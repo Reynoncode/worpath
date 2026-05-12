@@ -392,10 +392,13 @@ function finishQuiz() {
       elResultTitle.textContent = 'Mükəmməl!';
       elResultDesc.textContent  = `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
 
-      elResultMainBtn.textContent = hasNext ? `Test ${next + 1}-i aç →` : 'Ana səhifəyə qayıt';
-      elResultMainBtn.onclick     = () => {
-        closeOverlays();
-        renderLevels();
+      elResultMainBtn.textContent = hasNext ? `Test ${quiz.quizIdx + 2}-i aç →` : 'Ana səhifəyə qayıt';
+elResultMainBtn.onclick = () => {
+  const li = quiz.levelIdx;
+  closeOverlays();
+  renderLevels();
+  scrollToNextUnlocked(li);
+};
         if (hasNext) {
           // Auto-open the level accordion
           setTimeout(() => {
@@ -417,10 +420,12 @@ function finishQuiz() {
 
       elResultBackBtn.classList.remove('hidden');
       elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
-      elResultBackBtn.onclick     = () => {
-        closeOverlays();
-        renderLevels();
-      };
+      elResultBackBtn.onclick = () => {
+  const li = quiz.levelIdx;
+  closeOverlays();
+  renderLevels();
+  scrollToNextUnlocked(li);
+};
     }
   }, 250);
 }
@@ -429,6 +434,26 @@ function finishQuiz() {
 function closeOverlays() {
   elQuizScreen.classList.add('hidden');
   elResultScreen.classList.add('hidden');
+}
+
+function scrollToNextUnlocked(levelIdx) {
+  setTimeout(() => {
+    const cards = document.querySelectorAll('.level-card');
+    const targetCard = cards[levelIdx];
+    if (!targetCard) return;
+
+    if (!targetCard.classList.contains('open')) {
+      toggleLevel(targetCard);
+    }
+
+    setTimeout(() => {
+      const node = targetCard.querySelector('.path-node.pulse')
+                || targetCard.querySelector('.path-node.unlocked');
+      if (node) {
+        node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 200);
+  }, 100);
 }
 
 // ── Toast ─────────────────────────────────────────────────
@@ -460,8 +485,10 @@ elOpt1.addEventListener('click', () => handleAnswer(1));
 
 elQuitBtn.addEventListener('click', () => {
   if (confirm('Testdən çıxmaq istəyirsən? İrəliləyişin saxlanmayacaq.')) {
+    const li = quiz.levelIdx;
     closeOverlays();
     renderLevels();
+    scrollToNextUnlocked(li);
   }
 });
 
