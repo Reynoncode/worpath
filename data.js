@@ -333,6 +333,7 @@ const LEVELS = [
   { en: 'pale',        tr: 'solğun',             wrong: 'parlaq'        },
   { en: 'deep',        tr: 'dərin / tünd',       wrong: 'açıq'          },
   { en: 'shade',       tr: 'çalar / kölgə',      wrong: 'rəng'          },
+  { en: 'colourful',   tr: 'rəngli',             wrong: 'rəngsiz'       },
 ],
 
 // ─────────────────────── QUIZ 14 — Rəqəmlər 1 / Numbers 1–20 ───────────────────────
