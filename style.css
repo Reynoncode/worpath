@@ -332,6 +332,14 @@ button { font-family: var(--font); }
   transform: scale(0.94);
 }
 
+.path-node.exam-node {
+  width: 70px;
+  height: 70px;
+  font-size: 26px;
+  border-width: 3px;
+  border-style: dashed;
+}
+
 /* ── FULL-SCREEN OVERLAY ────────────────────── */
 .screen-overlay {
   position: fixed;
