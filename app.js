@@ -28,18 +28,24 @@ function loadProgress() {
 
   LEVELS.forEach((lvl) => {
     if (!progress[lvl.id]) progress[lvl.id] = [];
+
     for (let i = 0; i < lvl.quizzes.length; i++) {
       if (!progress[lvl.id][i]) {
-        // İlk item quiz və ya exam olsun, unlocked başlasın
         const item = lvl.quizzes[i];
-        if (item.type === 'exam') {
+
+        // Yeni yoxlama — item array-dirsə normal quiz, obyekt-dirsə exam
+        const isExam = item && typeof item === 'object' && item.type === 'exam';
+
+        if (isExam) {
           progress[lvl.id][i] = 'locked';
         } else {
+          // Normal quiz
           progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
         }
       }
     }
   });
+
   saveProgress();
 }
 function saveProgress() {
