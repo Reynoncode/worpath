@@ -197,14 +197,27 @@ function renderQuizPath(lvl, li) {
 
 function toggleLevel(card) {
   const isOpen = card.classList.contains('open');
+
   // Close all open cards first
   document.querySelectorAll('.level-card.open').forEach(c => {
+    const b = c.querySelector('.level-body');
+    b.style.maxHeight = '0px';
     c.classList.remove('open');
     c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
   });
+
   if (!isOpen) {
     card.classList.add('open');
     card.querySelector('.level-header').setAttribute('aria-expanded', 'true');
+    const body = card.querySelector('.level-body');
+    body.style.maxHeight = body.scrollHeight + 'px';
+
+    // Animasiya bitəndə 'none' et ki, içəri dəyişsə problem olmasın
+    body.addEventListener('transitionend', () => {
+      if (card.classList.contains('open')) {
+        body.style.maxHeight = 'none';
+      }
+    }, { once: true });
   }
 }
 
