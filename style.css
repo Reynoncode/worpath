@@ -211,9 +211,6 @@ button { font-family: var(--font); }
   transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
-.level-card.open .level-body {
-  max-height: none;
-}
 
 /* ── QUIZ PATH (circles) ────────────────────── */
 .quiz-path {
