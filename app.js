@@ -384,8 +384,8 @@ function finishQuiz() {
 
     if (won) {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
-      const lvl  = LEVELS[quiz.levelIdx];
-      const next = quiz.quizIdx + 1;
+      const lvl     = LEVELS[quiz.levelIdx];
+      const next    = quiz.quizIdx + 1;
       const hasNext = next < lvl.quizzes.length;
 
       elResultEmoji.textContent = '🎉';
@@ -393,19 +393,11 @@ function finishQuiz() {
       elResultDesc.textContent  = `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
 
       elResultMainBtn.textContent = hasNext ? `Test ${quiz.quizIdx + 2}-i aç →` : 'Ana səhifəyə qayıt';
-elResultMainBtn.onclick = () => {
-  const li = quiz.levelIdx;
-  closeOverlays();
-  renderLevels();
-  scrollToNextUnlocked(li);
-};
-        if (hasNext) {
-          // Auto-open the level accordion
-          setTimeout(() => {
-            const cards = document.querySelectorAll('.level-card');
-            if (cards[quiz.levelIdx]) toggleLevel(cards[quiz.levelIdx]);
-          }, 100);
-        }
+      elResultMainBtn.onclick = () => {
+        const li = quiz.levelIdx;
+        closeOverlays();
+        renderLevels();
+        scrollToNextUnlocked(li);
       };
 
       elResultBackBtn.classList.add('hidden');
@@ -421,11 +413,11 @@ elResultMainBtn.onclick = () => {
       elResultBackBtn.classList.remove('hidden');
       elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
       elResultBackBtn.onclick = () => {
-  const li = quiz.levelIdx;
-  closeOverlays();
-  renderLevels();
-  scrollToNextUnlocked(li);
-};
+        const li = quiz.levelIdx;
+        closeOverlays();
+        renderLevels();
+        scrollToNextUnlocked(li);
+      };
     }
   }, 250);
 }
