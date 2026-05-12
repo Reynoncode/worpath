@@ -5607,7 +5607,7 @@ const LEVELS = [
   { en: 'teeming', tr: 'dolu', wrong: 'boş' },
   { en: 'want', tr: 'yoxsulluq', wrong: 'bolluq' },
   { en: 'penury', tr: 'yoxsulluq', wrong: 'var-dövlət' }
-]
+],
       
       [], [], [], [], [],
       [], [], [], [], [],
