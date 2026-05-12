@@ -177,13 +177,12 @@ function renderQuizPath(lvl, li) {
     const isFirst = qi === 0;
     const isExam = item.type === 'exam';
 
-    if (!isFirst) {
-      html += '<div class="path-line"></div>';
-    }
+    if (!isFirst) html += '<div class="path-line"></div>';
 
     html += `<div class="path-node-wrap">`;
 
-    if (!isExam) quizCounter++; // ← bütün statuslardan əvvəl sayır
+    // ← BURDA artır, exam deyilsə, statusdan asılı olmayaraq
+    if (!isExam) quizCounter++;
 
     if (status === 'completed') {
       html += `
@@ -194,6 +193,7 @@ function renderQuizPath(lvl, li) {
              title="Test ${quizCounter}">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>`;
+
     } else if (status === 'unlocked') {
       const pulseClass = qi === progress[lvl.id].filter(s => s === 'completed').length ? 'pulse' : '';
       if (isExam) {
@@ -215,6 +215,7 @@ function renderQuizPath(lvl, li) {
             ${quizCounter}
           </div>`;
       }
+
     } else {
       if (isExam) {
         html += `
