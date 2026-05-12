@@ -183,13 +183,15 @@ function renderQuizPath(lvl, li) {
 
     html += `<div class="path-node-wrap">`;
 
+    if (!isExam) quizCounter++; // ← bütün statuslardan əvvəl sayır
+
     if (status === 'completed') {
       html += `
         <div class="path-node completed"
              data-quiz-idx="${qi}"
              data-status="completed"
              style="border-color:${lvl.color}; background:${lvl.color}"
-             title="Tamamlandı">
+             title="Test ${quizCounter}">
           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
         </div>`;
     } else if (status === 'unlocked') {
@@ -204,7 +206,6 @@ function renderQuizPath(lvl, li) {
             🏆
           </div>`;
       } else {
-        quizCounter++;
         html += `
           <div class="path-node unlocked ${pulseClass}"
                data-quiz-idx="${qi}"
@@ -224,7 +225,6 @@ function renderQuizPath(lvl, li) {
             🏆
           </div>`;
       } else {
-        quizCounter++;
         html += `
           <div class="path-node locked"
                data-quiz-idx="${qi}"
