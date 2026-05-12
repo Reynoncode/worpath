@@ -3375,7 +3375,7 @@ const LEVELS = [
   { en: 'diplomatic',      tr: 'diplomatik',          wrong: 'siyasi'           },
   { en: 'election',        tr: 'seçki',               wrong: 'referendum'       },
   { en: 'electoral',       tr: 'seçki (sifət)',        wrong: 'siyasi'           },
-];
+],
 
 // ─────────────────────── QUIZ 2 — Government & Politics (2) ───────────────────────
 [
@@ -3399,7 +3399,7 @@ const LEVELS = [
   { en: 'regulatory',   tr: 'tənzimləyici',         wrong: 'icraedici'        },
   { en: 'sovereignty',  tr: 'suverenlik',           wrong: 'müstəqillik'      },
   { en: 'treaty',       tr: 'müqavilə',             wrong: 'saziş'            },
-];
+],
 
 // ─────────────────────── QUIZ 3 — Law & Justice ───────────────────────
 [
@@ -3423,7 +3423,7 @@ const LEVELS = [
   { en: 'justice',     tr: 'ədalət',            wrong: 'qanun'           },
   { en: 'lawsuit',     tr: 'məhkəmə işi',       wrong: 'şikayət'         },
   { en: 'verdict',     tr: 'hökm',              wrong: 'qərar'           },
-];
+],
 
 // ─────────────────────── QUIZ 4 — Crime & Conflict ───────────────────────
 [
@@ -3447,7 +3447,7 @@ const LEVELS = [
   { en: 'torture',       tr: 'işgəncə',            wrong: 'zorakılıq'      },
   { en: 'violation',     tr: 'pozuntu',            wrong: 'cinayət'        },
   { en: 'warfare',       tr: 'müharibə',           wrong: 'döyüş'          },
-];
+],
 
 // ─────────────────────── QUIZ 5 — Business & Economy (1) ───────────────────────
 [
@@ -3471,8 +3471,7 @@ const LEVELS = [
   { en: 'privatization',  tr: 'özəlləşdirmə',         wrong: 'milliləşdirmə'      },
   { en: 'profit',         tr: 'mənfəət',              wrong: 'gəlir'              },
   { en: 'revenue',        tr: 'gəlir',                wrong: 'mənfəət'            },
-];
-
+],
 // ─────────────────────── QUIZ 6 — Business & Economy (2) ───────────────────────
 [
   { en: 'accountability', tr: 'hesabatlılıq',        wrong: 'şəffaflıq'          },
@@ -3495,7 +3494,7 @@ const LEVELS = [
   { en: 'transaction',    tr: 'əməliyyat',           wrong: 'ödəniş'             },
   { en: 'turnover',       tr: 'dövriyyə',            wrong: 'gəlir'              },
   { en: 'yield',          tr: 'gəlir (investisiya)', wrong: 'mənfəət'            },
-];
+],
 
 // ─────────────────────── QUIZ 7 — Society & Social Issues ───────────────────────
 [
@@ -3519,7 +3518,7 @@ const LEVELS = [
   { en: 'welfare',         tr: 'rifah',              wrong: 'yardım'           },
   { en: 'well-being',      tr: 'rifahlıq',           wrong: 'sağlamlıq'        },
   { en: 'workforce',       tr: 'işçi qüvvəsi',       wrong: 'əmək bazarı'      },
-];
+],
 
 // ─────────────────────── QUIZ 8 — Psychology & Emotions ───────────────────────
 [
@@ -3543,7 +3542,7 @@ const LEVELS = [
   { en: 'trauma',          tr: 'travma',             wrong: 'zərbə'           },
   { en: 'vulnerability',   tr: 'həssaslıq',          wrong: 'zəiflik'         },
   { en: 'willingness',     tr: 'istək',              wrong: 'hazırlıq'        },
-];
+],
 
 // ─────────────────────── QUIZ 9 — Abstract Concepts & Thinking ───────────────────────
 [
@@ -3567,7 +3566,7 @@ const LEVELS = [
   { en: 'reasoning',     tr: 'mühakimə',         wrong: 'düşüncə'         },
   { en: 'spectrum',      tr: 'spektr',           wrong: 'diapazon'        },
   { en: 'thesis',        tr: 'tezis',            wrong: 'hipotez'         },
-];
+],
 
 // ─────────────────────── QUIZ 10 — Actions & Processes (1) ───────────────────────
 [
@@ -3591,7 +3590,7 @@ const LEVELS = [
   { en: 'deploy',         tr: 'yerləşdirmək',             wrong: 'göndərmək'              },
   { en: 'derive',         tr: 'hasil etmək',              wrong: 'almaq'                  },
   { en: 'differentiate',  tr: 'fərqləndirmək',            wrong: 'ayırmaq'                },
-];
+],
 
 // ─────────────────────── QUIZ 11 — Actions & Processes (2) ───────────────────────
 [
@@ -3615,7 +3614,7 @@ const LEVELS = [
   { en: 'minimise',    tr: 'minimuma endirmək',          wrong: 'azaltmaq'                },
   { en: 'monitor',     tr: 'izləmək',                   wrong: 'nəzarət etmək'           },
   { en: 'negotiate',   tr: 'danışıqlar aparmaq',         wrong: 'müzakirə etmək'          },
-];
+],
 
 // ─────────────────────── QUIZ 12 — Change & Development ───────────────────────
 [
@@ -3639,7 +3638,7 @@ const LEVELS = [
   { en: 'thrive',          tr: 'uğurla inkişaf etmək',  wrong: 'böyümək'            },
   { en: 'undermine',       tr: 'zəiflətmək',            wrong: 'baltalamaq'         },
   { en: 'upgrade',         tr: 'təkmilləşdirmək',       wrong: 'yeniləmək'          },
-];
+],
 
 // ─────────────────────── QUIZ 13 — Media & Communication ───────────────────────
 [
@@ -3663,7 +3662,7 @@ const LEVELS = [
   { en: 'explicit',       tr: 'açıq',                   wrong: 'aydın'               },
   { en: 'implicit',       tr: 'gizli',                  wrong: 'örtülü'              },
   { en: 'irony',          tr: 'ironi',                  wrong: 'sarkazm'             },
-];
+],
 
 // ─────────────────────── QUIZ 14 — Science & Research ───────────────────────
 [
@@ -3687,7 +3686,7 @@ const LEVELS = [
   { en: 'molecular',      tr: 'molekulyar',         wrong: 'atomik'           },
   { en: 'quantum',        tr: 'kvant',              wrong: 'nüvə'             },
   { en: 'simulation',     tr: 'simulyasiya',        wrong: 'model'            },
-];
+],
 
 // ─────────────────────── QUIZ 15 — Health & Medicine ───────────────────────
 [
@@ -3711,7 +3710,7 @@ const LEVELS = [
   { en: 'virus',           tr: 'virus',                      wrong: 'bakteriya'       },
   { en: 'clinical',        tr: 'klinik',                     wrong: 'tibbi'           },
   { en: 'physician',       tr: 'terapevt',                   wrong: 'cərrah'          },
-];
+],
 
 // ─────────────────────── QUIZ 16 — Environment & Nature ───────────────────────
 [
@@ -3735,7 +3734,7 @@ const LEVELS = [
   { en: 'ozone',         tr: 'ozon',              wrong: 'atmosfer'          },
   { en: 'recycling',     tr: 'təkrar emal',       wrong: 'utilizasiya'       },
   { en: 'toxic',         tr: 'zəhərli',           wrong: 'təhlükəli'         },
-];
+],
 
 // ─────────────────────── QUIZ 17 — Art, Culture & Entertainment ───────────────────────
 [
@@ -3759,7 +3758,7 @@ const LEVELS = [
   { en: 'theatrical',     tr: 'teatr (sifət)',     wrong: 'dramatik'        },
   { en: 'masterpiece',    tr: 'şah əsər',          wrong: 'nadir əsər'      },
   { en: 'legendary',      tr: 'əfsanəvi',          wrong: 'məşhur'          },
-];
+],
 
 // ─────────────────────── QUIZ 18 — Personality & Character ───────────────────────
 [
@@ -3783,7 +3782,7 @@ const LEVELS = [
   { en: 'radical',       tr: 'radikal',           wrong: 'ekstremist'      },
   { en: 'sceptical',     tr: 'şübhəci',           wrong: 'ehtiyatlı'       },
   { en: 'tolerant',      tr: 'tolerant',          wrong: 'hörmətli'        },
-];
+],
 
 // ─────────────────────── QUIZ 19 — War & Military ───────────────────────
 [
@@ -3807,7 +3806,7 @@ const LEVELS = [
   { en: 'strategic',    tr: 'strateji',         wrong: 'taktik'          },
   { en: 'surrender',    tr: 'təslim olmaq',     wrong: 'geri çəkilmək'   },
   { en: 'tactical',     tr: 'taktik',           wrong: 'strateji'        },
-];
+],
 
 // ─────────────────────── QUIZ 20 — Remaining Advanced Words (Mixed) ───────────────────────
 [
@@ -3831,7 +3830,7 @@ const LEVELS = [
   { en: 'dynamic',        tr: 'dinamik',               wrong: 'aktiv'           },
   { en: 'explicit',       tr: 'açıq',                  wrong: 'aydın'           },
   { en: 'fundamental',    tr: 'əsas',                  wrong: 'vacib'           },
-];
+],
 // ─────────────────────── QUIZ 21 — Personality & Character Traits ───────────────────────
 [
   { en: 'absurd',        tr: 'absurd',            wrong: 'mənasız'         },
