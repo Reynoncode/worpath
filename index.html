@@ -25,11 +25,12 @@
           </div>
           <span class="logo-text">WordPath</span>
         </div>
+        <!-- Ulduz sayğacı (şans üçün gem sistemi) -->
         <div class="stat-badge">
           <svg viewBox="0 0 24 24" stroke-width="2">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
           </svg>
-          <span id="completed-count">0</span>
+          <span id="star-count">0</span>
         </div>
       </div>
     </header>
@@ -87,8 +88,38 @@
       <h2  class="result-title" id="result-title">Əla!</h2>
       <p   class="result-desc"  id="result-desc"></p>
       <div class="result-actions">
-        <button class="btn-primary"   id="result-main-btn">Davam et</button>
-        <button class="btn-secondary hidden" id="result-back-btn">Ana səhifəyə qayıt</button>
+        <button class="btn-primary"            id="result-main-btn">Davam et</button>
+        <button class="btn-secondary hidden"   id="result-back-btn">Ana səhifəyə qayıt</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       CHANCE MODAL (bottom sheet)
+       Səhv etdikdə çıxır — 1 ulduz qarşılığında şans
+  ═══════════════════════════════════════════ -->
+  <div id="chance-modal" class="chance-backdrop hidden">
+    <div class="chance-sheet">
+      <div class="chance-handle"></div>
+      <div class="chance-icon">🎯</div>
+      <h3 class="chance-title">Bir şansın var!</h3>
+      <p class="chance-desc">
+        1 ulduz xərcləyərək bu sualı yenidən cavablandır.<br>
+        Hər testdə yalnız <strong>1 dəfə</strong> istifadə oluna bilər.
+      </p>
+      <div class="chance-cost">
+        <svg viewBox="0 0 24 24" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+        </svg>
+        <span>1 ulduz — mövcud: <span id="chance-stars">0</span></span>
+      </div>
+      <div class="chance-actions">
+        <button class="btn-chance-accept" id="chance-accept">
+          ⭐ 1 ulduz xərclə, yenidən cəhd et
+        </button>
+        <button class="btn-chance-decline" id="chance-decline">
+          Xeyr, keç
+        </button>
       </div>
     </div>
   </div>
