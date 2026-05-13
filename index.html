@@ -25,12 +25,31 @@
           </div>
           <span class="logo-text">WordPath</span>
         </div>
-        <!-- Ulduz sayğacı (şans üçün gem sistemi) -->
-        <div class="stat-badge">
-          <svg viewBox="0 0 24 24" stroke-width="2">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-          </svg>
-          <span id="star-count">0</span>
+
+        <div class="header-actions">
+          <!-- Ümumi Təkrar düyməsi -->
+          <button class="header-action-btn review-btn" id="review-btn" title="Ümumi Təkrar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+          </button>
+
+          <!-- Səviyyəni Test Et düyməsi -->
+          <button class="header-action-btn test-btn" id="level-test-btn" title="Səviyyəni Test Et">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </button>
+
+          <!-- Ulduz sayğacı -->
+          <div class="stat-badge">
+            <svg viewBox="0 0 24 24" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span id="star-count">0</span>
+          </div>
         </div>
       </div>
     </header>
@@ -38,9 +57,7 @@
     <!-- ── LEVEL LIST ─────────────────────────── -->
     <main class="main-content">
       <p class="page-subtitle">Öyrənmək istədiyin səviyyəni seç</p>
-      <div class="level-list" id="level-list">
-        <!-- Rendered by app.js -->
-      </div>
+      <div class="level-list" id="level-list"></div>
     </main>
 
   </div>
@@ -49,11 +66,9 @@
        QUIZ SCREEN (full-screen overlay)
   ═══════════════════════════════════════════ -->
   <div id="quiz-screen" class="screen-overlay hidden">
-
     <div class="quiz-header">
       <button class="icon-btn" id="quit-btn" aria-label="Çıx">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-             stroke-linecap="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <line x1="18" y1="6" x2="6" y2="18"/>
           <line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
@@ -68,7 +83,7 @@
 
     <div class="quiz-body">
       <div class="question-card">
-        <p class="question-hint">Düzgün tərcüməni tap</p>
+        <p class="question-hint" id="question-hint">Düzgün tərcüməni tap</p>
         <h1 class="question-word" id="question-word">Apple</h1>
       </div>
       <div class="options-grid" id="options-grid">
@@ -76,7 +91,6 @@
         <button class="option-btn" id="opt-1" data-index="1"></button>
       </div>
     </div>
-
   </div>
 
   <!-- ═══════════════════════════════════════════
@@ -87,6 +101,31 @@
       <div class="result-emoji" id="result-emoji">🎉</div>
       <h2  class="result-title" id="result-title">Əla!</h2>
       <p   class="result-desc"  id="result-desc"></p>
+      <div class="result-stats hidden" id="result-stats">
+        <div class="stat-item correct-stat">
+          <span class="stat-num" id="stat-correct">0</span>
+          <span class="stat-label">Düzgün</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item wrong-stat">
+          <span class="stat-num" id="stat-wrong">0</span>
+          <span class="stat-label">Səhv</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" id="stat-pct">0%</span>
+          <span class="stat-label">Nəticə</span>
+        </div>
+      </div>
+      <!-- Level test result card -->
+      <div class="level-result-card hidden" id="level-result-card">
+        <div class="level-result-badge" id="level-result-badge"></div>
+        <div class="level-result-info">
+          <div class="level-result-name" id="level-result-name"></div>
+          <div class="level-result-ielts" id="level-result-ielts"></div>
+          <div class="level-result-desc" id="level-result-desc"></div>
+        </div>
+      </div>
       <div class="result-actions">
         <button class="btn-primary"            id="result-main-btn">Davam et</button>
         <button class="btn-secondary hidden"   id="result-back-btn">Ana səhifəyə qayıt</button>
@@ -96,7 +135,6 @@
 
   <!-- ═══════════════════════════════════════════
        CHANCE MODAL (bottom sheet)
-       Səhv etdikdə çıxır — 1 ulduz qarşılığında şans
   ═══════════════════════════════════════════ -->
   <div id="chance-modal" class="chance-backdrop hidden">
     <div class="chance-sheet">
@@ -114,13 +152,27 @@
         <span>1 ulduz — mövcud: <span id="chance-stars">0</span></span>
       </div>
       <div class="chance-actions">
-        <button class="btn-chance-accept" id="chance-accept">
-          ⭐ 1 ulduz xərclə, yenidən cəhd et
-        </button>
-        <button class="btn-chance-decline" id="chance-decline">
-          Xeyr, keç
-        </button>
+        <button class="btn-chance-accept" id="chance-accept">⭐ 1 ulduz xərclə, yenidən cəhd et</button>
+        <button class="btn-chance-decline" id="chance-decline">Xeyr, keç</button>
       </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       REVIEW MODAL — Ümumi Təkrar səviyyə seçimi
+  ═══════════════════════════════════════════ -->
+  <div id="review-modal" class="modal-backdrop hidden">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header-row">
+        <span class="modal-icon">🔄</span>
+        <h3 class="modal-title">Ümumi Təkrar</h3>
+      </div>
+      <p class="modal-desc">Hansı səviyyənin sözlərini təkrar etmək istəyirsən?</p>
+      <div class="review-level-grid" id="review-level-grid">
+        <!-- Rendered by app.js -->
+      </div>
+      <button class="btn-chance-decline" id="review-close">Ləğv et</button>
     </div>
   </div>
 
@@ -130,4 +182,3 @@
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
-</html>
