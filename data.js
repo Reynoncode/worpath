@@ -4527,12 +4527,6 @@ const LEVELS = [
     icon: '⚡',
     color: '#2EAA6E',
     quizzes: [
-       {
-    id: 'c1b',
-    name: 'C1+ — İrəliləmiş II',
-    icon: '🏆',
-    color: '#7058D0',
-    quizzes: [
       // ─────────────────────── QUIZ 1 — Government & Politics (1) ───────────────────────
 [
   { en: 'abolish',         tr: 'ləğv etmək',         wrong: 'qadağan etmək'    },
