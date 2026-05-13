@@ -20,6 +20,11 @@ const quiz = {
 // progress[levelId][quizIdx] = 'locked' | 'unlocked' | 'completed'
 let progress = {};
 
+// Helper: safely check if a quiz item is an exam object
+function isExamItem(item) {
+  return item && !Array.isArray(item) && item.type === 'exam';
+}
+
 function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -33,13 +38,9 @@ function loadProgress() {
       if (!progress[lvl.id][i]) {
         const item = lvl.quizzes[i];
 
-        // Yeni yoxlama — item array-dirsə normal quiz, obyekt-dirsə exam
-        const isExam = item && typeof item === 'object' && item.type === 'exam';
-
-        if (isExam) {
+        if (isExamItem(item)) {
           progress[lvl.id][i] = 'locked';
         } else {
-          // Normal quiz
           progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
         }
       }
@@ -65,7 +66,7 @@ function markCompleted(levelIdx, quizIdx) {
   if (next < lvl.quizzes.length) {
     const nextItem = lvl.quizzes[next];
 
-    if (nextItem.type === 'exam') {
+    if (isExamItem(nextItem)) {
       // Exam-dan əvvəlki bütün quizlər tamamlandısa examı aç
       const allDone = nextItem.sourceQuizzes.every(
         qi => progress[lvl.id][qi] === 'completed'
@@ -146,28 +147,28 @@ function renderLevels() {
     // Attach quiz-node click handlers after inserting into DOM
     card.querySelectorAll('.path-node').forEach((node) => {
       node.addEventListener('click', () => {
-  const qi = parseInt(node.dataset.quizIdx, 10);
-  const status = node.dataset.status;
+        const qi = parseInt(node.dataset.quizIdx, 10);
+        const status = node.dataset.status;
 
-  if (status === 'locked') {
-    showToast('Əvvəlki testi tam bitir 🔒');
-    return;
-  }
+        if (status === 'locked') {
+          showToast('Əvvəlki testi tam bitir 🔒');
+          return;
+        }
 
-  const item = lvl.quizzes[qi];
+        const item = lvl.quizzes[qi];
 
-  if (item.type === 'exam') {
-    startQuiz(li, qi);
-    return;
-  }
+        if (isExamItem(item)) {
+          startQuiz(li, qi);
+          return;
+        }
 
-  if (!item || item.length < 20) {
-    showToast('Bu test hələ hazır deyil ✏️');
-    return;
-  }
+        if (!item || item.length < 20) {
+          showToast('Bu test hələ hazır deyil ✏️');
+          return;
+        }
 
-  startQuiz(li, qi);
-});
+        startQuiz(li, qi);
+      });
     });
 
     elLevelList.appendChild(card);
@@ -181,13 +182,12 @@ function renderQuizPath(lvl, li) {
   lvl.quizzes.forEach((item, qi) => {
     const status = getStatus(li, qi);
     const isFirst = qi === 0;
-    const isExam = item.type === 'exam';
+    const isExam = isExamItem(item); // ← FIX: safe check
 
     if (!isFirst) html += '<div class="path-line"></div>';
 
     html += `<div class="path-node-wrap">`;
 
-    // ← BURDA artır, exam deyilsə, statusdan asılı olmayaraq
     if (!isExam) quizCounter++;
 
     if (status === 'completed') {
@@ -271,7 +271,6 @@ function toggleLevel(card) {
     const body = card.querySelector('.level-body');
     body.style.maxHeight = body.scrollHeight + 'px';
 
-    // Animasiya bitəndə 'none' et ki, içəri dəyişsə problem olmasın
     body.addEventListener('transitionend', () => {
       if (card.classList.contains('open')) {
         body.style.maxHeight = 'none';
@@ -288,16 +287,16 @@ function startQuiz(levelIdx, quizIdx) {
   quiz.index    = 0;
   quiz.locked   = false;
 
-const item = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
-const isExam = item.type === 'exam';
+  const item = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
+  const isExam = isExamItem(item); // ← FIX: safe check
 
-elResultEmoji.textContent = isExam ? '🎓' : '🎉';
-elResultTitle.textContent = isExam ? 'Exam keçildi!' : 'Mükəmməl!';
-elResultDesc.textContent  = isExam
-  ? `Examı uğurla tamamladın! Növbəti bölməyə keçə bilərsən.`
-  : `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
+  elResultEmoji.textContent = isExam ? '🎓' : '🎉';
+  elResultTitle.textContent = isExam ? 'Exam keçildi!' : 'Mükəmməl!';
+  elResultDesc.textContent  = isExam
+    ? `Examı uğurla tamamladın! Növbəti bölməyə keçə bilərsən.`
+    : `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
 
-  if (item.type === 'exam') {
+  if (isExam) {
     // Exam: sourceQuizzes-dən bütün sözləri topla, 20-sini random seç
     const lvl = LEVELS[levelIdx];
     let allWords = [];
@@ -323,15 +322,12 @@ function showQuestion() {
   const word       = quiz.words[quiz.index];
   const totalWords = quiz.words.length;
 
-  // Update progress bar & counter
   const pct = (quiz.index / totalWords) * 100;
   elProgressFill.style.width = pct + '%';
   elQCounter.textContent = `${quiz.index + 1}/${totalWords}`;
 
-  // Show the English word
   elQuestionWord.textContent = capitalize(word.en);
 
-  // Randomize correct answer position (0 = left, 1 = right)
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
   const opts = quiz.correctPos === 0
     ? [word.tr, word.wrong]
@@ -340,7 +336,6 @@ function showQuestion() {
   elOpt0.textContent = capitalize(opts[0]);
   elOpt1.textContent = capitalize(opts[1]);
 
-  // Reset button states
   elOpt0.className = 'option-btn';
   elOpt1.className = 'option-btn';
   elOpt0.disabled  = false;
@@ -358,17 +353,14 @@ function handleAnswer(btnIdx) {
   elOpt0.disabled = true;
   elOpt1.disabled = true;
 
-  // Visual feedback
   if (isCorrect) {
     (btnIdx === 0 ? elOpt0 : elOpt1).className = 'option-btn correct';
   } else {
     quiz.mistakes++;
     (btnIdx === 0 ? elOpt0 : elOpt1).className = 'option-btn wrong';
-    // Highlight the correct button
     (quiz.correctPos === 0 ? elOpt0 : elOpt1).className = 'option-btn correct';
   }
 
-  // Advance after short delay
   setTimeout(() => {
     quiz.index++;
     if (quiz.index >= quiz.words.length) {
