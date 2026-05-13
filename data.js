@@ -117,7 +117,110 @@ const LEVELS = [
   { en: 'born',      tr: 'doğulmuş',     wrong: 'ölmüş'      },
 ],
       
-{ type: 'exam', name: 'Exam 1', sourceQuizzes: [0,1,2,3] },
+// ─────────────────────── EXAM 1 — Ümumi insanlar ───────────────────────
+[
+  { 
+    en: "The ____ is sleeping.", 
+    tr: 'baby', 
+    wrong: 'scientist' 
+  },
+  { 
+    en: "This ____ is my son.", 
+    tr: 'boy', 
+    wrong: 'grandmother' 
+  },
+  { 
+    en: "The ____ is playing in the park.", 
+    tr: 'child', 
+    wrong: 'doctor' 
+  },
+  { 
+    en: "The ____ wants to buy a new phone.", 
+    tr: 'customer', 
+    wrong: 'policeman' 
+  },
+  { 
+    en: "That ____ is my daughter.", 
+    tr: 'girl', 
+    wrong: 'farmer' 
+  },
+  { 
+    en: "The tall ____ is my father.", 
+    tr: 'man', 
+    wrong: 'nurse' 
+  },
+  { 
+    en: "He is a ____ of our team.", 
+    tr: 'member', 
+    wrong: 'waiter' 
+  },
+  { 
+    en: "My ____ lives next door.", 
+    tr: 'neighbour', 
+    wrong: 'singer' 
+  },
+  { 
+    en: "She is my business ____.", 
+    tr: 'partner', 
+    wrong: 'baby' 
+  },
+  { 
+    en: "Every ____ needs food and water.", 
+    tr: 'person', 
+    wrong: 'tooth' 
+  },
+  { 
+    en: "The ____ goes to high school.", 
+    tr: 'teenager', 
+    wrong: 'grandfather' 
+  },
+  { 
+    en: "The ____ is my mother.", 
+    tr: 'woman', 
+    wrong: 'driver' 
+  },
+  { 
+    en: "Many ____ live in this city.", 
+    tr: 'people', 
+    wrong: 'actor' 
+  },
+  { 
+    en: "He is my best ____.", 
+    tr: 'friend', 
+    wrong: 'leg' 
+  },
+  { 
+    en: "____ is knocking at the door.", 
+    tr: 'Somebody', 
+    wrong: 'nobody' 
+  },
+  { 
+    en: "I saw ____ in the park yesterday.", 
+    tr: 'someone', 
+    wrong: 'no one' 
+  },
+  { 
+    en: "Is ____ home right now?", 
+    tr: 'anybody', 
+    wrong: 'teacher' 
+  },
+  { 
+    en: "Can ____ help me please?", 
+    tr: 'anyone', 
+    wrong: 'hair' 
+  },
+  { 
+    en: "____ came to the meeting.", 
+    tr: 'Nobody', 
+    wrong: 'artist' 
+  },
+  { 
+    en: "____ knows the secret.", 
+    tr: 'No one', 
+    wrong: 'visitor' 
+  }
+],
+      
       // ─────────────────────── QUIZ 5 — Hisslər ───────────────────────
 [
   { en: 'afraid',       tr: 'qorxmuş',          wrong: 'xoşbəxt'       },
