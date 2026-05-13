@@ -117,8 +117,7 @@ const LEVELS = [
   { en: 'born',      tr: 'doğulmuş',     wrong: 'ölmüş'      },
 ],
       
-{ type: 'exam', name: 'Exam 1 — Peşələr & İnsanlar', sourceQuizzes: [0,1,2,3] },
-
+{ type: 'exam', name: 'Exam 1', sourceQuizzes: [0,1,2,3] },
       // ─────────────────────── QUIZ 5 — Hisslər ───────────────────────
 [
   { en: 'afraid',       tr: 'qorxmuş',          wrong: 'xoşbəxt'       },
@@ -238,7 +237,7 @@ const LEVELS = [
   { en: 'true',        tr: 'doğru',              wrong: 'yalan'         },
   { en: 'warm',        tr: 'ilıq',               wrong: 'soyuq'         },
 ],
-      { type: 'exam', name: 'Exam 2 — Hisslər & Sifətlər', sourceQuizzes: [4,5,6,7,8] },
+{ type: 'exam', name: 'Exam 2', sourceQuizzes: [5,6,7,8,9] },
 
 // ─────────────────────── QUIZ 10 — Yemək / Food ───────────────────────
 [
@@ -310,7 +309,8 @@ const LEVELS = [
   { en: 'thirsty',     tr: 'susamış',            wrong: 'ac'            },
   { en: 'delicious',   tr: 'dadlı',              wrong: 'dadsız'        },
 ],
-      { type: 'exam', name: 'Exam 3 — Yemək & İçki', sourceQuizzes: [10,11,12] },
+      { type: 'exam', name: 'Exam 3 — Yemək',     sourceQuizzes: [11,12,13] },
+
 
 // ─────────────────────── QUIZ 13 — Rənglər / Colours ───────────────────────
 [
@@ -383,7 +383,7 @@ const LEVELS = [
   { en: 'once',        tr: 'bir dəfə',           wrong: 'iki dəfə'      },
   { en: 'twice',       tr: 'iki dəfə',           wrong: 'bir dəfə'      },
 ],
-      { type: 'exam', name: 'Exam 4 — Rənglər & Rəqəmlər', sourceQuizzes: [14,15,16] },
+{ type: 'exam', name: 'Exam 4',              sourceQuizzes: [15,16,17] },
 
 // ─────────────────────── QUIZ 16 — Ev 1 / Rooms & Furniture ───────────────────────
 [
@@ -503,7 +503,7 @@ const LEVELS = [
   { en: 'sun',          tr: 'günəş',              wrong: 'ay'             },
   { en: 'tree',         tr: 'ağac',               wrong: 'kol'            },
 ],
-      { type: 'exam', name: 'Exam 5 — Şəhər & Təbiət', sourceQuizzes: [18,19,20,21] },
+{ type: 'exam', name: 'Exam 5',              sourceQuizzes: [19,20,21,22,23] },
 
 // ─────────────────────── QUIZ 21 — Heyvanlar / Animals ───────────────────────
 [
@@ -576,6 +576,8 @@ const LEVELS = [
   { en: 'to dress',     tr: 'geyindirmək',        wrong: 'soyundırmaq'    },
   { en: 'fashion',      tr: 'moda',               wrong: 'stil'           },
 ],
+      { type: 'exam', name: 'Exam 6',              sourceQuizzes: [25,26,27] },
+
 
 // ─────────────────────── QUIZ 24 — Zaman 1 / Days & Months ───────────────────────
 [
@@ -600,7 +602,6 @@ const LEVELS = [
   { en: 'December',     tr: 'dekabr',             wrong: 'noyabr'         },
   { en: 'week',         tr: 'həftə',              wrong: 'ay'             },
 ],
-      { type: 'exam', name: 'Exam 6 — Nəqliyyat & Geyim', sourceQuizzes: [22,23,24] },
 
 // ─────────────────────── QUIZ 25 — Zaman 2 / General time ───────────────────────
 [
@@ -648,7 +649,7 @@ const LEVELS = [
   { en: 'never',        tr: 'heç vaxt',           wrong: 'həmişə'         },
   { en: 'often',        tr: 'tez-tez',            wrong: 'nadir hallarda' },
 ],
-      { type: 'exam', name: 'Exam 7 — Zaman', sourceQuizzes: [25,26,27] },
+{ type: 'exam', name: 'Exam 7',              sourceQuizzes: [28,29,30] },
 
 // ─────────────────────── QUIZ 27 — Pul / Money & Shopping ───────────────────────
 [
@@ -721,7 +722,7 @@ const LEVELS = [
   { en: 'band',         tr: 'qrup / ansambl',     wrong: 'orkestra'       },
   { en: 'concert',      tr: 'konsert',            wrong: 'şou'            },
 ],
-      { type: 'exam', name: 'Exam 8 — Texnologiya & Media', sourceQuizzes: [28,29,30] },
+{ type: 'exam', name: 'Exam 8',              sourceQuizzes: [32,33,34] },
 
 // ─────────────────────── QUIZ 30 — Məktəb 1 / School & Study ───────────────────────
 [
@@ -793,7 +794,7 @@ const LEVELS = [
   { en: 'team',        tr: 'komanda',            wrong: 'oyunçu'         },
   { en: 'tennis',      tr: 'tennis',             wrong: 'badminton'      },
 ],
-      { type: 'exam', name: 'Exam 9 — Məktəb & İdman', sourceQuizzes: [31,32,33] },
+{ type: 'exam', name: 'Exam 9',              sourceQuizzes: [36,37,38] },
 
 // ─────────────────────── QUIZ 33 — Feil 1 / Movement verbs ───────────────────────
 [
@@ -865,7 +866,7 @@ const LEVELS = [
   { en: 'to help',      tr: 'kömək etmək',        wrong: 'mane olmaq'     },
   { en: 'to keep',      tr: 'saxlamaq',           wrong: 'atmaq'          },
 ],
-      { type: 'exam', name: 'Exam 10 — Feillər 1', sourceQuizzes: [34,35,36] },
+{ type: 'exam', name: 'Exam 10',             sourceQuizzes: [40,41,42] },
       
 // ─────────────────────── QUIZ 36 — Feil 4 / Daily life verbs 2 ───────────────────────
 [
@@ -938,7 +939,7 @@ const LEVELS = [
   { en: 'to break',     tr: 'sındırmaq',          wrong: 'düzəltmək'      },
   { en: 'to wear',      tr: 'geymək',             wrong: 'çıxarmaq'       },
 ],
-      { type: 'exam', name: 'Exam 11 — Feillər 2', sourceQuizzes: [37,38,39] },
+{ type: 'exam', name: 'Exam 11',             sourceQuizzes: [44,45,46] },
 
 // ─────────────────────── QUIZ 39 — İş / Work & Business ───────────────────────
 [
@@ -1010,7 +1011,7 @@ const LEVELS = [
   { en: 'title',        tr: 'başlıq / ünvan',     wrong: 'ad'             },
   { en: 'number',       tr: 'rəqəm / nömrə',      wrong: 'hərf'           },
 ],
-      { type: 'exam', name: 'Exam 12 — İş & İsimlər', sourceQuizzes: [40,41,42] },
+{ type: 'exam', name: 'Exam 12',             sourceQuizzes: [48,49,50] },
 
 
       // ─────────────────────── QUIZ 10 ──────────────────────
