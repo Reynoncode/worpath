@@ -5481,15 +5481,8 @@ const LEVELS = [
   { en: 'anonymous',     tr: 'anonim',                  wrong: 'naməlum'         },
   { en: 'apparent',      tr: 'aşkar',                   wrong: 'açıq'            },
   { en: 'aspiration',    tr: 'istək',                   wrong: 'arzu'            },
-],
-      [], [], [], [], [],
-      [], [], [], [], [],
-    ]
-  },
-      [], [], [], [], [],
-      [], [], [], [], [],
-    ]
-  },
+]  
+  }
 
   // ╔══════════════════════════════════════════════════╗
   // ║  LEVEL 6 — C2: Orta Səviyyə II                 ║
