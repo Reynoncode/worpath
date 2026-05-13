@@ -3,6 +3,63 @@
 // ============================================================
 
 // ── Storage keys ──────────────────────────────────────────
+const QUIZ_NAMES = {
+  'a1': {
+    0:  'Roles',
+    1:  'General People',
+    2:  'Family',
+    3:  'Body',
+    // 4 → Exam 1
+    5:  'Feelings',
+    6:  'Positive Adjectives',
+    7:  'Size & Description',
+    8:  'State Adjectives',
+    9:  'State Adjectives 2',
+    // 10 → Exam 2
+    11: 'Vegetables & Fruit',
+    12: 'Dairy & Protein',
+    13: 'Drinks & Meals',
+    // 14 → Exam 3
+    15: 'Colours',
+    16: 'Numbers 1–20',
+    17: 'Numbers 30–Ordinals',
+    // 18 → Exam 4
+    19: 'Rooms & Furniture',
+    20: 'Household Objects',
+    21: 'City Buildings',
+    22: 'Places & Areas',
+    // 23 → Exam 5
+    24: 'Nature & Geography',
+    25: 'Animals',
+    26: 'Transport',
+    27: 'Clothes & Accessories',
+    // 28 → Exam 6
+    29: 'Days & Months',
+    30: 'General Time',
+    31: 'More Time Words',
+    // 32 → Exam 7
+    33: 'Money & Shopping',
+    34: 'Technology',
+    35: 'Media & Entertainment',
+    // 36 → Exam 8
+    37: 'School & Study',
+    38: 'More School Words',
+    39: 'Sport & Hobbies',
+    // 40 → Exam 9
+    41: 'Movement Verbs',
+    42: 'Communication Verbs',
+    43: 'Daily Life Verbs',
+    // 44 → Exam 10
+    45: 'Daily Life Verbs 2',
+    46: 'Mental & Abstract Verbs',
+    47: 'Mental Verbs 2',
+    // 48 → Exam 11
+    49: 'Work & Business',
+    50: 'Misc Nouns',
+    51: 'Misc Nouns 2',
+    // 52 → Exam 12
+  }
+};
 const STORAGE_KEY = 'wordpath_v1';
 const STARS_KEY   = 'wordpath_stars';
 
@@ -280,7 +337,7 @@ function renderQuizPath(lvl, li) {
       }
     }
 
-    const label = isExam ? `Exam ${examCounter}` : `Test ${quizCounter}`;
+    const label = isExam ? `Exam ${examCounter}` : (QUIZ_NAMES[lvl.id]?.[qi] || `Test ${quizCounter}`);
     html += `<div class="node-label">${label}</div>`;
     html += `</div>`;
   });
