@@ -46,6 +46,38 @@ const QUIZ_NAMES = {
     50: 'Misc Nouns',
     51: 'Misc Nouns 2',
   }
+  'a2': {
+    0:  'Jobs & Professions 1',
+    1:  'Jobs & Professions 2',
+    2:  'Human Body',
+    3:  'Health & Illness',
+    5:  'Food & Drink',
+    6:  'Kitchen & Utensils',
+    7:  'Animals',
+    8:  'Nature & Geography',
+    10: 'Technology & Internet',
+    11: 'Media & Advertising',
+    12: 'Education',
+    13: 'Science & Discovery',
+    15: 'Sports',
+    16: 'Hobbies & Free Time',
+    18: 'City Life',
+    19: 'Transport',
+    20: 'Home & Household',
+    21: 'Clothes & Accessories',
+    23: 'Feelings & Emotions',
+    24: 'Character & Behaviour',
+    25: 'Adjectives: Quality',
+    26: 'Adjectives: State',
+    28: 'Adverbs & Connectors',
+    29: 'Time & Sequence',
+    31: 'Communication & Language',
+    32: 'Social Life & Relationships',
+    34: 'Law, Crime & Military',
+    35: 'Business, Money & Economy',
+    37: 'Environment',
+    38: 'Travel & Tourism',
+  }
 };
 
 // ── Storage keys ──────────────────────────────────────────
