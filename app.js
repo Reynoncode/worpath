@@ -3,8 +3,13 @@
 // ============================================================
 
 // ── Storage keys ──────────────────────────────────────────
-const STORAGE_KEY      = 'wordpath_v1';
-const STARS_KEY        = 'wordpath_stars';
+const STORAGE_KEY = 'wordpath_v1';
+const STARS_KEY   = 'wordpath_stars';
+
+// ── Exam ID-ləri (0-based index, level id ilə) ────────────
+const EXAM_IDS = {
+  'a1': new Set([4, 10, 14, 18, 23, 28, 32, 36, 40, 44, 48, 52])
+};
 
 // ── Quiz state ────────────────────────────────────────────
 const quiz = {
@@ -15,8 +20,8 @@ const quiz = {
   mistakes:     0,
   correctPos:   0,
   locked:       false,
-  chanceUsed:   false,   // bu quiz-də şans işlədildi mi?
-  chanceActive: false,   // hal-hazırda şans popup-ı göstərilibmi?
+  chanceUsed:   false,
+  chanceActive: false,
 };
 
 // ── Progress ──────────────────────────────────────────────
@@ -44,8 +49,11 @@ function renderStarCount() {
   if (el) el.textContent = getStars();
 }
 
-// Helper: safely check if a quiz item is an exam object
-function isExamItem(item) {
+// ── Exam yoxlaması ────────────────────────────────────────
+function isExamItem(item, levelId, quizIdx) {
+  if (levelId !== undefined && quizIdx !== undefined) {
+    return !!(EXAM_IDS[levelId] && EXAM_IDS[levelId].has(quizIdx));
+  }
   return item && !Array.isArray(item) && item.type === 'exam';
 }
 
@@ -60,12 +68,7 @@ function loadProgress() {
 
     for (let i = 0; i < lvl.quizzes.length; i++) {
       if (!progress[lvl.id][i]) {
-        const item = lvl.quizzes[i];
-        if (isExamItem(item)) {
-          progress[lvl.id][i] = 'unlocked';
-        } else {
-          progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
-        }
+        progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
       }
     }
   });
@@ -88,27 +91,13 @@ function markCompleted(levelIdx, quizIdx) {
 
   progress[lvl.id][quizIdx] = 'completed';
 
-  const item = lvl.quizzes[quizIdx];
-
-  if (isExamItem(item)) {
-    item.sourceQuizzes.forEach(qi => {
-      if (progress[lvl.id][qi] !== 'completed') {
-        progress[lvl.id][qi] = 'completed';
-      }
-    });
-  }
-
   const next = quizIdx + 1;
   if (next < lvl.quizzes.length) {
-    const nextItem = lvl.quizzes[next];
-    if (!isExamItem(nextItem)) {
-      if (progress[lvl.id][next] === 'locked') {
-        progress[lvl.id][next] = 'unlocked';
-      }
+    if (progress[lvl.id][next] === 'locked') {
+      progress[lvl.id][next] = 'unlocked';
     }
   }
 
-  // Yeni tamamlanan quiz üçün 1 ulduz ver (əvvəl tamamlanmışdısa vermir)
   if (!wasCompleted) {
     addStar();
   }
@@ -127,30 +116,28 @@ function completedCount() {
 // ── DOM refs ──────────────────────────────────────────────
 const $ = (id) => document.getElementById(id);
 
-const elLevelList      = $('level-list');
-const elCompletedCount = $('completed-count');
-const elQuizScreen     = $('quiz-screen');
-const elResultScreen   = $('result-screen');
-const elProgressFill   = $('progress-fill');
-const elQCounter       = $('q-counter');
-const elQuestionWord   = $('question-word');
-const elOpt0           = $('opt-0');
-const elOpt1           = $('opt-1');
-const elQuitBtn        = $('quit-btn');
-const elResultEmoji    = $('result-emoji');
-const elResultTitle    = $('result-title');
-const elResultDesc     = $('result-desc');
-const elResultMainBtn  = $('result-main-btn');
-const elResultBackBtn  = $('result-back-btn');
-const elToast          = $('toast');
-const elChanceModal    = $('chance-modal');
-const elChanceAccept   = $('chance-accept');
-const elChanceDecline  = $('chance-decline');
-const elChanceStars    = $('chance-stars');
+const elLevelList     = $('level-list');
+const elQuizScreen    = $('quiz-screen');
+const elResultScreen  = $('result-screen');
+const elProgressFill  = $('progress-fill');
+const elQCounter      = $('q-counter');
+const elQuestionWord  = $('question-word');
+const elOpt0          = $('opt-0');
+const elOpt1          = $('opt-1');
+const elQuitBtn       = $('quit-btn');
+const elResultEmoji   = $('result-emoji');
+const elResultTitle   = $('result-title');
+const elResultDesc    = $('result-desc');
+const elResultMainBtn = $('result-main-btn');
+const elResultBackBtn = $('result-back-btn');
+const elToast         = $('toast');
+const elChanceModal   = $('chance-modal');
+const elChanceAccept  = $('chance-accept');
+const elChanceDecline = $('chance-decline');
+const elChanceStars   = $('chance-stars');
 
 // ── Render level list ────────────────────────────────────
 function renderLevels() {
-  elCompletedCount.textContent = completedCount();
   renderStarCount();
   elLevelList.innerHTML = '';
 
@@ -192,13 +179,7 @@ function renderLevels() {
         }
 
         const item = lvl.quizzes[qi];
-
-        if (isExamItem(item)) {
-          startQuiz(li, qi);
-          return;
-        }
-
-        if (!item || item.length < 20) {
+        if (!item || (Array.isArray(item) && item.length < 2)) {
           showToast('Bu test hələ hazır deyil ✏️');
           return;
         }
@@ -214,37 +195,55 @@ function renderLevels() {
 function renderQuizPath(lvl, li) {
   let html = '<div class="quiz-path">';
   let quizCounter = 0;
+  let examCounter = 0;
 
   lvl.quizzes.forEach((item, qi) => {
-    const status = getStatus(li, qi);
+    const status  = getStatus(li, qi);
     const isFirst = qi === 0;
-    const isExam  = isExamItem(item);
+    const isExam  = isExamItem(item, lvl.id, qi);
 
     if (!isFirst) html += '<div class="path-line"></div>';
 
     html += `<div class="path-node-wrap">`;
 
-    if (!isExam) quizCounter++;
+    if (isExam) {
+      examCounter++;
+    } else {
+      quizCounter++;
+    }
 
     if (status === 'completed') {
-      html += `
-        <div class="path-node completed"
-             data-quiz-idx="${qi}"
-             data-status="completed"
-             style="border-color:${lvl.color}; background:${lvl.color}"
-             title="Test ${quizCounter}">
-          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>`;
+      if (isExam) {
+        html += `
+          <div class="path-node completed exam-node"
+               data-quiz-idx="${qi}"
+               data-status="completed"
+               style="border-color:${lvl.color}; background:${lvl.color}"
+               title="Exam ${examCounter}">
+            🏆
+          </div>`;
+      } else {
+        html += `
+          <div class="path-node completed"
+               data-quiz-idx="${qi}"
+               data-status="completed"
+               style="border-color:${lvl.color}; background:${lvl.color}"
+               title="Test ${quizCounter}">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>`;
+      }
 
     } else if (status === 'unlocked') {
-      const pulseClass = qi === progress[lvl.id].filter(s => s === 'completed').length ? 'pulse' : '';
+      const completedSoFar = progress[lvl.id].filter(s => s === 'completed').length;
+      const pulseClass = qi === completedSoFar ? 'pulse' : '';
+
       if (isExam) {
         html += `
           <div class="path-node unlocked exam-node ${pulseClass}"
                data-quiz-idx="${qi}"
                data-status="unlocked"
                style="color:${lvl.color}; border-color:${lvl.color}"
-               title="${item.name}">
+               title="Exam ${examCounter}">
             🏆
           </div>`;
       } else {
@@ -261,11 +260,10 @@ function renderQuizPath(lvl, li) {
     } else {
       if (isExam) {
         html += `
-          <div class="path-node unlocked exam-node"
+          <div class="path-node locked exam-node"
                data-quiz-idx="${qi}"
-               data-status="unlocked"
-               style="color:${lvl.color}; border-color:${lvl.color}; opacity:0.55"
-               title="${item.name} (keçid imtahanı)">
+               data-status="locked"
+               title="Exam ${examCounter}">
             🏆
           </div>`;
       } else {
@@ -282,7 +280,7 @@ function renderQuizPath(lvl, li) {
       }
     }
 
-    const label = isExam ? item.name : `Test ${quizCounter}`;
+    const label = isExam ? `Exam ${examCounter}` : `Test ${quizCounter}`;
     html += `<div class="node-label">${label}</div>`;
     html += `</div>`;
   });
@@ -325,20 +323,8 @@ function startQuiz(levelIdx, quizIdx) {
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
 
-  const item   = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
-  const isExam = isExamItem(item);
-
-  if (isExam) {
-    const lvl = LEVELS[levelIdx];
-    let allWords = [];
-    item.sourceQuizzes.forEach(qi => {
-      const q = lvl.quizzes[qi];
-      if (Array.isArray(q)) allWords = allWords.concat(q);
-    });
-    quiz.words = shuffle(allWords).slice(0, 20);
-  } else {
-    quiz.words = shuffle([...item]);
-  }
+  const item = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
+  quiz.words = shuffle([...item]);
 
   showQuizScreen();
   showQuestion();
@@ -374,12 +360,12 @@ function showQuestion() {
   quiz.locked      = false;
 }
 
-// ── Şans popup-ını göstər ────────────────────────────────
+// ── Şans popup ───────────────────────────────────────────
 function showChanceModal() {
   quiz.chanceActive = true;
-  elChanceStars.textContent = getStars();
+  if (elChanceStars) elChanceStars.textContent = getStars();
   elChanceModal.classList.remove('hidden');
-  elChanceModal.classList.add('show');
+  setTimeout(() => elChanceModal.classList.add('show'), 10);
 }
 
 function hideChanceModal() {
@@ -388,36 +374,23 @@ function hideChanceModal() {
   setTimeout(() => elChanceModal.classList.add('hidden'), 250);
 }
 
-// Şans qəbul edildi — ulduzu xərcle, eyni sualı təkrar göstər
 elChanceAccept.addEventListener('click', () => {
   if (!spendStar()) {
     showToast('Ulduzun yoxdur 😔');
     hideChanceModal();
-    // Ulduzsuz şans yoxdur — səhvi say, davam et
     proceedAfterWrong();
     return;
   }
   quiz.chanceUsed = true;
   hideChanceModal();
-
-  // Eyni sualı yenidən göstər (indeksi artırma)
-  elOpt0.className = 'option-btn';
-  elOpt1.className = 'option-btn';
-  elOpt0.disabled  = false;
-  elOpt1.disabled  = false;
-  quiz.locked      = false;
-
-  // Sualı yenidən render et (düymə mövqeyini dəyişmək üçün)
-  showQuestion();
+  setTimeout(() => showQuestion(), 260);
 });
 
-// Şans rədd edildi — normal axışla davam et
 elChanceDecline.addEventListener('click', () => {
   hideChanceModal();
   proceedAfterWrong();
 });
 
-// Səhvdən sonra növbəti suala keç (şans olmadan)
 function proceedAfterWrong() {
   setTimeout(() => {
     quiz.index++;
@@ -429,10 +402,9 @@ function proceedAfterWrong() {
   }, 300);
 }
 
-// ── Handle answer click ──────────────────────────────────
+// ── Handle answer ─────────────────────────────────────────
 function handleAnswer(btnIdx) {
-  if (quiz.locked) return;
-  if (quiz.chanceActive) return;
+  if (quiz.locked || quiz.chanceActive) return;
   quiz.locked = true;
 
   const isCorrect = btnIdx === quiz.correctPos;
@@ -453,20 +425,16 @@ function handleAnswer(btnIdx) {
     }, 500);
 
   } else {
-    // Səhv cavab
     quiz.mistakes++;
     (btnIdx === 0 ? elOpt0 : elOpt1).className = 'option-btn wrong';
     (quiz.correctPos === 0 ? elOpt0 : elOpt1).className = 'option-btn correct';
 
-    // Şans hələ işlədilməyibsə və ulduz varsa → popup göstər
     if (!quiz.chanceUsed && getStars() > 0) {
       setTimeout(() => {
-        // Səhvi geri götür (şans teklif edirik)
         quiz.mistakes--;
         showChanceModal();
       }, 800);
     } else {
-      // Şans yoxdur ya işlənib — düzgün cavabı göstər, davam et
       setTimeout(() => {
         quiz.index++;
         if (quiz.index >= quiz.words.length) {
@@ -491,24 +459,18 @@ function finishQuiz() {
 
     if (won) {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
-      const lvl     = LEVELS[quiz.levelIdx];
-      const item    = lvl.quizzes[quiz.quizIdx];
-      const examWon = isExamItem(item);
-      const next    = quiz.quizIdx + 1;
+      const lvl    = LEVELS[quiz.levelIdx];
+      const isExam = isExamItem(lvl.quizzes[quiz.quizIdx], lvl.id, quiz.quizIdx);
+      const next   = quiz.quizIdx + 1;
       const hasNext = next < lvl.quizzes.length;
 
-      if (examWon) {
-        const skipped = item.sourceQuizzes.length;
-        elResultEmoji.textContent = '🏆';
-        elResultTitle.textContent = 'Exam keçildi!';
-        elResultDesc.textContent  = `Əla! ${skipped} test atlandı və tamamlanmış sayıldı.`;
-      } else {
-        elResultEmoji.textContent = '🎉';
-        elResultTitle.textContent = 'Mükəmməl!';
-        elResultDesc.textContent  = `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
-      }
+      elResultEmoji.textContent = isExam ? '🏆' : '🎉';
+      elResultTitle.textContent = isExam ? 'Exam keçildi!' : 'Mükəmməl!';
+      elResultDesc.textContent  = isExam
+        ? 'Examı uğurla tamamladın!'
+        : `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
 
-      elResultMainBtn.textContent = hasNext ? `Növbəti →` : 'Ana səhifəyə qayıt';
+      elResultMainBtn.textContent = hasNext ? 'Növbəti →' : 'Ana səhifəyə qayıt';
       elResultMainBtn.onclick = () => {
         const li = quiz.levelIdx;
         closeOverlays();
