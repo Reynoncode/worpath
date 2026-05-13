@@ -39,7 +39,8 @@ function loadProgress() {
         const item = lvl.quizzes[i];
 
         if (isExamItem(item)) {
-          progress[lvl.id][i] = 'locked';
+          // Exam həmişə unlocked başlayır — skip checkpoint kimi işləyir
+          progress[lvl.id][i] = 'unlocked';
         } else {
           progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
         }
@@ -62,18 +63,22 @@ function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
   progress[lvl.id][quizIdx] = 'completed';
 
+  const item = lvl.quizzes[quizIdx];
+
+  // Exam keçildi → sourceQuizzes-dəki bütün quizləri completed say (skip mexanizmi)
+  if (isExamItem(item)) {
+    item.sourceQuizzes.forEach(qi => {
+      if (progress[lvl.id][qi] !== 'completed') {
+        progress[lvl.id][qi] = 'completed';
+      }
+    });
+  }
+
   const next = quizIdx + 1;
   if (next < lvl.quizzes.length) {
     const nextItem = lvl.quizzes[next];
-
     if (isExamItem(nextItem)) {
-      // Exam-dan əvvəlki bütün quizlər tamamlandısa examı aç
-      const allDone = nextItem.sourceQuizzes.every(
-        qi => progress[lvl.id][qi] === 'completed'
-      );
-      if (allDone) {
-        progress[lvl.id][next] = 'unlocked';
-      }
+      // Exam nodeları həmişə unlocked qalır, əlavə iş lazım deyil
     } else {
       // Normal quiz — birbaşa aç
       if (progress[lvl.id][next] === 'locked') {
@@ -224,11 +229,13 @@ function renderQuizPath(lvl, li) {
 
     } else {
       if (isExam) {
+        // Exam həmişə tıklanabilir görünür — skip checkpoint kimi
         html += `
-          <div class="path-node locked exam-node"
+          <div class="path-node unlocked exam-node"
                data-quiz-idx="${qi}"
-               data-status="locked"
-               title="Kilidli Exam">
+               data-status="unlocked"
+               style="color:${lvl.color}; border-color:${lvl.color}; opacity:0.55"
+               title="${item.name} (keçid imtahanı)">
             🏆
           </div>`;
       } else {
@@ -383,15 +390,24 @@ function finishQuiz() {
 
     if (won) {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
-      const lvl     = LEVELS[quiz.levelIdx];
-      const next    = quiz.quizIdx + 1;
-      const hasNext = next < lvl.quizzes.length;
+      const lvl       = LEVELS[quiz.levelIdx];
+      const item      = lvl.quizzes[quiz.quizIdx];
+      const examWon   = isExamItem(item);
+      const next      = quiz.quizIdx + 1;
+      const hasNext   = next < lvl.quizzes.length;
 
-      elResultEmoji.textContent = '🎉';
-      elResultTitle.textContent = 'Mükəmməl!';
-      elResultDesc.textContent  = `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
+      if (examWon) {
+        const skipped = item.sourceQuizzes.length;
+        elResultEmoji.textContent = '🏆';
+        elResultTitle.textContent = 'Exam keçildi!';
+        elResultDesc.textContent  = `Əla! ${skipped} test atlandı və tamamlanmış sayıldı.`;
+      } else {
+        elResultEmoji.textContent = '🎉';
+        elResultTitle.textContent = 'Mükəmməl!';
+        elResultDesc.textContent  = `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
+      }
 
-      elResultMainBtn.textContent = hasNext ? `Test ${quiz.quizIdx + 2}-i aç →` : 'Ana səhifəyə qayıt';
+      elResultMainBtn.textContent = hasNext ? `Növbəti →` : 'Ana səhifəyə qayıt';
       elResultMainBtn.onclick = () => {
         const li = quiz.levelIdx;
         closeOverlays();
