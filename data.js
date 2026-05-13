@@ -514,8 +514,8 @@ const LEVELS = [
   { en: 'thirsty',     tr: 'susamış',            wrong: 'ac'            },
   { en: 'delicious',   tr: 'dadlı',              wrong: 'dadsız'        },
 ],
-      { type: 'exam', name: 'Exam 3 — Yemək',     sourceQuizzes: [
-      [
+     
+[
   {
     en: "I eat an ____ every day.",
     tr: 'apple',
@@ -617,8 +617,6 @@ const LEVELS = [
     wrong: 'carrot'
   }
 ],
-      ] },
-
 
 // ─────────────────────── QUIZ 13 — Rənglər / Colours ───────────────────────
 [
@@ -691,8 +689,108 @@ const LEVELS = [
   { en: 'once',        tr: 'bir dəfə',           wrong: 'iki dəfə'      },
   { en: 'twice',       tr: 'iki dəfə',           wrong: 'bir dəfə'      },
 ],
-{ type: 'exam', name: 'Exam 4',              sourceQuizzes: [15,16,17] },
-
+[
+  {
+    en: "My car is ____.",
+    tr: 'black',
+    wrong: 'first'
+  },
+  {
+    en: "The sky is ____.",
+    tr: 'blue',
+    wrong: 'thirty'
+  },
+  {
+    en: "Grass is ____.",
+    tr: 'green',
+    wrong: 'second'
+  },
+  {
+    en: "This apple is ____.",
+    tr: 'red',
+    wrong: 'hundred'
+  },
+  {
+    en: "She has ____ hair.",
+    tr: 'blonde',
+    wrong: 'fifth'
+  },
+  {
+    en: "I have ____ books.",
+    tr: 'two',
+    wrong: 'purple'
+  },
+  {
+    en: "He is ____ years old.",
+    tr: 'ten',
+    wrong: 'yellow'
+  },
+  {
+    en: "This is my ____ car.",
+    tr: 'first',
+    wrong: 'blue'
+  },
+  {
+    en: "I want ____ ice cream.",
+    tr: 'one',
+    wrong: 'dark'
+  },
+  {
+    en: "The sun is ____.",
+    tr: 'yellow',
+    wrong: 'third'
+  },
+  {
+    en: "She wears a ____ dress.",
+    tr: 'pink',
+    wrong: 'twenty'
+  },
+  {
+    en: "There are ____ students.",
+    tr: 'fifteen',
+    wrong: 'white'
+  },
+  {
+    en: "My shirt is ____.",
+    tr: 'white',
+    wrong: 'quarter'
+  },
+  {
+    en: "This is the ____ time.",
+    tr: 'second',
+    wrong: 'green'
+  },
+  {
+    en: "I see a ____ cat.",
+    tr: 'black',
+    wrong: 'fifty'
+  },
+  {
+    en: "He lives on the ____ floor.",
+    tr: 'third',
+    wrong: 'red'
+  },
+  {
+    en: "The light is very ____.",
+    tr: 'bright',
+    wrong: 'twice'
+  },
+  {
+    en: "I have ____ apples.",
+    tr: 'three',
+    wrong: 'purple'
+  },
+  {
+    en: "Her bag is ____.",
+    tr: 'brown',
+    wrong: 'once'
+  },
+  {
+    en: "I drink ____ glasses of water.",
+    tr: 'two',
+    wrong: 'colourful'
+  }
+],
 // ─────────────────────── QUIZ 16 — Ev 1 / Rooms & Furniture ───────────────────────
 [
   { en: 'apartment',   tr: 'mənzil',             wrong: 'ev'            },
@@ -788,6 +886,109 @@ const LEVELS = [
   { en: 'bottom',       tr: 'alt / dib',          wrong: 'üst'            },
 ],
 
+      [
+  {
+    en: "I sleep in my ____.",
+    tr: 'bed',
+    wrong: 'kitchen'
+  },
+  {
+    en: "We cook in the ____.",
+    tr: 'kitchen',
+    wrong: 'bathroom'
+  },
+  {
+    en: "I take a shower in the ____.",
+    tr: 'bathroom',
+    wrong: 'bed'
+  },
+  {
+    en: "My books are on the ____.",
+    tr: 'desk',
+    wrong: 'window'
+  },
+  {
+    en: "Please open the ____.",
+    tr: 'door',
+    wrong: 'lamp'
+  },
+  {
+    en: "I watch TV in the living ____.",
+    tr: 'room',
+    wrong: 'floor'
+  },
+  {
+    en: "She sits on the ____.",
+    tr: 'sofa',
+    wrong: 'toilet'
+  },
+  {
+    en: "There is a big ____ in the garden.",
+    tr: 'tree',
+    wrong: 'chair'
+  },
+  {
+    en: "I live in a small ____.",
+    tr: 'apartment',
+    wrong: 'hospital'
+  },
+  {
+    en: "This is my ____.",
+    tr: 'house',
+    wrong: 'school'
+  },
+  {
+    en: "I drink water from a ____.",
+    tr: 'glass',
+    wrong: 'bed'
+  },
+  {
+    en: "Turn on the ____ please.",
+    tr: 'lamp',
+    wrong: 'door'
+  },
+  {
+    en: "The shop is in the city ____.",
+    tr: 'centre',
+    wrong: 'bedroom'
+  },
+  {
+    en: "I go to school by ____.",
+    tr: 'bus',
+    wrong: 'chair'
+  },
+  {
+    en: "We buy food in the ____.",
+    tr: 'supermarket',
+    wrong: 'bathroom'
+  },
+  {
+    en: "She lives in a small ____.",
+    tr: 'village',
+    wrong: 'desk'
+  },
+  {
+    en: "The doctor works in the ____.",
+    tr: 'hospital',
+    wrong: 'kitchen'
+  },
+  {
+    en: "I read books in the ____.",
+    tr: 'library',
+    wrong: 'toilet'
+  },
+  {
+    en: "We eat dinner in the ____.",
+    tr: 'restaurant',
+    wrong: 'bed'
+  },
+  {
+    en: "This is my favourite ____.",
+    tr: 'room',
+    wrong: 'station'
+  }
+],
+      
 // ─────────────────────── QUIZ 20 — Təbiət / Nature & Geography ───────────────────────
 [
   { en: 'beach',        tr: 'çimərlik',           wrong: 'ada'            },
@@ -811,7 +1012,6 @@ const LEVELS = [
   { en: 'sun',          tr: 'günəş',              wrong: 'ay'             },
   { en: 'tree',         tr: 'ağac',               wrong: 'kol'            },
 ],
-{ type: 'exam', name: 'Exam 5',              sourceQuizzes: [19,20,21,22,23] },
 
 // ─────────────────────── QUIZ 21 — Heyvanlar / Animals ───────────────────────
 [
@@ -884,8 +1084,109 @@ const LEVELS = [
   { en: 'to dress',     tr: 'geyindirmək',        wrong: 'soyundırmaq'    },
   { en: 'fashion',      tr: 'moda',               wrong: 'stil'           },
 ],
-      { type: 'exam', name: 'Exam 6',              sourceQuizzes: [25,26,27] },
 
+      [
+  {
+    en: "I swim in the ____.",
+    tr: 'sea',
+    wrong: 'mountain'
+  },
+  {
+    en: "The ____ is very high.",
+    tr: 'mountain',
+    wrong: 'river'
+  },
+  {
+    en: "There is a big ____ in the garden.",
+    tr: 'tree',
+    wrong: 'car'
+  },
+  {
+    en: "The cat is an ____.",
+    tr: 'animal',
+    wrong: 'shirt'
+  },
+  {
+    en: "I have a small ____ at home.",
+    tr: 'dog',
+    wrong: 'boat'
+  },
+  {
+    en: "The ____ flies in the sky.",
+    tr: 'bird',
+    wrong: 'shoe'
+  },
+  {
+    en: "We go to school by ____.",
+    tr: 'bus',
+    wrong: 'dress'
+  },
+  {
+    en: "My father drives a ____.",
+    tr: 'car',
+    wrong: 'lion'
+  },
+  {
+    en: "I wear a ____ in winter.",
+    tr: 'coat',
+    wrong: 'beach'
+  },
+  {
+    en: "She has a new red ____.",
+    tr: 'dress',
+    wrong: 'river'
+  },
+  {
+    en: "The ____ is very hot today.",
+    tr: 'sun',
+    wrong: 'train'
+  },
+  {
+    en: "I see a ____ in the zoo.",
+    tr: 'lion',
+    wrong: 'jacket'
+  },
+  {
+    en: "We travel by ____.",
+    tr: 'plane',
+    wrong: 'flower'
+  },
+  {
+    en: "Put on your ____.",
+    tr: 'shoes',
+    wrong: 'island'
+  },
+  {
+    en: "There are many trees in the ____.",
+    tr: 'forest',
+    wrong: 'taxi'
+  },
+  {
+    en: "The ____ gives us milk.",
+    tr: 'cow',
+    wrong: 'hat'
+  },
+  {
+    en: "I ride my ____ to school.",
+    tr: 'bicycle',
+    wrong: 'snow'
+  },
+  {
+    en: "She wears blue ____.",
+    tr: 'jeans',
+    wrong: 'mountain'
+  },
+  {
+    en: "The ____ is very cold.",
+    tr: 'snow',
+    wrong: 'bus'
+  },
+  {
+    en: "I need an ____ for the rain.",
+    tr: 'umbrella',
+    wrong: 'elephant'
+  }
+],
 
 // ─────────────────────── QUIZ 24 — Zaman 1 / Days & Months ───────────────────────
 [
@@ -957,8 +1258,108 @@ const LEVELS = [
   { en: 'never',        tr: 'heç vaxt',           wrong: 'həmişə'         },
   { en: 'often',        tr: 'tez-tez',            wrong: 'nadir hallarda' },
 ],
-{ type: 'exam', name: 'Exam 7',              sourceQuizzes: [28,29,30] },
-
+[
+  {
+    en: "Today is ____.",
+    tr: 'Monday',
+    wrong: 'summer'
+  },
+  {
+    en: "My birthday is in ____.",
+    tr: 'July',
+    wrong: 'night'
+  },
+  {
+    en: "We go to school on ____.",
+    tr: 'Monday',
+    wrong: 'winter'
+  },
+  {
+    en: "It is very hot in ____.",
+    tr: 'summer',
+    wrong: 'Tuesday'
+  },
+  {
+    en: "The party is on ____.",
+    tr: 'Saturday',
+    wrong: 'morning'
+  },
+  {
+    en: "I wake up in the ____.",
+    tr: 'morning',
+    wrong: 'December'
+  },
+  {
+    en: "We sleep at ____.",
+    tr: 'night',
+    wrong: 'January'
+  },
+  {
+    en: "She was born in ____.",
+    tr: 'March',
+    wrong: 'evening'
+  },
+  {
+    en: "I have English class on ____.",
+    tr: 'Wednesday',
+    wrong: 'autumn'
+  },
+  {
+    en: "Tomorrow is ____.",
+    tr: 'Tuesday',
+    wrong: 'year'
+  },
+  {
+    en: "It snows in ____.",
+    tr: 'winter',
+    wrong: 'Friday'
+  },
+  {
+    en: "The meeting is in the ____.",
+    tr: 'afternoon',
+    wrong: 'April'
+  },
+  {
+    en: "Yesterday was ____.",
+    tr: 'Sunday',
+    wrong: 'spring'
+  },
+  {
+    en: "My favourite month is ____.",
+    tr: 'May',
+    wrong: 'tonight'
+  },
+  {
+    en: "We eat breakfast in the ____.",
+    tr: 'morning',
+    wrong: 'November'
+  },
+  {
+    en: "School starts in ____.",
+    tr: 'September',
+    wrong: 'midnight'
+  },
+  {
+    en: "I am going there ____.",
+    tr: 'tomorrow',
+    wrong: 'December'
+  },
+  {
+    en: "This is my ____ year.",
+    tr: 'first',
+    wrong: 'evening'
+  },
+  {
+    en: "We celebrate New Year in ____.",
+    tr: 'December',
+    wrong: 'afternoon'
+  },
+  {
+    en: "I am free on the ____.",
+    tr: 'weekend',
+    wrong: 'January'
+  }
+],
 // ─────────────────────── QUIZ 27 — Pul / Money & Shopping ───────────────────────
 [
   { en: 'bill',         tr: 'hesab / əskinaz',    wrong: 'kart'           },
@@ -1030,8 +1431,110 @@ const LEVELS = [
   { en: 'band',         tr: 'qrup / ansambl',     wrong: 'orkestra'       },
   { en: 'concert',      tr: 'konsert',            wrong: 'şou'            },
 ],
-{ type: 'exam', name: 'Exam 8',              sourceQuizzes: [32,33,34] },
 
+      [
+  {
+    en: "I want to buy a new ____.",
+    tr: 'phone',
+    wrong: 'book'
+  },
+  {
+    en: "How much is this ____?",
+    tr: 'shirt',
+    wrong: 'music'
+  },
+  {
+    en: "I pay with my ____.",
+    tr: 'card',
+    wrong: 'television'
+  },
+  {
+    en: "This computer is very ____.",
+    tr: 'expensive',
+    wrong: 'Monday'
+  },
+  {
+    en: "I watch films on my ____.",
+    tr: 'computer',
+    wrong: 'dollar'
+  },
+  {
+    en: "She listens to ____ every day.",
+    tr: 'music',
+    wrong: 'price'
+  },
+  {
+    en: "I read the ____ in the morning.",
+    tr: 'newspaper',
+    wrong: 'euro'
+  },
+  {
+    en: "Send me an ____ please.",
+    tr: 'email',
+    wrong: 'concert'
+  },
+  {
+    en: "This dress is very ____.",
+    tr: 'cheap',
+    wrong: 'website'
+  },
+  {
+    en: "I take a ____ with my camera.",
+    tr: 'photo',
+    wrong: 'bill'
+  },
+  {
+    en: "We go to the ____ to buy food.",
+    tr: 'shop',
+    wrong: 'song'
+  },
+  {
+    en: "Turn on the ____ please.",
+    tr: 'television',
+    wrong: 'money'
+  },
+  {
+    en: "I need a new ____.",
+    tr: 'phone',
+    wrong: 'movie'
+  },
+  {
+    en: "She likes pop ____.",
+    tr: 'music',
+    wrong: 'card'
+  },
+  {
+    en: "The ____ is very big.",
+    tr: 'price',
+    wrong: 'radio'
+  },
+  {
+    en: "I watch a ____ in the cinema.",
+    tr: 'movie',
+    wrong: 'euro'
+  },
+  {
+    en: "This ____ is free.",
+    tr: 'magazine',
+    wrong: 'dollar'
+  },
+  {
+    en: "I listen to the ____ in the car.",
+    tr: 'radio',
+    wrong: 'shopping'
+  },
+  {
+    en: "He is a very ____ man.",
+    tr: 'rich',
+    wrong: 'screen'
+  },
+  {
+    en: "I send a ____ to my friend.",
+    tr: 'message',
+    wrong: 'price'
+  }
+],
+      
 // ─────────────────────── QUIZ 30 — Məktəb 1 / School & Study ───────────────────────
 [
   { en: 'answer',       tr: 'cavab',              wrong: 'sual'           },
@@ -1102,8 +1605,109 @@ const LEVELS = [
   { en: 'team',        tr: 'komanda',            wrong: 'oyunçu'         },
   { en: 'tennis',      tr: 'tennis',             wrong: 'badminton'      },
 ],
-{ type: 'exam', name: 'Exam 9',              sourceQuizzes: [36,37,38] },
-
+[
+  {
+    en: "I go to ____ every day.",
+    tr: 'school',
+    wrong: 'football'
+  },
+  {
+    en: "The teacher writes on the ____.",
+    tr: 'board',
+    wrong: 'ball'
+  },
+  {
+    en: "We do ____ at home.",
+    tr: 'homework',
+    wrong: 'guitar'
+  },
+  {
+    en: "This is my English ____.",
+    tr: 'lesson',
+    wrong: 'piano'
+  },
+  {
+    en: "I like ____ very much.",
+    tr: 'history',
+    wrong: 'swimming'
+  },
+  {
+    en: "Please open your ____.",
+    tr: 'book',
+    wrong: 'team'
+  },
+  {
+    en: "The ____ is very difficult.",
+    tr: 'exam',
+    wrong: 'concert'
+  },
+  {
+    en: "I write with a ____.",
+    tr: 'pen',
+    wrong: 'match'
+  },
+  {
+    en: "We play ____ after school.",
+    tr: 'football',
+    wrong: 'dictionary'
+  },
+  {
+    en: "She is a good ____.",
+    tr: 'student',
+    wrong: 'painting'
+  },
+  {
+    en: "I read a new ____.",
+    tr: 'book',
+    wrong: 'tennis'
+  },
+  {
+    en: "The answer is on page ____.",
+    tr: 'five',
+    wrong: 'guitar'
+  },
+  {
+    en: "We learn new ____ in class.",
+    tr: 'words',
+    wrong: 'swimming'
+  },
+  {
+    en: "I study ____ at school.",
+    tr: 'geography',
+    wrong: 'cooking'
+  },
+  {
+    en: "He plays ____ very well.",
+    tr: 'tennis',
+    wrong: 'homework'
+  },
+  {
+    en: "This is my favourite ____.",
+    tr: 'subject',
+    wrong: 'piano'
+  },
+  {
+    en: "We sing in music ____.",
+    tr: 'class',
+    wrong: 'team'
+  },
+  {
+    en: "I need a new ____.",
+    tr: 'dictionary',
+    wrong: 'festival'
+  },
+  {
+    en: "She draws a beautiful ____.",
+    tr: 'picture',
+    wrong: 'question'
+  },
+  {
+    en: "We play in the ____ after class.",
+    tr: 'yard',
+    wrong: 'exam'
+  }
+],
+      
 // ─────────────────────── QUIZ 33 — Feil 1 / Movement verbs ───────────────────────
 [
   { en: 'to arrive',   tr: 'çatmaq / gəlmək',   wrong: 'getmək'         },
@@ -1174,7 +1778,109 @@ const LEVELS = [
   { en: 'to help',      tr: 'kömək etmək',        wrong: 'mane olmaq'     },
   { en: 'to keep',      tr: 'saxlamaq',           wrong: 'atmaq'          },
 ],
-{ type: 'exam', name: 'Exam 10',             sourceQuizzes: [40,41,42] },
+[
+  {
+    en: "I ____ to school every day.",
+    tr: 'go',
+    wrong: 'sing'
+  },
+  {
+    en: "Please ____ the door.",
+    tr: 'close',
+    wrong: 'fly'
+  },
+  {
+    en: "She ____ a lot of water.",
+    tr: 'drinks',
+    wrong: 'climbs'
+  },
+  {
+    en: "We ____ football after school.",
+    tr: 'play',
+    wrong: 'explain'
+  },
+  {
+    en: "He ____ very fast.",
+    tr: 'runs',
+    wrong: 'thanks'
+  },
+  {
+    en: "I ____ my homework now.",
+    tr: 'do',
+    wrong: 'fall'
+  },
+  {
+    en: "The teacher ____ us English.",
+    tr: 'teaches',
+    wrong: 'jumps'
+  },
+  {
+    en: "Please ____ me your book.",
+    tr: 'give',
+    wrong: 'arrive'
+  },
+  {
+    en: "She ____ a beautiful song.",
+    tr: 'sings',
+    wrong: 'carry'
+  },
+  {
+    en: "I ____ up at 7 o'clock.",
+    tr: 'wake',
+    wrong: 'buy'
+  },
+  {
+    en: "We ____ to music every evening.",
+    tr: 'listen',
+    wrong: 'cut'
+  },
+  {
+    en: "He ____ the ball very well.",
+    tr: 'catches',
+    wrong: 'return'
+  },
+  {
+    en: "I want to ____ a new phone.",
+    tr: 'buy',
+    wrong: 'speak'
+  },
+  {
+    en: "The plane ____ very high.",
+    tr: 'flies',
+    wrong: 'clean'
+  },
+  {
+    en: "Please ____ the question.",
+    tr: 'answer',
+    wrong: 'fall'
+  },
+  {
+    en: "She ____ dinner for the family.",
+    tr: 'cooks',
+    wrong: 'follow'
+  },
+  {
+    en: "I ____ English every day.",
+    tr: 'study',
+    wrong: 'dance'
+  },
+  {
+    en: "They ____ in the park.",
+    tr: 'play',
+    wrong: 'write'
+  },
+  {
+    en: "He ____ the mountain quickly.",
+    tr: 'climbs',
+    wrong: 'drink'
+  },
+  {
+    en: "We ____ home at 5 o'clock.",
+    tr: 'return',
+    wrong: 'ask'
+  }
+],
+      
       
 // ─────────────────────── QUIZ 36 — Feil 4 / Daily life verbs 2 ───────────────────────
 [
@@ -1247,8 +1953,108 @@ const LEVELS = [
   { en: 'to break',     tr: 'sındırmaq',          wrong: 'düzəltmək'      },
   { en: 'to wear',      tr: 'geymək',             wrong: 'çıxarmaq'       },
 ],
-{ type: 'exam', name: 'Exam 11',             sourceQuizzes: [44,45,46] },
-
+[
+  {
+    en: "I ____ in Baku.",
+    tr: 'live',
+    wrong: 'win'
+  },
+  {
+    en: "Please ____ the window.",
+    tr: 'open',
+    wrong: 'forget'
+  },
+  {
+    en: "She ____ to music.",
+    tr: 'listens',
+    wrong: 'breaks'
+  },
+  {
+    en: "We ____ football on Sunday.",
+    tr: 'play',
+    wrong: 'die'
+  },
+  {
+    en: "He ____ a new car.",
+    tr: 'wants',
+    wrong: 'remembers'
+  },
+  {
+    en: "I ____ my homework every day.",
+    tr: 'do',
+    wrong: 'lie'
+  },
+  {
+    en: "She ____ a beautiful picture.",
+    tr: 'draws',
+    wrong: 'waits'
+  },
+  {
+    en: "They ____ in the sea.",
+    tr: 'swim',
+    wrong: 'understand'
+  },
+  {
+    en: "I ____ you very much.",
+    tr: 'love',
+    wrong: 'wash'
+  },
+  {
+    en: "He ____ to work by car.",
+    tr: 'goes',
+    wrong: 'hopes'
+  },
+  {
+    en: "Please ____ for me.",
+    tr: 'wait',
+    wrong: 'build'
+  },
+  {
+    en: "We ____ TV in the evening.",
+    tr: 'watch',
+    wrong: 'believe'
+  },
+  {
+    en: "She ____ English very well.",
+    tr: 'speaks',
+    wrong: 'needs'
+  },
+  {
+    en: "I ____ my keys.",
+    tr: 'lost',
+    wrong: 'enjoys'
+  },
+  {
+    en: "He ____ in the morning.",
+    tr: 'wakes',
+    wrong: 'plans'
+  },
+  {
+    en: "They ____ a big house.",
+    tr: 'have',
+    wrong: 'practises'
+  },
+  {
+    en: "I ____ to be a doctor.",
+    tr: 'want',
+    wrong: 'breaks'
+  },
+  {
+    en: "She ____ her hands before eating.",
+    tr: 'washes',
+    wrong: 'remembers'
+  },
+  {
+    en: "We ____ our friends at school.",
+    tr: 'meet',
+    wrong: 'uses'
+  },
+  {
+    en: "He ____ very hard.",
+    tr: 'works',
+    wrong: 'hates'
+  }
+],
 // ─────────────────────── QUIZ 39 — İş / Work & Business ───────────────────────
 [
   { en: 'action',       tr: 'hərəkət / fəaliyyət', wrong: 'fikir'         },
@@ -1319,8 +2125,109 @@ const LEVELS = [
   { en: 'title',        tr: 'başlıq / ünvan',     wrong: 'ad'             },
   { en: 'number',       tr: 'rəqəm / nömrə',      wrong: 'hərf'           },
 ],
-{ type: 'exam', name: 'Exam 12',             sourceQuizzes: [48,49,50] },
 
+      [
+  {
+    en: "I go to the ____ every day.",
+    tr: 'office',
+    wrong: 'shape'
+  },
+  {
+    en: "She has a good ____.",
+    tr: 'job',
+    wrong: 'piece'
+  },
+  {
+    en: "We have a meeting at the ____.",
+    tr: 'company',
+    wrong: 'bottle'
+  },
+  {
+    en: "This is an important ____.",
+    tr: 'project',
+    wrong: 'cup'
+  },
+  {
+    en: "I need to ____ the problem.",
+    tr: 'fix',
+    wrong: 'space'
+  },
+  {
+    en: "He works in a big ____.",
+    tr: 'office',
+    wrong: 'item'
+  },
+  {
+    en: "What is the ____ of this shirt?",
+    tr: 'size',
+    wrong: 'number'
+  },
+  {
+    en: "I have a new business ____.",
+    tr: 'plan',
+    wrong: 'glass'
+  },
+  {
+    en: "She is very good at her ____.",
+    tr: 'job',
+    wrong: 'title'
+  },
+  {
+    en: "We need more ____ about the trip.",
+    tr: 'information',
+    wrong: 'model'
+  },
+  {
+    en: "This is my favourite ____.",
+    tr: 'colour',
+    wrong: 'meeting'
+  },
+  {
+    en: "I made a small ____.",
+    tr: 'mistake',
+    wrong: 'interview'
+  },
+  {
+    en: "He has a great ____.",
+    tr: 'idea',
+    wrong: 'box'
+  },
+  {
+    en: "The ____ of the story is sad.",
+    tr: 'end',
+    wrong: 'report'
+  },
+  {
+    en: "I want to ____ a new phone.",
+    tr: 'buy',
+    wrong: 'name'
+  },
+  {
+    en: "This ____ is very interesting.",
+    tr: 'work',
+    wrong: 'thing'
+  },
+  {
+    en: "She has a beautiful ____.",
+    tr: 'name',
+    wrong: 'business'
+  },
+  {
+    en: "We need to make a ____.",
+    tr: 'list',
+    wrong: 'interview'
+  },
+  {
+    en: "The ____ of this bag is big.",
+    tr: 'size',
+    wrong: 'action'
+  },
+  {
+    en: "I like this ____ of music.",
+    tr: 'type',
+    wrong: 'company'
+  }
+],
 
       // ─────────────────────── QUIZ 10 ──────────────────────
       [
