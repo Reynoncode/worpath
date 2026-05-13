@@ -340,7 +340,109 @@ const LEVELS = [
   { en: 'true',        tr: 'doğru',              wrong: 'yalan'         },
   { en: 'warm',        tr: 'ilıq',               wrong: 'soyuq'         },
 ],
-{ type: 'exam', name: 'Exam 2', sourceQuizzes: [5,6,7,8,9] },
+// ─────────────────────── NEW EXAM — Emotions & Adjectives ───────────────────────
+[
+  { 
+    en: "I am very ____ today.", 
+    tr: 'happy', 
+    wrong: 'big' 
+  },
+  { 
+    en: "She feels ____ before the trip.", 
+    tr: 'excited', 
+    wrong: 'dirty' 
+  },
+  { 
+    en: "The baby is ____ now.", 
+    tr: 'hungry', 
+    wrong: 'short' 
+  },
+  { 
+    en: "He is ____ of the dark.", 
+    tr: 'afraid', 
+    wrong: 'delicious' 
+  },
+  { 
+    en: "I feel ____ after running.", 
+    tr: 'tired', 
+    wrong: 'beautiful' 
+  },
+  { 
+    en: "This food is very ____.", 
+    tr: 'delicious', 
+    wrong: 'cold' 
+  },
+  { 
+    en: "She is a ____ girl.", 
+    tr: 'beautiful', 
+    wrong: 'late' 
+  },
+  { 
+    en: "The movie was very ____.", 
+    tr: 'interesting', 
+    wrong: 'small' 
+  },
+  { 
+    en: "My house is ____.", 
+    tr: 'big', 
+    wrong: 'sad' 
+  },
+  { 
+    en: "The man is very ____.", 
+    tr: 'tall', 
+    wrong: 'hungry' 
+  },
+  { 
+    en: "This bag is too ____.", 
+    tr: 'heavy', 
+    wrong: 'happy' 
+  },
+  { 
+    en: "The room is ____.", 
+    tr: 'clean', 
+    wrong: 'long' 
+  },
+  { 
+    en: "It is ____ outside today.", 
+    tr: 'hot', 
+    wrong: 'afraid' 
+  },
+  { 
+    en: "The test was very ____.", 
+    tr: 'difficult', 
+    wrong: 'full' 
+  },
+  { 
+    en: "I am ____ I am late.", 
+    tr: 'sorry', 
+    wrong: 'expensive' 
+  },
+  { 
+    en: "She is ____ with her new phone.", 
+    tr: 'happy', 
+    wrong: 'short' 
+  },
+  { 
+    en: "The water is ____.", 
+    tr: 'cold', 
+    wrong: 'boring' 
+  },
+  { 
+    en: "This is my ____ book.", 
+    tr: 'favourite', 
+    wrong: 'angry' 
+  },
+  { 
+    en: "The street is very ____ at night.", 
+    tr: 'quiet', 
+    wrong: 'tall' 
+  },
+  { 
+    en: "He is ____ in football.", 
+    tr: 'interested', 
+    wrong: 'small' 
+  }
+],
 
 // ─────────────────────── QUIZ 10 — Yemək / Food ───────────────────────
 [
@@ -412,7 +514,110 @@ const LEVELS = [
   { en: 'thirsty',     tr: 'susamış',            wrong: 'ac'            },
   { en: 'delicious',   tr: 'dadlı',              wrong: 'dadsız'        },
 ],
-      { type: 'exam', name: 'Exam 3 — Yemək',     sourceQuizzes: [11,12,13] },
+      { type: 'exam', name: 'Exam 3 — Yemək',     sourceQuizzes: [
+      [
+  {
+    en: "I eat an ____ every day.",
+    tr: 'apple',
+    wrong: 'chicken'
+  },
+  {
+    en: "She likes ____ with milk.",
+    tr: 'banana',
+    wrong: 'salt'
+  },
+  {
+    en: "The ____ is orange and long.",
+    tr: 'carrot',
+    wrong: 'bread'
+  },
+  {
+    en: "I like fresh ____ in summer.",
+    tr: 'fruit',
+    wrong: 'milk'
+  },
+  {
+    en: "This ____ is red and round.",
+    tr: 'tomato',
+    wrong: 'rice'
+  },
+  {
+    en: "We eat ____ with butter.",
+    tr: 'bread',
+    wrong: 'water'
+  },
+  {
+    en: "I drink ____ in the morning.",
+    tr: 'milk',
+    wrong: 'cake'
+  },
+  {
+    en: "My mother cooks ____ for lunch.",
+    tr: 'chicken',
+    wrong: 'coffee'
+  },
+  {
+    en: "Please give me a glass of ____.",
+    tr: 'water',
+    wrong: 'banana'
+  },
+  {
+    en: "We eat ____ in the morning.",
+    tr: 'breakfast',
+    wrong: 'dinner'
+  },
+  {
+    en: "I have ____ at school at 12.",
+    tr: 'lunch',
+    wrong: 'breakfast'
+  },
+  {
+    en: "We have ____ at 8 o'clock.",
+    tr: 'dinner',
+    wrong: 'lunch'
+  },
+  {
+    en: "I am very ____. I want food.",
+    tr: 'hungry',
+    wrong: 'thirsty'
+  },
+  {
+    en: "She is ____. She wants water.",
+    tr: 'thirsty',
+    wrong: 'hungry'
+  },
+  {
+    en: "This pizza is very ____.",
+    tr: 'delicious',
+    wrong: 'carrot'
+  },
+  {
+    en: "I want to ____ some cake.",
+    tr: 'eat',
+    wrong: 'drink'
+  },
+  {
+    en: "We ____ tea every evening.",
+    tr: 'drink',
+    wrong: 'eat'
+  },
+  {
+    en: "My favourite ____ is chocolate.",
+    tr: 'cake',
+    wrong: 'tomato'
+  },
+  {
+    en: "I like ____ with fish.",
+    tr: 'rice',
+    wrong: 'apple'
+  },
+  {
+    en: "She drinks ____ in the morning.",
+    tr: 'coffee',
+    wrong: 'carrot'
+  }
+],
+      ] },
 
 
 // ─────────────────────── QUIZ 13 — Rənglər / Colours ───────────────────────
