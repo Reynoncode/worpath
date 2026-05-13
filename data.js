@@ -2340,6 +2340,29 @@ const LEVELS = [
   { en: 'sick',         tr: 'xəstə',           wrong: 'zəif'          },
   { en: 'doctor',       tr: 'həkim',           wrong: 'tibb bacısı'   },
 ],
+      // ─────────────────────── QUIZ 1 — A2 Mixed (Peşələr, Bədən, Sağlamlıq) ───────────────────────
+[
+  { en: "My sister wants to become a famous ____.", tr: 'architect', wrong: 'patient' },
+  { en: "He works as a software ____ in a big company.", tr: 'programmer', wrong: 'knee' },
+  { en: "The ____ helps people who have legal problems.", tr: 'lawyer', wrong: 'headache' },
+  { en: "She is a talented ____ and takes beautiful photos.", tr: 'photographer', wrong: 'virus' },
+  { en: "I have a bad ____. I need to take medicine.", tr: 'headache', wrong: 'chef' },
+  { en: "The ____ designs new buildings and houses.", tr: 'architect', wrong: 'blood' },
+  { en: "My uncle is a heart ____ in the hospital.", tr: 'doctor', wrong: 'editor' },
+  { en: "She broke her ____ while playing football.", tr: 'ankle', wrong: 'journalist' },
+  { en: "The famous ____ wrote more than 15 books.", tr: 'writer', wrong: 'temperature' },
+  { en: "I can feel my ____ beating very fast.", tr: 'heart', wrong: 'pilot' },
+  { en: "He is a professional ____ and cooks in a big restaurant.", tr: 'chef', wrong: 'brain' },
+  { en: "The university ____ teaches biology and chemistry.", tr: 'professor', wrong: 'injury' },
+  { en: "I have a high ____. I think I have the flu.", tr: 'temperature', wrong: 'musician' },
+  { en: "The ____ is checking the patient's blood pressure.", tr: 'nurse', wrong: 'shoulder' },
+  { en: "She studies ____ at university and wants to be a doctor.", tr: 'medicine', wrong: 'director' },
+  { en: "Be careful! Don't break your ____.", tr: 'bone', wrong: 'manager' },
+  { en: "The young ____ creates modern clothes and fashion.", tr: 'designer', wrong: 'stomach' },
+  { en: "I can't move my ____ after the accident.", tr: 'neck', wrong: 'reporter' },
+  { en: "The ____ is doing important research in the lab.", tr: 'scientist', wrong: 'pill' },
+  { en: "He is a very good ____ and wins many matches.", tr: 'athlete', wrong: 'disease' }
+],
 
 // ─────────────────────── QUIZ 5 — Yemək və içki ───────────────────────
 [
@@ -2437,6 +2460,30 @@ const LEVELS = [
   { en: 'mountain',     tr: 'dağ',             wrong: 'təpə'          },
 ],
 
+      // ─────────────────────── QUIZ 5 — A2 Mixed (Yemək, Mətbəx, Heyvanlar, Təbiət) ───────────────────────
+[
+  { en: "I usually eat ____ with rice and vegetables.", tr: 'chicken', wrong: 'stone' },
+  { en: "She bought some fresh ____ from the market.", tr: 'strawberry', wrong: 'fork' },
+  { en: "We keep milk and eggs in the ____.", tr: 'fridge', wrong: 'lion' },
+  { en: "Be careful! There's a big ____ in the forest.", tr: 'bear', wrong: 'sauce' },
+  { en: "I like to drink orange juice with a little ____.", tr: 'sugar', wrong: 'spider' },
+  { en: "Can you pass me the ____? I want to cut the bread.", tr: 'knife', wrong: 'mountain' },
+  { en: "The ____ is my favourite animal because it's very fast.", tr: 'horse', wrong: 'jam' },
+  { en: "We saw a beautiful ____ while walking in the countryside.", tr: 'lake', wrong: 'bowl' },
+  { en: "My mother makes delicious ____ from cherries.", tr: 'jam', wrong: 'tiger' },
+  { en: "There is a big ____ behind our house.", tr: 'tree', wrong: 'plate' },
+  { en: "I don't like ____ very much, but I love cheese.", tr: 'beef', wrong: 'butterfly' },
+  { en: "Please put the dirty plates in the ____.", tr: 'sink', wrong: 'pear' },
+  { en: "A ____ has eight legs and catches insects.", tr: 'spider', wrong: 'oven' },
+  { en: "We picked some fresh ____ from the garden.", tr: 'grape', wrong: 'cupboard' },
+  { en: "The highest ____ in the world is Mount Everest.", tr: 'mountain', wrong: 'nut' },
+  { en: "I always put ____ on my bread in the morning.", tr: 'butter', wrong: 'frog' },
+  { en: "The little ____ jumped into the water and swam away.", tr: 'frog', wrong: 'sauce' },
+  { en: "Can you bring me a clean ____ for the soup?", tr: 'bowl', wrong: 'desert' },
+  { en: "She is afraid of ____ and never goes to the zoo.", tr: 'snake', wrong: 'biscuit' },
+  { en: "We had a picnic near a small ____ in the valley.", tr: 'river', wrong: 'chef' }
+],
+      
 // ─────────────────────── QUIZ 9 — Texnologiya və internet ───────────────────────
 [
   { en: 'app',          tr: 'tətbiq',          wrong: 'proqram'       },
@@ -2533,6 +2580,110 @@ const LEVELS = [
   { en: 'discover',     tr: 'kəşf etmək',      wrong: 'ixtira etmək'  },
 ],
 
+      // ─────────────────────── QUIZ 9 — A2 Mixed (Texnologiya, Media, Təhsil, Elm) ───────────────────────
+[
+  { 
+    en: "I need to ____ this app on my phone.", 
+    tr: 'download', 
+    wrong: 'invent' 
+  },
+  { 
+    en: "She is studying ____ at university.", 
+    tr: 'biology', 
+    wrong: 'audience' 
+  },
+  { 
+    en: "My brother wants to work as a software ____.", 
+    tr: 'programmer', 
+    wrong: 'reporter' 
+  },
+  { 
+    en: "We watched an interesting ____ about space.", 
+    tr: 'documentary', 
+    wrong: 'degree' 
+  },
+  { 
+    en: "You can find a lot of useful ____ on the internet.", 
+    tr: 'information', 
+    wrong: 'experiment' 
+  },
+  { 
+    en: "I always check my ____ before going to bed.", 
+    tr: 'email', 
+    wrong: 'lecture' 
+  },
+  { 
+    en: "The scientist made an important ____ last year.", 
+    tr: 'discovery', 
+    wrong: 'essay' 
+  },
+  { 
+    en: "She is doing ____ in chemistry at the laboratory.", 
+    tr: 'research', 
+    wrong: 'channel' 
+  },
+  { 
+    en: "I use my ____ to take notes during lessons.", 
+    tr: 'laptop', 
+    wrong: 'novel' 
+  },
+  { 
+    en: "This ____ has millions of users around the world.", 
+    tr: 'app', 
+    wrong: 'press' 
+  },
+  { 
+    en: "The ____ gave a very interesting lecture yesterday.", 
+    tr: 'professor', 
+    wrong: 'advertisement' 
+  },
+  { 
+    en: "I saw this news on social ____ this morning.", 
+    tr: 'media', 
+    wrong: 'theory' 
+  },
+  { 
+    en: "He is writing a long ____ about climate change.", 
+    tr: 'essay', 
+    wrong: 'screen' 
+  },
+  { 
+    en: "My favourite TV ____ starts at 8 o'clock.", 
+    tr: 'series', 
+    wrong: 'method' 
+  },
+  { 
+    en: "You need a good internet ____ to watch online videos.", 
+    tr: 'connection', 
+    wrong: 'fact' 
+  },
+  { 
+    en: "The new ____ of this phone is really fast.", 
+    tr: 'technology', 
+    wrong: 'poster' 
+  },
+  { 
+    en: "Students must do their ____ every evening.", 
+    tr: 'homework', 
+    wrong: 'recording' 
+  },
+  { 
+    en: "She wants to study ____ at university.", 
+    tr: 'physics', 
+    wrong: 'platform' 
+  },
+  { 
+    en: "I saw a very funny ____ on YouTube yesterday.", 
+    tr: 'video', 
+    wrong: 'analysis' 
+  },
+  { 
+    en: "The ____ interviewed the famous actor yesterday.", 
+    tr: 'reporter', 
+    wrong: 'tablet' 
+  }
+],
+      
 // ─────────────────────── QUIZ 13 — İdman ───────────────────────
 [
   { en: 'baseball',     tr: 'beysbol',         wrong: 'kriket'        },
@@ -2579,6 +2730,109 @@ const LEVELS = [
   { en: 'craft',        tr: 'əl işi',          wrong: 'sənətkarlıq'   },
   { en: 'garden',       tr: 'bağ',             wrong: 'park'          },
   { en: 'hobby',        tr: 'hobbi',           wrong: 'maraq'         },
+],
+      // ─────────────────────── QUIZ 13 — A2 Mixed (İdman və Hobbi) ───────────────────────
+[
+  { 
+    en: "My favourite sport is ____ because it is very exciting.", 
+    tr: 'basketball', 
+    wrong: 'camping' 
+  },
+  { 
+    en: "She goes to the stadium to watch a football ____.", 
+    tr: 'match', 
+    wrong: 'drawing' 
+  },
+  { 
+    en: "He is a professional ____ and trains every day.", 
+    tr: 'athlete', 
+    wrong: 'fishing' 
+  },
+  { 
+    en: "We are going ____ in the mountains next weekend.", 
+    tr: 'hiking', 
+    wrong: 'sailing' 
+  },
+  { 
+    en: "The ____ told the players to run faster.", 
+    tr: 'coach', 
+    wrong: 'reading' 
+  },
+  { 
+    en: "I like ____ because I can see beautiful places.", 
+    tr: 'travel', 
+    wrong: 'hockey' 
+  },
+  { 
+    en: "She is very good at ____ and paints wonderful pictures.", 
+    tr: 'painting', 
+    wrong: 'golf' 
+  },
+  { 
+    en: "Our team won the ____ last season.", 
+    tr: 'champion', 
+    wrong: 'cooking' 
+  },
+  { 
+    en: "I usually go ____ on the lake in summer.", 
+    tr: 'fishing', 
+    wrong: 'skiing' 
+  },
+  { 
+    en: "They play ____ every Saturday in the park.", 
+    tr: 'soccer', 
+    wrong: 'photography' 
+  },
+  { 
+    en: "My hobby is ____. I love taking photos of nature.", 
+    tr: 'photography', 
+    wrong: 'baseball' 
+  },
+  { 
+    en: "The Olympic Games is the biggest sports ____.", 
+    tr: 'competition', 
+    wrong: 'singing' 
+  },
+  { 
+    en: "She enjoys ____ in her free time.", 
+    tr: 'dancing', 
+    wrong: 'race' 
+  },
+  { 
+    en: "We need a big ____ to watch the football final.", 
+    tr: 'stadium', 
+    wrong: 'hiking' 
+  },
+  { 
+    en: "He is learning how to play ____ on the snow.", 
+    tr: 'skiing', 
+    wrong: 'writing' 
+  },
+  { 
+    en: "My brother collects stamps as a ____.", 
+    tr: 'hobby', 
+    wrong: 'score' 
+  },
+  { 
+    en: "The final ____ was 3-2 for our team.", 
+    tr: 'score', 
+    wrong: 'garden' 
+  },
+  { 
+    en: "I like ____ because it is relaxing and creative.", 
+    tr: 'cooking', 
+    wrong: 'team' 
+  },
+  { 
+    en: "They went ____ in the forest last summer.", 
+    tr: 'camping', 
+    wrong: 'tennis' 
+  },
+  { 
+    en: "She reads a lot of books in her ____ time.", 
+    tr: 'free', 
+    wrong: 'match' 
+  }
 ],
 
 // ─────────────────────── QUIZ 15 — Şəhər həyatı ───────────────────────
@@ -2653,6 +2907,7 @@ const LEVELS = [
   { en: 'bedroom',      tr: 'yataq otağı',     wrong: 'qonaq otağı'   },
 ],
 
+      
 // ─────────────────────── QUIZ 18 — Geyim və aksesuar ───────────────────────
 [
   { en: 'belt',         tr: 'kəmər',           wrong: 'boyunbağı'     },
@@ -2676,6 +2931,110 @@ const LEVELS = [
   { en: 'jewellery',    tr: 'zinət əşyaları',  wrong: 'aksesuar'      },
   { en: 'ring',         tr: 'üzük',            wrong: 'qolbaq'        },
 ],
+      // ─────────────────────── QUIZ 15 — A2 Mixed (Şəhər, Nəqliyyat, Ev, Geyim) ───────────────────────
+[
+  { 
+    en: "There is a beautiful old ____ in the centre of the city.", 
+    tr: 'castle', 
+    wrong: 'belt' 
+  },
+  { 
+    en: "We crossed the long ____ over the river.", 
+    tr: 'bridge', 
+    wrong: 'sock' 
+  },
+  { 
+    en: "I usually travel to work by ____.", 
+    tr: 'bus', 
+    wrong: 'carpet' 
+  },
+  { 
+    en: "She lives on the fifth ____ of that tall building.", 
+    tr: 'floor', 
+    wrong: 'tie' 
+  },
+  { 
+    en: "The fastest way to travel is by ____.", 
+    tr: 'plane', 
+    wrong: 'mirror' 
+  },
+  { 
+    en: "We bought new ____ for our living room last month.", 
+    tr: 'furniture', 
+    wrong: 'platform' 
+  },
+  { 
+    en: "I left my car in the underground ____ near the station.", 
+    tr: 'parking', 
+    wrong: 'scarf' 
+  },
+  { 
+    en: "The famous painting is in the art ____.", 
+    tr: 'gallery', 
+    wrong: 'lorry' 
+  },
+  { 
+    en: "Please hang your coat on the ____.", 
+    tr: 'hook', 
+    wrong: 'church' 
+  },
+  { 
+    en: "The ____ arrived late because of bad weather.", 
+    tr: 'train', 
+    wrong: 'roof' 
+  },
+  { 
+    en: "She looked at herself in the big ____.", 
+    tr: 'mirror', 
+    wrong: 'truck' 
+  },
+  { 
+    en: "We visited a very old ____ during our trip.", 
+    tr: 'church', 
+    wrong: 'van' 
+  },
+  { 
+    en: "I need to buy a new winter ____.", 
+    tr: 'coat', 
+    wrong: 'bin' 
+  },
+  { 
+    en: "The ____ is full of people on Saturday mornings.", 
+    tr: 'market', 
+    wrong: 'button' 
+  },
+  { 
+    en: "Don't forget to lock the front ____.", 
+    tr: 'door', 
+    wrong: 'ferry' 
+  },
+  { 
+    en: "We waited for the bus at the ____.", 
+    tr: 'station', 
+    wrong: 'dress' 
+  },
+  { 
+    en: "My bedroom is ____ and the kitchen is downstairs.", 
+    tr: 'upstairs', 
+    wrong: 'petrol' 
+  },
+  { 
+    en: "He drives a big red ____ for his job.", 
+    tr: 'truck', 
+    wrong: 'library' 
+  },
+  { 
+    en: "She always wears a beautiful red ____ to parties.", 
+    tr: 'dress', 
+    wrong: 'wheel' 
+  },
+  { 
+    en: "The view from the top of the ____ is amazing.", 
+    tr: 'tower', 
+    wrong: 'suit' 
+  }
+],
+      
 
 // ─────────────────────── QUIZ 19 — Hisslər və emosiyalar ───────────────────────
 [
@@ -2771,6 +3130,109 @@ const LEVELS = [
   { en: 'missing',      tr: 'itmiş',           wrong: 'yoxolan'       },
   { en: 'mobile',       tr: 'mobil',           wrong: 'portativ'      },
 ],
+      // ─────────────────────── QUIZ 19 — A2 Mixed (Hisslər, Xarakter, Sifətlər) ───────────────────────
+[
+  { 
+    en: "I felt very ____ when I saw my old friend after many years.", 
+    tr: 'surprised', 
+    wrong: 'crowded' 
+  },
+  { 
+    en: "She was ____ because she didn't get the job.", 
+    tr: 'upset', 
+    wrong: 'alive' 
+  },
+  { 
+    en: "He is a very ____ person and always helps others.", 
+    tr: 'kind', 
+    wrong: 'curly' 
+  },
+  { 
+    en: "I'm a bit ____ about the exam tomorrow.", 
+    tr: 'nervous', 
+    wrong: 'ancient' 
+  },
+  { 
+    en: "My little sister is very ____ of spiders.", 
+    tr: 'scared', 
+    wrong: 'available' 
+  },
+  { 
+    en: "He is extremely ____ and never tells lies.", 
+    tr: 'honest', 
+    wrong: 'heavy' 
+  },
+  { 
+    en: "I'm so ____ of you! You did a great job.", 
+    tr: 'proud', 
+    wrong: 'closed' 
+  },
+  { 
+    en: "The old ____ castle is now a popular tourist place.", 
+    tr: 'ancient', 
+    wrong: 'comfortable' 
+  },
+  { 
+    en: "She felt very ____ after the long journey.", 
+    tr: 'tired', 
+    wrong: 'intelligent' 
+  },
+  { 
+    en: "Don't be ____! Everything will be fine.", 
+    tr: 'worried', 
+    wrong: 'divorced' 
+  },
+  { 
+    en: "He is a ____ student and always gets high marks.", 
+    tr: 'clever', 
+    wrong: 'missing' 
+  },
+  { 
+    en: "The room was completely ____ when we arrived.", 
+    tr: 'empty', 
+    wrong: 'independent' 
+  },
+  { 
+    en: "I was really ____ when I won the competition.", 
+    tr: 'excited', 
+    wrong: 'informal' 
+  },
+  { 
+    en: "She is quite ____ and doesn't like talking to strangers.", 
+    tr: 'shy', 
+    wrong: 'electronic' 
+  },
+  { 
+    en: "This chair is very ____. I can sit here for hours.", 
+    tr: 'comfortable', 
+    wrong: 'impossible' 
+  },
+  { 
+    en: "The teacher was ____ with the students' results.", 
+    tr: 'pleased', 
+    wrong: 'deep' 
+  },
+  { 
+    en: "He made a very ____ decision to study abroad.", 
+    tr: 'brave', 
+    wrong: 'bright' 
+  },
+  { 
+    en: "I'm not ____ with my exam results.", 
+    tr: 'happy', 
+    wrong: 'connected' 
+  },
+  { 
+    en: "The city was too ____, so we couldn't walk easily.", 
+    tr: 'crowded', 
+    wrong: 'patient' 
+  },
+  { 
+    en: "She has a very ____ personality and makes friends easily.", 
+    tr: 'friendly', 
+    wrong: 'exact' 
+  }
+],
 
 // ─────────────────────── QUIZ 23 — Zərflər və bağlayıcılar ───────────────────────
 [
@@ -2820,6 +3282,110 @@ const LEVELS = [
   { en: 'sometimes',    tr: 'bəzən',           wrong: 'tez-tez'       },
 ],
 
+      // ─────────────────────── QUIZ 23 — A2 Mixed (Zərflər və Zaman ifadələri) ───────────────────────
+[
+  { 
+    en: "I ____ finished my homework, so I can watch TV now.", 
+    tr: 'already', 
+    wrong: 'yet' 
+  },
+  { 
+    en: "She was very tired, ____ she continued working.", 
+    tr: 'although', 
+    wrong: 'finally' 
+  },
+  { 
+    en: "We go to the cinema ____ on weekends.", 
+    tr: 'sometimes', 
+    wrong: 'always' 
+  },
+  { 
+    en: "He ran very fast and ____ won the race.", 
+    tr: 'finally', 
+    wrong: 'suddenly' 
+  },
+  { 
+    en: "I haven't eaten anything ____.", 
+    tr: 'yet', 
+    wrong: 'already' 
+  },
+  { 
+    en: "She smiled ____ when she saw her birthday present.", 
+    tr: 'happily', 
+    wrong: 'certainly' 
+  },
+  { 
+    en: "____ I prefer tea, but today I want coffee.", 
+    tr: 'usually', 
+    wrong: 'exactly' 
+  },
+  { 
+    en: "Call me ____ you arrive at the airport.", 
+    tr: 'as soon as', 
+    wrong: 'before' 
+  },
+  { 
+    en: "It was raining, ____ we decided to stay at home.", 
+    tr: 'so', 
+    wrong: 'although' 
+  },
+  { 
+    en: "I ____ go to the gym three times a week.", 
+    tr: 'often', 
+    wrong: 'never' 
+  },
+  { 
+    en: "____, I don't agree with your idea.", 
+    tr: 'actually', 
+    wrong: 'certainly' 
+  },
+  { 
+    en: "She has lived in London ____ 2015.", 
+    tr: 'since', 
+    wrong: 'still' 
+  },
+  { 
+    en: "He spoke ____ and everyone understood him.", 
+    tr: 'clearly', 
+    wrong: 'completely' 
+  },
+  { 
+    en: "I will call you ____ I finish the meeting.", 
+    tr: 'as soon as', 
+    wrong: 'lately' 
+  },
+  { 
+    en: "____ I was late, I still managed to catch the train.", 
+    tr: 'although', 
+    wrong: 'suddenly' 
+  },
+  { 
+    en: "She is ____ the best student in the class.", 
+    tr: 'definitely', 
+    wrong: 'especially' 
+  },
+  { 
+    en: "We ____ go swimming in the summer.", 
+    tr: 'sometimes', 
+    wrong: 'daily' 
+  },
+  { 
+    en: "He left the house ____ without saying goodbye.", 
+    tr: 'suddenly', 
+    wrong: 'finally' 
+  },
+  { 
+    en: "I have ____ told you the answer three times.", 
+    tr: 'already', 
+    wrong: 'yet' 
+  },
+  { 
+    en: "____, we won the match in the last minute.", 
+    tr: 'fortunately', 
+    wrong: 'unfortunately' 
+  }
+],
+      
 // ─────────────────────── QUIZ 25 — Ünsiyyət və dil ───────────────────────
 [
   { en: 'advice',       tr: 'məsləhət',        wrong: 'xəbərdarlıq'   },
@@ -2868,6 +3434,110 @@ const LEVELS = [
   { en: 'festival',     tr: 'festival',        wrong: 'bayram'        },
 ],
 
+      // ─────────────────────── QUIZ 25 — A2 Mixed (Ünsiyyət və Sosial həyat) ───────────────────────
+[
+  { 
+    en: "Can you give me some ____ about choosing a university?", 
+    tr: 'advice', 
+    wrong: 'festival' 
+  },
+  { 
+    en: "I don't ____ with you. I think you're wrong.", 
+    tr: 'agree', 
+    wrong: 'celebrate' 
+  },
+  { 
+    en: "We had a long ____ about politics last night.", 
+    tr: 'conversation', 
+    wrong: 'wedding' 
+  },
+  { 
+    en: "She didn't ____ to my message until this morning.", 
+    tr: 'reply', 
+    wrong: 'tradition' 
+  },
+  { 
+    en: "He made a very funny ____ and everyone laughed.", 
+    tr: 'joke', 
+    wrong: 'community' 
+  },
+  { 
+    en: "I want to ____ a party for my birthday next month.", 
+    tr: 'invite', 
+    wrong: 'suggest' 
+  },
+  { 
+    en: "They got married last year. It was a beautiful ____.", 
+    tr: 'wedding', 
+    wrong: 'argument' 
+  },
+  { 
+    en: "She is very good at ____ with people from different countries.", 
+    tr: 'communicate', 
+    wrong: 'support' 
+  },
+  { 
+    en: "I ____ going to the cinema tonight. What do you think?", 
+    tr: 'suggest', 
+    wrong: 'relationship' 
+  },
+  { 
+    en: "There was a big ____ between the two brothers.", 
+    tr: 'argument', 
+    wrong: 'culture' 
+  },
+  { 
+    en: "My best friend always ____ me when I have problems.", 
+    tr: 'supports', 
+    wrong: 'mentions' 
+  },
+  { 
+    en: "It's important to respect other people's ____.", 
+    tr: 'culture', 
+    wrong: 'guest' 
+  },
+  { 
+    en: "He gave a long ____ at the conference yesterday.", 
+    tr: 'speech', 
+    wrong: 'invitation' 
+  },
+  { 
+    en: "We have a very good ____ with our neighbours.", 
+    tr: 'relationship', 
+    wrong: 'description' 
+  },
+  { 
+    en: "Could you ____ the new teacher to me?", 
+    tr: 'introduce', 
+    wrong: 'discuss' 
+  },
+  { 
+    en: "The whole ____ came together to help the poor family.", 
+    tr: 'community', 
+    wrong: 'expression' 
+  },
+  { 
+    en: "She received a beautiful ____ to her sister's wedding.", 
+    tr: 'invitation', 
+    wrong: 'disagree' 
+  },
+  { 
+    en: "Don't forget to ____ your promise.", 
+    tr: 'keep', 
+    wrong: 'argue' 
+  },
+  { 
+    en: "They ____ Christmas with their whole family.", 
+    tr: 'celebrate', 
+    wrong: 'comment' 
+  },
+  { 
+    en: "I need your honest ____ about my new dress.", 
+    tr: 'opinion', 
+    wrong: 'society' 
+  }
+],
+      
 // ─────────────────────── QUIZ 27 — Hüquq, cinayət və ordu ───────────────────────
 [
   { en: 'army',         tr: 'ordu',            wrong: 'qoşun'         },
@@ -2915,7 +3585,110 @@ const LEVELS = [
   { en: 'investment',   tr: 'investisiya',     wrong: 'kapital'       },
   { en: 'economy',      tr: 'iqtisadiyyat',    wrong: 'maliyyə'       },
 ],
-
+  // ─────────────────────── QUIZ 27 — A2 Mixed (Hüquq, Cinayət, Biznes və İqtisadiyyat) ───────────────────────
+[
+  { 
+    en: "The police caught the ____ who stole the car.", 
+    tr: 'thief', 
+    wrong: 'soldier' 
+  },
+  { 
+    en: "He works in a big company and earns a good ____.", 
+    tr: 'salary', 
+    wrong: 'weapon' 
+  },
+  { 
+    en: "The government is trying to improve the ____ of the country.", 
+    tr: 'economy', 
+    wrong: 'prison' 
+  },
+  { 
+    en: "Many people lost their jobs during the economic ____.", 
+    tr: 'crisis', 
+    wrong: 'army' 
+  },
+  { 
+    en: "The young man was sent to ____ for two years.", 
+    tr: 'prison', 
+    wrong: 'factory' 
+  },
+  { 
+    en: "The company made a big ____ this year.", 
+    tr: 'profit', 
+    wrong: 'crime' 
+  },
+  { 
+    en: "You must pay ____ on your income every year.", 
+    tr: 'tax', 
+    wrong: 'fight' 
+  },
+  { 
+    en: "The ____ attacked the city at night.", 
+    tr: 'army', 
+    wrong: 'customer' 
+  },
+  { 
+    en: "She is a very successful business ____.", 
+    tr: 'woman', 
+    wrong: 'officer' 
+  },
+  { 
+    en: "The police officer arrested the ____ last night.", 
+    tr: 'criminal', 
+    wrong: 'farmer' 
+  },
+  { 
+    en: "This phone is very expensive. It ____ too much.", 
+    tr: 'costs', 
+    wrong: 'kills' 
+  },
+  { 
+    en: "The soldiers received special ____ training.", 
+    tr: 'military', 
+    wrong: 'budget' 
+  },
+  { 
+    en: "He wants to start his own ____ next year.", 
+    tr: 'business', 
+    wrong: 'war' 
+  },
+  { 
+    en: "The bank gave me a loan for my new ____.", 
+    tr: 'investment', 
+    wrong: 'gun' 
+  },
+  { 
+    en: "Stealing money from a bank is a serious ____.", 
+    tr: 'crime', 
+    wrong: 'salary' 
+  },
+  { 
+    en: "The president gave an important ____ on television.", 
+    tr: 'speech', 
+    wrong: 'coin' 
+  },
+  { 
+    en: "Many people work in the car ____ in our city.", 
+    tr: 'industry', 
+    wrong: 'danger' 
+  },
+  { 
+    en: "The detective solved the ____ very quickly.", 
+    tr: 'case', 
+    wrong: 'benefit' 
+  },
+  { 
+    en: "This shop is having a big ____ this weekend.", 
+    tr: 'sale', 
+    wrong: 'attack' 
+  },
+  { 
+    en: "The country is preparing for possible ____.", 
+    tr: 'war', 
+    wrong: 'profit' 
+  }
+],
+      
 // ─────────────────────── QUIZ 29 — Ətraf mühit ───────────────────────
 [
   { en: 'climate',      tr: 'iqlim',           wrong: 'hava'          },
@@ -2963,24 +3736,111 @@ const LEVELS = [
   { en: 'trip',         tr: 'səfər',           wrong: 'gəzinti'       },
   { en: 'visa',         tr: 'viza',            wrong: 'icazə'         },
 ],
-      // QUIZ 2
-      [],
-      // QUIZ 3
-      [],
-      // QUIZ 4
-      [],
-      // QUIZ 5
-      [],
-      // QUIZ 6
-      [],
-      // QUIZ 7
-      [],
-      // QUIZ 8
-      [],
-      // QUIZ 9
-      [],
-      // QUIZ 10
-      [],
+
+      // ─────────────────────── QUIZ 29 — A2 Mixed (Ətraf mühit və Səyahət) ───────────────────────
+[
+  { 
+    en: "We must protect the ____ if we want a better future.", 
+    tr: 'environment', 
+    wrong: 'passport' 
+  },
+  { 
+    en: "Many animals live in the Amazon ____.", 
+    tr: 'forest', 
+    wrong: 'luggage' 
+  },
+  { 
+    en: "Air ____ is a big problem in big cities.", 
+    tr: 'pollution', 
+    wrong: 'reservation' 
+  },
+  { 
+    en: "We should ____ plastic bottles and paper.", 
+    tr: 'recycle', 
+    wrong: 'adventure' 
+  },
+  { 
+    en: "The ____ is changing because of global warming.", 
+    tr: 'climate', 
+    wrong: 'visa' 
+  },
+  { 
+    en: "I always take a lot of ____ when I travel.", 
+    tr: 'luggage', 
+    wrong: 'rubbish' 
+  },
+  { 
+    en: "We are going on a ____ to Italy next summer.", 
+    tr: 'trip', 
+    wrong: 'wood' 
+  },
+  { 
+    en: "You need a ____ to visit some countries.", 
+    tr: 'visa', 
+    wrong: 'grass' 
+  },
+  { 
+    en: "Solar ____ is clean and good for the environment.", 
+    tr: 'energy', 
+    wrong: 'destination' 
+  },
+  { 
+    en: "The hotel made a ____ for us for next weekend.", 
+    tr: 'reservation', 
+    wrong: 'gold' 
+  },
+  { 
+    en: "Earth is the only ____ where we can live.", 
+    tr: 'planet', 
+    wrong: 'tour' 
+  },
+  { 
+    en: "Don't throw ____ on the ground. Use the bin.", 
+    tr: 'rubbish', 
+    wrong: 'coast' 
+  },
+  { 
+    en: "We went on a boat ____ along the Nile River.", 
+    tr: 'tour', 
+    wrong: 'oil' 
+  },
+  { 
+    en: "She wants to save the ____ and plant more trees.", 
+    tr: 'nature', 
+    wrong: 'guide' 
+  },
+  { 
+    en: "This summer we are travelling ____ to Spain.", 
+    tr: 'abroad', 
+    wrong: 'recycle' 
+  },
+  { 
+    en: "The beautiful sandy ____ is full of tourists.", 
+    tr: 'beach', 
+    wrong: 'continent' 
+  },
+  { 
+    en: "We must reduce our use of plastic to save the ____.", 
+    tr: 'planet', 
+    wrong: 'sightseeing' 
+  },
+  { 
+    en: "He is a professional mountain ____.", 
+    tr: 'guide', 
+    wrong: 'factory' 
+  },
+  { 
+    en: "This car uses less ____ than older models.", 
+    tr: 'petrol', 
+    wrong: 'region' 
+  },
+  { 
+    en: "We had an amazing ____ in the mountains last year.", 
+    tr: 'adventure', 
+    wrong: 'climate' 
+  }
+],
+      
     ]
   },
 
