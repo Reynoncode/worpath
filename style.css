@@ -116,6 +116,108 @@ button { font-family: var(--font); }
   fill: #F0C030;
 }
 
+/* ── HEADER ACTIONS ─────────────────────────── */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icon-only buttons in header (review + test) */
+.header-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.header-action-btn svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--icon);
+  fill: none;
+  flex-shrink: 0;
+}
+
+.header-action-btn:active {
+  transform: scale(0.92);
+  background: var(--border-light);
+}
+
+/* Review button — subtle outline */
+.review-btn {
+  border-color: #D0CAFF;
+  background: #F5F3FF;
+}
+
+.review-btn svg {
+  stroke: #6C4FEB;
+}
+
+.review-btn:active {
+  background: #EDE9FF;
+  border-color: #B8AFFF;
+}
+
+/* Test button — filled dark */
+.test-btn {
+  border-color: var(--text-primary);
+  background: var(--text-primary);
+}
+
+.test-btn svg {
+  stroke: #fff;
+}
+
+.test-btn:active {
+  opacity: 0.82;
+  transform: scale(0.92);
+}
+
+/* (Legacy pill style — kept for compatibility) */
+.header-pill {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--text-mid);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.header-pill svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--text-mid);
+  flex-shrink: 0;
+}
+
+.header-pill:active { transform: scale(0.95); background: var(--border-light); }
+
+.header-pill.accent {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: #fff;
+}
+
+.header-pill.accent svg { stroke: #fff; }
+.header-pill.accent:active { opacity: 0.85; }
+
 /* ── MAIN CONTENT ───────────────────────────── */
 .main-content {
   padding: 24px 16px 80px;
@@ -514,6 +616,112 @@ button { font-family: var(--font); }
   line-height: 1.6;
 }
 
+/* ── RESULT STATS ───────────────────────────── */
+.result-stats {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  width: 100%;
+  max-width: 310px;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  padding: 16px 10px;
+}
+
+.stat-num {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.stat-divider {
+  width: 1.5px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.correct-stat .stat-num { color: var(--completed); }
+.wrong-stat   .stat-num { color: var(--wrong); }
+
+/* ── LEVEL TEST RESULT CARD ─────────────────── */
+.level-result-card {
+  width: 100%;
+  max-width: 310px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.level-result-badge {
+  width: 100%;
+  padding: 20px 0;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1;
+}
+
+.level-result-info {
+  width: 100%;
+  padding: 14px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  border-top: 1.5px solid var(--border);
+}
+
+.level-result-name {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  text-align: center;
+}
+
+.level-result-ielts {
+  display: inline-block;
+  background: #F0F4FF;
+  border: 1.5px solid #C5D2F6;
+  border-radius: 10px;
+  padding: 4px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3B5BDB;
+}
+
+.level-result-desc {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-mid);
+  line-height: 1.5;
+  text-align: center;
+}
+
 .result-actions {
   display: flex;
   flex-direction: column;
@@ -720,6 +928,199 @@ button { font-family: var(--font); }
 }
 
 .btn-chance-decline:active { background: var(--border-light); }
+
+/* ── REVIEW MODAL ───────────────────────────── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 350;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-backdrop.hidden { display: none !important; }
+
+.modal-sheet {
+  background: var(--surface);
+  border-radius: 24px 24px 0 0;
+  padding: 24px 20px 36px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.34,1.1,0.64,1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-backdrop.show .modal-sheet { transform: translateY(0); }
+
+/* Handle bar inside modal sheet */
+.modal-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+
+/* Header row with icon + title side by side */
+.modal-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+}
+
+.modal-desc {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+/* ── REVIEW LEVEL GRID ──────────────────────── */
+.review-level-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 6px 0 4px;
+  width: 100%;
+}
+
+/* Button rendered by app.js with --lvl-color variable */
+.review-level-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 18px 10px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  font-family: var(--font);
+  cursor: pointer;
+  background: color-mix(in srgb, var(--lvl-color, #4A8FE7) 12%, transparent);
+  border-color: color-mix(in srgb, var(--lvl-color, #4A8FE7) 35%, transparent);
+  transition: transform 0.12s, opacity 0.12s, background 0.15s;
+  min-width: 74px;
+}
+
+.review-level-btn:active {
+  transform: scale(0.94);
+  opacity: 0.85;
+}
+
+.rlb-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.rlb-name {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+}
+
+.rlb-count {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-mid);
+}
+
+/* ── LEVEL TEST RESULT extras ───────────────── */
+.lt-result-body { gap: 12px; }
+
+.lt-level-badge {
+  font-size: 28px;
+  font-weight: 900;
+  padding: 10px 28px;
+  border-radius: 16px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.lt-ielts-badge {
+  background: #F0F4FF;
+  border: 1.5px solid #C5D2F6;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3B5BDB;
+}
+
+.lt-stats {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.lt-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: var(--border-light);
+  border-radius: 12px;
+  padding: 10px 18px;
+  min-width: 70px;
+}
+
+.lt-stat-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.lt-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-faint);
+  text-transform: uppercase;
+}
+
+.lt-stat-item.green .lt-stat-num { color: var(--completed); }
+.lt-stat-item.red   .lt-stat-num { color: var(--wrong); }
+
+/* Level test hint badge (in question-hint area) */
+.lt-level-hint {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 10px;
+  color: #fff;
+  margin-bottom: 4px;
+}
 
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
