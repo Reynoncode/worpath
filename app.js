@@ -2,64 +2,53 @@
 //  WORDPATH — Application Logic
 // ============================================================
 
-// ── Storage keys ──────────────────────────────────────────
 const QUIZ_NAMES = {
   'a1': {
     0:  'Roles',
     1:  'General People',
     2:  'Family',
     3:  'Body',
-    // 4 → Exam 1
     5:  'Feelings',
     6:  'Positive Adjectives',
     7:  'Size & Description',
     8:  'State Adjectives',
     9:  'State Adjectives 2',
-    // 10 → Exam 2
     11: 'Vegetables & Fruit',
     12: 'Dairy & Protein',
     13: 'Drinks & Meals',
-    // 14 → Exam 3
     15: 'Colours',
     16: 'Numbers 1–20',
     17: 'Numbers 30–Ordinals',
-    // 18 → Exam 4
     19: 'Rooms & Furniture',
     20: 'Household Objects',
     21: 'City Buildings',
     22: 'Places & Areas',
-    // 23 → Exam 5
     24: 'Nature & Geography',
     25: 'Animals',
     26: 'Transport',
     27: 'Clothes & Accessories',
-    // 28 → Exam 6
     29: 'Days & Months',
     30: 'General Time',
     31: 'More Time Words',
-    // 32 → Exam 7
     33: 'Money & Shopping',
     34: 'Technology',
     35: 'Media & Entertainment',
-    // 36 → Exam 8
     37: 'School & Study',
     38: 'More School Words',
     39: 'Sport & Hobbies',
-    // 40 → Exam 9
     41: 'Movement Verbs',
     42: 'Communication Verbs',
     43: 'Daily Life Verbs',
-    // 44 → Exam 10
     45: 'Daily Life Verbs 2',
     46: 'Mental & Abstract Verbs',
     47: 'Mental Verbs 2',
-    // 48 → Exam 11
     49: 'Work & Business',
     50: 'Misc Nouns',
     51: 'Misc Nouns 2',
-    // 52 → Exam 12
   }
 };
+
+// ── Storage keys ──────────────────────────────────────────
 const STORAGE_KEY = 'wordpath_v1';
 const STARS_KEY   = 'wordpath_stars';
 
@@ -92,9 +81,7 @@ function setStars(n) {
   localStorage.setItem(STARS_KEY, String(Math.max(0, n)));
   renderStarCount();
 }
-function addStar() {
-  setStars(getStars() + 1);
-}
+function addStar() { setStars(getStars() + 1); }
 function spendStar() {
   const s = getStars();
   if (s <= 0) return false;
@@ -114,6 +101,18 @@ function isExamItem(item, levelId, quizIdx) {
   return item && !Array.isArray(item) && item.type === 'exam';
 }
 
+// ── Növbəti keçilə bilən quiz indeksini tap ───────────────
+// Boş array-ları atlayır, level sonuna çatarsa null qaytarır
+function findNextPlayableQuiz(levelIdx, afterQuizIdx) {
+  const lvl = LEVELS[levelIdx];
+  for (let i = afterQuizIdx + 1; i < lvl.quizzes.length; i++) {
+    const item = lvl.quizzes[i];
+    if (Array.isArray(item) && item.length >= 2) return i;
+    if (isExamItem(item, lvl.id, i)) return i;
+  }
+  return null;
+}
+
 function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -122,7 +121,6 @@ function loadProgress() {
 
   LEVELS.forEach((lvl) => {
     if (!progress[lvl.id]) progress[lvl.id] = [];
-
     for (let i = 0; i < lvl.quizzes.length; i++) {
       if (!progress[lvl.id][i]) {
         progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
@@ -145,7 +143,6 @@ function getStatus(levelIdx, quizIdx) {
 function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
   const wasCompleted = progress[lvl.id][quizIdx] === 'completed';
-
   progress[lvl.id][quizIdx] = 'completed';
 
   const next = quizIdx + 1;
@@ -155,10 +152,7 @@ function markCompleted(levelIdx, quizIdx) {
     }
   }
 
-  if (!wasCompleted) {
-    addStar();
-  }
-
+  if (!wasCompleted) addStar();
   saveProgress();
 }
 
@@ -193,7 +187,7 @@ const elChanceAccept  = $('chance-accept');
 const elChanceDecline = $('chance-decline');
 const elChanceStars   = $('chance-stars');
 
-// ── Render level list ────────────────────────────────────
+// ── Render level list ─────────────────────────────────────
 function renderLevels() {
   renderStarCount();
   elLevelList.innerHTML = '';
@@ -260,34 +254,21 @@ function renderQuizPath(lvl, li) {
     const isExam  = isExamItem(item, lvl.id, qi);
 
     if (!isFirst) html += '<div class="path-line"></div>';
-
     html += `<div class="path-node-wrap">`;
 
-    if (isExam) {
-      examCounter++;
-    } else {
-      quizCounter++;
-    }
+    if (isExam) { examCounter++; } else { quizCounter++; }
 
     if (status === 'completed') {
       if (isExam) {
-        html += `
-          <div class="path-node completed exam-node"
-               data-quiz-idx="${qi}"
-               data-status="completed"
-               style="border-color:${lvl.color}; background:${lvl.color}"
-               title="Exam ${examCounter}">
-            🏆
-          </div>`;
+        html += `<div class="path-node completed exam-node"
+             data-quiz-idx="${qi}" data-status="completed"
+             style="border-color:${lvl.color}; background:${lvl.color}">🏆</div>`;
       } else {
-        html += `
-          <div class="path-node completed"
-               data-quiz-idx="${qi}"
-               data-status="completed"
-               style="border-color:${lvl.color}; background:${lvl.color}"
-               title="Test ${quizCounter}">
-            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          </div>`;
+        html += `<div class="path-node completed"
+             data-quiz-idx="${qi}" data-status="completed"
+             style="border-color:${lvl.color}; background:${lvl.color}">
+           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+         </div>`;
       }
 
     } else if (status === 'unlocked') {
@@ -295,51 +276,34 @@ function renderQuizPath(lvl, li) {
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
 
       if (isExam) {
-        html += `
-          <div class="path-node unlocked exam-node ${pulseClass}"
-               data-quiz-idx="${qi}"
-               data-status="unlocked"
-               style="color:${lvl.color}; border-color:${lvl.color}"
-               title="Exam ${examCounter}">
-            🏆
-          </div>`;
+        html += `<div class="path-node unlocked exam-node ${pulseClass}"
+             data-quiz-idx="${qi}" data-status="unlocked"
+             style="color:${lvl.color}; border-color:${lvl.color}">🏆</div>`;
       } else {
-        html += `
-          <div class="path-node unlocked ${pulseClass}"
-               data-quiz-idx="${qi}"
-               data-status="unlocked"
-               style="color:${lvl.color}; border-color:${lvl.color}"
-               title="Test ${quizCounter}">
-            ${quizCounter}
-          </div>`;
+        html += `<div class="path-node unlocked ${pulseClass}"
+             data-quiz-idx="${qi}" data-status="unlocked"
+             style="color:${lvl.color}; border-color:${lvl.color}">${quizCounter}</div>`;
       }
 
     } else {
       if (isExam) {
-        html += `
-          <div class="path-node locked exam-node"
-               data-quiz-idx="${qi}"
-               data-status="locked"
-               title="Exam ${examCounter}">
-            🏆
-          </div>`;
+        html += `<div class="path-node locked exam-node"
+             data-quiz-idx="${qi}" data-status="locked">🏆</div>`;
       } else {
-        html += `
-          <div class="path-node locked"
-               data-quiz-idx="${qi}"
-               data-status="locked"
-               title="Kilidli">
-            <svg viewBox="0 0 24 24">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-          </div>`;
+        html += `<div class="path-node locked"
+             data-quiz-idx="${qi}" data-status="locked">
+           <svg viewBox="0 0 24 24">
+             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+             <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+           </svg>
+         </div>`;
       }
     }
 
-    const label = isExam ? `Exam ${examCounter}` : (QUIZ_NAMES[lvl.id]?.[qi] || `Test ${quizCounter}`);
-    html += `<div class="node-label">${label}</div>`;
-    html += `</div>`;
+    const label = isExam
+      ? `Exam ${examCounter}`
+      : (QUIZ_NAMES[lvl.id]?.[qi] || `Test ${quizCounter}`);
+    html += `<div class="node-label">${label}</div></div>`;
   });
 
   html += '</div>';
@@ -350,8 +314,7 @@ function toggleLevel(card) {
   const isOpen = card.classList.contains('open');
 
   document.querySelectorAll('.level-card.open').forEach(c => {
-    const b = c.querySelector('.level-body');
-    b.style.maxHeight = '0px';
+    c.querySelector('.level-body').style.maxHeight = '0px';
     c.classList.remove('open');
     c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
   });
@@ -361,16 +324,13 @@ function toggleLevel(card) {
     card.querySelector('.level-header').setAttribute('aria-expanded', 'true');
     const body = card.querySelector('.level-body');
     body.style.maxHeight = body.scrollHeight + 'px';
-
     body.addEventListener('transitionend', () => {
-      if (card.classList.contains('open')) {
-        body.style.maxHeight = 'none';
-      }
+      if (card.classList.contains('open')) body.style.maxHeight = 'none';
     }, { once: true });
   }
 }
 
-// ── Start quiz ───────────────────────────────────────────
+// ── Start quiz ────────────────────────────────────────────
 function startQuiz(levelIdx, quizIdx) {
   quiz.levelIdx     = levelIdx;
   quiz.quizIdx      = quizIdx;
@@ -396,10 +356,8 @@ function showQuestion() {
   const word       = quiz.words[quiz.index];
   const totalWords = quiz.words.length;
 
-  const pct = (quiz.index / totalWords) * 100;
-  elProgressFill.style.width = pct + '%';
+  elProgressFill.style.width = `${(quiz.index / totalWords) * 100}%`;
   elQCounter.textContent = `${quiz.index + 1}/${totalWords}`;
-
   elQuestionWord.textContent = capitalize(word.en);
 
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
@@ -409,7 +367,6 @@ function showQuestion() {
 
   elOpt0.textContent = capitalize(opts[0]);
   elOpt1.textContent = capitalize(opts[1]);
-
   elOpt0.className = 'option-btn';
   elOpt1.className = 'option-btn';
   elOpt0.disabled  = false;
@@ -417,7 +374,7 @@ function showQuestion() {
   quiz.locked      = false;
 }
 
-// ── Şans popup ───────────────────────────────────────────
+// ── Şans popup ────────────────────────────────────────────
 function showChanceModal() {
   quiz.chanceActive = true;
   if (elChanceStars) elChanceStars.textContent = getStars();
@@ -451,11 +408,8 @@ elChanceDecline.addEventListener('click', () => {
 function proceedAfterWrong() {
   setTimeout(() => {
     quiz.index++;
-    if (quiz.index >= quiz.words.length) {
-      finishQuiz();
-    } else {
-      showQuestion();
-    }
+    if (quiz.index >= quiz.words.length) finishQuiz();
+    else showQuestion();
   }, 300);
 }
 
@@ -465,20 +419,15 @@ function handleAnswer(btnIdx) {
   quiz.locked = true;
 
   const isCorrect = btnIdx === quiz.correctPos;
-
   elOpt0.disabled = true;
   elOpt1.disabled = true;
 
   if (isCorrect) {
     (btnIdx === 0 ? elOpt0 : elOpt1).className = 'option-btn correct';
-
     setTimeout(() => {
       quiz.index++;
-      if (quiz.index >= quiz.words.length) {
-        finishQuiz();
-      } else {
-        showQuestion();
-      }
+      if (quiz.index >= quiz.words.length) finishQuiz();
+      else showQuestion();
     }, 500);
 
   } else {
@@ -487,24 +436,18 @@ function handleAnswer(btnIdx) {
     (quiz.correctPos === 0 ? elOpt0 : elOpt1).className = 'option-btn correct';
 
     if (!quiz.chanceUsed && getStars() > 0) {
-      setTimeout(() => {
-        quiz.mistakes--;
-        showChanceModal();
-      }, 800);
+      setTimeout(() => { quiz.mistakes--; showChanceModal(); }, 800);
     } else {
       setTimeout(() => {
         quiz.index++;
-        if (quiz.index >= quiz.words.length) {
-          finishQuiz();
-        } else {
-          showQuestion();
-        }
+        if (quiz.index >= quiz.words.length) finishQuiz();
+        else showQuestion();
       }, 800);
     }
   }
 }
 
-// ── Finish quiz ──────────────────────────────────────────
+// ── Finish quiz ───────────────────────────────────────────
 function finishQuiz() {
   elProgressFill.style.width = '100%';
 
@@ -518,8 +461,9 @@ function finishQuiz() {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
       const lvl    = LEVELS[quiz.levelIdx];
       const isExam = isExamItem(lvl.quizzes[quiz.quizIdx], lvl.id, quiz.quizIdx);
-      const next   = quiz.quizIdx + 1;
-      const hasNext = next < lvl.quizzes.length;
+
+      // Növbəti keçilə bilən quizi tap (boş olanları atla)
+      const nextPlayable = findNextPlayableQuiz(quiz.levelIdx, quiz.quizIdx);
 
       elResultEmoji.textContent = isExam ? '🏆' : '🎉';
       elResultTitle.textContent = isExam ? 'Exam keçildi!' : 'Mükəmməl!';
@@ -527,15 +471,31 @@ function finishQuiz() {
         ? 'Examı uğurla tamamladın!'
         : `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
 
-      elResultMainBtn.textContent = hasNext ? 'Növbəti →' : 'Ana səhifəyə qayıt';
-      elResultMainBtn.onclick = () => {
+      if (nextPlayable !== null) {
+        elResultMainBtn.textContent = 'Növbəti →';
+        elResultMainBtn.onclick = () => {
+          // Birbaşa növbəti quizi başlat, ana səhifəyə getmədən
+          startQuiz(quiz.levelIdx, nextPlayable);
+          elResultScreen.classList.add('hidden');
+        };
+      } else {
+        elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
+        elResultMainBtn.onclick = () => {
+          const li = quiz.levelIdx;
+          closeOverlays();
+          renderLevels();
+          scrollToCurrentNode(li);
+        };
+      }
+
+      elResultBackBtn.classList.remove('hidden');
+      elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+      elResultBackBtn.onclick = () => {
         const li = quiz.levelIdx;
         closeOverlays();
         renderLevels();
-        scrollToNextUnlocked(li);
+        scrollToCurrentNode(li);
       };
-
-      elResultBackBtn.classList.add('hidden');
 
     } else {
       elResultEmoji.textContent = '😅';
@@ -551,36 +511,51 @@ function finishQuiz() {
         const li = quiz.levelIdx;
         closeOverlays();
         renderLevels();
-        scrollToNextUnlocked(li);
+        scrollToCurrentNode(li);
       };
     }
   }, 250);
 }
 
-// ── Close / quit ─────────────────────────────────────────
+// ── Close / quit ──────────────────────────────────────────
 function closeOverlays() {
   elQuizScreen.classList.add('hidden');
   elResultScreen.classList.add('hidden');
 }
 
-function scrollToNextUnlocked(levelIdx) {
-  setTimeout(() => {
-    const cards      = document.querySelectorAll('.level-card');
-    const targetCard = cards[levelIdx];
-    if (!targetCard) return;
+// ── Ana səhifəyə qayıdanda cari node-u mərkəzə gətir ─────
+function scrollToCurrentNode(levelIdx) {
+  const cards      = document.querySelectorAll('.level-card');
+  const targetCard = cards[levelIdx];
+  if (!targetCard) return;
 
-    if (!targetCard.classList.contains('open')) {
-      toggleLevel(targetCard);
+  // Əgər bağlıdırsa aç
+  if (!targetCard.classList.contains('open')) {
+    toggleLevel(targetCard);
+  }
+
+  // Accordion animasiyası bitdikdən sonra scroll et
+  const body = targetCard.querySelector('.level-body');
+
+  const doScroll = () => {
+    // Pulse olan (yeni açılan) node-u tap, yoxdursa son unlocked-ı tap
+    const node = targetCard.querySelector('.path-node.pulse')
+              || targetCard.querySelector('.path-node.unlocked:last-of-type')
+              || targetCard.querySelector('.path-node.unlocked');
+    if (node) {
+      node.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+  };
 
-    setTimeout(() => {
-      const node = targetCard.querySelector('.path-node.pulse')
-                || targetCard.querySelector('.path-node.unlocked');
-      if (node) {
-        node.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }, 200);
-  }, 100);
+  if (targetCard.classList.contains('open') && body.style.maxHeight === 'none') {
+    // Artıq açıqdır — birbaşa scroll et
+    setTimeout(doScroll, 80);
+  } else {
+    // Açılma animasiyası gözlə
+    body.addEventListener('transitionend', () => {
+      setTimeout(doScroll, 80);
+    }, { once: true });
+  }
 }
 
 // ── Toast ─────────────────────────────────────────────────
@@ -616,7 +591,7 @@ elQuitBtn.addEventListener('click', () => {
     hideChanceModal();
     closeOverlays();
     renderLevels();
-    scrollToNextUnlocked(li);
+    scrollToCurrentNode(li);
   }
 });
 
