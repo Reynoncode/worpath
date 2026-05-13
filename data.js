@@ -4512,9 +4512,7 @@ const LEVELS = [
   { en: 'afterwards',    tr: 'sonradan',            wrong: 'daha sonra'       },
   { en: 'agenda',        tr: 'gündəlik',            wrong: 'proqram'          },
 ],
-      
-      [], [], [], [], [],
-      [], [], [], [], [],
+  
     ]
   },
 
