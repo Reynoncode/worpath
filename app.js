@@ -2,23 +2,47 @@
 //  WORDPATH — Application Logic
 // ============================================================
 
-// ── Storage key ───────────────────────────────────────────
-const STORAGE_KEY = 'wordpath_v1';
+// ── Storage keys ──────────────────────────────────────────
+const STORAGE_KEY      = 'wordpath_v1';
+const STARS_KEY        = 'wordpath_stars';
 
 // ── Quiz state ────────────────────────────────────────────
 const quiz = {
-  levelIdx:   null,
-  quizIdx:    null,
-  words:      [],       // shuffled copy for this session
-  index:      0,        // current question (0–19)
-  mistakes:   0,
-  correctPos: 0,        // which button (0=left, 1=right) is correct
-  locked:     false,    // prevent double-tap during feedback
+  levelIdx:     null,
+  quizIdx:      null,
+  words:        [],
+  index:        0,
+  mistakes:     0,
+  correctPos:   0,
+  locked:       false,
+  chanceUsed:   false,   // bu quiz-də şans işlədildi mi?
+  chanceActive: false,   // hal-hazırda şans popup-ı göstərilibmi?
 };
 
 // ── Progress ──────────────────────────────────────────────
-// progress[levelId][quizIdx] = 'locked' | 'unlocked' | 'completed'
 let progress = {};
+
+// ── Stars ─────────────────────────────────────────────────
+function getStars() {
+  return parseInt(localStorage.getItem(STARS_KEY) || '0', 10);
+}
+function setStars(n) {
+  localStorage.setItem(STARS_KEY, String(Math.max(0, n)));
+  renderStarCount();
+}
+function addStar() {
+  setStars(getStars() + 1);
+}
+function spendStar() {
+  const s = getStars();
+  if (s <= 0) return false;
+  setStars(s - 1);
+  return true;
+}
+function renderStarCount() {
+  const el = $('star-count');
+  if (el) el.textContent = getStars();
+}
 
 // Helper: safely check if a quiz item is an exam object
 function isExamItem(item) {
@@ -37,9 +61,7 @@ function loadProgress() {
     for (let i = 0; i < lvl.quizzes.length; i++) {
       if (!progress[lvl.id][i]) {
         const item = lvl.quizzes[i];
-
         if (isExamItem(item)) {
-          // Exam həmişə unlocked başlayır — skip checkpoint kimi işləyir
           progress[lvl.id][i] = 'unlocked';
         } else {
           progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
@@ -50,6 +72,7 @@ function loadProgress() {
 
   saveProgress();
 }
+
 function saveProgress() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 }
@@ -61,11 +84,12 @@ function getStatus(levelIdx, quizIdx) {
 
 function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
+  const wasCompleted = progress[lvl.id][quizIdx] === 'completed';
+
   progress[lvl.id][quizIdx] = 'completed';
 
   const item = lvl.quizzes[quizIdx];
 
-  // Exam keçildi → sourceQuizzes-dəki bütün quizləri completed say (skip mexanizmi)
   if (isExamItem(item)) {
     item.sourceQuizzes.forEach(qi => {
       if (progress[lvl.id][qi] !== 'completed') {
@@ -77,15 +101,18 @@ function markCompleted(levelIdx, quizIdx) {
   const next = quizIdx + 1;
   if (next < lvl.quizzes.length) {
     const nextItem = lvl.quizzes[next];
-    if (isExamItem(nextItem)) {
-      // Exam nodeları həmişə unlocked qalır, əlavə iş lazım deyil
-    } else {
-      // Normal quiz — birbaşa aç
+    if (!isExamItem(nextItem)) {
       if (progress[lvl.id][next] === 'locked') {
         progress[lvl.id][next] = 'unlocked';
       }
     }
   }
+
+  // Yeni tamamlanan quiz üçün 1 ulduz ver (əvvəl tamamlanmışdısa vermir)
+  if (!wasCompleted) {
+    addStar();
+  }
+
   saveProgress();
 }
 
@@ -116,10 +143,15 @@ const elResultDesc     = $('result-desc');
 const elResultMainBtn  = $('result-main-btn');
 const elResultBackBtn  = $('result-back-btn');
 const elToast          = $('toast');
+const elChanceModal    = $('chance-modal');
+const elChanceAccept   = $('chance-accept');
+const elChanceDecline  = $('chance-decline');
+const elChanceStars    = $('chance-stars');
 
 // ── Render level list ────────────────────────────────────
 function renderLevels() {
   elCompletedCount.textContent = completedCount();
+  renderStarCount();
   elLevelList.innerHTML = '';
 
   LEVELS.forEach((lvl, li) => {
@@ -149,10 +181,9 @@ function renderLevels() {
 
     card.querySelector('.level-header').addEventListener('click', () => toggleLevel(card));
 
-    // Attach quiz-node click handlers after inserting into DOM
     card.querySelectorAll('.path-node').forEach((node) => {
       node.addEventListener('click', () => {
-        const qi = parseInt(node.dataset.quizIdx, 10);
+        const qi     = parseInt(node.dataset.quizIdx, 10);
         const status = node.dataset.status;
 
         if (status === 'locked') {
@@ -187,7 +218,7 @@ function renderQuizPath(lvl, li) {
   lvl.quizzes.forEach((item, qi) => {
     const status = getStatus(li, qi);
     const isFirst = qi === 0;
-    const isExam = isExamItem(item); // ← FIX: safe check
+    const isExam  = isExamItem(item);
 
     if (!isFirst) html += '<div class="path-line"></div>';
 
@@ -229,7 +260,6 @@ function renderQuizPath(lvl, li) {
 
     } else {
       if (isExam) {
-        // Exam həmişə tıklanabilir görünür — skip checkpoint kimi
         html += `
           <div class="path-node unlocked exam-node"
                data-quiz-idx="${qi}"
@@ -264,7 +294,6 @@ function renderQuizPath(lvl, li) {
 function toggleLevel(card) {
   const isOpen = card.classList.contains('open');
 
-  // Close all open cards first
   document.querySelectorAll('.level-card.open').forEach(c => {
     const b = c.querySelector('.level-body');
     b.style.maxHeight = '0px';
@@ -288,23 +317,18 @@ function toggleLevel(card) {
 
 // ── Start quiz ───────────────────────────────────────────
 function startQuiz(levelIdx, quizIdx) {
-  quiz.levelIdx = levelIdx;
-  quiz.quizIdx  = quizIdx;
-  quiz.mistakes = 0;
-  quiz.index    = 0;
-  quiz.locked   = false;
+  quiz.levelIdx     = levelIdx;
+  quiz.quizIdx      = quizIdx;
+  quiz.mistakes     = 0;
+  quiz.index        = 0;
+  quiz.locked       = false;
+  quiz.chanceUsed   = false;
+  quiz.chanceActive = false;
 
-  const item = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
-  const isExam = isExamItem(item); // ← FIX: safe check
-
-  elResultEmoji.textContent = isExam ? '🎓' : '🎉';
-  elResultTitle.textContent = isExam ? 'Exam keçildi!' : 'Mükəmməl!';
-  elResultDesc.textContent  = isExam
-    ? `Examı uğurla tamamladın! Növbəti bölməyə keçə bilərsən.`
-    : `Bütün ${quiz.words.length} sözü düzgün cavablandırdın!`;
+  const item   = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
+  const isExam = isExamItem(item);
 
   if (isExam) {
-    // Exam: sourceQuizzes-dən bütün sözləri topla, 20-sini random seç
     const lvl = LEVELS[levelIdx];
     let allWords = [];
     item.sourceQuizzes.forEach(qi => {
@@ -350,9 +374,65 @@ function showQuestion() {
   quiz.locked      = false;
 }
 
+// ── Şans popup-ını göstər ────────────────────────────────
+function showChanceModal() {
+  quiz.chanceActive = true;
+  elChanceStars.textContent = getStars();
+  elChanceModal.classList.remove('hidden');
+  elChanceModal.classList.add('show');
+}
+
+function hideChanceModal() {
+  quiz.chanceActive = false;
+  elChanceModal.classList.remove('show');
+  setTimeout(() => elChanceModal.classList.add('hidden'), 250);
+}
+
+// Şans qəbul edildi — ulduzu xərcle, eyni sualı təkrar göstər
+elChanceAccept.addEventListener('click', () => {
+  if (!spendStar()) {
+    showToast('Ulduzun yoxdur 😔');
+    hideChanceModal();
+    // Ulduzsuz şans yoxdur — səhvi say, davam et
+    proceedAfterWrong();
+    return;
+  }
+  quiz.chanceUsed = true;
+  hideChanceModal();
+
+  // Eyni sualı yenidən göstər (indeksi artırma)
+  elOpt0.className = 'option-btn';
+  elOpt1.className = 'option-btn';
+  elOpt0.disabled  = false;
+  elOpt1.disabled  = false;
+  quiz.locked      = false;
+
+  // Sualı yenidən render et (düymə mövqeyini dəyişmək üçün)
+  showQuestion();
+});
+
+// Şans rədd edildi — normal axışla davam et
+elChanceDecline.addEventListener('click', () => {
+  hideChanceModal();
+  proceedAfterWrong();
+});
+
+// Səhvdən sonra növbəti suala keç (şans olmadan)
+function proceedAfterWrong() {
+  setTimeout(() => {
+    quiz.index++;
+    if (quiz.index >= quiz.words.length) {
+      finishQuiz();
+    } else {
+      showQuestion();
+    }
+  }, 300);
+}
+
 // ── Handle answer click ──────────────────────────────────
 function handleAnswer(btnIdx) {
   if (quiz.locked) return;
+  if (quiz.chanceActive) return;
   quiz.locked = true;
 
   const isCorrect = btnIdx === quiz.correctPos;
@@ -362,20 +442,41 @@ function handleAnswer(btnIdx) {
 
   if (isCorrect) {
     (btnIdx === 0 ? elOpt0 : elOpt1).className = 'option-btn correct';
+
+    setTimeout(() => {
+      quiz.index++;
+      if (quiz.index >= quiz.words.length) {
+        finishQuiz();
+      } else {
+        showQuestion();
+      }
+    }, 500);
+
   } else {
+    // Səhv cavab
     quiz.mistakes++;
     (btnIdx === 0 ? elOpt0 : elOpt1).className = 'option-btn wrong';
     (quiz.correctPos === 0 ? elOpt0 : elOpt1).className = 'option-btn correct';
-  }
 
-  setTimeout(() => {
-    quiz.index++;
-    if (quiz.index >= quiz.words.length) {
-      finishQuiz();
+    // Şans hələ işlədilməyibsə və ulduz varsa → popup göstər
+    if (!quiz.chanceUsed && getStars() > 0) {
+      setTimeout(() => {
+        // Səhvi geri götür (şans teklif edirik)
+        quiz.mistakes--;
+        showChanceModal();
+      }, 800);
     } else {
-      showQuestion();
+      // Şans yoxdur ya işlənib — düzgün cavabı göstər, davam et
+      setTimeout(() => {
+        quiz.index++;
+        if (quiz.index >= quiz.words.length) {
+          finishQuiz();
+        } else {
+          showQuestion();
+        }
+      }, 800);
     }
-  }, isCorrect ? 500 : 800);
+  }
 }
 
 // ── Finish quiz ──────────────────────────────────────────
@@ -390,11 +491,11 @@ function finishQuiz() {
 
     if (won) {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
-      const lvl       = LEVELS[quiz.levelIdx];
-      const item      = lvl.quizzes[quiz.quizIdx];
-      const examWon   = isExamItem(item);
-      const next      = quiz.quizIdx + 1;
-      const hasNext   = next < lvl.quizzes.length;
+      const lvl     = LEVELS[quiz.levelIdx];
+      const item    = lvl.quizzes[quiz.quizIdx];
+      const examWon = isExamItem(item);
+      const next    = quiz.quizIdx + 1;
+      const hasNext = next < lvl.quizzes.length;
 
       if (examWon) {
         const skipped = item.sourceQuizzes.length;
@@ -445,7 +546,7 @@ function closeOverlays() {
 
 function scrollToNextUnlocked(levelIdx) {
   setTimeout(() => {
-    const cards = document.querySelectorAll('.level-card');
+    const cards      = document.querySelectorAll('.level-card');
     const targetCard = cards[levelIdx];
     if (!targetCard) return;
 
@@ -493,6 +594,7 @@ elOpt1.addEventListener('click', () => handleAnswer(1));
 elQuitBtn.addEventListener('click', () => {
   if (confirm('Testdən çıxmaq istəyirsən? İrəliləyişin saxlanmayacaq.')) {
     const li = quiz.levelIdx;
+    hideChanceModal();
     closeOverlays();
     renderLevels();
     scrollToNextUnlocked(li);

@@ -20,8 +20,8 @@
   --wrong:     #E05252;
 
   --header-h: 58px;
-  --r:  16px;   /* card radius */
-  --rs: 10px;   /* small radius */
+  --r:  16px;
+  --rs: 10px;
 
   --font: 'Nunito', 'Segoe UI', sans-serif;
 }
@@ -211,7 +211,6 @@ button { font-family: var(--font); }
   transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1);
 }
 
-
 /* ── QUIZ PATH (circles) ────────────────────── */
 .quiz-path {
   display: flex;
@@ -226,14 +225,12 @@ button { font-family: var(--font); }
   align-items: center;
 }
 
-/* Line segment connecting two circles */
 .path-line {
   width: 2px;
   height: 26px;
   background: var(--border);
 }
 
-/* The circle node */
 .path-node {
   width: 62px;
   height: 62px;
@@ -264,7 +261,6 @@ button { font-family: var(--font); }
   color: var(--text-faint);
 }
 
-/* STATUS: LOCKED */
 .path-node.locked {
   background: var(--border-light);
   border-color: var(--border);
@@ -281,7 +277,6 @@ button { font-family: var(--font); }
   stroke-linecap: round;
 }
 
-/* STATUS: UNLOCKED */
 .path-node.unlocked {
   background: var(--surface);
   border-color: currentColor;
@@ -297,7 +292,6 @@ button { font-family: var(--font); }
   box-shadow: 0 6px 20px rgba(0,0,0,0.16);
 }
 
-/* Pulse animation on first unlocked node */
 .path-node.unlocked.pulse {
   animation: pulse 2s ease infinite;
 }
@@ -307,7 +301,6 @@ button { font-family: var(--font); }
   50%      { box-shadow: 0 0 0 8px rgba(74,143,231,0.15), 0 4px 14px rgba(0,0,0,0.10); }
 }
 
-/* STATUS: COMPLETED */
 .path-node.completed {
   border-color: var(--completed);
   background: var(--completed);
@@ -324,13 +317,8 @@ button { font-family: var(--font); }
   stroke-linejoin: round;
 }
 
-.path-node.completed:hover {
-  transform: scale(1.04);
-}
-
-.path-node.completed:active {
-  transform: scale(0.94);
-}
+.path-node.completed:hover { transform: scale(1.04); }
+.path-node.completed:active { transform: scale(0.94); }
 
 .path-node.exam-node {
   width: 70px;
@@ -491,9 +479,7 @@ button { font-family: var(--font); }
   color: #A83030;
 }
 
-.option-btn:disabled {
-  cursor: default;
-}
+.option-btn:disabled { cursor: default; }
 
 /* ── RESULT SCREEN ──────────────────────────── */
 .result-body {
@@ -595,6 +581,145 @@ button { font-family: var(--font); }
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
+
+/* ── CHANCE MODAL ───────────────────────────── */
+.chance-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 350;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.chance-backdrop.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.chance-backdrop.hidden {
+  display: none !important;
+}
+
+.chance-sheet {
+  background: var(--surface);
+  border-radius: 24px 24px 0 0;
+  padding: 28px 24px 36px;
+  width: 100%;
+  max-width: 480px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.34,1.1,0.64,1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.chance-backdrop.show .chance-sheet {
+  transform: translateY(0);
+}
+
+.chance-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.chance-icon {
+  font-size: 54px;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.chance-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.chance-desc {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.chance-cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #FFFAEC;
+  border: 1.5px solid #F0D060;
+  border-radius: 14px;
+  padding: 8px 18px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #9A7B00;
+  margin: 4px 0;
+}
+
+.chance-cost svg {
+  width: 16px;
+  height: 16px;
+  stroke: #F0C030;
+  fill: #F0C030;
+}
+
+.chance-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.btn-chance-accept {
+  width: 100%;
+  padding: 16px;
+  background: #F0C030;
+  color: #5A4200;
+  border: none;
+  border-radius: var(--rs);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-chance-accept:active {
+  transform: scale(0.97);
+  opacity: 0.88;
+}
+
+.btn-chance-decline {
+  width: 100%;
+  padding: 13px;
+  background: transparent;
+  color: var(--text-mid);
+  border: 2px solid var(--border);
+  border-radius: var(--rs);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-chance-decline:active { background: var(--border-light); }
 
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
