@@ -210,7 +210,8 @@ const STARS_KEY   = 'wordpath_stars';
 // ── Exam ID-ləri (0-based index, level id ilə) ────────────
 const EXAM_IDS = {
   'a1': new Set([4, 10, 14, 18, 23, 28, 32, 36, 40, 44, 48, 52]),
-  'a2': new Set([4, 9, 14, 17, 22, 27, 30, 33, 36, 39])
+  'a2': new Set([4, 9, 14, 17, 22, 27, 30, 33, 36, 39]),
+  'b1': new Set([4, 8, 11, 15, 19, 23, 26, 30])
 };
 
 // ── Səviyyə test məlumatları ──────────────────────────────
