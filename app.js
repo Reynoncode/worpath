@@ -385,6 +385,7 @@ function markCompleted(levelIdx, quizIdx) {
  
   if (!wasCompleted) addStar();
   saveProgress();
+  updateStreak();
 }
  
 function completedCount() {
@@ -1018,6 +1019,19 @@ function showQuestion() {
   elOpt1.disabled    = false;
   quiz.locked        = false;
 }
+
+function updateStreak() {
+  const today = new Date().toDateString();
+  const last  = localStorage.getItem('wordpath_last_date');
+  let streak  = parseInt(localStorage.getItem('wordpath_streak') || '0', 10);
+
+  if (last === today) return; // eyni gün, streak dəyişmir
+  const yesterday = new Date(Date.now() - 86400000).toDateString();
+  streak = (last === yesterday) ? streak + 1 : 1;
+
+  localStorage.setItem('wordpath_streak',   String(streak));
+  localStorage.setItem('wordpath_last_date', today);
+}
  
 // ── Şans popup ────────────────────────────────────────────
 function showChanceModal() {
@@ -1041,6 +1055,12 @@ elChanceAccept.addEventListener('click', () => {
     return;
   }
   quiz.chanceUsed = true;
+   const word = quiz.words[quiz.index];
+  if (word) {
+    const errors = JSON.parse(localStorage.getItem('wordpath_errors') || '{}');
+    if (errors[word.en]) errors[word.en].starFixed = true;
+    localStorage.setItem('wordpath_errors', JSON.stringify(errors));
+  }
   hideChanceModal();
   setTimeout(() => showQuestion(), 260);
 });
@@ -1092,6 +1112,8 @@ function handleAnswer(btnIdx) {
     quiz.mistakes++;
  
     if (quiz.mode === 'review') reviewState.wrong++;
+
+    logError(quiz.words[quiz.index]);
  
     if (quiz.mode === 'leveltest') {
       lt_handleAnswer(false);
@@ -1152,16 +1174,24 @@ function finishQuiz() {
     return;
   }
  
-  // Normal mode nəticəsi
+// Normal mode nəticəsi
   setTimeout(() => {
     elQuizScreen.classList.add('hidden');
     elResultScreen.classList.remove('hidden');
- 
+
     elResultStats.classList.add('hidden');
     elLevelResultCard.classList.add('hidden');
- 
+
+    // ── ƏLAVƏ ET ──────────────────────────────
+    logSession({
+      correct:  quiz.words.length - quiz.mistakes,
+      total:    quiz.words.length,
+      learned:  quiz.words.length - quiz.mistakes,
+    });
+    // ──────────────────────────────────────────
+
     const won = quiz.mistakes === 0;
- 
+    
     if (won) {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
       const lvl          = LEVELS[quiz.levelIdx];
@@ -1276,6 +1306,39 @@ function shuffle(arr) {
 function capitalize(str) {
   if (!str) return '';
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+function logError(word) {
+  if (!word || !word.en) return;
+  const errors = JSON.parse(localStorage.getItem('wordpath_errors') || '{}');
+  if (!errors[word.en]) {
+    errors[word.en] = { tr: word.tr, count: 0, starFixed: false };
+  }
+  errors[word.en].count++;
+  localStorage.setItem('wordpath_errors', JSON.stringify(errors));
+}
+
+function logSession({ correct, total, learned }) {
+  const log = JSON.parse(localStorage.getItem('wordpath_session_log') || '[]');
+  log.push({
+    date:    new Date().toISOString(),
+    correct,
+    total,
+    learned,
+  });
+  localStorage.setItem('wordpath_session_log', JSON.stringify(log));
+}
+
+function updateStreak() {
+  const today = new Date().toDateString();
+  const last  = localStorage.getItem('wordpath_last_date');
+  let streak  = parseInt(localStorage.getItem('wordpath_streak') || '0', 10);
+
+  if (last === today) return;
+  const yesterday = new Date(Date.now() - 86400000).toDateString();
+  streak = (last === yesterday) ? streak + 1 : 1;
+
+  localStorage.setItem('wordpath_streak',    String(streak));
+  localStorage.setItem('wordpath_last_date', today);
 }
  
 // ── Event listeners ───────────────────────────────────────
