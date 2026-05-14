@@ -123,7 +123,7 @@ button { font-family: var(--font); }
   gap: 8px;
 }
 
-/* Icon-only buttons in header (review + test) */
+/* Icon-only buttons in header */
 .header-action-btn {
   width: 36px;
   height: 36px;
@@ -152,34 +152,26 @@ button { font-family: var(--font); }
   background: var(--border-light);
 }
 
-/* Review button — subtle outline */
-.review-btn {
-  border-color: #D0CAFF;
-  background: #F5F3FF;
-}
-
-.review-btn svg {
-  stroke: #6C4FEB;
-}
-
-.review-btn:active {
-  background: #EDE9FF;
-  border-color: #B8AFFF;
-}
-
-/* Test button — filled dark */
+/* ── Review + Test btns: header-dən GİZLƏDİLİR ─ */
+.review-btn,
 .test-btn {
-  border-color: var(--text-primary);
-  background: var(--text-primary);
+  display: none !important;
 }
 
-.test-btn svg {
-  stroke: #fff;
+/* ── Stats button — açıq solğun yaşıl ──────── */
+.stats-btn {
+  border-color: #C3E8D0;
+  background:   #EDF8F2;
 }
 
-.test-btn:active {
-  opacity: 0.82;
-  transform: scale(0.92);
+.stats-btn svg {
+  stroke: #2A9257;
+}
+
+.stats-btn:active {
+  background:     #D6F0E3;
+  border-color:   #9DD4B8;
+  transform:      scale(0.92);
 }
 
 /* (Legacy pill style — kept for compatibility) */
@@ -223,6 +215,7 @@ button { font-family: var(--font); }
   padding: 24px 16px 80px;
 }
 
+/* ── PAGE SUBTITLE — 2 böyük düymə yan-yana ── */
 .page-subtitle {
   display: flex;
   gap: 10px;
@@ -231,32 +224,43 @@ button { font-family: var(--font); }
 }
 
 .action-pill-btn {
+  /* Hər düymə mövcud genişliyin ~50%-ni tutur; ikisi birdən sığır */
+  flex: 1;
+  min-width: 0;
+
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 10px 18px;
-  border-radius: 14px;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 16px 12px;
+  border-radius: var(--r);          /* level kartlarla eyni radius */
   border: 2px solid var(--border);
   background: var(--surface);
+
   font-family: var(--font);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   cursor: pointer;
   transition: background 0.15s, transform 0.1s, border-color 0.15s;
   white-space: nowrap;
+
+  /* level kartlarla eyni kölgə */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
 .action-pill-btn svg {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
 .action-pill-btn:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
   background: var(--border-light);
 }
 
+/* Təkrar et — bənövşəyi */
 .review-pill {
   color: #6C4FEB;
   border-color: #D0CAFF;
@@ -271,6 +275,7 @@ button { font-family: var(--font); }
   background: #EDE9FF;
 }
 
+/* Səviyyəni test et — tünd */
 .test-pill {
   color: var(--surface);
   border-color: var(--text-primary);
@@ -1019,7 +1024,6 @@ button { font-family: var(--font); }
 
 .modal-backdrop.show .modal-sheet { transform: translateY(0); }
 
-/* Handle bar inside modal sheet */
 .modal-handle {
   width: 40px;
   height: 4px;
@@ -1028,7 +1032,6 @@ button { font-family: var(--font); }
   margin-bottom: 4px;
 }
 
-/* Header row with icon + title side by side */
 .modal-header-row {
   display: flex;
   align-items: center;
@@ -1066,7 +1069,6 @@ button { font-family: var(--font); }
   width: 100%;
 }
 
-/* Button rendered by app.js with --lvl-color variable */
 .review-level-btn {
   display: flex;
   flex-direction: column;
@@ -1088,23 +1090,9 @@ button { font-family: var(--font); }
   opacity: 0.85;
 }
 
-.rlb-icon {
-  font-size: 22px;
-  line-height: 1;
-}
-
-.rlb-name {
-  font-size: 14px;
-  font-weight: 900;
-  color: var(--text-primary);
-  letter-spacing: 0.3px;
-}
-
-.rlb-count {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-mid);
-}
+.rlb-icon  { font-size: 22px; line-height: 1; }
+.rlb-name  { font-size: 14px; font-weight: 900; color: var(--text-primary); letter-spacing: 0.3px; }
+.rlb-count { font-size: 11px; font-weight: 700; color: var(--text-mid); }
 
 /* ── LEVEL TEST RESULT extras ───────────────── */
 .lt-result-body { gap: 12px; }
@@ -1147,23 +1135,12 @@ button { font-family: var(--font); }
   min-width: 70px;
 }
 
-.lt-stat-num {
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--text-primary);
-}
-
-.lt-stat-label {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--text-faint);
-  text-transform: uppercase;
-}
+.lt-stat-num   { font-size: 22px; font-weight: 900; color: var(--text-primary); }
+.lt-stat-label { font-size: 11px; font-weight: 700; color: var(--text-faint); text-transform: uppercase; }
 
 .lt-stat-item.green .lt-stat-num { color: var(--completed); }
 .lt-stat-item.red   .lt-stat-num { color: var(--wrong); }
 
-/* Level test hint badge (in question-hint area) */
 .lt-level-hint {
   display: inline-block;
   font-size: 11px;
