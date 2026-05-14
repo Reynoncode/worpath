@@ -5237,7 +5237,7 @@ const LEVELS = [
   // ║  LEVEL 4 — B2: Orta-Aşağı                        ║
   // ╚══════════════════════════════════════════════════╝
   {
-    id: 'b1b',
+    id: 'b2',
     name: 'B2 — UPPER İNTERMEDİATE',
     icon: '🌲',
     color: '#E8A020',
@@ -6207,7 +6207,7 @@ const LEVELS = [
   // ║  LEVEL 5 — C1: Orta Səviyyə I                   ║
   // ╚══════════════════════════════════════════════════╝
   {
-    id: 'b2a',
+    id: 'c1',
     name: 'C1 — ADVANCED',
     icon: '⚡',
     color: '#2EAA6E',
@@ -7176,7 +7176,7 @@ const LEVELS = [
   // ║  LEVEL 6 — C2: Orta Səviyyə II                 ║
   // ╚══════════════════════════════════════════════════╝
   {
-    id: 'b2b',
+    id: 'c2',
     name: 'C2 — MASTERY',
     icon: '🔥',
     color: '#D44E30',
