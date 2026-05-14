@@ -29,7 +29,7 @@
         <div class="header-actions">
           <!-- Ümumi Təkrar düyməsi -->
           <button class="header-action-btn review-btn" id="review-btn" title="Ümumi Təkrar">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
               <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
               <path d="M3 3v5h5"/>
             </svg>
@@ -37,9 +37,18 @@
 
           <!-- Səviyyəni Test Et düyməsi -->
           <button class="header-action-btn test-btn" id="level-test-btn" title="Səviyyəni Test Et">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
               <path d="M9 11l3 3L22 4"/>
               <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </button>
+
+          <!-- ── YENİ: Statistika düyməsi ── -->
+          <button class="header-action-btn" id="stats-btn" title="Statistika">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/>
+              <line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6"  y1="20" x2="6"  y2="14"/>
             </svg>
           </button>
 
@@ -176,11 +185,75 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════
+       STATİSTİKA EKRANI (full-screen overlay)
+       — YENİ əlavə edildi —
+  ═══════════════════════════════════════════ -->
+  <div id="stats-screen" class="screen-overlay hidden">
+
+    <!-- Başlıq paneli -->
+    <div class="quiz-header" style="border-bottom: 1px solid #E8E2D9;">
+      <button class="icon-btn" id="stats-close-btn" aria-label="Bağla">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Statistika məzmunu buraya render olunur -->
+    <div id="stats-container" style="overflow-y: auto; height: calc(100vh - 60px);"></div>
+
+  </div>
+
   <!-- Toast notification -->
   <div class="toast" id="toast"></div>
-  
-  <script src="stats.js"></script>
-  <script src="stats-page.js"></script>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+
+  <!-- ── SKRIPTLƏR (sıra vacibdir) ── -->
+  <script src="stats.js"></script>       <!-- 1. Data mühərriki      -->
+  <script src="stats-page.js"></script>  <!-- 2. UI render           -->
+  <script src="data.js"></script>        <!-- 3. Söz dataları        -->
+  <script src="app.js"></script>         <!-- 4. Əsas tətbiq məntiqi -->
+
+  <!-- ── STATİSTİKA İNTEQRASİYASI ─────────────────────────────────────────
+       Bu blok app.js-dən SONRA işləyir, buna görə burada təhlükəsizdir.
+  ──────────────────────────────────────────────────────────────────────── -->
+  <script>
+    // 1. Tətbiq açılanda streak yenilə
+    Stats.updateStreak();
+
+    // 2. Statistika düyməsi — ekranı aç
+    document.getElementById('stats-btn').addEventListener('click', function () {
+      StatsPage.render('stats-container');   // hər açılanda təzə render et
+      document.getElementById('stats-screen').classList.remove('hidden');
+    });
+
+    // 3. Statistika ekranını bağla
+    document.getElementById('stats-close-btn').addEventListener('click', function () {
+      document.getElementById('stats-screen').classList.add('hidden');
+    });
+
+    // ── app.js-də edilməli dəyişikliklər ─────────────────────────────────
+    //
+    // A) Hər cavab yoxlananda (səhv və ya düzgün) — app.js-dəki həmin yerə əlavə et:
+    //
+    //    Stats.recordAnswer(
+    //      currentWord.en,          // sözün ingiliscəsi  ("ambiguous")
+    //      currentLevel.id,         // səviyyə kodu       ("B1")
+    //      currentWord.az,          // azərbaycancası     ("qeyri-müəyyən")
+    //      isCorrect                // true / false
+    //    );
+    //
+    // B) Test bitib ulduz veriləndə — app.js-dəki həmin yerə əlavə et:
+    //
+    //    Stats.addStar(1);
+    //
+    // C) chance-accept düyməsi klikləndikdə (ulduz xərclənir) — app.js-dəki həmin yerə:
+    //
+    //    Stats.useStarFix(currentWord.en);
+    //
+    // ─────────────────────────────────────────────────────────────────────
+  </script>
+
 </body>
+</html>
