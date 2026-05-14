@@ -78,7 +78,6 @@ const QUIZ_NAMES = {
     37: 'Environment',
     38: 'Travel & Tourism',
   },
-  {
   'b1': {
     0: 'Education & Learning 1',
     1: 'Education & Learning 2',
@@ -104,7 +103,6 @@ const QUIZ_NAMES = {
     26: 'Sports & Fitness',
     27: 'Language & Writing'
   },
-  {
   'b2': {
     0: 'Education & Learning',
     1: 'Personal Development & Skills',
@@ -137,7 +135,6 @@ const QUIZ_NAMES = {
     35: 'Work & Employment',
     37: 'Success & Achievement'
   },
-  {
   'c1': {
     0: 'Negative Emotions & States',
     1: 'Positive Qualities',
@@ -166,7 +163,6 @@ const QUIZ_NAMES = {
     30: 'Emotion & Psychological States 1',
     31: 'Emotion & Psychological States 2'
   },
-  {
   'c2': {
     0: 'Weakness & Decline',
     1: 'Resistance & Stubbornness',
