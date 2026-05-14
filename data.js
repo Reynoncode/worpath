@@ -3848,7 +3848,7 @@ const LEVELS = [
   // ║  LEVEL 3 — B1: Orta-Aşağı I                     ║
   // ╚══════════════════════════════════════════════════╝
   {
-    id: 'b1a',
+    id: 'b1',
     name: 'B1 — İNTERMEDİATE',
     icon: '🌳',
     color: '#E07A30',
