@@ -249,22 +249,18 @@ const reviewState = {
 };
  
 // ── Level test state ──────────────────────────────────────
-// Mərhələ 1 (≤12 sual): ikili axtarış ilə zona tap
-// Mərhələ 2 (12 sual):  tapılan zonada dərin yoxlama
-// Mərhələ 3 (6 sual):   üst səviyyə yoxlaması (75%+ keçdisə)
 const LT_TOTAL        = 30;
-const LT_P1_PER_LEVEL = 2;   // Mərhələ 1-də hər səviyyədən neçə sual
-const LT_P1_PASS      = 1;   // 2-dən ≥1 düz → "bilir"
-const LT_P2_COUNT     = 12;  // Mərhələ 2 sual sayı
-const LT_P2_STRONG    = 0.75; // ≥75% → möhkəm, üst hədd yoxlanır
-const LT_P2_WEAK      = 0.50; // <50% → bir aşağı en
-const LT_P3_COUNT     = 6;   // Mərhələ 3 sual sayı
-const LT_P3_UPGRADE   = 4;   // 6-dan ≥4 düz → bir üst səviyyəyə qalx
+const LT_P1_PER_LEVEL = 2;
+const LT_P1_PASS      = 1;
+const LT_P2_COUNT     = 12;
+const LT_P2_STRONG    = 0.75;
+const LT_P2_WEAK      = 0.50;
+const LT_P3_COUNT     = 6;
+const LT_P3_UPGRADE   = 4;
  
 const levelTestState = {
   phase:        1,
   totalAsked:   0,
-  // Mərhələ 1
   p1_lo:        0,
   p1_hi:        5,
   p1_mid:       -1,
@@ -272,17 +268,14 @@ const levelTestState = {
   p1_wordIdx:   0,
   p1_correct:   0,
   p1_results:   {},
-  // Mərhələ 2
   p2_levelId:   null,
   p2_words:     [],
   p2_wordIdx:   0,
   p2_correct:   0,
-  // Mərhələ 3
   p3_levelId:   null,
   p3_words:     [],
   p3_wordIdx:   0,
   p3_correct:   0,
-  // Final
   finalLevelId: null,
   usedWordKeys: new Set(),
 };
@@ -383,7 +376,29 @@ function markCompleted(levelIdx, quizIdx) {
     }
   }
  
-  if (!wasCompleted) addStar();
+  if (!wasCompleted) {
+    addStar();
+    Stats.addStar(1); // ── STATS: yeni ulduz qeydə alınır
+  }
+
+  // ── STATS: streak yenilə ──────────────────────────────
+  const today = new Date().toISOString().slice(0, 10);
+  const lastDate = localStorage.getItem('wordpath_last_date') || '';
+  const streak = parseInt(localStorage.getItem('wordpath_streak') || '0', 10);
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yStr = yesterday.toISOString().slice(0, 10);
+  if (lastDate === today) {
+    // eyni gün — dəyişmə
+  } else if (lastDate === yStr) {
+    localStorage.setItem('wordpath_streak', String(streak + 1));
+    localStorage.setItem('wordpath_last_date', today);
+  } else {
+    localStorage.setItem('wordpath_streak', '1');
+    localStorage.setItem('wordpath_last_date', today);
+  }
+  // ─────────────────────────────────────────────────────
+
   saveProgress();
 }
  
@@ -435,7 +450,6 @@ const elReviewClose     = $('review-close');
 function renderLevels() {
   renderStarCount();
  
-  // Subtitle sahəsini düymələrlə render et
   const subtitle = document.getElementById('page-subtitle');
   if (subtitle) {
     subtitle.innerHTML = `
@@ -656,7 +670,6 @@ function startReviewMode(levelId) {
 //  SƏVİYYƏNİ TEST ET — 3 Mərhələli Adaptiv Sistem
 // ══════════════════════════════════════════════
  
-// ── İstifadə olunmamış sözlər seç ────────────────────────
 function lt_pickFreshWords(levelId, count) {
   const all = getAllWordsForLevel(levelId).filter(w => {
     const key = levelId + '|' + w.en;
@@ -667,7 +680,6 @@ function lt_pickFreshWords(levelId, count) {
   return picked;
 }
  
-// ── Sual göstər (ümumi) ───────────────────────────────────
 function lt_renderQuestion(word, hint) {
   const asked = levelTestState.totalAsked;
   elProgressFill.style.width = `${(asked / LT_TOTAL) * 100}%`;
@@ -689,7 +701,6 @@ function lt_renderQuestion(word, hint) {
   quiz.locked        = false;
 }
  
-// ── GİRİŞ NÖQTƏSI ────────────────────────────────────────
 function startLevelTest() {
   Object.assign(levelTestState, {
     phase:        1,
@@ -726,9 +737,6 @@ function startLevelTest() {
   lt_startPhase1();
 }
  
-// ════════════════════════════════════════════
-//  MƏRHƏLƏ 1 — İkili axtarış (≤12 sual)
-// ════════════════════════════════════════════
 function lt_startPhase1() {
   const mid     = Math.floor((levelTestState.p1_lo + levelTestState.p1_hi) / 2);
   const levelId = LEVEL_ORDER[mid];
@@ -789,7 +797,6 @@ function lt_evalPhase1Block(passed) {
 }
  
 function lt_finishPhase1() {
-  // Bildiyimiz ən yüksək səviyyəni tap
   let zoneIdx = 0;
   const results = levelTestState.p1_results;
   const keys    = Object.keys(results);
@@ -810,9 +817,6 @@ function lt_finishPhase1() {
   lt_startPhase2();
 }
  
-// ════════════════════════════════════════════
-//  MƏRHƏLƏ 2 — Əsas zona (12 sual)
-// ════════════════════════════════════════════
 function lt_startPhase2() {
   levelTestState.phase      = 2;
   levelTestState.p2_wordIdx = 0;
@@ -857,13 +861,11 @@ function lt_finishPhase2() {
   const zoneIdx = LEVEL_ORDER.indexOf(levelTestState.p2_levelId);
  
   if (pct < LT_P2_WEAK && zoneIdx > 0) {
-    // 50%-dən az → bir aşağı en
     levelTestState.finalLevelId = LEVEL_ORDER[zoneIdx - 1];
   } else {
     levelTestState.finalLevelId = levelTestState.p2_levelId;
   }
  
-  // 75%+ və üst səviyyə varsa → Mərhələ 3
   const canUpgrade = zoneIdx < LEVEL_ORDER.length - 1;
   if (pct >= LT_P2_STRONG && canUpgrade) {
     levelTestState.p3_levelId = LEVEL_ORDER[zoneIdx + 1];
@@ -873,9 +875,6 @@ function lt_finishPhase2() {
   }
 }
  
-// ════════════════════════════════════════════
-//  MƏRHƏLƏ 3 — Üst hədd yoxlaması (6 sual)
-// ════════════════════════════════════════════
 function lt_startPhase3() {
   levelTestState.phase      = 3;
   levelTestState.p3_wordIdx = 0;
@@ -921,7 +920,6 @@ function lt_finishPhase3() {
   finishLevelTest();
 }
  
-// ── Mərhələ routeri ───────────────────────────────────────
 function lt_handleAnswer(isCorrect) {
   switch (levelTestState.phase) {
     case 1: lt_handlePhase1(isCorrect); break;
@@ -930,7 +928,6 @@ function lt_handleAnswer(isCorrect) {
   }
 }
  
-// ── Nəticə ekranı ─────────────────────────────────────────
 function finishLevelTest() {
   elProgressFill.style.width = '100%';
  
@@ -1041,6 +1038,7 @@ elChanceAccept.addEventListener('click', () => {
     return;
   }
   quiz.chanceUsed = true;
+  Stats.useStarFix(quiz.words[quiz.index]?.en || ''); // ── STATS: ulduzla düzəltmə qeydə alınır
   hideChanceModal();
   setTimeout(() => showQuestion(), 260);
 });
@@ -1072,6 +1070,16 @@ function handleAnswer(btnIdx) {
  
   if (isCorrect) {
     chosenBtn.className = 'option-btn correct';
+
+    // ── STATS: düzgün cavab qeydə alınır ─────────────────
+    if (quiz.mode === 'normal' || quiz.mode === 'review') {
+      const w = quiz.words[quiz.index];
+      const lvlId = quiz.levelIdx !== null
+        ? LEVELS[quiz.levelIdx]?.id?.toUpperCase()
+        : (reviewState.levelId?.toUpperCase() || '');
+      Stats.recordAnswer(w.en, lvlId, w.tr || '', true);
+    }
+    // ─────────────────────────────────────────────────────
  
     if (quiz.mode === 'leveltest') {
       lt_handleAnswer(true);
@@ -1090,6 +1098,16 @@ function handleAnswer(btnIdx) {
     chosenBtn.className  = 'option-btn wrong';
     correctBtn.className = 'option-btn correct';
     quiz.mistakes++;
+
+    // ── STATS: səhv cavab qeydə alınır ───────────────────
+    if (quiz.mode === 'normal' || quiz.mode === 'review') {
+      const w = quiz.words[quiz.index];
+      const lvlId = quiz.levelIdx !== null
+        ? LEVELS[quiz.levelIdx]?.id?.toUpperCase()
+        : (reviewState.levelId?.toUpperCase() || '');
+      Stats.recordAnswer(w.en, lvlId, w.tr || '', false);
+    }
+    // ─────────────────────────────────────────────────────
  
     if (quiz.mode === 'review') reviewState.wrong++;
  
@@ -1301,4 +1319,3 @@ elReviewModal.addEventListener('click', (e) => {
 // ── Init ──────────────────────────────────────────────────
 loadProgress();
 renderLevels();
- 
