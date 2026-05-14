@@ -290,8 +290,32 @@ const elLevelTestBtn  = $('level-test-btn');
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
   renderStarCount();
-  elLevelList.innerHTML = '';
 
+  // Subtitle sahəsini düymələrlə render et
+  const subtitle = document.getElementById('page-subtitle');
+  if (subtitle) {
+    subtitle.innerHTML = `
+      <button class="action-pill-btn review-pill" id="review-btn-inline">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.5"/>
+        </svg>
+        Təkrar et
+      </button>
+      <button class="action-pill-btn test-pill" id="level-test-btn-inline">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 11 12 14 22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        Səviyyəni test et
+      </button>
+    `;
+    // Event listener-ləri yenidən qoş
+    document.getElementById('review-btn-inline').addEventListener('click', showReviewModal);
+    document.getElementById('level-test-btn-inline').addEventListener('click', startLevelTest);
+  }
+
+  elLevelList.innerHTML = '';
+  
   LEVELS.forEach((lvl, li) => {
     const done  = progress[lvl.id].filter(s => s === 'completed').length;
     const total = lvl.quizzes.length;
@@ -1050,16 +1074,12 @@ elQuitBtn.addEventListener('click', () => {
   }
 });
 
-elReviewBtn.addEventListener('click', showReviewModal);
 elReviewClose.addEventListener('click', hideReviewModal);
 
 elReviewModal.addEventListener('click', (e) => {
   if (e.target === elReviewModal) hideReviewModal();
 });
 
-elLevelTestBtn.addEventListener('click', () => {
-  startLevelTest();
-});
 
 // ── Init ──────────────────────────────────────────────────
 loadProgress();
