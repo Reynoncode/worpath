@@ -77,7 +77,34 @@ const QUIZ_NAMES = {
     35: 'Business, Money & Economy',
     37: 'Environment',
     38: 'Travel & Tourism',
+  },
+  {
+  'b1': {
+    0: 'Education & Learning 1',
+    1: 'Education & Learning 2',
+    2: 'Business & Work 1',
+    3: 'Business & Work 2',
+    5: 'Money & Shopping',
+    6: 'Technology & Media',
+    7: 'Communication & Social Interaction',
+    8: 'Feelings & Personality 1',
+    9: 'Feelings & Personality 2',
+    11: 'Crime, Law & Government 1',
+    12: 'Crime, Law & Government 2',
+    13: 'War, Conflict & Danger',
+    15: 'Travel & Transport',
+    16: 'Nature & Environment 1',
+    17: 'Nature & Environment 2',
+    19: 'Science & Materials',
+    20: 'Health & Body',
+    21: 'Food & Cooking',
+    22: 'House & Daily Life',
+    24: 'Family, Relationships & Society',
+    25: 'Art, Culture & Entertainment',
+    26: 'Sports & Fitness',
+    27: 'Language & Writing'
   }
+}
 };
 
 // ── Storage keys ──────────────────────────────────────────
@@ -92,13 +119,16 @@ const EXAM_IDS = {
 
 // ── Səviyyə test məlumatları ──────────────────────────────
 const LEVEL_INFO = {
-  'a1': { label: 'A1 — Beginner',    ielts: '1.0 – 2.0', desc: 'Sadə ifadələri başa düşürsən.' },
-  'a2': { label: 'A2 — Elementary',  ielts: '2.5 – 3.5', desc: 'Gündəlik ünsiyyəti qura bilirsən.' },
-  'b1': { label: 'B1 — Intermediate',ielts: '4.0 – 5.0', desc: 'Tanış mövzularda öhdəsindən gəlirsən.' },
-  'b2': { label: 'B2 — Upper-Inter', ielts: '5.5 – 6.5', desc: 'Mürəkkəb mətinləri anlayırsan.' },
-  'c1': { label: 'C1 — Advanced',    ielts: '7.0 – 8.0', desc: 'Axıcı və effektiv ünsiyyət qurursan.' },
-  'c2': { label: 'C2 — Mastery',     ielts: '8.5 – 9.0', desc: 'Demək olar ki, ana dili səviyyəsindəsən.' },
+  'a1': { label: 'A1 — Beginner',     ielts: '1.0 – 2.0', desc: 'Sadə ifadələri başa düşürsən.' },
+  'a2': { label: 'A2 — Elementary',   ielts: '2.5 – 3.5', desc: 'Gündəlik ünsiyyəti qura bilirsən.' },
+  'b1': { label: 'B1 — Intermediate', ielts: '4.0 – 5.0', desc: 'Tanış mövzularda öhdəsindən gəlirsən.' },
+  'b2': { label: 'B2 — Upper-Inter',  ielts: '5.5 – 6.5', desc: 'Mürəkkəb mətinləri anlayırsan.' },
+  'c1': { label: 'C1 — Advanced',     ielts: '7.0 – 8.0', desc: 'Axıcı və effektiv ünsiyyət qurursan.' },
+  'c2': { label: 'C2 — Mastery',      ielts: '8.5 – 9.0', desc: 'Demək olar ki, ana dili səviyyəsindəsən.' },
 };
+
+// ── Səviyyə sırası ────────────────────────────────────────
+const LEVEL_ORDER = ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'];
 
 // ── Quiz state ────────────────────────────────────────────
 const quiz = {
@@ -122,23 +152,42 @@ const reviewState = {
 };
 
 // ── Level test state ──────────────────────────────────────
+// Mərhələ 1 (≤12 sual): ikili axtarış ilə zona tap
+// Mərhələ 2 (12 sual):  tapılan zonada dərin yoxlama
+// Mərhələ 3 (6 sual):   üst səviyyə yoxlaması (75%+ keçdisə)
+const LT_TOTAL        = 30;
+const LT_P1_PER_LEVEL = 2;   // Mərhələ 1-də hər səviyyədən neçə sual
+const LT_P1_PASS      = 1;   // 2-dən ≥1 düz → "bilir"
+const LT_P2_COUNT     = 12;  // Mərhələ 2 sual sayı
+const LT_P2_STRONG    = 0.75; // ≥75% → möhkəm, üst hədd yoxlanır
+const LT_P2_WEAK      = 0.50; // <50% → bir aşağı en
+const LT_P3_COUNT     = 6;   // Mərhələ 3 sual sayı
+const LT_P3_UPGRADE   = 4;   // 6-dan ≥4 düz → bir üst səviyyəyə qalx
+
 const levelTestState = {
-  levelOrder:       [], // ['a1','a2','b1','b2','c1','c2']
-  currentLevelIdx:  0,
-  questionsInBlock: [],
-  blockIndex:       0,
-  blockCorrect:     0,
-  verifying:        false,   // doğrulama mərhələsindəmi
-  prevLevelWords:   [],      // doğrulama üçün öncəki səviyyə sözləri
-  verifyIndex:      0,
-  verifyCorrect:    0,
-  finalLevelId:     null,
-  totalQuestions:   30,
-  askedSoFar:       0,
-  blockSize:        5,
-  verifySize:       2,
-  passThreshold:    3,       // 5-dən neçəsi düz olmalı
-  verifyThreshold:  2,       // 2-dən neçəsi düz olmalı
+  phase:        1,
+  totalAsked:   0,
+  // Mərhələ 1
+  p1_lo:        0,
+  p1_hi:        5,
+  p1_mid:       -1,
+  p1_words:     [],
+  p1_wordIdx:   0,
+  p1_correct:   0,
+  p1_results:   {},
+  // Mərhələ 2
+  p2_levelId:   null,
+  p2_words:     [],
+  p2_wordIdx:   0,
+  p2_correct:   0,
+  // Mərhələ 3
+  p3_levelId:   null,
+  p3_words:     [],
+  p3_wordIdx:   0,
+  p3_correct:   0,
+  // Final
+  finalLevelId: null,
+  usedWordKeys: new Set(),
 };
 
 // ── Progress ──────────────────────────────────────────────
@@ -152,7 +201,7 @@ function setStars(n) {
   localStorage.setItem(STARS_KEY, String(Math.max(0, n)));
   renderStarCount();
 }
-function addStar() { setStars(getStars() + 1); }
+function addStar()  { setStars(getStars() + 1); }
 function spendStar() {
   const s = getStars();
   if (s <= 0) return false;
@@ -252,40 +301,38 @@ function completedCount() {
 // ── DOM refs ──────────────────────────────────────────────
 const $ = (id) => document.getElementById(id);
 
-const elLevelList     = $('level-list');
-const elQuizScreen    = $('quiz-screen');
-const elResultScreen  = $('result-screen');
-const elProgressFill  = $('progress-fill');
-const elQCounter      = $('q-counter');
-const elQuestionWord  = $('question-word');
-const elQuestionHint  = $('question-hint');
-const elOpt0          = $('opt-0');
-const elOpt1          = $('opt-1');
-const elQuitBtn       = $('quit-btn');
-const elResultEmoji   = $('result-emoji');
-const elResultTitle   = $('result-title');
-const elResultDesc    = $('result-desc');
-const elResultStats   = $('result-stats');
-const elStatCorrect   = $('stat-correct');
-const elStatWrong     = $('stat-wrong');
-const elStatPct       = $('stat-pct');
-const elLevelResultCard = $('level-result-card');
-const elLevelResultBadge= $('level-result-badge');
-const elLevelResultName = $('level-result-name');
-const elLevelResultIelts= $('level-result-ielts');
-const elLevelResultDesc = $('level-result-desc');
-const elResultMainBtn = $('result-main-btn');
-const elResultBackBtn = $('result-back-btn');
-const elToast         = $('toast');
-const elChanceModal   = $('chance-modal');
-const elChanceAccept  = $('chance-accept');
-const elChanceDecline = $('chance-decline');
-const elChanceStars   = $('chance-stars');
-const elReviewModal   = $('review-modal');
+const elLevelList       = $('level-list');
+const elQuizScreen      = $('quiz-screen');
+const elResultScreen    = $('result-screen');
+const elProgressFill    = $('progress-fill');
+const elQCounter        = $('q-counter');
+const elQuestionWord    = $('question-word');
+const elQuestionHint    = $('question-hint');
+const elOpt0            = $('opt-0');
+const elOpt1            = $('opt-1');
+const elQuitBtn         = $('quit-btn');
+const elResultEmoji     = $('result-emoji');
+const elResultTitle     = $('result-title');
+const elResultDesc      = $('result-desc');
+const elResultStats     = $('result-stats');
+const elStatCorrect     = $('stat-correct');
+const elStatWrong       = $('stat-wrong');
+const elStatPct         = $('stat-pct');
+const elLevelResultCard  = $('level-result-card');
+const elLevelResultBadge = $('level-result-badge');
+const elLevelResultName  = $('level-result-name');
+const elLevelResultIelts = $('level-result-ielts');
+const elLevelResultDesc  = $('level-result-desc');
+const elResultMainBtn   = $('result-main-btn');
+const elResultBackBtn   = $('result-back-btn');
+const elToast           = $('toast');
+const elChanceModal     = $('chance-modal');
+const elChanceAccept    = $('chance-accept');
+const elChanceDecline   = $('chance-decline');
+const elChanceStars     = $('chance-stars');
+const elReviewModal     = $('review-modal');
 const elReviewLevelGrid = $('review-level-grid');
-const elReviewClose   = $('review-close');
-const elReviewBtn     = $('review-btn');
-const elLevelTestBtn  = $('level-test-btn');
+const elReviewClose     = $('review-close');
 
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
@@ -309,13 +356,12 @@ function renderLevels() {
         Səviyyəni test et
       </button>
     `;
-    // Event listener-ləri yenidən qoş
     document.getElementById('review-btn-inline').addEventListener('click', showReviewModal);
     document.getElementById('level-test-btn-inline').addEventListener('click', startLevelTest);
   }
 
   elLevelList.innerHTML = '';
-  
+
   LEVELS.forEach((lvl, li) => {
     const done  = progress[lvl.id].filter(s => s === 'completed').length;
     const total = lvl.quizzes.length;
@@ -510,18 +556,65 @@ function startReviewMode(levelId) {
 }
 
 // ══════════════════════════════════════════════
-//  SƏVİYYƏNİ TEST ET — Adaptive Level Test
+//  SƏVİYYƏNİ TEST ET — 3 Mərhələli Adaptiv Sistem
 // ══════════════════════════════════════════════
 
+// ── İstifadə olunmamış sözlər seç ────────────────────────
+function lt_pickFreshWords(levelId, count) {
+  const all = getAllWordsForLevel(levelId).filter(w => {
+    const key = levelId + '|' + w.en;
+    return !levelTestState.usedWordKeys.has(key);
+  });
+  const picked = shuffle([...all]).slice(0, count);
+  picked.forEach(w => levelTestState.usedWordKeys.add(levelId + '|' + w.en));
+  return picked;
+}
+
+// ── Sual göstər (ümumi) ───────────────────────────────────
+function lt_renderQuestion(word, hint) {
+  const asked = levelTestState.totalAsked;
+  elProgressFill.style.width = `${(asked / LT_TOTAL) * 100}%`;
+  elQCounter.textContent     = `${asked + 1}/${LT_TOTAL}`;
+  elQuestionHint.textContent = hint;
+  elQuestionWord.textContent = capitalize(word.en);
+
+  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
+  const opts = quiz.correctPos === 0
+    ? [word.tr, word.wrong]
+    : [word.wrong, word.tr];
+
+  elOpt0.textContent = capitalize(opts[0]);
+  elOpt1.textContent = capitalize(opts[1]);
+  elOpt0.className   = 'option-btn';
+  elOpt1.className   = 'option-btn';
+  elOpt0.disabled    = false;
+  elOpt1.disabled    = false;
+  quiz.locked        = false;
+}
+
+// ── GİRİŞ NÖQTƏSI ────────────────────────────────────────
 function startLevelTest() {
-  const order = LEVELS.map(l => l.id);
-  levelTestState.levelOrder       = order;
-  levelTestState.currentLevelIdx  = 0;
-  levelTestState.askedSoFar       = 0;
-  levelTestState.finalLevelId     = order[0];
-  levelTestState.verifying        = false;
-  levelTestState.verifyIndex      = 0;
-  levelTestState.verifyCorrect    = 0;
+  Object.assign(levelTestState, {
+    phase:        1,
+    totalAsked:   0,
+    p1_lo:        0,
+    p1_hi:        LEVEL_ORDER.length - 1,
+    p1_mid:       -1,
+    p1_words:     [],
+    p1_wordIdx:   0,
+    p1_correct:   0,
+    p1_results:   {},
+    p2_levelId:   null,
+    p2_words:     [],
+    p2_wordIdx:   0,
+    p2_correct:   0,
+    p3_levelId:   null,
+    p3_words:     [],
+    p3_wordIdx:   0,
+    p3_correct:   0,
+    finalLevelId: null,
+    usedWordKeys: new Set(),
+  });
 
   quiz.mode         = 'leveltest';
   quiz.levelIdx     = null;
@@ -532,204 +625,243 @@ function startLevelTest() {
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
 
-  loadLevelTestBlock();
+  showQuizScreen();
+  lt_startPhase1();
 }
 
-function loadLevelTestBlock() {
-  const levelId = levelTestState.levelOrder[levelTestState.currentLevelIdx];
-  const allWords = getAllWordsForLevel(levelId);
+// ════════════════════════════════════════════
+//  MƏRHƏLƏ 1 — İkili axtarış (≤12 sual)
+// ════════════════════════════════════════════
+function lt_startPhase1() {
+  const mid     = Math.floor((levelTestState.p1_lo + levelTestState.p1_hi) / 2);
+  const levelId = LEVEL_ORDER[mid];
 
-  if (allWords.length === 0) {
-    // Bu səviyyədə söz yoxdur, növbətiyə keç
-    advanceLevelTest(true);
+  levelTestState.p1_mid     = mid;
+  levelTestState.p1_wordIdx = 0;
+  levelTestState.p1_correct = 0;
+
+  const words = lt_pickFreshWords(levelId, LT_P1_PER_LEVEL);
+  if (words.length === 0) {
+    lt_evalPhase1Block(false);
     return;
   }
 
-  const blockWords = shuffle([...allWords]).slice(0, levelTestState.blockSize);
-  levelTestState.questionsInBlock = blockWords;
-  levelTestState.blockIndex       = 0;
-  levelTestState.blockCorrect     = 0;
-
-  quiz.words  = blockWords;
-  quiz.index  = 0;
-  quiz.locked = false;
-
-  elQuestionHint.textContent = `Səviyyə: ${levelId.toUpperCase()} — ${levelTestState.currentLevelIdx * 5 + 1}–${Math.min((levelTestState.currentLevelIdx + 1) * 5, levelTestState.totalQuestions)}/30`;
-
-  showQuizScreen();
-  showQuestionLevelTest();
+  levelTestState.p1_words = words;
+  lt_showPhase1Q();
 }
 
-function showQuestionLevelTest() {
-  const word = levelTestState.questionsInBlock[levelTestState.blockIndex];
-  const total = levelTestState.totalQuestions;
-  const asked = levelTestState.askedSoFar;
-
-  elProgressFill.style.width = `${(asked / total) * 100}%`;
-  elQCounter.textContent = `${asked + 1}/${total}`;
-  elQuestionWord.textContent = capitalize(word.en);
-
-  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
-  const opts = quiz.correctPos === 0
-    ? [word.tr, word.wrong]
-    : [word.wrong, word.tr];
-
-  elOpt0.textContent = capitalize(opts[0]);
-  elOpt1.textContent = capitalize(opts[1]);
-  elOpt0.className = 'option-btn';
-  elOpt1.className = 'option-btn';
-  elOpt0.disabled  = false;
-  elOpt1.disabled  = false;
-  quiz.locked      = false;
+function lt_showPhase1Q() {
+  const word    = levelTestState.p1_words[levelTestState.p1_wordIdx];
+  const levelId = LEVEL_ORDER[levelTestState.p1_mid];
+  lt_renderQuestion(word, `Skan: ${levelId.toUpperCase()}`);
 }
 
-function handleAnswerLevelTest(isCorrect) {
-  levelTestState.askedSoFar++;
-  if (isCorrect) levelTestState.blockCorrect++;
-  levelTestState.blockIndex++;
+function lt_handlePhase1(isCorrect) {
+  levelTestState.totalAsked++;
+  if (isCorrect) levelTestState.p1_correct++;
+  levelTestState.p1_wordIdx++;
 
   setTimeout(() => {
-    if (levelTestState.blockIndex >= levelTestState.blockSize) {
-      // Blok bitdi — nəticəni qiymətləndir
-      evaluateLevelTestBlock();
-    } else {
-      showQuestionLevelTest();
+    if (levelTestState.p1_wordIdx < levelTestState.p1_words.length) {
+      lt_showPhase1Q();
+      return;
     }
+    lt_evalPhase1Block(levelTestState.p1_correct >= LT_P1_PASS);
   }, 500);
 }
 
-function evaluateLevelTestBlock() {
-  const passed = levelTestState.blockCorrect >= levelTestState.passThreshold;
-  const currentLevelId = levelTestState.levelOrder[levelTestState.currentLevelIdx];
-  const isLastLevel = levelTestState.currentLevelIdx >= levelTestState.levelOrder.length - 1;
+function lt_evalPhase1Block(passed) {
+  const mid     = levelTestState.p1_mid;
+  const levelId = LEVEL_ORDER[mid];
+  levelTestState.p1_results[levelId] = passed;
 
   if (passed) {
-    levelTestState.finalLevelId = currentLevelId;
-    if (isLastLevel) {
-      finishLevelTest();
-    } else {
-      advanceLevelTest(true);
-    }
+    levelTestState.p1_lo = mid + 1;
   } else {
-    // Keçmədi — doğrulama lazımdırmı?
-    if (levelTestState.currentLevelIdx > 0) {
-      startVerification();
-    } else {
-      // A1-dən keçmədi — A1 səviyyəsindədir
-      levelTestState.finalLevelId = currentLevelId;
-      finishLevelTest();
-    }
+    levelTestState.p1_hi = mid - 1;
+  }
+
+  const maxReached  = levelTestState.totalAsked >= 12;
+  const rangeEmpty  = levelTestState.p1_lo > levelTestState.p1_hi;
+
+  if (rangeEmpty || maxReached) {
+    lt_finishPhase1();
+  } else {
+    lt_startPhase1();
   }
 }
 
-function startVerification() {
-  const prevLevelId = levelTestState.levelOrder[levelTestState.currentLevelIdx - 1];
-  const allWords = getAllWordsForLevel(prevLevelId);
-  const verifyWords = shuffle([...allWords]).slice(0, levelTestState.verifySize);
+function lt_finishPhase1() {
+  // Bildiyimiz ən yüksək səviyyəni tap
+  let zoneIdx = 0;
+  const results = levelTestState.p1_results;
+  const keys    = Object.keys(results);
 
-  levelTestState.verifying      = true;
-  levelTestState.prevLevelWords = verifyWords;
-  levelTestState.verifyIndex    = 0;
-  levelTestState.verifyCorrect  = 0;
-
-  elQuestionHint.textContent = `Doğrulama: ${prevLevelId.toUpperCase()}`;
-  showVerifyQuestion();
-}
-
-function showVerifyQuestion() {
-  const word = levelTestState.prevLevelWords[levelTestState.verifyIndex];
-  const total = levelTestState.totalQuestions;
-  const asked = levelTestState.askedSoFar;
-
-  elProgressFill.style.width = `${(asked / total) * 100}%`;
-  elQCounter.textContent = `${asked + 1}/${total}`;
-  elQuestionWord.textContent = capitalize(word.en);
-
-  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
-  const opts = quiz.correctPos === 0
-    ? [word.tr, word.wrong]
-    : [word.wrong, word.tr];
-
-  elOpt0.textContent = capitalize(opts[0]);
-  elOpt1.textContent = capitalize(opts[1]);
-  elOpt0.className = 'option-btn';
-  elOpt1.className = 'option-btn';
-  elOpt0.disabled  = false;
-  elOpt1.disabled  = false;
-  quiz.locked      = false;
-}
-
-function handleAnswerVerify(isCorrect) {
-  levelTestState.askedSoFar++;
-  if (isCorrect) levelTestState.verifyCorrect++;
-  levelTestState.verifyIndex++;
-
-  setTimeout(() => {
-    if (levelTestState.verifyIndex >= levelTestState.verifySize) {
-      // Doğrulama bitdi
-      levelTestState.verifying = false;
-      if (levelTestState.verifyCorrect >= levelTestState.verifyThreshold) {
-        // Doğrulama keçdi → əvvəlki səviyyəyə qayıt
-        levelTestState.currentLevelIdx--;
-        levelTestState.finalLevelId = levelTestState.levelOrder[levelTestState.currentLevelIdx];
-        const isLastLevel = levelTestState.currentLevelIdx >= levelTestState.levelOrder.length - 1;
-        if (isLastLevel || levelTestState.askedSoFar >= levelTestState.totalQuestions) {
-          finishLevelTest();
-        } else {
-          // Geri qayıdıb həmin səviyyəyə davam et (artıq keçilmiş sayılır)
-          finishLevelTest();
-        }
-      } else {
-        // Doğrulama keçmədi → cari səviyyədə qal, növbəti səviyyəyə keç
-        const currentLevelId = levelTestState.levelOrder[levelTestState.currentLevelIdx];
-        levelTestState.finalLevelId = currentLevelId;
-        const isLastLevel = levelTestState.currentLevelIdx >= levelTestState.levelOrder.length - 1;
-        if (isLastLevel || levelTestState.askedSoFar >= levelTestState.totalQuestions) {
-          finishLevelTest();
-        } else {
-          advanceLevelTest(false);
+  if (keys.length > 0) {
+    const allFailed = keys.every(k => results[k] === false);
+    if (!allFailed) {
+      for (let i = LEVEL_ORDER.length - 1; i >= 0; i--) {
+        if (results[LEVEL_ORDER[i]] === true) {
+          zoneIdx = i;
+          break;
         }
       }
+    }
+  }
+
+  levelTestState.p2_levelId = LEVEL_ORDER[zoneIdx];
+  lt_startPhase2();
+}
+
+// ════════════════════════════════════════════
+//  MƏRHƏLƏ 2 — Əsas zona (12 sual)
+// ════════════════════════════════════════════
+function lt_startPhase2() {
+  levelTestState.phase      = 2;
+  levelTestState.p2_wordIdx = 0;
+  levelTestState.p2_correct = 0;
+
+  const words = lt_pickFreshWords(levelTestState.p2_levelId, LT_P2_COUNT);
+  levelTestState.p2_words = words;
+
+  if (words.length === 0) {
+    lt_finishPhase2();
+    return;
+  }
+
+  lt_showPhase2Q();
+}
+
+function lt_showPhase2Q() {
+  const word   = levelTestState.p2_words[levelTestState.p2_wordIdx];
+  const lvlId  = levelTestState.p2_levelId;
+  const localI = levelTestState.p2_wordIdx + 1;
+  const localT = levelTestState.p2_words.length;
+  lt_renderQuestion(word, `${lvlId.toUpperCase()} — Əsas yoxlama (${localI}/${localT})`);
+}
+
+function lt_handlePhase2(isCorrect) {
+  levelTestState.totalAsked++;
+  if (isCorrect) levelTestState.p2_correct++;
+  levelTestState.p2_wordIdx++;
+
+  setTimeout(() => {
+    if (levelTestState.p2_wordIdx < levelTestState.p2_words.length) {
+      lt_showPhase2Q();
     } else {
-      showVerifyQuestion();
+      lt_finishPhase2();
     }
   }, 500);
 }
 
-function advanceLevelTest(passed) {
-  if (passed) {
-    levelTestState.currentLevelIdx++;
+function lt_finishPhase2() {
+  const total   = levelTestState.p2_words.length || 1;
+  const pct     = levelTestState.p2_correct / total;
+  const zoneIdx = LEVEL_ORDER.indexOf(levelTestState.p2_levelId);
+
+  if (pct < LT_P2_WEAK && zoneIdx > 0) {
+    // 50%-dən az → bir aşağı en
+    levelTestState.finalLevelId = LEVEL_ORDER[zoneIdx - 1];
+  } else {
+    levelTestState.finalLevelId = levelTestState.p2_levelId;
   }
-  if (levelTestState.currentLevelIdx >= levelTestState.levelOrder.length ||
-      levelTestState.askedSoFar >= levelTestState.totalQuestions) {
+
+  // 75%+ və üst səviyyə varsa → Mərhələ 3
+  const canUpgrade = zoneIdx < LEVEL_ORDER.length - 1;
+  if (pct >= LT_P2_STRONG && canUpgrade) {
+    levelTestState.p3_levelId = LEVEL_ORDER[zoneIdx + 1];
+    lt_startPhase3();
+  } else {
+    finishLevelTest();
+  }
+}
+
+// ════════════════════════════════════════════
+//  MƏRHƏLƏ 3 — Üst hədd yoxlaması (6 sual)
+// ════════════════════════════════════════════
+function lt_startPhase3() {
+  levelTestState.phase      = 3;
+  levelTestState.p3_wordIdx = 0;
+  levelTestState.p3_correct = 0;
+
+  const words = lt_pickFreshWords(levelTestState.p3_levelId, LT_P3_COUNT);
+  levelTestState.p3_words = words;
+
+  if (words.length === 0) {
     finishLevelTest();
     return;
   }
-  loadLevelTestBlock();
+
+  lt_showPhase3Q();
 }
 
+function lt_showPhase3Q() {
+  const word   = levelTestState.p3_words[levelTestState.p3_wordIdx];
+  const lvlId  = levelTestState.p3_levelId;
+  const localI = levelTestState.p3_wordIdx + 1;
+  const localT = levelTestState.p3_words.length;
+  lt_renderQuestion(word, `${lvlId.toUpperCase()} — Yuxarı hədd (${localI}/${localT})`);
+}
+
+function lt_handlePhase3(isCorrect) {
+  levelTestState.totalAsked++;
+  if (isCorrect) levelTestState.p3_correct++;
+  levelTestState.p3_wordIdx++;
+
+  setTimeout(() => {
+    if (levelTestState.p3_wordIdx < levelTestState.p3_words.length) {
+      lt_showPhase3Q();
+    } else {
+      lt_finishPhase3();
+    }
+  }, 500);
+}
+
+function lt_finishPhase3() {
+  if (levelTestState.p3_correct >= LT_P3_UPGRADE) {
+    levelTestState.finalLevelId = levelTestState.p3_levelId;
+  }
+  finishLevelTest();
+}
+
+// ── Mərhələ routeri ───────────────────────────────────────
+function lt_handleAnswer(isCorrect) {
+  switch (levelTestState.phase) {
+    case 1: lt_handlePhase1(isCorrect); break;
+    case 2: lt_handlePhase2(isCorrect); break;
+    case 3: lt_handlePhase3(isCorrect); break;
+  }
+}
+
+// ── Nəticə ekranı ─────────────────────────────────────────
 function finishLevelTest() {
   elProgressFill.style.width = '100%';
+
   setTimeout(() => {
     elQuizScreen.classList.add('hidden');
     elResultScreen.classList.remove('hidden');
 
-    const lvlId   = levelTestState.finalLevelId;
+    const lvlId   = levelTestState.finalLevelId || 'a1';
     const info    = LEVEL_INFO[lvlId] || {};
     const lvlData = LEVELS.find(l => l.id === lvlId);
 
+    const p2total = levelTestState.p2_words.length || 1;
+    const p2pct   = Math.round((levelTestState.p2_correct / p2total) * 100);
+    const p2label = p2pct >= 75 ? 'Möhkəm' : p2pct >= 50 ? 'Orta' : 'Zəif';
+
     elResultEmoji.textContent = '🎓';
     elResultTitle.textContent = 'Nəticən hazırdır!';
-    elResultDesc.textContent  = 'Adaptive test tamamlandı. Sənin İngilis dili səviyyən:';
+    elResultDesc.textContent  =
+      `Söz tanıma səviyyən: ${info.label || lvlId.toUpperCase()} · ${p2label} (${p2pct}%)`;
 
     elResultStats.classList.add('hidden');
     elLevelResultCard.classList.remove('hidden');
 
-    elLevelResultBadge.textContent = lvlData ? lvlData.icon : '📚';
+    elLevelResultBadge.textContent      = lvlData ? lvlData.icon : '📚';
     elLevelResultBadge.style.background = lvlData ? lvlData.color : '#999';
-    elLevelResultName.textContent  = info.label  || lvlId.toUpperCase();
-    elLevelResultIelts.textContent = `IELTS: ${info.ielts || '—'}`;
-    elLevelResultDesc.textContent  = info.desc   || '';
+    elLevelResultName.textContent       = info.label  || lvlId.toUpperCase();
+    elLevelResultIelts.textContent      = `IELTS: ${info.ielts || '—'}`;
+    elLevelResultDesc.textContent       = info.desc   || '';
 
     elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
     elResultMainBtn.onclick = () => {
@@ -783,11 +915,11 @@ function showQuestion() {
 
   elOpt0.textContent = capitalize(opts[0]);
   elOpt1.textContent = capitalize(opts[1]);
-  elOpt0.className = 'option-btn';
-  elOpt1.className = 'option-btn';
-  elOpt0.disabled  = false;
-  elOpt1.disabled  = false;
-  quiz.locked      = false;
+  elOpt0.className   = 'option-btn';
+  elOpt1.className   = 'option-btn';
+  elOpt0.disabled    = false;
+  elOpt1.disabled    = false;
+  quiz.locked        = false;
 }
 
 // ── Şans popup ────────────────────────────────────────────
@@ -834,9 +966,9 @@ function handleAnswer(btnIdx) {
   if (quiz.locked || quiz.chanceActive) return;
   quiz.locked = true;
 
-  const isCorrect = btnIdx === quiz.correctPos;
-  elOpt0.disabled = true;
-  elOpt1.disabled = true;
+  const isCorrect  = btnIdx === quiz.correctPos;
+  elOpt0.disabled  = true;
+  elOpt1.disabled  = true;
 
   const correctBtn = quiz.correctPos === 0 ? elOpt0 : elOpt1;
   const chosenBtn  = btnIdx === 0 ? elOpt0 : elOpt1;
@@ -844,17 +976,11 @@ function handleAnswer(btnIdx) {
   if (isCorrect) {
     chosenBtn.className = 'option-btn correct';
 
-    // Level test mode — öz handler-i
     if (quiz.mode === 'leveltest') {
-      if (levelTestState.verifying) {
-        handleAnswerVerify(true);
-      } else {
-        handleAnswerLevelTest(true);
-      }
+      lt_handleAnswer(true);
       return;
     }
 
-    // Review & normal — shared
     if (quiz.mode === 'review') reviewState.correct++;
 
     setTimeout(() => {
@@ -871,15 +997,10 @@ function handleAnswer(btnIdx) {
     if (quiz.mode === 'review') reviewState.wrong++;
 
     if (quiz.mode === 'leveltest') {
-      if (levelTestState.verifying) {
-        handleAnswerVerify(false);
-      } else {
-        handleAnswerLevelTest(false);
-      }
+      lt_handleAnswer(false);
       return;
     }
 
-    // Normal & review: şans sistemi yalnız normal modda
     if (quiz.mode === 'normal' && !quiz.chanceUsed && getStars() > 0) {
       setTimeout(() => { quiz.mistakes--; showChanceModal(); }, 800);
     } else {
@@ -908,11 +1029,11 @@ function finishQuiz() {
       const pct     = Math.round((correct / total) * 100);
 
       let emoji, title;
-      if (pct === 100)      { emoji = '🏆'; title = 'Əla nəticə!'; }
-      else if (pct >= 80)   { emoji = '🎉'; title = 'Çox yaxşı!'; }
-      else if (pct >= 60)   { emoji = '👍'; title = 'Pis deyil!'; }
-      else if (pct >= 40)   { emoji = '📚'; title = 'Daha çox oxu!'; }
-      else                  { emoji = '💪'; title = 'Davam et!'; }
+      if (pct === 100)    { emoji = '🏆'; title = 'Əla nəticə!'; }
+      else if (pct >= 80) { emoji = '🎉'; title = 'Çox yaxşı!'; }
+      else if (pct >= 60) { emoji = '👍'; title = 'Pis deyil!'; }
+      else if (pct >= 40) { emoji = '📚'; title = 'Daha çox oxu!'; }
+      else                { emoji = '💪'; title = 'Davam et!'; }
 
       elResultEmoji.textContent = emoji;
       elResultTitle.textContent = title;
@@ -946,8 +1067,8 @@ function finishQuiz() {
 
     if (won) {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
-      const lvl    = LEVELS[quiz.levelIdx];
-      const isExam = isExamItem(lvl.quizzes[quiz.quizIdx], lvl.id, quiz.quizIdx);
+      const lvl          = LEVELS[quiz.levelIdx];
+      const isExam       = isExamItem(lvl.quizzes[quiz.quizIdx], lvl.id, quiz.quizIdx);
       const nextPlayable = findNextPlayableQuiz(quiz.levelIdx, quiz.quizIdx);
 
       elResultEmoji.textContent = isExam ? '🏆' : '🎉';
@@ -1079,7 +1200,6 @@ elReviewClose.addEventListener('click', hideReviewModal);
 elReviewModal.addEventListener('click', (e) => {
   if (e.target === elReviewModal) hideReviewModal();
 });
-
 
 // ── Init ──────────────────────────────────────────────────
 loadProgress();
