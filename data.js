@@ -4050,7 +4050,7 @@ const LEVELS = [
     tr: 'competitive',
     wrong: 'educated'
   }
-]
+],
       
 // ─────────────────────── QUIZ 5 — Money & Shopping ───────────────────────
 [
@@ -4225,7 +4225,7 @@ const LEVELS = [
     tr: 'profit',
     wrong: 'script'
   }
-]
+],
       
 // ─────────────────────── QUIZ 8 — Feelings & Personality (1) ───────────────────────
 [
@@ -4376,7 +4376,7 @@ const LEVELS = [
     tr: 'pessimistic',
     wrong: 'gentle'
   }
-]
+],
 
 // ─────────────────────── QUIZ 10 — Crime, Law & Government (1) ───────────────────────
 [
@@ -4551,7 +4551,7 @@ const LEVELS = [
     tr: 'election',
     wrong: 'bomb'
   }
-]
+],
       
 // ─────────────────────── QUIZ 13 — Travel & Transport ───────────────────────
 [
@@ -4726,7 +4726,8 @@ const LEVELS = [
     tr: 'wildlife',
     wrong: 'arrest'
   }
-]
+],
+      
 // ─────────────────────── QUIZ 16 — Science & Materials ───────────────────────
 [
   { en: 'chemical',      tr: 'kimyəvi',          wrong: 'fiziki'         },
@@ -4901,7 +4902,7 @@ const LEVELS = [
     tr: 'substance',
     wrong: 'appliance'
   }
-]
+],
       
 // ─────────────────────── QUIZ 19 — House & Daily Life ───────────────────────
 [
@@ -5052,7 +5053,7 @@ const LEVELS = [
     tr: 'alarm',
     wrong: 'religion'
   }
-]
+],
 
 // ─────────────────────── QUIZ 21 — Art, Culture & Entertainment ───────────────────────
 [
@@ -5227,7 +5228,7 @@ const LEVELS = [
     tr: 'portrait',
     wrong: 'supporter'
   }
-]
+],
       
     ]
   },
