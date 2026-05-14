@@ -3948,6 +3948,110 @@ const LEVELS = [
   { en: 'profit',        tr: 'mənfəət',            wrong: 'əmək haqqı'    },
 ],
 
+      // ─────────────────────── EXAM 1 — Education & Business Vocabulary ───────────────────────
+[
+  {
+    en: "She has a very good _____ from university.",
+    tr: 'qualification',
+    wrong: 'laboratory'
+  },
+  {
+    en: "I need to _____ for the exam next week.",
+    tr: 'revise',
+    wrong: 'promote'
+  },
+  {
+    en: "The students have a lot of _____ this semester.",
+    tr: 'assignments',
+    wrong: 'currencies'
+  },
+  {
+    en: "He works for a big international _____ .",
+    tr: 'company',
+    wrong: 'campus'
+  },
+  {
+    en: "The _____ of this product is very high.",
+    tr: 'quality',
+    wrong: 'presentation'
+  },
+  {
+    en: "Our team has a very important _____ this month.",
+    tr: 'project',
+    wrong: 'summary'
+  },
+  {
+    en: "She is the best _____ in our department.",
+    tr: 'candidate',
+    wrong: 'diagram'
+  },
+  {
+    en: "I want to _____ my English before the trip.",
+    tr: 'improve',
+    wrong: 'export'
+  },
+  {
+    en: "The meeting will take place on the university _____.",
+    tr: 'campus',
+    wrong: 'profit'
+  },
+  {
+    en: "He received a high _____ for his essay.",
+    tr: 'grade',
+    wrong: 'staff'
+  },
+  {
+    en: "This course will help you develop new _____.",
+    tr: 'skills',
+    wrong: 'competitors'
+  },
+  {
+    en: "The manager wants to _____ the new product next month.",
+    tr: 'launch',
+    wrong: 'summarise'
+  },
+  {
+    en: "We made a good _____ last year.",
+    tr: 'profit',
+    wrong: 'chapter'
+  },
+  {
+    en: "She is very _____ in marketing.",
+    tr: 'experienced',
+    wrong: 'academic'
+  },
+  {
+    en: "I have an _____ with the doctor at 3 pm.",
+    tr: 'appointment',
+    wrong: 'translation'
+  },
+  {
+    en: "The company is looking for new _____ .",
+    tr: 'clients',
+    wrong: 'laboratories'
+  },
+  {
+    en: "You need to _____ the main points of the text.",
+    tr: 'summarise',
+    wrong: 'invest'
+  },
+  {
+    en: "He has a very successful _____.",
+    tr: 'career',
+    wrong: 'examination'
+  },
+  {
+    en: "The teacher asked us to draw a _____ of the process.",
+    tr: 'diagram',
+    wrong: 'business'
+  },
+  {
+    en: "This is a very _____ price for such a good product.",
+    tr: 'competitive',
+    wrong: 'educated'
+  }
+]
+      
 // ─────────────────────── QUIZ 5 — Money & Shopping ───────────────────────
 [
   { en: 'credit',        tr: 'kredit',             wrong: 'borc'          },
@@ -4019,7 +4123,110 @@ const LEVELS = [
   { en: 'warn',          tr: 'xəbərdarlıq etmək',  wrong: 'qorxutmaq'     },
   { en: 'yell',          tr: 'bağırmaq',           wrong: 'danlamaq'      },
 ],
-
+// ─────────────────────── EXAM 2 — Money, Technology & Communication ───────────────────────
+[
+  {
+    en: "I can't _____ this expensive car right now.",
+    tr: 'afford',
+    wrong: 'click'
+  },
+  {
+    en: "They gave me a 20% _____ on this jacket.",
+    tr: 'discount',
+    wrong: 'announcement'
+  },
+  {
+    en: "We made a good _____ last year.",
+    tr: 'profit',
+    wrong: 'keyboard'
+  },
+  {
+    en: "I need to make a _____ by the end of the month.",
+    tr: 'payment',
+    wrong: 'episode'
+  },
+  {
+    en: "This phone is a very famous _____.",
+    tr: 'brand',
+    wrong: 'viewer'
+  },
+  {
+    en: "Can you _____ me the file please?",
+    tr: 'send',
+    wrong: 'yell'
+  },
+  {
+    en: "I always _____ on the link to buy tickets.",
+    tr: 'click',
+    wrong: 'bargain'
+  },
+  {
+    en: "She is a very good _____ on social media.",
+    tr: 'influencer',
+    wrong: 'currency'
+  },
+  {
+    en: "The latest _____ of this app is much better.",
+    tr: 'version',
+    wrong: 'fine'
+  },
+  {
+    en: "I saw an interesting _____ about climate change.",
+    tr: 'documentary',
+    wrong: 'rent'
+  },
+  {
+    en: "Please _____ me when the meeting starts.",
+    tr: 'remind',
+    wrong: 'luxury'
+  },
+  {
+    en: "The government introduced a new digital _____.",
+    tr: 'currency',
+    wrong: 'studio'
+  },
+  {
+    en: "He tried to _____ me to buy his product.",
+    tr: 'persuade',
+    wrong: 'scan'
+  },
+  {
+    en: "I live in a small flat and pay high _____.",
+    tr: 'rent',
+    wrong: 'headline'
+  },
+  {
+    en: "You can download the file from this _____ .",
+    tr: 'website',
+    wrong: 'wealth'
+  },
+  {
+    en: "The teacher asked us to _____ our homework.",
+    tr: 'submit',
+    wrong: 'apologise'
+  },
+  {
+    en: "This painting has a very high _____.",
+    tr: 'value',
+    wrong: 'channel'
+  },
+  {
+    en: "I need to _____ my phone because it's old.",
+    tr: 'update',
+    wrong: 'recommend'
+  },
+  {
+    en: "She works as a _____ for a big news company.",
+    tr: 'photographer',
+    wrong: 'mall'
+  },
+  {
+    en: "The company made a big _____ from this new product.",
+    tr: 'profit',
+    wrong: 'script'
+  }
+]
+      
 // ─────────────────────── QUIZ 8 — Feelings & Personality (1) ───────────────────────
 [
   { en: 'amazed',        tr: 'heyrətlənmiş',       wrong: 'sevincli'      },
@@ -4067,6 +4274,109 @@ const LEVELS = [
   { en: 'uncomfortable', tr: 'narahat',            wrong: 'sıxıntılı'     },
   { en: 'unpleasant',    tr: 'xoşagəlməz',         wrong: 'pis'           },
 ],
+      // ─────────────────────── EXAM 3 — Feelings & Personality ───────────────────────
+[
+  {
+    en: "She was very _____ when she saw the surprise party.",
+    tr: 'amazed',
+    wrong: 'shy'
+  },
+  {
+    en: "He is _____ and wants to be a doctor one day.",
+    tr: 'ambitious',
+    wrong: 'lonely'
+  },
+  {
+    en: "I felt _____ after I lost my keys.",
+    tr: 'upset',
+    wrong: 'cheerful'
+  },
+  {
+    en: "My grandmother is always _____ and happy.",
+    tr: 'cheerful',
+    wrong: 'pessimistic'
+  },
+  {
+    en: "He is very _____ and doesn't like speaking in class.",
+    tr: 'shy',
+    wrong: 'brave'
+  },
+  {
+    en: "I was _____ when I fell in front of everyone.",
+    tr: 'embarrassed',
+    wrong: 'relaxed'
+  },
+  {
+    en: "My best friend is very _____ . He never lies.",
+    tr: 'honest',
+    wrong: 'cruel'
+  },
+  {
+    en: "The dark forest was very _____ at night.",
+    tr: 'frightening',
+    wrong: 'pleasant'
+  },
+  {
+    en: "She feels _____ because she has no friends here.",
+    tr: 'lonely',
+    wrong: 'confident'
+  },
+  {
+    en: "I am very _____ for your help.",
+    tr: 'grateful',
+    wrong: 'annoyed'
+  },
+  {
+    en: "She is a very _____ person. She always helps people.",
+    tr: 'kind',
+    wrong: 'negative'
+  },
+  {
+    en: "The park is very _____ in the morning.",
+    tr: 'peaceful',
+    wrong: 'horrible'
+  },
+  {
+    en: "He stayed _____ when the accident happened.",
+    tr: 'calm',
+    wrong: 'mad'
+  },
+  {
+    en: "My mother is very _____ and makes good decisions.",
+    tr: 'sensible',
+    wrong: 'silly'
+  },
+  {
+    en: "He is _____ and works very hard every day.",
+    tr: 'determined',
+    wrong: 'careless'
+  },
+  {
+    en: "She is a very _____ singer.",
+    tr: 'talented',
+    wrong: 'unpleasant'
+  },
+  {
+    en: "I feel _____ after sleeping for 8 hours.",
+    tr: 'relaxed',
+    wrong: 'frightened'
+  },
+  {
+    en: "The food was _____ . I didn't like it.",
+    tr: 'unpleasant',
+    wrong: 'positive'
+  },
+  {
+    en: "He was very _____ when he got the job.",
+    tr: 'proud',
+    wrong: 'disappointed'
+  },
+  {
+    en: "Don't be _____ ! Everything will be okay.",
+    tr: 'pessimistic',
+    wrong: 'gentle'
+  }
+]
 
 // ─────────────────────── QUIZ 10 — Crime, Law & Government (1) ───────────────────────
 [
@@ -4139,6 +4449,110 @@ const LEVELS = [
   { en: 'force',       tr: 'güc',                wrong: 'zorakılıq'      },
 ],
 
+      // ─────────────────────── EXAM 4 — Crime, Law & Conflict ───────────────────────
+[
+  {
+    en: "The police decided to _____ the suspect after finding new evidence.",
+    tr: 'arrest',
+    wrong: 'protest'
+  },
+  {
+    en: "The _____ said that the man was not guilty.",
+    tr: 'judge',
+    wrong: 'weapon'
+  },
+  {
+    en: "It is _____ to sell cigarettes to children.",
+    tr: 'illegal',
+    wrong: 'political'
+  },
+  {
+    en: "The court found him _____ of the crime.",
+    tr: 'guilty',
+    wrong: 'official'
+  },
+  {
+    en: "Many people believe he is _____ , even though he is in prison.",
+    tr: 'innocent',
+    wrong: 'military'
+  },
+  {
+    en: "The government started a big _____ against smoking.",
+    tr: 'campaign',
+    wrong: 'explosion'
+  },
+  {
+    en: "The police are still _____ the murder.",
+    tr: 'investigating',
+    wrong: 'voting'
+  },
+  {
+    en: "There was a big _____ in the city centre yesterday.",
+    tr: 'protest',
+    wrong: 'prison'
+  },
+  {
+    en: "The country has very strict gun _____ .",
+    tr: 'laws',
+    wrong: 'candidates'
+  },
+  {
+    en: "He was sent to _____ for five years.",
+    tr: 'prison',
+    wrong: 'election'
+  },
+  {
+    en: "The terrorist left a _____ in the building.",
+    tr: 'bomb',
+    wrong: 'authority'
+  },
+  {
+    en: "The police need more _____ before they can arrest him.",
+    tr: 'evidence',
+    wrong: 'battle'
+  },
+  {
+    en: "The president is an important political _____ .",
+    tr: 'leader',
+    wrong: 'victim'
+  },
+  {
+    en: "The two countries are in a serious political _____ .",
+    tr: 'conflict',
+    wrong: 'court'
+  },
+  {
+    en: "Many soldiers died during the _____ .",
+    tr: 'battle',
+    wrong: 'warning'
+  },
+  {
+    en: "The government has the _____ to change the law.",
+    tr: 'authority',
+    wrong: 'explosion'
+  },
+  {
+    en: "The man used a gun as a _____ during the robbery.",
+    tr: 'weapon',
+    wrong: 'punishment'
+  },
+  {
+    en: "She was the main _____ in the car accident.",
+    tr: 'victim',
+    wrong: 'guard'
+  },
+  {
+    en: "The police gave a serious _____ about the dangerous man.",
+    tr: 'warning',
+    wrong: 'election'
+  },
+  {
+    en: "The new law will come into effect after the next _____ .",
+    tr: 'election',
+    wrong: 'bomb'
+  }
+]
+      
 // ─────────────────────── QUIZ 13 — Travel & Transport ───────────────────────
 [
   { en: 'accommodation', tr: 'yaşayış yeri',     wrong: 'otel'           },
@@ -4210,7 +4624,109 @@ const LEVELS = [
   { en: 'environment',   tr: 'ətraf mühit',      wrong: 'ekosistem'      },
   { en: 'disaster',      tr: 'fəlakət',          wrong: 'təhlükə'        },
 ],
-
+// ─────────────────────── EXAM 5 — Travel, Transport & Nature ───────────────────────
+[
+  {
+    en: "We need to find cheap _____ near the beach for our holiday.",
+    tr: 'accommodation',
+    wrong: 'earthquake'
+  },
+  {
+    en: "I made a _____ for the hotel two months ago.",
+    tr: 'booking',
+    wrong: 'fog'
+  },
+  {
+    en: "Our final _____ is Rome. We arrive there tomorrow.",
+    tr: 'destination',
+    wrong: 'soil'
+  },
+  {
+    en: "The plane's _____ was delayed because of bad weather.",
+    tr: 'departure',
+    wrong: 'deer'
+  },
+  {
+    en: "Don't forget to take your _____ . It's very heavy.",
+    tr: 'luggage',
+    wrong: 'hurricane'
+  },
+  {
+    en: "We crossed the _____ between Turkey and Georgia.",
+    tr: 'border',
+    wrong: 'leaf'
+  },
+  {
+    en: "The train follows a beautiful mountain _____.",
+    tr: 'route',
+    wrong: 'whale'
+  },
+  {
+    en: "A local _____ showed us the old city.",
+    tr: 'guide',
+    wrong: 'fuel'
+  },
+  {
+    en: "I prefer public _____ because it's cheaper than a taxi.",
+    tr: 'transport',
+    wrong: 'thunder'
+  },
+  {
+    en: "We saw a big _____ flying over the national park.",
+    tr: 'helicopter',
+    wrong: 'grain'
+  },
+  {
+    en: "The _____ is changing very fast because of global warming.",
+    tr: 'climate',
+    wrong: 'reservation'
+  },
+  {
+    en: "There was a terrible _____ last night and many houses were damaged.",
+    tr: 'flood',
+    wrong: 'sailor'
+  },
+  {
+    en: "The weather _____ says it will rain tomorrow.",
+    tr: 'forecast',
+    wrong: 'explosion'
+  },
+  {
+    en: "We live in the _____ , far away from the city noise.",
+    tr: 'countryside',
+    wrong: 'court'
+  },
+  {
+    en: "After the heavy rain, there was a lot of _____ on the road.",
+    tr: 'mud',
+    wrong: 'election'
+  },
+  {
+    en: "The strong _____ blew down several trees.",
+    tr: 'wind',
+    wrong: 'campaign'
+  },
+  {
+    en: "Scientists are worried about the natural _____ .",
+    tr: 'environment',
+    wrong: 'punishment'
+  },
+  {
+    en: "Many tourists come to this country for cultural _____ .",
+    tr: 'tourism',
+    wrong: 'victim'
+  },
+  {
+    en: "We planted a small _____ in the garden last spring.",
+    tr: 'seed',
+    wrong: 'bomb'
+  },
+  {
+    en: "The government is trying to protect the local _____ .",
+    tr: 'wildlife',
+    wrong: 'arrest'
+  }
+]
 // ─────────────────────── QUIZ 16 — Science & Materials ───────────────────────
 [
   { en: 'chemical',      tr: 'kimyəvi',          wrong: 'fiziki'         },
@@ -4283,6 +4799,110 @@ const LEVELS = [
   { en: 'spicy',         tr: 'ədviyyatlı',       wrong: 'acı'            },
 ],
 
+      // ─────────────────────── EXAM 6 — Science, Health, Food & House ───────────────────────
+[
+  {
+    en: "Scientists are doing research in a modern _____ .",
+    tr: 'laboratory',
+    wrong: 'kitchen'
+  },
+  {
+    en: "Gold and _____ are both very valuable metals.",
+    tr: 'copper',
+    wrong: 'flour'
+  },
+  {
+    en: "This shirt is made of 100% _____ .",
+    tr: 'cotton',
+    wrong: 'diamond'
+  },
+  {
+    en: "The doctor gave me some strong _____ for my headache.",
+    tr: 'medicine',
+    wrong: 'fuel'
+  },
+  {
+    en: "I have a terrible _____ in my throat.",
+    tr: 'pain',
+    wrong: 'recipe'
+  },
+  {
+    en: "Regular exercise is important for good _____ .",
+    tr: 'health',
+    wrong: 'powder'
+  },
+  {
+    en: "She injured her _____ while playing football.",
+    tr: 'muscle',
+    wrong: 'ingredient'
+  },
+  {
+    en: "We need to buy a new washing _____ for the house.",
+    tr: 'appliance',
+    wrong: 'substance'
+  },
+  {
+    en: "Can you pass me the frying _____ ?",
+    tr: 'pan',
+    wrong: 'nuclear'
+  },
+  {
+    en: "This soup has a very special _____ .",
+    tr: 'ingredient',
+    wrong: 'laboratory'
+  },
+  {
+    en: "The cake is still in the _____ . It needs 20 more minutes.",
+    tr: 'oven',
+    wrong: 'bedroom'
+  },
+  {
+    en: "I prefer _____ food because it's healthier.",
+    tr: 'baked',
+    wrong: 'illegal'
+  },
+  {
+    en: "The car runs on diesel _____ .",
+    tr: 'fuel',
+    wrong: 'chest'
+  },
+  {
+    en: "There was a big _____ accident at the factory.",
+    tr: 'chemical',
+    wrong: 'throat'
+  },
+  {
+    en: "Iron is a very strong _____ .",
+    tr: 'metal',
+    wrong: 'meal'
+  },
+  {
+    en: "My doctor says I have a serious _____ problem.",
+    tr: 'mental',
+    wrong: 'cotton'
+  },
+  {
+    en: "This dish is quite _____ . I added a lot of pepper.",
+    tr: 'spicy',
+    wrong: 'solid'
+  },
+  {
+    en: "We sleep in the _____ and cook in the kitchen.",
+    tr: 'bedroom',
+    wrong: 'explosion'
+  },
+  {
+    en: "The scientist made an important _____ discovery.",
+    tr: 'scientific',
+    wrong: 'painful'
+  },
+  {
+    en: "Be careful! This liquid is a dangerous _____ .",
+    tr: 'substance',
+    wrong: 'appliance'
+  }
+]
+      
 // ─────────────────────── QUIZ 19 — House & Daily Life ───────────────────────
 [
   { en: 'alarm',         tr: 'zəng / siqnal',    wrong: 'saat'           },
@@ -4330,6 +4950,109 @@ const LEVELS = [
   { en: 'tradition',     tr: 'ənənə',            wrong: 'adət'           },
   { en: 'youth',         tr: 'gənclik',          wrong: 'uşaqlıq'        },
 ],
+      // ─────────────────────── EXAM 8 — House, Family & Society ───────────────────────
+[
+  {
+    en: "We bought new _____ for our living room last weekend.",
+    tr: 'furniture',
+    wrong: 'bride'
+  },
+  {
+    en: "The _____ in my bedroom is very high.",
+    tr: 'ceiling',
+    wrong: 'neighbourhood'
+  },
+  {
+    en: "Please close the _____ , the sun is too bright.",
+    tr: 'curtain',
+    wrong: 'generation'
+  },
+  {
+    en: "My grandparents live in a small _____ in the village.",
+    tr: 'cottage',
+    wrong: 'relationship'
+  },
+  {
+    en: "The central _____ in this building is very old.",
+    tr: 'heating',
+    wrong: 'tradition'
+  },
+  {
+    en: "She is my closest _____ . We grew up together.",
+    tr: 'relative',
+    wrong: 'garage'
+  },
+  {
+    en: "They got married last year. She was a beautiful _____.",
+    tr: 'bride',
+    wrong: 'shelf'
+  },
+  {
+    en: "I spent a very happy _____ in this house.",
+    tr: 'childhood',
+    wrong: 'appliance'
+  },
+  {
+    en: "We live in a quiet _____ on the edge of the city.",
+    tr: 'neighbourhood',
+    wrong: 'marriage'
+  },
+  {
+    en: "The whole _____ helped us when our house flooded.",
+    tr: 'community',
+    wrong: 'pot'
+  },
+  {
+    en: "They have a very strong _____ after 30 years together.",
+    tr: 'relationship',
+    wrong: 'fence'
+  },
+  {
+    en: "My brother and his girlfriend are _____ . They plan to marry soon.",
+    tr: 'engaged',
+    wrong: 'battery'
+  },
+  {
+    en: "Different _____ often have different traditions.",
+    tr: 'cultures',
+    wrong: 'alarm'
+  },
+  {
+    en: "The old _____ in the kitchen is broken again.",
+    tr: 'appliance',
+    wrong: 'romance'
+  },
+  {
+    en: "We need to put up new _____ in the living room.",
+    tr: 'curtains',
+    wrong: 'society'
+  },
+  {
+    en: "She comes from a very religious _____.",
+    tr: 'family',
+    wrong: 'shelf'
+  },
+  {
+    en: "There is a high wooden _____ around the garden.",
+    tr: 'fence',
+    wrong: 'youth'
+  },
+  {
+    en: "Modern _____ is very different from the past.",
+    tr: 'society',
+    wrong: 'pipe'
+  },
+  {
+    en: "This song is about young love and _____.",
+    tr: 'romance',
+    wrong: 'garage'
+  },
+  {
+    en: "The _____ clock woke me up at 6 o'clock this morning.",
+    tr: 'alarm',
+    wrong: 'religion'
+  }
+]
 
 // ─────────────────────── QUIZ 21 — Art, Culture & Entertainment ───────────────────────
 [
@@ -4402,6 +5125,109 @@ const LEVELS = [
   { en: 'translation',   tr: 'tərcümə',          wrong: 'şərh'           },
   { en: 'written',       tr: 'yazılı',           wrong: 'çap olunmuş'    },
 ],
+      // ─────────────────────── EXAM 9 — Art, Culture, Sports & Language ───────────────────────
+[
+  {
+    en: "She is a famous _____ and has written more than 10 books of poems.",
+    tr: 'poet',
+    wrong: 'champion'
+  },
+  {
+    en: "We went to an interesting _____ of modern Turkish painting.",
+    tr: 'exhibition',
+    wrong: 'training'
+  },
+  {
+    en: "This song is from her latest _____ . It became very popular.",
+    tr: 'album',
+    wrong: 'stadium'
+  },
+  {
+    en: "The wedding _____ was beautiful and took place in a big hall.",
+    tr: 'ceremony',
+    wrong: 'race'
+  },
+  {
+    en: "He has a real _____ for playing the guitar.",
+    tr: 'talent',
+    wrong: 'summary'
+  },
+  {
+    en: "The team showed great _____ in the second half of the match.",
+    tr: 'performance',
+    wrong: 'fashion'
+  },
+  {
+    en: "She is one of the best _____ in the national team.",
+    tr: 'athlete',
+    wrong: 'poetry'
+  },
+  {
+    en: "The coach was very angry after the _____ .",
+    tr: 'defeat',
+    wrong: 'portrait'
+  },
+  {
+    en: "I enjoy reading _____ because it helps me relax.",
+    tr: 'poetry',
+    wrong: 'competition'
+  },
+  {
+    en: "This dress is very _____ this season.",
+    tr: 'fashionable',
+    wrong: 'translation'
+  },
+  {
+    en: "The main _____ of the film is friendship and trust.",
+    tr: 'theme',
+    wrong: 'muscle'
+  },
+  {
+    en: "He is the _____ of our football team.",
+    tr: 'captain',
+    wrong: 'sculpture'
+  },
+  {
+    en: "We need to write a short _____ of the story.",
+    tr: 'summary',
+    wrong: 'gig'
+  },
+  {
+    en: "The band gave an amazing _____ last night.",
+    tr: 'performance',
+    wrong: 'neighbourhood'
+  },
+  {
+    en: "I want to improve my English by reading more _____ .",
+    tr: 'literature',
+    wrong: 'strength'
+  },
+  {
+    en: "The Olympic _____ takes place every four years.",
+    tr: 'games',
+    wrong: 'ceremony'
+  },
+  {
+    en: "She studied _____ at university and now works as a translator.",
+    tr: 'translation',
+    wrong: 'fitness'
+  },
+  {
+    en: "There was a big street _____ to celebrate the victory.",
+    tr: 'celebration',
+    wrong: 'script'
+  },
+  {
+    en: "Regular _____ is very important for professional athletes.",
+    tr: 'training',
+    wrong: 'culture'
+  },
+  {
+    en: "The artist painted a beautiful _____ of his wife.",
+    tr: 'portrait',
+    wrong: 'supporter'
+  }
+]
       
     ]
   },
