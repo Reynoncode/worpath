@@ -680,25 +680,44 @@ function hideReviewModal() {
   setTimeout(() => elReviewModal.classList.add('hidden'), 260);
 }
  
-function startReviewMode(levelId) {
-  const allWords = getAllWordsForLevel(levelId);
-  const selected = shuffle([...allWords]).slice(0, 20);
- 
-  reviewState.levelId = levelId;
-  reviewState.correct = 0;
-  reviewState.wrong   = 0;
- 
-  quiz.mode         = 'review';
-  quiz.levelIdx     = null;
-  quiz.quizIdx      = null;
-  quiz.words        = selected;
+function startRetakeMode(levelIdx, quizIdx) {
+  const lvl  = LEVELS[levelIdx];
+  const item = lvl.quizzes[quizIdx];
+  if (!item || !Array.isArray(item)) return;
+
+  // Hər 3 fazadan sualları topla
+  const p1words = shuffle(
+    item.filter(w => w && w.en && w.tr && w.wrong && !w.wen && !w.def)
+  ).slice(0, 5);
+
+  const p2words = shuffle(
+    item.filter(w => w && w.en && w.tr && w.wen)
+  ).slice(0, 7);
+
+  const p3words = shuffle(
+    item.filter(w => w && w.en && w.wen && w.def)
+  ).slice(0, 8);
+
+  // Hər sözə öz mode-unu qeyd et, sonra hamısını qarışdır
+  const tagged = [
+    ...p1words.map(w => ({ ...w, _retakeMode: 'normal' })),
+    ...p2words.map(w => ({ ...w, _retakeMode: 'phase2' })),
+    ...p3words.map(w => ({ ...w, _retakeMode: 'phase3' })),
+  ];
+
+  const mixed = shuffle(tagged);
+
+  quiz.mode         = 'retake';
+  quiz.levelIdx     = levelIdx;
+  quiz.quizIdx      = quizIdx;
+  quiz.words        = mixed;
   quiz.index        = 0;
   quiz.mistakes     = 0;
   quiz.locked       = false;
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
- 
-  elQuestionHint.textContent = 'Düzgün tərcüməni tap';
+
+  elQuestionHint.textContent = 'Qarışıq təkrar';
   showQuizScreen();
   showQuestion();
 }
@@ -1012,10 +1031,11 @@ function startQuiz(levelIdx, quizIdx) {
   const lvl    = LEVELS[levelIdx];
   const status = progress[lvl.id][quizIdx];
 
-  let mode = 'normal';
+ let mode = 'normal';
   if (status === 'completed' || status === 'phase2_unlocked') mode = 'phase2';
   if (status === 'phase2_completed' || status === 'phase3_unlocked') mode = 'phase3';
-
+  if (status === 'level_done') { startRetakeMode(levelIdx, quizIdx); return; }
+  
   quiz.mode         = mode;
   quiz.levelIdx     = levelIdx;
   quiz.quizIdx      = quizIdx;
@@ -1063,7 +1083,12 @@ function showQuestion() {
 
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
 
-if (quiz.mode === 'phase2') {
+  // Retake modunda hər sualın öz tipini yoxla
+  const effectiveMode = quiz.mode === 'retake'
+    ? (word._retakeMode || 'normal')
+    : quiz.mode;
+
+if (effectiveMode === 'phase2') {
     elQuestionWord.textContent = capitalize(word.tr);
     const opts = quiz.correctPos === 0
       ? [word.en, word.wen]
@@ -1071,7 +1096,7 @@ if (quiz.mode === 'phase2') {
     elOpt0.textContent = capitalize(opts[0]);
     elOpt1.textContent = capitalize(opts[1]);
 
-  } else if (quiz.mode === 'phase3') {
+  } else if (effectiveMode === 'phase3') {
     elQuestionWord.textContent = word.def;
     const opts = quiz.correctPos === 0
       ? [word.en, word.wen]
@@ -1245,6 +1270,48 @@ function finishQuiz() {
       elResultBackBtn.classList.remove('hidden');
       elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
       elResultBackBtn.onclick = () => { closeOverlays(); renderLevels(); };
+    }, 250);
+    return;
+  }
+
+  // Retake mode nəticəsi
+  if (quiz.mode === 'retake') {
+    setTimeout(() => {
+      elQuizScreen.classList.add('hidden');
+      elResultScreen.classList.remove('hidden');
+
+      const total   = quiz.words.length;
+      const correct = total - quiz.mistakes;
+      const pct     = Math.round((correct / total) * 100);
+
+      let emoji, title;
+      if (pct === 100)    { emoji = '🏆'; title = 'Əla nəticə!'; }
+      else if (pct >= 80) { emoji = '🎉'; title = 'Çox yaxşı!'; }
+      else if (pct >= 60) { emoji = '👍'; title = 'Pis deyil!'; }
+      else if (pct >= 40) { emoji = '📚'; title = 'Daha çox oxu!'; }
+      else                { emoji = '💪'; title = 'Davam et!'; }
+
+      elResultEmoji.textContent = emoji;
+      elResultTitle.textContent = title;
+      elResultDesc.textContent  = `${total} qarışıq sualdan ${correct} düzgün`;
+
+      elResultStats.classList.remove('hidden');
+      elLevelResultCard.classList.add('hidden');
+      elStatCorrect.textContent = correct;
+      elStatWrong.textContent   = quiz.mistakes;
+      elStatPct.textContent     = `${pct}%`;
+
+      elResultMainBtn.textContent = 'Yenidən cəhd et';
+      elResultMainBtn.onclick = () => startRetakeMode(quiz.levelIdx, quiz.quizIdx);
+
+      elResultBackBtn.classList.remove('hidden');
+      elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+      elResultBackBtn.onclick = () => {
+        const li = quiz.levelIdx;
+        closeOverlays();
+        renderLevels();
+        scrollToCurrentNode(li);
+      };
     }, 250);
     return;
   }
