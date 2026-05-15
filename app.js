@@ -1348,11 +1348,11 @@ function finishQuiz() {
           // completed → phase2_completed (1 addımda)
           progress[lvl.id][quiz.quizIdx] = 'phase2_completed';
           saveProgress();
-        } else {
-          // phase3_unlocked → level_done
-          markCompleted(quiz.levelIdx, quiz.quizIdx);
-        }
-
+       } else {
+  // phase3 → birbaşa level_done
+  progress[lvl.id][quiz.quizIdx] = 'level_done';
+  saveProgress();
+}
         const isPhase3 = quiz.mode === 'phase3';
         elResultEmoji.textContent = isPhase3 ? '🏅' : '💜';
         elResultTitle.textContent = isPhase3 ? 'Level tamamlandı!' : 'Phase 2 tamamlandı!';
