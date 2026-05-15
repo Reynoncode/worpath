@@ -368,6 +368,12 @@ function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
   const cur = progress[lvl.id][quizIdx];
 
+  if (cur === 'completed') {          // ← bu blok çatışmırdı
+    progress[lvl.id][quizIdx] = 'phase2_unlocked';
+    saveProgress();
+    return;
+  }
+
   if (cur === 'phase2_unlocked') {
     progress[lvl.id][quizIdx] = 'phase2_completed';
     saveProgress();
