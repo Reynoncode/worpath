@@ -8,32 +8,63 @@
 
 const StatsPage = (() => {
 
-  // Səviyyə konfiqurasiyası
+  // Göstəriləcək səviyyələr — label, rəng, sublevel ID-ləri (localStorage açarları)
+  // total: həmin levelə aid bütün quiz nodelarının sayı × 3 phase
+  // (exam nodeları daxil deyil — onların statusu progress-ə təsir etmir)
+  // sublevelKeys: localStorage-da həmin səviyyəyə aid olan bütün açarlar
   const LEVELS = [
-    { id: "A1", icon: "🌱", color: "#639922", total: 54 },
-    { id: "A2", icon: "🌿", color: "#3B6D11", total: 40 },
-    { id: "B1", icon: "🌲", color: "#0F6E56", total: 31 },
-    { id: "B2", icon: "🌲", color: "#085041", total: 40 },
-    { id: "C1", icon: "⚡", color: "#BA7517", total: 40 },
-    { id: "C2", icon: "🔥", color: "#A32D2D", total: 60 },
+    { label: "A1", color: "#C0392B", sublevelKeys: ["a1"],            total: 123 },
+    { label: "A2", color: "#E67E22", sublevelKeys: ["a2"],            total: 93  },
+    { label: "B1", color: "#D4AC0D", sublevelKeys: ["b1","b1a","b1b"], total: 135 },
+    { label: "B2", color: "#1E8449", sublevelKeys: ["b2","b2a","b2b"], total: 165 },
+    { label: "C1", color: "#2471A3", sublevelKeys: ["c1","c1a","c1b"], total: 147 },
+    { label: "C2", color: "#1B2A3B", sublevelKeys: ["c2"],            total: 174 },
   ];
+
+  // Status → neçə phase tamamlandı
+  const STATUS_PHASE_MAP = {
+    'completed':        1,
+    'phase2_unlocked':  1,
+    'phase2_completed': 2,
+    'phase3_unlocked':  2,
+    'level_done':       3,
+  };
+
+  // wordpath_v1 progress-dən hər səviyyə üçün tamamlanan phase sayını hesabla
+  // sublevelKeys-ə görə birləşdirir (b1a + b1b → B1)
+  function getPhasesByLevel() {
+    let raw = {};
+    try {
+      const stored = localStorage.getItem('wordpath_v1');
+      if (stored) raw = JSON.parse(stored);
+    } catch (_) {}
+
+    // Əvvəlcə hər localStorage açarı üçün phase cəmini hesabla
+    const keySum = {};
+    for (const [levelId, statuses] of Object.entries(raw)) {
+      let sum = 0;
+      if (Array.isArray(statuses)) {
+        statuses.forEach(s => { sum += (STATUS_PHASE_MAP[s] || 0); });
+      }
+      keySum[levelId.toLowerCase()] = sum;
+    }
+
+    // Sonra hər göstərilən səviyyə üçün sublevelKeys-i topla
+    const counts = {};
+    LEVELS.forEach(lv => {
+      let total = 0;
+      lv.sublevelKeys.forEach(k => { total += (keySum[k] || 0); });
+      counts[lv.label] = total;
+    });
+
+    return counts;
+  }
 
   const SEV_CFG = {
     critical: { label: "Kritik zəiflik", icon: "⚠️", bg: "#FFF1F0", border: "#FCA5A5", textColor: "#991B1B" },
     medium:   { label: "Orta səviyyə",   icon: "⚡", bg: "#FFFBEB", border: "#FCD34D", textColor: "#92400E" },
     light:    { label: "Yüngül səhv",    icon: "ℹ️", bg: "#F0FDF4", border: "#86EFAC", textColor: "#14532D" },
   };
-
-  // Səviyyə üzrə tamamlanan söz sayını hesabla
-  function getDoneByLevel(rawWords) {
-    const counts = {};
-    for (const [word, w] of Object.entries(rawWords)) {
-      if (w.correct > 0) {
-        counts[w.level] = (counts[w.level] || 0) + 1;
-      }
-    }
-    return counts;
-  }
 
   // Bir səhv qrupunun HTML-i
   function renderGroup(sev, words, openState) {
@@ -56,7 +87,7 @@ const StatsPage = (() => {
           <div style="font-size:10px;color:#9CA3AF;">səhv</div>
         </div>
       </div>
-    `).join("").replace(/border-bottom:[^;]+;(?=[^<]*<\/div>\s*<\/div>\s*$)/, ""); // son elementin border-bottom-unu sil... 
+    `).join("");
 
     return `
       <div style="margin-bottom:8px;">
@@ -86,8 +117,8 @@ const StatsPage = (() => {
     const body    = document.getElementById(`sp-body-${sev}`);
     const chevron = document.getElementById(`sp-chevron-${sev}`);
     const head    = document.getElementById(`sp-head-${sev}`);
-    body.style.display    = openState[sev] ? "" : "none";
-    chevron.textContent   = openState[sev] ? "▲" : "▼";
+    body.style.display      = openState[sev] ? "" : "none";
+    chevron.textContent     = openState[sev] ? "▲" : "▼";
     head.style.borderRadius = openState[sev] ? "10px 10px 0 0" : "10px";
     head.setAttribute("aria-expanded", openState[sev]);
   }
@@ -98,25 +129,37 @@ const StatsPage = (() => {
     if (!el) return;
 
     const s = Stats.getStats();
-    const doneByLevel = getDoneByLevel(Stats.load().words);
+    const phasesByLevel = getPhasesByLevel();
 
     // Qruplaşdır
     const grouped = { critical: [], medium: [], light: [] };
     s.errorWords.forEach(w => grouped[w.severity].push(w));
 
-    // Səviyyə progress sətirləri
+    // Səviyyə progress sətirləri — rəngli kvadrat badge
     const levelRows = LEVELS.map(lv => {
-      const done = doneByLevel[lv.id] || 0;
-      const pct  = Math.round((done / lv.total) * 100);
+      const done = phasesByLevel[lv.label] || 0;
+      const pct  = lv.total > 0 ? Math.min(100, Math.round((done / lv.total) * 100)) : 0;
+
+      const badge = `
+        <div style="
+          width:30px;height:30px;
+          border-radius:5px;
+          background:${lv.color};
+          display:flex;align-items:center;justify-content:center;
+          flex-shrink:0;
+        ">
+          <span style="font-size:10px;font-weight:800;color:#fff;letter-spacing:0.2px;">${lv.label}</span>
+        </div>
+      `;
+
       return `
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
-          <span style="width:22px;font-size:15px;text-align:center;">${lv.icon}</span>
-          <span style="font-size:11px;font-weight:600;color:#6B7280;width:22px;">${lv.id}</span>
+          ${badge}
           <div style="flex:1;height:6px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
             <div style="width:${pct}%;height:100%;background:${lv.color};border-radius:99px;transition:width 0.6s ease;"></div>
           </div>
           <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${pct > 0 ? lv.color : "#C4B8A8"};">${pct}%</span>
-          <span style="font-size:11px;color:#9CA3AF;width:40px;text-align:right;">${done}/${lv.total}</span>
+          <span style="font-size:11px;color:#9CA3AF;width:52px;text-align:right;">${done}/${lv.total}</span>
         </div>
       `;
     }).join("");
