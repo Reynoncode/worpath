@@ -524,6 +524,14 @@ button { font-family: var(--font); }
 .path-node.phase3-open svg polyline {
   stroke: #fff;
 }
+.path-node.phase2-open svg polyline,
+.path-node.phase2-done svg polyline,
+.path-node.phase3-open svg polyline,
+.path-node.level-done svg polyline {
+  stroke: #fff;
+  fill: none;
+  stroke-width: 2.5;
+}
 
 /* Level tamamlandı — qızıl */
 .path-node.level-done {
