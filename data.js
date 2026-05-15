@@ -72,7 +72,7 @@ const LEVELS = [
 
 // ─────────────────────── QUIZ 3 — Ailə ───────────────────────
 [
-  { en: 'aunt', tr: 'xala', wrong: 'nənə', wen: 'grandmother', def: 'your parent/'s sister' },
+  { en: 'aunt', tr: 'xala', wrong: 'nənə', wen: 'grandmother', def: 'your parent\'s sister' },
   { en: 'boyfriend', tr: 'oğlan dostu', wrong: 'qardaş', wen: 'brother', def: 'a boy you are dating romantically' },
   { en: 'brother', tr: 'qardaş', wrong: 'bacı', wen: 'sister', def: 'a boy who has the same parents as you' },
   { en: 'cousin', tr: 'əmiuşağı', wrong: 'nəvə', wen: 'grandchild', def: 'the child of your uncle or aunt' },
@@ -81,8 +81,8 @@ const LEVELS = [
   { en: 'family', tr: 'ailə', wrong: 'qrup', wen: 'group', def: 'people who are related by blood or marriage' },
   { en: 'father', tr: 'ata', wrong: 'ana', wen: 'mother', def: 'a male parent' },
   { en: 'girlfriend', tr: 'qız dostu', wrong: 'oğlan dostu', wen: 'boyfriend', def: 'a girl you are dating romantically' },
-  { en: 'grandfather', tr: 'baba', wrong: 'əmi', wen: 'uncle', def: 'your parent/'s father' },
-  { en: 'grandmother', tr: 'nənə', wrong: 'xala', wen: 'aunt', def: 'your parent/'s mother' },
+  { en: 'grandfather', tr: 'baba', wrong: 'əmi', wen: 'uncle', def: 'your parent\'s father' },
+  { en: 'grandmother', tr: 'nənə', wrong: 'xala', wen: 'aunt', def: 'your parent\'s mother' },
   { en: 'grandparent', tr: 'nənə baba', wrong: 'valideyn', wen: 'parent', def: 'a grandmother or grandfather' },
   { en: 'husband', tr: 'ər', wrong: 'arvad', wen: 'wife', def: 'a married man' },
   { en: 'mother', tr: 'ana', wrong: 'ata', wen: 'father', def: 'a female parent' },
