@@ -486,31 +486,62 @@ button { font-family: var(--font); }
   border-width: 3px;
   border-style: dashed;
 }
-/* Phase 2 dəvəti — mavi node, bənövşəyi parlayan kənar */
-.path-node.phase2-invite {
-  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.35);
+/* Phase 1 tamamlandı — mavi, bənövşəyi parlayan kənar */
+.path-node.completed.phase2-invite {
+  background: #3b82f6 !important;
+  border-color: #3b82f6 !important;
   animation: purplePulse 1.8s ease-in-out infinite;
 }
 
-/* Phase 2 açıqdır — bənövşəyi outline pulse */
+/* Phase 2 açıqdır — mavi fon, bənövşəyi kənar pulse */
 .path-node.phase2-open {
+  background: #a855f7 !important;
+  border-color: #a855f7 !important;
   animation: purplePulse 1.4s ease-in-out infinite;
 }
+.path-node.phase2-open svg polyline {
+  stroke: #fff;
+}
 
-/* Phase 2 tamamlandı — qızıl kənar */
+/* Phase 2 tamamlandı — bənövşəyi fon, qızıl kənar */
+.path-node.phase2-done {
+  background: #a855f7 !important;
+  border-color: #a855f7 !important;
+}
+.path-node.phase2-done svg polyline {
+  stroke: #fff;
+}
 .path-node.gold-pulse {
-  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.4);
   animation: goldPulse 1.8s ease-in-out infinite;
 }
 
+/* Phase 3 açıqdır — bənövşəyi fon, qızıl kənar pulse */
+.path-node.phase3-open {
+  background: #a855f7 !important;
+  border-color: #a855f7 !important;
+  animation: goldPulse 1.4s ease-in-out infinite;
+}
+.path-node.phase3-open svg polyline {
+  stroke: #fff;
+}
+
+/* Level tamamlandı — qızıl */
+.path-node.level-done {
+  background: #eab308 !important;
+  border-color: #eab308 !important;
+}
+.path-node.level-done svg polyline {
+  stroke: #fff;
+}
+
 @keyframes purplePulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.4); }
-  50%       { box-shadow: 0 0 0 7px rgba(168, 85, 247, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.5); }
+  50%       { box-shadow: 0 0 0 8px rgba(168, 85, 247, 0.15); }
 }
 
 @keyframes goldPulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.45); }
-  50%       { box-shadow: 0 0 0 7px rgba(234, 179, 8, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.55); }
+  50%       { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0.15); }
 }
 
 
