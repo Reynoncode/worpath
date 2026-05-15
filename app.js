@@ -366,22 +366,28 @@ function getStatus(levelIdx, quizIdx) {
  
 function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
-  const wasCompleted = progress[lvl.id][quizIdx] === 'completed';
-  progress[lvl.id][quizIdx] = 'completed';
- 
-  const next = quizIdx + 1;
-  if (next < lvl.quizzes.length) {
-    if (progress[lvl.id][next] === 'locked') {
-      progress[lvl.id][next] = 'unlocked';
-    }
-  }
- 
-  if (!wasCompleted) {
-    addStar();
-    Stats.addStar(1); // ── STATS: yeni ulduz qeydə alınır
+  const cur = progress[lvl.id][quizIdx];
+
+  if (cur === 'phase2_unlocked') {
+    progress[lvl.id][quizIdx] = 'phase2_completed';
+    saveProgress();
+    return;
   }
 
-  // ── STATS: streak yenilə ──────────────────────────────
+  const wasCompleted = ['completed', 'phase2_unlocked', 'phase2_completed'].includes(cur);
+  progress[lvl.id][quizIdx] = 'completed';
+
+  // Növbəti nodu aç (phase 1 bitən kimi)
+  const next = quizIdx + 1;
+  if (next < lvl.quizzes.length && progress[lvl.id][next] === 'locked') {
+    progress[lvl.id][next] = 'unlocked';
+  }
+
+  if (!wasCompleted) {
+    addStar();
+    Stats.addStar(1);
+  }
+
   const today = new Date().toISOString().slice(0, 10);
   const lastDate = localStorage.getItem('wordpath_last_date') || '';
   const streak = parseInt(localStorage.getItem('wordpath_streak') || '0', 10);
@@ -389,7 +395,6 @@ function markCompleted(levelIdx, quizIdx) {
   yesterday.setDate(yesterday.getDate() - 1);
   const yStr = yesterday.toISOString().slice(0, 10);
   if (lastDate === today) {
-    // eyni gün — dəyişmə
   } else if (lastDate === yStr) {
     localStorage.setItem('wordpath_streak', String(streak + 1));
     localStorage.setItem('wordpath_last_date', today);
@@ -397,7 +402,6 @@ function markCompleted(levelIdx, quizIdx) {
     localStorage.setItem('wordpath_streak', '1');
     localStorage.setItem('wordpath_last_date', today);
   }
-  // ─────────────────────────────────────────────────────
 
   saveProgress();
 }
@@ -528,33 +532,47 @@ function renderQuizPath(lvl, li) {
   let html = '<div class="quiz-path">';
   let quizCounter = 0;
   let examCounter = 0;
- 
+
   lvl.quizzes.forEach((item, qi) => {
     const status  = getStatus(li, qi);
     const isFirst = qi === 0;
     const isExam  = isExamItem(item, lvl.id, qi);
- 
+
     if (!isFirst) html += '<div class="path-line"></div>';
     html += `<div class="path-node-wrap">`;
- 
+
     if (isExam) { examCounter++; } else { quizCounter++; }
- 
-    if (status === 'completed') {
-      if (isExam) {
-        html += `<div class="path-node completed exam-node"
-             data-quiz-idx="${qi}" data-status="completed"
-             style="border-color:${lvl.color}; background:${lvl.color}">🏆</div>`;
-      } else {
-        html += `<div class="path-node completed"
-             data-quiz-idx="${qi}" data-status="completed"
-             style="border-color:${lvl.color}; background:${lvl.color}">
-           <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-         </div>`;
-      }
+
+    if (status === 'phase2_completed') {
+      // Bənövşəyi dolu + qızıl kənar (phase 3 üçün)
+      const nodeClass = isExam ? 'path-node phase2-done exam-node' : 'path-node phase2-done';
+      const inner = isExam ? '🏆' : `<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+      html += `<div class="${nodeClass} gold-pulse"
+           data-quiz-idx="${qi}" data-status="${status}"
+           style="border-color:#a855f7; background:#a855f7">${inner}</div>`;
+
+    } else if (status === 'completed') {
+      // Mavi dolu + bənövşəyi pulse kənar (phase 2 dəvəti)
+      const nodeClass = isExam ? 'path-node completed exam-node' : 'path-node completed';
+      const inner = isExam ? '🏆' : `<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+      html += `<div class="${nodeClass} phase2-invite"
+           data-quiz-idx="${qi}" data-status="${status}"
+           style="border-color:${lvl.color}; background:${lvl.color}">${inner}</div>`;
+
+    } else if (status === 'phase2_unlocked') {
+      // Bənövşəyi outline pulse (phase 2 açıqdır)
+      const nodeClass = isExam ? 'path-node phase2-open exam-node' : 'path-node phase2-open';
+      const inner = isExam ? '🏆' : `<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
+      html += `<div class="${nodeClass} purple-pulse"
+           data-quiz-idx="${qi}" data-status="${status}"
+           style="border-color:#a855f7; background:${lvl.color}">${inner}</div>`;
+
     } else if (status === 'unlocked') {
-      const completedSoFar = progress[lvl.id].filter(s => s === 'completed').length;
+      const completedSoFar = progress[lvl.id].filter(s =>
+        ['completed','phase2_unlocked','phase2_completed'].includes(s)
+      ).length;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
- 
+
       if (isExam) {
         html += `<div class="path-node unlocked exam-node ${pulseClass}"
              data-quiz-idx="${qi}" data-status="unlocked"
@@ -578,13 +596,13 @@ function renderQuizPath(lvl, li) {
          </div>`;
       }
     }
- 
+
     const label = isExam
       ? `Exam ${examCounter}`
       : (QUIZ_NAMES[lvl.id]?.[qi] || `Test ${quizCounter}`);
     html += `<div class="node-label">${label}</div></div>`;
   });
- 
+
   html += '</div>';
   return html;
 }
@@ -972,7 +990,11 @@ function finishLevelTest() {
 // ══════════════════════════════════════════════
  
 function startQuiz(levelIdx, quizIdx) {
-  quiz.mode         = 'normal';
+  const lvl    = LEVELS[levelIdx];
+  const status = progress[lvl.id][quizIdx];
+  const isPhase2 = status === 'completed' || status === 'phase2_unlocked';
+
+  quiz.mode         = isPhase2 ? 'phase2' : 'normal';
   quiz.levelIdx     = levelIdx;
   quiz.quizIdx      = quizIdx;
   quiz.mistakes     = 0;
@@ -980,11 +1002,20 @@ function startQuiz(levelIdx, quizIdx) {
   quiz.locked       = false;
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
- 
+
   const item = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
-  quiz.words = shuffle([...item]);
- 
-  elQuestionHint.textContent = 'Düzgün tərcüməni tap';
+
+  // phase2-də wen olmayan sözləri filtrləyirik
+  const words = quiz.mode === 'phase2'
+    ? item.filter(w => w && w.en && w.tr && w.wen)
+    : [...item];
+
+  quiz.words = shuffle(words.length >= 2 ? words : [...item]);
+
+  elQuestionHint.textContent = quiz.mode === 'phase2'
+    ? 'Düzgün ingilis sözünü tap'
+    : 'Düzgün tərcüməni tap';
+
   showQuizScreen();
   showQuestion();
 }
@@ -997,23 +1028,35 @@ function showQuizScreen() {
 function showQuestion() {
   const word       = quiz.words[quiz.index];
   const totalWords = quiz.words.length;
- 
+
   elProgressFill.style.width = `${(quiz.index / totalWords) * 100}%`;
   elQCounter.textContent = `${quiz.index + 1}/${totalWords}`;
-  elQuestionWord.textContent = capitalize(word.en);
- 
+
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
-  const opts = quiz.correctPos === 0
-    ? [word.tr, word.wrong]
-    : [word.wrong, word.tr];
- 
-  elOpt0.textContent = capitalize(opts[0]);
-  elOpt1.textContent = capitalize(opts[1]);
-  elOpt0.className   = 'option-btn';
-  elOpt1.className   = 'option-btn';
-  elOpt0.disabled    = false;
-  elOpt1.disabled    = false;
-  quiz.locked        = false;
+
+  if (quiz.mode === 'phase2') {
+    // Azərbaycan göstər, ingilis seç
+    elQuestionWord.textContent = capitalize(word.tr);
+    const opts = quiz.correctPos === 0
+      ? [word.en, word.wen]
+      : [word.wen, word.en];
+    elOpt0.textContent = capitalize(opts[0]);
+    elOpt1.textContent = capitalize(opts[1]);
+  } else {
+    // Normal: ingilis göstər, azərbaycan seç
+    elQuestionWord.textContent = capitalize(word.en);
+    const opts = quiz.correctPos === 0
+      ? [word.tr, word.wrong]
+      : [word.wrong, word.tr];
+    elOpt0.textContent = capitalize(opts[0]);
+    elOpt1.textContent = capitalize(opts[1]);
+  }
+
+  elOpt0.className = 'option-btn';
+  elOpt1.className = 'option-btn';
+  elOpt0.disabled  = false;
+  elOpt1.disabled  = false;
+  quiz.locked      = false;
 }
  
 // ── Şans popup ────────────────────────────────────────────
@@ -1169,6 +1212,62 @@ function finishQuiz() {
     }, 250);
     return;
   }
+
+  // Phase2 mode nəticəsi
+if (quiz.mode === 'phase2') {
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+    elResultStats.classList.add('hidden');
+    elLevelResultCard.classList.add('hidden');
+
+    const won = quiz.mistakes === 0;
+
+    if (won) {
+      // completed → phase2_unlocked → phase2_completed
+      const lvl = LEVELS[quiz.levelIdx];
+      const cur = progress[lvl.id][quiz.quizIdx];
+      if (cur === 'completed') {
+        progress[lvl.id][quiz.quizIdx] = 'phase2_unlocked';
+        saveProgress();
+      } else {
+        markCompleted(quiz.levelIdx, quiz.quizIdx); // phase2_completed edir
+      }
+
+      elResultEmoji.textContent = '💜';
+      elResultTitle.textContent = 'Phase 2 tamamlandı!';
+      elResultDesc.textContent  = `Bütün ${quiz.words.length} sözü tərsinə də bildirdin!`;
+
+      elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
+      elResultMainBtn.onclick = () => {
+        const li = quiz.levelIdx;
+        closeOverlays();
+        renderLevels();
+        scrollToCurrentNode(li);
+      };
+
+      elResultBackBtn.classList.add('hidden');
+    } else {
+      elResultEmoji.textContent = '😅';
+      elResultTitle.textContent = 'Olmadı...';
+      elResultDesc.textContent  = `${quiz.mistakes} səhv etdin. Sıfır səhv lazımdır!`;
+
+      elResultMainBtn.textContent = 'Yenidən cəhd et';
+      elResultMainBtn.onclick     = () => startQuiz(quiz.levelIdx, quiz.quizIdx);
+
+      elResultBackBtn.classList.remove('hidden');
+      elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+      elResultBackBtn.onclick = () => {
+        const li = quiz.levelIdx;
+        closeOverlays();
+        renderLevels();
+        scrollToCurrentNode(li);
+      };
+    }
+  }, 250);
+  return;
+}
+  
  
   // Normal mode nəticəsi
   setTimeout(() => {
