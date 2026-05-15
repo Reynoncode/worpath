@@ -564,21 +564,22 @@ function renderQuizPath(lvl, li) {
       ? '🏆'
       : `<svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>`;
 
-    if (status === 'level_done') {
-      const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
+ if (status === 'level_done') {
+  const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
+  html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}"
+       style="background:#eab308; border-color:#eab308">${inner}</div>`;
 
-    } else if (status === 'phase3_unlocked') {
-      const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
+} else if (status === 'phase3_unlocked') {
+  const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
+  html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
 
-    } else if (status === 'phase2_completed') {
-      const nodeClass = isExam ? 'path-node phase2-done gold-pulse exam-node' : 'path-node phase2-done gold-pulse';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
+} else if (status === 'phase2_completed') {
+  const nodeClass = isExam ? 'path-node phase2-done gold-pulse exam-node' : 'path-node phase2-done gold-pulse';
+  html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
 
-    } else if (status === 'phase2_unlocked') {
-      const nodeClass = isExam ? 'path-node phase2-open exam-node' : 'path-node phase2-open';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
+} else if (status === 'phase2_unlocked') {
+  const nodeClass = isExam ? 'path-node phase2-open exam-node' : 'path-node phase2-open';
+  html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
 
     } else if (status === 'completed') {
       const nodeClass = isExam ? 'path-node completed phase2-invite exam-node' : 'path-node completed phase2-invite';
