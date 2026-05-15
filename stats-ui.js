@@ -8,33 +8,30 @@
 
 const StatsPage = (() => {
 
-  // Səviyyə konfiqurasiyası
-  // total = həmin levelə aid olan bütün quizlərin phase sayının cəmi
-  // Hər quiz üçün: phase1 = 1 nöqtə, phase2 = 1 nöqtə, phase3 = 1 nöqtə → max 3 nöqtə/quiz
-  // Exam nodeları sayılmır (onlar quiz deyil)
-  // Bu dəyərlər app.js-dəki LEVELS və EXAM_IDS-ə uyğun hesablanır:
-  //   A1: 53 quiz var, 12-si exam → 41 normal quiz × 3 phase = 123 phase
-  //   A2: 40 quiz var,  9-su exam → 31 normal quiz × 3 phase = 93 phase ... və s.
-  // Əgər quiz sayı dəyişsə bu dəyərləri də yenilə.
+  // Göstəriləcək səviyyələr — label, rəng, sublevel ID-ləri (localStorage açarları)
+  // total: həmin levelə aid bütün quiz nodelarının sayı × 3 phase
+  // (exam nodeları daxil deyil — onların statusu progress-ə təsir etmir)
+  // sublevelKeys: localStorage-da həmin səviyyəyə aid olan bütün açarlar
   const LEVELS = [
-    { id: "A1", color: "#639922", total: 123 },
-    { id: "A2", color: "#3B6D11", total: 93  },
-    { id: "B1", color: "#0F6E56", total: 69  },
-    { id: "B2", color: "#085041", total: 93  },
-    { id: "C1", color: "#BA7517", total: 93  },
-    { id: "C2", color: "#A32D2D", total: 141 },
+    { label: "A1", color: "#639922", sublevelKeys: ["a1"],       total: 123 },
+    { label: "A2", color: "#3B6D11", sublevelKeys: ["a2"],       total: 93  },
+    { label: "B1", color: "#0F6E56", sublevelKeys: ["b1","b1a","b1b"], total: 135 },
+    { label: "B2", color: "#085041", sublevelKeys: ["b2","b2a","b2b"], total: 165 },
+    { label: "C1", color: "#BA7517", sublevelKeys: ["c1","c1a","c1b"], total: 147 },
+    { label: "C2", color: "#A32D2D", sublevelKeys: ["c2"],       total: 174 },
   ];
 
   // Status → neçə phase tamamlandı
   const STATUS_PHASE_MAP = {
-    'completed':       1,
-    'phase2_unlocked': 1,
-    'phase2_completed':2,
-    'phase3_unlocked': 2,
-    'level_done':      3,
+    'completed':        1,
+    'phase2_unlocked':  1,
+    'phase2_completed': 2,
+    'phase3_unlocked':  2,
+    'level_done':       3,
   };
 
-  // wordpath_v1 progress-dən hər level üçün tamamlanan phase sayını hesabla
+  // wordpath_v1 progress-dən hər səviyyə üçün tamamlanan phase sayını hesabla
+  // sublevelKeys-ə görə birləşdirir (b1a + b1b → B1)
   function getPhasesByLevel() {
     let raw = {};
     try {
@@ -42,17 +39,24 @@ const StatsPage = (() => {
       if (stored) raw = JSON.parse(stored);
     } catch (_) {}
 
-    const counts = {};
+    // Əvvəlcə hər localStorage açarı üçün phase cəmini hesabla
+    const keySum = {};
     for (const [levelId, statuses] of Object.entries(raw)) {
-      const id = levelId.toUpperCase();
       let sum = 0;
       if (Array.isArray(statuses)) {
-        statuses.forEach(s => {
-          sum += (STATUS_PHASE_MAP[s] || 0);
-        });
+        statuses.forEach(s => { sum += (STATUS_PHASE_MAP[s] || 0); });
       }
-      counts[id] = sum;
+      keySum[levelId.toLowerCase()] = sum;
     }
+
+    // Sonra hər göstərilən səviyyə üçün sublevelKeys-i topla
+    const counts = {};
+    LEVELS.forEach(lv => {
+      let total = 0;
+      lv.sublevelKeys.forEach(k => { total += (keySum[k] || 0); });
+      counts[lv.label] = total;
+    });
+
     return counts;
   }
 
@@ -134,10 +138,10 @@ const StatsPage = (() => {
     // Səviyyə progress sətirləri
     // Icon əvəzinə rəngli kvadrat (border-radius ~10%), sağ tərəfdəki əlavə yazı yoxdur
     const levelRows = LEVELS.map(lv => {
-      const done = phasesByLevel[lv.id] || 0;
+      const done = phasesByLevel[lv.label] || 0;
       const pct  = lv.total > 0 ? Math.min(100, Math.round((done / lv.total) * 100)) : 0;
 
-      // Rəngli kvadrat badge: 28×28px, border-radius 10% ≈ 3px
+      // Rəngli kvadrat badge: 28×28px, border-radius ~10%
       const badge = `
         <div style="
           width:28px;height:28px;
@@ -146,7 +150,7 @@ const StatsPage = (() => {
           display:flex;align-items:center;justify-content:center;
           flex-shrink:0;
         ">
-          <span style="font-size:10px;font-weight:800;color:#fff;letter-spacing:0.2px;">${lv.id}</span>
+          <span style="font-size:10px;font-weight:800;color:#fff;letter-spacing:0.2px;">${lv.label}</span>
         </div>
       `;
 
