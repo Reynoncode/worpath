@@ -405,9 +405,7 @@ function buildExamQuestions(levelId, quizIdx) {
     };
   });
 
-  // Sualları qarışdır: fill əvvəl, sonra wm və def qarışıq
-  const mixedTail = shuffle([...wmQuestions, ...defQuestions]);
-  return [...fillQuestions, ...mixedTail];
+  return shuffle([...fillQuestions, ...wmQuestions, ...defQuestions]);
 }
 
 // ============================================================
