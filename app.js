@@ -1327,15 +1327,19 @@ function showQuestion() {
     elOpt0.textContent = capitalize(opts[0]);
     elOpt1.textContent = capitalize(opts[1]);
 
-  } else {
-    elQuestionWord.textContent = capitalize(word.en);
+ } else {
+    if (word.en && word.en.includes('____')) {
+      elQuestionWord.textContent = word.en;
+      elQuestionHint.textContent = 'Boşluğa uyğun sözü tap';
+    } else {
+      elQuestionWord.textContent = capitalize(word.en);
+    }
     const opts = quiz.correctPos === 0
       ? [word.tr, word.wrong]
       : [word.wrong, word.tr];
     elOpt0.textContent = capitalize(opts[0]);
     elOpt1.textContent = capitalize(opts[1]);
   }
-
   elOpt0.className = 'option-btn';
   elOpt1.className = 'option-btn';
   elOpt0.disabled  = false;
