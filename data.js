@@ -119,7 +119,8 @@ const LEVELS = [
 ],
       
 // ─────────────────────── EXAM 1 — Ümumi insanlar ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "The ____ is sleeping.", 
     tr: 'baby', 
@@ -221,6 +222,7 @@ const LEVELS = [
     wrong: 'visitor' 
   }
 ],
+  },
       
       // ─────────────────────── QUIZ 5 — Hisslər ───────────────────────
 [
