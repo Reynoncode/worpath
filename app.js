@@ -248,37 +248,538 @@ const reviewState = {
   wrong:   0,
 };
 
-// ── Level test state ──────────────────────────────────────
-const LT_TOTAL        = 30;
-const LT_P1_PER_LEVEL = 2;
-const LT_P1_PASS      = 1;
-const LT_P2_COUNT     = 12;
-const LT_P2_STRONG    = 0.75;
-const LT_P2_WEAK      = 0.50;
-const LT_P3_COUNT     = 6;
-const LT_P3_UPGRADE   = 4;
+// ============================================================
+//  WORDPATH — YENİ SƏVİYYƏ TESTİ SİSTEMİ
+//  40 sual · 4 tip · Weighted Scoring · Adaptive 3-Phase
+// ============================================================
 
-const levelTestState = {
-  phase:        1,
-  totalAsked:   0,
-  p1_lo:        0,
-  p1_hi:        5,
-  p1_mid:       -1,
-  p1_words:     [],
-  p1_wordIdx:   0,
-  p1_correct:   0,
-  p1_results:   {},
-  p2_levelId:   null,
-  p2_words:     [],
-  p2_wordIdx:   0,
-  p2_correct:   0,
-  p3_levelId:   null,
-  p3_words:     [],
-  p3_wordIdx:   0,
-  p3_correct:   0,
-  finalLevelId: null,
-  usedWordKeys: new Set(),
+// ── Sabitlər ─────────────────────────────────────────────
+const LT_TOTAL        = 40;
+
+// Phase 1 — Binary Search Anchor
+const LT_P1_PER_LEVEL = 2;   // hər level blokunda sual sayı
+const LT_P1_PASS      = 1;   // keçmək üçün minimum düzgün
+
+// Phase 2 — Zone Confirmation (20 sual)
+const LT_P2_TOTAL     = 20;
+const LT_P2_PER_TYPE  = 5;   // hər tipdən 5 sual (normal/phase2/phase3/exam)
+const LT_P2_STRONG    = 0.72; // yuxarıya keçmək üçün weighted faiz
+const LT_P2_WEAK      = 0.45; // aşağıya düşmək üçün weighted faiz
+
+// Phase 3 — Upper Boundary (10 sual)
+const LT_P3_TOTAL     = 10;
+const LT_P3_UPGRADE   = 6;   // weighted xalla upgrade threshold
+
+// ── Weighted Scoring ──────────────────────────────────────
+const LT_LEVEL_WEIGHTS = { a1: 1, a2: 2, b1: 3, b2: 4, c1: 5, c2: 6 };
+
+const LT_TYPE_WEIGHTS = {
+  normal: 1.0,   // en → tr
+  phase2: 1.3,   // tr → en
+  phase3: 1.6,   // def → en
+  exam:   1.4,   // cümlədə boşluq
 };
+
+// Def və exam mövcud olan levellər
+const LT_HAS_DEF  = new Set(['a1', 'a2', 'b1']);
+const LT_HAS_EXAM = new Set(['a1', 'a2', 'b1']);
+
+// ── Level test state ──────────────────────────────────────
+const levelTestState = {
+  phase:          1,
+  totalAsked:     0,
+
+  // Phase 1
+  p1_lo:          0,
+  p1_hi:          5,
+  p1_mid:         -1,
+  p1_words:       [],
+  p1_wordIdx:     0,
+  p1_correct:     0,
+  p1_results:     {},
+
+  // Phase 2
+  p2_levelId:     null,
+  p2_queue:       [],   // {word, qType} sıralı qarışıq sual siyahısı
+  p2_idx:         0,
+  p2_weightedScore:    0,
+  p2_weightedMax:      0,
+
+  // Phase 3
+  p3_levelId:     null,
+  p3_queue:       [],
+  p3_idx:         0,
+  p3_weightedScore:    0,
+  p3_weightedMax:      0,
+
+  finalLevelId:   null,
+  usedWordKeys:   new Set(),
+};
+
+// ── Köməkçi: levelə aid bütün exam sözlərini topla ────────
+function getAllExamWordsForLevel(levelId) {
+  const lvl = LEVELS.find(l => l.id === levelId);
+  if (!lvl) return [];
+  const words = [];
+  lvl.quizzes.forEach((item, qi) => {
+    if (isExamItem(item, levelId, qi) && Array.isArray(item)) {
+      item.forEach(w => {
+        if (w && w.en && w.en.includes('____') && w.tr && w.wrong) {
+          words.push(w);
+        }
+      });
+    }
+  });
+  return words;
+}
+
+// ── Köməkçi: fresh sözlər seç (istifadə olunmamış) ────────
+function lt_pickFreshWords(levelId, count, type = 'normal') {
+  let pool = [];
+
+  if (type === 'exam') {
+    pool = getAllExamWordsForLevel(levelId);
+  } else {
+    const all = getAllWordsForLevel(levelId);
+    if (type === 'phase2') {
+      pool = all.filter(w => w.wen);
+    } else if (type === 'phase3') {
+      pool = all.filter(w => w.def && w.wen);
+    } else {
+      pool = all.filter(w => w.tr && w.wrong);
+    }
+  }
+
+  const fresh = pool.filter(w => {
+    const key = `${levelId}|${type}|${w.en}`;
+    return !levelTestState.usedWordKeys.has(key);
+  });
+
+  const picked = shuffle([...fresh]).slice(0, count);
+  picked.forEach(w => {
+    levelTestState.usedWordKeys.add(`${levelId}|${type}|${w.en}`);
+  });
+  return picked;
+}
+
+// ── Köməkçi: növbəti tipin mövcudluğunu yoxla ─────────────
+function lt_hasType(levelId, type) {
+  if (type === 'exam')   return LT_HAS_EXAM.has(levelId);
+  if (type === 'phase2') return true; // hamısında wen var
+  if (type === 'phase3') return LT_HAS_DEF.has(levelId);
+  return true;
+}
+
+// ── Sual növbəsi qur ───────────────────────────────────────
+// Tipləri qarışdırır, çatmayan tipləri normal ilə əvəzləyir
+function lt_buildQueue(levelId, totalCount) {
+  const queue = [];
+  const types = ['normal', 'phase2', 'phase3', 'exam'];
+  const perType = Math.floor(totalCount / 4);
+  const remainder = totalCount % 4;
+
+  types.forEach((type, i) => {
+    const count = perType + (i < remainder ? 1 : 0);
+    if (lt_hasType(levelId, type)) {
+      const words = lt_pickFreshWords(levelId, count, type);
+      // Əgər kifayət qədər söz yoxdursa normal ilə doldur
+      words.forEach(w => queue.push({ word: w, qType: type }));
+      const missing = count - words.length;
+      if (missing > 0) {
+        const extra = lt_pickFreshWords(levelId, missing, 'normal');
+        extra.forEach(w => queue.push({ word: w, qType: 'normal' }));
+      }
+    } else {
+      // Bu tip mövcud deyil → hamısını normal ilə əvəzlə
+      const words = lt_pickFreshWords(levelId, count, 'normal');
+      words.forEach(w => queue.push({ word: w, qType: 'normal' }));
+    }
+  });
+
+  return shuffle(queue);
+}
+
+// ── Sual render ───────────────────────────────────────────
+function lt_renderQuestion(entry, phaseLabel) {
+  const { word, qType } = entry;
+  const asked = levelTestState.totalAsked;
+
+  elProgressFill.style.width = `${(asked / LT_TOTAL) * 100}%`;
+  elQCounter.textContent     = `${asked + 1} / ${LT_TOTAL}`;
+
+  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
+
+  if (qType === 'exam') {
+    // Boşluq doldurma: cümləni göstər
+    const sentence = word.en.replace('____', '_____');
+    elQuestionWord.textContent = sentence;
+    elQuestionHint.textContent = `${phaseLabel} · Boşluğa uyğun sözü tap`;
+
+    const opts = quiz.correctPos === 0
+      ? [word.tr, word.wrong]
+      : [word.wrong, word.tr];
+    elOpt0.textContent = capitalize(opts[0]);
+    elOpt1.textContent = capitalize(opts[1]);
+
+  } else if (qType === 'phase2') {
+    // Tərsinə: Azərbaycan → İngilis
+    elQuestionWord.textContent = capitalize(word.tr);
+    elQuestionHint.textContent = `${phaseLabel} · İngilis sözünü tap`;
+
+    const opts = quiz.correctPos === 0
+      ? [word.en, word.wen]
+      : [word.wen, word.en];
+    elOpt0.textContent = capitalize(opts[0]);
+    elOpt1.textContent = capitalize(opts[1]);
+
+  } else if (qType === 'phase3') {
+    // Tərif → söz
+    elQuestionWord.textContent = word.def;
+    elQuestionHint.textContent = `${phaseLabel} · Tərifə uyğun sözü tap`;
+
+    const opts = quiz.correctPos === 0
+      ? [word.en, word.wen]
+      : [word.wen, word.en];
+    elOpt0.textContent = capitalize(opts[0]);
+    elOpt1.textContent = capitalize(opts[1]);
+
+  } else {
+    // Normal: İngilis → Azərbaycan
+    elQuestionWord.textContent = capitalize(word.en);
+    elQuestionHint.textContent = `${phaseLabel} · Düzgün tərcüməni tap`;
+
+    const opts = quiz.correctPos === 0
+      ? [word.tr, word.wrong]
+      : [word.wrong, word.tr];
+    elOpt0.textContent = capitalize(opts[0]);
+    elOpt1.textContent = capitalize(opts[1]);
+  }
+
+  elOpt0.className = 'option-btn';
+  elOpt1.className = 'option-btn';
+  elOpt0.disabled  = false;
+  elOpt1.disabled  = false;
+  quiz.locked      = false;
+}
+
+// ══════════════════════════════════════════════════════════
+//  PHASE 1 — Binary Search Anchor (max 10 sual)
+// ══════════════════════════════════════════════════════════
+
+function startLevelTest() {
+  Object.assign(levelTestState, {
+    phase:               1,
+    totalAsked:          0,
+    p1_lo:               0,
+    p1_hi:               LEVEL_ORDER.length - 1,
+    p1_mid:              -1,
+    p1_words:            [],
+    p1_wordIdx:          0,
+    p1_correct:          0,
+    p1_results:          {},
+    p2_levelId:          null,
+    p2_queue:            [],
+    p2_idx:              0,
+    p2_weightedScore:    0,
+    p2_weightedMax:      0,
+    p3_levelId:          null,
+    p3_queue:            [],
+    p3_idx:              0,
+    p3_weightedScore:    0,
+    p3_weightedMax:      0,
+    finalLevelId:        null,
+    usedWordKeys:        new Set(),
+  });
+
+  quiz.mode         = 'leveltest';
+  quiz.levelIdx     = null;
+  quiz.quizIdx      = null;
+  quiz.index        = 0;
+  quiz.mistakes     = 0;
+  quiz.locked       = false;
+  quiz.chanceUsed   = false;
+  quiz.chanceActive = false;
+
+  showQuizScreen();
+  lt_startPhase1();
+}
+
+function lt_startPhase1() {
+  const mid     = Math.floor((levelTestState.p1_lo + levelTestState.p1_hi) / 2);
+  const levelId = LEVEL_ORDER[mid];
+
+  levelTestState.p1_mid     = mid;
+  levelTestState.p1_wordIdx = 0;
+  levelTestState.p1_correct = 0;
+
+  const words = lt_pickFreshWords(levelId, LT_P1_PER_LEVEL, 'normal');
+  if (words.length === 0) {
+    lt_evalPhase1Block(false);
+    return;
+  }
+
+  levelTestState.p1_words = words;
+  lt_showPhase1Q();
+}
+
+function lt_showPhase1Q() {
+  const word  = levelTestState.p1_words[levelTestState.p1_wordIdx];
+  const lvlId = LEVEL_ORDER[levelTestState.p1_mid];
+  const entry = { word, qType: 'normal' };
+  lt_renderQuestion(entry, `Skan: ${lvlId.toUpperCase()}`);
+}
+
+function lt_handlePhase1(isCorrect) {
+  levelTestState.totalAsked++;
+  if (isCorrect) levelTestState.p1_correct++;
+  levelTestState.p1_wordIdx++;
+
+  setTimeout(() => {
+    if (levelTestState.p1_wordIdx < levelTestState.p1_words.length) {
+      lt_showPhase1Q();
+      return;
+    }
+    lt_evalPhase1Block(levelTestState.p1_correct >= LT_P1_PASS);
+  }, 500);
+}
+
+function lt_evalPhase1Block(passed) {
+  const mid     = levelTestState.p1_mid;
+  const levelId = LEVEL_ORDER[mid];
+  levelTestState.p1_results[levelId] = passed;
+
+  if (passed) {
+    levelTestState.p1_lo = mid + 1;
+  } else {
+    levelTestState.p1_hi = mid - 1;
+  }
+
+  const maxReached = levelTestState.totalAsked >= 10;
+  const rangeEmpty = levelTestState.p1_lo > levelTestState.p1_hi;
+
+  if (rangeEmpty || maxReached) {
+    lt_finishPhase1();
+  } else {
+    lt_startPhase1();
+  }
+}
+
+function lt_finishPhase1() {
+  let zoneIdx = 0;
+  const results = levelTestState.p1_results;
+  const keys    = Object.keys(results);
+
+  if (keys.length > 0) {
+    const allFailed = keys.every(k => results[k] === false);
+    if (!allFailed) {
+      for (let i = LEVEL_ORDER.length - 1; i >= 0; i--) {
+        if (results[LEVEL_ORDER[i]] === true) {
+          zoneIdx = i;
+          break;
+        }
+      }
+    }
+  }
+
+  levelTestState.p2_levelId = LEVEL_ORDER[zoneIdx];
+  lt_startPhase2();
+}
+
+// ══════════════════════════════════════════════════════════
+//  PHASE 2 — Zone Confirmation (20 sual, 4 tip mixed)
+// ══════════════════════════════════════════════════════════
+
+function lt_startPhase2() {
+  levelTestState.phase             = 2;
+  levelTestState.p2_idx            = 0;
+  levelTestState.p2_weightedScore  = 0;
+  levelTestState.p2_weightedMax    = 0;
+
+  const queue = lt_buildQueue(levelTestState.p2_levelId, LT_P2_TOTAL);
+  levelTestState.p2_queue = queue;
+
+  if (queue.length === 0) {
+    lt_finishPhase2();
+    return;
+  }
+
+  lt_showPhase2Q();
+}
+
+function lt_showPhase2Q() {
+  const entry  = levelTestState.p2_queue[levelTestState.p2_idx];
+  const lvlId  = levelTestState.p2_levelId;
+  const localI = levelTestState.p2_idx + 1;
+  const localT = levelTestState.p2_queue.length;
+  lt_renderQuestion(entry, `${lvlId.toUpperCase()} (${localI}/${localT})`);
+}
+
+function lt_handlePhase2(isCorrect) {
+  const entry   = levelTestState.p2_queue[levelTestState.p2_idx];
+  const lvlId   = levelTestState.p2_levelId;
+  const lw      = LT_LEVEL_WEIGHTS[lvlId] || 1;
+  const tw      = LT_TYPE_WEIGHTS[entry.qType] || 1.0;
+  const maxPts  = lw * tw;
+
+  levelTestState.totalAsked++;
+  levelTestState.p2_weightedMax += maxPts;
+  if (isCorrect) levelTestState.p2_weightedScore += maxPts;
+  levelTestState.p2_idx++;
+
+  setTimeout(() => {
+    if (levelTestState.p2_idx < levelTestState.p2_queue.length) {
+      lt_showPhase2Q();
+    } else {
+      lt_finishPhase2();
+    }
+  }, 500);
+}
+
+function lt_finishPhase2() {
+  const max     = levelTestState.p2_weightedMax || 1;
+  const pct     = levelTestState.p2_weightedScore / max;
+  const zoneIdx = LEVEL_ORDER.indexOf(levelTestState.p2_levelId);
+
+  if (pct < LT_P2_WEAK && zoneIdx > 0) {
+    levelTestState.finalLevelId = LEVEL_ORDER[zoneIdx - 1];
+  } else {
+    levelTestState.finalLevelId = levelTestState.p2_levelId;
+  }
+
+  const canUpgrade = zoneIdx < LEVEL_ORDER.length - 1;
+  if (pct >= LT_P2_STRONG && canUpgrade) {
+    levelTestState.p3_levelId = LEVEL_ORDER[zoneIdx + 1];
+    lt_startPhase3();
+  } else {
+    finishLevelTest();
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  PHASE 3 — Upper Boundary (10 sual, 4 tip mixed)
+// ══════════════════════════════════════════════════════════
+
+function lt_startPhase3() {
+  levelTestState.phase             = 3;
+  levelTestState.p3_idx            = 0;
+  levelTestState.p3_weightedScore  = 0;
+  levelTestState.p3_weightedMax    = 0;
+
+  const queue = lt_buildQueue(levelTestState.p3_levelId, LT_P3_TOTAL);
+  levelTestState.p3_queue = queue;
+
+  if (queue.length === 0) {
+    finishLevelTest();
+    return;
+  }
+
+  lt_showPhase3Q();
+}
+
+function lt_showPhase3Q() {
+  const entry  = levelTestState.p3_queue[levelTestState.p3_idx];
+  const lvlId  = levelTestState.p3_levelId;
+  const localI = levelTestState.p3_idx + 1;
+  const localT = levelTestState.p3_queue.length;
+  lt_renderQuestion(entry, `${lvlId.toUpperCase()} — Yuxarı hədd (${localI}/${localT})`);
+}
+
+function lt_handlePhase3(isCorrect) {
+  const entry   = levelTestState.p3_queue[levelTestState.p3_idx];
+  const lvlId   = levelTestState.p3_levelId;
+  const lw      = LT_LEVEL_WEIGHTS[lvlId] || 1;
+  const tw      = LT_TYPE_WEIGHTS[entry.qType] || 1.0;
+  const maxPts  = lw * tw;
+
+  levelTestState.totalAsked++;
+  levelTestState.p3_weightedMax += maxPts;
+  if (isCorrect) levelTestState.p3_weightedScore += maxPts;
+  levelTestState.p3_idx++;
+
+  setTimeout(() => {
+    if (levelTestState.p3_idx < levelTestState.p3_queue.length) {
+      lt_showPhase3Q();
+    } else {
+      lt_finishPhase3();
+    }
+  }, 500);
+}
+
+function lt_finishPhase3() {
+  const max = levelTestState.p3_weightedMax || 1;
+  const pct = levelTestState.p3_weightedScore / max;
+
+  // Phase 3-də weighted 60% → upgrade
+  if (pct >= (LT_P3_UPGRADE / LT_P3_TOTAL)) {
+    levelTestState.finalLevelId = levelTestState.p3_levelId;
+  }
+  finishLevelTest();
+}
+
+// ── Answer handler — phase router ─────────────────────────
+function lt_handleAnswer(isCorrect) {
+  switch (levelTestState.phase) {
+    case 1: lt_handlePhase1(isCorrect); break;
+    case 2: lt_handlePhase2(isCorrect); break;
+    case 3: lt_handlePhase3(isCorrect); break;
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  NƏTİCƏ — finishLevelTest
+// ══════════════════════════════════════════════════════════
+
+function finishLevelTest() {
+  elProgressFill.style.width = '100%';
+
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+
+    const lvlId   = levelTestState.finalLevelId || 'a1';
+    const info    = LEVEL_INFO[lvlId] || {};
+    const lvlData = LEVELS.find(l => l.id === lvlId);
+
+    // Weighted faiz hesabı (Phase 2 əsas göstərici)
+    const p2max = levelTestState.p2_weightedMax || 1;
+    const p2pct = Math.round((levelTestState.p2_weightedScore / p2max) * 100);
+
+    // Tip breakdown — neçə tip nə qədər gəldi
+    const p2queue   = levelTestState.p2_queue || [];
+    const typeCounts = { normal: 0, phase2: 0, phase3: 0, exam: 0 };
+    p2queue.forEach(e => { if (typeCounts[e.qType] !== undefined) typeCounts[e.qType]++; });
+
+    // Güc səviyyəsi
+    let strengthLabel, strengthEmoji;
+    if (p2pct >= 85)      { strengthLabel = 'Möhkəm';    strengthEmoji = '💪'; }
+    else if (p2pct >= 70) { strengthLabel = 'Yaxşı';     strengthEmoji = '👍'; }
+    else if (p2pct >= 55) { strengthLabel = 'Orta';      strengthEmoji = '📖'; }
+    else if (p2pct >= 40) { strengthLabel = 'Zəif';      strengthEmoji = '📚'; }
+    else                  { strengthLabel = 'Başlanğıc'; strengthEmoji = '🌱'; }
+
+    elResultEmoji.textContent = '🎓';
+    elResultTitle.textContent = 'Nəticən hazırdır!';
+    elResultDesc.textContent  =
+      `${strengthEmoji} ${info.label || lvlId.toUpperCase()} · ${strengthLabel} (${p2pct}%)`;
+
+    elResultStats.classList.add('hidden');
+    elLevelResultCard.classList.remove('hidden');
+
+    elLevelResultBadge.textContent      = lvlData ? lvlData.icon : '📚';
+    elLevelResultBadge.style.background = lvlData ? lvlData.color : '#999';
+    elLevelResultName.textContent       = info.label  || lvlId.toUpperCase();
+    elLevelResultIelts.textContent      = `IELTS: ${info.ielts || '—'}`;
+    elLevelResultDesc.textContent       = info.desc   || '';
+
+    elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
+    elResultMainBtn.onclick = () => {
+      closeOverlays();
+      renderLevels();
+    };
+
+    elResultBackBtn.classList.add('hidden');
+  }, 300);
+}
 
 // ── Progress ──────────────────────────────────────────────
 let progress = {};
@@ -739,302 +1240,6 @@ function startRetakeMode(levelIdx, quizIdx) {
 //  SƏVİYYƏNİ TEST ET — 3 Mərhələli Adaptiv Sistem
 // ══════════════════════════════════════════════
 
-function lt_pickFreshWords(levelId, count) {
-  const all = getAllWordsForLevel(levelId).filter(w => {
-    const key = levelId + '|' + w.en;
-    return !levelTestState.usedWordKeys.has(key);
-  });
-  const picked = shuffle([...all]).slice(0, count);
-  picked.forEach(w => levelTestState.usedWordKeys.add(levelId + '|' + w.en));
-  return picked;
-}
-
-function lt_renderQuestion(word, hint) {
-  const asked = levelTestState.totalAsked;
-  elProgressFill.style.width = `${(asked / LT_TOTAL) * 100}%`;
-  elQCounter.textContent     = `${asked + 1}/${LT_TOTAL}`;
-  elQuestionHint.textContent = hint;
-  elQuestionWord.textContent = capitalize(word.en);
-
-  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
-  const opts = quiz.correctPos === 0
-    ? [word.tr, word.wrong]
-    : [word.wrong, word.tr];
-
-  elOpt0.textContent = capitalize(opts[0]);
-  elOpt1.textContent = capitalize(opts[1]);
-  elOpt0.className   = 'option-btn';
-  elOpt1.className   = 'option-btn';
-  elOpt0.disabled    = false;
-  elOpt1.disabled    = false;
-  quiz.locked        = false;
-}
-
-function startLevelTest() {
-  Object.assign(levelTestState, {
-    phase:        1,
-    totalAsked:   0,
-    p1_lo:        0,
-    p1_hi:        LEVEL_ORDER.length - 1,
-    p1_mid:       -1,
-    p1_words:     [],
-    p1_wordIdx:   0,
-    p1_correct:   0,
-    p1_results:   {},
-    p2_levelId:   null,
-    p2_words:     [],
-    p2_wordIdx:   0,
-    p2_correct:   0,
-    p3_levelId:   null,
-    p3_words:     [],
-    p3_wordIdx:   0,
-    p3_correct:   0,
-    finalLevelId: null,
-    usedWordKeys: new Set(),
-  });
-
-  quiz.mode         = 'leveltest';
-  quiz.levelIdx     = null;
-  quiz.quizIdx      = null;
-  quiz.index        = 0;
-  quiz.mistakes     = 0;
-  quiz.locked       = false;
-  quiz.chanceUsed   = false;
-  quiz.chanceActive = false;
-
-  showQuizScreen();
-  lt_startPhase1();
-}
-
-function lt_startPhase1() {
-  const mid     = Math.floor((levelTestState.p1_lo + levelTestState.p1_hi) / 2);
-  const levelId = LEVEL_ORDER[mid];
-
-  levelTestState.p1_mid     = mid;
-  levelTestState.p1_wordIdx = 0;
-  levelTestState.p1_correct = 0;
-
-  const words = lt_pickFreshWords(levelId, LT_P1_PER_LEVEL);
-  if (words.length === 0) {
-    lt_evalPhase1Block(false);
-    return;
-  }
-
-  levelTestState.p1_words = words;
-  lt_showPhase1Q();
-}
-
-function lt_showPhase1Q() {
-  const word    = levelTestState.p1_words[levelTestState.p1_wordIdx];
-  const levelId = LEVEL_ORDER[levelTestState.p1_mid];
-  lt_renderQuestion(word, `Skan: ${levelId.toUpperCase()}`);
-}
-
-function lt_handlePhase1(isCorrect) {
-  levelTestState.totalAsked++;
-  if (isCorrect) levelTestState.p1_correct++;
-  levelTestState.p1_wordIdx++;
-
-  setTimeout(() => {
-    if (levelTestState.p1_wordIdx < levelTestState.p1_words.length) {
-      lt_showPhase1Q();
-      return;
-    }
-    lt_evalPhase1Block(levelTestState.p1_correct >= LT_P1_PASS);
-  }, 500);
-}
-
-function lt_evalPhase1Block(passed) {
-  const mid     = levelTestState.p1_mid;
-  const levelId = LEVEL_ORDER[mid];
-  levelTestState.p1_results[levelId] = passed;
-
-  if (passed) {
-    levelTestState.p1_lo = mid + 1;
-  } else {
-    levelTestState.p1_hi = mid - 1;
-  }
-
-  const maxReached  = levelTestState.totalAsked >= 12;
-  const rangeEmpty  = levelTestState.p1_lo > levelTestState.p1_hi;
-
-  if (rangeEmpty || maxReached) {
-    lt_finishPhase1();
-  } else {
-    lt_startPhase1();
-  }
-}
-
-function lt_finishPhase1() {
-  let zoneIdx = 0;
-  const results = levelTestState.p1_results;
-  const keys    = Object.keys(results);
-
-  if (keys.length > 0) {
-    const allFailed = keys.every(k => results[k] === false);
-    if (!allFailed) {
-      for (let i = LEVEL_ORDER.length - 1; i >= 0; i--) {
-        if (results[LEVEL_ORDER[i]] === true) {
-          zoneIdx = i;
-          break;
-        }
-      }
-    }
-  }
-
-  levelTestState.p2_levelId = LEVEL_ORDER[zoneIdx];
-  lt_startPhase2();
-}
-
-function lt_startPhase2() {
-  levelTestState.phase      = 2;
-  levelTestState.p2_wordIdx = 0;
-  levelTestState.p2_correct = 0;
-
-  const words = lt_pickFreshWords(levelTestState.p2_levelId, LT_P2_COUNT);
-  levelTestState.p2_words = words;
-
-  if (words.length === 0) {
-    lt_finishPhase2();
-    return;
-  }
-
-  lt_showPhase2Q();
-}
-
-function lt_showPhase2Q() {
-  const word   = levelTestState.p2_words[levelTestState.p2_wordIdx];
-  const lvlId  = levelTestState.p2_levelId;
-  const localI = levelTestState.p2_wordIdx + 1;
-  const localT = levelTestState.p2_words.length;
-  lt_renderQuestion(word, `${lvlId.toUpperCase()} — Əsas yoxlama (${localI}/${localT})`);
-}
-
-function lt_handlePhase2(isCorrect) {
-  levelTestState.totalAsked++;
-  if (isCorrect) levelTestState.p2_correct++;
-  levelTestState.p2_wordIdx++;
-
-  setTimeout(() => {
-    if (levelTestState.p2_wordIdx < levelTestState.p2_words.length) {
-      lt_showPhase2Q();
-    } else {
-      lt_finishPhase2();
-    }
-  }, 500);
-}
-
-function lt_finishPhase2() {
-  const total   = levelTestState.p2_words.length || 1;
-  const pct     = levelTestState.p2_correct / total;
-  const zoneIdx = LEVEL_ORDER.indexOf(levelTestState.p2_levelId);
-
-  if (pct < LT_P2_WEAK && zoneIdx > 0) {
-    levelTestState.finalLevelId = LEVEL_ORDER[zoneIdx - 1];
-  } else {
-    levelTestState.finalLevelId = levelTestState.p2_levelId;
-  }
-
-  const canUpgrade = zoneIdx < LEVEL_ORDER.length - 1;
-  if (pct >= LT_P2_STRONG && canUpgrade) {
-    levelTestState.p3_levelId = LEVEL_ORDER[zoneIdx + 1];
-    lt_startPhase3();
-  } else {
-    finishLevelTest();
-  }
-}
-
-function lt_startPhase3() {
-  levelTestState.phase      = 3;
-  levelTestState.p3_wordIdx = 0;
-  levelTestState.p3_correct = 0;
-
-  const words = lt_pickFreshWords(levelTestState.p3_levelId, LT_P3_COUNT);
-  levelTestState.p3_words = words;
-
-  if (words.length === 0) {
-    finishLevelTest();
-    return;
-  }
-
-  lt_showPhase3Q();
-}
-
-function lt_showPhase3Q() {
-  const word   = levelTestState.p3_words[levelTestState.p3_wordIdx];
-  const lvlId  = levelTestState.p3_levelId;
-  const localI = levelTestState.p3_wordIdx + 1;
-  const localT = levelTestState.p3_words.length;
-  lt_renderQuestion(word, `${lvlId.toUpperCase()} — Yuxarı hədd (${localI}/${localT})`);
-}
-
-function lt_handlePhase3(isCorrect) {
-  levelTestState.totalAsked++;
-  if (isCorrect) levelTestState.p3_correct++;
-  levelTestState.p3_wordIdx++;
-
-  setTimeout(() => {
-    if (levelTestState.p3_wordIdx < levelTestState.p3_words.length) {
-      lt_showPhase3Q();
-    } else {
-      lt_finishPhase3();
-    }
-  }, 500);
-}
-
-function lt_finishPhase3() {
-  if (levelTestState.p3_correct >= LT_P3_UPGRADE) {
-    levelTestState.finalLevelId = levelTestState.p3_levelId;
-  }
-  finishLevelTest();
-}
-
-function lt_handleAnswer(isCorrect) {
-  switch (levelTestState.phase) {
-    case 1: lt_handlePhase1(isCorrect); break;
-    case 2: lt_handlePhase2(isCorrect); break;
-    case 3: lt_handlePhase3(isCorrect); break;
-  }
-}
-
-function finishLevelTest() {
-  elProgressFill.style.width = '100%';
-
-  setTimeout(() => {
-    elQuizScreen.classList.add('hidden');
-    elResultScreen.classList.remove('hidden');
-
-    const lvlId   = levelTestState.finalLevelId || 'a1';
-    const info    = LEVEL_INFO[lvlId] || {};
-    const lvlData = LEVELS.find(l => l.id === lvlId);
-
-    const p2total = levelTestState.p2_words.length || 1;
-    const p2pct   = Math.round((levelTestState.p2_correct / p2total) * 100);
-    const p2label = p2pct >= 75 ? 'Möhkəm' : p2pct >= 50 ? 'Orta' : 'Zəif';
-
-    elResultEmoji.textContent = '🎓';
-    elResultTitle.textContent = 'Nəticən hazırdır!';
-    elResultDesc.textContent  =
-      `Söz tanıma səviyyən: ${info.label || lvlId.toUpperCase()} · ${p2label} (${p2pct}%)`;
-
-    elResultStats.classList.add('hidden');
-    elLevelResultCard.classList.remove('hidden');
-
-    elLevelResultBadge.textContent      = lvlData ? lvlData.icon : '📚';
-    elLevelResultBadge.style.background = lvlData ? lvlData.color : '#999';
-    elLevelResultName.textContent       = info.label  || lvlId.toUpperCase();
-    elLevelResultIelts.textContent      = `IELTS: ${info.ielts || '—'}`;
-    elLevelResultDesc.textContent       = info.desc   || '';
-
-    elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
-    elResultMainBtn.onclick = () => {
-      closeOverlays();
-      renderLevels();
-    };
-
-    elResultBackBtn.classList.add('hidden');
-  }, 300);
-}
 
 // ══════════════════════════════════════════════
 //  NORMAL QUIZ
