@@ -214,6 +214,47 @@ const EXAM_IDS = {
   'b1': new Set([4, 8, 11, 15, 19, 23, 26, 30])
 };
 
+// ── Hər exam hansı quiz ID-lərini əhatə edir ─────────────
+// Datada examların yanında bu məlumat olmur, burada saxlayırıq
+const EXAM_QUIZ_IDS = {
+  'a1': {
+    4:  [0, 1, 2, 3],
+    10: [5, 6, 7, 8, 9],
+    14: [11, 12, 13],
+    18: [15, 16, 17],
+    23: [19, 20, 21, 22],
+    28: [24, 25, 26, 27],
+    32: [29, 30, 31],
+    36: [33, 34, 35],
+    40: [37, 38, 39],
+    44: [41, 42, 43],
+    48: [45, 46, 47],
+    52: [49, 50, 51],
+  },
+  'a2': {
+    4:  [0, 1, 2, 3],
+    9:  [5, 6, 7, 8],
+    14: [10, 11, 12, 13],
+    17: [15, 16],
+    22: [18, 19, 20, 21],
+    27: [23, 24, 25, 26],
+    30: [28, 29],
+    33: [31, 32],
+    36: [34, 35],
+    39: [37, 38],
+  },
+  'b1': {
+    4:  [0, 1, 2, 3],
+    8:  [5, 6, 7],
+    11: [9, 10],
+    15: [12, 13, 14],
+    19: [16, 17, 18],
+    23: [20, 21, 22],
+    26: [24, 25],
+    30: [27, 28, 29],
+  }
+};
+
 // ── Səviyyə test məlumatları ──────────────────────────────
 const LEVEL_INFO = {
   'a1': { label: 'A1 — Beginner',     ielts: '1.0 – 2.0', desc: 'Sadə ifadələri başa düşürsən.' },
@@ -249,47 +290,517 @@ const reviewState = {
 };
 
 // ============================================================
-//  WORDPATH — YENİ SƏVİYYƏ TESTİ SİSTEMİ
-//  40 sual · 4 tip · Weighted Scoring · Adaptive 3-Phase
+//  EXAM SİSTEMİ STATE
 // ============================================================
 
-// ── Sabitlər ─────────────────────────────────────────────
-const LT_TOTAL        = 40;
-
-// Phase 1 — Binary Search Anchor
-const LT_P1_PER_LEVEL = 2;   // hər level blokunda sual sayı
-const LT_P1_PASS      = 1;   // keçmək üçün minimum düzgün
-
-// Phase 2 — Zone Confirmation (20 sual)
-const LT_P2_TOTAL     = 20;
-const LT_P2_PER_TYPE  = 5;   // hər tipdən 5 sual (normal/phase2/phase3/exam)
-const LT_P2_STRONG    = 0.72; // yuxarıya keçmək üçün weighted faiz
-const LT_P2_WEAK      = 0.45; // aşağıya düşmək üçün weighted faiz
-
-// Phase 3 — Upper Boundary (10 sual)
-const LT_P3_TOTAL     = 10;
-const LT_P3_UPGRADE   = 6;   // weighted xalla upgrade threshold
-
-// ── Weighted Scoring ──────────────────────────────────────
-const LT_LEVEL_WEIGHTS = { a1: 1, a2: 2, b1: 3, b2: 4, c1: 5, c2: 6 };
-
-const LT_TYPE_WEIGHTS = {
-  normal: 1.0,   // en → tr
-  phase2: 1.3,   // tr → en
-  phase3: 1.6,   // def → en
-  exam:   1.4,   // cümlədə boşluq
+const examState = {
+  levelIdx:       null,
+  quizIdx:        null,
+  questions:      [],   // {type: 'fill'|'wordmatch'|'definition', ...data}
+  currentQ:       0,
+  totalQ:         0,
+  mistakes:       0,    // ümumi uğursuz suallar
+  // Word match üçün
+  wm_selected:    null, // {side: 'en'|'az', index: number}
+  wm_matched:     [],   // match olunmuş cüt indexlər
+  wm_wrongCount:  0,    // cari word match sualında səhv sayı
+  wm_pairs:       [],   // [{en, az}]
 };
 
-// Def və exam mövcud olan levellər
+// ============================================================
+//  EXAM — SUAL GENERASIYASI
+// ============================================================
+
+// Həmin leveldəki quiz ID-lərindən bütün sözləri topla
+function getExamSourceWords(levelId, quizIdList) {
+  const lvl = LEVELS.find(l => l.id === levelId);
+  if (!lvl) return [];
+  const words = [];
+  quizIdList.forEach(qi => {
+    const item = lvl.quizzes[qi];
+    if (Array.isArray(item)) {
+      item.forEach(w => {
+        if (w && w.en && w.tr && w.wrong) words.push({ ...w });
+      });
+    }
+  });
+  return words;
+}
+
+// Exam suallarını qur
+function buildExamQuestions(levelId, quizIdx) {
+  const examData = LEVELS.find(l => l.id === levelId)?.quizzes[quizIdx];
+  if (!examData || !examData.sentences) return [];
+
+  const quizIdList = (EXAM_QUIZ_IDS[levelId] || {})[quizIdx] || [];
+  const topicCount = quizIdList.length;
+
+  // Cümlə boşluq sualları — datadan gəlir, hamısını götürürük (20 ədəd)
+  const fillQuestions = (examData.sentences || []).map(s => ({
+    type: 'fill',
+    en:    s.en,
+    tr:    s.tr,
+    wrong: s.wrong,
+  }));
+
+  // Word match və definition üçün mənbə sözlər
+  const sourceWords = getExamSourceWords(levelId, quizIdList);
+
+  // Cümlələrdə istifadə olunan sözləri çıxart (eyni söz 2 dəfə düşməsin)
+  const usedWords = new Set(fillQuestions.map(q => q.tr.toLowerCase()));
+
+  const availableWords = shuffle(
+    sourceWords.filter(w => !usedWords.has(w.tr.toLowerCase()))
+  );
+
+  // Mövzu sayına görə word match və definition sayı
+  // 2 mövzu: 2 wordmatch (12 söz), 8 definition
+  // 3 mövzu: 6 wordmatch (36 söz), 4 definition
+  // 4 mövzu: 5 wordmatch (30 söz), 5 definition
+  // 5+ mövzu: 5 wordmatch (30 söz), 5 definition
+  let wmCount, defCount;
+  if (topicCount <= 2) {
+    wmCount  = 2;
+    defCount = 8;
+  } else if (topicCount === 3) {
+    wmCount  = 6;
+    defCount = 4;
+  } else {
+    wmCount  = 5;
+    defCount = 5;
+  }
+
+  // Word match üçün sözlər seç (hər biri 6 cüt = 6 söz)
+  const wmWordsNeeded = wmCount * 6;
+  const wmPool = availableWords.slice(0, wmWordsNeeded);
+  const wmUsed = new Set(wmPool.map(w => w.tr.toLowerCase()));
+
+  // Definition üçün sözlər seç (word match-da istifadə olunmayanlardan)
+  const defPool = availableWords
+    .filter(w => !wmUsed.has(w.tr.toLowerCase()) && w.def && w.wen)
+    .slice(0, defCount);
+
+  // Word match suallarını qur
+  const wmQuestions = [];
+  for (let i = 0; i < wmCount; i++) {
+    const batch = wmPool.slice(i * 6, i * 6 + 6);
+    if (batch.length < 2) break; // kifayət qədər söz yoxdursa keç
+    wmQuestions.push({
+      type:  'wordmatch',
+      pairs: shuffle(batch.map(w => ({ en: w.en, az: w.tr }))),
+    });
+  }
+
+  // Definition suallarını qur
+  const defQuestions = defPool.map(w => {
+    // wrong variantı sourceWords-dən random seç
+    const wrongWord = sourceWords.find(sw =>
+      sw.en !== w.en && sw.wen && sw.wen !== w.wen
+    );
+    return {
+      type:  'definition',
+      def:   w.def,
+      en:    w.en,
+      wen:   wrongWord ? wrongWord.wen || wrongWord.en : w.wrong,
+    };
+  });
+
+  // Sualları qarışdır: fill əvvəl, sonra wm və def qarışıq
+  const mixedTail = shuffle([...wmQuestions, ...defQuestions]);
+  return [...fillQuestions, ...mixedTail];
+}
+
+// ============================================================
+//  EXAM — BAŞLAT
+// ============================================================
+
+function startExam(levelIdx, quizIdx) {
+  const lvl     = LEVELS[levelIdx];
+  const levelId = lvl.id;
+
+  const questions = buildExamQuestions(levelId, quizIdx);
+  if (!questions || questions.length === 0) {
+    showToast('Exam datasında problem var ✏️');
+    return;
+  }
+
+  examState.levelIdx      = levelIdx;
+  examState.quizIdx       = quizIdx;
+  examState.questions     = questions;
+  examState.currentQ      = 0;
+  examState.totalQ        = questions.length;
+  examState.mistakes      = 0;
+  examState.wm_selected   = null;
+  examState.wm_matched    = [];
+  examState.wm_wrongCount = 0;
+  examState.wm_pairs      = [];
+
+  quiz.mode = 'exam';
+
+  showQuizScreen();
+  renderExamQuestion();
+}
+
+// ============================================================
+//  EXAM — SUAL RENDER
+// ============================================================
+
+function renderExamQuestion() {
+  const q      = examState.questions[examState.currentQ];
+  const total  = examState.totalQ;
+  const cur    = examState.currentQ;
+
+  elProgressFill.style.width = `${(cur / total) * 100}%`;
+  elQCounter.textContent     = `${cur + 1}/${total}`;
+
+  // Quiz body-ni tam yenidən render edirik exam üçün
+  const quizBody = document.querySelector('.quiz-body');
+
+  if (q.type === 'fill') {
+    renderExamFill(q, quizBody);
+  } else if (q.type === 'wordmatch') {
+    renderExamWordMatch(q, quizBody);
+  } else if (q.type === 'definition') {
+    renderExamDefinition(q, quizBody);
+  }
+}
+
+// ── Fill in the blank ─────────────────────────────────────
+function renderExamFill(q, container) {
+  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
+
+  container.innerHTML = `
+    <div class="question-card">
+      <div class="exam-type-badge">Boşluq doldur</div>
+      <div class="question-hint">Boşluğa uyğun sözü tap</div>
+      <div class="question-word" style="font-size:22px; line-height:1.4">${q.en}</div>
+    </div>
+    <div class="options-grid">
+      <button class="option-btn" id="exam-opt-0"></button>
+      <button class="option-btn" id="exam-opt-1"></button>
+    </div>
+  `;
+
+  const opts = quiz.correctPos === 0
+    ? [q.tr, q.wrong]
+    : [q.wrong, q.tr];
+
+  document.getElementById('exam-opt-0').textContent = capitalize(opts[0]);
+  document.getElementById('exam-opt-1').textContent = capitalize(opts[1]);
+
+  document.getElementById('exam-opt-0').addEventListener('click', () => handleExamFill(0, q));
+  document.getElementById('exam-opt-1').addEventListener('click', () => handleExamFill(1, q));
+}
+
+function handleExamFill(btnIdx, q) {
+  if (quiz.locked) return;
+  quiz.locked = true;
+
+  const isCorrect = btnIdx === quiz.correctPos;
+  const btn0 = document.getElementById('exam-opt-0');
+  const btn1 = document.getElementById('exam-opt-1');
+  if (!btn0 || !btn1) return;
+
+  btn0.disabled = true;
+  btn1.disabled = true;
+
+  const correctBtn = quiz.correctPos === 0 ? btn0 : btn1;
+  const chosenBtn  = btnIdx === 0 ? btn0 : btn1;
+
+  if (isCorrect) {
+    chosenBtn.className = 'option-btn correct';
+    setTimeout(() => examNextQuestion(), 600);
+  } else {
+    chosenBtn.className  = 'option-btn wrong';
+    correctBtn.className = 'option-btn correct';
+    examState.mistakes++;
+    setTimeout(() => examNextQuestion(), 900);
+  }
+}
+
+// ── Word Match ────────────────────────────────────────────
+function renderExamWordMatch(q, container) {
+  examState.wm_pairs      = q.pairs;
+  examState.wm_matched    = [];
+  examState.wm_selected   = null;
+  examState.wm_wrongCount = 0;
+
+  // Azərbaycan sütunu üçün sözləri qarışdır (müstəqil sıra)
+  const azShuffled = shuffle([...q.pairs.map((p, i) => ({ az: p.az, origIdx: i }))]);
+
+  container.innerHTML = `
+    <div class="question-card" style="padding: 16px 14px;">
+      <div class="exam-type-badge">Word Match</div>
+      <div class="question-hint" style="margin-bottom:14px">Uyğun sözləri cütləşdir</div>
+      <div class="word-match-container" id="wm-container">
+        <div class="word-match-col" id="wm-col-en"></div>
+        <div class="word-match-col" id="wm-col-az"></div>
+      </div>
+    </div>
+  `;
+
+  const colEn = document.getElementById('wm-col-en');
+  const colAz = document.getElementById('wm-col-az');
+
+  q.pairs.forEach((pair, i) => {
+    const btn = document.createElement('div');
+    btn.className        = 'word-match-item';
+    btn.dataset.side     = 'en';
+    btn.dataset.index    = i;
+    btn.textContent      = pair.en;
+    btn.addEventListener('click', () => handleWordMatchClick('en', i));
+    colEn.appendChild(btn);
+  });
+
+  azShuffled.forEach((item) => {
+    const btn = document.createElement('div');
+    btn.className        = 'word-match-item';
+    btn.dataset.side     = 'az';
+    btn.dataset.index    = item.origIdx;
+    btn.textContent      = item.az;
+    btn.addEventListener('click', () => handleWordMatchClick('az', item.origIdx));
+    colAz.appendChild(btn);
+  });
+}
+
+function handleWordMatchClick(side, index) {
+  // Artıq match olunubsa ignore et
+  if (examState.wm_matched.includes(index)) return;
+
+  const sel = examState.wm_selected;
+
+  if (!sel) {
+    // İlk seçim
+    examState.wm_selected = { side, index };
+    highlightWmItem(side, index, 'selected');
+    return;
+  }
+
+  // Eyni tərəfdən seçim — dəyiş
+  if (sel.side === side) {
+    clearWmHighlight(sel.side, sel.index);
+    examState.wm_selected = { side, index };
+    highlightWmItem(side, index, 'selected');
+    return;
+  }
+
+  // Fərqli tərəfdən seçim — yoxla
+  const enIdx = side === 'en' ? index : sel.index;
+  const azIdx = side === 'az' ? index : sel.index;
+
+  if (enIdx === azIdx) {
+    // Düzgün match
+    examState.wm_matched.push(enIdx);
+    clearWmHighlight(sel.side, sel.index);
+    examState.wm_selected = null;
+
+    // Hər iki elementi matched et
+    setWmItemState('en', enIdx, 'matched');
+    setWmItemState('az', azIdx, 'matched');
+
+    // Hamısı matchlanıbsa növbəti suala keç
+    if (examState.wm_matched.length === examState.wm_pairs.length) {
+      setTimeout(() => examNextQuestion(), 700);
+    }
+  } else {
+    // Səhv match
+    examState.wm_wrongCount++;
+
+    clearWmHighlight(sel.side, sel.index);
+    examState.wm_selected = null;
+
+    // Hər ikisini wrong-flash et
+    setWmItemState(side, index, 'wrong-flash');
+    setWmItemState(sel.side, sel.index, 'wrong-flash');
+
+    setTimeout(() => {
+      clearWmState(side, index);
+      clearWmState(sel.side, sel.index);
+    }, 400);
+
+    // 3-cü səhvdə sual uğursuz sayılır
+    if (examState.wm_wrongCount >= 3) {
+      examState.mistakes++;
+      setTimeout(() => examNextQuestion(), 800);
+    }
+  }
+}
+
+function getWmEl(side, index) {
+  const col = document.getElementById(side === 'en' ? 'wm-col-en' : 'wm-col-az');
+  if (!col) return null;
+  return col.querySelector(`[data-index="${index}"]`);
+}
+
+function highlightWmItem(side, index, cls) {
+  const el = getWmEl(side, index);
+  if (el) el.classList.add(cls);
+}
+
+function clearWmHighlight(side, index) {
+  const el = getWmEl(side, index);
+  if (el) el.classList.remove('selected', 'wrong-flash');
+}
+
+function setWmItemState(side, index, cls) {
+  const el = getWmEl(side, index);
+  if (el) {
+    el.className = 'word-match-item ' + cls;
+  }
+}
+
+function clearWmState(side, index) {
+  const el = getWmEl(side, index);
+  if (el) {
+    el.className = 'word-match-item';
+  }
+}
+
+// ── Definition ────────────────────────────────────────────
+function renderExamDefinition(q, container) {
+  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
+
+  container.innerHTML = `
+    <div class="question-card">
+      <div class="exam-type-badge">Definition</div>
+      <div class="question-hint">Tərifə uyğun sözü tap</div>
+      <div class="question-word" style="font-size:20px; line-height:1.5; font-weight:700">${q.def}</div>
+    </div>
+    <div class="options-grid">
+      <button class="option-btn" id="exam-opt-0"></button>
+      <button class="option-btn" id="exam-opt-1"></button>
+    </div>
+  `;
+
+  const opts = quiz.correctPos === 0
+    ? [q.en, q.wen]
+    : [q.wen, q.en];
+
+  document.getElementById('exam-opt-0').textContent = capitalize(opts[0]);
+  document.getElementById('exam-opt-1').textContent = capitalize(opts[1]);
+
+  document.getElementById('exam-opt-0').addEventListener('click', () => handleExamDefinition(0, q));
+  document.getElementById('exam-opt-1').addEventListener('click', () => handleExamDefinition(1, q));
+}
+
+function handleExamDefinition(btnIdx, q) {
+  if (quiz.locked) return;
+  quiz.locked = true;
+
+  const isCorrect = btnIdx === quiz.correctPos;
+  const btn0 = document.getElementById('exam-opt-0');
+  const btn1 = document.getElementById('exam-opt-1');
+  if (!btn0 || !btn1) return;
+
+  btn0.disabled = true;
+  btn1.disabled = true;
+
+  const correctBtn = quiz.correctPos === 0 ? btn0 : btn1;
+  const chosenBtn  = btnIdx === 0 ? btn0 : btn1;
+
+  if (isCorrect) {
+    chosenBtn.className = 'option-btn correct';
+    setTimeout(() => examNextQuestion(), 600);
+  } else {
+    chosenBtn.className  = 'option-btn wrong';
+    correctBtn.className = 'option-btn correct';
+    examState.mistakes++;
+    setTimeout(() => examNextQuestion(), 900);
+  }
+}
+
+// ── Növbəti suala keç ─────────────────────────────────────
+function examNextQuestion() {
+  quiz.locked = false;
+  examState.currentQ++;
+
+  if (examState.currentQ >= examState.totalQ) {
+    finishExam();
+  } else {
+    renderExamQuestion();
+  }
+}
+
+// ── Exam bitdi ────────────────────────────────────────────
+function finishExam() {
+  elProgressFill.style.width = '100%';
+
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+    elResultStats.classList.add('hidden');
+    elLevelResultCard.classList.add('hidden');
+
+    const total   = examState.totalQ;
+    const wrong   = examState.mistakes;
+    const correct = total - wrong;
+    const pct     = Math.round((correct / total) * 100);
+    const won     = wrong === 0;
+
+    if (won) {
+      markCompleted(examState.levelIdx, examState.quizIdx);
+      elResultEmoji.textContent = '🏆';
+      elResultTitle.textContent = 'Exam keçildi!';
+      elResultDesc.textContent  = 'Examı uğurla tamamladın!';
+
+      const nextPlayable = findNextPlayableQuiz(examState.levelIdx, examState.quizIdx);
+      if (nextPlayable !== null) {
+        elResultMainBtn.textContent = 'Növbəti →';
+        elResultMainBtn.onclick = () => {
+          startQuiz(examState.levelIdx, nextPlayable);
+          elResultScreen.classList.add('hidden');
+        };
+      } else {
+        elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
+        elResultMainBtn.onclick = () => {
+          const li = examState.levelIdx;
+          closeOverlays();
+          renderLevels();
+          scrollToCurrentNode(li);
+        };
+      }
+    } else {
+      elResultEmoji.textContent = '😅';
+      elResultTitle.textContent = 'Olmadı...';
+      elResultDesc.textContent  = `${wrong} sualda uğursuz oldun. Sıfır səhv lazımdır!`;
+
+      elResultMainBtn.textContent = 'Yenidən cəhd et';
+      elResultMainBtn.onclick = () => startExam(examState.levelIdx, examState.quizIdx);
+    }
+
+    elResultBackBtn.classList.remove('hidden');
+    elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+    elResultBackBtn.onclick = () => {
+      const li = examState.levelIdx;
+      closeOverlays();
+      renderLevels();
+      scrollToCurrentNode(li);
+    };
+  }, 300);
+}
+
+// ============================================================
+//  WORDPATH — YENİ SƏVİYYƏ TESTİ SİSTEMİ
+// ============================================================
+
+const LT_TOTAL        = 40;
+const LT_P1_PER_LEVEL = 2;
+const LT_P1_PASS      = 1;
+const LT_P2_TOTAL     = 20;
+const LT_P2_PER_TYPE  = 5;
+const LT_P2_STRONG    = 0.72;
+const LT_P2_WEAK      = 0.45;
+const LT_P3_TOTAL     = 10;
+const LT_P3_UPGRADE   = 6;
+
+const LT_LEVEL_WEIGHTS = { a1: 1, a2: 2, b1: 3, b2: 4, c1: 5, c2: 6 };
+const LT_TYPE_WEIGHTS  = { normal: 1.0, phase2: 1.3, phase3: 1.6, exam: 1.4 };
 const LT_HAS_DEF  = new Set(['a1', 'a2', 'b1']);
 const LT_HAS_EXAM = new Set(['a1', 'a2', 'b1']);
 
-// ── Level test state ──────────────────────────────────────
 const levelTestState = {
   phase:          1,
   totalAsked:     0,
-
-  // Phase 1
   p1_lo:          0,
   p1_hi:          5,
   p1_mid:         -1,
@@ -297,33 +808,27 @@ const levelTestState = {
   p1_wordIdx:     0,
   p1_correct:     0,
   p1_results:     {},
-
-  // Phase 2
   p2_levelId:     null,
-  p2_queue:       [],   // {word, qType} sıralı qarışıq sual siyahısı
+  p2_queue:       [],
   p2_idx:         0,
   p2_weightedScore:    0,
   p2_weightedMax:      0,
-
-  // Phase 3
   p3_levelId:     null,
   p3_queue:       [],
   p3_idx:         0,
   p3_weightedScore:    0,
   p3_weightedMax:      0,
-
   finalLevelId:   null,
   usedWordKeys:   new Set(),
 };
 
-// ── Köməkçi: levelə aid bütün exam sözlərini topla ────────
 function getAllExamWordsForLevel(levelId) {
   const lvl = LEVELS.find(l => l.id === levelId);
   if (!lvl) return [];
   const words = [];
   lvl.quizzes.forEach((item, qi) => {
-    if (isExamItem(item, levelId, qi) && Array.isArray(item)) {
-      item.forEach(w => {
+    if (isExamItem(item, levelId, qi) && item && item.sentences) {
+      item.sentences.forEach(w => {
         if (w && w.en && w.en.includes('____') && w.tr && w.wrong) {
           words.push(w);
         }
@@ -333,7 +838,6 @@ function getAllExamWordsForLevel(levelId) {
   return words;
 }
 
-// ── Köməkçi: fresh sözlər seç (istifadə olunmamış) ────────
 function lt_pickFreshWords(levelId, count, type = 'normal') {
   let pool = [];
 
@@ -362,19 +866,16 @@ function lt_pickFreshWords(levelId, count, type = 'normal') {
   return picked;
 }
 
-// ── Köməkçi: növbəti tipin mövcudluğunu yoxla ─────────────
 function lt_hasType(levelId, type) {
   if (type === 'exam')   return LT_HAS_EXAM.has(levelId);
-  if (type === 'phase2') return true; // hamısında wen var
+  if (type === 'phase2') return true;
   if (type === 'phase3') return LT_HAS_DEF.has(levelId);
   return true;
 }
 
-// ── Sual növbəsi qur ───────────────────────────────────────
-// Tipləri qarışdırır, çatmayan tipləri normal ilə əvəzləyir
 function lt_buildQueue(levelId, totalCount) {
-  const queue = [];
-  const types = ['normal', 'phase2', 'phase3', 'exam'];
+  const queue   = [];
+  const types   = ['normal', 'phase2', 'phase3', 'exam'];
   const perType = Math.floor(totalCount / 4);
   const remainder = totalCount % 4;
 
@@ -382,7 +883,6 @@ function lt_buildQueue(levelId, totalCount) {
     const count = perType + (i < remainder ? 1 : 0);
     if (lt_hasType(levelId, type)) {
       const words = lt_pickFreshWords(levelId, count, type);
-      // Əgər kifayət qədər söz yoxdursa normal ilə doldur
       words.forEach(w => queue.push({ word: w, qType: type }));
       const missing = count - words.length;
       if (missing > 0) {
@@ -390,7 +890,6 @@ function lt_buildQueue(levelId, totalCount) {
         extra.forEach(w => queue.push({ word: w, qType: 'normal' }));
       }
     } else {
-      // Bu tip mövcud deyil → hamısını normal ilə əvəzlə
       const words = lt_pickFreshWords(levelId, count, 'normal');
       words.forEach(w => queue.push({ word: w, qType: 'normal' }));
     }
@@ -399,7 +898,6 @@ function lt_buildQueue(levelId, totalCount) {
   return shuffle(queue);
 }
 
-// ── Sual render ───────────────────────────────────────────
 function lt_renderQuestion(entry, phaseLabel) {
   const { word, qType } = entry;
   const asked = levelTestState.totalAsked;
@@ -409,61 +907,66 @@ function lt_renderQuestion(entry, phaseLabel) {
 
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
 
+  // Normal quiz body strukturunu bərpa et (exam render onu dəyişmiş ola bilər)
+  const quizBody = document.querySelector('.quiz-body');
+  quizBody.innerHTML = `
+    <div class="question-card">
+      <div class="question-hint" id="question-hint"></div>
+      <div class="question-word" id="question-word"></div>
+    </div>
+    <div class="options-grid">
+      <button class="option-btn" id="opt-0"></button>
+      <button class="option-btn" id="opt-1"></button>
+    </div>
+  `;
+
+  // DOM ref-ləri yenilə
+  const hint = document.getElementById('question-hint');
+  const word_el = document.getElementById('question-word');
+  const opt0 = document.getElementById('opt-0');
+  const opt1 = document.getElementById('opt-1');
+
+  opt0.addEventListener('click', () => handleAnswer(0));
+  opt1.addEventListener('click', () => handleAnswer(1));
+
   if (qType === 'exam') {
-    // Boşluq doldurma: cümləni göstər
     const sentence = word.en.replace('____', '_____');
-    elQuestionWord.textContent = sentence;
-    elQuestionHint.textContent = `${phaseLabel} · Boşluğa uyğun sözü tap`;
-
-    const opts = quiz.correctPos === 0
-      ? [word.tr, word.wrong]
-      : [word.wrong, word.tr];
-    elOpt0.textContent = capitalize(opts[0]);
-    elOpt1.textContent = capitalize(opts[1]);
-
+    word_el.textContent = sentence;
+    word_el.style.fontSize = '20px';
+    hint.textContent = `${phaseLabel} · Boşluğa uyğun sözü tap`;
+    const opts = quiz.correctPos === 0 ? [word.tr, word.wrong] : [word.wrong, word.tr];
+    opt0.textContent = capitalize(opts[0]);
+    opt1.textContent = capitalize(opts[1]);
   } else if (qType === 'phase2') {
-    // Tərsinə: Azərbaycan → İngilis
-    elQuestionWord.textContent = capitalize(word.tr);
-    elQuestionHint.textContent = `${phaseLabel} · İngilis sözünü tap`;
-
-    const opts = quiz.correctPos === 0
-      ? [word.en, word.wen]
-      : [word.wen, word.en];
-    elOpt0.textContent = capitalize(opts[0]);
-    elOpt1.textContent = capitalize(opts[1]);
-
+    word_el.textContent = capitalize(word.tr);
+    hint.textContent = `${phaseLabel} · İngilis sözünü tap`;
+    const opts = quiz.correctPos === 0 ? [word.en, word.wen] : [word.wen, word.en];
+    opt0.textContent = capitalize(opts[0]);
+    opt1.textContent = capitalize(opts[1]);
   } else if (qType === 'phase3') {
-    // Tərif → söz
-    elQuestionWord.textContent = word.def;
-    elQuestionHint.textContent = `${phaseLabel} · Tərifə uyğun sözü tap`;
-
-    const opts = quiz.correctPos === 0
-      ? [word.en, word.wen]
-      : [word.wen, word.en];
-    elOpt0.textContent = capitalize(opts[0]);
-    elOpt1.textContent = capitalize(opts[1]);
-
+    word_el.textContent = word.def;
+    word_el.style.fontSize = '20px';
+    hint.textContent = `${phaseLabel} · Tərifə uyğun sözü tap`;
+    const opts = quiz.correctPos === 0 ? [word.en, word.wen] : [word.wen, word.en];
+    opt0.textContent = capitalize(opts[0]);
+    opt1.textContent = capitalize(opts[1]);
   } else {
-    // Normal: İngilis → Azərbaycan
-    elQuestionWord.textContent = capitalize(word.en);
-    elQuestionHint.textContent = `${phaseLabel} · Düzgün tərcüməni tap`;
-
-    const opts = quiz.correctPos === 0
-      ? [word.tr, word.wrong]
-      : [word.wrong, word.tr];
-    elOpt0.textContent = capitalize(opts[0]);
-    elOpt1.textContent = capitalize(opts[1]);
+    word_el.textContent = capitalize(word.en);
+    hint.textContent = `${phaseLabel} · Düzgün tərcüməni tap`;
+    const opts = quiz.correctPos === 0 ? [word.tr, word.wrong] : [word.wrong, word.tr];
+    opt0.textContent = capitalize(opts[0]);
+    opt1.textContent = capitalize(opts[1]);
   }
 
-  elOpt0.className = 'option-btn';
-  elOpt1.className = 'option-btn';
-  elOpt0.disabled  = false;
-  elOpt1.disabled  = false;
-  quiz.locked      = false;
+  opt0.className = 'option-btn';
+  opt1.className = 'option-btn';
+  opt0.disabled  = false;
+  opt1.disabled  = false;
+  quiz.locked    = false;
 }
 
 // ══════════════════════════════════════════════════════════
-//  PHASE 1 — Binary Search Anchor (max 10 sual)
+//  PHASE 1
 // ══════════════════════════════════════════════════════════
 
 function startLevelTest() {
@@ -500,6 +1003,9 @@ function startLevelTest() {
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
 
+  // Quiz body-ni normal struktura gətir
+  restoreNormalQuizBody();
+
   showQuizScreen();
   lt_startPhase1();
 }
@@ -524,9 +1030,8 @@ function lt_startPhase1() {
 
 function lt_showPhase1Q() {
   const word  = levelTestState.p1_words[levelTestState.p1_wordIdx];
-  const lvlId = LEVEL_ORDER[levelTestState.p1_mid];
   const entry = { word, qType: 'normal' };
-  lt_renderQuestion(entry, `Skan: ${lvlId.toUpperCase()}`);
+  lt_renderQuestion(entry, `Skan: ${LEVEL_ORDER[levelTestState.p1_mid].toUpperCase()}`);
 }
 
 function lt_handlePhase1(isCorrect) {
@@ -548,20 +1053,14 @@ function lt_evalPhase1Block(passed) {
   const levelId = LEVEL_ORDER[mid];
   levelTestState.p1_results[levelId] = passed;
 
-  if (passed) {
-    levelTestState.p1_lo = mid + 1;
-  } else {
-    levelTestState.p1_hi = mid - 1;
-  }
+  if (passed) { levelTestState.p1_lo = mid + 1; }
+  else        { levelTestState.p1_hi = mid - 1; }
 
   const maxReached = levelTestState.totalAsked >= 10;
   const rangeEmpty = levelTestState.p1_lo > levelTestState.p1_hi;
 
-  if (rangeEmpty || maxReached) {
-    lt_finishPhase1();
-  } else {
-    lt_startPhase1();
-  }
+  if (rangeEmpty || maxReached) lt_finishPhase1();
+  else lt_startPhase1();
 }
 
 function lt_finishPhase1() {
@@ -573,10 +1072,7 @@ function lt_finishPhase1() {
     const allFailed = keys.every(k => results[k] === false);
     if (!allFailed) {
       for (let i = LEVEL_ORDER.length - 1; i >= 0; i--) {
-        if (results[LEVEL_ORDER[i]] === true) {
-          zoneIdx = i;
-          break;
-        }
+        if (results[LEVEL_ORDER[i]] === true) { zoneIdx = i; break; }
       }
     }
   }
@@ -586,23 +1082,19 @@ function lt_finishPhase1() {
 }
 
 // ══════════════════════════════════════════════════════════
-//  PHASE 2 — Zone Confirmation (20 sual, 4 tip mixed)
+//  PHASE 2
 // ══════════════════════════════════════════════════════════
 
 function lt_startPhase2() {
-  levelTestState.phase             = 2;
-  levelTestState.p2_idx            = 0;
-  levelTestState.p2_weightedScore  = 0;
-  levelTestState.p2_weightedMax    = 0;
+  levelTestState.phase            = 2;
+  levelTestState.p2_idx           = 0;
+  levelTestState.p2_weightedScore = 0;
+  levelTestState.p2_weightedMax   = 0;
 
   const queue = lt_buildQueue(levelTestState.p2_levelId, LT_P2_TOTAL);
   levelTestState.p2_queue = queue;
 
-  if (queue.length === 0) {
-    lt_finishPhase2();
-    return;
-  }
-
+  if (queue.length === 0) { lt_finishPhase2(); return; }
   lt_showPhase2Q();
 }
 
@@ -615,11 +1107,11 @@ function lt_showPhase2Q() {
 }
 
 function lt_handlePhase2(isCorrect) {
-  const entry   = levelTestState.p2_queue[levelTestState.p2_idx];
-  const lvlId   = levelTestState.p2_levelId;
-  const lw      = LT_LEVEL_WEIGHTS[lvlId] || 1;
-  const tw      = LT_TYPE_WEIGHTS[entry.qType] || 1.0;
-  const maxPts  = lw * tw;
+  const entry  = levelTestState.p2_queue[levelTestState.p2_idx];
+  const lvlId  = levelTestState.p2_levelId;
+  const lw     = LT_LEVEL_WEIGHTS[lvlId] || 1;
+  const tw     = LT_TYPE_WEIGHTS[entry.qType] || 1.0;
+  const maxPts = lw * tw;
 
   levelTestState.totalAsked++;
   levelTestState.p2_weightedMax += maxPts;
@@ -627,11 +1119,8 @@ function lt_handlePhase2(isCorrect) {
   levelTestState.p2_idx++;
 
   setTimeout(() => {
-    if (levelTestState.p2_idx < levelTestState.p2_queue.length) {
-      lt_showPhase2Q();
-    } else {
-      lt_finishPhase2();
-    }
+    if (levelTestState.p2_idx < levelTestState.p2_queue.length) lt_showPhase2Q();
+    else lt_finishPhase2();
   }, 500);
 }
 
@@ -656,23 +1145,19 @@ function lt_finishPhase2() {
 }
 
 // ══════════════════════════════════════════════════════════
-//  PHASE 3 — Upper Boundary (10 sual, 4 tip mixed)
+//  PHASE 3
 // ══════════════════════════════════════════════════════════
 
 function lt_startPhase3() {
-  levelTestState.phase             = 3;
-  levelTestState.p3_idx            = 0;
-  levelTestState.p3_weightedScore  = 0;
-  levelTestState.p3_weightedMax    = 0;
+  levelTestState.phase            = 3;
+  levelTestState.p3_idx           = 0;
+  levelTestState.p3_weightedScore = 0;
+  levelTestState.p3_weightedMax   = 0;
 
   const queue = lt_buildQueue(levelTestState.p3_levelId, LT_P3_TOTAL);
   levelTestState.p3_queue = queue;
 
-  if (queue.length === 0) {
-    finishLevelTest();
-    return;
-  }
-
+  if (queue.length === 0) { finishLevelTest(); return; }
   lt_showPhase3Q();
 }
 
@@ -685,11 +1170,11 @@ function lt_showPhase3Q() {
 }
 
 function lt_handlePhase3(isCorrect) {
-  const entry   = levelTestState.p3_queue[levelTestState.p3_idx];
-  const lvlId   = levelTestState.p3_levelId;
-  const lw      = LT_LEVEL_WEIGHTS[lvlId] || 1;
-  const tw      = LT_TYPE_WEIGHTS[entry.qType] || 1.0;
-  const maxPts  = lw * tw;
+  const entry  = levelTestState.p3_queue[levelTestState.p3_idx];
+  const lvlId  = levelTestState.p3_levelId;
+  const lw     = LT_LEVEL_WEIGHTS[lvlId] || 1;
+  const tw     = LT_TYPE_WEIGHTS[entry.qType] || 1.0;
+  const maxPts = lw * tw;
 
   levelTestState.totalAsked++;
   levelTestState.p3_weightedMax += maxPts;
@@ -697,26 +1182,20 @@ function lt_handlePhase3(isCorrect) {
   levelTestState.p3_idx++;
 
   setTimeout(() => {
-    if (levelTestState.p3_idx < levelTestState.p3_queue.length) {
-      lt_showPhase3Q();
-    } else {
-      lt_finishPhase3();
-    }
+    if (levelTestState.p3_idx < levelTestState.p3_queue.length) lt_showPhase3Q();
+    else lt_finishPhase3();
   }, 500);
 }
 
 function lt_finishPhase3() {
   const max = levelTestState.p3_weightedMax || 1;
   const pct = levelTestState.p3_weightedScore / max;
-
-  // Phase 3-də weighted 60% → upgrade
   if (pct >= (LT_P3_UPGRADE / LT_P3_TOTAL)) {
     levelTestState.finalLevelId = levelTestState.p3_levelId;
   }
   finishLevelTest();
 }
 
-// ── Answer handler — phase router ─────────────────────────
 function lt_handleAnswer(isCorrect) {
   switch (levelTestState.phase) {
     case 1: lt_handlePhase1(isCorrect); break;
@@ -740,16 +1219,9 @@ function finishLevelTest() {
     const info    = LEVEL_INFO[lvlId] || {};
     const lvlData = LEVELS.find(l => l.id === lvlId);
 
-    // Weighted faiz hesabı (Phase 2 əsas göstərici)
     const p2max = levelTestState.p2_weightedMax || 1;
     const p2pct = Math.round((levelTestState.p2_weightedScore / p2max) * 100);
 
-    // Tip breakdown — neçə tip nə qədər gəldi
-    const p2queue   = levelTestState.p2_queue || [];
-    const typeCounts = { normal: 0, phase2: 0, phase3: 0, exam: 0 };
-    p2queue.forEach(e => { if (typeCounts[e.qType] !== undefined) typeCounts[e.qType]++; });
-
-    // Güc səviyyəsi
     let strengthLabel, strengthEmoji;
     if (p2pct >= 85)      { strengthLabel = 'Möhkəm';    strengthEmoji = '💪'; }
     else if (p2pct >= 70) { strengthLabel = 'Yaxşı';     strengthEmoji = '👍'; }
@@ -772,11 +1244,7 @@ function finishLevelTest() {
     elLevelResultDesc.textContent       = info.desc   || '';
 
     elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
-    elResultMainBtn.onclick = () => {
-      closeOverlays();
-      renderLevels();
-    };
-
+    elResultMainBtn.onclick = () => { closeOverlays(); renderLevels(); };
     elResultBackBtn.classList.add('hidden');
   }, 300);
 }
@@ -865,11 +1333,6 @@ function getStatus(levelIdx, quizIdx) {
   return progress[lvl.id][quizIdx] || 'locked';
 }
 
-// ── Status axını:
-// unlocked → completed (next node açılır)
-// completed → phase2_completed (phase2 bitdi)
-// phase2_completed → phase3_unlocked (phase3 açıldı)
-// phase3_unlocked → level_done (tam bitdi)
 function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
   const cur = progress[lvl.id][quizIdx];
@@ -886,7 +1349,6 @@ function markCompleted(levelIdx, quizIdx) {
     return;
   }
 
-  // Phase 1 — ilk tamamlanma
   const wasCompleted = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(cur);
   progress[lvl.id][quizIdx] = 'completed';
 
@@ -902,10 +1364,11 @@ function markCompleted(levelIdx, quizIdx) {
 
   const today = new Date().toISOString().slice(0, 10);
   const lastDate = localStorage.getItem('wordpath_last_date') || '';
-  const streak = parseInt(localStorage.getItem('wordpath_streak') || '0', 10);
+  const streak   = parseInt(localStorage.getItem('wordpath_streak') || '0', 10);
   const yesterday = new Date();
   yesterday.setDate(yesterday.getDate() - 1);
   const yStr = yesterday.toISOString().slice(0, 10);
+
   if (lastDate === today) {
   } else if (lastDate === yStr) {
     localStorage.setItem('wordpath_streak', String(streak + 1));
@@ -961,6 +1424,27 @@ const elChanceStars      = $('chance-stars');
 const elReviewModal      = $('review-modal');
 const elReviewLevelGrid  = $('review-level-grid');
 const elReviewClose      = $('review-close');
+
+// ── Quiz body-ni normal struktura bərpa et ────────────────
+// Exam word-match render quiz body-ni tamamilə dəyişir,
+// normal quiz üçün əvvəlki strukturu bərpa etmək lazım olur
+function restoreNormalQuizBody() {
+  const quizBody = document.querySelector('.quiz-body');
+  if (!quizBody) return;
+  quizBody.innerHTML = `
+    <div class="question-card">
+      <div class="question-hint" id="question-hint"></div>
+      <div class="question-word" id="question-word"></div>
+    </div>
+    <div class="options-grid">
+      <button class="option-btn" id="opt-0"></button>
+      <button class="option-btn" id="opt-1"></button>
+    </div>
+  `;
+  // Event listenerları yenidən qoş
+  document.getElementById('opt-0').addEventListener('click', () => handleAnswer(0));
+  document.getElementById('opt-1').addEventListener('click', () => handleAnswer(1));
+}
 
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
@@ -1027,7 +1511,11 @@ function renderLevels() {
         }
 
         const item = lvl.quizzes[qi];
-        if (!item || (Array.isArray(item) && item.length < 2)) {
+        if (!item) {
+          showToast('Bu test hələ hazır deyil ✏️');
+          return;
+        }
+        if (Array.isArray(item) && item.length < 2) {
           showToast('Bu test hələ hazır deyil ✏️');
           return;
         }
@@ -1073,7 +1561,6 @@ function renderQuizPath(lvl, li) {
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
 
     } else if (status === 'completed') {
-      // Phase 2 dəvəti — mavi fon, bənövşəyi pulse kənar
       const nodeClass = isExam ? 'path-node completed phase2-invite exam-node' : 'path-node completed phase2-invite';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}"
            style="border-color:${lvl.color}; background:${lvl.color}">${inner}</div>`;
@@ -1190,28 +1677,21 @@ function startReviewMode(levelId) {
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
 
+  restoreNormalQuizBody();
   elQuestionHint.textContent = 'Düzgün tərcüməni tap';
   showQuizScreen();
   showQuestion();
 }
 
-// ── Retake mode — level_done olandan sonra qarışıq təkrar ─
+// ── Retake mode ───────────────────────────────────────────
 function startRetakeMode(levelIdx, quizIdx) {
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
   if (!item || !Array.isArray(item)) return;
 
-  const p1words = shuffle(
-    item.filter(w => w && w.en && w.tr && w.wrong)
-  ).slice(0, 5);
-
-  const p2words = shuffle(
-    item.filter(w => w && w.en && w.tr && w.wen)
-  ).slice(0, 7);
-
-  const p3words = shuffle(
-    item.filter(w => w && w.en && w.wen && w.def)
-  ).slice(0, 8);
+  const p1words = shuffle(item.filter(w => w && w.en && w.tr && w.wrong)).slice(0, 5);
+  const p2words = shuffle(item.filter(w => w && w.en && w.tr && w.wen)).slice(0, 7);
+  const p3words = shuffle(item.filter(w => w && w.en && w.wen && w.def)).slice(0, 8);
 
   const tagged = [
     ...p1words.map(w => ({ ...w, _retakeMode: 'normal' })),
@@ -1219,27 +1699,21 @@ function startRetakeMode(levelIdx, quizIdx) {
     ...p3words.map(w => ({ ...w, _retakeMode: 'phase3' })),
   ];
 
-  const mixed = shuffle(tagged);
-
   quiz.mode         = 'retake';
   quiz.levelIdx     = levelIdx;
   quiz.quizIdx      = quizIdx;
-  quiz.words        = mixed;
+  quiz.words        = shuffle(tagged);
   quiz.index        = 0;
   quiz.mistakes     = 0;
   quiz.locked       = false;
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
 
+  restoreNormalQuizBody();
   elQuestionHint.textContent = 'Qarışıq təkrar';
   showQuizScreen();
   showQuestion();
 }
-
-// ══════════════════════════════════════════════
-//  SƏVİYYƏNİ TEST ET — 3 Mərhələli Adaptiv Sistem
-// ══════════════════════════════════════════════
-
 
 // ══════════════════════════════════════════════
 //  NORMAL QUIZ
@@ -1249,28 +1723,20 @@ function startQuiz(levelIdx, quizIdx) {
   const lvl    = LEVELS[levelIdx];
   const status = progress[lvl.id][quizIdx];
 
-  // level_done → retake moduna keç
-
+  // level_done → retake
   if (status === 'level_done') {
+    // Exam üçün retake yoxdur, yenidən exam başlat
+    if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
+      startExam(levelIdx, quizIdx);
+      return;
+    }
     startRetakeMode(levelIdx, quizIdx);
     return;
   }
 
-  // Exam ise həmişə normal mode
-  const isExam = isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx);
-  if (isExam) {
-    quiz.mode         = 'normal';
-    quiz.levelIdx     = levelIdx;
-    quiz.quizIdx      = quizIdx;
-    quiz.mistakes     = 0;
-    quiz.index        = 0;
-    quiz.locked       = false;
-    quiz.chanceUsed   = false;
-    quiz.chanceActive = false;
-    quiz.words        = shuffle([...lvl.quizzes[quizIdx]]);
-    elQuestionHint.textContent = 'Boşluğa uyğun sözü tap';
-    showQuizScreen();
-    showQuestion();
+  // Exam ise exam sistemini başlat
+  if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
+    startExam(levelIdx, quizIdx);
     return;
   }
 
@@ -1306,8 +1772,9 @@ function startQuiz(levelIdx, quizIdx) {
     phase2: 'Düzgün ingilis sözünü tap',
     phase3: 'Tərifə uyğun sözü tap',
   };
-  elQuestionHint.textContent = hints[mode];
 
+  restoreNormalQuizBody();
+  elQuestionHint.textContent = hints[mode];
   showQuizScreen();
   showQuestion();
 }
@@ -1318,6 +1785,14 @@ function showQuizScreen() {
 }
 
 function showQuestion() {
+  // elQuestionWord və elQuestionHint DOM-dan yenidən oxu (bərpa edilmiş ola bilər)
+  const elQW = document.getElementById('question-word');
+  const elQH = document.getElementById('question-hint');
+  const elO0 = document.getElementById('opt-0');
+  const elO1 = document.getElementById('opt-1');
+
+  if (!elQW || !elO0) return;
+
   const word       = quiz.words[quiz.index];
   const totalWords = quiz.words.length;
 
@@ -1331,39 +1806,38 @@ function showQuestion() {
     : quiz.mode;
 
   if (effectiveMode === 'phase2') {
-    elQuestionWord.textContent = capitalize(word.tr);
-    const opts = quiz.correctPos === 0
-      ? [word.en, word.wen]
-      : [word.wen, word.en];
-    elOpt0.textContent = capitalize(opts[0]);
-    elOpt1.textContent = capitalize(opts[1]);
+    elQW.textContent = capitalize(word.tr);
+    elQW.style.fontSize = '';
+    const opts = quiz.correctPos === 0 ? [word.en, word.wen] : [word.wen, word.en];
+    elO0.textContent = capitalize(opts[0]);
+    elO1.textContent = capitalize(opts[1]);
 
   } else if (effectiveMode === 'phase3') {
-    elQuestionWord.textContent = word.def;
-    const opts = quiz.correctPos === 0
-      ? [word.en, word.wen]
-      : [word.wen, word.en];
-    elOpt0.textContent = capitalize(opts[0]);
-    elOpt1.textContent = capitalize(opts[1]);
+    elQW.textContent = word.def;
+    elQW.style.fontSize = '20px';
+    const opts = quiz.correctPos === 0 ? [word.en, word.wen] : [word.wen, word.en];
+    elO0.textContent = capitalize(opts[0]);
+    elO1.textContent = capitalize(opts[1]);
 
- } else {
+  } else {
     if (word.en && word.en.includes('____')) {
-      elQuestionWord.textContent = word.en;
-      elQuestionHint.textContent = 'Boşluğa uyğun sözü tap';
+      elQW.textContent = word.en;
+      elQW.style.fontSize = '20px';
+      if (elQH) elQH.textContent = 'Boşluğa uyğun sözü tap';
     } else {
-      elQuestionWord.textContent = capitalize(word.en);
+      elQW.textContent = capitalize(word.en);
+      elQW.style.fontSize = '';
     }
-    const opts = quiz.correctPos === 0
-      ? [word.tr, word.wrong]
-      : [word.wrong, word.tr];
-    elOpt0.textContent = capitalize(opts[0]);
-    elOpt1.textContent = capitalize(opts[1]);
+    const opts = quiz.correctPos === 0 ? [word.tr, word.wrong] : [word.wrong, word.tr];
+    elO0.textContent = capitalize(opts[0]);
+    elO1.textContent = capitalize(opts[1]);
   }
-  elOpt0.className = 'option-btn';
-  elOpt1.className = 'option-btn';
-  elOpt0.disabled  = false;
-  elOpt1.disabled  = false;
-  quiz.locked      = false;
+
+  elO0.className = 'option-btn';
+  elO1.className = 'option-btn';
+  elO0.disabled  = false;
+  elO1.disabled  = false;
+  quiz.locked    = false;
 }
 
 // ── Şans popup ────────────────────────────────────────────
@@ -1406,17 +1880,22 @@ function proceedAfterWrong() {
   }, 300);
 }
 
-// ── Handle answer ─────────────────────────────────────────
+// ── Handle answer (normal/review/retake/leveltest) ────────
 function handleAnswer(btnIdx) {
   if (quiz.locked || quiz.chanceActive) return;
   quiz.locked = true;
 
-  const isCorrect  = btnIdx === quiz.correctPos;
-  elOpt0.disabled  = true;
-  elOpt1.disabled  = true;
+  const isCorrect = btnIdx === quiz.correctPos;
 
-  const correctBtn = quiz.correctPos === 0 ? elOpt0 : elOpt1;
-  const chosenBtn  = btnIdx === 0 ? elOpt0 : elOpt1;
+  const elO0 = document.getElementById('opt-0');
+  const elO1 = document.getElementById('opt-1');
+  if (!elO0 || !elO1) return;
+
+  elO0.disabled = true;
+  elO1.disabled = true;
+
+  const correctBtn = quiz.correctPos === 0 ? elO0 : elO1;
+  const chosenBtn  = btnIdx === 0 ? elO0 : elO1;
 
   if (isCorrect) {
     chosenBtn.className = 'option-btn correct';
@@ -1570,17 +2049,14 @@ function finishQuiz() {
 
       if (won) {
         const lvl = LEVELS[quiz.levelIdx];
-        const cur = progress[lvl.id][quiz.quizIdx];
-
         if (quiz.mode === 'phase2') {
-          // completed → phase2_completed (1 addımda)
           progress[lvl.id][quiz.quizIdx] = 'phase2_completed';
           saveProgress();
-       } else {
-  // phase3 → birbaşa level_done
-  progress[lvl.id][quiz.quizIdx] = 'level_done';
-  saveProgress();
-}
+        } else {
+          progress[lvl.id][quiz.quizIdx] = 'level_done';
+          saveProgress();
+        }
+
         const isPhase3 = quiz.mode === 'phase3';
         elResultEmoji.textContent = isPhase3 ? '🏅' : '💜';
         elResultTitle.textContent = isPhase3 ? 'Level tamamlandı!' : 'Phase 2 tamamlandı!';
@@ -1622,7 +2098,6 @@ function finishQuiz() {
   setTimeout(() => {
     elQuizScreen.classList.add('hidden');
     elResultScreen.classList.remove('hidden');
-
     elResultStats.classList.add('hidden');
     elLevelResultCard.classList.add('hidden');
 
@@ -1697,19 +2172,14 @@ function scrollToCurrentNode(levelIdx) {
   const targetCard = cards[levelIdx];
   if (!targetCard) return;
 
-  if (!targetCard.classList.contains('open')) {
-    toggleLevel(targetCard);
-  }
+  if (!targetCard.classList.contains('open')) toggleLevel(targetCard);
 
   const body = targetCard.querySelector('.level-body');
-
   const doScroll = () => {
     const node = targetCard.querySelector('.path-node.pulse')
               || targetCard.querySelector('.path-node.unlocked:last-of-type')
               || targetCard.querySelector('.path-node.unlocked');
-    if (node) {
-      node.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    if (node) node.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
   if (targetCard.classList.contains('open') && body.style.maxHeight === 'none') {
@@ -1745,14 +2215,15 @@ function capitalize(str) {
 }
 
 // ── Event listeners ───────────────────────────────────────
-elOpt0.addEventListener('click', () => handleAnswer(0));
-elOpt1.addEventListener('click', () => handleAnswer(1));
+// opt-0 və opt-1 üçün event listenerlar showQuestion/restoreNormalQuizBody içindədir
+// Burada yalnız sabit elementlər üçün
 
 elQuitBtn.addEventListener('click', () => {
   if (confirm('Testdən çıxmaq istəyirsən? İrəliləyişin saxlanmayacaq.')) {
-    const li = quiz.levelIdx;
+    const li = quiz.mode === 'exam' ? examState.levelIdx : quiz.levelIdx;
     hideChanceModal();
     closeOverlays();
+    restoreNormalQuizBody();
     renderLevels();
     if (li !== null) scrollToCurrentNode(li);
   }
