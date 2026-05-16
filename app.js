@@ -1250,8 +1250,27 @@ function startQuiz(levelIdx, quizIdx) {
   const status = progress[lvl.id][quizIdx];
 
   // level_done → retake moduna keç
+
   if (status === 'level_done') {
     startRetakeMode(levelIdx, quizIdx);
+    return;
+  }
+
+  // Exam ise həmişə normal mode
+  const isExam = isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx);
+  if (isExam) {
+    quiz.mode         = 'normal';
+    quiz.levelIdx     = levelIdx;
+    quiz.quizIdx      = quizIdx;
+    quiz.mistakes     = 0;
+    quiz.index        = 0;
+    quiz.locked       = false;
+    quiz.chanceUsed   = false;
+    quiz.chanceActive = false;
+    quiz.words        = shuffle([...lvl.quizzes[quizIdx]]);
+    elQuestionHint.textContent = 'Boşluğa uyğun sözü tap';
+    showQuizScreen();
+    showQuestion();
     return;
   }
 
