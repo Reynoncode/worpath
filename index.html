@@ -52,21 +52,6 @@
             </svg>
           </button>
 
-          <!-- Sinif Otağı düyməsi (giriş edəndə görünür) -->
-          <button
-            id="classroom-btn"
-            title="Sinif Otağı"
-            style="display:none;"
-            class="header-action-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-              <polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-          </button>
-
-          <!-- Gmail giriş düyməsi -->
-          <div id="auth-btn-container"></div>
-
           <!-- Ulduz sayğacı -->
           <div class="stat-badge">
             <svg viewBox="0 0 24 24" stroke-width="2">
@@ -104,7 +89,6 @@
       </div>
       <span class="q-counter" id="q-counter">1/20</span>
     </div>
-
     <div class="quiz-body">
       <div class="question-card">
         <p class="question-hint" id="question-hint">Düzgün tərcüməni tap</p>
@@ -201,15 +185,22 @@
        STATİSTİKA EKRANI
   ═══════════════════════════════════════════ -->
   <div id="stats-screen" class="screen-overlay hidden">
-    <div class="quiz-header" style="border-bottom: 1px solid #E8E2D9;">
+
+    <!-- Header: X düyməsi + auth bar -->
+    <div class="quiz-header" style="border-bottom:1px solid #E8E2D9;">
       <button class="icon-btn" id="stats-close-btn" aria-label="Bağla">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
           <line x1="18" y1="6" x2="6" y2="18"/>
           <line x1="6" y1="6" x2="18" y2="18"/>
         </svg>
       </button>
+      <!-- Auth bar — x ilə eyni sətirdə sağda -->
+      <div id="stats-auth-bar" style="margin-left:auto;"></div>
     </div>
-    <div id="stats-container" style="overflow-y: auto; height: calc(100vh - 60px);"></div>
+
+    <!-- Statistika məzmunu -->
+    <div id="stats-container" style="overflow-y:auto;height:calc(100vh - 60px);"></div>
+
   </div>
 
   <!-- Toast -->
@@ -221,29 +212,21 @@
   <script src="data.js"></script>
   <script src="app.js"></script>
 
-  <!-- Firebase modulları (type="module" olmalıdır) -->
+  <!-- Firebase (type=module) -->
   <script type="module" src="firebase.js"></script>
   <script type="module" src="auth.js"></script>
   <script type="module" src="classroom.js"></script>
 
   <script>
-    // Streak yenilə
     Stats.updateStreak();
 
-    // Statistika ekranını aç
     document.getElementById('stats-btn').addEventListener('click', function () {
       StatsPage.render('stats-container');
       document.getElementById('stats-screen').classList.remove('hidden');
     });
 
-    // Statistika ekranını bağla
     document.getElementById('stats-close-btn').addEventListener('click', function () {
       document.getElementById('stats-screen').classList.add('hidden');
-    });
-
-    // Sinif otağı düyməsi
-    document.getElementById('classroom-btn').addEventListener('click', function () {
-      if (window.ClassroomManager) ClassroomManager.open();
     });
   </script>
 
