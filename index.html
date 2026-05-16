@@ -43,7 +43,7 @@
             </svg>
           </button>
 
-          <!-- ── YENİ: Statistika düyməsi ── -->
+          <!-- Statistika düyməsi -->
           <button class="header-action-btn" id="stats-btn" title="Statistika">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="20" x2="18" y2="10"/>
@@ -51,6 +51,21 @@
               <line x1="6"  y1="20" x2="6"  y2="14"/>
             </svg>
           </button>
+
+          <!-- Sinif Otağı düyməsi (giriş edəndə görünür) -->
+          <button
+            id="classroom-btn"
+            title="Sinif Otağı"
+            style="display:none;"
+            class="header-action-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </button>
+
+          <!-- Gmail giriş düyməsi -->
+          <div id="auth-btn-container"></div>
 
           <!-- Ulduz sayğacı -->
           <div class="stat-badge">
@@ -72,7 +87,7 @@
   </div>
 
   <!-- ═══════════════════════════════════════════
-       QUIZ SCREEN (full-screen overlay)
+       QUIZ SCREEN
   ═══════════════════════════════════════════ -->
   <div id="quiz-screen" class="screen-overlay hidden">
     <div class="quiz-header">
@@ -103,7 +118,7 @@
   </div>
 
   <!-- ═══════════════════════════════════════════
-       RESULT SCREEN (full-screen overlay)
+       RESULT SCREEN
   ═══════════════════════════════════════════ -->
   <div id="result-screen" class="screen-overlay hidden">
     <div class="result-body">
@@ -126,7 +141,6 @@
           <span class="stat-label">Nəticə</span>
         </div>
       </div>
-      <!-- Level test result card -->
       <div class="level-result-card hidden" id="level-result-card">
         <div class="level-result-badge" id="level-result-badge"></div>
         <div class="level-result-info">
@@ -143,7 +157,7 @@
   </div>
 
   <!-- ═══════════════════════════════════════════
-       CHANCE MODAL (bottom sheet)
+       CHANCE MODAL
   ═══════════════════════════════════════════ -->
   <div id="chance-modal" class="chance-backdrop hidden">
     <div class="chance-sheet">
@@ -168,7 +182,7 @@
   </div>
 
   <!-- ═══════════════════════════════════════════
-       REVIEW MODAL — Ümumi Təkrar səviyyə seçimi
+       REVIEW MODAL
   ═══════════════════════════════════════════ -->
   <div id="review-modal" class="modal-backdrop hidden">
     <div class="modal-sheet">
@@ -178,20 +192,15 @@
         <h3 class="modal-title">Ümumi Təkrar</h3>
       </div>
       <p class="modal-desc">Hansı səviyyənin sözlərini təkrar etmək istəyirsən?</p>
-      <div class="review-level-grid" id="review-level-grid">
-        <!-- Rendered by app.js -->
-      </div>
+      <div class="review-level-grid" id="review-level-grid"></div>
       <button class="btn-chance-decline" id="review-close">Ləğv et</button>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════════
-       STATİSTİKA EKRANI (full-screen overlay)
-       — YENİ əlavə edildi —
+       STATİSTİKA EKRANI
   ═══════════════════════════════════════════ -->
   <div id="stats-screen" class="screen-overlay hidden">
-
-    <!-- Başlıq paneli -->
     <div class="quiz-header" style="border-bottom: 1px solid #E8E2D9;">
       <button class="icon-btn" id="stats-close-btn" aria-label="Bağla">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -200,59 +209,42 @@
         </svg>
       </button>
     </div>
-
-    <!-- Statistika məzmunu buraya render olunur -->
     <div id="stats-container" style="overflow-y: auto; height: calc(100vh - 60px);"></div>
-
   </div>
 
-  <!-- Toast notification -->
+  <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <!-- ── SKRIPTLƏR (sıra vacibdir) ── -->
-  <script src="stats.js"></script>       <!-- 1. Data mühərriki      -->
-  <script src="stats-page.js"></script>  <!-- 2. UI render           -->
-  <script src="data.js"></script>        <!-- 3. Söz dataları        -->
-  <script src="app.js"></script>         <!-- 4. Əsas tətbiq məntiqi -->
+  <!-- ── SKRIPTLƏR ── -->
+  <script src="stats.js"></script>
+  <script src="stats-page.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 
-  <!-- ── STATİSTİKA İNTEQRASİYASI ─────────────────────────────────────────
-       Bu blok app.js-dən SONRA işləyir, buna görə burada təhlükəsizdir.
-  ──────────────────────────────────────────────────────────────────────── -->
+  <!-- Firebase modulları (type="module" olmalıdır) -->
+  <script type="module" src="firebase.js"></script>
+  <script type="module" src="auth.js"></script>
+  <script type="module" src="classroom.js"></script>
+
   <script>
-    // 1. Tətbiq açılanda streak yenilə
+    // Streak yenilə
     Stats.updateStreak();
 
-    // 2. Statistika düyməsi — ekranı aç
+    // Statistika ekranını aç
     document.getElementById('stats-btn').addEventListener('click', function () {
-      StatsPage.render('stats-container');   // hər açılanda təzə render et
+      StatsPage.render('stats-container');
       document.getElementById('stats-screen').classList.remove('hidden');
     });
 
-    // 3. Statistika ekranını bağla
+    // Statistika ekranını bağla
     document.getElementById('stats-close-btn').addEventListener('click', function () {
       document.getElementById('stats-screen').classList.add('hidden');
     });
 
-    // ── app.js-də edilməli dəyişikliklər ─────────────────────────────────
-    //
-    // A) Hər cavab yoxlananda (səhv və ya düzgün) — app.js-dəki həmin yerə əlavə et:
-    //
-    //    Stats.recordAnswer(
-    //      currentWord.en,          // sözün ingiliscəsi  ("ambiguous")
-    //      currentLevel.id,         // səviyyə kodu       ("B1")
-    //      currentWord.az,          // azərbaycancası     ("qeyri-müəyyən")
-    //      isCorrect                // true / false
-    //    );
-    //
-    // B) Test bitib ulduz veriləndə — app.js-dəki həmin yerə əlavə et:
-    //
-    //    Stats.addStar(1);
-    //
-    // C) chance-accept düyməsi klikləndikdə (ulduz xərclənir) — app.js-dəki həmin yerə:
-    //
-    //    Stats.useStarFix(currentWord.en);
-    //
-    // ─────────────────────────────────────────────────────────────────────
+    // Sinif otağı düyməsi
+    document.getElementById('classroom-btn').addEventListener('click', function () {
+      if (window.ClassroomManager) ClassroomManager.open();
+    });
   </script>
 
 </body>
