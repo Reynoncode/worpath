@@ -101,7 +101,7 @@ async function signOutUser() {
 
 // ─── Header düymələrini idarə et ────────────────────────────────────────────
 function renderAuthButton(user) {
-  const container = document.getElementById("auth-btn-container");
+  const container = document.getElementById("stats-auth-bar");
   if (!container) return;
 
   if (user) {
@@ -149,6 +149,12 @@ onAuthStateChanged(auth, async (user) => {
   const classroomBtn = document.getElementById("classroom-btn");
   if (classroomBtn) {
     classroomBtn.style.display = user ? "flex" : "none";
+  }
+
+  // stats-auth-bar-da sinif otağı ikonunu göstər/gizlə
+  const statsClassBtn = document.getElementById("stats-classroom-btn");
+  if (statsClassBtn) {
+    statsClassBtn.style.display = user ? "flex" : "none";
   }
 });
 
