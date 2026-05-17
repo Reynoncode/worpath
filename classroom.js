@@ -153,8 +153,11 @@ function renderStudentDropdown(userData, displayName) {
 
 // ─── Tələbə datasını email ilə tap ──────────────────────────────────────────
 async function fetchStudentData(email) {
+  const { getDocs, query, collection, where, getDocsFromServer } = await import(
+    "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+  );
   const q    = query(collection(db, "users"), where("email", "==", email));
-  const snap = await getDocs(q);
+  const snap = await getDocsFromServer(q);
   if (snap.empty) return null;
   return snap.docs[0].data();
 }
