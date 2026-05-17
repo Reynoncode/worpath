@@ -13683,6 +13683,73 @@ Anna knows that healthy food and good habits help us to feel strong and happy. M
     }
   ]
 },
+{
+  id: 'reading-2',
+  type: 'reading',
+  title: 'Passage 2',
+  text: `Sarah is ten years old. She has a small white cat. His name is Snow. Sarah loves Snow very much. Every morning she gives him milk and fish. Snow likes to play with a small ball. He runs and jumps in the garden.
+
+Sarah's cat is very clean. He washes his face with his paw. At night Snow sleeps on Sarah's bed. When Sarah is sad, Snow comes near her and makes her happy. Sarah's mother says, "Snow is not only a pet. He is a good friend."
+
+Many children want a pet, but Sarah is happy because she has Snow. She takes good care of her cat and Snow is always healthy and happy.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Sarah\'s school',
+        'Sarah and her cat',
+        'different kinds of pets',
+        'how to play in the garden'
+      ],
+      answer: 'Sarah and her cat'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What does Sarah give Snow every morning?',
+      options: [
+        'Bread and water',
+        'Milk and fish',
+        'Only vegetables',
+        'Rice and meat'
+      ],
+      answer: 'Milk and fish'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Snow is a white cat.',
+        'Snow sleeps on Sarah\'s bed.',
+        'Sarah is sad every day.',
+        'Snow likes to play with a ball.'
+      ],
+      answer: 'Sarah is sad every day.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Sarah\'s mother call Snow a good friend?',
+      options: [
+        'Because he helps in the garden.',
+        'Because he makes Sarah happy when she is sad.',
+        'Because he eats a lot of fish.',
+        'Because he is very big.'
+      ],
+      answer: 'Because he makes Sarah happy when she is sad.'
+    },
+    {
+      id: 'q5',
+      type: 'type-in',
+      q: 'What is the name of Sarah\'s cat?',
+      answer: 'Snow'
+    }
+  ]
+},
+      
      {
   id: 'reading-3',
   type: 'reading',
@@ -15038,78 +15105,4134 @@ it takes more than 500 years for plastic waste to disappear completely.`,
     }
   ]
 },
-      {
-  id: 'reading-1',
-  type: 'reading',
-  title: 'Passage 1',
-  text: `Today, there are some significant environmental problems around the world. 
-For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
-and about 10 million tons of plastic waste go to the oceans. This is a big problem 
-for sea animals, especially for the turtles. They eat the plastic litter because they 
-think that it is fish and then they die. Studies show that young turtles eat plastic 
-more than the adult ones. The other problem is that, when there is a lot of plastic 
-on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
-lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
-because of this waste problem.
 
-  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
-million other sea animals die each year because of plastic waste. Countries all over 
-the world must come together to reduce using plastic and protect sea animals. Because 
-it takes more than 500 years for plastic waste to disappear completely.`,
+{
+  id: 'reading-21',
+  type: 'reading',
+  title: 'Passage 21',
+  text: `The Great Barrier Reef is one of the most amazing places in the world. It is the largest coral reef system on Earth and it is located in Australia, off the coast of Queensland. The reef is so big that astronauts can see it from space. It stretches over 2,300 kilometres and covers an area bigger than many countries.
+
+This wonderful reef is home to thousands of different sea animals. There are more than 1,500 species of fish, around 400 types of coral, six species of sea turtles, and many sharks and dolphins. The colourful fish and beautiful coral make it look like an underwater garden. Every year, millions of tourists from all over the world visit the reef to go snorkelling, diving or take boat tours.
+
+However, the Great Barrier Reef faces serious problems today. Climate change is making the ocean warmer and this causes coral bleaching. When the water gets too hot, the coral loses its bright colours and can die. Plastic pollution and dirty water from cities also damage the reef. Scientists, governments and local people are working together to protect it. They create marine protected areas and teach tourists important rules.
+
+The Great Barrier Reef is not only beautiful but also very important. It protects the coast from big waves and helps many sea animals to survive. Without it, ocean life would be in great danger. That is why we all need to help protect this natural wonder for future generations.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
       q: 'The passage is mainly about...',
       options: [
-        'the ways of reducing litter',
-        'modern places of Kenya',
-        'adult sea turtles on the beaches',
-        'the results of plastic waste'
+        'the history of Australia',
+        'the Great Barrier Reef and its importance',
+        'how astronauts travel in space',
+        'different kinds of boats'
       ],
-      answer: 'the results of plastic waste'
+      answer: 'the Great Barrier Reef and its importance'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Where is the Great Barrier Reef located?',
       options: [
-        'The turtles die because of eating plastic waste.',
-        'Adult turtles eat plastic more than the young ones.',
-        'Plastic litter is a great problem for the turtles.',
-        'It is important to keep beaches clean from waste.'
+        'In Europe',
+        'In Australia',
+        'In Africa',
+        'In South America'
       ],
-      answer: 'Adult turtles eat plastic more than the young ones.'
+      answer: 'In Australia'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: "Why can't the baby turtles reach the ocean?",
+      q: 'Which statement is false according to the passage?',
       options: [
-        'Because of much litter on their way to the ocean.',
-        'Because they lay eggs on the sea shores.',
-        'Because they eat a lot of eggs on the beaches.',
-        'Because the plastic waste on the beaches makes it impossible.'
+        'The reef is home to more than 1,500 species of fish.',
+        'Tourists can go snorkelling there.',
+        'The reef is very small and difficult to see.',
+        'Climate change is dangerous for the coral.'
       ],
-      answer: 'Because the plastic waste on the beaches makes it impossible.'
+      answer: 'The reef is very small and difficult to see.'
     },
     {
       id: 'q4',
       type: 'mcq',
-      q: 'Turtles are not the only sea animals that...',
+      q: 'What causes coral bleaching according to the passage?',
       options: [
-        'protect their babies',
-        'pollute the environment',
-        'litter the beaches',
-        'are affected by plastic waste'
+        'Too many tourists swimming every day',
+        'Warmer ocean water because of climate change',
+        'Strong winds and big waves',
+        'People collecting coral as souvenirs'
       ],
-      answer: 'are affected by plastic waste'
+      answer: 'Warmer ocean water because of climate change'
     },
     {
       id: 'q5',
       type: 'typein',
-      q: 'Write the close meaning of the word "important" from paragraph 1.',
-      answer: 'significant'
+      q: 'How long does the Great Barrier Reef stretch?',
+      answer: 'over 2,300 kilometres'
+    }
+  ]
+},
+
+{
+  id: 'reading-22',
+  type: 'reading',
+  title: 'Passage 22',
+  text: `Sleep is very important for everyone, especially for students. Most doctors say that teenagers need between 8 and 10 hours of sleep every night. However, many students sleep only 6 or 7 hours because they study late, use their phones or watch videos before bed.
+
+Good sleep helps students in many ways. First, it improves memory. When you sleep well, your brain remembers new information better. This is very useful for learning languages, mathematics and other subjects. Second, sleep gives you more energy. Students who sleep enough can concentrate better in class and do not feel tired during the day. Third, good sleep makes you happier and helps you control your emotions.
+
+Not sleeping enough can cause serious problems. Students may get bad marks at school, feel angry easily or even become ill more often. Many teenagers drink coffee or energy drinks to stay awake, but these drinks can make sleep problems worse.
+
+To sleep better, students should turn off their phones at least one hour before bed, keep their bedroom dark and quiet, and go to bed at the same time every night. Parents and schools should also understand that sleep is not a waste of time – it is one of the best ways to help students succeed in their studies and stay healthy.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to use phones at night',
+        'why sleep is important for students',
+        'different kinds of energy drinks',
+        'school subjects'
+      ],
+      answer: 'why sleep is important for students'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How many hours of sleep do teenagers usually need?',
+      options: [
+        'Between 4 and 6 hours',
+        'Between 8 and 10 hours',
+        'Between 11 and 12 hours',
+        'Only 5 hours'
+      ],
+      answer: 'Between 8 and 10 hours'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Good sleep helps students remember information.',
+        'Many students sleep only 6 or 7 hours.',
+        'Drinking coffee always helps students sleep better.',
+        'Sleep is important for concentration.'
+      ],
+      answer: 'Drinking coffee always helps students sleep better.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is good sleep important for memory?',
+      options: [
+        'Because it makes the brain smaller.',
+        'Because the brain remembers new information better.',
+        'Because students do not need to study.',
+        'Because it stops students from using phones.'
+      ],
+      answer: 'Because the brain remembers new information better.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'When should students turn off their phones?',
+      answer: 'at least one hour before bed'
+    }
+  ]
+},
+{
+  id: 'reading-23',
+  type: 'reading',
+  title: 'Passage 23',
+  text: `For many years, people have dreamed about life on Mars. Today, scientists are working hard to understand if humans can really live on the Red Planet. Mars is the fourth planet from the Sun. It is smaller than Earth and has very cold temperatures. A day on Mars is almost the same length as a day on Earth, but a year on Mars is 687 days long.
+
+Scientists have sent many robots and spacecraft to Mars. These machines have discovered that there was water on Mars millions of years ago. They also found ice under the surface. This is very important because humans need water to survive. However, Mars has many problems. The atmosphere is very thin, so people cannot breathe without special suits. There is also dangerous radiation and very strong dust storms that can last for weeks.
+
+NASA and other space agencies are planning to send astronauts to Mars in the 2030s. They want to build special bases where people can live. These bases will need to produce oxygen, grow food and protect people from the cold. Some scientists believe that one day we can change Mars' atmosphere so humans can live there without suits. This process is called terraforming.
+
+Although living on Mars will be very difficult and expensive, many people think it is necessary. If we learn to live on another planet, humanity will have a better chance for the future.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the history of robots',
+        'life on Mars and scientific research',
+        'how to build spacesuits',
+        'different planets in our solar system'
+      ],
+      answer: 'life on Mars and scientific research'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What did scientists discover on Mars?',
+      options: [
+        'Only rocks and sand',
+        'Signs of water and ice',
+        'Many green plants',
+        'Houses from ancient people'
+      ],
+      answer: 'Signs of water and ice'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Mars has a very thin atmosphere.',
+        'A year on Mars is longer than on Earth.',
+        'Mars is warmer than Earth.',
+        'Scientists want to send astronauts to Mars.'
+      ],
+      answer: 'Mars is warmer than Earth.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is water important for future Mars missions?',
+      options: [
+        'Because it makes the planet red.',
+        'Because humans need water to survive.',
+        'Because robots only drink water.',
+        'Because it causes dust storms.'
+      ],
+      answer: 'Because humans need water to survive.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the name of the process to change Mars\' atmosphere?',
+      answer: 'terraforming'
+    }
+  ]
+},
+
+{
+  id: 'reading-24',
+  type: 'reading',
+  title: 'Passage 24',
+  text: `Chocolate is one of the most popular foods in the world today, but its history is very old and interesting. Chocolate comes from the cacao tree, which grows in tropical countries like Mexico, Brazil and Ghana. The scientific name of the cacao tree is Theobroma cacao, which means "food of the gods".
+
+More than 3,000 years ago, the Maya and Aztec people in Central America used cacao beans to make a bitter drink. They mixed the beans with water, spices and sometimes chilli. They believed this drink gave them energy and was good for health. They also used cacao beans as money. When Spanish explorers came to America in the 16th century, they brought cacao to Europe.
+
+At first, Europeans did not like the bitter taste. They added sugar, milk and vanilla to make it sweet. In 1847, the first chocolate bar was made in England. After that, chocolate became very popular around the world. Today, people eat more than 3 million tons of chocolate every year.
+
+Modern chocolate factories use special machines to make different types of chocolate: dark, milk and white. Dark chocolate is considered the healthiest because it contains more cacao and less sugar. However, eating too much chocolate is not good because of the high sugar and fat content. Scientists say that a small amount of dark chocolate every day can be good for the heart.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to grow cacao trees',
+        'the history and popularity of chocolate',
+        'Spanish explorers in America',
+        'different types of money'
+      ],
+      answer: 'the history and popularity of chocolate'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Where does chocolate originally come from?',
+      options: [
+        'From Europe',
+        'From the cacao tree in tropical countries',
+        'From sugar plants',
+        'From milk factories'
+      ],
+      answer: 'From the cacao tree in tropical countries'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The Maya and Aztec people used cacao as money.',
+        'Chocolate was always sweet in the past.',
+        'Dark chocolate can be good for the heart.',
+        'Europeans added sugar to cacao.'
+      ],
+      answer: 'Chocolate was always sweet in the past.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why did Europeans add sugar to chocolate?',
+      options: [
+        'Because they wanted to make more money.',
+        'Because they did not like the bitter taste.',
+        'Because sugar was very cheap.',
+        'Because cacao was not available.'
+      ],
+      answer: 'Because they did not like the bitter taste.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'In which year was the first chocolate bar made?',
+      answer: '1847'
+    }
+  ]
+},
+
+{
+  id: 'reading-25',
+  type: 'reading',
+  title: 'Passage 25',
+  text: `Deserts are some of the harshest environments on Earth, but many animals have developed amazing ways to survive there. The Sahara Desert in Africa and the Gobi Desert in Asia are examples of very dry and hot places where temperatures can reach 50°C during the day and drop below zero at night.
+
+Camels are called "ships of the desert" because they can travel for many days without water. They store fat in their humps and can drink up to 100 litres of water at once. Their long eyelashes and special noses protect them from sand storms. Another interesting animal is the fennec fox. It has very big ears that help it stay cool and hear small animals under the sand.
+
+Many desert animals are nocturnal. This means they sleep during the hot day and come out at night when it is cooler. Snakes, lizards and scorpions hide under rocks or in holes during the day. Some animals get all the water they need from their food. For example, the kangaroo rat in American deserts never drinks water at all.
+
+Climate change and human activities are making deserts bigger. This process is called desertification. Scientists and governments are trying to plant special trees and teach people how to protect desert animals and plants. These animals show us how strong nature can be even in the most difficult conditions.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to visit deserts',
+        'how animals survive in deserts',
+        'the history of the Sahara Desert',
+        'different kinds of sand'
+      ],
+      answer: 'how animals survive in deserts'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why are camels called "ships of the desert"?',
+      options: [
+        'Because they live near the sea.',
+        'Because they can travel for many days without water.',
+        'Because they have big boats on their backs.',
+        'Because they swim in the sand.'
+      ],
+      answer: 'Because they can travel for many days without water.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Many desert animals are active at night.',
+        'Camels can drink 100 litres of water at once.',
+        'All desert animals need to drink water every day.',
+        'Fennec foxes have big ears.'
+      ],
+      answer: 'All desert animals need to drink water every day.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What is desertification?',
+      options: [
+        'When animals move to the desert.',
+        'When deserts become bigger because of climate change and human activities.',
+        'When people build houses in the desert.',
+        'When it rains a lot in the desert.'
+      ],
+      answer: 'When deserts become bigger because of climate change and human activities.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the name of the small animal that never drinks water?',
+      answer: 'kangaroo rat'
+    }
+  ]
+},
+
+{
+  id: 'reading-26',
+  type: 'reading',
+  title: 'Passage 26',
+  text: `Learning a second language is one of the most useful skills a person can have in the modern world. Today, more than half of the people in Europe can speak at least two languages. Knowing another language opens many doors in education, work and travel.
+
+There are many benefits of learning a foreign language. First, it improves brain function. Studies show that people who speak two or more languages have better memory, concentration and problem-solving skills. Second, it helps people understand other cultures better. When you learn a language, you also learn about traditions, food, music and ways of thinking. Third, it creates better job opportunities. Many international companies prefer workers who can speak English, German, Chinese or Spanish.
+
+Learning a new language can be difficult at the beginning, but it becomes easier with regular practice. Experts recommend watching films, listening to songs and talking with native speakers. Mobile apps like Duolingo also make learning fun and easy. Children who learn a second language at school usually find it easier than adults.
+
+In our global world, speaking only one language is not enough. People who know a second language can make new friends from different countries, travel more confidently and understand the world better. That is why many schools and universities now make foreign language learning compulsory.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to watch films in English',
+        'the benefits of learning a second language',
+        'different mobile apps',
+        'problems in European schools'
+      ],
+      answer: 'the benefits of learning a second language'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How many people in Europe can speak at least two languages?',
+      options: [
+        'Less than 10%',
+        'More than half',
+        'Only adults',
+        'Only children'
+      ],
+      answer: 'More than half'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Learning languages improves memory.',
+        'It is impossible to learn a language as an adult.',
+        'Knowing languages helps in finding jobs.',
+        'Apps can make language learning easier.'
+      ],
+      answer: 'It is impossible to learn a language as an adult.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do many companies prefer workers who speak foreign languages?',
+      options: [
+        'Because they work faster.',
+        'Because they can communicate internationally.',
+        'Because they do not need computers.',
+        'Because they like travelling.'
+      ],
+      answer: 'Because they can communicate internationally.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What do experts recommend to practise a language?',
+      answer: 'watching films, listening to songs and talking with native speakers'
+    }
+  ]
+},
+
+{
+  id: 'reading-27',
+  type: 'reading',
+  title: 'Passage 27',
+  text: `Plastic pollution in our oceans has become one of the biggest environmental problems in the world. Every year, more than 8 million tons of plastic waste enter the oceans. That is like throwing a garbage truck full of plastic into the sea every minute. Most of this plastic does not disappear. It can stay in the ocean for hundreds of years.
+
+This pollution is very dangerous for sea animals. Turtles, seabirds, whales and dolphins often mistake plastic bags for food. When they eat plastic, it fills their stomachs and they cannot eat real food, so they slowly die. Scientists say that more than 100 million sea animals die every year because of plastic. Microplastics – very small pieces of plastic – are also dangerous because fish eat them and then people eat the fish.
+
+Many countries and organisations are trying to solve this problem. Some countries have banned single-use plastic bags. Companies are developing new materials that can break down naturally. People are also helping by cleaning beaches and using less plastic in their daily life.
+
+Everyone can make a difference. We can use reusable bags, bottles and containers. We should also recycle plastic properly. If we do not reduce plastic pollution soon, future generations may not see beautiful oceans and healthy sea life.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to make plastic bags',
+        'plastic pollution in the oceans',
+        'different kinds of sea animals',
+        'garbage trucks'
+      ],
+      answer: 'plastic pollution in the oceans'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How much plastic waste enters the oceans every year?',
+      options: [
+        'Less than one million tons',
+        'More than 8 million tons',
+        'Only 100 tons',
+        'Exactly 500 tons'
+      ],
+      answer: 'More than 8 million tons'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Plastic can stay in the ocean for hundreds of years.',
+        'Sea animals sometimes eat plastic.',
+        'Plastic pollution only affects fish.',
+        'People can help by using reusable bags.'
+      ],
+      answer: 'Plastic pollution only affects fish.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What are microplastics?',
+      options: [
+        'Large plastic bottles',
+        'Very small pieces of plastic',
+        'Special food for fish',
+        'New type of ocean water'
+      ],
+      answer: 'Very small pieces of plastic'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is one way people can help reduce plastic pollution?',
+      answer: 'use reusable bags'
+    }
+  ]
+},
+
+{
+  id: 'reading-28',
+  type: 'reading',
+  title: 'Passage 28',
+  text: `Our world is full of amazing and famous landmarks that attract millions of tourists every year. These places are important because they show the history, culture and beauty of different countries.
+
+One of the most famous landmarks is the Eiffel Tower in Paris, France. It was built in 1889 and is 324 metres tall. Every year, more than 7 million people visit it. Another popular place is the Great Wall of China. It is over 21,000 kilometres long and was built more than 2,000 years ago to protect the country. The Taj Mahal in India is a beautiful white marble building that a king built for his wife. It is considered one of the most romantic places in the world.
+
+In Egypt, the Pyramids of Giza are more than 4,500 years old. They are the only surviving wonder of the ancient world. In the USA, the Statue of Liberty welcomes people arriving in New York. It is a symbol of freedom. The Colosseum in Rome, Italy, is an ancient stadium where people watched gladiator fights long ago.
+
+These landmarks are not only beautiful but also teach us about human history and creativity. However, too many tourists can sometimes damage them. That is why many countries now have rules to protect these important places for future generations.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to build tall towers',
+        'famous landmarks around the world',
+        'the history of France',
+        'different types of marble'
+      ],
+      answer: 'famous landmarks around the world'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'When was the Eiffel Tower built?',
+      options: [
+        'In 2020',
+        'In 1889',
+        'More than 4,500 years ago',
+        '2,000 years ago'
+      ],
+      answer: 'In 1889'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The Great Wall of China is very long.',
+        'The Taj Mahal is in India.',
+        'The Pyramids are the newest landmarks.',
+        'The Colosseum is in Italy.'
+      ],
+      answer: 'The Pyramids are the newest landmarks.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do countries need rules for these landmarks?',
+      options: [
+        'Because too many tourists can damage them.',
+        'Because they are not popular anymore.',
+        'Because they are too small.',
+        'Because nobody wants to visit them.'
+      ],
+      answer: 'Because too many tourists can damage them.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the Statue of Liberty a symbol of?',
+      answer: 'freedom'
+    }
+  ]
+},
+{
+  id: 'reading-29',
+  type: 'reading',
+  title: 'Passage 29',
+  text: `Smartphones have completely changed our daily lives in the last twenty years. Today, more than 6 billion people use smartphones. These small devices can do many things: make calls, send messages, take photos, play music, find information and connect us to the internet.
+
+Smartphones have many positive effects. They help people stay in touch with family and friends easily. Students can learn new things with educational apps and online courses. In emergencies, smartphones can save lives because people can quickly call for help. They also make travelling easier – maps, translation apps and ticket booking are all in one device.
+
+However, smartphones also have negative sides. Many people spend too much time on social media and games. This can cause sleep problems, eye tiredness and less face-to-face communication. Some studies show that young people who use phones too much may feel more anxious or lonely. Another problem is distraction while driving or studying.
+
+Experts recommend using smartphones in a balanced way. They suggest turning off notifications during study or family time, using apps that limit screen time, and having phone-free hours every day. Although smartphones are very useful, it is important to control them instead of letting them control us.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to make phone calls',
+        'how smartphones changed our lives',
+        'the history of the internet',
+        'different types of games'
+      ],
+      answer: 'how smartphones changed our lives'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Approximately how many people use smartphones today?',
+      options: [
+        'Less than 1 billion',
+        'More than 6 billion',
+        'Only adults',
+        'Only students'
+      ],
+      answer: 'More than 6 billion'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Smartphones can help in emergencies.',
+        'Smartphones always make people happier.',
+        'Too much phone use can cause sleep problems.',
+        'Maps and translation apps are useful for travellers.'
+      ],
+      answer: 'Smartphones always make people happier.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do experts recommend phone-free hours?',
+      options: [
+        'Because phones are too expensive.',
+        'To have better balance and real-life communication.',
+        'Because phones do not work at night.',
+        'To save electricity.'
+      ],
+      answer: 'To have better balance and real-life communication.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Name one positive effect of smartphones mentioned in the passage.',
+      answer: 'stay in touch with family and friends'
+    }
+  ]
+},
+{
+  id: 'reading-30',
+  type: 'reading',
+  title: 'Passage 30',
+  text: `Bees are small but extremely important insects. There are more than 20,000 different species of bees in the world. They live in every continent except Antarctica. Honeybees are the most famous because they make honey and live in large groups called colonies.
+
+Bees play a very important role in nature. They are excellent pollinators. When bees fly from flower to flower to collect nectar, they carry pollen and help plants reproduce. One third of the food we eat depends on bee pollination. Without bees, we would not have apples, strawberries, almonds, coffee and many other foods.
+
+Bees have a very interesting social life. In a colony there is one queen bee, many worker bees and some male drones. Worker bees do all the work: they clean the hive, look after babies, collect food and protect the colony. They communicate with each other by dancing. This special dance tells other bees where to find flowers.
+
+Unfortunately, bees are in danger today. Climate change, pesticides, pollution and loss of flowers are killing many bee populations. Many countries are now creating bee-friendly gardens and reducing harmful chemicals to protect these amazing insects. Scientists say that saving bees means saving our own food supply.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to make honey',
+        'the secret lives and importance of bees',
+        'different types of flowers',
+        'life in Antarctica'
+      ],
+      answer: 'the secret lives and importance of bees'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What do bees do when they fly from flower to flower?',
+      options: [
+        'They eat all the flowers.',
+        'They help plants reproduce by pollination.',
+        'They sleep on the flowers.',
+        'They build new houses.'
+      ],
+      answer: 'They help plants reproduce by pollination.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Bees live on every continent.',
+        'One third of our food depends on bees.',
+        'Bees communicate by dancing.',
+        'Bees are not in any danger today.'
+      ],
+      answer: 'Bees are not in any danger today.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What is the role of worker bees in a colony?',
+      options: [
+        'They only eat honey.',
+        'They do all the work including cleaning and collecting food.',
+        'They only protect the queen.',
+        'They make decisions for the colony.'
+      ],
+      answer: 'They do all the work including cleaning and collecting food.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How do bees communicate with each other?',
+      answer: 'by dancing'
+    }
+  ]
+},
+
+{
+  id: 'reading-31',
+  type: 'reading',
+  title: 'Passage 31',
+  text: `Exercise is not only good for your body but also excellent for your brain. Scientists have discovered that regular physical activity helps the brain in many surprising ways. When you exercise, your heart pumps more blood and oxygen to the brain. This makes brain cells healthier and stronger.
+
+Physical exercise improves memory and learning ability. Studies show that students who play sports or do regular exercise get better results at school. Exercise also helps to reduce stress and anxiety. When you move your body, it releases special chemicals called endorphins that make you feel happier. This is why many people feel better after going for a run or playing football.
+
+Another benefit is better concentration. Children and teenagers who exercise regularly can focus longer on their studies. Exercise is also important for older people because it can slow down memory loss and reduce the risk of diseases like Alzheimer’s. Even 30 minutes of walking every day can make a big difference.
+
+Experts recommend mixing different types of exercise: aerobic activities like running or swimming, and strength exercises like push-ups or lifting weights. The most important thing is to find an activity you enjoy so you can continue it for a long time. Remember, a healthy brain needs both good food and regular movement.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'different kinds of sports',
+        'why exercise is good for your brain',
+        'how to play football',
+        'food for the brain'
+      ],
+      answer: 'why exercise is good for your brain'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What happens to the brain when you exercise?',
+      options: [
+        'It becomes smaller.',
+        'It receives more oxygen and blood.',
+        'It stops working.',
+        'It needs less food.'
+      ],
+      answer: 'It receives more oxygen and blood.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Exercise helps reduce stress.',
+        'Exercise improves memory.',
+        'Only young people benefit from exercise.',
+        '30 minutes of walking can be useful.'
+      ],
+      answer: 'Only young people benefit from exercise.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What are endorphins?',
+      options: [
+        'Special brain cells.',
+        'Chemicals that make you feel happier.',
+        'Types of food.',
+        'A kind of sport.'
+      ],
+      answer: 'Chemicals that make you feel happier.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How many minutes of exercise do experts often recommend daily?',
+      answer: '30 minutes'
+    }
+  ]
+},
+{
+  id: 'reading-32',
+  type: 'reading',
+  title: 'Passage 32',
+  text: `Traditional foods are an important part of every culture. They show the history, climate and lifestyle of people in different countries. Food brings people together and helps us understand other cultures better.
+
+In Italy, pizza and pasta are famous all over the world. Italians use fresh ingredients like tomatoes, olive oil, cheese and herbs. Sushi is a traditional food from Japan. It is made with rice, fresh fish and seaweed. Japanese people are very careful about the quality of ingredients and presentation. In Mexico, people enjoy tacos and spicy food with chilli, beans and corn. Spices play a big role in Indian traditional food. Curry dishes with different vegetables, chicken or lamb are very popular.
+
+Traditional foods are not only delicious but also healthy in many cases. They usually use fresh, local ingredients and cooking methods that keep vitamins. However, in modern life many young people prefer fast food and forget traditional recipes. This is a problem because traditional foods are part of cultural identity.
+
+Many countries now organise food festivals to protect their traditional cuisine. UNESCO even adds some traditional foods to the list of Intangible Cultural Heritage. Eating traditional food is not just about taste — it is also about preserving history and culture for future generations.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to cook pizza',
+        'traditional foods from different countries',
+        'the history of fast food',
+        'why people like spicy food'
+      ],
+      answer: 'traditional foods from different countries'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is sushi made with?',
+      options: [
+        'Only meat and bread',
+        'Rice, fresh fish and seaweed',
+        'Cheese and tomatoes',
+        'Chilli and beans'
+      ],
+      answer: 'Rice, fresh fish and seaweed'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Traditional foods use fresh ingredients.',
+        'Food is part of cultural identity.',
+        'All traditional foods are unhealthy.',
+        'Many countries organise food festivals.'
+      ],
+      answer: 'All traditional foods are unhealthy.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why are traditional foods important?',
+      options: [
+        'Because they are always cheap.',
+        'Because they show culture and history.',
+        'Because they are only eaten at festivals.',
+        'Because they contain no vitamins.'
+      ],
+      answer: 'Because they show culture and history.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Which organisation protects some traditional foods?',
+      answer: 'UNESCO'
+    }
+  ]
+},
+ {
+  id: 'reading-33',
+  type: 'reading',
+  title: 'Passage 33',
+  text: `Many animals around the world are in danger of disappearing forever. These are called endangered animals. According to scientists, more than 40,000 species are currently at risk. The main reasons are habitat loss, climate change, pollution and illegal hunting.
+
+The giant panda from China is one of the most famous endangered animals. People love them because they are cute and look friendly. Today, there are special nature reserves in China to protect pandas and their bamboo forests. Another example is the African elephant. Poachers kill them for their ivory tusks. Tigers are also in great danger, especially in Asia, because people destroy their forests.
+
+We can help endangered animals in many ways. First, we should protect their natural habitats. Governments can create more national parks and nature reserves. Second, people should not buy products made from endangered animals. Third, education is very important. Schools and organisations teach children about wildlife protection.
+
+Everyone can make a small difference. We can support organisations like WWF (World Wildlife Fund), avoid plastic pollution and plant trees. If we do not act now, many beautiful animals will disappear forever and our planet will lose its rich biodiversity.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to keep pets at home',
+        'endangered animals and how to protect them',
+        'the life of giant pandas',
+        'different types of forests'
+      ],
+      answer: 'endangered animals and how to protect them'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Approximately how many species are at risk today?',
+      options: [
+        'Less than 1,000',
+        'More than 40,000',
+        'Only 500',
+        'Exactly 10,000'
+      ],
+      answer: 'More than 40,000'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Habitat loss is a big problem.',
+        'We cannot do anything to help animals.',
+        'Giant pandas need bamboo forests.',
+        'Education is important for protection.'
+      ],
+      answer: 'We cannot do anything to help animals.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do poachers kill African elephants?',
+      options: [
+        'Because they are dangerous.',
+        'For their ivory tusks.',
+        'Because they eat too much.',
+        'For their skin.'
+      ],
+      answer: 'For their ivory tusks.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the name of the organisation mentioned for wildlife protection?',
+      answer: 'WWF'
+    }
+  ]
+},
+{
+  id: 'reading-34',
+  type: 'reading',
+  title: 'Passage 34',
+  text: `The internet has become one of the most important inventions in human history. It was developed in the 1960s by scientists in the United States for military and research purposes. At first, only a few universities and government organisations could use it. In the 1990s, the World Wide Web was created and the internet became available for ordinary people.
+
+Today, more than 5 billion people use the internet. It has changed almost every part of our lives. We can send messages instantly, shop online, study, watch films and meet new people from different countries. Students use it for research and online learning. Doctors use it to share medical information. Businesses can sell products to customers all over the world.
+
+However, the internet also has some disadvantages. Some people spend too much time online and forget real life. There is also a lot of false information and cyberbullying. Personal information can be stolen if we are not careful. That is why internet safety is very important.
+
+In the future, the internet will continue to develop with faster connections and new technologies like virtual reality. Despite its problems, the internet has connected the world and made information available to everyone. It is now difficult to imagine life without it.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to use computers',
+        'the story and impact of the internet',
+        'military technology',
+        'different types of shopping'
+      ],
+      answer: 'the story and impact of the internet'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'When was the internet first developed?',
+      options: [
+        'In the 1990s',
+        'In the 1960s',
+        'In 2000',
+        'In the 1800s'
+      ],
+      answer: 'In the 1960s'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'More than 5 billion people use the internet.',
+        'The internet has only positive effects.',
+        'The internet helps students study.',
+        'Internet safety is important.'
+      ],
+      answer: 'The internet has only positive effects.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What was the original purpose of the internet?',
+      options: [
+        'For shopping and entertainment',
+        'For military and research purposes',
+        'For watching films',
+        'For social media'
+      ],
+      answer: 'For military and research purposes'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What was created in the 1990s that made the internet popular?',
+      answer: 'World Wide Web'
+    }
+  ]
+},
+
+{
+  id: 'reading-35',
+  type: 'reading',
+  title: 'Passage 35',
+  text: `Antarctica is the coldest, windiest and driest continent on Earth. It is located at the South Pole and is covered with ice that is almost 5 kilometres thick in some places. The temperature in winter can drop to minus 89 degrees Celsius. Because of these extreme conditions, very few people live there permanently. Only scientists and researchers stay in special research stations for short periods.
+
+Although Antarctica seems like an empty and frozen place, it is full of life. There are penguins, seals, whales and many seabirds. The emperor penguin is the most famous animal there. It can survive the terrible cold and even raises its babies in winter. The ocean around Antarctica is rich with krill, which is the main food for many animals.
+
+Scientists from many countries work together in Antarctica. They study climate change, the ozone layer and the history of our planet by examining old ice. The ice in Antarctica contains information about the Earth’s past from millions of years ago. This research helps us understand global warming.
+
+Antarctica is protected by international agreement. No country can own it and it is used only for peaceful scientific research. Tourism is increasing, but visitors must follow strict rules to protect this unique and fragile environment. Antarctica is like a natural laboratory that shows us how our planet works.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to live in cold places',
+        'life and research in Antarctica',
+        'different kinds of penguins',
+        'winter clothes'
+      ],
+      answer: 'life and research in Antarctica'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is the lowest temperature in Antarctica?',
+      options: [
+        'Minus 10 degrees',
+        'Minus 89 degrees',
+        'Plus 5 degrees',
+        'Minus 30 degrees'
+      ],
+      answer: 'Minus 89 degrees'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Antarctica has many animals like penguins and seals.',
+        'Scientists study climate change there.',
+        'Many families live permanently in Antarctica.',
+        'The ice contains information about the past.'
+      ],
+      answer: 'Many families live permanently in Antarctica.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is Antarctica important for scientists?',
+      options: [
+        'Because it has many shops and restaurants.',
+        'Because the ice gives information about Earth’s history.',
+        'Because it is easy to live there.',
+        'Because there are many tourists.'
+      ],
+      answer: 'Because the ice gives information about Earth’s history.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the most famous animal in Antarctica?',
+      answer: 'emperor penguin'
+    }
+  ]
+},
+
+{
+  id: 'reading-36',
+  type: 'reading',
+  title: 'Passage 36',
+  text: `Water is the most important natural resource on our planet. Without water, there would be no life. More than 70 percent of the Earth’s surface is covered with water, but only 3 percent of it is fresh water that we can drink. The rest is salty ocean water.
+
+Fresh water is used for drinking, cooking, washing, farming and producing energy. However, many parts of the world face serious water problems. In some countries, people do not have clean drinking water and must walk many kilometres every day to get it. Climate change, pollution and population growth make the situation worse.
+
+Oceans are also very important. They produce most of the oxygen we breathe and control the world’s climate. Millions of people depend on oceans for food and jobs. Unfortunately, oceans are polluted with plastic, chemicals and oil. This harms sea animals and plants.
+
+We must use water wisely. Simple actions like turning off the tap while brushing teeth, taking shorter showers and fixing leaking taps can save a lot of water. Governments and organisations are working on new technologies to clean water and use it more efficiently. Every person should remember that water is not unlimited. Protecting water means protecting life on Earth.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to swim in the ocean',
+        'the importance of water on our planet',
+        'different types of fish',
+        'how to build dams'
+      ],
+      answer: 'the importance of water on our planet'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What percentage of the Earth’s water is fresh water?',
+      options: [
+        '70 percent',
+        '3 percent',
+        '50 percent',
+        '100 percent'
+      ],
+      answer: '3 percent'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Water is necessary for all life.',
+        'Oceans produce most of our oxygen.',
+        'All water on Earth is clean and drinkable.',
+        'People can save water with small actions.'
+      ],
+      answer: 'All water on Earth is clean and drinkable.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why are oceans important?',
+      options: [
+        'Because they are only for swimming.',
+        'Because they produce oxygen and control climate.',
+        'Because they have no animals.',
+        'Because they are small.'
+      ],
+      answer: 'Because they produce oxygen and control climate.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Name one simple way to save water at home.',
+      answer: 'turning off the tap while brushing teeth'
+    }
+  ]
+},
+
+{
+  id: 'reading-37',
+  type: 'reading',
+  title: 'Passage 37',
+  text: `Books have the power to change people’s lives in many ways. Reading good books can open our minds, teach us new things and help us understand the world better. Throughout history, many successful people have said that books played an important role in their success.
+
+Books give us knowledge. When we read, we learn about history, science, different cultures and new ideas. They help us develop better vocabulary and improve our writing and speaking skills. Reading also improves imagination. When we read stories, we create pictures in our minds and this helps us become more creative.
+
+Another important benefit is that books can change how we think and behave. Many people say that a single book changed their opinion about life, friendship, or success. For example, some students decide to become doctors or scientists after reading inspiring biographies. Books can also help us feel better when we are sad or stressed because they take us to different worlds.
+
+In the modern world with so many videos and social media, some people read less. However, experts say that regular reading is one of the best habits for personal development. Whether it is fiction, non-fiction, or science books, every book can teach us something valuable. Reading is like food for the brain – the more we read, the smarter and wiser we become.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to write books',
+        'how books can change your life',
+        'different types of videos',
+        'the history of libraries'
+      ],
+      answer: 'how books can change your life'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What do books help improve?',
+      options: [
+        'Only physical strength',
+        'Vocabulary, imagination and knowledge',
+        'Cooking skills',
+        'Driving ability'
+      ],
+      answer: 'Vocabulary, imagination and knowledge'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Books can improve imagination.',
+        'Reading is bad for the brain.',
+        'Books can inspire people to choose careers.',
+        'Reading helps us understand other cultures.'
+      ],
+      answer: 'Reading is bad for the brain.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do experts compare reading to food?',
+      options: [
+        'Because books taste good.',
+        'Because it is food for the brain.',
+        'Because you can eat books.',
+        'Because books are sold in supermarkets.'
+      ],
+      answer: 'Because it is food for the brain.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What do books help develop according to the passage?',
+      answer: 'imagination'
+    }
+  ]
+}
+
+{
+  id: 'reading-38',
+  type: 'reading',
+  title: 'Passage 38',
+  text: `Unusual sports from around the world show us how creative people can be with their free time. While football and basketball are popular everywhere, some sports are very strange and exciting.
+
+In Finland, there is a sport called wife carrying. In this competition, men run a special track while carrying their wives on their backs. The winner gets the wife’s weight in beer. In England, cheese rolling is a famous tradition. People run down a steep hill after a big round cheese. It is dangerous but very fun. In Australia, the world worm charming championship is held every year. People try to bring the most worms out of the ground in thirty minutes by dancing, singing or tapping the soil.
+
+Another strange sport is underwater hockey. Players wear masks, snorkels and fins and play hockey at the bottom of a swimming pool. In Norway, there is a sport called ski jumping on water. Sportsmen ski down a ramp and try to jump as far as possible on a lake. 
+
+These unusual sports are not only for winning. They bring communities together, keep old traditions alive and make people laugh. Many of them started as local games but now have international competitions. They show that sport can be serious, but it can also be funny and creative.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'popular sports like football',
+        'unusual and strange sports around the world',
+        'how to play basketball',
+        'winter sports in Norway'
+      ],
+      answer: 'unusual and strange sports around the world'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What happens in the wife carrying competition?',
+      options: [
+        'Women carry their husbands.',
+        'Men run while carrying their wives.',
+        'People eat a lot of food.',
+        'Players swim in a river.'
+      ],
+      answer: 'Men run while carrying their wives.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Cheese rolling happens in England.',
+        'All unusual sports are dangerous.',
+        'Underwater hockey is played in a pool.',
+        'These sports bring people together.'
+      ],
+      answer: 'All unusual sports are dangerous.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do people organise unusual sports?',
+      options: [
+        'To make money only.',
+        'To keep traditions alive and have fun.',
+        'Because normal sports are boring.',
+        'To train for the Olympics.'
+      ],
+      answer: 'To keep traditions alive and have fun.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What do people try to do in the worm charming championship?',
+      answer: 'bring the most worms out of the ground'
+    }
+  ]
+},
+      
+{
+  id: 'reading-39',
+  type: 'reading',
+  title: 'Passage 39',
+  text: `Robots are becoming more and more important in our future life. Today, robots already work in factories, clean houses, and help doctors in hospitals. In the future, they will play an even bigger role in our daily activities.
+
+In the coming years, robots will help older people live at home longer. They will remind them to take medicine, cook simple meals and even talk with them when they feel lonely. In schools, robot teachers may help children learn languages or mathematics. Delivery robots will bring food and shopping to our doors. Some companies are already testing self-driving cars and flying delivery drones.
+
+However, robots also bring challenges. Many people worry that robots will take away jobs from humans. There are also questions about safety and privacy. If a robot makes a mistake, who is responsible? Scientists and governments are working on new laws for robots and artificial intelligence.
+
+Most experts believe that robots will not replace humans completely. Instead, they will work together with people. Robots will do dangerous, boring or difficult tasks, while humans will focus on creative and emotional work. The future with robots can be better if we prepare for it properly and use this technology wisely.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to build robots at home',
+        'robots and their role in our future',
+        'the history of factories',
+        'different types of cars'
+      ],
+      answer: 'robots and their role in our future'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How can robots help older people?',
+      options: [
+        'By driving them to work.',
+        'By reminding them to take medicine and talking with them.',
+        'By playing football with them.',
+        'By teaching them to cook only.'
+      ],
+      answer: 'By reminding them to take medicine and talking with them.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Robots already work in hospitals.',
+        'Robots will replace all human jobs.',
+        'Self-driving cars are being tested.',
+        'Robots can do dangerous tasks.'
+      ],
+      answer: 'Robots will replace all human jobs.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What do experts believe about robots and humans?',
+      options: [
+        'Robots will disappear soon.',
+        'Robots and humans will work together.',
+        'Humans will become robots.',
+        'Robots are not useful.'
+      ],
+      answer: 'Robots and humans will work together.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Name one place where robots already work today.',
+      answer: 'factories'
+    }
+  ]
+},
+
+{
+  id: 'reading-40',
+  type: 'reading',
+  title: 'Passage 40',
+  text: `The Northern Lights, or Aurora Borealis, are one of the most beautiful natural phenomena in the world. They appear as colourful lights dancing in the night sky, usually in green, purple, blue and red. This amazing show happens in the northern parts of the world, especially in Norway, Iceland, Canada, Alaska and Finland.
+
+The Northern Lights are caused by particles from the Sun hitting the Earth’s atmosphere. When these particles meet gases in the air, they create beautiful colours. The best time to see them is during winter months on clear, dark nights. Sometimes the lights move like curtains or waves across the sky. In some cultures, people believed the lights were spirits of ancestors or messages from the gods.
+
+Today, thousands of tourists travel to the Arctic every year to see this magic. Many take special tours with guides who know the best places and times. Scientists also study the Northern Lights to understand more about the Sun and space weather. Strong solar storms can make the lights brighter and visible even in southern countries.
+
+The Northern Lights remind us how beautiful and powerful nature is. Seeing them is a special experience that many people describe as unforgettable. If you ever have the chance to visit the far north, watching the Northern Lights should be on your list.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to travel to Canada',
+        'the beauty and science of the Northern Lights',
+        'different colours of the Sun',
+        'winter clothes in Iceland'
+      ],
+      answer: 'the beauty and science of the Northern Lights'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What causes the Northern Lights?',
+      options: [
+        'Rain and clouds.',
+        'Particles from the Sun hitting the atmosphere.',
+        'Big cities with many lights.',
+        'People dancing in the snow.'
+      ],
+      answer: 'Particles from the Sun hitting the atmosphere.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The lights are usually green, purple and red.',
+        'They can only be seen in summer.',
+        'They are studied by scientists.',
+        'Many tourists go to see them.'
+      ],
+      answer: 'They can only be seen in summer.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'When is the best time to see the Northern Lights?',
+      options: [
+        'During the day.',
+        'In winter on clear, dark nights.',
+        'Only in July.',
+        'When it is raining.'
+      ],
+      answer: 'In winter on clear, dark nights.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is another name for the Northern Lights?',
+      answer: 'Aurora Borealis'
+    }
+  ]
+},
+
+      {
+  id: 'reading-41',
+  type: 'reading',
+  title: 'Passage 41',
+  text: `Volcanoes are among the most powerful natural forces on Earth. They form when hot melted rock, called magma, rises from deep inside the Earth and pushes through cracks in the surface. When magma reaches the surface, it is called lava. Volcanoes can be found on land and under the ocean. In fact, most of the world's volcanic activity happens under the sea.
+
+There are three main types of volcanoes: active, dormant and extinct. An active volcano erupts regularly or has erupted recently. A dormant volcano has not erupted for a long time but could erupt again in the future. An extinct volcano is one that scientists believe will never erupt again.
+
+When a volcano erupts, it can release huge amounts of lava, ash, and gas. These eruptions can destroy forests, towns and farmland. The ash from a large eruption can travel thousands of kilometres and affect the weather around the world. In 1815, the eruption of Mount Tambora in Indonesia caused a drop in global temperatures, leading to crop failures in many countries.
+
+However, volcanoes also have positive effects. Volcanic soil is extremely fertile and great for farming. Many people around the world choose to live near volcanoes because the land produces rich harvests. Volcanoes also create new land over time. The Hawaiian Islands, for example, were formed entirely by volcanic activity under the Pacific Ocean. Scientists continue to study volcanoes carefully to predict eruptions and protect people who live nearby.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'why people should avoid volcanoes',
+        'how volcanoes form and their effects',
+        'the history of Hawaiian Islands only',
+        'different types of rocks underground'
+      ],
+      answer: 'how volcanoes form and their effects'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is lava?',
+      options: [
+        'Cold water that comes from mountains.',
+        'Magma that has reached the surface.',
+        'A type of volcanic gas.',
+        'Ash released during eruptions.'
+      ],
+      answer: 'Magma that has reached the surface.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Volcanic soil is good for farming.',
+        'Most volcanic activity happens under the sea.',
+        'An extinct volcano can still erupt at any time.',
+        'Ash from eruptions can affect global weather.'
+      ],
+      answer: 'An extinct volcano can still erupt at any time.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do some people choose to live near volcanoes?',
+      options: [
+        'Because it is always warm there.',
+        'Because the land is very fertile for farming.',
+        'Because volcanoes protect them from floods.',
+        'Because there are no other places to live.'
+      ],
+      answer: 'Because the land is very fertile for farming.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the name of the volcano that erupted in 1815 and affected global temperatures?',
+      answer: 'Mount Tambora'
+    }
+  ]
+},
+
+{
+  id: 'reading-42',
+  type: 'reading',
+  title: 'Passage 42',
+  text: `The monarch butterfly is one of the most remarkable insects in the world. Known for its bright orange and black wings, it is famous for making one of the longest migrations of any insect on Earth. Every year, millions of monarch butterflies travel up to 4,500 kilometres from Canada and the United States to their wintering grounds in the mountains of central Mexico.
+
+The life cycle of a monarch butterfly has four stages: egg, larva, pupa and adult. A female butterfly lays her eggs on milkweed plants, which are the only food source for monarch caterpillars. After hatching, the caterpillar eats constantly and grows quickly. It then forms a chrysalis, where it transforms into a butterfly over about two weeks. The adult butterfly lives for only a few weeks — except for the special generation that migrates, which can live up to eight months.
+
+Scientists are still not fully sure how monarch butterflies navigate during migration. They appear to use the position of the sun and an internal magnetic compass to find their way. What is even more surprising is that the butterflies returning to Mexico have never made the journey before. They are the grandchildren or great-grandchildren of the butterflies that left Mexico the previous year.
+
+Unfortunately, the monarch butterfly population has declined sharply in recent decades. Loss of milkweed plants due to farming, deforestation and climate change are the main reasons. Conservation organisations around the world are working to plant more milkweed and protect the forests where monarchs spend the winter.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to grow milkweed plants',
+        'the life cycle and migration of monarch butterflies',
+        'insects that live in Mexico',
+        'climate change and its effects on animals'
+      ],
+      answer: 'the life cycle and migration of monarch butterflies'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why do monarch caterpillars need milkweed plants?',
+      options: [
+        'They use them to build their chrysalis.',
+        'Milkweed is their only food source.',
+        'They hide under milkweed leaves.',
+        'Milkweed helps them find direction.'
+      ],
+      answer: 'Milkweed is their only food source.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Monarchs migrate to Mexico every year.',
+        'The migrating generation can live up to eight months.',
+        'Monarch butterflies have made the migration journey before.',
+        'Scientists are not fully sure how monarchs navigate.'
+      ],
+      answer: 'Monarch butterflies have made the migration journey before.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What is one reason the monarch butterfly population is declining?',
+      options: [
+        'They are being hunted for their wings.',
+        'They can no longer find Mexico.',
+        'Loss of milkweed plants due to farming.',
+        'They are living too long.'
+      ],
+      answer: 'Loss of milkweed plants due to farming.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What are the four stages of the monarch butterfly life cycle?',
+      answer: 'egg, larva, pupa and adult'
+    }
+  ]
+},
+
+{
+  id: 'reading-43',
+  type: 'reading',
+  title: 'Passage 43',
+  text: `The Amazon Rainforest covers more than 5.5 million square kilometres across nine countries in South America, with the largest part located in Brazil. It is often called the "lungs of the Earth" because it produces around 20 percent of the world's oxygen through the process of photosynthesis. The Amazon is also home to the greatest variety of plant and animal species on the planet.
+
+Scientists estimate that the Amazon contains around 10 percent of all species on Earth. This includes more than 40,000 plant species, 1,300 bird species, 3,000 types of fish and thousands of mammals, reptiles and insects. Many of these species have not even been discovered yet. Indigenous communities have lived in the Amazon for thousands of years and have developed deep knowledge of its plants and medicines.
+
+The Amazon River, which flows through the rainforest, is the largest river in the world by volume of water. During the rainy season, it floods vast areas of the forest, creating a unique underwater habitat for fish and other creatures. This flooding also deposits rich nutrients into the soil, supporting the incredible biodiversity of the region.
+
+Unfortunately, the Amazon is under serious threat. Deforestation for farming, logging and mining has destroyed large areas of the forest. Scientists warn that if deforestation continues at the current rate, the Amazon could lose its ability to produce enough rainfall to sustain itself. This would have devastating consequences not only for South America but for the entire planet's climate. Protecting the Amazon is considered one of the most urgent environmental challenges of our time.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the animals that live in South America',
+        'the importance and threats facing the Amazon Rainforest',
+        'how to protect the Amazon River from flooding',
+        'farming methods used in Brazil'
+      ],
+      answer: 'the importance and threats facing the Amazon Rainforest'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why is the Amazon called the "lungs of the Earth"?',
+      options: [
+        'Because it is very large and wide.',
+        'Because it produces around 20 percent of the world\'s oxygen.',
+        'Because it has many rivers and lakes.',
+        'Because people breathe fresh air there.'
+      ],
+      answer: 'Because it produces around 20 percent of the world\'s oxygen.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The Amazon River is the largest by volume of water.',
+        'The Amazon is located only in Brazil.',
+        'Flooding deposits nutrients into the soil.',
+        'Many Amazon species have not been discovered yet.'
+      ],
+      answer: 'The Amazon is located only in Brazil.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What could happen if deforestation continues at the current rate?',
+      options: [
+        'The Amazon will grow even larger.',
+        'More animal species will be discovered.',
+        'The Amazon could lose its ability to produce enough rainfall.',
+        'Indigenous communities will move to cities.'
+      ],
+      answer: 'The Amazon could lose its ability to produce enough rainfall.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How many countries does the Amazon Rainforest spread across?',
+      answer: 'nine'
+    }
+  ]
+},
+
+{
+  id: 'reading-44',
+  type: 'reading',
+  title: 'Passage 44',
+  text: `Earthquakes are sudden movements of the Earth's crust that can cause tremendous damage in a very short time. They occur when stress built up along cracks in the Earth's surface, called faults, is suddenly released. The energy released travels through the ground in waves, shaking everything above it. Most earthquakes happen along the boundaries of the large plates that make up the Earth's outer layer.
+
+The strength of an earthquake is measured using the Richter scale or the more modern Moment Magnitude Scale. A small earthquake measuring 2.0 or below is usually not felt by people. An earthquake measuring 6.0 or above can cause serious damage to buildings and infrastructure. The largest earthquake ever recorded was a 9.5 magnitude quake in Chile in 1960, which also triggered a massive tsunami.
+
+Predicting exactly when and where an earthquake will strike remains one of science's greatest challenges. Scientists called seismologists study the movement of the Earth's plates and monitor fault lines using sensitive instruments called seismometers. While they cannot predict earthquakes precisely, they can identify high-risk areas and estimate the probability of future earthquakes occurring.
+
+Countries that experience frequent earthquakes, such as Japan and Turkey, have developed strict building codes to reduce damage. Modern earthquake-resistant buildings are designed to absorb and distribute the energy of shaking rather than collapse. Public education is also important — knowing what to do during an earthquake, such as taking cover under a strong table or standing in a doorframe, can save lives. As population grows in earthquake-prone regions, preparedness becomes increasingly critical.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the history of earthquakes in Chile',
+        'how earthquakes occur, are measured and how we prepare for them',
+        'why buildings collapse during floods',
+        'the different types of natural disasters'
+      ],
+      answer: 'how earthquakes occur, are measured and how we prepare for them'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What causes an earthquake?',
+      options: [
+        'Heavy rain and flooding underground.',
+        'The sudden release of stress along faults in the Earth\'s crust.',
+        'Strong winds hitting mountain ranges.',
+        'Volcanic eruptions deep in the ocean.'
+      ],
+      answer: 'The sudden release of stress along faults in the Earth\'s crust.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The 1960 Chile earthquake measured 9.5.',
+        'Scientists can predict earthquakes precisely.',
+        'Seismometers are used to monitor fault lines.',
+        'Japan has strict building codes for earthquakes.'
+      ],
+      answer: 'Scientists can predict earthquakes precisely.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'How are modern earthquake-resistant buildings designed?',
+      options: [
+        'To be made of wood so they bend easily.',
+        'To absorb and distribute the energy of shaking.',
+        'To be built underground for safety.',
+        'To be as heavy as possible.'
+      ],
+      answer: 'To absorb and distribute the energy of shaking.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What are scientists who study the movement of the Earth\'s plates called?',
+      answer: 'seismologists'
+    }
+  ]
+},
+
+{
+  id: 'reading-45',
+  type: 'reading',
+  title: 'Passage 45',
+  text: `The deep ocean is one of the least explored places on Earth. Covering more than 60 percent of our planet's surface, the deep sea lies below 200 metres of water, where sunlight cannot reach. Despite the extreme cold, total darkness and crushing pressure, a surprisingly large variety of creatures have adapted to survive in these harsh conditions.
+
+Many deep-sea animals produce their own light through a process called bioluminescence. The anglerfish, for example, has a glowing organ on its head that it uses to attract prey in the darkness. The vampire squid, despite its terrifying name, is actually a gentle creature that feeds on floating particles of organic material. The giant squid, which can grow up to 13 metres in length, was considered a myth for centuries until scientists finally photographed one in its natural habitat in 2004.
+
+The deep ocean floor is not flat and empty. It contains vast mountain ranges called mid-ocean ridges, deep trenches and hydrothermal vents. These vents release extremely hot water rich in minerals from beneath the Earth's crust. Remarkably, entire ecosystems thrive around these vents, including tube worms, crabs and shrimp, none of which depend on sunlight for energy. Instead, they rely on a process called chemosynthesis, in which bacteria convert chemicals from the vents into food.
+
+Scientists believe that exploring the deep sea could lead to important medical and scientific discoveries. Many deep-sea organisms produce unique chemical compounds that may one day be used in medicines. Despite modern technology, we have explored less than 20 percent of the world's oceans, making the deep sea one of the greatest remaining frontiers of human knowledge.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to catch deep-sea fish',
+        'the creatures and features of the deep ocean',
+        'why oceans are becoming warmer',
+        'the history of ocean exploration'
+      ],
+      answer: 'the creatures and features of the deep ocean'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is bioluminescence?',
+      options: [
+        'A process by which animals use chemicals for food.',
+        'The ability of animals to produce their own light.',
+        'A type of deep-sea plant that glows.',
+        'The reflection of sunlight in the ocean.'
+      ],
+      answer: 'The ability of animals to produce their own light.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The giant squid was photographed in its habitat in 2004.',
+        'Hydrothermal vents release hot mineral-rich water.',
+        'Deep-sea ecosystems depend entirely on sunlight.',
+        'We have explored less than 20 percent of the oceans.'
+      ],
+      answer: 'Deep-sea ecosystems depend entirely on sunlight.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'How do creatures near hydrothermal vents get their energy?',
+      options: [
+        'From sunlight that reaches the ocean floor.',
+        'By hunting other large sea animals.',
+        'Through chemosynthesis, using chemicals from the vents.',
+        'By absorbing minerals from the ocean water.'
+      ],
+      answer: 'Through chemosynthesis, using chemicals from the vents.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How long can a giant squid grow?',
+      answer: 'up to 13 metres'
+    }
+  ]
+},
+
+{
+  id: 'reading-46',
+  type: 'reading',
+  title: 'Passage 46',
+  text: `In ancient Egypt, the majority of people were farmers who lived simple but hard lives along the banks of the Nile River. The Nile was the most important part of their existence. Every year, between June and September, the river flooded and left behind a thick layer of dark, fertile mud called silt. Farmers used this rich soil to grow crops such as wheat, barley, flax and vegetables. Without the Nile flood, life in Egypt would have been impossible.
+
+A typical Egyptian farmer lived in a small mud-brick house with a flat roof. The house usually had two or three rooms shared by the whole family. Furniture was very simple — wooden stools, reed mats and clay pots. Farmers kept animals such as cattle, goats and geese, which were valuable for food, milk and trade. Most farmers paid taxes to the pharaoh in the form of grain or labour rather than money.
+
+The farming year was divided into three seasons. Akhet was the flood season, when water covered the fields and farmers repaired their tools. Peret was the growing season, when seeds were planted in the wet soil. Shemu was the harvest season, when crops were cut and stored. During quiet periods between farming tasks, many farmers were required to work on royal building projects such as temples or pyramids.
+
+Women in farming families played an active role in daily life. They baked bread, brewed beer, wove cloth and raised children. Bread and beer were the two most important foods in the Egyptian diet and were also used as payment for workers. Despite their difficult lives, Egyptian farmers had religious festivals, music and storytelling that brought joy to their communities.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how the pyramids were built in ancient Egypt',
+        'the daily life of farmers in ancient Egypt',
+        'the religious beliefs of the Egyptian pharaohs',
+        'trade routes along the Nile River'
+      ],
+      answer: 'the daily life of farmers in ancient Egypt'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What was silt and why was it important?',
+      options: [
+        'A type of Egyptian crop used for clothing.',
+        'Dark fertile mud left by the Nile flood, used for farming.',
+        'A tool farmers used to dig the ground.',
+        'A building material used to construct houses.'
+      ],
+      answer: 'Dark fertile mud left by the Nile flood, used for farming.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Egyptian farmers paid taxes in grain or labour.',
+        'Peret was the season when seeds were planted.',
+        'Egyptian farmers lived in large stone houses.',
+        'Bread and beer were used as payment for workers.'
+      ],
+      answer: 'Egyptian farmers lived in large stone houses.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What did farmers do during the Akhet season?',
+      options: [
+        'They harvested and stored their crops.',
+        'They planted seeds in the wet soil.',
+        'They repaired tools while the fields were flooded.',
+        'They built new houses near the Nile.'
+      ],
+      answer: 'They repaired tools while the fields were flooded.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Name two crops that ancient Egyptian farmers grew.',
+      answer: 'wheat and barley'
+    }
+  ]
+},
+
+{
+  id: 'reading-47',
+  type: 'reading',
+  title: 'Passage 47',
+  text: `The Silk Road was not a single road but a vast network of trade routes that connected China, Central Asia, the Middle East and Europe for more than a thousand years. At its height, between the 2nd century BC and the 15th century AD, merchants, diplomats, monks and travellers crossed deserts, mountains and oceans to trade goods and exchange ideas. The name "Silk Road" was given by a German geographer in the 19th century because silk was one of China's most valuable exports.
+
+Along with silk, traders carried many other goods. Spices, paper, glass, cotton, gold, ivory and precious stones all moved along these routes. China exported porcelain and tea, while the West sent back wool, wine and silver. However, trade on the Silk Road was not only about goods. Religions, languages, art, technology and diseases also spread along these routes. Buddhism, Islam and Christianity all travelled along the Silk Road, shaping the cultures of the regions they passed through.
+
+The city of Samarkand, located in present-day Uzbekistan, was one of the most important hubs along the Silk Road. It was a centre of learning, trade and culture where scholars, artists and merchants from many different backgrounds met and exchanged ideas. The famous explorer Marco Polo travelled the Silk Road in the 13th century and wrote detailed accounts of the places and peoples he encountered.
+
+The decline of the Silk Road began in the 15th century as sea trade routes became more efficient and less dangerous. Today, the Silk Road is remembered as one of history's greatest examples of cultural exchange, reminding us that connection between peoples has always driven human progress.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the life of Marco Polo',
+        'the Silk Road as a network of trade and cultural exchange',
+        'how silk is produced in China',
+        'the history of Samarkand city'
+      ],
+      answer: 'the Silk Road as a network of trade and cultural exchange'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why was the network called the "Silk Road"?',
+      options: [
+        'Because it was made of silk material.',
+        'Because silk was one of China\'s most valuable exports.',
+        'Because only silk merchants could use the routes.',
+        'Because a Chinese emperor named it.'
+      ],
+      answer: 'Because silk was one of China\'s most valuable exports.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Samarkand was an important hub on the Silk Road.',
+        'Marco Polo travelled the Silk Road in the 13th century.',
+        'The Silk Road was used only for trading silk.',
+        'Religions spread along the Silk Road.'
+      ],
+      answer: 'The Silk Road was used only for trading silk.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why did the Silk Road decline in the 15th century?',
+      options: [
+        'Because China stopped producing silk.',
+        'Because sea trade routes became more efficient.',
+        'Because wars destroyed all the roads.',
+        'Because merchants had nothing left to trade.'
+      ],
+      answer: 'Because sea trade routes became more efficient.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'In which present-day country is the city of Samarkand located?',
+      answer: 'Uzbekistan'
+    }
+  ]
+},
+
+{
+  id: 'reading-48',
+  type: 'reading',
+  title: 'Passage 48',
+  text: `The Olympic Games are the world's largest and most prestigious sporting event, bringing together athletes from almost every country on Earth. They have a history stretching back nearly three thousand years to ancient Greece, where they were held in the city of Olympia to honour the god Zeus. The ancient Games included events such as running, wrestling, discus throwing and chariot racing. They were held every four years and during the Games, wars between Greek city-states were temporarily stopped.
+
+The ancient Olympics were abolished in 393 AD by the Roman Emperor Theodosius I, who considered them a pagan celebration. For more than 1,500 years, the Games did not take place. It was a French nobleman named Pierre de Coubertin who revived the idea of the Olympic Games in the late 19th century. He believed that international sporting competition would promote peace and understanding between nations. The first modern Olympic Games were held in Athens, Greece, in 1896, with 14 countries and around 241 athletes participating.
+
+Today, the Olympic Games are held every four years in a different host city. The Summer and Winter Olympics alternate every two years. The Games now include hundreds of sports and attract thousands of athletes from over 200 countries. The Olympic motto is "Citius, Altius, Fortius," which is Latin for "Faster, Higher, Stronger."
+
+Hosting the Olympics is both an honour and a major challenge for a city. It requires enormous investment in stadiums, transport and security. However, host cities often benefit from increased tourism, improved infrastructure and international recognition. The Olympic flame, which is lit in Olympia, Greece, and carried by relay to the host city, remains one of the most iconic symbols of the Games.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to become an Olympic athlete',
+        'the history and significance of the Olympic Games',
+        'why Greece is the best country for sports',
+        'the differences between summer and winter sports'
+      ],
+      answer: 'the history and significance of the Olympic Games'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why were the ancient Olympics abolished in 393 AD?',
+      options: [
+        'Because there were not enough athletes.',
+        'Because the Roman Emperor considered them a pagan celebration.',
+        'Because Greece was destroyed by war.',
+        'Because chariot racing became too dangerous.'
+      ],
+      answer: 'Because the Roman Emperor considered them a pagan celebration.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The first modern Olympics were held in Athens in 1896.',
+        'Pierre de Coubertin revived the Olympic Games.',
+        'The ancient Games were held to honour Zeus.',
+        'The Olympic motto means "Peace, Unity, Strength."'
+      ],
+      answer: 'The Olympic motto means "Peace, Unity, Strength."'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What does Pierre de Coubertin believe about international sport?',
+      options: [
+        'That it would make one country stronger than others.',
+        'That it would promote peace and understanding between nations.',
+        'That only European countries should compete.',
+        'That sport should replace all political discussions.'
+      ],
+      answer: 'That it would promote peace and understanding between nations.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the Olympic motto in English?',
+      answer: 'Faster, Higher, Stronger'
+    }
+  ]
+},
+
+{
+  id: 'reading-49',
+  type: 'reading',
+  title: 'Passage 49',
+  text: `The Vikings were seafaring people from Scandinavia — the region that is now Norway, Sweden and Denmark — who lived between approximately 800 AD and 1100 AD. Often depicted as fierce warriors in horned helmets, this popular image is largely inaccurate. In reality, the horned helmet was not used in battle; such helmets have been found only in ceremonial contexts. The Vikings were far more complex than the stereotype suggests. They were skilled sailors, traders, craftsmen, farmers and explorers.
+
+Viking longships were among the most advanced vessels of their time. These narrow, flexible boats could sail both across open oceans and up shallow rivers, allowing Vikings to reach places that other peoples could not. Using the stars and landmarks for navigation, they reached Iceland, Greenland and became the first Europeans to reach North America, approximately 500 years before Christopher Columbus, landing in a place they called Vinland.
+
+Vikings also established important trade networks across Europe, the Middle East and even Central Asia. They traded furs, amber, slaves, honey and weapons in exchange for silver, silk and spices. Norse settlements were founded in places as far apart as Ireland, Normandy in France, Kiev in modern Ukraine, and Constantinople in present-day Turkey.
+
+Viking society was not entirely without law or order. They had a legal assembly called the Thing, where free men could discuss laws and resolve disputes. Women in Viking society had more rights than women in many other medieval cultures — they could own property, divorce their husbands and run farms. The Viking Age ended gradually as Scandinavian peoples converted to Christianity and adopted more settled ways of life.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the wars fought by Viking warriors',
+        'the real history and culture of the Vikings',
+        'how Viking longships were built',
+        'the religion of the Norse people'
+      ],
+      answer: 'the real history and culture of the Vikings'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why is the image of Vikings in horned helmets inaccurate?',
+      options: [
+        'Vikings never wore helmets at all.',
+        'Horned helmets were only used in ceremonies, not battle.',
+        'Only Viking women wore horned helmets.',
+        'The helmets were made of wood, not metal.'
+      ],
+      answer: 'Horned helmets were only used in ceremonies, not battle.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Vikings reached North America before Columbus.',
+        'Viking longships could only sail on open oceans.',
+        'The Thing was a legal assembly for free men.',
+        'Viking women could own property and divorce.'
+      ],
+      answer: 'Viking longships could only sail on open oceans.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What did Vikings trade their furs and amber for?',
+      options: [
+        'Gold and farmland.',
+        'Silver, silk and spices.',
+        'Horses and cattle.',
+        'Ships and weapons only.'
+      ],
+      answer: 'Silver, silk and spices.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What did Vikings call the place they landed in North America?',
+      answer: 'Vinland'
+    }
+  ]
+},
+
+{
+  id: 'reading-50',
+  type: 'reading',
+  title: 'Passage 50',
+  text: `Paper is one of the most important inventions in human history, yet its origins are often overlooked. Before paper was invented, people wrote on materials such as clay tablets, animal skins called parchment, and papyrus — a plant-based material used in ancient Egypt. These materials were either heavy, expensive or difficult to produce in large quantities.
+
+Paper was invented in China around 105 AD by a court official named Cai Lun, though some historians believe paper existed in China even earlier. Cai Lun developed a method of making paper from bark, hemp, rags and fishnets, which were soaked in water, beaten into a pulp, spread on a flat surface and left to dry. This process produced a lightweight, flexible material that was much cheaper and easier to make than parchment or papyrus.
+
+For several centuries, the Chinese kept the secret of papermaking. It eventually spread to Korea and Japan, and by the 8th century, Arab traders had learned the technique after capturing Chinese papermakers during a battle. Paper mills spread across the Islamic world, and the knowledge eventually reached Europe by the 12th century through Spain. By the 15th century, the invention of the printing press by Johannes Gutenberg in Germany made paper even more essential, allowing books to be produced quickly and cheaply for the first time.
+
+The spread of paper had profound effects on human civilisation. It made education and literacy more accessible, allowed governments to keep better records, and made the sharing of ideas across cultures and continents possible. Today, despite the rise of digital technology, paper remains one of the most widely used materials in the world.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how printing presses work',
+        'the invention of paper and its impact on civilisation',
+        'ancient Egyptian writing methods',
+        'the trade between China and Europe'
+      ],
+      answer: 'the invention of paper and its impact on civilisation'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What materials did Cai Lun use to make paper?',
+      options: [
+        'Clay, sand and animal skins.',
+        'Bark, hemp, rags and fishnets.',
+        'Papyrus, wood and river mud.',
+        'Silk, cotton and dried leaves.'
+      ],
+      answer: 'Bark, hemp, rags and fishnets.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Paper was invented in China around 105 AD.',
+        'The Chinese shared the secret of papermaking freely.',
+        'Paper reached Europe by the 12th century.',
+        'Gutenberg\'s printing press made paper even more important.'
+      ],
+      answer: 'The Chinese shared the secret of papermaking freely.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'How did Arab traders learn the technique of papermaking?',
+      options: [
+        'They bought the secret from Chinese merchants.',
+        'They discovered it independently.',
+        'They captured Chinese papermakers during a battle.',
+        'They found ancient papermaking books in a library.'
+      ],
+      answer: 'They captured Chinese papermakers during a battle.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Who invented the printing press and in which country?',
+      answer: 'Johannes Gutenberg in Germany'
+    }
+  ]
+},
+
+{
+  id: 'reading-51',
+  type: 'reading',
+  title: 'Passage 51',
+  text: `The Global Positioning System, commonly known as GPS, is a technology that most people use every day without thinking about it. Whether navigating by car, tracking a delivery or finding a restaurant, GPS makes it possible to know your exact location anywhere on Earth. But few people know the history behind this remarkable system or how it actually works.
+
+GPS was developed by the United States Department of Defense in the 1970s and was originally designed for military use. The system was gradually made available to the public, and in 2000, the US government removed restrictions that had previously made civilian GPS less accurate. Today, GPS is used in aviation, shipping, agriculture, emergency services and countless smartphone applications.
+
+The system works by using a network of at least 24 satellites that orbit the Earth at approximately 20,200 kilometres above the surface. Each satellite constantly sends signals that include the time and the satellite's position. A GPS receiver on the ground picks up signals from at least four satellites and uses the difference in arrival times to calculate its exact position. This process is called trilateration and can determine location to within a few metres.
+
+GPS has transformed navigation but it also has some limitations. It does not work well inside buildings or underground because signals cannot easily pass through solid materials. It also requires a clear view of the sky and can be affected by bad weather or interference. Despite these limitations, GPS remains one of the most widely used technologies in history. Other countries, including Russia, China and the European Union, have also developed their own satellite navigation systems as alternatives to GPS.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how the US military uses satellites',
+        'the history, function and limitations of GPS',
+        'why smartphones need internet connections',
+        'different types of navigation in aviation'
+      ],
+      answer: 'the history, function and limitations of GPS'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How does GPS calculate your exact position?',
+      options: [
+        'By measuring the distance to the nearest city.',
+        'By using signals from at least four satellites and trilateration.',
+        'By connecting to the internet and checking maps.',
+        'By analysing the speed of your movement.'
+      ],
+      answer: 'By using signals from at least four satellites and trilateration.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'GPS was originally designed for military use.',
+        'GPS works perfectly well inside buildings.',
+        'GPS satellites orbit at about 20,200 kilometres above Earth.',
+        'In 2000, restrictions on civilian GPS were removed.'
+      ],
+      answer: 'GPS works perfectly well inside buildings.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'When did the US government remove restrictions that made civilian GPS less accurate?',
+      options: [
+        'In the 1970s.',
+        'In 1990.',
+        'In 2000.',
+        'In 2010.'
+      ],
+      answer: 'In 2000.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the process called when GPS uses satellite signals to calculate your exact location?',
+      answer: 'trilateration'
+    }
+  ]
+},
+
+{
+  id: 'reading-52',
+  type: 'reading',
+  title: 'Passage 52',
+  text: `Sleep is one of the most essential biological processes for human health, yet scientists are still discovering exactly why we need it. The average adult needs between seven and nine hours of sleep per night, but many people in modern society regularly get far less than this. Understanding what happens in the brain during sleep helps explain why rest is so much more than simply "switching off."
+
+Sleep occurs in cycles, each lasting approximately 90 minutes. Each cycle contains different stages, including light sleep, deep sleep and a phase called REM sleep, which stands for Rapid Eye Movement. During REM sleep, the eyes move quickly beneath the eyelids and the brain is nearly as active as when we are awake. This is the stage when most dreaming occurs. REM sleep is thought to be critical for emotional regulation, memory consolidation and creative thinking.
+
+During deep sleep, the body repairs tissues, strengthens the immune system and releases growth hormones. The brain also clears out waste products that build up during the day, including proteins linked to Alzheimer's disease. This discovery has led scientists to believe that consistently poor sleep may increase the risk of developing serious conditions such as Alzheimer's, diabetes and heart disease.
+
+Common causes of poor sleep include stress, excessive screen time before bed, irregular sleep schedules and too much caffeine. Sleep experts recommend keeping a consistent sleep schedule, avoiding bright screens for at least an hour before bed and keeping the bedroom cool and dark. While many people view sleep as unproductive time, it is in fact one of the most important investments a person can make in their long-term physical and mental health.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to cure insomnia with medicine',
+        'what happens during sleep and why it is important',
+        'why people dream during the night',
+        'the effects of caffeine on the body'
+      ],
+      answer: 'what happens during sleep and why it is important'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What happens during REM sleep?',
+      options: [
+        'The body releases growth hormones.',
+        'The brain clears waste products.',
+        'The eyes move quickly and most dreaming occurs.',
+        'The immune system becomes stronger.'
+      ],
+      answer: 'The eyes move quickly and most dreaming occurs.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Deep sleep helps repair body tissues.',
+        'REM stands for Rapid Eye Movement.',
+        'Poor sleep has no connection to serious diseases.',
+        'Sleep cycles last approximately 90 minutes.'
+      ],
+      answer: 'Poor sleep has no connection to serious diseases.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What do scientists believe happens to waste products in the brain during deep sleep?',
+      options: [
+        'They are stored for the next day.',
+        'They are cleared out by the brain.',
+        'They are converted into energy.',
+        'They are sent to the immune system.'
+      ],
+      answer: 'They are cleared out by the brain.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How long does each sleep cycle approximately last?',
+      answer: '90 minutes'
+    }
+  ]
+},
+
+{
+  id: 'reading-53',
+  type: 'reading',
+  title: 'Passage 53',
+  text: `Vaccines are one of the greatest achievements in the history of medicine. They have saved hundreds of millions of lives by preventing diseases that once killed or disabled enormous numbers of people. Smallpox, which once caused millions of deaths every year, was completely eliminated worldwide thanks to a global vaccination campaign completed in 1980. Diseases such as polio, measles and tetanus have been dramatically reduced in countries with high vaccination rates.
+
+The immune system is the body's natural defence against infection. When a harmful pathogen such as a virus or bacterium enters the body, the immune system produces proteins called antibodies that identify and destroy the invader. After fighting off an infection, the immune system "remembers" the pathogen and can respond much faster if it encounters it again in the future. This memory is the key principle behind vaccines.
+
+Vaccines work by introducing the immune system to a weakened, killed or partial version of a pathogen — or, in the case of newer mRNA vaccines, instructions for producing a harmless piece of it. This allows the immune system to build a defence without the person experiencing the actual disease. If they later encounter the real pathogen, their immune system is already prepared to fight it effectively.
+
+Vaccines protect not only individuals but also communities. When enough people in a population are vaccinated, the disease cannot spread easily, protecting even those who cannot be vaccinated due to age or medical conditions. This is known as herd immunity. Despite the overwhelming scientific evidence supporting vaccine safety and effectiveness, misinformation remains a significant challenge. Public health authorities continue to work on building trust and providing accurate information to communities around the world.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the history of smallpox and its treatment',
+        'how vaccines work and why they are important',
+        'why some people are afraid of vaccines',
+        'the development of mRNA technology'
+      ],
+      answer: 'how vaccines work and why they are important'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How do vaccines prepare the immune system?',
+      options: [
+        'By giving the body a large dose of the actual disease.',
+        'By introducing a weakened or partial version of a pathogen.',
+        'By removing dangerous antibodies from the blood.',
+        'By increasing the temperature of the body temporarily.'
+      ],
+      answer: 'By introducing a weakened or partial version of a pathogen.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Smallpox was eliminated worldwide by 1980.',
+        'Vaccines only protect the person who receives them.',
+        'Herd immunity protects those who cannot be vaccinated.',
+        'Antibodies are produced by the immune system.'
+      ],
+      answer: 'Vaccines only protect the person who receives them.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What is herd immunity?',
+      options: [
+        'When animals in a herd are all vaccinated.',
+        'When a disease becomes stronger over time.',
+        'When enough people are vaccinated so a disease cannot spread easily.',
+        'When the immune system stops producing antibodies.'
+      ],
+      answer: 'When enough people are vaccinated so a disease cannot spread easily.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What proteins does the immune system produce to identify and destroy pathogens?',
+      answer: 'antibodies'
+    }
+  ]
+},
+
+{
+  id: 'reading-54',
+  type: 'reading',
+  title: 'Passage 54',
+  text: `The history of computers is far shorter than most people realise, yet the changes this technology has brought about are more dramatic than almost any other invention in human history. What began as enormous machines filling entire rooms has become pocket-sized devices more powerful than anything engineers could have imagined just decades ago.
+
+The earliest computing devices were mechanical rather than electronic. Charles Babbage, a British mathematician, designed the "Difference Engine" in the 1820s — a machine designed to perform mathematical calculations automatically. Although it was never fully built in his lifetime, his designs were later constructed and worked exactly as he intended. His later design, the "Analytical Engine," contained many of the logical features of modern computers, including memory and a processor.
+
+The first electronic computers appeared during the Second World War. The British built Colossus in 1943 to help decode German military messages. In the United States, ENIAC was completed in 1945 and contained over 17,000 vacuum tubes. It weighed 27 tonnes and occupied a large room but could perform calculations far faster than any human. These machines had no operating system and had to be reprogrammed manually for each new task.
+
+The invention of the transistor in 1947 and the integrated circuit in the 1950s allowed computers to become dramatically smaller and cheaper. By the 1980s, personal computers had entered homes and offices around the world. The development of the internet transformed computers from standalone tools into a global communication network. Today, billions of people carry smartphones — computers more powerful than those that guided the Apollo missions to the Moon.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how smartphones were invented',
+        'the history and development of computers',
+        'the life of Charles Babbage',
+        'how the internet changed communication'
+      ],
+      answer: 'the history and development of computers'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What was special about Charles Babbage\'s "Analytical Engine"?',
+      options: [
+        'It was the first electronic computer.',
+        'It contained logical features similar to modern computers.',
+        'It was used to decode military messages in World War II.',
+        'It was the first machine to use transistors.'
+      ],
+      answer: 'It contained logical features similar to modern computers.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'ENIAC was completed in 1945.',
+        'The transistor was invented in 1947.',
+        'Charles Babbage fully built the Difference Engine in his lifetime.',
+        'Colossus was built in Britain in 1943.'
+      ],
+      answer: 'Charles Babbage fully built the Difference Engine in his lifetime.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What allowed computers to become smaller and cheaper after the 1940s?',
+      options: [
+        'The invention of vacuum tubes.',
+        'The development of the internet.',
+        'The invention of the transistor and integrated circuit.',
+        'The design of the Analytical Engine.'
+      ],
+      answer: 'The invention of the transistor and integrated circuit.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How many vacuum tubes did ENIAC contain?',
+      answer: 'over 17,000'
+    }
+  ]
+},
+
+{
+  id: 'reading-55',
+  type: 'reading',
+  title: 'Passage 55',
+  text: `Plastic pollution has become one of the most serious environmental problems of the modern era. Since mass production of plastics began in the 1950s, more than 8 billion tonnes of plastic have been produced worldwide. Of this, only around 9 percent has been recycled. The rest has been sent to landfill, incinerated or released into the environment. Every year, approximately 8 million tonnes of plastic waste enter the world's oceans.
+
+Once in the ocean, plastic does not simply disappear. Sunlight and waves break it down into tiny pieces called microplastics, which are particles smaller than 5 millimetres. These microplastics are now found everywhere — in the deepest ocean trenches, in Arctic ice and even in human blood. Marine animals such as sea turtles, seabirds and whales mistake plastic bags and other debris for food, which can block their digestive systems and cause death. It is estimated that more than 1 million seabirds and 100,000 marine mammals die from plastic pollution each year.
+
+The problem begins largely on land. Rivers act as major pathways for plastic, carrying waste from cities and towns to the sea. The top 10 rivers responsible for the most plastic pollution are all located in Asia and Africa, reflecting the challenges of waste management in rapidly growing urban populations.
+
+Addressing plastic pollution requires action at multiple levels. Governments are introducing bans on single-use plastics such as bags, straws and cutlery. Companies are being pressured to reduce plastic packaging. Individuals can also make a significant difference by refusing unnecessary plastic, choosing reusable products and participating in clean-up efforts. Scientists are also developing new biodegradable materials and technologies to remove microplastics from water.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how plastic is produced in factories',
+        'the causes and effects of plastic pollution in the oceans',
+        'why recycling programmes fail in developing countries',
+        'the health effects of plastic on humans only'
+      ],
+      answer: 'the causes and effects of plastic pollution in the oceans'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What are microplastics?',
+      options: [
+        'Large pieces of plastic found on beaches.',
+        'Plastic particles smaller than 5 millimetres.',
+        'A type of biodegradable material.',
+        'Plastic found only in the Arctic.'
+      ],
+      answer: 'Plastic particles smaller than 5 millimetres.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Rivers carry plastic waste to the sea.',
+        'Around 9 percent of all plastic has been recycled.',
+        'The top 10 most polluting rivers are in Europe.',
+        'Microplastics have been found in human blood.'
+      ],
+      answer: 'The top 10 most polluting rivers are in Europe.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is plastic dangerous to marine animals?',
+      options: [
+        'Because it makes the ocean water too cold.',
+        'Because they mistake it for food, blocking their digestive systems.',
+        'Because plastic releases poisonous gases underwater.',
+        'Because it stops fish from swimming freely.'
+      ],
+      answer: 'Because they mistake it for food, blocking their digestive systems.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Approximately how many tonnes of plastic enter the world\'s oceans every year?',
+      answer: '8 million tonnes'
+    }
+  ]
+},
+
+{
+  id: 'reading-56',
+  type: 'reading',
+  title: 'Passage 56',
+  text: `For most of human history, the majority of people lived in rural areas and worked in agriculture. However, over the past two centuries, a dramatic shift has taken place. Today, more than half of the world's population lives in cities, and this proportion is expected to reach 68 percent by 2050. Understanding why cities are growing so rapidly and what challenges this creates is one of the most important issues facing the modern world.
+
+The process of people moving from rural areas to cities is called urbanisation. It is driven by several factors. Cities offer greater access to employment, education, healthcare and entertainment than rural areas. In developing countries, young people in particular are leaving villages in search of better economic opportunities. In some regions, climate change and environmental degradation are also making farming less viable, pushing people towards urban centres.
+
+Rapid urbanisation brings significant benefits. Cities are engines of economic growth, producing the majority of a country's GDP. They are also centres of innovation, where ideas, businesses and technologies develop quickly because of the concentration of skilled people. Access to services such as hospitals, universities and transport networks is generally better in cities than in rural areas.
+
+However, rapid urban growth also creates serious problems. Housing shortages, traffic congestion, air pollution, inadequate sanitation and rising inequality are common challenges in fast-growing cities, particularly in developing nations. Overcrowded informal settlements, often called slums, develop when cities cannot provide affordable housing for all new arrivals. City planners and governments around the world are working to develop sustainable urban policies that can manage growth while improving quality of life for all residents.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'why people prefer living in villages',
+        'the rapid growth of cities and its consequences',
+        'how climate change affects rural farming',
+        'the history of urbanisation in Europe'
+      ],
+      answer: 'the rapid growth of cities and its consequences'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is urbanisation?',
+      options: [
+        'The process of building new roads in cities.',
+        'The movement of people from rural areas to cities.',
+        'A plan to make cities more environmentally friendly.',
+        'The growth of agriculture near city borders.'
+      ],
+      answer: 'The movement of people from rural areas to cities.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'More than half the world\'s population lives in cities today.',
+        'Cities produce the majority of a country\'s GDP.',
+        'Rural areas always have better healthcare than cities.',
+        'Slums develop when cities cannot provide affordable housing.'
+      ],
+      answer: 'Rural areas always have better healthcare than cities.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why are cities described as "engines of economic growth"?',
+      options: [
+        'Because they have large factories and farms.',
+        'Because they produce the majority of a country\'s GDP and encourage innovation.',
+        'Because they receive more government funding than rural areas.',
+        'Because all international trade passes through cities.'
+      ],
+      answer: 'Because they produce the majority of a country\'s GDP and encourage innovation.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What percentage of the world\'s population is expected to live in cities by 2050?',
+      answer: '68 percent'
+    }
+  ]
+},
+
+{
+  id: 'reading-57',
+  type: 'reading',
+  title: 'Passage 57',
+  text: `Sign language is a complete, fully developed natural language that uses hand shapes, facial expressions and body movement to communicate. It is not a simplified version of spoken language, nor is it universal — different countries have their own distinct sign languages. American Sign Language and British Sign Language, for example, are not mutually understandable even though both countries use English as their spoken language.
+
+The origins of formal sign language can be traced back to 18th-century France, where Abbé Charles-Michel de l'Épée founded the first public school for deaf people in Paris in 1760. He observed that the deaf community in Paris had already developed their own signing system and worked to expand and formalise it. His methods spread internationally and influenced the development of sign languages across the world, including American Sign Language.
+
+Research has shown that sign languages are acquired naturally by deaf children in the same way that hearing children acquire spoken languages. Children exposed to sign language from birth develop full linguistic competence at the same rate and in the same stages as hearing children. This demonstrates that language is a human ability that does not depend on sound.
+
+Sign languages have their own grammar, which is different from the grammar of the spoken language used in the same country. In American Sign Language, for example, the question word often comes at the end of a sentence rather than the beginning. Facial expressions are grammatically significant — they can indicate whether a sentence is a question, a statement or a negative. Today, sign languages are increasingly recognised as official languages in many countries, and their use in education, television and public services is growing.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how deaf people communicate using gestures',
+        'the history, structure and recognition of sign language',
+        'why British and American English are different',
+        'the education system for deaf children in France'
+      ],
+      answer: 'the history, structure and recognition of sign language'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why are American Sign Language and British Sign Language not mutually understandable?',
+      options: [
+        'Because deaf people in each country refuse to share their language.',
+        'Because they are distinct languages, not versions of English.',
+        'Because British Sign Language is much older.',
+        'Because only American Sign Language has a formal grammar.'
+      ],
+      answer: 'Because they are distinct languages, not versions of English.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Sign language uses facial expressions as part of grammar.',
+        'Children acquire sign language at the same rate as spoken language.',
+        'Sign language grammar is identical to spoken language grammar.',
+        'Abbé de l\'Épée founded the first public school for deaf people in Paris.'
+      ],
+      answer: 'Sign language grammar is identical to spoken language grammar.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What did Abbé Charles-Michel de l\'Épée observe when he founded his school?',
+      options: [
+        'That deaf people preferred to use written language.',
+        'That the deaf community had already developed their own signing system.',
+        'That sign language was impossible to teach in schools.',
+        'That French spoken language could be easily converted to signs.'
+      ],
+      answer: 'That the deaf community had already developed their own signing system.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'In American Sign Language, where does the question word often appear in a sentence?',
+      answer: 'at the end'
+    }
+  ]
+},
+
+{
+  id: 'reading-58',
+  type: 'reading',
+  title: 'Passage 58',
+  text: `Urban farming — the practice of growing food within cities — is gaining popularity around the world as people look for more sustainable and local sources of food. From rooftop gardens in New York to vertical farms in Singapore and community allotments in London, city dwellers are finding creative ways to produce fresh food in environments not traditionally associated with agriculture.
+
+Urban farming takes many forms. Community gardens allow residents of a neighbourhood to share a plot of land and grow vegetables, herbs and fruit together. Rooftop farms use the unused space on top of buildings to grow food, often reducing the building's energy costs by providing insulation. Vertical farms are highly controlled indoor environments where crops are grown in stacked layers under artificial lighting, using significantly less water than traditional farming through hydroponic or aeroponic systems.
+
+The benefits of urban farming extend beyond food production. Green spaces in cities improve air quality and reduce the urban heat island effect — the phenomenon where cities become significantly warmer than surrounding rural areas due to human activity and construction. Urban farms also strengthen communities, providing shared spaces where people of different backgrounds can meet and cooperate. Some urban farming projects specifically target food deserts — areas within cities where residents have limited access to fresh, affordable produce.
+
+Despite these benefits, urban farming faces significant challenges. Land in cities is expensive and limited. Many rooftop structures are not strong enough to support heavy soil and equipment. Pollution from traffic and industry can contaminate crops. However, as technology improves and awareness of food security grows, urban farming is increasingly being seen not as a hobby but as a genuine component of sustainable city planning.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how to start a vegetable garden at home',
+        'the growth, benefits and challenges of urban farming',
+        'why traditional farming is being replaced by technology',
+        'the environmental problems caused by cities'
+      ],
+      answer: 'the growth, benefits and challenges of urban farming'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is the urban heat island effect?',
+      options: [
+        'When cities experience more rainfall than rural areas.',
+        'When cities become significantly warmer than surrounding rural areas.',
+        'When rooftop gardens release heat into the atmosphere.',
+        'When vertical farms increase indoor temperatures.'
+      ],
+      answer: 'When cities become significantly warmer than surrounding rural areas.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Vertical farms use stacked layers and artificial lighting.',
+        'Urban farming only benefits food production, nothing else.',
+        'Rooftop farms can provide insulation and reduce energy costs.',
+        'Food deserts are areas with limited access to fresh produce.'
+      ],
+      answer: 'Urban farming only benefits food production, nothing else.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is land a significant challenge for urban farming?',
+      options: [
+        'Because city soil is always contaminated.',
+        'Because cities do not have enough sunlight.',
+        'Because land in cities is expensive and limited.',
+        'Because governments do not allow farming in cities.'
+      ],
+      answer: 'Because land in cities is expensive and limited.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What are areas within cities with limited access to fresh, affordable food called?',
+      answer: 'food deserts'
+    }
+  ]
+},
+
+{
+  id: 'reading-59',
+  type: 'reading',
+  title: 'Passage 59',
+  text: `Libraries are among the oldest and most enduring institutions in human civilisation. The desire to collect, preserve and share knowledge has existed for thousands of years. The Library of Alexandria in ancient Egypt, founded around 300 BC, is perhaps the most famous library of the ancient world. At its height, it is believed to have contained hundreds of thousands of scrolls covering every subject known at the time, from mathematics and astronomy to philosophy and medicine. Its destruction, which happened gradually over several centuries, is often cited as one of history's greatest losses of knowledge.
+
+During the medieval period in Europe, libraries were primarily found in monasteries, where monks carefully copied manuscripts by hand to preserve religious and classical texts. Access to these collections was extremely limited. The invention of the printing press in the 15th century transformed the availability of books, making it possible for the first time to produce identical copies quickly and cheaply. This eventually led to the establishment of public lending libraries, where ordinary citizens could borrow books free of charge.
+
+The 19th century saw a major expansion of public libraries, particularly in Britain and the United States. Industrialists such as Andrew Carnegie donated enormous sums to build hundreds of public library buildings, believing that access to books was essential for the education and self-improvement of working people.
+
+Today, libraries have adapted to the digital age. While physical book collections remain important, modern libraries offer access to digital databases, e-books, online learning resources and community programmes. Far from becoming obsolete, libraries have reinvented themselves as community hubs that provide not just books but services ranging from job assistance to digital literacy training.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the destruction of the Library of Alexandria',
+        'how libraries have changed throughout history',
+        'why people stopped reading physical books',
+        'the life of Andrew Carnegie'
+      ],
+      answer: 'how libraries have changed throughout history'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What role did monasteries play in preserving knowledge during the medieval period?',
+      options: [
+        'They sold books to wealthy citizens.',
+        'They printed books using early machines.',
+        'Monks copied manuscripts by hand to preserve texts.',
+        'They built the first public libraries in Europe.'
+      ],
+      answer: 'Monks copied manuscripts by hand to preserve texts.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The Library of Alexandria was founded around 300 BC.',
+        'The printing press was invented in the 15th century.',
+        'Andrew Carnegie believed access to books was essential for workers.',
+        'Medieval monastery libraries were open to all ordinary citizens.'
+      ],
+      answer: 'Medieval monastery libraries were open to all ordinary citizens.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'How have modern libraries adapted to the digital age?',
+      options: [
+        'By removing all physical book collections.',
+        'By offering digital resources, online learning and community programmes.',
+        'By charging higher fees for book borrowing.',
+        'By focusing only on academic research materials.'
+      ],
+      answer: 'By offering digital resources, online learning and community programmes.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Who donated money to build hundreds of public library buildings in the 19th century?',
+      answer: 'Andrew Carnegie'
+    }
+  ]
+},
+
+{
+  id: 'reading-60',
+  type: 'reading',
+  title: 'Passage 60',
+  text: `Languages are disappearing at an alarming rate. Linguists — scientists who study language — estimate that of the approximately 7,000 languages spoken in the world today, around half could disappear by the end of this century. A language is considered endangered when children in a community are no longer learning it as their native language. When the last fluent speaker of a language dies, that language becomes extinct.
+
+Languages die for a variety of reasons. When communities face economic or social pressure to adopt a dominant language, people may stop passing their native language to their children. Historically, colonialism played a major role in the destruction of indigenous languages, as colonial powers often banned or discouraged native languages in schools and public life. Today, globalisation and the dominance of languages such as English, Mandarin and Spanish continue to put pressure on smaller languages.
+
+The loss of a language is not simply a cultural tragedy. Languages contain unique ways of describing and understanding the world. Many indigenous languages encode detailed knowledge about local ecosystems, plants, animals and sustainable practices that have been developed over thousands of years. When a language disappears, this knowledge often disappears with it. Some languages also have grammatical structures and ways of expressing concepts that do not exist in any other language, giving linguists valuable insights into the diversity of human thought.
+
+Efforts to preserve endangered languages are growing. Community-led revitalisation programmes, digital recording projects and school-based language initiatives have helped some languages survive or even recover. Welsh in the United Kingdom and Māori in New Zealand are notable examples of languages that have been successfully revitalised through dedicated government support and community commitment. However, for most endangered languages, the challenge remains enormous.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'why English is the most important global language',
+        'the disappearance of languages and efforts to preserve them',
+        'how linguists study ancient civilisations',
+        'the effects of globalisation on international trade'
+      ],
+      answer: 'the disappearance of languages and efforts to preserve them'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'When is a language considered endangered?',
+      options: [
+        'When it has fewer than one thousand speakers.',
+        'When children in a community no longer learn it as their native language.',
+        'When it has no written form.',
+        'When it is no longer used in government.'
+      ],
+      answer: 'When children in a community no longer learn it as their native language.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Around half of today\'s languages could disappear by the end of this century.',
+        'Welsh and Māori have been successfully revitalised.',
+        'Colonialism had no effect on the disappearance of indigenous languages.',
+        'Languages contain unique knowledge about local ecosystems.'
+      ],
+      answer: 'Colonialism had no effect on the disappearance of indigenous languages.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is the loss of a language more than just a cultural tragedy?',
+      options: [
+        'Because it reduces the number of languages for linguists to study.',
+        'Because unique knowledge about ecosystems and human thought disappears with it.',
+        'Because it makes international communication more difficult.',
+        'Because it causes economic problems for the communities involved.'
+      ],
+      answer: 'Because unique knowledge about ecosystems and human thought disappears with it.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Name one language that has been successfully revitalised according to the passage.',
+      answer: 'Welsh'
+    }
+  ]
+},
+{
+  id: 'reading-61',
+  type: 'reading',
+  title: 'Passage 61',
+  text: `The placebo effect is one of the most fascinating and puzzling phenomena in medicine. It occurs when a patient experiences a genuine improvement in their condition after receiving a treatment that contains no active medical ingredient — such as a sugar pill or a saline injection. What makes the placebo effect remarkable is that the improvement is real, not imaginary. Brain scans have shown measurable changes in neural activity in patients who responded to placebos, particularly in cases involving pain, depression and anxiety.
+
+Scientists believe the placebo effect works through several mechanisms. One is expectation: when patients believe a treatment will work, their brains release natural chemicals such as endorphins and dopamine that genuinely reduce pain and improve mood. Another mechanism is conditioning — similar to how Pavlov's dogs learned to salivate at the sound of a bell, patients who have previously responded well to a treatment may respond positively to a similar experience even without the active ingredient.
+
+What makes recent research even more surprising is the discovery of the "open-label placebo." Studies have shown that patients who were explicitly told they were receiving a placebo — with no deception involved — still experienced significant improvements in symptoms. This challenges the long-held assumption that placebos only work if the patient believes they are receiving real treatment.
+
+The placebo effect raises important ethical questions for medicine. If belief alone can produce measurable health improvements, how should doctors incorporate this knowledge into clinical practice without deceiving patients? Researchers are increasingly investigating how to harness the placebo effect ethically, potentially reducing the need for higher doses of medication and minimising side effects for patients with chronic conditions.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'why patients often lie about their symptoms',
+        'the science behind the placebo effect and its ethical implications',
+        'how sugar pills are manufactured for clinical trials',
+        'the dangers of using placebos instead of real medicine'
+      ],
+      answer: 'the science behind the placebo effect and its ethical implications'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What does the discovery of the "open-label placebo" suggest?',
+      options: [
+        'Patients must be deceived for placebos to be effective.',
+        'Placebos only work in cases involving physical pain.',
+        'Patients can benefit from placebos even when told they are receiving one.',
+        'Brain scans cannot detect the placebo effect accurately.'
+      ],
+      answer: 'Patients can benefit from placebos even when told they are receiving one.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The placebo effect produces measurable changes in brain activity.',
+        'Endorphins and dopamine play a role in the placebo effect.',
+        'The improvement experienced by placebo patients is purely imaginary.',
+        'Conditioning is one mechanism through which placebos work.'
+      ],
+      answer: 'The improvement experienced by placebo patients is purely imaginary.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do researchers want to harness the placebo effect ethically?',
+      options: [
+        'To replace all existing medications with sugar pills.',
+        'To potentially reduce medication doses and minimise side effects.',
+        'To prove that doctors do not need to prescribe real drugs.',
+        'To conduct experiments without patient consent.'
+      ],
+      answer: 'To potentially reduce medication doses and minimise side effects.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What two natural chemicals does the brain release when a patient expects a treatment to work?',
+      answer: 'endorphins and dopamine'
+    }
+  ]
+},
+
+{
+  id: 'reading-62',
+  type: 'reading',
+  title: 'Passage 62',
+  text: `Forgetting is often considered a failure of the mind, yet scientists increasingly argue that it is not only inevitable but essential to how the brain functions. Human memory is not like a video recording that captures everything with perfect accuracy. It is a reconstructive process — every time we recall a memory, we subtly alter it, filling in gaps with assumptions and updating it with new information. This is why eyewitness testimony in courts of law is considered far less reliable than once believed.
+
+The brain processes memory in two key stages. Short-term memory, also called working memory, holds a limited amount of information for a brief period — typically around 20 to 30 seconds without rehearsal. Long-term memory, by contrast, can store vast amounts of information for years or even a lifetime. The process of transferring information from short-term to long-term memory is called consolidation, and it happens largely during sleep, which is one of the reasons that sleep deprivation severely impairs learning.
+
+German psychologist Hermann Ebbinghaus was among the first scientists to study forgetting systematically. His research in the 1880s produced what is now known as the "forgetting curve," which shows that people forget approximately 50 percent of new information within an hour and around 70 percent within 24 hours unless the information is actively reviewed.
+
+Neuroscientists now believe that forgetting serves important cognitive functions. By clearing out irrelevant details, the brain reduces interference and allows us to focus on patterns and generalisations rather than becoming overwhelmed by trivial specifics. This ability to forget selectively may actually be what distinguishes flexible, intelligent thinking from rigid, encyclopaedic recall.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'why eyewitness testimony is used in courts',
+        'the science of memory and why forgetting is important',
+        'how to improve short-term memory through sleep',
+        'Hermann Ebbinghaus and his research methods'
+      ],
+      answer: 'the science of memory and why forgetting is important'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What does the "forgetting curve" demonstrate?',
+      options: [
+        'That people remember information better after several days.',
+        'That forgetting happens at a predictable rate without active review.',
+        'That short-term memory is more reliable than long-term memory.',
+        'That sleep prevents all forms of memory loss.'
+      ],
+      answer: 'That forgetting happens at a predictable rate without active review.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Memory consolidation happens largely during sleep.',
+        'Human memory works like a perfect video recording.',
+        'Short-term memory typically lasts around 20 to 30 seconds.',
+        'Forgetting can serve useful cognitive functions.'
+      ],
+      answer: 'Human memory works like a perfect video recording.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do neuroscientists argue that forgetting is beneficial?',
+      options: [
+        'Because it prevents the brain from becoming too large.',
+        'Because it helps us remember only the most recent events.',
+        'Because it reduces interference and allows focus on patterns and generalisations.',
+        'Because it speeds up the process of long-term memory storage.'
+      ],
+      answer: 'Because it reduces interference and allows focus on patterns and generalisations.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the process of transferring information from short-term to long-term memory called?',
+      answer: 'consolidation'
+    }
+  ]
+},
+
+{
+  id: 'reading-63',
+  type: 'reading',
+  title: 'Passage 63',
+  text: `CRISPR-Cas9 is a revolutionary gene-editing technology that has transformed the field of genetic medicine since its development in the early 2010s. Often described as a "molecular scissors," CRISPR allows scientists to locate a specific sequence of DNA within a living organism and cut it with extraordinary precision. Once the DNA is cut, the cell's natural repair mechanisms kick in, and scientists can either disable a faulty gene or insert a corrected version. The technology was originally discovered in bacteria, which use a similar mechanism as part of their immune defence against viruses.
+
+The potential medical applications of CRISPR are enormous. Researchers have already used it to treat patients with sickle cell disease and beta-thalassaemia — both serious inherited blood disorders — with results that have been described as potentially curative. Clinical trials are underway for conditions including certain cancers, inherited blindness and HIV. In some cases, CRISPR is being used to edit immune cells outside the body before returning them to the patient, while in others, the editing tools are delivered directly into the body.
+
+However, CRISPR also raises profound ethical concerns. The most controversial application is germline editing — making changes to embryos that would be inherited by future generations. In 2018, a Chinese scientist named He Jiankui announced that he had edited the embryos of twin girls to make them resistant to HIV, sparking international condemnation. Critics argued that this crossed a fundamental ethical boundary, as the children had no ability to consent and the long-term consequences of such editing are entirely unknown.
+
+Regulatory bodies worldwide are working to establish frameworks that permit beneficial research while preventing premature or irresponsible applications of this powerful technology.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how bacteria defend themselves against viruses',
+        'the development, applications and ethical concerns of CRISPR technology',
+        'why sickle cell disease is difficult to treat',
+        'the controversy surrounding Chinese medical research'
+      ],
+      answer: 'the development, applications and ethical concerns of CRISPR technology'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why was He Jiankui\'s experiment internationally condemned?',
+      options: [
+        'Because the technology he used had not been properly tested.',
+        'Because he edited embryos whose future generations would inherit the changes without consent.',
+        'Because he attempted to cure a disease that already had an effective treatment.',
+        'Because he published his results without peer review.'
+      ],
+      answer: 'Because he edited embryos whose future generations would inherit the changes without consent.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'CRISPR was originally discovered in bacteria.',
+        'CRISPR has been used to treat sickle cell disease.',
+        'Germline editing only affects the individual patient, not future generations.',
+        'Clinical trials for CRISPR are underway for certain cancers.'
+      ],
+      answer: 'Germline editing only affects the individual patient, not future generations.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'How does CRISPR work at a basic level?',
+      options: [
+        'It replaces entire chromosomes with healthy ones.',
+        'It locates a specific DNA sequence and cuts it with precision.',
+        'It stimulates the immune system to fight genetic disorders.',
+        'It introduces new bacteria into the body to repair damaged genes.'
+      ],
+      answer: 'It locates a specific DNA sequence and cuts it with precision.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What term is used for editing embryos in a way that future generations would inherit the changes?',
+      answer: 'germline editing'
+    }
+  ]
+},
+
+{
+  id: 'reading-64',
+  type: 'reading',
+  title: 'Passage 64',
+  text: `The Fermi Paradox is one of the most thought-provoking puzzles in science. Named after Italian-American physicist Enrico Fermi, it refers to the apparent contradiction between the high probability that intelligent extraterrestrial life exists somewhere in the universe and the complete absence of any confirmed evidence for it. In 1950, during a casual lunch conversation, Fermi reportedly asked his colleagues a simple but profound question: "Where is everybody?"
+
+The universe is approximately 13.8 billion years old and contains an estimated two trillion galaxies, each with hundreds of billions of stars. Many of these stars have planets orbiting them, and a significant proportion of those planets are located within habitable zones where liquid water — considered essential for life as we know it — could exist. Given these vast numbers, statistically speaking, intelligent life should have emerged many times over and should, by now, have made its presence detectable.
+
+Scientists have proposed numerous explanations for the apparent silence. One popular hypothesis is the "Great Filter" — the idea that there is some stage in the development of intelligent life that almost no civilisation manages to survive. This could be the emergence of complex cells, the development of multicellular life, the invention of technology or — most alarmingly — some self-destructive behaviour that advanced civilisations inevitably engage in. If the Great Filter lies ahead of us rather than behind us, the implications for humanity are deeply troubling.
+
+Other proposed explanations include the possibility that intelligent life is too far away for signals to have reached us, that advanced civilisations deliberately avoid contact, or that our methods of searching for signals are fundamentally inadequate. The Fermi Paradox remains unsolved, but it continues to inspire both scientific research and philosophical reflection about humanity's place in the cosmos.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Enrico Fermi\'s contributions to physics',
+        'the contradiction between the likelihood of alien life and the lack of evidence for it',
+        'how scientists search for signals from other planets',
+        'why the universe is too large for space travel'
+      ],
+      answer: 'the contradiction between the likelihood of alien life and the lack of evidence for it'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is the "Great Filter" hypothesis?',
+      options: [
+        'A technology used to filter radio signals from space.',
+        'The idea that a stage in civilisation\'s development prevents almost all from surviving.',
+        'A theory that most planets are filtered out of habitable zones.',
+        'The belief that advanced civilisations choose to filter all communication.'
+      ],
+      answer: 'The idea that a stage in civilisation\'s development prevents almost all from surviving.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The universe is approximately 13.8 billion years old.',
+        'Fermi asked his famous question during a lunch conversation.',
+        'Scientists have confirmed contact with at least one extraterrestrial civilisation.',
+        'Many stars have planets in habitable zones.'
+      ],
+      answer: 'Scientists have confirmed contact with at least one extraterrestrial civilisation.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why would it be alarming if the Great Filter lies ahead of humanity rather than behind us?',
+      options: [
+        'Because it would mean we have already missed our chance to develop technology.',
+        'Because it would suggest humanity is likely to face something that destroys it.',
+        'Because it would prove that no other civilisations have ever existed.',
+        'Because it would mean the universe is much younger than scientists believe.'
+      ],
+      answer: 'Because it would suggest humanity is likely to face something that destroys it.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What simple question did Enrico Fermi ask his colleagues at lunch in 1950?',
+      answer: 'Where is everybody?'
+    }
+  ]
+},
+
+{
+  id: 'reading-65',
+  type: 'reading',
+  title: 'Passage 65',
+  text: `For most of human history, forests were seen as collections of individual trees competing with one another for light, water and nutrients. Recent scientific research, however, has fundamentally changed this view. Ecologists and forest biologists now understand that trees within a forest are deeply interconnected through a vast underground network of fungi, communicating and exchanging resources in ways that challenge our assumptions about plant behaviour.
+
+This network, sometimes called the "Wood Wide Web," is formed by mycorrhizal fungi — microscopic organisms that form symbiotic relationships with the roots of trees. The fungi extend far beyond the reach of a tree's own roots, dramatically increasing its ability to absorb water and minerals from the soil. In return, the tree provides the fungi with sugars produced through photosynthesis. This mutually beneficial relationship has existed for approximately 450 million years and is believed to have played a critical role in the colonisation of land by plants.
+
+What makes this network particularly remarkable is that it facilitates communication and resource sharing between trees. Research by Canadian ecologist Suzanne Simard demonstrated that older, larger trees — which she termed "mother trees" — actively channel carbon and nutrients through the fungal network to younger, smaller trees growing in their shade. When a tree is stressed by drought or disease, it can send chemical distress signals through the network, prompting neighbouring trees to increase their own chemical defences.
+
+These discoveries have significant implications for how we manage forests. Clear-cutting — the practice of removing all trees in an area — destroys not only the trees themselves but the entire fungal network that sustains the ecosystem. Forest managers are increasingly adopting selective harvesting techniques that preserve key trees and maintain the network's integrity.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how fungi compete with trees for nutrients in the soil',
+        'the underground communication and resource-sharing network of forests',
+        'why clear-cutting is the most efficient method of timber harvesting',
+        'the discovery of a new species of fungi in Canadian forests'
+      ],
+      answer: 'the underground communication and resource-sharing network of forests'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What do trees provide to mycorrhizal fungi in their symbiotic relationship?',
+      options: [
+        'Water and minerals absorbed from deep soil.',
+        'Protection from disease and drought.',
+        'Sugars produced through photosynthesis.',
+        'A network of roots for the fungi to travel through.'
+      ],
+      answer: 'Sugars produced through photosynthesis.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Mycorrhizal fungi form symbiotic relationships with tree roots.',
+        'Mother trees channel resources to younger trees through the fungal network.',
+        'Trees in a forest have always been understood as deeply interconnected.',
+        'The fungal-plant relationship has existed for approximately 450 million years.'
+      ],
+      answer: 'Trees in a forest have always been understood as deeply interconnected.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is clear-cutting considered particularly damaging according to the passage?',
+      options: [
+        'Because it removes trees that are needed for paper production.',
+        'Because it destroys the fungal network that sustains the entire ecosystem.',
+        'Because it causes soil to become permanently infertile.',
+        'Because it prevents rainfall from reaching the forest floor.'
+      ],
+      answer: 'Because it destroys the fungal network that sustains the entire ecosystem.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What term did Suzanne Simard use to describe older, larger trees that support younger ones?',
+      answer: 'mother trees'
+    }
+  ]
+},
+
+{
+  id: 'reading-66',
+  type: 'reading',
+  title: 'Passage 66',
+  text: `Misinformation — false or inaccurate information — has existed throughout human history, but the speed and scale at which it spreads in the digital age has created challenges that societies are only beginning to understand. Studies consistently show that false information spreads significantly faster and further on social media platforms than accurate information, partly because it tends to be more emotionally provocative and therefore more likely to be shared without verification.
+
+Several psychological factors make people susceptible to misinformation. Confirmation bias — the tendency to seek out and accept information that confirms our existing beliefs while dismissing contradictory evidence — plays a major role. Once a false belief is established, it is remarkably resistant to correction. Research has shown that even when people are presented with clear factual corrections, they often continue to hold their original false belief, a phenomenon known as the "backfire effect." However, more recent studies have questioned how universal this effect actually is.
+
+The consequences of misinformation can be severe. During the COVID-19 pandemic, false claims about vaccines, treatments and the origins of the virus spread rapidly, contributing to vaccine hesitancy and, in some cases, dangerous self-medication. Misinformation has also been used deliberately as a political tool — so-called "disinformation" — to undermine trust in institutions, manipulate elections and incite social division.
+
+Combating misinformation requires action at multiple levels. Platforms are investing in algorithmic changes and fact-checking partnerships, though critics argue these measures are insufficient. Media literacy education — teaching people to critically evaluate sources and recognise manipulative content — is considered by many experts to be the most effective long-term solution. Ultimately, an informed and sceptical public remains the most powerful defence against the spread of false information.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how social media platforms design their algorithms',
+        'why misinformation spreads and how it can be countered',
+        'the history of political propaganda in the 20th century',
+        'the psychological differences between misinformation and disinformation'
+      ],
+      answer: 'why misinformation spreads and how it can be countered'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is confirmation bias?',
+      options: [
+        'The tendency to share information before verifying it.',
+        'The habit of seeking information that confirms existing beliefs.',
+        'The process of correcting false beliefs with factual evidence.',
+        'The preference for emotionally neutral information.'
+      ],
+      answer: 'The habit of seeking information that confirms existing beliefs.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'False information tends to spread faster than accurate information on social media.',
+        'The "backfire effect" has been universally confirmed by all recent studies.',
+        'Disinformation is misinformation spread deliberately for political purposes.',
+        'Media literacy is considered an effective long-term solution to misinformation.'
+      ],
+      answer: 'The "backfire effect" has been universally confirmed by all recent studies.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'According to the passage, what do many experts consider the most effective long-term solution to misinformation?',
+      options: [
+        'Stricter government censorship of online content.',
+        'Removing all social media platforms.',
+        'Media literacy education that teaches critical evaluation of sources.',
+        'Developing more advanced fact-checking algorithms.'
+      ],
+      answer: 'Media literacy education that teaches critical evaluation of sources.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the term for false information spread deliberately as a political tool?',
+      answer: 'disinformation'
+    }
+  ]
+},
+
+{
+  id: 'reading-67',
+  type: 'reading',
+  title: 'Passage 67',
+  text: `In 1951, social psychologist Solomon Asch conducted a series of experiments that would become among the most famous in the history of psychology. Asch asked participants to complete a simple visual task: comparing the length of lines on cards. The task was straightforward — the correct answer was always obvious. Yet when participants were placed in a group where all other members (who were secretly confederates of the researcher) gave the same wrong answer, approximately 75 percent of participants conformed to the incorrect group response at least once. Around 32 percent of all responses given by participants were conforming, even when clearly wrong.
+
+Asch's findings revealed something deeply uncomfortable about human nature: our desire to fit in with a group can override our own direct perceptions and rational judgement. Psychologists distinguish between two types of conformity. Normative conformity occurs when people publicly go along with a group even though they privately disagree, driven by the desire to be accepted and avoid rejection. Informational conformity occurs when people genuinely adopt the group's view because they believe the group knows better than they do.
+
+The implications of conformity extend far beyond laboratory experiments. It helps explain how ordinary people can participate in harmful group behaviours, how false information becomes widely accepted, and how authority figures can command obedience even in troubling situations. Later research by Stanley Milgram on obedience to authority demonstrated that a significant majority of people would administer what they believed to be dangerous electric shocks to strangers simply because an authority figure instructed them to do so.
+
+Understanding the psychology of conformity is not merely an academic exercise. It has practical applications in fields ranging from public health — where social norms are used to encourage healthy behaviours — to corporate governance, where awareness of groupthink can help organisations make better decisions.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how Asch designed his famous line experiment',
+        'the psychology of conformity and its broader implications',
+        'why people are unable to distinguish line lengths accurately',
+        'the ethical problems with psychological experiments'
+      ],
+      answer: 'the psychology of conformity and its broader implications'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is the difference between normative and informational conformity?',
+      options: [
+        'Normative conformity involves agreeing publicly while disagreeing privately; informational conformity involves genuinely adopting the group\'s view.',
+        'Normative conformity is based on logic; informational conformity is based on emotion.',
+        'Normative conformity only occurs in laboratory settings; informational conformity happens in real life.',
+        'Normative conformity leads to better decisions; informational conformity leads to worse ones.'
+      ],
+      answer: 'Normative conformity involves agreeing publicly while disagreeing privately; informational conformity involves genuinely adopting the group\'s view.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'In Asch\'s experiment, all participants conformed on every trial.',
+        'Approximately 75 percent of participants conformed at least once.',
+        'Milgram\'s research examined obedience to authority.',
+        'Conformity has applications in public health campaigns.'
+      ],
+      answer: 'In Asch\'s experiment, all participants conformed on every trial.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What did Milgram\'s research on obedience demonstrate?',
+      options: [
+        'That most people refuse to follow harmful instructions from authority figures.',
+        'That a significant majority would administer dangerous shocks when instructed by an authority.',
+        'That conformity only occurs when the task is ambiguous.',
+        'That people are more obedient in laboratory settings than in real life.'
+      ],
+      answer: 'That a significant majority would administer dangerous shocks when instructed by an authority.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What term describes the phenomenon where group pressure leads organisations to make poor decisions?',
+      answer: 'groupthink'
+    }
+  ]
+},
+
+{
+  id: 'reading-68',
+  type: 'reading',
+  title: 'Passage 68',
+  text: `Water is the most essential resource for human survival, yet it is one of the most unequally distributed substances on Earth. Although approximately 71 percent of the planet's surface is covered by water, only about 3 percent of that water is fresh, and two-thirds of that fresh water is locked in glaciers and ice caps. This means that less than 1 percent of all the water on Earth is readily accessible for human use. As the global population grows and climate change alters precipitation patterns, competition for fresh water is intensifying worldwide.
+
+The global water crisis is not uniform. Some regions, such as parts of sub-Saharan Africa and South Asia, have long struggled with severe water scarcity. Approximately 2 billion people currently lack access to safe drinking water, and around 3.6 billion experience inadequate access to sanitation. The consequences are devastating: waterborne diseases such as cholera, typhoid and dysentery kill hundreds of thousands of people every year, disproportionately affecting children under five.
+
+Water stress is also increasing in regions that have historically had sufficient supplies. Groundwater aquifers — underground reserves that took thousands of years to fill — are being depleted far faster than they can naturally replenish in countries including India, the United States and China. The depletion of the Ogallala Aquifer in the American Great Plains, which supports vast areas of agricultural irrigation, is considered one of the most pressing environmental challenges facing North American agriculture.
+
+Experts argue that solving the water crisis requires a combination of improved infrastructure, more efficient irrigation technologies, stronger international cooperation and fundamental shifts in how both agriculture and industry consume water. Agriculture accounts for approximately 70 percent of global fresh water use, making it the sector where efficiency gains could have the greatest impact.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how glaciers contribute to the global water supply',
+        'the global water crisis, its causes and potential solutions',
+        'why waterborne diseases are increasing in developing countries',
+        'the history of water management in North America'
+      ],
+      answer: 'the global water crisis, its causes and potential solutions'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why is groundwater depletion a serious concern?',
+      options: [
+        'Because underground water is too salty to use for drinking.',
+        'Because aquifers are being used faster than they naturally replenish.',
+        'Because groundwater causes earthquakes when removed.',
+        'Because aquifer water contains harmful chemicals.'
+      ],
+      answer: 'Because aquifers are being used faster than they naturally replenish.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Less than 1 percent of Earth\'s water is readily accessible for human use.',
+        'Agriculture accounts for approximately 70 percent of global fresh water use.',
+        'The majority of fresh water on Earth is found in rivers and lakes.',
+        'Around 2 billion people lack access to safe drinking water.'
+      ],
+      answer: 'The majority of fresh water on Earth is found in rivers and lakes.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is improving efficiency in agriculture particularly important for addressing the water crisis?',
+      options: [
+        'Because agriculture pollutes more water than any other industry.',
+        'Because agriculture uses approximately 70 percent of global fresh water.',
+        'Because agricultural land covers most of the Earth\'s surface.',
+        'Because farmers have the political power to change water policy.'
+      ],
+      answer: 'Because agriculture uses approximately 70 percent of global fresh water.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the name of the aquifer under the American Great Plains that is being rapidly depleted?',
+      answer: 'the Ogallala Aquifer'
+    }
+  ]
+},
+
+{
+  id: 'reading-69',
+  type: 'reading',
+  title: 'Passage 69',
+  text: `Dark tourism — the practice of visiting sites associated with death, tragedy and suffering — has grown significantly as a recognised area of tourism studies and as a phenomenon attracting millions of visitors worldwide. Destinations include former concentration camps such as Auschwitz in Poland, disaster sites such as Chernobyl in Ukraine, the killing fields of Cambodia and Ground Zero in New York. While the concept may seem morbid, researchers argue that the motivations of dark tourists are more complex and often more honourable than the label might suggest.
+
+Scholars who study dark tourism identify a wide range of motivations. Some visitors are driven by historical curiosity and a genuine desire to understand and commemorate past tragedies. Others seek a form of existential reflection — confronting mortality in a way that everyday life rarely permits. Educational visits to sites like Auschwitz are widely seen as important tools for Holocaust remembrance and for ensuring that atrocities are not forgotten or repeated. Many survivors and victim communities actively support such visits, believing they are essential for maintaining historical memory.
+
+However, dark tourism also raises ethical concerns. Critics argue that some sites risk trivialising suffering by transforming tragedy into entertainment, particularly when commercial interests dominate. Social media has intensified this debate: images of tourists posing for selfies at Auschwitz or Chernobyl have provoked widespread public criticism. Site managers face the difficult challenge of balancing accessibility and education with the need for dignity and respect.
+
+The way a site is managed and interpreted makes an enormous difference. Sites that prioritise thoughtful curation, survivor testimony and educational framing are generally considered ethically sound, while those that emphasise spectacle and thrill-seeking are viewed more critically. As dark tourism continues to grow, the question of how to remember tragedy responsibly remains deeply important.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'why tourists prefer visiting historical sites over natural attractions',
+        'the phenomenon of dark tourism, its motivations and ethical questions',
+        'how Auschwitz became the most visited dark tourism site in the world',
+        'the role of social media in changing travel behaviour'
+      ],
+      answer: 'the phenomenon of dark tourism, its motivations and ethical questions'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What do many survivors and victim communities believe about visits to tragedy sites?',
+      options: [
+        'That they are disrespectful and should be prohibited.',
+        'That they are essential for maintaining historical memory.',
+        'That they should only be open to academic researchers.',
+        'That they trivialise suffering by attracting large crowds.'
+      ],
+      answer: 'That they are essential for maintaining historical memory.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Social media has intensified ethical debates around dark tourism.',
+        'All visitors to dark tourism sites are motivated by morbid curiosity.',
+        'Chernobyl in Ukraine is an example of a dark tourism destination.',
+        'Site management plays an important role in how visits are perceived ethically.'
+      ],
+      answer: 'All visitors to dark tourism sites are motivated by morbid curiosity.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What makes a dark tourism site generally considered ethically sound?',
+      options: [
+        'Charging high entrance fees to limit visitor numbers.',
+        'Prioritising thoughtful curation, survivor testimony and educational framing.',
+        'Allowing visitors to take photographs freely throughout the site.',
+        'Focusing on the entertainment value of the historical events.'
+      ],
+      answer: 'Prioritising thoughtful curation, survivor testimony and educational framing.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What term do researchers use for the practice of visiting sites associated with death and tragedy?',
+      answer: 'dark tourism'
+    }
+  ]
+},
+
+{
+  id: 'reading-70',
+  type: 'reading',
+  title: 'Passage 70',
+  text: `Solitary confinement — the practice of isolating prisoners in a cell for 22 to 24 hours a day, with minimal human contact — is used in prison systems around the world, including in the United States, where it is estimated that between 80,000 and 100,000 people are held in some form of isolated confinement on any given day. Originally introduced in the 19th century as a supposedly humane alternative to corporal punishment, it was believed that isolation would encourage reflection and rehabilitation. Decades of psychological research have since produced a very different conclusion.
+
+The human brain is fundamentally social. Prolonged isolation deprives it of the stimulation it requires to function normally, often triggering a cascade of severe psychological effects. Studies of prisoners in solitary confinement consistently document high rates of anxiety, panic attacks, hallucinations, paranoia and depression. In extreme cases, prolonged isolation can result in a complete breakdown of cognitive function, sometimes referred to as "SHU syndrome" — named after the Security Housing Units where solitary confinement is typically administered.
+
+Psychiatrist Stuart Grassian, who interviewed hundreds of prisoners in solitary confinement, found that even previously mentally healthy individuals developed serious psychiatric symptoms within weeks of isolation. Crucially, he found that these symptoms were not simply a result of the stress of imprisonment in general, but were specifically caused by the absence of social interaction and environmental stimulation.
+
+Despite this evidence, solitary confinement remains widely used. Supporters argue it is a necessary tool for managing dangerous or disruptive inmates. Critics, including human rights organisations and the United Nations, consider prolonged solitary confinement to be a form of torture. Several countries have already banned or severely restricted its use, and pressure to reform the practice continues to grow internationally.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the history of corporal punishment in prison systems',
+        'the psychological effects of solitary confinement and the debate around its use',
+        'why the United States has the largest prison population in the world',
+        'how Security Housing Units are designed and managed'
+      ],
+      answer: 'the psychological effects of solitary confinement and the debate around its use'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What did Stuart Grassian\'s research specifically demonstrate?',
+      options: [
+        'That prisoners in solitary confinement were generally more dangerous.',
+        'That psychiatric symptoms in isolated prisoners were caused by the absence of social interaction.',
+        'That solitary confinement is an effective method of rehabilitation.',
+        'That previously mentally ill prisoners deteriorated faster in isolation.'
+      ],
+      answer: 'That psychiatric symptoms in isolated prisoners were caused by the absence of social interaction.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Solitary confinement was originally introduced as a humane alternative to corporal punishment.',
+        'The United Nations considers prolonged solitary confinement a form of torture.',
+        'Research has consistently supported solitary confinement as an effective rehabilitation tool.',
+        'Between 80,000 and 100,000 people are held in isolated confinement in the US daily.'
+      ],
+      answer: 'Research has consistently supported solitary confinement as an effective rehabilitation tool.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do supporters of solitary confinement argue it should be retained?',
+      options: [
+        'Because it has been proven to reduce reoffending rates.',
+        'Because it is considered an effective method of rehabilitation.',
+        'Because they see it as a necessary tool for managing dangerous inmates.',
+        'Because it is cheaper than other forms of imprisonment.'
+      ],
+      answer: 'Because they see it as a necessary tool for managing dangerous inmates.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the informal name given to the syndrome caused by prolonged solitary confinement?',
+      answer: 'SHU syndrome'
+    }
+  ]
+},
+
+{
+  id: 'reading-71',
+  type: 'reading',
+  title: 'Passage 71',
+  text: `On the morning of 30 June 1908, an enormous explosion occurred near the Podkamennaya Tunguska River in a remote region of Siberia, Russia. The blast flattened approximately 2,000 square kilometres of forest — an area roughly the size of a major metropolitan city — and the shockwave was felt hundreds of kilometres away. Windows were shattered in distant towns, and people were knocked off their feet by the force of the pressure wave. Yet when the first scientific expeditions finally reached the site nearly two decades later, they found no impact crater and no fragments of any object that might have caused the explosion.
+
+The absence of a crater and physical remnants puzzled scientists for much of the 20th century and gave rise to numerous unconventional theories, ranging from the collision of matter and antimatter to a miniature black hole passing through the Earth. The most widely accepted scientific explanation today is that the explosion was caused by a small asteroid or comet — estimated to be between 50 and 80 metres in diameter — that entered the Earth's atmosphere at high speed and exploded before reaching the ground. This type of event is known as an airburst, and the intense heat and pressure of the explosion would have been sufficient to destroy the object entirely, explaining the lack of physical remnants.
+
+The Tunguska event remains the largest impact event in recorded human history. Scientists estimate that the energy released was equivalent to between 10 and 15 megatons of TNT — roughly a thousand times more powerful than the atomic bomb dropped on Hiroshima. Because the event occurred in an uninhabited area, there were no confirmed human fatalities, though indigenous Evenki people in the region reported extraordinary phenomena, including a column of bluish light and a sound like artillery fire.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the history of asteroid research in Russia',
+        'the Tunguska event, its causes and scientific significance',
+        'why Siberia is particularly vulnerable to space impacts',
+        'the eyewitness accounts of the Evenki people in 1908'
+      ],
+      answer: 'the Tunguska event, its causes and scientific significance'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why did the absence of a crater initially puzzle scientists?',
+      options: [
+        'Because the explosion was not large enough to create a crater.',
+        'Because craters can only form in desert regions, not forests.',
+        'Because an explosion of that scale would normally leave physical remnants.',
+        'Because the area was too remote for scientists to investigate properly.'
+      ],
+      answer: 'Because an explosion of that scale would normally leave physical remnants.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The Tunguska explosion flattened approximately 2,000 square kilometres of forest.',
+        'Scientists found a large crater when they first investigated the site.',
+        'An airburst occurs when an object explodes before reaching the ground.',
+        'The energy released was roughly a thousand times more powerful than the Hiroshima bomb.'
+      ],
+      answer: 'Scientists found a large crater when they first investigated the site.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What is the most widely accepted explanation for the Tunguska event today?',
+      options: [
+        'A collision between matter and antimatter above the atmosphere.',
+        'A miniature black hole passing through the Earth.',
+        'An asteroid or comet that exploded in an airburst before reaching the ground.',
+        'An underground volcanic explosion triggered by seismic activity.'
+      ],
+      answer: 'An asteroid or comet that exploded in an airburst before reaching the ground.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How many square kilometres of forest were flattened by the Tunguska explosion?',
+      answer: 'approximately 2,000 square kilometres'
+    }
+  ]
+},
+
+{
+  id: 'reading-72',
+  type: 'reading',
+  title: 'Passage 72',
+  text: `The Black Death, which swept across Eurasia between 1347 and 1351, is estimated to have killed between 30 and 60 percent of Europe's population — a catastrophic loss of human life that fundamentally altered the continent's social, economic and cultural landscape in ways that would shape European history for centuries. The disease, caused by the bacterium Yersinia pestis, was primarily transmitted through the bites of fleas carried by rats, though pneumonic and septicaemic forms could also spread person to person. It arrived in Europe via trading ships from Central Asia that docked in Sicilian ports, and spread rapidly along trade routes.
+
+The immediate social consequences were devastating. Communities collapsed as people fled cities in panic, abandoning the sick and dead. The Church, which was central to medieval life, suffered a profound crisis of authority as prayers and religious ceremonies failed to halt the disease. Flagellant movements — groups of people who publicly whipped themselves as penance — emerged across Europe, while Jewish communities were scapegoated and massacred in many towns, accused without evidence of poisoning wells.
+
+In the long term, however, the Black Death paradoxically accelerated certain forms of social progress. The dramatic reduction in the labour supply gave surviving peasants and workers unprecedented bargaining power. Wages rose sharply, serfdom weakened across much of Western Europe, and rigid feudal hierarchies began to erode. Some historians argue that the economic and social disruption caused by the plague contributed to the conditions that eventually gave rise to the Renaissance and the emergence of early capitalism.
+
+The Black Death serves as a reminder of how rapidly infectious disease can reshape societies, an insight that remains profoundly relevant in an era of global pandemics and increasing human-animal contact.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the medical treatment of bubonic plague in medieval Europe',
+        'the causes, consequences and long-term impact of the Black Death',
+        'how trade routes spread disease across the ancient world',
+        'the role of the Catholic Church during the medieval period'
+      ],
+      answer: 'the causes, consequences and long-term impact of the Black Death'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What long-term social change did the Black Death paradoxically accelerate?',
+      options: [
+        'The strengthening of feudal hierarchies and serfdom.',
+        'The collapse of trade across Europe for several centuries.',
+        'The rise of peasant bargaining power and the weakening of serfdom.',
+        'The expansion of the Catholic Church\'s authority across Europe.'
+      ],
+      answer: 'The rise of peasant bargaining power and the weakening of serfdom.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The Black Death killed between 30 and 60 percent of Europe\'s population.',
+        'Jewish communities were falsely accused of poisoning wells.',
+        'The Black Death arrived in Europe through Sicilian ports.',
+        'The Church\'s authority was strengthened by its response to the plague.'
+      ],
+      answer: 'The Church\'s authority was strengthened by its response to the plague.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What were flagellant movements?',
+      options: [
+        'Groups of doctors who travelled between cities treating plague victims.',
+        'Religious groups who publicly whipped themselves as penance.',
+        'Merchants who continued trading goods despite the plague.',
+        'Peasant revolts against feudal landlords during the plague years.'
+      ],
+      answer: 'Religious groups who publicly whipped themselves as penance.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the name of the bacterium that caused the Black Death?',
+      answer: 'Yersinia pestis'
+    }
+  ]
+},
+
+{
+  id: 'reading-73',
+  type: 'reading',
+  title: 'Passage 73',
+  text: `At its greatest extent in the 2nd century AD, the Roman Empire controlled territory stretching from Scotland in the north to the Sahara Desert in the south, and from Portugal in the west to Mesopotamia in the east. Holding together such a vast and diverse empire required not only military power but an extraordinary infrastructure, at the centre of which was one of the ancient world's greatest engineering achievements: the Roman road network.
+
+The Romans constructed approximately 400,000 kilometres of roads, of which around 80,000 kilometres were paved with stone. These roads were not primitive tracks but sophisticated engineering projects built to last. A typical Roman road consisted of multiple layers: a foundation of large stones, a middle layer of gravel and rubite, and a surface of fitted stone slabs, carefully curved to allow rainwater to drain into ditches on either side. Many Roman roads ran in remarkably straight lines, as Roman engineers prioritised directness to minimise travel time.
+
+The roads served multiple critical functions. Militarily, they allowed legions to move rapidly across the empire to respond to threats. Economically, they facilitated the movement of goods, enabling trade between distant provinces. Administratively, they allowed messengers and officials to travel efficiently, maintaining communication across the vast territories under Roman control. The famous saying "all roads lead to Rome" reflects the reality that the entire network was oriented around the capital.
+
+After the fall of the Western Roman Empire in 476 AD, many roads fell into disrepair, as the centralised administrative system that had maintained them collapsed. However, numerous Roman roads remained in use throughout the medieval period and beyond. In some parts of Europe, modern roads still follow the routes first laid down by Roman engineers two thousand years ago.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the military strategies used by Roman legions',
+        'the construction and importance of the Roman road network',
+        'how the Roman Empire expanded into North Africa',
+        'the decline of trade routes after the fall of Rome'
+      ],
+      answer: 'the construction and importance of the Roman road network'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why did Roman engineers build roads in remarkably straight lines?',
+      options: [
+        'Because straight roads were easier to defend militarily.',
+        'Because Roman surveying technology could only measure straight distances.',
+        'Because directness minimised travel time.',
+        'Because curved roads caused drainage problems.'
+      ],
+      answer: 'Because directness minimised travel time.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The Romans built approximately 400,000 kilometres of roads in total.',
+        'Roman roads were designed with drainage ditches on either side.',
+        'All Roman roads were paved with stone.',
+        'Many modern European roads still follow routes laid by Roman engineers.'
+      ],
+      answer: 'All Roman roads were paved with stone.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What happened to Roman roads after the fall of the Western Roman Empire?',
+      options: [
+        'They were immediately destroyed by invading armies.',
+        'Many fell into disrepair as the administrative system that maintained them collapsed.',
+        'They were extended and improved by medieval kingdoms.',
+        'They were converted into waterways for trade.'
+      ],
+      answer: 'Many fell into disrepair as the administrative system that maintained them collapsed.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'In what year did the Western Roman Empire fall?',
+      answer: '476 AD'
+    }
+  ]
+},
+
+{
+  id: 'reading-74',
+  type: 'reading',
+  title: 'Passage 74',
+  text: `Propaganda — the systematic use of communication to influence public opinion and behaviour — is as old as organised society, but the 20th century saw it refined into a sophisticated tool of mass manipulation on a scale previously unimaginable. The development of mass media, including newspapers, radio, cinema and later television, gave governments and political movements unprecedented reach into the daily lives of ordinary citizens, enabling them to shape perceptions, manufacture consent and suppress dissent with extraordinary efficiency.
+
+During the First World War, governments on all sides produced vast quantities of propaganda to maintain public support for the war effort, encourage recruitment and demonise the enemy. British propaganda in the early years of the war famously invented or exaggerated atrocity stories about German soldiers to generate public outrage. In the United States, the Committee on Public Information used posters, pamphlets and celebrity endorsements to transform public opinion from isolationism to enthusiastic support for entering the war.
+
+The most studied and disturbing case of 20th-century propaganda remains Nazi Germany under Joseph Goebbels, who served as Minister of Propaganda from 1933 until 1945. Goebbels understood that effective propaganda did not need to be subtle. By controlling all forms of media — radio, film, press and public spectacle — and repeating simple, emotionally powerful messages relentlessly, the Nazi regime was able to mobilise an entire society behind its ideology and prepare the German public to accept, or at least tolerate, policies that culminated in genocide.
+
+The study of 20th-century propaganda remains urgently relevant today. While the tools have changed — social media has replaced state-controlled radio — the underlying psychological mechanisms that make propaganda effective have not. Recognising these mechanisms is a critical skill for any citizen navigating the modern information landscape.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how governments used propaganda in the First World War only',
+        'the role of propaganda in shaping public opinion throughout the 20th century',
+        'why Joseph Goebbels was the most effective propagandist in history',
+        'the differences between propaganda in democracies and dictatorships'
+      ],
+      answer: 'the role of propaganda in shaping public opinion throughout the 20th century'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What made Nazi propaganda under Goebbels particularly effective?',
+      options: [
+        'Its use of complex and sophisticated philosophical arguments.',
+        'Its control of all media combined with relentless repetition of simple emotional messages.',
+        'Its reliance on foreign media to spread its messages internationally.',
+        'Its exclusive focus on economic arguments rather than ideological ones.'
+      ],
+      answer: 'Its control of all media combined with relentless repetition of simple emotional messages.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'British propaganda during WWI invented or exaggerated atrocity stories.',
+        'The Committee on Public Information operated in the United States.',
+        'Goebbels served as Minister of Propaganda from 1933 to 1945.',
+        'Propaganda was only used by authoritarian governments in the 20th century.'
+      ],
+      answer: 'Propaganda was only used by authoritarian governments in the 20th century.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does the passage argue that studying 20th-century propaganda remains relevant today?',
+      options: [
+        'Because governments still use radio as their primary propaganda tool.',
+        'Because the psychological mechanisms that make propaganda effective have not changed.',
+        'Because social media has made propaganda less effective than before.',
+        'Because modern citizens are more vulnerable to propaganda than those in the 20th century.'
+      ],
+      answer: 'Because the psychological mechanisms that make propaganda effective have not changed.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What was the name of the US organisation that used posters and pamphlets to build support for entering World War One?',
+      answer: 'the Committee on Public Information'
+    }
+  ]
+},
+
+{
+  id: 'reading-75',
+  type: 'reading',
+  title: 'Passage 75',
+  text: `The Mona Lisa, painted by Leonardo da Vinci between approximately 1503 and 1519, is arguably the most recognisable artwork in the world. Yet it was not always so famous. For most of the four centuries following its creation, it was a moderately well-known painting housed in the French royal collection and later in the Louvre museum in Paris. What transformed it into a global icon was not artistic appreciation but theft.
+
+On the morning of 21 August 1911, a Louvre employee named Vincenzo Peruggia concealed himself in the museum overnight, removed the painting from the wall the following morning, hid it under his coat and walked out. The theft went unnoticed for 28 hours. When it was finally discovered, the investigation became a global sensation. The French poet Guillaume Apollinaire was arrested on suspicion of involvement, and even Pablo Picasso was briefly questioned. The missing painting dominated newspaper headlines around the world for months, making the Mona Lisa internationally famous for the first time.
+
+Peruggia kept the painting hidden in his apartment in Paris for two years. He eventually attempted to sell it to an art dealer in Florence, claiming it was his patriotic duty to return an Italian masterpiece to Italy. He was immediately arrested. The painting was recovered, toured Italy briefly and was returned to the Louvre in January 1914.
+
+The theft fundamentally changed the Mona Lisa's cultural status. The global media attention had made it the most famous painting in the world, a status reinforced over the following decades by its reproduction in mass media and its appropriation by artists such as Marcel Duchamp and Andy Warhol. Today, approximately 10 million people visit the Louvre each year primarily to see a relatively small painting in a bulletproof glass case.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Leonardo da Vinci\'s techniques for painting portraits',
+        'how the theft of the Mona Lisa transformed it into a global icon',
+        'the history of art theft in European museums',
+        'why the Louvre is the most visited museum in the world'
+      ],
+      answer: 'how the theft of the Mona Lisa transformed it into a global icon'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What was Vincenzo Peruggia\'s stated justification for stealing the Mona Lisa?',
+      options: [
+        'He wanted to sell it for personal financial gain.',
+        'He believed it was his patriotic duty to return an Italian masterpiece to Italy.',
+        'He was hired by a private collector to steal it.',
+        'He wanted to expose the poor security at the Louvre.'
+      ],
+      answer: 'He believed it was his patriotic duty to return an Italian masterpiece to Italy.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The theft of the Mona Lisa went unnoticed for 28 hours.',
+        'Pablo Picasso was briefly questioned in connection with the theft.',
+        'The Mona Lisa was already the most famous painting in the world before it was stolen.',
+        'The painting was returned to the Louvre in January 1914.'
+      ],
+      answer: 'The Mona Lisa was already the most famous painting in the world before it was stolen.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'How did the theft change the Mona Lisa\'s cultural status permanently?',
+      options: [
+        'It led to stricter security measures that made the painting more exclusive.',
+        'Global media attention made it the most famous painting in the world.',
+        'It inspired Leonardo da Vinci to paint a second version of the portrait.',
+        'It caused the French government to value the painting at record prices.'
+      ],
+      answer: 'Global media attention made it the most famous painting in the world.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How long did Vincenzo Peruggia keep the Mona Lisa hidden in his apartment?',
+      answer: 'two years'
+    }
+  ]
+},
+
+{
+  id: 'reading-76',
+  type: 'reading',
+  title: 'Passage 76',
+  text: `Facial recognition technology — which uses algorithms to identify or verify a person's identity based on their facial features — has advanced rapidly in recent years and is now deployed in contexts ranging from unlocking smartphones to monitoring public spaces. While proponents argue that it enhances security and convenience, critics raise serious concerns about privacy, accuracy and the potential for systemic abuse, making it one of the most ethically contested technologies of the digital age.
+
+The technology works by mapping the unique geometric features of a face — the distance between eyes, the shape of the jawline, the depth of eye sockets — and converting these measurements into a mathematical representation that can be compared against a database. Modern facial recognition systems can achieve extremely high accuracy rates under controlled conditions, but performance degrades significantly in real-world environments with poor lighting, unusual angles or partial obstructions.
+
+One of the most significant concerns relates to demographic bias. Multiple independent studies have found that facial recognition systems are substantially less accurate when identifying individuals with darker skin tones, women and elderly people, compared to lighter-skinned men. This is largely because the datasets used to train the algorithms have historically been dominated by images of white male faces. In law enforcement contexts, where the technology is increasingly used to identify suspects, this disparity has already led to documented cases of wrongful identification and false arrest.
+
+The deployment of facial recognition in public spaces raises fundamental questions about civil liberties. Mass surveillance enabled by this technology can have a chilling effect on free expression and peaceful protest, as people become aware that their movements and associations are being monitored. Several cities, including San Francisco and Amsterdam, have banned or restricted its use by government agencies, while others continue to expand deployment. The debate over how — or whether — to regulate facial recognition remains unresolved.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how facial recognition algorithms are technically developed',
+        'the capabilities, concerns and ethical debates surrounding facial recognition technology',
+        'why San Francisco banned all forms of surveillance technology',
+        'the history of biometric identification in law enforcement'
+      ],
+      answer: 'the capabilities, concerns and ethical debates surrounding facial recognition technology'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Why are facial recognition systems less accurate for certain demographic groups?',
+      options: [
+        'Because the algorithms were deliberately programmed to perform differently.',
+        'Because training datasets have historically been dominated by white male faces.',
+        'Because darker skin tones absorb more light, affecting camera sensors.',
+        'Because elderly people and women move their faces differently.'
+      ],
+      answer: 'Because training datasets have historically been dominated by white male faces.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Facial recognition maps geometric features such as eye distance and jawline shape.',
+        'Performance of facial recognition is consistent regardless of lighting conditions.',
+        'Several cities have banned or restricted its use by government agencies.',
+        'Demographic bias in facial recognition has led to documented false arrests.'
+      ],
+      answer: 'Performance of facial recognition is consistent regardless of lighting conditions.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What is meant by the "chilling effect" of mass surveillance on free expression?',
+      options: [
+        'That surveillance equipment makes public spaces physically colder.',
+        'That people become less likely to protest or express themselves freely when they know they are being monitored.',
+        'That surveillance technology is too expensive for most governments to maintain.',
+        'That facial recognition slows down the processing of large crowds.'
+      ],
+      answer: 'That people become less likely to protest or express themselves freely when they know they are being monitored.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Name one city that has banned or restricted the use of facial recognition by government agencies.',
+      answer: 'San Francisco'
+    }
+  ]
+},
+
+{
+  id: 'reading-77',
+  type: 'reading',
+  title: 'Passage 77',
+  text: `Every time you search for something online, watch a video, or scroll through a social media feed, algorithms are making decisions about what you see. These complex mathematical systems, developed and refined by technology companies, analyse enormous quantities of data about your behaviour — what you click on, how long you pause on certain content, what you purchase, who you communicate with — and use this information to predict and shape what you will encounter next. The stated goal is personalisation: showing users content they are most likely to engage with. The actual consequences, however, are considerably more complicated.
+
+The most commonly criticised effect of recommendation algorithms is the creation of "filter bubbles" or "echo chambers." When algorithms consistently serve users content that reinforces their existing interests and beliefs, exposure to diverse perspectives is reduced. A person who clicks on politically partisan content, for example, may find their feed increasingly dominated by similar material, gradually narrowing the range of viewpoints they encounter. This phenomenon has been linked to increasing political polarisation in several countries.
+
+Algorithms also have significant economic power. Search engine optimisation has created entire industries dedicated to gaming algorithms in order to appear prominently in search results, regardless of the actual quality or accuracy of the content. On social media, emotionally provocative content — particularly content that generates outrage — tends to receive higher engagement and is therefore amplified by algorithms designed to maximise user time on the platform.
+
+The opacity of these systems is a major concern for researchers and regulators. Technology companies treat their algorithms as proprietary secrets, making independent scrutiny extremely difficult. As calls for algorithmic transparency and accountability grow louder, governments in Europe and elsewhere are beginning to introduce legislation that would require companies to explain how their systems make decisions and to assess their broader societal impacts.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how technology companies develop their software products',
+        'the function of algorithms and their social and political consequences',
+        'why social media is more popular than traditional news media',
+        'the legal frameworks governing internet use in Europe'
+      ],
+      answer: 'the function of algorithms and their social and political consequences'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is the "filter bubble" effect?',
+      options: [
+        'When algorithms block harmful content from reaching users.',
+        'When users deliberately choose to follow only like-minded accounts.',
+        'When algorithms reduce exposure to diverse perspectives by reinforcing existing interests.',
+        'When social media platforms filter out politically sensitive content.'
+      ],
+      answer: 'When algorithms reduce exposure to diverse perspectives by reinforcing existing interests.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Algorithms analyse user behaviour such as clicks and viewing time.',
+        'Emotionally provocative content tends to receive higher algorithmic amplification.',
+        'Technology companies are required by law to make their algorithms fully transparent.',
+        'Search engine optimisation is used to appear prominently in search results.'
+      ],
+      answer: 'Technology companies are required by law to make their algorithms fully transparent.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is the opacity of algorithms considered a major concern?',
+      options: [
+        'Because it makes it impossible for users to access their own data.',
+        'Because it prevents independent scrutiny and accountability.',
+        'Because it allows hackers to manipulate search results.',
+        'Because it makes algorithms less effective at personalisation.'
+      ],
+      answer: 'Because it prevents independent scrutiny and accountability.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What term describes content that generates outrage and therefore receives higher algorithmic amplification?',
+      answer: 'emotionally provocative content'
+    }
+  ]
+},
+
+{
+  id: 'reading-78',
+  type: 'reading',
+  title: 'Passage 78',
+  text: `Autonomous weapons — military systems capable of selecting and engaging targets without meaningful human control — represent one of the most controversial developments in modern warfare. Also referred to as "lethal autonomous weapons systems" or LAWS, these technologies range from relatively simple automated defence systems to highly sophisticated AI-driven drones capable of independently identifying, tracking and attacking targets. As the technology advances, the debate over whether such weapons should be developed, deployed or banned has become increasingly urgent in international security discussions.
+
+Proponents of autonomous weapons argue that they offer significant military advantages. Removing human soldiers from direct combat reduces casualties on the deploying side. Machines do not experience fear, fatigue or emotional stress, potentially making them more consistent and precise in following rules of engagement. Supporters also argue that well-designed autonomous systems could theoretically apply international humanitarian law more reliably than human soldiers operating under extreme stress.
+
+However, critics — including many leading AI researchers, ethicists and former military commanders — raise profound objections. A central concern is the question of accountability: if an autonomous weapon kills civilians unlawfully, who is legally and morally responsible? The machine cannot be held accountable, and questions about the responsibility of the programmer, manufacturer or military commander remain unresolved under current international law. Critics also warn that autonomous weapons could lower the threshold for armed conflict, as the political cost of deploying weapons that do not put soldiers at risk is significantly reduced.
+
+As of 2024, no binding international treaty governing autonomous weapons exists, despite growing calls from human rights organisations and some governments for a preemptive ban. The Campaign to Stop Killer Robots, a coalition of non-governmental organisations, argues that decisions to take human life must always involve meaningful human judgement.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the history of drone warfare in the 21st century',
+        'the debate over the development and use of autonomous weapons',
+        'why artificial intelligence is unreliable in military contexts',
+        'the international laws governing the use of armed drones'
+      ],
+      answer: 'the debate over the development and use of autonomous weapons'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What is a central accountability concern raised by critics of autonomous weapons?',
+      options: [
+        'That autonomous weapons are too expensive to maintain.',
+        'That it is unclear who is legally responsible when an autonomous weapon kills civilians unlawfully.',
+        'That autonomous weapons cannot distinguish between enemy soldiers and civilians.',
+        'That autonomous weapons can be hacked and turned against their operators.'
+      ],
+      answer: 'That it is unclear who is legally responsible when an autonomous weapon kills civilians unlawfully.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Autonomous weapons can select and engage targets without human control.',
+        'A binding international treaty on autonomous weapons existed by 2024.',
+        'Supporters argue autonomous systems could apply humanitarian law more consistently.',
+        'The Campaign to Stop Killer Robots calls for meaningful human judgement in lethal decisions.'
+      ],
+      answer: 'A binding international treaty on autonomous weapons existed by 2024.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why might autonomous weapons lower the threshold for armed conflict?',
+      options: [
+        'Because they are cheaper to produce than conventional weapons.',
+        'Because the political cost of deploying them is reduced when no soldiers are at risk.',
+        'Because they can be deployed without government approval.',
+        'Because they are faster and more efficient than human soldiers.'
+      ],
+      answer: 'Because the political cost of deploying them is reduced when no soldiers are at risk.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the full term used for AI-driven military systems that can engage targets without human control?',
+      answer: 'lethal autonomous weapons systems'
+    }
+  ]
+},
+
+{
+  id: 'reading-79',
+  type: 'reading',
+  title: 'Passage 79',
+  text: `For most of the 20th century, bacterial infections that had previously killed millions were brought under control by antibiotics — one of the most transformative developments in the history of medicine. However, this era of reliable antibiotic effectiveness is increasingly under threat. Antibiotic resistance — the ability of bacteria to survive and multiply despite exposure to drugs designed to kill them — is now recognised by the World Health Organisation as one of the greatest threats to global health, food security and development.
+
+Resistance develops through a natural evolutionary process. When a population of bacteria is exposed to an antibiotic, most individuals are killed, but those with genetic mutations that allow them to survive will reproduce, passing on their resistance. The more frequently antibiotics are used, the faster this selection process occurs. The problem is significantly worsened by the widespread overuse and misuse of antibiotics: patients demanding antibiotics for viral infections (against which antibiotics are completely ineffective), incomplete courses of treatment and the routine use of antibiotics in livestock farming all accelerate the development of resistance.
+
+The consequences of antibiotic resistance are already severe. Infections caused by multidrug-resistant bacteria — sometimes called "superbugs" — are responsible for approximately 700,000 deaths annually worldwide. If no action is taken, projections suggest this figure could reach 10 million deaths per year by 2050, exceeding the current annual mortality from cancer. Procedures that are today considered routine — organ transplants, hip replacements, caesarean sections — depend on effective antibiotics to prevent infection, and could become significantly more dangerous.
+
+The development of new antibiotics has slowed dramatically, as pharmaceutical companies find them financially unattractive compared to drugs for chronic conditions. Addressing the resistance crisis requires global coordination, investment in new treatments, and a fundamental shift in how antibiotics are prescribed and used.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how antibiotics were first developed in the 20th century',
+        'the growing threat of antibiotic resistance and its consequences',
+        'why pharmaceutical companies are investing less in new drugs',
+        'how bacteria cause infections in hospital environments'
+      ],
+      answer: 'the growing threat of antibiotic resistance and its consequences'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How does antibiotic resistance develop?',
+      options: [
+        'Bacteria deliberately mutate when exposed to antibiotics.',
+        'Bacteria with resistance mutations survive and reproduce, passing on the trait.',
+        'Antibiotics become chemically weaker over time.',
+        'Patients develop resistance after taking too many courses of antibiotics.'
+      ],
+      answer: 'Bacteria with resistance mutations survive and reproduce, passing on the trait.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Antibiotics are ineffective against viral infections.',
+        'Antibiotic resistance currently causes approximately 700,000 deaths annually.',
+        'New antibiotics are being rapidly developed to address the resistance crisis.',
+        'Routine use of antibiotics in livestock farming accelerates resistance.'
+      ],
+      answer: 'New antibiotics are being rapidly developed to address the resistance crisis.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why could antibiotic resistance make routine medical procedures more dangerous?',
+      options: [
+        'Because resistant bacteria are more difficult to detect in the body.',
+        'Because procedures such as transplants and surgeries depend on effective antibiotics to prevent infection.',
+        'Because resistant bacteria can contaminate surgical equipment.',
+        'Because doctors would need longer training to perform procedures safely.'
+      ],
+      answer: 'Because procedures such as transplants and surgeries depend on effective antibiotics to prevent infection.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What term is used for bacteria that are resistant to multiple antibiotics?',
+      answer: 'superbugs'
+    }
+  ]
+},
+
+{
+  id: 'reading-80',
+  type: 'reading',
+  title: 'Passage 80',
+  text: `Social media has fundamentally changed how people present themselves to the world and, increasingly, how they understand themselves. Platforms such as Instagram, TikTok and X (formerly Twitter) have created environments in which personal identity is not simply lived but consciously constructed, curated and performed for an audience. Researchers in psychology and sociology are increasingly examining how this shift affects self-perception, mental health and the formation of identity — particularly among adolescents and young adults.
+
+One of the most extensively studied phenomena is the relationship between social media use and self-esteem. Studies consistently show that heavy use of image-based platforms such as Instagram is associated with lower self-esteem and increased body dissatisfaction, particularly among young women. This is largely attributed to social comparison — the natural human tendency to evaluate ourselves against others. When the "others" are carefully curated, filtered presentations of peers and influencers, the comparison inevitably disadvantages the viewer. Internal documents leaked from Meta in 2021 revealed that the company's own researchers had concluded that Instagram made body image issues worse for a significant proportion of teenage girls.
+
+Social media also affects identity in more complex ways. For marginalised groups — including LGBTQ+ youth and members of cultural or ethnic minorities — online communities can provide a sense of belonging, validation and identity affirmation that may be absent in their immediate physical environments. The ability to connect with others who share similar experiences can be profoundly supportive.
+
+However, the same platforms that enable community can also facilitate harassment, cyberbullying and exposure to harmful content. The anonymity afforded by many platforms reduces social inhibitions, enabling behaviour that would be considered unacceptable in face-to-face interactions. Regulators and researchers continue to debate how to preserve the benefits of social media while mitigating its demonstrable harms.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'how social media companies collect and use personal data',
+        'the complex effects of social media on identity and psychological wellbeing',
+        'why Instagram is more harmful than other social media platforms',
+        'the differences between online and offline social behaviour'
+      ],
+      answer: 'the complex effects of social media on identity and psychological wellbeing'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What did Meta\'s internal research reveal about Instagram?',
+      options: [
+        'That it improved self-esteem among teenagers overall.',
+        'That it made body image issues worse for a significant proportion of teenage girls.',
+        'That it had no measurable effect on users\' mental health.',
+        'That teenage boys were more negatively affected than girls.'
+      ],
+      answer: 'That it made body image issues worse for a significant proportion of teenage girls.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Social comparison involves evaluating ourselves against others.',
+        'Online communities can provide identity affirmation for marginalised groups.',
+        'Anonymity on social media always leads to more respectful interactions.',
+        'Social media has changed how people construct and present their identity.'
+      ],
+      answer: 'Anonymity on social media always leads to more respectful interactions.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'How can social media be particularly beneficial for LGBTQ+ youth and minority groups?',
+      options: [
+        'By providing access to professional mental health services.',
+        'By offering a sense of belonging and identity affirmation that may be absent locally.',
+        'By giving them a platform to challenge government policies directly.',
+        'By enabling them to remain anonymous and avoid discrimination.'
+      ],
+      answer: 'By offering a sense of belonging and identity affirmation that may be absent locally.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What natural human tendency makes social comparison on image-based platforms particularly damaging?',
+      answer: 'the tendency to evaluate ourselves against others'
     }
   ]
 }
