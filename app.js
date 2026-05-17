@@ -1850,7 +1850,7 @@ function renderReadingPath(lvl, li) {
 }
 
 function renderQuizPath(lvl, li) {
-  if (lvl.id === 'readings') {
+  if (lvl.id === 'reading') {
     return renderReadingPath(lvl, li);
   }
   let html = '<div class="quiz-path">';
@@ -2097,8 +2097,8 @@ function startQuiz(levelIdx, quizIdx) {
     words = [...item];
   }
 
-  quiz.words = shuffle(words.length >= 2 ? words : [...item]);
-
+quiz.words = shuffle(words.length >= 2 ? words : (Array.isArray(item) ? [...item] : []));
+  
   const hints = {
     normal: 'Düzgün tərcüməni tap',
     phase2: 'Düzgün ingilis sözünü tap',
