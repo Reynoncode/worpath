@@ -13683,156 +13683,1211 @@ Anna knows that healthy food and good habits help us to feel strong and happy. M
     }
   ]
 },
-      {
-  id: 'reading-1',
+     {
+  id: 'reading-3',
   type: 'reading',
-  title: 'Passage 1',
-  text: `Today, there are some significant environmental problems around the world. 
-For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
-and about 10 million tons of plastic waste go to the oceans. This is a big problem 
-for sea animals, especially for the turtles. They eat the plastic litter because they 
-think that it is fish and then they die. Studies show that young turtles eat plastic 
-more than the adult ones. The other problem is that, when there is a lot of plastic 
-on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
-lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
-because of this waste problem.
+  title: 'Passage 3',
+  text: `Tom is a young boy. He lives in a small village with his family. Every weekend he visits his grandfather. His grandfather has a big farm. There are many animals on the farm: cows, sheep, chickens and two horses.
 
-  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
-million other sea animals die each year because of plastic waste. Countries all over 
-the world must come together to reduce using plastic and protect sea animals. Because 
-it takes more than 500 years for plastic waste to disappear completely.`,
+Tom likes horses the most. He helps his grandfather to feed the animals and clean the stable. In the afternoon they sit under a big tree and grandfather tells him old stories. Tom learns many things about nature and animals from his grandfather.
+
+Tom is always happy when he goes to the farm. He wants to have his own farm one day.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
       q: 'The passage is mainly about...',
       options: [
-        'the ways of reducing litter',
-        'modern places of Kenya',
-        'adult sea turtles on the beaches',
-        'the results of plastic waste'
+        'Tom\'s school',
+        'Tom and his grandfather\'s farm',
+        'life in a big city',
+        'different kinds of stories'
       ],
-      answer: 'the results of plastic waste'
+      answer: 'Tom and his grandfather\'s farm'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'What animals are on the grandfather\'s farm?',
       options: [
-        'The turtles die because of eating plastic waste.',
-        'Adult turtles eat plastic more than the young ones.',
-        'Plastic litter is a great problem for the turtles.',
-        'It is important to keep beaches clean from waste.'
+        'Only cows and sheep',
+        'Cows, sheep, chickens and horses',
+        'Only horses',
+        'Dogs and cats'
       ],
-      answer: 'Adult turtles eat plastic more than the young ones.'
+      answer: 'Cows, sheep, chickens and horses'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: "Why can't the baby turtles reach the ocean?",
+      q: 'Which statement is false according to the passage?',
       options: [
-        'Because of much litter on their way to the ocean.',
-        'Because they lay eggs on the sea shores.',
-        'Because they eat a lot of eggs on the beaches.',
-        'Because the plastic waste on the beaches makes it impossible.'
+        'Tom visits his grandfather every weekend.',
+        'Tom helps on the farm.',
+        'Tom lives in a big city.',
+        'Grandfather tells old stories.'
       ],
-      answer: 'Because the plastic waste on the beaches makes it impossible.'
+      answer: 'Tom lives in a big city.'
     },
     {
       id: 'q4',
       type: 'mcq',
-      q: 'Turtles are not the only sea animals that...',
+      q: 'Why is Tom happy when he goes to the farm?',
       options: [
-        'protect their babies',
-        'pollute the environment',
-        'litter the beaches',
-        'are affected by plastic waste'
+        'Because he can play computer games.',
+        'Because he learns about nature and spends time with his grandfather.',
+        'Because there is no school on the farm.',
+        'Because he can eat a lot of food.'
       ],
-      answer: 'are affected by plastic waste'
+      answer: 'Because he learns about nature and spends time with his grandfather.'
     },
     {
       id: 'q5',
       type: 'typein',
-      q: 'Write the close meaning of the word "important" from paragraph 1.',
-      answer: 'significant'
+      q: 'What does Tom want to have one day?',
+      answer: 'his own farm'
     }
   ]
 },
-      {
-  id: 'reading-1',
+     {
+  id: 'reading-4',
   type: 'reading',
-  title: 'Passage 1',
-  text: `Today, there are some significant environmental problems around the world. 
-For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
-and about 10 million tons of plastic waste go to the oceans. This is a big problem 
-for sea animals, especially for the turtles. They eat the plastic litter because they 
-think that it is fish and then they die. Studies show that young turtles eat plastic 
-more than the adult ones. The other problem is that, when there is a lot of plastic 
-on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
-lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
-because of this waste problem.
+  title: 'Passage 4',
+  text: `Emma is a nine-year-old girl. She goes to Green Primary School. Her favourite subject is Art. Every Monday she has an Art lesson. In the lesson she draws pictures and paints with colours. Emma likes to draw animals and flowers.
 
-  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
-million other sea animals die each year because of plastic waste. Countries all over 
-the world must come together to reduce using plastic and protect sea animals. Because 
-it takes more than 500 years for plastic waste to disappear completely.`,
+At school Emma has many friends. Her best friend is Lily. They play together in the break time. They like to play hide and seek. After school Emma goes home and does her homework. Then she reads a story book for twenty minutes.
+
+Emma is a good student. She listens to her teacher carefully and always tries to do her best. Her teacher says, "Emma is a hardworking and kind girl."`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
       q: 'The passage is mainly about...',
       options: [
-        'the ways of reducing litter',
-        'modern places of Kenya',
-        'adult sea turtles on the beaches',
-        'the results of plastic waste'
+        'Emma\'s favourite food',
+        'Emma and her school life',
+        'different colours in Art',
+        'how to play hide and seek'
       ],
-      answer: 'the results of plastic waste'
+      answer: 'Emma and her school life'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'What is Emma\'s favourite subject?',
       options: [
-        'The turtles die because of eating plastic waste.',
-        'Adult turtles eat plastic more than the young ones.',
-        'Plastic litter is a great problem for the turtles.',
-        'It is important to keep beaches clean from waste.'
+        'Maths',
+        'Art',
+        'Music',
+        'Science'
       ],
-      answer: 'Adult turtles eat plastic more than the young ones.'
+      answer: 'Art'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: "Why can't the baby turtles reach the ocean?",
+      q: 'Which statement is false according to the passage?',
       options: [
-        'Because of much litter on their way to the ocean.',
-        'Because they lay eggs on the sea shores.',
-        'Because they eat a lot of eggs on the beaches.',
-        'Because the plastic waste on the beaches makes it impossible.'
+        'Emma goes to Green Primary School.',
+        'Emma likes to draw animals and flowers.',
+        'Emma does not have any friends.',
+        'Emma reads a story book after homework.'
       ],
-      answer: 'Because the plastic waste on the beaches makes it impossible.'
+      answer: 'Emma does not have any friends.'
     },
     {
       id: 'q4',
       type: 'mcq',
-      q: 'Turtles are not the only sea animals that...',
+      q: 'What do Emma and Lily like to play?',
       options: [
-        'protect their babies',
-        'pollute the environment',
-        'litter the beaches',
-        'are affected by plastic waste'
+        'Football',
+        'Hide and seek',
+        'Computer games',
+        'Basketball'
       ],
-      answer: 'are affected by plastic waste'
+      answer: 'Hide and seek'
     },
     {
       id: 'q5',
       type: 'typein',
-      q: 'Write the close meaning of the word "important" from paragraph 1.',
-      answer: 'significant'
+      q: 'How long does Emma read a story book?',
+      answer: 'twenty minutes'
     }
   ]
 },
+
+      {
+  id: 'reading-5',
+  type: 'reading',
+  title: 'Passage 5',
+  text: `Mike is eleven years old. He loves football very much. Every Tuesday and Thursday he goes to football practice after school. His team is called "Blue Stars". Mike is a fast runner and he is good at kicking the ball.
+
+On Saturdays there is usually a match. Mike's family comes to watch him. His father always says, "Well done, Mike!" After the match Mike drinks water and eats fruit. He knows that sports are good for his health.
+
+Mike wants to be a professional football player one day. He works hard and never misses practice.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Mike\'s school subjects',
+        'Mike and his love for football',
+        'how to watch matches',
+        'Mike\'s friends'
+      ],
+      answer: 'Mike and his love for football'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'When does Mike go to football practice?',
+      options: [
+        'Every Monday and Wednesday',
+        'Every Tuesday and Thursday',
+        'Only on Saturdays',
+        'Every day after school'
+      ],
+      answer: 'Every Tuesday and Thursday'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Mike is fast and good at kicking the ball.',
+        'Mike\'s family watches his matches.',
+        'Mike eats sweets after the match.',
+        'Mike wants to be a professional player.'
+      ],
+      answer: 'Mike eats sweets after the match.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Mike drink water and eat fruit after the match?',
+      options: [
+        'Because he is not hungry.',
+        'Because it is good for his health.',
+        'Because his father tells him to do it.',
+        'Because there is no other food.'
+      ],
+      answer: 'Because it is good for his health.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What is the name of Mike\'s football team?',
+      answer: 'Blue Stars'
+    }
+  ]
+},
+
+      {
+  id: 'reading-6',
+  type: 'reading',
+  title: 'Passage 6',
+  text: `Lisa lives with her family in a small house. She has a mother, a father and a little brother. Lisa is twelve years old. Every day after school she helps her mother. She cleans the table, washes the dishes and sometimes cooks simple food.
+
+On weekends the family goes to the park together. They play games and eat ice cream. Lisa's father likes to take photos. Her brother is only five years old, so Lisa helps him when he plays.
+
+Lisa loves her family very much. She is happy because they spend time together and help each other.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Lisa\'s school',
+        'Lisa and her family',
+        'how to cook food',
+        'playing in the park alone'
+      ],
+      answer: 'Lisa and her family'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What does Lisa do after school?',
+      options: [
+        'She watches TV all afternoon.',
+        'She helps her mother at home.',
+        'She plays computer games.',
+        'She goes to the park alone.'
+      ],
+      answer: 'She helps her mother at home.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Lisa has a little brother.',
+        'The family goes to the park on weekends.',
+        'Lisa is fifteen years old.',
+        'Lisa loves her family.'
+      ],
+      answer: 'Lisa is fifteen years old.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is Lisa happy?',
+      options: [
+        'Because she has many toys.',
+        'Because her family spends time together and helps each other.',
+        'Because she never helps at home.',
+        'Because she lives in a big city.'
+      ],
+      answer: 'Because her family spends time together and helps each other.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How old is Lisa\'s brother?',
+      answer: 'five years old'
+    }
+  ]
+},
+
+      {
+  id: 'reading-7',
+  type: 'reading',
+  title: 'Passage 7',
+  text: `In spring the weather is warm. Flowers grow and trees have new green leaves. Birds sing in the morning. Many children play outside after school. It sometimes rains, but the rain helps the flowers to grow.
+
+Summer is hot. The sun shines every day. People go to the beach and swim in the sea. Students do not go to school in summer. They have summer holiday.
+
+Autumn is cool. Leaves fall from the trees. People wear jackets. Farmers pick apples and vegetables from their fields.
+
+Winter is cold. It snows and everything is white. Children make snowmen and play in the snow. They wear warm coats, hats and gloves.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'different seasons and weather',
+        'how to make snowmen',
+        'school holidays',
+        'farmers and vegetables'
+      ],
+      answer: 'different seasons and weather'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What happens in spring?',
+      options: [
+        'Leaves fall from the trees.',
+        'Flowers grow and birds sing.',
+        'People swim in the sea.',
+        'Children make snowmen.'
+      ],
+      answer: 'Flowers grow and birds sing.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Summer is hot and people go to the beach.',
+        'It snows in winter.',
+        'Students go to school in summer.',
+        'Autumn is cool and leaves fall.'
+      ],
+      answer: 'Students go to school in summer.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why is rain good in spring?',
+      options: [
+        'Because it makes the weather hot.',
+        'Because it helps the flowers to grow.',
+        'Because children like to play in rain.',
+        'Because people wear jackets.'
+      ],
+      answer: 'Because it helps the flowers to grow.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What do children make in winter?',
+      answer: 'snowmen'
+    }
+  ]
+},
+      {
+  id: 'reading-8',
+  type: 'reading',
+  title: 'Passage 8',
+  text: `My name is Alex. I am ten years old. My favourite food is fruit and vegetables. Every morning I eat an apple or a banana. I like carrots and tomatoes too. My mother makes fresh salad for lunch.
+
+Alex does not like fast food. He eats pizza only on his birthday. He drinks water and milk every day. Sweets and chocolate are not good every day. Alex knows that healthy food makes him strong and gives him energy for school and games.
+
+His best friend Jack eats too many sweets and sometimes feels tired. Alex tells him, "Eat more fruit and you will feel better."`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Alex\'s school',
+        'Alex and healthy food',
+        'how to make pizza',
+        'Alex\'s birthday'
+      ],
+      answer: 'Alex and healthy food'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What does Alex eat every morning?',
+      options: [
+        'Pizza and chocolate',
+        'An apple or a banana',
+        'Only milk',
+        'Fast food'
+      ],
+      answer: 'An apple or a banana'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Alex likes fruit and vegetables.',
+        'Alex drinks water and milk.',
+        'Alex eats pizza every day.',
+        'Healthy food gives energy.'
+      ],
+      answer: 'Alex eats pizza every day.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Alex tell Jack to eat more fruit?',
+      options: [
+        'Because fruit is expensive.',
+        'Because Jack feels tired from too many sweets.',
+        'Because Alex does not like Jack.',
+        'Because there is no chocolate.'
+      ],
+      answer: 'Because Jack feels tired from too many sweets.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does Alex eat only on his birthday?',
+      answer: 'pizza'
+    }
+  ]
+},
+
+      {
+  id: 'reading-9',
+  type: 'reading',
+  title: 'Passage 9',
+  text: `Zara is thirteen years old. Her favourite hobby is reading books. She has many story books in her room. Every evening after homework she reads for thirty minutes. She likes adventure stories and books about animals.
+
+On weekends Zara goes to the library with her father. She borrows two or three new books. Reading helps Zara learn new words and improves her English. Her teacher says, "Zara is a very good reader."
+
+Sometimes Zara writes short stories too. She wants to be a writer one day. Her mother is very proud of her.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Zara\'s school',
+        'Zara and her reading hobby',
+        'how to write stories',
+        'the library building'
+      ],
+      answer: 'Zara and her reading hobby'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How long does Zara read every evening?',
+      options: [
+        'Ten minutes',
+        'Thirty minutes',
+        'One hour',
+        'Two hours'
+      ],
+      answer: 'Thirty minutes'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Zara likes adventure stories.',
+        'Zara goes to the library on weekends.',
+        'Zara never reads books.',
+        'Reading helps Zara learn new words.'
+      ],
+      answer: 'Zara never reads books.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Zara go to the library?',
+      options: [
+        'To meet her friends.',
+        'To borrow new books.',
+        'To play games.',
+        'To watch films.'
+      ],
+      answer: 'To borrow new books.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does Zara want to be one day?',
+      answer: 'a writer'
+    }
+  ]
+},
+
+{
+  id: 'reading-10',
+  type: 'reading',
+  title: 'Passage 10',
+  text: `Today is Amy's birthday. She is eleven years old. Her family has a small party at home. Amy's mother makes a big chocolate cake. There are eleven candles on the cake. Amy's friends come to the party. They bring presents and cards.
+
+The children play games, sing songs and eat ice cream. Amy opens her presents. She gets a new book, a red dress and a beautiful doll. Everyone is happy. At the end of the party they take a big photo together.
+
+Amy says, "This is the best birthday ever!" She thanks her family and friends.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Amy\'s school day',
+        'Amy\'s birthday party',
+        'how to make chocolate cake',
+        'different kinds of dolls'
+      ],
+      answer: 'Amy\'s birthday party'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How old is Amy?',
+      options: [
+        'Ten years old',
+        'Eleven years old',
+        'Twelve years old',
+        'Nine years old'
+      ],
+      answer: 'Eleven years old'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'There is a chocolate cake.',
+        'Amy gets presents from her friends.',
+        'The party is at school.',
+        'They take a photo at the end.'
+      ],
+      answer: 'The party is at school.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What does Amy get as presents?',
+      options: [
+        'A new bike and shoes',
+        'A book, a red dress and a doll',
+        'Only chocolate',
+        'Money and cards'
+      ],
+      answer: 'A book, a red dress and a doll'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'How many candles are on the cake?',
+      answer: 'eleven'
+    }
+  ]
+},
+
+{
+  id: 'reading-11',
+  type: 'reading',
+  title: 'Passage 11',
+  text: `Many people travel to different places. Some go by car, some by bus, and some by train. Anna and her family like to travel by train. Last summer they went to the mountains. The train was fast and comfortable.
+
+They saw beautiful green fields and high mountains from the window. In the mountains they walked in the forest, took photos and breathed fresh air. Anna's father says, "Travel is good because we see new places and learn many things."
+
+Anna wants to visit other countries one day. She thinks travelling is exciting and helps us understand the world better.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Anna\'s school trip',
+        'travelling by train and mountains',
+        'how to take photos',
+        'different kinds of cars'
+      ],
+      answer: 'travelling by train and mountains'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How did Anna and her family travel last summer?',
+      options: [
+        'By car',
+        'By bus',
+        'By train',
+        'By plane'
+      ],
+      answer: 'By train'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'They saw green fields and mountains.',
+        'They walked in the forest.',
+        'Anna does not like travelling.',
+        'Travel helps us learn new things.'
+      ],
+      answer: 'Anna does not like travelling.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Anna\'s father like travelling?',
+      options: [
+        'Because it is cheap.',
+        'Because they can see new places and learn many things.',
+        'Because there is no school in summer.',
+        'Because he likes to stay at home.'
+      ],
+      answer: 'Because they can see new places and learn many things.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does Anna want to visit one day?',
+      answer: 'other countries'
+    }
+  ]
+},
+{
+  id: 'reading-12',
+  type: 'reading',
+  title: 'Passage 12',
+  text: `Last weekend David and his family went to the zoo. They saw many animals. David liked the monkeys the most. The monkeys were funny and jumped from tree to tree. They also saw big lions, tall giraffes and beautiful birds.
+
+David fed the elephants with bananas. The zookeeper told them, "Please do not feed the lions." It was a sunny day and they took many photos. David learned that animals need clean water and good food to stay healthy.
+
+At the end of the day David said, "I want to visit the zoo again next month!"`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'David\'s school weekend',
+        'David\'s visit to the zoo',
+        'how to take photos',
+        'different kinds of birds'
+      ],
+      answer: 'David\'s visit to the zoo'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Which animal did David like the most?',
+      options: [
+        'Lions',
+        'Giraffes',
+        'Monkeys',
+        'Elephants'
+      ],
+      answer: 'Monkeys'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'They saw monkeys, lions and giraffes.',
+        'David fed the elephants.',
+        'It was a rainy day.',
+        'David wants to visit the zoo again.'
+      ],
+      answer: 'It was a rainy day.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'What did the zookeeper say?',
+      options: [
+        '"Please feed all the animals."',
+        '"Please do not feed the lions."',
+        '"The zoo is closed."',
+        '"Monkeys are dangerous."'
+      ],
+      answer: '"Please do not feed the lions."'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What did David feed the elephants?',
+      answer: 'bananas'
+    }
+  ]
+},
+
+{
+  id: 'reading-13',
+  type: 'reading',
+  title: 'Passage 13',
+  text: `Every summer Lena and her family go to the beach. The beach is near their town. The sand is yellow and the sea is blue. Lena likes to swim and collect shells. Her brother builds big sandcastles.
+
+They take food with them: sandwiches, fruit and cold water. They do not throw rubbish on the beach. Lena's mother says, "We must keep the beach clean for the animals and other people."
+
+In the evening they watch the sunset. It is orange and beautiful. Lena feels very happy at the beach. She says, "I love summer because of the sea and the sun."`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Lena\'s school',
+        'Lena and her family at the beach',
+        'how to build sandcastles',
+        'different colours of the sea'
+      ],
+      answer: 'Lena and her family at the beach'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What colour is the sand on the beach?',
+      options: [
+        'Blue',
+        'Yellow',
+        'Orange',
+        'Green'
+      ],
+      answer: 'Yellow'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Lena collects shells.',
+        'They throw rubbish on the beach.',
+        'Her brother builds sandcastles.',
+        'They watch the sunset.'
+      ],
+      answer: 'They throw rubbish on the beach.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do they keep the beach clean?',
+      options: [
+        'Because the sea is cold.',
+        'For the animals and other people.',
+        'Because there is no rubbish bin.',
+        'Because they do not like sand.'
+      ],
+      answer: 'For the animals and other people.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What colour is the sunset?',
+      answer: 'orange'
+    }
+  ]
+},
+
+{
+  id: 'reading-14',
+  type: 'reading',
+  title: 'Passage 14',
+  text: `We all need to help our planet. One easy way is recycling. Recycling means using old things again. For example, we can put paper, plastic bottles and glass in special bins. 
+
+Tom's school has recycling bins in every classroom. Every Friday students take the bins to the big container outside. Tom collects old newspapers at home and brings them to school. His teacher says, "Recycling saves trees and keeps our city clean."
+
+Tom is happy when he recycles. He knows that small actions can make a big difference for the Earth.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Tom\'s school lessons',
+        'recycling and helping the planet',
+        'how to make paper',
+        'playing in the classroom'
+      ],
+      answer: 'recycling and helping the planet'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What does recycling mean?',
+      options: [
+        'Throwing things away',
+        'Using old things again',
+        'Buying new things',
+        'Cleaning the classroom'
+      ],
+      answer: 'Using old things again'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Tom collects old newspapers.',
+        'There are recycling bins at school.',
+        'Recycling is difficult.',
+        'Recycling helps the Earth.'
+      ],
+      answer: 'Recycling is difficult.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do students take the bins outside every Friday?',
+      options: [
+        'To throw them away.',
+        'To put them in the big container.',
+        'To play with them.',
+        'Because the teacher is angry.'
+      ],
+      answer: 'To put them in the big container.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does recycling save?',
+      answer: 'trees'
+    }
+  ]
+},
+
+{
+  id: 'reading-15',
+  type: 'reading',
+  title: 'Passage 15',
+  text: `Sam has a new bicycle. It is blue and very fast. He rides it every day after school. Sam wears a helmet because it is important for safety. His mother always says, "Be careful and do not ride fast on the road."
+
+On Saturdays Sam rides to the park with his friends. They ride around the lake and sometimes have a race. Sam likes the fresh air and exercise. Riding a bike makes him strong and happy.
+
+Sam wants to join the school cycling club next year. He practices every day and learns new rules about traffic.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Sam\'s school',
+        'Sam and his bicycle',
+        'how to make races',
+        'different colours of bikes'
+      ],
+      answer: 'Sam and his bicycle'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What colour is Sam\'s bicycle?',
+      options: [
+        'Red',
+        'Green',
+        'Blue',
+        'Black'
+      ],
+      answer: 'Blue'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Sam wears a helmet.',
+        'Sam rides to the park on Saturdays.',
+        'Sam never rides his bike.',
+        'Riding makes Sam strong.'
+      ],
+      answer: 'Sam never rides his bike.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Sam wear a helmet?',
+      options: [
+        'Because it looks nice.',
+        'Because it is important for safety.',
+        'Because his friends wear one.',
+        'Because it is cold.'
+      ],
+      answer: 'Because it is important for safety.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Where does Sam ride with his friends?',
+      answer: 'to the park'
+    }
+  ]
+},
+
+{
+  id: 'reading-16',
+  type: 'reading',
+  title: 'Passage 16',
+  text: `Kevin is fourteen years old. He likes music very much. Every day after school he plays the guitar for one hour. His guitar is brown and sounds beautiful. Kevin learns new songs from the internet and practices them.
+
+On Fridays he plays with his friends in a small music group. They sing and play together. Kevin's parents are happy because music makes him creative and patient. His music teacher says, "Kevin works hard and has talent."
+
+Kevin dreams of becoming a musician one day. He wants to write his own songs and play in big concerts.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Kevin\'s school',
+        'Kevin and his music hobby',
+        'how to use the internet',
+        'big concerts'
+      ],
+      answer: 'Kevin and his music hobby'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'How long does Kevin play the guitar every day?',
+      options: [
+        'Thirty minutes',
+        'One hour',
+        'Two hours',
+        'Ten minutes'
+      ],
+      answer: 'One hour'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Kevin plays with his friends on Fridays.',
+        'Kevin\'s guitar is brown.',
+        'Kevin never practices.',
+        'Music makes Kevin creative.'
+      ],
+      answer: 'Kevin never practices.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why are Kevin\'s parents happy?',
+      options: [
+        'Because he plays computer games.',
+        'Because music makes him creative and patient.',
+        'Because he does not study.',
+        'Because he wants to be a teacher.'
+      ],
+      answer: 'Because music makes him creative and patient.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does Kevin dream of becoming?',
+      answer: 'a musician'
+    }
+  ]
+},
+
+      {
+  id: 'reading-17',
+  type: 'reading',
+  title: 'Passage 17',
+  text: `Nina loves nature. Every Sunday she goes for a walk in the forest with her grandmother. The forest is big and quiet. They see tall trees, green plants and many colourful flowers. Sometimes they find mushrooms after rain.
+
+Nina learns the names of birds and trees from her grandmother. They take water and apples with them. They never pick flowers or break branches because they want to protect nature. 
+
+Nina takes photos of beautiful butterflies and birds. She feels calm and happy in the forest. Her grandmother says, "Spending time in nature is good for our health and mind."`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Nina\'s school',
+        'Nina and her walks in the forest',
+        'how to pick flowers',
+        'different kinds of mushrooms'
+      ],
+      answer: 'Nina and her walks in the forest'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'When does Nina go to the forest?',
+      options: [
+        'Every Saturday',
+        'Every Sunday',
+        'Every Friday',
+        'Every day'
+      ],
+      answer: 'Every Sunday'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'They see tall trees and flowers.',
+        'They take water and apples.',
+        'They break branches in the forest.',
+        'Nina feels happy in the forest.'
+      ],
+      answer: 'They break branches in the forest.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do they not pick flowers?',
+      options: [
+        'Because flowers are not beautiful.',
+        'Because they want to protect nature.',
+        'Because there are no flowers.',
+        'Because grandmother is tired.'
+      ],
+      answer: 'Because they want to protect nature.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does Nina take photos of?',
+      answer: 'beautiful butterflies and birds'
+    }
+  ]
+},
+
+{
+  id: 'reading-18',
+  type: 'reading',
+  title: 'Passage 18',
+  text: `Many people like shopping. Julia goes shopping with her mother every Saturday. They go to the supermarket. Julia helps her mother to choose bread, milk, fruit and vegetables. She likes to push the trolley.
+
+Julia always checks the prices. She knows that it is important to spend money wisely. Sometimes she buys a new notebook or pencils for school. She never buys too many sweets.
+
+After shopping they go home and put everything in the fridge. Julia feels happy because she helps her family. Her mother says, "You are a good helper."`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Julia\'s school',
+        'Julia and shopping with her mother',
+        'how to make sweets',
+        'different trolleys'
+      ],
+      answer: 'Julia and shopping with her mother'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'When does Julia go shopping?',
+      options: [
+        'Every Sunday',
+        'Every Saturday',
+        'Every Friday',
+        'Every day'
+      ],
+      answer: 'Every Saturday'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Julia helps her mother.',
+        'They buy fruit and vegetables.',
+        'Julia buys many sweets every week.',
+        'They put food in the fridge.'
+      ],
+      answer: 'Julia buys many sweets every week.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Julia check the prices?',
+      options: [
+        'Because she likes numbers.',
+        'Because it is important to spend money wisely.',
+        'Because her mother cannot read.',
+        'Because there are no prices.'
+      ],
+      answer: 'Because it is important to spend money wisely.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does Julia like to push?',
+      answer: 'the trolley'
+    }
+  ]
+},
+
+{
+  id: 'reading-19',
+  type: 'reading',
+  title: 'Passage 19',
+  text: `There are two types of houses: houses in the city and houses in the village. City houses are tall and close to each other. Village houses have big gardens with trees and flowers. 
+
+Ali lives in a village. His house has a big yard. He can play outside every day. In the city, children usually play in small parks. Ali likes the quiet village life and fresh air. He helps his father in the garden.
+
+Many people move from city to village because they want a peaceful life. Ali says, "Village life is better for me."`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Ali\'s school',
+        'city life and village life',
+        'how to grow flowers',
+        'tall buildings'
+      ],
+      answer: 'city life and village life'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Where does Ali live?',
+      options: [
+        'In a big city',
+        'In a village',
+        'Near the sea',
+        'In a tall building'
+      ],
+      answer: 'In a village'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Village houses have big gardens.',
+        'Ali helps in the garden.',
+        'City houses are small and far from each other.',
+        'Ali likes fresh air.'
+      ],
+      answer: 'City houses are small and far from each other.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why do some people move to the village?',
+      options: [
+        'Because villages have big shops.',
+        'Because they want a peaceful life.',
+        'Because there are no schools.',
+        'Because city life is quiet.'
+      ],
+      answer: 'Because they want a peaceful life.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What does Ali have in his yard?',
+      answer: 'a big yard'
+    }
+  ]
+},
+      
+      {
+  id: 'reading-20',
+  type: 'reading',
+  title: 'Passage 20',
+  text: `Our dreams are important. When we are children we dream about our future. Some children want to be doctors, teachers, pilots or football players. 
+
+Sara is ten years old. She wants to be a doctor. She says, "I want to help sick people and make them healthy." She reads books about medicine and helps her mother when someone is ill.
+
+Dreams give us goals. We must study hard and work to make our dreams come true. Sara's teacher says, "Keep your dream and never stop trying."`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'Sara\'s school',
+        'dreams and future jobs',
+        'how to read books',
+        'sick people'
+      ],
+      answer: 'dreams and future jobs'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'What does Sara want to be?',
+      options: [
+        'A teacher',
+        'A doctor',
+        'A pilot',
+        'A football player'
+      ],
+      answer: 'A doctor'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'Dreams are important.',
+        'Sara wants to help sick people.',
+        'Sara never reads books.',
+        'We must work hard for our dreams.'
+      ],
+      answer: 'Sara never reads books.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Why does Sara read books about medicine?',
+      options: [
+        'Because she likes stories.',
+        'Because she wants to be a doctor.',
+        'Because her mother tells her.',
+        'Because there are no other books.'
+      ],
+      answer: 'Because she wants to be a doctor.'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'What do dreams give us?',
+      answer: 'goals'
+    }
+  ]
+},
+      
       {
   id: 'reading-1',
   type: 'reading',
