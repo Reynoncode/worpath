@@ -158,11 +158,6 @@ async function fetchStudentData(email) {
   if (snap.empty) return null;
   return snap.docs[0].data();
 }
-  const q    = query(collection(db, "users"), where("email", "==", email));
-  const snap = await getDocsFromServer(q);
-  if (snap.empty) return null;
-  return snap.docs[0].data();
-}
 
 // ─── Sinif siyahısını yüklə ─────────────────────────────────────────────────
 async function loadClasses(teacherUid) {
