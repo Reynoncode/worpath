@@ -13609,10 +13609,10 @@ const LEVELS = [
   },
 
   // ╔══════════════════════════════════════════════════╗
-  // ║  LEVEL 7 — C1: İrəliləmiş I                     ║
+  // ║  LEVEL 7 — READİNG                               ║
   // ╚══════════════════════════════════════════════════╝
   {
-    id: 'c1a',
+    id: 'reading',
     name: 'Readings (deaktiv)',
     icon: '💎',
     color: '#3BAAB5',
