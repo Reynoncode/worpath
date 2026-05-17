@@ -13621,74 +13621,65 @@ const LEVELS = [
   id: 'reading-1',
   type: 'reading',
   title: 'Passage 1',
-  text: `Today, there are some significant environmental problems around the world. 
-For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
-and about 10 million tons of plastic waste go to the oceans. This is a big problem 
-for sea animals, especially for the turtles. They eat the plastic litter because they 
-think that it is fish and then they die. Studies show that young turtles eat plastic 
-more than the adult ones. The other problem is that, when there is a lot of plastic 
-on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
-lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
-because of this waste problem.
+  text: `Every day is important for our health. Anna is a student. She gets up at seven o'clock in the morning. First, she brushes her teeth and washes her face. Then she eats a good breakfast. She usually eats eggs, bread with butter and drinks milk. Breakfast is very important. It gives her energy for the day.
 
-  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
-million other sea animals die each year because of plastic waste. Countries all over 
-the world must come together to reduce using plastic and protect sea animals. Because 
-it takes more than 500 years for plastic waste to disappear completely.`,
+After school, Anna walks home with her friends. She does not eat chips or sweets every day. She likes fruit and vegetables. In the evening, she does her homework, then helps her mother at home. She goes to bed at ten o'clock.
+
+Anna knows that healthy food and good habits help us to feel strong and happy. Many students forget breakfast, but Anna never forgets it.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
       q: 'The passage is mainly about...',
       options: [
-        'the ways of reducing litter',
-        'modern places of Kenya',
-        'adult sea turtles on the beaches',
-        'the results of plastic waste'
+        'Anna\'s school lessons',
+        'healthy daily habits',
+        'Anna\'s friends',
+        'evening activities'
       ],
-      answer: 'the results of plastic waste'
+      answer: 'healthy daily habits'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'What does Anna eat for breakfast?',
       options: [
-        'The turtles die because of eating plastic waste.',
-        'Adult turtles eat plastic more than the young ones.',
-        'Plastic litter is a great problem for the turtles.',
-        'It is important to keep beaches clean from waste.'
+        'Chips and sweets',
+        'Eggs, bread and milk',
+        'Only fruit',
+        'Vegetables and rice'
       ],
-      answer: 'Adult turtles eat plastic more than the young ones.'
+      answer: 'Eggs, bread and milk'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: "Why can't the baby turtles reach the ocean?",
+      q: 'Which statement is false according to the passage?',
       options: [
-        'Because of much litter on their way to the ocean.',
-        'Because they lay eggs on the sea shores.',
-        'Because they eat a lot of eggs on the beaches.',
-        'Because the plastic waste on the beaches makes it impossible.'
+        'Anna gets up at seven o\'clock.',
+        'Breakfast is important for energy.',
+        'Anna eats chips every day.',
+        'Anna goes to bed at ten o\'clock.'
       ],
-      answer: 'Because the plastic waste on the beaches makes it impossible.'
+      answer: 'Anna eats chips every day.'
     },
     {
       id: 'q4',
       type: 'mcq',
-      q: 'Turtles are not the only sea animals that...',
+      q: 'Why is breakfast important?',
       options: [
-        'protect their babies',
-        'pollute the environment',
-        'litter the beaches',
-        'are affected by plastic waste'
+        'Because it helps her sleep well.',
+        'Because it gives her energy for the day.',
+        'Because she likes eggs only.',
+        'Because her friends eat breakfast.'
       ],
-      answer: 'are affected by plastic waste'
+      answer: 'Because it gives her energy for the day.'
     },
     {
       id: 'q5',
-      type: 'typein',
-      q: 'Write the close meaning of the word "important" from paragraph 1.',
-      answer: 'significant'
+      type: 'type-in',
+      q: 'What time does Anna go to bed?',
+      answer: 'ten o\'clock'
     }
   ]
 },
