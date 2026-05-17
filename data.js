@@ -13617,8 +13617,456 @@ const LEVELS = [
     icon: '💎',
     color: '#3BAAB5',
     quizzes: [
-      [], [], [], [], [],
-      [], [], [], [], [],
+      {
+  id: 'reading-1',
+  type: 'reading',
+  title: 'Passage 1',
+  text: `Today, there are some significant environmental problems around the world. 
+For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
+and about 10 million tons of plastic waste go to the oceans. This is a big problem 
+for sea animals, especially for the turtles. They eat the plastic litter because they 
+think that it is fish and then they die. Studies show that young turtles eat plastic 
+more than the adult ones. The other problem is that, when there is a lot of plastic 
+on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
+lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
+because of this waste problem.
+
+  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
+million other sea animals die each year because of plastic waste. Countries all over 
+the world must come together to reduce using plastic and protect sea animals. Because 
+it takes more than 500 years for plastic waste to disappear completely.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the ways of reducing litter',
+        'modern places of Kenya',
+        'adult sea turtles on the beaches',
+        'the results of plastic waste'
+      ],
+      answer: 'the results of plastic waste'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The turtles die because of eating plastic waste.',
+        'Adult turtles eat plastic more than the young ones.',
+        'Plastic litter is a great problem for the turtles.',
+        'It is important to keep beaches clean from waste.'
+      ],
+      answer: 'Adult turtles eat plastic more than the young ones.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: "Why can't the baby turtles reach the ocean?",
+      options: [
+        'Because of much litter on their way to the ocean.',
+        'Because they lay eggs on the sea shores.',
+        'Because they eat a lot of eggs on the beaches.',
+        'Because the plastic waste on the beaches makes it impossible.'
+      ],
+      answer: 'Because the plastic waste on the beaches makes it impossible.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Turtles are not the only sea animals that...',
+      options: [
+        'protect their babies',
+        'pollute the environment',
+        'litter the beaches',
+        'are affected by plastic waste'
+      ],
+      answer: 'are affected by plastic waste'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Write the close meaning of the word "important" from paragraph 1.',
+      answer: 'significant'
+    }
+  ]
+},
+      {
+  id: 'reading-1',
+  type: 'reading',
+  title: 'Passage 1',
+  text: `Today, there are some significant environmental problems around the world. 
+For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
+and about 10 million tons of plastic waste go to the oceans. This is a big problem 
+for sea animals, especially for the turtles. They eat the plastic litter because they 
+think that it is fish and then they die. Studies show that young turtles eat plastic 
+more than the adult ones. The other problem is that, when there is a lot of plastic 
+on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
+lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
+because of this waste problem.
+
+  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
+million other sea animals die each year because of plastic waste. Countries all over 
+the world must come together to reduce using plastic and protect sea animals. Because 
+it takes more than 500 years for plastic waste to disappear completely.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the ways of reducing litter',
+        'modern places of Kenya',
+        'adult sea turtles on the beaches',
+        'the results of plastic waste'
+      ],
+      answer: 'the results of plastic waste'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The turtles die because of eating plastic waste.',
+        'Adult turtles eat plastic more than the young ones.',
+        'Plastic litter is a great problem for the turtles.',
+        'It is important to keep beaches clean from waste.'
+      ],
+      answer: 'Adult turtles eat plastic more than the young ones.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: "Why can't the baby turtles reach the ocean?",
+      options: [
+        'Because of much litter on their way to the ocean.',
+        'Because they lay eggs on the sea shores.',
+        'Because they eat a lot of eggs on the beaches.',
+        'Because the plastic waste on the beaches makes it impossible.'
+      ],
+      answer: 'Because the plastic waste on the beaches makes it impossible.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Turtles are not the only sea animals that...',
+      options: [
+        'protect their babies',
+        'pollute the environment',
+        'litter the beaches',
+        'are affected by plastic waste'
+      ],
+      answer: 'are affected by plastic waste'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Write the close meaning of the word "important" from paragraph 1.',
+      answer: 'significant'
+    }
+  ]
+},
+      {
+  id: 'reading-1',
+  type: 'reading',
+  title: 'Passage 1',
+  text: `Today, there are some significant environmental problems around the world. 
+For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
+and about 10 million tons of plastic waste go to the oceans. This is a big problem 
+for sea animals, especially for the turtles. They eat the plastic litter because they 
+think that it is fish and then they die. Studies show that young turtles eat plastic 
+more than the adult ones. The other problem is that, when there is a lot of plastic 
+on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
+lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
+because of this waste problem.
+
+  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
+million other sea animals die each year because of plastic waste. Countries all over 
+the world must come together to reduce using plastic and protect sea animals. Because 
+it takes more than 500 years for plastic waste to disappear completely.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the ways of reducing litter',
+        'modern places of Kenya',
+        'adult sea turtles on the beaches',
+        'the results of plastic waste'
+      ],
+      answer: 'the results of plastic waste'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The turtles die because of eating plastic waste.',
+        'Adult turtles eat plastic more than the young ones.',
+        'Plastic litter is a great problem for the turtles.',
+        'It is important to keep beaches clean from waste.'
+      ],
+      answer: 'Adult turtles eat plastic more than the young ones.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: "Why can't the baby turtles reach the ocean?",
+      options: [
+        'Because of much litter on their way to the ocean.',
+        'Because they lay eggs on the sea shores.',
+        'Because they eat a lot of eggs on the beaches.',
+        'Because the plastic waste on the beaches makes it impossible.'
+      ],
+      answer: 'Because the plastic waste on the beaches makes it impossible.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Turtles are not the only sea animals that...',
+      options: [
+        'protect their babies',
+        'pollute the environment',
+        'litter the beaches',
+        'are affected by plastic waste'
+      ],
+      answer: 'are affected by plastic waste'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Write the close meaning of the word "important" from paragraph 1.',
+      answer: 'significant'
+    }
+  ]
+},
+      {
+  id: 'reading-1',
+  type: 'reading',
+  title: 'Passage 1',
+  text: `Today, there are some significant environmental problems around the world. 
+For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
+and about 10 million tons of plastic waste go to the oceans. This is a big problem 
+for sea animals, especially for the turtles. They eat the plastic litter because they 
+think that it is fish and then they die. Studies show that young turtles eat plastic 
+more than the adult ones. The other problem is that, when there is a lot of plastic 
+on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
+lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
+because of this waste problem.
+
+  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
+million other sea animals die each year because of plastic waste. Countries all over 
+the world must come together to reduce using plastic and protect sea animals. Because 
+it takes more than 500 years for plastic waste to disappear completely.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the ways of reducing litter',
+        'modern places of Kenya',
+        'adult sea turtles on the beaches',
+        'the results of plastic waste'
+      ],
+      answer: 'the results of plastic waste'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The turtles die because of eating plastic waste.',
+        'Adult turtles eat plastic more than the young ones.',
+        'Plastic litter is a great problem for the turtles.',
+        'It is important to keep beaches clean from waste.'
+      ],
+      answer: 'Adult turtles eat plastic more than the young ones.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: "Why can't the baby turtles reach the ocean?",
+      options: [
+        'Because of much litter on their way to the ocean.',
+        'Because they lay eggs on the sea shores.',
+        'Because they eat a lot of eggs on the beaches.',
+        'Because the plastic waste on the beaches makes it impossible.'
+      ],
+      answer: 'Because the plastic waste on the beaches makes it impossible.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Turtles are not the only sea animals that...',
+      options: [
+        'protect their babies',
+        'pollute the environment',
+        'litter the beaches',
+        'are affected by plastic waste'
+      ],
+      answer: 'are affected by plastic waste'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Write the close meaning of the word "important" from paragraph 1.',
+      answer: 'significant'
+    }
+  ]
+},
+      {
+  id: 'reading-1',
+  type: 'reading',
+  title: 'Passage 1',
+  text: `Today, there are some significant environmental problems around the world. 
+For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
+and about 10 million tons of plastic waste go to the oceans. This is a big problem 
+for sea animals, especially for the turtles. They eat the plastic litter because they 
+think that it is fish and then they die. Studies show that young turtles eat plastic 
+more than the adult ones. The other problem is that, when there is a lot of plastic 
+on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
+lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
+because of this waste problem.
+
+  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
+million other sea animals die each year because of plastic waste. Countries all over 
+the world must come together to reduce using plastic and protect sea animals. Because 
+it takes more than 500 years for plastic waste to disappear completely.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the ways of reducing litter',
+        'modern places of Kenya',
+        'adult sea turtles on the beaches',
+        'the results of plastic waste'
+      ],
+      answer: 'the results of plastic waste'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The turtles die because of eating plastic waste.',
+        'Adult turtles eat plastic more than the young ones.',
+        'Plastic litter is a great problem for the turtles.',
+        'It is important to keep beaches clean from waste.'
+      ],
+      answer: 'Adult turtles eat plastic more than the young ones.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: "Why can't the baby turtles reach the ocean?",
+      options: [
+        'Because of much litter on their way to the ocean.',
+        'Because they lay eggs on the sea shores.',
+        'Because they eat a lot of eggs on the beaches.',
+        'Because the plastic waste on the beaches makes it impossible.'
+      ],
+      answer: 'Because the plastic waste on the beaches makes it impossible.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Turtles are not the only sea animals that...',
+      options: [
+        'protect their babies',
+        'pollute the environment',
+        'litter the beaches',
+        'are affected by plastic waste'
+      ],
+      answer: 'are affected by plastic waste'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Write the close meaning of the word "important" from paragraph 1.',
+      answer: 'significant'
+    }
+  ]
+},
+      {
+  id: 'reading-1',
+  type: 'reading',
+  title: 'Passage 1',
+  text: `Today, there are some significant environmental problems around the world. 
+For example, there is a lot of plastic waste on Kenya's beaches. People use plastic 
+and about 10 million tons of plastic waste go to the oceans. This is a big problem 
+for sea animals, especially for the turtles. They eat the plastic litter because they 
+think that it is fish and then they die. Studies show that young turtles eat plastic 
+more than the adult ones. The other problem is that, when there is a lot of plastic 
+on the beaches, turtles find it difficult to lay their eggs. When they are lucky to 
+lay eggs, baby turtles may appear. But this time baby turtles can't reach the ocean 
+because of this waste problem.
+
+  Turtles are not the only sea animals who suffer from plastic pollution. Over 100 
+million other sea animals die each year because of plastic waste. Countries all over 
+the world must come together to reduce using plastic and protect sea animals. Because 
+it takes more than 500 years for plastic waste to disappear completely.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'The passage is mainly about...',
+      options: [
+        'the ways of reducing litter',
+        'modern places of Kenya',
+        'adult sea turtles on the beaches',
+        'the results of plastic waste'
+      ],
+      answer: 'the results of plastic waste'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Which statement is false according to the passage?',
+      options: [
+        'The turtles die because of eating plastic waste.',
+        'Adult turtles eat plastic more than the young ones.',
+        'Plastic litter is a great problem for the turtles.',
+        'It is important to keep beaches clean from waste.'
+      ],
+      answer: 'Adult turtles eat plastic more than the young ones.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: "Why can't the baby turtles reach the ocean?",
+      options: [
+        'Because of much litter on their way to the ocean.',
+        'Because they lay eggs on the sea shores.',
+        'Because they eat a lot of eggs on the beaches.',
+        'Because the plastic waste on the beaches makes it impossible.'
+      ],
+      answer: 'Because the plastic waste on the beaches makes it impossible.'
+    },
+    {
+      id: 'q4',
+      type: 'mcq',
+      q: 'Turtles are not the only sea animals that...',
+      options: [
+        'protect their babies',
+        'pollute the environment',
+        'litter the beaches',
+        'are affected by plastic waste'
+      ],
+      answer: 'are affected by plastic waste'
+    },
+    {
+      id: 'q5',
+      type: 'typein',
+      q: 'Write the close meaning of the word "important" from paragraph 1.',
+      answer: 'significant'
+    }
+  ]
+}
     ]
   },
 
@@ -13645,7 +14093,7 @@ const LEVELS = [
     icon: '👑',
     color: '#2C3E50',
     quizzes: [
-      [], [], [], [], [],
+      
       [], [], [], [], [],
     ]
   },
@@ -13659,8 +14107,7 @@ const LEVELS = [
     icon: '💼',
     color: '#8B7355',
     quizzes: [
-      [], [], [], [], [],
-      [], [], [], [], [],
+[], [], [], [], [],
     ]
   },
 ];
