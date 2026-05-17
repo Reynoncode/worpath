@@ -195,16 +195,15 @@
         </svg>
       </button>
 
-      <!-- Sinif otağı ikonu (yalnız giriş edildikdə görünür) -->
-      <button id="stats-classroom-btn"
-        onclick="ClassroomManager.open()"
-        style="display:none;align-items:center;gap:5px;background:#1A1A1A;color:#fff;border:none;border-radius:99px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600;margin-left:8px;">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-        Sinif Otağı
-      </button>
+     <!-- Sinif otağı ikonu (yalnız giriş edildikdə görünür) -->
+<button id="stats-classroom-btn"
+  style="display:none;align-items:center;gap:5px;background:#1A1A1A;color:#fff;border:none;border-radius:99px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600;margin-left:8px;">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+  Sinif Otağı
+</button>
 
       <!-- Auth bar — X ilə eyni sətirdə sağda -->
       <div id="stats-auth-bar" style="margin-left:auto;"></div>
@@ -230,17 +229,21 @@
   <script type="module" src="classroom.js"></script>
 
   <script>
-    Stats.updateStreak();
+  Stats.updateStreak();
 
-    document.getElementById('stats-btn').addEventListener('click', function () {
-      StatsPage.render('stats-container');
-      document.getElementById('stats-screen').classList.remove('hidden');
-    });
+  document.getElementById('stats-btn').addEventListener('click', function () {
+    StatsPage.render('stats-container');
+    document.getElementById('stats-screen').classList.remove('hidden');
+  });
 
-    document.getElementById('stats-close-btn').addEventListener('click', function () {
-      document.getElementById('stats-screen').classList.add('hidden');
-    });
-  </script>
+  document.getElementById('stats-close-btn').addEventListener('click', function () {
+    document.getElementById('stats-screen').classList.add('hidden');
+  });
+
+  document.getElementById('stats-classroom-btn').addEventListener('click', function () {
+    if (window.ClassroomManager) ClassroomManager.open();
+  });
+</script>
 
 </body>
 </html>
