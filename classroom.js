@@ -486,7 +486,11 @@ async function _openClass(classId) {
   content.innerHTML = `
     <div>
       <button onclick="ClassroomManager._backToList()"
-        style="background:none;border:none;font-size:13px;color:#9CA3AF;cursor:pointer;padding:0;margin-bottom:14px;">← Geri</button>
+        style="background:none;border:none;font-size:13px;color:#9CA3AF;cursor:pointer;padding:0;">← Geri</button>
+        <button onclick="ClassroomManager._openClass('${classId}')"
+          style="margin-left:auto;background:none;border:1px solid #E8E2D9;border-radius:99px;font-size:12px;font-weight:600;color:#6B7280;cursor:pointer;padding:5px 14px;">
+          ↻ Yenilə
+        </button>
       <div id="class-detail-container"></div>
     </div>
   `;
