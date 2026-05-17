@@ -48,18 +48,12 @@ async function syncOnLogin(uid) {
     await saveUserData(uid, statsObj, progressObj);
     console.log("✅ Local data cloud-a köçürüldü");
   } else {
-    // Cloud-da data var — cloud local-a yazılır (hər girişdə)
-    if (cloudData.stats)
-      localStorage.setItem(LOCAL_STATS_KEY,    JSON.stringify(cloudData.stats));
-    if (cloudData.progress)
-      localStorage.setItem(LOCAL_PROGRESS_KEY, JSON.stringify(cloudData.progress));
-
-    // Progress yeniləndi — səhifəni yenidən render et
-    if (typeof loadProgress === "function") {
-      loadProgress();
-      if (typeof renderLevels === "function") renderLevels();
-    }
-    console.log("✅ Cloud datası local-a yükləndi");
+    // Cloud-da data var — local cloud-dan YENİDİRSƏ local-ı cloud-a yaz
+    await saveUserData(uid, 
+      localStats    ? JSON.parse(localStats)    : {}, 
+      localProgress ? JSON.parse(localProgress) : {}
+    );
+    console.log("✅ Local data cloud-a göndərildi");
   }
 }
 
