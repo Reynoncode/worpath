@@ -364,6 +364,17 @@ const examState = {
   wm_pairs:       [],   // [{en, az}]
 };
 
+// ── Reading Quiz State ────────────────────────────────────
+const readingState = {
+  levelIdx: null,
+  quizIdx:  null,
+  item:     null,
+  queue:    [],     // hal-hazırkı sual növbəsi (indekslər)
+  skipped:  [],     // keçilən suallar
+  correct:  0,
+  wrong:    0,
+};
+
 // ============================================================
 //  EXAM — SUAL GENERASIYASI
 // ============================================================
@@ -1489,6 +1500,7 @@ const elReviewClose      = $('review-close');
 function restoreNormalQuizBody() {
   const quizBody = document.querySelector('.quiz-body');
   if (!quizBody) return;
+  quizBody.classList.remove('reading-mode');
   quizBody.innerHTML = `
     <div class="question-card">
       <div class="question-hint" id="question-hint"></div>
@@ -1586,7 +1598,261 @@ function renderLevels() {
   });
 }
 
+// ============================================================
+//  READING QUIZ
+// ============================================================
+
+function startReadingQuiz(levelIdx, quizIdx) {
+  const lvl  = LEVELS[levelIdx];
+  const item = lvl.quizzes[quizIdx];
+
+  readingState.levelIdx = levelIdx;
+  readingState.quizIdx  = quizIdx;
+  readingState.item     = item;
+  readingState.queue    = item.questions.map((_, i) => i);
+  readingState.skipped  = [];
+  readingState.correct  = 0;
+  readingState.wrong    = 0;
+
+  quiz.mode   = 'reading';
+  quiz.locked = false;
+
+  showQuizScreen();
+  renderReadingQuestion();
+}
+
+function renderReadingQuestion() {
+  // Keçilən suallar sona qayıdır
+  if (readingState.queue.length === 0) {
+    if (readingState.skipped.length > 0) {
+      readingState.queue   = [...readingState.skipped];
+      readingState.skipped = [];
+    } else {
+      finishReadingQuiz();
+      return;
+    }
+  }
+
+  const qIdx  = readingState.queue[0];
+  const q     = readingState.item.questions[qIdx];
+  const item  = readingState.item;
+  const total = item.questions.length;
+  const done  = readingState.correct + readingState.wrong;
+
+  elProgressFill.style.width = `${(done / total) * 100}%`;
+  elQCounter.textContent     = `${done + 1}/${total}`;
+
+  const quizBody = document.querySelector('.quiz-body');
+  quizBody.classList.add('reading-mode');
+  quiz.locked = false;
+
+  const textBlock = `
+    <div class="reading-text-card">
+      <div class="reading-text-title">${item.title}</div>
+      <div class="reading-text-content">${item.text}</div>
+    </div>
+  `;
+
+  if (q.type === 'mcq') {
+    quizBody.innerHTML = `
+      <div class="reading-layout">
+        ${textBlock}
+        <div class="reading-question-area">
+          <div class="reading-question-text">${q.q}</div>
+          <div class="reading-options-grid">
+            ${q.options.map((opt, i) =>
+              `<button class="reading-option-btn" data-opt="${i}">${opt}</button>`
+            ).join('')}
+          </div>
+          <button class="reading-skip-btn" id="reading-skip">Keç →</button>
+        </div>
+      </div>
+    `;
+
+    quizBody.querySelectorAll('.reading-option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        handleReadingAnswer(parseInt(btn.dataset.opt), q);
+      });
+    });
+
+    document.getElementById('reading-skip').addEventListener('click', () => {
+      if (quiz.locked) return;
+      readingState.skipped.push(readingState.queue.shift());
+      renderReadingQuestion();
+    });
+
+  } else if (q.type === 'typein') {
+    quizBody.innerHTML = `
+      <div class="reading-layout">
+        ${textBlock}
+        <div class="reading-question-area">
+          <div class="reading-question-text">${q.q}</div>
+          <div class="reading-typein-wrap">
+            <input class="reading-typein-input" id="reading-input"
+              type="text" placeholder="Cavabınızı yazın..." autocomplete="off" />
+            <button class="reading-typein-submit" id="reading-submit">Yoxla</button>
+          </div>
+          <div class="reading-typein-feedback hidden" id="reading-feedback"></div>
+          <button class="reading-skip-btn" id="reading-skip">Keç →</button>
+        </div>
+      </div>
+    `;
+
+    const input = document.getElementById('reading-input');
+
+    document.getElementById('reading-submit').addEventListener('click', () => {
+      handleReadingAnswer(null, q, input.value);
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') handleReadingAnswer(null, q, input.value);
+    });
+    document.getElementById('reading-skip').addEventListener('click', () => {
+      if (quiz.locked) return;
+      readingState.skipped.push(readingState.queue.shift());
+      renderReadingQuestion();
+    });
+  }
+}
+
+function handleReadingAnswer(optIdx, q, typeInValue) {
+  if (quiz.locked) return;
+  quiz.locked = true;
+
+  if (q.type === 'mcq') {
+    const isCorrect = q.options[optIdx] === q.answer;
+
+    document.querySelectorAll('.reading-option-btn').forEach(btn => {
+      btn.disabled = true;
+      const i = parseInt(btn.dataset.opt);
+      if (q.options[i] === q.answer)       btn.classList.add('reading-opt-correct');
+      else if (i === optIdx && !isCorrect) btn.classList.add('reading-opt-wrong');
+    });
+
+    const skipBtn = document.getElementById('reading-skip');
+    if (skipBtn) skipBtn.style.display = 'none';
+
+    if (isCorrect) readingState.correct++;
+    else           readingState.wrong++;
+
+    readingState.queue.shift();
+
+    setTimeout(() => {
+      quiz.locked = false;
+      renderReadingQuestion();
+    }, 800);
+
+  } else if (q.type === 'typein') {
+    const userVal   = (typeInValue || '').trim().toLowerCase();
+    const correct   = (q.answer || '').trim().toLowerCase();
+    const isCorrect = userVal === correct;
+
+    const input     = document.getElementById('reading-input');
+    const submitBtn = document.getElementById('reading-submit');
+    const feedback  = document.getElementById('reading-feedback');
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    if (isCorrect) {
+      input.classList.add('reading-input-correct');
+      if (feedback) {
+        feedback.textContent = '✓ Düzgün!';
+        feedback.className   = 'reading-typein-feedback reading-feedback-correct';
+      }
+      readingState.correct++;
+    } else {
+      input.classList.add('reading-input-wrong');
+      if (feedback) {
+        feedback.textContent = `✗ Düzgün cavab: ${q.answer}`;
+        feedback.className   = 'reading-typein-feedback reading-feedback-wrong';
+      }
+      readingState.wrong++;
+    }
+
+    readingState.queue.shift();
+
+    setTimeout(() => {
+      quiz.locked = false;
+      renderReadingQuestion();
+    }, isCorrect ? 800 : 1400);
+  }
+}
+
+function finishReadingQuiz() {
+  elProgressFill.style.width = '100%';
+
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+    elResultStats.classList.remove('hidden');
+    elLevelResultCard.classList.add('hidden');
+
+    const total   = readingState.item.questions.length;
+    const correct = readingState.correct;
+    const wrong   = readingState.wrong;
+    const pct     = Math.round((correct / total) * 100);
+
+    let emoji, title;
+    if (pct === 100)    { emoji = '🏆'; title = 'Əla nəticə!'; }
+    else if (pct >= 80) { emoji = '🎉'; title = 'Çox yaxşı!'; }
+    else if (pct >= 60) { emoji = '👍'; title = 'Pis deyil!'; }
+    else if (pct >= 40) { emoji = '📚'; title = 'Daha çox oxu!'; }
+    else                { emoji = '💪'; title = 'Davam et!'; }
+
+    elResultEmoji.textContent = emoji;
+    elResultTitle.textContent = title;
+    elResultDesc.textContent  = `${readingState.item.title} — ${total} sualdan ${correct} düzgün`;
+    elStatCorrect.textContent = correct;
+    elStatWrong.textContent   = wrong;
+    elStatPct.textContent     = `${pct}%`;
+
+    markCompleted(readingState.levelIdx, readingState.quizIdx);
+
+    elResultMainBtn.textContent = 'Yenidən cəhd et';
+    elResultMainBtn.onclick = () => startReadingQuiz(readingState.levelIdx, readingState.quizIdx);
+
+    elResultBackBtn.classList.remove('hidden');
+    elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+    elResultBackBtn.onclick = () => {
+      const li = readingState.levelIdx;
+      closeOverlays();
+      renderLevels();
+      scrollToCurrentNode(li);
+    };
+  }, 300);
+}
+
+function renderReadingPath(lvl, li) {
+  let html = '<div class="reading-quiz-grid">';
+
+  lvl.quizzes.forEach((item, qi) => {
+    const status    = getStatus(li, qi);
+    const isDone    = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
+    const isLocked  = status === 'locked';
+
+    let nodeClass = 'reading-grid-node path-node';
+    if (isDone)       nodeClass += ' reading-node-done';
+    else if (isLocked) nodeClass += ' reading-node-locked';
+    else               nodeClass += ' reading-node-unlocked';
+
+    const emoji = isDone ? '✅' : (isLocked ? '🔒' : '📖');
+    const title = (item && item.title) ? item.title : `Reading ${qi + 1}`;
+
+    html += `
+      <div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">
+        <div class="reading-node-emoji">${emoji}</div>
+        <div class="reading-node-title">${title}</div>
+      </div>
+    `;
+  });
+
+  html += '</div>';
+  return html;
+}
+
 function renderQuizPath(lvl, li) {
+  if (lvl.id === 'readings') {
+    return renderReadingPath(lvl, li);
+  }
   let html = '<div class="quiz-path">';
   let quizCounter = 0;
   let examCounter = 0;
@@ -1778,9 +2044,17 @@ function startRetakeMode(levelIdx, quizIdx) {
 // ══════════════════════════════════════════════
 
 function startQuiz(levelIdx, quizIdx) {
-  const lvl    = LEVELS[levelIdx];
-  const status = progress[lvl.id][quizIdx];
+  const lvl  = LEVELS[levelIdx];
+  const item = lvl.quizzes[quizIdx];
 
+  // Reading quiz yoxlaması
+  if (item && !Array.isArray(item) && item.type === 'reading') {
+    startReadingQuiz(levelIdx, quizIdx);
+    return;
+  }
+
+  const status = progress[lvl.id][quizIdx];
+  
   // level_done → retake
   if (status === 'level_done') {
     // Exam üçün retake yoxdur, yenidən exam başlat
