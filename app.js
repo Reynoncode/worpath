@@ -1338,12 +1338,14 @@ function markCompleted(levelIdx, quizIdx) {
   if (cur === 'phase2_completed') {
     progress[lvl.id][quizIdx] = 'phase3_unlocked';
     saveProgress();
+    if (window.AuthManager) AuthManager.syncStats();
     return;
   }
 
   if (cur === 'phase3_unlocked') {
     progress[lvl.id][quizIdx] = 'level_done';
     saveProgress();
+    if (window.AuthManager) AuthManager.syncStats();
     return;
   }
 
@@ -1377,6 +1379,7 @@ function markCompleted(levelIdx, quizIdx) {
   }
 
   saveProgress();
+  if (window.AuthManager) AuthManager.syncStats();
 }
 
 function completedCount() {
@@ -1904,6 +1907,7 @@ function handleAnswer(btnIdx) {
         ? LEVELS[quiz.levelIdx]?.id?.toUpperCase()
         : (reviewState.levelId?.toUpperCase() || '');
       Stats.recordAnswer(w.en, lvlId, w.tr || '', true);
+      if (window.AuthManager) AuthManager.syncStats()
     }
 
     if (quiz.mode === 'leveltest') {
@@ -1930,6 +1934,8 @@ function handleAnswer(btnIdx) {
         ? LEVELS[quiz.levelIdx]?.id?.toUpperCase()
         : (reviewState.levelId?.toUpperCase() || '');
       Stats.recordAnswer(w.en, lvlId, w.tr || '', false);
+      if (window.AuthManager) AuthManager.syncStats(); 
+
     }
 
     if (quiz.mode === 'review') reviewState.wrong++;
