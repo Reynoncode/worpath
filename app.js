@@ -1834,15 +1834,20 @@ function renderReadingPath(lvl, li) {
     else if (isLocked) nodeClass += ' reading-node-locked';
     else               nodeClass += ' reading-node-unlocked';
 
-    const emoji = isDone ? '✅' : (isLocked ? '🔒' : '📖');
     const title = (item && item.title) ? item.title : `Reading ${qi + 1}`;
 
-    html += `
-      <div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">
-        <div class="reading-node-emoji">${emoji}</div>
-        <div class="reading-node-title">${title}</div>
-      </div>
-    `;
+const circleInner = isDone
+  ? `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+  : isLocked
+  ? `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="${'var(--locked)'}" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`
+  : `${qi + 1}`;
+
+html += `
+  <div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">
+    <div class="reading-node-circle">${circleInner}</div>
+    <div class="reading-node-title">${title}</div>
+  </div>
+`;
   });
 
   html += '</div>';
