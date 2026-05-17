@@ -1471,24 +1471,24 @@ button { font-family: var(--font); }
 
 /* ── READING PATH — 4 sütunlu grid ─────────────────────── */
 .reading-quiz-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4px 0;
+  display: flex;
+  flex-wrap: wrap;
   padding: 14px 8px 24px;
+  justify-content: flex-start;
 }
 
 .reading-grid-node {
+  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 6px;
   cursor: pointer;
-  transition: transform 0.15s, box-shadow 0.15s;
-  text-align: center;
+  padding: 8px 4px;
   background: none;
   border: none;
-  padding: 4px 0;
+  text-align: center;
 }
 
 .reading-grid-node:active { transform: scale(0.94); }
@@ -1509,18 +1509,19 @@ button { font-family: var(--font); }
 }
 
 .reading-node-circle {
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   border: 3px solid var(--border);
   background: var(--surface);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 900;
   transition: transform 0.15s, box-shadow 0.15s;
   box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+  flex-shrink: 0;
 }
 
 .reading-node-done .reading-node-circle {
