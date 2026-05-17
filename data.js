@@ -13677,7 +13677,7 @@ Anna knows that healthy food and good habits help us to feel strong and happy. M
     },
     {
       id: 'q5',
-      type: 'type-in',
+      type: 'typein',
       q: 'What time does Anna go to bed?',
       answer: 'ten o\'clock'
     }
