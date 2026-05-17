@@ -344,7 +344,8 @@ const LEVELS = [
   { en: 'warm',       tr: 'isti',         wrong: 'soyuq',      wen: 'cold',        def: 'a little hot' },
 ],
 // ─────────────────────── NEW EXAM — Emotions & Adjectives ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "I am very ____ today.", 
     tr: 'happy', 
@@ -446,6 +447,7 @@ const LEVELS = [
     wrong: 'small' 
   }
 ],
+  },
 
 // ─────────────────────── QUIZ 10 — Yemək / Food ───────────────────────
 [
@@ -518,8 +520,9 @@ const LEVELS = [
   { en: 'thirsty',     tr: 'susamış',        wrong: 'ac',           wen: 'hungry',        def: 'wanting water' },
   { en: 'delicious',   tr: 'dadlı',          wrong: 'dadsız',       wen: 'tasteless',     def: 'very good to eat' },
 ],
-     
-[
+     // ─────────────────────── EXAM — foods ───────────────────────
+{
+  sentences: [
   {
     en: "I eat an ____ every day.",
     tr: 'apple',
@@ -621,6 +624,7 @@ const LEVELS = [
     wrong: 'carrot'
   }
 ],
+  },
 
 // ─────────────────────── QUIZ 13 — Rənglər / Colours ───────────────────────
 [
@@ -693,7 +697,8 @@ const LEVELS = [
   { en: 'twice',     tr: 'iki dəfə',    wrong: 'bir dəfə',   wen: 'once',        def: 'two times' },
 ],
       
-[
+{
+  sentences: [
   {
     en: "My car is ____.",
     tr: 'black',
@@ -794,7 +799,7 @@ const LEVELS = [
     tr: 'two',
     wrong: 'colourful'
   }
-],
+],},
 // ─────────────────────── QUIZ 16 — Ev 1 / Rooms & Furniture ───────────────────────
 [
   { en: 'apartment', tr: 'mənzil',       wrong: 'ev',           wen: 'house',       def: 'a home in a big building' },
@@ -890,7 +895,8 @@ const LEVELS = [
   { en: 'bottom',    tr: 'dib',          wrong: 'dayaz',        wen: 'top',         def: 'lowest part' },
 ],
 
-      [
+{
+  sentences: [
   {
     en: "I sleep in my ____.",
     tr: 'bed',
@@ -992,7 +998,7 @@ const LEVELS = [
     wrong: 'station'
   }
 ],
-      
+   },   
 // ─────────────────────── QUIZ 20 — Təbiət / Nature & Geography ───────────────────────
 [
   { en: 'beach',    tr: 'çimərlik',      wrong: 'ada',         wen: 'island',      def: 'sandy place by the sea' },
@@ -1089,7 +1095,8 @@ const LEVELS = [
   { en: 'fashion',  tr: 'moda',          wrong: 'stil',        wen: 'style',       def: 'popular way of dressing' },
 ],
 
-      [
+    {
+  sentences:   [
   {
     en: "I swim in the ____.",
     tr: 'sea',
@@ -1191,7 +1198,7 @@ const LEVELS = [
     wrong: 'elephant'
   }
 ],
-
+},
 // ─────────────────────── QUIZ 24 — Zaman 1 / Days & Months ───────────────────────
 [
   { en: 'Monday',    tr: 'bazar ertəsi',    wrong: 'çərşənbə',      wen: 'Wednesday',   def: 'first day of the week' },
@@ -1263,7 +1270,9 @@ const LEVELS = [
   { en: 'never',     tr: 'heç vaxt',        wrong: 'həmişə',        wen: 'always',      def: 'at no time' },
   { en: 'often',     tr: 'tez-tez',         wrong: 'nadir hallarda', wen: 'rarely',     def: 'many times' },
 ],
-[
+      
+{
+  sentences: [
   {
     en: "Today is ____.",
     tr: 'Monday',
@@ -1365,6 +1374,7 @@ const LEVELS = [
     wrong: 'January'
   }
 ],
+  },
 // ─────────────────────── QUIZ 27 — Pul / Money & Shopping ───────────────────────
 [
   { en: 'bill',       tr: 'hesab',           wrong: 'kart',        wen: 'card',        def: 'paper money' },
@@ -1436,7 +1446,8 @@ const LEVELS = [
   { en: 'concert',    tr: 'konsert',        wrong: 'şou',         wen: 'show',        def: 'live music performance' },
 ],
 
-      [
+     {
+  sentences:  [
   {
     en: "I want to buy a new ____.",
     tr: 'phone',
@@ -1538,7 +1549,7 @@ const LEVELS = [
     wrong: 'price'
   }
 ],
-      
+      },
 // ─────────────────────── QUIZ 30 — Məktəb 1 / School & Study ───────────────────────
 [
   { en: 'answer',     tr: 'cavab',                 wrong: 'sual',           wen: 'question',      def: 'what you say after a question' },
@@ -1610,7 +1621,10 @@ const LEVELS = [
   { en: 'team',      tr: 'komanda',              wrong: 'oyunçu',         wen: 'player',        def: 'group of players' },
   { en: 'tennis',    tr: 'tennis',               wrong: 'badminton',      wen: 'badminton',     def: 'sport with racket and ball' },
 ],
-[
+
+      
+{
+  sentences: [
   {
     en: "I go to ____ every day.",
     tr: 'school',
@@ -1712,7 +1726,7 @@ const LEVELS = [
     wrong: 'exam'
   }
 ],
-      
+      },
 // ─────────────────────── QUIZ 33 — Feil 1 / Movement verbs ───────────────────────
 [
   { en: 'to arrive',   tr: 'çatmaq',       wrong: 'getmək',           wen: 'to leave',       def: 'to reach a place' },
@@ -1783,7 +1797,8 @@ const LEVELS = [
   { en: 'to help',    tr: 'kömək etmək',         wrong: 'mane olmaq',     wen: 'to disturb',     def: 'to assist' },
   { en: 'to keep',    tr: 'saxlamaq',            wrong: 'atmaq',          wen: 'to throw',       def: 'to hold and not give away' },
 ],
-[
+{
+  sentences: [
   {
     en: "I ____ to school every day.",
     tr: 'go',
@@ -1885,7 +1900,7 @@ const LEVELS = [
     wrong: 'ask'
   }
 ],
-      
+      },
       
 // ─────────────────────── QUIZ 36 — Feil 4 / Daily life verbs 2 ───────────────────────
 [
@@ -1958,7 +1973,8 @@ const LEVELS = [
   { en: 'to break',    tr: 'sındırmaq',                 wrong: 'düzəltmək',       wen: 'to fix',          def: 'to make something not work' },
   { en: 'to wear',     tr: 'geymək',                    wrong: 'çıxarmaq',        wen: 'to take off',     def: 'to have clothes on your body' },
 ],
-[
+{
+  sentences: [
   {
     en: "I ____ in Baku.",
     tr: 'live',
@@ -2060,6 +2076,7 @@ const LEVELS = [
     wrong: 'hates'
   }
 ],
+  },
 // ─────────────────────── QUIZ 39 — İş / Work & Business ───────────────────────
 [
   { en: 'action',     tr: 'hərəkət / fəaliyyət', wrong: 'fikir',         wen: 'idea',          def: 'something you do' },
@@ -2130,7 +2147,8 @@ const LEVELS = [
   { en: 'title',     tr: 'başlıq / ünvan',       wrong: 'ad',            wen: 'name',          def: 'name of a book or film' },
   { en: 'number',    tr: 'rəqəm / nömrə',        wrong: 'hərf',          wen: 'letter',        def: '1, 2, 3 etc.' },
 ],
-      [
+   {
+  sentences:    [
   {
     en: "I go to the ____ every day.",
     tr: 'office',
@@ -2232,8 +2250,7 @@ const LEVELS = [
     wrong: 'company'
   }
 ],
-
-   
+},
     ]
   },
 
@@ -2342,7 +2359,8 @@ const LEVELS = [
   { en: 'doctor',      tr: 'həkim',            wrong: 'tibb bacısı',   wen: 'teacher',       def: 'a person who helps sick people' }
 ],
       // ─────────────────────── QUIZ 1 — A2 Mixed (Peşələr, Bədən, Sağlamlıq) ───────────────────────
-[
+{
+  sentences: [
   { en: "My sister wants to become a famous ____.", tr: 'architect', wrong: 'patient' },
   { en: "He works as a software ____ in a big company.", tr: 'programmer', wrong: 'knee' },
   { en: "The ____ helps people who have legal problems.", tr: 'lawyer', wrong: 'headache' },
@@ -2364,7 +2382,7 @@ const LEVELS = [
   { en: "The ____ is doing important research in the lab.", tr: 'scientist', wrong: 'pill' },
   { en: "He is a very good ____ and wins many matches.", tr: 'athlete', wrong: 'disease' }
 ],
-
+},
 // ─────────────────────── QUIZ 5 — Yemək və içki ───────────────────────
 [
   { en: 'bean',        tr: 'lobya',          wrong: 'noxud',        wen: 'carrot',        def: 'a small green vegetable that grows in pods' },
@@ -2462,7 +2480,8 @@ const LEVELS = [
 ],
 
       // ─────────────────────── QUIZ 5 — A2 Mixed (Yemək, Mətbəx, Heyvanlar, Təbiət) ───────────────────────
-[
+{
+  sentences: [
   { en: "I usually eat ____ with rice and vegetables.", tr: 'chicken', wrong: 'stone' },
   { en: "She bought some fresh ____ from the market.", tr: 'strawberry', wrong: 'fork' },
   { en: "We keep milk and eggs in the ____.", tr: 'fridge', wrong: 'lion' },
@@ -2484,7 +2503,7 @@ const LEVELS = [
   { en: "She is afraid of ____ and never goes to the zoo.", tr: 'snake', wrong: 'biscuit' },
   { en: "We had a picnic near a small ____ in the valley.", tr: 'river', wrong: 'chef' }
 ],
-      
+},
 // ─────────────────────── QUIZ 9 — Texnologiya və internet ───────────────────────
 [
   { en: 'app',         tr: 'tətbiq',            wrong: 'proqram',      wen: 'keyboard',      def: 'a program you use on your phone' },
@@ -2582,7 +2601,8 @@ const LEVELS = [
 ],
       
       // ─────────────────────── QUIZ 9 — A2 Mixed (Texnologiya, Media, Təhsil, Elm) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "I need to ____ this app on my phone.", 
     tr: 'download', 
@@ -2684,7 +2704,7 @@ const LEVELS = [
     wrong: 'tablet' 
   }
 ],
-      
+},
 // ─────────────────────── QUIZ 13 — İdman ───────────────────────
 [
   { en: 'baseball',     tr: 'beysbol',           wrong: 'kriket',        wen: 'swimming',      def: 'a game played with a bat and ball in America' },
@@ -2734,7 +2754,8 @@ const LEVELS = [
 ],
       
       // ─────────────────────── QUIZ 13 — A2 Mixed (İdman və Hobbi) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "My favourite sport is ____ because it is very exciting.", 
     tr: 'basketball', 
@@ -2836,7 +2857,7 @@ const LEVELS = [
     wrong: 'match' 
   }
 ],
-
+},
 // ─────────────────────── QUIZ 15 — Şəhər həyatı ───────────────────────
 [
   { en: 'bridge',       tr: 'körpü',            wrong: 'tunel',         wen: 'tower',         def: 'a structure over a river or road' },
@@ -2935,7 +2956,8 @@ const LEVELS = [
 ],
       
       // ─────────────────────── QUIZ 15 — A2 Mixed (Şəhər, Nəqliyyat, Ev, Geyim) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "There is a beautiful old ____ in the centre of the city.", 
     tr: 'castle', 
@@ -3037,7 +3059,7 @@ const LEVELS = [
     wrong: 'suit' 
   }
 ],
-      
+     }, 
 
 // ─────────────────────── QUIZ 19 — Hisslər və emosiyalar ───────────────────────
 [
@@ -3134,7 +3156,8 @@ const LEVELS = [
   { en: 'mobile',      tr: 'mobil',             wrong: 'portativ',      wen: 'fixed',         def: 'able to move' }
 ],
       // ─────────────────────── QUIZ 19 — A2 Mixed (Hisslər, Xarakter, Sifətlər) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "I felt very ____ when I saw my old friend after many years.", 
     tr: 'surprised', 
@@ -3236,7 +3259,7 @@ const LEVELS = [
     wrong: 'exact' 
   }
 ],
-
+},
 // ─────────────────────── QUIZ 23 — Zərflər və bağlayıcılar ───────────────────────
 [
   { en: 'actually',     tr: 'əslində',           wrong: 'həqiqətən',     wen: 'maybe',         def: 'in fact or really' },
@@ -3286,7 +3309,8 @@ const LEVELS = [
 ],
 
       // ─────────────────────── QUIZ 23 — A2 Mixed (Zərflər və Zaman ifadələri) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "I ____ finished my homework, so I can watch TV now.", 
     tr: 'already', 
@@ -3388,7 +3412,7 @@ const LEVELS = [
     wrong: 'unfortunately' 
   }
 ],
-      
+ },     
 // ─────────────────────── QUIZ 25 — Ünsiyyət və dil ───────────────────────
 [
   { en: 'advice',       tr: 'məsləhət',           wrong: 'xəbərdarlıq',   wen: 'question',      def: 'an opinion to help someone' },
@@ -3438,7 +3462,8 @@ const LEVELS = [
 ],
 
       // ─────────────────────── QUIZ 25 — A2 Mixed (Ünsiyyət və Sosial həyat) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "Can you give me some ____ about choosing a university?", 
     tr: 'advice', 
@@ -3540,7 +3565,7 @@ const LEVELS = [
     wrong: 'society' 
   }
 ],
-      
+      },
 // ─────────────────────── QUIZ 27 — Hüquq, cinayət və ordu ───────────────────────
 [
   { en: 'army',        tr: 'ordu',               wrong: 'qoşun',         wen: 'school',        def: 'the military forces of a country' },
@@ -3590,7 +3615,8 @@ const LEVELS = [
 ],
       
   // ─────────────────────── QUIZ 27 — A2 Mixed (Hüquq, Cinayət, Biznes və İqtisadiyyat) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "The police caught the ____ who stole the car.", 
     tr: 'thief', 
@@ -3692,7 +3718,7 @@ const LEVELS = [
     wrong: 'profit' 
   }
 ],
-      
+      },
 // ─────────────────────── QUIZ 29 — Ətraf mühit ───────────────────────
 [
   { en: 'climate',     tr: 'iqlim',             wrong: 'hava',          wen: 'weather',       def: 'the normal weather conditions in a place' },
@@ -3742,7 +3768,8 @@ const LEVELS = [
 ],
 
       // ─────────────────────── QUIZ 29 — A2 Mixed (Ətraf mühit və Səyahət) ───────────────────────
-[
+{
+  sentences: [
   { 
     en: "We must protect the ____ if we want a better future.", 
     tr: 'environment', 
@@ -3844,7 +3871,7 @@ const LEVELS = [
     wrong: 'climate' 
   }
 ],
-      
+},
     ]
   },
 
@@ -3953,7 +3980,8 @@ const LEVELS = [
 ],
 
       // ─────────────────────── EXAM 1 — Education & Business Vocabulary ───────────────────────
-[
+{
+  sentences: [
   {
     en: "She has a very good _____ from university.",
     tr: 'qualification',
@@ -4055,7 +4083,7 @@ const LEVELS = [
     wrong: 'educated'
   }
 ],
-      
+},
 // ─────────────────────── QUIZ 5 — Money & Shopping ───────────────────────
 [
   { en: 'credit',      tr: 'kredit',            wrong: 'borc',          wen: 'gift',          def: 'an agreement to pay for something later' },
@@ -4128,7 +4156,8 @@ const LEVELS = [
   { en: 'yell',         tr: 'bağırmaq',          wrong: 'danlamaq',      wen: 'whisper',       def: 'to shout loudly' }
 ],
 // ─────────────────────── EXAM 2 — Money, Technology & Communication ───────────────────────
-[
+{
+  sentences: [
   {
     en: "I can't _____ this expensive car right now.",
     tr: 'afford',
@@ -4230,7 +4259,7 @@ const LEVELS = [
     wrong: 'script'
   }
 ],
-      
+},
 // ─────────────────────── QUIZ 8 — Feelings & Personality (1) ───────────────────────
 [
   { en: 'amazed',       tr: 'heyrətlənmiş',      wrong: 'sevincli',      wen: 'bored',         def: 'very surprised by something unexpected' },
@@ -4279,7 +4308,8 @@ const LEVELS = [
   { en: 'unpleasant',   tr: 'xoşagəlməz',        wrong: 'pis',           wen: 'pleasant',      def: 'not nice or enjoyable' }
 ],
       // ─────────────────────── EXAM 3 — Feelings & Personality ───────────────────────
-[
+{
+  sentences: [
   {
     en: "She was very _____ when she saw the surprise party.",
     tr: 'amazed',
@@ -4381,7 +4411,7 @@ const LEVELS = [
     wrong: 'gentle'
   }
 ],
-
+},
 // ─────────────────────── QUIZ 10 — Crime, Law & Government (1) ───────────────────────
 [
   { en: 'arrest',       tr: 'həbs etmək',        wrong: 'tutmaq',        wen: 'release',       def: 'to take someone to the police station because they may have committed a crime' },
@@ -4454,7 +4484,8 @@ const LEVELS = [
 ],
 
       // ─────────────────────── EXAM 4 — Crime, Law & Conflict ───────────────────────
-[
+{
+  sentences: [
   {
     en: "The police decided to _____ the suspect after finding new evidence.",
     tr: 'arrest',
@@ -4556,7 +4587,7 @@ const LEVELS = [
     wrong: 'bomb'
   }
 ],
-      
+      },
 // ─────────────────────── QUIZ 13 — Travel & Transport ───────────────────────
 [
   { en: 'accommodation', tr: 'yaşayış yeri',     wrong: 'otel',           wen: 'restaurant',    def: 'a place where you can stay or live temporarily' },
@@ -4629,7 +4660,8 @@ const LEVELS = [
   { en: 'disaster',     tr: 'fəlakət',           wrong: 'təhlükə',       wen: 'success',       def: 'a sudden event causing great damage' }
 ],
 // ─────────────────────── EXAM 5 — Travel, Transport & Nature ───────────────────────
-[
+{
+  sentences: [
   {
     en: "We need to find cheap _____ near the beach for our holiday.",
     tr: 'accommodation',
@@ -4731,7 +4763,7 @@ const LEVELS = [
     wrong: 'arrest'
   }
 ],
-      
+      },
 // ─────────────────────── QUIZ 16 — Science & Materials ───────────────────────
 [
   { en: 'chemical',     tr: 'kimyəvi',           wrong: 'fiziki',        wen: 'musical',       def: 'relating to chemistry or chemicals' },
@@ -4805,7 +4837,8 @@ const LEVELS = [
 ],
 
       // ─────────────────────── EXAM 6 — Science, Health, Food & House ───────────────────────
-[
+{
+  sentences: [
   {
     en: "Scientists are doing research in a modern _____ .",
     tr: 'laboratory',
@@ -4907,7 +4940,7 @@ const LEVELS = [
     wrong: 'appliance'
   }
 ],
-      
+      },
 // ─────────────────────── QUIZ 19 — House & Daily Life ───────────────────────
 [
   { en: 'alarm',       tr: 'zəng / siqnal',      wrong: 'saat',          wen: 'music',         def: 'a loud sound that warns you or wakes you up' },
@@ -4957,7 +4990,8 @@ const LEVELS = [
 ],
       
       // ─────────────────────── EXAM 8 — House, Family & Society ───────────────────────
-[
+{
+  sentences: [
   {
     en: "We bought new _____ for our living room last weekend.",
     tr: 'furniture',
@@ -5059,7 +5093,7 @@ const LEVELS = [
     wrong: 'religion'
   }
 ],
-
+},
 // ─────────────────────── QUIZ 21 — Art, Culture & Entertainment ───────────────────────
 [
   { en: 'album',        tr: 'albom',             wrong: 'disk',          wen: 'novel',         def: 'a collection of songs released together' },
@@ -5132,7 +5166,8 @@ const LEVELS = [
   { en: 'written',      tr: 'yazılı',            wrong: 'çap olunmuş',   wen: 'spoken',        def: 'expressed in writing' }
 ],
       // ─────────────────────── EXAM 9 — Art, Culture, Sports & Language ───────────────────────
-[
+{
+  sentences: [
   {
     en: "She is a famous _____ and has written more than 10 books of poems.",
     tr: 'poet',
@@ -5234,7 +5269,7 @@ const LEVELS = [
     wrong: 'supporter'
   }
 ],
-      
+},
     ]
   },
 
@@ -5294,6 +5329,112 @@ const LEVELS = [
   { en: 'develop',      tr: 'inkişaf etdirmək',  wrong: 'dəyişdirmək',   wen: 'destroy',       def: 'to grow or improve something over time' },
   { en: 'improvement',  tr: 'inkişaf',           wrong: 'dəyişiklik',    wen: 'decline',       def: 'the process of becoming better' }
 ],
+      
+// ─────────────────────── EXAM — Education & Personal Development (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The university has completely revised its ____ to better prepare students for the modern job market.",
+      tr: 'curriculum',
+      wrong: 'creativity'
+    },
+    {
+      en: "Continuous ____ throughout the course helps teachers understand each student’s weaknesses and strengths.",
+      tr: 'assessment',
+      wrong: 'laboratory'
+    },
+    {
+      en: "Without a relevant professional ____, it is very difficult to find a well-paid job in this field.",
+      tr: 'qualification',
+      wrong: 'deadline'
+    },
+    {
+      en: "The department organizes a monthly ____ on current global issues for postgraduate students.",
+      tr: 'seminar',
+      wrong: 'scholarship'
+    },
+    {
+      en: "The market ____ predicted that inflation would continue to rise over the next six months.",
+      tr: 'analyst',
+      wrong: 'campus'
+    },
+    {
+      en: "Her extraordinary ____ and hard work enabled her to succeed where others had given up.",
+      tr: 'determination',
+      wrong: 'textbook'
+    },
+    {
+      en: "Modern businesses actively seek employees who show high levels of innovation and ____.",
+      tr: 'creativity',
+      wrong: 'examination'
+    },
+    {
+      en: "Despite many setbacks, the team finally managed to ____ everything they had planned.",
+      tr: 'accomplish',
+      wrong: 'concentration'
+    },
+    {
+      en: "She is highly ____ and aims to start her own company within the next few years.",
+      tr: 'ambitious',
+      wrong: 'certificate'
+    },
+    {
+      en: "It was not easy for him to ____ to such a different working environment and culture.",
+      tr: 'adapt',
+      wrong: 'assignment'
+    },
+    {
+      en: "Environmental organizations are trying to raise ____ about the dangers of plastic pollution.",
+      tr: 'awareness',
+      wrong: 'classroom'
+    },
+    {
+      en: "Only the most talented and hardworking students can ____ their full potential at top universities.",
+      tr: 'achieve',
+      wrong: 'curriculum'
+    },
+    {
+      en: "All scientific data must be recorded ____ to ensure the validity of the research findings.",
+      tr: 'accurately',
+      wrong: 'ambitious'
+    },
+    {
+      en: "The experiments were carried out in a well-equipped research ____.",
+      tr: 'laboratory',
+      wrong: 'determination'
+    },
+    {
+      en: "Thanks to the ____ she received, she was able to study abroad without financial difficulties.",
+      tr: 'scholarship',
+      wrong: 'analyst'
+    },
+    {
+      en: "We are working against a very tight ____, so please submit your reports by Wednesday.",
+      tr: 'deadline',
+      wrong: 'creativity'
+    },
+    {
+      en: "Deep ____ is required when reading complex academic texts in a foreign language.",
+      tr: 'concentration',
+      wrong: 'qualification'
+    },
+    {
+      en: "Over 1,200 students are expected to ____ this year with degrees in engineering and business.",
+      tr: 'graduate',
+      wrong: 'awareness'
+    },
+    {
+      en: "The final ____ includes both a written paper and an oral presentation.",
+      tr: 'examination',
+      wrong: 'adapt'
+    },
+    {
+      en: "The main goal of the training program is to ____ employees’ leadership and communication skills.",
+      tr: 'develop',
+      wrong: 'seminar'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 3 — Business & Work (1) ───────────────────────
 [
@@ -5367,6 +5508,112 @@ const LEVELS = [
   { en: 'wealth',       tr: 'sərvət',            wrong: 'kapital',       wen: 'poverty',       def: 'a large amount of money and valuable possessions' }
 ],
 
+     // ─────────────────────── EXAM — Business & Work + Money & Economy (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The company's main ____ are located in New York, while the factories are spread across Asia.",
+      tr: 'headquarters',
+      wrong: 'workshop'
+    },
+    {
+      en: "She works as a senior ____ in a multinational company and makes important strategic decisions.",
+      tr: 'executive',
+      wrong: 'applicant'
+    },
+    {
+      en: "Apple is one of the largest ____ in the world, with operations in dozens of countries.",
+      tr: 'corporation',
+      wrong: 'committee'
+    },
+    {
+      en: "The board of directors meets every quarter to discuss the company's long-term ____.",
+      tr: 'strategy',
+      wrong: 'bargain'   // (düz sözlər içindən ən uyğunu seçdim)
+    },
+    {
+      en: "Successful ____ requires excellent communication and leadership skills.",
+      tr: 'management',
+      wrong: 'manufacture'
+    },
+    {
+      en: "The company plans to ____ new employees for its expanding digital marketing team.",
+      tr: 'recruit',
+      wrong: 'mortgage'
+    },
+    {
+      en: "After ten years of hard work, she finally received a well-deserved ____ to regional director.",
+      tr: 'promotion',
+      wrong: 'currency'
+    },
+    {
+      en: "Germany has a very strong ____ sector, especially in cars and machinery.",
+      tr: 'manufacturing',
+      wrong: 'poverty'
+    },
+    {
+      en: "The marketing team is developing a new campaign to increase brand ____.",
+      tr: 'awareness',
+      wrong: 'headquarters'
+    },
+    {
+      en: "They formed a ____ to start a tech company together and share both risks and profits.",
+      tr: 'partnership',
+      wrong: 'appointment'
+    },
+    {
+      en: "The government is trying to reduce ____ by creating more jobs in rural areas.",
+      tr: 'poverty',
+      wrong: 'revenue'
+    },
+    {
+      en: "Buying a house usually requires taking out a large ____ that can last 20–30 years.",
+      tr: 'mortgage',
+      wrong: 'discount'
+    },
+    {
+      en: "The company's ____ increased by 18% this year thanks to strong sales in Asia.",
+      tr: 'revenue',
+      wrong: 'workforce'
+    },
+    {
+      en: "Many young people cannot afford to buy homes because prices are not ____.",
+      tr: 'affordable',
+      wrong: 'financial'
+    },
+    {
+      en: "Foreign ____ are showing growing interest in the country’s renewable energy sector.",
+      tr: 'investors',
+      wrong: 'clients'
+    },
+    {
+      en: "The ____ of the company consists of over 4,000 employees worldwide.",
+      tr: 'workforce',
+      wrong: 'appointment'
+    },
+    {
+      en: "She has had a very successful ____, moving from assistant to vice president in just eight years.",
+      tr: 'career',
+      wrong: 'bargain'
+    },
+    {
+      en: "The central bank decided to change the national ____ to control inflation.",
+      tr: 'currency',
+      wrong: 'committee'
+    },
+    {
+      en: "Effective ____ is essential for any business that wants to sell its products successfully.",
+      tr: 'marketing',
+      wrong: 'manufacture'
+    },
+    {
+      en: "The new factory will create hundreds of jobs and boost the local ____.",
+      tr: 'economy',
+      wrong: 'mortgage'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 6 — Technology & Media ───────────────────────
 [
   { en: 'broadcast',    tr: 'yayımlamaq',        wrong: 'ötürmək',       wen: 'hide',          def: 'to send out radio or television programmes' },
@@ -5463,6 +5710,112 @@ const LEVELS = [
   { en: 'weird',        tr: 'qəribə',            wrong: 'maraqlı',       wen: 'normal',        def: 'very strange and unusual' }
 ],
 
+      // ─────────────────────── EXAM — Technology, Communication & Emotions (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The company has developed a powerful new ____ that can process millions of user data points per second.",
+      tr: 'database',
+      wrong: 'gesture'
+    },
+    {
+      en: "Social media has completely changed the way people ____ with each other across long distances.",
+      tr: 'communicate',
+      wrong: 'manufacture'
+    },
+    {
+      en: "Many young people today prefer to watch live ____ on platforms like YouTube and Twitch instead of traditional television.",
+      tr: 'broadcast',
+      wrong: 'embarrassed'
+    },
+    {
+      en: "The latest ____ of the software includes several important security improvements.",
+      tr: 'version',
+      wrong: 'anxious'
+    },
+    {
+      en: "She felt extremely ____ before the job interview, even though she was well qualified.",
+      tr: 'nervous',
+      wrong: 'digital'
+    },
+    {
+      en: "The government plans to invest heavily in ____ infrastructure to improve internet access nationwide.",
+      tr: 'technological',
+      wrong: 'furious'
+    },
+    {
+      en: "I need to ____ the team that the project deadline has been moved forward by two weeks.",
+      tr: 'inform',
+      wrong: 'keyboard'   // (daha yaxşı səhv variant)
+    },
+    {
+      en: "His ____ interpretation of the data led the whole team to the wrong conclusion.",
+      tr: 'interpretation',
+      wrong: 'optimistic'
+    },
+    {
+      en: "She was deeply ____ when she realized she had accidentally sent the private email to her boss.",
+      tr: 'embarrassed',
+      wrong: 'software'
+    },
+    {
+      en: "The new marketing campaign aims to ____ customers that this product is better than all competitors.",
+      tr: 'convince',
+      wrong: 'depressed'
+    },
+    {
+      en: "After working 14 hours straight, he felt completely ____ and unable to continue.",
+      tr: 'exhausted',
+      wrong: 'hilarious'
+    },
+    {
+      en: "Modern ____ design plays a crucial role in making websites user-friendly and attractive.",
+      tr: 'graphics',
+      wrong: 'pessimistic'
+    },
+    {
+      en: "I strongly ____ that you book your flight early because prices tend to rise closer to the date.",
+      tr: 'recommend',
+      wrong: 'frustrated'
+    },
+    {
+      en: "The CEO will personally ____ the good news at the annual general meeting tomorrow.",
+      tr: 'announce',
+      wrong: 'laptop'
+    },
+    {
+      en: "She has always been very ____ and believes that hard work will eventually bring success.",
+      tr: 'optimistic',
+      wrong: 'network'
+    },
+    {
+      en: "The new ____ allows users to edit videos directly in their browser without installing anything.",
+      tr: 'software',
+      wrong: 'sympathetic'
+    },
+    {
+      en: "He became ____ when his colleague took credit for the work he had done.",
+      tr: 'furious',
+      wrong: 'update'
+    },
+    {
+      en: "Parents should ____ their children to ask questions and explore new ideas.",
+      tr: 'encourage',
+      wrong: 'channel'
+    },
+    {
+      en: "The film received mixed reviews; some critics found it brilliant while others called it ____.",
+      tr: 'weird',
+      wrong: 'website'
+    },
+    {
+      en: "After months of hard work, she felt extremely ____ when she finally received the promotion.",
+      tr: 'proud',
+      wrong: 'broadcast'
+    }
+  ],
+},
+
 // ─────────────────────── QUIZ 10 — Crime, Law & Government (1) ───────────────────────
 [
   { en: 'arrest',       tr: 'həbs etmək',        wrong: 'tutmaq',        wen: 'release',       def: 'to take someone to the police station because they may have committed a crime' },
@@ -5535,6 +5888,112 @@ const LEVELS = [
   { en: 'armed',        tr: 'silahlı',           wrong: 'hərbi',         wen: 'unarmed',       def: 'carrying weapons' }
 ],
 
+    // ─────────────────────── EXAM — Crime, Law, Government & Conflict (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The police have enough ____ to charge the suspect with fraud.",
+      tr: 'evidence',
+      wrong: 'soldier'
+    },
+    {
+      en: "The case will go to ____ next month where a jury will decide if he is guilty.",
+      tr: 'trial',
+      wrong: 'election'
+    },
+    {
+      en: "The court found him ____ of murder and sentenced him to life in prison.",
+      tr: 'guilty',
+      wrong: 'campaign'
+    },
+    {
+      en: "The government is planning to introduce a new ____ to reduce gun violence.",
+      tr: 'policy',
+      wrong: 'weapon'
+    },
+    {
+      en: "The United Nations is trying to resolve the ____ between the two countries through diplomacy.",
+      tr: 'conflict',
+      wrong: 'jury'
+    },
+    {
+      en: "Several opposition politicians were arrested during the anti-government ____.",
+      tr: 'protest',
+      wrong: 'database'
+    },
+    {
+      en: "The terrorist attack caused widespread ____ and fear across the country.",
+      tr: 'panic',
+      wrong: 'punishment'
+    },
+    {
+      en: "The judge has the ____ to decide whether the evidence is admissible in court.",
+      tr: 'authority',
+      wrong: 'democracy'
+    },
+    {
+      en: "The police are continuing to ____ the murder, but they still have no clear suspect.",
+      tr: 'investigate',
+      wrong: 'protest'
+    },
+    {
+      en: "Many people believe that the current justice system does not provide real ____ for victims.",
+      tr: 'justice',
+      wrong: 'military'
+    },
+    {
+      en: "The president promised to increase ____ spending to strengthen national defence.",
+      tr: 'military',
+      wrong: 'evidence'
+    },
+    {
+      en: "He was released from prison after new ____ proved he was innocent.",
+      tr: 'evidence',
+      wrong: 'threat'
+    },
+    {
+      en: "The opposition party has launched a major ____ ahead of next year's election.",
+      tr: 'campaign',
+      wrong: 'punishment'
+    },
+    {
+      en: "Carrying a concealed ____ is strictly ____ in this country.",
+      tr: 'weapon',
+      wrong: 'witness'
+    },
+    {
+      en: "The victim received serious ____ in the explosion and is still in hospital.",
+      tr: 'wounds',
+      wrong: 'policy'
+    },
+    {
+      en: "Terrorist groups continue to pose a serious ____ to national security.",
+      tr: 'threat',
+      wrong: 'jury'
+    },
+    {
+      en: "The country has been in a state of political ____ for the past three years.",
+      tr: 'crisis',
+      wrong: 'court'
+    },
+    {
+      en: "She acted as a key ____ in the trial and her testimony helped convict the defendant.",
+      tr: 'witness',
+      wrong: 'violence'
+    },
+    {
+      en: "The new law aims to reduce juvenile ____ and improve rehabilitation programs.",
+      tr: 'offence',
+      wrong: 'election'
+    },
+    {
+      en: "The United Nations condemned the use of excessive ____ against peaceful demonstrators.",
+      tr: 'violence',
+      wrong: 'candidate'
+    }
+  ],
+},
+
 // ─────────────────────── QUIZ 13 — Travel & Transport ───────────────────────
 [
   { en: 'accommodation', tr: 'yaşayış yeri',     wrong: 'otel',           wen: 'restaurant',    def: 'a place where travellers can stay overnight' },
@@ -5582,6 +6041,112 @@ const LEVELS = [
   { en: 'wildlife',     tr: 'vəhşi təbiət',      wrong: 'fauna',         wen: 'technology',    def: 'wild animals and plants living in their natural environment' },
   { en: 'pollution',    tr: 'çirklənmə',         wrong: 'tullantı',      wen: 'cleanliness',   def: 'the presence of harmful substances in the environment' }
 ],
+
+    // ─────────────────────── EXAM — Travel, Transport, Nature & Environment (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Finding affordable ____ in the city centre during peak tourist season can be extremely difficult.",
+      tr: 'accommodation',
+      wrong: 'destination'
+    },
+    {
+      en: "The government has introduced stricter controls at the country's southern ____ to prevent illegal immigration.",
+      tr: 'border',
+      wrong: 'storm'
+    },
+    {
+      en: "We need to make a ____ for the hotel room as soon as possible because the city gets very crowded in summer.",
+      tr: 'reservation',
+      wrong: 'tsunami'
+    },
+    {
+      en: "The ship will depart from the port of Barcelona on a two-week Mediterranean ____.",
+      tr: 'cruise',
+      wrong: 'pollution'
+    },
+    {
+      en: "After several delays, our ____ finally took off at midnight and arrived in Tokyo at dawn.",
+      tr: 'flight',
+      wrong: 'hurricane'
+    },
+    {
+      en: "Make sure you keep your ____ with you at all times when travelling internationally.",
+      tr: 'passport',
+      wrong: 'wildlife'
+    },
+    {
+      en: "Tourism is one of the main sources of income for many small countries with beautiful coastlines.",
+      tr: 'tourism',
+      wrong: 'atmosphere'
+    },
+    {
+      en: "You will need a tourist ____ to enter the country, which can take up to three weeks to process.",
+      tr: 'visa',
+      wrong: 'earthquake'
+    },
+    {
+      en: "The most direct ____ from Paris to Rome goes through the Alps and takes about 12 hours by train.",
+      tr: 'route',
+      wrong: 'greenhouse'
+    },
+    {
+      en: "Electric ____ are becoming increasingly popular as cities try to reduce air pollution.",
+      tr: 'vehicles',
+      wrong: 'floods'
+    },
+    {
+      en: "Scientists warn that the Earth's ____ is warming at an alarming rate due to human activity.",
+      tr: 'climate',
+      wrong: 'luggage'
+    },
+    {
+      en: "The ____ has been badly damaged by decades of industrial activity and poor waste management.",
+      tr: 'environment',
+      wrong: 'cruise'
+    },
+    {
+      en: "Many rare species of ____ are under threat because of deforestation and illegal hunting.",
+      tr: 'wildlife',
+      wrong: 'booking'
+    },
+    {
+      en: "The government declared a state of emergency after the ____ destroyed thousands of homes.",
+      tr: 'disaster',
+      wrong: 'passport'
+    },
+    {
+      en: "A powerful ____ struck the coast, causing massive waves that flooded coastal villages.",
+      tr: 'tsunami',
+      wrong: 'reservation'
+    },
+    {
+      en: "The thick black smoke from the factory is a clear sign of serious air ____.",
+      tr: 'pollution',
+      wrong: 'journey'
+    },
+    {
+      en: "Rising sea levels and extreme weather events are two major consequences of ____ warming.",
+      tr: 'global',
+      wrong: 'border'
+    },
+    {
+      en: "The dense Amazon ____ plays a vital role in absorbing carbon dioxide from the atmosphere.",
+      tr: 'forest',
+      wrong: 'visa'
+    },
+    {
+      en: "We had to cancel our trip because of the severe ____ warning issued by the meteorological office.",
+      tr: 'hurricane',
+      wrong: 'tourism'
+    },
+    {
+      en: "The sudden drop in ____ during the night caught many travellers unprepared for the cold.",
+      tr: 'temperature',
+      wrong: 'vehicle'
+    }
+  ],
+},
       
 // ─────────────────────── QUIZ 15 — Science & Research ───────────────────────
 [
@@ -5631,6 +6196,112 @@ const LEVELS = [
   { en: 'therapist',    tr: 'terapevt',          wrong: 'psixoloq',      wen: 'teacher',       def: 'a person who treats physical or mental problems' }
 ],
 
+    // ─────────────────────── EXAM — Science, Research, Health & Body (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The results of the latest ____ show a clear link between diet and heart disease.",
+      tr: 'analysis',
+      wrong: 'ambulance'
+    },
+    {
+      en: "Scientists are conducting a long-term ____ into the effects of climate change on ocean life.",
+      tr: 'research',
+      wrong: 'patient'
+    },
+    {
+      en: "All new medicines must be thoroughly tested in a controlled ____ before they are approved.",
+      tr: 'experiment',
+      wrong: 'symptom'
+    },
+    {
+      en: "The discovery of penicillin was one of the most important ____ in medical history.",
+      tr: 'discoveries',
+      wrong: 'muscle'
+    },
+    {
+      en: "Darwin's theory of ____ remains one of the most influential ideas in modern biology.",
+      tr: 'evolution',
+      wrong: 'surgery'
+    },
+    {
+      en: "The laboratory uses advanced equipment to ____ chemical reactions at a molecular level.",
+      tr: 'observe',
+      wrong: 'cancer'
+    },
+    {
+      en: "The researchers collected a huge amount of ____ from over 10,000 participants.",
+      tr: 'data',
+      wrong: 'therapist'
+    },
+    {
+      en: "Nuclear power remains a controversial source of ____ due to safety concerns.",
+      tr: 'energy',
+      wrong: 'injury'
+    },
+    {
+      en: "The doctor said the ____ would take several weeks to heal completely.",
+      tr: 'injury',
+      wrong: 'database'
+    },
+    {
+      en: "Mental ____ is just as important as physical health in overall well-being.",
+      tr: 'health',
+      wrong: 'laboratory'
+    },
+    {
+      en: "The patient showed several worrying ____, including high fever and difficulty breathing.",
+      tr: 'symptoms',
+      wrong: 'element'
+    },
+    {
+      en: "He underwent major heart ____ last year but has now made a full recovery.",
+      tr: 'surgery',
+      wrong: 'theory'
+    },
+    {
+      en: "Regular physical exercise is essential for maintaining good cardiovascular ____.",
+      tr: 'fitness',
+      wrong: 'evidence'
+    },
+    {
+      en: "The government is investing more money in public ____ to improve access to hospitals.",
+      tr: 'healthcare',
+      wrong: 'chemical'
+    },
+    {
+      en: "Many serious diseases can be prevented through early diagnosis and timely ____.",
+      tr: 'treatment',
+      wrong: 'scientist'
+    },
+    {
+      en: "The chemical ____ released by the factory was highly toxic to marine life.",
+      tr: 'substance',
+      wrong: 'emergency'
+    },
+    {
+      en: "An ____ was called immediately after the car accident on the motorway.",
+      tr: 'ambulance',
+      wrong: 'evolution'
+    },
+    {
+      en: "The university has one of the most advanced ____ in the country for genetic research.",
+      tr: 'laboratory',
+      wrong: 'fitness'
+    },
+    {
+      en: "The scientist received international recognition for her groundbreaking ____ in quantum physics.",
+      tr: 'research',
+      wrong: 'pain'
+    },
+    {
+      en: "Chronic stress can have a very negative effect on both physical and ____ health.",
+      tr: 'mental',
+      wrong: 'nuclear'
+    }
+  ],
+},
+    
 // ─────────────────────── QUIZ 17 — Food, House & Daily Life ───────────────────────
 [
   { en: 'appliance',    tr: 'məişət texnikası',  wrong: 'cihaz',         wen: 'furniture',     def: 'a machine used in the home, such as a fridge or washing machine' },
@@ -5726,6 +6397,112 @@ const LEVELS = [
   { en: 'victory',      tr: 'qələbə',            wrong: 'nailiyyət',     wen: 'defeat',        def: 'the act of winning a game or competition' },
   { en: 'tournament',   tr: 'turnir',            wrong: 'çempionat',     wen: 'festival',      def: 'a series of competitions' }
 ],
+
+      // ─────────────────────── EXAM — Daily Life, and Hobbies (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Modern households rely heavily on labour-saving ____ such as washing machines and dishwashers.",
+      tr: 'appliances',
+      wrong: 'ingredients'
+    },
+    {
+      en: "Following the ____ carefully is essential if you want the cake to rise properly.",
+      tr: 'recipe',
+      wrong: 'stadium'
+    },
+    {
+      en: "The whole ____ works together to maintain the house and share daily responsibilities.",
+      tr: 'household',
+      wrong: 'tournament'
+    },
+    {
+      en: "After the earthquake, thousands of people were left without ____ and had to sleep in tents.",
+      tr: 'shelter',
+      wrong: 'championship'
+    },
+    {
+      en: "A broken water ____ caused flooding in the basement and damaged the furniture.",
+      tr: 'pipe',
+      wrong: 'performance'
+    },
+    {
+      en: "Different ____ often have conflicting values and attitudes towards technology.",
+      tr: 'generations',
+      wrong: 'appliances'
+    },
+    {
+      en: "Building strong ____ within the local ____ is important for social cohesion.",
+      tr: 'relationships',
+      wrong: 'victory'
+    },
+    {
+      en: "Cultural ____ and customs are passed down from one generation to the next.",
+      tr: 'traditions',
+      wrong: 'muscle'
+    },
+    {
+      en: "The new art ____ at the museum attracted over 50,000 visitors in its first month.",
+      tr: 'exhibition',
+      wrong: 'recipe'
+    },
+    {
+      en: "Her latest ____ explores the complex relationship between humans and nature.",
+      tr: 'sculpture',
+      wrong: 'appliance'
+    },
+    {
+      en: "The live ____ of the national anthem at the opening ceremony was incredibly moving.",
+      tr: 'performance',
+      wrong: 'shelter'
+    },
+    {
+      en: "The main ____ of the novel is the conflict between personal freedom and social expectations.",
+      tr: 'theme',
+      wrong: 'pipe'
+    },
+    {
+      en: "The wedding ____ was held in a beautiful old church with over 200 guests.",
+      tr: 'ceremony',
+      wrong: 'fitness'
+    },
+    {
+      en: "She is a highly ____ person who always strives to be the best in everything she does.",
+      tr: 'competitive',
+      wrong: 'tradition'
+    },
+    {
+      en: "The national football ____ is watched by millions of people around the country.",
+      tr: 'championship',
+      wrong: 'generation'
+    },
+    {
+      en: "The Olympic ____ brings together thousands of athletes from all over the world.",
+      tr: 'tournament',
+      wrong: 'household'
+    },
+    {
+      en: "Regular physical ____ is necessary to build strength and improve overall fitness.",
+      tr: 'training',
+      wrong: 'exhibition'
+    },
+    {
+      en: "The team celebrated their unexpected ____ with a parade through the city streets.",
+      tr: 'victory',
+      wrong: 'ceremony'
+    },
+    {
+      en: "A large modern ____ was built to host international football matches and concerts.",
+      tr: 'stadium',
+      wrong: 'theme'
+    },
+    {
+      en: "Maintaining a good work-life balance is essential for both mental and physical ____.",
+      tr: 'wellbeing',
+      wrong: 'performance'
+    }
+  ],
+},
       
       // ─────────────────────── QUIZ 21 — Personality & Character ───────────────────────
 [
@@ -5822,6 +6599,112 @@ const LEVELS = [
   { en: 'solve',        tr: 'həll etmək',        wrong: 'çözmək',        wen: 'create',        def: 'to find a solution to a problem' }
 ],
 
+      // ─────────────────────── EXAM — Personality, Character, Abstract Concepts & Actions (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "She is very ____ and always sets herself challenging goals in both her career and personal life.",
+      tr: 'ambitious',
+      wrong: 'curious'
+    },
+    {
+      en: "Despite many obstacles, his ____ attitude helped him eventually achieve his dream of starting his own company.",
+      tr: 'determined',
+      wrong: 'flexible'
+    },
+    {
+      en: "A good leader should remain ____ even in highly stressful and difficult situations.",
+      tr: 'calm',
+      wrong: 'aggressive'
+    },
+    {
+      en: "He has a very ____ personality and can make friends with almost anyone he meets.",
+      tr: 'charming',
+      wrong: 'impatient'
+    },
+    {
+      en: "Being ____ is important in negotiations because it allows you to see the situation from different angles.",
+      tr: 'flexible',
+      wrong: 'loyal'
+    },
+    {
+      en: "She is extremely ____ and always supports her friends through both good and bad times.",
+      tr: 'loyal',
+      wrong: 'bold'
+    },
+    {
+      en: "From a historical ____, the industrial revolution completely changed how people lived and worked.",
+      tr: 'perspective',
+      wrong: 'recipe'
+    },
+    {
+      en: "The philosopher's ____ on life and happiness continues to influence people even today.",
+      tr: 'philosophy',
+      wrong: 'appliance'
+    },
+    {
+      en: "Many scientific ____ are later proven wrong when new evidence appears.",
+      tr: 'assumptions',
+      wrong: 'ingredients'
+    },
+    {
+      en: "You need strong ____ to understand complex philosophical arguments.",
+      tr: 'logic',
+      wrong: 'shelter'
+    },
+    {
+      en: "The team successfully ____ the project despite working with a very limited budget.",
+      tr: 'accomplished',
+      wrong: 'negotiated'
+    },
+    {
+      en: "The company plans to ____ a new system to improve customer service next year.",
+      tr: 'implement',
+      wrong: 'observe'
+    },
+    {
+      en: "Both sides are willing to ____ in order to reach a fair agreement.",
+      tr: 'negotiate',
+      wrong: 'bake'
+    },
+    {
+      en: "It took the scientists many years to ____ the complex problem of climate change.",
+      tr: 'resolve',
+      wrong: 'celebrate'
+    },
+    {
+      en: "Before making a final decision, we need to carefully ____ all the available options.",
+      tr: 'evaluate',
+      wrong: 'generate'
+    },
+    {
+      en: "Everyone in the community is encouraged to ____ ideas for improving the local park.",
+      tr: 'contribute',
+      wrong: 'adjust'
+    },
+    {
+      en: "The government must ____ more funding to support scientific research and development.",
+      tr: 'provide',
+      wrong: 'perform'
+    },
+    {
+      en: "She finally ____ that her current job was making her unhappy and decided to change careers.",
+      tr: 'realised',
+      wrong: 'maintained'
+    },
+    {
+      en: "The manager has to ____ several difficult situations at the same time.",
+      tr: 'handle',
+      wrong: 'publish'
+    },
+    {
+      en: "Regular exercise and a balanced diet help people ____ good physical and mental health.",
+      tr: 'maintain',
+      wrong: 'negotiate'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 25 — Change & Development ───────────────────────
 [
   { en: 'alter',        tr: 'dəyişdirmək',       wrong: 'tənzimləmək',   wen: 'keep',          def: 'to change something slightly' },
@@ -5870,6 +6753,112 @@ const LEVELS = [
   { en: 'dilemma',      tr: 'dilemma',           wrong: 'seçim',         wen: 'solution',      def: 'a difficult choice between two possibilities' }
 ],
 
+      // ─────────────────────── EXAM — Change & Development + Problems & Solutions (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The company plans to ____ its headquarters into a modern eco-friendly building.",
+      tr: 'transform',
+      wrong: 'obstacle'
+    },
+    {
+      en: "Society has ____ rapidly over the last twenty years due to advances in technology.",
+      tr: 'evolved',
+      wrong: 'dilemma'
+    },
+    {
+      en: "The government is considering a major ____ of the education system to meet future needs.",
+      tr: 'reform',
+      wrong: 'shortage'
+    },
+    {
+      en: "Many traditional industries are struggling to ____ to the digital economy.",
+      tr: 'adapt',
+      wrong: 'defect'
+    },
+    {
+      en: "The sudden ____ from a planned economy to a free market caused serious social problems.",
+      tr: 'transition',
+      wrong: 'barrier'
+    },
+    {
+      en: "Climate change poses one of the greatest ____ facing humanity in the 21st century.",
+      tr: 'challenges',
+      wrong: 'variations'
+    },
+    {
+      en: "The country is currently experiencing a severe ____ of skilled workers in the technology sector.",
+      tr: 'shortage',
+      wrong: 'revolution'
+    },
+    {
+      en: "Financial ____ often force people to make difficult decisions about their future.",
+      tr: 'limitations',
+      wrong: 'progress'
+    },
+    {
+      en: "The team had to ____ their original plan when they encountered unexpected problems.",
+      tr: 'modify',
+      wrong: 'failure'
+    },
+    {
+      en: "The economic ____ of 2008 had long-lasting effects on global markets.",
+      tr: 'crisis',
+      wrong: 'growth'
+    },
+    {
+      en: "Rapid population ____ in cities has created serious infrastructure problems.",
+      tr: 'expansion',
+      wrong: 'fault'
+    },
+    {
+      en: "She faced a real ____: accept the job abroad or stay with her family.",
+      tr: 'dilemma',
+      wrong: 'variation'
+    },
+    {
+      en: "The new manager wants to ____ the company's image and attract younger customers.",
+      tr: 'update',
+      wrong: 'weakness'
+    },
+    {
+      en: "Language teachers often ____ their methods according to the needs of each group.",
+      tr: 'adapt',
+      wrong: 'defect'
+    },
+    {
+      en: "Overcoming financial and technical ____ is part of every successful startup story.",
+      tr: 'obstacles',
+      wrong: 'reform'
+    },
+    {
+      en: "The invention of the internet caused a complete ____ in the way people communicate.",
+      tr: 'revolution',
+      wrong: 'confusion'
+    },
+    {
+      en: "We need to find a permanent ____ to the ongoing water supply problem.",
+      tr: 'solution',
+      wrong: 'progress'
+    },
+    {
+      en: "There is considerable ____ in how different cultures celebrate important life events.",
+      tr: 'variation',
+      wrong: 'crisis'
+    },
+    {
+      en: "The main ____ of the current system is its inability to adapt to rapid change.",
+      tr: 'weakness',
+      wrong: 'extension'
+    },
+    {
+      en: "Continuous learning is essential for personal and professional ____ in today's world.",
+      tr: 'development',
+      wrong: 'threat'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 27 — Government & Politics ───────────────────────
 [
   { en: 'authority',    tr: 'səlahiyyət',        wrong: 'hökumət',       wen: 'freedom',       def: 'the power or right to make decisions and control people' },
@@ -5918,6 +6907,111 @@ const LEVELS = [
   { en: 'witness',      tr: 'şahid',             wrong: 'zərərçəkən',    wen: 'criminal',      def: 'a person who sees a crime happen' }
 ],
 
+// ─────────────────────── EXAM — Government, Politics, Law & Justice (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The new government has promised to introduce major economic ____ to fight corruption.",
+      tr: 'reforms',
+      wrong: 'witness'
+    },
+    {
+      en: "In a true ____, power ultimately belongs to the people through free and fair elections.",
+      tr: 'democracy',
+      wrong: 'penalty'
+    },
+    {
+      en: "The opposition party launched a strong ____ ahead of the upcoming general election.",
+      tr: 'campaign',
+      wrong: 'jury'
+    },
+    {
+      en: "The president has the constitutional ____ to veto bills passed by parliament.",
+      tr: 'authority',
+      wrong: 'evidence'
+    },
+    {
+      en: "All citizens over the age of 18 have the right to ____ in national elections.",
+      tr: 'vote',
+      wrong: 'prison'
+    },
+    {
+      en: "The main ____ party strongly criticised the government's new tax policy.",
+      tr: 'opposition',
+      wrong: 'trial'
+    },
+    {
+      en: "The court found the defendant not ____ due to lack of sufficient evidence.",
+      tr: 'guilty',
+      wrong: 'regulation'
+    },
+    {
+      en: "The case will go to ____ next month, where a jury will hear all the evidence.",
+      tr: 'trial',
+      wrong: 'campaign'
+    },
+    {
+      en: "Freedom of speech is one of the fundamental ____ protected by the constitution.",
+      tr: 'rights',
+      wrong: 'candidate'
+    },
+    {
+      en: "The judge's decision was widely regarded as a victory for social ____.",
+      tr: 'justice',
+      wrong: 'democracy'
+    },
+    {
+      en: "New environmental ____ have been introduced to reduce industrial pollution.",
+      tr: 'regulations',
+      wrong: 'protest'
+    },
+    {
+      en: "Thousands of people took part in a peaceful ____ against the new law.",
+      tr: 'protest',
+      wrong: 'minister'
+    },
+    {
+      en: "The ____ must remain independent from political influence to ensure fair trials.",
+      tr: 'judiciary',
+      wrong: 'election'
+    },
+    {
+      en: "She has been a leading ____ in the fight for women's rights for over twenty years.",
+      tr: 'politician',
+      wrong: 'offence'
+    },
+    {
+      en: "The police are still gathering ____ in connection with the recent bank robbery.",
+      tr: 'evidence',
+      wrong: 'reform'
+    },
+    {
+      en: "The new prime ____ announced a major education reform during his first speech.",
+      tr: 'minister',
+      wrong: 'court'
+    },
+    {
+      en: "Parliament is expected to pass the new immigration bill before the end of the year.",
+      tr: 'parliament',
+      wrong: 'guilty'
+    },
+    {
+      en: "He was called as a key ____ in the high-profile corruption case.",
+      tr: 'witness',
+      wrong: 'policy'
+    },
+    {
+      en: "The government’s foreign ____ has been criticised by both opposition parties.",
+      tr: 'policy',
+      wrong: 'jury'
+    },
+    {
+      en: "Anyone accused of a serious ____ has the right to a fair trial and legal representation.",
+      tr: 'offence',
+      wrong: 'democracy'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 29 — Work & Employment ───────────────────────
 [
   { en: 'application',  tr: 'müraciət',          wrong: 'sənəd',         wen: 'holiday',       def: 'a formal request for a job' },
@@ -5964,6 +7058,113 @@ const LEVELS = [
   { en: 'reward',       tr: 'mükafat',           wrong: 'hədiyyə',       wen: 'punishment',    def: 'something given because of good work' },
   { en: 'target',       tr: 'hədəf',             wrong: 'məqsəd',        wen: 'problem',       def: 'a goal or result you want to achieve' }
 ],
+
+      // ─────────────────────── EXAM — Work & Employment + Success & Achievement (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "All applicants must submit a detailed ____ along with a cover letter.",
+      tr: 'CV',
+      wrong: 'medal'
+    },
+    {
+      en: "After working for the same company for 35 years, he decided to ____ at the age of 62.",
+      tr: 'retire',
+      wrong: 'ambition'
+    },
+    {
+      en: "The company offers a competitive ____ and excellent opportunities for career development.",
+      tr: 'salary',
+      wrong: 'target'
+    },
+    {
+      en: "She had a very successful ____, rising from assistant to managing director in just ten years.",
+      tr: 'career',
+      wrong: 'obstacle'
+    },
+    {
+      en: "The human resources department received over 200 ____ for the new marketing position.",
+      tr: 'applications',
+      wrong: 'talent'
+    },
+    {
+      en: "Good communication skills and teamwork are essential when working with ____.",
+      tr: 'colleagues',
+      wrong: 'goals'
+    },
+    {
+      en: "Before signing any ____, it is important to read all the terms and conditions carefully.",
+      tr: 'contract',
+      wrong: 'victory'
+    },
+    {
+      en: "After several months of unemployment, he finally received a job ____ from a multinational company.",
+      tr: 'offer',
+      wrong: 'recognition'
+    },
+    {
+      en: "The company promotes a culture where hard work and dedication are properly ____.",
+      tr: 'rewarded',
+      wrong: 'unemployed'
+    },
+    {
+      en: "She has always been very ____ and set herself high targets from an early age.",
+      tr: 'ambitious',
+      wrong: 'staff'
+    },
+    {
+      en: "Winning the championship was the greatest ____ of his sporting career.",
+      tr: 'achievement',
+      wrong: 'profession'
+    },
+    {
+      en: "The team worked extremely hard and eventually ____ their goal of doubling sales.",
+      tr: 'achieved',
+      wrong: 'interview'
+    },
+    {
+      en: "The young musician finally gained international ____ after releasing her second album.",
+      tr: 'recognition',
+      wrong: 'employer'
+    },
+    {
+      en: "Setting clear and realistic ____ is the first step towards long-term success.",
+      tr: 'goals',
+      wrong: 'retirement'
+    },
+    {
+      en: "Many people consider financial independence to be the true measure of ____.",
+      tr: 'success',
+      wrong: 'contract'
+    },
+    {
+      en: "She is a highly ____ businesswoman who has built a global brand from nothing.",
+      tr: 'successful',
+      wrong: 'unemployed'
+    },
+    {
+      en: "Natural ____ is important, but hard work and determination are what bring real results.",
+      tr: 'talent',
+      wrong: 'application'
+    },
+    {
+      en: "After many years of effort, the project finally reached its main ____ ahead of schedule.",
+      tr: 'target',
+      wrong: 'colleague'
+    },
+    {
+      en: "The whole ____ celebrated when the company announced record profits for the year.",
+      tr: 'staff',
+      wrong: 'achievement'
+    },
+    {
+      en: "He received a special ____ for his outstanding contribution to the field of medical research.",
+      tr: 'award',
+      wrong: 'career'
+    }
+  ],
+},
+      
       // ─────────────────────── QUIZ 31 — Negative Emotions & States ───────────────────────
 [
   { en: 'angry',        tr: 'əsəbi',             wrong: 'hirslı',        wen: 'calm',          def: 'feeling strong displeasure or annoyance' },
@@ -6012,6 +7213,112 @@ const LEVELS = [
   { en: 'wise',         tr: 'müdrik',            wrong: 'ağıllı',        wen: 'stupid',        def: 'having experience and good judgement' }
 ],
 
+      // ─────────────────────── EXAM — Negative Emotions & Positive Qualities (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "She felt extremely ____ when she realised she had sent the private email to the wrong person.",
+      tr: 'embarrassed',
+      wrong: 'energetic'
+    },
+    {
+      en: "He was ____ with his team’s performance because they had not prepared properly for the presentation.",
+      tr: 'frustrated',
+      wrong: 'generous'
+    },
+    {
+      en: "After failing the exam twice, he started to feel ____ about his chances of getting into university.",
+      tr: 'pessimistic',
+      wrong: 'polite'
+    },
+    {
+      en: "The news of the accident left the whole family feeling shocked and deeply ____.",
+      tr: 'upset',
+      wrong: 'talented'
+    },
+    {
+      en: "Even though she was very ____ before the interview, she managed to answer all the questions confidently.",
+      tr: 'nervous',
+      wrong: 'wise'
+    },
+    {
+      en: "Living alone in a new city for the first time made her feel incredibly ____.",
+      tr: 'lonely',
+      wrong: 'responsible'
+    },
+    {
+      en: "He was ____ when his best friend betrayed his trust and shared his secret.",
+      tr: 'furious',
+      wrong: 'creative'
+    },
+    {
+      en: "Parents should try to remain ____ when dealing with difficult teenagers.",
+      tr: 'patient',
+      wrong: 'depressed'
+    },
+    {
+      en: "She is a very ____ person who always looks for the best possible outcome in any situation.",
+      tr: 'optimistic',
+      wrong: 'ashamed'
+    },
+    {
+      en: "It was very ____ of her to donate most of her savings to help children in need.",
+      tr: 'generous',
+      wrong: 'anxious'
+    },
+    {
+      en: "A good leader should stay ____ even during times of crisis and uncertainty.",
+      tr: 'calm',
+      wrong: 'disappointed'
+    },
+    {
+      en: "He has always been very ____ and never gives up when facing challenges.",
+      tr: 'determined',
+      wrong: 'confused'
+    },
+    {
+      en: "Young children are often more ____ and open to new ideas than adults.",
+      tr: 'creative',
+      wrong: 'stressed'
+    },
+    {
+      en: "You can always trust her because she is a highly ____ and honest colleague.",
+      tr: 'reliable',
+      wrong: 'annoyed'
+    },
+    {
+      en: "The team felt ____ after losing the final match in the last minute.",
+      tr: 'disappointed',
+      wrong: 'sensible'
+    },
+    {
+      en: "It is important to be ____ when giving feedback so that it is not taken as rude.",
+      tr: 'polite',
+      wrong: 'lonely'
+    },
+    {
+      en: "She felt deeply ____ after lying to her parents about where she had been.",
+      tr: 'ashamed',
+      wrong: 'enthusiastic'
+    },
+    {
+      en: "The constant pressure at work left him feeling mentally and physically ____.",
+      tr: 'stressed',
+      wrong: 'brave'
+    },
+    {
+      en: "A truly ____ person thinks carefully before making important decisions.",
+      tr: 'sensible',
+      wrong: 'furious'
+    },
+    {
+      en: "Despite the difficulties, she remained ____ and continued working towards her long-term goals.",
+      tr: 'determined',
+      wrong: 'worried'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 33 — Media & Communication ───────────────────────
 [
   { en: 'advertisement', tr: 'reklam',           wrong: 'elan',          wen: 'secret',        def: 'a notice or film that tries to persuade people to buy something' },
@@ -6083,6 +7390,112 @@ const LEVELS = [
   { en: 'wound',        tr: 'yara',              wrong: 'xəsarət',       wen: 'healing',       def: 'an injury to the body caused by violence' }
 ],
 
+      // ─────────────────────── EXAM — Media, Environment, Health & Medicine (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The breaking news ____ appeared in large letters across the front page of every newspaper.",
+      tr: 'headline',
+      wrong: 'surgery'
+    },
+    {
+      en: "Social ____ has completely changed the way people receive and share information.",
+      tr: 'media',
+      wrong: 'patient'
+    },
+    {
+      en: "The new ____ about climate change has sparked heated debate across the country.",
+      tr: 'documentary',
+      wrong: 'virus'
+    },
+    {
+      en: "Many young people now get most of their news from ____ rather than traditional newspapers.",
+      tr: 'websites',
+      wrong: 'wound'
+    },
+    {
+      en: "The journalist wrote a powerful ____ exposing corruption in the government.",
+      tr: 'article',
+      wrong: 'therapy'
+    },
+    {
+      en: "The government is investing heavily in ____ energy to reduce dependence on fossil fuels.",
+      tr: 'renewable',
+      wrong: 'symptom'
+    },
+    {
+      en: "Rapid ____ is one of the biggest challenges facing the planet in the 21st century.",
+      tr: 'global warming',
+      wrong: 'nurse'
+    },
+    {
+      en: "We all need to do more to protect endangered species and preserve ____.",
+      tr: 'wildlife',
+      wrong: 'broadcast'
+    },
+    {
+      en: "The factory was fined for releasing dangerous chemicals and causing serious air ____.",
+      tr: 'pollution',
+      wrong: 'channel'
+    },
+    {
+      en: "After the earthquake and subsequent ____, thousands of people lost their homes.",
+      tr: 'tsunami',
+      wrong: 'editor'
+    },
+    {
+      en: "Sustainable development aims to meet present needs without damaging the ____ for future generations.",
+      tr: 'environment',
+      wrong: 'magazine'
+    },
+    {
+      en: "Early diagnosis and prompt ____ can significantly improve a patient’s chances of recovery.",
+      tr: 'treatment',
+      wrong: 'recycle'
+    },
+    {
+      en: "Mental ____ is just as important as physical health and should not be ignored.",
+      tr: 'health',
+      wrong: 'reporter'
+    },
+    {
+      en: "The doctor recommended complete rest and a course of ____ to fight the infection.",
+      tr: 'medicine',
+      wrong: 'conservation'
+    },
+    {
+      en: "He suffered a serious ____ to his leg during the football match and needed surgery.",
+      tr: 'injury',
+      wrong: 'headline'
+    },
+    {
+      en: "The hospital has a special unit for patients with life-threatening ____.",
+      tr: 'emergencies',
+      wrong: 'solar'
+    },
+    {
+      en: "Regular physical exercise is essential for maintaining good cardiovascular ____.",
+      tr: 'fitness',
+      wrong: 'article'
+    },
+    {
+      en: "The ____ performed a complex operation that lasted over six hours.",
+      tr: 'surgeon',
+      wrong: 'disaster'
+    },
+    {
+      en: "One of the most common ____ of this disease is a persistent high fever.",
+      tr: 'symptoms',
+      wrong: 'programme'
+    },
+    {
+      en: "The government launched a major ____ campaign to raise awareness about recycling.",
+      tr: 'awareness',
+      wrong: 'earthquake'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 36 — Technology & Innovation ───────────────────────
 [
   { en: 'computer',     tr: 'kompüter',          wrong: 'planşet',       wen: 'camera',        def: 'an electronic machine that can store and process information' },
@@ -6155,6 +7568,112 @@ const LEVELS = [
   { en: 'purchase',     tr: 'satın almaq',       wrong: 'əldə etmək',    wen: 'sell',          def: 'to buy something' }
 ],
 
+      // ─────────────────────── EXAM — Technology, Travel, Food & Shopping (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Artificial ____ is transforming many industries, from healthcare to transportation.",
+      tr: 'intelligence',
+      wrong: 'luggage'
+    },
+    {
+      en: "The new ____ allows users to control their home lighting and heating from anywhere.",
+      tr: 'app',
+      wrong: 'resort'
+    },
+    {
+      en: "Companies must constantly ____ their software to protect against cyber attacks.",
+      tr: 'update',
+      wrong: 'bargain'
+    },
+    {
+      en: "Virtual reality creates a completely ____ environment that feels real to the user.",
+      tr: 'virtual',
+      wrong: 'ingredient'
+    },
+    {
+      en: "Many experts believe that ____ will replace many traditional jobs in the near future.",
+      tr: 'robots',
+      wrong: 'passport'
+    },
+    {
+      en: "Finding suitable ____ in the city centre during the tourist season is very difficult.",
+      tr: 'accommodation',
+      wrong: 'supermarket'
+    },
+    {
+      en: "We need to make a ____ for the hotel before prices rise any further.",
+      tr: 'reservation',
+      wrong: 'brand'
+    },
+    {
+      en: "The tropical island has become a popular ____ for wealthy tourists.",
+      tr: 'resort',
+      wrong: 'device'
+    },
+    {
+      en: "Don't forget to take your ____ with you — you'll need it to enter the country.",
+      tr: 'passport',
+      wrong: 'recipe'
+    },
+    {
+      en: "The long ____ by ship across the Atlantic took almost two weeks.",
+      tr: 'voyage',
+      wrong: 'discount'
+    },
+    {
+      en: "Following the ____ exactly is essential if you want the cake to turn out perfectly.",
+      tr: 'recipe',
+      wrong: 'network'
+    },
+    {
+      en: "This famous ____ is known for selling fresh organic products at reasonable prices.",
+      tr: 'supermarket',
+      wrong: 'innovation'
+    },
+    {
+      en: "Many people cannot ____ to buy a house in the city centre because of high prices.",
+      tr: 'afford',
+      wrong: 'broadcast'
+    },
+    {
+      en: "She got a great ____ and bought the designer bag for half the normal price.",
+      tr: 'bargain',
+      wrong: 'gadget'
+    },
+    {
+      en: "The company is launching a new ____ of smartphones with improved cameras.",
+      tr: 'brand',
+      wrong: 'destination'
+    },
+    {
+      en: "Consumers are becoming more conscious about the environmental impact of the ____ they buy.",
+      tr: 'products',
+      wrong: 'flights'
+    },
+    {
+      en: "Solar power is one of the most promising forms of ____ energy.",
+      tr: 'renewable',
+      wrong: 'customer'
+    },
+    {
+      en: "The hotel offers luxury ____ with beautiful sea views and private balconies.",
+      tr: 'accommodation',
+      wrong: 'software'
+    },
+    {
+      en: "Modern ____ has made it much easier for people to stay connected while travelling.",
+      tr: 'technology',
+      wrong: 'meal'
+    },
+    {
+      en: "The government is investing heavily in green ____ to fight climate change.",
+      tr: 'innovation',
+      wrong: 'purchase'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 39 — House & Everyday Life ───────────────────────
 [
   { en: 'appliance',    tr: 'məişət texnikası',  wrong: 'cihaz',         wen: 'furniture',     def: 'a machine used in the home, such as a fridge or washing machine' },
@@ -6202,7 +7721,111 @@ const LEVELS = [
   { en: 'afterwards',   tr: 'sonradan',          wrong: 'daha sonra',    wen: 'before',        def: 'at a later time' },
   { en: 'agenda',       tr: 'gündəlik',          wrong: 'proqram',       wen: 'menu',          def: 'a list of things to be discussed' }
 ],
-  
+  // ─────────────────────── EXAM — House & Everyday Life + Mixed Advanced Words (B2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Modern homes are full of labour-saving ____ such as washing machines and dishwashers.",
+      tr: 'appliances',
+      wrong: 'agenda'
+    },
+    {
+      en: "The ____ in this old house is very high, which makes the rooms feel quite spacious.",
+      tr: 'ceiling',
+      wrong: 'accent'
+    },
+    {
+      en: "We need to call a professional to ____ the leaking roof before the rainy season starts.",
+      tr: 'repair',
+      wrong: 'adopt'
+    },
+    {
+      en: "The whole ____ works together to keep the house clean and organised.",
+      tr: 'household',
+      wrong: 'afterwards'
+    },
+    {
+      en: "She has lived in the same ____ for over twenty years and knows all her neighbours well.",
+      tr: 'neighbourhood',
+      wrong: 'accuracy'
+    },
+    {
+      en: "They decided to ____ a small cottage in the countryside for the summer.",
+      tr: 'rent',
+      wrong: 'activate'
+    },
+    {
+      en: "The living room has large windows that let in plenty of natural light.",
+      tr: 'windows',
+      wrong: 'accommodate'
+    },
+    {
+      en: "Solar panels on the ____ help reduce electricity bills significantly.",
+      tr: 'roof',
+      wrong: 'absent'
+    },
+    {
+      en: "He had to ____ his original plans when he realised they were not realistic.",
+      tr: 'abandon',
+      wrong: 'luggage'
+    },
+    {
+      en: "The company needs someone with strong ____ skills to manage the new project.",
+      tr: 'administration',
+      wrong: 'garden'
+    },
+    {
+      en: "She showed great ____ by admitting her mistake immediately.",
+      tr: 'acknowledgement',
+      wrong: 'furniture'
+    },
+    {
+      en: "Students must be ____ in at least 80% of classes to pass the course.",
+      tr: 'present',
+      wrong: 'kitchen'
+    },
+    {
+      en: "The new system will automatically ____ when someone enters the building.",
+      tr: 'activate',
+      wrong: 'building'
+    },
+    {
+      en: "We must find an ____ solution that satisfies both sides of the argument.",
+      tr: 'adequate',
+      wrong: 'garage'
+    },
+    {
+      en: "The manager promised to ____ the schedule to give employees more flexible hours.",
+      tr: 'adjust',
+      wrong: 'bedroom'
+    },
+    {
+      en: "Her strong regional ____ sometimes makes it difficult for people to understand her.",
+      tr: 'accent',
+      wrong: 'heating'
+    },
+    {
+      en: "The government plans to ____ stricter rules on plastic waste next year.",
+      tr: 'adopt',
+      wrong: 'living room'
+    },
+    {
+      en: "Please check the meeting ____ before you come so you know what will be discussed.",
+      tr: 'agenda',
+      wrong: 'ceiling'
+    },
+    {
+      en: "The company aims to ____ new talent from top universities every year.",
+      tr: 'acquire',
+      wrong: 'wall'
+    },
+    {
+      en: "He was ____ from school yesterday because he was feeling ill.",
+      tr: 'absent',
+      wrong: 'roof'
+    }
+  ],
+},
     ]
   },
 
