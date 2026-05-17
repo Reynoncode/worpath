@@ -1477,7 +1477,7 @@ button { font-family: var(--font); }
   flex-wrap: wrap;
   padding: 14px 8px 24px;
   justify-content: flex-start;
-  row-gap: 12px;
+  row-gap: 18px;
 }
 
 .reading-grid-node {
