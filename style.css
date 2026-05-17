@@ -1473,8 +1473,8 @@ button { font-family: var(--font); }
 .reading-quiz-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 8px;
-  padding: 14px 14px 24px;
+  gap: 4px 0;
+  padding: 14px 8px 24px;
 }
 
 .reading-grid-node {
@@ -1509,8 +1509,8 @@ button { font-family: var(--font); }
 }
 
 .reading-node-circle {
-  width: 62px;
-  height: 62px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 3px solid var(--border);
   background: var(--surface);
