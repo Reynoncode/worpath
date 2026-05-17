@@ -1604,6 +1604,7 @@ function renderLevels() {
 
 function startReadingQuiz(levelIdx, quizIdx) {
   const lvl  = LEVELS[levelIdx];
+  const item = lvl.quizzes[quizIdx]; 
 
   readingState.levelIdx = levelIdx;
   readingState.quizIdx  = quizIdx;
@@ -2085,7 +2086,6 @@ function startQuiz(levelIdx, quizIdx) {
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
 
-  const item = LEVELS[quiz.levelIdx].quizzes[quiz.quizIdx];
 
   let words;
   if (mode === 'phase2') {
