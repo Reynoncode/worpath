@@ -7885,6 +7885,111 @@ const LEVELS = [
   { en: 'sovereignty',  tr: 'suverenlik',        wrong: 'müstəqillik',   wen: 'dependence',    def: 'the full right and power of a country to govern itself' },
   { en: 'treaty',       tr: 'müqavilə',          wrong: 'saziş',         wen: 'war',           def: 'a formal agreement between two or more countries' }
 ],
+      // ─────────────────────── EXAM — Government & Politics (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The newly elected government has pledged to ____ the outdated and discriminatory laws that have been in place for decades.",
+      tr: 'abolish',
+      wrong: 'treaty'
+    },
+    {
+      en: "True democracy requires strong mechanisms of ____ to prevent those in power from abusing their position.",
+      tr: 'accountability',
+      wrong: 'regime'
+    },
+    {
+      en: "Senior officials must be held ____ for decisions that lead to significant public financial loss.",
+      tr: 'accountable',
+      wrong: 'legislative'
+    },
+    {
+      en: "The country's complex ____ has often been criticised for being slow, inefficient and overly centralised.",
+      tr: 'bureaucracy',
+      wrong: 'sovereignty'
+    },
+    {
+      en: "The proposed constitutional ____ aims to strengthen the separation of powers between the executive and judiciary.",
+      tr: 'amendment',
+      wrong: 'referendum'
+    },
+    {
+      en: "The two main parties failed to reach an agreement and eventually formed a fragile ____ government.",
+      tr: 'coalition',
+      wrong: 'jurisdiction'
+    },
+    {
+      en: "The prime minister reshuffled his ____ following heavy criticism of the government's handling of the crisis.",
+      tr: 'cabinet',
+      wrong: 'mandate'
+    },
+    {
+      en: "The upcoming ____ will be crucial in determining the future direction of the country's foreign policy.",
+      tr: 'election',
+      wrong: 'ideology'
+    },
+    {
+      en: "The supreme court has the authority to rule on the ____ of any law passed by parliament.",
+      tr: 'constitutionality',
+      wrong: 'governance'
+    },
+    {
+      en: "Voter turnout in the last ____ was disappointingly low, raising concerns about public engagement in politics.",
+      tr: 'referendum',
+      wrong: 'administration'
+    },
+    {
+      en: "The opposition accused the ruling party of undermining the country's judicial ____.",
+      tr: 'independence',
+      wrong: 'regulatory'
+    },
+    {
+      en: "Effective ____ requires both transparency and the active participation of civil society.",
+      tr: 'governance',
+      wrong: 'ambassador'
+    },
+    {
+      en: "The new ____ on data protection has far-reaching implications for businesses operating in the country.",
+      tr: 'legislation',
+      wrong: 'ballot'
+    },
+    {
+      en: "The president’s second term in office has been marked by increasing ____ tensions and polarisation.",
+      tr: 'political',
+      wrong: 'electoral'
+    },
+    {
+      en: "Many experts argue that true national ____ cannot be achieved without economic independence.",
+      tr: 'sovereignty',
+      wrong: 'minister'
+    },
+    {
+      en: "The country signed a landmark trade ____ with its neighbouring states last month.",
+      tr: 'treaty',
+      wrong: 'councillor'
+    },
+    {
+      en: "The minister was forced to resign after a major scandal involving abuse of ____.",
+      tr: 'power',
+      wrong: 'parliament'
+    },
+    {
+      en: "The judicial branch plays a vital role in upholding the rule of law and protecting citizens' ____.",
+      tr: 'rights',
+      wrong: 'policy'
+    },
+    {
+      en: "The current administration has introduced sweeping ____ reforms aimed at reducing red tape.",
+      tr: 'administrative',
+      wrong: 'diplomatic'
+    },
+    {
+      en: "Voters cast their ____ in secret to ensure the integrity and fairness of the democratic process.",
+      tr: 'ballots',
+      wrong: 'constitution'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 3 — Law & Justice ───────────────────────
 [
@@ -7934,6 +8039,112 @@ const LEVELS = [
   { en: 'warfare',      tr: 'müharibə',          wrong: 'döyüş',         wen: 'peace',         def: 'the activity of fighting a war' }
 ],
 
+// ─────────────────────── EXAM — Law, Justice, Crime & Conflict (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The prosecutor presented compelling evidence to support the serious ____ against the former minister.",
+      tr: 'accusation',
+      wrong: 'warfare'
+    },
+    {
+      en: "Several high-ranking officials are currently facing ____ of corruption and abuse of power.",
+      tr: 'allegations',
+      wrong: 'genocide'
+    },
+    {
+      en: "The opposition parties have repeatedly ____ that the election results were manipulated.",
+      tr: 'alleged',
+      wrong: 'hostage'
+    },
+    {
+      en: "The government granted political ____ to the journalist who had been threatened by the regime.",
+      tr: 'asylum',
+      wrong: 'raid'
+    },
+    {
+      en: "The company was sued for ____ of contract after failing to deliver the promised services.",
+      tr: 'breach',
+      wrong: 'coup'
+    },
+    {
+      en: "Following a lengthy trial, the defendant received a conviction and was sentenced to twelve years in prison.",
+      tr: 'conviction',
+      wrong: 'guerrilla'
+    },
+    {
+      en: "Widespread ____ in the police force has severely undermined public trust in law enforcement.",
+      tr: 'corruption',
+      wrong: 'verdict'
+    },
+    {
+      en: "The suspect was taken into police ____ for questioning but was released without charge.",
+      tr: 'custody',
+      wrong: 'atrocity'
+    },
+    {
+      en: "The ____ pleaded not guilty and maintained his innocence throughout the entire trial.",
+      tr: 'defendant',
+      wrong: 'assassination'
+    },
+    {
+      en: "The court ordered the immediate release of the journalist who had been held in arbitrary ____ for months.",
+      tr: 'detention',
+      wrong: 'riot'
+    },
+    {
+      en: "Strict ____ of environmental regulations is essential to combat illegal logging and pollution.",
+      tr: 'enforcement',
+      wrong: 'torture'
+    },
+    {
+      en: "The brutal ____ committed during the civil war shocked the international community.",
+      tr: 'atrocities',
+      wrong: 'jurisdiction'
+    },
+    {
+      en: "The military ____ was swiftly condemned by the United Nations and major world powers.",
+      tr: 'coup',
+      wrong: 'indictment'
+    },
+    {
+      en: "The international community must do more to prevent acts of ____ and bring those responsible to justice.",
+      tr: 'genocide',
+      wrong: 'felony'
+    },
+    {
+      en: "The jury returned a unanimous ____ of guilty on all charges after deliberating for less than two hours.",
+      tr: 'verdict',
+      wrong: 'conspiracy'
+    },
+    {
+      en: "The court has no ____ over crimes committed outside its national borders in this particular case.",
+      tr: 'jurisdiction',
+      wrong: 'assault'
+    },
+    {
+      en: "The brutal ____ of civilians during the conflict has been described as a clear violation of international law.",
+      tr: 'assault',
+      wrong: 'legislation'
+    },
+    {
+      en: "The suspect was charged with first-degree ____ after evidence linked him to the planned killing.",
+      tr: 'murder',
+      wrong: 'breach'
+    },
+    {
+      en: "Several witnesses came forward with credible testimony regarding the alleged ____ to overthrow the government.",
+      tr: 'conspiracy',
+      wrong: 'custody'
+    },
+    {
+      en: "The systematic use of ____ against political prisoners was documented by human rights organisations.",
+      tr: 'torture',
+      wrong: 'enforcement'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 5 — Business & Economy (1) ───────────────────────
 [
   { en: 'accumulation', tr: 'toplanma',          wrong: 'artım',          wen: 'decline',       def: 'the process of gradually collecting or increasing in quantity' },
@@ -8006,6 +8217,111 @@ const LEVELS = [
   { en: 'workforce',    tr: 'işçi qüvvəsi',      wrong: 'əmək bazarı',    wen: 'machinery',     def: 'the people engaged in or available for work in a country or area' }
 ],
       
+      // ─────────────────────── EXAM — Business & Economy + Society & Social Issues (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The persistent trade ____ has become a major concern for economists and policymakers alike.",
+      tr: 'deficit',
+      wrong: 'solidarity'
+    },
+    {
+      en: "After the merger, the newly formed corporation significantly increased its market share and overall ____.",
+      tr: 'productivity',
+      wrong: 'asylum'
+    },
+    {
+      en: "The government introduced substantial tax cuts as part of its expansionary ____ policy.",
+      tr: 'fiscal',
+      wrong: 'verdict'
+    },
+    {
+      en: "Foreign direct ____ has played a crucial role in the country’s rapid economic development.",
+      tr: 'investment',
+      wrong: 'prejudice'
+    },
+    {
+      en: "The company’s annual ____ reached record levels, reflecting strong demand for its innovative products.",
+      tr: 'turnover',
+      wrong: 'migration'
+    },
+    {
+      en: "Shareholders are expecting a higher ____ on their investment following the strong quarterly results.",
+      tr: 'yield',
+      wrong: 'refugee'
+    },
+    {
+      en: "The recent wave of privatisation has sparked intense debate about the long-term effects on public ____.",
+      tr: 'welfare',
+      wrong: 'liability'
+    },
+    {
+      en: "Economic ____ continues to widen, with the richest 10% owning an ever-increasing share of national wealth.",
+      tr: 'inequality',
+      wrong: 'franchise'
+    },
+    {
+      en: "Many countries are struggling to integrate large numbers of ____ fleeing conflict and persecution.",
+      tr: 'refugees',
+      wrong: 'audit'
+    },
+    {
+      en: "The proposed ____ between the two leading banks is expected to create a financial giant in the region.",
+      tr: 'merger',
+      wrong: 'tolerance'
+    },
+    {
+      en: "Social ____ remains one of the greatest challenges facing multicultural societies today.",
+      tr: 'integration',
+      wrong: 'bankruptcy'
+    },
+    {
+      en: "The scandal led to serious questions about corporate ____ and ethical standards in the industry.",
+      tr: 'accountability',
+      wrong: 'discrimination'
+    },
+    {
+      en: "Rising levels of ____ in major cities have prompted calls for more inclusive urban planning.",
+      tr: 'diversity',
+      wrong: 'commodity'
+    },
+    {
+      en: "The government provides generous ____ to low-income families to help alleviate child poverty.",
+      tr: 'subsidies',
+      wrong: 'conviction'
+    },
+    {
+      en: "The rapid ____ of wealth among a small elite has raised concerns about social stability.",
+      tr: 'accumulation',
+      wrong: 'jurisdiction'
+    },
+    {
+      en: "Promoting greater gender ____ remains a key objective of the organisation’s long-term strategy.",
+      tr: 'equality',
+      wrong: 'acquisition'
+    },
+    {
+      en: "The firm was forced to declare ____ after years of mounting debts and declining sales.",
+      tr: 'bankruptcy',
+      wrong: 'well-being'
+    },
+    {
+      en: "Cultural ____ is essential for building harmonious relationships in increasingly diverse communities.",
+      tr: 'tolerance',
+      wrong: 'enforcement'
+    },
+    {
+      en: "The new legislation aims to protect vulnerable groups from various forms of ____ in the workplace.",
+      tr: 'discrimination',
+      wrong: 'allocation'
+    },
+    {
+      en: "Sustainable economic growth must be balanced with social ____ and environmental protection.",
+      tr: 'well-being',
+      wrong: 'monopoly'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 8 — Psychology & Emotions ───────────────────────
 [
   { en: 'anxiety',      tr: 'narahatlıq',        wrong: 'qorxu',         wen: 'confidence',    def: 'a feeling of worry, nervousness or unease about something with an uncertain outcome' },
@@ -8053,7 +8369,111 @@ const LEVELS = [
   { en: 'spectrum',     tr: 'spektr',            wrong: 'diapazon',      wen: 'point',         def: 'a range of different positions or opinions' },
   { en: 'thesis',       tr: 'tezis',             wrong: 'hipotez',       wen: 'fact',          def: 'a statement or theory put forward to be maintained or proved' }
 ],
-      
+      // ─────────────────────── EXAM — Psychology, Emotions & Abstract Concepts (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Despite her outward confidence, she struggled with deep-seated ____ about her abilities and future prospects.",
+      tr: 'anxiety',
+      wrong: 'spectrum'
+    },
+    {
+      en: "The traumatic event left him with long-lasting psychological ____ that required years of professional therapy.",
+      tr: 'trauma',
+      wrong: 'doctrine'
+    },
+    {
+      en: "Survivors of the disaster experienced profound ____, which manifested as both anger and overwhelming sadness.",
+      tr: 'grief',
+      wrong: 'thesis'
+    },
+    {
+      en: "His irrational ____ with perfection often prevented him from completing projects on time.",
+      tr: 'obsession',
+      wrong: 'dimension'
+    },
+    {
+      en: "The constant public scrutiny led to feelings of deep ____ and a loss of personal ____.",
+      tr: 'humiliation',
+      wrong: 'reasoning'
+    },
+    {
+      en: "Many people find it difficult to express genuine ____ without feeling vulnerable or exposed.",
+      tr: 'vulnerability',
+      wrong: 'analogy'
+    },
+    {
+      en: "Her remarkable ____ in the face of repeated failures inspired everyone around her.",
+      tr: 'resilience',
+      wrong: 'ideology'
+    },
+    {
+      en: "The philosopher argued that human ____ is what fundamentally distinguishes us from other animals.",
+      tr: 'consciousness',
+      wrong: 'criterion'
+    },
+    {
+      en: "In times of crisis, maintaining a sense of ____ and self-worth becomes particularly important for mental health.",
+      tr: 'dignity',
+      wrong: 'assumption'
+    },
+    {
+      en: "The widespread ____ towards the political elite has contributed to growing social unrest.",
+      tr: 'resentment',
+      wrong: 'notion'
+    },
+    {
+      en: "From a historical ____, the industrial revolution fundamentally altered human society and labour relations.",
+      tr: 'perspective',
+      wrong: 'embarrassment'
+    },
+    {
+      en: "The core ____ of democracy is that power ultimately derives from the consent of the governed.",
+      tr: 'principle',
+      wrong: 'frustration'
+    },
+    {
+      en: "His argument was based on a false ____ that economic growth automatically leads to greater happiness.",
+      tr: 'assumption',
+      wrong: 'guilt'
+    },
+    {
+      en: "The concept of justice varies significantly across different cultural and philosophical ____.",
+      tr: 'traditions',
+      wrong: 'optimism'
+    },
+    {
+      en: "Developing critical ____ skills is essential for navigating the complexities of modern information overload.",
+      tr: 'reasoning',
+      wrong: 'depression'
+    },
+    {
+      en: "The theory presents a compelling ____ between quantum physics and ancient Eastern philosophy.",
+      tr: 'analogy',
+      wrong: 'sentiment'
+    },
+    {
+      en: "Her ____ remains remarkably positive despite facing numerous professional and personal setbacks.",
+      tr: 'optimism',
+      wrong: 'perception'
+    },
+    {
+      en: "The fundamental ____ of the research challenges conventional thinking in the field of behavioural economics.",
+      tr: 'hypothesis',
+      wrong: 'irony'
+    },
+    {
+      en: "Public ____ towards immigration has become increasingly polarised in recent years.",
+      tr: 'sentiment',
+      wrong: 'accumulation'
+    },
+    {
+      en: "True wisdom lies in recognising the full ____ of human experience, including both success and failure.",
+      tr: 'spectrum',
+      wrong: 'willingness'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 10 — Actions & Processes (1) ───────────────────────
 [
   { en: 'accelerate',   tr: 'sürətləndirmək',    wrong: 'artırmaq',      wen: 'slow down',     def: 'to begin to move or happen more quickly' },
@@ -8125,7 +8545,112 @@ const LEVELS = [
   { en: 'undermine',    tr: 'zəiflətmək',               wrong: 'baltalamaq',          wen: 'strengthen',    def: 'to gradually weaken or damage something' },
   { en: 'upgrade',      tr: 'təkmilləşdirmək',          wrong: 'yeniləmək',           wen: 'downgrade',     def: 'to raise something to a higher standard or level' }
 ],
-
+// ─────────────────────── EXAM — Actions, Processes, Change & Development (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The government is determined to ____ major economic reforms in order to stimulate long-term growth.",
+      tr: 'implement',
+      wrong: 'thrive'
+    },
+    {
+      en: "Successful leaders know how to ____ various departments so that they work together seamlessly towards a common goal.",
+      tr: 'coordinate',
+      wrong: 'flourish'
+    },
+    {
+      en: "The company aims to ____ its market position by acquiring smaller competitors in the region.",
+      tr: 'consolidate',
+      wrong: 'undermine'
+    },
+    {
+      en: "Researchers must carefully ____ the potential risks before proceeding with the clinical trials.",
+      tr: 'assess',
+      wrong: 'evolve'
+    },
+    {
+      en: "The rapid expansion of the company has enabled it to ____ significant resources for research and development.",
+      tr: 'allocate',
+      wrong: 'deterioration'
+    },
+    {
+      en: "New technologies have helped ____ the transition from fossil fuels to renewable energy sources.",
+      tr: 'accelerate',
+      wrong: 'comprise'
+    },
+    {
+      en: "It is essential to ____ strict environmental regulations to prevent further damage to fragile ecosystems.",
+      tr: 'enforce',
+      wrong: 'breakthrough'
+    },
+    {
+      en: "The university plans to ____ a new interdisciplinary programme focusing on sustainable development.",
+      tr: 'establish',
+      wrong: 'manipulation'
+    },
+    {
+      en: "The two departments have decided to ____ closely on the upcoming international project.",
+      tr: 'collaborate',
+      wrong: 'upgrade'
+    },
+    {
+      en: "Economic analysts ____ the recent downturn to a combination of global instability and poor policy decisions.",
+      tr: 'attribute',
+      wrong: 'facilitate'
+    },
+    {
+      en: "The organisation must ____ its strategies to remain competitive in an increasingly digital marketplace.",
+      tr: 'adapt',
+      wrong: 'maximise'
+    },
+    {
+      en: "The minister promised to ____ immediate measures to address the growing public discontent.",
+      tr: 'initiate',
+      wrong: 'accumulate'
+    },
+    {
+      en: "Successful businesses constantly seek ways to ____ efficiency while reducing operational costs.",
+      tr: 'enhance',
+      wrong: 'revolution'
+    },
+    {
+      en: "The new system will ____ better communication between different branches of the organisation.",
+      tr: 'facilitate',
+      wrong: 'transformation'
+    },
+    {
+      en: "Over time, languages naturally ____ as societies and cultures change and interact.",
+      tr: 'evolve',
+      wrong: 'impose'
+    },
+    {
+      en: "The board decided to ____ a comprehensive review of the company's financial performance.",
+      tr: 'conduct',
+      wrong: 'derive'
+    },
+    {
+      en: "The peace negotiations represent a significant ____ in resolving the long-standing conflict.",
+      tr: 'breakthrough',
+      wrong: 'administer'
+    },
+    {
+      en: "The country is currently undergoing a profound economic and social ____.",
+      tr: 'transformation',
+      wrong: 'circulate'
+    },
+    {
+      en: "It is crucial to ____ the negative effects of climate change through immediate global action.",
+      tr: 'mitigate',
+      wrong: 'correlate'
+    },
+    {
+      en: "The team's ability to quickly ____ to unexpected challenges was key to their ultimate success.",
+      tr: 'adapt',
+      wrong: 'execute'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 13 — Media & Communication ───────────────────────
 [
   { en: 'broadcast',    tr: 'yayımlamaq',               wrong: 'nəşr etmək',          wen: 'conceal',       def: 'to transmit radio or television programmes to a wide audience' },
@@ -8197,6 +8722,112 @@ const LEVELS = [
   { en: 'clinical',     tr: 'klinik',                   wrong: 'tibbi',               wen: 'theoretical',   def: 'relating to the observation and treatment of actual patients' },
   { en: 'physician',    tr: 'terapevt',                 wrong: 'cərrah',              wen: 'surgeon',       def: 'a medical practitioner who treats general medical conditions' }
 ],
+
+      // ─────────────────────── EXAM — Media, Science, Research & Health (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The media's extensive ____ of the scandal played a significant role in shaping public opinion.",
+      tr: 'coverage',
+      wrong: 'syndrome'
+    },
+    {
+      en: "The journalist's ____ from the conflict zone provided invaluable insight into the humanitarian crisis.",
+      tr: 'correspondent',
+      wrong: 'vaccine'
+    },
+    {
+      en: "State-controlled media often serve as a vehicle for political ____ rather than objective reporting.",
+      tr: 'propaganda',
+      wrong: 'empirical'
+    },
+    {
+      en: "His speech was a masterclass in political ____, carefully crafted to persuade without seeming manipulative.",
+      tr: 'rhetoric',
+      wrong: 'diagnosis'
+    },
+    {
+      en: "The documentary underwent rigorous editorial ____ before being approved for national broadcast.",
+      tr: 'scrutiny',
+      wrong: 'tumour'
+    },
+    {
+      en: "Scientists must rely on ____ evidence rather than anecdotal reports when publishing their findings.",
+      tr: 'empirical',
+      wrong: 'explicit'
+    },
+    {
+      en: "The research team is currently testing a new ____ that could revolutionise the treatment of autoimmune diseases.",
+      tr: 'hypothesis',
+      wrong: 'transcript'
+    },
+    {
+      en: "The study examines the complex ____ between diet, lifestyle and long-term cardiovascular health.",
+      tr: 'correlation',
+      wrong: 'articulate'
+    },
+    {
+      en: "Advances in ____ biology have enabled researchers to develop increasingly targeted cancer therapies.",
+      tr: 'molecular',
+      wrong: 'irony'
+    },
+    {
+      en: "The effectiveness of the new drug is currently being evaluated through large-scale ____ trials.",
+      tr: 'clinical',
+      wrong: 'convey'
+    },
+    {
+      en: "Early ____ and prompt treatment are critical in preventing the long-term complications of this condition.",
+      tr: 'diagnosis',
+      wrong: 'discourse'
+    },
+    {
+      en: "The patient was referred to a ____ specialist after exhibiting severe symptoms of post-traumatic stress.",
+      tr: 'psychiatric',
+      wrong: 'headline'
+    },
+    {
+      en: "Following the accident, she underwent extensive ____ to regain full mobility in her injured leg.",
+      tr: 'rehabilitation',
+      wrong: 'commentary'
+    },
+    {
+      en: "The rapid global spread of the virus was classified as a ____ by the World Health Organization.",
+      tr: 'pandemic',
+      wrong: 'editor'
+    },
+    {
+      en: "Chronic stress has been shown to have a profoundly negative impact on both physical and mental ____.",
+      tr: 'well-being',
+      wrong: 'publication'
+    },
+    {
+      en: "The surgeon performed a highly complex procedure with remarkable precision and skill.",
+      tr: 'surgeon',
+      wrong: 'implicit'
+    },
+    {
+      en: "Public health officials strongly recommend that all children receive the full course of recommended ____.",
+      tr: 'vaccines',
+      wrong: 'spectrum'
+    },
+    {
+      en: "The ability to ____ complex scientific concepts to a general audience is a rare and valuable skill.",
+      tr: 'articulate',
+      wrong: 'accumulation'
+    },
+    {
+      en: "His seemingly innocent remark carried a layer of ____ that only those familiar with the context could detect.",
+      tr: 'irony',
+      wrong: 'physician'
+    },
+    {
+      en: "The research findings challenge the long-held ____ that intelligence is determined solely by genetics.",
+      tr: 'assumption',
+      wrong: 'transmission'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 16 — Environment & Nature ───────────────────────
 [
@@ -8270,6 +8901,111 @@ const LEVELS = [
   { en: 'tolerant',     tr: 'tolerant',                 wrong: 'hörmətli',            wen: 'intolerant',    def: 'showing willingness to allow the existence of opinions or behaviour different from one’s own' }
 ],
 
+      // ─────────────────────── EXAM — Environment, Art, Culture & Personality (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The rapid loss of ____ poses one of the greatest threats to the planet’s long-term ecological stability.",
+      tr: 'biodiversity',
+      wrong: 'symphony'
+    },
+    {
+      en: "Many species are now on the brink of ____ due to habitat destruction and climate change.",
+      tr: 'extinction',
+      wrong: 'prestigious'
+    },
+    {
+      en: "Achieving true ____ requires a fundamental shift in how societies consume natural resources.",
+      tr: 'sustainability',
+      wrong: 'eccentric'
+    },
+    {
+      en: "Rising sea levels and extreme weather events are clear indicators of accelerating ____ change.",
+      tr: 'climate',
+      wrong: 'charismatic'
+    },
+    {
+      en: "The museum’s latest ____ features works by both established masters and emerging contemporary artists.",
+      tr: 'exhibition',
+      wrong: 'emission'
+    },
+    {
+      en: "Her ____ approach to sculpture challenges traditional notions of form and materiality.",
+      tr: 'innovative',
+      wrong: 'chronic'
+    },
+    {
+      en: "The novel is widely regarded as a literary ____ that defined an entire generation.",
+      tr: 'masterpiece',
+      wrong: 'habitat'
+    },
+    {
+      en: "The composer’s latest ____ masterfully blends classical traditions with modern experimental elements.",
+      tr: 'symphony',
+      wrong: 'recycling'
+    },
+    {
+      en: "Cultural ____ forms an essential part of a nation’s identity and historical memory.",
+      tr: 'heritage',
+      wrong: 'diagnosis'
+    },
+    {
+      en: "His ____ personality made him both fascinating and occasionally difficult to work with.",
+      tr: 'eccentric',
+      wrong: 'sustainable'
+    },
+    {
+      en: "She maintained a remarkably ____ outlook even after facing multiple professional setbacks.",
+      tr: 'resilient',
+      wrong: 'toxic'
+    },
+    {
+      en: "His ____ remarks about his own achievements often alienated those around him.",
+      tr: 'arrogant',
+      wrong: 'ecological'
+    },
+    {
+      en: "A truly ____ leader inspires loyalty through empathy rather than authority.",
+      tr: 'charismatic',
+      wrong: 'erosion'
+    },
+    {
+      en: "Her ____ nature led her to trust people who ultimately took advantage of her kindness.",
+      tr: 'naive',
+      wrong: 'conservation'
+    },
+    {
+      en: "The artist’s work explores the complex relationship between human vulnerability and ____.",
+      tr: 'resilience',
+      wrong: 'genre'
+    },
+    {
+      en: "The government has introduced stricter regulations to reduce industrial ____ in urban areas.",
+      tr: 'emissions',
+      wrong: 'melody'
+    },
+    {
+      en: "Marine ____ are particularly vulnerable to the effects of plastic pollution and rising temperatures.",
+      tr: 'ecosystems',
+      wrong: 'portrait'
+    },
+    {
+      en: "His deeply ____ worldview made it difficult for him to form meaningful relationships.",
+      tr: 'cynical',
+      wrong: 'canvas'
+    },
+    {
+      en: "The architect’s design perfectly balances functionality with pure ____ appeal.",
+      tr: 'aesthetic',
+      wrong: 'outbreak'
+    },
+    {
+      en: "True artistic ____ often emerges from the tension between tradition and innovation.",
+      tr: 'creativity',
+      wrong: 'pollution'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 19 — War & Military ───────────────────────
 [
   { en: 'battlefield',  tr: 'döyüş meydanı',            wrong: 'cəbhə',               wen: 'playground',    def: 'the piece of ground on which a battle is fought' },
@@ -8340,7 +9076,112 @@ const LEVELS = [
   { en: 'stubborn',     tr: 'inadkar',                  wrong: 'sərt',                wen: 'flexible',      def: 'determined not to change one’s attitude or position' },
   { en: 'tolerant',     tr: 'tolerant',                 wrong: 'hörmətli',            wen: 'intolerant',    def: 'showing willingness to allow the existence of opinions or behaviour different from one’s own' }
 ],
-
+      
+// ─────────────────────── EXAM — War, Military, Advanced Concepts & Personality (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The prolonged conflict has turned vast areas of the country into a devastated ____ where little civilian life remains.",
+      tr: 'battlefield',
+      wrong: 'consensus'
+    },
+    {
+      en: "The rapid ____ of troops to the border region heightened international tensions significantly.",
+      tr: 'deployment',
+      wrong: 'eccentric'
+    },
+    {
+      en: "The surprise ____ of the neighbouring territory was widely condemned by the international community as an act of aggression.",
+      tr: 'invasion',
+      wrong: 'prestigious'
+    },
+    {
+      en: "Modern ____ relies heavily on advanced technology, intelligence, and precision-guided munitions.",
+      tr: 'warfare',
+      wrong: 'resilient'
+    },
+    {
+      en: "After years of service, the military ____ was honoured at a special ceremony for his contributions to national defence.",
+      tr: 'veteran',
+      wrong: 'sceptical'
+    },
+    {
+      en: "The government imposed a strict arms embargo to prevent further escalation of the armed ____.",
+      tr: 'conflict',
+      wrong: 'articulate'
+    },
+    {
+      en: "The peace negotiations finally resulted in a fragile ____ that both sides have so far respected.",
+      tr: 'ceasefire',
+      wrong: 'hypothesis'
+    },
+    {
+      en: "His ____ decision-making under pressure earned him the respect of both his superiors and subordinates.",
+      tr: 'strategic',
+      wrong: 'absurd'
+    },
+    {
+      en: "The enemy forces eventually chose to ____ rather than face certain defeat against overwhelming odds.",
+      tr: 'surrender',
+      wrong: 'accessible'
+    },
+    {
+      en: "The general devised a brilliant ____ plan that allowed the army to outmanoeuvre the opposing forces.",
+      tr: 'tactical',
+      wrong: 'dedicated'
+    },
+    {
+      en: "Her ____ approach to problem-solving often leads her to challenge conventional wisdom in her field.",
+      tr: 'radical',
+      wrong: 'arbitrary'
+    },
+    {
+      en: "Despite facing repeated failures, she remained remarkably ____ and continued pursuing her long-term objectives.",
+      tr: 'resilient',
+      wrong: 'biased'
+    },
+    {
+      en: "His ____ personality made him both admired and feared within the political establishment.",
+      tr: 'charismatic',
+      wrong: 'coherent'
+    },
+    {
+      en: "She is known for being refreshingly ____ and never hesitates to speak truth to power.",
+      tr: 'candid',
+      wrong: 'arrogant'
+    },
+    {
+      en: "His deeply ____ worldview often prevented him from forming genuine connections with others.",
+      tr: 'cynical',
+      wrong: 'authentic'
+    },
+    {
+      en: "The theory remains highly ____ because it challenges long-established scientific paradigms.",
+      tr: 'controversial',
+      wrong: 'dominant'
+    },
+    {
+      en: "The witness provided a remarkably ____ and detailed account of the events that unfolded that night.",
+      tr: 'coherent',
+      wrong: 'dynamic'
+    },
+    {
+      en: "Her ____ commitment to human rights has earned her international recognition and respect.",
+      tr: 'dedicated',
+      wrong: 'explicit'
+    },
+    {
+      en: "The decision appeared completely ____ and lacked any clear strategic justification.",
+      tr: 'arbitrary',
+      wrong: 'influential'
+    },
+    {
+      en: "True leadership requires both strategic vision and the ability to remain ____ in the face of adversity.",
+      tr: 'resilient',
+      wrong: 'naive'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 22 — Abstract & Philosophical Concepts ───────────────────────
 [
   { en: 'autonomy',     tr: 'muxtariyyət',              wrong: 'azadlıq',             wen: 'dependence',    def: 'the right or condition of self-government' },
@@ -8412,6 +9253,112 @@ const LEVELS = [
   { en: 'transition',   tr: 'keçid etmək',              wrong: 'dəyişmək',            wen: 'stability',     def: 'the process or period of changing from one state to another' },
   { en: 'undermine',    tr: 'zəiflətmək',               wrong: 'baltalamaq',          wen: 'strengthen',    def: 'to gradually weaken or damage something' }
 ],
+
+      // ─────────────────────── EXAM — Abstract Concepts, Actions & Change (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "True individual ____ can only exist within a society that respects both personal freedom and collective responsibility.",
+      tr: 'autonomy',
+      wrong: 'thrive'
+    },
+    {
+      en: "The philosopher argued that human ____ is what fundamentally separates us from mere biological existence.",
+      tr: 'consciousness',
+      wrong: 'escalate'
+    },
+    {
+      en: "Even in the most desperate circumstances, people strive to maintain their sense of human ____.",
+      tr: 'dignity',
+      wrong: 'manifest'
+    },
+    {
+      en: "The dominant political ____ of the era profoundly shaped both domestic policy and international relations.",
+      tr: 'ideology',
+      wrong: 'minimise'
+    },
+    {
+      en: "The ____ of the problem lies not in the symptoms but in the underlying systemic failures.",
+      tr: 'essence',
+      wrong: 'articulate'
+    },
+    {
+      en: "She demonstrated remarkable ____ by refusing to compromise her core moral principles under pressure.",
+      tr: 'integrity',
+      wrong: 'revive'
+    },
+    {
+      en: "The situation presented a classic ethical ____ with no clear right or wrong answer.",
+      tr: 'dilemma',
+      wrong: 'assemble'
+    },
+    {
+      en: "The government's failure to act has severely ____ public confidence in its ability to manage the crisis.",
+      tr: 'undermined',
+      wrong: 'confer'
+    },
+    {
+      en: "The company must ____ its resources more effectively if it wishes to remain competitive in the global market.",
+      tr: 'allocate',
+      wrong: 'deteriorate'
+    },
+    {
+      en: "Scientists have struggled for decades to ____ a comprehensive theory that explains all observed phenomena.",
+      tr: 'formulate',
+      wrong: 'circulate'
+    },
+    {
+      en: "The movement has gained significant momentum and continues to ____ across different social groups.",
+      tr: 'expand',
+      wrong: 'abolish'
+    },
+    {
+      en: "Despite numerous setbacks, the project continues to ____ thanks to the team's unwavering commitment.",
+      tr: 'flourish',
+      wrong: 'compel'
+    },
+    {
+      en: "The rapid technological changes have forced many traditional industries to ____ or face extinction.",
+      tr: 'adapt',
+      wrong: 'attribute'
+    },
+    {
+      en: "The peace process represents a delicate ____ from conflict to reconciliation that requires careful management.",
+      tr: 'transition',
+      wrong: 'accumulate'
+    },
+    {
+      en: "The new policy aims to ____ economic inequality through targeted social programmes.",
+      tr: 'diminish',
+      wrong: 'coordinate'
+    },
+    {
+      en: "The team worked tirelessly to ____ a detailed recovery plan following the natural disaster.",
+      tr: 'devise',
+      wrong: 'consolidate'
+    },
+    {
+      en: "His ability to ____ complex philosophical ideas in simple terms made him an exceptional teacher.",
+      tr: 'articulate',
+      wrong: 'correlate'
+    },
+    {
+      en: "The theory has been widely criticised for its failure to ____ real-world observations.",
+      tr: 'correlate',
+      wrong: 'concede'
+    },
+    {
+      en: "Societies must constantly ____ and reform their institutions to meet the challenges of a changing world.",
+      tr: 'evolve',
+      wrong: 'enforce'
+    },
+    {
+      en: "The scandal ultimately led to a profound ____ in the way the organisation was structured and governed.",
+      tr: 'transformation',
+      wrong: 'derive'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 25 — Problems, Difficulties & Risks ───────────────────────
 [
@@ -8485,6 +9432,112 @@ const LEVELS = [
   { en: 'rhetoric',     tr: 'ritorika',                 wrong: 'natiqlik',            wen: 'silence',       def: 'the art of effective or persuasive speaking or writing' }
 ],
 
+      // ─────────────────────── EXAM — Problems, Success, Media & Journalism (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The government is struggling to address the growing fiscal ____ caused by rising public expenditure and falling tax revenues.",
+      tr: 'deficit',
+      wrong: 'breakthrough'
+    },
+    {
+      en: "Climate change represents an existential ____ that threatens the long-term survival of countless species.",
+      tr: 'threat',
+      wrong: 'prestige'
+    },
+    {
+      en: "Many developing countries face severe skilled labour ____ in key sectors such as healthcare and engineering.",
+      tr: 'shortage',
+      wrong: 'feat'
+    },
+    {
+      en: "The country’s heavy reliance on a single export commodity has left its economy extremely ____ to global market fluctuations.",
+      tr: 'vulnerable',
+      wrong: 'renowned'
+    },
+    {
+      en: "Overcoming deep-rooted institutional ____ remains one of the greatest challenges in post-conflict reconstruction.",
+      tr: 'prejudice',
+      wrong: 'accomplishment'
+    },
+    {
+      en: "Winning the Nobel Prize was the crowning ____ of her long and distinguished scientific career.",
+      tr: 'achievement',
+      wrong: 'dilemma'
+    },
+    {
+      en: "The team’s latest discovery marked a major scientific ____ that could revolutionise the treatment of neurological disorders.",
+      tr: 'breakthrough',
+      wrong: 'constraint'
+    },
+    {
+      en: "Her ____ to humanitarian causes has earned her widespread international admiration and respect.",
+      tr: 'dedication',
+      wrong: 'flaw'
+    },
+    {
+      en: "The university enjoys considerable academic ____ due to its long history of groundbreaking research.",
+      tr: 'prestige',
+      wrong: 'chaos'
+    },
+    {
+      en: "The young entrepreneur’s rapid rise to success is a remarkable ____ considering his humble beginnings.",
+      tr: 'feat',
+      wrong: 'burden'
+    },
+    {
+      en: "The media’s sensationalist ____ of the scandal significantly influenced public perception of the politician.",
+      tr: 'coverage',
+      wrong: 'prosperity'
+    },
+    {
+      en: "The newspaper’s leading ____ strongly criticised the government’s handling of the economic crisis.",
+      tr: 'editorial',
+      wrong: 'triumph'
+    },
+    {
+      en: "State-controlled media often serve as instruments of political ____ rather than sources of objective information.",
+      tr: 'propaganda',
+      wrong: 'outstanding'
+    },
+    {
+      en: "The journalist’s on-the-ground ____ provided crucial context that was missing from official statements.",
+      tr: 'reporting',
+      wrong: 'dignity'
+    },
+    {
+      en: "The issue has sparked intense public ____ about the ethics of genetic engineering.",
+      tr: 'debate',
+      wrong: 'merit'
+    },
+    {
+      en: "His speech was a masterpiece of political ____, designed to appeal to both moderates and hardliners.",
+      tr: 'rhetoric',
+      wrong: 'frustration'
+    },
+    {
+      en: "The proposal has come under intense public ____ following allegations of corruption.",
+      tr: 'scrutiny',
+      wrong: 'worthy'
+    },
+    {
+      en: "The government’s handling of the crisis has led to widespread public ____ and loss of confidence.",
+      tr: 'frustration',
+      wrong: 'exceptional'
+    },
+    {
+      en: "The new policy represents a significant ____ from previous approaches to environmental protection.",
+      tr: 'departure',
+      wrong: 'prosperity'
+    },
+    {
+      en: "Her ____ performance in the role earned her critical acclaim and several prestigious awards.",
+      tr: 'outstanding',
+      wrong: 'complication'
+    }
+  ],
+},
+
 // ─────────────────────── QUIZ 28 — Science, Research & Technology ───────────────────────
 [
   { en: 'empirical',    tr: 'empirik',                  wrong: 'nəzəri',              wen: 'theoretical',   def: 'based on observation or experience rather than theory' },
@@ -8556,6 +9609,112 @@ const LEVELS = [
   { en: 'toxic',        tr: 'zəhərli',                  wrong: 'təhlükəli',           wen: 'harmless',      def: 'containing or being poisonous' },
   { en: 'climate',      tr: 'iqlim',                    wrong: 'hava',                wen: 'economy',       def: 'the long-term weather conditions in a particular region' }
 ],
+
+      // ─────────────────────── EXAM — Science, Technology, Health, Medicine & Environment (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The research team conducted a series of ____ studies to test the validity of their groundbreaking hypothesis.",
+      tr: 'empirical',
+      wrong: 'extinction'
+    },
+    {
+      en: "Advances in ____ biology have opened new frontiers in the treatment of previously incurable genetic disorders.",
+      tr: 'molecular',
+      wrong: 'chronic'
+    },
+    {
+      en: "The scientist proposed a bold ____ that challenges the fundamental assumptions of classical physics.",
+      tr: 'hypothesis',
+      wrong: 'surgeon'
+    },
+    {
+      en: "The development of quantum computing represents a major ____ that could transform multiple industries.",
+      tr: 'breakthrough',
+      wrong: 'obesity'
+    },
+    {
+      en: "Early and accurate ____ is crucial for the successful treatment of many life-threatening conditions.",
+      tr: 'diagnosis',
+      wrong: 'biodiversity'
+    },
+    {
+      en: "The patient was referred to a leading ____ specialist for evaluation of severe mood disorders.",
+      tr: 'psychiatric',
+      wrong: 'recycling'
+    },
+    {
+      en: "Following the accident, he underwent intensive physical and psychological ____ to regain full function.",
+      tr: 'rehabilitation',
+      wrong: 'emission'
+    },
+    {
+      en: "Widespread ____ remains one of the greatest public health challenges of the 21st century.",
+      tr: 'obesity',
+      wrong: 'specimen'
+    },
+    {
+      en: "The rapid loss of tropical rainforests poses a serious threat to global ____ and climate stability.",
+      tr: 'biodiversity',
+      wrong: 'simulation'
+    },
+    {
+      en: "Transitioning to ____ energy sources is essential for achieving long-term environmental sustainability.",
+      tr: 'renewable',
+      wrong: 'dilemma'
+    },
+    {
+      en: "Industrial activities continue to release harmful ____ into the atmosphere, accelerating climate change.",
+      tr: 'emissions',
+      wrong: 'prestige'
+    },
+    {
+      en: "Effective ____ policies are vital for protecting endangered species and preserving natural habitats.",
+      tr: 'conservation',
+      wrong: 'prototype'
+    },
+    {
+      en: "The concept of ____ development requires balancing economic growth with environmental protection.",
+      tr: 'sustainable',
+      wrong: 'correspondent'
+    },
+    {
+      en: "Scientists are using advanced computer ____ to model the potential effects of rising sea levels.",
+      tr: 'simulations',
+      wrong: 'outbreak'
+    },
+    {
+      en: "The new vaccine has shown promising results in ____ trials and may soon be approved for general use.",
+      tr: 'clinical',
+      wrong: 'habitat'
+    },
+    {
+      en: "Soil ____ caused by deforestation has led to a significant decline in agricultural productivity.",
+      tr: 'degradation',
+      wrong: 'charismatic'
+    },
+    {
+      en: "Marine ____ are particularly vulnerable to the combined effects of pollution and ocean acidification.",
+      tr: 'ecosystems',
+      wrong: 'articulate'
+    },
+    {
+      en: "The discovery of a new ____ has the potential to revolutionise our understanding of the universe.",
+      tr: 'particle',
+      wrong: 'resilient'
+    },
+    {
+      en: "Public health officials are working to contain the latest ____ before it spreads to neighbouring regions.",
+      tr: 'outbreak',
+      wrong: 'prestigious'
+    },
+    {
+      en: "The long-term psychological ____ of childhood trauma can persist well into adulthood if left untreated.",
+      tr: 'trauma',
+      wrong: 'innovation'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 31 — Art, Culture & Heritage ───────────────────────
 [
@@ -8629,6 +9788,111 @@ const LEVELS = [
   { en: 'hostage',      tr: 'girov',                    wrong: 'məhbus',              wen: 'guest',         def: 'a person held captive by force as a means of bargaining' }
 ],
 
+      // ─────────────────────── EXAM — Art, Culture, Law, War & Conflict (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The exhibition offers a profound exploration of the relationship between modern technology and traditional ____ values.",
+      tr: 'aesthetic',
+      wrong: 'deployment'
+    },
+    {
+      en: "The restoration of the ancient temple was a remarkable feat of ____ preservation and engineering skill.",
+      tr: 'architectural',
+      wrong: 'hostage'
+    },
+    {
+      en: "Her latest novel is widely regarded as a literary ____ that captures the spirit of an entire generation.",
+      tr: 'masterpiece',
+      wrong: 'indictment'
+    },
+    {
+      en: "The country's rich cultural ____ attracts millions of visitors every year and forms a vital part of its identity.",
+      tr: 'heritage',
+      wrong: 'conviction'
+    },
+    {
+      en: "The composer's ____ blends traditional folk elements with innovative contemporary techniques.",
+      tr: 'symphony',
+      wrong: 'breach'
+    },
+    {
+      en: "The court dismissed the ____ due to insufficient evidence and lack of credible witnesses.",
+      tr: 'accusation',
+      wrong: 'canvas'
+    },
+    {
+      en: "The new legislation represents a significant ____ of citizens' fundamental rights and freedoms.",
+      tr: 'breach',
+      wrong: 'melody'
+    },
+    {
+      en: "The international community has condemned the systematic human rights ____ occurring in the region.",
+      tr: 'violations',
+      wrong: 'genre'
+    },
+    {
+      en: "The judge's impartial ____ was widely praised for upholding the principles of justice and due process.",
+      tr: 'verdict',
+      wrong: 'ritual'
+    },
+    {
+      en: "The rapid ____ of troops along the border escalated tensions between the two neighbouring countries.",
+      tr: 'deployment',
+      wrong: 'portrait'
+    },
+    {
+      en: "The brutal ____ of civilians during the conflict has been classified as a potential war crime.",
+      tr: 'assault',
+      wrong: 'contemporary'
+    },
+    {
+      en: "Modern ____ increasingly relies on asymmetric tactics, advanced technology and intelligence operations.",
+      tr: 'warfare',
+      wrong: 'exhibition'
+    },
+    {
+      en: "The peace negotiations finally resulted in a fragile ____ that both sides have agreed to honour.",
+      tr: 'ceasefire',
+      wrong: 'sculpture'
+    },
+    {
+      en: "Experienced military ____ provided crucial strategic advice during the planning of the operation.",
+      tr: 'veterans',
+      wrong: 'manuscript'
+    },
+    {
+      en: "The surprise military ____ was met with fierce resistance from local defence forces.",
+      tr: 'invasion',
+      wrong: 'classical'
+    },
+    {
+      en: "The ability to remain calm and make rational decisions under extreme pressure is a hallmark of great ____ leadership.",
+      tr: 'strategic',
+      wrong: 'legendary'
+    },
+    {
+      en: "The use of chemical weapons in the conflict constituted a clear ____ of international law.",
+      tr: 'violation',
+      wrong: 'orchestra'
+    },
+    {
+      en: "The artist's work explores the complex interplay between personal ____ and collective memory.",
+      tr: 'trauma',
+      wrong: 'theatrical'
+    },
+    {
+      en: "His ____ personality and visionary ideas profoundly influenced the course of 20th-century art.",
+      tr: 'charismatic',
+      wrong: 'tactical'
+    },
+    {
+      en: "The rapid ____ of traditional cultural practices in the face of globalisation is a growing concern for anthropologists.",
+      tr: 'erosion',
+      wrong: 'artillery'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 34 — Economy & Finance (Advanced) ───────────────────────
 [
   { en: 'bankruptcy',   tr: 'iflas',                    wrong: 'borc',                wen: 'prosperity',    def: 'the state of being unable to pay debts and legally declared insolvent' },
@@ -8700,6 +9964,112 @@ const LEVELS = [
   { en: 'consultation', tr: 'məsləhət',                 wrong: 'görüş',               wen: 'isolation',     def: 'the action or process of formally consulting or discussing' },
   { en: 'consensus',    tr: 'konsensus',                wrong: 'razılaşma',           wen: 'disagreement',  def: 'general agreement among a group of people' }
 ],
+
+      // ─────────────────────── EXAM — Economy, Society, Communication & Interaction (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The persistent trade ____ continues to undermine the country's economic stability and long-term growth prospects.",
+      tr: 'deficit',
+      wrong: 'discourse'
+    },
+    {
+      en: "After the merger, the corporation significantly increased its market share while improving overall ____.",
+      tr: 'productivity',
+      wrong: 'allegation'
+    },
+    {
+      en: "Many economists argue that widening income ____ poses a serious threat to social cohesion.",
+      tr: 'inequality',
+      wrong: 'consensus'
+    },
+    {
+      en: "The government introduced substantial fiscal ____ to support struggling industries during the recession.",
+      tr: 'subsidies',
+      wrong: 'interpretation'
+    },
+    {
+      en: "Foreign direct ____ has been instrumental in driving technological advancement and job creation.",
+      tr: 'investment',
+      wrong: 'clarification'
+    },
+    {
+      en: "The company's annual ____ reached unprecedented levels, reflecting strong consumer demand.",
+      tr: 'turnover',
+      wrong: 'solidarity'
+    },
+    {
+      en: "Achieving true social ____ requires more than legal reforms; it demands a fundamental shift in cultural attitudes.",
+      tr: 'integration',
+      wrong: 'transaction'
+    },
+    {
+      en: "The rapid ____ of wealth among a small elite has sparked intense public debate about economic justice.",
+      tr: 'accumulation',
+      wrong: 'articulate'
+    },
+    {
+      en: "Effective corporate ____ is essential for maintaining public trust and preventing financial scandals.",
+      tr: 'governance',
+      wrong: 'persuasion'
+    },
+    {
+      en: "The minister's speech was a masterclass in political ____, carefully balancing reassurance and authority.",
+      tr: 'rhetoric',
+      wrong: 'liability'
+    },
+    {
+      en: "The journalist's on-the-ground ____ provided crucial context that official statements had omitted.",
+      tr: 'reporting',
+      wrong: 'franchise'
+    },
+    {
+      en: "Her ability to ____ complex economic concepts in accessible language made her an influential public figure.",
+      tr: 'articulate',
+      wrong: 'monopoly'
+    },
+    {
+      en: "The media's sensationalist ____ of the crisis significantly influenced public perception and policy decisions.",
+      tr: 'coverage',
+      wrong: 'rehabilitation'
+    },
+    {
+      en: "The proposal has come under intense public ____ following allegations of corruption and conflicts of interest.",
+      tr: 'scrutiny',
+      wrong: 'yield'
+    },
+    {
+      en: "Achieving a broad political ____ on such a divisive issue will require considerable negotiation and compromise.",
+      tr: 'consensus',
+      wrong: 'habitat'
+    },
+    {
+      en: "The new legislation aims to protect vulnerable groups from various forms of systemic ____ in the workplace.",
+      tr: 'discrimination',
+      wrong: 'merger'
+    },
+    {
+      en: "His deeply ____ worldview often prevented him from recognising the genuine efforts of others.",
+      tr: 'cynical',
+      wrong: 'commodity'
+    },
+    {
+      en: "The peace process represents a delicate ____ from decades of conflict toward reconciliation and stability.",
+      tr: 'transition',
+      wrong: 'explicit'
+    },
+    {
+      en: "True leadership requires both strategic vision and the emotional ____ to inspire others during difficult times.",
+      tr: 'intelligence',
+      wrong: 'erosion'
+    },
+    {
+      en: "The company's aggressive expansion strategy ultimately led to financial overextension and eventual ____.",
+      tr: 'bankruptcy',
+      wrong: 'tolerance'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 37 — Negative States & Emotions ───────────────────────
 [
   { en: 'atrocity',     tr: 'vəhşilik',                 wrong: 'zorakılıq',           wen: 'kindness',      def: 'an extremely cruel and shocking act' },
@@ -8795,7 +10165,112 @@ const LEVELS = [
   { en: 'apparent',     tr: 'aşkar',                    wrong: 'açıq',                wen: 'hidden',        def: 'clearly visible or understood' },
   { en: 'aspiration',   tr: 'istək',                    wrong: 'arzu',                wen: 'apathy',        def: 'a hope or ambition of achieving something' }
 ],
-    ]
+// ─────────────────────── EXAM — Negative Emotions, Positive Qualities & Advanced Mixed (C1) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The survivors of the war continue to live with deep psychological ____ that may never fully heal.",
+      tr: 'trauma',
+      wrong: 'prestige'
+    },
+    {
+      en: "His growing ____ towards his colleagues stemmed from years of being overlooked for promotion.",
+      tr: 'resentment',
+      wrong: 'dignity'
+    },
+    {
+      en: "The scale of the humanitarian ____ committed during the conflict shocked the entire international community.",
+      tr: 'atrocity',
+      wrong: 'integrity'
+    },
+    {
+      en: "She felt overwhelming ____ after realising she had unintentionally betrayed her closest friend’s confidence.",
+      tr: 'guilt',
+      wrong: 'tolerance'
+    },
+    {
+      en: "Despite repeated failures, her remarkable ____ allowed her to continue pursuing her ambitious goals.",
+      tr: 'resilience',
+      wrong: 'vulnerability'
+    },
+    {
+      en: "True ____ requires admitting one’s mistakes and taking responsibility for their consequences.",
+      tr: 'integrity',
+      wrong: 'frustration'
+    },
+    {
+      en: "His ____ personality and visionary ideas have inspired a whole generation of young entrepreneurs.",
+      tr: 'charismatic',
+      wrong: 'cynical'
+    },
+    {
+      en: "The organisation’s commitment to ____ and transparency has earned it widespread public trust.",
+      tr: 'accountability',
+      wrong: 'despair'
+    },
+    {
+      en: "She faced the difficult situation with quiet ____ and refused to compromise her moral principles.",
+      tr: 'dignity',
+      wrong: 'hostility'
+    },
+    {
+      en: "The government’s handling of the crisis has led to widespread public ____ and loss of confidence.",
+      tr: 'frustration',
+      wrong: 'solidarity'
+    },
+    {
+      en: "His deeply ____ worldview made it difficult for him to trust even his closest colleagues.",
+      tr: 'cynical',
+      wrong: 'compassion'
+    },
+    {
+      en: "The community showed remarkable ____ by coming together to support the victims of the disaster.",
+      tr: 'solidarity',
+      wrong: 'betrayal'
+    },
+    {
+      en: "Her ____ to humanitarian causes has earned her international recognition and respect.",
+      tr: 'dedication',
+      wrong: 'contempt'
+    },
+    {
+      en: "The decision was criticised for lacking both moral ____ and practical wisdom.",
+      tr: 'integrity',
+      wrong: 'suspicion'
+    },
+    {
+      en: "True leadership demands both strategic vision and genuine ____ for the people one serves.",
+      tr: 'compassion',
+      wrong: 'arbitrary'
+    },
+    {
+      en: "The theory remains highly ____ because it challenges long-established scientific paradigms.",
+      tr: 'controversial',
+      wrong: 'coherent'
+    },
+    {
+      en: "His ability to remain calm and make rational decisions under pressure is truly ____.",
+      tr: 'remarkable',
+      wrong: 'explicit'
+    },
+    {
+      en: "The witness provided a remarkably ____ and detailed account of the events.",
+      tr: 'coherent',
+      wrong: 'adverse'
+    },
+    {
+      en: "The consequences of the policy were both immediate and far-reaching, with ____ effects on the economy.",
+      tr: 'profound',
+      wrong: 'accessible'
+    },
+    {
+      en: "Her ____ commitment to justice and equality has made her a role model for many young activists.",
+      tr: 'unwavering',
+      wrong: 'arrogant'
+    }
+  ],
+},
+ ]
   },
 
   // ╔══════════════════════════════════════════════════╗
@@ -8856,6 +10331,112 @@ const LEVELS = [
   { en: 'sophistry',    tr: 'yalançı mühakimə',          wrong: 'düzgün mühakimə',     wen: 'sound reasoning', def: 'the use of clever but false arguments, especially with the intention of deceiving' }
 ],
 
+      // ─────────────────────── EXAM — Deception & Dishonesty (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The politician's seemingly candid confession was later revealed to be nothing more than a calculated ____ designed to win public sympathy.",
+      tr: 'artifice',
+      wrong: 'sincerity'
+    },
+    {
+      en: "His charming smile and polished manners served only to ____ the ruthless ambition that lay beneath the surface.",
+      tr: 'beguile',
+      wrong: 'enlighten'
+    },
+    {
+      en: "The company's elaborate financial reports were exposed as a sophisticated ____ intended to conceal massive losses.",
+      tr: 'fabrication',
+      wrong: 'confirmation'
+    },
+    {
+      en: "Several executives were found to have ____ with external auditors to present a falsely positive picture of the company's health.",
+      tr: 'colluded',
+      wrong: 'cooperated'
+    },
+    {
+      en: "The lawyer's ____ arguments, while superficially convincing, were based on deliberately misleading premises.",
+      tr: 'specious',
+      wrong: 'genuine'
+    },
+    {
+      en: "She was a master of ____, always appearing helpful while subtly advancing her own hidden agenda.",
+      tr: 'duplicity',
+      wrong: 'integrity'
+    },
+    {
+      en: "The government's attempt to ____ the extent of the scandal only served to deepen public distrust.",
+      tr: 'whitewash',
+      wrong: 'expose'
+    },
+    {
+      en: "His ____ behaviour during the negotiations suggested he knew far more than he was willing to reveal.",
+      tr: 'surreptitious',
+      wrong: 'transparent'
+    },
+    {
+      en: "The con artist employed every form of ____ to separate vulnerable investors from their savings.",
+      tr: 'chicanery',
+      wrong: 'honesty'
+    },
+    {
+      en: "Rather than answer directly, the witness chose to ____, hoping to avoid incriminating himself.",
+      tr: 'prevaricate',
+      wrong: 'confess'
+    },
+    {
+      en: "The entire operation was based on an elaborate ____ to make the rival company appear financially unstable.",
+      tr: 'ruse',
+      wrong: 'strategy'
+    },
+    {
+      en: "His claims of expertise were quickly exposed as the boasts of a shameless ____.",
+      tr: 'charlatan',
+      wrong: 'expert'
+    },
+    {
+      en: "The report was filled with ____ statistics designed to mislead rather than inform policymakers.",
+      tr: 'spurious',
+      wrong: 'accurate'
+    },
+    {
+      en: "She managed to ____ ignorance about the company's illegal activities, despite being deeply involved.",
+      tr: 'feign',
+      wrong: 'reveal'
+    },
+    {
+      en: "The negotiations were undermined by layers of political ____ and mutual suspicion.",
+      tr: 'subterfuge',
+      wrong: 'openness'
+    },
+    {
+      en: "His seemingly innocent question was in fact a clever ____ to extract confidential information.",
+      tr: 'ploy',
+      wrong: 'approach'
+    },
+    {
+      en: "The use of such blatant ____ in academic circles is considered a serious breach of intellectual ethics.",
+      tr: 'sophistry',
+      wrong: 'reasoning'
+    },
+    {
+      en: "She was remarkably skilled at ____ her true intentions behind a façade of concern and goodwill.",
+      tr: 'dissembling',
+      wrong: 'revealing'
+    },
+    {
+      en: "The entire scandal was built upon a foundation of ____ and carefully constructed falsehoods.",
+      tr: 'deceit',
+      wrong: 'transparency'
+    },
+    {
+      en: "His ____ refusal to acknowledge any wrongdoing only served to heighten suspicion about his involvement.",
+      tr: 'disingenuous',
+      wrong: 'sincere'
+    }
+  ],
+},
+      
 // ─────────────────────── QUIZ 3 — Criticism & Condemnation (1) ───────────────────────
 [
   { en: 'to admonish', tr: 'xəbərdar etmək', wrong: 'tərifləmək', wen: 'praise', def: 'to warn or reprimand someone firmly and seriously about their behaviour or actions' },
@@ -8904,6 +10485,111 @@ const LEVELS = [
   { en: 'to impugn', tr: 'şübhə altına almaq', wrong: 'təsdiqləmək', wen: 'affirm', def: 'to dispute the truth, validity or honesty of something' }
 ],
 
+      // ─────────────────────── EXAM — Criticism & Condemnation (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The opposition leader delivered a blistering ____ against the government's handling of the economic crisis, accusing ministers of gross incompetence.",
+      tr: 'diatribe',
+      wrong: 'eulogy'
+    },
+    {
+      en: "In his latest article, the renowned critic ____ the novel as pretentious and intellectually hollow.",
+      tr: 'lambasted',
+      wrong: 'commended'
+    },
+    {
+      en: "The international community was quick to ____ the regime for its systematic violation of human rights.",
+      tr: 'castigate',
+      wrong: 'applaud'
+    },
+    {
+      en: "Her ____ remarks about her former colleagues revealed a level of bitterness that surprised everyone.",
+      tr: 'vitriolic',
+      wrong: 'complimentary'
+    },
+    {
+      en: "The committee issued a strongly worded ____ of the company's reckless disregard for safety regulations.",
+      tr: 'censure',
+      wrong: 'endorsement'
+    },
+    {
+      en: "The journalist was widely ____ for publishing unsubstantiated claims that damaged several reputations.",
+      tr: 'castigated',
+      wrong: 'praised'
+    },
+    {
+      en: "His speech was filled with ____ language aimed at undermining the credibility of his political opponents.",
+      tr: 'scurrilous',
+      wrong: 'respectful'
+    },
+    {
+      en: "The professor did not hesitate to ____ his students for submitting work that was clearly plagiarised.",
+      tr: 'reprimand',
+      wrong: 'thank'
+    },
+    {
+      en: "The film's director faced ____ criticism for what many saw as a cynical and exploitative portrayal of historical events.",
+      tr: 'scathing',
+      wrong: 'mild'
+    },
+    {
+      en: "She was accused of ____ her rivals through carefully worded statements that stopped just short of outright slander.",
+      tr: 'denigrating',
+      wrong: 'extolling'
+    },
+    {
+      en: "The tone of the debate became increasingly ____ as both sides traded personal insults.",
+      tr: 'acrimonious',
+      wrong: 'amicable'
+    },
+    {
+      en: "The opposition's attempt to ____ the minister's character ultimately backfired and damaged their own credibility.",
+      tr: 'impugn',
+      wrong: 'affirm'
+    },
+    {
+      en: "His ____ of the peace agreement was seen by many as a betrayal of the country's long-term interests.",
+      tr: 'repudiation',
+      wrong: 'endorsement'
+    },
+    {
+      en: "The judge delivered a stern ____ to the defendant, warning him of the serious consequences of his actions.",
+      tr: 'admonishment',
+      wrong: 'commendation'
+    },
+    {
+      en: "The article was filled with thinly veiled ____ aimed at the celebrity's lifestyle and choices.",
+      tr: 'aspersions',
+      wrong: 'praise'
+    },
+    {
+      en: "She was known for her tendency to ____ anyone who dared to challenge her authority in public.",
+      tr: 'berate',
+      wrong: 'laud'
+    },
+    {
+      en: "The report's ____ tone left little doubt about the author's deep disapproval of current policies.",
+      tr: 'derogatory',
+      wrong: 'laudatory'
+    },
+    {
+      en: "His ____ of the younger generation as lazy and entitled provoked a strong backlash on social media.",
+      tr: 'denigration',
+      wrong: 'celebration'
+    },
+    {
+      en: "The media's relentless ____ of the scandal contributed to the rapid fall of several high-profile figures.",
+      tr: 'vilification',
+      wrong: 'glorification'
+    },
+    {
+      en: "The senator issued a strongly worded statement ____ the proposed legislation as morally bankrupt and economically disastrous.",
+      tr: 'decrying',
+      wrong: 'endorsing'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 5 — Morality & Ethics (1) ───────────────────────
 [
   { en: 'to absolve', tr: 'günahdan təmizləmək', wrong: 'günahlandırmaq', wen: 'accuse', def: 'to declare someone free from guilt, blame or responsibility' },
@@ -8999,6 +10685,111 @@ const LEVELS = [
   { en: 'tyranny', tr: 'tiranlıq', wrong: 'demokratiya', wen: 'democracy', def: 'cruel and oppressive government or rule' },
   { en: 'veto', tr: 'veto', wrong: 'təsdiq', wen: 'ratification', def: 'a constitutional right to reject a decision or proposal made by a law-making body' }
 ],
+      // ─────────────────────── EXAM — Morality, Ethics, Power & Authority (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The senator's attempt to ____ himself from responsibility for the scandal only served to deepen public distrust.",
+      tr: 'absolve',
+      wrong: 'accuse'
+    },
+    {
+      en: "True moral courage requires the willingness to ____ for one's mistakes rather than seeking to evade accountability.",
+      tr: 'atone',
+      wrong: 'sin'
+    },
+    {
+      en: "His public display of ____ appeared genuine, yet many questioned whether it stemmed from sincere remorse or political expediency.",
+      tr: 'contrition',
+      wrong: 'pride'
+    },
+    {
+      en: "The court's ruling made it clear that those in positions of power are not ____ from the consequences of their actions.",
+      tr: 'immune',
+      wrong: 'innocent'
+    },
+    {
+      en: "The systematic ____ of human rights in the region has drawn widespread international condemnation.",
+      tr: 'depravity',
+      wrong: 'virtue'
+    },
+    {
+      en: "Her ____ behaviour during the negotiations raised serious questions about her professional ethics and integrity.",
+      tr: 'disingenuous',
+      wrong: 'sincere'
+    },
+    {
+      en: "The judge described the defendant's actions as particularly ____, warranting the maximum possible sentence.",
+      tr: 'heinous',
+      wrong: 'virtuous'
+    },
+    {
+      en: "Few leaders possess the moral ____ to admit their mistakes publicly and accept the political consequences.",
+      tr: 'rectitude',
+      wrong: 'immorality'
+    },
+    {
+      en: "His ____ generosity towards charitable causes stands in stark contrast to his ruthless business practices.",
+      tr: 'magnanimous',
+      wrong: 'petty'
+    },
+    {
+      en: "The company's attempt to ____ its role in the environmental disaster was met with widespread public outrage.",
+      tr: 'whitewash',
+      wrong: 'expose'
+    },
+    {
+      en: "The dictator's ____ over the country lasted for more than three decades before being overthrown.",
+      tr: 'tyranny',
+      wrong: 'democracy'
+    },
+    {
+      en: "The prime minister's decision to ____ responsibility for the policy failure was seen as a rare act of political courage.",
+      tr: 'abdicate',
+      wrong: 'ascend'
+    },
+    {
+      en: "The party's ____ within the coalition gave it disproportionate influence over national policy decisions.",
+      tr: 'hegemony',
+      wrong: 'equality'
+    },
+    {
+      en: "The new law significantly expanded the executive branch's ____, raising concerns about the separation of powers.",
+      tr: 'prerogative',
+      wrong: 'restriction'
+    },
+    {
+      en: "Many critics argue that the media's growing ____ poses a serious threat to democratic discourse.",
+      tr: 'dominion',
+      wrong: 'subjection'
+    },
+    {
+      en: "The general's swift and decisive action helped ____ the rebellion before it could spread to other regions.",
+      tr: 'subdue',
+      wrong: 'liberate'
+    },
+    {
+      en: "The king's sudden decision to ____ the throne in favour of his younger brother shocked the entire nation.",
+      tr: 'abdicate',
+      wrong: 'ascend'
+    },
+    {
+      en: "The regime's brutal ____ of dissenting voices has drawn sharp criticism from human rights organisations worldwide.",
+      tr: 'suppression',
+      wrong: 'fostering'
+    },
+    {
+      en: "Her ____ refusal to compromise on matters of principle earned her both admiration and powerful enemies.",
+      tr: 'uncompromising',
+      wrong: 'flexible'
+    },
+    {
+      en: "The philosopher's concept of moral ____ continues to influence contemporary debates on justice and human rights.",
+      tr: 'rectitude',
+      wrong: 'immorality'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 9 — Conflict & Hostility (1) ───────────────────────
 [
@@ -9096,6 +10887,112 @@ const LEVELS = [
   { en: 'restitution', tr: 'əvəz ödənişi', wrong: 'cəza', wen: 'punishment', def: 'the restoration of something lost or stolen to its rightful owner' }
 ],
 
+      // ─────────────────────── EXAM — Conflict, Hostility, Law & Governance (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The long-standing ____ between the two families finally erupted into open violence after decades of simmering resentment.",
+      tr: 'feud',
+      wrong: 'reconciliation'
+    },
+    {
+      en: "The government's increasingly ____ rhetoric has only served to inflame tensions rather than defuse them.",
+      tr: 'bellicose',
+      wrong: 'pacifist'
+    },
+    {
+      en: "The fragile ceasefire was shattered by a sudden and brutal ____ on civilian targets near the border.",
+      tr: 'onslaught',
+      wrong: 'negotiation'
+    },
+    {
+      en: "The country has been plagued by internal ____ for years, with various factions vying for control of key resources.",
+      tr: 'strife',
+      wrong: 'harmony'
+    },
+    {
+      en: "The rapid escalation of the conflict has created a dangerous power vacuum that militant groups are eager to exploit.",
+      tr: 'vacuum',
+      wrong: 'stability'
+    },
+    {
+      en: "The international community condemned the regime's systematic ____ of human rights as crimes against humanity.",
+      tr: 'violation',
+      wrong: 'upholding'
+    },
+    {
+      en: "The court issued a stern ____ against the company for its flagrant breach of environmental regulations.",
+      tr: 'injunction',
+      wrong: 'permission'
+    },
+    {
+      en: "The opposition leader's fiery speech was widely seen as an attempt to ____ public discontent into open rebellion.",
+      tr: 'foment',
+      wrong: 'pacify'
+    },
+    {
+      en: "The treaty's ratification was delayed due to fierce parliamentary debate over its perceived threat to national ____.",
+      tr: 'sovereignty',
+      wrong: 'dependence'
+    },
+    {
+      en: "The judge warned that any further ____ of court orders would result in severe penalties for the defendant.",
+      tr: 'contempt',
+      wrong: 'respect'
+    },
+    {
+      en: "The military junta's brutal ____ of all forms of political dissent has drawn widespread international condemnation.",
+      tr: 'suppression',
+      wrong: 'encouragement'
+    },
+    {
+      en: "The scandal has severely undermined the government's moral ____ and public legitimacy.",
+      tr: 'authority',
+      wrong: 'weakness'
+    },
+    {
+      en: "The peace negotiations collapsed amid mutual accusations of bad faith and political ____.",
+      tr: 'duplicity',
+      wrong: 'transparency'
+    },
+    {
+      en: "The rebel forces launched a surprise ____ that caught the government troops completely off guard.",
+      tr: 'incursion',
+      wrong: 'withdrawal'
+    },
+    {
+      en: "The commission's report was a scathing ____ of the systemic failures that led to the disaster.",
+      tr: 'indictment',
+      wrong: 'endorsement'
+    },
+    {
+      en: "The president's attempt to ____ emergency powers was immediately challenged by the constitutional court.",
+      tr: 'usurp',
+      wrong: 'relinquish'
+    },
+    {
+      en: "The deep-seated ____ between the two communities continues to hinder any meaningful reconciliation efforts.",
+      tr: 'enmity',
+      wrong: 'rapport'
+    },
+    {
+      en: "The lawyer argued that the evidence presented was insufficient to establish criminal ____ on the part of his client.",
+      tr: 'liability',
+      wrong: 'innocence'
+    },
+    {
+      en: "The sudden political ____ has created widespread uncertainty about the future direction of the country.",
+      tr: 'upheaval',
+      wrong: 'stability'
+    },
+    {
+      en: "The international tribunal was established to bring those responsible for the atrocities to ____.",
+      tr: 'justice',
+      wrong: 'impunity'
+    }
+  ],
+},
+
 // ─────────────────────── QUIZ 13 — Praise & Admiration ───────────────────────
 [
   { en: 'acclaim', tr: 'böyük tərif', wrong: 'tənqid', wen: 'criticism', def: 'enthusiastic and public praise or approval' },
@@ -9167,6 +11064,112 @@ const LEVELS = [
   { en: 'unctuous', tr: 'yaltaq', wrong: 'səmimi', wen: 'genuine', def: 'excessively flattering or ingratiating' },
   { en: 'vindictive', tr: 'qisasçı', wrong: 'bağışlayan', wen: 'forgiving', def: 'having or showing a strong or unreasoning desire for revenge' }
 ],
+
+      // ─────────────────────── EXAM — Praise, Admiration & Negative Character Traits (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The renowned scientist received widespread international ____ for her groundbreaking contributions to quantum physics.",
+      tr: 'acclaim',
+      wrong: 'denunciation'
+    },
+    {
+      en: "Her selfless dedication to humanitarian causes has earned her the ____ of people from all walks of life.",
+      tr: 'adulation',
+      wrong: 'contempt'
+    },
+    {
+      en: "The critic's ____ of the novel as a timeless masterpiece was echoed by scholars and readers alike.",
+      tr: 'eulogy',
+      wrong: 'diatribe'
+    },
+    {
+      en: "The young athlete was ____ to the status of national hero after his extraordinary performance in the Olympics.",
+      tr: 'exalted',
+      wrong: 'belittled'
+    },
+    {
+      en: "The professor's ____ scholarship and intellectual rigour have made him a truly ____ figure in academic circles.",
+      tr: 'venerable',
+      wrong: 'mediocre'
+    },
+    {
+      en: "His ____ behaviour and inflated sense of self-importance quickly alienated even his closest colleagues.",
+      tr: 'arrogance',
+      wrong: 'humility'
+    },
+    {
+      en: "The executive's ____ disregard for the suffering of others revealed a deeply ____ character.",
+      tr: 'callous',
+      wrong: 'compassionate'
+    },
+    {
+      en: "Her ____ spending habits and reckless extravagance eventually led to financial ruin.",
+      tr: 'profligate',
+      wrong: 'frugal'
+    },
+    {
+      en: "The politician's ____ promises and empty rhetoric failed to convince a sceptical electorate.",
+      tr: 'bombastic',
+      wrong: 'measured'
+    },
+    {
+      en: "His ____ refusal to accept any criticism demonstrated a remarkably ____ and inflexible personality.",
+      tr: 'obstinate',
+      wrong: 'adaptable'
+    },
+    {
+      en: "The CEO's ____ attitude towards his employees created a toxic work environment marked by fear and resentment.",
+      tr: 'condescending',
+      wrong: 'egalitarian'
+    },
+    {
+      en: "Her ____ flattery and overly servile behaviour made her colleagues deeply uncomfortable.",
+      tr: 'obsequious',
+      wrong: 'dignified'
+    },
+    {
+      en: "The dictator's ____ rule was characterised by systematic repression and the cult of personality.",
+      tr: 'tyrannical',
+      wrong: 'benevolent'
+    },
+    {
+      en: "His ____ worldview and deep mistrust of human nature made genuine relationships almost impossible.",
+      tr: 'cynical',
+      wrong: 'idealistic'
+    },
+    {
+      en: "The artist's ____ lifestyle and disregard for social conventions only added to his legendary status.",
+      tr: 'bohemian',
+      wrong: 'conventional'
+    },
+    {
+      en: "Her ____ generosity and willingness to help others without expectation of reward were truly inspiring.",
+      tr: 'altruistic',
+      wrong: 'selfish'
+    },
+    {
+      en: "The judge's ____ decision was widely praised as a triumph of moral courage and judicial integrity.",
+      tr: 'impartial',
+      wrong: 'biased'
+    },
+    {
+      en: "His sudden display of ____ after years of ruthless ambition surprised everyone who knew him.",
+      tr: 'magnanimity',
+      wrong: 'pettyness'
+    },
+    {
+      en: "The author's ____ portrayal of human weakness and moral ambiguity gives the novel its profound depth.",
+      tr: 'nuanced',
+      wrong: 'simplistic'
+    },
+    {
+      en: "Despite his immense wealth and power, he remained remarkably ____ and approachable.",
+      tr: 'unassuming',
+      wrong: 'arrogant'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 16 — Positive Character Traits (1) ───────────────────────
 [
@@ -9264,6 +11267,111 @@ const LEVELS = [
   { en: 'mortifying', tr: 'utandırıcı', wrong: 'qürurverici', wen: 'gratifying', def: 'causing great embarrassment or humiliation' }
 ],
 
+      // ─────────────────────── EXAM — Positive Character Traits & Emotions (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Her ____ handling of the delicate diplomatic situation earned her the respect of even her most hardened critics.",
+      tr: 'adroit',
+      wrong: 'clumsy'
+    },
+    {
+      en: "Despite his immense wealth and influence, he remained remarkably ____ and approachable in all social interactions.",
+      tr: 'unassuming',
+      wrong: 'arrogant'
+    },
+    {
+      en: "The judge's ____ decision, rendered without fear or favour, restored faith in the impartiality of the judiciary.",
+      tr: 'impartial',
+      wrong: 'biased'
+    },
+    {
+      en: "His ____ commitment to the project, even in the face of repeated setbacks, was nothing short of inspirational.",
+      tr: 'indefatigable',
+      wrong: 'half-hearted'
+    },
+    {
+      en: "She faced the devastating news with remarkable ____, refusing to let despair overwhelm her.",
+      tr: 'fortitude',
+      wrong: 'fragility'
+    },
+    {
+      en: "The leader's ____ nature allowed him to maintain composure and clarity of thought even during the most chaotic crises.",
+      tr: 'equanimity',
+      wrong: 'agitation'
+    },
+    {
+      en: "Her ____ approach to financial management ensured the organisation's long-term stability and growth.",
+      tr: 'prudent',
+      wrong: 'reckless'
+    },
+    {
+      en: "The professor's ____ analysis of the text revealed layers of meaning that had eluded previous scholars.",
+      tr: 'perspicacious',
+      wrong: 'superficial'
+    },
+    {
+      en: "His sudden display of ____ generosity towards his former rivals surprised everyone who knew his competitive nature.",
+      tr: 'magnanimous',
+      wrong: 'petty'
+    },
+    {
+      en: "The team's ____ attention to every minute detail was the key factor behind their flawless execution of the complex operation.",
+      tr: 'meticulous',
+      wrong: 'careless'
+    },
+    {
+      en: "She was overcome with ____ upon learning of her mentor's sudden passing after years of close collaboration.",
+      tr: 'grief',
+      wrong: 'elation'
+    },
+    {
+      en: "The survivors described their ____ at being rescued after days trapped in the wreckage.",
+      tr: 'euphoria',
+      wrong: 'despair'
+    },
+    {
+      en: "Years of unresolved trauma left him in a state of deep ____ that affected every aspect of his daily life.",
+      tr: 'despondency',
+      wrong: 'optimism'
+    },
+    {
+      en: "The defendant's visible ____ in court convinced the jury of his genuine remorse for the crime.",
+      tr: 'remorse',
+      wrong: 'indifference'
+    },
+    {
+      en: "She approached the unfamiliar situation with a mixture of excitement and ____.",
+      tr: 'trepidation',
+      wrong: 'confidence'
+    },
+    {
+      en: "His ____ at having disappointed his family was palpable and deeply moving.",
+      tr: 'chagrin',
+      wrong: 'satisfaction'
+    },
+    {
+      en: "The community responded to the tragedy with a profound sense of shared ____ and mutual support.",
+      tr: 'solidarity',
+      wrong: 'division'
+    },
+    {
+      en: "Despite the harsh criticism, she maintained an air of quiet ____ that commanded respect.",
+      tr: 'dignity',
+      wrong: 'humiliation'
+    },
+    {
+      en: "The child's innocent ____ and wonder at the world around him was truly heartwarming.",
+      tr: 'wistfulness',
+      wrong: 'cynicism'
+    },
+    {
+      en: "His ____ in the face of overwhelming adversity served as an inspiration to everyone who knew him.",
+      tr: 'stoicism',
+      wrong: 'hysteria'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 20 — Weakness & Decline ───────────────────────
 [
   { en: 'to abate', tr: 'zəifləmək', wrong: 'güclənmək', wen: 'intensify', def: 'to become less intense or severe; to subside' },
@@ -9334,6 +11442,112 @@ const LEVELS = [
   { en: 'melee', tr: 'qarışıq dava', wrong: 'sülh', wen: 'peace', def: 'a confused fight or scuffle involving many people' },
   { en: 'frenzy', tr: 'dəli həyəcan', wrong: 'sakitlik', wen: 'serenity', def: 'a state or period of uncontrolled excitement or wild behaviour' }
 ],
+
+      // ─────────────────────── EXAM — Positive Traits, Emotions, Weakness, Resistance & Chaos (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Her ____ handling of the delicate diplomatic crisis demonstrated both intellectual rigour and emotional intelligence of the highest order.",
+      tr: 'adroit',
+      wrong: 'clumsy'
+    },
+    {
+      en: "Despite his immense power and influence, he remained remarkably ____ and never lost touch with ordinary citizens.",
+      tr: 'unassuming',
+      wrong: 'arrogant'
+    },
+    {
+      en: "The leader's ____ in the face of overwhelming adversity inspired the entire nation to persevere.",
+      tr: 'fortitude',
+      wrong: 'fragility'
+    },
+    {
+      en: "His ____ commitment to the project, even after multiple setbacks, ultimately led to its remarkable success.",
+      tr: 'indefatigable',
+      wrong: 'half-hearted'
+    },
+    {
+      en: "She faced the devastating news with remarkable ____, refusing to let despair cloud her judgement.",
+      tr: 'equanimity',
+      wrong: 'agitation'
+    },
+    {
+      en: "The professor's ____ analysis revealed nuances that had escaped the attention of previous scholars.",
+      tr: 'perspicacious',
+      wrong: 'superficial'
+    },
+    {
+      en: "The team's ____ attention to every minute detail was the decisive factor in their flawless execution.",
+      tr: 'meticulous',
+      wrong: 'careless'
+    },
+    {
+      en: "Overwhelmed by ____ at the loss of his mentor, he withdrew from public life for several months.",
+      tr: 'grief',
+      wrong: 'elation'
+    },
+    {
+      en: "The survivors described their ____ upon being rescued after days stranded in the wilderness.",
+      tr: 'euphoria',
+      wrong: 'despair'
+    },
+    {
+      en: "Years of unresolved trauma had left him in a state of profound ____ that affected every aspect of his existence.",
+      tr: 'despondency',
+      wrong: 'optimism'
+    },
+    {
+      en: "The rapid ____ of the once-thriving industry was caused by a combination of technological disruption and poor management.",
+      tr: 'dwindling',
+      wrong: 'flourishing'
+    },
+    {
+      en: "The company's financial resources were severely ____ after years of reckless expansion and mismanagement.",
+      tr: 'depleted',
+      wrong: 'replenished'
+    },
+    {
+      en: "His ____ refusal to compromise on matters of principle made him both admired and politically isolated.",
+      tr: 'adamant',
+      wrong: 'flexible'
+    },
+    {
+      en: "The government's ____ stance on the issue only served to further inflame public discontent.",
+      tr: 'intransigent',
+      wrong: 'accommodating'
+    },
+    {
+      en: "The city descended into complete ____ after the sudden collapse of law and order.",
+      tr: 'anarchy',
+      wrong: 'order'
+    },
+    {
+      en: "The scandal caused widespread ____ within the political establishment and eroded public trust.",
+      tr: 'turmoil',
+      wrong: 'stability'
+    },
+    {
+      en: "The team's performance has ____ since the departure of their star player and experienced coach.",
+      tr: 'deteriorated',
+      wrong: 'improved'
+    },
+    {
+      en: "His once formidable influence has begun to ____ as younger, more dynamic leaders emerge.",
+      tr: 'wane',
+      wrong: 'wax'
+    },
+    {
+      en: "The prolonged economic stagnation has left the country in a state of dangerous ____.",
+      tr: 'lethargy',
+      wrong: 'vitality'
+    },
+    {
+      en: "The old building, now ____ and neglected, stood as a melancholy reminder of a more prosperous era.",
+      tr: 'decrepit',
+      wrong: 'pristine'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 23 — Language, Rhetoric & Literature (1) ───────────────────────
 [
@@ -9431,6 +11645,111 @@ const LEVELS = [
   { en: 'materialism', tr: 'materializm', wrong: 'idealizm', wen: 'idealism', def: 'the doctrine that nothing exists except matter and its movements and modifications' }
 ],
 
+      // ─────────────────────── EXAM — Language, Rhetoric, Thought & Philosophy (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The novel functions as a sophisticated ____ in which seemingly mundane events symbolise broader truths about human nature and society.",
+      tr: 'allegory',
+      wrong: 'literal account'
+    },
+    {
+      en: "Her speech was rich with subtle ____ to classical mythology that only the most erudite members of the audience fully appreciated.",
+      tr: 'allusions',
+      wrong: 'direct references'
+    },
+    {
+      en: "The philosopher's central ____ — that existence precedes essence — continues to provoke intense debate in contemporary thought.",
+      tr: 'axiom',
+      wrong: 'casual remark'
+    },
+    {
+      en: "The word 'home' carries powerful emotional ____ far beyond its denotative meaning of a physical dwelling.",
+      tr: 'connotations',
+      wrong: 'literal definitions'
+    },
+    {
+      en: "Politicians often resort to ____ such as 'collateral damage' to sanitise the horrific reality of civilian casualties in war.",
+      tr: 'euphemisms',
+      wrong: 'blunt expressions'
+    },
+    {
+      en: "The author's use of ____, describing the silence as 'deafening', created a striking and memorable image in the reader's mind.",
+      tr: 'hyperbole',
+      wrong: 'understatement'
+    },
+    {
+      en: "The poem masterfully employs ____, comparing life to 'a journey through uncharted waters' without using 'like' or 'as'.",
+      tr: 'metaphor',
+      wrong: 'literal description'
+    },
+    {
+      en: "The apparent ____ of 'bittersweet' perfectly captures the complex emotions of farewell.",
+      tr: 'oxymoron',
+      wrong: 'consistent phrase'
+    },
+    {
+      en: "His speech was little more than a collection of tired ____ that offered no original insight into the country's problems.",
+      tr: 'platitudes',
+      wrong: 'profound truths'
+    },
+    {
+      en: "The article was a brilliant piece of ____ that systematically dismantled the government's economic arguments.",
+      tr: 'polemic',
+      wrong: 'neutral analysis'
+    },
+    {
+      en: "The concept of 'progress' is laden with cultural ____ that vary significantly across different societies and historical periods.",
+      tr: 'connotations',
+      wrong: 'denotations'
+    },
+    {
+      en: "In his final ____, the dying king reflected upon the futility of power and the inevitability of mortality.",
+      tr: 'soliloquy',
+      wrong: 'public address'
+    },
+    {
+      en: "The philosopher's ____ that 'cogito ergo sum' became a foundational principle of modern Western thought.",
+      tr: 'postulate',
+      wrong: 'casual suggestion'
+    },
+    {
+      en: "True ____ demands that we question not only our beliefs but also the very foundations upon which those beliefs rest.",
+      tr: 'scepticism',
+      wrong: 'blind faith'
+    },
+    {
+      en: "The apparent ____ of 'less is more' reveals a deeper truth about simplicity and elegance in both art and life.",
+      tr: 'paradox',
+      wrong: 'obvious truth'
+    },
+    {
+      en: "His argument, though rhetorically impressive, was ultimately based on a dangerous ____ that led to flawed conclusions.",
+      tr: 'fallacy',
+      wrong: 'sound reasoning'
+    },
+    {
+      en: "The researcher's ____ approach, relying solely on observable data, stood in stark contrast to more speculative theoretical models.",
+      tr: 'empirical',
+      wrong: 'speculative'
+    },
+    {
+      en: "The shift from feudalism to capitalism represented a profound societal ____ that reshaped every aspect of human existence.",
+      tr: 'paradigm shift',
+      wrong: 'minor adjustment'
+    },
+    {
+      en: "Her writing is characterised by remarkable linguistic ____, seamlessly blending formal prose with colloquial expressions.",
+      tr: 'versatility',
+      wrong: 'limitation'
+    },
+    {
+      en: "The thinker's radical ____ challenged the very foundations of traditional moral philosophy and sparked decades of debate.",
+      tr: 'nihilism',
+      wrong: 'idealism'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 27 — Social Status & Class ───────────────────────
 [
   { en: 'bourgeoisie', tr: 'burjuaziya', wrong: 'proletariat', wen: 'proletariat', def: 'the middle class, typically with reference to its perceived materialistic values or conventional attitudes' },
@@ -9526,6 +11845,112 @@ const LEVELS = [
   { en: 'creed', tr: 'etikad', wrong: 'şübhə', wen: 'scepticism', def: 'a system of religious belief; a faith' },
   { en: 'zealotry', tr: 'fanatizm', wrong: 'laqeydlik', wen: 'indifference', def: 'fanatical and uncompromising pursuit of religious, political or other ideals' }
 ],
+
+      // ─────────────────────── EXAM — Social Status, Wealth, Religion & Belief (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "In many traditional societies, the rigid ____ system continues to dictate social interactions and opportunities despite legal reforms aimed at equality.",
+      tr: 'caste',
+      wrong: 'meritocracy'
+    },
+    {
+      en: "The intellectual ____ of 19th-century Europe played a pivotal role in shaping revolutionary ideas that would later transform the continent.",
+      tr: 'intelligentsia',
+      wrong: 'populace'
+    },
+    {
+      en: "The old aristocratic families jealously guarded their ancient ____, viewing any social mobility as a threat to their privileged status.",
+      tr: 'pedigree',
+      wrong: 'entourage'
+    },
+    {
+      en: "The rapid rise of a new ____ class in post-Soviet Russia created both unprecedented wealth and deep social divisions.",
+      tr: 'bourgeoisie',
+      wrong: 'proletariat'
+    },
+    {
+      en: "His ____ lifestyle stood in stark contrast to the penury suffered by the majority of the population under his rule.",
+      tr: 'opulent',
+      wrong: 'frugal'
+    },
+    {
+      en: "The entrepreneur's ____ approach to business allowed him to amass a vast fortune while maintaining a reputation for generosity.",
+      tr: 'munificent',
+      wrong: 'miserly'
+    },
+    {
+      en: "Extreme ____ drove the tycoon to exploit his workers relentlessly in pursuit of ever greater profits.",
+      tr: 'avarice',
+      wrong: 'largesse'
+    },
+    {
+      en: "After the economic crash, many once-prosperous families found themselves reduced to ____, struggling even for basic necessities.",
+      tr: 'penury',
+      wrong: 'opulence'
+    },
+    {
+      en: "The church's act of ____ transformed the humble chapel into a sacred space revered by pilgrims for centuries.",
+      tr: 'consecration',
+      wrong: 'desecration'
+    },
+    {
+      en: "Accusations of ____ against the cardinal severely damaged the institution's moral authority in the eyes of the faithful.",
+      tr: 'blasphemy',
+      wrong: 'piety'
+    },
+    {
+      en: "The philosopher's radical critique was immediately labelled as ____ by the religious authorities of his time.",
+      tr: 'heresy',
+      wrong: 'orthodoxy'
+    },
+    {
+      en: "Throughout history, ____ have often been willing to endure persecution and martyrdom in defence of their beliefs.",
+      tr: 'disciples',
+      wrong: 'tyrants'
+    },
+    {
+      en: "The concept of divine ____ remains central to many theological debates about the nature of free will and predestination.",
+      tr: 'providence',
+      wrong: 'chance'
+    },
+    {
+      en: "The ancient ritual of ____ served not only as a spiritual practice but also as a powerful tool for social cohesion.",
+      tr: 'invocation',
+      wrong: 'silence'
+    },
+    {
+      en: "His outward display of religious devotion masked a profound inner ____ that eventually led to his crisis of faith.",
+      tr: 'scepticism',
+      wrong: 'piety'
+    },
+    {
+      en: "The community's strong sense of ____ helped it preserve its cultural identity despite centuries of diaspora.",
+      tr: 'solidarity',
+      wrong: 'fragmentation'
+    },
+    {
+      en: "The rise of religious ____ in the region has led to increased sectarian violence and social instability.",
+      tr: 'zealotry',
+      wrong: 'tolerance'
+    },
+    {
+      en: "The emperor's claim to divine status was seen by many as an act of political ____ designed to consolidate power.",
+      tr: 'cynicism',
+      wrong: 'genuineness'
+    },
+    {
+      en: "True spiritual ____ requires not only adherence to ritual but also genuine compassion and moral integrity.",
+      tr: 'piety',
+      wrong: 'hypocrisy'
+    },
+    {
+      en: "The scholar's exhaustive study of religious ____ across cultures revealed surprising parallels in human spiritual experience.",
+      tr: 'mythology',
+      wrong: 'history'
+    }
+  ],
+},
       // ─────────────────────── QUIZ 31 — Ambition, Success & Failure (1) ───────────────────────
 [
   { en: 'acumen', tr: 'iti ağıl', wrong: 'küt ağıl', wen: 'obtuseness', def: 'the ability to make good judgements and quick decisions, typically in a particular domain' },
@@ -9598,6 +12023,112 @@ const LEVELS = [
   { en: 'to yield', tr: 'güzəştə getmək', wrong: 'müqavimət göstərmək', wen: 'resist', def: 'to give way to arguments, demands or pressure' }
 ],
 
+      // ─────────────────────── EXAM — Ambition, Resistance, Disorder & Chaos (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Her remarkable ____ and strategic vision enabled her to overcome seemingly insurmountable obstacles and achieve extraordinary success.",
+      tr: 'acumen',
+      wrong: 'obtuseness'
+    },
+    {
+      en: "The young entrepreneur faced the investors with impressive ____, presenting his radical idea with complete self-assurance.",
+      tr: 'aplomb',
+      wrong: 'apprehension'
+    },
+    {
+      en: "Despite repeated setbacks, her ____ determination to succeed never wavered, ultimately leading to her remarkable breakthrough.",
+      tr: 'indomitable',
+      wrong: 'feeble'
+    },
+    {
+      en: "The project reached its ____ when the team successfully launched the innovative product after years of dedicated effort.",
+      tr: 'zenith',
+      wrong: 'nadir'
+    },
+    {
+      en: "His ____ refusal to compromise on ethical principles, even when it cost him professional opportunities, earned him widespread respect.",
+      tr: 'unyielding',
+      wrong: 'accommodating'
+    },
+    {
+      en: "The government's ____ stance on the controversial issue only served to further polarise public opinion and deepen social divisions.",
+      tr: 'intransigent',
+      wrong: 'flexible'
+    },
+    {
+      en: "After the sudden policy change, the entire sector descended into complete ____ as companies struggled to adapt.",
+      tr: 'disarray',
+      wrong: 'order'
+    },
+    {
+      en: "The rapid ____ of the once-thriving industry was caused by a combination of technological disruption and poor strategic decisions.",
+      tr: 'dwindling',
+      wrong: 'flourishing'
+    },
+    {
+      en: "The team's performance began to ____ noticeably after the departure of their most experienced and motivating leader.",
+      tr: 'falter',
+      wrong: 'strengthen'
+    },
+    {
+      en: "His reckless ____ of the company's resources eventually led to its complete financial collapse and bankruptcy.",
+      tr: 'squandering',
+      wrong: 'economising'
+    },
+    {
+      en: "The country's political landscape has been in a state of perpetual ____ since the controversial election results were announced.",
+      tr: 'turmoil',
+      wrong: 'stability'
+    },
+    {
+      en: "The old empire, once powerful and influential, has now become a ____ institution, surviving only on past glories.",
+      tr: 'moribund',
+      wrong: 'flourishing'
+    },
+    {
+      en: "Her ____ nature made her an invaluable asset during negotiations, as she could quickly identify mutually beneficial solutions.",
+      tr: 'astute',
+      wrong: 'naive'
+    },
+    {
+      en: "The leader's ____ response to the crisis helped restore confidence and prevent further panic among the population.",
+      tr: 'decisive',
+      wrong: 'hesitant'
+    },
+    {
+      en: "The company's ____ approach to innovation allowed it to stay ahead of competitors in a rapidly changing market.",
+      tr: 'pioneering',
+      wrong: 'conventional'
+    },
+    {
+      en: "Despite facing overwhelming odds, the small resistance movement showed remarkable ____ and refused to surrender.",
+      tr: 'tenacity',
+      wrong: 'surrender'
+    },
+    {
+      en: "The sudden economic ____ caught even the most experienced analysts completely by surprise.",
+      tr: 'debacle',
+      wrong: 'triumph'
+    },
+    {
+      en: "His ____ to authority and refusal to follow outdated protocols often put him at odds with senior management.",
+      tr: 'recalcitrance',
+      wrong: 'compliance'
+    },
+    {
+      en: "The team's ability to ____ immense pressure during the final stages of the project was truly impressive.",
+      tr: 'withstand',
+      wrong: 'succumb'
+    },
+    {
+      en: "The old political system, once seemingly invincible, is now showing clear signs of ____ and inevitable decline.",
+      tr: 'attrition',
+      wrong: 'strengthening'
+    }
+  ],
+},
+
 // ─────────────────────── QUIZ 34 — Time, Change & Impermanence ───────────────────────
 [
   { en: 'anachronism', tr: 'zaman uyğunsuzluğu', wrong: 'zaman uyğunluğu', wen: 'chronological accuracy', def: 'a thing belonging or appropriate to a period other than that in which it exists' },
@@ -9644,6 +12175,112 @@ const LEVELS = [
   { en: 'sediment', tr: 'çökmə', wrong: 'təmiz su', wen: 'clear water', def: 'matter that settles to the bottom of a liquid' },
   { en: 'topography', tr: 'topoqrafiya', wrong: 'düzənlik', wen: 'flat terrain', def: 'the arrangement of the natural and artificial physical features of an area' }
 ],
+
+      // ─────────────────────── EXAM — Time, Change, Nature & Geography (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The rapid pace of technological advancement has rendered many traditional skills virtually ____ within a single generation.",
+      tr: 'obsolete',
+      wrong: 'innovative'
+    },
+    {
+      en: "The ancient ruins stand as a poignant reminder of the ____ of even the most powerful civilizations.",
+      tr: 'impermanence',
+      wrong: 'permanence'
+    },
+    {
+      en: "What was once considered a radical idea has now become ____, accepted as common knowledge by the majority.",
+      tr: 'axiomatic',
+      wrong: 'controversial'
+    },
+    {
+      en: "The artist's style, though initially dismissed as ____, has since been recognised as remarkably prescient and influential.",
+      tr: 'anachronistic',
+      wrong: 'contemporary'
+    },
+    {
+      en: "Her once-promising career began to ____ after a series of unfortunate professional missteps and public controversies.",
+      tr: 'dwindle',
+      wrong: 'flourish'
+    },
+    {
+      en: "The company's market dominance proved to be surprisingly ____, collapsing almost overnight due to disruptive innovation.",
+      tr: 'ephemeral',
+      wrong: 'enduring'
+    },
+    {
+      en: "The vast Arctic ____ stretches for thousands of kilometres, supporting a unique but fragile ecosystem.",
+      tr: 'tundra',
+      wrong: 'metropolis'
+    },
+    {
+      en: "The remote mountain village remained largely untouched by modernity, preserving its traditional way of life in splendid ____.",
+      tr: 'isolation',
+      wrong: 'integration'
+    },
+    {
+      en: "The river's ____, formed over millennia by sediment deposition, creates a rich and fertile agricultural region.",
+      tr: 'delta',
+      wrong: 'source'
+    },
+    {
+      en: "The dramatic ____ along the coastline offers breathtaking views but also poses significant geological hazards.",
+      tr: 'escarpment',
+      wrong: 'plain'
+    },
+    {
+      en: "Climate change is accelerating the ____ of coral reefs worldwide at an alarming and potentially irreversible rate.",
+      tr: 'degradation',
+      wrong: 'restoration'
+    },
+    {
+      en: "The deep ocean ____ remains one of the least explored and most mysterious environments on Earth.",
+      tr: 'abyss',
+      wrong: 'summit'
+    },
+    {
+      en: "The sudden volcanic ____ buried entire settlements under layers of ash and lava, preserving them for future archaeologists.",
+      tr: 'cataclysm',
+      wrong: 'serenity'
+    },
+    {
+      en: "The island nation's rich marine ____ makes it a global destination for diving enthusiasts and scientific researchers alike.",
+      tr: 'biodiversity',
+      wrong: 'uniformity'
+    },
+    {
+      en: "The ancient trade routes facilitated cultural exchange across vast geographical and temporal ____.",
+      tr: 'expanses',
+      wrong: 'confines'
+    },
+    {
+      en: "The once-mighty empire gradually fell into a state of terminal ____, unable to adapt to changing global realities.",
+      tr: 'decline',
+      wrong: 'ascendancy'
+    },
+    {
+      en: "The expedition ventured into the uncharted ____ of the Amazon rainforest, seeking species unknown to science.",
+      tr: 'wilderness',
+      wrong: 'metropolis'
+    },
+    {
+      en: "The concept of progress itself has become increasingly ____ as societies grapple with the unintended consequences of rapid modernisation.",
+      tr: 'problematic',
+      wrong: 'unquestionable'
+    },
+    {
+      en: "The artist's work captures the ____ beauty of fleeting moments, reminding us of the transient nature of existence.",
+      tr: 'ephemeral',
+      wrong: 'eternal'
+    },
+    {
+      en: "Geological ____ reveals that the landscape has undergone dramatic transformations over millions of years.",
+      tr: 'evidence',
+      wrong: 'speculation'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 36 — War, Military & Strategy (1) ───────────────────────
 [
@@ -9693,6 +12330,112 @@ const LEVELS = [
   { en: 'to retaliate', tr: 'qisas almaq', wrong: 'bağışlamaq', wen: 'forgive', def: 'to make an attack or assault in return for a similar attack' }
 ],
 
+      // ─────────────────────── EXAM — War, Military & Strategy (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The prolonged war of ____ gradually eroded the enemy's resources and morale, ultimately proving more decisive than any single battlefield victory.",
+      tr: 'attrition',
+      wrong: 'swift victory'
+    },
+    {
+      en: "The ancient fortress, long regarded as an impregnable ____, finally fell after a prolonged and meticulously planned siege.",
+      tr: 'bastion',
+      wrong: 'open territory'
+    },
+    {
+      en: "The general's masterful use of ____ allowed his smaller force to outmanoeuvre and ultimately defeat a much larger enemy army.",
+      tr: 'stratagem',
+      wrong: 'open battle'
+    },
+    {
+      en: "Modern conflicts increasingly rely on ____ tactics, with small, highly mobile units conducting hit-and-run operations against larger conventional forces.",
+      tr: 'guerrilla',
+      wrong: 'regular army'
+    },
+    {
+      en: "The surprise military ____ across the border caught the defending forces completely unprepared and led to rapid territorial gains.",
+      tr: 'incursion',
+      wrong: 'defence'
+    },
+    {
+      en: "The besieged city held out for months thanks to its formidable ____ and the determination of its defenders.",
+      tr: 'bulwark',
+      wrong: 'vulnerability'
+    },
+    {
+      en: "After weeks of intense fighting, the enemy forces finally chose to ____ rather than face certain annihilation.",
+      tr: 'capitulate',
+      wrong: 'resist'
+    },
+    {
+      en: "The rapid ____ of troops and heavy weaponry to the front lines was critical in preventing a total collapse of the defensive line.",
+      tr: 'deployment',
+      wrong: 'withdrawal'
+    },
+    {
+      en: "The use of advanced ____ and precision-guided munitions has fundamentally transformed the nature of modern warfare.",
+      tr: 'weaponry',
+      wrong: 'unarmed'
+    },
+    {
+      en: "The ancient citadel served as a formidable ____ from which the defenders could repel repeated enemy assaults.",
+      tr: 'stronghold',
+      wrong: 'weak position'
+    },
+    {
+      en: "The invading army's brutal campaign of ____ left the once-thriving region in ruins and its population decimated.",
+      tr: 'subjugation',
+      wrong: 'liberation'
+    },
+    {
+      en: "The general's tactical genius enabled him to ____ the enemy forces despite being significantly outnumbered.",
+      tr: 'vanquish',
+      wrong: 'be defeated'
+    },
+    {
+      en: "The fragile ____ held for only a few weeks before hostilities resumed with even greater intensity.",
+      tr: 'armistice',
+      wrong: 'war'
+    },
+    {
+      en: "The sudden military ____ caught the defending forces off guard and led to the rapid capture of several key positions.",
+      tr: 'coup',
+      wrong: 'legitimate government'
+    },
+    {
+      en: "Experienced military ____ provided crucial intelligence that helped shape the overall strategy of the campaign.",
+      tr: 'veterans',
+      wrong: 'recruits'
+    },
+    {
+      en: "The prolonged ____ of the city eventually forced the defenders to negotiate terms of surrender.",
+      tr: 'siege',
+      wrong: 'liberation'
+    },
+    {
+      en: "The enemy's use of sophisticated ____ made it extremely difficult for conventional forces to maintain supply lines.",
+      tr: 'sabotage',
+      wrong: 'construction'
+    },
+    {
+      en: "The sudden and violent ____ by rebel forces plunged the region into chaos and instability.",
+      tr: 'uprising',
+      wrong: 'peace'
+    },
+    {
+      en: "The general's ____ decision to launch a surprise attack at dawn proved to be the turning point of the entire campaign.",
+      tr: 'tactical',
+      wrong: 'strategic'
+    },
+    {
+      en: "The use of chemical weapons in modern conflicts is widely regarded as a flagrant ____ of international law and basic human decency.",
+      tr: 'violation',
+      wrong: 'compliance'
+    }
+  ],
+},
+
 // ─────────────────────── QUIZ 38 — Crime, Corruption & Wrongdoing (1) ───────────────────────
 [
   { en: 'accomplice', tr: 'cinayət ortaqı', wrong: 'şahid', wen: 'witness', def: 'a person who helps another commit a crime' },
@@ -9740,6 +12483,112 @@ const LEVELS = [
   { en: 'subversion', tr: 'dağıdıcı fəaliyyət', wrong: 'qurma', wen: 'construction', def: 'the undermining of the power and authority of an established system or institution' },
   { en: 'wrongdoer', tr: 'günahkar', wrong: 'günahsız', wen: 'innocent', def: 'a person who commits an immoral or illegal act' }
 ],
+
+      // ─────────────────────── EXAM — Crime, Corruption & Wrongdoing (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The prosecutor presented compelling evidence that the defendant had acted as a willing ____ in the elaborate financial fraud scheme.",
+      tr: 'accomplice',
+      wrong: 'witness'
+    },
+    {
+      en: "Several high-ranking officials were accused of ____ with foreign entities to undermine national security for personal gain.",
+      tr: 'collusion',
+      wrong: 'legal contract'
+    },
+    {
+      en: "The company's systematic ____ of public funds went undetected for years due to lax oversight and political protection.",
+      tr: 'embezzlement',
+      wrong: 'return'
+    },
+    {
+      en: "The judge described the crime as particularly ____, citing its calculated nature and devastating impact on innocent victims.",
+      tr: 'heinous',
+      wrong: 'virtuous'
+    },
+    {
+      en: "The international community has long condemned the regime's widespread ____ and abuse of power.",
+      tr: 'corruption',
+      wrong: 'integrity'
+    },
+    {
+      en: "The suspect managed to ____ with a substantial sum of money before authorities could issue an arrest warrant.",
+      tr: 'abscond',
+      wrong: 'remain'
+    },
+    {
+      en: "The operation was conducted in complete secrecy, relying on a network of ____ agents and encrypted communications.",
+      tr: 'clandestine',
+      wrong: 'overt'
+    },
+    {
+      en: "The court found the defendant guilty of multiple counts of ____, including money laundering and tax evasion.",
+      tr: 'malfeasance',
+      wrong: 'lawful conduct'
+    },
+    {
+      en: "Despite overwhelming evidence, the powerful politician appeared to enjoy complete ____ from legal consequences.",
+      tr: 'impunity',
+      wrong: 'punishment'
+    },
+    {
+      en: "The gang's leader was a notorious ____ who had evaded capture for over a decade through a combination of intimidation and bribery.",
+      tr: 'racketeer',
+      wrong: 'honest businessman'
+    },
+    {
+      en: "The elaborate ____ involved forging documents and creating shell companies to disguise the illegal flow of funds.",
+      tr: 'swindle',
+      wrong: 'legitimate deal'
+    },
+    {
+      en: "The scandal exposed deep-seated ____ within the highest levels of government and law enforcement.",
+      tr: 'complicity',
+      wrong: 'innocence'
+    },
+    {
+      en: "The activist was charged with ____ for allegedly inciting violence during the peaceful demonstration.",
+      tr: 'sedition',
+      wrong: 'patriotism'
+    },
+    {
+      en: "The criminal organisation's sophisticated money-laundering operation spanned multiple jurisdictions and involved complex ____.",
+      tr: 'subterfuge',
+      wrong: 'transparency'
+    },
+    {
+      en: "The defendant's long history of similar offences suggested a clear pattern of ____ that made rehabilitation unlikely.",
+      tr: 'recidivism',
+      wrong: 'rehabilitation'
+    },
+    {
+      en: "The judge issued a scathing ____ of the corporation's reckless disregard for environmental regulations and public safety.",
+      tr: 'condemnation',
+      wrong: 'endorsement'
+    },
+    {
+      en: "The gang operated with ruthless efficiency, using violence and intimidation to maintain control over their criminal empire.",
+      tr: 'syndicate',
+      wrong: 'legitimate business'
+    },
+    {
+      en: "The whistleblower's testimony provided crucial evidence of high-level ____ in the awarding of government contracts.",
+      tr: 'graft',
+      wrong: 'integrity'
+    },
+    {
+      en: "The elaborate ____ to defraud investors ultimately collapsed when key participants turned state's evidence.",
+      tr: 'conspiracy',
+      wrong: 'overt plan'
+    },
+    {
+      en: "The international community has called for a thorough investigation into alleged war ____ committed during the conflict.",
+      tr: 'atrocities',
+      wrong: 'humanitarian efforts'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 40 — Suffering & Hardship (1) ───────────────────────
 [
@@ -9813,6 +12662,111 @@ const LEVELS = [
   { en: 'to succour', tr: 'kömək etmək', wrong: 'zərər vermək', wen: 'harm', def: 'to give assistance or help, especially in a time of need' }
 ],
 
+      // ─────────────────────── EXAM — Time, Nature, Suffering & Generosity (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The relentless march of time renders even the most formidable empires ____, reducing once-mighty civilizations to mere footnotes in history.",
+      tr: 'ephemeral',
+      wrong: 'enduring'
+    },
+    {
+      en: "What was once considered a radical innovation has now become so commonplace as to appear almost ____ in our modern context.",
+      tr: 'anachronistic',
+      wrong: 'contemporary'
+    },
+    {
+      en: "The vast Arctic ____, though seemingly barren, supports a delicate and remarkably resilient ecosystem adapted to extreme conditions.",
+      tr: 'tundra',
+      wrong: 'metropolis'
+    },
+    {
+      en: "Geological evidence reveals that the dramatic ____ along this coastline was formed over millennia by the relentless forces of erosion and tectonic activity.",
+      tr: 'escarpment',
+      wrong: 'plain'
+    },
+    {
+      en: "The survivors endured unimaginable ____ during their long ordeal, yet their remarkable resilience continues to inspire those who hear their stories.",
+      tr: 'suffering',
+      wrong: 'ease'
+    },
+    {
+      en: "His profound ____ at the loss of his lifelong companion was palpable, reflecting a depth of emotion few could truly comprehend.",
+      tr: 'grief',
+      wrong: 'elation'
+    },
+    {
+      en: "The organisation’s ____ efforts have provided vital support to thousands of families struggling with poverty and displacement.",
+      tr: 'philanthropic',
+      wrong: 'selfish'
+    },
+    {
+      en: "Her ____ in the face of personal tragedy and professional setbacks exemplified the true meaning of moral strength and human dignity.",
+      tr: 'fortitude',
+      wrong: 'fragility'
+    },
+    {
+      en: "The rapid ____ of natural resources in the region has triggered an environmental crisis of unprecedented scale and complexity.",
+      tr: 'depletion',
+      wrong: 'replenishment'
+    },
+    {
+      en: "The ancient ruins stand as a haunting testament to the ____ of even the greatest civilizations, reminding us of the impermanence of human achievement.",
+      tr: 'transience',
+      wrong: 'permanence'
+    },
+    {
+      en: "Despite facing overwhelming ____, the small community demonstrated extraordinary solidarity and mutual support.",
+      tr: 'adversity',
+      wrong: 'ease'
+    },
+    {
+      en: "The philanthropist’s ____ donation enabled the construction of a state-of-the-art research facility dedicated to finding cures for rare diseases.",
+      tr: 'munificent',
+      wrong: 'meagre'
+    },
+    {
+      en: "The once-thriving port city has fallen into a state of sad ____, its former glory now reduced to crumbling buildings and faded memories.",
+      tr: 'desolation',
+      wrong: 'prosperity'
+    },
+    {
+      en: "His ____ nature and genuine concern for the less fortunate have earned him the deep respect and gratitude of the entire community.",
+      tr: 'compassionate',
+      wrong: 'callous'
+    },
+    {
+      en: "The expedition ventured deep into the uncharted ____, facing unknown dangers and extreme conditions in their quest for scientific discovery.",
+      tr: 'wilderness',
+      wrong: 'metropolis'
+    },
+    {
+      en: "The prolonged economic ____ has left many families in a state of desperate ____, struggling to meet even their most basic needs.",
+      tr: 'penury',
+      wrong: 'opulence'
+    },
+    {
+      en: "The artist’s work captures the poignant beauty of ____ moments, reminding us of the fleeting nature of joy and human connection.",
+      tr: 'transient',
+      wrong: 'eternal'
+    },
+    {
+      en: "True ____ requires not only material generosity but also empathy and a genuine desire to alleviate suffering.",
+      tr: 'philanthropy',
+      wrong: 'selfishness'
+    },
+    {
+      en: "The ancient manuscript, preserved through centuries of careful ____, offers invaluable insights into the philosophical thought of its era.",
+      tr: 'conservation',
+      wrong: 'neglect'
+    },
+    {
+      en: "In times of great national ____, the true character of a society is revealed through its collective response to hardship and loss.",
+      tr: 'tribulation',
+      wrong: 'prosperity'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 43 — Pride, Vanity & Arrogance ───────────────────────
 [
   { en: 'affectation', tr: 'sunilik', wrong: 'təbiiilik', wen: 'naturalness', def: 'behaviour, speech or writing that is artificial and designed to impress' },
@@ -9860,6 +12814,112 @@ const LEVELS = [
   { en: 'to suppress', tr: 'boğmaq', wrong: 'açıqlamaq', wen: 'disclose', def: 'to forcibly put an end to something' },
   { en: 'to withhold', tr: 'gizlətmək', wrong: 'vermək', wen: 'disclose', def: 'to refuse to give something that is due to or is desired by another' }
 ],
+
+      // ─────────────────────── EXAM — Pride, Vanity, Arrogance, Secrecy & Concealment (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "His ____ and inflated sense of self-worth made him blind to the genuine concerns of those around him, ultimately leading to his professional isolation.",
+      tr: 'arrogance',
+      wrong: 'humility'
+    },
+    {
+      en: "The politician's ____ behaviour and condescending tone alienated even his most loyal supporters.",
+      tr: 'haughtiness',
+      wrong: 'modesty'
+    },
+    {
+      en: "Her ____ display of wealth and status at the gala was widely criticised as tasteless and ____.",
+      tr: 'ostentatious',
+      wrong: 'unpretentious'
+    },
+    {
+      en: "The author's ____ claims about his own genius were met with widespread ridicule in literary circles.",
+      tr: 'bombastic',
+      wrong: 'measured'
+    },
+    {
+      en: "True leadership requires the ability to set aside personal ____ and prioritise the collective good.",
+      tr: 'vanity',
+      wrong: 'humility'
+    },
+    {
+      en: "The CEO's ____ belief in his own infallibility led the company into a series of disastrous decisions.",
+      tr: 'hubris',
+      wrong: 'prudence'
+    },
+    {
+      en: "His ____ refusal to acknowledge any wrongdoing, even in the face of overwhelming evidence, only deepened public outrage.",
+      tr: 'presumptuous',
+      wrong: 'humble'
+    },
+    {
+      en: "The operation was conducted with absolute ____, using encrypted communications and a network of trusted insiders.",
+      tr: 'clandestine',
+      wrong: 'overt'
+    },
+    {
+      en: "The details of the negotiations remained carefully ____ from the public until a formal agreement was reached.",
+      tr: 'shrouded',
+      wrong: 'exposed'
+    },
+    {
+      en: "The witness gave a ____ glance towards the defendant before quickly looking away, raising suspicions about his true loyalties.",
+      tr: 'furtive',
+      wrong: 'open'
+    },
+    {
+      en: "The organisation's true motives were cleverly ____ behind a façade of humanitarian concern and public goodwill.",
+      tr: 'concealed',
+      wrong: 'revealed'
+    },
+    {
+      en: "The ancient manuscript's meaning remained largely ____ to all but a handful of specialised scholars.",
+      tr: 'obscure',
+      wrong: 'transparent'
+    },
+    {
+      en: "His ____ charm masked a calculating mind and ruthless ambition that few initially suspected.",
+      tr: 'sly',
+      wrong: 'candid'
+    },
+    {
+      en: "The rebels operated with remarkable ____, striking quickly and disappearing before government forces could respond.",
+      tr: 'stealth',
+      wrong: 'transparency'
+    },
+    {
+      en: "The government's attempt to ____ information about the scandal only fuelled public suspicion and conspiracy theories.",
+      tr: 'suppress',
+      wrong: 'disclose'
+    },
+    {
+      en: "The spy's ____ movements and carefully cultivated cover story allowed him to operate undetected for years.",
+      tr: 'surreptitious',
+      wrong: 'overt'
+    },
+    {
+      en: "The true extent of the corruption was deliberately ____ from investigators through layers of bureaucratic obfuscation.",
+      tr: 'withheld',
+      wrong: 'revealed'
+    },
+    {
+      en: "The organisation's inner workings were deliberately designed to remain ____ to outsiders and even to many of its own members.",
+      tr: 'inscrutable',
+      wrong: 'transparent'
+    },
+    {
+      en: "His ____ display of false modesty was widely recognised as nothing more than a calculated attempt to appear more approachable.",
+      tr: 'affectation',
+      wrong: 'naturalness'
+    },
+    {
+      en: "The ____ nature of the ancient ritual meant that only a select few initiates could fully understand its symbolic significance.",
+      tr: 'esoteric',
+      wrong: 'exoteric'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 45 — Rebellion & Dissent ───────────────────────
 [
   { en: 'anarchy', tr: 'anarxiya', wrong: 'nizam', wen: 'order', def: 'a state of disorder due to absence or non-recognition of authority' },
@@ -9932,6 +12992,111 @@ const LEVELS = [
   { en: 'dissipation', tr: 'israf', wrong: 'qənaət', wen: 'economy', def: 'the squandering of money, energy or resources' }
 ],
 
+      // ─────────────────────── EXAM — Pride, Vanity, Arrogance, Secrecy & Concealment (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "His ____ and overbearing manner alienated even those who had once been among his most loyal supporters.",
+      tr: 'arrogance',
+      wrong: 'humility'
+    },
+    {
+      en: "The celebrity's ____ display of wealth at the gala was widely criticised as both tasteless and deeply ____.",
+      tr: 'ostentatious',
+      wrong: 'unpretentious'
+    },
+    {
+      en: "The leader's ____ belief in his own infallibility ultimately led to the catastrophic failure of his grand vision.",
+      tr: 'hubris',
+      wrong: 'prudence'
+    },
+    {
+      en: "Her ____ refusal to acknowledge any fault, even when confronted with irrefutable evidence, shocked those who knew her.",
+      tr: 'presumptuous',
+      wrong: 'humble'
+    },
+    {
+      en: "The operation was executed with absolute ____, using encrypted channels and a carefully cultivated network of insiders.",
+      tr: 'clandestine',
+      wrong: 'overt'
+    },
+    {
+      en: "The true motives behind the policy remained deliberately ____ from public scrutiny until the damage was already done.",
+      tr: 'shrouded',
+      wrong: 'exposed'
+    },
+    {
+      en: "The witness cast a ____ glance towards the accused before quickly looking away, raising immediate suspicions.",
+      tr: 'furtive',
+      wrong: 'open'
+    },
+    {
+      en: "The ancient manuscript's meaning remained largely ____ to all but a small circle of specialised scholars.",
+      tr: 'obscure',
+      wrong: 'transparent'
+    },
+    {
+      en: "His ____ charm masked a calculating intellect and ruthless ambition that few initially suspected.",
+      tr: 'sly',
+      wrong: 'candid'
+    },
+    {
+      en: "The rebels operated with remarkable ____, striking swiftly and vanishing before conventional forces could respond.",
+      tr: 'stealth',
+      wrong: 'transparency'
+    },
+    {
+      en: "The government’s attempt to ____ critical information about the scandal only fuelled public suspicion and conspiracy theories.",
+      tr: 'suppress',
+      wrong: 'disclose'
+    },
+    {
+      en: "The details of the negotiations were carefully ____ from both the media and the general public.",
+      tr: 'withheld',
+      wrong: 'revealed'
+    },
+    {
+      en: "The organisation's inner workings were deliberately designed to remain ____ even to many of its own members.",
+      tr: 'inscrutable',
+      wrong: 'transparent'
+    },
+    {
+      en: "Her seemingly innocent question was in fact a cleverly crafted ____ designed to extract confidential information.",
+      tr: 'ruse',
+      wrong: 'honest inquiry'
+    },
+    {
+      en: "The ____ nature of the ancient ritual meant that only a select few initiates could fully comprehend its symbolic depth.",
+      tr: 'esoteric',
+      wrong: 'exoteric'
+    },
+    {
+      en: "His ____ display of false modesty was widely recognised as nothing more than a calculated attempt to appear more relatable.",
+      tr: 'affectation',
+      wrong: 'naturalness'
+    },
+    {
+      en: "The ____ of the evidence made it nearly impossible for investigators to determine what had actually occurred.",
+      tr: 'opacity',
+      wrong: 'transparency'
+    },
+    {
+      en: "The spy’s movements were so ____ that even his own handlers sometimes lost track of his whereabouts.",
+      tr: 'surreptitious',
+      wrong: 'overt'
+    },
+    {
+      en: "The ____ charm of the con artist allowed him to deceive even the most cautious and experienced investors.",
+      tr: 'deceitful',
+      wrong: 'sincere'
+    },
+    {
+      en: "The true extent of the corruption was masterfully ____ behind layers of bureaucratic complexity and legal jargon.",
+      tr: 'concealed',
+      wrong: 'revealed'
+    }
+  ],
+},
 // ─────────────────────── QUIZ 48 — Intellect & Knowledge (1) ───────────────────────
 [
   { en: 'acuity', tr: 'iti ağıl', wrong: 'küt ağıl', wen: 'obtuseness', def: 'sharpness or keenness of thought, vision or hearing' },
@@ -9979,6 +13144,112 @@ const LEVELS = [
   { en: 'to construe', tr: 'anlamaq', wrong: 'yanlış başa düşmək', wen: 'misinterpret', def: 'to interpret something in a particular way' },
   { en: 'to infer', tr: 'nəticə çıxarmaq', wrong: 'fakt', wen: 'fact', def: 'to deduce or conclude something from evidence and reasoning rather than from explicit statements' }
 ],
+
+      // ─────────────────────── EXAM — Intellect & Knowledge (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "Her remarkable intellectual ____ allowed her to navigate complex philosophical arguments with both precision and profound insight.",
+      tr: 'acumen',
+      wrong: 'obtuseness'
+    },
+    {
+      en: "The scholar's ____ analysis of ancient texts revealed connections that had eluded generations of previous researchers.",
+      tr: 'perspicacious',
+      wrong: 'superficial'
+    },
+    {
+      en: "His ____ mind and ability to synthesise disparate ideas made him one of the most influential thinkers of his generation.",
+      tr: 'sagacious',
+      wrong: 'simple'
+    },
+    {
+      en: "The professor's ____ approach to teaching transformed complex theoretical concepts into accessible and engaging material.",
+      tr: 'didactic',
+      wrong: 'entertaining'
+    },
+    {
+      en: "The theory, though initially dismissed as ____, has since gained widespread acceptance within the scientific community.",
+      tr: 'esoteric',
+      wrong: 'mainstream'
+    },
+    {
+      en: "She possessed an almost uncanny ____ that allowed her to anticipate market shifts long before they became apparent to others.",
+      tr: 'intuition',
+      wrong: 'logic'
+    },
+    {
+      en: "The author's ____ prose and masterful command of language have earned her a place among the literary giants of the 20th century.",
+      tr: 'luminous',
+      wrong: 'obscure'
+    },
+    {
+      en: "His ____ arguments, grounded in both empirical evidence and logical rigour, effectively dismantled the opposing viewpoint.",
+      tr: 'cogent',
+      wrong: 'weak'
+    },
+    {
+      en: "The researcher's ____ of previously overlooked historical documents fundamentally altered our understanding of the period.",
+      tr: 'erudition',
+      wrong: 'ignorance'
+    },
+    {
+      en: "The philosopher's central ____ — that consciousness precedes material reality — continues to provoke intense debate.",
+      tr: 'postulate',
+      wrong: 'fact'
+    },
+    {
+      en: "Despite extensive investigation, the true meaning of the inscription remains largely ____ to modern scholars.",
+      tr: 'recondite',
+      wrong: 'clear'
+    },
+    {
+      en: "Her ability to ____ the author's true intentions from subtle textual clues demonstrated exceptional literary insight.",
+      tr: 'discern',
+      wrong: 'misinterpret'
+    },
+    {
+      en: "The detective's ____ questioning gradually uncovered inconsistencies in the witness's seemingly credible testimony.",
+      tr: 'incisive',
+      wrong: 'blunt'
+    },
+    {
+      en: "The team's ____ solution to the complex engineering problem showcased both creativity and technical brilliance.",
+      tr: 'ingenious',
+      wrong: 'simple'
+    },
+    {
+      en: "Scientists are still attempting to ____ the precise mechanisms by which the human brain processes abstract thought.",
+      tr: 'fathom',
+      wrong: 'misunderstand'
+    },
+    {
+      en: "The report's conclusions were carefully ____ with extensive empirical data and rigorous statistical analysis.",
+      tr: 'substantiated',
+      wrong: 'refuted'
+    },
+    {
+      en: "His ____ of the historical events provided a fresh and compelling perspective that challenged conventional interpretations.",
+      tr: 'elucidation',
+      wrong: 'obscuration'
+    },
+    {
+      en: "The concept remains highly ____ and continues to divide scholars across multiple academic disciplines.",
+      tr: 'controversial',
+      wrong: 'unquestionable'
+    },
+    {
+      en: "Her ____ decision-making process, characterised by careful consideration and sound judgement, earned her widespread respect.",
+      tr: 'judicious',
+      wrong: 'foolish'
+    },
+    {
+      en: "The ancient text's meaning was deliberately ____, intended only for those initiated into the esoteric tradition.",
+      tr: 'arcane',
+      wrong: 'transparent'
+    }
+  ],
+},
 
 // ─────────────────────── QUIZ 50 — Appearance & Perception ───────────────────────
 [
@@ -10052,6 +13323,112 @@ const LEVELS = [
   { en: 'rigorous', tr: 'sərt və dəqiq', wrong: 'yumşaq', wen: 'lenient', def: 'extremely thorough, exhaustive or accurate' }
 ],
 
+      // ─────────────────────── EXAM — Appearance, Perception, Indifference, Brevity & Style (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The actress arrived at the premiere in a ____ gown that shimmered ethereally under the bright lights, captivating everyone present.",
+      tr: 'diaphanous',
+      wrong: 'opaque'
+    },
+    {
+      en: "Despite the chaos of the long journey, she maintained an ____ appearance, with not a single hair out of place.",
+      tr: 'immaculate',
+      wrong: 'dishevelled'
+    },
+    {
+      en: "The once-vibrant garden had fallen into a state of ____ neglect, its former beauty now barely recognisable.",
+      tr: 'squalid',
+      wrong: 'pristine'
+    },
+    {
+      en: "His ____ features and haunted eyes spoke volumes about the suffering he had endured during the long years of captivity.",
+      tr: 'emaciated',
+      wrong: 'robust'
+    },
+    {
+      en: "The old mansion, with its ____ grandeur and faded opulence, stood as a melancholy monument to a bygone era.",
+      tr: 'palatial',
+      wrong: 'humble'
+    },
+    {
+      en: "She remained remarkably ____ throughout the heated debate, showing neither approval nor disapproval.",
+      tr: 'impassive',
+      wrong: 'expressive'
+    },
+    {
+      en: "His ____ attitude towards the suffering of others shocked those who had once considered him a compassionate leader.",
+      tr: 'callous',
+      wrong: 'compassionate'
+    },
+    {
+      en: "The critic's review was characteristically ____, offering neither praise nor condemnation but simply stating facts.",
+      tr: 'dispassionate',
+      wrong: 'emotional'
+    },
+    {
+      en: "The instructions were admirably ____, conveying complex technical information with remarkable clarity and economy of language.",
+      tr: 'succinct',
+      wrong: 'verbose'
+    },
+    {
+      en: "Her ____ prose and masterful command of nuance have earned her a place among the finest writers of her generation.",
+      tr: 'lucid',
+      wrong: 'obscure'
+    },
+    {
+      en: "The lawyer's ____ questioning exposed inconsistencies in the witness's testimony that had previously gone unnoticed.",
+      tr: 'incisive',
+      wrong: 'blunt'
+    },
+    {
+      en: "His ____ nature made him reluctant to share personal details, even with his closest friends and family.",
+      tr: 'reticent',
+      wrong: 'talkative'
+    },
+    {
+      en: "The painting's ____ beauty lay not in its vibrant colours but in its subtle interplay of light and shadow.",
+      tr: 'ethereal',
+      wrong: 'garish'
+    },
+    {
+      en: "The once-celebrated author's later works were dismissed by critics as ____ and lacking the depth of his earlier masterpieces.",
+      tr: 'ponderous',
+      wrong: 'luminous'
+    },
+    {
+      en: "Her ____ response to the provocative question demonstrated both intellectual rigour and emotional intelligence.",
+      tr: 'measured',
+      wrong: 'impulsive'
+    },
+    {
+      en: "The detective's ____ observation of the crime scene revealed crucial details that others had overlooked.",
+      tr: 'astute',
+      wrong: 'naive'
+    },
+    {
+      en: "The building's ____ façade concealed a surprisingly modern and functional interior.",
+      tr: 'ornate',
+      wrong: 'plain'
+    },
+    {
+      en: "His ____ charm masked a calculating mind that few initially suspected.",
+      tr: 'affable',
+      wrong: 'aloof'
+    },
+    {
+      en: "The report's ____ analysis provided a comprehensive overview of the complex issue without unnecessary embellishment.",
+      tr: 'concise',
+      wrong: 'prolix'
+    },
+    {
+      en: "Despite the surrounding chaos, she maintained an air of quiet ____ that commanded respect from everyone present.",
+      tr: 'poise',
+      wrong: 'agitation'
+    }
+  ],
+},
+
 // ─────────────────────── QUIZ 53 — Fate, Prophecy & the Supernatural ───────────────────────
 [
   { en: 'apparition', tr: 'xəyalət', wrong: 'real insan', wen: 'corporeal being', def: 'a ghost or ghostlike image of a person' },
@@ -10123,6 +13500,111 @@ const LEVELS = [
   { en: 'want', tr: 'yoxsulluq', wrong: 'bolluq', wen: 'plenty', def: 'a lack or deficiency of something' },
   { en: 'penury', tr: 'yoxsulluq', wrong: 'var-dövlət', wen: 'opulence', def: 'extreme poverty or destitution' }
 ],
+      // ─────────────────────── EXAM — Fate, Memory, Legacy, Abundance & Scarcity (C2) ───────────────────────
+{
+  sentences: [
+    {
+      en: "The sudden appearance of the comet was interpreted by ancient astronomers as a dark ____ of impending disaster for the kingdom.",
+      tr: 'portent',
+      wrong: 'ordinary event'
+    },
+    {
+      en: "The village elder claimed to possess the gift of ____, allowing him to foresee events that others could only understand in hindsight.",
+      tr: 'prophecy',
+      wrong: 'falsehood'
+    },
+    {
+      en: "Many cultures believe in ____, the idea that the soul returns in a new body to continue its spiritual journey.",
+      tr: 'reincarnation',
+      wrong: 'death'
+    },
+    {
+      en: "The ancient ruins serve as a powerful ____ of a once-great civilization that has long since vanished from the pages of living history.",
+      tr: 'relic',
+      wrong: 'innovation'
+    },
+    {
+      en: "Historians continue to debate the true ____ of the mysterious manuscript discovered in the monastery archives.",
+      tr: 'provenance',
+      wrong: 'unknown origin'
+    },
+    {
+      en: "The family's priceless ____, passed down through generations, held both sentimental value and significant historical importance.",
+      tr: 'heirloom',
+      wrong: 'new item'
+    },
+    {
+      en: "The rapid ____ of natural resources has forced governments to confront the harsh realities of environmental sustainability.",
+      tr: 'depletion',
+      wrong: 'replenishment'
+    },
+    {
+      en: "Despite the country's vast mineral wealth, a significant portion of the population still lives in conditions of extreme ____.",
+      tr: 'penury',
+      wrong: 'opulence'
+    },
+    {
+      en: "The market was filled with a ____ of fresh produce, spices and handicrafts from every corner of the region.",
+      tr: 'cornucopia',
+      wrong: 'scarcity'
+    },
+    {
+      en: "The ____ of skilled labour in the technology sector has become a major obstacle to the country's economic development.",
+      tr: 'paucity',
+      wrong: 'abundance'
+    },
+    {
+      en: "The desert landscape appeared almost completely barren, with only a few ____ patches of vegetation surviving in the harsh conditions.",
+      tr: 'sparse',
+      wrong: 'dense'
+    },
+    {
+      en: "The team's ____ victory celebrations were in stark contrast to the ____ mood that followed their unexpected defeat the following season.",
+      tr: 'exuberant',
+      wrong: 'meagre'
+    },
+    {
+      en: "Future generations will judge our civilisation not by our technological achievements but by the ____ we leave behind.",
+      tr: 'legacy',
+      wrong: 'innovation'
+    },
+    {
+      en: "The historian's meticulous ____ of the period provided invaluable context for understanding the social upheavals that followed.",
+      tr: 'chronicle',
+      wrong: 'fiction'
+    },
+    {
+      en: "The sudden appearance of the ghostly ____ sent waves of terror through the assembled crowd at the old manor house.",
+      tr: 'apparition',
+      wrong: 'corporeal being'
+    },
+    {
+      en: "The ancient practice of ____, once central to decision-making in the royal court, is now regarded as mere superstition.",
+      tr: 'divination',
+      wrong: 'scientific prediction'
+    },
+    {
+      en: "The black raven circling overhead was seen by the superstitious villagers as an unmistakable ____ of impending doom.",
+      tr: 'omen',
+      wrong: 'ordinary occurrence'
+    },
+    {
+      en: "The ____ of the great empire marked the beginning of a long period of cultural and economic decline in the region.",
+      tr: 'decline',
+      wrong: 'renaissance'
+    },
+    {
+      en: "Only a few ____ fragments of the original manuscript survived the destruction of the great library.",
+      tr: 'remnant',
+      wrong: 'whole'
+    },
+    {
+      en: "The king's sudden and mysterious death was widely interpreted as a divine ____ signalling the end of the dynasty.",
+      tr: 'portent',
+      wrong: 'ordinary event'
+    }
+  ],
+},
  ]
   },
 
