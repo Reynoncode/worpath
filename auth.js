@@ -7,20 +7,19 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import {
-  doc, getDoc, setDoc, updateDoc, serverTimestamp
+  doc, getDoc, setDoc, serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // ─── Local data açarları ────────────────────────────────────────────────────
 const LOCAL_STATS_KEY    = "wordpath_stats";
 const LOCAL_PROGRESS_KEY = "wordpath_v1";
-const MIGRATED_KEY       = "wordpath_migrated";
 
 // ─── Firestore-a yaz ────────────────────────────────────────────────────────
 async function saveUserData(uid, statsData, progressData) {
   const ref = doc(db, "users", uid);
   await setDoc(ref, {
-    stats:    statsData,
-    progress: progressData,
+    stats:     statsData,
+    progress:  progressData,
     updatedAt: serverTimestamp()
   }, { merge: true });
 }
@@ -32,42 +31,39 @@ async function loadUserData(uid) {
   return snap.exists() ? snap.data() : null;
 }
 
-// ─── Local → Cloud miqrasiya (yalnız bir dəfə) ──────────────────────────────
-async function migrateLocalToCloud(uid) {
-  if (localStorage.getItem(MIGRATED_KEY)) return; // artıq köçürülüb
-
+// ─── Giriş edəndə cloud ↔ local sinxronizasiya ──────────────────────────────
+// Hər girişdə:
+//   - Cloud-da data varsa → cloud local-dan YENİDİRSƏ cloud üstünlük alır
+//   - Cloud-da data yoxdursa → local datanı cloud-a köçür
+async function syncOnLogin(uid) {
   const localStats    = localStorage.getItem(LOCAL_STATS_KEY);
   const localProgress = localStorage.getItem(LOCAL_PROGRESS_KEY);
 
-  if (!localStats && !localProgress) {
-    localStorage.setItem(MIGRATED_KEY, "1");
-    return;
-  }
-
-  // Cloud-da data varmı yoxla
   const cloudData = await loadUserData(uid);
 
-  if (!cloudData) {
+  if (!cloudData || (!cloudData.stats && !cloudData.progress)) {
     // Cloud boşdur — local datanı köçür
     const statsObj    = localStats    ? JSON.parse(localStats)    : {};
     const progressObj = localProgress ? JSON.parse(localProgress) : {};
     await saveUserData(uid, statsObj, progressObj);
     console.log("✅ Local data cloud-a köçürüldü");
   } else {
-    // Cloud-da data var — cloud üstünlük alır, local-ı cloud ilə əvəz et
+    // Cloud-da data var — cloud local-a yazılır (hər girişdə)
     if (cloudData.stats)
-      localStorage.setItem(LOCAL_STATS_KEY, JSON.stringify(cloudData.stats));
+      localStorage.setItem(LOCAL_STATS_KEY,    JSON.stringify(cloudData.stats));
     if (cloudData.progress)
       localStorage.setItem(LOCAL_PROGRESS_KEY, JSON.stringify(cloudData.progress));
+
+    // Progress yeniləndi — səhifəni yenidən render et
+    if (typeof loadProgress === "function") {
+      loadProgress();
+      if (typeof renderLevels === "function") renderLevels();
+    }
     console.log("✅ Cloud datası local-a yükləndi");
   }
-
-  localStorage.setItem(MIGRATED_KEY, "1");
 }
 
-// ─── Stats dəyişdikdə cloud-a sinxronizasiya ────────────────────────────────
-// app.js-də Stats.recordAnswer() çağrıldıqdan sonra bu funksiyanı da çağır:
-//   AuthManager.syncStats()
+// ─── Stats/Progress dəyişdikdə cloud-a sinxronizasiya ───────────────────────
 export async function syncStats() {
   const user = auth.currentUser;
   if (!user) return;
@@ -78,6 +74,7 @@ export async function syncStats() {
   const progressObj = progressRaw ? JSON.parse(progressRaw) : {};
 
   await saveUserData(user.uid, statsObj, progressObj);
+  console.log("✅ Sync edildi");
 }
 
 // ─── Gmail ilə giriş ────────────────────────────────────────────────────────
@@ -93,13 +90,11 @@ async function signInWithGoogle() {
 
 // ─── Çıxış ──────────────────────────────────────────────────────────────────
 async function signOutUser() {
-  // Çıxışdan əvvəl son datanı sinxronizasiya et
-  await syncStats();
-  localStorage.removeItem(MIGRATED_KEY); // növbəti girişdə yenidən yoxlasın
+  await syncStats(); // çıxışdan əvvəl son datanı yaz
   await signOut(auth);
 }
 
-// ─── Header düymələrini idarə et ────────────────────────────────────────────
+// ─── Auth button render ──────────────────────────────────────────────────────
 function renderAuthButton(user) {
   const container = document.getElementById("stats-auth-bar");
   if (!container) return;
@@ -134,34 +129,31 @@ onAuthStateChanged(auth, async (user) => {
   renderAuthButton(user);
 
   if (user) {
-    await migrateLocalToCloud(user.uid);
-    // İstifadəçi məlumatlarını Firestore-da qeyd et
+    // İstifadəçi profil məlumatlarını Firestore-da qeyd et
     const ref = doc(db, "users", user.uid);
     await setDoc(ref, {
       email:       user.email,
       displayName: user.displayName || "",
-      photoURL:    user.photoURL || "",
+      photoURL:    user.photoURL    || "",
       lastLogin:   serverTimestamp()
     }, { merge: true });
+
+    // Hər girişdə cloud ↔ local sinxronizasiya
+    await syncOnLogin(user.uid);
   }
 
   // Sinif otağı düyməsinin görünürlüyü
   const classroomBtn = document.getElementById("classroom-btn");
-  if (classroomBtn) {
-    classroomBtn.style.display = user ? "flex" : "none";
-  }
+  if (classroomBtn) classroomBtn.style.display = user ? "flex" : "none";
 
-  // stats-auth-bar-da sinif otağı ikonunu göstər/gizlə
   const statsClassBtn = document.getElementById("stats-classroom-btn");
-  if (statsClassBtn) {
-    statsClassBtn.style.display = user ? "flex" : "none";
-  }
+  if (statsClassBtn) statsClassBtn.style.display = user ? "flex" : "none";
 });
 
 // ─── Public API ─────────────────────────────────────────────────────────────
 window.AuthManager = {
-  signIn:    signInWithGoogle,
-  signOut:   signOutUser,
+  signIn:         signInWithGoogle,
+  signOut:        signOutUser,
   syncStats,
   getCurrentUser: () => auth.currentUser
 };
