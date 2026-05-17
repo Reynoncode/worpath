@@ -1604,7 +1604,6 @@ function renderLevels() {
 
 function startReadingQuiz(levelIdx, quizIdx) {
   const lvl  = LEVELS[levelIdx];
-  const item = lvl.quizzes[quizIdx];
 
   readingState.levelIdx = levelIdx;
   readingState.quizIdx  = quizIdx;
