@@ -378,6 +378,491 @@ const readingState = {
 };
 
 // ============================================================
+//  1. listeningState — readingState-in yanına əlavə et
+// ============================================================
+
+const listeningState = {
+  levelIdx:   null,
+  quizIdx:    null,
+  item:       null,
+  attempt:    1,       // 1 və ya 2
+  audioEnded: false,   // audio bitibmi
+  queue:      [],
+  skipped:    [],
+  correct:    0,
+  wrong:      0,
+  audioEl:    null,    // Audio() obyekti
+};
+
+
+// ============================================================
+//  2. startListeningQuiz — startReadingQuiz-in yanına əlavə et
+// ============================================================
+
+function startListeningQuiz(levelIdx, quizIdx) {
+  const lvl  = LEVELS[levelIdx];
+  const item = lvl.quizzes[quizIdx];
+
+  // attempt: ilk dəfə başladanda 1, completed-dirsə 2
+  const status  = progress[lvl.id][quizIdx];
+  const attempt = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status) ? 2 : 1;
+
+  listeningState.levelIdx   = levelIdx;
+  listeningState.quizIdx    = quizIdx;
+  listeningState.item       = item;
+  listeningState.attempt    = attempt;
+  listeningState.audioEnded = false;
+  listeningState.queue      = item.questions.map((_, i) => i);
+  listeningState.skipped    = [];
+  listeningState.correct    = 0;
+  listeningState.wrong      = 0;
+
+  // Əvvəlki audio varsa dayandır
+  if (listeningState.audioEl) {
+    listeningState.audioEl.pause();
+    listeningState.audioEl = null;
+  }
+
+  quiz.mode   = 'listening';
+  quiz.locked = false;
+
+  showQuizScreen();
+  renderListeningQuestion();
+}
+
+
+// ============================================================
+//  3. renderListeningQuestion — renderReadingQuestion-ın yanına
+// ============================================================
+
+function renderListeningQuestion() {
+  if (listeningState.queue.length === 0) {
+    if (listeningState.skipped.length > 0) {
+      listeningState.queue   = [...listeningState.skipped];
+      listeningState.skipped = [];
+    } else {
+      finishListeningQuiz();
+      return;
+    }
+  }
+
+  const qIdx  = listeningState.queue[0];
+  const q     = listeningState.item.questions[qIdx];
+  const item  = listeningState.item;
+  const total = item.questions.length;
+  const done  = listeningState.correct + listeningState.wrong;
+
+  elProgressFill.style.width = `${(done / total) * 100}%`;
+  elQCounter.textContent     = `${done + 1}/${total}`;
+
+  const quizBody = document.querySelector('.quiz-body');
+  quizBody.classList.add('listening-mode');
+  quiz.locked = false;
+
+  const attempt    = listeningState.attempt;
+  const audioEnded = listeningState.audioEnded;
+
+  // Attempt badge mətni
+  const badgeClass = attempt === 1 ? 'attempt-1' : 'attempt-2';
+  const badgeText  = attempt === 1 ? '1-ci dinləmə' : '2-ci dinləmə';
+  const badgeSvg   = `<svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+  </svg>`;
+
+  // Player card
+  const playerCard = `
+    <div class="listening-player-card">
+      <div class="listening-attempt-badge ${badgeClass}">${badgeSvg}${badgeText}</div>
+      <div class="listening-passage-title">${item.title}</div>
+      <div class="audio-player ${attempt === 1 ? 'attempt-1-player' : 'attempt-2-player'}" id="audio-player-wrap">
+        <div class="audio-player-controls">
+          <button class="audio-play-btn" id="audio-play-btn" ${audioEnded ? 'disabled' : ''}>
+            <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <div class="audio-progress-wrap">
+            <div class="audio-progress-bar">
+              <div class="audio-progress-fill" id="audio-progress-fill"></div>
+            </div>
+            <div class="audio-timer">
+              <span id="audio-current">0:00</span>
+              <span id="audio-duration">0:00</span>
+            </div>
+          </div>
+        </div>
+        <div class="audio-ended-msg ${audioEnded ? 'visible' : ''}" id="audio-ended-msg">
+          ${attempt === 1 ? 'Audio bitdi — suallara cavab ver' : 'Audio bitdi'}
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Suallar — audio bitənə qədər bloklanır
+  const isBlocked = !audioEnded;
+
+  if (q.type === 'mcq') {
+    const optLabels = ['A', 'B', 'C', 'D', 'E'];
+
+    quizBody.innerHTML = `
+      <div class="listening-layout">
+        ${playerCard}
+        <div class="listening-question-area ${isBlocked ? 'blocked' : ''}" id="listening-q-area">
+          ${isBlocked ? `
+            <div class="listening-blocked-notice" id="listening-blocked-notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              Əvvəlcə audionu dinlə
+            </div>
+          ` : ''}
+          <div class="listening-question-text">${q.q}</div>
+          <div class="listening-options-grid">
+            ${q.options.map((opt, i) => `
+              <button class="listening-option-btn" data-opt="${i}">
+                <span class="listening-opt-label">${optLabels[i]}</span>
+                ${opt}
+              </button>
+            `).join('')}
+          </div>
+          <button class="reading-skip-btn" id="listening-skip">Keç →</button>
+        </div>
+      </div>
+    `;
+
+    // Sual event listenerları
+    quizBody.querySelectorAll('.listening-option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (!listeningState.audioEnded) return;
+        handleListeningAnswer(parseInt(btn.dataset.opt), q);
+      });
+    });
+
+    document.getElementById('listening-skip').addEventListener('click', () => {
+      if (quiz.locked || !listeningState.audioEnded) return;
+      listeningState.skipped.push(listeningState.queue.shift());
+      renderListeningQuestion();
+    });
+
+  } else if (q.type === 'typein') {
+    quizBody.innerHTML = `
+      <div class="listening-layout">
+        ${playerCard}
+        <div class="listening-question-area ${isBlocked ? 'blocked' : ''}" id="listening-q-area">
+          ${isBlocked ? `
+            <div class="listening-blocked-notice" id="listening-blocked-notice">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              Əvvəlcə audionu dinlə
+            </div>
+          ` : ''}
+          <div class="listening-question-text">${q.q}</div>
+          <div class="reading-typein-wrap">
+            <input class="reading-typein-input" id="listening-input"
+              type="text" placeholder="Cavabınızı yazın..." autocomplete="off" />
+            <button class="reading-typein-submit" id="listening-submit">Yoxla</button>
+          </div>
+          <div class="reading-typein-feedback hidden" id="listening-feedback"></div>
+          <button class="reading-skip-btn" id="listening-skip">Keç →</button>
+        </div>
+      </div>
+    `;
+
+    const input = document.getElementById('listening-input');
+
+    document.getElementById('listening-submit').addEventListener('click', () => {
+      if (!listeningState.audioEnded) return;
+      handleListeningAnswer(null, q, input.value);
+    });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && listeningState.audioEnded) {
+        handleListeningAnswer(null, q, input.value);
+      }
+    });
+    document.getElementById('listening-skip').addEventListener('click', () => {
+      if (quiz.locked || !listeningState.audioEnded) return;
+      listeningState.skipped.push(listeningState.queue.shift());
+      renderListeningQuestion();
+    });
+  }
+
+  // Audio player qur
+  setupAudioPlayer();
+}
+
+
+// ============================================================
+//  4. setupAudioPlayer — audio player məntiqi
+// ============================================================
+
+function setupAudioPlayer() {
+  const item    = listeningState.item;
+  const playBtn = document.getElementById('audio-play-btn');
+  const fill    = document.getElementById('audio-progress-fill');
+  const current = document.getElementById('audio-current');
+  const durEl   = document.getElementById('audio-duration');
+  const endMsg  = document.getElementById('audio-ended-msg');
+
+  if (!playBtn) return;
+
+  // Əgər audio artıq bitibsə player-i passiv göstər
+  if (listeningState.audioEnded) {
+    if (playBtn) playBtn.disabled = true;
+    return;
+  }
+
+  // Əvvəlki audio varsa saxla (sual keçəndə eyni audio davam edir)
+  let audio = listeningState.audioEl;
+
+  if (!audio) {
+    audio = new Audio(item.audio);
+    listeningState.audioEl = audio;
+
+    audio.addEventListener('loadedmetadata', () => {
+      if (durEl) durEl.textContent = formatTime(audio.duration);
+    });
+
+    audio.addEventListener('timeupdate', () => {
+      if (!audio.duration) return;
+      const pct = (audio.currentTime / audio.duration) * 100;
+      if (fill)    fill.style.width   = `${pct}%`;
+      if (current) current.textContent = formatTime(audio.currentTime);
+    });
+
+    audio.addEventListener('ended', () => {
+      listeningState.audioEnded = true;
+      listeningState.audioEl    = null;
+
+      if (fill)    fill.style.width    = '100%';
+      if (playBtn) playBtn.disabled    = true;
+      if (endMsg)  endMsg.classList.add('visible');
+
+      // Sual sahəsini aktiv et
+      const qArea   = document.getElementById('listening-q-area');
+      const blocked = document.getElementById('listening-blocked-notice');
+      if (qArea)   qArea.classList.remove('blocked');
+      if (blocked) blocked.classList.add('hidden');
+    });
+  } else {
+    // Audio artıq var (sual keçərkən) — yalnız UI sinxronlaşdır
+    if (audio.duration) {
+      if (durEl) durEl.textContent = formatTime(audio.duration);
+      const pct = (audio.currentTime / audio.duration) * 100;
+      if (fill)    fill.style.width    = `${pct}%`;
+      if (current) current.textContent = formatTime(audio.currentTime);
+    }
+
+    // timeupdate yenidən bağla (DOM yeniləndi)
+    const onTimeUpdate = () => {
+      if (!audio.duration) return;
+      const pct = (audio.currentTime / audio.duration) * 100;
+      if (fill)    fill.style.width    = `${pct}%`;
+      if (current) current.textContent = formatTime(audio.currentTime);
+    };
+    audio.addEventListener('timeupdate', onTimeUpdate);
+
+    // ended yenidən bağla
+    audio.addEventListener('ended', () => {
+      listeningState.audioEnded = true;
+      listeningState.audioEl    = null;
+      if (fill)    fill.style.width    = '100%';
+      if (playBtn) playBtn.disabled    = true;
+      if (endMsg)  endMsg.classList.add('visible');
+      const qArea   = document.getElementById('listening-q-area');
+      const blocked = document.getElementById('listening-blocked-notice');
+      if (qArea)   qArea.classList.remove('blocked');
+      if (blocked) blocked.classList.add('hidden');
+    }, { once: true });
+
+    if (!audio.paused) {
+      // Artıq çalınır — play düyməsini disabled et
+      if (playBtn) playBtn.disabled = true;
+    }
+  }
+
+  // Play düyməsi — yalnız bir dəfə işləyir
+  playBtn.addEventListener('click', () => {
+    if (playBtn.disabled) return;
+    playBtn.disabled = true;
+    playBtn.classList.add('playing-locked');
+    audio.play().catch(() => {});
+  }, { once: true });
+}
+
+function formatTime(sec) {
+  if (!sec || isNaN(sec)) return '0:00';
+  const m = Math.floor(sec / 60);
+  const s = Math.floor(sec % 60);
+  return `${m}:${s.toString().padStart(2, '0')}`;
+}
+
+
+// ============================================================
+//  5. handleListeningAnswer
+// ============================================================
+
+function handleListeningAnswer(optIdx, q, typeInValue) {
+  if (quiz.locked) return;
+  quiz.locked = true;
+
+  if (q.type === 'mcq') {
+    const isCorrect = q.options[optIdx] === q.answer;
+
+    document.querySelectorAll('.listening-option-btn').forEach(btn => {
+      btn.disabled = true;
+      const i = parseInt(btn.dataset.opt);
+      if (q.options[i] === q.answer)       btn.classList.add('listening-opt-correct');
+      else if (i === optIdx && !isCorrect) btn.classList.add('listening-opt-wrong');
+    });
+
+    const skipBtn = document.getElementById('listening-skip');
+    if (skipBtn) skipBtn.style.display = 'none';
+
+    if (isCorrect) listeningState.correct++;
+    else           listeningState.wrong++;
+
+    listeningState.queue.shift();
+
+    setTimeout(() => {
+      quiz.locked = false;
+      renderListeningQuestion();
+    }, 800);
+
+  } else if (q.type === 'typein') {
+    const userVal   = (typeInValue || '').trim().toLowerCase();
+    const correct   = (q.answer || '').trim().toLowerCase();
+    const isCorrect = userVal === correct;
+
+    const input     = document.getElementById('listening-input');
+    const submitBtn = document.getElementById('listening-submit');
+    const feedback  = document.getElementById('listening-feedback');
+
+    if (submitBtn) submitBtn.disabled = true;
+
+    if (isCorrect) {
+      input.classList.add('reading-input-correct');
+      if (feedback) {
+        feedback.textContent = '✓ Düzgün!';
+        feedback.className   = 'reading-typein-feedback reading-feedback-correct';
+      }
+      listeningState.correct++;
+    } else {
+      input.classList.add('reading-input-wrong');
+      if (feedback) {
+        feedback.textContent = `✗ Düzgün cavab: ${q.answer}`;
+        feedback.className   = 'reading-typein-feedback reading-feedback-wrong';
+      }
+      listeningState.wrong++;
+    }
+
+    listeningState.queue.shift();
+
+    setTimeout(() => {
+      quiz.locked = false;
+      renderListeningQuestion();
+    }, isCorrect ? 800 : 1400);
+  }
+}
+
+
+// ============================================================
+//  6. finishListeningQuiz
+// ============================================================
+
+function finishListeningQuiz() {
+  // Audio varsa dayandır
+  if (listeningState.audioEl) {
+    listeningState.audioEl.pause();
+    listeningState.audioEl = null;
+  }
+
+  elProgressFill.style.width = '100%';
+
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+    elResultStats.classList.remove('hidden');
+    elLevelResultCard.classList.add('hidden');
+
+    const total   = listeningState.item.questions.length;
+    const correct = listeningState.correct;
+    const wrong   = listeningState.wrong;
+    const pct     = Math.round((correct / total) * 100);
+
+    let emoji, title;
+    if (pct === 100)    { emoji = '🏆'; title = 'Əla nəticə!'; }
+    else if (pct >= 80) { emoji = '🎉'; title = 'Çox yaxşı!'; }
+    else if (pct >= 60) { emoji = '👍'; title = 'Pis deyil!'; }
+    else if (pct >= 40) { emoji = '📚'; title = 'Daha çox dinlə!'; }
+    else                { emoji = '💪'; title = 'Davam et!'; }
+
+    elResultEmoji.textContent = emoji;
+    elResultTitle.textContent = title;
+    elResultDesc.textContent  = `${listeningState.item.title} — ${total} sualdan ${correct} düzgün`;
+    elStatCorrect.textContent = correct;
+    elStatWrong.textContent   = wrong;
+    elStatPct.textContent     = `${pct}%`;
+
+    markCompleted(listeningState.levelIdx, listeningState.quizIdx);
+
+    elResultMainBtn.textContent = 'Yenidən cəhd et';
+    elResultMainBtn.onclick = () => startListeningQuiz(listeningState.levelIdx, listeningState.quizIdx);
+
+    elResultBackBtn.classList.remove('hidden');
+    elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+    elResultBackBtn.onclick = () => {
+      const li = listeningState.levelIdx;
+      closeOverlays();
+      renderLevels();
+      scrollToCurrentNode(li);
+    };
+  }, 300);
+}
+
+
+// ============================================================
+//  7. renderListeningPath
+// ============================================================
+
+function renderListeningPath(lvl, li) {
+  let html = '<div class="listening-quiz-grid">';
+
+  lvl.quizzes.forEach((item, qi) => {
+    const status   = getStatus(li, qi);
+    const isDone   = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
+    const isLocked = status === 'locked';
+
+    let nodeClass = 'listening-grid-node path-node';
+    if (isDone)        nodeClass += ' listening-node-done';
+    else if (isLocked) nodeClass += ' listening-node-locked';
+    else               nodeClass += ' listening-node-unlocked';
+
+    const title = (item && item.title) ? item.title : `Listening ${qi + 1}`;
+
+    const circleInner = isDone
+      ? `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+      : isLocked
+      ? `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--locked)" stroke-width="2.2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`
+      : `${qi + 1}`;
+
+    html += `
+      <div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">
+        <div class="listening-node-circle">${circleInner}</div>
+        <div class="listening-node-title">${title}</div>
+      </div>
+    `;
+  });
+
+  html += '</div>';
+  return html;
+}
+
+
+
+// ============================================================
 //  EXAM — SUAL GENERASIYASI
 // ============================================================
 
@@ -1860,6 +2345,9 @@ function renderQuizPath(lvl, li) {
   if (lvl.id === 'reading') {
     return renderReadingPath(lvl, li);
   }
+  if (lvl.id === 'listening') {
+  return renderListeningPath(lvl, li);
+}
   let html = '<div class="quiz-path">';
   let quizCounter = 0;
   let examCounter = 0;
@@ -2059,6 +2547,11 @@ function startQuiz(levelIdx, quizIdx) {
     startReadingQuiz(levelIdx, quizIdx);
     return;
   }
+
+  if (item && !Array.isArray(item) && item.type === 'listening') {
+  startListeningQuiz(levelIdx, quizIdx);
+  return;
+}
 
   const status = progress[lvl.id][quizIdx];
   
