@@ -3052,15 +3052,37 @@ function capitalize(str) {
 // opt-0 və opt-1 üçün event listenerlar showQuestion/restoreNormalQuizBody içindədir
 // Burada yalnız sabit elementlər üçün
 
-elQuitBtn.addEventListener('click', () => {
-  if (confirm('Testdən çıxmaq istəyirsən? İrəliləyişin saxlanmayacaq.')) {
-    const li = quiz.mode === 'exam' ? examState.levelIdx : quiz.levelIdx;
-    hideChanceModal();
-    closeOverlays();
-    restoreNormalQuizBody();
-    renderLevels();
-    if (li !== null) scrollToCurrentNode(li);
-  }
+const elQuitModal   = $('quit-modal');
+const elQuitConfirm = $('quit-confirm');
+const elQuitCancel  = $('quit-cancel');
+
+function showQuitModal() {
+  elQuitModal.classList.remove('hidden');
+  setTimeout(() => elQuitModal.classList.add('show'), 10);
+}
+
+function hideQuitModal() {
+  elQuitModal.classList.remove('show');
+  setTimeout(() => elQuitModal.classList.add('hidden'), 220);
+}
+
+elQuitBtn.addEventListener('click', showQuitModal);
+
+elQuitConfirm.addEventListener('click', () => {
+  const li = quiz.mode === 'exam' ? examState.levelIdx :
+             quiz.mode === 'listening' ? listeningState.levelIdx : quiz.levelIdx;
+  hideQuitModal();
+  hideChanceModal();
+  closeOverlays();
+  restoreNormalQuizBody();
+  renderLevels();
+  if (li !== null) scrollToCurrentNode(li);
+});
+
+elQuitCancel.addEventListener('click', hideQuitModal);
+
+elQuitModal.addEventListener('click', (e) => {
+  if (e.target === elQuitModal) hideQuitModal();
 });
 
 elReviewClose.addEventListener('click', hideReviewModal);
