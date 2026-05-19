@@ -220,15 +220,84 @@ const StatsPage = (() => {
           ${levelRows}
         </div>
 
-        <!-- Səhv analizi -->
-        <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Səhv analizi</div>
+<!-- Səhv analizi -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
+          ${s.errorWords.length > 0 ? `
+            <button
+              onclick="StatsPage._retryWrongs()"
+              style="display:flex;align-items:center;gap:5px;background:#085041;color:#fff;border:none;border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;">
+              🔁 Təkrar et
+            </button>
+          ` : ''}
+        </div>
         ${errGroups}
         ${noErrors}
-
       </div>
     `;
   }
 
-  return { render, _toggle };
 
+
+  // ─── Səhv sözləri təkrar et ───────────────────────────────────────────────
+function startWrongWordsRetake() {
+  const s = Stats.getStats();
+  if (s.errorWords.length === 0) {
+    alert('Heç bir səhv söz yoxdur!');
+    return;
+  }
+
+  // 20 random səhv söz seç
+  const shuffled = s.errorWords.sort(() => Math.random() - 0.5);
+  const selected = shuffled.slice(0, 20);
+
+  // Hər söz üçün data.js-dən uyğun word object-i tap
+  const tagged = [];
+
+  for (const errWord of selected) {
+    // Bütün LEVELS-dən həmin sözü axtar
+    let found = null;
+    for (const lvl of LEVELS) {
+      for (const quiz of lvl.quizzes) {
+        if (!Array.isArray(quiz)) continue;
+        const match = quiz.find(w => w && w.en === errWord.word);
+        if (match) { found = match; break; }
+      }
+      if (found) break;
+    }
+    if (!found) continue;
+
+    // 3 phase-dən random birini seç (mövcud olanlara görə)
+    const available = [];
+    if (found.en && found.tr && found.wrong) available.push('normal');
+    if (found.en && found.tr && found.wen)   available.push('phase2');
+    if (found.en && found.wen && found.def)  available.push('phase3');
+    if (available.length === 0) continue;
+
+    const phase = available[Math.floor(Math.random() * available.length)];
+    tagged.push({ ...found, _retakeMode: phase });
+  }
+
+  if (tagged.length === 0) {
+    alert('Sözlər tapılmadı.');
+    return;
+  }
+
+  // app.js-dəki quiz sistemini işə sal
+  quiz.mode         = 'retake';
+  quiz.levelIdx     = -1;   // xüsusi: wrong-words retake
+  quiz.quizIdx      = -1;
+  quiz.words        = tagged.sort(() => Math.random() - 0.5);
+  quiz.index        = 0;
+  quiz.mistakes     = 0;
+  quiz.locked       = false;
+  quiz.chanceUsed   = false;
+  quiz.chanceActive = false;
+
+  restoreNormalQuizBody();
+  elQuestionHint.textContent = 'Səhv sözlər — qarışıq təkrar';
+  showQuizScreen();
+  showQuestion();
+}
+return { render, _toggle, _retryWrongs: startWrongWordsRetake };
 })();
