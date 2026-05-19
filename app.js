@@ -593,11 +593,9 @@ function renderListeningQuestion() {
   setupAudioPlayer();
 }
 
-
 // ============================================================
 //  4. setupAudioPlayer — audio player məntiqi
 // ============================================================
-
 function setupAudioPlayer() {
   const item    = listeningState.item;
   const playBtn = document.getElementById('audio-play-btn');
@@ -605,7 +603,6 @@ function setupAudioPlayer() {
   const current = document.getElementById('audio-current');
   const durEl   = document.getElementById('audio-duration');
   const endMsg  = document.getElementById('audio-ended-msg');
-
   if (!playBtn) return;
 
   // Əgər audio artıq bitibsə player-i passiv göstər
@@ -616,7 +613,6 @@ function setupAudioPlayer() {
 
   // Əvvəlki audio varsa saxla (sual keçəndə eyni audio davam edir)
   let audio = listeningState.audioEl;
-
   if (!audio) {
     audio = new Audio(item.audio);
     listeningState.audioEl = audio;
@@ -628,24 +624,41 @@ function setupAudioPlayer() {
     audio.addEventListener('timeupdate', () => {
       if (!audio.duration) return;
       const pct = (audio.currentTime / audio.duration) * 100;
-      if (fill)    fill.style.width   = `${pct}%`;
+      if (fill)    fill.style.width    = `${pct}%`;
       if (current) current.textContent = formatTime(audio.currentTime);
     });
 
     audio.addEventListener('ended', () => {
-      listeningState.audioEnded = true;
-      listeningState.audioEl    = null;
+      listeningState.playCount = (listeningState.playCount || 0) + 1;
 
-      if (fill)    fill.style.width    = '100%';
-      if (playBtn) playBtn.disabled    = true;
-      if (endMsg)  endMsg.classList.add('visible');
-
-      // Sual sahəsini aktiv et
-      const qArea   = document.getElementById('listening-q-area');
-      const blocked = document.getElementById('listening-blocked-notice');
-      if (qArea)   qArea.classList.remove('blocked');
-      if (blocked) blocked.classList.add('hidden');
+      if (listeningState.playCount >= 2) {
+        listeningState.audioEnded = true;
+        listeningState.audioEl    = null;
+        if (fill)    fill.style.width  = '100%';
+        if (playBtn) playBtn.disabled  = true;
+        if (endMsg)  endMsg.classList.add('visible');
+        const qArea   = document.getElementById('listening-q-area');
+        const blocked = document.getElementById('listening-blocked-notice');
+        if (qArea)   qArea.classList.remove('blocked');
+        if (blocked) blocked.classList.add('hidden');
+      } else {
+        // Birinci dinləmə bitdi — yenidən oxumağa icazə ver
+        audio.currentTime = 0;
+        if (fill)    fill.style.width    = '0%';
+        if (current) current.textContent = '0:00';
+        if (playBtn) {
+          playBtn.disabled = false;
+          playBtn.classList.remove('playing-locked');
+        }
+        playBtn.addEventListener('click', () => {
+          if (playBtn.disabled) return;
+          playBtn.disabled = true;
+          playBtn.classList.add('playing-locked');
+          audio.play().catch(() => {});
+        }, { once: true });
+      }
     });
+
   } else {
     // Audio artıq var (sual keçərkən) — yalnız UI sinxronlaşdır
     if (audio.duration) {
@@ -666,19 +679,36 @@ function setupAudioPlayer() {
 
     // ended yenidən bağla
     audio.addEventListener('ended', () => {
-      listeningState.audioEnded = true;
-      listeningState.audioEl    = null;
-      if (fill)    fill.style.width    = '100%';
-      if (playBtn) playBtn.disabled    = true;
-      if (endMsg)  endMsg.classList.add('visible');
-      const qArea   = document.getElementById('listening-q-area');
-      const blocked = document.getElementById('listening-blocked-notice');
-      if (qArea)   qArea.classList.remove('blocked');
-      if (blocked) blocked.classList.add('hidden');
+      listeningState.playCount = (listeningState.playCount || 0) + 1;
+
+      if (listeningState.playCount >= 2) {
+        listeningState.audioEnded = true;
+        listeningState.audioEl    = null;
+        if (fill)    fill.style.width  = '100%';
+        if (playBtn) playBtn.disabled  = true;
+        if (endMsg)  endMsg.classList.add('visible');
+        const qArea   = document.getElementById('listening-q-area');
+        const blocked = document.getElementById('listening-blocked-notice');
+        if (qArea)   qArea.classList.remove('blocked');
+        if (blocked) blocked.classList.add('hidden');
+      } else {
+        audio.currentTime = 0;
+        if (fill)    fill.style.width    = '0%';
+        if (current) current.textContent = '0:00';
+        if (playBtn) {
+          playBtn.disabled = false;
+          playBtn.classList.remove('playing-locked');
+        }
+        playBtn.addEventListener('click', () => {
+          if (playBtn.disabled) return;
+          playBtn.disabled = true;
+          playBtn.classList.add('playing-locked');
+          audio.play().catch(() => {});
+        }, { once: true });
+      }
     }, { once: true });
 
     if (!audio.paused) {
-      // Artıq çalınır — play düyməsini disabled et
       if (playBtn) playBtn.disabled = true;
     }
   }
@@ -698,8 +728,6 @@ function formatTime(sec) {
   const s = Math.floor(sec % 60);
   return `${m}:${s.toString().padStart(2, '0')}`;
 }
-
-
 // ============================================================
 //  5. handleListeningAnswer
 // ============================================================
