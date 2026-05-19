@@ -561,7 +561,6 @@ function renderListeningQuestion() {
 
   setupAudioPlayer();
 }
-
 // ============================================================
 //  4. setupAudioPlayer — audio player məntiqi
 // ============================================================
@@ -580,94 +579,93 @@ function setupAudioPlayer() {
   }
 
   let audio = listeningState.audioEl;
+
   if (!audio) {
+    // ── Yeni audio yarat, bütün listenerları bir dəfə bağla ──
     audio = new Audio(item.audio);
     listeningState.audioEl = audio;
 
     audio.addEventListener('loadedmetadata', () => {
-      if (durEl) durEl.textContent = formatTime(audio.duration);
+      const d = document.getElementById('audio-duration');
+      if (d) d.textContent = formatTime(audio.duration);
     });
 
     audio.addEventListener('timeupdate', () => {
       if (!audio.duration) return;
       const pct = (audio.currentTime / audio.duration) * 100;
-      if (fill)    fill.style.width    = `${pct}%`;
-      if (current) current.textContent = formatTime(audio.currentTime);
+      const f = document.getElementById('audio-progress-fill');
+      const c = document.getElementById('audio-current');
+      if (f) f.style.width    = `${pct}%`;
+      if (c) c.textContent    = formatTime(audio.currentTime);
     });
 
     audio.addEventListener('ended', () => {
       listeningState.playCount = (listeningState.playCount || 0) + 1;
 
+      const pb  = document.getElementById('audio-play-btn');
+      const fl  = document.getElementById('audio-progress-fill');
+      const cu  = document.getElementById('audio-current');
+      const em  = document.getElementById('audio-ended-msg');
+
       if (listeningState.playCount >= 2) {
+        // İkinci dinləmə bitdi — kilidlə
         listeningState.audioEnded = true;
         listeningState.audioEl    = null;
-        if (fill)    fill.style.width  = '100%';
-        if (playBtn) playBtn.disabled  = true;
-        if (endMsg)  endMsg.classList.add('visible');
+        if (fl) fl.style.width  = '100%';
+        if (pb) pb.disabled     = true;
+        if (em) em.classList.add('visible');
       } else {
+        // Birinci dinləmə bitdi — reset et, yenidən oxumağa icazə ver
         audio.currentTime = 0;
-        if (fill)    fill.style.width    = '0%';
-        if (current) current.textContent = '0:00';
-        if (playBtn) {
-          playBtn.disabled = false;
-          playBtn.classList.remove('playing-locked');
+        if (fl) fl.style.width  = '0%';
+        if (cu) cu.textContent  = '0:00';
+        if (pb) {
+          pb.disabled = false;
+          pb.classList.remove('playing-locked');
+          pb.addEventListener('click', () => {
+            if (pb.disabled) return;
+            pb.disabled = true;
+            pb.classList.add('playing-locked');
+            audio.play().catch(() => {});
+          }, { once: true });
         }
-        playBtn.addEventListener('click', () => {
-          if (playBtn.disabled) return;
-          playBtn.disabled = true;
-          playBtn.classList.add('playing-locked');
-          audio.play().catch(() => {});
-        }, { once: true });
       }
     });
+    // ── listener-lar bağlandı ──
 
   } else {
+    // Audio artıq var — yalnız UI sinxronlaşdır, HEÇ BİR listener əlavə etmə
     if (audio.duration) {
       if (durEl) durEl.textContent = formatTime(audio.duration);
       const pct = (audio.currentTime / audio.duration) * 100;
       if (fill)    fill.style.width    = `${pct}%`;
       if (current) current.textContent = formatTime(audio.currentTime);
     }
-
-    const onTimeUpdate = () => {
-      if (!audio.duration) return;
-      const pct = (audio.currentTime / audio.duration) * 100;
-      if (fill)    fill.style.width    = `${pct}%`;
-      if (current) current.textContent = formatTime(audio.currentTime);
-    };
-    audio.addEventListener('timeupdate', onTimeUpdate);
-
-    audio.addEventListener('ended', () => {
-      listeningState.playCount = (listeningState.playCount || 0) + 1;
-
-      if (listeningState.playCount >= 2) {
-        listeningState.audioEnded = true;
-        listeningState.audioEl    = null;
-        if (fill)    fill.style.width  = '100%';
-        if (playBtn) playBtn.disabled  = true;
-        if (endMsg)  endMsg.classList.add('visible');
-      } else {
-        audio.currentTime = 0;
-        if (fill)    fill.style.width    = '0%';
-        if (current) current.textContent = '0:00';
-        if (playBtn) {
-          playBtn.disabled = false;
-          playBtn.classList.remove('playing-locked');
-        }
-        playBtn.addEventListener('click', () => {
-          if (playBtn.disabled) return;
-          playBtn.disabled = true;
-          playBtn.classList.add('playing-locked');
-          audio.play().catch(() => {});
-        }, { once: true });
-      }
-    }, { once: true });
-
     if (!audio.paused) {
       if (playBtn) playBtn.disabled = true;
     }
   }
 
+  // timeupdate — DOM yeniləndiyindən hər dəfə bağlamaq lazımdır
+  // amma yalnız yeni audio üçün deyil, mövcud audio üçün də UI güncəllənsin
+  if (audio) {
+    const onTimeUpdate = () => {
+      if (!audio.duration) return;
+      const pct = (audio.currentTime / audio.duration) * 100;
+      const f = document.getElementById('audio-progress-fill');
+      const c = document.getElementById('audio-current');
+      if (f) f.style.width  = `${pct}%`;
+      if (c) c.textContent  = formatTime(audio.currentTime);
+    };
+    // Köhnə timeupdate-ləri yığılmasın deyə named function saxla
+    if (listeningState._onTimeUpdate) {
+      audio.removeEventListener('timeupdate', listeningState._onTimeUpdate);
+    }
+    listeningState._onTimeUpdate = onTimeUpdate;
+    audio.addEventListener('timeupdate', onTimeUpdate);
+  }
+
+  // Play düyməsi
   playBtn.addEventListener('click', () => {
     if (playBtn.disabled) return;
     playBtn.disabled = true;
