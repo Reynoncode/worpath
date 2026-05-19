@@ -355,7 +355,7 @@ function _openHomeworkPanel(classId, className) {
   panel.innerHTML = `<div style="text-align:center;padding:16px;color:#9CA3AF;font-size:13px;">Yüklənir...</div>`;
 
   if (window.HomeworkManager?.renderPanel) {
-    window.HomeworkManager.renderPanel(classId, className, panel);
+    window.HomeworkManager.renderManager(classId, className, panel);
   } else {
     panel.innerHTML = `<div style="text-align:center;padding:16px;color:#DC2626;font-size:13px;">HomeworkManager tapılmadı.</div>`;
   }
