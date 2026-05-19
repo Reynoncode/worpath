@@ -637,10 +637,6 @@ function setupAudioPlayer() {
         if (fill)    fill.style.width  = '100%';
         if (playBtn) playBtn.disabled  = true;
         if (endMsg)  endMsg.classList.add('visible');
-        const qArea   = document.getElementById('listening-q-area');
-        const blocked = document.getElementById('listening-blocked-notice');
-        if (qArea)   qArea.classList.remove('blocked');
-        if (blocked) blocked.classList.add('hidden');
       } else {
         // Birinci dinləmə bitdi — yenidən oxumağa icazə ver
         audio.currentTime = 0;
@@ -668,7 +664,6 @@ function setupAudioPlayer() {
       if (current) current.textContent = formatTime(audio.currentTime);
     }
 
-    // timeupdate yenidən bağla (DOM yeniləndi)
     const onTimeUpdate = () => {
       if (!audio.duration) return;
       const pct = (audio.currentTime / audio.duration) * 100;
@@ -677,7 +672,6 @@ function setupAudioPlayer() {
     };
     audio.addEventListener('timeupdate', onTimeUpdate);
 
-    // ended yenidən bağla
     audio.addEventListener('ended', () => {
       listeningState.playCount = (listeningState.playCount || 0) + 1;
 
@@ -687,10 +681,6 @@ function setupAudioPlayer() {
         if (fill)    fill.style.width  = '100%';
         if (playBtn) playBtn.disabled  = true;
         if (endMsg)  endMsg.classList.add('visible');
-        const qArea   = document.getElementById('listening-q-area');
-        const blocked = document.getElementById('listening-blocked-notice');
-        if (qArea)   qArea.classList.remove('blocked');
-        if (blocked) blocked.classList.add('hidden');
       } else {
         audio.currentTime = 0;
         if (fill)    fill.style.width    = '0%';
