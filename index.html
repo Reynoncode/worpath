@@ -181,26 +181,24 @@
     </div>
   </div>
 
-
   <!-- Quit Confirm Modal -->
-<div class="quit-backdrop hidden" id="quit-modal">
-  <div class="quit-card">
-    <div class="quit-icon">🚪</div>
-    <div class="quit-title">Çıxmaq istəyirsən?</div>
-    <div class="quit-desc">İrəliləyişin saxlanmayacaq.</div>
-    <div class="quit-actions">
-      <button class="btn-quit-confirm" id="quit-confirm">Çıx</button>
-      <button class="btn-quit-cancel" id="quit-cancel">Davam et</button>
+  <div class="quit-backdrop hidden" id="quit-modal">
+    <div class="quit-card">
+      <div class="quit-icon">🚪</div>
+      <div class="quit-title">Çıxmaq istəyirsən?</div>
+      <div class="quit-desc">İrəliləyişin saxlanmayacaq.</div>
+      <div class="quit-actions">
+        <button class="btn-quit-confirm" id="quit-confirm">Çıx</button>
+        <button class="btn-quit-cancel"  id="quit-cancel">Davam et</button>
+      </div>
     </div>
   </div>
-</div>
 
   <!-- ═══════════════════════════════════════════
        STATİSTİKA EKRANI
   ═══════════════════════════════════════════ -->
   <div id="stats-screen" class="screen-overlay hidden">
 
-    <!-- Header: X düyməsi + sinif otağı + auth bar eyni sətirdə -->
     <div class="quiz-header" style="border-bottom:1px solid #E8E2D9;">
       <button class="icon-btn" id="stats-close-btn" aria-label="Bağla">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -209,21 +207,20 @@
         </svg>
       </button>
 
-     <!-- Sinif otağı ikonu (yalnız giriş edildikdə görünür) -->
-<button id="stats-classroom-btn"
-  style="display:none;align-items:center;gap:5px;background:#1A1A1A;color:#fff;border:none;border-radius:99px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600;margin-left:8px;">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-    <polyline points="9 22 9 12 15 12 15 22"/>
-  </svg>
-  Sinif Otağı
-</button>
+      <button id="stats-classroom-btn"
+        style="display:none;align-items:center;gap:5px;background:#1A1A1A;color:#fff;border:none;
+               border-radius:99px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600;margin-left:8px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        Sinif Otağı
+      </button>
 
-      <!-- Auth bar — X ilə eyni sətirdə sağda -->
       <div id="stats-auth-bar" style="margin-left:auto;"></div>
     </div>
 
-    <!-- Statistika məzmunu -->
     <div id="stats-container" style="overflow-y:auto;height:calc(100vh - 60px);"></div>
 
   </div>
@@ -231,33 +228,42 @@
   <!-- Toast -->
   <div class="toast" id="toast"></div>
 
-  <!-- ── SKRIPTLƏR ── -->
+  <!-- ══════════════════════════════════════════
+       SKRIPTLƏR
+
+       Yükləmə sırası:
+       1. stats.js, stats-page.js, data.js, app.js  — adi skriptlər (global)
+       2. firebase.js   — Firebase konfiqurasiyası (module)
+       3. auth.js       — Auth məntiqi (module)
+       4. homework.js   — Ev tapşırığı sistemi (module) ← YENİ
+       5. classroom.js  — Sinif otağı (module, HomeworkManager-dən istifadə edir)
+  ════════════════════════════════════════════ -->
   <script src="stats.js"></script>
   <script src="stats-page.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
 
-  <!-- Firebase (type=module) -->
   <script type="module" src="firebase.js"></script>
   <script type="module" src="auth.js"></script>
+  <script type="module" src="homework.js"></script>
   <script type="module" src="classroom.js"></script>
 
   <script>
-  Stats.updateStreak();
+    Stats.updateStreak();
 
-  document.getElementById('stats-btn').addEventListener('click', function () {
-    StatsPage.render('stats-container');
-    document.getElementById('stats-screen').classList.remove('hidden');
-  });
+    document.getElementById('stats-btn').addEventListener('click', function () {
+      StatsPage.render('stats-container');
+      document.getElementById('stats-screen').classList.remove('hidden');
+    });
 
-  document.getElementById('stats-close-btn').addEventListener('click', function () {
-    document.getElementById('stats-screen').classList.add('hidden');
-  });
+    document.getElementById('stats-close-btn').addEventListener('click', function () {
+      document.getElementById('stats-screen').classList.add('hidden');
+    });
 
-  document.getElementById('stats-classroom-btn').addEventListener('click', function () {
-    if (window.ClassroomManager) ClassroomManager.open();
-  });
-</script>
+    document.getElementById('stats-classroom-btn').addEventListener('click', function () {
+      if (window.ClassroomManager) ClassroomManager.open();
+    });
+  </script>
 
 </body>
 </html>
