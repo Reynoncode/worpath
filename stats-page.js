@@ -8,10 +8,6 @@
 
 const StatsPage = (() => {
 
-  // Göstəriləcək səviyyələr — label, rəng, sublevel ID-ləri (localStorage açarları)
-  // total: həmin levelə aid bütün quiz nodelarının sayı × 3 phase
-  // (exam nodeları daxil deyil — onların statusu progress-ə təsir etmir)
-  // sublevelKeys: localStorage-da həmin səviyyəyə aid olan bütün açarlar
   const LEVELS = [
     { label: "A1", color: "#C0392B", sublevelKeys: ["a1"],            total: 123 },
     { label: "A2", color: "#E67E22", sublevelKeys: ["a2"],            total: 93  },
@@ -21,7 +17,6 @@ const StatsPage = (() => {
     { label: "C2", color: "#1B2A3B", sublevelKeys: ["c2"],            total: 174 },
   ];
 
-  // Status → neçə phase tamamlandı
   const STATUS_PHASE_MAP = {
     'completed':        1,
     'phase2_unlocked':  1,
@@ -30,8 +25,6 @@ const StatsPage = (() => {
     'level_done':       3,
   };
 
-  // wordpath_v1 progress-dən hər səviyyə üçün tamamlanan phase sayını hesabla
-  // sublevelKeys-ə görə birləşdirir (b1a + b1b → B1)
   function getPhasesByLevel() {
     let raw = {};
     try {
@@ -39,7 +32,6 @@ const StatsPage = (() => {
       if (stored) raw = JSON.parse(stored);
     } catch (_) {}
 
-    // Əvvəlcə hər localStorage açarı üçün phase cəmini hesabla
     const keySum = {};
     for (const [levelId, statuses] of Object.entries(raw)) {
       let sum = 0;
@@ -49,7 +41,6 @@ const StatsPage = (() => {
       keySum[levelId.toLowerCase()] = sum;
     }
 
-    // Sonra hər göstərilən səviyyə üçün sublevelKeys-i topla
     const counts = {};
     LEVELS.forEach(lv => {
       let total = 0;
@@ -66,7 +57,6 @@ const StatsPage = (() => {
     light:    { label: "Yüngül səhv",    icon: "ℹ️", bg: "#F0FDF4", border: "#86EFAC", textColor: "#14532D" },
   };
 
-  // Bir səhv qrupunun HTML-i
   function renderGroup(sev, words, openState) {
     const cfg = SEV_CFG[sev];
     const isOpen = openState[sev];
@@ -109,7 +99,6 @@ const StatsPage = (() => {
     `;
   }
 
-  // Açma/bağlama
   const openState = { critical: true, medium: true, light: true };
 
   function _toggle(sev) {
@@ -131,11 +120,9 @@ const StatsPage = (() => {
     const s = Stats.getStats();
     const phasesByLevel = getPhasesByLevel();
 
-    // Qruplaşdır
     const grouped = { critical: [], medium: [], light: [] };
     s.errorWords.forEach(w => grouped[w.severity].push(w));
 
-    // Səviyyə progress sətirləri — rəngli kvadrat badge
     const levelRows = LEVELS.map(lv => {
       const done = phasesByLevel[lv.label] || 0;
       const pct  = lv.total > 0 ? Math.min(100, Math.round((done / lv.total) * 100)) : 0;
@@ -164,7 +151,6 @@ const StatsPage = (() => {
       `;
     }).join("");
 
-    // Səhv qrupları
     const errGroups = ["critical", "medium", "light"]
       .filter(sev => grouped[sev].length > 0)
       .map(sev => renderGroup(sev, grouped[sev], openState))
@@ -220,7 +206,7 @@ const StatsPage = (() => {
           ${levelRows}
         </div>
 
-<!-- Səhv analizi -->
+        <!-- Səhv analizi -->
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
           <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
           ${s.errorWords.length > 0 ? `
@@ -233,71 +219,78 @@ const StatsPage = (() => {
         </div>
         ${errGroups}
         ${noErrors}
+
       </div>
     `;
   }
 
-
-
   // ─── Səhv sözləri təkrar et ───────────────────────────────────────────────
-function startWrongWordsRetake() {
-  const s = Stats.getStats();
-  if (s.errorWords.length === 0) {
-    alert('Heç bir səhv söz yoxdur!');
-    return;
-  }
-
-  // 20 random səhv söz seç
-  const shuffled = s.errorWords.sort(() => Math.random() - 0.5);
-  const selected = shuffled.slice(0, 20);
-
-  // Hər söz üçün data.js-dən uyğun word object-i tap
-  const tagged = [];
-
-  for (const errWord of selected) {
-    // Bütün LEVELS-dən həmin sözü axtar
-    let found = null;
-    for (const lvl of LEVELS) {
-      for (const quiz of lvl.quizzes) {
-        if (!Array.isArray(quiz)) continue;
-        const match = quiz.find(w => w && w.en === errWord.word);
-        if (match) { found = match; break; }
-      }
-      if (found) break;
+  function startWrongWordsRetake() {
+    const s = Stats.getStats();
+    if (s.errorWords.length === 0) {
+      alert('Heç bir səhv söz yoxdur!');
+      return;
     }
-    if (!found) continue;
 
-    // 3 phase-dən random birini seç (mövcud olanlara görə)
-    const available = [];
-    if (found.en && found.tr && found.wrong) available.push('normal');
-    if (found.en && found.tr && found.wen)   available.push('phase2');
-    if (found.en && found.wen && found.def)  available.push('phase3');
-    if (available.length === 0) continue;
+    // 20 random səhv söz seç
+    const shuffled = [...s.errorWords].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 20);
 
-    const phase = available[Math.floor(Math.random() * available.length)];
-    tagged.push({ ...found, _retakeMode: phase });
+    // Hər söz üçün window.LEVELS (data.js)-dən uyğun word object-i tap
+    const dataLevels = window.LEVELS;
+    if (!dataLevels) {
+      alert('LEVELS tapılmadı. data.js yüklənib?');
+      return;
+    }
+
+    const tagged = [];
+
+    for (const errWord of selected) {
+      let found = null;
+      for (const lvl of dataLevels) {
+        if (!lvl.quizzes) continue;
+        for (const quizItem of lvl.quizzes) {
+          if (!Array.isArray(quizItem)) continue;
+          const match = quizItem.find(w => w && w.en === errWord.word);
+          if (match) { found = match; break; }
+        }
+        if (found) break;
+      }
+      if (!found) continue;
+
+      const available = [];
+      if (found.en && found.tr && found.wrong) available.push('normal');
+      if (found.en && found.tr && found.wen)   available.push('phase2');
+      if (found.en && found.wen && found.def)  available.push('phase3');
+      if (available.length === 0) continue;
+
+      const phase = available[Math.floor(Math.random() * available.length)];
+      tagged.push({ ...found, _retakeMode: phase });
+    }
+
+    if (tagged.length === 0) {
+      alert('Sözlər tapılmadı.');
+      return;
+    }
+
+    quiz.mode         = 'retake';
+    quiz.levelIdx     = -1;
+    quiz.quizIdx      = -1;
+    quiz.words        = tagged.sort(() => Math.random() - 0.5);
+    quiz.index        = 0;
+    quiz.mistakes     = 0;
+    quiz.locked       = false;
+    quiz.chanceUsed   = false;
+    quiz.chanceActive = false;
+
+    restoreNormalQuizBody();
+    elQuestionHint.textContent = 'Səhv sözlər — qarışıq təkrar';
+    showQuizScreen();
+    showQuestion();
   }
 
-  if (tagged.length === 0) {
-    alert('Sözlər tapılmadı.');
-    return;
-  }
+  window.startWrongWordsRetake = startWrongWordsRetake;
 
-  // app.js-dəki quiz sistemini işə sal
-  quiz.mode         = 'retake';
-  quiz.levelIdx     = -1;   // xüsusi: wrong-words retake
-  quiz.quizIdx      = -1;
-  quiz.words        = tagged.sort(() => Math.random() - 0.5);
-  quiz.index        = 0;
-  quiz.mistakes     = 0;
-  quiz.locked       = false;
-  quiz.chanceUsed   = false;
-  quiz.chanceActive = false;
+  return { render, _toggle, _retryWrongs: startWrongWordsRetake };
 
-  restoreNormalQuizBody();
-  elQuestionHint.textContent = 'Səhv sözlər — qarışıq təkrar';
-  showQuizScreen();
-  showQuestion();
-}
-return { render, _toggle, _retryWrongs: startWrongWordsRetake };
 })();
