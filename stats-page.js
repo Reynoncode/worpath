@@ -200,6 +200,9 @@ const StatsPage = (() => {
           `).join("")}
         </div>
 
+        <!-- Ev tapşırığı kartı (HomeworkManager tərəfindən doldurulur) -->
+        <div id="stats-homework-card"></div>
+
         <!-- Səviyyə irəliləməsi -->
         <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
           <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Səviyyə üzrə irəliləmə</div>
@@ -222,6 +225,11 @@ const StatsPage = (() => {
 
       </div>
     `;
+
+    // Ev tapşırığı kartını asinxron doldur
+    if (window.HomeworkManager?.renderCard) {
+      window.HomeworkManager.renderCard("stats-homework-card");
+    }
   }
 
   // ─── Səhv sözləri təkrar et ───────────────────────────────────────────────
