@@ -3071,6 +3071,11 @@ elReviewModal.addEventListener('click', (e) => {
   if (e.target === elReviewModal) hideReviewModal();
 });
 
+window.restoreNormalQuizBody = restoreNormalQuizBody;
+window.showQuizScreen        = showQuizScreen;
+window.showQuestion          = showQuestion;
+window.quiz                  = quiz;
+window.elQuestionHint        = elQuestionHint;
 // ── Init ──────────────────────────────────────────────────
 loadProgress();
 renderLevels();
