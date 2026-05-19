@@ -283,10 +283,10 @@ const StatsPage = (() => {
     quiz.chanceUsed   = false;
     quiz.chanceActive = false;
 
-    restoreNormalQuizBody();
-    elQuestionHint.textContent = 'Səhv sözlər — qarışıq təkrar';
-    showQuizScreen();
-    showQuestion();
+    window.restoreNormalQuizBody();
+    window.elQuestionHint.textContent = 'Səhv sözlər — qarışıq təkrar';
+    window.showQuizScreen();
+    window.showQuestion();
   }
 
   window.startWrongWordsRetake = startWrongWordsRetake;
