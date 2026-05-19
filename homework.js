@@ -11,10 +11,12 @@ import {
 // ════════════════════════════════════════════════════════════
 
 let _hwState = {
-  classId:   null,
-  className: null,
-  questions: [],   // [{ text, options:["","","",""], correct:0 }]
-  qCount:    5,
+  classId:    null,
+  className:  null,
+  questions:  [],   // [{ text, options:["","","",""], correct:0 }]
+  qCount:     5,
+  editId:     null,
+  editStatus: null,
 };
 
 // ─── Ev tapşırığı yaratma panelini render et ─────────────────────────────────
@@ -122,25 +124,21 @@ function _renderQuestion(idx) {
   const container = document.getElementById("hw-questions-container");
   if (!container) return;
 
-  // Köhnə element varsa yenilə
   const existingEl = document.getElementById(`hw-q-${idx}`);
   const q = _hwState.questions[idx];
 
   const optionsHTML = q.options.map((opt, oi) => `
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;" id="hw-q${idx}-opt-row-${oi}">
-      <!-- Doğru cavab radio -->
       <button onclick="HomeworkManager._setCorrect(${idx},${oi})" id="hw-q${idx}-radio-${oi}"
         style="width:20px;height:20px;border-radius:50%;border:2px solid ${q.correct===oi?'#1A1A1A':'#E8E2D9'};
                background:${q.correct===oi?'#1A1A1A':'transparent'};cursor:pointer;flex-shrink:0;
                display:flex;align-items:center;justify-content:center;padding:0;transition:all 0.15s;">
         ${q.correct===oi?'<div style="width:8px;height:8px;border-radius:50%;background:#fff;"></div>':''}
       </button>
-      <!-- Bənd mətni -->
       <input type="text" value="${_escHtml(opt)}"
         oninput="HomeworkManager._updateOption(${idx},${oi},this.value)"
         placeholder="${String.fromCharCode(65+oi)} bəndi"
         style="flex:1;padding:8px 10px;border:1px solid #E8E2D9;border-radius:8px;font-size:13px;background:#F9F7F3;outline:none;"/>
-      <!-- Bənd sil (min 2 olduqda gizlət) -->
       ${q.options.length > 2 ? `
         <button onclick="HomeworkManager._removeOption(${idx},${oi})"
           style="background:none;border:none;color:#FCA5A5;font-size:18px;cursor:pointer;padding:0 2px;line-height:1;">×</button>
@@ -154,14 +152,12 @@ function _renderQuestion(idx) {
     <div id="hw-q-${idx}"
       style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:14px 16px;margin-bottom:10px;">
 
-      <!-- Sual başlığı sətri -->
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
         <div style="font-size:12px;font-weight:700;color:#1A1A1A;">Sual ${idx+1}</div>
         <button onclick="HomeworkManager._deleteQuestion(${idx})"
           style="background:none;border:none;color:#9CA3AF;font-size:20px;cursor:pointer;padding:0;line-height:1;">×</button>
       </div>
 
-      <!-- Sual mətni -->
       <textarea oninput="HomeworkManager._updateQuestionText(${idx},this.value)"
         placeholder="Sual mətnini yazın..."
         rows="2"
@@ -170,7 +166,6 @@ function _renderQuestion(idx) {
                font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;"
       >${_escHtml(q.text)}</textarea>
 
-      <!-- Cavab bəndləri -->
       <div style="font-size:11px;font-weight:600;color:#6B7280;margin-bottom:6px;">
         Bəndlər <span style="font-weight:400;">(doğru cavabı ● ilə işarələyin)</span>
       </div>
@@ -230,7 +225,6 @@ function _removeOption(idx, oi) {
 // ─── Sualı sil ───────────────────────────────────────────────────────────────
 function _deleteQuestion(idx) {
   _hwState.questions.splice(idx, 1);
-  // Bütün sualları yenidən render et
   const container = document.getElementById("hw-questions-container");
   if (container) container.innerHTML = "";
   _hwState.questions.forEach((_, i) => _renderQuestion(i));
@@ -265,7 +259,6 @@ async function _submitHomework() {
   const title     = document.getElementById("hw-title-input")?.value.trim() || "Ev tapşırığı";
   const questions = _hwState.questions;
 
-  // Validation
   if (questions.length === 0) {
     _showHwError("Ən az 1 sual əlavə edin."); return;
   }
@@ -283,7 +276,6 @@ async function _submitHomework() {
     }
   }
 
-  // Boş bəndləri sil
   const cleanQuestions = questions.map(q => ({
     text:    q.text.trim(),
     options: q.options.map(o => o.trim()).filter(o => o),
@@ -303,7 +295,6 @@ async function _submitHomework() {
       status:     "active"
     });
 
-    // Uğurlu mesaj + geri qayıt
     const container = document.getElementById("hw-questions-container");
     if (container) {
       const parent = container.closest("[id]") || container.parentElement;
@@ -328,6 +319,231 @@ async function _submitHomework() {
 }
 
 // ════════════════════════════════════════════════════════════
+//  MÜƏLLIM — Tapşırıq idarəetməsi (siyahı + nəticələr + redaktə)
+// ════════════════════════════════════════════════════════════
+
+async function renderHomeworkManager(classId, className, container) {
+  container.innerHTML = `<div style="text-align:center;padding:20px;color:#9CA3AF;font-size:13px;">Yüklənir...</div>`;
+  const snap = await getDocs(
+    query(collection(db, "homeworks"), where("classId", "==", classId), orderBy("createdAt", "desc"))
+  );
+  const homeworks = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+  window._hwManagerState = { classId, className };
+
+  if (homeworks.length === 0) {
+    renderHomeworkPanel(classId, className, container); return;
+  }
+
+  const cards = homeworks.map(hw => {
+    const date = hw.createdAt?.toDate ? _formatDate(hw.createdAt.toDate()) : "";
+    const statusBadge = hw.status === "active"
+      ? `<span style="background:#F0FDF4;color:#16A34A;border:1px solid #86EFAC;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;">Aktiv</span>`
+      : `<span style="background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;">Bağlı</span>`;
+    return `
+      <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:14px 16px;margin-bottom:10px;">
+        <div style="margin-bottom:10px;">
+          <div style="font-size:13px;font-weight:700;color:#1A1A1A;margin-bottom:4px;">${_escHtml(hw.title)}</div>
+          <div style="display:flex;align-items:center;gap:6px;">${statusBadge}
+            <span style="font-size:11px;color:#9CA3AF;">${hw.questions?.length||0} sual · ${date}</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;">
+          <button onclick="HomeworkManager._showHwResults('${hw.id}','${_escHtml(hw.title)}')"
+            style="flex:1;background:#F5F0E8;color:#1A1A1A;border:1px solid #E8E2D9;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;">
+            📊 Nəticələr
+          </button>
+          <button onclick="HomeworkManager._showHwEdit('${hw.id}')"
+            style="flex:1;background:#F5F0E8;color:#1A1A1A;border:1px solid #E8E2D9;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;">
+            ✏️ Redaktə
+          </button>
+        </div>
+      </div>`;
+  }).join("");
+
+  container.innerHTML = `
+    <div style="padding:0 2px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:700;color:#1A1A1A;">Ev tapşırıqları</div>
+        <button onclick="HomeworkManager._showCreateNew('${classId}','${_escHtml(className)}')"
+          style="background:#1A1A1A;color:#fff;border:none;border-radius:99px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;">
+          + Yeni
+        </button>
+      </div>
+      ${cards}
+    </div>`;
+}
+
+async function _showHwResults(hwId, hwTitle) {
+  const panel = document.getElementById("homework-panel");
+  if (!panel) return;
+  panel.innerHTML = `<div style="text-align:center;padding:20px;color:#9CA3AF;font-size:13px;">Yüklənir...</div>`;
+
+  try {
+    const hwSnap = await getDoc(doc(db, "homeworks", hwId));
+    const hw = { id: hwSnap.id, ...hwSnap.data() };
+
+    const resultsSnap = await getDocs(
+      query(collection(db, "homeworkResults"), where("homeworkId", "==", hwId))
+    );
+    const results = resultsSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+
+    const enriched = await Promise.all(results.map(async r => {
+      try {
+        const uSnap = await getDoc(doc(db, "users", r.uid));
+        const name = uSnap.exists() ? (uSnap.data().displayName || uSnap.data().email || r.uid) : r.uid;
+        return { ...r, displayName: name };
+      } catch { return { ...r, displayName: r.uid }; }
+    }));
+    enriched.sort((a, b) => b.score - a.score);
+
+    const medals = ["🥇","🥈","🥉"];
+    const rows = enriched.length === 0
+      ? `<div style="text-align:center;padding:24px;color:#9CA3AF;font-size:13px;">Hələ heç bir tələbə həll etməyib</div>`
+      : enriched.map((r, i) => {
+          const scoreColor = r.score >= 80 ? "#16A34A" : r.score >= 50 ? "#D97706" : "#DC2626";
+          const date = r.completedAt?.toDate ? _formatDate(r.completedAt.toDate()) : "";
+          return `
+            <div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid #F0ECE4;">
+              <span style="font-size:16px;width:24px;text-align:center;">${medals[i] || `${i+1}.`}</span>
+              <div style="flex:1;min-width:0;">
+                <div style="font-size:13px;font-weight:600;color:#1A1A1A;">${_escHtml(r.displayName)}</div>
+                <div style="font-size:11px;color:#9CA3AF;">${r.correct}/${r.total} düzgün · ${date}</div>
+              </div>
+              <div style="font-size:16px;font-weight:700;color:${scoreColor};">${r.score}%</div>
+            </div>`;
+        }).join("");
+
+    panel.innerHTML = `
+      <div style="padding:0 2px;">
+        <button onclick="HomeworkManager._backToHwList()"
+          style="background:none;border:none;font-size:13px;color:#9CA3AF;cursor:pointer;padding:0;margin-bottom:14px;">← Geri</button>
+        <div style="font-size:13px;font-weight:700;color:#1A1A1A;margin-bottom:4px;">${_escHtml(hwTitle)}</div>
+        <div style="font-size:11px;color:#9CA3AF;margin-bottom:14px;">${results.length} tələbə · ${hw.questions?.length||0} sual</div>
+        <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;overflow:hidden;">${rows}</div>
+      </div>`;
+  } catch(err) {
+    console.error("Nəticə xətası:", err);
+    panel.innerHTML = `<div style="padding:20px;text-align:center;color:#DC2626;font-size:13px;">Xəta baş verdi</div>`;
+  }
+}
+
+async function _showHwEdit(hwId) {
+  const panel = document.getElementById("homework-panel");
+  if (!panel) return;
+  panel.innerHTML = `<div style="text-align:center;padding:20px;color:#9CA3AF;font-size:13px;">Yüklənir...</div>`;
+
+  const snap = await getDoc(doc(db, "homeworks", hwId));
+  if (!snap.exists()) return;
+  const hw = { id: snap.id, ...snap.data() };
+
+  _hwState.questions  = hw.questions.map(q => ({ ...q, options: [...q.options] }));
+  _hwState.qCount     = Math.max(hw.questions.length, 20);
+  _hwState.editId     = hwId;
+  _hwState.editStatus = hw.status;
+
+  panel.innerHTML = `
+    <div style="padding:0 2px;">
+      <button onclick="HomeworkManager._backToHwList()"
+        style="background:none;border:none;font-size:13px;color:#9CA3AF;cursor:pointer;padding:0;margin-bottom:14px;">← Geri</button>
+
+      <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:14px 16px;margin-bottom:12px;">
+        <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:6px;">Test başlığı</div>
+        <input id="hw-title-input" value="${_escHtml(hw.title)}"
+          style="width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:13px;background:#F9F7F3;outline:none;"/>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:14px 16px;margin-bottom:12px;">
+        <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:8px;">Status</div>
+        <div style="display:flex;gap:8px;">
+          <button id="hw-status-active" onclick="HomeworkManager._setEditStatus('active')"
+            style="flex:1;padding:8px;border-radius:8px;border:1px solid ${hw.status==='active'?'#16A34A':'#E8E2D9'};
+                   background:${hw.status==='active'?'#F0FDF4':'#fff'};color:${hw.status==='active'?'#16A34A':'#6B7280'};
+                   font-size:12px;font-weight:600;cursor:pointer;">✓ Aktiv</button>
+          <button id="hw-status-closed" onclick="HomeworkManager._setEditStatus('closed')"
+            style="flex:1;padding:8px;border-radius:8px;border:1px solid ${hw.status==='closed'?'#DC2626':'#E8E2D9'};
+                   background:${hw.status==='closed'?'#FFF1F0':'#fff'};color:${hw.status==='closed'?'#DC2626':'#6B7280'};
+                   font-size:12px;font-weight:600;cursor:pointer;">✕ Bağlı</button>
+        </div>
+      </div>
+
+      <div id="hw-questions-container" style="margin-bottom:12px;"></div>
+
+      <button onclick="HomeworkManager._addQuestion()"
+        style="width:100%;padding:12px;border:2px dashed #E8E2D9;border-radius:12px;background:transparent;
+               color:#6B7280;font-size:13px;font-weight:600;cursor:pointer;margin-bottom:14px;"
+        id="hw-add-q-btn">+ Sual əlavə et</button>
+
+      <button onclick="HomeworkManager._saveEdit()"
+        style="width:100%;background:#1A1A1A;color:#fff;border:none;border-radius:12px;padding:14px;font-size:14px;font-weight:700;cursor:pointer;">
+        ✓ Dəyişiklikləri Saxla
+      </button>
+      <div id="hw-error-msg" style="margin-top:10px;font-size:12px;color:#DC2626;text-align:center;display:none;"></div>
+    </div>`;
+
+  _hwState.questions.forEach((_, i) => _renderQuestion(i));
+  _updateAddBtn();
+}
+
+function _setEditStatus(status) {
+  _hwState.editStatus = status;
+  const ab = document.getElementById("hw-status-active");
+  const cb = document.getElementById("hw-status-closed");
+  if (ab) {
+    ab.style.borderColor = status === 'active' ? '#16A34A' : '#E8E2D9';
+    ab.style.background  = status === 'active' ? '#F0FDF4' : '#fff';
+    ab.style.color       = status === 'active' ? '#16A34A' : '#6B7280';
+  }
+  if (cb) {
+    cb.style.borderColor = status === 'closed' ? '#DC2626' : '#E8E2D9';
+    cb.style.background  = status === 'closed' ? '#FFF1F0' : '#fff';
+    cb.style.color       = status === 'closed' ? '#DC2626' : '#6B7280';
+  }
+}
+
+async function _saveEdit() {
+  const hwId = _hwState.editId;
+  if (!hwId) return;
+  const title     = document.getElementById("hw-title-input")?.value.trim() || "Ev tapşırığı";
+  const questions = _hwState.questions;
+  if (questions.length === 0) { _showHwError("Ən az 1 sual olmalıdır."); return; }
+  for (let i = 0; i < questions.length; i++) {
+    if (!questions[i].text.trim()) { _showHwError(`Sual ${i+1} mətnini yazın.`); return; }
+    if (questions[i].options.filter(o => o.trim()).length < 2) { _showHwError(`Sual ${i+1} üçün ən az 2 bənd doldurun.`); return; }
+  }
+  const cleanQ = questions.map(q => ({
+    text:    q.text.trim(),
+    options: q.options.map(o => o.trim()).filter(o => o),
+    correct: q.correct
+  }));
+  try {
+    await updateDoc(doc(db, "homeworks", hwId), {
+      title,
+      questions: cleanQ,
+      status:    _hwState.editStatus || "active"
+    });
+    _hwState.editId = null;
+    await _backToHwList();
+  } catch(err) {
+    console.error(err);
+    _showHwError("Xəta baş verdi.");
+  }
+}
+
+function _showCreateNew(classId, className) {
+  const panel = document.getElementById("homework-panel");
+  if (!panel) return;
+  _hwState.editId = null;
+  renderHomeworkPanel(classId, className, panel);
+}
+
+async function _backToHwList() {
+  const panel = document.getElementById("homework-panel");
+  if (!panel) return;
+  const { classId, className } = window._hwManagerState || {};
+  if (classId) await renderHomeworkManager(classId, className, panel);
+}
+
+// ════════════════════════════════════════════════════════════
 //  TƏLƏBƏ TƏRƏFİ — Ev tapşırığı kartı + test interfeysi
 // ════════════════════════════════════════════════════════════
 
@@ -336,7 +552,6 @@ export async function loadStudentHomeworks() {
   const user = auth.currentUser;
   if (!user) return [];
 
-  // İstifadəçinin daxil olduğu sinifləri tap
   const classSnap = await getDocs(
     query(collection(db, "classes"), where("students", "array-contains", user.email))
   );
@@ -344,7 +559,6 @@ export async function loadStudentHomeworks() {
 
   const classIds = classSnap.docs.map(d => d.id);
 
-  // Hər sinifdəki aktiv ev tapşırıqlarını yüklə
   const hwList = [];
   for (const cid of classIds) {
     const hwSnap = await getDocs(
@@ -356,7 +570,6 @@ export async function loadStudentHomeworks() {
     hwSnap.docs.forEach(d => hwList.push({ id: d.id, ...d.data() }));
   }
 
-  // Tamamlanmış tapşırıqları filtrele
   const results = await _getCompletedHwIds(user.uid);
   return hwList.filter(hw => !results.includes(hw.id));
 }
@@ -473,12 +686,12 @@ export async function renderHomeworkCard(containerId) {
 // ════════════════════════════════════════════════════════════
 
 let _testState = {
-  hw:        null,
-  idx:       0,
-  answers:   [],
-  correct:   0,
-  wrong:     0,
-  locked:    false,
+  hw:      null,
+  idx:     0,
+  answers: [],
+  correct: 0,
+  wrong:   0,
+  locked:  false,
 };
 
 // ─── Testi başlat ────────────────────────────────────────────────────────────
@@ -501,7 +714,6 @@ async function startHomework(hwId) {
 
 // ─── Test ekranını render et ─────────────────────────────────────────────────
 function _renderTestScreen() {
-  // Mövcud overlay-i sil
   const existing = document.getElementById("hw-test-overlay");
   if (existing) existing.remove();
 
@@ -606,7 +818,6 @@ function _selectAnswer(oi) {
   _testState.answers[idx] = oi;
   if (isCorrect) _testState.correct++; else _testState.wrong++;
 
-  // Düzgün/yanlış rəng
   for (let i = 0; i < q.options.length; i++) {
     const btn = document.getElementById(`hw-opt-${i}`);
     if (!btn) continue;
@@ -665,24 +876,22 @@ async function _finishTest() {
   const total = hw.questions.length;
   const pct   = Math.round((correct / total) * 100);
 
-  // Nəticəni Firestore-a yaz
   try {
     await addDoc(collection(db, "homeworkResults"), {
-      uid:        user.uid,
-      homeworkId: hw.id,
-      classId:    hw.classId,
-      answers:    answers,
-      correct:    correct,
-      wrong:      wrong,
-      total:      total,
-      score:      pct,
+      uid:         user.uid,
+      homeworkId:  hw.id,
+      classId:     hw.classId,
+      answers:     answers,
+      correct:     correct,
+      wrong:       wrong,
+      total:       total,
+      score:       pct,
       completedAt: serverTimestamp()
     });
   } catch(err) {
     console.error("Nəticə yazma xətası:", err);
   }
 
-  // Nəticə ekranı
   const body   = document.getElementById("hw-test-body");
   const footer = document.getElementById("hw-test-footer");
 
@@ -700,7 +909,6 @@ async function _finishTest() {
       <div style="font-size:20px;font-weight:800;color:#1A1A1A;margin-bottom:6px;">${msg}</div>
       <div style="font-size:14px;color:#6B7280;margin-bottom:24px;">${hw.title}</div>
 
-      <!-- Nəticə kartı -->
       <div style="background:#fff;border:1px solid #E8E2D9;border-radius:16px;padding:20px;margin-bottom:16px;">
         <div style="font-size:48px;font-weight:800;color:#1A1A1A;margin-bottom:4px;">${pct}%</div>
         <div style="font-size:13px;color:#6B7280;margin-bottom:16px;">Düzgün cavab faizi</div>
@@ -716,7 +924,6 @@ async function _finishTest() {
         </div>
       </div>
 
-      <!-- Sual-cavab icmalı -->
       <div style="text-align:left;">
         <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Cavablar icmalı</div>
         ${hw.questions.map((q, i) => {
@@ -782,7 +989,8 @@ function _formatDate(date) {
 
 // ─── Public API ─────────────────────────────────────────────────────────────
 window.HomeworkManager = {
-  renderPanel:       renderHomeworkPanel,
+  renderPanel:    renderHomeworkPanel,
+  renderManager:  renderHomeworkManager,
   _setQCount,
   _addQuestion,
   _updateQuestionText,
@@ -792,6 +1000,12 @@ window.HomeworkManager = {
   _removeOption,
   _deleteQuestion,
   _submitHomework,
+  _showHwResults,
+  _showHwEdit,
+  _setEditStatus,
+  _saveEdit,
+  _showCreateNew,
+  _backToHwList,
   startHomework,
   _selectAnswer,
   _nextQuestion,
