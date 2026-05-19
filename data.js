@@ -19200,3 +19200,6 @@ However, the same platforms that enable community can also facilitate harassment
     ]
   },
 ];
+
+
+window.LEVELS = LEVELS;
