@@ -273,15 +273,41 @@ async function renderClassDetail(classData, containerId) {
 
   container.innerHTML = `
     <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;overflow:hidden;">
-      <div style="padding:12px 14px;background:#F5F0E8;border-bottom:1px solid #E8E2D9;">
-        <div style="font-size:14px;font-weight:700;color:#1A1A1A;">${classData.name}</div>
-        <div style="font-size:12px;color:#9CA3AF;">${students.length} tələbə</div>
+
+      <!-- Sinif başlığı + düymələr -->
+      <div style="padding:12px 14px;background:#F5F0E8;border-bottom:1px solid #E8E2D9;display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:14px;font-weight:700;color:#1A1A1A;">${classData.name}</div>
+          <div style="font-size:12px;color:#9CA3AF;">${students.length} tələbə</div>
+        </div>
+        <!-- + Tələbə düyməsi -->
+        <button onclick="ClassroomManager._toggleAddStudent('${safeClassId}')"
+          id="toggle-add-student-btn"
+          style="display:flex;align-items:center;gap:5px;background:#1A1A1A;color:#fff;border:none;border-radius:99px;
+                 padding:7px 13px;font-size:12px;font-weight:600;cursor:pointer;flex-shrink:0;white-space:nowrap;">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          Tələbə
+        </button>
+        <!-- Ev tapşırığı düyməsi -->
+        <button onclick="ClassroomManager._openHomeworkPanel('${safeClassId}', '${classData.name.replace(/'/g,"\\'")}') "
+          style="display:flex;align-items:center;gap:5px;background:#FAEEDA;color:#633806;border:1px solid #FAC775;border-radius:99px;
+                 padding:7px 13px;font-size:12px;font-weight:600;cursor:pointer;flex-shrink:0;white-space:nowrap;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/>
+          </svg>
+          Ev tapşırığı
+        </button>
       </div>
+
       ${rows || '<div style="padding:20px;text-align:center;color:#9CA3AF;font-size:13px;">Tələbə yoxdur</div>'}
     </div>
 
-    <!-- Tələbə əlavə et -->
-    <div style="margin-top:14px;background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;">
+    <!-- Tələbə əlavə et (default gizli) -->
+    <div id="add-student-panel" style="display:none;margin-top:10px;background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;">
       <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:8px;">Yeni tələbə əlavə et</div>
       <div style="display:flex;gap:8px;">
         <input id="add-student-input" type="email" placeholder="telebe@gmail.com"
@@ -290,7 +316,49 @@ async function renderClassDetail(classData, containerId) {
           style="background:#1A1A1A;color:#fff;border:none;border-radius:10px;padding:10px 14px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;">+ Əlavə et</button>
       </div>
     </div>
+
+    <!-- Ev tapşırığı panel (default gizli) -->
+    <div id="homework-panel" style="display:none;margin-top:10px;background:#F5F0E8;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;">
+    </div>
   `;
+}
+
+// ─── Tələbə əlavəetmə panelini aç/bağla ─────────────────────────────────────
+function _toggleAddStudent() {
+  const panel   = document.getElementById("add-student-panel");
+  const hwPanel = document.getElementById("homework-panel");
+  if (!panel) return;
+
+  const isOpen = panel.style.display !== "none";
+  panel.style.display = isOpen ? "none" : "block";
+  if (hwPanel && !isOpen) hwPanel.style.display = "none";
+
+  if (!isOpen) {
+    setTimeout(() => {
+      const inp = document.getElementById("add-student-input");
+      if (inp) inp.focus();
+    }, 50);
+  }
+}
+
+// ─── Ev tapşırığı panelini aç/bağla ─────────────────────────────────────────
+function _openHomeworkPanel(classId, className) {
+  const panel   = document.getElementById("homework-panel");
+  const stPanel = document.getElementById("add-student-panel");
+  if (!panel) return;
+
+  const isOpen = panel.style.display !== "none";
+  if (isOpen) { panel.style.display = "none"; return; }
+
+  if (stPanel) stPanel.style.display = "none";
+  panel.style.display = "block";
+  panel.innerHTML = `<div style="text-align:center;padding:16px;color:#9CA3AF;font-size:13px;">Yüklənir...</div>`;
+
+  if (window.HomeworkManager?.renderPanel) {
+    window.HomeworkManager.renderPanel(classId, className, panel);
+  } else {
+    panel.innerHTML = `<div style="text-align:center;padding:16px;color:#DC2626;font-size:13px;">HomeworkManager tapılmadı.</div>`;
+  }
 }
 
 // ─── Dropdown aç/bağla ───────────────────────────────────────────────────────
@@ -507,6 +575,8 @@ async function _openClass(classId) {
 window.ClassroomManager = {
   open: openClassroomModal,
   _toggleStudent,
+  _toggleAddStudent,
+  _openHomeworkPanel,
   _showCreateForm,
   _addEmail,
   _removeEmail,
