@@ -16,7 +16,7 @@ const LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'a1',
-    name: 'A1 — BEGİNNER',
+    name: 'BEGİNNER',
     icon: 'A1',
     color: '#C0392B',
     quizzes: [
@@ -2259,7 +2259,7 @@ const LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'a2',
-    name: 'A2 — ELEMENTARY',
+    name: 'ELEMENTARY',
     icon: 'A2',
     color: '#E67E22',
     quizzes: [
@@ -3880,7 +3880,7 @@ const LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'b1',
-    name: 'B1 — İNTERMEDİATE',
+    name: 'İNTERMEDİATE',
     icon: 'B1',
     color: '#D4AC0D',
     quizzes: [// ─────────────────────── QUIZ 1 — Education & Learning (1) ───────────────────────
@@ -5278,7 +5278,7 @@ const LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'b2',
-    name: 'B2 — UPPER İNTERMEDİATE',
+    name: 'UPPER İNTERMEDİATE',
     icon: 'B2',
     color: '#27AE60',
     quizzes: [
@@ -7834,7 +7834,7 @@ const LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'c1',
-    name: 'C1 — ADVANCED',
+    name: 'ADVANCED',
     icon: 'C1',
     color: '#2980B9',
     quizzes: [
@@ -10278,7 +10278,7 @@ const LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'c2',
-    name: 'C2 — MASTERY',
+    name: 'MASTERY',
     icon: 'C2',
     color: '#1A252F',
     quizzes: [
@@ -13613,7 +13613,7 @@ const LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'reading',
-    name: 'Readings (deaktiv)',
+    name: 'READINGS',
     icon: '📖',
     color: '#0891b2',
     quizzes: [
@@ -19093,7 +19093,7 @@ However, the same platforms that enable community can also facilitate harassment
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'listening',
-    name: 'Listenings (deaktiv)',
+    name: 'LISTENINGS',
     icon: '🎧',
     color: '#7c3aed',
     quizzes: [
