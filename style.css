@@ -517,16 +517,16 @@ button { font-family: var(--font); }
 }
 /* Phase 1 tamamlandı — mavi, bənövşəyi parlayan kənar */
 .path-node.completed.phase2-invite {
-  background: #3b82f6 !important;
-  border-color: #3b82f6 !important;
-  animation: purplePulse 1.8s ease-in-out infinite;
+  background: var(--lvl-color) !important;
+  border-color: var(--lvl-color) !important;
+  animation: levelPulse 1.8s ease-in-out infinite;
 }
 
 /* Phase 2 açıqdır — mavi fon, bənövşəyi kənar pulse */
 .path-node.phase2-open {
-  background: #a855f7 !important;
-  border-color: #a855f7 !important;
-  animation: purplePulse 1.4s ease-in-out infinite;
+  background: var(--lvl-color) !important;
+  border-color: var(--lvl-color) !important;
+  animation: levelPulse 1.4s ease-in-out infinite;
 }
 .path-node.phase2-open svg polyline {
   stroke: #fff;
@@ -534,8 +534,8 @@ button { font-family: var(--font); }
 
 /* Phase 2 tamamlandı — bənövşəyi fon, qızıl kənar */
 .path-node.phase2-done {
-  background: #a855f7 !important;
-  border-color: #a855f7 !important;
+  background: var(--lvl-color) !important;
+  border-color: var(--lvl-color) !important;
 }
 .path-node.phase2-done svg polyline {
   stroke: #fff;
@@ -546,8 +546,8 @@ button { font-family: var(--font); }
 
 /* Phase 3 açıqdır — bənövşəyi fon, qızıl kənar pulse */
 .path-node.phase3-open {
-  background: #a855f7 !important;
-  border-color: #a855f7 !important;
+  background: #2A2A2A !important;
+  border-color: #2A2A2A !important;
   animation: goldPulse 1.4s ease-in-out infinite;
 }
 .path-node.phase3-open svg polyline {
@@ -566,6 +566,8 @@ button { font-family: var(--font); }
 .path-node.level-done {
   background: #eab308 !important;
   border-color: #eab308 !important;
+  box-shadow: 0 0 0 3px rgba(234,179,8,0.4), 0 0 18px 6px rgba(255,255,255,0.55);
+  animation: whitePulse 2s ease-in-out infinite;
 }
 .path-node.level-done svg polyline {
   stroke: #fff;
@@ -581,6 +583,15 @@ button { font-family: var(--font); }
   50%       { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0.15); }
 }
 
+@keyframes levelPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(0,0,0,0.15); }
+  50%       { box-shadow: 0 0 0 8px rgba(0,0,0,0.07); }
+}
+
+@keyframes whitePulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(234,179,8,0.45), 0 0 14px 4px rgba(255,255,255,0.4); }
+  50%       { box-shadow: 0 0 0 8px rgba(234,179,8,0.15), 0 0 26px 10px rgba(255,255,255,0.65); }
+}
 
 /* ── FULL-SCREEN OVERLAY ────────────────────── */
 .screen-overlay {
