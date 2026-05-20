@@ -2357,12 +2357,12 @@ function renderQuizPath(lvl, li) {
 
     } else if (status === 'phase2_completed') {
       const nodeClass = isExam ? 'path-node phase2-done gold-pulse exam-node' : 'path-node phase2-done gold-pulse';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
-
+      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">${inner}</div>`;
+    
     } else if (status === 'completed') {
       const nodeClass = isExam ? 'path-node completed phase2-invite exam-node' : 'path-node completed phase2-invite';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}"
-           style="border-color:${lvl.color}; background:${lvl.color}">${inner}</div>`;
+           style="--lvl-color:${lvl.color}">${inner}</div>`;
 
     } else if (status === 'unlocked') {
       const completedSoFar = progress[lvl.id].filter(s =>
