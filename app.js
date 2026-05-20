@@ -2016,8 +2016,8 @@ function renderLevels() {
 
     const card = document.createElement('div');
     card.className = 'level-card';
-    card.dataset.level = li;
-
+    card.dataset.level = lvl.id;
+    
     card.innerHTML = `
       <div class="level-header" role="button" aria-expanded="false">
         <div class="level-bar" style="background:${lvl.color}"></div>
