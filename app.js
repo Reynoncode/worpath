@@ -1869,21 +1869,31 @@ function getStatus(levelIdx, quizIdx) {
 function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
   const cur = progress[lvl.id][quizIdx];
-
+  if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
+    progress[lvl.id][quizIdx] = 'level_done';
+    saveProgress();
+    if (window.AuthManager) AuthManager.syncStats();
+    return;
+  }
   if (cur === 'phase2_completed') {
     progress[lvl.id][quizIdx] = 'phase3_unlocked';
     saveProgress();
     if (window.AuthManager) AuthManager.syncStats();
     return;
   }
-
   if (cur === 'phase3_unlocked') {
     progress[lvl.id][quizIdx] = 'level_done';
     saveProgress();
     if (window.AuthManager) AuthManager.syncStats();
     return;
   }
-
+  
+  if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
+  progress[lvl.id][quizIdx] = 'level_done';
+  saveProgress();
+  if (window.AuthManager) AuthManager.syncStats();
+  return;
+}
   const wasCompleted = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(cur);
   progress[lvl.id][quizIdx] = 'completed';
 
@@ -2344,7 +2354,7 @@ function renderQuizPath(lvl, li) {
 
     const inner = isExam
   ? '🏆'
-  : `<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+  : `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
 
   if (status === 'level_done') {
       const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
