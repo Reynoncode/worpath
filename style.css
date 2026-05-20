@@ -514,7 +514,10 @@ button { font-family: var(--font); }
   font-size: 26px;
   border-width: 3px;
   border-style: dashed;
+  overflow: hidden;
+  position: relative;
 }
+
 /* Phase 1 tamamlandı — mavi, bənövşəyi parlayan kənar */
 .path-node.completed.phase2-invite {
   background: var(--lvl-color) !important;
@@ -573,7 +576,8 @@ button { font-family: var(--font); }
 .path-node.level-done svg polyline {
   stroke: #fff;
 }
-.path-node.level-done::after {
+.path-node.level-done::after,
+.path-node.exam-node.unlocked::after {
   content: '';
   position: absolute;
   top: -50%;
