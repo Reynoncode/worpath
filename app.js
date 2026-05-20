@@ -2346,24 +2346,18 @@ function renderQuizPath(lvl, li) {
   ? '🏆'
   : `<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
 
-    if (status === 'level_done') {
+  if (status === 'level_done') {
       const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}"
-           style="background:#eab308; border-color:#eab308">${inner}</div>`;
-
+      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
     } else if (status === 'phase3_unlocked') {
       const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
-
     } else if (status === 'phase2_completed') {
       const nodeClass = isExam ? 'path-node phase2-done gold-pulse exam-node' : 'path-node phase2-done gold-pulse';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">${inner}</div>`;
-    
     } else if (status === 'completed') {
       const nodeClass = isExam ? 'path-node completed phase2-invite exam-node' : 'path-node completed phase2-invite';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}"
-           style="--lvl-color:${lvl.color}">${inner}</div>`;
-
+      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">${inner}</div>`;
     } else if (status === 'unlocked') {
       const completedSoFar = progress[lvl.id].filter(s =>
         ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
