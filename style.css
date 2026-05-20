@@ -277,13 +277,11 @@ button { font-family: var(--font); }
 }
 
 /* Səviyyəni test et — tünd  
-color: var(--surface);
-  border-color: var(--text-primary);
-  background: var(--text-primary);*/
+*/
 .test-pill {
-  color: #6C4FEB;
-  border-color: #D0CAFF;
-  background: #F5F3FF;
+  color: var(--surface);
+  border-color: var(--text-primary);
+  background: var(--text-primary);
 }
 
 .test-pill svg {
