@@ -562,35 +562,48 @@ button { font-family: var(--font); }
   stroke-width: 2.5;
 }
 
-/* Level tamamlandı — qızıl */
+/* Level tamamlandı — qızıl + metal sweep */
 .path-node.level-done {
   background: #eab308 !important;
   border-color: #eab308 !important;
-  box-shadow: 0 0 0 3px rgba(234,179,8,0.4), 0 0 18px 6px rgba(255,255,255,0.55);
-  animation: whitePulse 2s ease-in-out infinite;
+  box-shadow: 0 4px 12px rgba(234,179,8,0.35);
+  overflow: hidden;
+  position: relative;
 }
 .path-node.level-done svg polyline {
   stroke: #fff;
 }
-
+.path-node.level-done::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.55) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: metalSweep 2.4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes metalSweep {
+  0%        { left: -75%; }
+  60%, 100% { left: 125%; }
+}
 @keyframes purplePulse {
   0%, 100% { box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.5); }
   50%       { box-shadow: 0 0 0 8px rgba(168, 85, 247, 0.15); }
 }
-
 @keyframes goldPulse {
   0%, 100% { box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.55); }
   50%       { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0.15); }
 }
-
 @keyframes levelPulse {
   0%, 100% { box-shadow: 0 0 0 3px rgba(0,0,0,0.15); }
   50%       { box-shadow: 0 0 0 8px rgba(0,0,0,0.07); }
-}
-
-@keyframes whitePulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(234,179,8,0.45), 0 0 14px 4px rgba(255,255,255,0.4); }
-  50%       { box-shadow: 0 0 0 8px rgba(234,179,8,0.15), 0 0 26px 10px rgba(255,255,255,0.65); }
 }
 
 /* ── FULL-SCREEN OVERLAY ────────────────────── */
