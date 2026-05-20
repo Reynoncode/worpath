@@ -106,13 +106,13 @@ button { font-family: var(--font); }
   padding: 0 12px;
   height: 36px;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 17px;
   color: #9A7B00;
 }
 
 .stat-badge svg {
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 19px;
   stroke: #F0C030;
   fill: #F0C030;
 }
@@ -276,11 +276,14 @@ button { font-family: var(--font); }
   background: #EDE9FF;
 }
 
-/* Səviyyəni test et — tünd */
-.test-pill {
-  color: var(--surface);
+/* Səviyyəni test et — tünd  
+color: var(--surface);
   border-color: var(--text-primary);
-  background: var(--text-primary);
+  background: var(--text-primary);*/
+.test-pill {
+  color: #6C4FEB;
+  border-color: #D0CAFF;
+  background: #F5F3FF;
 }
 
 .test-pill svg {
