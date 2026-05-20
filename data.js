@@ -17,8 +17,8 @@ const LEVELS = [
   {
     id: 'a1',
     name: 'A1 — BEGİNNER',
-    icon: '🌱',
-    color: '#4A8FE7',
+    icon: 'A1',
+    color: '#C0392B',
     quizzes: [
 
      // ─────────────────────── QUIZ 1 — Peşələr ───────────────────────
@@ -2260,8 +2260,8 @@ const LEVELS = [
   {
     id: 'a2',
     name: 'A2 — ELEMENTARY',
-    icon: '🌿',
-    color: '#9B6FD4',
+    icon: 'A2',
+    color: '#E67E22',
     quizzes: [
       // ─────────────────────── QUIZ 1 — Peşələr 1 (texniki / yaradıcı) ───────────────────────
 [
@@ -3881,8 +3881,8 @@ const LEVELS = [
   {
     id: 'b1',
     name: 'B1 — İNTERMEDİATE',
-    icon: '🌳',
-    color: '#E07A30',
+    icon: 'B1',
+    color: '#D4AC0D',
     quizzes: [// ─────────────────────── QUIZ 1 — Education & Learning (1) ───────────────────────
 [
   { en: 'academic',     tr: 'akademik',          wrong: 'peşəkar',       wen: 'practical',     def: 'related to studying and education at a high level' },
@@ -5279,8 +5279,8 @@ const LEVELS = [
   {
     id: 'b2',
     name: 'B2 — UPPER İNTERMEDİATE',
-    icon: '🌲',
-    color: '#E8A020',
+    icon: 'B2',
+    color: '#27AE60',
     quizzes: [
       // ─────────────────────── QUIZ 1 — Education & Learning ───────────────────────
 [
@@ -7835,8 +7835,8 @@ const LEVELS = [
   {
     id: 'c1',
     name: 'C1 — ADVANCED',
-    icon: '⚡',
-    color: '#2EAA6E',
+    icon: 'C1',
+    color: '#2980B9',
     quizzes: [
       // ─────────────────────── QUIZ 1 — Government & Politics (1) ───────────────────────
 [
@@ -10279,8 +10279,8 @@ const LEVELS = [
   {
     id: 'c2',
     name: 'C2 — MASTERY',
-    icon: '🔥',
-    color: '#D44E30',
+    icon: 'C2',
+    color: '#1A252F',
     quizzes: [
 
       // ─────────────────────── QUIZ 1 — Deception & Dishonesty (1) ───────────────────────
