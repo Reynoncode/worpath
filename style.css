@@ -534,7 +534,7 @@ button { font-family: var(--font); }
 
 /* Phase 2 tamamlandı — bənövşəyi fon, qızıl kənar */
 .path-node.phase2-done {
-  background: rgb(37, 150, 190) !important;
+  background: rgba(42, 42, 42) !important;
   border-color: rgb(37, 150, 190) !important;
 }
 .path-node.phase2-done svg polyline {
