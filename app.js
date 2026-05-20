@@ -2376,8 +2376,8 @@ function renderQuizPath(lvl, li) {
 
       if (isExam) {
         html += `<div class="path-node unlocked exam-node ${pulseClass}"
-             data-quiz-idx="${qi}" data-status="unlocked"
-             style="color:${lvl.color}; border-color:${lvl.color}">🏆</div>`;
+     data-quiz-idx="${qi}" data-status="unlocked"
+     style="color:${lvl.color}; border-color:${lvl.color}; background:#eab308;">🏆</div>`;
       } else {
         html += `<div class="path-node unlocked ${pulseClass}"
              data-quiz-idx="${qi}" data-status="unlocked"
