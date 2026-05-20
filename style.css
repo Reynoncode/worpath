@@ -115,6 +115,8 @@ button { font-family: var(--font); }
   height: 19px;
   stroke: #F0C030;
   fill: #F0C030;
+   position: relative;
+  top: -2px;
 }
 
 /* ── HEADER ACTIONS ─────────────────────────── */
