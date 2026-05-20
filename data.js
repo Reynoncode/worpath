@@ -13614,8 +13614,8 @@ const LEVELS = [
   {
     id: 'reading',
     name: 'Readings (deaktiv)',
-    icon: '💎',
-    color: '#3BAAB5',
+    icon: '📖',
+    color: '#0891b2',
     quizzes: [
       {
   id: 'reading-1',
@@ -19094,8 +19094,8 @@ However, the same platforms that enable community can also facilitate harassment
   {
     id: 'listening',
     name: 'Listenings (deaktiv)',
-    icon: '💎',
-    color: '#3BAAB5',
+    icon: '🎧',
+    color: '#7c3aed',
     quizzes: [
       {
         id: 'listening-1',
@@ -19173,32 +19173,7 @@ However, the same platforms that enable community can also facilitate harassment
       },
     ]
   },
-  // ╔══════════════════════════════════════════════════╗
-  // ║  LEVEL 9 — C2: Ustalıq Səviyyəsi                ║
-  // ╚══════════════════════════════════════════════════╝
-  {
-    id: 'c2',
-    name: 'Writing (deaktiv)',
-    icon: '👑',
-    color: '#2C3E50',
-    quizzes: [
-      
-      [], [], [], [], [],
-    ]
-  },
 
-  // ╔══════════════════════════════════════════════════╗
-  // ║  LEVEL 10 — İş Ingilis dili                     ║
-  // ╚══════════════════════════════════════════════════╝
-  {
-    id: 'business',
-    name: 'Business English',
-    icon: '💼',
-    color: '#8B7355',
-    quizzes: [
-[], [], [], [], [],
-    ]
-  },
 ];
 
 
