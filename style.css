@@ -102,8 +102,9 @@ button { font-family: var(--font); }
   gap: 5px;
   background: #FFFAEC;
   border: 1.5px solid #F0D060;
-  border-radius: 20px;
-  padding: 5px 12px;
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 36px;
   font-weight: 800;
   font-size: 15px;
   color: #9A7B00;
