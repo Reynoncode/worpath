@@ -2364,7 +2364,7 @@ function renderQuizPath(lvl, li) {
       const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
     } else if (status === 'phase2_completed') {
-      const nodeClass = isExam ? 'path-node phase2-done gold-pulse exam-node' : 'path-node phase2-done gold-pulse';
+      const nodeClass = isExam ? 'path-node phase2-done exam-node' : 'path-node phase2-done';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">${inner}</div>`;
     } else if (status === 'completed') {
       const nodeClass = isExam ? 'path-node completed phase2-invite exam-node' : 'path-node completed phase2-invite';
