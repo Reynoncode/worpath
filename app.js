@@ -2996,7 +2996,7 @@ function handleAnswer(btnIdx) {
     }
 
     if (quiz.mode === 'normal' && !quiz.chanceUsed && getStars() > 0) {
-      setTimeout(() => { quiz.mistakes--; showChanceModal(); }, 800);
+      setTimeout(() => { showChanceModal(); }, 800);
     } else {
       setTimeout(() => {
         quiz.index++;
