@@ -2995,8 +2995,8 @@ function handleAnswer(btnIdx) {
       return;
     }
 
-    if (quiz.mode === 'normal' && !quiz.chanceUsed && getStars() > 0) {
-      setTimeout(() => { showChanceModal(); }, 800);
+   if ((quiz.mode === 'normal' || quiz.mode === 'phase2' || quiz.mode === 'phase3') && !quiz.chanceUsed && quiz.mistakes === 1 && getStars() > 0) {
+    setTimeout(() => { showChanceModal(); }, 800);
     } else {
       setTimeout(() => {
         quiz.index++;
