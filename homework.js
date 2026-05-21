@@ -45,7 +45,7 @@ function renderHomeworkPanel(classId, className, container) {
       </div>
 
       <!-- Sual sayı seçimi -->
-      <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:14px 16px;margin-bottom:12px;">
+      <div style="background:#EDEAE2;border:none;border-radius:12px;padding:14px 16px;margin-bottom:12px;">
         <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:10px;">Sual sayı seçin</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;" id="hw-qcount-btns">
           ${[3,5,7,10,15,20].map(n => `
