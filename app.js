@@ -1839,6 +1839,12 @@ function getAllWordsForLevel(levelId) {
   return words;
 }
 
+function saveProgress() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  } catch (_) {}
+}
+
 function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
