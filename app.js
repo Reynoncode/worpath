@@ -1862,10 +1862,13 @@ function loadProgress() {
   LEVELS.forEach((lvl) => {
     if (!progress[lvl.id]) progress[lvl.id] = [];
     for (let i = 0; i < lvl.quizzes.length; i++) {
-      if (!progress[lvl.id][i]) {
-        progress[lvl.id][i] = i === 0 ? 'unlocked' : 'locked';
-      }
-    }
+  const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
+  if (!progress[lvl.id][i]) {
+    progress[lvl.id][i] = (i === 0 || isExam) ? 'unlocked' : 'locked';
+  } else if (isExam && progress[lvl.id][i] === 'locked') {
+    progress[lvl.id][i] = 'unlocked';
+  }
+}
   });
 
   saveProgress();
