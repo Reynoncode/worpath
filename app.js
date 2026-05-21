@@ -2430,60 +2430,104 @@ function toggleLevel(card) {
 
   // Bütün açıq kartları bağla
   document.querySelectorAll('.level-card.open').forEach(c => {
-    c.querySelector('.level-body').style.maxHeight = '0px';
     c.classList.remove('open');
     c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
+    const body = c.querySelector('.level-body');
+    body.style.maxHeight = '0px';
+    body.style.overflow = 'hidden';
   });
 
-  // Düymələri göstər (başqa kart bağlananda)
+  // Subtitle-i göstər
   const subtitleEl = document.getElementById('page-subtitle');
   if (subtitleEl) subtitleEl.style.display = '';
 
-  // Overlay-i sil (əgər varsa)
+  // Overlay-i sil
   const existingOverlay = document.getElementById('level-fullscreen-overlay');
-  if (existingOverlay) existingOverlay.remove();
+  if (existingOverlay) {
+    existingOverlay.style.opacity = '0';
+    existingOverlay.style.transform = 'translateY(-8px)';
+    setTimeout(() => existingOverlay.remove(), 220);
+  }
 
   if (!isOpen) {
     card.classList.add('open');
     card.querySelector('.level-header').setAttribute('aria-expanded', 'true');
 
-    // Düymələri gizlət
     if (subtitleEl) subtitleEl.style.display = 'none';
 
-    // Header hündürlüyünü tap
     const appHeader = document.querySelector('.app-header');
     const headerH = appHeader ? appHeader.offsetHeight : 56;
 
-    // Kartın başlığını al
-    const header = card.querySelector('.level-header');
-    const headerClone = header.cloneNode(true);
+    // Kartın pozisyasını tap
+    const cardRect = card.getBoundingClientRect();
+    const cardLeft = cardRect.left;
+    const cardWidth = cardRect.width;
 
-    // Fullscreen overlay yarat
+    // Kartın level bar rəngini tap
+    const levelBar = card.querySelector('.level-bar');
+    const barColor = levelBar ? levelBar.style.background : '#ccc';
+
+    // Kartın header-ini tap
+    const header = card.querySelector('.level-header');
+
+    // Overlay
     const overlay = document.createElement('div');
     overlay.id = 'level-fullscreen-overlay';
     overlay.style.cssText = `
       position: fixed;
       top: ${headerH + 10}px;
-      left: 0; right: 0; bottom: 0;
-      background: #FAF8F4;
+      left: ${cardLeft}px;
+      width: ${cardWidth}px;
+      bottom: 16px;
+      background: #fff;
       z-index: 200;
       display: flex;
       flex-direction: column;
+      border-radius: 16px;
+      border: 1px solid #E8E2D9;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     `;
 
-    // Sticky başlıq
+    // Sticky başlıq — orijinal header stilini qoru
     const stickyHeader = document.createElement('div');
     stickyHeader.style.cssText = `
       flex-shrink: 0;
-      background: #FAF8F4;
+      background: #fff;
       border-bottom: 1px solid #E8E2D9;
-      padding: 0 16px;
       cursor: pointer;
+      border-radius: 16px 16px 0 0;
+      position: relative;
+      overflow: hidden;
     `;
-    stickyHeader.appendChild(headerClone);
+
+    // Rəngli bar
+    const bar = document.createElement('div');
+    bar.className = 'level-bar';
+    bar.style.cssText = `background: ${barColor}; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;`;
+
+    // Header içeriyi kopyala (bar olmadan)
+    const headerInner = document.createElement('div');
+    headerInner.style.cssText = `
+      display: flex;
+      align-items: center;
+      padding: 14px 16px 14px 20px;
+      gap: 12px;
+    `;
+    headerInner.innerHTML = header.innerHTML;
+
+    // Mövcud level-bar-ı gizlət (ikinci bar olmasın)
+    const innerBar = headerInner.querySelector('.level-bar');
+    if (innerBar) innerBar.style.display = 'none';
+
+    stickyHeader.appendChild(bar);
+    stickyHeader.appendChild(headerInner);
     stickyHeader.addEventListener('click', () => toggleLevel(card));
 
-    // Scroll olan body
+    // Scroll body
     const scrollBody = document.createElement('div');
     scrollBody.style.cssText = `
       flex: 1;
@@ -2491,18 +2535,23 @@ function toggleLevel(card) {
       padding: 12px 16px 32px;
       -ms-overflow-style: none;
       scrollbar-width: none;
+      background: #fff;
     `;
-    scrollBody.innerHTML = `<style>#level-fullscreen-overlay ::-webkit-scrollbar{display:none}</style>`;
 
-    // Quiz path-i render et
+    // Scrollbar gizlət
+    const style = document.createElement('style');
+    style.textContent = `#level-fullscreen-overlay ::-webkit-scrollbar { display: none; }`;
+    scrollBody.appendChild(style);
+
+    // Quiz path render et
     const li = Array.from(document.querySelectorAll('.level-card')).indexOf(card);
     const lvl = LEVELS[li];
-    const pathHtml = document.createElement('div');
-    pathHtml.innerHTML = renderQuizPath(lvl, li);
-    scrollBody.appendChild(pathHtml);
+    const pathWrap = document.createElement('div');
+    pathWrap.innerHTML = renderQuizPath(lvl, li);
+    scrollBody.appendChild(pathWrap);
 
-    // Path node-lara click əlavə et
-    pathHtml.querySelectorAll('.path-node').forEach((node) => {
+    // Path node click-ləri
+    pathWrap.querySelectorAll('.path-node').forEach((node) => {
       node.addEventListener('click', () => {
         const qi     = parseInt(node.dataset.quizIdx, 10);
         const status = node.dataset.status;
@@ -2517,6 +2566,14 @@ function toggleLevel(card) {
     overlay.appendChild(stickyHeader);
     overlay.appendChild(scrollBody);
     document.body.appendChild(overlay);
+
+    // Animasiya
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        overlay.style.opacity = '1';
+        overlay.style.transform = 'translateY(0)';
+      });
+    });
   }
 }
 
