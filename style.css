@@ -531,26 +531,25 @@ button { font-family: var(--font); }
   animation: levelPulse 1.4s ease-in-out infinite;
 }
 
-.path-node.phase3-open {
-  background: white !important;
-  border-color: var(--lvl-color) !important;
-  animation: levelPulse 1.4s ease-in-out infinite;
-}
 .path-node.phase2-open svg polyline {
   stroke: #fff;
 }
 
-/* Phase 2 tamamlandı — solğun qızıl fon, qızıl kənar */
+/* Phase 2 tamamlandı */
 .path-node.phase2-done {
   background: white !important;
   border-color: var(--lvl-color) !important;
   overflow: hidden;
   position: relative;
+  animation: levelPulse 1.8s ease-in-out infinite;
 }
 
 .path-node.phase2-done svg polyline {
-  stroke: #eab308;
+  fill: none;
+  stroke: var(--lvl-color);
+  stroke-width: 2.5;
 }
+
 .path-node.phase2-done::after {
   content: '';
   position: absolute;
@@ -567,20 +566,22 @@ button { font-family: var(--font); }
   animation: metalSweep 2.4s ease-in-out infinite;
   pointer-events: none;
 }
-.path-node.gold-pulse {
-  animation: goldPulse 1.8s ease-in-out infinite;
-}
-/* Phase 3 açıqdır — solğun qızıl fon, qızıl kənar pulse, metal parlaması */
+
+/* Phase 3 açıqdır */
 .path-node.phase3-open {
-  background: color-mix(in srgb, #eab308 15%, white) !important;
-  border-color: #eab308 !important;
-  animation: goldPulse 1.4s ease-in-out infinite;
+  background: white !important;
+  border-color: var(--lvl-color) !important;
+  animation: levelPulse 1.4s ease-in-out infinite;
   overflow: hidden;
   position: relative;
 }
+
 .path-node.phase3-open svg polyline {
-  stroke: #eab308;
+  fill: none;
+  stroke: var(--lvl-color);
+  stroke-width: 2.5;
 }
+
 .path-node.phase3-open::after {
   content: '';
   position: absolute;
@@ -597,13 +598,9 @@ button { font-family: var(--font); }
   animation: metalSweep 2.4s ease-in-out infinite;
   pointer-events: none;
 }
-.path-node.phase2-open svg polyline,
-.path-node.phase2-done svg polyline,
-.path-node.phase3-open svg polyline,
-.path-node.level-done svg polyline {
-  fill: none;
-  stroke: var(--lvl-color);
-  stroke-width: 2.5;
+
+.path-node.gold-pulse {
+  animation: goldPulse 1.8s ease-in-out infinite;
 }
 
 /* Level tamamlandı — qızıl + metal sweep */
@@ -614,9 +611,13 @@ button { font-family: var(--font); }
   overflow: hidden;
   position: relative;
 }
+
 .path-node.level-done svg polyline {
+  fill: none;
   stroke: #fff;
+  stroke-width: 2.5;
 }
+
 .path-node.level-done::after {
   content: '';
   position: absolute;
@@ -633,6 +634,7 @@ button { font-family: var(--font); }
   animation: metalSweep 2.4s ease-in-out infinite;
   pointer-events: none;
 }
+
 @keyframes metalSweep {
   0%        { left: -75%; }
   60%, 100% { left: 125%; }
