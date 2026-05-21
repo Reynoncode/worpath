@@ -2,6 +2,9 @@
 
 import { auth, db } from "./firebase.js";
 import {
+  renderQuizHomeworkCard,
+} from "./quiz_homework.js";
+import {
   collection, doc, addDoc, getDocs, getDoc,
   query, where, updateDoc, serverTimestamp, orderBy
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -647,6 +650,49 @@ async function renderHomeworkManager(classId, className, container) {
     return;
   }
 
+
+  // Quiz tapşırıqlarını yüklə
+const quizSnap = await getDocs(
+  query(collection(db, 'quizHomeworks'), where('classId', '==', classId), orderBy('createdAt', 'desc'))
+);
+const quizHomeworks = quizSnap.docs.map(d => ({ id: d.id, ...d.data() }));
+const _qhColors = { a1:'#C0392B', a2:'#E67E22', b1:'#27AE60', b2:'#2980B9', c1:'#8E44AD', c2:'#2C3E50' };
+
+const quizCards = quizHomeworks.map(hw => {
+  const date     = hw.createdAt?.toDate ? _formatDate(hw.createdAt.toDate()) : '';
+  const col      = _qhColors[hw.levelId] || '#1A1A1A';
+  const isClosed = hw.status === 'closed';
+  const statusBadge = isClosed
+    ? `<span style="background:#F3F4F6;color:#6B7280;border:1px solid #E5E7EB;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;">Bağlı</span>`
+    : `<span style="background:#F0FDF4;color:#16A34A;border:1px solid #86EFAC;font-size:10px;font-weight:700;padding:2px 8px;border-radius:99px;">Aktiv</span>`;
+  const phaseBadges = (hw.phases || []).map(p =>
+    `<span style="background:${col}15;color:${col};font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;border:1px solid ${col}30;">P${p}</span>`
+  ).join('');
+  return `
+    <div style="background:#fff;border:1px solid #E8E2D9;border-left:3px solid ${col};border-radius:12px;padding:14px 16px;margin-bottom:10px;">
+      <div style="margin-bottom:10px;">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+          <span style="font-size:10px;font-weight:800;color:${col};background:${col}15;padding:2px 8px;border-radius:99px;">QUIZ · ${hw.levelId?.toUpperCase()}</span>
+          <span style="font-size:13px;font-weight:700;color:#1A1A1A;">${_escHtml(hw.quizName || '')}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
+          ${statusBadge}${phaseBadges}
+          <span style="font-size:11px;color:#9CA3AF;">${hw.wordCount || 0} söz · ${date}</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button onclick="QuizHomeworkManager._showQhResults('${hw.id}')"
+          style="flex:1;background:#F5F0E8;color:#1A1A1A;border:1px solid #E8E2D9;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;">
+          📊 Nəticələr
+        </button>
+        <button onclick="QuizHomeworkManager._toggleQhStatus('${hw.id}','${hw.status}')"
+          style="flex:1;background:#F5F0E8;color:#1A1A1A;border:1px solid #E8E2D9;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;">
+          ${isClosed ? '▶ Aktiv et' : '✕ Bağla'}
+        </button>
+      </div>
+    </div>`;
+}).join('');
+  
   const cards = homeworks.map(hw => {
     const date = hw.createdAt?.toDate ? _formatDate(hw.createdAt.toDate()) : "";
     const isDraft = hw.status === "draft";
@@ -708,11 +754,18 @@ async function renderHomeworkManager(classId, className, container) {
     <div style="padding:0 2px;">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
         <div style="font-size:13px;font-weight:700;color:#1A1A1A;">Ev tapşırıqları</div>
-        <button onclick="HomeworkManager._showCreateNew('${classId}','${_escHtml(className)}')"
-          style="background:#1A1A1A;color:#fff;border:none;border-radius:99px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;">
-          + Yeni
-        </button>
+        <div style="display:flex;gap:6px;">
+  <button onclick="HomeworkManager._showCreateNew('${classId}','${_escHtml(className)}')"
+    style="background:#1A1A1A;color:#fff;border:none;border-radius:99px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;">
+    + Test
+  </button>
+  <button onclick="HomeworkManager._showCreateQuiz('${classId}','${_escHtml(className)}')"
+    style="background:#F5F0E8;color:#1A1A1A;border:1px solid #E8E2D9;border-radius:99px;padding:7px 14px;font-size:12px;font-weight:600;cursor:pointer;">
+    + Quiz
+  </button>
+</div>
       </div>
+      ${quizCards}
       ${localDraftCard}
       ${cards}
     </div>`;
@@ -1308,12 +1361,20 @@ function _formatDate(date) {
   return `${d.getDate().toString().padStart(2,"0")}.${(d.getMonth()+1).toString().padStart(2,"0")}.${d.getFullYear()}`;
 }
 
+function _showCreateQuiz(classId, className) {
+  const panel = document.getElementById('homework-panel');
+  if (!panel) return;
+  window._qhManagerState = { classId, className };
+  window.QuizHomeworkManager?.renderPanel(classId, className, panel);
+}
+
 // ─── Public API ─────────────────────────────────────────────────────────────
 window.HomeworkManager = {
   renderPanel:        renderHomeworkPanel,
   renderManager:      renderHomeworkManager,
   _setQCount,
   _setOptCount,
+  _showCreateQuiz,
   _setDeadlineQuick,
   _setDeadlineDate,
   _toggleCalendar,
