@@ -65,10 +65,10 @@ export function renderQuizHomeworkPanel(classId, className, container) {
     selectedLevel: null, selectedQuiz: null,
     phases: [1, 2, 3], deadline: null
   };
-  _renderLevelPicker(container);
+  _renderLevelPicker(container, className);
 }
 
-function _renderLevelPicker(container) {
+function _renderLevelPicker(container, className) {
   _qhState.selectedLevel = null;
   _qhState.selectedQuiz  = null;
 
