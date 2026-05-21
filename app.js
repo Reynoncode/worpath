@@ -2425,6 +2425,21 @@ function renderQuizPath(lvl, li) {
   return html;
 }
 
+function closeOverlayPanel() {
+  const overlay = document.getElementById('level-fullscreen-overlay');
+  if (overlay) {
+    overlay.style.opacity = '0';
+    overlay.style.transform = 'translateY(-8px)';
+    setTimeout(() => overlay.remove(), 220);
+  }
+  const subtitleEl = document.getElementById('page-subtitle');
+  if (subtitleEl) subtitleEl.style.display = '';
+  document.querySelectorAll('.level-card.open').forEach(c => {
+    c.classList.remove('open');
+    c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
+  });
+}
+
 function toggleLevel(card) {
   const isOpen = card.classList.contains('open');
 
@@ -2679,6 +2694,7 @@ function startRetakeMode(levelIdx, quizIdx) {
 // ══════════════════════════════════════════════
 
 function startQuiz(levelIdx, quizIdx) {
+  closeOverlayPanel();
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
 
@@ -2964,7 +2980,7 @@ function finishQuiz() {
 
       elResultBackBtn.classList.remove('hidden');
       elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
-      elResultBackBtn.onclick = () => { closeOverlays(); renderLevels(); };
+      elResultBackBtn.onclick = () => { closeOverlays(); closeOverlayPanel(); renderLevels(); };
     }, 250);
     return;
   }
