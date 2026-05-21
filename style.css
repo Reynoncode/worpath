@@ -2141,24 +2141,5 @@ button { font-family: var(--font); }
 
 .btn-quit-cancel:active { background: var(--border-light); }
 
-
-/* Phase tamamlanma — levelə uyğun rəng, animasiya yox */
-.path-node.completed.phase2-invite,
-.path-node.phase2-done,
-.path-node.phase3-open {
-  background: white !important;
-  border-color: currentColor !important;
-  animation: none !important;
-  overflow: visible !important;
-}
-
-.path-node.completed.phase2-invite svg polyline,
-.path-node.phase2-done svg polyline,
-.path-node.phase3-open svg polyline {
-  fill: none;
-  stroke: currentColor !important;
-  stroke-width: 2.5;
-}
-
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
