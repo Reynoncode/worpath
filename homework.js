@@ -588,39 +588,22 @@ export async function renderHomeworkCard(containerId) {
   if (!el) return;
 
   el.innerHTML = `
-            <div style="background:#EDEAE2;border:none;border-radius:14px;padding:14px 16px;
-            width:100%;height:100%;box-sizing:border-box;margin:0;">
-            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-        </svg>
-        <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">Ev tapşırığı</div>
-      </div>
-      <div style="font-size:12px;color:#9CA3AF;">Yüklənir...</div>
-    </div>
-  `;
+  <div style="padding:14px 16px;height:100%;box-sizing:border-box;">
+    <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">EV TAPŞIRIĞI</div>
+    <div style="font-size:13px;font-weight:600;color:#1A1A1A;">Aktiv tapşırıq yoxdur</div>
+  </div>
+`;
 
   try {
     const homeworks = await loadStudentHomeworks();
 
     if (homeworks.length === 0) {
-      el.innerHTML = `
-        <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
-          <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-            </svg>
-            <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">Ev tapşırığı</div>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div>
-              <div style="font-size:13px;font-weight:600;color:#1A1A1A;">Aktiv tapşırıq yoxdur</div>
-            </div>
-          </div>
-        </div>
-      `;
+     el.innerHTML = `
+  <div style="padding:14px 16px;height:100%;box-sizing:border-box;">
+    <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">EV TAPŞIRIĞI</div>
+    <div style="font-size:13px;font-weight:600;color:#1A1A1A;">Aktiv tapşırıq yoxdur</div>
+  </div>
+`;
       return;
     }
 
@@ -657,21 +640,29 @@ export async function renderHomeworkCard(containerId) {
     }).join("");
 
     el.innerHTML = `
-      <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
-        <div style="display:flex;align-items:center;gap:6px;margin-bottom:12px;">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-          </svg>
-          <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">Ev tapşırığı</div>
-          <span style="margin-left:auto;background:#FAEEDA;color:#633806;font-size:10px;font-weight:700;
-                       padding:2px 8px;border-radius:99px;border:1px solid #FAC775;">
-            ${homeworks.length} yeni
-          </span>
+  <div style="padding:14px 16px;box-sizing:border-box;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+      <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">EV TAPŞIRIĞI</div>
+      <span style="background:#FAEEDA;color:#633806;font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;border:1px solid #FAC775;">
+        ${homeworks.length} yeni
+      </span>
+    </div>
+    ${homeworks.map(hw => {
+      const qCount = hw.questions?.length || 0;
+      const date = hw.createdAt?.toDate ? _formatDate(hw.createdAt.toDate()) : "";
+      return `
+        <div style="margin-bottom:8px;">
+          <div style="font-size:13px;font-weight:600;color:#1A1A1A;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:2px;">${_escHtml(hw.title)}</div>
+          <div style="font-size:11px;color:#9CA3AF;margin-bottom:6px;">${qCount} sual · ${date}</div>
+          <button onclick="HomeworkManager.startHomework('${hw.id}')"
+            style="width:100%;background:#1A1A1A;color:#fff;border:none;border-radius:8px;padding:7px;font-size:12px;font-weight:600;cursor:pointer;">
+            Başla →
+          </button>
         </div>
-        ${cards}
-      </div>
-    `;
+      `;
+    }).join("")}
+  </div>
+`;
   } catch(err) {
     console.error("Homework card xətası:", err);
     el.innerHTML = "";
