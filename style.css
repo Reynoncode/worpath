@@ -505,6 +505,10 @@ button { font-family: var(--font); }
   stroke-linejoin: round;
 }
 
+.path-node.completed.phase2-invite svg {
+  stroke: var(--lvl-color);
+}
+
 .path-node.completed:hover { transform: scale(1.04); }
 .path-node.completed:active { transform: scale(0.94); }
 
