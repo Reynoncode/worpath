@@ -1839,12 +1839,6 @@ function getAllWordsForLevel(levelId) {
   return words;
 }
 
-function saveProgress() {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
-  } catch (_) {}
-}
-
 function loadProgress() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -1861,6 +1855,15 @@ function loadProgress() {
   });
 
   saveProgress();
+}
+
+function saveProgress() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+}
+
+function getStatus(levelIdx, quizIdx) {
+  const lvl = LEVELS[levelIdx];
+  return progress[lvl.id][quizIdx] || 'locked';
 }
 
 function markCompleted(levelIdx, quizIdx) {
@@ -1884,18 +1887,21 @@ function markCompleted(levelIdx, quizIdx) {
     if (window.AuthManager) AuthManager.syncStats();
     return;
   }
-  if (cur === 'completed') {
-    progress[lvl.id][quizIdx] = 'phase2_completed';
-    saveProgress();
-    if (window.AuthManager) AuthManager.syncStats();
-    return;
-  }
+  
+  if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
+  progress[lvl.id][quizIdx] = 'level_done';
+  saveProgress();
+  if (window.AuthManager) AuthManager.syncStats();
+  return;
+}
   const wasCompleted = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(cur);
   progress[lvl.id][quizIdx] = 'completed';
+
   const next = quizIdx + 1;
   if (next < lvl.quizzes.length && progress[lvl.id][next] === 'locked') {
     progress[lvl.id][next] = 'unlocked';
   }
+
   if (!wasCompleted) {
     addStar();
     Stats.addStar(1);
