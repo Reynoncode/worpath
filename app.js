@@ -2523,6 +2523,13 @@ function toggleLevel(card) {
     const innerBar = headerInner.querySelector('.level-bar');
     if (innerBar) innerBar.style.display = 'none';
 
+    // level-icon rəngini qoru
+const innerIcon = headerInner.querySelector('.level-icon');
+if (innerIcon) {
+  const origIcon = header.querySelector('.level-icon');
+  if (origIcon) innerIcon.style.background = origIcon.style.background;
+}
+
     stickyHeader.appendChild(bar);
     stickyHeader.appendChild(headerInner);
     stickyHeader.addEventListener('click', () => toggleLevel(card));
