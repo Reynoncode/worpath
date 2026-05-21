@@ -21,14 +21,6 @@ function _getLevelData(levelId) {
   if (!levels) return null;
   return levels.find(l => l.id === levelId) || null;
 }
-  if (window.levels) {
-    return window.levels.find(l => l.id === levelId);
-  }
-  // fallback — birbaşa global variable kimi
-  if (window[levelId]) return window[levelId];
-  return null;
-}
-
 function _getQuizWords(levelId, quizIdx) {
   const level = _getLevelData(levelId);
   if (!level || !level.quizzes) return [];
