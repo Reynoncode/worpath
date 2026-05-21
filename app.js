@@ -2428,9 +2428,14 @@ function renderQuizPath(lvl, li) {
 function closeOverlayPanel() {
   const overlay = document.getElementById('level-fullscreen-overlay');
   if (overlay) {
-    overlay.style.opacity = '0';
-    overlay.style.transform = 'translateY(-8px)';
-    setTimeout(() => overlay.remove(), 220);
+    const origCard = document.querySelector('.level-card.open');
+if (origCard) {
+  const origRect = origCard.getBoundingClientRect();
+  overlay.style.top = `${origRect.top}px`;
+  overlay.style.height = `${origRect.height}px`;
+  overlay.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
+}
+setTimeout(() => overlay.remove(), 360);
   }
   const subtitleEl = document.getElementById('page-subtitle');
   if (subtitleEl) subtitleEl.style.display = '';
@@ -2477,7 +2482,8 @@ function toggleLevel(card) {
     const cardRect = card.getBoundingClientRect();
     const cardLeft = cardRect.left;
     const cardWidth = cardRect.width;
-
+    const cardTop = cardRect.top; // ← bunu əlavə et
+    
     // Kartın level bar rəngini tap
     const levelBar = card.querySelector('.level-bar');
     const barColor = levelBar ? levelBar.style.background : '#ccc';
@@ -2489,23 +2495,23 @@ function toggleLevel(card) {
     const overlay = document.createElement('div');
     overlay.id = 'level-fullscreen-overlay';
     overlay.style.cssText = `
-      position: fixed;
-      top: ${headerH + 10}px;
-      left: ${cardLeft}px;
-      width: ${cardWidth}px;
-      bottom: 16px;
-      background: #fff;
-      z-index: 200;
-      display: flex;
-      flex-direction: column;
-      border-radius: 16px;
-      border: 1px solid #E8E2D9;
-      overflow: hidden;
-      opacity: 0;
-      transform: translateY(-8px);
-      transition: opacity 0.22s ease, transform 0.22s ease;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    `;
+  position: fixed;
+  top: ${cardTop}px;
+  left: ${cardLeft}px;
+  width: ${cardWidth}px;
+  height: ${cardRect.height}px;
+  background: #fff;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  border: 1px solid #E8E2D9;
+  overflow: hidden;
+  transition: top 0.35s cubic-bezier(0.4,0,0.2,1), 
+              height 0.35s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.35s ease;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+`;
 
     // Sticky başlıq — orijinal header stilini qoru
     const stickyHeader = document.createElement('div');
@@ -2590,12 +2596,13 @@ if (innerIcon) {
     document.body.appendChild(overlay);
 
     // Animasiya
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        overlay.style.opacity = '1';
-        overlay.style.transform = 'translateY(0)';
-      });
-    });
+   requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    overlay.style.top = `${headerH + 10}px`;
+    overlay.style.height = `calc(100vh - ${headerH + 26}px)`;
+    overlay.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+  });
+});
   }
 }
 
