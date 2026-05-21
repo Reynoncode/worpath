@@ -221,10 +221,13 @@ const StatsPage = (() => {
       </div>
     `;
 
-    // Ev tapşırığı kartını asinxron doldur
-    if (window.HomeworkManager?.renderCard) {
-      window.HomeworkManager.renderCard("stats-homework-card");
-    }
+   // Ev tapşırığı kartını asinxron doldur
+if (window.HomeworkManager?.renderCard) {
+  window.HomeworkManager.renderCard("stats-homework-card");
+}
+if (window.QuizHomeworkManager?.renderCard) {
+  window.QuizHomeworkManager.renderCard("stats-homework-card");
+}
   }
 
   // ─── Səhv sözləri təkrar et ───────────────────────────────────────────────
