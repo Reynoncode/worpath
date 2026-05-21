@@ -2478,6 +2478,9 @@ function toggleLevel(card) {
     const appHeader = document.querySelector('.app-header');
     const headerH = appHeader ? appHeader.offsetHeight : 56;
 
+    const li = Array.from(document.querySelectorAll('.level-card')).indexOf(card);
+    const lvl = LEVELS[li];
+
     // Kartın pozisyasını tap
     const cardRect = card.getBoundingClientRect();
     const cardLeft = cardRect.left;
@@ -2594,8 +2597,6 @@ stickyHeader.addEventListener('click', () => toggleLevel(card));
     scrollBody.appendChild(style);
 
     // Quiz path render et
-    const li = Array.from(document.querySelectorAll('.level-card')).indexOf(card);
-    const lvl = LEVELS[li];
     const pathWrap = document.createElement('div');
     pathWrap.innerHTML = renderQuizPath(lvl, li);
     scrollBody.appendChild(pathWrap);
