@@ -99,8 +99,8 @@ const StatsPage = (() => {
     `;
   }
 
-  const openState = { critical: true, medium: true, light: true };
-
+  const openState = { critical: false, medium: false, light: false };
+  
   function _toggle(sev) {
     openState[sev] = !openState[sev];
     const body    = document.getElementById(`sp-body-${sev}`);
@@ -174,15 +174,7 @@ const StatsPage = (() => {
           </span>
         </div>
 
-        <!-- Ulduz paneli -->
-        <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-          <span style="font-size:22px;">⭐</span>
-          <div style="flex:1;">
-            <span style="font-size:14px;font-weight:600;color:#1A1A1A;">${s.stars} ulduz</span>
-            <span style="font-size:12px;color:#6B7280;"> · ${s.starFixedCount} səhv ulduzla düzəldildi</span>
-          </div>
-          <span style="font-size:11px;color:#9CA3AF;text-align:right;max-width:110px;line-height:1.4;">Düzəldilsə də səhv qeydə alınır</span>
-        </div>
+        
 
         <!-- 4 kart -->
         <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px;">
@@ -190,18 +182,19 @@ const StatsPage = (() => {
             { val: s.totalLearned,       lbl: "Öyrənilmiş söz",  sub: null },
             { val: `${s.correctRate}%`,  lbl: "Düzgün cavab",    sub: null },
             { val: s.totalErrors,        lbl: "Ümumi səhv sayı", sub: `${s.starFixedCount} ulduzla düzəldildi`, subColor: "#D97706" },
-            { val: "—",                  lbl: "Ortalama / gün",  sub: null },
-          ].map(c => `
-            <div style="background:#EDEAE2;border-radius:10px;padding:14px 16px;">
-              <div style="font-size:24px;font-weight:700;color:#1A1A1A;">${c.val}</div>
-              <div style="font-size:12px;color:#6B7280;margin-top:3px;">${c.lbl}</div>
-              ${c.sub ? `<div style="font-size:11px;color:${c.subColor};margin-top:3px;font-weight:500;">${c.sub}</div>` : ""}
-            </div>
-          `).join("")}
+            { val: "📋", lbl: "Ev tapşırığı", sub: null, isHomework: true },
+          .map(c => `
+  <div style="background:#EDEAE2;border-radius:10px;padding:14px 16px;" id="${c.isHomework ? 'stats-homework-card' : ''}">
+    ${c.isHomework ? '' : `
+      <div style="font-size:24px;font-weight:700;color:#1A1A1A;">${c.val}</div>
+      <div style="font-size:12px;color:#6B7280;margin-top:3px;">${c.lbl}</div>
+      ${c.sub ? `<div style="font-size:11px;color:${c.subColor};margin-top:3px;font-weight:500;">${c.sub}</div>` : ""}
+    `}
+  </div>
+`).join("")}
         </div>
 
-        <!-- Ev tapşırığı kartı (HomeworkManager tərəfindən doldurulur) -->
-        <div id="stats-homework-card"></div>
+        
 
         <!-- Səviyyə irəliləməsi -->
         <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
