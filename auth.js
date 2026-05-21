@@ -95,14 +95,15 @@ function renderAuthButton(user) {
 
   if (user) {
     const name = user.displayName ? user.displayName.split(" ")[0] : user.email;
+    const photo = user.photoURL || '';
     container.innerHTML = `
-      <div style="display:flex;align-items:center;gap:8px;">
-        <img src="${user.photoURL || ''}" 
-             onerror="this.style.display='none'"
-             style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />
+      <div style="display:flex;align-items:center;gap:8px;cursor:pointer;"
+           onclick="AuthManager.openProfileModal()">
+        ${photo
+          ? `<img src="${photo}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid #E8E2D9;" />`
+          : `<div style="width:28px;height:28px;border-radius:50%;background:#EDEAE2;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#6B7280;">${name.charAt(0).toUpperCase()}</div>`
+        }
         <span style="font-size:12px;font-weight:600;color:#1A1A1A;max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${name}</span>
-        <button onclick="AuthManager.signOut()"
-          style="font-size:11px;color:#9CA3AF;background:none;border:none;cursor:pointer;padding:0;">çıx</button>
       </div>
     `;
   } else {
@@ -117,7 +118,6 @@ function renderAuthButton(user) {
     `;
   }
 }
-
 // ─── Auth vəziyyəti dəyişikliyi ─────────────────────────────────────────────
 onAuthStateChanged(auth, async (user) => {
   renderAuthButton(user);
@@ -144,10 +144,259 @@ onAuthStateChanged(auth, async (user) => {
   if (statsClassBtn) statsClassBtn.style.display = user ? "flex" : "none";
 });
 
+
+// ─── Şəkli resize et (canvas ilə) ───────────────────────────────────────────
+function resizeImage(file, maxSize = 400, quality = 0.8) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        let w = img.width, h = img.height;
+        if (w > h) { if (w > maxSize) { h = h * maxSize / w; w = maxSize; } }
+        else       { if (h > maxSize) { w = w * maxSize / h; h = maxSize; } }
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', quality));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+// ─── Profil modalını aç ──────────────────────────────────────────────────────
+async function openProfileModal() {
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const existingModal = document.getElementById('profile-modal');
+  if (existingModal) existingModal.remove();
+
+  // Firestore-dan mövcud profil datasını oxu
+  const userData = await loadUserData(user.uid);
+  const savedName  = userData?.displayName || user.displayName || '';
+  const savedPhoto = userData?.photoURL    || user.photoURL    || '';
+
+  const modal = document.createElement('div');
+  modal.id = 'profile-modal';
+  modal.style.cssText = `
+    position:fixed;inset:0;z-index:3000;
+    background:rgba(0,0,0,0.4);
+    display:flex;align-items:flex-end;justify-content:center;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  `;
+
+  modal.innerHTML = `
+    <div id="profile-sheet" style="
+      background:#F5F0E8;
+      width:100%;max-width:480px;
+      border-radius:20px 20px 0 0;
+      padding:0 0 32px;
+      transform:translateY(100%);
+      transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);
+      max-height:90vh;
+      overflow-y:auto;
+      -ms-overflow-style:none;scrollbar-width:none;
+    ">
+      <!-- Handle -->
+      <div style="display:flex;justify-content:center;padding:12px 0 4px;">
+        <div style="width:36px;height:4px;border-radius:99px;background:#D1C9BE;"></div>
+      </div>
+
+      <!-- Profil hissəsi -->
+      <div style="padding:16px 20px 0;">
+
+        <!-- Şəkil + Ad -->
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;">
+          <!-- Profil şəkli -->
+          <div style="position:relative;flex-shrink:0;" onclick="document.getElementById('profile-photo-input').click()">
+            <div id="profile-photo-wrap" style="
+              width:64px;height:64px;border-radius:50%;
+              background:#EDEAE2;
+              overflow:hidden;
+              border:2px solid #E8E2D9;
+              display:flex;align-items:center;justify-content:center;
+              cursor:pointer;
+            ">
+              ${savedPhoto
+                ? `<img id="profile-photo-img" src="${savedPhoto}" style="width:100%;height:100%;object-fit:cover;" />`
+                : `<span style="font-size:24px;font-weight:700;color:#6B7280;">${savedName.charAt(0).toUpperCase()}</span>`
+              }
+            </div>
+            <div style="
+              position:absolute;bottom:0;right:0;
+              width:22px;height:22px;border-radius:50%;
+              background:#1A1A1A;border:2px solid #F5F0E8;
+              display:flex;align-items:center;justify-content:center;
+              cursor:pointer;
+            ">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                <circle cx="12" cy="13" r="4"/>
+              </svg>
+            </div>
+            <input type="file" id="profile-photo-input" accept="image/*" style="display:none;"
+              onchange="AuthManager._handlePhotoChange(event)" />
+          </div>
+
+          <!-- Ad edit -->
+          <div style="flex:1;">
+            <div style="font-size:11px;font-weight:600;color:#6B7280;margin-bottom:5px;text-transform:uppercase;letter-spacing:0.06em;">İstifadəçi adı</div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <input id="profile-name-input" value="${savedName}"
+                style="flex:1;padding:9px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:14px;font-weight:600;background:#fff;outline:none;color:#1A1A1A;" />
+              <button onclick="AuthManager._saveName()"
+                style="background:#1A1A1A;color:#fff;border:none;border-radius:10px;padding:9px 14px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">
+                Saxla
+              </button>
+            </div>
+            <div id="profile-save-msg" style="font-size:11px;color:#16A34A;margin-top:4px;display:none;">✓ Saxlandı</div>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:12px 14px;margin-bottom:12px;">
+          <div style="font-size:11px;font-weight:600;color:#9CA3AF;margin-bottom:2px;">Email</div>
+          <div style="font-size:13px;color:#1A1A1A;">${user.email}</div>
+        </div>
+
+        <!-- Çıxış et düyməsi -->
+        <button onclick="AuthManager._confirmSignOut()"
+          style="width:100%;background:#FFF1F0;color:#DC2626;border:1px solid #FCA5A5;border-radius:12px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:16px;">
+          🚪 Çıxış et
+        </button>
+
+        <!-- Achievements -->
+        <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:16px;">
+          <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">🏅 Nailiyyətlər</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
+            ${[
+              { icon:'🎯', label:'İlk test',     desc:'Tezliklə' },
+              { icon:'🔥', label:'7 gün streak', desc:'Tezliklə' },
+              { icon:'📚', label:'100 söz',      desc:'Tezliklə' },
+              { icon:'🏆', label:'İlk exam',     desc:'Tezliklə' },
+              { icon:'⭐', label:'10 ulduz',     desc:'Tezliklə' },
+              { icon:'💎', label:'C2 səviyyə',   desc:'Tezliklə' },
+            ].map(a => `
+              <div style="background:#F5F0E8;border-radius:10px;padding:12px 8px;text-align:center;opacity:0.6;">
+                <div style="font-size:24px;margin-bottom:4px;">${a.icon}</div>
+                <div style="font-size:11px;font-weight:600;color:#1A1A1A;">${a.label}</div>
+                <div style="font-size:10px;color:#9CA3AF;">${a.desc}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  `;
+
+  // Kənara bassanda bağla
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeProfileModal();
+  });
+
+  document.body.appendChild(modal);
+
+  // Animasiya
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.getElementById('profile-sheet').style.transform = 'translateY(0)';
+    });
+  });
+}
+
+// ─── Profil modalını bağla ───────────────────────────────────────────────────
+function closeProfileModal() {
+  const sheet = document.getElementById('profile-sheet');
+  if (sheet) {
+    sheet.style.transform = 'translateY(100%)';
+    setTimeout(() => {
+      const modal = document.getElementById('profile-modal');
+      if (modal) modal.remove();
+    }, 300);
+  }
+}
+
+// ─── Profil şəklini dəyiş ───────────────────────────────────────────────────
+async function _handlePhotoChange(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const base64 = await resizeImage(file, 400, 0.8);
+
+  // UI-da göstər
+  const wrap = document.getElementById('profile-photo-wrap');
+  if (wrap) wrap.innerHTML = `<img src="${base64}" style="width:100%;height:100%;object-fit:cover;" />`;
+
+  // Firestore-a yaz
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const ref = doc(db, "users", user.uid);
+  await setDoc(ref, { photoURL: base64 }, { merge: true });
+
+  // Auth bar-ı yenilə
+  renderAuthButton({ ...user, photoURL: base64 });
+}
+
+// ─── Adı saxla ───────────────────────────────────────────────────────────────
+async function _saveName() {
+  const input = document.getElementById('profile-name-input');
+  const name  = input?.value.trim();
+  if (!name) return;
+
+  const user = auth.currentUser;
+  if (!user) return;
+
+  const ref = doc(db, "users", user.uid);
+  await setDoc(ref, { displayName: name }, { merge: true });
+
+  const msg = document.getElementById('profile-save-msg');
+  if (msg) { msg.style.display = 'block'; setTimeout(() => msg.style.display = 'none', 2000); }
+
+  renderAuthButton({ ...user, displayName: name });
+}
+
+// ─── Çıxış təsdiqi ──────────────────────────────────────────────────────────
+function _confirmSignOut() {
+  const confirmDiv = document.createElement('div');
+  confirmDiv.style.cssText = `
+    position:fixed;inset:0;z-index:4000;
+    background:rgba(0,0,0,0.5);
+    display:flex;align-items:center;justify-content:center;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  `;
+  confirmDiv.innerHTML = `
+    <div style="background:#fff;border-radius:16px;padding:24px 20px;width:280px;text-align:center;">
+      <div style="font-size:32px;margin-bottom:10px;">🚪</div>
+      <div style="font-size:16px;font-weight:700;color:#1A1A1A;margin-bottom:6px;">Çıxış etmək istəyirsən?</div>
+      <div style="font-size:13px;color:#6B7280;margin-bottom:20px;">İrəliləyişin saxlanacaq.</div>
+      <div style="display:flex;gap:10px;">
+        <button onclick="this.closest('div[style*=\"z-index:4000\"]').remove()"
+          style="flex:1;padding:11px;border:1px solid #E8E2D9;border-radius:10px;background:#fff;font-size:13px;font-weight:600;color:#6B7280;cursor:pointer;">
+          Ləğv et
+        </button>
+        <button onclick="AuthManager.signOut();this.closest('div[style*=\"z-index:4000\"]').remove();AuthManager._closeProfileModal();"
+          style="flex:1;padding:11px;border:none;border-radius:10px;background:#DC2626;color:#fff;font-size:13px;font-weight:600;cursor:pointer;">
+          Çıxış et
+        </button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(confirmDiv);
+}
 // ─── Public API ─────────────────────────────────────────────────────────────
 window.AuthManager = {
-  signIn:         signInWithGoogle,
-  signOut:        signOutUser,
+  signIn:              signInWithGoogle,
+  signOut:             signOutUser,
   syncStats,
-  getCurrentUser: () => auth.currentUser
+  getCurrentUser:      () => auth.currentUser,
+  openProfileModal,
+  _closeProfileModal:  closeProfileModal,
+  _handlePhotoChange,
+  _saveName,
+  _confirmSignOut,
 };
