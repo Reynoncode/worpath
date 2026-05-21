@@ -2356,22 +2356,14 @@ function renderQuizPath(lvl, li) {
   ? '🏆'
   : `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
     
- if (status === 'level_done') {
-  const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
-  const examInner = isExam ? '🏆' : inner;
-  html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">
-    ${examInner}
-    <div class="retake-hint">
-      <svg viewBox="0 0 24 24">
-        <polyline points="1 4 1 10 7 10"/>
-        <path d="M3.51 15a9 9 0 1 0 .49-3.5"/>
-      </svg>
-    </div>
-  </div>`;
-} else if (status === 'phase3_unlocked') {
-  const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
-  html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
-} else if (status === 'phase2_completed') {
+  if (status === 'level_done') {
+      const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
+      const examInner = isExam ? '🏆' : inner;
+      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${examInner}</div>`;
+    } else if (status === 'phase3_unlocked') {
+      const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
+      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
+    } else if (status === 'phase2_completed') {
       const nodeClass = isExam ? 'path-node phase2-done exam-node' : 'path-node phase2-done';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">${inner}</div>`;
     } else if (status === 'completed') {
@@ -2780,33 +2772,6 @@ function handleAnswer(btnIdx) {
   }
 }
 
-
-function showUnlockBanner(title, desc) {
-  const old = document.querySelector('.unlock-banner');
-  if (old) old.remove();
-
-  const banner = document.createElement('div');
-  banner.className = 'unlock-banner';
-  banner.innerHTML = `
-    <div class="unlock-banner-icon">
-      <svg viewBox="0 0 24 24">
-        <rect x="3" y="11" width="18" height="11" rx="2"/>
-        <path d="M7 11V7a5 5 0 0 1 9.9-1"/>
-      </svg>
-    </div>
-    <div class="unlock-banner-text">
-      <div class="unlock-banner-title">${title}</div>
-      <div class="unlock-banner-desc">${desc}</div>
-    </div>
-  `;
-  document.body.appendChild(banner);
-  setTimeout(() => banner.classList.add('show'), 10);
-  setTimeout(() => {
-    banner.classList.remove('show');
-    setTimeout(() => banner.remove(), 450);
-  }, 5000);
-}
-
 // ── Finish quiz ───────────────────────────────────────────
 function finishQuiz() {
   elProgressFill.style.width = '100%';
@@ -2917,12 +2882,6 @@ function finishQuiz() {
         elResultDesc.textContent  = isPhase3
           ? 'Bu leveli tam mənimsədin! 🌟'
           : `Bütün ${quiz.words.length} sözü tərsinə də bildirdin!`;
-
-        if (isPhase3) {
-  showUnlockBanner('🔁 Ümumi təkrar açıldı!', 'Təsvir edilən sözü tap');
-} else {
-  showUnlockBanner('🔓 Part 2 açıldı!', 'Tərsinə tərcümə');
-}
 
         elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
         elResultMainBtn.onclick = () => {
