@@ -2428,20 +2428,95 @@ function renderQuizPath(lvl, li) {
 function toggleLevel(card) {
   const isOpen = card.classList.contains('open');
 
+  // Bütün açıq kartları bağla
   document.querySelectorAll('.level-card.open').forEach(c => {
     c.querySelector('.level-body').style.maxHeight = '0px';
     c.classList.remove('open');
     c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
   });
 
+  // Düymələri göstər (başqa kart bağlananda)
+  const subtitleEl = document.getElementById('page-subtitle');
+  if (subtitleEl) subtitleEl.style.display = '';
+
+  // Overlay-i sil (əgər varsa)
+  const existingOverlay = document.getElementById('level-fullscreen-overlay');
+  if (existingOverlay) existingOverlay.remove();
+
   if (!isOpen) {
     card.classList.add('open');
     card.querySelector('.level-header').setAttribute('aria-expanded', 'true');
-    const body = card.querySelector('.level-body');
-    body.style.maxHeight = body.scrollHeight + 'px';
-    body.addEventListener('transitionend', () => {
-      if (card.classList.contains('open')) body.style.maxHeight = 'none';
-    }, { once: true });
+
+    // Düymələri gizlət
+    if (subtitleEl) subtitleEl.style.display = 'none';
+
+    // Header hündürlüyünü tap
+    const appHeader = document.querySelector('.app-header');
+    const headerH = appHeader ? appHeader.offsetHeight : 56;
+
+    // Kartın başlığını al
+    const header = card.querySelector('.level-header');
+    const headerClone = header.cloneNode(true);
+
+    // Fullscreen overlay yarat
+    const overlay = document.createElement('div');
+    overlay.id = 'level-fullscreen-overlay';
+    overlay.style.cssText = `
+      position: fixed;
+      top: ${headerH + 10}px;
+      left: 0; right: 0; bottom: 0;
+      background: #FAF8F4;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+    `;
+
+    // Sticky başlıq
+    const stickyHeader = document.createElement('div');
+    stickyHeader.style.cssText = `
+      flex-shrink: 0;
+      background: #FAF8F4;
+      border-bottom: 1px solid #E8E2D9;
+      padding: 0 16px;
+      cursor: pointer;
+    `;
+    stickyHeader.appendChild(headerClone);
+    stickyHeader.addEventListener('click', () => toggleLevel(card));
+
+    // Scroll olan body
+    const scrollBody = document.createElement('div');
+    scrollBody.style.cssText = `
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 16px 32px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    `;
+    scrollBody.innerHTML = `<style>#level-fullscreen-overlay ::-webkit-scrollbar{display:none}</style>`;
+
+    // Quiz path-i render et
+    const li = Array.from(document.querySelectorAll('.level-card')).indexOf(card);
+    const lvl = LEVELS[li];
+    const pathHtml = document.createElement('div');
+    pathHtml.innerHTML = renderQuizPath(lvl, li);
+    scrollBody.appendChild(pathHtml);
+
+    // Path node-lara click əlavə et
+    pathHtml.querySelectorAll('.path-node').forEach((node) => {
+      node.addEventListener('click', () => {
+        const qi     = parseInt(node.dataset.quizIdx, 10);
+        const status = node.dataset.status;
+        if (status === 'locked') { showToast('Əvvəlki testi tam bitir 🔒'); return; }
+        const item = lvl.quizzes[qi];
+        if (!item) { showToast('Bu test hələ hazır deyil ✏️'); return; }
+        if (Array.isArray(item) && item.length < 2) { showToast('Bu test hələ hazır deyil ✏️'); return; }
+        startQuiz(li, qi);
+      });
+    });
+
+    overlay.appendChild(stickyHeader);
+    overlay.appendChild(scrollBody);
+    document.body.appendChild(overlay);
   }
 }
 
