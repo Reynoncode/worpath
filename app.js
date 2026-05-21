@@ -2426,7 +2426,19 @@ function renderQuizPath(lvl, li) {
 }
 
 // ── closeOverlayPanel — yenilənmiş ──────────────────────
-function closeOverlayPanel() {
+function closeOverlayPanel(instant = false) {
+  if (instant) {
+    const overlay = document.getElementById('level-fullscreen-overlay');
+    if (overlay) overlay.remove();
+    const subtitleEl = document.getElementById('page-subtitle');
+    if (subtitleEl) subtitleEl.style.display = '';
+    document.querySelectorAll('.level-card.open').forEach(c => {
+      c.classList.remove('open');
+      c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
+    });
+    return;
+  }
+
   const overlay = document.getElementById('level-fullscreen-overlay');
   if (overlay) {
     const origCard = document.querySelector('.level-card.open');
@@ -2746,7 +2758,7 @@ function startRetakeMode(levelIdx, quizIdx) {
 // ══════════════════════════════════════════════
 
 function startQuiz(levelIdx, quizIdx) {
-  closeOverlayPanel();
+  closeOverlayPanel(true);
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
 
