@@ -2518,16 +2518,28 @@ function toggleLevel(card) {
       gap: 12px;
     `;
     headerInner.innerHTML = header.innerHTML;
+// Mövcud level-bar-ı gizlət (ikinci bar olmasın)
+const innerBar = headerInner.querySelector('.level-bar');
+if (innerBar) innerBar.style.display = 'none';
 
-    // Mövcud level-bar-ı gizlət (ikinci bar olmasın)
-    const innerBar = headerInner.querySelector('.level-bar');
-    if (innerBar) innerBar.style.display = 'none';
+// level-icon rəngini inline stil ilə qoru
+const iconStyles = {
+  'a1':        { background: '#f9e5e3', borderColor: '#e8b3ae', color: '#8B1A11' },
+  'a2':        { background: '#fdf0e0', borderColor: '#f5c98a', color: '#9A4F08' },
+  'b1':        { background: '#fdf8e1', borderColor: '#f0d060', color: '#7D6608' },
+  'b2':        { background: '#e4f7ed', borderColor: '#82d9a8', color: '#145A32' },
+  'c1':        { background: '#e3f0fa', borderColor: '#85bce0', color: '#1A4971' },
+  'c2':        { background: '#d5dde3', borderColor: '#8fa5b3', color: '#0D1317' },
+  'reading':   { background: '#e0f2fe', borderColor: '#7dd3fc', color: '#0369a1' },
+  'listening': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#6d28d9' },
+};
 
-    // level-icon rəngini qoru
 const innerIcon = headerInner.querySelector('.level-icon');
-if (innerIcon) {
-  const origIcon = header.querySelector('.level-icon');
-  if (origIcon) innerIcon.style.background = origIcon.style.background;
+if (innerIcon && iconStyles[lvl.id]) {
+  const s = iconStyles[lvl.id];
+  innerIcon.style.background  = s.background;
+  innerIcon.style.borderColor = s.borderColor;
+  innerIcon.style.color       = s.color;
 }
 
     stickyHeader.appendChild(bar);
