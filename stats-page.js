@@ -183,7 +183,7 @@ const StatsPage = (() => {
             { val: `${s.correctRate}%`,  lbl: "Düzgün cavab",    sub: null },
             { val: s.totalErrors,        lbl: "Ümumi səhv sayı", sub: `${s.starFixedCount} ulduzla düzəldildi`, subColor: "#D97706" },
             { val: "📋", lbl: "Ev tapşırığı", sub: null, isHomework: true },
-          .map(c => `
+            ].map(c => `
   <div style="background:#EDEAE2;border-radius:10px;padding:14px 16px;" id="${c.isHomework ? 'stats-homework-card' : ''}">
     ${c.isHomework ? '' : `
       <div style="font-size:24px;font-weight:700;color:#1A1A1A;">${c.val}</div>
