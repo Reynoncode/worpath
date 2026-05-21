@@ -530,10 +530,6 @@ button { font-family: var(--font); }
   border-color: var(--lvl-color) !important;
   animation: levelPulse 1.4s ease-in-out infinite;
 }
-.path-node.phase2-done {
-  background: white !important;
-  border-color: var(--lvl-color) !important;
-}
 
 .path-node.phase3-open {
   background: white !important;
