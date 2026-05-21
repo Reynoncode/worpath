@@ -517,16 +517,23 @@ button { font-family: var(--font); }
 }
 /* Phase 1 tamamlandı — mavi, bənövşəyi parlayan kənar */
 .path-node.completed.phase2-invite {
-  background: var(--lvl-color) !important;
+  background: color-mix(in srgb, var(--lvl-color) 15%, white) !important;
   border-color: var(--lvl-color) !important;
   animation: levelPulse 1.8s ease-in-out infinite;
 }
-
-/* Phase 2 açıqdır — mavi fon, bənövşəyi kənar pulse */
 .path-node.phase2-open {
-  background: var(--lvl-color) !important;
+  background: color-mix(in srgb, var(--lvl-color) 15%, white) !important;
   border-color: var(--lvl-color) !important;
   animation: levelPulse 1.4s ease-in-out infinite;
+}
+.path-node.phase2-done {
+  background: color-mix(in srgb, #eab308 15%, white) !important;
+  border-color: #eab308 !important;
+}
+.path-node.phase3-open {
+  background: color-mix(in srgb, #eab308 15%, white) !important;
+  border-color: #eab308 !important;
+  animation: goldPulse 1.4s ease-in-out infinite;
 }
 .path-node.phase2-open svg polyline {
   stroke: #fff;
