@@ -2429,52 +2429,50 @@ function renderQuizPath(lvl, li) {
 function closeOverlayPanel() {
   const overlay = document.getElementById('level-fullscreen-overlay');
   if (overlay) {
-    // Açıq kartı tap, onun orijinal pozisiyasına qayıt
     const origCard = document.querySelector('.level-card.open');
     if (origCard) {
-      const origRect = origCard.getBoundingClientRect();
-      overlay.style.top    = `${origRect.top}px`;
-      overlay.style.height = `${origRect.height}px`;
+      const r = origCard.getBoundingClientRect();
+      overlay.style.top       = `${r.top}px`;
+      overlay.style.height    = `${r.height}px`;
       overlay.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
-    } else {
-      // Kart yoxdursa sadəcə kiçilt
-      overlay.style.height  = '0px';
-      overlay.style.opacity = '0';
     }
-
-    // Transition bitəndə sil
-    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
-    // Fallback: transition işləməsə 400ms sonra sil
-    setTimeout(() => overlay.remove(), 420);
+    overlay.addEventListener('transitionend', () => {
+      overlay.remove();
+      document.querySelectorAll('.level-card.open').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
+      });
+    }, { once: true });
+    setTimeout(() => {
+      overlay.remove();
+      document.querySelectorAll('.level-card.open').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
+      });
+    }, 420);
   }
 
   const subtitleEl = document.getElementById('page-subtitle');
   if (subtitleEl) subtitleEl.style.display = '';
-
-  document.querySelectorAll('.level-card.open').forEach(c => {
-    c.classList.remove('open');
-    c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
-  });
 }
 
 function toggleLevel(card) {
   const isOpen = card.classList.contains('open');
 
-  // Bütün açıq kartları bağla
-  document.querySelectorAll('.level-card.open').forEach(c => {
-    c.classList.remove('open');
-    c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
-    const body = c.querySelector('.level-body');
-    body.style.maxHeight = '0px';
-    body.style.overflow = 'hidden';
-  });
+// Bütün açıq kartları bağla (classList.remove-u animasiya bitənə saxla)
+document.querySelectorAll('.level-card.open').forEach(c => {
+  c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
+  const body = c.querySelector('.level-body');
+  body.style.maxHeight = '0px';
+  body.style.overflow = 'hidden';
+});
 
-  // Subtitle-i göstər
-  const subtitleEl = document.getElementById('page-subtitle');
-  if (subtitleEl) subtitleEl.style.display = '';
+// Subtitle-i göstər
+const subtitleEl = document.getElementById('page-subtitle');
+if (subtitleEl) subtitleEl.style.display = '';
 
-  // Overlay-i sil
- const existingOverlay = document.getElementById('level-fullscreen-overlay');
+// Overlay-i animasiya ilə bağla
+const existingOverlay = document.getElementById('level-fullscreen-overlay');
 if (existingOverlay) {
   const openCard = document.querySelector('.level-card.open');
   if (openCard) {
@@ -2482,12 +2480,15 @@ if (existingOverlay) {
     existingOverlay.style.top       = `${r.top}px`;
     existingOverlay.style.height    = `${r.height}px`;
     existingOverlay.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
-  } else {
-    existingOverlay.style.height  = '0px';
-    existingOverlay.style.opacity = '0';
   }
-  existingOverlay.addEventListener('transitionend', () => existingOverlay.remove(), { once: true });
-  setTimeout(() => existingOverlay.remove(), 420);
+  existingOverlay.addEventListener('transitionend', () => {
+    existingOverlay.remove();
+    document.querySelectorAll('.level-card.open').forEach(c => c.classList.remove('open'));
+  }, { once: true });
+  setTimeout(() => {
+    existingOverlay.remove();
+    document.querySelectorAll('.level-card.open').forEach(c => c.classList.remove('open'));
+  }, 420);
 }
 
   if (!isOpen) {
