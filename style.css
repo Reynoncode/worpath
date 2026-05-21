@@ -648,8 +648,8 @@ button { font-family: var(--font); }
   50%       { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0.15); }
 }
 @keyframes levelPulse {
-  0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--lvl-color) 45%, transparent); }
-  50%       { box-shadow: 0 0 0 8px color-mix(in srgb, var(--lvl-color) 15%, transparent); }
+  0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--lvl-color) 25%, transparent); }
+  50%       { box-shadow: 0 0 0 8px color-mix(in srgb, var(--lvl-color) 8%, transparent); }
 }
 
 /* ── FULL-SCREEN OVERLAY ────────────────────── */
