@@ -614,12 +614,8 @@ export async function renderHomeworkCard(containerId) {
             <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">Ev tapşırığı</div>
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:28px;height:28px;background:#F0FDF4;border-radius:8px;display:flex;align-items:center;justify-content:center;">
-              <span style="font-size:14px;">✅</span>
-            </div>
             <div>
               <div style="font-size:13px;font-weight:600;color:#1A1A1A;">Aktiv tapşırıq yoxdur</div>
-              <div style="font-size:11px;color:#9CA3AF;">Müəllimin yeni test göndərməsini gözlə</div>
             </div>
           </div>
         </div>
