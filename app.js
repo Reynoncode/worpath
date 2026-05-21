@@ -2425,20 +2425,32 @@ function renderQuizPath(lvl, li) {
   return html;
 }
 
+// ── closeOverlayPanel — yenilənmiş ──────────────────────
 function closeOverlayPanel() {
   const overlay = document.getElementById('level-fullscreen-overlay');
   if (overlay) {
+    // Açıq kartı tap, onun orijinal pozisiyasına qayıt
     const origCard = document.querySelector('.level-card.open');
-if (origCard) {
-  const origRect = origCard.getBoundingClientRect();
-  overlay.style.top = `${origRect.top}px`;
-  overlay.style.height = `${origRect.height}px`;
-  overlay.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
-}
-setTimeout(() => overlay.remove(), 360);
+    if (origCard) {
+      const origRect = origCard.getBoundingClientRect();
+      overlay.style.top    = `${origRect.top}px`;
+      overlay.style.height = `${origRect.height}px`;
+      overlay.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
+    } else {
+      // Kart yoxdursa sadəcə kiçilt
+      overlay.style.height  = '0px';
+      overlay.style.opacity = '0';
+    }
+
+    // Transition bitəndə sil
+    overlay.addEventListener('transitionend', () => overlay.remove(), { once: true });
+    // Fallback: transition işləməsə 400ms sonra sil
+    setTimeout(() => overlay.remove(), 420);
   }
+
   const subtitleEl = document.getElementById('page-subtitle');
   if (subtitleEl) subtitleEl.style.display = '';
+
   document.querySelectorAll('.level-card.open').forEach(c => {
     c.classList.remove('open');
     c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
@@ -2462,12 +2474,21 @@ function toggleLevel(card) {
   if (subtitleEl) subtitleEl.style.display = '';
 
   // Overlay-i sil
-  const existingOverlay = document.getElementById('level-fullscreen-overlay');
-  if (existingOverlay) {
+ const existingOverlay = document.getElementById('level-fullscreen-overlay');
+if (existingOverlay) {
+  const openCard = document.querySelector('.level-card.open');
+  if (openCard) {
+    const r = openCard.getBoundingClientRect();
+    existingOverlay.style.top       = `${r.top}px`;
+    existingOverlay.style.height    = `${r.height}px`;
+    existingOverlay.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)';
+  } else {
+    existingOverlay.style.height  = '0px';
     existingOverlay.style.opacity = '0';
-    existingOverlay.style.transform = 'translateY(-8px)';
-    setTimeout(() => existingOverlay.remove(), 220);
   }
+  existingOverlay.addEventListener('transitionend', () => existingOverlay.remove(), { once: true });
+  setTimeout(() => existingOverlay.remove(), 420);
+}
 
   if (!isOpen) {
     card.classList.add('open');
