@@ -2352,13 +2352,14 @@ function renderQuizPath(lvl, li) {
 
     if (isExam) { examCounter++; } else { quizCounter++; }
 
-    const inner = isExam
+ const inner = isExam
   ? '🏆'
   : `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
-
+    
   if (status === 'level_done') {
       const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
+      const examInner = isExam ? '🏆' : inner;
+      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${examInner}</div>`;
     } else if (status === 'phase3_unlocked') {
       const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
@@ -2368,21 +2369,21 @@ function renderQuizPath(lvl, li) {
     } else if (status === 'completed') {
       const nodeClass = isExam ? 'path-node completed phase2-invite exam-node' : 'path-node completed phase2-invite';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">${inner}</div>`;
-    } else if (status === 'unlocked') {
+   } else if (status === 'unlocked') {
       const completedSoFar = progress[lvl.id].filter(s =>
         ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
       ).length;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
-
       if (isExam) {
         html += `<div class="path-node unlocked exam-node ${pulseClass}"
-     data-quiz-idx="${qi}" data-status="unlocked"
-     style="color:${lvl.color}; border-color:${lvl.color}; background:#eab308;">🏆</div>`;
+             data-quiz-idx="${qi}" data-status="unlocked"
+             style="color:${lvl.color}; border-color:${lvl.color}; background:white;">🏆</div>`;
       } else {
         html += `<div class="path-node unlocked ${pulseClass}"
              data-quiz-idx="${qi}" data-status="unlocked"
-             style="color:${lvl.color}; border-color:${lvl.color}">${quizCounter}</div>`;
+             style="color:${lvl.color}; border-color:${lvl.color}; background:white;">${quizCounter}</div>`;
       }
+    
     } else {
       if (isExam) {
         html += `<div class="path-node locked exam-node"
