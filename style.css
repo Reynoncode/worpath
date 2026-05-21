@@ -542,6 +542,7 @@ button { font-family: var(--font); }
   stroke: #fff;
   stroke-width: 2.5;
 }
+
 @keyframes levelPulse {
   0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--lvl-color) 45%, transparent); }
   50%       { box-shadow: 0 0 0 8px color-mix(in srgb, var(--lvl-color) 15%, transparent); }
