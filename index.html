@@ -247,11 +247,11 @@
   <script>
     Stats.updateStreak();
 
-    document.getElementById('stats-btn').addEventListener('click', function () {
-      StatsPage.render('stats-container');
-      document.getElementById('stats-screen').classList.remove('hidden');
-    });
-
+   document.getElementById('stats-btn').addEventListener('click', function () {
+  closeOverlayPanel();
+  StatsPage.render('stats-container');
+  document.getElementById('stats-screen').classList.remove('hidden');
+});
     document.getElementById('stats-close-btn').addEventListener('click', function () {
       document.getElementById('stats-screen').classList.add('hidden');
     });
