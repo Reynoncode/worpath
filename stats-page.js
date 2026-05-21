@@ -177,22 +177,24 @@ const StatsPage = (() => {
         
 
         <!-- 4 kart -->
-        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px;">
-          ${[
-            { val: s.totalLearned,       lbl: "Öyrənilmiş söz",  sub: null },
-            { val: `${s.correctRate}%`,  lbl: "Düzgün cavab",    sub: null },
-            { val: s.totalErrors,        lbl: "Ümumi səhv sayı", sub: `${s.starFixedCount} ulduzla düzəldildi`, subColor: "#D97706" },
-            { val: "📋", lbl: "Ev tapşırığı", sub: null, isHomework: true },
-            ].map(c => `
-  <div style="background:#EDEAE2;border-radius:10px;padding:14px 16px;" id="${c.isHomework ? 'stats-homework-card' : ''}">
-    ${c.isHomework ? '' : `
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px;">
+  ${[
+    { val: s.totalLearned,       lbl: "Öyrənilmiş söz",  sub: null },
+    { val: `${s.correctRate}%`,  lbl: "Düzgün cavab",    sub: null },
+    { val: s.totalErrors,        lbl: "Ümumi səhv sayı", sub: `${s.starFixedCount} ulduzla düzəldildi`, subColor: "#D97706" },
+    { val: "📋", lbl: "Ev tapşırığı", sub: null, isHomework: true },
+    ].map(c => `
+<div style="background:#EDEAE2;border-radius:10px;padding:0;overflow:hidden;" id="${c.isHomework ? 'stats-homework-card' : ''}">
+  ${c.isHomework ? '' : `
+    <div style="padding:14px 16px;">
       <div style="font-size:24px;font-weight:700;color:#1A1A1A;">${c.val}</div>
       <div style="font-size:12px;color:#6B7280;margin-top:3px;">${c.lbl}</div>
       ${c.sub ? `<div style="font-size:11px;color:${c.subColor};margin-top:3px;font-weight:500;">${c.sub}</div>` : ""}
-    `}
-  </div>
+    </div>
+  `}
+</div>
 `).join("")}
-        </div>
+</div>
 
         
 
