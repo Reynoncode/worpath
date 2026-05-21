@@ -17,11 +17,10 @@ function _getExamIds()    { return window.EXAM_IDS    || {}; }
 function _getLevelOrder() { return window.LEVEL_ORDER || ['a1','a2','b1','b2','c1','c2']; }
 
 function _getLevelData(levelId) {
-  // window.appData və ya window.levels-dən götür
-  // data.js-in export strukturuna uyğun olaraq:
-  if (window.appData) {
-    return window.appData.find(l => l.id === levelId);
-  }
+  const levels = window.LEVELS;
+  if (!levels) return null;
+  return levels.find(l => l.id === levelId) || null;
+}
   if (window.levels) {
     return window.levels.find(l => l.id === levelId);
   }
