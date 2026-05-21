@@ -942,7 +942,20 @@ function buildExamQuestions(levelId, quizIdx) {
 
   return shuffle([...fillQuestions, ...wmQuestions, ...defQuestions]);
 }
+function unlockExamSkippedQuizzes(levelIdx, examQuizIdx) {
+  const lvl      = LEVELS[levelIdx];
+  const levelId  = lvl.id;
+  const quizIds  = (EXAM_QUIZ_IDS[levelId] || {})[examQuizIdx] || [];
 
+  quizIds.forEach(qi => {
+    const current = progress[levelId][qi];
+    if (current === 'locked') {
+      progress[levelId][qi] = 'unlocked';
+    }
+  });
+
+  saveProgress();
+}
 // ============================================================
 //  EXAM — BAŞLAT
 // ============================================================
@@ -1271,6 +1284,7 @@ function finishExam() {
     const won     = wrong === 0;
 
     if (won) {
+      unlockExamSkippedQuizzes(examState.levelIdx, examState.quizIdx);
       markCompleted(examState.levelIdx, examState.quizIdx);
       elResultEmoji.textContent = '🏆';
       elResultTitle.textContent = 'Exam keçildi!';
