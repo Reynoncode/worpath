@@ -943,16 +943,15 @@ function buildExamQuestions(levelId, quizIdx) {
   return shuffle([...fillQuestions, ...wmQuestions, ...defQuestions]);
 }
 function unlockExamSkippedQuizzes(levelIdx, examQuizIdx) {
-  const lvl      = LEVELS[levelIdx];
-  const levelId  = lvl.id;
-  const quizIds  = (EXAM_QUIZ_IDS[levelId] || {})[examQuizIdx] || [];
+  const lvl     = LEVELS[levelIdx];
+  const levelId = lvl.id;
 
-  quizIds.forEach(qi => {
-    const current = progress[levelId][qi];
-    if (current === 'locked') {
-      progress[levelId][qi] = 'unlocked';
+  // 0-dan examın özünə kimi bütün quizləri aç (locked olanları)
+  for (let i = 0; i < examQuizIdx; i++) {
+    if (progress[levelId][i] === 'locked') {
+      progress[levelId][i] = 'unlocked';
     }
-  });
+  }
 
   saveProgress();
 }
