@@ -1853,8 +1853,6 @@ function loadProgress() {
       }
     }
   });
-
-  saveProgress();
 }
 
 function markCompleted(levelIdx, quizIdx) {
