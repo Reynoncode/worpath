@@ -413,10 +413,14 @@ async function openClassroomModal() {
 
   modal.innerHTML = `
     <!-- Header -->
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid #E8E2D9;flex-shrink:0;">
-      <span style="font-size:16px;font-weight:700;color:#1A1A1A;">Sinif Otağı</span>
+    <div style="display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid #E8E2D9;flex-shrink:0;">
       <button onclick="document.getElementById('classroom-modal').remove()"
-        style="background:none;border:none;font-size:24px;color:#9CA3AF;cursor:pointer;line-height:1;padding:0 4px;">×</button>
+        style="background:none;border:none;cursor:pointer;padding:4px;color:#9CA3AF;display:flex;align-items:center;justify-content:center;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <span style="font-size:16px;font-weight:700;color:#1A1A1A;">Sinif Otağı</span>
     </div>
 
     <!-- İçərik -->
@@ -553,12 +557,25 @@ async function _openClass(classId) {
 
   content.innerHTML = `
     <div>
-      <button onclick="ClassroomManager._backToList()"
-        style="background:none;border:none;font-size:13px;color:#9CA3AF;cursor:pointer;padding:0;">← Geri</button>
-        <button onclick="ClassroomManager._openClass('${classId}')"
-          style="margin-left:auto;background:none;border:1px solid #E8E2D9;border-radius:99px;font-size:12px;font-weight:600;color:#6B7280;cursor:pointer;padding:5px 14px;">
-          ↻ Yenilə
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+        <button onclick="ClassroomManager._backToList()"
+          style="display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #E8E2D9;
+                 border-radius:99px;padding:9px 16px;font-size:13px;font-weight:600;color:#1A1A1A;cursor:pointer;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          Geri
         </button>
+        <button onclick="ClassroomManager._openClass('${classId}')"
+          style="display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #E8E2D9;
+                 border-radius:99px;padding:9px 16px;font-size:13px;font-weight:600;color:#1A1A1A;cursor:pointer;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <polyline points="1 4 1 10 7 10"/>
+            <path d="M3.51 15a9 9 0 1 0 .49-3.5"/>
+          </svg>
+          Yenilə
+        </button>
+      </div>
       <div id="class-detail-container"></div>
     </div>
   `;
