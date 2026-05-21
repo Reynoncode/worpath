@@ -496,11 +496,11 @@ button { font-family: var(--font); }
 }
 
 .path-node.completed svg {
-  width: 30px;
-  height: 30px;
-  stroke: #fff;
+  width: 26px;
+  height: 26px;
+  stroke: var(--lvl-color);
   fill: none;
-  stroke-width: 3;
+  stroke-width: 2.5;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
@@ -609,8 +609,8 @@ button { font-family: var(--font); }
   50%       { box-shadow: 0 0 0 8px rgba(234, 179, 8, 0.15); }
 }
 @keyframes levelPulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(0,0,0,0.15); }
-  50%       { box-shadow: 0 0 0 8px rgba(0,0,0,0.07); }
+  0%, 100% { box-shadow: 0 0 0 3px color-mix(in srgb, var(--lvl-color) 45%, transparent); }
+  50%       { box-shadow: 0 0 0 8px color-mix(in srgb, var(--lvl-color) 15%, transparent); }
 }
 
 /* ── FULL-SCREEN OVERLAY ────────────────────── */
