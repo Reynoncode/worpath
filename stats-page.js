@@ -170,7 +170,7 @@ const StatsPage = (() => {
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
           <span style="font-size:22px;font-weight:700;color:#1A1A1A;">Statistika</span>
           <span style="display:flex;align-items:center;gap:5px;background:#FAEEDA;color:#633806;border:1px solid #FAC775;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:600;">
-            🔥 ${s.streak} günlük ardıcıllıq
+            🔥 ${s.streak} STREAK
           </span>
         </div>
 
