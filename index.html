@@ -248,7 +248,7 @@
     Stats.updateStreak();
 
    document.getElementById('stats-btn').addEventListener('click', function () {
-  closeOverlayPanel();
+  closeOverlayPanel(true);
   StatsPage.render('stats-container');
   document.getElementById('stats-screen').classList.remove('hidden');
 });
