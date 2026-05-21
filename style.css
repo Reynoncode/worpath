@@ -519,52 +519,39 @@ button { font-family: var(--font); }
   border-width: 3px;
   border-style: dashed;
 }
-/* Phase 1 bitdi */
+/* Phase 1 tamamlandı — mavi, bənövşəyi parlayan kənar */
 .path-node.completed.phase2-invite {
-  background: var(--completed);
-  border-color: var(--completed);
-  box-shadow: 0 4px 12px rgba(62,184,116,0.25);
-  animation: none;
+  background: color-mix(in srgb, var(--lvl-color) 15%, white) !important;
+  border-color: var(--lvl-color) !important;
+  animation: levelPulse 1.8s ease-in-out infinite;
 }
-
-/* Phase 2 açıqdır */
 .path-node.phase2-open {
-  background: var(--completed);
-  border-color: var(--completed);
-  box-shadow: 0 4px 12px rgba(62,184,116,0.25);
-  animation: none;
+  background: color-mix(in srgb, var(--lvl-color) 15%, white) !important;
+  border-color: var(--lvl-color) !important;
+  animation: levelPulse 1.4s ease-in-out infinite;
 }
-
-/* Phase 2 bitdi */
 .path-node.phase2-done {
-  background: var(--completed);
-  border-color: var(--completed);
-  box-shadow: 0 4px 12px rgba(62,184,116,0.25);
-  animation: none;
+  background: color-mix(in srgb, #eab308 15%, white) !important;
+  border-color: #eab308 !important;
 }
-
-/* Phase 3 açıqdır */
 .path-node.phase3-open {
-  background: var(--completed);
-  border-color: var(--completed);
-  box-shadow: 0 4px 12px rgba(62,184,116,0.25);
-  animation: none;
-
+  background: color-mix(in srgb, #eab308 15%, white) !important;
+  border-color: #eab308 !important;
+  animation: goldPulse 1.4s ease-in-out infinite;
+}
 .path-node.phase2-open svg polyline {
   stroke: #fff;
 }
+
 /* Phase 2 tamamlandı — solğun qızıl fon, qızıl kənar */
 .path-node.phase2-done {
-  background: color-mix(in srgb, 
-#eab308 15%, white) !important;
-  border-color: 
-#eab308 !important;
+  background: color-mix(in srgb, #eab308 15%, white) !important;
+  border-color: #eab308 !important;
   overflow: hidden;
   position: relative;
 }
 .path-node.phase2-done svg polyline {
-  stroke: 
-#eab308;
+  stroke: #eab308;
 }
 .path-node.phase2-done::after {
   content: '';
@@ -587,17 +574,14 @@ button { font-family: var(--font); }
 }
 /* Phase 3 açıqdır — solğun qızıl fon, qızıl kənar pulse, metal parlaması */
 .path-node.phase3-open {
-  background: color-mix(in srgb, 
-#eab308 15%, white) !important;
-  border-color: 
-#eab308 !important;
+  background: color-mix(in srgb, #eab308 15%, white) !important;
+  border-color: #eab308 !important;
   animation: goldPulse 1.4s ease-in-out infinite;
   overflow: hidden;
   position: relative;
 }
 .path-node.phase3-open svg polyline {
-  stroke: 
-#eab308;
+  stroke: #eab308;
 }
 .path-node.phase3-open::after {
   content: '';
@@ -621,7 +605,7 @@ button { font-family: var(--font); }
 .path-node.level-done svg polyline {
   fill: none;
   stroke-width: 2.5;
-} 
+}
 
 /* Level tamamlandı — qızıl + metal sweep */
 .path-node.level-done {
