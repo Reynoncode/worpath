@@ -547,9 +547,27 @@ button { font-family: var(--font); }
 .path-node.phase2-done {
   background: color-mix(in srgb, #eab308 15%, white) !important;
   border-color: #eab308 !important;
+  overflow: hidden;
+  position: relative;
 }
 .path-node.phase2-done svg polyline {
   stroke: #eab308;
+}
+.path-node.phase2-done::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  animation: metalSweep 2.4s ease-in-out infinite;
+  pointer-events: none;
 }
 .path-node.gold-pulse {
   animation: goldPulse 1.8s ease-in-out infinite;
