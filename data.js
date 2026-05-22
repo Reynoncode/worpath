@@ -21,7 +21,7 @@ const LEVELS = [
     color: '#C0392B',
     quizzes: [
 
-     // ─────────────────────── QUIZ 1 — Peşələr ───────────────────────
+   // ─────────────────────── QUIZ 1 — Peşələr ───────────────────────
 [
   { en: 'actor',      tr: 'aktyor',       wrong: 'rejissor',     wen: 'director',     def: 'a person who performs in films or theatre' },
   { en: 'actress',    tr: 'aktrisa',      wrong: 'rəqqasə',      wen: 'dancer',       def: 'a woman who performs in films or theatre' },
@@ -29,14 +29,14 @@ const LEVELS = [
   { en: 'artist',     tr: 'rəssam',       wrong: 'musiqiçi',     wen: 'musician',     def: 'a person who creates paintings or drawings' },
   { en: 'dancer',     tr: 'rəqqas',       wrong: 'müğənni',      wen: 'singer',       def: 'a person who dances to music' },
   { en: 'doctor',     tr: 'həkim',        wrong: 'müəllim',      wen: 'teacher',      def: 'a person who treats sick people' },
-  { en: 'driver',     tr: 'sürücü',       wrong: 'pilot',        wen: 'pilot',        def: 'a person who drives a car or bus' },
+  { en: 'driver',     tr: 'sürücü',       wrong: 'mexanik',      wen: 'mechanic',     def: 'a person who drives a car or bus' },
   { en: 'farmer',     tr: 'əkinçi',       wrong: 'balıqçı',      wen: 'fisherman',    def: 'a person who grows food on a farm' },
-  { en: 'nurse',      tr: 'tibb bacısı',  wrong: 'həkim',        wen: 'teacher',      def: 'a person who helps doctors and patients in hospital' },
+  { en: 'nurse',      tr: 'tibb bacısı',  wrong: 'həkim',        wen: 'doctor',       def: 'a person who helps doctors and patients in hospital' },
   { en: 'player',     tr: 'oyunçu',       wrong: 'məşqçi',       wen: 'coach',        def: 'a person who plays a sport or game' },
   { en: 'policeman',  tr: 'polis',        wrong: 'gözətçi',      wen: 'guard',        def: 'a person who protects people and catches criminals' },
   { en: 'scientist',  tr: 'alim',         wrong: 'mühəndis',     wen: 'engineer',     def: 'a person who studies science and does experiments' },
   { en: 'singer',     tr: 'müğənni',      wrong: 'rəqqas',       wen: 'dancer',       def: 'a person who sings songs' },
-  { en: 'student',    tr: 'tələbə',       wrong: 'müəllim',      wen: 'teacher',      def: 'a person who studies at school or university' },
+  { en: 'student',    tr: 'şagird',       wrong: 'müəllim',      wen: 'teacher',      def: 'a person who studies at school or university' },
   { en: 'teacher',    tr: 'müəllim',      wrong: 'direktor',     wen: 'principal',    def: 'a person who teaches students' },
   { en: 'tourist',    tr: 'turist',       wrong: 'səfir',        wen: 'ambassador',   def: 'a person who travels for pleasure' },
   { en: 'visitor',    tr: 'ziyarətçi',    wrong: 'sakin',        wen: 'resident',     def: 'a person who visits a place' },
@@ -45,231 +45,150 @@ const LEVELS = [
   { en: 'writer',     tr: 'yazıçı',       wrong: 'jurnalist',    wen: 'journalist',   def: 'a person who writes books or stories' }
 ],
 
-
 // ─────────────────────── QUIZ 2 — Ümumi insanlar ───────────────────────
 [
-  { en: 'baby', tr: 'körpə', wrong: 'uşaq', wen: 'adult', def: 'a very young child who cannot walk or talk yet' },
-  { en: 'boy', tr: 'oğlan', wrong: 'qız', wen: 'girl', def: 'a male child' },
-  { en: 'child', tr: 'uşaq', wrong: 'gənc', wen: 'adult', def: 'a young person who is not yet an adult' },
-  { en: 'customer', tr: 'müştəri', wrong: 'satıcı', wen: 'seller', def: 'a person who buys something from a shop or business' },
-  { en: 'girl', tr: 'qız', wrong: 'oğlan', wen: 'boy', def: 'a female child' },
-  { en: 'man', tr: 'kişi', wrong: 'qadın', wen: 'woman', def: 'an adult male person' },
-  { en: 'member', tr: 'üzv', wrong: 'rəhbər', wen: 'leader', def: 'a person who belongs to a group, club, or organization' },
-  { en: 'neighbour', tr: 'qonşu', wrong: 'dost', wen: 'friend', def: 'a person who lives near you' },
-  { en: 'partner', tr: 'ortaq', wrong: 'rəqib', wen: 'rival', def: 'a person you work or do business with' },
-  { en: 'person', tr: 'insan', wrong: 'heyvan', wen: 'animal', def: 'a human being' },
-  { en: 'teenager', tr: 'yeniyetmə', wrong: 'körpə', wen: 'baby', def: 'a person between 13 and 19 years old' },
-  { en: 'woman', tr: 'qadın', wrong: 'kişi', wen: 'man', def: 'an adult female person' },
-  { en: 'people', tr: 'insanlar', wrong: 'heyvanlar', wen: 'animals', def: 'more than one person' },
-  { en: 'friend', tr: 'dost', wrong: 'qonşu', wen: 'neighbour', def: 'a person you like and enjoy spending time with' },
-  { en: 'somebody', tr: 'kimsə', wrong: 'heç kim', wen: 'nobody', def: 'a person who is not named or known' },
-  { en: 'someone', tr: 'biri', wrong: 'hamı', wen: 'everyone', def: 'a person who is not specified' },
-  { en: 'anybody', tr: 'hər hansı biri', wrong: 'heç kim', wen: 'nobody', def: 'any person at all' },
-  { en: 'anyone', tr: 'hər kəs', wrong: 'heç biri', wen: 'no one', def: 'any person' },
-  { en: 'nobody', tr: 'heç kim', wrong: 'hamı', wen: 'everybody', def: 'no person' },
-  { en: 'no one', tr: 'heç kəs', wrong: 'kimsə', wen: 'someone', def: 'no person at all' },
+  { en: 'baby',      tr: 'körpə',          wrong: 'uşaq',      wen: 'adult',      def: 'a very young child who cannot walk or talk yet' },
+  { en: 'boy',       tr: 'oğlan',          wrong: 'qız',       wen: 'girl',       def: 'a male child' },
+  { en: 'child',     tr: 'uşaq',           wrong: 'gənc',      wen: 'adult',      def: 'a young person who is not yet an adult' },
+  { en: 'customer',  tr: 'müştəri',        wrong: 'satıcı',    wen: 'seller',     def: 'a person who buys something from a shop or business' },
+  { en: 'girl',      tr: 'qız',            wrong: 'oğlan',     wen: 'boy',        def: 'a female child' },
+  { en: 'man',       tr: 'kişi',           wrong: 'qadın',     wen: 'woman',      def: 'an adult male person' },
+  { en: 'member',    tr: 'üzv',            wrong: 'rəhbər',    wen: 'leader',     def: 'a person who belongs to a group, club, or organization' },
+  { en: 'neighbour', tr: 'qonşu',          wrong: 'dost',      wen: 'friend',     def: 'a person who lives near you' },
+  { en: 'partner',   tr: 'ortaq',          wrong: 'rəqib',     wen: 'rival',      def: 'a person you work or do business with' },
+  { en: 'person',    tr: 'insan',          wrong: 'heyvan',    wen: 'animal',     def: 'a human being' },
+  { en: 'teenager',  tr: 'yeniyetmə',      wrong: 'körpə',     wen: 'baby',       def: 'a person between 13 and 19 years old' },
+  { en: 'woman',     tr: 'qadın',          wrong: 'kişi',      wen: 'man',        def: 'an adult female person' },
+  { en: 'people',    tr: 'insanlar',       wrong: 'heyvanlar', wen: 'animals',    def: 'more than one person' },
+  { en: 'friend',    tr: 'dost',           wrong: 'qonşu',     wen: 'neighbour',  def: 'a person you like and enjoy spending time with' },
+  { en: 'somebody',  tr: 'kimsə',          wrong: 'heç kim',   wen: 'nobody',     def: 'a person who is not named or known' },
+  { en: 'someone',   tr: 'biri',           wrong: 'hamı',      wen: 'everyone',   def: 'a person who is not specified' },
+  { en: 'anybody',   tr: 'hər hansı biri', wrong: 'heç kim',   wen: 'nobody',     def: 'any person at all' },
+  { en: 'anyone',    tr: 'hər kəs',        wrong: 'heç biri',  wen: 'no one',     def: 'any person' },
+  { en: 'nobody',    tr: 'heç kim',        wrong: 'hamı',      wen: 'everybody',  def: 'no person' },
+  { en: 'no one',    tr: 'heç kəs',        wrong: 'kimsə',     wen: 'someone',    def: 'no person at all' },
 ],
 
 // ─────────────────────── QUIZ 3 — Ailə ───────────────────────
 [
-  { en: 'aunt', tr: 'xala', wrong: 'nənə', wen: 'grandmother', def: 'your parent\'s sister' },
-  { en: 'boyfriend', tr: 'oğlan dostu', wrong: 'qardaş', wen: 'brother', def: 'a boy you are dating romantically' },
-  { en: 'brother', tr: 'qardaş', wrong: 'bacı', wen: 'sister', def: 'a boy who has the same parents as you' },
-  { en: 'cousin', tr: 'əmiuşağı', wrong: 'nəvə', wen: 'grandchild', def: 'the child of your uncle or aunt' },
-  { en: 'dad', tr: 'ata', wrong: 'baba', wen: 'grandfather', def: 'informal word for your father' },
-  { en: 'daughter', tr: 'qız övlad', wrong: 'oğul', wen: 'son', def: 'a female child of her parents' },
-  { en: 'family', tr: 'ailə', wrong: 'qrup', wen: 'group', def: 'people who are related by blood or marriage' },
-  { en: 'father', tr: 'ata', wrong: 'ana', wen: 'mother', def: 'a male parent' },
-  { en: 'girlfriend', tr: 'qız dostu', wrong: 'oğlan dostu', wen: 'boyfriend', def: 'a girl you are dating romantically' },
-  { en: 'grandfather', tr: 'baba', wrong: 'əmi', wen: 'uncle', def: 'your parent\'s father' },
-  { en: 'grandmother', tr: 'nənə', wrong: 'xala', wen: 'aunt', def: 'your parent\'s mother' },
-  { en: 'grandparent', tr: 'nənə baba', wrong: 'valideyn', wen: 'parent', def: 'a grandmother or grandfather' },
-  { en: 'husband', tr: 'ər', wrong: 'arvad', wen: 'wife', def: 'a married man' },
-  { en: 'mother', tr: 'ana', wrong: 'ata', wen: 'father', def: 'a female parent' },
-  { en: 'mum', tr: 'ana', wrong: 'baba', wen: 'dad', def: 'informal word for your mother' },
-  { en: 'parent', tr: 'valideyn', wrong: 'müəllim', wen: 'teacher', def: 'a mother or a father' },
-  { en: 'sister', tr: 'bacı', wrong: 'qardaş', wen: 'brother', def: 'a girl who has the same parents as you' },
-  { en: 'son', tr: 'oğul', wrong: 'qız övlad', wen: 'daughter', def: 'a male child of his parents' },
-  { en: 'uncle', tr: 'əmi', wrong: 'baba', wen: 'grandfather', def: 'your parent\'s brother' },
-  { en: 'wife', tr: 'arvad', wrong: 'ər', wen: 'husband', def: 'a married woman' },
+  { en: 'aunt',        tr: 'xala',        wrong: 'nənə',        wen: 'grandmother', def: 'your parent\'s sister' },
+  { en: 'boyfriend',   tr: 'oğlan dostu', wrong: 'qardaş',      wen: 'brother',     def: 'a boy you are dating romantically' },
+  { en: 'brother',     tr: 'qardaş',      wrong: 'bacı',        wen: 'sister',      def: 'a boy who has the same parents as you' },
+  { en: 'cousin',      tr: 'əmiuşağı',    wrong: 'nəvə',        wen: 'grandchild',  def: 'the child of your uncle or aunt' },
+  { en: 'dad',         tr: 'papa',        wrong: 'baba',        wen: 'grandfather', def: 'informal word for your father' },
+  { en: 'daughter',    tr: 'qız övlad',   wrong: 'oğul',        wen: 'son',         def: 'a female child of her parents' },
+  { en: 'family',      tr: 'ailə',        wrong: 'qrup',        wen: 'group',       def: 'people who are related by blood or marriage' },
+  { en: 'father',      tr: 'ata',         wrong: 'ana',         wen: 'mother',      def: 'a male parent' },
+  { en: 'girlfriend',  tr: 'qız dostu',   wrong: 'oğlan dostu', wen: 'boyfriend',   def: 'a girl you are dating romantically' },
+  { en: 'grandfather', tr: 'baba',        wrong: 'əmi',         wen: 'uncle',       def: 'your parent\'s father' },
+  { en: 'grandmother', tr: 'nənə',        wrong: 'xala',        wen: 'aunt',        def: 'your parent\'s mother' },
+  { en: 'grandparent', tr: 'nənə baba',   wrong: 'valideyn',    wen: 'parent',      def: 'a grandmother or grandfather' },
+  { en: 'husband',     tr: 'ər',          wrong: 'arvad',       wen: 'wife',        def: 'a married man' },
+  { en: 'mother',      tr: 'ana',         wrong: 'ata',         wen: 'father',      def: 'a female parent' },
+  { en: 'mum',         tr: 'mama',        wrong: 'baba',        wen: 'dad',         def: 'informal word for your mother' },
+  { en: 'parent',      tr: 'valideyn',    wrong: 'müəllim',     wen: 'teacher',     def: 'a mother or a father' },
+  { en: 'sister',      tr: 'bacı',        wrong: 'qardaş',      wen: 'brother',     def: 'a girl who has the same parents as you' },
+  { en: 'son',         tr: 'oğul',        wrong: 'qız övlad',   wen: 'daughter',    def: 'a male child of his parents' },
+  { en: 'uncle',       tr: 'əmi',         wrong: 'baba',        wen: 'grandfather', def: 'your parent\'s brother' },
+  { en: 'wife',        tr: 'arvad',       wrong: 'ər',          wen: 'husband',     def: 'a married woman' },
 ],
 
 // ─────────────────────── QUIZ 4 — Bədən ───────────────────────
 [
-  { en: 'arm', tr: 'qol', wrong: 'ayaq', wen: 'leg', def: 'the upper limb from shoulder to hand' },
-  { en: 'body', tr: 'bədən', wrong: 'üz', wen: 'face', def: 'the entire physical structure of a human' },
-  { en: 'ear', tr: 'qulaq', wrong: 'göz', wen: 'eye', def: 'the organ you use to hear sounds' },
-  { en: 'eye', tr: 'göz', wrong: 'qulaq', wen: 'ear', def: 'the organ you use to see' },
-  { en: 'face', tr: 'üz', wrong: 'baş', wen: 'head', def: 'the front part of the head including eyes, nose and mouth' },
-  { en: 'foot', tr: 'ayaq', wrong: 'əl', wen: 'hand', def: 'the part at the end of your leg that you walk on' },
-  { en: 'hair', tr: 'saç', wrong: 'qaş', wen: 'eyebrow', def: 'the strands that grow on your head' },
-  { en: 'hand', tr: 'əl', wrong: 'qol', wen: 'arm', def: 'the part at the end of your arm with fingers' },
-  { en: 'head', tr: 'baş', wrong: 'boyun', wen: 'neck', def: 'the top part of your body containing the brain' },
-  { en: 'leg', tr: 'ayaq', wrong: 'qol', wen: 'arm', def: 'the lower limb from hip to foot' },
-  { en: 'mouth', tr: 'ağız', wrong: 'burun', wen: 'nose', def: 'the opening on your face used for eating and speaking' },
-  { en: 'nose', tr: 'burun', wrong: 'ağız', wen: 'mouth', def: 'the part of your face used for smelling' },
-  { en: 'tooth', tr: 'diş', wrong: 'dil', wen: 'tongue', def: 'the hard white parts inside your mouth used for biting' },
-  { en: 'back', tr: 'kürək', wrong: 'qarın', wen: 'stomach', def: 'the rear part of the body from shoulders to hips' },
-  { en: 'bottom', tr: 'oturacaq', wrong: 'üst', wen: 'top', def: 'the part of the body you sit on' },
-  { en: 'skin', tr: 'dəri', wrong: 'sümük', wen: 'bone', def: 'the outer layer that covers your body' },
-  { en: 'health', tr: 'sağlamlıq', wrong: 'xəstəlik', wen: 'illness', def: 'the state of being physically well' },
-  { en: 'diet', tr: 'pəhriz', wrong: 'idman', wen: 'exercise', def: 'the kinds of food a person usually eats' },
-  { en: 'exercise', tr: 'məşq', wrong: 'istirahət', wen: 'rest', def: 'physical activity done to stay healthy' },
-  { en: 'born', tr: 'doğulmuş', wrong: 'ölmüş', wen: 'dead', def: 'having come into life' },
+  { en: 'arm',      tr: 'qol',        wrong: 'ayaq',      wen: 'leg',      def: 'the upper limb from shoulder to hand' },
+  { en: 'body',     tr: 'bədən',      wrong: 'üz',        wen: 'face',     def: 'the entire physical structure of a human' },
+  { en: 'ear',      tr: 'qulaq',      wrong: 'göz',       wen: 'eye',      def: 'the organ you use to hear sounds' },
+  { en: 'eye',      tr: 'göz',        wrong: 'qulaq',     wen: 'ear',      def: 'the organ you use to see' },
+  { en: 'face',     tr: 'üz',         wrong: 'baş',       wen: 'head',     def: 'the front part of the head including eyes, nose and mouth' },
+  { en: 'foot',     tr: 'ayaq',       wrong: 'əl',        wen: 'hand',     def: 'the part at the end of your leg that you walk on' },
+  { en: 'hair',     tr: 'saç',        wrong: 'qaş',       wen: 'eyebrow',  def: 'the strands that grow on your head' },
+  { en: 'hand',     tr: 'əl',         wrong: 'qol',       wen: 'arm',      def: 'the part at the end of your arm with fingers' },
+  { en: 'head',     tr: 'baş',        wrong: 'boyun',     wen: 'neck',     def: 'the top part of your body containing the brain' },
+  { en: 'leg',      tr: 'baldır',     wrong: 'qol',       wen: 'arm',      def: 'the lower limb from hip to foot' },
+  { en: 'mouth',    tr: 'ağız',       wrong: 'burun',     wen: 'nose',     def: 'the opening on your face used for eating and speaking' },
+  { en: 'nose',     tr: 'burun',      wrong: 'ağız',      wen: 'mouth',    def: 'the part of your face used for smelling' },
+  { en: 'tooth',    tr: 'diş',        wrong: 'dil',       wen: 'tongue',   def: 'the hard white parts inside your mouth used for biting' },
+  { en: 'back',     tr: 'kürək',      wrong: 'qarın',     wen: 'stomach',  def: 'the rear part of the body from shoulders to hips' },
+  { en: 'bottom',   tr: 'oturacaq',   wrong: 'üst',       wen: 'top',      def: 'the part of the body you sit on' },
+  { en: 'skin',     tr: 'dəri',       wrong: 'sümük',     wen: 'bone',     def: 'the outer layer that covers your body' },
+  { en: 'health',   tr: 'sağlamlıq',  wrong: 'xəstəlik',  wen: 'illness',  def: 'the state of being physically well' },
+  { en: 'diet',     tr: 'pəhriz',     wrong: 'idman',     wen: 'exercise', def: 'the kinds of food a person usually eats' },
+  { en: 'exercise', tr: 'məşq',       wrong: 'istirahət', wen: 'rest',     def: 'physical activity done to stay healthy' },
+  { en: 'born',     tr: 'doğulmuş',   wrong: 'ölmüş',     wen: 'dead',     def: 'having come into life' },
 ],
       
 // ─────────────────────── EXAM 1 — Ümumi insanlar ───────────────────────
 {
   sentences: [
-  { 
-    en: "The ____ is sleeping.", 
-    tr: 'baby', 
-    wrong: 'scientist' 
-  },
-  { 
-    en: "This ____ is my son.", 
-    tr: 'boy', 
-    wrong: 'grandmother' 
-  },
-  { 
-    en: "The ____ is playing in the park.", 
-    tr: 'child', 
-    wrong: 'doctor' 
-  },
-  { 
-    en: "The ____ wants to buy a new phone.", 
-    tr: 'customer', 
-    wrong: 'policeman' 
-  },
-  { 
-    en: "That ____ is my daughter.", 
-    tr: 'girl', 
-    wrong: 'farmer' 
-  },
-  { 
-    en: "The tall ____ is my father.", 
-    tr: 'man', 
-    wrong: 'nurse' 
-  },
-  { 
-    en: "He is a ____ of our team.", 
-    tr: 'member', 
-    wrong: 'waiter' 
-  },
-  { 
-    en: "My ____ lives next door.", 
-    tr: 'neighbour', 
-    wrong: 'singer' 
-  },
-  { 
-    en: "She is my business ____.", 
-    tr: 'partner', 
-    wrong: 'baby' 
-  },
-  { 
-    en: "Every ____ needs food and water.", 
-    tr: 'person', 
-    wrong: 'tooth' 
-  },
-  { 
-    en: "The ____ goes to high school.", 
-    tr: 'teenager', 
-    wrong: 'grandfather' 
-  },
-  { 
-    en: "The ____ is my mother.", 
-    tr: 'woman', 
-    wrong: 'driver' 
-  },
-  { 
-    en: "Many ____ live in this city.", 
-    tr: 'people', 
-    wrong: 'actor' 
-  },
-  { 
-    en: "He is my best ____.", 
-    tr: 'friend', 
-    wrong: 'leg' 
-  },
-  { 
-    en: "____ is knocking at the door.", 
-    tr: 'Somebody', 
-    wrong: 'nobody' 
-  },
-  { 
-    en: "I saw ____ in the park yesterday.", 
-    tr: 'someone', 
-    wrong: 'no one' 
-  },
-  { 
-    en: "Is ____ home right now?", 
-    tr: 'anybody', 
-    wrong: 'teacher' 
-  },
-  { 
-    en: "Can ____ help me please?", 
-    tr: 'anyone', 
-    wrong: 'hair' 
-  },
-  { 
-    en: "____ came to the meeting.", 
-    tr: 'Nobody', 
-    wrong: 'artist' 
-  },
-  { 
-    en: "____ knows the secret.", 
-    tr: 'No one', 
-    wrong: 'visitor' 
-  }
-],
-  },
+    { en: "The ____ is sleeping.",                  tr: 'baby',      wrong: 'scientist'   },
+    { en: "This ____ is my son.",                   tr: 'boy',       wrong: 'grandmother' },
+    { en: "The ____ is playing in the park.",       tr: 'child',     wrong: 'doctor'      },
+    { en: "The ____ wants to buy a new phone.",     tr: 'customer',  wrong: 'policeman'   },
+    { en: "That ____ is my daughter.",              tr: 'girl',      wrong: 'farmer'      },
+    { en: "The tall ____ is my father.",            tr: 'man',       wrong: 'nurse'       },
+    { en: "He is a ____ of our team.",              tr: 'member',    wrong: 'waiter'      },
+    { en: "My ____ lives next door.",               tr: 'neighbour', wrong: 'singer'      },
+    { en: "She is my business ____.",               tr: 'partner',   wrong: 'baby'        },
+    { en: "Every ____ needs food and water.",       tr: 'person',    wrong: 'baby'        },
+    { en: "The ____ goes to high school.",          tr: 'teenager',  wrong: 'grandfather' },
+    { en: "The ____ is my mother.",                 tr: 'woman',     wrong: 'driver'      },
+    { en: "Many ____ live in this city.",           tr: 'people',    wrong: 'actor'       },
+    { en: "He is my best ____.",                    tr: 'friend',    wrong: 'son'         },
+    { en: "____ is knocking at the door.",          tr: 'Somebody',  wrong: 'nobody'      },
+    { en: "I saw ____ in the park yesterday.",      tr: 'someone',   wrong: 'no one'      },
+    { en: "Is ____ home right now?",                tr: 'anybody',   wrong: 'teacher'     },
+    { en: "Can ____ help me please?",               tr: 'anyone',    wrong: 'nobody'      },
+    { en: "____ came to the meeting.",              tr: 'Nobody',    wrong: 'artist'      },
+    { en: "____ knows the secret.",                 tr: 'No one',    wrong: 'visitor'     },
+  ],
+},
       
-      // ─────────────────────── QUIZ 5 — Hisslər ───────────────────────
+// ─────────────────────── QUIZ 5 — Hisslər ───────────────────────
 [
-  { en: 'afraid',      tr: 'qorxmuş',       wrong: 'xoşbəxt',     wen: 'happy',       def: 'feeling scared' },
-  { en: 'angry',       tr: 'əsəbi',         wrong: 'sakit',       wen: 'calm',        def: 'very mad' },
-  { en: 'bored',       tr: 'darıxmış',      wrong: 'həyəcanlı',   wen: 'excited',     def: 'not interested' },
-  { en: 'excited',     tr: 'həyəcanlı',     wrong: 'yorğun',      wen: 'tired',       def: 'very happy about something' },
-  { en: 'happy',       tr: 'xoşbəxt',       wrong: 'kədərli',     wen: 'sad',         def: 'feeling good and joyful' },
-  { en: 'hungry',      tr: 'ac',            wrong: 'susamış',     wen: 'thirsty',     def: 'wanting food' },
-  { en: 'interested',  tr: 'maraqlanmış',   wrong: 'biganə',      wen: 'bored',       def: 'wanting to know more' },
-  { en: 'sad',         tr: 'kədərli',       wrong: 'xoşbəxt',     wen: 'happy',       def: 'feeling unhappy' },
-  { en: 'sick',        tr: 'xəstə',         wrong: 'sağlam',      wen: 'healthy',     def: 'not well, ill' },
-  { en: 'sorry',       tr: 'üzr istəmək',   wrong: 'razı olmaq',  wen: 'glad',        def: 'feeling bad about something' },
-  { en: 'thirsty',     tr: 'susamış',       wrong: 'ac',          wen: 'hungry',      def: 'wanting water' },
-  { en: 'tired',       tr: 'yorğun',        wrong: 'enerjili',    wen: 'energetic',   def: 'needing rest' },
-  { en: 'boring',      tr: 'cansıxıcı',     wrong: 'maraqlı',     wen: 'interesting', def: 'not interesting' },
-  { en: 'exciting',    tr: 'həyəcanlandırıcı', wrong: 'darıxdırıcı', wen: 'boring',    def: 'very interesting' },
-  { en: 'interesting', tr: 'maraqlı',       wrong: 'sıxıcı',      wen: 'boring',      def: 'good to know' },
-  { en: 'dear',        tr: 'əziz',          wrong: 'uzaq',        wen: 'distant',     def: 'very loved' },
-  { en: 'to feel',     tr: 'hiss etmək',    wrong: 'görmək',      wen: 'to see',      def: 'to have an emotion' },
-  { en: 'to hate',     tr: 'nifrət etmək',  wrong: 'sevmək',      wen: 'to love',     def: 'to dislike very much' },
-  { en: 'to love',     tr: 'sevmək',        wrong: 'nifrət etmək', wen: 'to hate',    def: 'to like very much' },
-  { en: 'to like',     tr: 'xoşlamaq',      wrong: 'sevməmək',    wen: 'to dislike',  def: 'to enjoy something' },
+  { en: 'afraid',      tr: 'qorxmuş',          wrong: 'xoşbəxt',      wen: 'happy',       def: 'feeling scared' },
+  { en: 'angry',       tr: 'əsəbi',             wrong: 'sakit',        wen: 'calm',        def: 'very mad' },
+  { en: 'bored',       tr: 'darıxmış',          wrong: 'həyəcanlı',    wen: 'excited',     def: 'not interested' },
+  { en: 'excited',     tr: 'həyəcanlı',         wrong: 'yorğun',       wen: 'tired',       def: 'very happy about something' },
+  { en: 'happy',       tr: 'xoşbəxt',           wrong: 'kədərli',      wen: 'sad',         def: 'feeling good and joyful' },
+  { en: 'hungry',      tr: 'ac',                wrong: 'susamış',      wen: 'thirsty',     def: 'wanting food' },
+  { en: 'interested',  tr: 'maraqlı',           wrong: 'biganə',       wen: 'bored',       def: 'wanting to know more' },
+  { en: 'sad',         tr: 'kədərli',           wrong: 'xoşbəxt',      wen: 'happy',       def: 'feeling unhappy' },
+  { en: 'sick',        tr: 'xəstə',             wrong: 'sağlam',       wen: 'healthy',     def: 'not well, ill' },
+  { en: 'sorry',       tr: 'peşman',            wrong: 'məmnun',       wen: 'glad',        def: 'feeling bad about something' },
+  { en: 'thirsty',     tr: 'susamış',           wrong: 'ac',           wen: 'hungry',      def: 'wanting water' },
+  { en: 'tired',       tr: 'yorğun',            wrong: 'enerjili',     wen: 'energetic',   def: 'needing rest' },
+  { en: 'boring',      tr: 'cansıxıcı',         wrong: 'maraqlı',      wen: 'interesting', def: 'not interesting' },
+  { en: 'exciting',    tr: 'həyəcanlandırıcı',  wrong: 'darıxdırıcı',  wen: 'boring',      def: 'very interesting' },
+  { en: 'interesting', tr: 'maraqlı',           wrong: 'sıxıcı',       wen: 'boring',      def: 'good to know' },
+  { en: 'dear',        tr: 'əziz',              wrong: 'uzaq',         wen: 'distant',     def: 'very loved' },
+  { en: 'to feel',     tr: 'hiss etmək',        wrong: 'görmək',       wen: 'to see',      def: 'to have an emotion' },
+  { en: 'to hate',     tr: 'nifrət etmək',      wrong: 'sevmək',       wen: 'to love',     def: 'to dislike very much' },
+  { en: 'to love',     tr: 'sevmək',            wrong: 'nifrət etmək', wen: 'to hate',     def: 'to like very much' },
+  { en: 'to like',     tr: 'xoşlamaq',          wrong: 'sevməmək',     wen: 'to dislike',  def: 'to enjoy something' },
 ],
-      
+
 // ─────────────────────── QUIZ 6 — Müsbət Sifətlər ───────────────────────
 [
-  { en: 'amazing',    tr: 'heyrətamiz',    wrong: 'darıxdırıcı', wen: 'boring',      def: 'very very good' },
-  { en: 'beautiful',  tr: 'gözəl',         wrong: 'çirkin',     wen: 'ugly',        def: 'very nice to look at' },
-  { en: 'cool',       tr: 'əla',           wrong: 'bərbad',      wen: 'terrible',    def: 'very good' },
-  { en: 'delicious',  tr: 'dadlı',         wrong: 'dadsız',     wen: 'tasteless',   def: 'very good to eat' },
-  { en: 'fantastic',  tr: 'fantastik',     wrong: 'adi',         wen: 'ordinary',    def: 'extremely good' },
-  { en: 'favourite',  tr: 'sevimli',       wrong: 'sevilməyən',  wen: 'hated',       def: 'liked the most' },
-  { en: 'friendly',   tr: 'mehriban',      wrong: 'düşmənçilik', wen: 'unfriendly',  def: 'nice to people' },
-  { en: 'funny',      tr: 'gülməli',       wrong: 'kədərli',     wen: 'sad',         def: 'makes you laugh' },
-  { en: 'good',       tr: 'yaxşı',         wrong: 'pis',         wen: 'bad',         def: 'nice or correct' },
-  { en: 'great',      tr: 'əla',           wrong: 'zəif',        wen: 'weak',        def: 'very good' },
-  { en: 'healthy',    tr: 'sağlam',        wrong: 'xəstə',       wen: 'sick',        def: 'in good health' },
-  { en: 'kind',       tr: 'xeyirxah',      wrong: 'zalım',       wen: 'cruel',       def: 'nice and helpful' },
-  { en: 'nice',       tr: 'xoş',           wrong: 'pis',         wen: 'mean',        def: 'pleasant and kind' },
-  { en: 'perfect',    tr: 'mükəmməl',      wrong: 'qüsurlu',     wen: 'flawed',      def: 'with no mistakes' },
-  { en: 'popular',    tr: 'məşhur',        wrong: 'naməlum',     wen: 'unknown',     def: 'liked by many' },
-  { en: 'pretty',     tr: 'qəşəng',        wrong: 'çirkin',      wen: 'ugly',        def: 'nice to look at' },
-  { en: 'special',    tr: 'xüsusi',        wrong: 'adi',         wen: 'ordinary',    def: 'not normal' },
-  { en: 'strong',     tr: 'güclü',         wrong: 'zəif',        wen: 'weak',        def: 'having power' },
-  { en: 'wonderful',  tr: 'möhtəşəm',      wrong: 'dəhşətli',     wen: 'terrible',    def: 'very very good' },
-  { en: 'modern',     tr: 'müasir',        wrong: 'köhnə',       wen: 'old-fashioned', def: 'new style' },
+  { en: 'amazing',    tr: 'heyrətamiz',   wrong: 'darıxdırıcı',  wen: 'boring',        def: 'very very good' },
+  { en: 'beautiful',  tr: 'gözəl',        wrong: 'çirkin',       wen: 'ugly',          def: 'very nice to look at' },
+  { en: 'cool',       tr: 'əla',          wrong: 'bərbad',       wen: 'terrible',      def: 'very good' },
+  { en: 'delicious',  tr: 'dadlı',        wrong: 'dadsız',       wen: 'tasteless',     def: 'very good to eat' },
+  { en: 'fantastic',  tr: 'fantastik',    wrong: 'adi',          wen: 'ordinary',      def: 'extremely good' },
+  { en: 'favourite',  tr: 'sevimli',      wrong: 'sevilməyən',   wen: 'hated',         def: 'liked the most' },
+  { en: 'friendly',   tr: 'mehriban',     wrong: 'kobud',        wen: 'unfriendly',    def: 'nice to people' },
+  { en: 'funny',      tr: 'gülməli',      wrong: 'kədərli',      wen: 'sad',           def: 'makes you laugh' },
+  { en: 'good',       tr: 'yaxşı',        wrong: 'pis',          wen: 'bad',           def: 'nice or correct' },
+  { en: 'great',      tr: 'əla',          wrong: 'zəif',         wen: 'weak',          def: 'very good' },
+  { en: 'healthy',    tr: 'sağlam',       wrong: 'xəstə',        wen: 'sick',          def: 'in good health' },
+  { en: 'kind',       tr: 'xeyirxah',     wrong: 'zalım',        wen: 'cruel',         def: 'nice and helpful' },
+  { en: 'nice',       tr: 'xoş',          wrong: 'pis',          wen: 'mean',          def: 'pleasant and kind' },
+  { en: 'perfect',    tr: 'mükəmməl',     wrong: 'qüsurlu',      wen: 'flawed',        def: 'with no mistakes' },
+  { en: 'popular',    tr: 'məşhur',       wrong: 'naməlum',      wen: 'unknown',       def: 'liked by many' },
+  { en: 'pretty',     tr: 'qəşəng',       wrong: 'çirkin',       wen: 'ugly',          def: 'nice to look at' },
+  { en: 'special',    tr: 'xüsusi',       wrong: 'adi',          wen: 'ordinary',      def: 'not normal' },
+  { en: 'strong',     tr: 'güclü',        wrong: 'zəif',         wen: 'weak',          def: 'having power' },
+  { en: 'wonderful',  tr: 'möhtəşəm',     wrong: 'dəhşətli',     wen: 'terrible',      def: 'very very good' },
+  { en: 'modern',     tr: 'müasir',       wrong: 'köhnə',        wen: 'old-fashioned', def: 'new style' },
 ],
 
 // ─────────────────────── QUIZ 7 — Ölçü / Size & Shape ───────────────────────
@@ -298,157 +217,78 @@ const LEVELS = [
 
 // ─────────────────────── QUIZ 8 — Hal Sifətləri 1 ───────────────────────
 [
-  { en: 'bad',        tr: 'pis',          wrong: 'yaxşı',      wen: 'good',        def: 'not good' },
-  { en: 'busy',       tr: 'məşğul',       wrong: 'boş',        wen: 'free',        def: 'having a lot of work' },
-  { en: 'cheap',      tr: 'ucuz',         wrong: 'bahalı',     wen: 'expensive',   def: 'low price' },
-  { en: 'clean',      tr: 'təmiz',        wrong: 'çirkli',     wen: 'dirty',       def: 'not dirty' },
-  { en: 'cold',       tr: 'soyuq',        wrong: 'isti',       wen: 'hot',         def: 'not warm' },
-  { en: 'correct',    tr: 'düzgün',       wrong: 'səhv',       wen: 'wrong',       def: 'true or right' },
-  { en: 'dangerous',  tr: 'təhlükəli',    wrong: 'təhlükəsiz', wen: 'safe',        def: 'can hurt you' },
-  { en: 'dark',       tr: 'qaranlıq',     wrong: 'işıqlı',     wen: 'bright',      def: 'no light' },
-  { en: 'different',  tr: 'fərqli',       wrong: 'eyni',       wen: 'same',        def: 'not the same' },
-  { en: 'difficult',  tr: 'çətin',        wrong: 'asan',       wen: 'easy',        def: 'not easy' },
-  { en: 'dirty',      tr: 'çirkli',       wrong: 'təmiz',      wen: 'clean',       def: 'not clean' },
-  { en: 'dry',        tr: 'quru',         wrong: 'nəm',        wen: 'wet',         def: 'not wet' },
-  { en: 'early',      tr: 'erkən',        wrong: 'gec',        wen: 'late',        def: 'before the time' },
-  { en: 'easy',       tr: 'asan',         wrong: 'çətin',      wen: 'difficult',   def: 'not difficult' },
-  { en: 'expensive',  tr: 'bahalı',       wrong: 'ucuz',       wen: 'cheap',       def: 'high price' },
-  { en: 'false',      tr: 'yalan',        wrong: 'həqiqi',     wen: 'true',        def: 'not true' },
-  { en: 'fast',       tr: 'sürətli',      wrong: 'yavaş',      wen: 'slow',        def: 'moving quickly' },
-  { en: 'fine',       tr: 'yaxşı',        wrong: 'pis',        wen: 'bad',         def: 'good or okay' },
-  { en: 'free',       tr: 'azad',         wrong: 'məhkum',     wen: 'imprisoned',  def: 'not in prison' },
-  { en: 'hard',       tr: 'çətin',        wrong: 'asan',       wen: 'easy',        def: 'very difficult' },
+  { en: 'bad',        tr: 'pis',        wrong: 'yaxşı',        wen: 'good',        def: 'not good' },
+  { en: 'busy',       tr: 'məşğul',     wrong: 'boş',          wen: 'free',        def: 'having a lot of work' },
+  { en: 'cheap',      tr: 'ucuz',       wrong: 'bahalı',       wen: 'expensive',   def: 'low price' },
+  { en: 'clean',      tr: 'təmiz',      wrong: 'çirkli',       wen: 'dirty',       def: 'not dirty' },
+  { en: 'cold',       tr: 'soyuq',      wrong: 'isti',         wen: 'hot',         def: 'not warm' },
+  { en: 'correct',    tr: 'düzgün',     wrong: 'səhv',         wen: 'wrong',       def: 'true or right' },
+  { en: 'dangerous',  tr: 'təhlükəli',  wrong: 'təhlükəsiz',   wen: 'safe',        def: 'can hurt you' },
+  { en: 'dark',       tr: 'qaranlıq',   wrong: 'işıqlı',       wen: 'bright',      def: 'no light' },
+  { en: 'different',  tr: 'fərqli',     wrong: 'eyni',         wen: 'same',        def: 'not the same' },
+  { en: 'difficult',  tr: 'çətin',      wrong: 'asan',         wen: 'easy',        def: 'not easy' },
+  { en: 'dirty',      tr: 'çirkli',     wrong: 'təmiz',        wen: 'clean',       def: 'not clean' },
+  { en: 'dry',        tr: 'quru',       wrong: 'nəm',          wen: 'wet',         def: 'not wet' },
+  { en: 'early',      tr: 'erkən',      wrong: 'gec',          wen: 'late',        def: 'before the time' },
+  { en: 'easy',       tr: 'asan',       wrong: 'çətin',        wen: 'difficult',   def: 'not difficult' },
+  { en: 'expensive',  tr: 'bahalı',     wrong: 'ucuz',         wen: 'cheap',       def: 'high price' },
+  { en: 'false',      tr: 'yalan',      wrong: 'həqiqi',       wen: 'true',        def: 'not true' },
+  { en: 'fast',       tr: 'sürətli',    wrong: 'yavaş',        wen: 'slow',        def: 'moving quickly' },
+  { en: 'fine',       tr: 'normal',     wrong: 'pis',          wen: 'bad',         def: 'good or okay' },
+  { en: 'free',       tr: 'azad',       wrong: 'məhkum',       wen: 'imprisoned',  def: 'not in prison' },
+  { en: 'hard',       tr: 'bərk',       wrong: 'asan',         wen: 'easy',        def: 'very difficult' },
 ],
 
 // ─────────────────────── QUIZ 9 — Hal Sifətləri 2 ───────────────────────
 [
-  { en: 'hot',        tr: 'isti',         wrong: 'soyuq',      wen: 'cold',        def: 'very warm' },
-  { en: 'important',  tr: 'vacib',        wrong: 'əhəmiyyətsiz', wen: 'unimportant', def: 'very necessary' },
-  { en: 'late',       tr: 'gec',          wrong: 'erkən',      wen: 'early',       def: 'after the time' },
-  { en: 'married',    tr: 'evli',         wrong: 'subay',      wen: 'single',      def: 'has a wife or husband' },
-  { en: 'old',        tr: 'köhnə',        wrong: 'yeni',       wen: 'new',         def: 'not new' },
-  { en: 'open',       tr: 'açıq',         wrong: 'bağlı',      wen: 'closed',      def: 'not closed' },
-  { en: 'opposite',   tr: 'əks',          wrong: 'eyni',       wen: 'same',        def: 'completely different' },
-  { en: 'poor',       tr: 'kasıb',        wrong: 'varlı',      wen: 'rich',        def: 'has little money' },
-  { en: 'possible',   tr: 'mümkün',       wrong: 'qeyri-mümkün', wen: 'impossible', def: 'can happen' },
-  { en: 'quick',      tr: 'tez',          wrong: 'yavaş',      wen: 'slow',        def: 'very fast' },
-  { en: 'quiet',      tr: 'sakit',        wrong: 'səs-küylü',  wen: 'noisy',       def: 'little or no sound' },
-  { en: 'ready',      tr: 'hazır',        wrong: 'razı',       wen: 'unprepared',  def: 'prepared to do' },
-  { en: 'real',       tr: 'həqiqi',       wrong: 'saxta',      wen: 'fake',        def: 'not fake' },
-  { en: 'rich',       tr: 'varlı',        wrong: 'kasıb',      wen: 'poor',        def: 'has a lot of money' },
-  { en: 'same',       tr: 'eyni',         wrong: 'fərqli',     wen: 'different',   def: 'exactly like' },
-  { en: 'slow',       tr: 'yavaş',        wrong: 'sürətli',    wen: 'fast',        def: 'not fast' },
-  { en: 'sure',       tr: 'əmin',         wrong: 'şübhəli',    wen: 'unsure',      def: 'very certain' },
-  { en: 'terrible',   tr: 'dəhşətli',     wrong: 'möhtəşəm',   wen: 'wonderful',   def: 'very bad' },
-  { en: 'true',       tr: 'doğru',        wrong: 'yalan',      wen: 'false',       def: 'correct' },
-  { en: 'warm',       tr: 'isti',         wrong: 'soyuq',      wen: 'cold',        def: 'a little hot' },
+  { en: 'hot',        tr: 'isti',       wrong: 'soyuq',        wen: 'cold',        def: 'very warm' },
+  { en: 'important',  tr: 'vacib',      wrong: 'əhəmiyyətsiz', wen: 'unimportant', def: 'very necessary' },
+  { en: 'late',       tr: 'gec',        wrong: 'erkən',        wen: 'early',       def: 'after the time' },
+  { en: 'married',    tr: 'evli',       wrong: 'subay',        wen: 'single',      def: 'has a wife or husband' },
+  { en: 'old',        tr: 'köhnə',      wrong: 'yeni',         wen: 'new',         def: 'not new' },
+  { en: 'open',       tr: 'açıq',       wrong: 'bağlı',        wen: 'closed',      def: 'not closed' },
+  { en: 'opposite',   tr: 'əks',        wrong: 'eyni',         wen: 'same',        def: 'completely different' },
+  { en: 'poor',       tr: 'kasıb',      wrong: 'varlı',        wen: 'rich',        def: 'has little money' },
+  { en: 'possible',   tr: 'mümkün',     wrong: 'qeyri-mümkün', wen: 'impossible',  def: 'can happen' },
+  { en: 'quick',      tr: 'tez',        wrong: 'yavaş',        wen: 'slow',        def: 'very fast' },
+  { en: 'quiet',      tr: 'sakit',      wrong: 'səs-küylü',    wen: 'noisy',       def: 'little or no sound' },
+  { en: 'ready',      tr: 'hazır',      wrong: 'tənbəl',       wen: 'unprepared',  def: 'prepared to do' },
+  { en: 'real',       tr: 'həqiqi',     wrong: 'saxta',        wen: 'fake',        def: 'not fake' },
+  { en: 'rich',       tr: 'varlı',      wrong: 'kasıb',        wen: 'poor',        def: 'has a lot of money' },
+  { en: 'same',       tr: 'eyni',       wrong: 'fərqli',       wen: 'different',   def: 'exactly like' },
+  { en: 'slow',       tr: 'yavaş',      wrong: 'sürətli',      wen: 'fast',        def: 'not fast' },
+  { en: 'sure',       tr: 'əmin',       wrong: 'şübhəli',      wen: 'unsure',      def: 'very certain' },
+  { en: 'terrible',   tr: 'dəhşətli',   wrong: 'möhtəşəm',     wen: 'wonderful',   def: 'very bad' },
+  { en: 'true',       tr: 'doğru',      wrong: 'yalan',        wen: 'false',       def: 'correct' },
+  { en: 'warm',       tr: 'ilıq',       wrong: 'soyuq',        wen: 'cold',        def: 'a little hot' },
 ],
-// ─────────────────────── NEW EXAM — Emotions & Adjectives ───────────────────────
+
+// ─────────────────────── EXAM — Emotions & Adjectives ───────────────────────
 {
   sentences: [
-  { 
-    en: "I am very ____ today.", 
-    tr: 'happy', 
-    wrong: 'big' 
-  },
-  { 
-    en: "She feels ____ before the trip.", 
-    tr: 'excited', 
-    wrong: 'dirty' 
-  },
-  { 
-    en: "The baby is ____ now.", 
-    tr: 'hungry', 
-    wrong: 'short' 
-  },
-  { 
-    en: "He is ____ of the dark.", 
-    tr: 'afraid', 
-    wrong: 'delicious' 
-  },
-  { 
-    en: "I feel ____ after running.", 
-    tr: 'tired', 
-    wrong: 'beautiful' 
-  },
-  { 
-    en: "This food is very ____.", 
-    tr: 'delicious', 
-    wrong: 'cold' 
-  },
-  { 
-    en: "She is a ____ girl.", 
-    tr: 'beautiful', 
-    wrong: 'late' 
-  },
-  { 
-    en: "The movie was very ____.", 
-    tr: 'interesting', 
-    wrong: 'small' 
-  },
-  { 
-    en: "My house is ____.", 
-    tr: 'big', 
-    wrong: 'sad' 
-  },
-  { 
-    en: "The man is very ____.", 
-    tr: 'tall', 
-    wrong: 'hungry' 
-  },
-  { 
-    en: "This bag is too ____.", 
-    tr: 'heavy', 
-    wrong: 'happy' 
-  },
-  { 
-    en: "The room is ____.", 
-    tr: 'clean', 
-    wrong: 'long' 
-  },
-  { 
-    en: "It is ____ outside today.", 
-    tr: 'hot', 
-    wrong: 'afraid' 
-  },
-  { 
-    en: "The test was very ____.", 
-    tr: 'difficult', 
-    wrong: 'full' 
-  },
-  { 
-    en: "I am ____ I am late.", 
-    tr: 'sorry', 
-    wrong: 'expensive' 
-  },
-  { 
-    en: "She is ____ with her new phone.", 
-    tr: 'happy', 
-    wrong: 'short' 
-  },
-  { 
-    en: "The water is ____.", 
-    tr: 'cold', 
-    wrong: 'boring' 
-  },
-  { 
-    en: "This is my ____ book.", 
-    tr: 'favourite', 
-    wrong: 'angry' 
-  },
-  { 
-    en: "The street is very ____ at night.", 
-    tr: 'quiet', 
-    wrong: 'tall' 
-  },
-  { 
-    en: "He is ____ in football.", 
-    tr: 'interested', 
-    wrong: 'small' 
-  }
-],
-  },
-
+    { en: "I am very ____ today.",                tr: 'happy',       wrong: 'big'       },
+    { en: "She feels ____ before the trip.",      tr: 'excited',     wrong: 'dirty'     },
+    { en: "The baby is ____ now.",                tr: 'hungry',      wrong: 'short'     },
+    { en: "He is ____ of the dark.",              tr: 'afraid',      wrong: 'delicious' },
+    { en: "I feel ____ after running.",           tr: 'tired',       wrong: 'beautiful' },
+    { en: "This food is very ____.",              tr: 'delicious',   wrong: 'cold'      },
+    { en: "She is a ____ girl.",                  tr: 'beautiful',   wrong: 'late'      },
+    { en: "The movie was very ____.",             tr: 'interesting', wrong: 'small'     },
+    { en: "My house is ____.",                    tr: 'big',         wrong: 'sad'       },
+    { en: "The man is very ____.",                tr: 'tall',        wrong: 'hungry'    },
+    { en: "This lesson is very ____.",            tr: 'boring',      wrong: 'tall'      },
+    { en: "The room is ____.",                    tr: 'clean',       wrong: 'long'      },
+    { en: "It is ____ outside today.",            tr: 'hot',         wrong: 'afraid'    },
+    { en: "The test was very ____.",              tr: 'difficult',   wrong: 'full'      },
+    { en: "I am ____ I am late.",                 tr: 'sorry',       wrong: 'expensive' },
+    { en: "She is ____ with her new phone.",      tr: 'happy',       wrong: 'short'     },
+    { en: "The water is ____.",                   tr: 'cold',        wrong: 'boring'    },
+    { en: "This is my ____ book.",                tr: 'favourite',   wrong: 'angry'     },
+    { en: "The street is very ____ at night.",    tr: 'quiet',       wrong: 'tall'      },
+    { en: "He is ____ in football.",              tr: 'interested',  wrong: 'small'     },
+  ],
+},
+      
 // ─────────────────────── QUIZ 10 — Yemək / Food ───────────────────────
 [
   { en: 'apple',     tr: 'alma',         wrong: 'armud',      wen: 'pear',        def: 'a round red or green fruit' },
@@ -472,7 +312,7 @@ const LEVELS = [
   { en: 'sugar',     tr: 'şəkər',        wrong: 'duz',        wen: 'salt',        def: 'sweet white powder' },
   { en: 'salt',      tr: 'duz',          wrong: 'şəkər',      wen: 'sugar',       def: 'white powder that makes food salty' },
 ],
-      
+
 // ─────────────────────── QUIZ 11 — Yemək 2 / Ət & Dairy ───────────────────────
 [
   { en: 'cake',       tr: 'tort',         wrong: 'çörək',      wen: 'bread',       def: 'sweet food for birthdays' },
@@ -486,14 +326,14 @@ const LEVELS = [
   { en: 'milk',       tr: 'süd',          wrong: 'su',         wen: 'water',       def: 'white drink from cows' },
   { en: 'pasta',      tr: 'makaron',      wrong: 'düyü',       wen: 'rice',        def: 'Italian food from flour' },
   { en: 'pizza',      tr: 'pizza',        wrong: 'burger',     wen: 'burger',      def: 'round Italian food with cheese' },
-  { en: 'sandwich',   tr: 'sendviç',      wrong: 'pizza',      wen: 'pizza',       def: 'bread with food inside' },
+  { en: 'sandwich',   tr: 'sendviç',      wrong: 'tort',       wen: 'cake',        def: 'bread with food inside' },
   { en: 'soup',       tr: 'şorba',        wrong: 'salat',      wen: 'salad',       def: 'hot liquid food' },
-  { en: 'dish',       tr: 'təam',         wrong: 'dadsız',     wen: 'tasteless',   def: 'one kind of food' },
+  { en: 'dish',       tr: 'təam',         wrong: 'içki',       wen: 'drink',       def: 'one kind of food' },
   { en: 'food',       tr: 'qida',         wrong: 'içki',       wen: 'drink',       def: 'things we eat' },
   { en: 'snack',      tr: 'qəlyanaltı',   wrong: 'nahar',      wen: 'lunch',       def: 'small food between meals' },
   { en: 'butter',     tr: 'kərə yağı',    wrong: 'pendir',     wen: 'cheese',      def: 'yellow food from milk' },
   { en: 'diet',       tr: 'pəhriz',       wrong: 'resept',     wen: 'recipe',      def: 'special food plan' },
-  { en: 'cooking',    tr: 'bişirmək',     wrong: 'yemək',      wen: 'to eat',      def: 'making food' },
+  { en: 'cooking',    tr: 'bişirmə',      wrong: 'yemək',      wen: 'to eat',      def: 'making food' },
   { en: 'recipe',     tr: 'resept',       wrong: 'menyu',      wen: 'menu',        def: 'instructions to make food' },
 ],
 
@@ -501,14 +341,14 @@ const LEVELS = [
 [
   { en: 'beer',        tr: 'pivə',           wrong: 'şərab',        wen: 'wine',          def: 'alcoholic drink from grain' },
   { en: 'coffee',      tr: 'qəhvə',          wrong: 'çay',          wen: 'tea',           def: 'hot brown drink' },
-  { en: 'juice',       tr: 'meyvə şirəsi',    wrong: 'qazlı su',     wen: 'soda',          def: 'drink from fruit' },
+  { en: 'juice',       tr: 'meyvə şirəsi',   wrong: 'qazlı su',     wen: 'soda',          def: 'drink from fruit' },
   { en: 'milk',        tr: 'süd',            wrong: 'qəhvə',        wen: 'coffee',        def: 'white drink from cows' },
   { en: 'tea',         tr: 'çay',            wrong: 'qəhvə',        wen: 'coffee',        def: 'hot drink from leaves' },
   { en: 'water',       tr: 'su',             wrong: 'şirə',         wen: 'juice',         def: 'clear liquid we drink' },
   { en: 'wine',        tr: 'şərab',          wrong: 'pivə',         wen: 'beer',          def: 'alcoholic drink from grapes' },
   { en: 'breakfast',   tr: 'səhər yeməyi',   wrong: 'axşam yeməyi', wen: 'dinner',        def: 'morning meal' },
   { en: 'dinner',      tr: 'axşam yeməyi',   wrong: 'səhər yeməyi', wen: 'breakfast',     def: 'evening meal' },
-  { en: 'lunch',       tr: 'nahar',          wrong: 'başlatmaq',    wen: 'start',         def: 'midday meal' },
+  { en: 'lunch',       tr: 'nahar',          wrong: 'axşam yeməyi', wen: 'dinner',        def: 'midday meal' },
   { en: 'meal',        tr: 'yemək',          wrong: 'qəlyanaltı',   wen: 'snack',         def: 'food we eat at one time' },
   { en: 'menu',        tr: 'menyu',          wrong: 'resept',       wen: 'recipe',        def: 'list of foods in a restaurant' },
   { en: 'to drink',    tr: 'içmək',          wrong: 'yemək',        wen: 'to eat',        def: 'to take liquid' },
@@ -520,111 +360,32 @@ const LEVELS = [
   { en: 'thirsty',     tr: 'susamış',        wrong: 'ac',           wen: 'hungry',        def: 'wanting water' },
   { en: 'delicious',   tr: 'dadlı',          wrong: 'dadsız',       wen: 'tasteless',     def: 'very good to eat' },
 ],
-     // ─────────────────────── EXAM — foods ───────────────────────
+
+// ─────────────────────── EXAM — foods ───────────────────────
 {
   sentences: [
-  {
-    en: "I eat an ____ every day.",
-    tr: 'apple',
-    wrong: 'chicken'
-  },
-  {
-    en: "She likes ____ with milk.",
-    tr: 'banana',
-    wrong: 'salt'
-  },
-  {
-    en: "The ____ is orange and long.",
-    tr: 'carrot',
-    wrong: 'bread'
-  },
-  {
-    en: "I like fresh ____ in summer.",
-    tr: 'fruit',
-    wrong: 'milk'
-  },
-  {
-    en: "This ____ is red and round.",
-    tr: 'tomato',
-    wrong: 'rice'
-  },
-  {
-    en: "We eat ____ with butter.",
-    tr: 'bread',
-    wrong: 'water'
-  },
-  {
-    en: "I drink ____ in the morning.",
-    tr: 'milk',
-    wrong: 'cake'
-  },
-  {
-    en: "My mother cooks ____ for lunch.",
-    tr: 'chicken',
-    wrong: 'coffee'
-  },
-  {
-    en: "Please give me a glass of ____.",
-    tr: 'water',
-    wrong: 'banana'
-  },
-  {
-    en: "We eat ____ in the morning.",
-    tr: 'breakfast',
-    wrong: 'dinner'
-  },
-  {
-    en: "I have ____ at school at 12.",
-    tr: 'lunch',
-    wrong: 'breakfast'
-  },
-  {
-    en: "We have ____ at 8 o'clock.",
-    tr: 'dinner',
-    wrong: 'lunch'
-  },
-  {
-    en: "I am very ____. I want food.",
-    tr: 'hungry',
-    wrong: 'thirsty'
-  },
-  {
-    en: "She is ____. She wants water.",
-    tr: 'thirsty',
-    wrong: 'hungry'
-  },
-  {
-    en: "This pizza is very ____.",
-    tr: 'delicious',
-    wrong: 'carrot'
-  },
-  {
-    en: "I want to ____ some cake.",
-    tr: 'eat',
-    wrong: 'drink'
-  },
-  {
-    en: "We ____ tea every evening.",
-    tr: 'drink',
-    wrong: 'eat'
-  },
-  {
-    en: "My favourite ____ is chocolate.",
-    tr: 'cake',
-    wrong: 'tomato'
-  },
-  {
-    en: "I like ____ with fish.",
-    tr: 'rice',
-    wrong: 'apple'
-  },
-  {
-    en: "She drinks ____ in the morning.",
-    tr: 'coffee',
-    wrong: 'carrot'
-  }
-],
-  },
+    { en: "I eat an ____ every day.",              tr: 'apple',      wrong: 'chicken'   },
+    { en: "She eats a ____ every morning.",        tr: 'banana',     wrong: 'salt'      },
+    { en: "The ____ is orange and long.",          tr: 'carrot',     wrong: 'bread'     },
+    { en: "I like fresh ____ in summer.",          tr: 'fruit',      wrong: 'milk'      },
+    { en: "This ____ is red and round.",           tr: 'tomato',     wrong: 'rice'      },
+    { en: "We eat ____ with butter.",              tr: 'bread',      wrong: 'water'     },
+    { en: "I drink ____ in the morning.",          tr: 'milk',       wrong: 'cake'      },
+    { en: "My mother cooks ____ for lunch.",       tr: 'chicken',    wrong: 'coffee'    },
+    { en: "Please give me a glass of ____.",       tr: 'water',      wrong: 'banana'    },
+    { en: "We eat ____ in the morning.",           tr: 'breakfast',  wrong: 'dinner'    },
+    { en: "I have ____ at school at 12.",          tr: 'lunch',      wrong: 'breakfast' },
+    { en: "We have ____ at 8 o'clock.",            tr: 'dinner',     wrong: 'lunch'     },
+    { en: "I am very ____. I want food.",          tr: 'hungry',     wrong: 'thirsty'   },
+    { en: "She is ____. She wants water.",         tr: 'thirsty',    wrong: 'hungry'    },
+    { en: "This pizza is very ____.",              tr: 'delicious',  wrong: 'carrot'    },
+    { en: "I want to ____ some cake.",             tr: 'eat',        wrong: 'drink'     },
+    { en: "We ____ tea every evening.",            tr: 'drink',      wrong: 'eat'       },
+    { en: "My favourite ____ is chocolate.",       tr: 'cake',       wrong: 'tomato'    },
+    { en: "I like ____ with fish.",                tr: 'rice',       wrong: 'apple'     },
+    { en: "She drinks ____ in the morning.",       tr: 'coffee',     wrong: 'carrot'    },
+  ],
+},
 
 // ─────────────────────── QUIZ 13 — Rənglər / Colours ───────────────────────
 [
@@ -646,9 +407,10 @@ const LEVELS = [
   { en: 'bright',    tr: 'parlaq',      wrong: 'solğun',     wen: 'pale',        def: 'very strong colour' },
   { en: 'pale',      tr: 'solğun',      wrong: 'parlaq',     wen: 'bright',      def: 'very light colour' },
   { en: 'deep',      tr: 'dərin',       wrong: 'açıq',       wen: 'light',       def: 'strong and dark colour' },
-  { en: 'shade',     tr: 'kölgə',       wrong: 'rəngsiz',    wen: 'colourless',  def: 'a type of colour' },
+  { en: 'shade',     tr: 'çalar',       wrong: 'rəngsiz',    wen: 'colourless',  def: 'a type of colour' },
   { en: 'colourful', tr: 'rəngli',      wrong: 'tünd',       wen: 'dark',        def: 'with many colours' },
 ],
+
 // ─────────────────────── QUIZ 14 — Rəqəmlər 1 / Numbers 1–20 ───────────────────────
 [
   { en: 'one',       tr: 'bir',         wrong: 'iki',        wen: 'two',         def: 'the number 1' },
@@ -696,110 +458,33 @@ const LEVELS = [
   { en: 'once',      tr: 'bir dəfə',    wrong: 'iki dəfə',   wen: 'twice',       def: 'one time' },
   { en: 'twice',     tr: 'iki dəfə',    wrong: 'bir dəfə',   wen: 'once',        def: 'two times' },
 ],
-      
+
+// ─────────────────────── EXAM — Colours & Numbers ───────────────────────
 {
   sentences: [
-  {
-    en: "My car is ____.",
-    tr: 'black',
-    wrong: 'first'
-  },
-  {
-    en: "The sky is ____.",
-    tr: 'blue',
-    wrong: 'thirty'
-  },
-  {
-    en: "Grass is ____.",
-    tr: 'green',
-    wrong: 'second'
-  },
-  {
-    en: "This apple is ____.",
-    tr: 'red',
-    wrong: 'hundred'
-  },
-  {
-    en: "She has ____ hair.",
-    tr: 'blonde',
-    wrong: 'fifth'
-  },
-  {
-    en: "I have ____ books.",
-    tr: 'two',
-    wrong: 'purple'
-  },
-  {
-    en: "He is ____ years old.",
-    tr: 'ten',
-    wrong: 'yellow'
-  },
-  {
-    en: "This is my ____ car.",
-    tr: 'first',
-    wrong: 'blue'
-  },
-  {
-    en: "I want ____ ice cream.",
-    tr: 'one',
-    wrong: 'dark'
-  },
-  {
-    en: "The sun is ____.",
-    tr: 'yellow',
-    wrong: 'third'
-  },
-  {
-    en: "She wears a ____ dress.",
-    tr: 'pink',
-    wrong: 'twenty'
-  },
-  {
-    en: "There are ____ students.",
-    tr: 'fifteen',
-    wrong: 'white'
-  },
-  {
-    en: "My shirt is ____.",
-    tr: 'white',
-    wrong: 'quarter'
-  },
-  {
-    en: "This is the ____ time.",
-    tr: 'second',
-    wrong: 'green'
-  },
-  {
-    en: "I see a ____ cat.",
-    tr: 'black',
-    wrong: 'fifty'
-  },
-  {
-    en: "He lives on the ____ floor.",
-    tr: 'third',
-    wrong: 'red'
-  },
-  {
-    en: "The light is very ____.",
-    tr: 'bright',
-    wrong: 'twice'
-  },
-  {
-    en: "I have ____ apples.",
-    tr: 'three',
-    wrong: 'purple'
-  },
-  {
-    en: "Her bag is ____.",
-    tr: 'brown',
-    wrong: 'once'
-  },
-  {
-    en: "I drink ____ glasses of water.",
-    tr: 'two',
-    wrong: 'colourful'
-  }
-],},
+    { en: "My car is ____.",                       tr: 'black',     wrong: 'first'     },
+    { en: "The sky is ____.",                      tr: 'blue',      wrong: 'thirty'    },
+    { en: "Grass is ____.",                        tr: 'green',     wrong: 'second'    },
+    { en: "This apple is ____.",                   tr: 'red',       wrong: 'hundred'   },
+    { en: "She has ____ hair.",                    tr: 'blonde',    wrong: 'fifth'     },
+    { en: "I have ____ books.",                    tr: 'two',       wrong: 'purple'    },
+    { en: "He is ____ years old.",                 tr: 'ten',       wrong: 'yellow'    },
+    { en: "This is my ____ car.",                  tr: 'first',     wrong: 'blue'      },
+    { en: "I want ____ ice cream.",                tr: 'one',       wrong: 'dark'      },
+    { en: "The sun is ____.",                      tr: 'yellow',    wrong: 'third'     },
+    { en: "She wears a ____ dress.",               tr: 'pink',      wrong: 'twenty'    },
+    { en: "There are ____ students.",              tr: 'fifteen',   wrong: 'white'     },
+    { en: "My shirt is ____.",                     tr: 'white',     wrong: 'quarter'   },
+    { en: "This is the ____ time.",                tr: 'second',    wrong: 'green'     },
+    { en: "I see a ____ cat.",                     tr: 'black',     wrong: 'fifty'     },
+    { en: "He lives on the ____ floor.",           tr: 'third',     wrong: 'red'       },
+    { en: "The light is very ____.",               tr: 'bright',    wrong: 'twice'     },
+    { en: "I have ____ apples.",                   tr: 'three',     wrong: 'purple'    },
+    { en: "Her bag is ____.",                      tr: 'brown',     wrong: 'once'      },
+    { en: "I drink ____ glasses of water.",        tr: 'two',       wrong: 'colourful' },
+  ],
+},
+
 // ─────────────────────── QUIZ 16 — Ev 1 / Rooms & Furniture ───────────────────────
 [
   { en: 'apartment', tr: 'mənzil',       wrong: 'ev',           wen: 'house',       def: 'a home in a big building' },
@@ -826,27 +511,28 @@ const LEVELS = [
 
 // ─────────────────────── QUIZ 17 — Ev 2 / Household objects ───────────────────────
 [
-  { en: 'bag',       tr: 'çanta',        wrong: 'qutu',         wen: 'box',         def: 'you carry things in it' },
-  { en: 'bottle',    tr: 'şüşə',         wrong: 'stəkan',       wen: 'glass',       def: 'container for drinks' },
-  { en: 'box',       tr: 'qutu',         wrong: 'çanta',        wen: 'bag',         def: 'hard container' },
-  { en: 'cup',       tr: 'fincan',       wrong: 'stəkan',       wen: 'glass',       def: 'small container with handle for hot drinks' },
-  { en: 'garden',    tr: 'bağça',        wrong: 'həyət',        wen: 'yard',        def: 'place with plants outside house' },
-  { en: 'glass',     tr: 'stəkan',       wrong: 'fincan',       wen: 'cup',         def: 'container for cold drinks' },
-  { en: 'key',       tr: 'açar',         wrong: 'qıfıl',        wen: 'lock',        def: 'opens a door' },
-  { en: 'lamp',      tr: 'lampa',        wrong: 'pəncərə',      wen: 'window',      def: 'gives light' },
-  { en: 'machine',   tr: 'maşın',        wrong: 'alət',         wen: 'tool',        def: 'device that does work' },
-  { en: 'paper',     tr: 'kağız',        wrong: 'dəftər',       wen: 'notebook',    def: 'thin material for writing' },
-  { en: 'pen',       tr: 'qələm',        wrong: 'karandaş',     wen: 'pencil',      def: 'writes with ink' },
-  { en: 'pencil',    tr: 'karandaş',     wrong: 'qələm',        wen: 'pen',         def: 'writes with graphite' },
-  { en: 'picture',   tr: 'şəkil',        wrong: 'poster',       wen: 'poster',      def: 'photo or painting' },
-  { en: 'plant',     tr: 'bitki',        wrong: 'çiçək',        wen: 'flower',      def: 'living thing in a pot' },
-  { en: 'shower',    tr: 'duş',          wrong: 'vanna',        wen: 'bath',        def: 'you wash under it' },
-  { en: 'window',    tr: 'pəncərə',      wrong: 'qapı',         wen: 'door',        def: 'glass in the wall' },
+  { en: 'bag',       tr: 'çanta',         wrong: 'qutu',          wen: 'box',         def: 'you carry things in it' },
+  { en: 'bottle',    tr: 'şüşə',          wrong: 'stəkan',        wen: 'glass',       def: 'container for drinks' },
+  { en: 'box',       tr: 'qutu',          wrong: 'çanta',         wen: 'bag',         def: 'hard container' },
+  { en: 'cup',       tr: 'fincan',        wrong: 'stəkan',        wen: 'glass',       def: 'small container with handle for hot drinks' },
+  { en: 'garden',    tr: 'bağça',         wrong: 'həyət',         wen: 'yard',        def: 'place with plants outside house' },
+  { en: 'glass',     tr: 'stəkan',        wrong: 'fincan',        wen: 'cup',         def: 'container for cold drinks' },
+  { en: 'key',       tr: 'açar',          wrong: 'qıfıl',         wen: 'lock',        def: 'opens a door' },
+  { en: 'lamp',      tr: 'lampa',         wrong: 'pəncərə',       wen: 'window',      def: 'gives light' },
+  { en: 'machine',   tr: 'maşın',         wrong: 'alət',          wen: 'tool',        def: 'device that does work' },
+  { en: 'paper',     tr: 'kağız',         wrong: 'dəftər',        wen: 'notebook',    def: 'thin material for writing' },
+  { en: 'pen',       tr: 'qələm',         wrong: 'karandaş',      wen: 'pencil',      def: 'writes with ink' },
+  { en: 'pencil',    tr: 'karandaş',      wrong: 'qələm',         wen: 'pen',         def: 'writes with graphite' },
+  { en: 'picture',   tr: 'şəkil',         wrong: 'xəritə',        wen: 'map',         def: 'photo or painting' },
+  { en: 'plant',     tr: 'bitki',         wrong: 'çiçək',         wen: 'flower',      def: 'living thing in a pot' },
+  { en: 'shower',    tr: 'duş',           wrong: 'vanna',         wen: 'bath',        def: 'you wash under it' },
+  { en: 'window',    tr: 'pəncərə',       wrong: 'qapı',          wen: 'door',        def: 'glass in the wall' },
   { en: 'upstairs',  tr: 'üst mərtəbədə', wrong: 'alt mərtəbədə', wen: 'downstairs',  def: 'on a higher floor' },
   { en: 'downstairs',tr: 'alt mərtəbədə', wrong: 'üst mərtəbədə', wen: 'upstairs',    def: 'on a lower floor' },
-  { en: 'inside',    tr: 'içəridə',      wrong: 'çöldə',        wen: 'outside',     def: 'in the house' },
-  { en: 'outside',   tr: 'çöldə',        wrong: 'içəridə',      wen: 'inside',      def: 'not in the house' },
+  { en: 'inside',    tr: 'içəridə',       wrong: 'çöldə',         wen: 'outside',     def: 'in the house' },
+  { en: 'outside',   tr: 'çöldə',         wrong: 'içəridə',       wen: 'inside',      def: 'not in the house' },
 ],
+
 // ─────────────────────── QUIZ 18 — Şəhər 1 / City buildings ───────────────────────
 [
   { en: 'airport',    tr: 'hava limanı',  wrong: 'stansiya',     wen: 'station',     def: 'place for planes' },
@@ -895,125 +581,46 @@ const LEVELS = [
   { en: 'bottom',    tr: 'dib',          wrong: 'dayaz',        wen: 'top',         def: 'lowest part' },
 ],
 
+// ─────────────────────── EXAM — Home & City ───────────────────────
 {
   sentences: [
-  {
-    en: "I sleep in my ____.",
-    tr: 'bed',
-    wrong: 'kitchen'
-  },
-  {
-    en: "We cook in the ____.",
-    tr: 'kitchen',
-    wrong: 'bathroom'
-  },
-  {
-    en: "I take a shower in the ____.",
-    tr: 'bathroom',
-    wrong: 'bed'
-  },
-  {
-    en: "My books are on the ____.",
-    tr: 'desk',
-    wrong: 'window'
-  },
-  {
-    en: "Please open the ____.",
-    tr: 'door',
-    wrong: 'lamp'
-  },
-  {
-    en: "I watch TV in the living ____.",
-    tr: 'room',
-    wrong: 'floor'
-  },
-  {
-    en: "She sits on the ____.",
-    tr: 'sofa',
-    wrong: 'toilet'
-  },
-  {
-    en: "There is a big ____ in the garden.",
-    tr: 'tree',
-    wrong: 'chair'
-  },
-  {
-    en: "I live in a small ____.",
-    tr: 'apartment',
-    wrong: 'hospital'
-  },
-  {
-    en: "This is my ____.",
-    tr: 'house',
-    wrong: 'school'
-  },
-  {
-    en: "I drink water from a ____.",
-    tr: 'glass',
-    wrong: 'bed'
-  },
-  {
-    en: "Turn on the ____ please.",
-    tr: 'lamp',
-    wrong: 'door'
-  },
-  {
-    en: "The shop is in the city ____.",
-    tr: 'centre',
-    wrong: 'bedroom'
-  },
-  {
-    en: "I go to school by ____.",
-    tr: 'bus',
-    wrong: 'chair'
-  },
-  {
-    en: "We buy food in the ____.",
-    tr: 'supermarket',
-    wrong: 'bathroom'
-  },
-  {
-    en: "She lives in a small ____.",
-    tr: 'village',
-    wrong: 'desk'
-  },
-  {
-    en: "The doctor works in the ____.",
-    tr: 'hospital',
-    wrong: 'kitchen'
-  },
-  {
-    en: "I read books in the ____.",
-    tr: 'library',
-    wrong: 'toilet'
-  },
-  {
-    en: "We eat dinner in the ____.",
-    tr: 'restaurant',
-    wrong: 'bed'
-  },
-  {
-    en: "This is my favourite ____.",
-    tr: 'room',
-    wrong: 'station'
-  }
-],
-   },   
+    { en: "I sleep in my ____.",                   tr: 'bed',         wrong: 'kitchen'   },
+    { en: "We cook in the ____.",                  tr: 'kitchen',     wrong: 'bathroom'  },
+    { en: "I take a shower in the ____.",          tr: 'bathroom',    wrong: 'bed'       },
+    { en: "My books are on the ____.",             tr: 'desk',        wrong: 'window'    },
+    { en: "Please open the ____.",                 tr: 'door',        wrong: 'lamp'      },
+    { en: "I watch TV in the living ____.",        tr: 'room',        wrong: 'floor'     },
+    { en: "She sits on the ____.",                 tr: 'sofa',        wrong: 'toilet'    },
+    { en: "There is a beautiful ____ in the pot.", tr: 'plant',       wrong: 'chair'     },
+    { en: "I live in a small ____.",               tr: 'apartment',   wrong: 'hospital'  },
+    { en: "I drink water from a ____.",            tr: 'glass',       wrong: 'bed'       },
+    { en: "Turn on the ____ please.",              tr: 'lamp',        wrong: 'door'      },
+    { en: "The shop is in the city ____.",         tr: 'centre',      wrong: 'bedroom'   },
+    { en: "I live on the second ____.",            tr: 'floor',       wrong: 'chair'     },
+    { en: "We buy food in the ____.",              tr: 'supermarket', wrong: 'bathroom'  },
+    { en: "She lives in a small ____.",            tr: 'village',     wrong: 'desk'      },
+    { en: "The doctor works in the ____.",         tr: 'hospital',    wrong: 'kitchen'   },
+    { en: "I read books in the ____.",             tr: 'library',     wrong: 'toilet'    },
+    { en: "We eat dinner in the ____.",            tr: 'restaurant',  wrong: 'bed'       },
+    { en: "This is my ____.",                      tr: 'house',       wrong: 'school'    },
+    { en: "This is my favourite ____.",            tr: 'room',        wrong: 'station'   },
+  ],
+},
 // ─────────────────────── QUIZ 20 — Təbiət / Nature & Geography ───────────────────────
 [
   { en: 'beach',    tr: 'çimərlik',      wrong: 'ada',         wen: 'island',      def: 'sandy place by the sea' },
-  { en: 'east',     tr: 'şərq',          wrong: 'qərb',        wen: 'west',        def: 'direction of sunrise' },
+  { en: 'east',     tr: 'şərq',          wrong: 'şimal',       wen: 'north',       def: 'direction of sunrise' },
   { en: 'island',   tr: 'ada',           wrong: 'yarımada',    wen: 'peninsula',   def: 'land with water all around' },
-  { en: 'land',     tr: 'torpaq / ərazi', wrong: 'dəniz',      wen: 'sea',         def: 'ground, not water' },
+  { en: 'land',     tr: 'torpaq',        wrong: 'dəniz',      wen: 'sea',         def: 'ground, not water' },
   { en: 'mountain', tr: 'dağ',           wrong: 'təpə',        wen: 'hill',        def: 'very high land' },
   { en: 'north',    tr: 'şimal',         wrong: 'cənub',       wen: 'south',       def: 'direction to the north pole' },
   { en: 'river',    tr: 'çay',           wrong: 'göl',         wen: 'lake',        def: 'long water that moves' },
   { en: 'road',     tr: 'yol',           wrong: 'küçə',        wen: 'street',      def: 'way for cars' },
   { en: 'sea',      tr: 'dəniz',         wrong: 'okean',       wen: 'ocean',       def: 'big salt water' },
   { en: 'south',    tr: 'cənub',         wrong: 'şimal',       wen: 'north',       def: 'direction opposite to north' },
-  { en: 'west',     tr: 'qərb',          wrong: 'şərq',        wen: 'east',        def: 'direction of sunset' },
+  { en: 'west',     tr: 'qərb',          wrong: 'cənub',       wen: 'north',        def: 'direction of sunset' },
   { en: 'air',      tr: 'hava',          wrong: 'külək',       wen: 'wind',        def: 'what we breathe' },
-  { en: 'fire',     tr: 'od / atəş',     wrong: 'su',          wen: 'water',       def: 'hot and burns' },
+  { en: 'fire',     tr: 'od',            wrong: 'su',          wen: 'water',       def: 'hot and burns' },
   { en: 'flower',   tr: 'çiçək',         wrong: 'ağac',        wen: 'tree',        def: 'beautiful plant with colours' },
   { en: 'ice',      tr: 'buz',           wrong: 'qar',         wen: 'snow',        def: 'frozen water' },
   { en: 'light',    tr: 'işıq',          wrong: 'kölgə',       wen: 'shadow',      def: 'makes things bright' },
@@ -1039,18 +646,18 @@ const LEVELS = [
   { en: 'rabbit',   tr: 'dovşan',        wrong: 'siçan',       wen: 'mouse',       def: 'animal with long ears' },
   { en: 'sheep',    tr: 'qoyun',         wrong: 'keçi',        wen: 'goat',        def: 'farm animal with wool' },
   { en: 'snake',    tr: 'ilan',          wrong: 'kərtənkələ',  wen: 'lizard',      def: 'long animal without legs' },
-  { en: 'weather',  tr: 'hava / iqlim',  wrong: 'mənzərə',     wen: 'view',        def: 'sun, rain, wind etc.' },
+  { en: 'weather',  tr: 'hava',          wrong: 'mənzərə',     wen: 'view',        def: 'sun, rain, wind etc.' },
   { en: 'water',    tr: 'su',            wrong: 'hava',        wen: 'air',         def: 'clear liquid we drink' },
-  { en: 'rock',     tr: 'qaya / daş',    wrong: 'torpaq',      wen: 'soil',        def: 'hard stone' },
-  { en: 'wood',     tr: 'taxta / meşə',  wrong: 'daş',         wen: 'stone',       def: 'material from trees' },
-  { en: 'grass',    tr: 'ot / çəmən',    wrong: 'ağac',        wen: 'tree',        def: 'green plant on ground' },
+  { en: 'rock',     tr: 'qaya',          wrong: 'torpaq',      wen: 'soil',        def: 'hard stone' },
+  { en: 'wood',     tr: 'taxta',         wrong: 'daş',         wen: 'stone',       def: 'material from trees' },
+  { en: 'grass',    tr: 'ot',            wrong: 'ağac',        wen: 'tree',        def: 'green plant on ground' },
   { en: 'farm',     tr: 'ferma',         wrong: 'bağça',       wen: 'garden',      def: 'place for animals and crops' },
 ],
 
 // ─────────────────────── QUIZ 22 — Nəqliyyat / Transport ───────────────────────
 [
   { en: 'bicycle',  tr: 'velosiped',     wrong: 'motosiklet',  wen: 'motorcycle',  def: 'two-wheel vehicle with pedals' },
-  { en: 'bike',     tr: 'velosiped / moto', wrong: 'avtomobil', wen: 'car',        def: 'short word for bicycle' },
+  { en: 'bike',     tr: 'motosiklet',    wrong: 'avtomobil',   wen: 'car',         def: 'short word for bicycle' },
   { en: 'boat',     tr: 'qayıq',         wrong: 'gəmi',        wen: 'ship',        def: 'small vehicle on water' },
   { en: 'bus',      tr: 'avtobus',       wrong: 'trolleybus',  wen: 'trolleybus',  def: 'big vehicle for many people' },
   { en: 'car',      tr: 'avtomobil',     wrong: 'avtobus',     wen: 'bus',         def: 'small vehicle for family' },
@@ -1059,15 +666,15 @@ const LEVELS = [
   { en: 'taxi',     tr: 'taksi',         wrong: 'avtobus',     wen: 'bus',         def: 'car for paying passengers' },
   { en: 'train',    tr: 'qatar',         wrong: 'metro',       wen: 'metro',       def: 'long vehicle on rails' },
   { en: 'driving',  tr: 'sürücülük',     wrong: 'uçuş',        wen: 'flying',      def: 'controlling a car' },
-  { en: 'traffic',  tr: 'nəqliyyat / tıxac', wrong: 'yol',     wen: 'road',        def: 'cars on the street' },
-  { en: 'trip',     tr: 'səfər / gəzinti', wrong: 'yol',       wen: 'road',        def: 'short journey' },
+  { en: 'traffic',  tr: 'nəqliyyat',     wrong: 'yol',         wen: 'road',        def: 'cars on the street' },
+  { en: 'trip',     tr: 'səfər',         wrong: 'istirahət',   wen: 'next',        def: 'short journey' },
   { en: 'journey',  tr: 'səyahət',       wrong: 'gəzinti',     wen: 'walk',        def: 'long travel' },
   { en: 'travel',   tr: 'səyahət etmək', wrong: 'uçmaq',       wen: 'to fly',      def: 'to go to another place' },
   { en: 'ticket',   tr: 'bilet',         wrong: 'pasport',     wen: 'passport',    def: 'paper to travel' },
-  { en: 'passport', tr: 'pasport',       wrong: 'bilet',       wen: 'ticket',      def: 'official document for travel' },
+  { en: 'passport', tr: 'vəsiqə',        wrong: 'bilet',       wen: 'ticket',      def: 'official document for travel' },
   { en: 'to drive', tr: 'sürmək',        wrong: 'uçmaq',       wen: 'to fly',      def: 'to control a car' },
   { en: 'to fly',   tr: 'uçmaq',         wrong: 'sürmək',      wen: 'to drive',    def: 'to move in the air' },
-  { en: 'to ride',  tr: 'minmək / sürmək', wrong: 'gətirmək',  wen: 'to bring',    def: 'to go on a bike or horse' },
+  { en: 'to ride',  tr: 'minmək',        wrong: 'gətirmək',  wen: 'to bring',    def: 'to go on a bike or horse' },
   { en: 'to travel',tr: 'səyahət etmək', wrong: 'köçmək',      wen: 'to move',     def: 'to go from one place to another' },
 ],
 
@@ -1076,19 +683,19 @@ const LEVELS = [
   { en: 'boot',     tr: 'çəkmə',         wrong: 'ayaqqabı',    wen: 'shoe',        def: 'tall footwear' },
   { en: 'coat',     tr: 'palto',         wrong: 'gödəkçə',     wen: 'jacket',      def: 'warm long outer clothing' },
   { en: 'dress',    tr: 'don',           wrong: 'ətək',        wen: 'skirt',       def: 'one-piece clothing for girls' },
-  { en: 'hat',      tr: 'papaq / şlyapa', wrong: 'şal',        wen: 'scarf',       def: 'covers your head' },
+  { en: 'hat',      tr: 'şlyapa',        wrong: 'şal',        wen: 'scarf',       def: 'covers your head' },
   { en: 'jacket',   tr: 'gödəkçə',       wrong: 'palto',       wen: 'coat',        def: 'short outer clothing' },
   { en: 'jeans',    tr: 'cins şalvar',   wrong: 'şalvar',      wen: 'trousers',    def: 'blue pants' },
   { en: 'shirt',    tr: 'köynək',        wrong: 'pencək',      wen: 'suit',        def: 'top clothing with buttons' },
   { en: 'shoe',     tr: 'ayaqqabı',      wrong: 'çəkmə',       wen: 'boot',        def: 'footwear' },
   { en: 'skirt',    tr: 'ətək',          wrong: 'don',         wen: 'dress',       def: 'clothing from waist down' },
   { en: 'sweater',  tr: 'sviter',        wrong: 'köynək',      wen: 'shirt',       def: 'warm wool top' },
-  { en: 'T-shirt',  tr: 'futbolka',      wrong: 'köynək',      wen: 'shirt',       def: 'casual short-sleeve top' },
+  { en: 'T-shirt',  tr: 'qısaqol köynək',      wrong: 'qalstuk',      wen: 'suit',       def: 'casual short-sleeve top' },
   { en: 'trousers', tr: 'şalvar',        wrong: 'cins şalvar', wen: 'jeans',       def: 'pants' },
   { en: 'umbrella', tr: 'çətir',         wrong: 'papaq',       wen: 'hat',         def: 'protects from rain' },
   { en: 'watch',    tr: 'saat',          wrong: 'üzük',        wen: 'ring',        def: 'tells time on your wrist' },
-  { en: 'clothes',  tr: 'geyim / paltar', wrong: 'aksesuar',   wen: 'accessory',   def: 'things you wear' },
-  { en: 'style',    tr: 'üslub / stil',  wrong: 'moda',        wen: 'fashion',     def: 'way of dressing' },
+  { en: 'clothes',  tr: 'paltar',        wrong: 'aksesuar',   wen: 'accessory',   def: 'things you wear' },
+  { en: 'style',    tr: 'tərz',          wrong: 'moda',        wen: 'fashion',     def: 'way of dressing' },
   { en: 'pair',     tr: 'cüt',           wrong: 'ədəd',        wen: 'piece',       def: 'two things together' },
   { en: 'to wear',  tr: 'geymək',        wrong: 'çıxarmaq',    wen: 'to take off', def: 'to put on clothes' },
   { en: 'to dress', tr: 'geyindirmək',   wrong: 'soyundırmaq', wen: 'to undress',  def: 'to put clothes on someone' },
@@ -1260,7 +867,7 @@ const LEVELS = [
   { en: 'second',    tr: 'saniyə',          wrong: 'dəqiqə',        wen: 'minute',      def: 'very short time' },
   { en: 'birthday',  tr: 'ad günü',         wrong: 'bayram',        wen: 'holiday',     def: 'your birth day' },
   { en: 'festival',  tr: 'festival',        wrong: 'konsert',       wen: 'concert',     def: 'big celebration' },
-  { en: 'ago',       tr: 'əvvəl',           wrong: 'sonra',    wen: 'later',       def: 'in the past' },
+  { en: 'ago',       tr: 'əvvəl',           wrong: 'sonra',         wen: 'later',       def: 'in the past' },
   { en: 'now',       tr: 'indi',            wrong: 'sonra',         wen: 'later',       def: 'at this moment' },
   { en: 'then',      tr: 'sonra',           wrong: 'indi',          wen: 'now',         def: 'at that time' },
   { en: 'soon',      tr: 'tezliklə',        wrong: 'gec',           wen: 'late',        def: 'in a short time' },
@@ -1396,15 +1003,15 @@ const LEVELS = [
   { en: 'free',       tr: 'pulsuz',          wrong: 'bahalı',      wen: 'expensive',   def: 'costs nothing' },
   { en: 'rich',       tr: 'varlı',           wrong: 'kasıb',       wen: 'poor',        def: 'has a lot of money' },
   { en: 'poor',       tr: 'kasıb',           wrong: 'varlı',       wen: 'rich',        def: 'has little money' },
-  { en: 'market',     tr: 'bazar',           wrong: 'mağaza',      wen: 'shop',        def: 'outdoor place to buy things' },
+  { en: 'market',     tr: 'mağaza',          wrong: 'bazar',       wen: 'bazaar',        def: 'outdoor place to buy things' },
 ],
 // ─────────────────────── QUIZ 28 — Texnologiya / Technology ───────────────────────
 [
   { en: 'blog',       tr: 'bloq',           wrong: 'vebsayt',     wen: 'website',     def: 'personal online diary' },
   { en: 'camera',     tr: 'kamera',         wrong: 'foto',        wen: 'photo',       def: 'device to take pictures' },
-  { en: 'CD',         tr: 'CD disk',        wrong: 'DVD',         wen: 'DVD',         def: 'old round music disc' },
+  { en: 'CD',         tr: 'disk',           wrong: 'kaser',         wen: 'DVD',         def: 'old round music disc' },
   { en: 'computer',   tr: 'kompüter',       wrong: 'planşet',     wen: 'tablet',      def: 'machine for work and games' },
-  { en: 'DVD',        tr: 'DVD disk',       wrong: 'CD',          wen: 'CD',          def: 'disc for movies' },
+  { en: 'DVD',        tr: 'kaset',          wrong: 'disk',          wen: 'CD',          def: 'disc for movies' },
   { en: 'email',      tr: 'elektron poçt',  wrong: 'mesaj',       wen: 'message',     def: 'electronic letter' },
   { en: 'internet',   tr: 'internet',       wrong: 'şəbəkə',      wen: 'network',     def: 'world wide web' },
   { en: 'message',    tr: 'mesaj',          wrong: 'email',       wen: 'email',       def: 'short text' },
@@ -1434,10 +1041,10 @@ const LEVELS = [
   { en: 'news',       tr: 'xəbər',          wrong: 'məqalə',      wen: 'article',     def: 'new information' },
   { en: 'photo',      tr: 'şəkil',          wrong: 'video',       wen: 'video',       def: 'picture' },
   { en: 'pop',        tr: 'pop musiqi',     wrong: 'rok',         wen: 'rock',        def: 'popular modern music' },
-  { en: 'programme',  tr: 'veriliş',        wrong: 'kanal',   wen: 'channel',     def: 'TV show' },
+  { en: 'programme',  tr: 'veriliş',        wrong: 'kanal',       wen: 'channel',     def: 'TV show' },
   { en: 'radio',      tr: 'radio',          wrong: 'televiziya',  wen: 'television',  def: 'sound only device' },
-  { en: 'report',     tr: 'hesabat',        wrong: 'məqalə',     wen: 'article',     def: 'news story' },
-  { en: 'rock',       tr: 'rok musiqi',     wrong: 'pop',         wen: 'pop',         def: 'loud guitar music' },
+  { en: 'report',     tr: 'hesabat',        wrong: 'məqalə',      wen: 'article',     def: 'news story' },
+  { en: 'rock',       tr: 'rok musiqi',     wrong: 'pop musiqi',         wen: 'pop',         def: 'loud guitar music' },
   { en: 'show',       tr: 'veriliş',        wrong: 'konsert',     wen: 'concert',     def: 'television program' },
   { en: 'song',       tr: 'mahnı',          wrong: 'musiqi',      wen: 'music',       def: 'one piece of music with words' },
   { en: 'story',      tr: 'hekayə',         wrong: 'roman',       wen: 'novel',       def: 'short tale' },
@@ -1553,45 +1160,45 @@ const LEVELS = [
 // ─────────────────────── QUIZ 30 — Məktəb 1 / School & Study ───────────────────────
 [
   { en: 'answer',     tr: 'cavab',                 wrong: 'sual',           wen: 'question',      def: 'what you say after a question' },
-  { en: 'class',      tr: 'dərs',         wrong: 'kurs',           wen: 'course',        def: 'group of students' },
-  { en: 'classroom',  tr: 'sinif otağı',          wrong: 'laboratoriya',   wen: 'laboratory',    def: 'room where you have lessons' },
+  { en: 'class',      tr: 'sinif',                  wrong: 'kurs',           wen: 'course',        def: 'group of students' },
+  { en: 'classroom',  tr: 'sinif otağı',           wrong: 'laboratoriya',   wen: 'laboratory',    def: 'room where you have lessons' },
   { en: 'course',     tr: 'kurs',                  wrong: 'dərs',           wen: 'lesson',        def: 'long study program' },
-  { en: 'detail',     tr: 'təfərrüat',    wrong: 'nümunə',         wen: 'example',       def: 'small information' },
-  { en: 'dialogue',   tr: 'dialoq',               wrong: 'monoloq',        wen: 'monologue',     def: 'conversation between two people' },
+  { en: 'detail',     tr: 'təfərrüat',             wrong: 'nümunə',         wen: 'example',       def: 'small information' },
+  { en: 'dialogue',   tr: 'dialoq',                wrong: 'monoloq',        wen: 'monologue',     def: 'conversation between two people' },
   { en: 'dictionary', tr: 'lüğət',                 wrong: 'kitab',          wen: 'book',          def: 'book of words and meanings' },
-  { en: 'exam',       tr: 'imtahan',              wrong: 'test',           wen: 'test',          def: 'big important test' },
-  { en: 'example',    tr: 'nümunə',       wrong: 'tapşırıq',       wen: 'exercise',      def: 'something that shows how' },
-  { en: 'exercise',   tr: 'məşq',      wrong: 'nümunə',         wen: 'example',       def: 'practice task' },
-  { en: 'geography',  tr: 'coğrafiya',            wrong: 'tarix',          wen: 'history',       def: 'study of countries and maps' },
+  { en: 'exam',       tr: 'imtahan',               wrong: 'test',           wen: 'test',          def: 'big important test' },
+  { en: 'example',    tr: 'nümunə',                wrong: 'tapşırıq',       wen: 'exercise',      def: 'something that shows how' },
+  { en: 'exercise',   tr: 'məşq',                  wrong: 'nümunə',         wen: 'example',       def: 'practice task' },
+  { en: 'geography',  tr: 'coğrafiya',             wrong: 'tarix',          wen: 'history',       def: 'study of countries and maps' },
   { en: 'history',    tr: 'tarix',                 wrong: 'coğrafiya',      wen: 'geography',     def: 'study of the past' },
   { en: 'homework',   tr: 'ev tapşırığı',          wrong: 'sinif işi',      wen: 'classwork',     def: 'work you do at home' },
   { en: 'language',   tr: 'dil',                   wrong: 'ləhcə',          wen: 'dialect',       def: 'way of speaking' },
   { en: 'lesson',     tr: 'dərs',                  wrong: 'kurs',           wen: 'course',        def: 'one class period' },
-  { en: 'letter',     tr: 'hərf',        wrong: 'söz',            wen: 'word',          def: 'a, b, c or written message' },
+  { en: 'letter',     tr: 'hərf',                  wrong: 'söz',            wen: 'word',          def: 'a, b, c or written message' },
   { en: 'note',       tr: 'qeyd',                  wrong: 'məqalə',         wen: 'article',       def: 'short written message' },
   { en: 'page',       tr: 'səhifə',                wrong: 'paraqraf',       wen: 'paragraph',     def: 'one side of paper' },
   { en: 'paragraph',  tr: 'paraqraf',              wrong: 'cümlə',          wen: 'sentence',      def: 'group of sentences' },
-  { en: 'phrase',     tr: 'ifadə', wrong: 'cümlə',        wen: 'sentence',      def: 'group of words' },
+  { en: 'phrase',     tr: 'ifadə',                 wrong: 'cümlə',          wen: 'sentence',      def: 'group of words' },
 ],
       
 // ─────────────────────── QUIZ 31 — Məktəb 2 / More school words ───────────────────────
 [
-  { en: 'practice',   tr: 'təcrübə',       wrong: 'nəzəriyyə',      wen: 'theory',        def: 'doing something many times' },
+  { en: 'practice',   tr: 'təcrübə',              wrong: 'nəzəriyyə',      wen: 'theory',        def: 'doing something many times' },
   { en: 'question',   tr: 'sual',                 wrong: 'cavab',          wen: 'answer',        def: 'what you ask' },
   { en: 'reading',    tr: 'oxuma',                wrong: 'yazma',          wen: 'writing',       def: 'looking at words' },
   { en: 'rule',       tr: 'qayda',                wrong: 'istisna',        wen: 'exception',     def: 'what you must do' },
   { en: 'science',    tr: 'elm',                  wrong: 'tarix',          wen: 'history',       def: 'study of nature and experiments' },
   { en: 'section',    tr: 'bölmə',                wrong: 'paraqraf',       wen: 'paragraph',     def: 'part of a text' },
   { en: 'sentence',   tr: 'cümlə',                wrong: 'söz',            wen: 'word',          def: 'full idea with words' },
-  { en: 'spelling',   tr: 'yazılış', wrong: 'tələffüz',      wen: 'pronunciation', def: 'how to write words correctly' },
-  { en: 'subject',    tr: 'mövzu',         wrong: 'dərs',           wen: 'lesson',        def: 'school topic like math' },
+  { en: 'spelling',   tr: 'yazılış',              wrong: 'tələffüz',      wen: 'pronunciation', def: 'how to write words correctly' },
+  { en: 'subject',    tr: 'mövzu',                wrong: 'dərs',           wen: 'lesson',        def: 'school topic like math' },
   { en: 'test',       tr: 'test',                 wrong: 'imtahan',        wen: 'exam',          def: 'small check of knowledge' },
   { en: 'title',      tr: 'başlıq',               wrong: 'mövzu',          wen: 'topic',         def: 'name of a book or text' },
   { en: 'word',       tr: 'söz',                  wrong: 'hərf',           wen: 'letter',        def: 'unit of language' },
-  { en: 'writing',    tr: 'yazma',                wrong: 'oxuma',          wen: 'reading',       def: 'putting words on paper' },
+  { en: 'writing',    tr: 'yazmaq',               wrong: 'oxuma',          wen: 'reading',       def: 'putting words on paper' },
   { en: 'to learn',   tr: 'öyrənmək',             wrong: 'öyrətmək',       wen: 'to teach',      def: 'to get new knowledge' },
   { en: 'to read',    tr: 'oxumaq',               wrong: 'yazmaq',         wen: 'to write',      def: 'to look at text' },
-  { en: 'to study',   tr: 'öyrənmək',    wrong: 'istirahət etmək', wen: 'to rest',       def: 'to learn in school' },
+  { en: 'to study',   tr: 'öyrənmək',             wrong: 'istirahət etmək', wen: 'to rest',       def: 'to learn in school' },
   { en: 'to teach',   tr: 'öyrətmək',             wrong: 'öyrənmək',       wen: 'to learn',      def: 'to give knowledge' },
   { en: 'to write',   tr: 'yazmaq',               wrong: 'oxumaq',         wen: 'to read',       def: 'to make letters on paper' },
   { en: 'to spell',   tr: 'hərfləmək',            wrong: 'tələffüz etmək', wen: 'to pronounce',  def: 'to say letters of a word' },
@@ -1611,11 +1218,11 @@ const LEVELS = [
   { en: 'game',      tr: 'oyun',                 wrong: 'matç',           wen: 'match',         def: 'play activity' },
   { en: 'guitar',    tr: 'gitara',               wrong: 'piano',          wen: 'piano',         def: 'string music instrument' },
   { en: 'hobby',     tr: 'hobbi',                wrong: 'peşə',           wen: 'job',           def: 'fun activity in free time' },
-  { en: 'match',     tr: 'oyun',          wrong: 'turnir',         wen: 'tournament',    def: 'sports competition' },
-  { en: 'painting',  tr: 'rəsm çəkmə',   wrong: 'heykəltəraşlıq', wen: 'sculpture',     def: 'making pictures with colours' },
+  { en: 'match',     tr: 'oyun',                 wrong: 'turnir',         wen: 'tournament',    def: 'sports competition' },
+  { en: 'painting',  tr: 'rəsm çəkmə',           wrong: 'heykəltəraşlıq', wen: 'sculpture',     def: 'making pictures with colours' },
   { en: 'piano',     tr: 'piano',                wrong: 'gitara',         wen: 'guitar',        def: 'keyboard music instrument' },
   { en: 'pool',      tr: 'hovuz',                wrong: 'idman zalı',     wen: 'gym',           def: 'place to swim' },
-  { en: 'singing',   tr: 'mahnı oxuma',  wrong: 'rəqs etmə',      wen: 'dancing',       def: 'using your voice for music' },
+  { en: 'singing',   tr: 'mahnı oxuma',          wrong: 'rəqs etmə',      wen: 'dancing',       def: 'using your voice for music' },
   { en: 'sport',     tr: 'idman',                wrong: 'hobbi',          wen: 'hobby',         def: 'physical activity' },
   { en: 'swimming',  tr: 'üzmə',                 wrong: 'qaçış',          wen: 'running',       def: 'moving in water' },
   { en: 'team',      tr: 'komanda',              wrong: 'oyunçu',         wen: 'player',        def: 'group of players' },
@@ -1729,25 +1336,25 @@ const LEVELS = [
       },
 // ─────────────────────── QUIZ 33 — Feil 1 / Movement verbs ───────────────────────
 [
-  { en: 'to arrive',   tr: 'çatmaq',       wrong: 'getmək',           wen: 'to leave',       def: 'to reach a place' },
+  { en: 'to arrive',   tr: 'çatmaq',                wrong: 'getmək',           wen: 'to leave',       def: 'to reach a place' },
   { en: 'to bring',    tr: 'gətirmək',              wrong: 'aparmaq',          wen: 'to take',        def: 'to carry something here' },
-  { en: 'to carry',    tr: 'daşımaq',     wrong: 'qoymaq',           wen: 'to put',         def: 'to hold and move something' },
+  { en: 'to carry',    tr: 'daşımaq',               wrong: 'qoymaq',           wen: 'to put',         def: 'to hold and move something' },
   { en: 'to climb',    tr: 'dırmaşmaq',             wrong: 'düşmək',           wen: 'to fall',        def: 'to go up' },
   { en: 'to come',     tr: 'gəlmək',                wrong: 'getmək',           wen: 'to go',          def: 'to move towards here' },
-  { en: 'to fall',     tr: 'yıxılmaq',     wrong: 'qalxmaq',          wen: 'to rise',        def: 'to drop down' },
+  { en: 'to fall',     tr: 'yıxılmaq',              wrong: 'qalxmaq',          wen: 'to rise',        def: 'to drop down' },
   { en: 'to fly',      tr: 'uçmaq',                 wrong: 'üzmək',            wen: 'to swim',        def: 'to move in the air' },
-  { en: 'to follow',   tr: 'ardınca getmək', wrong: 'qaçmaq',        wen: 'to run',         def: 'to go after someone' },
+  { en: 'to follow',   tr: 'ardınca getmək',        wrong: 'qaçmaq',        wen: 'to run',         def: 'to go after someone' },
   { en: 'to go',       tr: 'getmək',                wrong: 'gəlmək',           wen: 'to come',        def: 'to move away' },
-  { en: 'to leave',    tr: 'ayrılmaq',     wrong: 'qalmaq',           wen: 'to stay',        def: 'to go away from a place' },
+  { en: 'to leave',    tr: 'ayrılmaq',              wrong: 'qalmaq',           wen: 'to stay',        def: 'to go away from a place' },
   { en: 'to move',     tr: 'hərəkət etmək',         wrong: 'dayanmaq',         wen: 'to stop',        def: 'to change position' },
-  { en: 'to ride',     tr: 'minmək',       wrong: 'yüyürmək',         wen: 'to run',         def: 'to travel on something' },
+  { en: 'to ride',     tr: 'minmək',                wrong: 'yüyürmək',         wen: 'to run',         def: 'to travel on something' },
   { en: 'to run',      tr: 'qaçmaq',                wrong: 'gəzmək',           wen: 'to walk',        def: 'to move fast with legs' },
   { en: 'to sit',      tr: 'oturmaq',               wrong: 'durmaq',           wen: 'to stand',       def: 'to rest on your bottom' },
-  { en: 'to stand',    tr: 'ayağa qalxmaq', wrong: 'oturmaq',         wen: 'to sit',         def: 'to be on your feet' },
-  { en: 'to turn',     tr: 'dönmək ',     wrong: 'getmək',           wen: 'to go',          def: 'to change direction' },
-  { en: 'to walk',     tr: 'gəzmək ',      wrong: 'qaçmaq',           wen: 'to run',         def: 'to move with legs slowly' },
+  { en: 'to stand',    tr: 'ayağa qalxmaq',         wrong: 'oturmaq',         wen: 'to sit',         def: 'to be on your feet' },
+  { en: 'to turn',     tr: 'dönmək ',               wrong: 'getmək',           wen: 'to go',          def: 'to change direction' },
+  { en: 'to walk',     tr: 'gəzmək ',               wrong: 'qaçmaq',           wen: 'to run',         def: 'to move with legs slowly' },
   { en: 'to wake',     tr: 'oyanmaq',               wrong: 'yatmaq',           wen: 'to sleep',       def: 'to stop sleeping' },
-  { en: 'to jump',     tr: 'tullanmaq',   wrong: 'qaçmaq',           wen: 'to run',         def: 'to push up from the ground' },
+  { en: 'to jump',     tr: 'tullanmaq',             wrong: 'qaçmaq',           wen: 'to run',         def: 'to push up from the ground' },
   { en: 'to return',   tr: 'qayıtmaq',              wrong: 'getmək',           wen: 'to go',          def: 'to come back' },
 ],
       
@@ -1755,7 +1362,7 @@ const LEVELS = [
 [
   { en: 'to answer',    tr: 'cavablamaq',           wrong: 'sual vermək',      wen: 'to ask',         def: 'to reply' },
   { en: 'to ask',       tr: 'soruşmaq',             wrong: 'cavablamaq',       wen: 'to answer',      def: 'to question someone' },
-  { en: 'to call',      tr: 'zəng etmək / çağırmaq', wrong: 'göndərmək',       wen: 'to send',        def: 'to telephone someone' },
+  { en: 'to call',      tr: 'çağırmaq',             wrong: 'göndərmək',       wen: 'to send',        def: 'to telephone someone' },
   { en: 'to explain',   tr: 'izah etmək',           wrong: 'sual vermək',      wen: 'to ask',         def: 'to make something clear' },
   { en: 'to guess',     tr: 'təxmin etmək',         wrong: 'bilmək',           wen: 'to know',        def: 'to try to know without sure' },
   { en: 'to introduce', tr: 'təqdim etmək',         wrong: 'izah etmək',       wen: 'to explain',     def: 'to present someone' },
@@ -1770,7 +1377,7 @@ const LEVELS = [
   { en: 'to speak',     tr: 'danışmaq',             wrong: 'susmaaq',          wen: 'to be quiet',    def: 'to talk' },
   { en: 'to spell',     tr: 'hərfləmək',            wrong: 'tələffüz etmək',   wen: 'to pronounce',   def: 'to say letters' },
   { en: 'to talk',      tr: 'söhbət etmək',         wrong: 'susmaaq',          wen: 'to be quiet',    def: 'to speak with someone' },
-  { en: 'to tell',      tr: 'söyləmək / danışmaq',  wrong: 'soruşmaq',         wen: 'to ask',         def: 'to give information' },
+  { en: 'to tell',      tr: 'söyləmək',             wrong: 'soruşmaq',         wen: 'to ask',         def: 'to give information' },
   { en: 'to thank',     tr: 'təşəkkür etmək',       wrong: 'üzr istəmək',      wen: 'to apologise',   def: 'to say thank you' },
   { en: 'to write',     tr: 'yazmaq',               wrong: 'oxumaq',           wen: 'to read',        def: 'to make letters' },
 ],
@@ -1780,7 +1387,7 @@ const LEVELS = [
   { en: 'to buy',     tr: 'almaq',               wrong: 'satmaq',         wen: 'to sell',        def: 'to get with money' },
   { en: 'to change',  tr: 'dəyişmək',            wrong: 'saxlamaq',       wen: 'to keep',        def: 'to make different' },
   { en: 'to check',   tr: 'yoxlamaq',            wrong: 'düzəltmək',      wen: 'to fix',         def: 'to look if correct' },
-  { en: 'to clean',   tr: 'təmizləmək',          wrong: 'çirkləndirmək',   wen: 'to dirty',       def: 'to make clean' },
+  { en: 'to clean',   tr: 'təmizləmək',          wrong: 'çirkləndirmək',  wen: 'to dirty',       def: 'to make clean' },
   { en: 'to close',   tr: 'bağlamaq',            wrong: 'açmaq',          wen: 'to open',        def: 'to shut' },
   { en: 'to cook',    tr: 'bişirmək',            wrong: 'yemək',          wen: 'to eat',         def: 'to make food' },
   { en: 'to cut',     tr: 'kəsmək',              wrong: 'yapışdırmaq',    wen: 'to stick',       def: 'to divide with knife' },
@@ -1790,10 +1397,10 @@ const LEVELS = [
   { en: 'to fill',    tr: 'doldurmaq',           wrong: 'boşaltmaq',      wen: 'to empty',       def: 'to make full' },
   { en: 'to finish',  tr: 'bitirmək',            wrong: 'başlamaq',       wen: 'to start',       def: 'to complete' },
   { en: 'to fix',     tr: 'düzəltmək',           wrong: 'sındırmaq',      wen: 'to break',       def: 'to repair' },
-  { en: 'to get',     tr: 'almaq / əldə etmək',  wrong: 'vermək',         wen: 'to give',        def: 'to receive' },
+  { en: 'to get',     tr: 'əldə etmək',          wrong: 'vermək',         wen: 'to give',        def: 'to receive' },
   { en: 'to give',    tr: 'vermək',              wrong: 'almaq',          wen: 'to take',        def: 'to offer something' },
-  { en: 'to grow',    tr: 'böyümək / yetişdirmək', wrong: 'azalmaq',      wen: 'to decrease',    def: 'to become bigger' },
-  { en: 'to have',    tr: 'sahib olmaq / var olmaq', wrong: 'istəmək',    wen: 'to want',        def: 'to own or possess' },
+  { en: 'to grow',    tr: 'böyümək',             wrong: 'azalmaq',        wen: 'to decrease',    def: 'to become bigger' },
+  { en: 'to have',    tr: 'sahib olmaq',         wrong: 'istəmək',        wen: 'to want',        def: 'to own or possess' },
   { en: 'to help',    tr: 'kömək etmək',         wrong: 'mane olmaq',     wen: 'to disturb',     def: 'to assist' },
   { en: 'to keep',    tr: 'saxlamaq',            wrong: 'atmaq',          wen: 'to throw',       def: 'to hold and not give away' },
 ],
@@ -1906,35 +1513,35 @@ const LEVELS = [
 [
   { en: 'to live',    tr: 'yaşamaq',                    wrong: 'ölmək',           wen: 'to die',          def: 'to be alive' },
   { en: 'to look',    tr: 'baxmaq',                     wrong: 'görmək',          wen: 'to see',          def: 'to turn your eyes toward something' },
-  { en: 'to make',    tr: 'etmək / düzəltmək',          wrong: 'dağıtmaq',        wen: 'to break',        def: 'to create or build' },
-  { en: 'to meet',    tr: 'görüşmək / tanışmaq',        wrong: 'ayrılmaq',        wen: 'to separate',     def: 'to see someone for the first time' },
-  { en: 'to miss',    tr: 'darıxmaq / qaçırmaq',        wrong: 'çatmaq',          wen: 'to arrive',       def: 'to feel sad when someone is not here' },
+  { en: 'to make',    tr: 'düzəltmək',                  wrong: 'dağıtmaq',        wen: 'to break',        def: 'to create or build' },
+  { en: 'to meet',    tr: 'görüşmək',                   wrong: 'ayrılmaq',        wen: 'to separate',     def: 'to see someone for the first time' },
+  { en: 'to miss',    tr: 'qaçırmaq',                   wrong: 'çatmaq',          wen: 'to arrive',       def: 'to feel sad when someone is not here' },
   { en: 'to open',    tr: 'açmaq',                      wrong: 'bağlamaq',        wen: 'to close',        def: 'to make something not closed' },
   { en: 'to order',   tr: 'sifariş etmək',              wrong: 'ödəmək',          wen: 'to pay',          def: 'to ask for food or things' },
   { en: 'to own',     tr: 'sahib olmaq',                wrong: 'itirmək',         wen: 'to lose',         def: 'to have something as your property' },
-  { en: 'to paint',   tr: 'rəsm çəkmək / boyamaq',      wrong: 'silmək',          wen: 'to erase',        def: 'to make pictures with colours' },
+  { en: 'to paint',   tr: 'boyamaq',                    wrong: 'silmək',          wen: 'to erase',        def: 'to make pictures with colours' },
   { en: 'to pay',     tr: 'ödəmək',                     wrong: 'almaq',           wen: 'to buy',          def: 'to give money' },
   { en: 'to play',    tr: 'oynamaq',                    wrong: 'işləmək',         wen: 'to work',         def: 'to have fun with games' },
   { en: 'to put',     tr: 'qoymaq',                     wrong: 'götürmək',        wen: 'to take',         def: 'to place something somewhere' },
   { en: 'to relax',   tr: 'istirahət etmək',            wrong: 'işləmək',         wen: 'to work',         def: 'to rest and feel calm' },
   { en: 'to sleep',   tr: 'yatmaq',                     wrong: 'oyanmaq',         wen: 'to wake',         def: 'to close your eyes and rest' },
-  { en: 'to spend',   tr: 'xərcləmək / keçirmək',       wrong: 'qazanmaq',        wen: 'to earn',         def: 'to use money or time' },
+  { en: 'to spend',   tr: 'xərcləmək',       wrong: 'qazanmaq',        wen: 'to earn',         def: 'to use money or time' },
   { en: 'to start',   tr: 'başlamaq',                   wrong: 'bitirmək',        wen: 'to finish',       def: 'to begin' },
-  { en: 'to stop',    tr: 'dayanmaq / dayandırmaq',     wrong: 'davam etmək',     wen: 'to continue',     def: 'to finish moving or doing' },
+  { en: 'to stop',    tr: 'dayanmaq',     wrong: 'davam etmək',     wen: 'to continue',     def: 'to finish moving or doing' },
   { en: 'to swim',    tr: 'üzmək',                      wrong: 'qaçmaq',          wen: 'to run',          def: 'to move in water' },
-  { en: 'to take',    tr: 'götürmək / almaq',           wrong: 'vermək',          wen: 'to give',         def: 'to get and hold' },
+  { en: 'to take',    tr: 'götürmək',           wrong: 'vermək',          wen: 'to give',         def: 'to get and hold' },
   { en: 'to try',     tr: 'cəhd etmək',                 wrong: 'imtina etmək',     wen: 'to refuse',       def: 'to attempt something' },
 ],
 
 // ─────────────────────── QUIZ 37 — Feil 5 / Mental & abstract verbs ───────────────────────
 [
-  { en: 'to become',   tr: 'olmaq / çevrilmək',         wrong: 'qalmaq',          wen: 'to stay',         def: 'to change into something' },
+  { en: 'to become',   tr: 'olmaq',                     wrong: 'qalmaq',          wen: 'to stay',         def: 'to change into something' },
   { en: 'to begin',    tr: 'başlamaq',                  wrong: 'bitirmək',        wen: 'to finish',       def: 'to start' },
   { en: 'to believe',  tr: 'inanmaq',                   wrong: 'şübhə etmək',     wen: 'to doubt',        def: 'to think something is true' },
-  { en: 'to build',    tr: 'inşa etmək / qurmaq',       wrong: 'dağıtmaq',        wen: 'to destroy',      def: 'to make a building' },
+  { en: 'to build',    tr: 'inşa etmək',                wrong: 'dağıtmaq',        wen: 'to destroy',      def: 'to make a building' },
   { en: 'to complete', tr: 'tamamlamaq',                wrong: 'başlamaq',        wen: 'to start',        def: 'to finish completely' },
   { en: 'to decide',   tr: 'qərar vermək',              wrong: 'şübhə etmək',     wen: 'to doubt',        def: 'to make a choice' },
-  { en: 'to do',       tr: 'etmək / yapmaq',            wrong: 'dayandırmaq',     wen: 'to stop',         def: 'to perform an action' },
+  { en: 'to do',       tr: 'etmək',                     wrong: 'dayandırmaq',     wen: 'to stop',         def: 'to perform an action' },
   { en: 'to enjoy',    tr: 'zövq almaq',                wrong: 'nifrət etmək',    wen: 'to hate',         def: 'to like something very much' },
   { en: 'to feel',     tr: 'hiss etmək',                wrong: 'düşünmək',        wen: 'to think',        def: 'to have an emotion' },
   { en: 'to find',     tr: 'tapmaq',                    wrong: 'itirmək',         wen: 'to lose',         def: 'to discover something' },
@@ -1943,11 +1550,11 @@ const LEVELS = [
   { en: 'to hear',     tr: 'eşitmək',                   wrong: 'görmək',          wen: 'to see',          def: 'to receive sound' },
   { en: 'to hope',     tr: 'ümid etmək',                wrong: 'ümidsiz olmaq',   wen: 'to despair',      def: 'to want something to happen' },
   { en: 'to include',  tr: 'daxil etmək',               wrong: 'xaric etmək',     wen: 'to exclude',      def: 'to put inside a group' },
-  { en: 'to join',     tr: 'qoşulmaq / birləşmək',      wrong: 'ayrılmaq',        wen: 'to leave',        def: 'to become a member' },
+  { en: 'to join',     tr: 'qoşulmaq',                  wrong: 'ayrılmaq',        wen: 'to leave',        def: 'to become a member' },
   { en: 'to know',     tr: 'bilmək',                    wrong: 'unutmaq',         wen: 'to forget',       def: 'to have information' },
-  { en: 'to lose',     tr: 'itirmək / udmaq',           wrong: 'tapmaq',          wen: 'to find',         def: 'to not be able to find' },
+  { en: 'to lose',     tr: 'itirmək',                   wrong: 'qazanmaq',          wen: 'to find',         def: 'to not be able to find' },
   { en: 'to love',     tr: 'sevmək',                    wrong: 'nifrət etmək',    wen: 'to hate',         def: 'to like very very much' },
-  { en: 'to mean',     tr: 'mənası olmaq / demək istəmək', wrong: 'bilmək',       wen: 'to know',         def: 'to have a meaning' },
+  { en: 'to mean',     tr: 'mənası olmaq',              wrong: 'səbəbi olmaq',       wen: 'to know',         def: 'to have a meaning' },
 ],
 
 // ─────────────────────── QUIZ 38 — Feil 6 / Mental verbs 2 ───────────────────────
@@ -1963,13 +1570,13 @@ const LEVELS = [
   { en: 'to wait',     tr: 'gözləmək',                  wrong: 'getmək',          wen: 'to go',           def: 'to stay until something happens' },
   { en: 'to want',     tr: 'istəmək',                   wrong: 'ehtiyac duymaq',  wen: 'to need',         def: 'to wish for something' },
   { en: 'to wash',     tr: 'yumaq',                     wrong: 'çirkləndirmək',    wen: 'to dirty',        def: 'to make clean with water' },
-  { en: 'to watch',    tr: 'izləmək / seyr etmək',      wrong: 'dinləmək',        wen: 'to listen',       def: 'to look at something for a time' },
-  { en: 'to win',      tr: 'qazanmaq / udmaq',          wrong: 'uduzmaq',         wen: 'to lose',         def: 'to be the best' },
+  { en: 'to watch',    tr: 'izləmək',                   wrong: 'dinləmək',        wen: 'to listen',       def: 'to look at something for a time' },
+  { en: 'to win',      tr: 'qalib gəlmək',              wrong: 'uduzmaq',         wen: 'to lose',         def: 'to be the best' },
   { en: 'to work',     tr: 'işləmək',                   wrong: 'istirahət etmək', wen: 'to rest',         def: 'to do a job' },
   { en: 'to draw',     tr: 'rəsm çəkmək',               wrong: 'boyamaq',         wen: 'to paint',        def: 'to make pictures with pencil' },
   { en: 'to die',      tr: 'ölmək',                     wrong: 'yaşamaq',         wen: 'to live',         def: 'to stop living' },
   { en: 'to let',      tr: 'icazə vermək',              wrong: 'qadağan etmək',   wen: 'to forbid',       def: 'to allow' },
-  { en: 'to lie',      tr: 'uzanmaq / yalan söyləmək',  wrong: 'oturmaq',         wen: 'to sit',          def: 'to be in horizontal position' },
+  { en: 'to lie',      tr: 'uzanmaq',                   wrong: 'oturmaq',         wen: 'to sit',          def: 'to be in horizontal position' },
   { en: 'to break',    tr: 'sındırmaq',                 wrong: 'düzəltmək',       wen: 'to fix',          def: 'to make something not work' },
   { en: 'to wear',     tr: 'geymək',                    wrong: 'çıxarmaq',        wen: 'to take off',     def: 'to have clothes on your body' },
 ],
@@ -2079,13 +1686,13 @@ const LEVELS = [
   },
 // ─────────────────────── QUIZ 39 — İş / Work & Business ───────────────────────
 [
-  { en: 'action',     tr: 'hərəkət / fəaliyyət', wrong: 'fikir',         wen: 'idea',          def: 'something you do' },
+  { en: 'action',     tr: 'hərəkət',             wrong: 'fikir',         wen: 'idea',          def: 'something you do' },
   { en: 'activity',   tr: 'fəaliyyət',           wrong: 'istirahət',     wen: 'rest',          def: 'thing you do' },
-  { en: 'business',   tr: 'biznes / iş',         wrong: 'hobbi',         wen: 'hobby',         def: 'work to make money' },
+  { en: 'business',   tr: 'biznes',              wrong: 'hobbi',         wen: 'hobby',         def: 'work to make money' },
   { en: 'company',    tr: 'şirkət',              wrong: 'komanda',       wen: 'team',          def: 'big group that works together' },
   { en: 'interview',  tr: 'müsahibə',            wrong: 'imtahan',       wen: 'exam',          def: 'meeting for a job' },
-  { en: 'job',        tr: 'iş / vəzifə',         wrong: 'hobbi',         wen: 'hobby',         def: 'work you do for money' },
-  { en: 'meeting',    tr: 'görüş / iclas',       wrong: 'müsahibə',      wen: 'interview',     def: 'when people talk together' },
+  { en: 'job',        tr: 'peşə',                wrong: 'hobbi',         wen: 'hobby',         def: 'work you do for money' },
+  { en: 'meeting',    tr: 'iclas',               wrong: 'müsahibə',      wen: 'interview',     def: 'when people talk together' },
   { en: 'model',      tr: 'model',               wrong: 'nümunə',        wen: 'example',       def: 'small copy or example' },
   { en: 'office',     tr: 'ofis',                wrong: 'fabrik',        wen: 'factory',       def: 'place where people work at desks' },
   { en: 'plan',       tr: 'plan',                wrong: 'hesabat',       wen: 'report',        def: 'what you will do' },
@@ -2104,48 +1711,48 @@ const LEVELS = [
 // ─────────────────────── QUIZ 40 — Müxtəlif İsimlər / Misc nouns ───────────────────────
 [
   { en: 'beginning',  tr: 'başlanğıc',           wrong: 'son',           wen: 'end',           def: 'first part' },
-  { en: 'chart',      tr: 'cədvəl / qrafik',     wrong: 'xəritə',        wen: 'map',           def: 'picture with information' },
+  { en: 'chart',      tr: 'cədvəl',     wrong: 'xəritə',        wen: 'map',           def: 'picture with information' },
   { en: 'end',        tr: 'son',                 wrong: 'başlanğıc',     wen: 'beginning',     def: 'last part' },
-  { en: 'form',       tr: 'forma / bianket',     wrong: 'sənəd',         wen: 'document',      def: 'paper to fill' },
-  { en: 'fun',        tr: 'əyləncə / zövq',      wrong: 'sıkıntı',       wen: 'boredom',       def: 'enjoyable time' },
+  { en: 'form',       tr: 'blanket',             wrong: 'sənəd',         wen: 'document',      def: 'paper to fill' },
+  { en: 'fun',        tr: 'əyləncə',      wrong: 'sıkıntı',       wen: 'boredom',       def: 'enjoyable time' },
   { en: 'group',      tr: 'qrup',                wrong: 'fərd',          wen: 'individual',    def: 'more than one person together' },
-  { en: 'idea',       tr: 'fikir / ideya',       wrong: 'plan',          wen: 'plan',          def: 'new thought' },
+  { en: 'idea',       tr: 'fikir',       wrong: 'plan',          wen: 'plan',          def: 'new thought' },
   { en: 'information',tr: 'məlumat',             wrong: 'sual',          wen: 'question',      def: 'facts and knowledge' },
-  { en: 'interest',   tr: 'maraq / faiz',        wrong: 'biganəlik',     wen: 'boredom',       def: 'wanting to know more' },
-  { en: 'kind',       tr: 'növ / cür',           wrong: 'rəng',          wen: 'colour',        def: 'type or sort' },
+  { en: 'interest',   tr: 'maraq',        wrong: 'biganəlik',     wen: 'boredom',       def: 'wanting to know more' },
+  { en: 'kind',       tr: 'növ',           wrong: 'rəng',          wen: 'colour',        def: 'type or sort' },
   { en: 'life',       tr: 'həyat',               wrong: 'ölüm',          wen: 'death',         def: 'time you are alive' },
-  { en: 'line',       tr: 'xətt / sıra',         wrong: 'nöqtə',         wen: 'point',         def: 'long thin mark' },
+  { en: 'line',       tr: 'xətt',         wrong: 'nöqtə',         wen: 'point',         def: 'long thin mark' },
   { en: 'list',       tr: 'siyahı',              wrong: 'cədvəl',        wen: 'chart',         def: 'names or things one after another' },
-  { en: 'lot',        tr: 'çox / xeyli',         wrong: 'az',            wen: 'little',        def: 'large amount' },
+  { en: 'lot',        tr: 'xeyli',         wrong: 'az',            wen: 'little',        def: 'large amount' },
   { en: 'map',        tr: 'xəritə',              wrong: 'plan',          wen: 'plan',          def: 'picture of a place' },
   { en: 'meaning',    tr: 'məna',                wrong: 'söz',           wen: 'word',          def: 'what something means' },
   { en: 'mistake',    tr: 'səhv',                wrong: 'cavab',         wen: 'answer',        def: 'wrong action' },
   { en: 'part',       tr: 'hissə',               wrong: 'tam',           wen: 'whole',         def: 'piece of something' },
-  { en: 'point',      tr: 'nöqtə / məqam',       wrong: 'xətt',          wen: 'line',          def: 'single dot or idea' },
+  { en: 'point',      tr: 'nöqtə',       wrong: 'xətt',          wen: 'line',          def: 'single dot or idea' },
   { en: 'sound',      tr: 'səs',                 wrong: 'şəkil',         wen: 'picture',       def: 'what you hear' },
 ],
 
 // ─────────────────────── QUIZ 41 — Müxtəlif İsimlər 2 / Misc nouns 2 ───────────────────────
 [
-  { en: 'space',     tr: 'məkan / kosmoz',       wrong: 'yer',           wen: 'place',         def: 'empty area' },
-  { en: 'style',     tr: 'üslub / stil',         wrong: 'moda',          wen: 'fashion',       def: 'way of doing something' },
-  { en: 'type',      tr: 'növ / tip',            wrong: 'forma',         wen: 'shape',         def: 'kind or sort' },
-  { en: 'way',       tr: 'yol / üsul',           wrong: 'məkan',         wen: 'place',         def: 'how to do something' },
+  { en: 'space',     tr: 'kosmos',       wrong: 'yer',           wen: 'place',         def: 'empty area' },
+  { en: 'style',     tr: 'tərz',         wrong: 'moda',          wen: 'fashion',       def: 'way of doing something' },
+  { en: 'type',      tr: 'növ',            wrong: 'forma',         wen: 'shape',         def: 'kind or sort' },
+  { en: 'way',       tr: 'yol',           wrong: 'məkan',         wen: 'place',         def: 'how to do something' },
   { en: 'cup',       tr: 'fincan',               wrong: 'stəkan',        wen: 'glass',         def: 'small container with handle' },
-  { en: 'glass',     tr: 'stəkan / şüşə',        wrong: 'fincan',        wen: 'cup',           def: 'container for drinks' },
-  { en: 'bottle',    tr: 'şüşə / butulka',       wrong: 'qutu',          wen: 'box',           def: 'container for liquid' },
+  { en: 'glass',     tr: 'stəkan',        wrong: 'fincan',        wen: 'cup',           def: 'container for drinks' },
+  { en: 'bottle',    tr: 'butulka',       wrong: 'qutu',          wen: 'box',           def: 'container for liquid' },
   { en: 'box',       tr: 'qutu',                 wrong: 'çanta',         wen: 'bag',           def: 'hard container' },
-  { en: 'piece',     tr: 'parça / hissə',        wrong: 'tam',           wen: 'whole',         def: 'one part' },
+  { en: 'piece',     tr: 'parça',        wrong: 'tam',           wen: 'whole',         def: 'one part' },
   { en: 'thing',     tr: 'şey',                  wrong: 'yer',           wen: 'place',         def: 'object' },
-  { en: 'stuff',     tr: 'şeylər / əşyalar',     wrong: 'məlumat',       wen: 'information',   def: 'different things' },
-  { en: 'item',      tr: 'maddə / əşya',         wrong: 'siyahı',        wen: 'list',          def: 'one single thing' },
+  { en: 'stuff',     tr: 'əşyalar',     wrong: 'məlumat',       wen: 'information',   def: 'different things' },
+  { en: 'item',      tr: 'əşya',         wrong: 'siyahı',        wen: 'list',          def: 'one single thing' },
   { en: 'model',     tr: 'model',                wrong: 'tip',           wen: 'type',          def: 'small copy' },
-  { en: 'size',      tr: 'ölçü / beden',         wrong: 'forma',         wen: 'shape',         def: 'how big or small' },
-  { en: 'shape',     tr: 'forma / şəkil',        wrong: 'rəng',          wen: 'colour',        def: 'form of something' },
+  { en: 'size',      tr: 'ölçü',         wrong: 'forma',         wen: 'shape',         def: 'how big or small' },
+  { en: 'shape',     tr: 'forma',        wrong: 'rəng',          wen: 'colour',        def: 'form of something' },
   { en: 'colour',    tr: 'rəng',                 wrong: 'forma',         wen: 'shape',         def: 'red, blue, green etc.' },
-  { en: 'name',      tr: 'ad / isim',            wrong: 'soyad',         wen: 'surname',       def: 'what someone is called' },
-  { en: 'title',     tr: 'başlıq / ünvan',       wrong: 'ad',            wen: 'name',          def: 'name of a book or film' },
-  { en: 'number',    tr: 'rəqəm / nömrə',        wrong: 'hərf',          wen: 'letter',        def: '1, 2, 3 etc.' },
+  { en: 'name',      tr: 'ad',            wrong: 'soyad',         wen: 'surname',       def: 'what someone is called' },
+  { en: 'title',     tr: 'başlıq',       wrong: 'ad',            wen: 'name',          def: 'name of a book or film' },
+  { en: 'number',    tr: 'rəqəm',        wrong: 'hərf',          wen: 'letter',        def: '1, 2, 3 etc.' },
 ],
    {
   sentences:    [
