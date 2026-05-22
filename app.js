@@ -375,6 +375,7 @@ const readingState = {
   skipped:  [],     // keçilən suallar
   correct:  0,
   wrong:    0,
+  textCardHeight: null,
 };
 
 // ============================================================
@@ -2284,12 +2285,17 @@ function renderReadingQuestion() {
       renderReadingQuestion();
     });
   }
-  // ── Resizer ──────────────────────────────────────────────
+// ── Resizer ──────────────────────────────────────────────
   requestAnimationFrame(() => {
     const resizer  = document.getElementById('reading-resizer');
     const textCard = document.getElementById('reading-text-card');
     const layout   = resizer?.closest('.reading-layout');
     if (!resizer || !textCard || !layout) return;
+
+    // Əvvəlki hündürlük varsa tətbiq et
+    if (readingState.textCardHeight) {
+      textCard.style.height = `${readingState.textCardHeight}px`;
+    }
 
     let startY = 0, startHeight = 0;
 
@@ -2311,11 +2317,13 @@ function renderReadingQuestion() {
     function onMouseMove(e) {
       const newH = Math.min(Math.max(startHeight + (e.clientY - startY), 80), layout.offsetHeight - 80);
       textCard.style.height = `${newH}px`;
+      readingState.textCardHeight = newH;
     }
     function onTouchMove(e) {
       e.preventDefault();
       const newH = Math.min(Math.max(startHeight + (e.touches[0].clientY - startY), 80), layout.offsetHeight - 80);
       textCard.style.height = `${newH}px`;
+      readingState.textCardHeight = newH;
     }
     function onMouseUp() {
       resizer.classList.remove('dragging');
@@ -2333,24 +2341,18 @@ function renderReadingQuestion() {
 function handleReadingAnswer(optIdx, q) {
   if (quiz.locked) return;
   quiz.locked = true;
-
   const isCorrect = q.options[optIdx] === q.answer;
-
   document.querySelectorAll('.reading-option-btn').forEach(btn => {
     btn.disabled = true;
     const i = parseInt(btn.dataset.opt);
     if (q.options[i] === q.answer)      btn.classList.add('reading-opt-correct');
     else if (i === optIdx && !isCorrect) btn.classList.add('reading-opt-wrong');
   });
-
   const skipBtn = document.getElementById('reading-skip');
   if (skipBtn) skipBtn.style.display = 'none';
-
   if (isCorrect) readingState.correct++;
   else           readingState.wrong++;
-
   readingState.queue.shift();
-
   setTimeout(() => {
     quiz.locked = false;
     renderReadingQuestion();
