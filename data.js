@@ -14060,7 +14060,7 @@ However, most scientists and researchers do not consider the Bermuda Triangle to
       type: 'mcq',
       q: 'What is the passage mainly about?',
       options: [
-        'why Lloyd's of London refuses to cover vessels sailing through the North Atlantic',
+        'why Lloyd\'s of London refuses to cover vessels sailing through the North Atlantic',
         'how the Bermuda Triangle gained its reputation and why scientists question its mystery',
         'the history of shipwrecks and aircraft disappearances across the North Atlantic Ocean',
         'the scientific evidence proving the Bermuda Triangle poses no danger whatsoever',
@@ -14418,7 +14418,7 @@ The internet transformed from a specialist tool into a global public resource la
   title: 'passage 20',
   text: `Ocean currents are large-scale movements of seawater that flow continuously around the globe, transporting heat, nutrients, and marine life across vast distances. They are driven by two main forces: wind and differences in the temperature and salinity of seawater. Near the surface, winds push water across the ocean in relatively consistent patterns. In the deep ocean, however, currents are driven by differences in water density — cold, salty water is denser and sinks, while warm, lighter water rises to replace it. This slow, deep movement of water around the globe is known as thermohaline circulation, and it connects all of the world's major oceans in a single continuous system often described as the ocean conveyor belt.
 
-Ocean currents play a critical role in regulating the Earth's climate. The Gulf Stream, for example, carries warm water from the Gulf of Mexico across the Atlantic to northwestern Europe, keeping countries like the United Kingdom warmer than their latitude would suggest. Currents also distribute nutrients through the ocean, supporting the marine food chains that billions of people depend on for food. Scientists are increasingly concerned that climate change — by melting polar ice and altering the temperature and salinity of seawater — could weaken or disrupt these vital currents, with potentially severe consequences for both ecosystems and global weather patterns.`,
+Ocean currents play a critical role in regulating the Earth\'s climate. The Gulf Stream, for example, carries warm water from the Gulf of Mexico across the Atlantic to northwestern Europe, keeping countries like the United Kingdom warmer than their latitude would suggest. Currents also distribute nutrients through the ocean, supporting the marine food chains that billions of people depend on for food. Scientists are increasingly concerned that climate change — by melting polar ice and altering the temperature and salinity of seawater — could weaken or disrupt these vital currents, with potentially severe consequences for both ecosystems and global weather patterns.`,
   questions: [
     {
       id: 'q1',
