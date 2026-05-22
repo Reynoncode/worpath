@@ -13228,7 +13228,10 @@ const LEVELS = [
   id: 'reading-24',
   type: 'reading',
   title: 'Passage 24',
-  text: `Chocolate is one of the most popular foods in the world today...`, // eyni qalır
+  text: `Chocolate is one of the most popular foods in the world today, but its history is very old and interesting. Chocolate comes from the cacao tree, which grows in tropical countries like Mexico, Brazil and Ghana. The scientific name of the cacao tree is Theobroma cacao, which means "food of the gods".
+More than 3,000 years ago, the Maya and Aztec people in Central America used cacao beans to make a bitter drink. They mixed the beans with water, spices and sometimes chilli. They believed this drink gave them energy and was good for health. They also used cacao beans as money. When Spanish explorers came to America in the 16th century, they brought cacao to Europe.
+At first, Europeans did not like the bitter taste. They added sugar, milk and vanilla to make it sweet. In 1847, the first chocolate bar was made in England. After that, chocolate became very popular around the world. Today, people eat more than 3 million tons of chocolate every year.
+Modern chocolate factories use special machines to make different types of chocolate: dark, milk and white. Dark chocolate is considered the healthiest because it contains more cacao and less sugar. However, eating too much chocolate is not good because of the high sugar and fat content. Scientists say that a small amount of dark chocolate every day can be good for the heart.`, // eyni qalır
   questions: [
     {
       id: 'q1',
