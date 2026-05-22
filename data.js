@@ -13229,7 +13229,7 @@ const LEVELS = [
 {
   id: 'reading-1',
   type: 'reading',
-  title: 'The Science of Laughter',
+  title: 'passage 1',
   text: `Laughter is one of the most natural human behaviours, yet scientists are still discovering how and why we laugh. On average, people laugh around 17 times a day, though most laughter has nothing to do with jokes. Studies show that the majority of laughter occurs during ordinary conversations, when people feel relaxed and connected with others.
 
 From a biological perspective, laughter involves several parts of the brain. When something seems funny, the brain's reward system releases a chemical called dopamine, which creates a feeling of pleasure. At the same time, the body produces endorphins — natural chemicals that reduce pain and increase feelings of happiness. This is why laughter is often described as "the best medicine."
@@ -13282,7 +13282,7 @@ Scientists believe that laughter evolved long before human language. Apes and ot
     {
       id: 'q4',
       type: 'truefalse',
-      q: 'Decide whether the statements are TRUE or FALSE.',
+      q: 'TRUE/FALSE',
       statements: [
         { text: 'Most laughter occurs because people hear something funny.', answer: false },
         { text: 'People laugh significantly more when they are with others.', answer: true },
@@ -13561,271 +13561,244 @@ Today, Spain, Italy and Greece together produce around 70 percent of the world's
   ]
 },
 
-      {
+{
   id: 'reading-6',
   type: 'reading',
-  title: 'Passage 6',
-  text: `Lisa lives with her family in a small house. She has a mother, a father and a little brother. Lisa is twelve years old. Every day after school she helps her mother. She cleans the table, washes the dishes and sometimes cooks simple food.
+  title: 'passage 6',
+  text: `The Global Positioning System, commonly known as GPS, is a technology that allows devices to determine their exact location anywhere on Earth. It was originally developed by the United States Department of Defense in the 1970s and became available for civilian use in the 1980s. The system relies on a network of at least 24 satellites orbiting the Earth at an altitude of approximately 20,000 kilometres. Each satellite continuously broadcasts radio signals containing information about its position and the current time. A GPS receiver on the ground picks up signals from at least four of these satellites simultaneously. By calculating the time it takes for each signal to arrive, the device can determine its precise location through a process called trilateration.
 
-On weekends the family goes to the park together. They play games and eat ice cream. Lisa's father likes to take photos. Her brother is only five years old, so Lisa helps him when he plays.
-
-Lisa loves her family very much. She is happy because they spend time together and help each other.`,
+GPS technology has transformed modern life in ways that go far beyond simple navigation. It is used in aviation, shipping, agriculture, and emergency services, where accurate positioning can save lives. Farmers use GPS-guided machinery to plant crops more efficiently, while scientists rely on it to monitor the movement of tectonic plates and track wildlife migrations. Despite its widespread use, GPS signals can be disrupted by tall buildings, dense forests, or deliberate interference known as jamming. As a result, engineers are constantly working to develop more reliable and accurate positioning systems for the future.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Lisa\'s school',
-        'Lisa and her family',
-        'how to cook food',
-        'playing in the park alone'
+        'the history of the United States Department of Defense',
+        'how GPS works and the many ways it is used today',
+        'why satellites are important for weather forecasting',
+        'the dangers of GPS jamming on military operations',
+        'how farmers have improved crop production with technology'
       ],
-      answer: 'Lisa and her family'
+      answer: 'how GPS works and the many ways it is used today'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What does Lisa do after school?',
+      q: 'According to the passage, how does a GPS device calculate its precise location?',
       options: [
-        'She watches TV all afternoon.',
-        'She helps her mother at home.',
-        'She plays computer games.',
-        'She goes to the park alone.'
+        'By connecting to the internet and downloading map data',
+        'By measuring the distance between the device and the nearest city',
+        'By calculating the time it takes for signals from satellites to arrive',
+        'By detecting changes in the Earth\'s magnetic field',
+        'By receiving signals from underground cables'
       ],
-      answer: 'She helps her mother at home.'
+      answer: 'By calculating the time it takes for signals from satellites to arrive'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: GPS technology is valuable because it...  1. helps emergency services locate people accurately  2. works without any disruption in forests and cities  3. allows farmers to operate machinery more efficiently  4. was made available to the public in the 1970s  5. helps scientists monitor tectonic plates and wildlife',
       options: [
-        'Lisa has a little brother.',
-        'The family goes to the park on weekends.',
-        'Lisa is fifteen years old.',
-        'Lisa loves her family.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Lisa is fifteen years old.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why is Lisa happy?',
-      options: [
-        'Because she has many toys.',
-        'Because her family spends time together and helps each other.',
-        'Because she never helps at home.',
-        'Because she lives in a big city.'
-      ],
-      answer: 'Because her family spends time together and helps each other.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'How old is Lisa\'s brother?',
-      answer: 'five years old'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'GPS was originally developed by the United States Department of Defense.', answer: true },
+        { text: 'A GPS receiver needs signals from at least three satellites to determine its location.', answer: false },
+        { text: 'GPS signals can be disrupted by tall buildings and dense forests.', answer: true },
+        { text: 'GPS became available for civilian use in the 1970s.', answer: false }
+      ]
     }
   ]
 },
-
-      {
+{
   id: 'reading-7',
   type: 'reading',
-  title: 'Passage 7',
-  text: `In spring the weather is warm. Flowers grow and trees have new green leaves. Birds sing in the morning. Many children play outside after school. It sometimes rains, but the rain helps the flowers to grow.
+  title: 'passage 7',
+  text: `Fear is one of the most powerful human emotions, and it plays a critical role in survival. When a person encounters a threat, the brain's amygdala — a small, almond-shaped region — immediately sends an alarm signal to the body. This triggers the release of adrenaline, which causes the heart to beat faster, breathing to quicken, and muscles to tense up. This automatic response, commonly known as the "fight or flight" response, prepares the body to either confront the danger or escape from it. Interestingly, this biological mechanism has remained largely unchanged since the earliest stages of human evolution, when threats typically came from predators or rival groups.
 
-Summer is hot. The sun shines every day. People go to the beach and swim in the sea. Students do not go to school in summer. They have summer holiday.
-
-Autumn is cool. Leaves fall from the trees. People wear jackets. Farmers pick apples and vegetables from their fields.
-
-Winter is cold. It snows and everything is white. Children make snowmen and play in the snow. They wear warm coats, hats and gloves.`,
+However, fear does not always serve a useful purpose in modern life. Many people experience fear in situations that pose no real physical danger, such as public speaking, flying, or encountering spiders. These reactions are known as phobias, and they affect a significant portion of the global population. Psychologists believe that phobias often develop through negative past experiences or learned behaviour from others. Fortunately, they can be treated effectively through a technique called exposure therapy, in which patients gradually face their fears in a controlled environment. Over time, repeated exposure reduces the brain's automatic alarm response, allowing individuals to manage their fear more rationally.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'different seasons and weather',
-        'how to make snowmen',
-        'school holidays',
-        'farmers and vegetables'
+        'the history of how humans evolved to avoid predators',
+        'how fear works in the brain and body, and how irrational fears can be treated',
+        'why public speaking is the most common fear among adults',
+        'the differences between adrenaline and other stress hormones',
+        'how the amygdala controls all human emotions equally'
       ],
-      answer: 'different seasons and weather'
+      answer: 'how fear works in the brain and body, and how irrational fears can be treated'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What happens in spring?',
+      q: 'According to the passage, what happens in the body when the amygdala detects a threat?',
       options: [
-        'Leaves fall from the trees.',
-        'Flowers grow and birds sing.',
-        'People swim in the sea.',
-        'Children make snowmen.'
+        'The body releases dopamine and the heart rate slows down',
+        'The brain shuts down non-essential functions permanently',
+        'Adrenaline is released, causing faster heartbeat, quicker breathing, and muscle tension',
+        'The body enters a deep state of rest to conserve energy',
+        'Blood pressure drops and the muscles relax completely'
       ],
-      answer: 'Flowers grow and birds sing.'
+      answer: 'Adrenaline is released, causing faster heartbeat, quicker breathing, and muscle tension'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Phobias are a recognised psychological condition because they...  1. involve fear responses to situations with no real physical danger  2. are caused exclusively by genetic factors passed down in families  3. can develop through negative past experiences or learned behaviour  4. affect only a small and specific group of people worldwide  5. can be treated through a gradual process called exposure therapy',
       options: [
-        'Summer is hot and people go to the beach.',
-        'It snows in winter.',
-        'Students go to school in summer.',
-        'Autumn is cool and leaves fall.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Students go to school in summer.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why is rain good in spring?',
-      options: [
-        'Because it makes the weather hot.',
-        'Because it helps the flowers to grow.',
-        'Because children like to play in rain.',
-        'Because people wear jackets.'
-      ],
-      answer: 'Because it helps the flowers to grow.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What do children make in winter?',
-      answer: 'snowmen'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The amygdala is the part of the brain responsible for triggering the fear response.', answer: true },
+        { text: 'The fight or flight response is a recently developed feature of modern human biology.', answer: false },
+        { text: 'Exposure therapy works by gradually introducing patients to the source of their fear.', answer: true },
+        { text: 'Phobias can only be caused by direct personal experiences, not by observing others.', answer: false }
+      ]
     }
   ]
 },
-      {
+{
   id: 'reading-8',
   type: 'reading',
-  title: 'Passage 8',
-  text: `My name is Alex. I am ten years old. My favourite food is fruit and vegetables. Every morning I eat an apple or a banana. I like carrots and tomatoes too. My mother makes fresh salad for lunch.
+  title: 'passage 8',
+  text: `Bread is one of the oldest prepared foods in human history, with evidence of its production dating back over 14,000 years. Early humans discovered that grinding wild grains and mixing them with water produced a paste that could be cooked on hot stones. At first, this created flat, unleavened bread similar to modern crackers. The discovery of leavening — most likely accidental, when wild yeast in the air fermented a batch of dough — transformed bread into the lighter, softer loaves we recognise today. Ancient Egyptians are widely credited with being among the first to bake leavened bread systematically, and they even used it as a form of currency to pay workers who built their famous monuments.
 
-Alex does not like fast food. He eats pizza only on his birthday. He drinks water and milk every day. Sweets and chocolate are not good every day. Alex knows that healthy food makes him strong and gives him energy for school and games.
-
-His best friend Jack eats too many sweets and sometimes feels tired. Alex tells him, "Eat more fruit and you will feel better."`,
+Over the centuries, bread became a central element of diet and culture across the world. In medieval Europe, the type of bread a person ate reflected their social status — the wealthy ate white bread made from refined flour, while the poor consumed darker, coarser loaves. The invention of commercial yeast in the 19th century and industrial milling dramatically changed bread production, making it cheaper and more widely available. Today, hundreds of bread varieties exist around the world, each reflecting the unique ingredients, traditions, and tastes of its culture.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Alex\'s school',
-        'Alex and healthy food',
-        'how to make pizza',
-        'Alex\'s birthday'
+        'the religious significance of bread in ancient civilisations',
+        'the history of bread and its role in human diet and culture',
+        'how modern baking technology has replaced traditional methods',
+        'why ancient Egyptians were the first to discover wild grains',
+        'the differences between leavened and unleavened bread types'
       ],
-      answer: 'Alex and healthy food'
+      answer: 'the history of bread and its role in human diet and culture'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What does Alex eat every morning?',
+      q: 'According to the passage, how did ancient Egyptians use bread beyond eating it?',
       options: [
-        'Pizza and chocolate',
-        'An apple or a banana',
-        'Only milk',
-        'Fast food'
+        'They used it as an offering in religious ceremonies',
+        'They traded it with neighbouring countries for spices',
+        'They used it as a form of currency to pay workers',
+        'They stored it as emergency food during military campaigns',
+        'They ground it into powder to make medicine'
       ],
-      answer: 'An apple or a banana'
+      answer: 'They used it as a form of currency to pay workers'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Bread has played an important role throughout human history because it...  1. was first made by grinding wild grains and cooking them on hot stones  2. was used by medieval nobility as a symbol of religious devotion  3. was used by ancient Egyptians as a form of payment for labour  4. has always been produced in the same way across all cultures  5. exists today in hundreds of forms that reflect different local cultures',
       options: [
-        'Alex likes fruit and vegetables.',
-        'Alex drinks water and milk.',
-        'Alex eats pizza every day.',
-        'Healthy food gives energy.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Alex eats pizza every day.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why does Alex tell Jack to eat more fruit?',
-      options: [
-        'Because fruit is expensive.',
-        'Because Jack feels tired from too many sweets.',
-        'Because Alex does not like Jack.',
-        'Because there is no chocolate.'
-      ],
-      answer: 'Because Jack feels tired from too many sweets.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Alex eat only on his birthday?',
-      answer: 'pizza'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The discovery of leavening was most likely an accidental process.', answer: true },
+        { text: 'In medieval Europe, wealthy people ate darker bread made from coarser flour.', answer: false },
+        { text: 'Industrial milling helped make bread cheaper and more widely available.', answer: true },
+        { text: 'Evidence of bread production dates back approximately 5,000 years.', answer: false }
+      ]
     }
   ]
 },
 
-      {
+{
   id: 'reading-9',
   type: 'reading',
-  title: 'Passage 9',
-  text: `Zara is thirteen years old. Her favourite hobby is reading books. She has many story books in her room. Every evening after homework she reads for thirty minutes. She likes adventure stories and books about animals.
+  title: 'passage 9',
+  text: `A desert is defined not by heat, but by the lack of water. Scientifically, any region that receives less than 250 millimetres of rainfall per year is classified as a desert, which means that cold places like Antarctica also qualify. Hot deserts, such as the Sahara, form primarily because of atmospheric circulation patterns. Warm, moist air rises near the equator, loses its moisture as rain over tropical regions, and then descends as dry air around 30 degrees latitude — precisely where many of the world's great deserts are located. Another cause is the rain shadow effect, where mountain ranges block moisture-carrying winds, leaving the land on the opposite side extremely dry.
 
-On weekends Zara goes to the library with her father. She borrows two or three new books. Reading helps Zara learn new words and improves her English. Her teacher says, "Zara is a very good reader."
-
-Sometimes Zara writes short stories too. She wants to be a writer one day. Her mother is very proud of her.`,
+Not all deserts are the result of natural processes alone. Human activity has accelerated a phenomenon called desertification, in which fertile land gradually turns into desert due to overgrazing, deforestation, and unsustainable farming practices. This process threatens millions of people across Africa, Asia, and South America who depend on the land for food and water. Climate change is making the situation worse by increasing temperatures and altering rainfall patterns worldwide. However, large-scale projects to plant trees and restore degraded land — such as Africa's Great Green Wall initiative — offer hope that the spread of deserts can be slowed or even reversed in some regions.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Zara\'s school',
-        'Zara and her reading hobby',
-        'how to write stories',
-        'the library building'
+        'why the Sahara Desert is the largest and hottest desert on Earth',
+        'how deserts form through natural and human causes, and efforts to address their spread',
+        'the effects of rainfall patterns on agriculture in tropical regions',
+        'how mountain ranges influence the climate of coastal regions',
+        'why Antarctica should be reclassified as a polar region rather than a desert'
       ],
-      answer: 'Zara and her reading hobby'
+      answer: 'how deserts form through natural and human causes, and efforts to address their spread'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'How long does Zara read every evening?',
+      q: 'According to the passage, why is Antarctica classified as a desert?',
       options: [
-        'Ten minutes',
-        'Thirty minutes',
-        'One hour',
-        'Two hours'
+        'Because it has extremely low temperatures throughout the year',
+        'Because no plants or animals are able to survive there',
+        'Because it receives less than 250 millimetres of rainfall per year',
+        'Because it is located far from any moisture-carrying winds',
+        'Because it covers a larger area than any hot desert in the world'
       ],
-      answer: 'Thirty minutes'
+      answer: 'Because it receives less than 250 millimetres of rainfall per year'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Deserts are a significant global concern because...  1. deserts are defined by extreme heat rather than low rainfall  2. human activities such as overgrazing and deforestation can turn fertile land into desert  3. climate change is worsening desertification by increasing temperatures and altering rainfall  4. the rain shadow effect is caused by rivers blocking moisture-carrying winds  5. millions of people in Africa, Asia, and South America depend on land at risk of desertification',
       options: [
-        'Zara likes adventure stories.',
-        'Zara goes to the library on weekends.',
-        'Zara never reads books.',
-        'Reading helps Zara learn new words.'
+        'A) 2, 3, 5',
+        'B) 1, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Zara never reads books.'
+      answer: 'A) 2, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why does Zara go to the library?',
-      options: [
-        'To meet her friends.',
-        'To borrow new books.',
-        'To play games.',
-        'To watch films.'
-      ],
-      answer: 'To borrow new books.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Zara want to be one day?',
-      answer: 'a writer'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Any region receiving less than 250 millimetres of rainfall per year is classified as a desert.', answer: true },
+        { text: 'Hot deserts like the Sahara form because warm, moist air descends near the equator.', answer: false },
+        { text: 'The Great Green Wall initiative aims to slow the spread of deserts in Africa.', answer: true },
+        { text: 'The rain shadow effect occurs when rivers prevent moisture from reaching inland areas.', answer: false }
+      ]
     }
   ]
 },
@@ -13833,66 +13806,60 @@ Sometimes Zara writes short stories too. She wants to be a writer one day. Her m
 {
   id: 'reading-10',
   type: 'reading',
-  title: 'Passage 10',
-  text: `Today is Amy's birthday. She is eleven years old. Her family has a small party at home. Amy's mother makes a big chocolate cake. There are eleven candles on the cake. Amy's friends come to the party. They bring presents and cards.
+  title: 'passage 10',
+  text: `At its height, the Roman Empire was one of the most powerful and extensive states the world had ever seen, stretching from Britain in the north to Egypt in the south and covering an area of approximately five million square kilometres. Rome began as a small city-state in central Italy around the 8th century BC and gradually expanded through military conquest, strategic alliances, and sophisticated governance. The Romans were exceptional administrators who connected their vast territories through an elaborate network of roads, aqueducts, and legal systems. Latin, the language of Rome, laid the foundation for several modern European languages, and Roman law continues to influence legal systems around the world today.
 
-The children play games, sing songs and eat ice cream. Amy opens her presents. She gets a new book, a red dress and a beautiful doll. Everyone is happy. At the end of the party they take a big photo together.
-
-Amy says, "This is the best birthday ever!" She thanks her family and friends.`,
+However, maintaining such a large empire proved increasingly difficult over time. Internal political instability, economic troubles, and a series of weak emperors weakened Rome from within. At the same time, repeated invasions by Germanic tribes along the empire's northern borders placed enormous pressure on Roman defences. Historians generally mark the fall of the Western Roman Empire in 476 AD, when the last Roman emperor was removed from power. The Eastern Roman Empire, known as the Byzantine Empire, survived for nearly another thousand years. Despite its collapse, Rome's cultural, architectural, and legal achievements left a legacy that shaped the development of Western civilisation for centuries to come.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Amy\'s school day',
-        'Amy\'s birthday party',
-        'how to make chocolate cake',
-        'different kinds of dolls'
+        'the military strategies that made Rome undefeatable for centuries',
+        'the rise, expansion, decline, and lasting legacy of the Roman Empire',
+        'how the Latin language developed into modern European languages',
+        'the political rivalry between the Western and Eastern Roman Empires',
+        'why Germanic tribes were the sole cause of Rome\'s collapse'
       ],
-      answer: 'Amy\'s birthday party'
+      answer: 'the rise, expansion, decline, and lasting legacy of the Roman Empire'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'How old is Amy?',
+      q: 'According to the passage, when did the Western Roman Empire fall, and what marked this event?',
       options: [
-        'Ten years old',
-        'Eleven years old',
-        'Twelve years old',
-        'Nine years old'
+        'In 376 AD, when Germanic tribes first crossed the northern border',
+        'In 476 AD, when the last Roman emperor was removed from power',
+        'In 500 AD, when the Byzantine Empire declared independence from Rome',
+        'In 410 AD, when the city of Rome was sacked for the first time',
+        'In 395 AD, when the empire was officially divided into two halves'
       ],
-      answer: 'Eleven years old'
+      answer: 'In 476 AD, when the last Roman emperor was removed from power'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The Roman Empire had a lasting impact on world history because it...  1. built roads, aqueducts, and legal systems that connected vast territories  2. established Latin as the permanent official language of all European nations  3. developed a legal tradition that still influences legal systems around the world today  4. successfully defended its borders against every Germanic invasion it faced  5. left cultural, architectural, and legal achievements that shaped Western civilisation',
       options: [
-        'There is a chocolate cake.',
-        'Amy gets presents from her friends.',
-        'The party is at school.',
-        'They take a photo at the end.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 3, 4, 5'
       ],
-      answer: 'The party is at school.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'What does Amy get as presents?',
-      options: [
-        'A new bike and shoes',
-        'A book, a red dress and a doll',
-        'Only chocolate',
-        'Money and cards'
-      ],
-      answer: 'A book, a red dress and a doll'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'How many candles are on the cake?',
-      answer: 'eleven'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The Roman Empire covered approximately five million square kilometres at its height.', answer: true },
+        { text: 'The Eastern Roman Empire collapsed at the same time as the Western Roman Empire in 476 AD.', answer: false },
+        { text: 'Rome expanded through military conquest, strategic alliances, and sophisticated governance.', answer: true },
+        { text: 'Germanic tribes repeatedly invaded the Roman Empire from its southern borders.', answer: false }
+      ]
     }
   ]
 },
@@ -13900,132 +13867,121 @@ Amy says, "This is the best birthday ever!" She thanks her family and friends.`,
 {
   id: 'reading-11',
   type: 'reading',
-  title: 'Passage 11',
-  text: `Many people travel to different places. Some go by car, some by bus, and some by train. Anna and her family like to travel by train. Last summer they went to the mountains. The train was fast and comfortable.
+  title: 'passage 11',
+  text: `The Earth's outer layer, known as the crust, is divided into large sections called tectonic plates that are constantly moving. Although this movement is extremely slow — typically just a few centimetres per year — it generates enormous pressure along the boundaries where plates meet. When the stress between two plates becomes too great, the rock suddenly shifts, releasing energy in the form of seismic waves. These waves travel outward from the point of origin, known as the focus, and cause the ground shaking we experience as an earthquake. The point directly above the focus on the Earth's surface is called the epicentre, and this is usually where the strongest shaking occurs.
 
-They saw beautiful green fields and high mountains from the window. In the mountains they walked in the forest, took photos and breathed fresh air. Anna's father says, "Travel is good because we see new places and learn many things."
-
-Anna wants to visit other countries one day. She thinks travelling is exciting and helps us understand the world better.`,
+Earthquakes vary greatly in strength and are measured using the Richter scale or the more modern moment magnitude scale. Minor earthquakes occur thousands of times each day around the world, but most are too weak to be felt by humans. Major earthquakes, however, can cause devastating damage to buildings and infrastructure, trigger landslides, and generate powerful ocean waves called tsunamis. Japan, Indonesia, and Chile are among the most earthquake-prone countries in the world due to their location along active plate boundaries. While scientists can identify high-risk zones, predicting the exact time and location of an earthquake remains one of the greatest unsolved challenges in modern science.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Anna\'s school trip',
-        'travelling by train and mountains',
-        'how to take photos',
-        'different kinds of cars'
+        'the causes, effects, and unpredictability of earthquakes',
+        'how the Richter scale was developed and later replaced by the moment magnitude scale',
+        'why countries like Japan and Chile are situated near active tectonic plate boundaries',
+        'the difference between minor and major earthquakes in terms of their daily frequency',
+        'how seismic waves behave differently depending on the depth of the earthquake focus'
       ],
-      answer: 'travelling by train and mountains'
+      answer: 'the causes, effects, and unpredictability of earthquakes'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'How did Anna and her family travel last summer?',
+      q: 'According to the passage, what is the epicentre of an earthquake?',
       options: [
-        'By car',
-        'By bus',
-        'By train',
-        'By plane'
+        'the underground point where rock shifts and seismic waves are first released',
+        'the scale used to measure the strength of ground movement during a seismic event',
+        'the point on the Earth\'s surface directly above the focus',
+        'the outer boundary of the region affected by an earthquake\'s seismic waves',
+        'the area where two tectonic plates meet and pressure gradually builds up'
       ],
-      answer: 'By train'
+      answer: 'the point on the Earth\'s surface directly above the focus'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Earthquakes are considered dangerous natural events because they...  1. can trigger landslides and generate powerful ocean waves called tsunamis  2. can be precisely predicted by scientists using modern seismic instruments  3. occur thousands of times daily, though most are too weak to be felt  4. are caused by the rotation of the Earth rather than tectonic plate movement  5. can cause devastating damage to buildings and infrastructure',
       options: [
-        'They saw green fields and mountains.',
-        'They walked in the forest.',
-        'Anna does not like travelling.',
-        'Travel helps us learn new things.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Anna does not like travelling.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why does Anna\'s father like travelling?',
-      options: [
-        'Because it is cheap.',
-        'Because they can see new places and learn many things.',
-        'Because there is no school in summer.',
-        'Because he likes to stay at home.'
-      ],
-      answer: 'Because they can see new places and learn many things.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Anna want to visit one day?',
-      answer: 'other countries'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The epicentre is the underground point where rock suddenly shifts during an earthquake.', answer: false },
+        { text: 'Most earthquakes that occur daily around the world are too weak to be felt by humans.', answer: true },
+        { text: 'Scientists can currently predict the exact time and location of future earthquakes.', answer: false },
+        { text: 'Japan, Indonesia, and Chile are highly earthquake-prone due to their location along active plate boundaries.', answer: true }
+      ]
     }
   ]
 },
+
 {
   id: 'reading-12',
   type: 'reading',
-  title: 'Passage 12',
-  text: `Last weekend David and his family went to the zoo. They saw many animals. David liked the monkeys the most. The monkeys were funny and jumped from tree to tree. They also saw big lions, tall giraffes and beautiful birds.
+  title: 'passage 12',
+  text: `In 1995, grey wolves were reintroduced to Yellowstone National Park in the United States after being absent for nearly 70 years. They had been hunted to local extinction by the 1920s, and their disappearance had unexpected consequences for the entire ecosystem. Without wolves, the elk population grew unchecked and overgrazed riverbanks and valleys, stripping away vegetation and causing widespread erosion. The return of the wolves transformed Yellowstone in ways scientists had not fully anticipated, demonstrating a powerful ecological concept known as a trophic cascade — a chain of effects that flows through an entire food web when a top predator is added or removed.
 
-David fed the elephants with bananas. The zookeeper told them, "Please do not feed the lions." It was a sunny day and they took many photos. David learned that animals need clean water and good food to stay healthy.
-
-At the end of the day David said, "I want to visit the zoo again next month!"`,
+The wolves reduced the elk population directly through hunting, but their impact went far beyond simply killing prey. The presence of wolves changed the behaviour of elk, which began avoiding open areas where they were more vulnerable to attack. This allowed vegetation along riverbanks to recover, which in turn stabilised the soil and reduced erosion. Rivers began to flow more steadily as their banks strengthened. Populations of beavers, birds, and other species increased as their habitats improved. The wolves had, in effect, changed the physical landscape of the park — a remarkable example of how restoring a single species can have far-reaching consequences for an entire ecosystem.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'David\'s school weekend',
-        'David\'s visit to the zoo',
-        'how to take photos',
-        'different kinds of birds'
+        'why elk populations are difficult to control without the presence of natural predators in national parks',
+        'how reintroducing wolves to Yellowstone caused widespread ecological change',
+        'the history of wolf hunting in the United States during the early 20th century',
+        'how beavers and birds in Yellowstone recovered after decades of habitat loss',
+        'the differences between trophic cascades in forest and river ecosystems'
       ],
-      answer: 'David\'s visit to the zoo'
+      answer: 'how reintroducing wolves to Yellowstone caused widespread ecological change'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Which animal did David like the most?',
+      q: 'According to the passage, how did wolves change the behaviour of elk?',
       options: [
-        'Lions',
-        'Giraffes',
-        'Monkeys',
-        'Elephants'
+        'wolves competed with elk for food, forcing them to migrate to other regions entirely',
+        'reduced elk numbers meant the remaining animals moved to higher ground for safety',
+        'elk began avoiding open areas where they were more vulnerable to wolf attacks',
+        'the smell of wolves caused elk to permanently abandon their traditional grazing routes',
+        'elk adapted by forming much larger herds, which made it harder for wolves to hunt them'
       ],
-      answer: 'Monkeys'
+      answer: 'elk began avoiding open areas where they were more vulnerable to wolf attacks'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The reintroduction of wolves to Yellowstone was significant because it...  1. brought wolves back after nearly 70 years of absence from the park  2. proved that wolves and elk could coexist peacefully without conflict  3. changed elk behaviour, allowing riverbank vegetation to recover and erosion to decrease  4. caused the wolf population to grow to over a thousand individuals within a decade  5. showed how restoring one species can transform an entire ecosystem',
       options: [
-        'They saw monkeys, lions and giraffes.',
-        'David fed the elephants.',
-        'It was a rainy day.',
-        'David wants to visit the zoo again.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'It was a rainy day.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'What did the zookeeper say?',
-      options: [
-        '"Please feed all the animals."',
-        '"Please do not feed the lions."',
-        '"The zoo is closed."',
-        '"Monkeys are dangerous."'
-      ],
-      answer: '"Please do not feed the lions."'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What did David feed the elephants?',
-      answer: 'bananas'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Wolves were hunted to local extinction in Yellowstone by the 1920s.', answer: true },
+        { text: 'The return of wolves had no significant effect on plant life in Yellowstone.', answer: false },
+        { text: 'Scientists had fully predicted all the ecological changes that would follow wolf reintroduction.', answer: false },
+        { text: 'Populations of beavers, birds, and other species increased after the wolves were reintroduced.', answer: true }
+      ]
     }
   ]
 },
@@ -14033,66 +13989,60 @@ At the end of the day David said, "I want to visit the zoo again next month!"`,
 {
   id: 'reading-13',
   type: 'reading',
-  title: 'Passage 13',
-  text: `Every summer Lena and her family go to the beach. The beach is near their town. The sand is yellow and the sea is blue. Lena likes to swim and collect shells. Her brother builds big sandcastles.
+  title: 'passage 13',
+  text: `Sushi is today recognised around the world as a symbol of Japanese cuisine, but its origins are far removed from the elegant rolls and fresh fish slices found in modern restaurants. The earliest form of sushi, known as narezushi, developed in Southeast Asia as a method of preserving fish. Fish were packed in salted rice and left to ferment for months or even years. The rice was not eaten — it served only as a preservation medium and was discarded once the fish was ready. This technique gradually spread to Japan, where it became an important food preservation method during the 8th century.
 
-They take food with them: sandwiches, fruit and cold water. They do not throw rubbish on the beach. Lena's mother says, "We must keep the beach clean for the animals and other people."
-
-In the evening they watch the sunset. It is orange and beautiful. Lena feels very happy at the beach. She says, "I love summer because of the sea and the sun."`,
+Over the following centuries, Japanese cooks began to modify the process. By the 17th century, a faster version had developed in which lightly vinegared rice was eaten together with the fish, reducing the fermentation period significantly. The most familiar form of sushi — nigiri, small hand-pressed rice portions topped with fresh fish — emerged in Tokyo, then called Edo, during the early 19th century. Street vendors sold it as a quick and affordable snack. The global spread of sushi began in earnest during the late 20th century, as Japanese restaurants opened worldwide and health-conscious consumers embraced it as a nutritious alternative to fast food.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Lena\'s school',
-        'Lena and her family at the beach',
-        'how to build sandcastles',
-        'different colours of the sea'
+        'why fresh fish is the most essential ingredient in traditional Japanese cooking',
+        'how Japanese street food culture shaped restaurant cuisine around the world',
+        'the historical development of sushi from a preservation method to a global food',
+        'the differences between narezushi, nigiri, and the sushi rolls served in modern restaurants',
+        'how Western demand for healthy food drove the international growth of Japanese restaurants'
       ],
-      answer: 'Lena and her family at the beach'
+      answer: 'the historical development of sushi from a preservation method to a global food'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What colour is the sand on the beach?',
+      q: 'According to the passage, what was the role of rice in the earliest form of sushi?',
       options: [
-        'Blue',
-        'Yellow',
-        'Orange',
-        'Green'
+        'it was eaten with the fish as part of a nutritious and balanced meal',
+        'it absorbed the fish\'s flavour and was served as a separate side dish',
+        'it served as a preservation medium and was thrown away once the fish was ready',
+        'it was seasoned with vinegar to prevent bacteria from forming during storage',
+        'it was salted and compressed to give sushi its distinctive texture'
       ],
-      answer: 'Yellow'
+      answer: 'it served as a preservation medium and was thrown away once the fish was ready'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Sushi has changed significantly over its long history because...  1. the earliest form involved fermenting fish in salted rice for months or even years  2. nigiri sushi was first created in Southeast Asia during the 8th century  3. a faster version using vinegared rice had developed by the 17th century  4. sushi became popular globally mainly because of its low cost and simple preparation  5. nigiri emerged in Tokyo during the early 19th century and was sold as a street snack',
       options: [
-        'Lena collects shells.',
-        'They throw rubbish on the beach.',
-        'Her brother builds sandcastles.',
-        'They watch the sunset.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'They throw rubbish on the beach.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why do they keep the beach clean?',
-      options: [
-        'Because the sea is cold.',
-        'For the animals and other people.',
-        'Because there is no rubbish bin.',
-        'Because they do not like sand.'
-      ],
-      answer: 'For the animals and other people.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What colour is the sunset?',
-      answer: 'orange'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The earliest form of sushi originated in Southeast Asia as a method of preserving fish.', answer: true },
+        { text: 'In narezushi, both the fish and the rice were consumed together after fermentation.', answer: false },
+        { text: 'Nigiri sushi first appeared in Tokyo during the early 19th century.', answer: true },
+        { text: 'Sushi began spreading around the world during the early 20th century.', answer: false }
+      ]
     }
   ]
 },
@@ -14100,66 +14050,60 @@ In the evening they watch the sunset. It is orange and beautiful. Lena feels ver
 {
   id: 'reading-14',
   type: 'reading',
-  title: 'Passage 14',
-  text: `We all need to help our planet. One easy way is recycling. Recycling means using old things again. For example, we can put paper, plastic bottles and glass in special bins. 
+  title: 'passage 14',
+  text: `The Bermuda Triangle is a loosely defined region of the North Atlantic Ocean, roughly bounded by Miami, Bermuda, and Puerto Rico. Over the decades, it has gained a reputation as a place where ships and aircraft mysteriously disappear. Stories of vanished vessels, malfunctioning compasses, and unexplained phenomena have made it one of the most talked-about mysteries in popular culture. The legend grew significantly in the 1950s and 1960s, when writers began collecting accounts of accidents and disappearances in the area and presenting them as evidence of something supernatural or unexplained.
 
-Tom's school has recycling bins in every classroom. Every Friday students take the bins to the big container outside. Tom collects old newspapers at home and brings them to school. His teacher says, "Recycling saves trees and keeps our city clean."
-
-Tom is happy when he recycles. He knows that small actions can make a big difference for the Earth.`,
+However, most scientists and researchers do not consider the Bermuda Triangle to be genuinely more dangerous than any other area of ocean. Lloyd's of London, one of the world's leading insurance markets, does not charge higher rates for ships travelling through the region, suggesting that the statistical risk is no greater there than elsewhere. Investigations have shown that many disappearances attributed to the Bermuda Triangle either occurred outside its boundaries or had straightforward explanations such as human error, poor weather, or mechanical failure. The United States Coast Guard does not officially recognise it as a particularly hazardous zone. Researchers argue that the mystery persists largely because dramatic stories attract more attention than rational explanations.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Tom\'s school lessons',
-        'recycling and helping the planet',
-        'how to make paper',
-        'playing in the classroom'
+        'why Lloyd's of London refuses to cover vessels sailing through the North Atlantic',
+        'how the Bermuda Triangle gained its reputation and why scientists question its mystery',
+        'the history of shipwrecks and aircraft disappearances across the North Atlantic Ocean',
+        'the scientific evidence proving the Bermuda Triangle poses no danger whatsoever',
+        'why writers in the 1950s became interested in paranormal activity at sea'
       ],
-      answer: 'recycling and helping the planet'
+      answer: 'how the Bermuda Triangle gained its reputation and why scientists question its mystery'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What does recycling mean?',
+      q: 'What does Lloyd\'s of London\'s approach to insurance suggest about the Bermuda Triangle?',
       options: [
-        'Throwing things away',
-        'Using old things again',
-        'Buying new things',
-        'Cleaning the classroom'
+        'that ships are statistically more likely to sink there than in other ocean regions',
+        'that only uninsured vessels should be allowed to sail through the area',
+        'that the risk is no greater there than in any other part of the ocean',
+        'that insurance companies have detected unusual magnetic interference in the region',
+        'that financial losses from Bermuda Triangle incidents are too unpredictable to cover reliably'
       ],
-      answer: 'Using old things again'
+      answer: 'that the risk is no greater there than in any other part of the ocean'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The Bermuda Triangle mystery is considered exaggerated by researchers because...  1. Lloyd\'s of London does not charge higher insurance rates for ships in the region  2. the US Navy has placed navigational warning markers throughout the area  3. many disappearances either occurred outside its boundaries or had logical explanations  4. no ships or aircraft have actually gone missing there in recorded history  5. the US Coast Guard does not officially recognise it as a particularly hazardous zone',
       options: [
-        'Tom collects old newspapers.',
-        'There are recycling bins at school.',
-        'Recycling is difficult.',
-        'Recycling helps the Earth.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Recycling is difficult.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why do students take the bins outside every Friday?',
-      options: [
-        'To throw them away.',
-        'To put them in the big container.',
-        'To play with them.',
-        'Because the teacher is angry.'
-      ],
-      answer: 'To put them in the big container.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does recycling save?',
-      answer: 'trees'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The Bermuda Triangle is a precisely defined region with fixed geographical boundaries.', answer: false },
+        { text: 'The legend of the Bermuda Triangle grew mainly during the 1950s and 1960s.', answer: true },
+        { text: 'The United States Coast Guard officially classifies the Bermuda Triangle as an extreme danger zone.', answer: false },
+        { text: 'Researchers suggest the mystery endures because dramatic stories draw more attention than rational explanations.', answer: true }
+      ]
     }
   ]
 },
@@ -14167,200 +14111,181 @@ Tom is happy when he recycles. He knows that small actions can make a big differ
 {
   id: 'reading-15',
   type: 'reading',
-  title: 'Passage 15',
-  text: `Sam has a new bicycle. It is blue and very fast. He rides it every day after school. Sam wears a helmet because it is important for safety. His mother always says, "Be careful and do not ride fast on the road."
+  title: 'passage 15',
+  text: `Elephants are among the most socially complex animals on Earth. They live in tight family groups led by the oldest female, known as the matriarch, whose memory and experience are essential for the group's survival. The matriarch guides the herd to water sources and food across vast distances, particularly during droughts. Elephants communicate through a variety of sounds, including deep rumbles that can travel several kilometres through the ground, allowing separated herds to remain in contact. Research has shown that elephants can recognise the calls of hundreds of other individuals, reflecting a level of social memory that is rare among animals.
 
-On Saturdays Sam rides to the park with his friends. They ride around the lake and sometimes have a race. Sam likes the fresh air and exercise. Riding a bike makes him strong and happy.
-
-Sam wants to join the school cycling club next year. He practices every day and learns new rules about traffic.`,
+Elephants also display behaviours that point to a rich emotional life. They have been observed mourning their dead, returning to the bones of deceased family members and touching them gently with their trunks. Young elephants play, form close friendships, and appear to experience distress when separated from the group. When a calf is in danger, the entire herd responds together to protect it. Scientists believe that these strong social bonds make elephants particularly vulnerable to trauma — groups that have suffered heavy losses through poaching often display signs of long-term psychological disturbance. This suggests that conserving elephants means safeguarding not just individual animals, but entire social communities.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Sam\'s school',
-        'Sam and his bicycle',
-        'how to make races',
-        'different colours of bikes'
+        'how poaching has reduced elephant populations across Africa and Asia in recent decades',
+        'why matriarchs are selected to lead elephant herds in the wild',
+        'the complex social behaviour, communication, and emotional life of elephants',
+        'the methods scientists use to study long-distance animal communication in the wild',
+        'why elephants are more intelligent than most other large land mammals'
       ],
-      answer: 'Sam and his bicycle'
+      answer: 'the complex social behaviour, communication, and emotional life of elephants'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What colour is Sam\'s bicycle?',
+      q: 'According to the passage, what is the matriarch\'s role in an elephant herd?',
       options: [
-        'Red',
-        'Green',
-        'Blue',
-        'Black'
+        'she selects a successor from the group when her own strength begins to decline',
+        'she leads the herd using her memory and experience, especially in finding food and water',
+        'she is responsible for teaching calves how to communicate with distant herds',
+        'she resolves conflicts between adult females to maintain peace within the group',
+        'she organises the herd\'s movement patterns to avoid contact with rival groups'
       ],
-      answer: 'Blue'
+      answer: 'she leads the herd using her memory and experience, especially in finding food and water'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Elephants demonstrate a complex emotional and social life because they...  1. mourn their dead by returning to their bones and touching them with their trunks  2. choose a new matriarch through a group decision-making process  3. experience distress when separated from their social group  4. are the only animals known to use sound for long-distance communication  5. act collectively as a herd to protect a calf when it faces danger',
       options: [
-        'Sam wears a helmet.',
-        'Sam rides to the park on Saturdays.',
-        'Sam never rides his bike.',
-        'Riding makes Sam strong.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 3, 4, 5'
       ],
-      answer: 'Sam never rides his bike.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The matriarch of an elephant herd is the oldest male in the group.', answer: false },
+        { text: 'Elephants can recognise the calls of hundreds of other individual elephants.', answer: true },
+        { text: 'Young elephants have been observed forming friendships and playing together.', answer: true },
+        { text: 'Elephant herds affected by poaching always make a full recovery without lasting effects.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-16',
+  type: 'reading',
+  title: 'passage 16',
+  text: `The compass is one of the most transformative inventions in human history, and its origins can be traced back to ancient China. As early as the 2nd century BC, Chinese scholars discovered that a naturally magnetic mineral called lodestone would align itself in a north-south direction when suspended or floated freely. Initially, this property was used not for navigation but for divination and feng shui — the traditional practice of arranging spaces to harmonise with natural forces. The first compasses designed specifically for navigation appeared in China around the 11th century AD, typically consisting of a magnetised needle floating in water or balanced on a fine point.
+
+Knowledge of the compass gradually spread westward through Arab traders and reached Europe by the 12th century. Its impact on seafaring was enormous. Before the compass, sailors relied heavily on the stars for direction and were reluctant to venture far from coastlines, particularly in cloudy weather. With a reliable means of determining direction at sea, long-distance ocean voyages became far more practical. The compass played a crucial role in enabling the Age of Exploration during the 15th and 16th centuries, when European navigators crossed the Atlantic and reached Asia, fundamentally changing trade, culture, and the balance of global power.`,
+  questions: [
+    {
+      id: 'q1',
       type: 'mcq',
-      q: 'Why does Sam wear a helmet?',
+      q: 'What is the passage mainly about?',
       options: [
-        'Because it looks nice.',
-        'Because it is important for safety.',
-        'Because his friends wear one.',
-        'Because it is cold.'
+        'the invention of the compass and how it transformed navigation and global exploration',
+        'why Chinese scholars were the first civilisation to study the properties of magnetic minerals',
+        'how Arab traders spread scientific and navigational knowledge across continents',
+        'the role of feng shui in the early development of Chinese scientific thinking',
+        'why European sailors were unable to navigate open waters before the 15th century'
       ],
-      answer: 'Because it is important for safety.'
+      answer: 'the invention of the compass and how it transformed navigation and global exploration'
     },
     {
-      id: 'q5',
-      type: 'typein',
-      q: 'Where does Sam ride with his friends?',
-      answer: 'to the park'
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what was lodestone originally used for in China?',
+      options: [
+        'to help Chinese sailors navigate coastal waters during cloudy and stormy conditions',
+        'to measure the strength of magnetic fields across different regions of ancient China',
+        'for divination and feng shui rather than for navigation',
+        'to magnetise metal tools and weapons used in Chinese military campaigns',
+        'as a trading commodity exchanged between Chinese merchants and Arab travellers'
+      ],
+      answer: 'for divination and feng shui rather than for navigation'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The compass had a profound effect on world history because it...  1. allowed sailors to navigate without relying solely on the stars for direction  2. was invented in Europe during the 12th century as a tool for long-distance trade  3. helped make the Age of Exploration during the 15th and 16th centuries possible  4. enabled Arab traders to travel directly from China to Europe entirely by sea  5. spread from China to Europe through Arab traders by the 12th century',
+      options: [
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'A) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Lodestone was first used in China for navigation rather than for cultural or spiritual practices.', answer: false },
+        { text: 'The compass reached Europe by the 12th century through Arab traders.', answer: true },
+        { text: 'Before the compass, sailors used the stars to determine their direction at sea.', answer: true },
+        { text: 'The first navigational compasses appeared in China during the 8th century AD.', answer: false }
+      ]
     }
   ]
 },
 
 {
-  id: 'reading-16',
-  type: 'reading',
-  title: 'Passage 16',
-  text: `Kevin is fourteen years old. He likes music very much. Every day after school he plays the guitar for one hour. His guitar is brown and sounds beautiful. Kevin learns new songs from the internet and practices them.
-
-On Fridays he plays with his friends in a small music group. They sing and play together. Kevin's parents are happy because music makes him creative and patient. His music teacher says, "Kevin works hard and has talent."
-
-Kevin dreams of becoming a musician one day. He wants to write his own songs and play in big concerts.`,
-  questions: [
-    {
-      id: 'q1',
-      type: 'mcq',
-      q: 'The passage is mainly about...',
-      options: [
-        'Kevin\'s school',
-        'Kevin and his music hobby',
-        'how to use the internet',
-        'big concerts'
-      ],
-      answer: 'Kevin and his music hobby'
-    },
-    {
-      id: 'q2',
-      type: 'mcq',
-      q: 'How long does Kevin play the guitar every day?',
-      options: [
-        'Thirty minutes',
-        'One hour',
-        'Two hours',
-        'Ten minutes'
-      ],
-      answer: 'One hour'
-    },
-    {
-      id: 'q3',
-      type: 'mcq',
-      q: 'Which statement is false according to the passage?',
-      options: [
-        'Kevin plays with his friends on Fridays.',
-        'Kevin\'s guitar is brown.',
-        'Kevin never practices.',
-        'Music makes Kevin creative.'
-      ],
-      answer: 'Kevin never practices.'
-    },
-    {
-      id: 'q4',
-      type: 'mcq',
-      q: 'Why are Kevin\'s parents happy?',
-      options: [
-        'Because he plays computer games.',
-        'Because music makes him creative and patient.',
-        'Because he does not study.',
-        'Because he wants to be a teacher.'
-      ],
-      answer: 'Because music makes him creative and patient.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Kevin dream of becoming?',
-      answer: 'a musician'
-    }
-  ]
-},
-
-      {
   id: 'reading-17',
   type: 'reading',
-  title: 'Passage 17',
-  text: `Nina loves nature. Every Sunday she goes for a walk in the forest with her grandmother. The forest is big and quiet. They see tall trees, green plants and many colourful flowers. Sometimes they find mushrooms after rain.
+  title: 'passage 17',
+  text: `Before the discovery of antibiotics, even minor bacterial infections could be fatal. A small wound, a tooth infection, or a case of pneumonia could kill a healthy adult within days. This changed dramatically in 1928, when Scottish scientist Alexander Fleming noticed that a mould called Penicillium had contaminated one of his laboratory plates and was killing the surrounding bacteria. He identified the mould's active compound, which he named penicillin, though it took more than a decade before other scientists developed it into a practical medicine. During the Second World War, mass production of penicillin saved the lives of countless soldiers who would otherwise have died from infected wounds.
 
-Nina learns the names of birds and trees from her grandmother. They take water and apples with them. They never pick flowers or break branches because they want to protect nature. 
-
-Nina takes photos of beautiful butterflies and birds. She feels calm and happy in the forest. Her grandmother says, "Spending time in nature is good for our health and mind."`,
+Antibiotics work by either killing bacteria directly or preventing them from reproducing, giving the body's immune system time to eliminate the infection. Their introduction transformed medicine profoundly — diseases that had killed millions for centuries, such as tuberculosis and scarlet fever, became treatable. Life expectancy increased significantly across the world. However, the overuse and misuse of antibiotics has led to a growing crisis: bacteria are increasingly developing resistance, making certain infections much harder to treat. Doctors and scientists now warn that antibiotic resistance could become one of the greatest public health threats of the 21st century if new treatments are not found and existing antibiotics are not used more responsibly.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Nina\'s school',
-        'Nina and her walks in the forest',
-        'how to pick flowers',
-        'different kinds of mushrooms'
+        'the discovery of antibiotics, their medical impact, and the threat of resistance',
+        'why Alexander Fleming is considered the most important scientist of the 20th century',
+        'how the Second World War accelerated advances in the field of medical science',
+        'the biological process by which bacteria gradually develop resistance to treatment over time',
+        'why tuberculosis and scarlet fever were the deadliest diseases before the modern era'
       ],
-      answer: 'Nina and her walks in the forest'
+      answer: 'the discovery of antibiotics, their medical impact, and the threat of resistance'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'When does Nina go to the forest?',
+      q: 'According to the passage, how did Alexander Fleming discover penicillin?',
       options: [
-        'Every Saturday',
-        'Every Sunday',
-        'Every Friday',
-        'Every day'
+        'he deliberately introduced mould to bacterial cultures to test its effect on infections',
+        'he observed that a mould contaminating his laboratory plates was killing surrounding bacteria',
+        'he discovered that certain minerals found in soil could prevent bacterial growth in wounds',
+        'he built on earlier chemical formulas developed by other European scientists before him',
+        'he noticed that soldiers kept in damp conditions recovered faster from infected wounds'
       ],
-      answer: 'Every Sunday'
+      answer: 'he observed that a mould contaminating his laboratory plates was killing surrounding bacteria'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Antibiotics transformed modern medicine because they...  1. made diseases like tuberculosis and scarlet fever treatable for the first time  2. were first developed in Germany during the First World War to treat soldiers  3. work by killing bacteria or stopping them from reproducing  4. have completely eliminated the global threat of bacterial infections  5. contributed to a significant rise in life expectancy around the world',
       options: [
-        'They see tall trees and flowers.',
-        'They take water and apples.',
-        'They break branches in the forest.',
-        'Nina feels happy in the forest.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'They break branches in the forest.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why do they not pick flowers?',
-      options: [
-        'Because flowers are not beautiful.',
-        'Because they want to protect nature.',
-        'Because there are no flowers.',
-        'Because grandmother is tired.'
-      ],
-      answer: 'Because they want to protect nature.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Nina take photos of?',
-      answer: 'beautiful butterflies and birds'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Alexander Fleming discovered penicillin in 1928 after observing mould killing bacteria in his lab.', answer: true },
+        { text: 'Penicillin was immediately turned into a practical medicine as soon as Fleming identified it.', answer: false },
+        { text: 'Antibiotic resistance is linked to the overuse and misuse of antibiotics.', answer: true },
+        { text: 'Antibiotics work by strengthening the immune system so it can fight infections more quickly.', answer: false }
+      ]
     }
   ]
 },
@@ -14368,66 +14293,60 @@ Nina takes photos of beautiful butterflies and birds. She feels calm and happy i
 {
   id: 'reading-18',
   type: 'reading',
-  title: 'Passage 18',
-  text: `Many people like shopping. Julia goes shopping with her mother every Saturday. They go to the supermarket. Julia helps her mother to choose bread, milk, fruit and vegetables. She likes to push the trolley.
+  title: 'passage 18',
+  text: `Dreams are one of the most mysterious aspects of human experience, and despite centuries of curiosity, scientists still do not fully understand why we dream. Most dreaming occurs during a stage of sleep called REM — rapid eye movement — during which the brain is highly active while the body remains largely still. The average person spends around two hours dreaming each night, though most dreams are forgotten within minutes of waking. Throughout history, people have attributed great significance to dreams, from ancient Egyptians who believed they were messages from the gods to early psychologists like Sigmund Freud, who argued that dreams reveal hidden desires and unconscious conflicts.
 
-Julia always checks the prices. She knows that it is important to spend money wisely. Sometimes she buys a new notebook or pencils for school. She never buys too many sweets.
-
-After shopping they go home and put everything in the fridge. Julia feels happy because she helps her family. Her mother says, "You are a good helper."`,
+Modern neuroscience offers different explanations. One widely supported theory suggests that dreaming helps the brain consolidate memories, sorting and storing information gathered during the day. Another theory proposes that dreams allow the brain to process difficult emotions in a safe environment, which may explain why disturbing experiences often appear in dreams. Some researchers believe dreaming is simply a by-product of brain activity during sleep, with no specific function at all. Despite decades of research, no single theory has been universally accepted. Dreaming remains one of the most intriguing puzzles in neuroscience, and understanding it may eventually tell us a great deal about how the mind works.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Julia\'s school',
-        'Julia and shopping with her mother',
-        'how to make sweets',
-        'different trolleys'
+        'why Sigmund Freud\'s theory of dreams is the most widely accepted in modern science',
+        'the various theories about why we dream and why no single explanation has been accepted',
+        'how REM sleep was discovered and what researchers learned from early brain studies',
+        'the reasons why most dreams disappear from memory within minutes of waking',
+        'how ancient cultures interpreted dreams compared with modern scientific understanding'
       ],
-      answer: 'Julia and shopping with her mother'
+      answer: 'the various theories about why we dream and why no single explanation has been accepted'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'When does Julia go shopping?',
+      q: 'According to the passage, what does one widely supported theory suggest about dreaming?',
       options: [
-        'Every Sunday',
-        'Every Saturday',
-        'Every Friday',
-        'Every day'
+        'that it allows the body to recover from physical and mental exhaustion during sleep',
+        'that it gives the conscious mind a space to rehearse future events and challenges',
+        'that it removes harmful or unnecessary thoughts from memory during the night',
+        'that it helps the brain consolidate memories by sorting and storing information gathered during the day',
+        'that it is a random by-product of neural activity with no meaningful function'
       ],
-      answer: 'Every Saturday'
+      answer: 'that it helps the brain consolidate memories by sorting and storing information gathered during the day'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Dreaming is considered a complex and unresolved phenomenon because...  1. most dreams are forgotten within minutes of waking up  2. dreams only occur during the deepest and most restful stages of sleep  3. some researchers believe dreams may help the brain process difficult emotions safely  4. ancient Egyptians were the first to study the nature of dreams scientifically  5. no single theory about why we dream has been universally accepted',
       options: [
-        'Julia helps her mother.',
-        'They buy fruit and vegetables.',
-        'Julia buys many sweets every week.',
-        'They put food in the fridge.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Julia buys many sweets every week.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why does Julia check the prices?',
-      options: [
-        'Because she likes numbers.',
-        'Because it is important to spend money wisely.',
-        'Because her mother cannot read.',
-        'Because there are no prices.'
-      ],
-      answer: 'Because it is important to spend money wisely.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Julia like to push?',
-      answer: 'the trolley'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Most dreaming takes place during REM sleep, when the brain is highly active.', answer: true },
+        { text: 'Sigmund Freud believed that dreams were messages sent to humans from the gods.', answer: false },
+        { text: 'One theory suggests that dreaming helps the brain process and store daily memories.', answer: true },
+        { text: 'Scientists have reached a clear and widely accepted consensus on the purpose of dreaming.', answer: false }
+      ]
     }
   ]
 },
@@ -14435,133 +14354,121 @@ After shopping they go home and put everything in the fridge. Julia feels happy 
 {
   id: 'reading-19',
   type: 'reading',
-  title: 'Passage 19',
-  text: `There are two types of houses: houses in the city and houses in the village. City houses are tall and close to each other. Village houses have big gardens with trees and flowers. 
+  title: 'passage 19',
+  text: `The internet as we know it today grew from a military research project in the United States during the Cold War. In the 1960s, the US Department of Defense funded a network called ARPANET, designed to allow computers at different universities and research centres to share information. A key feature of this system was that it had no central hub — if one part of the network was damaged or destroyed, data could be rerouted through other connections. This design made it particularly resilient and laid the technical foundation for the modern internet. By the late 1980s, ARPANET had expanded and connected institutions across several countries, though it remained largely limited to academic and government use.
 
-Ali lives in a village. His house has a big yard. He can play outside every day. In the city, children usually play in small parks. Ali likes the quiet village life and fresh air. He helps his father in the garden.
-
-Many people move from city to village because they want a peaceful life. Ali says, "Village life is better for me."`,
+The internet transformed from a specialist tool into a global public resource largely because of one invention: the World Wide Web. In 1989, British scientist Tim Berners-Lee proposed a system of linked documents that could be accessed through a browser using a simple address. This made navigating the internet accessible to ordinary users for the first time. Through the 1990s, the rapid growth of commercial websites, email services, and online businesses changed how people communicated, shopped, and consumed information. Today, the internet connects billions of people worldwide, shaping nearly every aspect of modern life from education and medicine to politics and entertainment.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Ali\'s school',
-        'city life and village life',
-        'how to grow flowers',
-        'tall buildings'
+        'why Tim Berners-Lee is considered the sole inventor of the modern internet',
+        'how commercial websites and email transformed everyday communication in the 1990s',
+        'the technical differences between ARPANET and the World Wide Web',
+        'the development of the internet from a military research network to a global resource',
+        'how the Cold War competition between nations drove advances in computing technology'
       ],
-      answer: 'city life and village life'
+      answer: 'the development of the internet from a military research network to a global resource'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Where does Ali live?',
+      q: 'According to the passage, what was a key feature of the ARPANET system?',
       options: [
-        'In a big city',
-        'In a village',
-        'Near the sea',
-        'In a tall building'
+        'it used a browser system that made internet access easy for non-specialist users',
+        'it connected universities and research centres without a central hub, so data could be rerouted if part of the network was damaged',
+        'it was designed to transmit both voice calls and written messages simultaneously',
+        'it was powered by a central government server that managed all data across the network',
+        'it was the first network to connect computers in different countries via satellite'
       ],
-      answer: 'In a village'
+      answer: 'it connected universities and research centres without a central hub, so data could be rerouted if part of the network was damaged'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The internet changed the world significantly because...  1. ARPANET was designed without a central hub, making the network resilient against damage  2. Tim Berners-Lee invented the first personal computer used to access the internet  3. the World Wide Web made the internet accessible to ordinary users for the first time  4. it was originally built to help soldiers communicate during active military operations  5. commercial growth in the 1990s changed how people communicated, shopped, and found information',
       options: [
-        'Village houses have big gardens.',
-        'Ali helps in the garden.',
-        'City houses are small and far from each other.',
-        'Ali likes fresh air.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'City houses are small and far from each other.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why do some people move to the village?',
-      options: [
-        'Because villages have big shops.',
-        'Because they want a peaceful life.',
-        'Because there are no schools.',
-        'Because city life is quiet.'
-      ],
-      answer: 'Because they want a peaceful life.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Ali have in his yard?',
-      answer: 'a big yard'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'ARPANET was funded by the US Department of Defense during the Cold War.', answer: true },
+        { text: 'Tim Berners-Lee was an American scientist who proposed the World Wide Web in 1995.', answer: false },
+        { text: 'The design of ARPANET allowed data to be rerouted if part of the network was damaged.', answer: true },
+        { text: 'ARPANET was freely available to the general public throughout the 1980s.', answer: false }
+      ]
     }
   ]
 },
-      
-      {
+
+{
   id: 'reading-20',
   type: 'reading',
-  title: 'Passage 20',
-  text: `Our dreams are important. When we are children we dream about our future. Some children want to be doctors, teachers, pilots or football players. 
+  title: 'passage 20',
+  text: `Ocean currents are large-scale movements of seawater that flow continuously around the globe, transporting heat, nutrients, and marine life across vast distances. They are driven by two main forces: wind and differences in the temperature and salinity of seawater. Near the surface, winds push water across the ocean in relatively consistent patterns. In the deep ocean, however, currents are driven by differences in water density — cold, salty water is denser and sinks, while warm, lighter water rises to replace it. This slow, deep movement of water around the globe is known as thermohaline circulation, and it connects all of the world's major oceans in a single continuous system often described as the ocean conveyor belt.
 
-Sara is ten years old. She wants to be a doctor. She says, "I want to help sick people and make them healthy." She reads books about medicine and helps her mother when someone is ill.
-
-Dreams give us goals. We must study hard and work to make our dreams come true. Sara's teacher says, "Keep your dream and never stop trying."`,
+Ocean currents play a critical role in regulating the Earth's climate. The Gulf Stream, for example, carries warm water from the Gulf of Mexico across the Atlantic to northwestern Europe, keeping countries like the United Kingdom warmer than their latitude would suggest. Currents also distribute nutrients through the ocean, supporting the marine food chains that billions of people depend on for food. Scientists are increasingly concerned that climate change — by melting polar ice and altering the temperature and salinity of seawater — could weaken or disrupt these vital currents, with potentially severe consequences for both ecosystems and global weather patterns.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Sara\'s school',
-        'dreams and future jobs',
-        'how to read books',
-        'sick people'
+        'why the Gulf Stream is considered the most important ocean current in the world',
+        'the effects of polar ice melting on the salinity and temperature of seawater',
+        'how ocean currents work and their importance for climate, ecosystems, and weather',
+        'why thermohaline circulation is more powerful than wind-driven surface currents',
+        'how marine food chains are affected by changes in ocean temperature and nutrient levels'
       ],
-      answer: 'dreams and future jobs'
+      answer: 'how ocean currents work and their importance for climate, ecosystems, and weather'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What does Sara want to be?',
+      q: 'According to the passage, what drives currents in the deep ocean?',
       options: [
-        'A teacher',
-        'A doctor',
-        'A pilot',
-        'A football player'
+        'the gravitational pull of the moon acting on large volumes of seawater',
+        'differences in water density caused by variations in temperature and salinity',
+        'strong underwater winds flowing in the opposite direction to surface currents',
+        'volcanic activity on the ocean floor, which forces heated water upward toward the surface',
+        'the rotation of the Earth, which pushes cold polar water toward the equator'
       ],
-      answer: 'A doctor'
+      answer: 'differences in water density caused by variations in temperature and salinity'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Ocean currents are vital to life on Earth because they...  1. transport heat, nutrients, and marine life across vast distances around the globe  2. are driven entirely by seasonal wind patterns that shift throughout the year  3. support marine food chains that billions of people depend on for food  4. prevent the formation of polar ice by maintaining stable seawater temperatures  5. play a critical role in regulating the Earth\'s climate',
       options: [
-        'Dreams are important.',
-        'Sara wants to help sick people.',
-        'Sara never reads books.',
-        'We must work hard for our dreams.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 3, 4, 5'
       ],
-      answer: 'Sara never reads books.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why does Sara read books about medicine?',
-      options: [
-        'Because she likes stories.',
-        'Because she wants to be a doctor.',
-        'Because her mother tells her.',
-        'Because there are no other books.'
-      ],
-      answer: 'Because she wants to be a doctor.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What do dreams give us?',
-      answer: 'goals'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Thermohaline circulation connects all of the world\'s major oceans in a single continuous system.', answer: true },
+        { text: 'The Gulf Stream carries cold water from northwestern Europe toward the Gulf of Mexico.', answer: false },
+        { text: 'Ocean currents help distribute nutrients through the ocean, supporting marine food chains.', answer: true },
+        { text: 'Climate change could strengthen ocean currents by increasing the salinity of polar waters.', answer: false }
+      ]
     }
   ]
 },
