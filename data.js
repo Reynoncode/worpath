@@ -13225,68 +13225,60 @@ const LEVELS = [
     color: '#0891b2',
     quizzes: [
       {
-  id: 'reading-1',
+  id: 'reading-24',
   type: 'reading',
-  title: 'Passage 1',
-  text: `Every day is important for our health. Anna is a student. She gets up at seven o'clock in the morning. First, she brushes her teeth and washes her face. Then she eats a good breakfast. She usually eats eggs, bread with butter and drinks milk. Breakfast is very important. It gives her energy for the day.
-
-After school, Anna walks home with her friends. She does not eat chips or sweets every day. She likes fruit and vegetables. In the evening, she does her homework, then helps her mother at home. She goes to bed at ten o'clock.
-
-Anna knows that healthy food and good habits help us to feel strong and happy. Many students forget breakfast, but Anna never forgets it.`,
+  title: 'Passage 24',
+  text: `Chocolate is one of the most popular foods in the world today...`, // eyni qalır
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Anna\'s school lessons',
-        'healthy daily habits',
-        'Anna\'s friends',
-        'evening activities'
+        'how to grow cacao trees in tropical countries',
+        'the history and popularity of chocolate',
+        'Spanish explorers who came to America',
+        'different ways cacao beans were used as money',
+        'the process of making chocolate in factories'
       ],
-      answer: 'healthy daily habits'
+      answer: 'the history and popularity of chocolate'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What does Anna eat for breakfast?',
+      q: 'Why did Europeans add sugar and milk to cacao?',
       options: [
-        'Chips and sweets',
-        'Eggs, bread and milk',
-        'Only fruit',
-        'Vegetables and rice'
+        'Because cacao trees did not grow in Europe',
+        'Because they wanted to sell it for more money',
+        'Because they did not like the bitter taste',
+        'Because sugar made it healthier',
+        'Because Spanish explorers taught them to'
       ],
-      answer: 'Eggs, bread and milk'
+      answer: 'Because they did not like the bitter taste'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The Maya and Aztec people used cacao beans to... 1. make a bitter drink  2. mix with sugar  3. use as money  4. add vanilla  5. give energy',
       options: [
-        'Anna gets up at seven o\'clock.',
-        'Breakfast is important for energy.',
-        'Anna eats chips every day.',
-        'Anna goes to bed at ten o\'clock.'
+        '1, 3, 5',
+        '1, 2, 4',
+        '2, 3, 4',
+        '1, 4, 5',
+        '3, 4, 5'
       ],
-      answer: 'Anna eats chips every day.'
+      answer: '1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why is breakfast important?',
-      options: [
-        'Because it helps her sleep well.',
-        'Because it gives her energy for the day.',
-        'Because she likes eggs only.',
-        'Because her friends eat breakfast.'
-      ],
-      answer: 'Because it gives her energy for the day.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What time does Anna go to bed?',
-      answer: 'ten o\'clock'
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The cacao tree grows in cold countries like England.', answer: false },
+        { text: 'The first chocolate bar was made in 1847 in England.', answer: true },
+        { text: 'Dark chocolate contains more sugar than milk chocolate.', answer: false },
+        { text: 'Scientists say a small amount of dark chocolate can be good for the heart.', answer: true }
+      ]
     }
   ]
 },
