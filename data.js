@@ -13260,18 +13260,18 @@ Modern chocolate factories use special machines to make different types of choco
       answer: 'Because they did not like the bitter taste'
     },
     {
-      id: 'q3',
-      type: 'mcq',
-      q: 'Complete the sentence: The Maya and Aztec people used cacao beans to... 1. make a bitter drink  2. mix with sugar  3. use as money  4. add vanilla  5. give energy',
-      options: [
-        '1, 3, 5',
-        '1, 2, 4',
-        '2, 3, 4',
-        '1, 4, 5',
-        '3, 4, 5'
-      ],
-      answer: '1, 3, 5'
-    },
+  id: 'q3',
+  type: 'mcq',
+  q: 'Complete the sentence: Cacao beans were important to the Maya and Aztec people because they... 1. were used as a form of payment  2. were grown in European countries  3. were mixed with water and spices to make a drink  4. were used to make sweet desserts  5. were believed to be good for health',
+  options: [
+    'A) 1, 3, 5',
+    'B) 2, 3, 4',
+    'C) 1, 4, 5',
+    'D) 2, 4, 5',
+    'E) 1, 2, 3'
+  ],
+  answer: 'A) 1, 3, 5'
+},
     {
       id: 'q4',
       type: 'truefalse',
