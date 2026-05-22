@@ -2115,7 +2115,6 @@ function startReadingQuiz(levelIdx, quizIdx) {
 }
 
 function renderReadingQuestion() {
-  // Keçilən suallar sona qayıdır
   if (readingState.queue.length === 0) {
     if (readingState.skipped.length > 0) {
       readingState.queue   = [...readingState.skipped];
@@ -2139,6 +2138,8 @@ function renderReadingQuestion() {
   quizBody.classList.add('reading-mode');
   quiz.locked = false;
 
+  const optLabels = ['A', 'B', 'C', 'D', 'E'];
+
   const textBlock = `
     <div class="reading-text-card">
       <div class="reading-text-title">${item.title}</div>
@@ -2146,6 +2147,7 @@ function renderReadingQuestion() {
     </div>
   `;
 
+  // ── MCQ (5 variant) ──────────────────────────────────
   if (q.type === 'mcq') {
     quizBody.innerHTML = `
       <div class="reading-layout">
@@ -2153,9 +2155,12 @@ function renderReadingQuestion() {
         <div class="reading-question-area">
           <div class="reading-question-text">${q.q}</div>
           <div class="reading-options-grid">
-            ${q.options.map((opt, i) =>
-              `<button class="reading-option-btn" data-opt="${i}">${opt}</button>`
-            ).join('')}
+            ${q.options.map((opt, i) => `
+              <button class="reading-option-btn" data-opt="${i}">
+                <span class="reading-opt-label">${optLabels[i]}</span>
+                ${opt}
+              </button>
+            `).join('')}
           </div>
           <button class="reading-skip-btn" id="reading-skip">Keç →</button>
         </div>
@@ -2174,31 +2179,103 @@ function renderReadingQuestion() {
       renderReadingQuestion();
     });
 
-  } else if (q.type === 'typein') {
+  // ── TRUE/FALSE ────────────────────────────────────────
+  } else if (q.type === 'truefalse') {
+    // userAnswers: null = cavablanmayıb, true/false = seçilib
+    const userAnswers = new Array(q.statements.length).fill(null);
+
+    const renderTFCards = () => {
+      const grid = document.getElementById('tf-cards-grid');
+      if (!grid) return;
+
+      grid.innerHTML = q.statements.map((stmt, i) => {
+        const ua = userAnswers[i];
+        const isAnswered = ua !== null;
+        const isCorrect  = ua === stmt.answer;
+
+        let trueClass  = 'tf-btn tf-true';
+        let falseClass = 'tf-btn tf-false';
+
+        if (isAnswered) {
+          // True düyməsi
+          if (stmt.answer === true) {
+            trueClass += ua === true ? ' tf-correct' : ' tf-show-correct';
+          } else {
+            if (ua === true) trueClass += ' tf-wrong';
+          }
+          // False düyməsi
+          if (stmt.answer === false) {
+            falseClass += ua === false ? ' tf-correct' : ' tf-show-correct';
+          } else {
+            if (ua === false) falseClass += ' tf-wrong';
+          }
+        }
+
+        return `
+          <div class="tf-card ${isAnswered ? 'tf-card-done' : ''}" data-idx="${i}">
+            <div class="tf-statement">
+              <span class="tf-num">${i + 1}.</span>
+              ${stmt.text}
+            </div>
+            <div class="tf-btns">
+              <button class="${trueClass}"
+                data-idx="${i}" data-val="true"
+                ${isAnswered ? 'disabled' : ''}>True</button>
+              <button class="${falseClass}"
+                data-idx="${i}" data-val="false"
+                ${isAnswered ? 'disabled' : ''}>False</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Event listenerlar
+      grid.querySelectorAll('.tf-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (quiz.locked) return;
+          const idx = parseInt(btn.dataset.idx);
+          const val = btn.dataset.val === 'true';
+          if (userAnswers[idx] !== null) return;
+
+          userAnswers[idx] = val;
+          const isCorrect = val === q.statements[idx].answer;
+          if (!isCorrect) readingState.wrong++;
+
+          renderTFCards();
+
+          // Hamısı cavablanıbsa
+          const allDone = userAnswers.every(a => a !== null);
+          if (allDone) {
+            const wrongCount = userAnswers.filter((a, i) => a !== q.statements[i].answer).length;
+            const correctCount = q.statements.length - wrongCount;
+            readingState.correct += correctCount;
+
+            // wrong artıq bənd-bənd sayıldı, correct isə yuxarıda
+            // Amma biz bütün sualı 1 vahid sayırıq progress üçün
+            readingState.queue.shift();
+
+            setTimeout(() => {
+              quiz.locked = false;
+              renderReadingQuestion();
+            }, 1000);
+          }
+        });
+      });
+    };
+
     quizBody.innerHTML = `
       <div class="reading-layout">
         ${textBlock}
         <div class="reading-question-area">
           <div class="reading-question-text">${q.q}</div>
-          <div class="reading-typein-wrap">
-            <input class="reading-typein-input" id="reading-input"
-              type="text" placeholder="Cavabınızı yazın..." autocomplete="off" />
-            <button class="reading-typein-submit" id="reading-submit">Yoxla</button>
-          </div>
-          <div class="reading-typein-feedback hidden" id="reading-feedback"></div>
+          <div class="tf-cards-grid" id="tf-cards-grid"></div>
           <button class="reading-skip-btn" id="reading-skip">Keç →</button>
         </div>
       </div>
     `;
 
-    const input = document.getElementById('reading-input');
+    renderTFCards();
 
-    document.getElementById('reading-submit').addEventListener('click', () => {
-      handleReadingAnswer(null, q, input.value);
-    });
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') handleReadingAnswer(null, q, input.value);
-    });
     document.getElementById('reading-skip').addEventListener('click', () => {
       if (quiz.locked) return;
       readingState.skipped.push(readingState.queue.shift());
@@ -2207,67 +2284,31 @@ function renderReadingQuestion() {
   }
 }
 
-function handleReadingAnswer(optIdx, q, typeInValue) {
+function handleReadingAnswer(optIdx, q) {
   if (quiz.locked) return;
   quiz.locked = true;
 
-  if (q.type === 'mcq') {
-    const isCorrect = q.options[optIdx] === q.answer;
+  const isCorrect = q.options[optIdx] === q.answer;
 
-    document.querySelectorAll('.reading-option-btn').forEach(btn => {
-      btn.disabled = true;
-      const i = parseInt(btn.dataset.opt);
-      if (q.options[i] === q.answer)       btn.classList.add('reading-opt-correct');
-      else if (i === optIdx && !isCorrect) btn.classList.add('reading-opt-wrong');
-    });
+  document.querySelectorAll('.reading-option-btn').forEach(btn => {
+    btn.disabled = true;
+    const i = parseInt(btn.dataset.opt);
+    if (q.options[i] === q.answer)      btn.classList.add('reading-opt-correct');
+    else if (i === optIdx && !isCorrect) btn.classList.add('reading-opt-wrong');
+  });
 
-    const skipBtn = document.getElementById('reading-skip');
-    if (skipBtn) skipBtn.style.display = 'none';
+  const skipBtn = document.getElementById('reading-skip');
+  if (skipBtn) skipBtn.style.display = 'none';
 
-    if (isCorrect) readingState.correct++;
-    else           readingState.wrong++;
+  if (isCorrect) readingState.correct++;
+  else           readingState.wrong++;
 
-    readingState.queue.shift();
+  readingState.queue.shift();
 
-    setTimeout(() => {
-      quiz.locked = false;
-      renderReadingQuestion();
-    }, 800);
-
-  } else if (q.type === 'typein') {
-    const userVal   = (typeInValue || '').trim().toLowerCase();
-    const correct   = (q.answer || '').trim().toLowerCase();
-    const isCorrect = userVal === correct;
-
-    const input     = document.getElementById('reading-input');
-    const submitBtn = document.getElementById('reading-submit');
-    const feedback  = document.getElementById('reading-feedback');
-
-    if (submitBtn) submitBtn.disabled = true;
-
-    if (isCorrect) {
-      input.classList.add('reading-input-correct');
-      if (feedback) {
-        feedback.textContent = '✓ Düzgün!';
-        feedback.className   = 'reading-typein-feedback reading-feedback-correct';
-      }
-      readingState.correct++;
-    } else {
-      input.classList.add('reading-input-wrong');
-      if (feedback) {
-        feedback.textContent = `✗ Düzgün cavab: ${q.answer}`;
-        feedback.className   = 'reading-typein-feedback reading-feedback-wrong';
-      }
-      readingState.wrong++;
-    }
-
-    readingState.queue.shift();
-
-    setTimeout(() => {
-      quiz.locked = false;
-      renderReadingQuestion();
-    }, isCorrect ? 800 : 1400);
-  }
+  setTimeout(() => {
+    quiz.locked = false;
+    renderReadingQuestion();
+  }, 800);
 }
 
 function finishReadingQuiz() {
