@@ -13224,330 +13224,339 @@ const LEVELS = [
     icon: '📖',
     color: '#0891b2',
     quizzes: [
-      {
-  id: 'reading-24',
+     // ── Reading Quiz Data — Passages 1–5 ─────────────────────
+
+{
+  id: 'reading-1',
   type: 'reading',
-  title: 'Passage 24',
-  text: `Chocolate is one of the most popular foods in the world today, but its history is very old and interesting. Chocolate comes from the cacao tree, which grows in tropical countries like Mexico, Brazil and Ghana. The scientific name of the cacao tree is Theobroma cacao, which means "food of the gods".
-More than 3,000 years ago, the Maya and Aztec people in Central America used cacao beans to make a bitter drink. They mixed the beans with water, spices and sometimes chilli. They believed this drink gave them energy and was good for health. They also used cacao beans as money. When Spanish explorers came to America in the 16th century, they brought cacao to Europe.
-At first, Europeans did not like the bitter taste. They added sugar, milk and vanilla to make it sweet. In 1847, the first chocolate bar was made in England. After that, chocolate became very popular around the world. Today, people eat more than 3 million tons of chocolate every year.
-Modern chocolate factories use special machines to make different types of chocolate: dark, milk and white. Dark chocolate is considered the healthiest because it contains more cacao and less sugar. However, eating too much chocolate is not good because of the high sugar and fat content. Scientists say that a small amount of dark chocolate every day can be good for the heart.`, // eyni qalır
+  title: 'The Science of Laughter',
+  text: `Laughter is one of the most natural human behaviours, yet scientists are still discovering how and why we laugh. On average, people laugh around 17 times a day, though most laughter has nothing to do with jokes. Studies show that the majority of laughter occurs during ordinary conversations, when people feel relaxed and connected with others.
+
+From a biological perspective, laughter involves several parts of the brain. When something seems funny, the brain's reward system releases a chemical called dopamine, which creates a feeling of pleasure. At the same time, the body produces endorphins — natural chemicals that reduce pain and increase feelings of happiness. This is why laughter is often described as "the best medicine."
+
+Laughter also has significant social functions. Research suggests that people laugh 30 times more often when they are with others than when they are alone. It helps build trust, strengthen relationships and reduce tension in difficult situations. In workplaces, shared laughter among colleagues has been shown to improve teamwork and productivity.
+
+However, not all laughter is positive. Laughter can sometimes be used to exclude or humiliate others, which can cause emotional damage. Psychologists make a distinction between genuine laughter, which is spontaneous and uncontrollable, and social laughter, which is performed deliberately to fit into a group or situation.
+
+Scientists believe that laughter evolved long before human language. Apes and other primates also produce laughter-like sounds during play, suggesting that laughter has deep evolutionary roots. Understanding laughter not only tells us about human biology but also about the social bonds that hold communities together.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
       q: 'What is the passage mainly about?',
       options: [
-        'how to grow cacao trees in tropical countries',
-        'the history and popularity of chocolate',
-        'Spanish explorers who came to America',
-        'different ways cacao beans were used as money',
-        'the process of making chocolate in factories'
+        'the funniest jokes in human history',
+        'the biological and social aspects of laughter',
+        'how the brain produces dopamine',
+        'why animals laugh more than humans',
+        'the negative effects of laughter on health'
       ],
-      answer: 'the history and popularity of chocolate'
+      answer: 'the biological and social aspects of laughter'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Why did Europeans add sugar and milk to cacao?',
+      q: 'According to the passage, why does laughter make people feel better?',
       options: [
-        'Because cacao trees did not grow in Europe',
-        'Because they wanted to sell it for more money',
-        'Because they did not like the bitter taste',
-        'Because sugar made it healthier',
-        'Because Spanish explorers taught them to'
+        'Because it activates the memory centre of the brain',
+        'Because it increases the production of adrenaline',
+        'Because it releases dopamine and endorphins in the body',
+        'Because it slows down the nervous system',
+        'Because it removes stress hormones from the blood'
       ],
-      answer: 'Because they did not like the bitter taste'
+      answer: 'Because it releases dopamine and endorphins in the body'
     },
     {
-  id: 'q3',
-  type: 'mcq',
-  q: 'Complete the sentence: Cacao beans were important to the Maya and Aztec people because they... 1. were used as a form of payment  2. were grown in European countries  3. were mixed with water and spices to make a drink  4. were used to make sweet desserts  5. were believed to be good for health',
-  options: [
-    'A) 1, 3, 5',
-    'B) 2, 3, 4',
-    'C) 1, 4, 5',
-    'D) 2, 4, 5',
-    'E) 1, 2, 3'
-  ],
-  answer: 'A) 1, 3, 5'
-},
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Laughter plays an important role in human life because it... 1. helps build trust between people  2. always results from hearing jokes  3. reduces pain through endorphins  4. improves teamwork in workplaces  5. is only found in human beings',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 2, 4',
+        'D) 3, 4, 5',
+        'E) 1, 2, 5'
+      ],
+      answer: 'A) 1, 3, 4'
+    },
     {
       id: 'q4',
       type: 'truefalse',
       q: 'Decide whether the statements are TRUE or FALSE.',
       statements: [
-        { text: 'The cacao tree grows in cold countries like England.', answer: false },
-        { text: 'The first chocolate bar was made in 1847 in England.', answer: true },
-        { text: 'Dark chocolate contains more sugar than milk chocolate.', answer: false },
-        { text: 'Scientists say a small amount of dark chocolate can be good for the heart.', answer: true }
+        { text: 'Most laughter occurs because people hear something funny.', answer: false },
+        { text: 'People laugh significantly more when they are with others.', answer: true },
+        { text: 'Genuine laughter is deliberate and performed for social reasons.', answer: false },
+        { text: 'Other primates also produce sounds similar to laughter during play.', answer: true }
       ]
     }
   ]
 },
+
 {
   id: 'reading-2',
   type: 'reading',
-  title: 'Passage 2',
-  text: `Sarah is ten years old. She has a small white cat. His name is Snow. Sarah loves Snow very much. Every morning she gives him milk and fish. Snow likes to play with a small ball. He runs and jumps in the garden.
+  title: 'How the Pyramids Were Built',
+  text: `The ancient Egyptian pyramids are among the most remarkable structures ever built. The Great Pyramid of Giza, constructed around 2560 BC, stood as the tallest man-made structure in the world for over 3,800 years. Despite centuries of research, the exact methods used to build the pyramids remain a subject of debate among historians and archaeologists.
 
-Sarah's cat is very clean. He washes his face with his paw. At night Snow sleeps on Sarah's bed. When Sarah is sad, Snow comes near her and makes her happy. Sarah's mother says, "Snow is not only a pet. He is a good friend."
+The pyramids were built as tombs for the pharaohs, who were considered gods on earth. Ancient Egyptians believed in life after death and filled the tombs with food, furniture and valuable objects that the pharaoh would need in the afterlife. The size of a pyramid reflected the power and wealth of the ruler it was built for.
 
-Many children want a pet, but Sarah is happy because she has Snow. She takes good care of her cat and Snow is always healthy and happy.`,
+Modern research suggests that the pyramids were not built by slaves, as was once commonly believed. Evidence found at workers' villages near Giza shows that the builders were skilled labourers who were paid, fed and given medical care. They worked in organised teams and took great pride in their work. Graffiti found on stone blocks even suggests they gave their teams names, such as "Friends of Khufu."
+
+One of the greatest mysteries is how the ancient Egyptians moved the massive stone blocks, some weighing up to 80 tons. Recent experiments and ancient paintings suggest that workers used wooden sledges pulled over wet sand to reduce friction. Ramps were also likely used to raise the stones to higher levels, though the exact design of these ramps is still unknown.
+
+The pyramids continue to fascinate people worldwide not only because of their size, but because they represent an extraordinary level of organisation, engineering and dedication achieved thousands of years ago without modern technology.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Sarah\'s school',
-        'Sarah and her cat',
-        'different kinds of pets',
-        'how to play in the garden'
+        'the religious beliefs of ancient Egyptians',
+        'the history and construction of the Egyptian pyramids',
+        'the discovery of tombs near the Nile River',
+        'the life of the pharaoh Khufu',
+        'modern technology used to study ancient structures'
       ],
-      answer: 'Sarah and her cat'
+      answer: 'the history and construction of the Egyptian pyramids'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What does Sarah give Snow every morning?',
+      q: 'What did recent evidence reveal about the pyramid builders?',
       options: [
-        'Bread and water',
-        'Milk and fish',
-        'Only vegetables',
-        'Rice and meat'
+        'They were prisoners forced to work without pay',
+        'They were foreign soldiers brought from other countries',
+        'They were skilled workers who received food and medical care',
+        'They were volunteers who worked for religious reasons',
+        'They were engineers who came from Greece and Rome'
       ],
-      answer: 'Milk and fish'
+      answer: 'They were skilled workers who received food and medical care'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The pyramids are considered extraordinary achievements because... 1. they were built without modern technology  2. they were completed in less than ten years  3. they required advanced organisation and engineering  4. they were designed by foreign architects  5. they were built by thousands of dedicated workers',
       options: [
-        'Snow is a white cat.',
-        'Snow sleeps on Sarah\'s bed.',
-        'Sarah is sad every day.',
-        'Snow likes to play with a ball.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
       ],
-      answer: 'Sarah is sad every day.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why does Sarah\'s mother call Snow a good friend?',
-      options: [
-        'Because he helps in the garden.',
-        'Because he makes Sarah happy when she is sad.',
-        'Because he eats a lot of fish.',
-        'Because he is very big.'
-      ],
-      answer: 'Because he makes Sarah happy when she is sad.'
-    },
-    {
-      id: 'q5',
-      type: 'type-in',
-      q: 'What is the name of Sarah\'s cat?',
-      answer: 'Snow'
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The Great Pyramid of Giza was the tallest structure in the world for nearly 4,000 years.', answer: true },
+        { text: 'Ancient Egyptians built pyramids as palaces for living pharaohs.', answer: false },
+        { text: 'Workers painted team names on some of the stone blocks used in construction.', answer: true },
+        { text: 'Historians have fully agreed on the exact method used to build the pyramids.', answer: false }
+      ]
     }
   ]
 },
-      
-     {
+
+{
   id: 'reading-3',
   type: 'reading',
-  title: 'Passage 3',
-  text: `Tom is a young boy. He lives in a small village with his family. Every weekend he visits his grandfather. His grandfather has a big farm. There are many animals on the farm: cows, sheep, chickens and two horses.
+  title: 'The Story of the Black Death',
+  text: `The Black Death was one of the most devastating pandemics in human history. It swept through Asia, the Middle East and Europe between 1347 and 1351, killing an estimated 75 to 200 million people. In Europe alone, it is believed to have wiped out between one-third and one-half of the entire population within just a few years.
 
-Tom likes horses the most. He helps his grandfather to feed the animals and clean the stable. In the afternoon they sit under a big tree and grandfather tells him old stories. Tom learns many things about nature and animals from his grandfather.
+The disease was caused by the bacterium Yersinia pestis, which was primarily spread through the bites of infected fleas living on rats. As trade routes expanded across continents, rats carrying these fleas travelled on merchant ships, spreading the disease rapidly from port to port. When the plague reached a new city, it often killed thousands within weeks.
 
-Tom is always happy when he goes to the farm. He wants to have his own farm one day.`,
+The symptoms of the disease were horrifying. Victims developed large, painful swellings called buboes in the neck, armpits and groin, which gave the disease its name. High fever, vomiting and blackening of the skin followed. Most victims died within days of showing symptoms, and there was no effective treatment at the time.
+
+The Black Death had enormous consequences for European society. With so many people dead, there was a severe shortage of agricultural workers. This gave survivors more bargaining power, which contributed to the decline of the feudal system. The Church also lost authority, as prayers and religious rituals had failed to stop the disease. These social changes helped set the stage for the Renaissance and a new era of scientific thinking.
+
+Today, the plague still exists in some parts of the world but can be treated effectively with modern antibiotics. The Black Death remains a powerful reminder of how quickly infectious diseases can reshape entire civilisations.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Tom\'s school',
-        'Tom and his grandfather\'s farm',
-        'life in a big city',
-        'different kinds of stories'
+        'the modern treatment of bacterial infections',
+        'the causes, effects and legacy of the Black Death',
+        'the history of trade routes between Asia and Europe',
+        'how rats spread diseases in medieval cities',
+        'the religious response to disease in the Middle Ages'
       ],
-      answer: 'Tom and his grandfather\'s farm'
+      answer: 'the causes, effects and legacy of the Black Death'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What animals are on the grandfather\'s farm?',
+      q: 'How did the Black Death spread so rapidly across continents?',
       options: [
-        'Only cows and sheep',
-        'Cows, sheep, chickens and horses',
-        'Only horses',
-        'Dogs and cats'
+        'Through contaminated water supplies in major cities',
+        'Through direct contact between infected soldiers during wars',
+        'Through infected fleas on rats travelling on merchant ships',
+        'Through birds carrying the bacteria across long distances',
+        'Through crops imported from Asia to European markets'
       ],
-      answer: 'Cows, sheep, chickens and horses'
+      answer: 'Through infected fleas on rats travelling on merchant ships'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The Black Death had a lasting impact on European society because it... 1. reduced the workforce and gave labourers more power  2. caused the Church to gain greater authority over people  3. weakened the feudal system that had dominated for centuries  4. directly led to the development of modern antibiotics  5. created conditions that contributed to new ways of thinking',
       options: [
-        'Tom visits his grandfather every weekend.',
-        'Tom helps on the farm.',
-        'Tom lives in a big city.',
-        'Grandfather tells old stories.'
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 3, 4'
       ],
-      answer: 'Tom lives in a big city.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why is Tom happy when he goes to the farm?',
-      options: [
-        'Because he can play computer games.',
-        'Because he learns about nature and spends time with his grandfather.',
-        'Because there is no school on the farm.',
-        'Because he can eat a lot of food.'
-      ],
-      answer: 'Because he learns about nature and spends time with his grandfather.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What does Tom want to have one day?',
-      answer: 'his own farm'
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The Black Death killed more than half of the world\'s population between 1347 and 1351.', answer: false },
+        { text: 'Victims of the plague developed painful swellings in several parts of the body.', answer: true },
+        { text: 'The Church gained more influence in society as a result of the Black Death.', answer: false },
+        { text: 'The plague can still be found today but is treatable with antibiotics.', answer: true }
+      ]
     }
   ]
 },
-     {
+
+{
   id: 'reading-4',
   type: 'reading',
-  title: 'Passage 4',
-  text: `Emma is a nine-year-old girl. She goes to Green Primary School. Her favourite subject is Art. Every Monday she has an Art lesson. In the lesson she draws pictures and paints with colours. Emma likes to draw animals and flowers.
+  title: 'Why Do Cats Purr?',
+  text: `Few sounds are as comforting as the gentle purring of a cat. Yet despite being one of the most familiar animal sounds in the world, the science behind purring is more complex than most people realise. Cats purr by rapidly contracting and relaxing the muscles in their larynx, or voice box, which causes the air they breathe to vibrate. This produces the distinctive rumbling sound at a frequency typically between 25 and 150 hertz.
 
-At school Emma has many friends. Her best friend is Lily. They play together in the break time. They like to play hide and seek. After school Emma goes home and does her homework. Then she reads a story book for twenty minutes.
+Most people assume that cats only purr when they are happy and relaxed. While this is often true, cats also purr in situations of stress, pain and illness. Veterinarians have observed cats purring during medical examinations, while giving birth and even when they are close to death. This suggests that purring serves a much wider emotional function than simple contentment.
 
-Emma is a good student. She listens to her teacher carefully and always tries to do her best. Her teacher says, "Emma is a hardworking and kind girl."`,
+Interestingly, research has shown that the frequency of a cat's purr may have healing properties. Vibrations between 25 and 50 hertz have been shown in scientific studies to promote bone density and accelerate the healing of muscles and tendons. Some scientists have suggested that cats may purr as a self-soothing and self-healing mechanism during periods of stress or injury.
+
+Purring also plays an important role in communication. Kittens begin purring just a few days after birth, and mother cats purr while nursing to keep their young calm. When cats purr around humans, they are often signalling a desire for attention, food or comfort. Researchers have identified a specific type of purr, called the "solicitation purr," which cats use to communicate urgency — for example, when they are hungry.
+
+Unlike big cats such as lions and tigers, which can roar but cannot purr continuously, domestic cats can purr both when breathing in and out. This ability makes their purring a constant, rhythmic sound that many people find deeply soothing.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Emma\'s favourite food',
-        'Emma and her school life',
-        'different colours in Art',
-        'how to play hide and seek'
+        'the differences between domestic cats and wild cats',
+        'why cats are the most popular pets in the world',
+        'the science, purpose and effects of cat purring',
+        'how kittens learn to communicate with their mothers',
+        'the medical use of sound vibrations in treating animals'
       ],
-      answer: 'Emma and her school life'
+      answer: 'the science, purpose and effects of cat purring'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What is Emma\'s favourite subject?',
+      q: 'According to the passage, what is surprising about cat purring?',
       options: [
-        'Maths',
-        'Art',
-        'Music',
-        'Science'
+        'Cats can only purr at a single specific frequency',
+        'Cats purr not only when happy but also when stressed or in pain',
+        'Only female cats are capable of purring',
+        'Big cats like lions purr more frequently than domestic cats',
+        'Kittens cannot purr until they are several months old'
       ],
-      answer: 'Art'
+      answer: 'Cats purr not only when happy but also when stressed or in pain'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Cat purring is considered remarkable because... 1. it may help cats heal their own bones and muscles  2. it is used to communicate different needs to humans  3. it only occurs when the cat is in perfect health  4. it begins in kittens just days after birth  5. it produces vibrations that are harmful to humans',
       options: [
-        'Emma goes to Green Primary School.',
-        'Emma likes to draw animals and flowers.',
-        'Emma does not have any friends.',
-        'Emma reads a story book after homework.'
+        'A) 1, 2, 4',
+        'B) 2, 3, 5',
+        'C) 1, 3, 4',
+        'D) 2, 4, 5',
+        'E) 1, 3, 5'
       ],
-      answer: 'Emma does not have any friends.'
+      answer: 'A) 1, 2, 4'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'What do Emma and Lily like to play?',
-      options: [
-        'Football',
-        'Hide and seek',
-        'Computer games',
-        'Basketball'
-      ],
-      answer: 'Hide and seek'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'How long does Emma read a story book?',
-      answer: 'twenty minutes'
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Cats produce purring sounds by vibrating muscles in their throat.', answer: true },
+        { text: 'Scientific research has found no connection between purring and physical healing.', answer: false },
+        { text: 'Lions and tigers can purr continuously just like domestic cats.', answer: false },
+        { text: 'Cats use a special type of purr to signal hunger to their owners.', answer: true }
+      ]
     }
   ]
 },
 
-      {
+{
   id: 'reading-5',
   type: 'reading',
-  title: 'Passage 5',
-  text: `Mike is eleven years old. He loves football very much. Every Tuesday and Thursday he goes to football practice after school. His team is called "Blue Stars". Mike is a fast runner and he is good at kicking the ball.
+  title: 'The History of Olive Oil',
+  text: `Olive oil is one of the oldest and most widely used foods in human history. Its origins trace back more than 6,000 years to the eastern Mediterranean region, where wild olive trees grew naturally across rocky hillsides. Ancient civilisations in Greece, Egypt and the Middle East quickly recognised the value of the olive tree, and its fruit became central to their culture, economy and religion.
 
-On Saturdays there is usually a match. Mike's family comes to watch him. His father always says, "Well done, Mike!" After the match Mike drinks water and eats fruit. He knows that sports are good for his health.
+In ancient Greece, olive oil was far more than just a food. Athletes rubbed it on their bodies before competitions, and it was used as fuel for lamps, a base for perfumes and an ingredient in medicines. Olive trees were considered sacred, and cutting one down was punishable by death in some city-states. The olive branch became a universal symbol of peace and victory, a tradition that continues today in the design of international flags and emblems.
 
-Mike wants to be a professional football player one day. He works hard and never misses practice.`,
+The Romans played a key role in spreading olive cultivation across Europe. As the Roman Empire expanded into Spain, North Africa and southern France, they brought olive trees and the knowledge of oil production with them. By the first century AD, the Mediterranean had become the world's leading producer of olive oil, a position it has largely maintained to this day.
+
+Modern science has confirmed what ancient peoples seemed to understand intuitively — olive oil is exceptionally good for human health. It is rich in monounsaturated fats and antioxidants, which reduce the risk of heart disease, lower inflammation and protect cells from damage. The Mediterranean diet, which features olive oil as its primary fat source, is consistently ranked among the healthiest diets in the world.
+
+Today, Spain, Italy and Greece together produce around 70 percent of the world's olive oil. Despite industrial production methods, high-quality extra virgin olive oil is still made using methods that are remarkably similar to those used thousands of years ago.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'Mike\'s school subjects',
-        'Mike and his love for football',
-        'how to watch matches',
-        'Mike\'s friends'
+        'the health benefits of the Mediterranean diet',
+        'how olive trees grow in different climates',
+        'the history, cultural significance and value of olive oil',
+        'the economic importance of Spain and Italy today',
+        'the religious ceremonies involving olive trees in ancient Greece'
       ],
-      answer: 'Mike and his love for football'
+      answer: 'the history, cultural significance and value of olive oil'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'When does Mike go to football practice?',
+      q: 'How did the Romans contribute to the spread of olive oil?',
       options: [
-        'Every Monday and Wednesday',
-        'Every Tuesday and Thursday',
-        'Only on Saturdays',
-        'Every day after school'
+        'They invented new machines to produce olive oil in large quantities',
+        'They brought olive trees and production knowledge to newly conquered lands',
+        'They exported olive oil to Asia and established new trade routes',
+        'They replaced all other cooking fats with olive oil across the empire',
+        'They developed the first olive oil health guidelines for their soldiers'
       ],
-      answer: 'Every Tuesday and Thursday'
+      answer: 'They brought olive trees and production knowledge to newly conquered lands'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Olive oil was highly valued in the ancient world because... 1. it was used as fuel for lighting  2. it served as a base for medicines and perfumes  3. it was the primary ingredient in bread-making  4. it was applied to athletes\' bodies before competitions  5. it was traded exclusively between Greece and Egypt',
       options: [
-        'Mike is fast and good at kicking the ball.',
-        'Mike\'s family watches his matches.',
-        'Mike eats sweets after the match.',
-        'Mike wants to be a professional player.'
+        'A) 1, 2, 4',
+        'B) 2, 3, 5',
+        'C) 1, 3, 4',
+        'D) 3, 4, 5',
+        'E) 1, 2, 5'
       ],
-      answer: 'Mike eats sweets after the match.'
+      answer: 'A) 1, 2, 4'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why does Mike drink water and eat fruit after the match?',
-      options: [
-        'Because he is not hungry.',
-        'Because it is good for his health.',
-        'Because his father tells him to do it.',
-        'Because there is no other food.'
-      ],
-      answer: 'Because it is good for his health.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What is the name of Mike\'s football team?',
-      answer: 'Blue Stars'
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Olive oil production began less than 2,000 years ago in the Mediterranean region.', answer: false },
+        { text: 'In ancient Greece, destroying an olive tree was considered a serious offence.', answer: true },
+        { text: 'Modern science has found no evidence that olive oil is beneficial for health.', answer: false },
+        { text: 'Spain, Italy and Greece currently produce the majority of the world\'s olive oil.', answer: true }
+      ]
     }
   ]
 },
