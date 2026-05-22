@@ -1409,7 +1409,7 @@ button { font-family: var(--font); }
 }
 
 .reading-text-card {
-  flex: 0 0 25%;
+  flex: 0 0 15%;
   min-height: 0;
   overflow-y: auto;
   padding: 14px 18px;
