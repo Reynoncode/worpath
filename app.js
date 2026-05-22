@@ -2141,11 +2141,12 @@ function renderReadingQuestion() {
   const optLabels = ['A', 'B', 'C', 'D', 'E'];
 
   const textBlock = `
-    <div class="reading-text-card">
-      <div class="reading-text-title">${item.title}</div>
-      <div class="reading-text-content">${item.text}</div>
-    </div>
-  `;
+  <div class="reading-text-card" id="reading-text-card">
+    <div class="reading-text-title">${item.title}</div>
+    <div class="reading-text-content">${item.text}</div>
+  </div>
+  <div class="reading-resizer" id="reading-resizer"></div>
+`;
 
   // ── MCQ (5 variant) ──────────────────────────────────
   if (q.type === 'mcq') {
@@ -2177,6 +2178,7 @@ function renderReadingQuestion() {
       if (quiz.locked) return;
       readingState.skipped.push(readingState.queue.shift());
       renderReadingQuestion();
+      
     });
 
   // ── TRUE/FALSE ────────────────────────────────────────
@@ -2282,6 +2284,50 @@ function renderReadingQuestion() {
       renderReadingQuestion();
     });
   }
+  // ── Resizer ──────────────────────────────────────────────
+  requestAnimationFrame(() => {
+    const resizer  = document.getElementById('reading-resizer');
+    const textCard = document.getElementById('reading-text-card');
+    const layout   = resizer?.closest('.reading-layout');
+    if (!resizer || !textCard || !layout) return;
+
+    let startY = 0, startHeight = 0;
+
+    resizer.addEventListener('mousedown', onMouseDown);
+    resizer.addEventListener('touchstart', onTouchStart, { passive: true });
+
+    function onMouseDown(e) {
+      startY = e.clientY; startHeight = textCard.offsetHeight;
+      resizer.classList.add('dragging');
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    }
+    function onTouchStart(e) {
+      startY = e.touches[0].clientY; startHeight = textCard.offsetHeight;
+      resizer.classList.add('dragging');
+      document.addEventListener('touchmove', onTouchMove, { passive: false });
+      document.addEventListener('touchend', onTouchEnd);
+    }
+    function onMouseMove(e) {
+      const newH = Math.min(Math.max(startHeight + (e.clientY - startY), 80), layout.offsetHeight - 80);
+      textCard.style.height = `${newH}px`;
+    }
+    function onTouchMove(e) {
+      e.preventDefault();
+      const newH = Math.min(Math.max(startHeight + (e.touches[0].clientY - startY), 80), layout.offsetHeight - 80);
+      textCard.style.height = `${newH}px`;
+    }
+    function onMouseUp() {
+      resizer.classList.remove('dragging');
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    }
+    function onTouchEnd() {
+      resizer.classList.remove('dragging');
+      document.removeEventListener('touchmove', onTouchMove);
+      document.removeEventListener('touchend', onTouchEnd);
+    }
+  });
 }
 
 function handleReadingAnswer(optIdx, q) {
