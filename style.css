@@ -1392,14 +1392,14 @@ button { font-family: var(--font); }
 }
 
 /* ── READING QUIZ ───────────────────────────────────────── */
-
+ 
 .quiz-body.reading-mode {
   padding: 0;
   gap: 0;
   justify-content: flex-start;
   align-items: stretch;
 }
-
+ 
 .reading-layout {
   display: flex;
   flex-direction: column;
@@ -1407,7 +1407,7 @@ button { font-family: var(--font); }
   width: 100%;
   overflow: hidden;
 }
-
+ 
 .reading-text-card {
   flex: 0 0 50%;
   min-height: 0;
@@ -1416,7 +1416,7 @@ button { font-family: var(--font); }
   background: var(--surface);
   border-bottom: 1.5px solid var(--border);
 }
-
+ 
 .reading-text-title {
   font-size: 12px;
   font-weight: 800;
@@ -1425,7 +1425,7 @@ button { font-family: var(--font); }
   letter-spacing: 0.8px;
   margin-bottom: 10px;
 }
-
+ 
 .reading-text-content {
   font-size: 13.5px;
   font-weight: 500;
@@ -1433,7 +1433,7 @@ button { font-family: var(--font); }
   line-height: 1.75;
   white-space: pre-line;
 }
-
+ 
 .reading-question-area {
   flex: 0 0 50%;
   min-height: 0;
@@ -1444,52 +1444,84 @@ button { font-family: var(--font); }
   flex-direction: column;
   gap: 10px;
 }
-
+ 
 .reading-question-text {
   font-size: 14px;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.5;
 }
-
+ 
+/* ── MCQ — 5 variant ────────────────────────────────────── */
+ 
 .reading-options-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
 }
-
+ 
 .reading-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   background: var(--surface);
   border: 2px solid var(--border);
   border-radius: var(--rs);
-  padding: 10px 8px;
+  padding: 10px 12px;
   font-family: var(--font);
   font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
   cursor: pointer;
   line-height: 1.3;
-  min-height: 50px;
-  text-align: center;
+  min-height: 44px;
+  text-align: left;
   transition: border-color 0.12s, background 0.12s, transform 0.1s;
   word-break: break-word;
+  width: 100%;
 }
-
-.reading-option-btn:active:not(:disabled) { transform: scale(0.95); }
+ 
+.reading-option-btn:active:not(:disabled) { transform: scale(0.98); }
 .reading-option-btn:disabled { cursor: default; }
-
+ 
+.reading-opt-label {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--text-faint);
+  background: var(--border-light);
+  border-radius: 5px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+ 
 .reading-opt-correct {
   background: #EAF8F1 !important;
   border-color: var(--completed) !important;
   color: #207A44 !important;
 }
-
+ 
+.reading-opt-correct .reading-opt-label {
+  background: #c2ecd6 !important;
+  color: #207A44 !important;
+}
+ 
 .reading-opt-wrong {
   background: #FDEEEE !important;
   border-color: var(--wrong) !important;
   color: #A83030 !important;
 }
-
+ 
+.reading-opt-wrong .reading-opt-label {
+  background: #f7cccc !important;
+  color: #A83030 !important;
+}
+ 
+/* ── Skip düyməsi ───────────────────────────────────────── */
+ 
 .reading-skip-btn {
   align-self: flex-end;
   background: none;
@@ -1503,74 +1535,103 @@ button { font-family: var(--font); }
   cursor: pointer;
   transition: background 0.12s, transform 0.1s;
 }
-
+ 
 .reading-skip-btn:active {
   transform: scale(0.95);
   background: var(--border-light);
 }
-
-.reading-typein-wrap {
+ 
+/* ── TRUE / FALSE ───────────────────────────────────────── */
+ 
+.tf-cards-grid {
   display: flex;
+  flex-direction: column;
   gap: 8px;
-  align-items: center;
 }
-
-.reading-typein-input {
-  flex: 1;
-  height: 44px;
-  border: 2px solid var(--border);
-  border-radius: var(--rs);
-  padding: 0 14px;
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--text-primary);
+ 
+.tf-card {
   background: var(--surface);
-  outline: none;
-  transition: border-color 0.15s;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 11px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  transition: border-color 0.2s, background 0.2s;
 }
-
-.reading-typein-input:focus { border-color: var(--unlocked); }
-
-.reading-input-correct {
-  border-color: var(--completed) !important;
-  background: #EAF8F1 !important;
+ 
+.tf-card-done {
+  border-color: var(--border);
+  background: var(--bg);
+  opacity: 0.85;
 }
-
-.reading-input-wrong {
-  border-color: var(--wrong) !important;
-  background: #FDEEEE !important;
-}
-
-.reading-typein-submit {
-  height: 44px;
-  padding: 0 18px;
-  background: var(--text-primary);
-  color: #fff;
-  border: none;
-  border-radius: var(--rs);
-  font-family: var(--font);
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: opacity 0.15s, transform 0.1s;
-}
-
-.reading-typein-submit:active { transform: scale(0.96); opacity: 0.88; }
-.reading-typein-submit:disabled { opacity: 0.5; cursor: default; }
-
-.reading-typein-feedback {
+ 
+.tf-statement {
   font-size: 13px;
-  font-weight: 700;
-  padding: 6px 10px;
-  border-radius: var(--rs);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+  display: flex;
+  gap: 6px;
+  align-items: flex-start;
 }
-
-.reading-feedback-correct { background: #EAF8F1; color: #207A44; }
-.reading-feedback-wrong   { background: #FDEEEE; color: #A83030; }
-
-/* ── READING PATH — 4 sütunlu grid ─────────────────────── */
+ 
+.tf-num {
+  font-weight: 900;
+  color: var(--text-faint);
+  flex-shrink: 0;
+  font-size: 12px;
+  margin-top: 1px;
+}
+ 
+.tf-btns {
+  display: flex;
+  gap: 7px;
+}
+ 
+.tf-btn {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 8px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 800;
+  border: 1.5px solid var(--border);
+  background: var(--bg);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.3px;
+}
+ 
+.tf-btn:active:not(:disabled) { transform: scale(0.96); }
+.tf-btn:disabled { cursor: default; }
+ 
+.tf-true  { color: #1a7a4a; }
+.tf-false { color: #b5341b; }
+ 
+.tf-btn:hover:not(:disabled) { background: var(--border-light); }
+ 
+.tf-correct {
+  background: #EAF8F1 !important;
+  border-color: var(--completed) !important;
+  color: #207A44 !important;
+}
+ 
+.tf-wrong {
+  background: #FDEEEE !important;
+  border-color: var(--wrong) !important;
+  color: #A83030 !important;
+}
+ 
+.tf-show-correct {
+  background: #EAF8F1 !important;
+  border-color: var(--completed) !important;
+  color: #207A44 !important;
+  opacity: 0.6;
+}
+ 
+/* ── READING PATH — grid ────────────────────────────────── */
+ 
 .reading-quiz-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1578,7 +1639,7 @@ button { font-family: var(--font); }
   justify-content: flex-start;
   row-gap: 18px;
 }
-
+ 
 .reading-grid-node {
   width: 25%;
   display: flex;
@@ -1594,24 +1655,13 @@ button { font-family: var(--font); }
   box-shadow: none !important;
   text-align: center;
 }
-
+ 
 .reading-grid-node:active { transform: scale(0.94); }
-
-.reading-node-done {
-  border-color: var(--completed);
-  background: #EAF8F1;
-}
-
-.reading-node-unlocked {
-  border-color: var(--unlocked);
-  box-shadow: 0 2px 8px rgba(74,143,231,0.18);
-}
-
-.reading-node-locked {
-  opacity: 0.45;
-  cursor: not-allowed;
-}
-
+ 
+.reading-node-done     { border-color: var(--completed); background: #EAF8F1; }
+.reading-node-unlocked { border-color: var(--unlocked); box-shadow: 0 2px 8px rgba(74,143,231,0.18); }
+.reading-node-locked   { opacity: 0.45; cursor: not-allowed; }
+ 
 .reading-node-circle {
   width: 56px;
   height: 56px;
@@ -1627,26 +1677,26 @@ button { font-family: var(--font); }
   box-shadow: 0 4px 14px rgba(0,0,0,0.10);
   flex-shrink: 0;
 }
-
+ 
 .reading-node-done .reading-node-circle {
   background: var(--completed);
   border-color: var(--completed);
   box-shadow: 0 4px 12px rgba(62,184,116,0.25);
 }
-
+ 
 .reading-node-unlocked .reading-node-circle {
   border-color: var(--unlocked);
   color: var(--unlocked);
   box-shadow: 0 4px 14px rgba(74,143,231,0.18);
 }
-
+ 
 .reading-node-locked .reading-node-circle {
   background: var(--border-light);
   border-color: var(--border);
 }
-
+ 
 .reading-grid-node:active .reading-node-circle { transform: scale(0.91); }
-
+ 
 .reading-node-title {
   font-size: 10px;
   font-weight: 700;
@@ -1654,7 +1704,7 @@ button { font-family: var(--font); }
   line-height: 1.3;
   word-break: break-word;
 }
-
+ 
 /* ══════════════════════════════════════════════════════════
    LISTENING QUIZ
 ══════════════════════════════════════════════════════════ */
