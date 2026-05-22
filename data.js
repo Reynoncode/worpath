@@ -14476,347 +14476,303 @@ Ocean currents play a critical role in regulating the Earth\'s climate. The Gulf
 {
   id: 'reading-21',
   type: 'reading',
-  title: 'Passage 21',
-  text: `The Great Barrier Reef is one of the most amazing places in the world. It is the largest coral reef system on Earth and it is located in Australia, off the coast of Queensland. The reef is so big that astronauts can see it from space. It stretches over 2,300 kilometres and covers an area bigger than many countries.
+  title: 'passage 21',
+  text: `The cacao tree has been cultivated for thousands of years in the tropical regions of Central and South America. The ancient Maya and Aztec civilisations considered cacao sacred and prepared a bitter drink from it, mixing the ground beans with water, spices, and sometimes chilli. Unlike the sweet chocolate enjoyed today, this early beverage was consumed primarily by royalty, priests, and warriors, as it was believed to provide strength and energy. The Aztecs valued cacao beans so highly that they were used as a form of currency, with goods being traded in exchange for a specific number of beans.
 
-This wonderful reef is home to thousands of different sea animals. There are more than 1,500 species of fish, around 400 types of coral, six species of sea turtles, and many sharks and dolphins. The colourful fish and beautiful coral make it look like an underwater garden. Every year, millions of tourists from all over the world visit the reef to go snorkelling, diving or take boat tours.
-
-However, the Great Barrier Reef faces serious problems today. Climate change is making the ocean warmer and this causes coral bleaching. When the water gets too hot, the coral loses its bright colours and can die. Plastic pollution and dirty water from cities also damage the reef. Scientists, governments and local people are working together to protect it. They create marine protected areas and teach tourists important rules.
-
-The Great Barrier Reef is not only beautiful but also very important. It protects the coast from big waves and helps many sea animals to survive. Without it, ocean life would be in great danger. That is why we all need to help protect this natural wonder for future generations.`,
+When Spanish explorers arrived in the Americas in the sixteenth century, they brought cacao back to Europe. The drink was initially unfamiliar to European tastes, but it became widely popular after sugar was added to reduce its natural bitterness. By the seventeenth century, chocolate houses had opened in several major European cities, and the beverage had become fashionable among the wealthy. The development of solid chocolate came much later, during the nineteenth century, when new techniques made it possible to extract cocoa butter and combine it with sugar and milk powder. Today, chocolate is one of the world's most widely consumed foods, enjoyed in countless forms across nearly every culture on Earth.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'the history of Australia',
-        'the Great Barrier Reef and its importance',
-        'how astronauts travel in space',
-        'different kinds of boats'
+        'why the Maya and Aztec civilisations valued cacao more than any other agricultural product in the region',
+        'the history of chocolate from an ancient sacred drink to a modern global food',
+        'how Spanish explorers introduced new flavours and beverages to European courts during the age of exploration',
+        'the role of sugar in making chocolate accessible and appealing to ordinary people across Europe',
+        'why solid chocolate took several centuries longer to develop than the original cacao drink'
       ],
-      answer: 'the Great Barrier Reef and its importance'
+      answer: 'the history of chocolate from an ancient sacred drink to a modern global food'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Where is the Great Barrier Reef located?',
+      q: 'According to the passage, why did chocolate become popular in Europe?',
       options: [
-        'In Europe',
-        'In Australia',
-        'In Africa',
-        'In South America'
+        'because Spanish explorers promoted it as a health remedy with unique benefits for European consumers',
+        'because it was cheap and widely available across all social classes in Europe by the 1600s',
+        'because sugar was added to reduce its bitterness, making it more appealing to European tastes',
+        'because cacao was declared a luxury item, which increased demand among European nobles and royalty',
+        'because chocolate houses became fashionable social spaces where wealthy Europeans gathered to do business'
       ],
-      answer: 'In Australia'
+      answer: 'because sugar was added to reduce its bitterness, making it more appealing to European tastes'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The history of cacao shows how a single ingredient transformed across different cultures and centuries...  1. the Maya and Aztecs prepared a bitter cacao drink mixed with water and spices  2. cacao trees were first discovered by Portuguese navigators on the western coast of Africa  3. the Aztecs used cacao beans as a form of currency in trade  4. sugar was added in Europe to make the cacao drink more popular and palatable  5. solid chocolate was first made during the sixteenth century in Spain',
       options: [
-        'The reef is home to more than 1,500 species of fish.',
-        'Tourists can go snorkelling there.',
-        'The reef is very small and difficult to see.',
-        'Climate change is dangerous for the coral.'
+        'A) 1, 2, 5',
+        'B) 2, 4, 5',
+        'C) 1, 3, 4',
+        'D) 1, 2, 3',
+        'E) 3, 4, 5'
       ],
-      answer: 'The reef is very small and difficult to see.'
+      answer: 'C) 1, 3, 4'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'What causes coral bleaching according to the passage?',
-      options: [
-        'Too many tourists swimming every day',
-        'Warmer ocean water because of climate change',
-        'Strong winds and big waves',
-        'People collecting coral as souvenirs'
-      ],
-      answer: 'Warmer ocean water because of climate change'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'How long does the Great Barrier Reef stretch?',
-      answer: 'over 2,300 kilometres'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The Aztecs used cacao beans as a form of currency to trade goods.', answer: true },
+        { text: 'The cacao drink was sweet and was enjoyed equally by all members of Aztec society.', answer: false },
+        { text: 'Chocolate became popular in Europe after sugar was added to reduce its bitterness.', answer: true },
+        { text: 'Solid chocolate was developed in the sixteenth century by Spanish explorers returning from the Americas.', answer: false }
+      ]
     }
   ]
 },
-
 {
   id: 'reading-22',
   type: 'reading',
-  title: 'Passage 22',
-  text: `Sleep is very important for everyone, especially for students. Most doctors say that teenagers need between 8 and 10 hours of sleep every night. However, many students sleep only 6 or 7 hours because they study late, use their phones or watch videos before bed.
+  title: 'passage 22',
+  text: `Sleep is a fundamental biological process that affects almost every system in the human body. During sleep, the brain does not simply shut down — it cycles through different stages, each serving a specific purpose. The first stages involve light and deep sleep, during which the body repairs tissues, strengthens the immune system, and consolidates memories formed during the day. The final stage, known as REM sleep, is associated with dreaming and plays an important role in emotional processing and creative thinking. A full sleep cycle lasts approximately 90 minutes, and most people need between four and six complete cycles each night for optimal health.
 
-Good sleep helps students in many ways. First, it improves memory. When you sleep well, your brain remembers new information better. This is very useful for learning languages, mathematics and other subjects. Second, sleep gives you more energy. Students who sleep enough can concentrate better in class and do not feel tired during the day. Third, good sleep makes you happier and helps you control your emotions.
-
-Not sleeping enough can cause serious problems. Students may get bad marks at school, feel angry easily or even become ill more often. Many teenagers drink coffee or energy drinks to stay awake, but these drinks can make sleep problems worse.
-
-To sleep better, students should turn off their phones at least one hour before bed, keep their bedroom dark and quiet, and go to bed at the same time every night. Parents and schools should also understand that sleep is not a waste of time – it is one of the best ways to help students succeed in their studies and stay healthy.`,
+Chronic sleep deprivation has serious consequences for both physical and mental well-being. Studies have shown that people who consistently sleep fewer than seven hours a night face a higher risk of developing conditions such as obesity, heart disease, and diabetes. Concentration, decision-making, and reaction time are all significantly impaired by even moderate sleep loss. Despite this, many people in modern societies treat sleep as an optional activity, prioritising work, entertainment, or social obligations instead. Scientists emphasise that sleep should be considered as essential as diet and exercise, and that improving sleep habits can have a profound effect on long-term health and cognitive performance.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'how to use phones at night',
-        'why sleep is important for students',
-        'different kinds of energy drinks',
-        'school subjects'
+        'why REM sleep is the single most important stage for physical and emotional recovery at night',
+        'how sleep works and why sleep deprivation is a serious risk to human health',
+        'the exact number of sleep cycles required each night to maintain a fully healthy brain and body',
+        'why modern societies increasingly fail to prioritise sleep despite the well-documented risks of sleep loss',
+        'the connection between dreaming, emotional processing, and creative thinking during the REM stage of sleep'
       ],
-      answer: 'why sleep is important for students'
+      answer: 'how sleep works and why sleep deprivation is a serious risk to human health'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'How many hours of sleep do teenagers usually need?',
+      q: 'According to the passage, what does REM sleep involve?',
       options: [
-        'Between 4 and 6 hours',
-        'Between 8 and 10 hours',
-        'Between 11 and 12 hours',
-        'Only 5 hours'
+        'the repair of body tissues and the strengthening of the immune system after a busy day',
+        'a deep state of physical rest during which the brain becomes almost completely inactive',
+        'dreaming and an important role in emotional processing and creative thinking',
+        'the consolidation of short-term memories formed during the previous day into long-term storage',
+        'a stage in which the body resets its hormone levels to prepare for the following morning'
       ],
-      answer: 'Between 8 and 10 hours'
+      answer: 'dreaming and an important role in emotional processing and creative thinking'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Sleep deprivation is considered a serious health concern because...  1. it increases the risk of conditions such as obesity, heart disease, and diabetes  2. even brief periods of poor sleep cause permanent and irreversible damage to the brain\'s memory systems  3. the brain enters REM sleep less frequently as a direct result of accumulated sleep debt  4. it significantly impairs concentration, decision-making, and reaction time  5. most people need fewer than three complete sleep cycles to feel fully rested and refreshed',
       options: [
-        'Good sleep helps students remember information.',
-        'Many students sleep only 6 or 7 hours.',
-        'Drinking coffee always helps students sleep better.',
-        'Sleep is important for concentration.'
+        'A) 1, 3, 5',
+        'B) 1, 4',
+        'C) 2, 3, 5',
+        'D) 3, 4, 5',
+        'E) 1, 2, 4'
       ],
-      answer: 'Drinking coffee always helps students sleep better.'
+      answer: 'B) 1, 4'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why is good sleep important for memory?',
-      options: [
-        'Because it makes the brain smaller.',
-        'Because the brain remembers new information better.',
-        'Because students do not need to study.',
-        'Because it stops students from using phones.'
-      ],
-      answer: 'Because the brain remembers new information better.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'When should students turn off their phones?',
-      answer: 'at least one hour before bed'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'REM sleep is associated with dreaming and plays a role in emotional processing and creative thinking.', answer: true },
+        { text: 'A full sleep cycle lasts approximately 60 minutes, and most people need at least eight cycles per night.', answer: false },
+        { text: 'People who sleep fewer than seven hours a night face a higher risk of heart disease and diabetes.', answer: true },
+        { text: 'Scientists argue that sleep is less critical to health than regular physical exercise and a balanced diet.', answer: false }
+      ]
     }
   ]
 },
 {
   id: 'reading-23',
   type: 'reading',
-  title: 'Passage 23',
-  text: `For many years, people have dreamed about life on Mars. Today, scientists are working hard to understand if humans can really live on the Red Planet. Mars is the fourth planet from the Sun. It is smaller than Earth and has very cold temperatures. A day on Mars is almost the same length as a day on Earth, but a year on Mars is 687 days long.
+  title: 'passage 23',
+  text: `The Viking Age, which lasted roughly from 793 to 1066 CE, was a period of remarkable expansion by Scandinavian peoples from present-day Norway, Sweden, and Denmark. Commonly portrayed as fierce warriors, the Vikings were also skilled navigators, traders, and settlers who travelled extraordinary distances using their distinctive longships. These vessels were engineered to sail both open oceans and shallow rivers, allowing the Vikings to reach destinations as far as North America to the west and the Caspian Sea to the east. The raids on coastal monasteries in Britain and Ireland brought the Vikings to widespread historical attention, yet trade and exploration were equally central to their culture.
 
-Scientists have sent many robots and spacecraft to Mars. These machines have discovered that there was water on Mars millions of years ago. They also found ice under the surface. This is very important because humans need water to survive. However, Mars has many problems. The atmosphere is very thin, so people cannot breathe without special suits. There is also dangerous radiation and very strong dust storms that can last for weeks.
-
-NASA and other space agencies are planning to send astronauts to Mars in the 2030s. They want to build special bases where people can live. These bases will need to produce oxygen, grow food and protect people from the cold. Some scientists believe that one day we can change Mars' atmosphere so humans can live there without suits. This process is called terraforming.
-
-Although living on Mars will be very difficult and expensive, many people think it is necessary. If we learn to live on another planet, humanity will have a better chance for the future.`,
+Viking societies were organised around chieftains and governed by a set of laws discussed at open assemblies called Things. Women in Viking communities held relatively more rights than women in many other contemporary European societies — they could own property and seek divorce under certain circumstances. The Viking Age came to an end partly because of the gradual adoption of Christianity, which changed the values and political structures of Scandinavian kingdoms, and partly because stronger, more centralised European states became more capable of resisting Viking raids. Today, the Viking legacy survives in language, place names, and the cultural memory of Northern Europe.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'the history of robots',
-        'life on Mars and scientific research',
-        'how to build spacesuits',
-        'different planets in our solar system'
+        'the raids carried out by Viking warriors on coastal communities across Britain, Ireland, and northern France',
+        'the Viking Age — who the Vikings were, how they lived, and why their era ended',
+        'why Viking longships were the most advanced naval vessels ever constructed during the medieval period',
+        'how the gradual spread of Christianity transformed the political and cultural structures of Scandinavian kingdoms',
+        'the legal rights that Viking women enjoyed and how these compared with women elsewhere in medieval Europe'
       ],
-      answer: 'life on Mars and scientific research'
+      answer: 'the Viking Age — who the Vikings were, how they lived, and why their era ended'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'What did scientists discover on Mars?',
+      q: 'According to the passage, what made Viking longships particularly useful for exploration?',
       options: [
-        'Only rocks and sand',
-        'Signs of water and ice',
-        'Many green plants',
-        'Houses from ancient people'
+        'they were the largest ships of the period, capable of carrying hundreds of warriors across long distances',
+        'they were built with special materials that allowed them to survive extremely cold arctic conditions',
+        'they could sail both open oceans and shallow rivers, allowing the Vikings to reach distant regions',
+        'they were equipped with advanced navigational tools that helped Vikings travel without stars or landmarks',
+        'their flat bottoms enabled them to land directly on beaches without needing a harbour or port'
       ],
-      answer: 'Signs of water and ice'
+      answer: 'they could sail both open oceans and shallow rivers, allowing the Vikings to reach distant regions'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The Vikings had a significant impact on world history because...  1. Viking longships could only operate in deep ocean waters due to their large size and hull design  2. the Vikings were skilled navigators, traders, and settlers who travelled extraordinary distances  3. Viking women could own property and seek divorce under certain circumstances  4. the Viking Age ended mainly because of military defeat by the Roman Empire in the east  5. trade and exploration were equally central to Viking culture alongside raiding',
       options: [
-        'Mars has a very thin atmosphere.',
-        'A year on Mars is longer than on Earth.',
-        'Mars is warmer than Earth.',
-        'Scientists want to send astronauts to Mars.'
+        'A) 1, 3, 4',
+        'B) 1, 2, 4',
+        'C) 1, 4, 5',
+        'D) 2, 3, 5',
+        'E) 2, 4, 5'
       ],
-      answer: 'Mars is warmer than Earth.'
+      answer: 'D) 2, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why is water important for future Mars missions?',
-      options: [
-        'Because it makes the planet red.',
-        'Because humans need water to survive.',
-        'Because robots only drink water.',
-        'Because it causes dust storms.'
-      ],
-      answer: 'Because humans need water to survive.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What is the name of the process to change Mars\' atmosphere?',
-      answer: 'terraforming'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Viking longships were built to sail both open oceans and shallow rivers.', answer: true },
+        { text: 'The Viking Age began in 1066 CE with the first raids on coastal monasteries in Britain.', answer: false },
+        { text: 'Women in Viking society could own property and seek divorce under certain conditions.', answer: true },
+        { text: 'The Viking Age ended mainly because Viking warriors were defeated in a series of battles by the Romans.', answer: false }
+      ]
     }
   ]
 },
-
 {
   id: 'reading-24',
   type: 'reading',
-  title: 'Passage 24',
-  text: `Chocolate is one of the most popular foods in the world today, but its history is very old and interesting. Chocolate comes from the cacao tree, which grows in tropical countries like Mexico, Brazil and Ghana. The scientific name of the cacao tree is Theobroma cacao, which means "food of the gods".
+  title: 'passage 24',
+  text: `Spiders are among the most skilled engineers in the natural world, producing silk that is, by weight, stronger than steel and more elastic than most synthetic fibres. This silk is made inside specialised organs called spinnerets, located at the rear of the spider's body. Different types of silk are used for different purposes — some threads form the structural frame of the web, while others are coated in sticky droplets to trap prey. Before spinning, a spider typically releases a single thread into the air, allowing the wind to carry it to a nearby surface and form the first connecting line of the web.
 
-More than 3,000 years ago, the Maya and Aztec people in Central America used cacao beans to make a bitter drink. They mixed the beans with water, spices and sometimes chilli. They believed this drink gave them energy and was good for health. They also used cacao beans as money. When Spanish explorers came to America in the 16th century, they brought cacao to Europe.
-
-At first, Europeans did not like the bitter taste. They added sugar, milk and vanilla to make it sweet. In 1847, the first chocolate bar was made in England. After that, chocolate became very popular around the world. Today, people eat more than 3 million tons of chocolate every year.
-
-Modern chocolate factories use special machines to make different types of chocolate: dark, milk and white. Dark chocolate is considered the healthiest because it contains more cacao and less sugar. However, eating too much chocolate is not good because of the high sugar and fat content. Scientists say that a small amount of dark chocolate every day can be good for the heart.`,
+The process of building a web follows a precise sequence. Once the foundation threads are in place, the spider adds radial lines that spread outward from the centre, like the spokes of a wheel. It then lays down a temporary spiral thread for guidance before replacing it with a permanent sticky spiral moving from the outside inward. The entire structure can be completed in under an hour and may be rebuilt daily, as webs become damaged or lose their stickiness over time. Remarkably, spiders do not get caught in their own webs because they are able to walk on the non-sticky threads and have an oily coating on their legs that prevents adhesion.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'how to grow cacao trees',
-        'the history and popularity of chocolate',
-        'Spanish explorers in America',
-        'different types of money'
+        'why spider silk is considered stronger and more versatile than most materials produced by modern industry',
+        'the reason why spiders must rebuild their webs every single day to keep them functional and effective',
+        'how spiders produce silk and use it to build their webs in a precise sequence',
+        'why spiders are not caught in their own webs despite the highly sticky nature of the threads',
+        'how the spinnerets located at the rear of a spider produce multiple types of specialised silk'
       ],
-      answer: 'the history and popularity of chocolate'
+      answer: 'how spiders produce silk and use it to build their webs in a precise sequence'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Where does chocolate originally come from?',
+      q: 'According to the passage, why do spiders not get caught in their own webs?',
       options: [
-        'From Europe',
-        'From the cacao tree in tropical countries',
-        'From sugar plants',
-        'From milk factories'
+        'because they only enter the web from the centre outward, avoiding the sticky outer sections entirely',
+        'because their body weight is too small to trigger the adhesive properties of the sticky threads',
+        'because they walk on the non-sticky threads and have an oily coating on their legs that prevents adhesion',
+        'because they regularly remove the sticky sections of the web before crossing over them',
+        'because spiders release a chemical that temporarily deactivates the stickiness of their own silk threads'
       ],
-      answer: 'From the cacao tree in tropical countries'
+      answer: 'because they walk on the non-sticky threads and have an oily coating on their legs that prevents adhesion'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: Spider webs are considered remarkable natural structures because...  1. spider silk is stronger than steel by weight and more elastic than most synthetic fibres  2. spiders produce silk from a gland located behind their eyes in the front of their head  3. a spider releases a single thread into the air to begin forming the first line of the web  4. most spiders only rebuild their webs once a month when the structure becomes severely damaged  5. spiders avoid getting caught in their own webs by walking on non-sticky threads and having oily legs',
       options: [
-        'The Maya and Aztec people used cacao as money.',
-        'Chocolate was always sweet in the past.',
-        'Dark chocolate can be good for the heart.',
-        'Europeans added sugar to cacao.'
+        'A) 1, 2, 4',
+        'B) 2, 3, 4',
+        'C) 1, 4, 5',
+        'D) 2, 3, 5',
+        'E) 1, 3, 5'
       ],
-      answer: 'Chocolate was always sweet in the past.'
+      answer: 'E) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'Why did Europeans add sugar to chocolate?',
-      options: [
-        'Because they wanted to make more money.',
-        'Because they did not like the bitter taste.',
-        'Because sugar was very cheap.',
-        'Because cacao was not available.'
-      ],
-      answer: 'Because they did not like the bitter taste.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'In which year was the first chocolate bar made?',
-      answer: '1847'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Spider silk is produced in specialised organs called spinnerets located at the rear of the body.', answer: true },
+        { text: 'Spiders always construct their webs from the outside inward, starting with the sticky spiral threads.', answer: false },
+        { text: 'Spiders do not get caught in their own webs partly because of an oily coating on their legs.', answer: true },
+        { text: 'Once a spider finishes building a web, the structure remains effective for several weeks without being rebuilt.', answer: false }
+      ]
     }
   ]
 },
-
 {
   id: 'reading-25',
   type: 'reading',
-  title: 'Passage 25',
-  text: `Deserts are some of the harshest environments on Earth, but many animals have developed amazing ways to survive there. The Sahara Desert in Africa and the Gobi Desert in Asia are examples of very dry and hot places where temperatures can reach 50°C during the day and drop below zero at night.
+  title: 'passage 25',
+  text: `The immune system is the body's primary defence against harmful pathogens such as bacteria, viruses, and other foreign substances. It operates through two main branches: the innate immune system and the adaptive immune system. The innate system provides the first line of defence, responding rapidly and non-specifically to any threat it detects. When the body is invaded by a pathogen, cells called phagocytes move to the site of infection and engulf harmful particles. If this initial response is insufficient, the adaptive system becomes active, identifying the specific nature of the threat and producing targeted antibodies designed to neutralise it.
 
-Camels are called "ships of the desert" because they can travel for many days without water. They store fat in their humps and can drink up to 100 litres of water at once. Their long eyelashes and special noses protect them from sand storms. Another interesting animal is the fennec fox. It has very big ears that help it stay cool and hear small animals under the sand.
-
-Many desert animals are nocturnal. This means they sleep during the hot day and come out at night when it is cooler. Snakes, lizards and scorpions hide under rocks or in holes during the day. Some animals get all the water they need from their food. For example, the kangaroo rat in American deserts never drinks water at all.
-
-Climate change and human activities are making deserts bigger. This process is called desertification. Scientists and governments are trying to plant special trees and teach people how to protect desert animals and plants. These animals show us how strong nature can be even in the most difficult conditions.`,
+One of the most remarkable features of the adaptive immune system is its ability to remember previous infections. After defeating a pathogen, the body retains memory cells that can recognise the same threat if it returns in the future, enabling a far faster and stronger response the second time. This principle underlies the effectiveness of vaccination — by introducing a harmless version or component of a pathogen, vaccines train the immune system to respond rapidly without causing disease. However, the immune system can sometimes malfunction. In autoimmune conditions, the body mistakenly attacks its own healthy cells, while allergies occur when the immune system overreacts to harmless substances such as pollen or certain foods.`,
   questions: [
     {
       id: 'q1',
       type: 'mcq',
-      q: 'The passage is mainly about...',
+      q: 'What is the passage mainly about?',
       options: [
-        'how to visit deserts',
-        'how animals survive in deserts',
-        'the history of the Sahara Desert',
-        'different kinds of sand'
+        'why autoimmune conditions and allergies represent the two most common failures of the human immune system',
+        'how the immune system defends the body and why it sometimes makes errors in identifying threats',
+        'the role of phagocytes and antibodies in detecting and destroying harmful pathogens inside the human body',
+        'why memory cells are considered the most important component of a fully functioning immune response',
+        'how vaccines use harmless versions of pathogens to prepare the immune system for future infections'
       ],
-      answer: 'how animals survive in deserts'
+      answer: 'how the immune system defends the body and why it sometimes makes errors in identifying threats'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Why are camels called "ships of the desert"?',
+      q: 'According to the passage, what do phagocytes do when the body is invaded by a pathogen?',
       options: [
-        'Because they live near the sea.',
-        'Because they can travel for many days without water.',
-        'Because they have big boats on their backs.',
-        'Because they swim in the sand.'
+        'they produce targeted antibodies to neutralise the specific pathogen during the adaptive immune response',
+        'they store information about the pathogen so the immune system can respond more quickly in future',
+        'they move to the site of infection and engulf harmful particles',
+        'they signal the adaptive immune system to begin manufacturing memory cells after a threat is detected',
+        'they form a protective barrier around infected cells to stop harmful pathogens reaching healthy tissue'
       ],
-      answer: 'Because they can travel for many days without water.'
+      answer: 'they move to the site of infection and engulf harmful particles'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Which statement is false according to the passage?',
+      q: 'Complete the sentence: The adaptive immune system is especially important to human health because...  1. it produces targeted antibodies designed to neutralise specific pathogens  2. it is always the first branch to respond when a new pathogen is detected by the body  3. it retains memory cells that enable a faster and stronger response when the same pathogen returns  4. it completely replaces the innate immune system once a person has been successfully vaccinated  5. the memory function it develops is the biological principle that makes vaccination effective',
       options: [
-        'Many desert animals are active at night.',
-        'Camels can drink 100 litres of water at once.',
-        'All desert animals need to drink water every day.',
-        'Fennec foxes have big ears.'
+        'A) 1, 3, 5',
+        'B) 1, 2, 4',
+        'C) 2, 3, 4',
+        'D) 1, 4, 5',
+        'E) 2, 4, 5'
       ],
-      answer: 'All desert animals need to drink water every day.'
+      answer: 'A) 1, 3, 5'
     },
     {
       id: 'q4',
-      type: 'mcq',
-      q: 'What is desertification?',
-      options: [
-        'When animals move to the desert.',
-        'When deserts become bigger because of climate change and human activities.',
-        'When people build houses in the desert.',
-        'When it rains a lot in the desert.'
-      ],
-      answer: 'When deserts become bigger because of climate change and human activities.'
-    },
-    {
-      id: 'q5',
-      type: 'typein',
-      q: 'What is the name of the small animal that never drinks water?',
-      answer: 'kangaroo rat'
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The innate immune system is the first line of defence and responds rapidly to any detected threat.', answer: true },
+        { text: 'The adaptive immune system is always the first to respond when a new pathogen enters the body.', answer: false },
+        { text: 'Memory cells allow the immune system to respond faster and more strongly to a previously encountered pathogen.', answer: true },
+        { text: 'Autoimmune conditions occur when the immune system overreacts to harmless substances such as pollen or certain foods.', answer: false }
+      ]
     }
   ]
 },
-
 {
   id: 'reading-26',
   type: 'reading',
