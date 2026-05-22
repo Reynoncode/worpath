@@ -1412,7 +1412,7 @@ button { font-family: var(--font); }
 }
 
 .reading-text-card {
-  flex: 0 0 38%;
+  flex: 0 0 25%;
   max-height: 38%;
   min-height: 80px;
   overflow-y: auto;
