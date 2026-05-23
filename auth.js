@@ -363,6 +363,7 @@ async function _saveName() {
 // ─── Çıxış təsdiqi ──────────────────────────────────────────────────────────
 function _confirmSignOut() {
   const confirmDiv = document.createElement('div');
+  confirmDiv.id = 'signout-confirm-overlay';
   confirmDiv.style.cssText = `
     position:fixed;inset:0;z-index:4000;
     background:rgba(0,0,0,0.5);
@@ -375,11 +376,11 @@ function _confirmSignOut() {
       <div style="font-size:16px;font-weight:700;color:#1A1A1A;margin-bottom:6px;">Çıxış etmək istəyirsən?</div>
       <div style="font-size:13px;color:#6B7280;margin-bottom:20px;">İrəliləyişin saxlanacaq.</div>
       <div style="display:flex;gap:10px;">
-        <button onclick="this.closest('div[style*=\"z-index:4000\"]').remove()"
+          <button onclick="document.getElementById('signout-confirm-overlay').remove()"
           style="flex:1;padding:11px;border:1px solid #E8E2D9;border-radius:10px;background:#fff;font-size:13px;font-weight:600;color:#6B7280;cursor:pointer;">
           Ləğv et
         </button>
-        <button onclick="AuthManager.signOut();this.closest('div[style*=\"z-index:4000\"]').remove();AuthManager._closeProfileModal();"
+        <button onclick="AuthManager.signOut();document.getElementById('signout-confirm-overlay').remove();AuthManager._closeProfileModal();"
           style="flex:1;padding:11px;border:none;border-radius:10px;background:#DC2626;color:#fff;font-size:13px;font-weight:600;cursor:pointer;">
           Çıxış et
         </button>
