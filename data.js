@@ -18641,10 +18641,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
   ]
 },
       {
-  id: 'listening-12',
+  id: 'listening-11',
   type: 'listening',
-  title: 'Passage 11 — The history of the Olympic Games',
-  audio: 'mp3/12.mp3',
+  title: 'Passage 11',
+  audio: 'mp3/11.mp3',
   questions: [
     {
       id: 'q1',
@@ -18696,10 +18696,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
   ]
 },
       {
-  id: 'listening-13',
+  id: 'listening-12',
   type: 'listening',
-  title: 'Passage 12 — Why people dream',
-  audio: 'mp3/13.mp3',
+  title: 'Passage 12',
+  audio: 'mp3/12.mp3',
   questions: [
     {
       id: 'q1',
@@ -18751,10 +18751,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
   ]
 },
       {
-  id: 'listening-14',
+  id: 'listening-13',
   type: 'listening',
   title: 'Passage 13 — The Great Wall of China',
-  audio: 'mp3/14.mp3',
+  audio: 'mp3/13.mp3',
   questions: [
     {
       id: 'q1',
@@ -18805,10 +18805,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
     }
   ]
 },{
-  id: 'listening-15',
+  id: 'listening-14',
   type: 'listening',
   title: 'Passage 14 — How a volcano erupts',
-  audio: 'mp3/15.mp3',
+  audio: 'mp3/14.mp3',
   questions: [
     {
       id: 'q1',
@@ -18860,10 +18860,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
   ]
 },
       {
-  id: 'listening-16',
+  id: 'listening-15',
   type: 'listening',
-  title: 'Passage 15 — The story of Coca-Cola',
-  audio: 'mp3/16.mp3',
+  title: 'Passage 15',
+  audio: 'mp3/15.mp3',
   questions: [
     {
       id: 'q1',
@@ -18915,10 +18915,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
   ]
 },
       {
-  id: 'listening-17',
+  id: 'listening-16',
   type: 'listening',
-  title: 'Passage 16 — Why sharks are important for the ocean',
-  audio: 'mp3/17.mp3',
+  title: 'Passage 16',
+  audio: 'mp3/16.mp3',
   questions: [
     {
       id: 'q1',
@@ -18971,10 +18971,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
 },
       
 {
-  id: 'listening-18',
+  id: 'listening-17',
   type: 'listening',
-  title: 'Passage 17 — The life of Marie Curie',
-  audio: 'mp3/18.mp3',
+  title: 'Passage 17',
+  audio: 'mp3/17.mp3',
   questions: [
     {
       id: 'q1',
@@ -19026,10 +19026,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
   ]
 },
     {
-  id: 'listening-19',
+  id: 'listening-18',
   type: 'listening',
-  title: 'Passage 18 — How airports work',
-  audio: 'mp3/19.mp3',
+  title: 'Passage 18',
+  audio: 'mp3/18.mp3',
   questions: [
     {
       id: 'q1',
@@ -19081,10 +19081,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
   ]
 },
       {
-  id: 'listening-20',
+  id: 'listening-19',
   type: 'listening',
-  title: 'Passage 19 — The history of football',
-  audio: 'mp3/20.mp3',
+  title: 'Passage 19',
+  audio: 'mp3/19.mp3',
   questions: [
     {
       id: 'q1',
@@ -19741,6 +19741,557 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
         { text: 'Tectonic plates move several metres per year.', answer: false },
         { text: 'Mount Fuji in Japan is an example of a volcanic mountain.', answer: true },
         { text: 'The Sierra Nevada mountains were formed by tectonic plate collision.', answer: false }
+       ]
+    }
+  ]
+},
+{
+  id: 'listening-31',
+  type: 'listening',
+  title: 'Passage 31',
+  audio: 'mp3/31.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The wars between ancient Egypt and Rome',
+        'The life and legacy of Cleopatra',
+        'How Cleopatra learned to speak nine languages',
+        'The fall of the Roman Empire'
+      ],
+      answer: 'The life and legacy of Cleopatra'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How did Cleopatra regain her throne?',
+      options: [
+        'She defeated her brother in battle on her own.',
+        'She was supported by the people of Egypt.',
+        'She formed an alliance with Julius Caesar.',
+        'She made a deal with the Roman leader Octavian.'
+      ],
+      answer: 'She formed an alliance with Julius Caesar.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. After Cleopatra\'s death, Egypt ...',
+      options: [
+        'was ruled by Mark Antony\'s family.',
+        'became an independent kingdom once again.',
+        'was divided between Rome and Greece.',
+        'became a province of the Roman Empire.'
+      ],
+      answer: 'became a province of the Roman Empire.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Cleopatra became queen at the age of eighteen.', answer: true },
+        { text: 'Cleopatra could speak five languages.', answer: false },
+        { text: 'Cleopatra and Mark Antony were defeated by Octavian.', answer: true },
+        { text: 'Cleopatra was the first ruler of ancient Egypt.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-32',
+  type: 'listening',
+  title: 'Passage 32',
+  audio: 'mp3/32.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How national parks protect wildlife around the world',
+        'The effects of climate change on ocean animals',
+        'The reasons why animals become endangered and efforts to protect them',
+        'Why hunting and poaching should be made illegal'
+      ],
+      answer: 'The reasons why animals become endangered and efforts to protect them'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why are rhinoceroses and elephants particularly threatened?',
+      options: [
+        'Their habitats are being destroyed by rising sea levels.',
+        'They are killed illegally for their body parts.',
+        'They cannot adapt to changes in climate.',
+        'They are threatened by invasive species in their regions.'
+      ],
+      answer: 'They are killed illegally for their body parts.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Invasive species are a threat to wildlife because they ...',
+      options: [
+        'spread diseases that native animals cannot resist.',
+        'destroy the natural habitats of endangered animals.',
+        'reduce the amount of food available for humans.',
+        'compete with or prey on native species.'
+      ],
+      answer: 'compete with or prey on native species.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The destruction of natural habitats is the most significant cause of animals becoming endangered.', answer: true },
+        { text: 'Climate change has no effect on endangered animals.', answer: false },
+        { text: 'National parks and wildlife reserves help protect endangered species.', answer: true },
+        { text: 'Invasive species are animals that have always lived in a particular area.', answer: false }
+      ]
+    }
+  ]
+},
+      
+{
+  id: 'listening-33',
+  type: 'listening',
+  title: 'Passage 33',
+  audio: 'mp3/33.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How banking systems are managed around the world',
+        'Why cryptocurrency is becoming more popular today',
+        'How paper money was invented in ancient China',
+        'The development of money from barter to digital payments'
+      ],
+      answer: 'The development of money from barter to digital payments'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Where were the first metal coins made?',
+      options: [
+        'In ancient China during the Tang Dynasty.',
+        'In ancient Greece during the Classical Period.',
+        'In Lydia, a kingdom in what is now Turkey.',
+        'In ancient Egypt along the Nile River.'
+      ],
+      answer: 'In Lydia, a kingdom in what is now Turkey.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Paper money was originally used in China as ...',
+      options: [
+        'a way to pay soldiers in distant regions.',
+        'receipts for deposited coins.',
+        'a replacement for metal coins in everyday trade.',
+        'a record of taxes paid to the government.'
+      ],
+      answer: 'receipts for deposited coins.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Barter is a system in which people exchange goods and services without using money.', answer: true },
+        { text: 'The first metal coins were made around 600 BC.', answer: true },
+        { text: 'Paper money was first invented in Europe.', answer: false },
+        { text: 'Credit cards and electronic banking were developed in the 19th century.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-34',
+  type: 'listening',
+  title: 'Passage 34',
+  audio: 'mp3/34.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The different blood types and their characteristics',
+        'The process and importance of blood donation',
+        'How hospitals manage their blood supplies',
+        'Why blood cannot be produced in a laboratory'
+      ],
+      answer: 'The process and importance of blood donation'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why are people with type O negative blood called universal donors?',
+      options: [
+        'Their blood contains no infections or diseases.',
+        'Their blood is the most common type in the world.',
+        'Their blood replaces itself faster than other blood types.',
+        'Their blood can be given to patients of any blood type.'
+      ],
+      answer: 'Their blood can be given to patients of any blood type.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. After blood is donated, it is ...',
+      options: [
+        'immediately given to patients waiting in the hospital.',
+        'stored for up to one year before being used.',
+        'tested in a laboratory for infections and blood type.',
+        'divided into components and sent to different countries.'
+      ],
+      answer: 'tested in a laboratory for infections and blood type.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The actual blood donation process takes about ten minutes.', answer: true },
+        { text: 'About 450 millilitres of blood is collected during a donation.', answer: true },
+        { text: 'The body takes several months to replace donated blood.', answer: false },
+        { text: 'Blood can be manufactured artificially in laboratories.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-35',
+  type: 'listening',
+  title: 'Passage 35',
+  audio: 'mp3/35.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How astronauts are trained before going to space',
+        'The daily routine and challenges of living on the ISS',
+        'Why the International Space Station was built',
+        'How food and water are produced on the ISS'
+      ],
+      answer: 'The daily routine and challenges of living on the ISS'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why do astronauts exercise for about two and a half hours every day?',
+      options: [
+        'To prepare for spacewalks outside the station.',
+        'To follow the strict schedule set by mission controllers.',
+        'To keep themselves entertained during long missions.',
+        'To prevent their muscles and bones from weakening in microgravity.'
+      ],
+      answer: 'To prevent their muscles and bones from weakening in microgravity.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Astronauts on the ISS can experience 16 sunrises and sunsets a day because ...',
+      options: [
+        'the ISS has special windows that magnify sunlight.',
+        'the Sun moves differently in space than on Earth.',
+        'the ISS orbits the Earth every 90 minutes.',
+        'the ISS is positioned close to the North Pole.'
+      ],
+      answer: 'the ISS orbits the Earth every 90 minutes.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Astronauts sleep in sleeping bags attached to the wall to avoid floating.', answer: true },
+        { text: 'Water on the ISS is brought from Earth every month.', answer: false },
+        { text: 'Food in space is specially packaged to stop crumbs from floating.', answer: true },
+        { text: 'Astronauts are unable to communicate with their families while in space.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-36',
+  type: 'listening',
+  title: 'Passage 36',
+  audio: 'mp3/36.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How the human respiratory system works',
+        'Why holding your breath cures hiccups',
+        'How to avoid getting hiccups after eating',
+        'The causes, effects, and science behind hiccups'
+      ],
+      answer: 'The causes, effects, and science behind hiccups'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What causes the "hic" sound during hiccups?',
+      options: [
+        'Air rushing quickly through the nose.',
+        'The diaphragm pressing against the stomach.',
+        'The sudden closure of the vocal cords after a sharp intake of breath.',
+        'The contraction of muscles in the throat.'
+      ],
+      answer: 'The sudden closure of the vocal cords after a sharp intake of breath.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Hiccups that last more than 48 hours ...',
+      options: [
+        'are completely normal and will stop on their own.',
+        'can be cured by drinking large amounts of water.',
+        'may indicate a more serious medical condition.',
+        'are caused by a virus affecting the diaphragm.'
+      ],
+      answer: 'may indicate a more serious medical condition.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Hiccups are caused by the involuntary contraction of the diaphragm.', answer: true },
+        { text: 'Scientists have fully explained why remedies such as holding your breath work.', answer: false },
+        { text: 'The longest recorded case of hiccups lasted 68 years.', answer: true },
+        { text: 'Hiccups that last more than 24 hours may be a sign of a serious condition.', answer: false }
+      ]
+    }
+  ]
+},
+   {
+  id: 'listening-37',
+  type: 'listening',
+  title: 'Passage 37',
+  audio: 'mp3/37.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How Chinese silk was produced and exported',
+        'The journeys of the explorer Marco Polo',
+        'The history and significance of the Silk Road',
+        'How sea routes replaced overland trade in Asia'
+      ],
+      answer: 'The history and significance of the Silk Road'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why was silk so highly valued in the West?',
+      options: [
+        'It was the most comfortable fabric available at the time.',
+        'Only the Chinese knew the secret of how to make it.',
+        'It was the only fabric that could survive long trade journeys.',
+        'It was used as a form of currency along the trade routes.'
+      ],
+      answer: 'Only the Chinese knew the secret of how to make it.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. The Silk Road began to decline in the 15th century because ...',
+      options: [
+        'China decided to stop trading with European nations.',
+        'wars and conflicts made overland travel too dangerous.',
+        'the demand for silk in Europe began to decrease.',
+        'European explorers found faster and cheaper sea routes to Asia.'
+      ],
+      answer: 'European explorers found faster and cheaper sea routes to Asia.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The Silk Road was a single road connecting China to Europe.', answer: false },
+        { text: 'The Silk Road first became widely used during the Han Dynasty around 130 BC.', answer: true },
+        { text: 'Marco Polo travelled along the Silk Road in the 13th century.', answer: true },
+        { text: 'The Silk Road was only used for trading silk and no other goods.', answer: false }
+      ]
+    }
+  ]
+},
+     {
+  id: 'listening-38',
+  type: 'listening',
+  title: 'Passage 38',
+  audio: 'mp3/38.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The different types of weather conditions that create rainbows',
+        'Why rainbows appear only in the morning and evening',
+        'How rainbows form and what makes them visible',
+        'The scientific study of light and colour in the atmosphere'
+      ],
+      answer: 'How rainbows form and what makes them visible'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why are secondary rainbows fainter than primary ones?',
+      options: [
+        'The Sun is at a lower angle when secondary rainbows appear.',
+        'Secondary rainbows are formed from smaller water droplets.',
+        'Light reflects twice inside the water droplets, making it weaker.',
+        'The colours in secondary rainbows are further apart and harder to see.'
+      ],
+      answer: 'Light reflects twice inside the water droplets, making it weaker.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. For a rainbow to be visible, the observer must ...',
+      options: [
+        'be facing the Sun with rain falling behind them.',
+        'be standing on high ground with a clear view of the sky.',
+        'be positioned between the Sun and the rain clouds.',
+        'have the Sun behind them and water droplets in front.'
+      ],
+      answer: 'have the Sun behind them and water droplets in front.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'In a primary rainbow, red appears on the outside and violet on the inside.', answer: true },
+        { text: 'In a secondary rainbow, the colours appear in the same order as in a primary rainbow.', answer: false },
+        { text: 'Rainbows appear as arcs because we can only see part of the circle above the horizon.', answer: true },
+        { text: 'Refraction occurs when light reflects off the inside of a water droplet.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-39',
+  type: 'listening',
+  title: 'Passage 39',
+  audio: 'mp3/39.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The political differences between East and West Germany',
+        'How the Cold War affected people living in Eastern Europe',
+        'Why Germany was divided after World War II',
+        'The history of the Berlin Wall from its construction to its fall'
+      ],
+      answer: 'The history of the Berlin Wall from its construction to its fall'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why was the Berlin Wall originally built?',
+      options: [
+        'To protect East Berlin from military attack from the West.',
+        'To prevent East Germans from escaping to West Berlin.',
+        'To mark the official border between East and West Germany.',
+        'To stop Western influences from entering East Berlin.'
+      ],
+      answer: 'To prevent East Germans from escaping to West Berlin.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. The Berlin Wall fell on ...',
+      options: [
+        'the 3rd of October 1989.',
+        'the 13th of August 1961.',
+        'the 9th of November 1989.',
+        'the 3rd of October 1990.'
+      ],
+      answer: 'the 9th of November 1989.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The Berlin Wall was built in 1961 by the East German government.', answer: true },
+        { text: 'The Berlin Wall was about 55 kilometres long.', answer: false },
+        { text: 'Germany was officially reunified on the 3rd of October 1990.', answer: true },
+        { text: 'All sections of the Berlin Wall were completely demolished after 1989.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-40',
+  type: 'listening',
+  title: 'Passage 40',
+  audio: 'mp3/40.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How to create an effective exercise routine for better health',
+        'Why children need more exercise than adults',
+        'How the human brain responds to stress and anxiety',
+        'The benefits of exercise for brain health and mental performance'
+      ],
+      answer: 'The benefits of exercise for brain health and mental performance'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What role does BDNF play in the brain?',
+      options: [
+        'It reduces the level of stress hormones in the body.',
+        'It delivers oxygen and nutrients from the blood to brain cells.',
+        'It helps brain cells grow and form new connections.',
+        'It controls the release of endorphins during physical activity.'
+      ],
+      answer: 'It helps brain cells grow and form new connections.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. In older adults, regular exercise may ...',
+      options: [
+        'completely prevent the development of Alzheimer\'s disease.',
+        'increase the production of serotonin and reduce sleep problems.',
+        'improve physical strength but have little effect on brain function.',
+        'slow down cognitive decline and reduce the risk of Alzheimer\'s.'
+      ],
+      answer: 'slow down cognitive decline and reduce the risk of Alzheimer\'s.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Exercise increases blood flow to the brain, delivering more oxygen and nutrients.', answer: true },
+        { text: 'BDNF is a chemical released by the brain during stress.', answer: false },
+        { text: 'Studies show that children who exercise regularly tend to perform better at school.', answer: true },
+        { text: 'Experts recommend at least one hour of exercise every day for good brain health.', answer: false }
       ]
     }
   ]
@@ -19755,34 +20306,9 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       
-];
+ ]
+  },
 
 
 window.LEVELS = LEVELS;
