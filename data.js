@@ -18085,7 +18085,7 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
     icon: '🎧',
     color: '#7c3aed',
     quizzes: [
-     {
+    {
   id: 'listening-1',
   type: 'listening',
   title: 'Passage 1',
@@ -18094,53 +18094,596 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
     {
       id: 'q1',
       type: 'mcq',
-      q: 'What is the conversation mainly about?',
+      q: 'What is the passage mainly about?',
       options: [
-        'A neighbor complaining about loud music',
-        'A tenant reporting a broken window to the manager',
-        'A manager asking a tenant to pay rent',
-        'Kids being punished for playing baseball'
+        'The life of Gustave Eiffel',
+        'The history and features of the Eiffel Tower',
+        'Famous buildings in Europe',
+        'The World Exhibition in Paris'
       ],
-      answer: 'A tenant reporting a broken window to the manager'
+      answer: 'The history and features of the Eiffel Tower'
     },
     {
       id: 'q2',
       type: 'mcq',
-      q: 'Choose the correct answer according to the conversation. Why does Janet think the kids broke the window?',
+      q: 'Choose the correct answer according to the passage. Why was the Eiffel Tower built?',
       options: [
-        'Because she saw them throw a ball at the window.',
-        'Because the kids admitted breaking it.',
-        'Because she found a baseball next to the broken glass.',
-        'Because the manager told her about the kids.'
+        'To be the symbol of France',
+        'To attract tourists to Paris',
+        'For the World Exhibition in Paris',
+        'To show the talent of Gustave Eiffel'
       ],
-      answer: 'Because she found a baseball next to the broken glass.'
+      answer: 'For the World Exhibition in Paris'
     },
     {
       id: 'q3',
       type: 'mcq',
-      q: 'Complete the sentence according to the conversation. Janet does not have to pay for the damage because ...',
+      q: 'Complete the sentence according to the passage. Workers paint the Eiffel Tower every seven years in order to ...',
       options: [
-        'the manager is responsible for all repairs.',
-        'the kids already paid for the damage.',
-        'she was not the one who broke the window.',
-        'the repairman agreed to fix it for free.'
+        'make it look more attractive to tourists.',
+        'change its colour from red to brown.',
+        'protect it from rust.',
+        'prepare it for the World Exhibition.'
       ],
-      answer: 'she was not the one who broke the window.'
+      answer: 'protect it from rust.'
     },
     {
       id: 'q4',
       type: 'truefalse',
       q: 'Decide whether the statements are TRUE or FALSE.',
       statements: [
-        { text: 'Janet was at home when the window broke.', answer: false },
-        { text: 'There was a baseball near the broken glass.', answer: true },
-        { text: 'The manager agreed to pay for the repair.', answer: true },
-        { text: 'It will take a week to repair the window.', answer: false },
-        ]
-      }
-    ],
+        { text: 'The Eiffel Tower was completed in 1889.', answer: true },
+        { text: 'People loved the tower from the very beginning.', answer: false },
+        { text: 'The Eiffel Tower is currently painted red.', answer: false },
+        { text: 'The Eiffel Tower is the most visited paid monument in the world.', answer: true }
+      ]
+    }
+  ]
   },
-];
+{
+  id: 'listening-2',
+  type: 'listening',
+  title: 'Passage 2',
+  audio: 'mp3/2.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The importance of flowers for nature',
+        'How bees live in a hive',
+        'The process of making honey',
+        'Why honey is a healthy food'
+      ],
+      answer: 'The process of making honey'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How does a bee carry nectar back to the hive?',
+      options: [
+        'In a small wax cell on its back',
+        'In a special stomach',
+        'In its wings',
+        'In a small bag attached to its legs'
+      ],
+      answer: 'In a special stomach'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Bees fan the honey with their wings in order to ...',
+      options: [
+        'make it sweeter.',
+        'cool down the hive.',
+        'remove extra water.',
+        'seal the wax cells.'
+      ],
+      answer: 'remove extra water.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Bees collect nectar from flowers.', answer: true },
+        { text: 'One bee passes nectar to another inside the hive.', answer: true },
+        { text: 'A single bee produces a large amount of honey in its lifetime.', answer: false },
+        { text: 'A large hive can produce more than 27 kilograms of honey per year.', answer: true }
+      ]
+    }
+  ]
+},
+{
+  id: 'listening-3',
+  type: 'listening',
+  title: 'Passage 3',
+  audio: 'mp3/3.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'Public transport in London',
+        'The daily life and work of a London bus driver',
+        'How to become a bus driver in London',
+        'Problems with traffic in London'
+      ],
+      answer: 'The daily life and work of a London bus driver'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What can experienced bus drivers do after many years of service?',
+      options: [
+        'They can drive double-decker buses.',
+        'They can choose their own routes.',
+        'They can become trainers and teach new drivers.',
+        'They can work fewer hours per day.'
+      ],
+      answer: 'They can become trainers and teach new drivers.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. London bus drivers must follow strict schedules because ...',
+      options: [
+        'the routes are very long and difficult.',
+        'passengers complain if buses are late.',
+        'they drive in heavy traffic.',
+        'their job requires careful time management in a busy city.'
+      ],
+      answer: 'their job requires careful time management in a busy city.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'London bus drivers sometimes start work at four in the morning.', answer: true },
+        { text: 'Bus drivers drive a different route every day.', answer: false },
+        { text: 'Bus drivers work without any breaks during their shift.', answer: false },
+        { text: 'Bus drivers sometimes help passengers with directions.', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-4',
+  type: 'listening',
+  title: 'Passage 4',
+  audio: 'mp3/4.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The history of the Roman calendar',
+        'New Year celebrations around the world',
+        'Famous New Year events in New York',
+        'How Julius Caesar changed the calendar'
+      ],
+      answer: 'New Year celebrations around the world'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why was January chosen as the first month of the year?',
+      options: [
+        'Because it is the coldest month of the year.',
+        'Because Julius Caesar named it after himself.',
+        'Because it was named after Janus, the Roman god of beginnings.',
+        'Because the ancient Romans celebrated their new year in January.'
+      ],
+      answer: 'Because it was named after Janus, the Roman god of beginnings.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. New Year resolutions are ...',
+      options: [
+        'special meals prepared for the celebration.',
+        'fireworks displays organised in city centres.',
+        'promises people make to themselves to change something.',
+        'public events held in the streets every January.'
+      ],
+      answer: 'promises people make to themselves to change something.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Julius Caesar changed the calendar in 46 BC.', answer: true },
+        { text: 'All countries celebrate New Year on the first of January.', answer: false },
+        { text: 'Sydney Harbour is known for its New Year celebrations.', answer: true },
+        { text: 'New Year resolutions are promises people make to others.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-5',
+  type: 'listening',
+  title: 'Passage 5',
+  audio: 'mp3/5.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'Why pizza is popular around the world',
+        'The history and origins of pizza',
+        'How to make a Margherita pizza',
+        'The food culture of Naples, Italy'
+      ],
+      answer: 'The history and origins of pizza'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why did poor people in Naples start adding tomato to their bread?',
+      options: [
+        'Because tomatoes were very expensive at the time.',
+        'Because they needed cheap and quick food.',
+        'Because the Queen of Italy asked them to.',
+        'Because Europeans loved the taste of tomatoes.'
+      ],
+      answer: 'Because they needed cheap and quick food.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Raffaele Esposito used tomatoes, mozzarella and basil because ...',
+      options: [
+        'they were the cheapest ingredients available.',
+        'the Queen of Italy asked for those toppings.',
+        'they represented the colours of the Italian flag.',
+        'they were the most popular toppings in Naples.'
+      ],
+      answer: 'they represented the colours of the Italian flag.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The modern pizza was first made in Rome.', answer: false },
+        { text: 'Many Europeans once believed tomatoes were poisonous.', answer: true },
+        { text: 'The Margherita pizza was made for the Queen of Italy in 1889.', answer: true },
+        { text: 'Ancient Egyptians and Greeks never used toppings on their bread.', answer: false }
+      ]
+    }
+  ]
+},
+  
+{
+  id: 'listening-6',
+  type: 'listening',
+  title: 'Passage 6 — How libraries work',
+  audio: 'mp3/6.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The history of ancient libraries',
+        'How libraries work and what they offer',
+        'The importance of reading books',
+        'How to get a library card'
+      ],
+      answer: 'How libraries work and what they offer'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What happens if a borrowed book is returned late?',
+      options: [
+        'The library card is cancelled.',
+        'The person must buy a new copy of the book.',
+        'The person may have to pay a small fine.',
+        'The person cannot borrow books for one month.'
+      ],
+      answer: 'The person may have to pay a small fine.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Libraries are important because ...',
+      options: [
+        'they have the largest collection of books in the world.',
+        'they give everyone equal access to knowledge regardless of income.',
+        'they organise events for children and adults.',
+        'they offer free internet access to all visitors.'
+      ],
+      answer: 'they give everyone equal access to knowledge regardless of income.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The first libraries appeared around 3000 BC.', answer: true },
+        { text: 'A library card costs a small amount of money.', answer: false },
+        { text: 'Borrowed books must usually be returned within two to three weeks.', answer: true },
+        { text: 'Libraries only provide books and nothing else.', answer: false }
+      ]
+    }
+  ]
+},
+      
+
+{
+  id: 'listening-7',
+  type: 'listening',
+  title: 'Passage 7 — The life of Nelson Mandela',
+  audio: 'mp3/7.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The apartheid system in South Africa',
+        'The life and achievements of Nelson Mandela',
+        'The history of South African politics',
+        'How Nelson Mandela became a lawyer'
+      ],
+      answer: 'The life and achievements of Nelson Mandela'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why was Nelson Mandela sent to prison?',
+      options: [
+        'Because he broke the law as a lawyer.',
+        'Because he fought against the apartheid system.',
+        'Because he tried to become president illegally.',
+        'Because he left South Africa without permission.'
+      ],
+      answer: 'Because he fought against the apartheid system.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Nelson Mandela became a symbol of hope because ...',
+      options: [
+        'he was the first black lawyer in South Africa.',
+        'he won the first free election in South Africa.',
+        'he continued to inspire people even while in prison.',
+        'he built schools and hospitals across the country.'
+      ],
+      answer: 'he continued to inspire people even while in prison.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Nelson Mandela was born in a big city in South Africa.', answer: false },
+        { text: 'Mandela spent 27 years in prison.', answer: true },
+        { text: 'South Africa held its first free election in 1994.', answer: true },
+        { text: 'Nelson Mandela died at the age of 90.', answer: false }
+      ]
+    }
+  ]
+},
+
+      {
+  id: 'listening-8',
+  type: 'listening',
+  title: 'Passage 8 — Why cats sleep so much',
+  audio: 'mp3/8.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How cats hunt in the wild',
+        'The sleeping habits of cats and the reasons behind them',
+        'How to take care of a domestic cat',
+        'The differences between wild and domestic cats'
+      ],
+      answer: 'The sleeping habits of cats and the reasons behind them'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why does eating protein make cats sleepy?',
+      options: [
+        'Because protein gives cats too much energy.',
+        'Because digesting protein takes time.',
+        'Because cats eat too much food at once.',
+        'Because protein is found only in heavy meals.'
+      ],
+      answer: 'Because digesting protein takes time.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Cats are most active ...',
+      options: [
+        'during the middle of the day.',
+        'late at night when everything is quiet.',
+        'at dawn and dusk.',
+        'after they eat a large meal.'
+      ],
+      answer: 'at dawn and dusk.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'An average cat sleeps between 12 and 16 hours a day.', answer: true },
+        { text: 'Domestic cats do not keep the hunting behaviour of wild cats.', answer: false },
+        { text: 'Kittens and older cats sleep more than adult cats.', answer: true },
+        { text: 'Cats are most active during the day.', answer: false }
+      ]
+    }
+  ]
+},
+      
+{
+  id: 'listening-9',
+  type: 'listening',
+  title: 'Passage 9',
+  audio: 'mp3/9.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The Amazon River and its importance',
+        'The Amazon rainforest and the threats it faces',
+        'How deforestation affects climate change',
+        'The wildlife of South America'
+      ],
+      answer: 'The Amazon rainforest and the threats it faces'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why is the Amazon called the lungs of the Earth?',
+      options: [
+        'Because it is the largest forest in the world.',
+        'Because it is home to millions of animal species.',
+        'Because it produces about 20 percent of the world\'s oxygen.',
+        'Because the Amazon River brings clean water to the world.'
+      ],
+      answer: 'Because it produces about 20 percent of the world\'s oxygen.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Deforestation is dangerous because ...',
+      options: [
+        'it makes the Amazon River shorter.',
+        'it reduces the number of tourists visiting the Amazon.',
+        'it destroys habitats and contributes to climate change.',
+        'it prevents scientists from studying the rainforest.'
+      ],
+      answer: 'it destroys habitats and contributes to climate change.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The Amazon rainforest is located only in Brazil.', answer: false },
+        { text: 'The Amazon River is the second longest river in the world.', answer: true },
+        { text: 'About 10 percent of all species on Earth live in the Amazon.', answer: true },
+        { text: 'Logging and farming are the main causes of deforestation in the Amazon.', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-10',
+  type: 'listening',
+  title: 'Passage 10',
+  audio: 'mp3/10.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The history of chocolate around the world',
+        'The process of making chocolate from cacao beans',
+        'The differences between dark and milk chocolate',
+        'Where cacao trees grow and why'
+      ],
+      answer: 'The process of making chocolate from cacao beans'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What happens to cacao beans after they are removed from the pods?',
+      options: [
+        'They are immediately roasted.',
+        'They are crushed to produce chocolate liquor.',
+        'They are left to ferment for several days.',
+        'They are mixed with sugar and milk.'
+      ],
+      answer: 'They are left to ferment for several days.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. White chocolate is different from other types because ...',
+      options: [
+        'it contains more sugar than dark chocolate.',
+        'it is made without any cacao.',
+        'it is produced in a different type of mould.',
+        'it contains more milk than other types.'
+      ],
+      answer: 'it is made without any cacao.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Cacao trees grow in cold regions far from the equator.', answer: false },
+        { text: 'Each cacao pod contains between 20 and 50 beans.', answer: true },
+        { text: 'Cacao beans are roasted before they are fermented.', answer: false },
+        { text: 'Dark chocolate contains more cacao and less sugar than milk chocolate.', answer: true }
+      ]
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+]
 
 
 window.LEVELS = LEVELS;
