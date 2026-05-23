@@ -14860,6 +14860,2107 @@ One of the most remarkable features of the adaptive immune system is its ability
         ]
       },
     ]
+    {
+  id: 'reading-26',
+  type: 'reading',
+  title: 'Passage 26',
+  text: `Rainforests cover only about six percent of the Earth\'s surface, yet they are home to more than half of the world\'s plant and animal species. Found mainly near the equator, these dense forests receive heavy rainfall throughout the year, creating warm and humid conditions that support an extraordinary variety of life. The Amazon rainforest in South America is the largest of its kind, producing roughly twenty percent of the world\'s oxygen and playing a critical role in regulating the global climate. Rainforests are structured in distinct layers, each supporting different forms of life. The canopy forms a dense ceiling of leaves where most wildlife lives, while the forest floor remains dark and damp, covered in decomposing matter that feeds the soil below.
+
+Despite their importance, rainforests are being destroyed at an alarming rate. Deforestation driven by agriculture, logging, and urban expansion has already eliminated large portions of these vital habitats. Scientists warn that continued destruction threatens not only the millions of species that depend on rainforests but also the stability of global weather patterns and carbon cycles that affect every region of the planet. Many governments and environmental organisations are now calling for stronger international agreements to slow deforestation and protect these irreplaceable ecosystems before the damage becomes permanent and impossible to reverse.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the importance, structure, and ongoing destruction of rainforests around the world',
+        'why the Amazon produces a significant portion of the oxygen found in the atmosphere',
+        'how each layer of the rainforest supports a completely different group of species',
+        'the reason deforestation continues despite warnings from environmental organisations',
+        'how international agreements are being used to slow the destruction of rainforests'
+      ],
+      answer: 'the importance, structure, and ongoing destruction of rainforests around the world'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what role does the forest floor play in the rainforest ecosystem?',
+      options: [
+        'it forms a dense ceiling of branches that shelters the majority of the forest\'s wildlife',
+        'it produces most of the oxygen released by the rainforest into the surrounding atmosphere',
+        'it remains dark and damp, with decomposing matter that feeds the soil and supports growth',
+        'it receives the most direct sunlight and therefore supports the greatest variety of plant life',
+        'it is where the tallest trees are rooted and where most of the rainfall is first absorbed'
+      ],
+      answer: 'it remains dark and damp, with decomposing matter that feeds the soil and supports growth'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Rainforests are considered vital to the planet because... 1. they are home to more than half of all plant and animal species on Earth 2. the canopy layer is the only part of the rainforest that receives any rainfall throughout the year 3. their destruction threatens the stability of global weather patterns and carbon cycles 4. governments have already signed agreements that have successfully stopped all deforestation 5. the Amazon produces roughly twenty percent of the world\'s oxygen supply',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 4',
+        'C) 2, 3, 4',
+        'D) 1, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'D) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Rainforests cover more than half of the Earth\'s total surface area.', answer: false },
+        { text: 'The Amazon rainforest plays a critical role in regulating the global climate.', answer: true },
+        { text: 'The forest floor is dark, damp, and covered in decomposing matter.', answer: true },
+        { text: 'Scientists believe deforestation has no significant impact on global carbon cycles.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-27',
+  type: 'reading',
+  title: 'Passage 27',
+  text: `Coffee is one of the most widely consumed beverages in the world, with its origins tracing back to the highlands of Ethiopia, where a goat herder named Kaldi first noticed that his goats became unusually energetic after eating berries from a particular tree. Word of this discovery reached a local monastery, where monks prepared a drink from the berries and found it helped them remain alert during long evening prayers. By the fifteenth century, coffee had spread to the Arabian Peninsula, where coffeehouses became important social spaces for conversation and debate. It later reached Europe in the seventeenth century, quickly replacing beer and wine as a common morning drink.
+
+Today, coffee is grown across more than seventy countries, with Brazil and Vietnam among the largest producers in the world. The global coffee industry supports millions of workers across farming, harvesting, roasting, and retail. Despite its long history, scientists continue to study the effects of coffee on human health, with research suggesting both potential benefits such as improved concentration and focus, and risks associated with consuming it in excessive quantities. Coffee\'s journey from an Ethiopian hillside to a globally traded commodity reflects how a single discovery can shape the habits and economies of entire civilisations over many centuries.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how coffee was first discovered and how it spread to become a global commodity today',
+        'the reason Brazil and Vietnam became the dominant producers in the modern coffee market',
+        'why coffeehouses in the Arab world became the most important social spaces of their time',
+        'how scientists are currently studying the health risks associated with drinking too much coffee',
+        'the way coffee replaced beer and wine across Europe during the seventeenth century period'
+      ],
+      answer: 'how coffee was first discovered and how it spread to become a global commodity today'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what did the monks discover after preparing a drink from the coffee berries?',
+      options: [
+        'that the drink could be traded profitably with merchants travelling across the Arabian Peninsula',
+        'that it caused their goats to become unusually energetic and remain active well into the night',
+        'that it helped them stay alert and awake during the long evening prayers at the monastery',
+        'that it was far more effective than wine at improving concentration during periods of study',
+        'that the berries contained properties that made them suitable for long-distance trade and export'
+      ],
+      answer: 'that it helped them stay alert and awake during the long evening prayers at the monastery'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The global significance of coffee is evident because... 1. it originated in Ethiopia before spreading across the Arabian Peninsula and into Europe 2. coffeehouses completely replaced all universities as centres of learning across medieval Europe 3. it is now cultivated in more than seventy countries and supports millions of workers worldwide 4. Kaldi the goat herder is officially recognised as the founder of the modern coffee industry 5. its journey from Ethiopia to global trade reflects how one discovery can shape entire civilisations',
+      options: [
+        'A) 1, 4, 5',
+        'B) 2, 3, 5',
+        'C) 1, 3, 5',
+        'D) 2, 4, 5',
+        'E) 1, 2, 4'
+      ],
+      answer: 'C) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'According to the passage, coffee\'s origins trace back to the highlands of Ethiopia.', answer: true },
+        { text: 'Coffee reached Europe before it spread to the Arabian Peninsula.', answer: false },
+        { text: 'Brazil and Vietnam are among the largest coffee-producing countries in the world today.', answer: true },
+        { text: 'Scientists have concluded that drinking coffee in any quantity is completely safe for health.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-28',
+  type: 'reading',
+  title: 'Passage 28',
+  text: `The Olympic Games are one of the oldest sporting traditions in human history, with their origins in ancient Greece. The earliest recorded Games took place in 776 BC at Olympia, a sacred site dedicated to the god Zeus, where athletes from various Greek city-states competed in events such as running, wrestling, and chariot racing. The Games were held every four years, and during this period a sacred truce was declared, allowing athletes and spectators to travel safely across warring regions. The ancient Olympics continued for over a thousand years before being banned in 393 AD by the Roman Emperor Theodosius I, who considered them a pagan tradition incompatible with Christian values.
+
+The modern Olympic Games were revived in 1896 in Athens, following a proposal by French educator Pierre de Coubertin, who believed sport could promote international understanding and peace. Since then, the Games have grown into one of the world\'s largest events, now featuring both Summer and Winter editions held in different cities every two years in alternation. Today the Olympics bring together thousands of athletes from over two hundred countries, serving as a global symbol of unity and healthy competition. Despite ongoing controversies over commercialisation and political interference, the Games continue to inspire millions of people worldwide and remain one of the most watched television events in history.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the origins of the Olympic Games in ancient Greece and how they developed into a modern event',
+        'why Pierre de Coubertin believed that international sport could effectively promote world peace',
+        'how the sacred truce declared during the ancient Olympics allowed safe travel across warring regions',
+        'the reason the Roman Emperor Theodosius banned the ancient Olympic Games in 393 AD',
+        'how the modern Olympics grew to become the most watched television broadcast in human history'
+      ],
+      answer: 'the origins of the Olympic Games in ancient Greece and how they developed into a modern event'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why did Pierre de Coubertin propose reviving the Olympic Games?',
+      options: [
+        'because he wanted Athens to become the permanent host city of a major international sports event',
+        'because he believed that sport could serve as a powerful way of promoting international understanding',
+        'because he hoped the Games would replace the sacred truce tradition from the ancient Greek period',
+        'because he wanted to create a new competition that would include both Summer and Winter editions',
+        'because he believed commercialisation of sport was the most effective way to unite different nations'
+      ],
+      answer: 'because he believed that sport could serve as a powerful way of promoting international understanding'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The Olympic Games are considered historically significant because... 1. they originated in ancient Greece and have continued in a modern form since 1896 2. the sacred truce meant that no wars were ever fought between Greek city-states during the Games 3. Pierre de Coubertin\'s revival turned them into a global symbol of unity and healthy competition 4. the ancient Games were banned because athletes began competing for financial rewards rather than honour 5. they now bring together thousands of athletes from more than two hundred countries worldwide',
+      options: [
+        'A) 2, 3, 4',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 3, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'D) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The earliest recorded Olympic Games took place in 776 BC at Olympia in ancient Greece.', answer: true },
+        { text: 'The ancient Olympic Games were banned by Pierre de Coubertin in the late nineteenth century.', answer: false },
+        { text: 'The modern Olympics now include both Summer and Winter editions held in alternating years.', answer: true },
+        { text: 'The passage states that all political controversy surrounding the Olympics has now been fully resolved.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-29',
+  type: 'reading',
+  title: 'Passage 29',
+  text: `Habits are automatic behaviours that the brain develops over time through a process of repetition and reinforcement. When a person performs an action repeatedly in response to a specific trigger, the brain gradually encodes that behaviour into a neural pathway, making it easier and faster to carry out without conscious thought. This process, often described as the habit loop, consists of three stages: a cue that triggers the behaviour, the routine itself, and a reward that reinforces it. Over time the brain begins to anticipate the reward as soon as the cue appears, which is why habits can feel almost impossible to resist once they are firmly established.
+
+Understanding how habits form also reveals how they can be changed. Research in behavioural science suggests that the most effective way to break an unwanted habit is not to eliminate the cue or the reward but to replace the routine with a different behaviour that delivers a similar sense of satisfaction. This approach, known as habit substitution, has been used successfully in programmes designed to address behaviours ranging from overeating to smoking. Building new habits, on the other hand, requires consistency and patience, as the brain needs sufficient repetition before a new behaviour becomes truly automatic and no longer requires deliberate effort to maintain.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how habits are formed in the brain and what strategies can be used to change them effectively',
+        'the reason smoking and overeating are considered the most difficult habits for people to break',
+        'why the brain develops neural pathways that make certain automatic behaviours feel rewarding',
+        'how behavioural science programmes use cues and rewards to help people adopt healthier routines',
+        'the role that consistency and patience play in helping the brain establish new automatic behaviours'
+      ],
+      answer: 'how habits are formed in the brain and what strategies can be used to change them effectively'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is the most effective way to break an unwanted habit?',
+      options: [
+        'to remove the reward entirely so that the brain no longer associates the cue with any satisfaction',
+        'to replace the routine with a different behaviour that provides a similar sense of satisfaction',
+        'to eliminate the cue that triggers the behaviour before the habit loop has a chance to begin',
+        'to repeat the unwanted behaviour consciously until the brain loses interest in the reward it provides',
+        'to use medical programmes specifically designed to rewire the neural pathways formed by old habits'
+      ],
+      answer: 'to replace the routine with a different behaviour that provides a similar sense of satisfaction'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The habit loop is central to understanding behaviour because... 1. it explains how a cue, routine, and reward work together to make behaviours automatic over time 2. it proves that all habits, whether good or bad, can be permanently eliminated by removing the cue 3. the brain begins to anticipate the reward as soon as the cue appears, making habits hard to resist 4. habit substitution has been shown to be ineffective in programmes addressing overeating and smoking 5. it shows that replacing the routine rather than the cue or reward is key to changing unwanted habits',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 5',
+        'C) 1, 2, 4',
+        'D) 2, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'B) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The habit loop consists of three stages: a cue, a routine, and a reward.', answer: true },
+        { text: 'The passage states that eliminating the cue is the most effective way to break a habit.', answer: false },
+        { text: 'Habit substitution involves replacing the routine while keeping the cue and reward in place.', answer: true },
+        { text: 'According to the passage, new habits become automatic immediately after a behaviour is performed once.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-30',
+  type: 'reading',
+  title: 'Passage 30',
+  text: `Exercise is widely known for its physical benefits, but research over the past two decades has revealed that regular physical activity also has a profound effect on the brain. When a person exercises, the body releases chemicals called endorphins, which reduce feelings of stress and anxiety and produce a general sense of wellbeing. At the same time, exercise stimulates the production of a protein known as brain-derived neurotrophic factor, or BDNF, which supports the growth and maintenance of neurons and has been linked to improved memory and learning capacity. Studies have shown that even moderate exercise, such as a thirty-minute walk, can produce measurable improvements in concentration and mood within hours.
+
+Regular physical activity has also been associated with long-term protection against cognitive decline. Research suggests that people who exercise consistently throughout their lives are significantly less likely to develop conditions such as dementia and Alzheimer\'s disease in later years. Exercise appears to increase the volume of the hippocampus, the region of the brain responsible for memory formation, which typically shrinks with age. Beyond its protective effects, exercise has been used as a complementary treatment for depression and anxiety, with several studies indicating that its impact on mood can be comparable to that of medication in certain cases. These findings highlight the importance of physical activity not only for the body but also for long-term mental health.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how regular exercise affects the brain in both the short term and over a person\'s lifetime',
+        'the reason endorphins released during exercise are more effective than medication for depression',
+        'why the hippocampus shrinks with age and how physical activity can slow this natural process',
+        'how BDNF production during exercise leads directly to improvements in academic performance',
+        'the way moderate exercise such as walking can produce immediate improvements in a person\'s mood'
+      ],
+      answer: 'how regular exercise affects the brain in both the short term and over a person\'s lifetime'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what role does BDNF play in the brain?',
+      options: [
+        'it reduces feelings of stress and anxiety by triggering the release of endorphins during physical activity',
+        'it protects the hippocampus from shrinking by replacing neurons lost through the natural ageing process',
+        'it supports the growth and maintenance of neurons and has been linked to improved memory and learning',
+        'it increases the overall volume of the brain and prevents the development of dementia in older adults',
+        'it regulates the production of endorphins and controls the brain\'s response to stress and physical effort'
+      ],
+      answer: 'it supports the growth and maintenance of neurons and has been linked to improved memory and learning'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Exercise is beneficial for the brain because... 1. it triggers the release of endorphins that reduce stress and produce a sense of wellbeing 2. it completely eliminates the risk of developing Alzheimer\'s disease in people over the age of sixty 3. it stimulates BDNF production, which supports neuron growth and improves memory and learning 4. studies show it increases the volume of the hippocampus, which typically shrinks with age 5. researchers have confirmed it is more effective than all known medications for treating depression',
+      options: [
+        'A) 1, 2, 5',
+        'B) 2, 3, 4',
+        'C) 1, 3, 4',
+        'D) 2, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'C) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Endorphins released during exercise help reduce feelings of stress and anxiety.', answer: true },
+        { text: 'The passage states that exercise completely prevents the development of dementia in all cases.', answer: false },
+        { text: 'The hippocampus is the region of the brain responsible for memory formation.', answer: true },
+        { text: 'According to the passage, exercise has no effect on depression or anxiety disorders.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-31',
+  type: 'reading',
+  title: 'Passage 31',
+  text: `Honeybees are among the most socially complex insects on Earth, living in highly organised colonies that can contain up to eighty thousand individuals. Each colony is structured around a single queen, whose sole purpose is to lay eggs, while thousands of worker bees carry out tasks ranging from collecting nectar to defending the hive. Worker bees communicate with one another through a remarkable behaviour known as the waggle dance, a series of movements that conveys precise information about the direction and distance of a food source relative to the position of the sun. This form of communication is considered one of the most sophisticated examples of non-human language in the animal kingdom.
+
+Beyond their social lives, honeybees play an indispensable role in global food production through pollination. As bees move from flower to flower collecting nectar, they transfer pollen between plants, enabling the reproduction of a vast number of crops that humans depend on for food. Scientists estimate that roughly one third of the world\'s food supply depends either directly or indirectly on bee pollination. In recent decades, bee populations have declined sharply due to habitat loss, pesticide use, disease, and climate change. Researchers and conservationists are increasingly concerned that continued decline could have severe consequences for agricultural systems and food security worldwide.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the social organisation of honeybee colonies and the vital role bees play in global food production',
+        'why the waggle dance is considered the most advanced form of communication in the animal kingdom',
+        'how habitat loss and pesticide use have become the leading causes of honeybee population decline',
+        'the way worker bees divide responsibilities within the hive to support the needs of the queen',
+        'how pollination carried out by bees directly contributes to approximately one third of food crops'
+      ],
+      answer: 'the social organisation of honeybee colonies and the vital role bees play in global food production'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what information does the waggle dance communicate to other bees?',
+      options: [
+        'the total amount of nectar available at a food source and how many bees are needed to collect it',
+        'the precise direction and distance of a food source relative to the position of the sun',
+        'whether a food source contains enough pollen to support the reproductive needs of the colony',
+        'the level of threat posed by predators in the area surrounding the identified food source',
+        'how long a food source is likely to remain available before it is exhausted or becomes unsuitable'
+      ],
+      answer: 'the precise direction and distance of a food source relative to the position of the sun'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Honeybees are considered essential to human survival because... 1. they live in colonies of up to eighty thousand individuals led by a single egg-laying queen 2. their pollination activity supports roughly one third of the world\'s total food supply 3. the waggle dance allows them to coordinate agricultural activity across entire regions 4. declining bee populations threaten agricultural systems and global food security 5. worker bees collect nectar and transfer pollen between plants as they move between flowers',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 2, 3',
+        'D) 2, 4, 5',
+        'E) 1, 3, 5'
+      ],
+      answer: 'D) 2, 4, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'A honeybee colony can contain up to eighty thousand individual bees.', answer: true },
+        { text: 'The waggle dance provides information about the quality of nectar rather than the location of food.', answer: false },
+        { text: 'Scientists estimate that roughly one third of the world\'s food supply depends on bee pollination.', answer: true },
+        { text: 'The passage states that honeybee populations have been steadily increasing in recent decades.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-32',
+  type: 'reading',
+  title: 'Passage 32',
+  text: `An endangered species is one whose population has declined to the point where it faces a significant risk of extinction in the wild. Species become endangered for a variety of reasons, but habitat destruction remains the leading cause worldwide. As forests are cleared, wetlands drained, and natural landscapes converted for agriculture or urban development, the animals and plants that depend on those environments lose the space and resources they need to survive. Alongside habitat loss, poaching, pollution, invasive species, and the effects of climate change place additional pressure on already vulnerable populations.
+
+Conservation efforts to protect endangered species take many forms. Protected areas such as national parks and wildlife reserves provide safe habitats where animals can live and breed without direct human interference. Captive breeding programmes have successfully increased the populations of critically endangered species and in some cases enabled their reintroduction into the wild. International agreements such as CITES regulate the global trade in wildlife and plant products to prevent commercial exploitation from driving species toward extinction. Despite these efforts, scientists warn that the current rate of species loss is far higher than the natural background rate of extinction and that urgent action at both local and global levels is essential to reverse the trend.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the reasons species become endangered and the conservation efforts used to protect them',
+        'why habitat destruction is considered a more serious threat than poaching or climate change',
+        'how captive breeding programmes have successfully restored all endangered species to the wild',
+        'the way international agreements regulate wildlife trade to prevent commercial overexploitation',
+        'why scientists believe the natural background rate of extinction is higher than previously thought'
+      ],
+      answer: 'the reasons species become endangered and the conservation efforts used to protect them'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is the primary reason species become endangered?',
+      options: [
+        'the introduction of invasive species that compete directly with native animals for food and space',
+        'the effects of climate change, which alter the conditions that native species have adapted to over time',
+        'the destruction of natural habitats through deforestation, draining of wetlands, and urban development',
+        'illegal poaching driven by commercial demand for animal products in international wildlife markets',
+        'pollution from industrial and agricultural sources that contaminates water supplies and food chains'
+      ],
+      answer: 'the destruction of natural habitats through deforestation, draining of wetlands, and urban development'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Conservation efforts are vital for endangered species because... 1. protected areas provide safe habitats where animals can live and breed without human interference 2. captive breeding has increased populations and in some cases allowed reintroduction into the wild 3. CITES has successfully eliminated all illegal wildlife trade across international borders 4. scientists confirm the current rate of species loss far exceeds the natural background extinction rate 5. national parks ensure that no species living within their boundaries can ever become endangered',
+      options: [
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 4',
+        'D) 3, 4, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Habitat destruction is described in the passage as the leading cause of species becoming endangered.', answer: true },
+        { text: 'CITES is an international agreement designed to regulate the global trade in wildlife and plant products.', answer: true },
+        { text: 'The passage states that captive breeding programmes have successfully restored all endangered species.', answer: false },
+        { text: 'According to the passage, the current rate of species loss is lower than the natural background rate.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-33',
+  type: 'reading',
+  title: 'Passage 33',
+  text: `Black holes are among the most extreme objects in the universe, formed when massive stars reach the end of their lives and collapse under the force of their own gravity. During most of a star\'s life, the outward pressure produced by nuclear fusion in its core counterbalances the inward pull of gravity. When a sufficiently massive star exhausts its nuclear fuel, this balance breaks down. The core collapses rapidly and the outer layers are expelled in a violent explosion known as a supernova. If the remaining core is massive enough, gravity overwhelms all other forces and the material collapses into an infinitely dense point called a singularity, surrounded by a boundary known as the event horizon, beyond which nothing, not even light, can escape.
+
+Black holes cannot be observed directly because they emit no light, but their presence can be detected through their gravitational effects on nearby matter and radiation. Stars and gas clouds orbiting unusually fast around an invisible centre, or the bending of light passing close to a massive object, can indicate the presence of a black hole. In 2019, scientists produced the first direct image of a black hole\'s shadow using a global network of radio telescopes known as the Event Horizon Telescope. This landmark achievement confirmed predictions made by Einstein\'s general theory of relativity and opened new possibilities for studying some of the most extreme environments in the known universe.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how black holes form from collapsing stars and how scientists are able to detect their presence',
+        'why Einstein\'s general theory of relativity accurately predicted the existence of black holes in space',
+        'the reason nuclear fusion in a star\'s core is the only force capable of counterbalancing gravity',
+        'how the Event Horizon Telescope produced the first direct image of a black hole\'s shadow in 2019',
+        'why supernovae are considered the most violent and destructive events that occur in the universe'
+      ],
+      answer: 'how black holes form from collapsing stars and how scientists are able to detect their presence'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what happens when a massive star exhausts its nuclear fuel?',
+      options: [
+        'it expands outward into a red giant before gradually cooling and fading into a white dwarf star',
+        'the outward pressure from fusion increases rapidly, causing the star to explode without leaving a core',
+        'the balance between gravity and fusion pressure breaks down, leading to core collapse and a supernova',
+        'gravity immediately pulls all surrounding matter into a singularity before an event horizon can form',
+        'the star begins orbiting a nearby black hole as the gravitational pull between the two objects increases'
+      ],
+      answer: 'the balance between gravity and fusion pressure breaks down, leading to core collapse and a supernova'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The study of black holes is significant in modern science because... 1. the Event Horizon Telescope produced the first direct image of a black hole\'s shadow in 2019 2. black holes emit powerful beams of light that allow them to be photographed with standard telescopes 3. their gravitational effects on nearby stars and gas clouds allow scientists to detect their presence 4. the discovery confirmed all predictions made by Einstein\'s general theory of relativity without exception 5. studying them opens new possibilities for understanding some of the most extreme environments in the universe',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 4',
+        'C) 1, 3, 5',
+        'D) 2, 3, 4',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'A singularity is described in the passage as an infinitely dense point formed by gravitational collapse.', answer: true },
+        { text: 'Black holes can be observed directly because they emit strong radiation visible to most telescopes.', answer: false },
+        { text: 'The first direct image of a black hole\'s shadow was captured by the Event Horizon Telescope in 2019.', answer: true },
+        { text: 'The passage states that all stars, regardless of their size, eventually collapse into black holes.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-34',
+  type: 'reading',
+  title: 'Passage 34',
+  text: `Coral reefs are among the most biodiverse ecosystems on Earth, covering less than one percent of the ocean floor yet supporting approximately twenty-five percent of all marine species. They are built over thousands of years by tiny organisms called coral polyps, which secrete hard calcium carbonate skeletons that accumulate into the reef structures seen today. Despite their ecological importance, coral reefs are disappearing at an alarming rate, driven primarily by rising ocean temperatures caused by climate change. When water temperatures rise even slightly above normal levels, corals expel the symbiotic algae living in their tissues in a process known as coral bleaching. Without these algae, which provide corals with up to ninety percent of their energy, the reef begins to starve and eventually dies.
+
+Ocean acidification, caused by the absorption of excess carbon dioxide from the atmosphere, further weakens coral skeletons and slows reef growth. Pollution from agricultural runoff introduces excess nutrients into reef waters, promoting the growth of algae that smother corals and block the sunlight they need. Destructive fishing practices and coastal development cause direct physical damage to reef structures. Scientists estimate that half of the world\'s coral reefs have already been lost over the past fifty years. Without significant reductions in carbon emissions and stronger local protections, researchers warn that the majority of remaining reefs could be severely damaged or lost entirely within this century.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the ecological importance of coral reefs and the multiple threats that are causing their disappearance',
+        'how coral polyps build reef structures over thousands of years through calcium carbonate secretion',
+        'why ocean acidification is considered a more serious threat to coral reefs than rising temperatures',
+        'the way symbiotic algae provide corals with energy and what happens when they are expelled from tissue',
+        'how destructive fishing and coastal development cause more reef damage than climate change worldwide'
+      ],
+      answer: 'the ecological importance of coral reefs and the multiple threats that are causing their disappearance'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what causes coral bleaching to occur?',
+      options: [
+        'the absorption of excess carbon dioxide weakens coral skeletons and causes them to turn white gradually',
+        'agricultural runoff introduces nutrients that promote algae growth and physically bleach the coral surface',
+        'rising water temperatures cause corals to expel the symbiotic algae living within their tissues',
+        'destructive fishing practices damage the reef surface and expose the calcium carbonate skeleton beneath',
+        'excess sunlight during unusually warm seasons breaks down the pigmentation in coral polyp tissues'
+      ],
+      answer: 'rising water temperatures cause corals to expel the symbiotic algae living within their tissues'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Coral reefs face an uncertain future because... 1. rising ocean temperatures trigger coral bleaching by causing corals to expel their symbiotic algae 2. coral polyps are unable to secrete calcium carbonate in waters that contain any level of dissolved salt 3. ocean acidification weakens coral skeletons and reduces the rate at which reef structures can grow 4. scientists estimate that half of the world\'s coral reefs have already been lost over the past fifty years 5. most marine species that depend on coral reefs have already adapted successfully to warmer ocean temperatures',
+      options: [
+        'A) 2, 3, 5',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 3, 4',
+        'E) 2, 3, 4'
+      ],
+      answer: 'D) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Coral reefs support approximately twenty-five percent of all marine species despite covering very little of the ocean floor.', answer: true },
+        { text: 'Symbiotic algae provide corals with up to ninety percent of the energy they need to survive.', answer: true },
+        { text: 'The passage states that ocean acidification is caused by the absorption of excess nitrogen from the atmosphere.', answer: false },
+        { text: 'According to the passage, coral reefs are currently expanding in size due to improved conservation efforts.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-35',
+  type: 'reading',
+  title: 'Passage 35',
+  text: `Taste and smell are closely linked senses that work together to create the experience of flavour. The tongue detects five basic tastes: sweet, sour, salty, bitter, and umami, which is the savoury quality found in foods such as meat and aged cheese. These tastes are detected by specialised receptor cells grouped in taste buds, located primarily on the tongue but also found in smaller numbers on the roof of the mouth and in the throat. However, taste alone accounts for only a small part of what people perceive as flavour. The majority of flavour perception is driven by smell, as molecules released by food travel through the nasal passages and stimulate olfactory receptors at the top of the nose.
+
+This connection between taste and smell explains why food seems bland when a person has a blocked nose. During eating, aromas travel from the back of the mouth up into the nasal cavity through a passage behind the palate, a process called retronasal smell. Unlike direct smelling, this retronasal route allows the brain to combine taste and smell signals simultaneously, creating the rich and complex experience of flavour. The brain\'s ability to merge these signals is so precise that people can distinguish thousands of different flavours despite having only five basic tastes. Damage to the olfactory system through illness or injury can therefore dramatically reduce a person\'s ability to enjoy food, even when the taste receptors on the tongue remain fully functional.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how taste and smell work together to create the full experience of flavour in the human brain',
+        'why the sense of smell is considered far more important than taste in detecting food quality',
+        'the way taste buds located on the tongue detect the five basic categories of taste in food',
+        'how damage to the olfactory system affects a person\'s ability to detect the five basic tastes',
+        'why retronasal smell is the only mechanism through which the brain is able to process flavour'
+      ],
+      answer: 'how taste and smell work together to create the full experience of flavour in the human brain'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why does food taste bland when a person has a blocked nose?',
+      options: [
+        'because a blocked nose prevents saliva from reaching the taste buds and activating the receptors',
+        'because the majority of flavour perception depends on smell, which is disrupted when the nose is blocked',
+        'because nasal congestion reduces the production of olfactory receptors on the surface of the tongue',
+        'because taste buds located in the throat cannot function properly when the nasal passages are congested',
+        'because a blocked nose stops the brain from receiving the electrical signals produced by the taste buds'
+      ],
+      answer: 'because the majority of flavour perception depends on smell, which is disrupted when the nose is blocked'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The relationship between taste and smell is remarkable because... 1. the brain combines taste and smell signals simultaneously to create a rich and complex flavour experience 2. taste buds alone are sufficient to allow people to distinguish thousands of different flavours without smell 3. retronasal smell allows aromas to travel from the back of the mouth into the nasal cavity during eating 4. damage to the olfactory system can significantly reduce the ability to enjoy food even with functional taste buds 5. the tongue contains more than ten thousand taste buds that each respond to all five basic tastes equally',
+      options: [
+        'A) 2, 3, 5',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 2, 4',
+        'E) 1, 3, 4'
+      ],
+      answer: 'E) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The five basic tastes detected by the tongue include sweet, sour, salty, bitter, and umami.', answer: true },
+        { text: 'The passage states that taste alone is responsible for the majority of what people perceive as flavour.', answer: false },
+        { text: 'Retronasal smell occurs when aromas travel from the back of the mouth into the nasal cavity during eating.', answer: true },
+        { text: 'According to the passage, damage to the olfactory system has no effect on a person\'s enjoyment of food.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-36',
+  type: 'reading',
+  title: 'Passage 36',
+  text: `The human brain is the most complex organ in the known universe, containing approximately eighty-six billion neurons that communicate through trillions of connections called synapses. It is divided into several regions, each responsible for specific functions. The cerebrum, the largest part of the brain, governs higher functions such as thought, language, memory, and voluntary movement. The cerebellum, located at the back of the skull, coordinates balance and fine motor control. The brainstem connects the brain to the spinal cord and regulates essential automatic functions such as breathing, heart rate, and digestion, ensuring these processes continue without conscious effort.
+
+Despite its extraordinary capabilities, the brain consumes roughly twenty percent of the body\'s total energy, despite accounting for only about two percent of body weight. Much of this energy is used to maintain the constant electrical activity that underlies all brain function, even during sleep. Neuroscience has advanced considerably in recent decades, with techniques such as functional MRI allowing researchers to observe which regions of the brain are active during specific tasks. These tools have transformed the understanding of how the brain processes emotions, makes decisions, and recovers from injury. However, many aspects of brain function, including the nature of consciousness and the mechanisms underlying long-term memory storage, remain among the most challenging unsolved questions in modern science.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the structure and functions of the human brain and the progress made in understanding it scientifically',
+        'why the cerebellum is considered the most important region of the brain for higher cognitive functions',
+        'how functional MRI technology has allowed researchers to fully explain the nature of human consciousness',
+        'the reason the brain consumes twenty percent of the body\'s energy despite its relatively small size',
+        'how synaptic connections between neurons allow the brain to regulate breathing and heart rate automatically'
+      ],
+      answer: 'the structure and functions of the human brain and the progress made in understanding it scientifically'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is the function of the brainstem?',
+      options: [
+        'it governs higher cognitive functions such as language, thought, memory, and voluntary movement',
+        'it coordinates the body\'s balance and controls the precise fine motor movements of the limbs',
+        'it connects the brain to the spinal cord and regulates automatic functions such as breathing and heart rate',
+        'it stores long-term memories and transfers information between the two hemispheres of the cerebrum',
+        'it manages the electrical activity of the brain during sleep and ensures neurons remain properly connected'
+      ],
+      answer: 'it connects the brain to the spinal cord and regulates automatic functions such as breathing and heart rate'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The human brain remains a subject of intense scientific interest because... 1. it contains eighty-six billion neurons connected by trillions of synapses that enable all human functions 2. functional MRI has already provided complete explanations for consciousness and long-term memory storage 3. it consumes roughly twenty percent of the body\'s energy despite representing only two percent of body weight 4. the nature of consciousness and the mechanisms of long-term memory remain unsolved scientific questions 5. the cerebellum has recently been found to govern language and thought in addition to balance and movement',
+      options: [
+        'A) 1, 2, 5',
+        'B) 2, 3, 4',
+        'C) 1, 4, 5',
+        'D) 1, 3, 4',
+        'E) 2, 4, 5'
+      ],
+      answer: 'D) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The cerebrum is the largest part of the brain and governs thought, language, memory, and voluntary movement.', answer: true },
+        { text: 'The passage states that the brain accounts for approximately twenty percent of total body weight.', answer: false },
+        { text: 'Functional MRI technology allows researchers to observe which brain regions are active during specific tasks.', answer: true },
+        { text: 'According to the passage, the mechanisms underlying long-term memory storage are now fully understood.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-37',
+  type: 'reading',
+  title: 'Passage 37',
+  text: `The Age of Exploration, spanning roughly from the fifteenth to the seventeenth century, was a period during which European sailors and navigators ventured far beyond their known world in search of new trade routes, resources, and territories. Advances in navigation technology, including the magnetic compass, the astrolabe, and improvements in ship design, made long ocean voyages increasingly feasible. Portugal and Spain led the early stages of this era, with Portuguese explorers charting the coastline of Africa and establishing a sea route to Asia, while Spanish-sponsored expeditions reached the Americas. The voyages of Christopher Columbus in 1492 and Vasco da Gama in 1498 are among the most celebrated of this period.
+
+The consequences of the Age of Exploration were profound and far-reaching. European contact with the Americas led to the exchange of plants, animals, diseases, and ideas between the Old and New Worlds, a process historians call the Columbian Exchange. While this brought new crops such as potatoes and tomatoes to Europe, it also devastated indigenous populations through the introduction of diseases to which they had no immunity. European powers established colonies across Africa, Asia, and the Americas, reshaping global trade networks and laying the foundations for systems of exploitation that would shape world history for centuries. The era marked the beginning of a connected global economy but also introduced lasting inequalities whose effects are still debated today.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the causes and far-reaching consequences of European exploration during the fifteenth to seventeenth centuries',
+        'why Portugal and Spain became the dominant naval powers during the early stages of global exploration',
+        'how improvements in navigation technology made the long ocean voyages of this period possible',
+        'the way the Columbian Exchange introduced new crops to Europe while devastating indigenous populations',
+        'how Christopher Columbus and Vasco da Gama changed the course of global trade through their voyages'
+      ],
+      answer: 'the causes and far-reaching consequences of European exploration during the fifteenth to seventeenth centuries'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what was the Columbian Exchange?',
+      options: [
+        'a formal trade agreement signed between Columbus and the indigenous leaders of the Americas in 1492',
+        'a Spanish-sponsored programme that financed the voyages of Columbus and other explorers to the Americas',
+        'the process by which plants, animals, diseases, and ideas were exchanged between the Old and New Worlds',
+        'a system of colonial governance established by European powers to manage resources in the Americas',
+        'the network of sea routes connecting Europe, Africa, and Asia that emerged during the Age of Exploration'
+      ],
+      answer: 'the process by which plants, animals, diseases, and ideas were exchanged between the Old and New Worlds'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The Age of Exploration had a lasting impact on world history because... 1. it led to the exchange of plants, animals, diseases, and ideas between the Old and New Worlds 2. European nations agreed to share all newly discovered territories equally to prevent international conflict 3. indigenous populations across the Americas were devastated by diseases brought by European explorers 4. Portugal and Spain permanently abandoned their domestic economies to focus entirely on colonial expansion 5. it laid the foundations for a connected global economy while also introducing lasting global inequalities',
+      options: [
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 4, 5',
+        'D) 2, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'A) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The magnetic compass and astrolabe are mentioned in the passage as navigation tools used during this era.', answer: true },
+        { text: 'The passage states that indigenous populations benefited greatly from the diseases introduced by European explorers.', answer: false },
+        { text: 'The Columbian Exchange introduced crops such as potatoes and tomatoes to Europe from the Americas.', answer: true },
+        { text: 'According to the passage, the inequalities introduced during the Age of Exploration have been fully resolved today.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-38',
+  type: 'reading',
+  title: 'Passage 38',
+  text: `Lying is a universal human behaviour, observed across all cultures and age groups, yet the reasons why people lie are surprisingly varied. Psychologists distinguish between several types of deception. White lies, told to protect someone\'s feelings or avoid unnecessary conflict, are considered socially acceptable in many contexts. Self-serving lies are motivated by personal gain, whether financial, social, or reputational. Pathological lying, a rarer condition, involves compulsive deception that appears to serve no clear rational purpose. Research suggests that most adults tell at least one or two lies per day, though a small number of prolific liars account for a disproportionately large share of all deception.
+
+The ability to detect lies reliably has long been sought by law enforcement agencies and researchers alike, but studies consistently show that most people perform only slightly better than chance when judging whether someone is being truthful. Common assumptions, such as the belief that liars avoid eye contact or display nervous behaviour, are largely unsupported by evidence. Polygraph machines, which measure physiological responses such as heart rate and perspiration, are considered unreliable by most scientists and are inadmissible as evidence in many legal systems. More recent research into micro-expressions, subtle involuntary facial movements that briefly reveal concealed emotions, suggests greater promise but remains a developing field with significant limitations in real-world application.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the different reasons people lie and the challenges involved in detecting deception accurately',
+        'why white lies are considered socially acceptable while self-serving lies are widely condemned',
+        'how polygraph machines measure physiological responses to determine whether a person is lying',
+        'the reason pathological liars are responsible for the majority of all deception in human society',
+        'how micro-expression research has provided law enforcement with a reliable method of detecting lies'
+      ],
+      answer: 'the different reasons people lie and the challenges involved in detecting deception accurately'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why are polygraph machines considered unreliable?',
+      options: [
+        'because they can only measure perspiration and are unable to detect changes in heart rate accurately',
+        'because most scientists regard them as unreliable and they are inadmissible as evidence in many legal systems',
+        'because they were designed to detect micro-expressions rather than physiological responses to deception',
+        'because prolific liars have learned to control their physiological responses and consistently fool the machine',
+        'because law enforcement agencies stopped using them after research showed they performed worse than chance'
+      ],
+      answer: 'because most scientists regard them as unreliable and they are inadmissible as evidence in many legal systems'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Detecting lies is difficult in practice because... 1. most people perform only slightly better than chance when judging whether someone is being truthful 2. polygraphs are considered unreliable by most scientists and are inadmissible in many legal systems 3. white lies are told so frequently that they have made all other forms of deception impossible to identify 4. the belief that liars avoid eye contact is a well-established fact supported by decades of scientific research 5. micro-expression research shows promise but remains a developing field with significant real-world limitations',
+      options: [
+        'A) 2, 3, 4',
+        'B) 1, 3, 5',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 2, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The passage states that most adults tell at least one or two lies per day.', answer: true },
+        { text: 'According to the passage, avoiding eye contact is a reliable indicator that a person is lying.', answer: false },
+        { text: 'Polygraph machines are described as inadmissible as evidence in many legal systems.', answer: true },
+        { text: 'The passage concludes that micro-expression research has fully solved the problem of lie detection.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-39',
+  type: 'reading',
+  title: 'Passage 39',
+  text: `Tea is the most widely consumed beverage in the world after water, with a history stretching back nearly five thousand years. According to Chinese legend, tea was discovered in 2737 BC when leaves from a wild tree fell into the boiling water of Emperor Shen Nong, who was so pleased with the resulting drink that it became a permanent part of Chinese culture. By the Tang Dynasty, tea had become central to Chinese society, with elaborate rituals surrounding its preparation and consumption. The spread of Buddhism helped carry tea culture across Asia, as monks valued its ability to promote alertness during long periods of meditation.
+
+Tea reached Europe in the sixteenth century through Portuguese and Dutch traders, and its popularity grew rapidly, particularly in Britain, where it became a defining feature of national culture. The British demand for tea drove significant global trade, including the controversial opium trade used to balance payments with China. Today, tea is grown commercially across more than thirty countries, with China, India, and Kenya among the largest producers. The two most common varieties are black tea, which is fully oxidised, and green tea, which is not, giving each a distinct flavour and different health properties. Research suggests that regular consumption of tea, particularly green tea, may offer benefits including improved cardiovascular health and reduced inflammation.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the history of tea from its ancient origins to its role as a globally consumed beverage today',
+        'why Britain\'s demand for tea led directly to the development of the controversial opium trade',
+        'how Buddhist monks were responsible for spreading tea culture from China across the rest of Asia',
+        'the reason green tea is considered healthier than black tea based on recent scientific research',
+        'how Portuguese and Dutch traders introduced tea to Europe during the sixteenth century period'
+      ],
+      answer: 'the history of tea from its ancient origins to its role as a globally consumed beverage today'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why did Buddhist monks value tea?',
+      options: [
+        'because it was used as a form of currency in trade between monasteries across different regions of Asia',
+        'because the elaborate rituals surrounding its preparation aligned closely with Buddhist spiritual practices',
+        'because it promoted alertness, which was beneficial during the long periods of meditation they practised',
+        'because it was the only beverage that could be prepared safely using the water available at high altitudes',
+        'because Emperor Shen Nong had declared tea a sacred drink and forbidden its use outside religious contexts'
+      ],
+      answer: 'because it promoted alertness, which was beneficial during the long periods of meditation they practised'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Tea has had a lasting impact on global history because... 1. it originated in China nearly five thousand years ago and spread across Asia through Buddhist culture 2. its popularity in Britain drove significant global trade including the controversial opium trade with China 3. green tea and black tea are now considered medically equivalent and recommended for the same health conditions 4. China, India, and Kenya are among the largest producers of tea grown commercially today 5. Emperor Shen Nong officially declared tea the national drink of China during the Tang Dynasty period',
+      options: [
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 4, 5',
+        'D) 1, 2, 4',
+        'E) 2, 4, 5'
+      ],
+      answer: 'D) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'According to legend, tea was discovered when leaves fell into the boiling water of Emperor Shen Nong.', answer: true },
+        { text: 'The passage states that tea reached Europe before it became established in China and the rest of Asia.', answer: false },
+        { text: 'Black tea is fully oxidised while green tea is not, giving each a distinct flavour and health properties.', answer: true },
+        { text: 'The passage concludes that the health benefits of drinking tea have been fully confirmed by scientists.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-40',
+  type: 'reading',
+  title: 'Passage 40',
+  text: `Salt is one of the most essential minerals in human history, playing a central role in the preservation of food, the development of trade, and the rise of civilisations long before modern refrigeration existed. Because salt prevents bacterial growth by drawing moisture out of food, it was the primary method of preserving meat and fish across ancient cultures. Control over salt supplies gave enormous power to those who possessed it, and entire economies were built around its production and distribution. The word salary is believed to derive from the Latin word for salt, reflecting the historical practice of paying Roman soldiers partly in salt or with money to buy it.
+
+The importance of salt extended beyond food preservation into politics and conflict. Salt taxes were imposed by ruling powers throughout history as a reliable source of revenue, often generating resentment among ordinary people who depended on it for survival. In colonial India, the British salt tax became a powerful symbol of imperial oppression, leading Mahatma Gandhi to organise the famous Salt March of 1930, in which he walked two hundred and forty miles to the sea to make salt illegally in protest. Today, salt remains one of the most traded commodities in the world, but advances in food technology have reduced its role in preservation while concerns about excessive consumption and its links to cardiovascular disease have made it a subject of ongoing public health debate.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the historical significance of salt in food preservation, trade, political power, and public health',
+        'why the British salt tax in colonial India was the most unjust taxation policy in recorded history',
+        'how Roman soldiers were paid entirely in salt and how this practice shaped the modern economy',
+        'the reason salt taxes were more effective than other forms of taxation throughout human history',
+        'how advances in modern food technology have completely eliminated the need for salt in preservation'
+      ],
+      answer: 'the historical significance of salt in food preservation, trade, political power, and public health'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why did Gandhi organise the Salt March in 1930?',
+      options: [
+        'to demonstrate that Indian communities could produce enough salt to supply the entire subcontinent',
+        'to protest against the British salt tax, which had become a powerful symbol of imperial oppression',
+        'to demand that the British government lower the price of salt for Roman soldiers stationed in India',
+        'to show that walking two hundred and forty miles was physically possible for a man of his advanced age',
+        'to establish a new trade route that would allow Indian merchants to export salt to international markets'
+      ],
+      answer: 'to protest against the British salt tax, which had become a powerful symbol of imperial oppression'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Salt has shaped human civilisation profoundly because... 1. it was the primary method of preserving food before modern refrigeration existed 2. control over salt supplies gave enormous power to those who produced and distributed it 3. Roman soldiers refused to serve in the military unless they were paid exclusively in salt 4. salt taxes throughout history generated revenue for rulers but often caused resentment among ordinary people 5. Gandhi\'s Salt March of 1930 successfully ended the British colonial presence in India immediately',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 2, 4',
+        'D) 3, 4, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The word salary is believed to originate from the Latin word for salt.', answer: true },
+        { text: 'The passage states that salt taxes were universally welcomed by ordinary people throughout history.', answer: false },
+        { text: 'Gandhi walked two hundred and forty miles to the sea during the Salt March of 1930.', answer: true },
+        { text: 'According to the passage, concerns about salt consumption and health have been permanently resolved.', answer: false }
+      ]
+    }
+  ]
+},
+  {
+  id: 'reading-41',
+  type: 'reading',
+  title: 'Passage 41',
+  text: `Mountains are formed through geological processes that operate over millions of years, driven by the movement of the large plates that make up the Earth\'s crust. When two continental plates collide, the immense pressure forces rock upward, creating fold mountains such as the Himalayas and the Alps. These are the most common type of mountain on Earth and include the highest peaks in the world. Volcanic mountains form differently, arising when magma from deep within the Earth forces its way through weak points in the crust and accumulates on the surface over successive eruptions. Mount Fuji in Japan and Mount Kilimanjaro in Africa are well-known examples of this type.
+
+A third category, known as fault-block mountains, forms when fractures in the Earth\'s crust allow large blocks of rock to be pushed upward or to drop relative to the surrounding land. The Sierra Nevada range in North America was formed through this process. Once mountains exist, they are gradually shaped by erosion caused by wind, water, and ice, which carve valleys, sharpen peaks, and transport material down to lower elevations over time. Mountains play a vital role in global ecology, acting as water towers that collect precipitation and feed the rivers relied upon by billions of people living in surrounding lowlands and plains.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the different processes through which mountains form and the ecological role they play on Earth',
+        'why the Himalayas and the Alps are considered the most geologically significant mountains in the world',
+        'how volcanic eruptions create mountains by forcing accumulated magma through weak points in the crust',
+        'the way erosion caused by wind, water, and ice gradually reshapes mountain ranges over long periods',
+        'how fault-block mountains differ from fold mountains in terms of the geological forces that create them'
+      ],
+      answer: 'the different processes through which mountains form and the ecological role they play on Earth'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how are fault-block mountains formed?',
+      options: [
+        'they form when two continental plates collide and force accumulated layers of rock upward over time',
+        'they arise when magma pushes repeatedly through weak points in the crust and builds up on the surface',
+        'they form when fractures in the crust allow large blocks of rock to be pushed upward or drop relative to surrounding land',
+        'they are created when glaciers carve deep valleys into existing mountain ranges over thousands of years',
+        'they develop when erosion removes softer rock layers and leaves harder resistant blocks standing above the landscape'
+      ],
+      answer: 'they form when fractures in the crust allow large blocks of rock to be pushed upward or drop relative to surrounding land'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Mountains are essential to life on Earth because... 1. they act as water towers that collect precipitation and feed rivers relied upon by billions of people 2. fold mountains such as the Himalayas were formed by the collision of two continental plates 3. erosion by wind, water, and ice carves valleys and transports material to lower elevations over time 4. fault-block mountains like the Sierra Nevada demonstrate how crustal fractures shape the landscape 5. volcanic mountains form when magma accumulates on the surface through repeated eruptions over time',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 5',
+        'C) 2, 3, 4',
+        'D) 1, 2, 4',
+        'E) 3, 4, 5'
+      ],
+      answer: 'B) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Fold mountains are described as the most common type of mountain on Earth.', answer: true },
+        { text: 'The passage states that Mount Fuji and Mount Kilimanjaro are examples of fault-block mountains.', answer: false },
+        { text: 'Mountains act as water towers that collect precipitation and feed rivers in surrounding lowlands.', answer: true },
+        { text: 'According to the passage, mountains are formed quickly through sudden geological events.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-42',
+  type: 'reading',
+  title: 'Passage 42',
+  text: `Colour has a powerful and often unconscious influence on human behaviour, perception, and emotion, a subject studied extensively within the field of psychology. Research suggests that different colours consistently evoke particular emotional responses across a wide range of cultures. Red is commonly associated with urgency, passion, and danger, which is why it is frequently used in warning signs and sale promotions. Blue tends to evoke feelings of calm, trust, and reliability, making it the dominant colour in corporate branding and financial institutions. Yellow is associated with optimism and attention, while green is linked to nature, health, and balance.
+
+These associations are exploited deliberately in marketing, interior design, and even healthcare settings. Studies have shown that the colour of a room can affect a patient\'s recovery rate, that packaging colour influences purchasing decisions, and that the colour of food can alter how its taste is perceived. However, the psychological effects of colour are not entirely universal. Cultural background plays a significant role in shaping colour associations, as white symbolises purity in many Western traditions but is associated with mourning in parts of East Asia. Individual experience and personal preference also moderate how colours are perceived and interpreted, meaning that while general patterns exist, responses to colour remain partly subjective and context-dependent.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how colour influences human behaviour and emotion while remaining partly shaped by culture and experience',
+        'why blue is considered the most psychologically effective colour for use in corporate and financial branding',
+        'the way marketing professionals use colour associations to manipulate consumer purchasing decisions globally',
+        'how cultural background determines the emotional response a person has to any given colour they encounter',
+        'the reason red and yellow are used in warning signs while blue and green are preferred in healthcare settings'
+      ],
+      answer: 'how colour influences human behaviour and emotion while remaining partly shaped by culture and experience'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why is blue commonly used in corporate branding and financial institutions?',
+      options: [
+        'because blue is associated with urgency and authority, which encourages customers to make quick decisions',
+        'because psychological research has shown that blue packaging increases product sales more than any other colour',
+        'because blue tends to evoke feelings of calm, trust, and reliability that suit professional environments',
+        'because blue is the colour most strongly linked to nature and health across the majority of world cultures',
+        'because financial regulators in most countries recommend blue as the standard colour for business branding'
+      ],
+      answer: 'because blue tends to evoke feelings of calm, trust, and reliability that suit professional environments'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The psychology of colour is complex because... 1. cultural background shapes colour associations, meaning the same colour can carry different meanings in different societies 2. all emotional responses to colour are entirely determined by genetics and remain the same across all cultures 3. individual experience and personal preference mean that responses to colour are partly subjective 4. the colour of a room, food packaging, and even food itself can influence human perception and behaviour 5. red is universally associated with mourning in every culture studied by psychologists worldwide',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 4',
+        'C) 2, 3, 5',
+        'D) 1, 4, 5',
+        'E) 2, 3, 4'
+      ],
+      answer: 'B) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Red is commonly associated with urgency, passion, and danger, and is frequently used in warning signs.', answer: true },
+        { text: 'The passage states that the psychological effects of colour are entirely universal across all cultures.', answer: false },
+        { text: 'White symbolises purity in many Western traditions but is associated with mourning in parts of East Asia.', answer: true },
+        { text: 'According to the passage, individual experience has no effect on how colours are perceived or interpreted.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-43',
+  type: 'reading',
+  title: 'Passage 43',
+  text: `The history of vaccines begins in the late eighteenth century with the observations of an English physician named Edward Jenner, who noticed that milkmaids who had contracted cowpox appeared to be immune to smallpox, a far more deadly disease. In 1796 Jenner conducted a now-famous experiment in which he inoculated a young boy with material from a cowpox sore and later exposed him to smallpox, demonstrating that the boy remained uninfected. This experiment established the principle of vaccination and laid the foundation for one of the most important advances in medical history. The word vaccine itself derives from the Latin word for cow, reflecting the origins of Jenner\'s discovery.
+
+Following Jenner\'s breakthrough, the French scientist Louis Pasteur expanded the concept of vaccination in the nineteenth century by developing vaccines for cholera, anthrax, and rabies. Pasteur\'s work established the germ theory of disease and demonstrated that weakened or killed forms of a pathogen could train the immune system to resist future infection. Throughout the twentieth century, vaccines were developed for diseases including polio, measles, and tuberculosis, dramatically reducing child mortality worldwide. The global eradication of smallpox in 1980 remains the greatest achievement in the history of public health, demonstrating the extraordinary potential of vaccination programmes when applied consistently on an international scale.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the discovery and development of vaccines from Jenner\'s early experiments to global disease eradication',
+        'why Edward Jenner\'s experiment with a young boy is considered unethical by modern medical standards',
+        'how Louis Pasteur\'s germ theory of disease completely replaced all previous understanding of infection',
+        'the reason smallpox was chosen as the first target for a global eradication programme in the twentieth century',
+        'how weakened forms of pathogens are used in modern vaccines to stimulate a protective immune response'
+      ],
+      answer: 'the discovery and development of vaccines from Jenner\'s early experiments to global disease eradication'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what did Jenner\'s experiment in 1796 demonstrate?',
+      options: [
+        'that cowpox and smallpox were caused by the same pathogen and could therefore be treated identically',
+        'that milkmaids developed immunity to all infectious diseases as a result of regular contact with cattle',
+        'that inoculation with cowpox material could protect a person from subsequently contracting smallpox',
+        'that weakened forms of a pathogen were more effective than killed forms in producing lasting immunity',
+        'that the immune system could be trained to resist infection by exposure to unrelated animal diseases'
+      ],
+      answer: 'that inoculation with cowpox material could protect a person from subsequently contracting smallpox'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Vaccination has transformed global public health because... 1. Jenner\'s original experiment established the principle that immunity could be artificially induced 2. Pasteur demonstrated that weakened or killed pathogens could train the immune system to resist infection 3. the development of vaccines for polio and measles has had no measurable effect on child mortality rates 4. smallpox was globally eradicated in 1980, representing the greatest achievement in public health history 5. all infectious diseases known to science have now been eliminated through international vaccination programmes',
+      options: [
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 4, 5',
+        'D) 1, 2, 4',
+        'E) 2, 4, 5'
+      ],
+      answer: 'D) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Edward Jenner noticed that milkmaids who had contracted cowpox appeared to be immune to smallpox.', answer: true },
+        { text: 'The word vaccine derives from the Latin word for cow, reflecting the origins of Jenner\'s discovery.', answer: true },
+        { text: 'The passage states that Louis Pasteur developed the first vaccine before Jenner conducted his experiment.', answer: false },
+        { text: 'According to the passage, smallpox remains one of the most widespread infectious diseases in the world today.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-44',
+  type: 'reading',
+  title: 'Passage 44',
+  text: `Every autumn, millions of monarch butterflies undertake one of the most remarkable migrations in the animal kingdom, travelling up to four thousand kilometres from their summer breeding grounds in Canada and the northern United States to their overwintering sites in the oyamel fir forests of central Mexico. What makes this journey particularly extraordinary is that no individual butterfly completes the full round trip. The butterflies that arrive in Mexico have never made the journey before, yet they navigate with remarkable precision to the same mountain forests used by previous generations, a feat that scientists believe is guided by a combination of the sun\'s position and an internal magnetic compass.
+
+The monarch\'s migration is not only a biological marvel but also an indicator of environmental health. In recent decades, monarch populations have declined sharply, with estimates suggesting a reduction of more than eighty percent over the past twenty years. The primary causes include the widespread loss of milkweed, the only plant on which monarchs lay their eggs and which their caterpillars eat, due to herbicide use in agricultural areas. Habitat destruction at both the breeding grounds in North America and the overwintering sites in Mexico has further reduced population numbers. Conservation efforts focused on restoring milkweed habitats and protecting the Mexican forests are now considered essential to preventing the collapse of this extraordinary annual migration.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the remarkable migration of monarch butterflies and the threats that are causing their population to decline',
+        'why the oyamel fir forests of central Mexico are the only suitable overwintering site for monarch butterflies',
+        'how an internal magnetic compass allows monarch butterflies to navigate without any prior experience',
+        'the reason milkweed loss due to herbicide use is considered more damaging than habitat destruction in Mexico',
+        'how monarch butterfly populations have declined by more than eighty percent over the past two decades'
+      ],
+      answer: 'the remarkable migration of monarch butterflies and the threats that are causing their population to decline'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what makes the monarch butterfly\'s navigation particularly extraordinary?',
+      options: [
+        'the butterflies travel in large coordinated groups that collectively remember the route from previous years',
+        'each butterfly memorises the route during its first migration and uses this memory on all subsequent journeys',
+        'the arriving butterflies have never made the journey before yet navigate precisely to the same forests each year',
+        'monarchs use the positions of stars at night rather than the sun\'s position to guide their long migration',
+        'the butterflies follow rivers and coastlines during their migration rather than relying on any internal compass'
+      ],
+      answer: 'the arriving butterflies have never made the journey before yet navigate precisely to the same forests each year'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The monarch butterfly\'s migration is under serious threat because... 1. widespread loss of milkweed due to herbicide use has removed the plant monarchs need for reproduction 2. the butterflies now travel a shorter distance each year as a result of gradual climate shifts in North America 3. habitat destruction at both breeding grounds in North America and overwintering sites in Mexico has reduced numbers 4. scientists have been unable to identify which forests the butterflies use and cannot therefore protect them 5. monarch populations have declined by more than eighty percent over the past twenty years',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 4',
+        'C) 1, 3, 5',
+        'D) 2, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Monarch butterflies travel up to four thousand kilometres to reach their overwintering sites in Mexico.', answer: true },
+        { text: 'The passage states that each individual monarch butterfly completes the full round trip migration.', answer: false },
+        { text: 'Milkweed is the only plant on which monarchs lay their eggs and which their caterpillars eat.', answer: true },
+        { text: 'According to the passage, monarch butterfly populations have increased significantly in recent decades.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-45',
+  type: 'reading',
+  title: 'Passage 45',
+  text: `The Dead Sea, located on the border between Jordan and Israel, is one of the most unusual bodies of water on Earth. Sitting at approximately four hundred and thirty metres below sea level, it is the lowest point on the surface of the planet. Its water is nearly ten times saltier than the ocean, making it impossible for most forms of life to survive within it and giving it the name by which it is known worldwide. The high salt concentration also makes the water exceptionally dense, allowing people to float effortlessly on its surface without any swimming ability. For centuries the mineral-rich mud and water of the Dead Sea have been valued for their therapeutic properties.
+
+Despite its remarkable characteristics, the Dead Sea is disappearing at an alarming rate. Its water level has been dropping by more than one metre per year for several decades, and the sea has already lost approximately one third of its surface area since the 1960s. The primary cause is the diversion of water from the Jordan River, the Dead Sea\'s main source of inflow, for agricultural and municipal use by surrounding countries. As the water level falls, thousands of sinkholes have appeared along the shoreline, swallowing roads and damaging infrastructure. Efforts to save the Dead Sea include a proposed canal from the Red Sea, though scientists warn that introducing different water could alter the sea\'s unique chemical composition and create unforeseen ecological consequences.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the unique characteristics of the Dead Sea and the environmental crisis threatening its survival',
+        'why the Dead Sea is considered the most therapeutically valuable body of water in the world today',
+        'how the diversion of the Jordan River has affected agriculture in the countries surrounding the Dead Sea',
+        'the reason the Dead Sea\'s high salt concentration makes it impossible for any living organism to survive',
+        'how sinkholes forming along the shoreline are causing significant damage to infrastructure in the region'
+      ],
+      answer: 'the unique characteristics of the Dead Sea and the environmental crisis threatening its survival'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is the primary cause of the Dead Sea\'s declining water level?',
+      options: [
+        'rising temperatures caused by climate change are increasing the rate of evaporation from the sea\'s surface',
+        'the construction of tourist infrastructure along the shoreline is preventing natural inflow from reaching the sea',
+        'the diversion of water from the Jordan River for agricultural and municipal use by surrounding countries',
+        'sinkholes forming along the shoreline are allowing large quantities of water to drain into underground cavities',
+        'the unusually high salt concentration is causing the water to evaporate more rapidly than in normal sea water'
+      ],
+      answer: 'the diversion of water from the Jordan River for agricultural and municipal use by surrounding countries'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The Dead Sea faces an uncertain future because... 1. its water level has been dropping by more than one metre per year for several decades 2. the Jordan River has been diverted for human use, removing the sea\'s primary source of inflow 3. the proposed Red Sea canal has already been built but failed to restore the sea\'s water levels 4. thousands of sinkholes have appeared along the shoreline as water levels continue to fall 5. scientists have confirmed that the Dead Sea will completely disappear within the next ten years',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 4, 5',
+        'D) 1, 2, 4',
+        'E) 2, 4, 5'
+      ],
+      answer: 'D) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The Dead Sea sits at approximately four hundred and thirty metres below sea level.', answer: true },
+        { text: 'The passage states that the Dead Sea has gained surface area since the 1960s due to conservation efforts.', answer: false },
+        { text: 'The high salt concentration of the Dead Sea allows people to float effortlessly on its surface.', answer: true },
+        { text: 'According to the passage, scientists fully support the proposed Red Sea canal without any reservations.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-46',
+  type: 'reading',
+  title: 'Passage 46',
+  text: `Fingerprints have been used as a method of personal identification for over a century, but their history stretches back much further. Ancient Babylonian and Chinese civilisations used fingerprints on clay tablets and documents as a form of signature long before their scientific properties were understood. The systematic study of fingerprints began in the nineteenth century, when scientists established that the ridge patterns on human fingertips are unique to each individual and remain unchanged throughout a person\'s lifetime. In 1892, the Argentine police became the first law enforcement agency in the world to use fingerprints to solve a murder, marking a turning point in criminal investigation.
+
+The uniqueness of fingerprints arises during foetal development, when the growing fingertips press against the walls of the womb in ways that are influenced by random physical factors, meaning that even identical twins have different fingerprints. Modern forensic science relies heavily on fingerprint analysis, and databases containing millions of prints allow investigators to match evidence found at crime scenes to known individuals within seconds. Beyond law enforcement, fingerprints are now used in consumer technology such as smartphones and laptops, as well as in border control and banking security systems worldwide. Despite the widespread use of biometric alternatives such as facial recognition and iris scanning, fingerprint identification remains one of the most reliable and cost-effective methods of personal verification available today.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the history, science, and modern applications of fingerprints as a method of personal identification',
+        'why fingerprint databases have made it possible for investigators to solve crimes more quickly than before',
+        'how the ridge patterns on human fingertips develop during foetal growth and why they remain permanent',
+        'the reason fingerprint identification is considered more reliable than facial recognition or iris scanning',
+        'how ancient civilisations in Babylon and China first discovered the identification potential of fingerprints'
+      ],
+      answer: 'the history, science, and modern applications of fingerprints as a method of personal identification'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why do even identical twins have different fingerprints?',
+      options: [
+        'because their genetic material diverges slightly during the early stages of embryonic cell division',
+        'because fingerprint patterns are determined entirely by environmental factors after a child is born',
+        'because random physical factors during foetal development cause each set of fingertips to press differently against the womb',
+        'because the ridge patterns on fingertips change gradually during early childhood in response to physical activity',
+        'because identical twins develop in separate sections of the womb, exposing their fingertips to different pressures'
+      ],
+      answer: 'because random physical factors during foetal development cause each set of fingertips to press differently against the womb'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Fingerprints remain one of the most valuable identification tools because... 1. ridge patterns on human fingertips are unique to each individual and remain unchanged throughout life 2. ancient Babylonian civilisation developed the first scientific classification system for fingerprint patterns 3. forensic databases allow investigators to match crime scene evidence to known individuals within seconds 4. fingerprint identification has been entirely replaced by facial recognition in most law enforcement agencies 5. they are used not only in criminal investigation but also in consumer technology and border security systems',
+      options: [
+        'A) 2, 3, 4',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 3, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'D) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The Argentine police were the first law enforcement agency to use fingerprints to solve a murder in 1892.', answer: true },
+        { text: 'The passage states that fingerprint ridge patterns change significantly as a person ages.', answer: false },
+        { text: 'Fingerprints are now used in consumer technology such as smartphones as well as in border control systems.', answer: true },
+        { text: 'According to the passage, facial recognition has completely replaced fingerprints in all modern security systems.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-47',
+  type: 'reading',
+  title: 'Passage 47',
+  text: `Plastic pollution has become one of the most pervasive environmental problems of the modern era, and one of its most alarming aspects is the way plastic particles enter and accumulate within food chains. Large plastic items discarded in the environment are broken down by sunlight and physical abrasion into tiny fragments known as microplastics, which measure less than five millimetres in diameter. These particles are now found in virtually every environment on Earth, from deep ocean trenches to Arctic ice. Marine organisms such as zooplankton and small fish ingest microplastics either directly or by consuming contaminated prey, and the particles then pass up the food chain as larger animals consume smaller ones.
+
+The process of bioaccumulation means that plastic concentrations increase at each level of the food chain, so predators at the top, including humans, are exposed to the highest levels. Studies have detected microplastics in human blood, lungs, and even placental tissue, though the long-term health consequences remain an active area of research. Beyond microplastics, plastic packaging and containers can leach chemical additives such as plasticisers and stabilisers into food and drink, raising additional concerns about chronic low-level exposure. Reducing plastic pollution requires action at multiple levels, from individual consumer choices and improved waste management to international agreements limiting the production of single-use plastics and holding manufacturers accountable for the full lifecycle of their products.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how plastic enters and accumulates in food chains and the health concerns this raises for humans',
+        'why zooplankton and small fish are considered the most severely affected victims of plastic pollution',
+        'the way bioaccumulation causes plastic concentrations to decrease as they move up the food chain',
+        'how international agreements have successfully reduced the production of single-use plastics worldwide',
+        'the reason microplastics are found in Arctic ice but have not yet been detected in human body tissue'
+      ],
+      answer: 'how plastic enters and accumulates in food chains and the health concerns this raises for humans'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is bioaccumulation?',
+      options: [
+        'the process by which microplastics are broken down by bacteria into harmless compounds within marine ecosystems',
+        'the way plastic items are physically broken down by sunlight and abrasion into increasingly smaller fragments',
+        'the process by which plastic concentrations increase at each level of the food chain as larger animals consume smaller ones',
+        'the accumulation of chemical additives from plastic packaging in the tissues of marine organisms over time',
+        'the mechanism by which zooplankton filter microplastics from seawater and concentrate them in their bodies'
+      ],
+      answer: 'the process by which plastic concentrations increase at each level of the food chain as larger animals consume smaller ones'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Plastic pollution poses a serious threat to human health because... 1. microplastics have been detected in human blood, lungs, and placental tissue 2. bioaccumulation ensures that predators at the top of the food chain are exposed to the highest plastic concentrations 3. all long-term health consequences of microplastic exposure have now been fully identified by researchers 4. plastic packaging can leach chemical additives into food and drink, raising concerns about chronic exposure 5. microplastics are only found in marine environments and do not affect land-based food chains',
+      options: [
+        'A) 2, 3, 5',
+        'B) 1, 4, 5',
+        'C) 1, 2, 4',
+        'D) 2, 3, 4',
+        'E) 1, 3, 5'
+      ],
+      answer: 'C) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Microplastics are fragments of plastic measuring less than five millimetres in diameter.', answer: true },
+        { text: 'The passage states that plastic concentrations decrease at each level of the food chain.', answer: false },
+        { text: 'Studies have detected microplastics in human blood, lungs, and placental tissue.', answer: true },
+        { text: 'According to the passage, the long-term health consequences of microplastic exposure are now fully understood.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-48',
+  type: 'reading',
+  title: 'Passage 48',
+  text: `Goosebumps are a physiological response that humans share with many other mammals, triggered by cold temperatures, fear, or intense emotional experiences. When the brain perceives a threat or a sudden drop in temperature, the nervous system activates tiny muscles attached to the base of each hair follicle, causing the hairs to stand upright and producing the characteristic bumps visible on the skin. In animals with thick fur, this response serves a practical purpose: raised fur traps a layer of insulating air close to the body, helping to retain heat, and in threatening situations it makes the animal appear larger and more intimidating to potential predators or rivals.
+
+In humans, however, goosebumps have largely lost their functional value because our body hair is too fine and sparse to provide meaningful insulation or to produce a visible size increase. The response persists because it is governed by ancient neurological pathways that evolved long before humans lost the dense body hair of their evolutionary ancestors. Interestingly, goosebumps triggered by emotional stimuli such as music, awe, or a powerful memory appear to involve a different pathway in the brain connected to the reward and social bonding systems. Some researchers suggest that this emotional form of goosebumps, sometimes called frisson, may reflect a uniquely human capacity for deep aesthetic and social experience, distinguishing it from the purely physiological response seen in other mammals.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the biological origins of goosebumps, their function in animals, and their significance in humans',
+        'why goosebumps triggered by cold temperatures are more physiologically significant than emotional goosebumps',
+        'how the nervous system activates hair follicle muscles in response to threats and sudden temperature changes',
+        'the reason humans retained goosebumps despite losing the dense body hair of their evolutionary ancestors',
+        'how frisson differs from ordinary goosebumps and why it is considered a defining feature of human experience'
+      ],
+      answer: 'the biological origins of goosebumps, their function in animals, and their significance in humans'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why are goosebumps functionally useful in animals with thick fur?',
+      options: [
+        'because raised fur allows animals to move more quietly and approach prey without being detected',
+        'because the muscle contractions that cause goosebumps generate heat directly within the animal\'s skin tissue',
+        'because raised fur traps insulating air near the body and can make the animal appear larger to rivals',
+        'because goosebumps signal emotional distress to other members of the same species in social situations',
+        'because the response triggers the release of hormones that increase strength and speed in threatening situations'
+      ],
+      answer: 'because raised fur traps insulating air near the body and can make the animal appear larger to rivals'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Goosebumps in humans are scientifically interesting because... 1. they persist despite having lost most of their functional value due to the loss of dense human body hair 2. emotional goosebumps involve brain pathways connected to reward and social bonding rather than physical threat 3. scientists have confirmed that human goosebumps provide the same level of insulation as fur in other mammals 4. frisson may reflect a uniquely human capacity for deep aesthetic and social experience 5. the nervous system no longer activates goosebumps in response to cold or fear in modern humans',
+      options: [
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 4',
+        'D) 1, 4, 5',
+        'E) 2, 4, 5'
+      ],
+      answer: 'C) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Goosebumps are caused by tiny muscles attached to the base of each hair follicle contracting.', answer: true },
+        { text: 'The passage states that human body hair is thick enough to provide meaningful insulation through goosebumps.', answer: false },
+        { text: 'Emotional goosebumps appear to involve brain pathways connected to reward and social bonding systems.', answer: true },
+        { text: 'According to the passage, frisson is a physiological response observed equally in humans and other mammals.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-49',
+  type: 'reading',
+  title: 'Passage 49',
+  text: `Happiness is one of the most studied yet least fully understood subjects in modern psychology and neuroscience. Researchers distinguish between two broad types: hedonic happiness, which refers to the pleasure derived from positive experiences and the absence of discomfort, and eudaimonic happiness, which arises from living a meaningful and purposeful life. Studies consistently show that while hedonic pleasures provide immediate satisfaction, their effects tend to fade quickly due to a process called hedonic adaptation, whereby people rapidly return to their baseline level of wellbeing after positive events. Eudaimonic wellbeing, by contrast, has been linked to longer-lasting life satisfaction and better physical health outcomes.
+
+Neuroscience has identified several brain systems involved in the experience of happiness, including the dopaminergic reward system, which responds to anticipated and received rewards, and circuits involving serotonin and oxytocin, which are associated with social connection and contentment. Research suggests that strong social relationships are the single most reliable predictor of long-term happiness across cultures and demographic groups. Other factors consistently associated with greater wellbeing include regular physical activity, gratitude practices, a sense of autonomy, and engagement in activities that promote a state of focused absorption known as flow. Importantly, income above a level that meets basic needs has a surprisingly limited effect on happiness, suggesting that beyond a certain threshold, additional wealth contributes little to genuine wellbeing.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the science of happiness, including its types, neurological basis, and the factors that reliably predict it',
+        'why eudaimonic happiness is always superior to hedonic happiness in terms of health and life satisfaction',
+        'how the dopaminergic reward system generates feelings of pleasure in response to anticipated experiences',
+        'the reason income levels have a surprisingly strong influence on long-term happiness across all cultures',
+        'how hedonic adaptation causes people to experience permanent increases in wellbeing after positive life events'
+      ],
+      answer: 'the science of happiness, including its types, neurological basis, and the factors that reliably predict it'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is hedonic adaptation?',
+      options: [
+        'the brain\'s ability to anticipate positive events and begin releasing dopamine before they actually occur',
+        'the process by which people rapidly return to their baseline level of wellbeing after positive experiences',
+        'a long-term increase in contentment that results from repeated exposure to pleasurable activities over time',
+        'the tendency for people to overestimate how much happiness a future positive event will actually provide',
+        'a neurological mechanism that converts short-term hedonic pleasure into lasting eudaimonic satisfaction'
+      ],
+      answer: 'the process by which people rapidly return to their baseline level of wellbeing after positive experiences'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Research into happiness reveals important insights because... 1. strong social relationships are the single most reliable predictor of long-term happiness across cultures 2. hedonic adaptation shows that positive events produce permanent increases in a person\'s baseline wellbeing 3. income above a level that meets basic needs has a surprisingly limited effect on genuine happiness 4. eudaimonic wellbeing has been linked to longer-lasting life satisfaction and better physical health outcomes 5. neuroscience has shown that the dopaminergic reward system is the only brain circuit involved in happiness',
+      options: [
+        'A) 1, 2, 5',
+        'B) 2, 3, 4',
+        'C) 1, 4, 5',
+        'D) 1, 3, 4',
+        'E) 2, 4, 5'
+      ],
+      answer: 'D) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Hedonic happiness refers to pleasure derived from positive experiences and the absence of discomfort.', answer: true },
+        { text: 'The passage states that hedonic pleasures provide long-lasting satisfaction that does not fade over time.', answer: false },
+        { text: 'Strong social relationships are described as the single most reliable predictor of long-term happiness.', answer: true },
+        { text: 'According to the passage, higher income consistently produces significant increases in happiness at all levels.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-50',
+  type: 'reading',
+  title: 'Passage 50',
+  text: `Cities significantly alter the climate of the areas they occupy through a phenomenon known as the urban heat island effect, whereby urban areas experience consistently higher temperatures than the surrounding rural landscape. The primary cause is the replacement of natural surfaces such as vegetation and soil with heat-absorbing materials including concrete, asphalt, and glass. These materials absorb solar radiation during the day and release it slowly at night, preventing the natural cooling that occurs in vegetated areas. Heat generated by vehicles, air conditioning systems, and industrial processes adds to this effect, raising urban temperatures by as much as five to ten degrees Celsius above those of nearby rural areas.
+
+The consequences of urban heat islands extend beyond discomfort. Higher temperatures increase energy demand for cooling, which in turn drives further emissions and worsens the warming effect. Heat stress causes measurable increases in mortality rates during heatwaves, particularly among elderly and vulnerable populations. Urban warming also affects local precipitation patterns, as the rising warm air over cities can trigger more frequent and intense rain events in surrounding areas. Strategies to mitigate the urban heat island effect include increasing urban green spaces and tree cover, introducing reflective or green roofing materials, and designing streets to improve airflow. As global urbanisation continues and climate change intensifies background temperatures, managing urban heat is becoming an increasingly urgent challenge for city planners worldwide.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the urban heat island effect, its consequences for city populations, and strategies to reduce its impact',
+        'why concrete and asphalt absorb more solar radiation than natural surfaces such as vegetation and soil',
+        'how increased energy demand for cooling in cities drives further greenhouse gas emissions worldwide',
+        'the reason urban heat islands cause more intense rainfall in surrounding rural areas during hot weather',
+        'how city planners are using green roofing and tree cover to eliminate the urban heat island effect entirely'
+      ],
+      answer: 'the urban heat island effect, its consequences for city populations, and strategies to reduce its impact'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is the primary cause of the urban heat island effect?',
+      options: [
+        'the large volume of heat produced by vehicles, industrial processes, and air conditioning systems in cities',
+        'the replacement of natural vegetation and soil with heat-absorbing materials such as concrete and asphalt',
+        'the increased frequency of heatwaves caused by global climate change affecting urban areas more than rural ones',
+        'the reduction in airflow through city streets caused by tall buildings blocking natural wind patterns',
+        'the concentration of human activity in a small area, which produces more body heat than rural populations'
+      ],
+      answer: 'the replacement of natural vegetation and soil with heat-absorbing materials such as concrete and asphalt'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The urban heat island effect creates serious problems for cities because... 1. higher temperatures increase energy demand for cooling, which drives further emissions and worsens warming 2. all cities have already exceeded the maximum safe temperature threshold identified by climate scientists 3. heat stress causes measurable increases in mortality during heatwaves, particularly among vulnerable populations 4. urban warming affects local precipitation, triggering more frequent and intense rainfall in surrounding areas 5. the rising cost of reflective roofing materials has made it impossible for most cities to reduce urban heat',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 4',
+        'C) 2, 3, 5',
+        'D) 1, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'B) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Urban areas can experience temperatures up to five to ten degrees Celsius higher than nearby rural areas.', answer: true },
+        { text: 'The passage states that the urban heat island effect reduces energy demand by keeping buildings naturally warm.', answer: false },
+        { text: 'Heat stress is described as causing measurable increases in mortality during heatwaves among vulnerable groups.', answer: true },
+        { text: 'According to the passage, urban warming has no effect on precipitation patterns in areas surrounding cities.', answer: false }
+      ]
+    }
+  ]
+},
+  {
+  id: 'reading-51',
+  type: 'reading',
+  title: 'Passage 51',
+  text: `Arctic animals have developed a remarkable range of physiological and behavioural adaptations that allow them to survive in one of the harshest environments on Earth. Many species, including polar bears and Arctic foxes, grow thick layers of insulating fur that trap warm air close to the body and change colour with the seasons, providing camouflage against both snow and summer tundra. Marine mammals such as walruses and seals rely on thick layers of blubber beneath the skin, which insulates against freezing water temperatures and serves as an energy reserve during periods when food is scarce. Some Arctic birds migrate thousands of kilometres to warmer regions during the darkest months, while others remain year-round by adapting their diet to whatever limited resources are available.
+
+Hibernation and torpor are used by certain species to conserve energy through the coldest periods. Arctic ground squirrels, for example, lower their body temperature to just below freezing during hibernation, dramatically reducing their metabolic rate and surviving for months without eating. Other species, such as musk oxen, form tight huddles to share body heat and reduce exposure to wind chill. The timing of reproduction in Arctic species is precisely synchronised with the brief summer season, ensuring that offspring are born when food availability and temperatures are at their most favourable. These strategies collectively represent some of the most sophisticated survival mechanisms found anywhere in the natural world.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the physiological and behavioural strategies that allow Arctic animals to survive extreme conditions',
+        'why blubber is considered more effective than fur as an insulating mechanism in cold environments',
+        'how hibernation allows Arctic ground squirrels to survive winter without any food consumption at all',
+        'the reason Arctic species synchronise reproduction with summer to ensure offspring survive the cold',
+        'how migration to warmer regions is the most common survival strategy used by Arctic animal species'
+      ],
+      answer: 'the physiological and behavioural strategies that allow Arctic animals to survive extreme conditions'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how do musk oxen survive the coldest Arctic conditions?',
+      options: [
+        'they grow an additional inner layer of dense fur during winter that is shed completely in early spring',
+        'they migrate short distances to sheltered valleys where temperatures are slightly warmer than the open tundra',
+        'they form tight huddles with other members of the herd to share body heat and reduce wind chill exposure',
+        'they enter a state of torpor that reduces their metabolic rate and allows them to survive without eating',
+        'they rely on thick blubber reserves built up during summer to insulate against winter temperature drops'
+      ],
+      answer: 'they form tight huddles with other members of the herd to share body heat and reduce wind chill exposure'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Arctic animals demonstrate extraordinary survival capabilities because... 1. species such as polar bears and Arctic foxes grow insulating fur that also provides seasonal camouflage 2. all Arctic mammals hibernate for the entire winter period by lowering their body temperature below freezing 3. Arctic ground squirrels can lower their body temperature to just below freezing and survive months without food 4. marine mammals rely on blubber for insulation and as an energy reserve when food becomes scarce 5. Arctic species have synchronised reproduction with summer when food and temperatures are most favourable',
+      options: [
+        'A) 2, 3, 4',
+        'B) 1, 2, 5',
+        'C) 1, 3, 4',
+        'D) 2, 4, 5',
+        'E) 1, 3, 5'
+      ],
+      answer: 'E) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Arctic foxes grow thick insulating fur that changes colour with the seasons to provide camouflage.', answer: true },
+        { text: 'The passage states that all Arctic animals survive winter by migrating to warmer regions.', answer: false },
+        { text: 'Arctic ground squirrels lower their body temperature to just below freezing during hibernation.', answer: true },
+        { text: 'According to the passage, Arctic species reproduce in winter when temperatures are at their lowest.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-52',
+  type: 'reading',
+  title: 'Passage 52',
+  text: `Cheese is believed to have been discovered accidentally around ten thousand years ago, most likely by nomadic peoples in the Middle East or Central Asia who stored milk in pouches made from the stomachs of ruminant animals. The stomach lining of these animals contains rennet, a natural enzyme that causes milk to separate into solid curds and liquid whey. When travellers discovered that the milk in their pouches had transformed into a solid, edible substance that lasted far longer than fresh milk, they had unknowingly stumbled upon one of the most significant food discoveries in human history. Early cheeses were simple and unaged, but over centuries, different cultures developed their own techniques for ripening, salting, and flavouring the product.
+
+By the time of ancient Rome, cheese production had become a sophisticated industry, with hundreds of varieties traded across the empire. Monasteries in medieval Europe played a central role in advancing cheesemaking techniques, as monks had both the time and the knowledge to experiment with extended ageing processes that produced complex flavours. Many of the most celebrated European cheese varieties, including those from France and Switzerland, trace their origins to this monastic tradition. Today, cheese is produced in virtually every country in the world, with global production exceeding twenty million tonnes annually. Its accidental origins serve as a reminder that some of the most enduring human discoveries have emerged not from deliberate experimentation but from fortunate circumstance.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the accidental discovery of cheese and how it developed into a global food industry over centuries',
+        'why monasteries in medieval Europe are considered the true founders of modern cheesemaking techniques',
+        'how rennet found in animal stomach linings causes milk to separate into solid curds and liquid whey',
+        'the reason ancient Roman cheese production was more sophisticated than any other food industry of its time',
+        'how nomadic peoples in the Middle East first developed the technique of ageing and salting cheese varieties'
+      ],
+      answer: 'the accidental discovery of cheese and how it developed into a global food industry over centuries'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what role did monasteries play in the history of cheese?',
+      options: [
+        'they were the first institutions to trade cheese across international borders during the medieval period',
+        'they discovered rennet and developed the first pouches made from animal stomachs for storing fresh milk',
+        'they advanced cheesemaking techniques by experimenting with extended ageing processes that created complex flavours',
+        'they introduced cheese production to ancient Rome and established the varieties that are still consumed today',
+        'they preserved ancient Roman cheesemaking recipes and distributed them across Europe during the medieval era'
+      ],
+      answer: 'they advanced cheesemaking techniques by experimenting with extended ageing processes that created complex flavours'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The story of cheese illustrates important aspects of human ingenuity because... 1. its accidental discovery shows that significant advances can emerge from fortunate circumstance rather than deliberate experiment 2. rennet found in animal stomachs was the first synthetic enzyme ever produced by early human civilisations 3. monastic communities in medieval Europe contributed to the development of complex aged cheese varieties 4. ancient Roman cheese production had already reached a level of sophistication involving hundreds of traded varieties 5. nomadic peoples intentionally designed pouches from animal stomachs specifically to accelerate milk fermentation',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 4',
+        'C) 2, 3, 5',
+        'D) 1, 4, 5',
+        'E) 2, 3, 4'
+      ],
+      answer: 'B) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Cheese is believed to have been discovered accidentally when milk was stored in pouches made from animal stomachs.', answer: true },
+        { text: 'The passage states that early cheeses were highly complex and required long periods of ageing to produce.', answer: false },
+        { text: 'Many celebrated European cheese varieties trace their origins to the monastic cheesemaking tradition.', answer: true },
+        { text: 'According to the passage, global cheese production currently falls well below ten million tonnes per year.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-53',
+  type: 'reading',
+  title: 'Passage 53',
+  text: `The Amazon River is the largest river in the world by volume of water discharged, carrying approximately twenty percent of all freshwater that flows into the world\'s oceans. Rising in the Andes Mountains of Peru, it travels roughly six thousand seven hundred kilometres eastward across South America before emptying into the Atlantic Ocean. The Amazon basin, which drains an area of around seven million square kilometres, contains the world\'s largest tropical rainforest and supports an extraordinary concentration of biodiversity. Scientists estimate that the Amazon region is home to ten percent of all species on Earth, including thousands that have yet to be formally identified and described.
+
+The river itself is a dynamic and complex ecosystem. During the wet season, the Amazon floods vast areas of surrounding forest, creating temporary lakes and submerged woodlands where fish feed on fallen fruits and seeds. This seasonal flooding plays a critical role in nutrient distribution across the basin, sustaining both aquatic and terrestrial life. The Amazon and its tributaries have historically served as the primary routes for transportation and trade for indigenous communities throughout the region. Today, the river faces growing threats from deforestation, mining, and agricultural expansion, which increase sediment loads, raise water temperatures, and introduce pollutants into one of the most ecologically important freshwater systems on the planet.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the Amazon River\'s scale, ecological importance, and the threats it faces from human activity',
+        'why the Amazon basin contains a greater concentration of biodiversity than any other region on Earth',
+        'how seasonal flooding distributes nutrients across the Amazon basin and sustains aquatic life',
+        'the reason the Amazon discharges more freshwater into the ocean than any other river in the world',
+        'how deforestation and mining are raising water temperatures and increasing sediment in the Amazon River'
+      ],
+      answer: 'the Amazon River\'s scale, ecological importance, and the threats it faces from human activity'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what happens during the Amazon\'s wet season?',
+      options: [
+        'the river\'s flow reverses direction as water levels rise and push back against the Atlantic Ocean currents',
+        'indigenous communities along the river abandon their settlements and move to higher ground for safety',
+        'the river floods surrounding forests, creating temporary lakes where fish feed on fallen fruits and seeds',
+        'increased rainfall causes the Amazon to discharge twice its normal volume of freshwater into the ocean',
+        'the flooding season triggers the migration of thousands of fish species from the river into its tributaries'
+      ],
+      answer: 'the river floods surrounding forests, creating temporary lakes where fish feed on fallen fruits and seeds'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The Amazon River is considered one of the most important systems on Earth because... 1. it carries approximately twenty percent of all freshwater discharged into the world\'s oceans 2. seasonal flooding plays a critical role in distributing nutrients and sustaining life across the basin 3. the Amazon basin contains ten percent of all species on Earth including thousands not yet identified 4. the river originates in the Atlantic Ocean and flows westward across South America to the Andes 5. indigenous communities have traditionally relied on the river as their primary route for trade and transport',
+      options: [
+        'A) 1, 4, 5',
+        'B) 2, 4, 5',
+        'C) 1, 2, 3',
+        'D) 2, 3, 4',
+        'E) 1, 3, 5'
+      ],
+      answer: 'C) 1, 2, 3'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The Amazon River carries approximately twenty percent of all freshwater that flows into the world\'s oceans.', answer: true },
+        { text: 'The passage states that all species living in the Amazon region have been formally identified by scientists.', answer: false },
+        { text: 'Seasonal flooding in the Amazon plays a critical role in distributing nutrients across the basin.', answer: true },
+        { text: 'According to the passage, mining and deforestation have had no measurable effect on the Amazon River system.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-54',
+  type: 'reading',
+  title: 'Passage 54',
+  text: `Spices have shaped the course of human history to a degree that far exceeds their modest culinary role. For much of recorded history, spices such as pepper, cinnamon, nutmeg, and cloves were among the most valuable commodities in the world, worth more by weight than gold in certain periods and traded across vast networks connecting Asia, the Middle East, and Europe. The demand for spices in medieval Europe drove the search for new sea routes to Asia, directly motivating the voyages of exploration that resulted in the European discovery of the Americas and the establishment of global trade networks. The spice trade made the fortunes of cities such as Venice and later Lisbon and Amsterdam, reshaping the economic map of the continent.
+
+Control over spice-producing regions became a central aim of European colonial expansion. The Dutch and Portuguese fought costly wars to dominate the trade in nutmeg and cloves, and European powers established colonial plantations across South and Southeast Asia to secure reliable supplies. The consequences for local populations were often devastating, involving forced labour, displacement, and the suppression of indigenous trade networks. Today spices are inexpensive and universally available, yet their history reflects the extraordinary lengths to which human societies have gone in pursuit of flavour, profit, and power. The global food culture of the modern world bears the direct imprint of the spice trade\'s centuries-long influence on migration, cuisine, and commerce.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the historical importance of spices in driving exploration, trade, and colonial expansion across the world',
+        'why pepper and cinnamon were considered more valuable than gold during certain periods of history',
+        'how the Dutch and Portuguese established colonial plantations to secure control over nutmeg production',
+        'the reason European demand for spices led directly to the discovery of new sea routes to Asia',
+        'how the spice trade transformed the economies of Venice, Lisbon, and Amsterdam during the medieval period'
+      ],
+      answer: 'the historical importance of spices in driving exploration, trade, and colonial expansion across the world'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what were the consequences of European colonial control over spice regions?',
+      options: [
+        'local populations benefited economically as European powers invested in infrastructure and education',
+        'the suppression of local trade networks led to a permanent reduction in spice production across Asia',
+        'local populations suffered through forced labour, displacement, and the destruction of indigenous trade',
+        'European powers shared control of spice regions equally to avoid the costly wars of the earlier period',
+        'colonial plantations introduced new spice varieties to Europe that had previously been entirely unknown'
+      ],
+      answer: 'local populations suffered through forced labour, displacement, and the destruction of indigenous trade'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The history of spices reveals the profound influence of trade on human civilisation because... 1. the demand for spices motivated voyages of exploration that led to the European discovery of the Americas 2. spices were valued purely for their medicinal properties rather than for culinary or commercial purposes 3. control over spice regions drove colonial expansion and had devastating consequences for local populations 4. spice trading cities such as Venice and Amsterdam accumulated great wealth that reshaped European economies 5. modern spice production is now entirely controlled by the same European powers that established the original trade',
+      options: [
+        'A) 2, 3, 5',
+        'B) 1, 2, 4',
+        'C) 1, 3, 4',
+        'D) 2, 4, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Spices such as pepper and cinnamon were among the most valuable traded commodities in the medieval world.', answer: true },
+        { text: 'The passage states that local populations in spice-producing regions welcomed and benefited from European colonial control.', answer: false },
+        { text: 'The demand for spices in Europe motivated the voyages of exploration that led to the discovery of the Americas.', answer: true },
+        { text: 'According to the passage, spices remain among the most expensive and difficult to obtain commodities today.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-55',
+  type: 'reading',
+  title: 'Passage 55',
+  text: `Bees are among the most ecologically important insects on Earth, playing a role in the reproduction of a vast number of plant species that extends far beyond the honey they produce. As bees move between flowers in search of nectar, they inadvertently transfer pollen from one plant to another, enabling fertilisation and the production of seeds and fruit. This process, known as pollination, is essential to the reproduction of approximately eighty percent of flowering plant species and supports roughly one third of the global food supply, including many of the fruits, vegetables, and nuts that form a central part of the human diet. Without bees, the agricultural systems that feed the world\'s population would face severe disruption.
+
+Beyond food production, bees contribute to the health of natural ecosystems by supporting the plant diversity that provides habitat and food for countless other species. A decline in bee populations therefore triggers a cascade of ecological consequences that extend well beyond agriculture. In recent decades, bee numbers have fallen sharply across many parts of the world due to habitat loss, pesticide exposure, disease, and the effects of climate change on flowering seasons. Conservation strategies including the protection of wildflower habitats, the reduction of pesticide use, and the support of both wild and managed bee populations are considered essential to maintaining the ecological services that bees provide. The scale of their contribution to life on Earth makes their protection one of the most pressing conservation priorities of the current era.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the ecological importance of bees as pollinators and the urgent need to address their population decline',
+        'why bees are considered more important to agriculture than any other insect species in the natural world',
+        'how the decline of bee populations is directly causing the extinction of flowering plant species worldwide',
+        'the reason pesticide exposure is considered the single greatest threat to bee populations across the globe',
+        'how conservation strategies focused on wildflower habitats have successfully reversed bee population decline'
+      ],
+      answer: 'the ecological importance of bees as pollinators and the urgent need to address their population decline'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why would a decline in bee populations affect ecosystems beyond agriculture?',
+      options: [
+        'because bees produce honey that provides essential nutrients for a large number of mammal species',
+        'because fewer bees would reduce the amount of carbon absorbed by flowering plants across the world',
+        'because bees support plant diversity that provides habitat and food for countless other species',
+        'because bee colonies regulate soil moisture levels in ways that sustain the growth of non-flowering plants',
+        'because the loss of bees would prevent the formation of seeds in all plant species including non-flowering ones'
+      ],
+      answer: 'because bees support plant diversity that provides habitat and food for countless other species'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Bees are considered irreplaceable in both agriculture and nature because... 1. they pollinate approximately eighty percent of flowering plant species essential to ecosystems and food production 2. their honey is the primary source of nutrition for the majority of bird and mammal species in temperate regions 3. a decline in bee numbers triggers cascading ecological consequences that extend well beyond food systems 4. bees are the only insect species capable of transferring pollen between flowering plants in natural ecosystems 5. they support roughly one third of the global food supply including many fruits, vegetables, and nuts',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 3',
+        'C) 2, 3, 4',
+        'D) 1, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'D) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Bees support roughly one third of the global food supply through their role in pollination.', answer: true },
+        { text: 'The passage states that bee populations have been steadily increasing across most parts of the world.', answer: false },
+        { text: 'A decline in bee numbers is described as triggering ecological consequences that extend beyond agriculture.', answer: true },
+        { text: 'According to the passage, habitat loss and pesticide exposure have had no significant effect on bee numbers.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-56',
+  type: 'reading',
+  title: 'Passage 56',
+  text: `Dolphins are among the most communicative animals on Earth, using a sophisticated system of sounds to coordinate behaviour, maintain social bonds, and navigate their environment. Their vocal repertoire includes clicks, whistles, and burst-pulse sounds, each serving distinct communicative functions. Echolocation, which relies on rapid sequences of high-frequency clicks, allows dolphins to build a detailed acoustic picture of their surroundings, detecting the size, shape, distance, and movement of objects with extraordinary precision. This ability is so refined that dolphins can locate prey hidden beneath the seafloor and distinguish between objects of nearly identical size and composition.
+
+Each dolphin develops a unique signature whistle shortly after birth, which functions in a manner comparable to a name, allowing individuals to identify and call to one another across distances. Studies have shown that dolphins remember the signature whistles of individuals they have not encountered for more than twenty years, suggesting a capacity for long-term social memory that rivals that of humans and elephants. Dolphins also engage in vocal learning, meaning they can acquire new sounds from other individuals, a rare ability in the animal kingdom. Researchers have observed dolphins adopting the calls of other species they are housed with, and some studies suggest that groups of dolphins develop shared vocal dialects, indicating a form of cultural transmission of communication patterns across generations.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the sophisticated communication abilities of dolphins, including echolocation and signature whistles',
+        'why echolocation is considered more advanced in dolphins than in any other marine mammal species',
+        'how signature whistles allow dolphins to maintain social bonds across distances of hundreds of kilometres',
+        'the reason dolphins are able to locate prey hidden beneath the seafloor using high-frequency click sequences',
+        'how vocal learning in dolphins has led to the development of entirely new languages within captive groups'
+      ],
+      answer: 'the sophisticated communication abilities of dolphins, including echolocation and signature whistles'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is remarkable about dolphins\' memory for signature whistles?',
+      options: [
+        'dolphins can produce over one hundred distinct signature whistles and assign each one to a different individual',
+        'signature whistles are genetically inherited, meaning dolphins are born already recognising their relatives\' calls',
+        'dolphins remember the signature whistles of individuals they have not encountered for more than twenty years',
+        'each dolphin creates a new signature whistle every few years, requiring other dolphins to update their memory',
+        'signature whistles are only remembered by female dolphins, who use them to track the locations of their young'
+      ],
+      answer: 'dolphins remember the signature whistles of individuals they have not encountered for more than twenty years'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Dolphin communication is considered one of the most advanced in the animal kingdom because... 1. echolocation allows dolphins to detect objects with extraordinary precision, including prey hidden beneath the seafloor 2. each dolphin develops a unique signature whistle that functions like a name and enables individual identification 3. dolphins communicate exclusively through body language rather than vocal sounds in social situations 4. groups of dolphins develop shared vocal dialects, suggesting cultural transmission of communication across generations 5. dolphins can remember signature whistles of individuals not encountered for over twenty years',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 4, 5',
+        'D) 2, 3, 4',
+        'E) 1, 2, 5'
+      ],
+      answer: 'E) 1, 2, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Each dolphin develops a unique signature whistle shortly after birth that functions like a name.', answer: true },
+        { text: 'The passage states that dolphins can only remember signature whistles of individuals they encounter daily.', answer: false },
+        { text: 'Dolphins are described as capable of vocal learning, meaning they can acquire new sounds from other individuals.', answer: true },
+        { text: 'According to the passage, echolocation in dolphins is too imprecise to detect objects hidden beneath the seafloor.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-57',
+  type: 'reading',
+  title: 'Passage 57',
+  text: `Octopuses are widely regarded as the most intelligent invertebrates on Earth, possessing a nervous system unlike that of any other animal. Two thirds of their neurons are located not in their central brain but distributed throughout their eight arms, allowing each limb to process sensory information and execute complex movements with a degree of independence. This decentralised neural architecture enables octopuses to manipulate objects, navigate mazes, and solve multi-step problems with remarkable efficiency. In laboratory settings, octopuses have demonstrated the ability to open childproof containers, unscrew jar lids, and recognise individual human faces, distinguishing between people who treated them differently.
+
+Octopuses also display striking behavioural flexibility and what researchers describe as play behaviour, repeatedly manipulating objects that offer no immediate reward. They are capable of rapid learning through both observation and direct experience, and studies suggest they can retain information for extended periods. Their camouflage abilities are equally extraordinary, with specialised skin cells called chromatophores allowing them to change colour and texture within milliseconds to match their surroundings or signal to other animals. Despite their impressive cognitive abilities, octopuses live remarkably short lives, typically surviving for only one to two years. Scientists continue to study them to better understand how complex intelligence can evolve in a nervous system structured so differently from that of vertebrates such as mammals and birds.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the remarkable intelligence of octopuses and the unique structure of their nervous system',
+        'why the distribution of neurons across octopus arms makes them superior problem solvers to all vertebrates',
+        'how chromatophores allow octopuses to change colour and texture faster than any other marine animal',
+        'the reason octopuses live such short lives despite possessing highly developed cognitive capabilities',
+        'how laboratory experiments have demonstrated that octopuses can recognise and remember human faces'
+      ],
+      answer: 'the remarkable intelligence of octopuses and the unique structure of their nervous system'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is distinctive about the octopus nervous system?',
+      options: [
+        'it is the largest nervous system relative to body size of any invertebrate found in marine environments',
+        'it is entirely contained within the central brain, which is proportionally larger than that of most vertebrates',
+        'two thirds of its neurons are distributed throughout the arms rather than concentrated in the central brain',
+        'it allows octopuses to regenerate lost arms within days by redirecting neural signals from the central brain',
+        'it processes visual information ten times faster than the nervous systems of comparably sized vertebrates'
+      ],
+      answer: 'two thirds of its neurons are distributed throughout the arms rather than concentrated in the central brain'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Octopuses are considered exceptionally intelligent animals because... 1. their decentralised nervous system allows each arm to process information and act with a degree of independence 2. they are the only marine animals capable of changing both colour and texture simultaneously within milliseconds 3. they have demonstrated the ability to open containers, solve multi-step problems, and recognise human faces 4. their lifespan of over ten years allows them sufficient time to develop highly complex learned behaviours 5. studies show they can learn through observation and retain information for extended periods of time',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 5',
+        'C) 2, 3, 4',
+        'D) 1, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'B) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Two thirds of an octopus\'s neurons are located in its arms rather than in its central brain.', answer: true },
+        { text: 'The passage states that octopuses typically live for ten to fifteen years in their natural habitat.', answer: false },
+        { text: 'Octopuses use specialised skin cells called chromatophores to change colour and texture within milliseconds.', answer: true },
+        { text: 'According to the passage, octopuses can only learn through direct personal experience and not through observation.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-58',
+  type: 'reading',
+  title: 'Passage 58',
+  text: `The printing press, developed by Johannes Gutenberg in the German city of Mainz around 1440, is widely regarded as one of the most transformative inventions in human history. By combining the concept of movable type with a mechanical pressing mechanism and oil-based ink, Gutenberg created a system capable of producing books at a speed and consistency impossible to achieve by hand. Before the printing press, books were copied manually by scribes, making them extremely expensive and accessible only to the wealthy and the clergy. Gutenberg\'s Bible, completed around 1455, is considered the first major book produced using this technology and marked the beginning of a new era in the spread of knowledge.
+
+The consequences of the printing press were profound and far-reaching. The rapid multiplication of texts made knowledge accessible to a far broader population, fuelling literacy rates, religious reform, and scientific advancement across Europe. The Protestant Reformation was accelerated by the ability to print and distribute pamphlets and religious texts on a large scale, while the Scientific Revolution was supported by the wider circulation of academic works. Governments and religious authorities, recognising the threat posed by the free flow of information, responded with censorship and the regulation of printing. Despite these attempts at control, the press ultimately proved impossible to suppress and laid the foundations for the modern concept of a free and informed public.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the invention of the printing press and its profound impact on knowledge, religion, and society in Europe',
+        'why Gutenberg\'s Bible is considered the most important book ever produced in the history of printing',
+        'how movable type and oil-based ink were combined to create a system faster than any previous method',
+        'the reason governments and religious authorities attempted to suppress the spread of printed materials',
+        'how the printing press directly caused the Protestant Reformation and the Scientific Revolution in Europe'
+      ],
+      answer: 'the invention of the printing press and its profound impact on knowledge, religion, and society in Europe'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why were books so expensive and inaccessible before the printing press?',
+      options: [
+        'because the materials required to produce books, including parchment and ink, were extremely rare and costly',
+        'because only religious institutions were legally permitted to produce and distribute books across Europe',
+        'because books were copied by hand by scribes, making the process slow and limiting production to wealthy owners',
+        'because Gutenberg\'s printing technology was kept secret for decades before it became widely available',
+        'because governments placed heavy taxes on book production to control which texts could be distributed publicly'
+      ],
+      answer: 'because books were copied by hand by scribes, making the process slow and limiting production to wealthy owners'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The printing press transformed European civilisation because... 1. it made knowledge accessible to a far broader population, fuelling literacy and scientific advancement 2. it allowed governments to regulate the spread of information and prevent the rise of religious reformers 3. the Protestant Reformation was accelerated by the large-scale printing and distribution of religious texts 4. Gutenberg personally funded the translation of all major scientific works into every European language 5. the wider circulation of academic works helped support the intellectual progress of the Scientific Revolution',
+      options: [
+        'A) 2, 3, 4',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 3, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'D) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Johannes Gutenberg developed the printing press in the German city of Mainz around 1440.', answer: true },
+        { text: 'The passage states that books were widely available and affordable to ordinary people before the printing press.', answer: false },
+        { text: 'The Protestant Reformation was accelerated by the ability to print and distribute pamphlets on a large scale.', answer: true },
+        { text: 'According to the passage, governments and religious authorities fully supported the free spread of printed information.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-59',
+  type: 'reading',
+  title: 'Passage 59',
+  text: `Pompeii was a prosperous Roman city located near the Bay of Naples in southern Italy, home to an estimated population of eleven thousand people at the time of its destruction in 79 AD. On the twenty-fourth of August of that year, the nearby volcano Mount Vesuvius erupted with catastrophic force, releasing a column of ash and pumice that rose more than thirty kilometres into the sky. The city was buried under several metres of volcanic material within hours, killing a significant portion of its population and preserving the urban landscape in remarkable detail beneath the debris. The eruption also destroyed the neighbouring town of Herculaneum, which was engulfed by a superheated flow of gas and volcanic matter.
+
+Systematic excavation of Pompeii began in the eighteenth century and has continued ever since, making it one of the most extensively studied archaeological sites in the world. The preservation of the city beneath volcanic ash has provided historians and archaeologists with an extraordinary snapshot of daily life in the Roman world, including intact buildings, wall paintings, tools, food remains, and personal possessions. The casts made by filling the voids left by decomposed bodies with plaster revealed the final moments and positions of those who perished. Today Pompeii is a UNESCO World Heritage Site and one of Italy\'s most visited tourist destinations, attracting millions of visitors each year who come to witness the haunting remains of a civilisation frozen in time.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the destruction of Pompeii by Mount Vesuvius and its significance as an archaeological site today',
+        'why the eruption of Mount Vesuvius in 79 AD was the most destructive volcanic event in Roman history',
+        'how the plaster casts made from body voids revealed the final positions of Pompeii\'s inhabitants',
+        'the reason Pompeii attracts more tourists each year than any other archaeological site in the world',
+        'how the preservation of Herculaneum beneath volcanic flows has provided more detail than Pompeii itself'
+      ],
+      answer: 'the destruction of Pompeii by Mount Vesuvius and its significance as an archaeological site today'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why is Pompeii considered so valuable to historians and archaeologists?',
+      options: [
+        'because it is the only Roman city ever discovered with its population still living in the original buildings',
+        'because the volcanic ash preserved the city in extraordinary detail, providing a unique record of Roman daily life',
+        'because excavations have uncovered written documents describing every aspect of Roman law and governance',
+        'because the site contains the largest collection of Roman wall paintings ever found in a single location',
+        'because Pompeii\'s layout reveals that Roman urban planning was far more sophisticated than previously believed'
+      ],
+      answer: 'because the volcanic ash preserved the city in extraordinary detail, providing a unique record of Roman daily life'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The story of Pompeii continues to captivate the world because... 1. the city was preserved beneath volcanic ash, offering an unparalleled snapshot of Roman daily life 2. Mount Vesuvius continues to erupt regularly, adding new layers of material to the archaeological site 3. plaster casts of body voids revealed the final moments and positions of those who died in the eruption 4. Pompeii is the only Roman site where excavation work has now been fully completed by archaeologists 5. it is a UNESCO World Heritage Site that attracts millions of visitors who come to see its preserved remains',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 5',
+        'C) 2, 3, 4',
+        'D) 1, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'B) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Pompeii was buried under several metres of volcanic material within hours of the eruption of Mount Vesuvius.', answer: true },
+        { text: 'The passage states that systematic excavation of Pompeii began in the twentieth century.', answer: false },
+        { text: 'Plaster casts were made by filling the voids left by decomposed bodies to reveal final positions of victims.', answer: true },
+        { text: 'According to the passage, the neighbouring town of Herculaneum was unaffected by the eruption of Vesuvius.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-60',
+  type: 'reading',
+  title: 'Passage 60',
+  text: `Music has a uniquely powerful effect on the human brain, engaging a wider network of neural regions than almost any other activity. Listening to music activates areas associated with auditory processing, emotion, memory, and movement simultaneously, which helps explain why music can trigger vivid memories, alter mood within seconds, and cause involuntary physical responses such as tapping a foot or nodding the head. The brain\'s reward system releases dopamine both when a musical climax is reached and in anticipation of it, producing the sensation of pleasure commonly described as chills or shivers. This anticipatory response reflects the brain\'s sophisticated ability to predict and respond to patterns in sound.
+
+Research has demonstrated that music has measurable therapeutic effects across a range of conditions. In patients with Alzheimer\'s disease, familiar music can temporarily restore access to autobiographical memories that are otherwise inaccessible, even in advanced stages of the illness. Music therapy has been shown to reduce anxiety and pain perception in hospital settings, and rhythmic auditory stimulation is used in neurological rehabilitation to help stroke patients relearn coordinated movement. Learning to play a musical instrument has been linked to structural changes in the brain, including increased grey matter in regions associated with motor control, hearing, and spatial reasoning. These findings suggest that music is not merely a cultural product but a powerful tool with genuine implications for human health and cognitive development.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the effects of music on the brain, including its emotional, therapeutic, and cognitive impact',
+        'why the dopaminergic reward system responds more strongly to music than to any other human activity',
+        'how rhythmic auditory stimulation is used to help stroke patients recover coordinated physical movement',
+        'the reason familiar music can restore memories in Alzheimer\'s patients even in the most advanced stages',
+        'how learning a musical instrument produces structural changes in the areas of the brain linked to hearing'
+      ],
+      answer: 'the effects of music on the brain, including its emotional, therapeutic, and cognitive impact'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why does the brain release dopamine in anticipation of a musical climax?',
+      options: [
+        'because the auditory cortex sends signals to the reward system whenever it detects a repeated melody',
+        'because dopamine is released automatically whenever any form of rhythmic sound reaches the inner ear',
+        'because the brain predicts and responds to patterns in sound, generating pleasure before the climax arrives',
+        'because familiar music activates the memory system, which in turn triggers the release of reward chemicals',
+        'because musical training increases the density of dopamine receptors in regions associated with hearing'
+      ],
+      answer: 'because the brain predicts and responds to patterns in sound, generating pleasure before the climax arrives'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Music is considered a powerful tool for human health and development because... 1. familiar music can temporarily restore autobiographical memories in Alzheimer\'s patients 2. music therapy has been shown to reduce anxiety and pain perception in hospital settings 3. all neurological conditions can be fully treated and cured through structured music therapy programmes 4. learning an instrument is linked to structural brain changes in areas associated with motor control and reasoning 5. music activates more neural regions simultaneously than any other recorded form of human activity',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 2, 4',
+        'D) 3, 4, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The brain\'s reward system releases dopamine both when a musical climax is reached and in anticipation of it.', answer: true },
+        { text: 'The passage states that music therapy has been shown to increase anxiety levels in hospital patients.', answer: false },
+        { text: 'Learning to play a musical instrument has been linked to structural changes in the brain.', answer: true },
+        { text: 'According to the passage, music has no measurable effect on patients with Alzheimer\'s disease.', answer: false }
+      ]
+    }
+  ]
+},
+  
   },
 
 ];
