@@ -495,9 +495,10 @@ function renderListeningQuestion() {
     </div>
   `;
 
-  if (q.type === 'mcq') {
-    const optLabels = ['A', 'B', 'C', 'D', 'E'];
+  const optLabels = ['A', 'B', 'C', 'D', 'E'];
 
+  // ── MCQ ──────────────────────────────────────────────
+  if (q.type === 'mcq') {
     quizBody.innerHTML = `
       <div class="listening-layout">
         ${playerCard}
@@ -528,6 +529,91 @@ function renderListeningQuestion() {
       renderListeningQuestion();
     });
 
+  // ── TRUE/FALSE ────────────────────────────────────────
+  } else if (q.type === 'truefalse') {
+    const userAnswers = new Array(q.statements.length).fill(null);
+
+    const renderTFCards = () => {
+      const grid = document.getElementById('listening-tf-grid');
+      if (!grid) return;
+
+      grid.innerHTML = q.statements.map((stmt, i) => {
+        const ua = userAnswers[i];
+        const isAnswered = ua !== null;
+
+        let trueClass  = 'tf-btn tf-true';
+        let falseClass = 'tf-btn tf-false';
+
+        if (isAnswered) {
+          if (stmt.answer === true)  trueClass  += ua === true  ? ' tf-correct' : ' tf-show-correct';
+          else if (ua === true)      trueClass  += ' tf-wrong';
+          if (stmt.answer === false) falseClass += ua === false ? ' tf-correct' : ' tf-show-correct';
+          else if (ua === false)     falseClass += ' tf-wrong';
+        }
+
+        return `
+          <div class="tf-card ${isAnswered ? 'tf-card-done' : ''}" data-idx="${i}">
+            <div class="tf-statement">
+              <span class="tf-num">${i + 1}.</span>
+              ${stmt.text}
+            </div>
+            <div class="tf-btns">
+              <button class="${trueClass}" data-idx="${i}" data-val="true"
+                ${isAnswered ? 'disabled' : ''}>True</button>
+              <button class="${falseClass}" data-idx="${i}" data-val="false"
+                ${isAnswered ? 'disabled' : ''}>False</button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      grid.querySelectorAll('.tf-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (quiz.locked) return;
+          const idx = parseInt(btn.dataset.idx);
+          const val = btn.dataset.val === 'true';
+          if (userAnswers[idx] !== null) return;
+
+          userAnswers[idx] = val;
+          const isCorrect = val === q.statements[idx].answer;
+          if (!isCorrect) listeningState.wrong++;
+
+          renderTFCards();
+
+          const allDone = userAnswers.every(a => a !== null);
+          if (allDone) {
+            const correctCount = userAnswers.filter((a, i) => a === q.statements[i].answer).length;
+            listeningState.correct += correctCount;
+            listeningState.queue.shift();
+            setTimeout(() => {
+              quiz.locked = false;
+              renderListeningQuestion();
+            }, 1000);
+          }
+        });
+      });
+    };
+
+    quizBody.innerHTML = `
+      <div class="listening-layout">
+        ${playerCard}
+        <div class="listening-question-area" id="listening-q-area">
+          <div class="listening-question-text">${q.q}</div>
+          <div class="tf-cards-grid" id="listening-tf-grid"></div>
+          <button class="reading-skip-btn" id="listening-skip">Keç →</button>
+        </div>
+      </div>
+    `;
+
+    renderTFCards();
+
+    document.getElementById('listening-skip').addEventListener('click', () => {
+      if (quiz.locked) return;
+      listeningState.skipped.push(listeningState.queue.shift());
+      renderListeningQuestion();
+    });
+
+  // ── TYPE IN ───────────────────────────────────────────
   } else if (q.type === 'typein') {
     quizBody.innerHTML = `
       <div class="listening-layout">
