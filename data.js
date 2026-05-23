@@ -18364,7 +18364,7 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
 {
   id: 'listening-6',
   type: 'listening',
-  title: 'Passage 6 — How libraries work',
+  title: 'Passage 6',
   audio: 'mp3/6.mp3',
   questions: [
     {
@@ -18421,7 +18421,7 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
 {
   id: 'listening-7',
   type: 'listening',
-  title: 'Passage 7 — The life of Nelson Mandela',
+  title: 'Passage 7',
   audio: 'mp3/7.mp3',
   questions: [
     {
@@ -18477,7 +18477,7 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
       {
   id: 'listening-8',
   type: 'listening',
-  title: 'Passage 8 — Why cats sleep so much',
+  title: 'Passage 8',
   audio: 'mp3/8.mp3',
   questions: [
     {
@@ -18753,7 +18753,7 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
       {
   id: 'listening-13',
   type: 'listening',
-  title: 'Passage 13 — The Great Wall of China',
+  title: 'Passage 13',
   audio: 'mp3/13.mp3',
   questions: [
     {
@@ -18807,7 +18807,7 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
 },{
   id: 'listening-14',
   type: 'listening',
-  title: 'Passage 14 — How a volcano erupts',
+  title: 'Passage 14',
   audio: 'mp3/14.mp3',
   questions: [
     {
