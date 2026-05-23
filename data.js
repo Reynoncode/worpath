@@ -18085,83 +18085,61 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
     icon: '🎧',
     color: '#7c3aed',
     quizzes: [
-      {
-        id: 'listening-1',
-        type: 'listening',
-        title: 'Passage 1',
-        audio: 'mp3/1.mp3',
-        questions: [
-          {
-            id: 'q1',
-            type: 'mcq',
-            q: 'What is the conversation mainly about?',
-            options: [
-              'A neighbor complaining about loud music',
-              'A tenant reporting a broken window to the manager',
-              'A manager asking a tenant to pay rent',
-              'Kids being punished for playing baseball'
-            ],
-            answer: 'A tenant reporting a broken window to the manager'
-          },
-          {
-            id: 'q2',
-            type: 'mcq',
-            q: 'Which statement is true according to the conversation?',
-            options: [
-              'Janet was at home when the window broke.',
-              'The manager refused to help Janet.',
-              'There was a baseball near the broken glass.',
-              'Janet will pay for the repair herself.'
-            ],
-            answer: 'There was a baseball near the broken glass.'
-          },
-          {
-            id: 'q3',
-            type: 'mcq',
-            q: 'Choose the correct answer to the question according to the conversation. Why does Janet think the kids broke the window?',
-            options: [
-              'Because she saw them throw a ball at the window.',
-              'Because the kids admitted breaking it.',
-              'Because she found a baseball next to the broken glass.',
-              'Because the manager told her about the kids.'
-            ],
-            answer: 'Because she found a baseball next to the broken glass.'
-          },
-          {
-            id: 'q4',
-            type: 'mcq',
-            q: 'Complete the sentence according to the conversation. The manager says it will take ...',
-            options: [
-              'a few hours to repair the window.',
-              'a couple of days to repair the window.',
-              'a week to replace the window.',
-              'three days to find a repairman.'
-            ],
-            answer: 'a couple of days to repair the window.'
-          },
-          {
-            id: 'q5',
-            type: 'mcq',
-            q: 'Complete the sentence according to the conversation. Janet does not have to pay for the damage because ...',
-            options: [
-              'the manager is responsible for all repairs.',
-              'the kids already paid for the damage.',
-              'she was not the one who broke the window.',
-              'the repairman agreed to fix it for free.'
-            ],
-            answer: 'she was not the one who broke the window.'
-          },
-          {
-            id: 'q6',
-            type: 'typein',
-            q: 'Write your answer to the question. What sport were the kids playing before Janet left her apartment?',
-            answer: 'baseball'
-          }
+     {
+  id: 'listening-1',
+  type: 'listening',
+  title: 'Passage 1',
+  audio: 'mp3/1.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the conversation mainly about?',
+      options: [
+        'A neighbor complaining about loud music',
+        'A tenant reporting a broken window to the manager',
+        'A manager asking a tenant to pay rent',
+        'Kids being punished for playing baseball'
+      ],
+      answer: 'A tenant reporting a broken window to the manager'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the conversation. Why does Janet think the kids broke the window?',
+      options: [
+        'Because she saw them throw a ball at the window.',
+        'Because the kids admitted breaking it.',
+        'Because she found a baseball next to the broken glass.',
+        'Because the manager told her about the kids.'
+      ],
+      answer: 'Because she found a baseball next to the broken glass.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the conversation. Janet does not have to pay for the damage because ...',
+      options: [
+        'the manager is responsible for all repairs.',
+        'the kids already paid for the damage.',
+        'she was not the one who broke the window.',
+        'the repairman agreed to fix it for free.'
+      ],
+      answer: 'she was not the one who broke the window.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Janet was at home when the window broke.', answer: false },
+        { text: 'There was a baseball near the broken glass.', answer: true },
+        { text: 'The manager agreed to pay for the repair.', answer: true },
+        { text: 'It will take a week to repair the window.', answer: false },
         ]
-      },
-    ]
+      }
+    ],
   },
-
 ];
 
 
