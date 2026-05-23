@@ -20292,10 +20292,10 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
         { text: 'BDNF is a chemical released by the brain during stress.', answer: false },
         { text: 'Studies show that children who exercise regularly tend to perform better at school.', answer: true },
         { text: 'Experts recommend at least one hour of exercise every day for good brain health.', answer: false }
-         ]
+      ]
     }
   ]
-
-};       
-
+}       
+]
+  }
 window.LEVELS = LEVELS;
