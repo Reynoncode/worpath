@@ -1950,7 +1950,8 @@ function loadProgress() {
     for (let i = 0; i < lvl.quizzes.length; i++) {
   const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
   if (!progress[lvl.id][i]) {
-    progress[lvl.id][i] = (i === 0 || isExam) ? 'unlocked' : 'locked';
+const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening';
+progress[lvl.id][i] = (i === 0 || isExam || isOpenSection) ? 'unlocked' : 'locked';
   } else if (isExam && progress[lvl.id][i] === 'locked') {
     progress[lvl.id][i] = 'unlocked';
   }
