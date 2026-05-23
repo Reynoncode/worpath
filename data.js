@@ -14773,94 +14773,7 @@ One of the most remarkable features of the adaptive immune system is its ability
     }
   ]
 },
- ]
-  },
-
-  // ╔══════════════════════════════════════════════════╗
-  // ║  LEVEL 8 — C1+: İrəliləmiş II                   ║
-  // ╚══════════════════════════════════════════════════╝
-  {
-    id: 'listening',
-    name: 'LISTENINGS',
-    icon: '🎧',
-    color: '#7c3aed',
-    quizzes: [
-      {
-        id: 'listening-1',
-        type: 'listening',
-        title: 'Passage 1',
-        audio: 'mp3/1.mp3',
-        questions: [
-          {
-            id: 'q1',
-            type: 'mcq',
-            q: 'What is the conversation mainly about?',
-            options: [
-              'A neighbor complaining about loud music',
-              'A tenant reporting a broken window to the manager',
-              'A manager asking a tenant to pay rent',
-              'Kids being punished for playing baseball'
-            ],
-            answer: 'A tenant reporting a broken window to the manager'
-          },
-          {
-            id: 'q2',
-            type: 'mcq',
-            q: 'Which statement is true according to the conversation?',
-            options: [
-              'Janet was at home when the window broke.',
-              'The manager refused to help Janet.',
-              'There was a baseball near the broken glass.',
-              'Janet will pay for the repair herself.'
-            ],
-            answer: 'There was a baseball near the broken glass.'
-          },
-          {
-            id: 'q3',
-            type: 'mcq',
-            q: 'Choose the correct answer to the question according to the conversation. Why does Janet think the kids broke the window?',
-            options: [
-              'Because she saw them throw a ball at the window.',
-              'Because the kids admitted breaking it.',
-              'Because she found a baseball next to the broken glass.',
-              'Because the manager told her about the kids.'
-            ],
-            answer: 'Because she found a baseball next to the broken glass.'
-          },
-          {
-            id: 'q4',
-            type: 'mcq',
-            q: 'Complete the sentence according to the conversation. The manager says it will take ...',
-            options: [
-              'a few hours to repair the window.',
-              'a couple of days to repair the window.',
-              'a week to replace the window.',
-              'three days to find a repairman.'
-            ],
-            answer: 'a couple of days to repair the window.'
-          },
-          {
-            id: 'q5',
-            type: 'mcq',
-            q: 'Complete the sentence according to the conversation. Janet does not have to pay for the damage because ...',
-            options: [
-              'the manager is responsible for all repairs.',
-              'the kids already paid for the damage.',
-              'she was not the one who broke the window.',
-              'the repairman agreed to fix it for free.'
-            ],
-            answer: 'she was not the one who broke the window.'
-          },
-          {
-            id: 'q6',
-            type: 'typein',
-            q: 'Write your answer to the question. What sport were the kids playing before Janet left her apartment?',
-            answer: 'baseball'
-          }
-        ]
-      },
-    ]
-    {
+        {
   id: 'reading-26',
   type: 'reading',
   title: 'Passage 26',
@@ -16960,7 +16873,1293 @@ Research has demonstrated that music has measurable therapeutic effects across a
     }
   ]
 },
-  
+      {
+  id: 'reading-61',
+  type: 'reading',
+  title: 'Passage 61',
+  text: `Solar energy is one of the most abundant and rapidly growing sources of renewable power on Earth, harnessing the light and heat produced by the sun and converting it into usable electricity. The most common technology used for this purpose is the photovoltaic cell, commonly known as a solar cell, which is made from semiconductor materials such as silicon. When photons from sunlight strike the surface of a solar cell, they transfer their energy to electrons within the material, causing them to move and generate an electrical current. Multiple cells are connected together to form solar panels, which can be installed on rooftops, in large ground-mounted arrays, or integrated into building materials.
+
+A significant challenge associated with solar energy is that it can only be generated when sunlight is available, making storage and grid integration essential components of a reliable solar power system. Battery storage technologies allow excess energy produced during daylight hours to be saved and used at night or during periods of cloud cover. Solar power has expanded dramatically in recent decades, with installation costs falling by more than ninety percent since 2010, making it the cheapest source of electricity in history in many parts of the world. Governments and energy companies are investing heavily in large-scale solar infrastructure as part of broader strategies to reduce dependence on fossil fuels and limit the greenhouse gas emissions driving climate change.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how solar energy works, the challenges it faces, and its growing role in global power systems',
+        'why photovoltaic cells made from silicon are more efficient than all other renewable energy technologies',
+        'how battery storage systems allow solar power to be used reliably during periods without direct sunlight',
+        'the reason installation costs for solar panels have fallen so dramatically over the past two decades',
+        'how governments and energy companies are using solar infrastructure to eliminate fossil fuel dependence'
+      ],
+      answer: 'how solar energy works, the challenges it faces, and its growing role in global power systems'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how does a photovoltaic cell generate electricity?',
+      options: [
+        'it heats a fluid that drives a turbine connected to a generator, producing electricity through mechanical motion',
+        'it absorbs infrared radiation from the sun and converts the resulting heat directly into an electrical current',
+        'photons from sunlight strike the cell and transfer energy to electrons, causing them to move and generate current',
+        'it stores solar energy in chemical form during the day and releases it as electricity during the night hours',
+        'semiconductor layers within the cell split water molecules using sunlight to release electrons and produce power'
+      ],
+      answer: 'photons from sunlight strike the cell and transfer energy to electrons, causing them to move and generate current'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Solar energy is increasingly central to global power strategies because... 1. installation costs have fallen by more than ninety percent since 2010, making it the cheapest electricity source in many regions 2. photovoltaic cells require no semiconductor materials and can therefore be produced at virtually no cost 3. battery storage technologies allow excess solar energy to be saved and used when sunlight is unavailable 4. solar panels can only be installed in ground-mounted arrays and are not suitable for rooftop or building use 5. reducing dependence on fossil fuels and cutting greenhouse gas emissions are key goals of energy investment',
+      options: [
+        'A) 2, 3, 4',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 3, 5',
+        'E) 1, 2, 4'
+      ],
+      answer: 'D) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Photovoltaic cells are commonly made from semiconductor materials such as silicon.', answer: true },
+        { text: 'The passage states that solar energy can be generated continuously regardless of weather or time of day.', answer: false },
+        { text: 'Solar installation costs have fallen by more than ninety percent since 2010.', answer: true },
+        { text: 'According to the passage, governments are reducing investment in solar infrastructure to cut spending.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-62',
+  type: 'reading',
+  title: 'Passage 62',
+  text: `Fresh water is one of the most essential resources on Earth, yet it is becoming increasingly scarce in many regions due to a combination of population growth, pollution, climate change, and inefficient use. Although water covers approximately seventy percent of the Earth\'s surface, only about three percent of it is fresh water, and the vast majority of that is locked in glaciers and polar ice caps. Less than one percent of the world\'s water is readily accessible for human use through rivers, lakes, and groundwater reserves. As global demand rises with population growth and industrial expansion, many of these sources are being depleted faster than they can naturally replenish.
+
+Climate change is intensifying the crisis by altering precipitation patterns, accelerating glacial melt, and increasing the frequency of droughts in already water-stressed regions. Groundwater aquifers in parts of South Asia, North Africa, and the western United States are being extracted at unsustainable rates, with some reserves estimated to be depleted within decades. Agricultural irrigation accounts for approximately seventy percent of global fresh water use, making farming practices a central focus of conservation efforts. Solutions being explored include improved irrigation efficiency, water recycling systems, desalination technology, and international agreements to manage shared water resources more equitably. Without significant changes in how fresh water is managed and consumed, experts warn that water scarcity could become one of the defining challenges of the coming century.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the growing scarcity of fresh water, its causes, and the solutions being explored to address the crisis',
+        'why less than one percent of the world\'s water is accessible despite water covering most of the Earth\'s surface',
+        'how agricultural irrigation has become the dominant driver of groundwater depletion across the world',
+        'the reason climate change is considered the single most significant cause of the global water shortage',
+        'how desalination technology is being developed to convert sea water into a reliable source of fresh water'
+      ],
+      answer: 'the growing scarcity of fresh water, its causes, and the solutions being explored to address the crisis'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why is fresh water scarce despite covering much of the Earth\'s surface?',
+      options: [
+        'because industrial pollution has contaminated most of the world\'s rivers and lakes beyond safe drinking levels',
+        'because the majority of fresh water is locked in glaciers and ice caps and is not readily accessible for use',
+        'because international agreements prevent most countries from accessing shared rivers and groundwater reserves',
+        'because desalination plants consume most of the world\'s accessible fresh water during the purification process',
+        'because rapid population growth has caused demand to exceed supply in every region of the world simultaneously'
+      ],
+      answer: 'because the majority of fresh water is locked in glaciers and ice caps and is not readily accessible for use'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Fresh water scarcity is a serious global concern because... 1. less than one percent of the world\'s water is readily accessible through rivers, lakes, and groundwater 2. agricultural irrigation alone accounts for approximately seventy percent of global fresh water consumption 3. desalination technology has already been deployed widely enough to resolve water shortages in all arid regions 4. groundwater aquifers in several regions are being extracted at rates far exceeding their natural replenishment 5. climate change is altering precipitation patterns and increasing drought frequency in water-stressed areas',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 2, 3',
+        'D) 2, 4, 5',
+        'E) 1, 2, 4'
+      ],
+      answer: 'E) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Only about three percent of the water on Earth is fresh water, and most of it is locked in ice.', answer: true },
+        { text: 'The passage states that agricultural irrigation accounts for approximately thirty percent of global fresh water use.', answer: false },
+        { text: 'Climate change is described as intensifying water scarcity by altering precipitation patterns and increasing droughts.', answer: true },
+        { text: 'According to the passage, groundwater aquifers are replenishing faster than they are currently being extracted.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-63',
+  type: 'reading',
+  title: 'Passage 63',
+  text: `The invention of the printing press by Johannes Gutenberg around 1440 is widely considered one of the most consequential technological developments in human history. Before this invention, books were produced by hand, making them expensive, rare, and accessible only to the wealthy and educated elite. Gutenberg\'s system of movable type and mechanical pressing allowed texts to be reproduced rapidly and at a fraction of the previous cost, dramatically increasing the availability of written material across Europe. Within decades of its introduction, the number of books in circulation grew from a few thousand to millions, transforming access to knowledge on an unprecedented scale.
+
+The social and cultural consequences were equally profound. The ability to print and distribute information quickly undermined the monopoly that the Church and ruling classes had previously held over knowledge. The Protestant Reformation accelerated significantly because religious reformers could now print and distribute their arguments to mass audiences in a matter of days. Scientific ideas spread more rapidly, contributing to the intellectual environment of the Renaissance and later the Scientific Revolution. Governments responded with censorship laws and licensing systems in attempts to control what could be printed and circulated. Despite these efforts, the printing press ultimately proved impossible to contain and is credited with laying the groundwork for the Enlightenment, modern journalism, and the concept of an informed and literate public.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the invention of the printing press and the profound social and cultural changes it produced across Europe',
+        'why Gutenberg\'s system of movable type was technically superior to all previous methods of book production',
+        'how the Protestant Reformation was caused entirely by the ability to print and distribute religious arguments',
+        'the reason governments introduced censorship laws to prevent the printing press from spreading dangerous ideas',
+        'how the printing press transformed the cost of books and made them available to ordinary people for the first time'
+      ],
+      answer: 'the invention of the printing press and the profound social and cultural changes it produced across Europe'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how did the printing press affect the Church and ruling classes?',
+      options: [
+        'it allowed the Church to print and distribute religious texts more widely, strengthening its authority across Europe',
+        'it gave ruling classes greater control over information by allowing them to print official propaganda at low cost',
+        'it undermined their monopoly over knowledge by making information accessible to a much broader population',
+        'it forced the Church to commission Gutenberg to produce official translations of sacred texts for mass distribution',
+        'it had no immediate effect on existing power structures as censorship laws prevented most texts from circulating'
+      ],
+      answer: 'it undermined their monopoly over knowledge by making information accessible to a much broader population'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The printing press transformed European civilisation because... 1. the rapid spread of books grew circulation from a few thousand to millions within decades of its introduction 2. Gutenberg personally ensured that printed books were distributed equally to all social classes across Europe 3. the Protestant Reformation was accelerated by the ability to print and circulate arguments to mass audiences 4. governments successfully used censorship laws to prevent the press from influencing public opinion permanently 5. the spread of scientific and philosophical ideas contributed to the Renaissance and the Enlightenment',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 5',
+        'C) 2, 3, 4',
+        'D) 1, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'B) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Before the printing press, books were produced by hand and accessible only to wealthy and educated people.', answer: true },
+        { text: 'The passage states that the number of books in circulation decreased after the printing press was introduced.', answer: false },
+        { text: 'The Protestant Reformation was accelerated by the ability to print and distribute arguments to mass audiences.', answer: true },
+        { text: 'According to the passage, censorship laws introduced by governments successfully contained the spread of printing.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-64',
+  type: 'reading',
+  title: 'Passage 64',
+  text: `The changing of the seasons is one of the most familiar natural phenomena on Earth, yet it is frequently misunderstood. Many people assume that seasons result from variations in the Earth\'s distance from the sun, but this is incorrect. The Earth\'s orbit is only slightly elliptical, and the planet is actually closest to the sun during the Northern Hemisphere\'s winter. The true cause of the seasons is the tilt of the Earth\'s axis, which is inclined at approximately twenty-three and a half degrees relative to its orbital plane. As the Earth travels around the sun throughout the year, this tilt means that different hemispheres receive more direct sunlight at different times, creating the cycle of seasons experienced on the surface.
+
+When the Northern Hemisphere is tilted toward the sun, it receives sunlight at a more direct angle and for longer daily periods, producing summer. At the same time, the Southern Hemisphere is tilted away and experiences winter. Six months later, the situation reverses. The equinoxes, which occur in March and September, represent the two moments each year when neither hemisphere is tilted toward or away from the sun, resulting in roughly equal periods of daylight and darkness across the globe. The solstices in June and December mark the points at which one hemisphere reaches its maximum tilt toward the sun, producing the longest and shortest days of the year. These astronomical relationships govern not only temperature but also the biological rhythms of plants, animals, and human agricultural cycles.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the true cause of the seasons and how the Earth\'s axial tilt drives the annual cycle of temperature change',
+        'why the common belief that seasons are caused by the Earth\'s distance from the sun is partially correct',
+        'how the equinoxes and solstices mark the precise boundaries between the four seasons in each hemisphere',
+        'the reason the Northern Hemisphere experiences summer when the Earth is furthest from the sun in its orbit',
+        'how seasonal changes in daylight and temperature influence the biological rhythms of plants and animals'
+      ],
+      answer: 'the true cause of the seasons and how the Earth\'s axial tilt drives the annual cycle of temperature change'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what causes one hemisphere to experience summer while the other experiences winter?',
+      options: [
+        'the hemisphere experiencing summer is closer to the sun because the Earth\'s orbit becomes more elliptical',
+        'ocean currents redistribute solar heat unevenly, warming one hemisphere more than the other at any given time',
+        'the axial tilt means one hemisphere receives more direct sunlight for longer daily periods at certain times of year',
+        'the rotation speed of the Earth increases during summer, exposing one hemisphere to more solar radiation daily',
+        'atmospheric pressure differences between hemispheres cause warm air to concentrate in the summer hemisphere'
+      ],
+      answer: 'the axial tilt means one hemisphere receives more direct sunlight for longer daily periods at certain times of year'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Understanding the cause of seasons is important because... 1. it corrects the common misconception that seasons are caused by variations in the Earth\'s distance from the sun 2. the Earth\'s axial tilt of approximately twenty-three and a half degrees is the true driver of seasonal change 3. the equinoxes occur when the Earth is at its maximum distance from the sun, producing equal days and nights 4. solstices mark the points of maximum axial tilt toward the sun, producing the longest and shortest days of the year 5. seasonal changes in daylight and temperature govern the biological rhythms of plants, animals, and agriculture',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 3, 5',
+        'D) 2, 4, 5',
+        'E) 1, 2, 4'
+      ],
+      answer: 'E) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The seasons are caused by the tilt of the Earth\'s axis rather than by variations in its distance from the sun.', answer: true },
+        { text: 'The passage states that the Earth is furthest from the sun during the Northern Hemisphere\'s summer.', answer: false },
+        { text: 'The equinoxes occur when neither hemisphere is tilted toward or away from the sun, producing equal daylight.', answer: true },
+        { text: 'According to the passage, the solstices represent moments when both hemispheres receive equal amounts of sunlight.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-65',
+  type: 'reading',
+  title: 'Passage 65',
+  text: `First impressions are formed with remarkable speed, with research suggesting that people make initial judgements about others within milliseconds of first encountering them. These rapid assessments draw on a range of visual and contextual cues including facial features, posture, clothing, and the manner in which a person moves or speaks. Studies have shown that assessments of traits such as trustworthiness, competence, and dominance are formed almost instantaneously and are highly resistant to change even when contradictory information is encountered later. This phenomenon, sometimes called the primacy effect, reflects the brain\'s tendency to weight early information more heavily than information received subsequently.
+
+The evolutionary basis for rapid social judgement lies in the need to quickly assess whether an unfamiliar individual represents a threat or an ally. While this ability was adaptive in ancestral environments, it also gives rise to systematic biases in modern social contexts. Research has demonstrated that taller individuals are more frequently perceived as leaders, that people with symmetrical facial features are judged as more competent, and that subtle cues such as vocal pitch and eye contact significantly influence perceived trustworthiness. These biases operate largely outside conscious awareness and can affect judgements in high-stakes situations including job interviews, legal proceedings, and political elections. Understanding the mechanisms behind first impressions is therefore important not only for individual self-presentation but also for designing fairer systems of evaluation across society.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how first impressions are formed rapidly and the biases they create in social and professional judgements',
+        'why the primacy effect causes people to permanently reject new information about individuals they have met',
+        'how evolutionary pressures in ancestral environments led humans to develop accurate social assessment skills',
+        'the reason taller individuals and those with symmetrical faces are considered more competent by most people',
+        'how understanding first impressions can help individuals present themselves more effectively in job interviews'
+      ],
+      answer: 'how first impressions are formed rapidly and the biases they create in social and professional judgements'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is the primacy effect?',
+      options: [
+        'the tendency for people to form more accurate judgements after spending extended time with an individual',
+        'the brain\'s natural ability to correct initial impressions once contradictory evidence becomes available',
+        'the brain\'s tendency to weight early information more heavily than information received at a later stage',
+        'the process by which repeated encounters with a person gradually replace the original first impression formed',
+        'the automatic preference people show for individuals who share similar physical characteristics to themselves'
+      ],
+      answer: 'the brain\'s tendency to weight early information more heavily than information received at a later stage'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The science of first impressions has important real-world consequences because... 1. biases based on height, facial symmetry, and vocal cues can influence outcomes in job interviews and legal proceedings 2. first impressions are formed within milliseconds and are highly resistant to change even with later information 3. the primacy effect has been shown to affect political elections as well as professional and legal evaluations 4. research has proven that people with asymmetrical facial features are consistently more competent than others 5. understanding these mechanisms is essential for correcting every form of social bias present in modern society',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 4',
+        'C) 1, 2, 3',
+        'D) 2, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 2, 3'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Research suggests that people form initial judgements about others within milliseconds of first encountering them.', answer: true },
+        { text: 'The passage states that first impressions are easily updated and corrected when contradictory information appears.', answer: false },
+        { text: 'Biases in first impressions can affect outcomes in job interviews, legal proceedings, and political elections.', answer: true },
+        { text: 'According to the passage, people are always consciously aware of the biases that influence their first impressions.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-66',
+  type: 'reading',
+  title: 'Passage 66',
+  text: `Caves are natural underground spaces large enough for a human to enter, and they are formed through a variety of geological processes depending on the type of rock and environmental conditions involved. The most common type, known as solution caves or karst caves, forms when slightly acidic rainwater percolates through cracks in soluble rock such as limestone. Over thousands to millions of years, the weak carbonic acid in the water gradually dissolves the rock, enlarging the cracks into passages and chambers of varying size. The world\'s longest and deepest cave systems, including Mammoth Cave in Kentucky and the Krubera Cave in Georgia, were formed through this process.
+
+Once a cave has formed, mineral-rich water dripping through the ceiling deposits calcium carbonate over time, creating the distinctive formations known as stalactites, which hang from above, and stalagmites, which grow upward from the floor. Where the two meet, they form a column. Lava caves form through a different mechanism, arising when the outer surface of a lava flow cools and solidifies while molten rock continues to flow beneath, eventually draining and leaving a hollow tube. Sea caves are carved by the relentless erosion of waves against coastal cliffs. Despite their seemingly lifeless appearance, caves support unique ecosystems and have played an important role in human history as shelters, sacred spaces, and sites of some of the world\'s earliest known art.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the different processes through which caves form and the features and significance they contain',
+        'why limestone is the only rock type capable of producing cave systems of significant size and depth',
+        'how stalactites and stalagmites form from calcium carbonate deposited by mineral-rich dripping water',
+        'the reason lava caves and sea caves are considered more geologically significant than solution caves',
+        'how Mammoth Cave and Krubera Cave were formed and why they are the largest systems in the world'
+      ],
+      answer: 'the different processes through which caves form and the features and significance they contain'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how do solution caves form?',
+      options: [
+        'molten rock flows beneath a solidified lava surface and drains away, leaving a hollow underground tube',
+        'ocean waves erode the base of coastal cliffs over centuries, carving out chambers and passages in the rock',
+        'slightly acidic rainwater percolates through cracks in soluble rock and gradually dissolves it over long periods',
+        'tectonic movement along fault lines forces rock layers apart and creates underground spaces between them',
+        'groundwater pressure builds beneath limestone until it fractures the rock and forces open underground chambers'
+      ],
+      answer: 'slightly acidic rainwater percolates through cracks in soluble rock and gradually dissolves it over long periods'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Caves are remarkable natural features because... 1. solution caves are formed over thousands to millions of years as acidic water dissolves soluble rock 2. all cave systems in the world were formed through the same geological process involving limestone dissolution 3. mineral-rich water deposits calcium carbonate to create stalactites and stalagmites inside cave chambers 4. lava caves form when molten rock drains from beneath a solidified outer surface, leaving a hollow tube 5. caves support unique ecosystems and have served as shelters, sacred spaces, and sites of early human art',
+      options: [
+        'A) 2, 3, 5',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 3, 4',
+        'E) 1, 2, 3'
+      ],
+      answer: 'D) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Solution caves form when acidic rainwater gradually dissolves soluble rock such as limestone over time.', answer: true },
+        { text: 'The passage states that stalactites grow upward from the floor while stalagmites hang from the ceiling.', answer: false },
+        { text: 'Lava caves are formed when molten rock drains from beneath a solidified surface, creating a hollow tube.', answer: true },
+        { text: 'According to the passage, caves are entirely lifeless environments with no ecosystems of any kind.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-67',
+  type: 'reading',
+  title: 'Passage 67',
+  text: `Music has a uniquely powerful influence on human emotions, engaging brain systems associated with memory, reward, and social connection in ways that few other stimuli can match. When people listen to music they find emotionally moving, the brain releases dopamine, a neurotransmitter associated with pleasure and motivation, producing sensations ranging from calm contentment to intense chills. The emotional response to music is not purely individual but is also shaped by cultural context, personal associations, and the memories a piece of music evokes. A song heard repeatedly during a significant life event can become permanently associated with the emotions of that period, explaining why certain pieces of music can trigger unexpectedly powerful feelings years later.
+
+Music also has measurable effects on physiological and psychological states beyond simple pleasure. Slow, quiet music tends to reduce heart rate and lower cortisol levels, producing a calming effect that has been used therapeutically in clinical settings to manage pain, anxiety, and stress. Upbeat, rhythmic music increases arousal and has been shown to enhance physical performance during exercise by reducing the perception of effort. In social contexts, shared musical experiences promote feelings of bonding and group identity, a function that may explain why music is present in virtually every known human culture and plays a central role in ceremonies, rituals, and collective celebration. These broad and consistent effects suggest that music is not a cultural luxury but a fundamental dimension of human psychological life.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the emotional, physiological, and social effects of music on human psychology and behaviour',
+        'why dopamine release during music listening produces stronger pleasure than any other cultural activity',
+        'how slow music reduces cortisol levels and has therefore replaced medication in most clinical settings',
+        'the reason shared musical experiences are the primary mechanism through which group identities form',
+        'how cultural context determines the emotional response a person has to any piece of music they hear'
+      ],
+      answer: 'the emotional, physiological, and social effects of music on human psychology and behaviour'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why can certain pieces of music trigger powerful feelings years after first hearing them?',
+      options: [
+        'because the brain stores musical patterns in a dedicated memory region that is immune to forgetting over time',
+        'because repeated listening gradually increases the brain\'s dopamine response, intensifying emotional reactions',
+        'because music heard during significant life events becomes associated with the emotions of that period',
+        'because the auditory cortex processes music more deeply than speech, creating stronger long-term memories',
+        'because familiar melodies activate the reward system independently of any personal memories or associations'
+      ],
+      answer: 'because music heard during significant life events becomes associated with the emotions of that period'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Music plays a fundamental role in human life because... 1. it triggers dopamine release and produces emotional responses ranging from calm contentment to intense chills 2. slow music has been shown to completely eliminate anxiety and pain in all clinical contexts without exception 3. upbeat rhythmic music reduces the perception of effort and has been shown to enhance physical performance 4. shared musical experiences promote feelings of bonding and group identity across virtually all human cultures 5. music is present in every known human culture and plays a central role in ceremonies and collective celebration',
+      options: [
+        'A) 2, 3, 4',
+        'B) 1, 4, 5',
+        'C) 2, 4, 5',
+        'D) 1, 3, 4',
+        'E) 1, 2, 3'
+      ],
+      answer: 'D) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The brain releases dopamine when people listen to music they find emotionally moving.', answer: true },
+        { text: 'The passage states that emotional responses to music are determined entirely by biology and are the same for everyone.', answer: false },
+        { text: 'Slow, quiet music tends to reduce heart rate and lower cortisol levels, producing a calming effect.', answer: true },
+        { text: 'According to the passage, music is considered a cultural luxury with no deeper psychological function.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-68',
+  type: 'reading',
+  title: 'Passage 68',
+  text: `Climate change refers to long-term shifts in global temperatures and weather patterns, and while some natural variation has always occurred, the scientific consensus is that human activity has been the dominant cause of the rapid changes observed since the mid-twentieth century. The primary driver is the burning of fossil fuels such as coal, oil, and natural gas, which releases carbon dioxide and other greenhouse gases into the atmosphere. These gases trap heat from the sun that would otherwise escape into space, causing average global temperatures to rise in a process known as the greenhouse effect. Deforestation compounds the problem by removing the trees that absorb carbon dioxide from the atmosphere.
+
+The consequences of rising temperatures are already visible across the globe. Arctic sea ice and mountain glaciers are retreating at accelerating rates, sea levels are rising as ice sheets melt and oceans warm and expand, and extreme weather events including heatwaves, floods, and wildfires are becoming more frequent and severe. Scientists warn that without significant reductions in greenhouse gas emissions, average global temperatures could rise by three degrees Celsius or more above pre-industrial levels by the end of this century, with potentially catastrophic consequences for ecosystems, food systems, and human settlements in vulnerable regions. International efforts such as the Paris Agreement aim to limit warming to below two degrees through coordinated national commitments to reduce emissions and transition to clean energy sources.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the causes of climate change, its observable consequences, and the international efforts to address it',
+        'why the burning of fossil fuels is the only factor responsible for rising global temperatures today',
+        'how deforestation removes carbon dioxide from the atmosphere and contributes to the greenhouse effect',
+        'the reason Arctic sea ice is retreating and why this is considered the most serious effect of warming',
+        'how the Paris Agreement has successfully reduced global emissions and limited temperature rise worldwide'
+      ],
+      answer: 'the causes of climate change, its observable consequences, and the international efforts to address it'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how do greenhouse gases cause global temperatures to rise?',
+      options: [
+        'they reflect sunlight back toward the Earth\'s surface before it can be absorbed by the oceans or land',
+        'they chemically react with oxygen in the atmosphere, releasing heat energy directly into the lower atmosphere',
+        'they trap heat from the sun that would otherwise escape into space, causing average temperatures to increase',
+        'they reduce the reflectivity of polar ice, causing it to absorb more solar radiation and melt more rapidly',
+        'they block the formation of clouds, allowing more direct sunlight to reach and warm the Earth\'s surface'
+      ],
+      answer: 'they trap heat from the sun that would otherwise escape into space, causing average temperatures to increase'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Climate change represents an urgent global challenge because... 1. burning fossil fuels releases greenhouse gases that trap heat and cause average global temperatures to rise 2. all consequences of climate change are fully reversible if emissions are reduced within the next five years 3. rising temperatures are causing glaciers to retreat, sea levels to rise, and extreme weather to intensify 4. the Paris Agreement has already succeeded in reducing global temperatures back to pre-industrial levels 5. without significant emissions reductions, temperatures could rise by three degrees or more by the century\'s end',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 5',
+        'C) 2, 3, 4',
+        'D) 1, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'B) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The burning of fossil fuels is identified as the primary driver of rapid climate change since the mid-twentieth century.', answer: true },
+        { text: 'The passage states that deforestation helps reduce climate change by removing excess carbon dioxide from the air.', answer: false },
+        { text: 'The Paris Agreement aims to limit global warming to below two degrees through coordinated national commitments.', answer: true },
+        { text: 'According to the passage, extreme weather events are becoming less frequent as global temperatures rise.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-69',
+  type: 'reading',
+  title: 'Passage 69',
+  text: `The tendency to follow the behaviour of others, often called herd behaviour or social conformity, is a deeply embedded aspect of human psychology with roots in evolutionary survival. In environments where threats were unpredictable and information was limited, following the actions of a group offered a reliable shortcut to safety and resource acquisition. Today this instinct persists in social and consumer behaviour, influencing decisions ranging from fashion choices to financial investments. The phenomenon was famously demonstrated in experiments by psychologist Solomon Asch, who showed that individuals would give visibly incorrect answers to simple questions when surrounded by others who had already given the same wrong answer.
+
+Conformity is driven by two distinct psychological mechanisms. Informational influence occurs when people follow others because they genuinely believe the group possesses superior knowledge or judgement. Normative influence, by contrast, arises from the desire to be accepted and avoid social rejection, even when a person privately disagrees with the group. Social media has amplified both forms of influence considerably, creating environments where popularity metrics such as likes and shares serve as powerful social signals that shape what people believe, share, and consume. Understanding why people follow the crowd has practical implications for public health campaigns, financial regulation, and the design of digital platforms, where nudging behaviour in one direction can trigger self-reinforcing cascades that rapidly spread across large populations.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the psychological mechanisms behind social conformity and its implications for behaviour and society',
+        'why Solomon Asch\'s experiments proved that all human beings will follow the crowd under any circumstances',
+        'how social media platforms use popularity metrics to deliberately manipulate users into conforming to trends',
+        'the reason informational influence is considered more powerful than normative influence in group settings',
+        'how herd behaviour evolved as a survival strategy and why it is no longer relevant in modern environments'
+      ],
+      answer: 'the psychological mechanisms behind social conformity and its implications for behaviour and society'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what is the difference between informational and normative influence?',
+      options: [
+        'informational influence involves following experts while normative influence involves following celebrities',
+        'informational influence is conscious and deliberate while normative influence always operates unconsciously',
+        'informational influence occurs when people trust the group\'s knowledge while normative influence stems from wanting social acceptance',
+        'informational influence is driven by fear of punishment while normative influence is driven by desire for reward',
+        'informational influence applies only in professional settings while normative influence operates in social contexts'
+      ],
+      answer: 'informational influence occurs when people trust the group\'s knowledge while normative influence stems from wanting social acceptance'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Understanding why people follow the crowd is important because... 1. Asch\'s experiments showed that individuals give incorrect answers when surrounded by others who do the same 2. social media amplifies conformity by using popularity signals that shape what people believe and consume 3. normative influence has been completely eliminated in online environments through improved platform design 4. conformity mechanisms have practical implications for public health campaigns and financial regulation 5. herd behaviour can trigger self-reinforcing cascades that spread rapidly across large populations online',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 4, 5',
+        'D) 2, 4, 5',
+        'E) 1, 2, 4'
+      ],
+      answer: 'E) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Solomon Asch\'s experiments showed that people would give incorrect answers when surrounded by others giving the same wrong answer.', answer: true },
+        { text: 'The passage states that normative influence only occurs when a person fully agrees with the group\'s position.', answer: false },
+        { text: 'Social media is described as amplifying conformity by using popularity metrics as powerful social signals.', answer: true },
+        { text: 'According to the passage, herd behaviour is a recently developed human trait with no evolutionary basis.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-70',
+  type: 'reading',
+  title: 'Passage 70',
+  text: `Street food is one of the oldest and most universal forms of culinary culture, with a history stretching back thousands of years to the markets and thoroughfares of ancient civilisations. In ancient Rome, thermopolia, which were small establishments with counter-mounted vessels for serving hot food, catered to the large portion of the urban population that lacked private kitchens. Similar traditions existed in ancient China, India, and the Middle East, where vendors sold prepared food to travellers, labourers, and city dwellers who needed affordable meals outside the home. Street food has always reflected the ingredients, flavours, and cooking techniques of the cultures that produce it, making it one of the most direct expressions of local culinary identity.
+
+Today street food is experiencing a global renaissance, driven partly by the growing appreciation for authentic regional cuisines and partly by the rise of food tourism. Cities such as Bangkok, Mexico City, Istanbul, and Singapore are renowned worldwide for the quality and diversity of their street food scenes, attracting visitors specifically to experience local flavours in their original context. The street food industry supports millions of vendors and small food producers globally, playing an important economic role in urban areas across both developing and developed nations. Despite concerns about hygiene standards in some contexts, street food continues to evolve, with many vendors now incorporating contemporary techniques and international influences while maintaining the accessibility and cultural character that define the tradition.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the history of street food, its cultural significance, and its growing global popularity today',
+        'why ancient Roman thermopolia are considered the direct ancestors of all modern fast food establishments',
+        'how food tourism has transformed street food from a local tradition into a major international industry',
+        'the reason street food vendors in developing nations face greater hygiene challenges than those elsewhere',
+        'how Bangkok, Istanbul, and Singapore became the most celebrated street food destinations in the world'
+      ],
+      answer: 'the history of street food, its cultural significance, and its growing global popularity today'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why did street food emerge in ancient cities such as Rome?',
+      options: [
+        'because ancient governments required all citizens to purchase food from licensed public vendors for safety',
+        'because the ingredients used in home cooking were too expensive for most urban residents to afford daily',
+        'because a large portion of the urban population lacked private kitchens and needed affordable meals outside the home',
+        'because street vendors offered a wider variety of dishes than private households could prepare at home',
+        'because religious traditions in ancient Rome prohibited the preparation of certain foods inside private dwellings'
+      ],
+      answer: 'because a large portion of the urban population lacked private kitchens and needed affordable meals outside the home'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Street food remains culturally and economically significant today because... 1. it reflects local ingredients, flavours, and cooking techniques, making it a direct expression of culinary identity 2. cities such as Bangkok and Singapore have banned all foreign influences from their traditional street food scenes 3. the street food industry supports millions of vendors and plays an important economic role in urban areas globally 4. growing appreciation for authentic regional cuisines and food tourism are driving a global street food renaissance 5. hygiene concerns have been fully resolved across all street food contexts through international regulatory standards',
+      options: [
+        'A) 2, 3, 5',
+        'B) 1, 4, 5',
+        'C) 1, 3, 4',
+        'D) 2, 4, 5',
+        'E) 1, 2, 4'
+      ],
+      answer: 'C) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Thermopolia were small establishments in ancient Rome that served hot food to urban residents.', answer: true },
+        { text: 'The passage states that street food traditions were unique to ancient Rome and did not exist elsewhere.', answer: false },
+        { text: 'The street food industry supports millions of vendors globally and plays an important economic role in cities.', answer: true },
+        { text: 'According to the passage, modern street food vendors never incorporate contemporary techniques or international influences.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-71',
+  type: 'reading',
+  title: 'Passage 71',
+  text: `Lightning is one of the most powerful and visually dramatic natural phenomena on Earth, produced by the buildup and discharge of electrical energy within storm clouds. During a thunderstorm, updrafts of warm air carry water droplets and ice crystals upward while downdrafts push larger ice particles downward. Collisions between these particles cause a separation of electrical charge, with positive charges accumulating near the top of the cloud and negative charges building up at the base. When the difference in charge between the cloud and the ground below becomes great enough, a massive electrical discharge occurs, travelling at speeds of up to one hundred thousand kilometres per second and heating the surrounding air to temperatures five times hotter than the surface of the sun.
+
+The visible flash of lightning is followed by thunder, which is caused by the rapid heating and expansion of air along the lightning channel. Because light travels faster than sound, the flash is seen before the thunder is heard, with the delay between the two indicating how far away the strike occurred. The Earth experiences approximately one hundred lightning strikes every second, and while most are harmless, lightning kills thousands of people annually and causes significant damage to buildings, forests, and electrical infrastructure. Lightning rods, invented by Benjamin Franklin in the eighteenth century, work by providing a conductive path that guides the electrical discharge safely into the ground, protecting structures from the destructive energy of a direct strike.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how lightning forms, what effects it produces, and how its destructive impact can be managed',
+        'why thunderstorms produce more lightning strikes than any other type of weather event on Earth',
+        'how Benjamin Franklin\'s invention of the lightning rod transformed the safety of buildings worldwide',
+        'the reason the air surrounding a lightning bolt reaches temperatures far higher than the sun\'s surface',
+        'how the separation of electrical charge within storm clouds leads to the formation of thunderstorms'
+      ],
+      answer: 'how lightning forms, what effects it produces, and how its destructive impact can be managed'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why is thunder heard after lightning is seen?',
+      options: [
+        'because thunder is produced at a higher altitude than lightning and therefore takes longer to reach the ground',
+        'because the electrical discharge heats the air so rapidly that sound cannot form until the flash has ended',
+        'because light travels faster than sound, so the flash arrives before the sound of the expanding air does',
+        'because thunder travels through denser layers of air near the ground, which slow its speed significantly',
+        'because the human ear processes sound more slowly than the eye processes light during storm conditions'
+      ],
+      answer: 'because light travels faster than sound, so the flash arrives before the sound of the expanding air does'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Lightning is both a fascinating and dangerous natural phenomenon because... 1. charge separation within storm clouds produces electrical discharges that heat air to extreme temperatures 2. the Earth experiences approximately one hundred lightning strikes every second across the globe 3. all lightning strikes travel at identical speeds and produce the same amount of electrical energy worldwide 4. lightning kills thousands of people annually and causes significant damage to buildings and infrastructure 5. lightning rods invented by Franklin guide electrical discharges safely into the ground to protect structures',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 4, 5',
+        'D) 2, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'D) 2, 4, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Lightning heats the surrounding air to temperatures five times hotter than the surface of the sun.', answer: true },
+        { text: 'The passage states that thunder is heard before lightning is seen because sound travels faster than light.', answer: false },
+        { text: 'The Earth experiences approximately one hundred lightning strikes every second.', answer: true },
+        { text: 'According to the passage, lightning rods work by absorbing and storing electrical energy within the structure.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-72',
+  type: 'reading',
+  title: 'Passage 72',
+  text: `Volcanoes are geological structures through which magma, gases, and ash are expelled from beneath the Earth\'s surface, and they are formed through processes closely linked to the movement of tectonic plates. The most common type forms at convergent plate boundaries, where one tectonic plate is forced beneath another in a process called subduction. As the subducting plate descends into the mantle, heat and pressure cause it to release water and other volatiles, which lower the melting point of the surrounding rock and generate magma. This magma rises through the crust and accumulates in a magma chamber before eventually erupting through vents at the surface, building a volcanic structure over successive eruptions.
+
+Volcanoes also form at divergent plate boundaries, where plates move apart and magma rises to fill the gap, creating new crust. This process is responsible for the formation of mid-ocean ridges, which are the longest mountain chains on Earth despite being largely submerged beneath the sea. A third type, known as hotspot volcanoes, forms where a plume of unusually hot mantle material burns through the overlying plate regardless of plate boundary location. The Hawaiian Islands were formed in this way as the Pacific Plate moved slowly over a stationary hotspot. Despite their destructive potential, volcanoes play a vital role in the Earth system, recycling nutrients into the soil, releasing gases that contributed to the early atmosphere, and building landmasses that support terrestrial ecosystems.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the different geological processes through which volcanoes form and the role they play in the Earth system',
+        'why subduction at convergent plate boundaries produces more powerful eruptions than any other volcanic process',
+        'how hotspot volcanoes such as those in Hawaii form independently of the boundaries between tectonic plates',
+        'the reason mid-ocean ridges are considered the most geologically significant volcanic features on Earth',
+        'how magma rises through the crust and accumulates in a chamber before being expelled through surface vents'
+      ],
+      answer: 'the different geological processes through which volcanoes form and the role they play in the Earth system'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how do volcanoes form at convergent plate boundaries?',
+      options: [
+        'two plates collide and compress the rock between them until it melts and rises to the surface as magma',
+        'one plate moves apart from the other, creating a gap that magma rises to fill and eventually solidifies',
+        'a subducting plate releases volatiles that lower the melting point of surrounding rock and generate rising magma',
+        'a hotspot plume burns through the overlying plate and creates a chain of volcanic islands at the surface',
+        'the collision of two oceanic plates forces water into the mantle, which generates steam that drives magma upward'
+      ],
+      answer: 'a subducting plate releases volatiles that lower the melting point of surrounding rock and generate rising magma'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Volcanoes are significant features of the Earth system because... 1. they recycle nutrients into the soil and released gases that contributed to the formation of the early atmosphere 2. convergent boundary volcanoes are entirely responsible for creating all of the landmasses on Earth\'s surface 3. hotspot volcanoes like those that formed Hawaii develop independently of tectonic plate boundary locations 4. mid-ocean ridges formed at divergent boundaries are the longest mountain chains on Earth 5. volcanic activity builds landmasses over time that support the development of terrestrial ecosystems',
+      options: [
+        'A) 1, 4, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 5',
+        'D) 2, 4, 5',
+        'E) 1, 3, 4'
+      ],
+      answer: 'A) 1, 4, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Volcanoes at convergent plate boundaries form when a subducting plate generates magma through heat and released volatiles.', answer: true },
+        { text: 'The passage states that mid-ocean ridges are fully visible above the ocean surface as prominent mountain ranges.', answer: false },
+        { text: 'The Hawaiian Islands were formed as the Pacific Plate moved over a stationary hotspot in the mantle.', answer: true },
+        { text: 'According to the passage, volcanoes have no beneficial role in the Earth system and are entirely destructive.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-73',
+  type: 'reading',
+  title: 'Passage 73',
+  text: `Food waste is one of the most significant and overlooked contributors to global resource depletion and environmental degradation. Approximately one third of all food produced for human consumption is lost or wasted each year, amounting to around 1.3 billion tonnes globally. This waste occurs at every stage of the food supply chain, from production and processing to retail and household consumption. In high-income countries, the majority of waste occurs at the consumer level, where food is purchased but not eaten before it spoils. In lower-income countries, waste is more common at earlier stages due to inadequate storage facilities, poor infrastructure, and limited access to refrigeration.
+
+The environmental consequences of food waste are substantial. When food decomposes in landfills, it releases methane, a greenhouse gas considerably more potent than carbon dioxide, contributing to climate change. The resources used to produce the wasted food, including water, land, energy, and labour, are also lost. It is estimated that food waste is responsible for approximately eight percent of global greenhouse gas emissions. Reducing food waste requires coordinated action across the entire supply chain, from improving storage and distribution infrastructure in lower-income regions to changing consumer behaviour in wealthier nations. Innovations such as improved packaging, food redistribution networks, and digital platforms that connect surplus food with those who need it are increasingly being deployed as part of broader efforts to build more sustainable and efficient food systems.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the scale and causes of food waste, its environmental consequences, and strategies to reduce it',
+        'why food waste in lower-income countries is considered more environmentally damaging than in wealthy nations',
+        'how methane released from decomposing food in landfills is the leading single cause of climate change today',
+        'the reason consumer behaviour in high-income countries is the only meaningful target for food waste reduction',
+        'how digital platforms and improved packaging are already eliminating food waste across global supply chains'
+      ],
+      answer: 'the scale and causes of food waste, its environmental consequences, and strategies to reduce it'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why is food waste particularly damaging to the environment?',
+      options: [
+        'because transporting wasted food to landfill sites produces more carbon emissions than any other waste category',
+        'because decomposing food releases methane into the atmosphere and all resources used in production are also lost',
+        'because food packaging materials used to preserve wasted food are the primary source of landfill pollution',
+        'because the water used to grow wasted crops evaporates and permanently reduces regional freshwater reserves',
+        'because food waste in landfills produces carbon dioxide that is absorbed by plants and re-enters the food chain'
+      ],
+      answer: 'because decomposing food releases methane into the atmosphere and all resources used in production are also lost'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Food waste is a critical global problem because... 1. approximately one third of all food produced for human consumption is lost or wasted every year 2. food waste is estimated to be responsible for approximately eight percent of global greenhouse gas emissions 3. waste in high-income countries occurs mainly in production while lower-income countries waste most at the consumer level 4. decomposing food in landfills releases methane, a greenhouse gas more potent than carbon dioxide 5. innovations including food redistribution networks and digital platforms are being deployed to reduce waste',
+      options: [
+        'A) 2, 3, 5',
+        'B) 1, 3, 4',
+        'C) 2, 4, 5',
+        'D) 1, 2, 4',
+        'E) 1, 4, 5'
+      ],
+      answer: 'D) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Approximately one third of all food produced for human consumption is lost or wasted each year globally.', answer: true },
+        { text: 'The passage states that in high-income countries most food waste occurs during production and processing stages.', answer: false },
+        { text: 'Food waste is estimated to contribute approximately eight percent of global greenhouse gas emissions.', answer: true },
+        { text: 'According to the passage, reducing food waste only requires changes in consumer behaviour in wealthy countries.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-74',
+  type: 'reading',
+  title: 'Passage 74',
+  text: `Blood types are one of the most fundamental aspects of human biology, yet their discovery came remarkably late in medical history. In 1901, the Austrian physician Karl Landsteiner identified the ABO blood group system by observing that mixing blood from different individuals sometimes caused clumping, a reaction that could prove fatal during transfusions. He determined that human blood falls into one of three categories, A, B, or O, with a fourth type, AB, identified shortly afterward. This discovery explained why many early blood transfusion attempts had ended in the death of the patient and transformed transfusion medicine into a safe and reliable procedure that has since saved countless millions of lives.
+
+Blood type is determined by the presence or absence of specific antigens on the surface of red blood cells and corresponding antibodies in the plasma. Type O blood lacks both A and B antigens, making it compatible with all other blood types and earning those with this type the designation of universal donors. Type AB individuals, who lack the antibodies that react against A or B antigens, can receive blood of any type and are therefore called universal recipients. Beyond transfusions, blood type research has contributed to understanding patterns of disease susceptibility and has historical links to debates about population genetics. The Rhesus factor, an additional antigen system discovered in 1940 and denoted by positive or negative, further refined the classification and plays a critical role in pregnancy management and neonatal care.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the discovery of blood types, how they work, and the medical significance of blood group classification',
+        'why Karl Landsteiner\'s identification of the ABO system is considered the most important discovery in medicine',
+        'how the Rhesus factor was discovered in 1940 and why it is more significant than the ABO blood group system',
+        'the reason type O blood is compatible with all other blood types and why this makes it medically valuable',
+        'how early blood transfusion attempts failed before the discovery of blood types and led to patient deaths'
+      ],
+      answer: 'the discovery of blood types, how they work, and the medical significance of blood group classification'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why are people with type O blood called universal donors?',
+      options: [
+        'because type O blood contains both A and B antigens, making it accepted by all blood group recipients',
+        'because type O individuals produce more blood cells than other types and can therefore donate more frequently',
+        'because type O blood lacks both A and B antigens and is therefore compatible with all other blood types',
+        'because type O plasma contains antibodies that neutralise reactions in all other blood group combinations',
+        'because type O blood clots more slowly than other types, making it safer to use in emergency transfusions'
+      ],
+      answer: 'because type O blood lacks both A and B antigens and is therefore compatible with all other blood types'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The discovery of blood types transformed medicine because... 1. it explained why early transfusions had frequently killed patients by revealing the cause of fatal blood reactions 2. it established that type AB individuals are universal donors because they lack both A and B antigens entirely 3. it enabled transfusion medicine to become a safe procedure that has since saved countless millions of lives 4. the Rhesus factor discovered in 1940 further refined blood classification and plays a key role in pregnancy care 5. blood type research has also contributed to understanding disease susceptibility and population genetics patterns',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 3',
+        'C) 1, 3, 4',
+        'D) 2, 3, 5',
+        'E) 1, 3, 5'
+      ],
+      answer: 'E) 1, 3, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Karl Landsteiner identified the ABO blood group system in 1901 by observing clumping reactions between blood samples.', answer: true },
+        { text: 'The passage states that type AB individuals are universal donors because their blood is compatible with all types.', answer: false },
+        { text: 'The Rhesus factor is an additional antigen system discovered in 1940 that plays a role in pregnancy management.', answer: true },
+        { text: 'According to the passage, blood type is determined by the presence of antibodies on the surface of red blood cells.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-75',
+  type: 'reading',
+  title: 'Passage 75',
+  text: `Advertising is one of the most pervasive forces shaping modern consumer behaviour, operating through psychological mechanisms that often function below the level of conscious awareness. Repetition is among the most powerful tools available to advertisers, as repeated exposure to a brand or message increases familiarity and creates a sense of comfort and trust, a phenomenon known as the mere exposure effect. Emotional associations are equally important, with advertisements frequently linking products to positive feelings such as happiness, freedom, or social belonging rather than communicating objective information about the product itself. Celebrity endorsements exploit social proof, the tendency to trust the choices of admired or successful individuals.
+
+Advertising also targets cognitive biases to influence purchasing decisions. Scarcity messaging, such as limited time offers or low stock warnings, triggers loss aversion, causing people to act quickly out of fear of missing out rather than as a result of genuine need. Price anchoring presents an inflated original price alongside a discounted one, making the sale price appear more attractive than it might otherwise seem. Digital advertising has amplified the reach and precision of these techniques considerably, with algorithms using browsing history and behavioural data to deliver targeted messages at moments when individuals are most susceptible. Understanding how advertising affects the mind allows consumers to make more informed choices and has prompted calls for greater regulation of manipulative techniques particularly when directed at children and vulnerable groups.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the psychological techniques used in advertising to influence consumer behaviour and purchasing decisions',
+        'why celebrity endorsements are considered the most effective form of advertising in the modern digital era',
+        'how the mere exposure effect causes consumers to purchase familiar brands without any conscious awareness',
+        'the reason digital advertising algorithms are more effective at targeting children than traditional media methods',
+        'how price anchoring and scarcity messaging exploit cognitive biases to make discounted products seem attractive'
+      ],
+      answer: 'the psychological techniques used in advertising to influence consumer behaviour and purchasing decisions'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how does scarcity messaging influence consumer behaviour?',
+      options: [
+        'it increases the perceived quality of a product by suggesting that only a limited number have been produced',
+        'it creates a sense of social exclusivity that makes consumers feel privileged to access a rare product',
+        'it triggers loss aversion, causing people to act quickly out of fear of missing out rather than genuine need',
+        'it exploits the mere exposure effect by repeatedly showing consumers a product in short supply situations',
+        'it anchors the consumer\'s attention on the original price, making the discounted offer appear more reasonable'
+      ],
+      answer: 'it triggers loss aversion, causing people to act quickly out of fear of missing out rather than genuine need'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Advertising has a powerful influence on consumer decisions because... 1. the mere exposure effect means that repeated exposure to a brand increases familiarity and perceived trust 2. emotional associations link products to positive feelings rather than communicating objective product information 3. all advertising techniques operate entirely within conscious awareness and are therefore easy to identify and resist 4. digital algorithms use behavioural data to deliver targeted messages when individuals are most susceptible 5. celebrity endorsements exploit social proof by linking products to the choices of admired individuals',
+      options: [
+        'A) 1, 3, 4',
+        'B) 2, 3, 5',
+        'C) 1, 4, 5',
+        'D) 2, 4, 5',
+        'E) 1, 2, 5'
+      ],
+      answer: 'E) 1, 2, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The mere exposure effect describes how repeated exposure to a brand increases familiarity and a sense of trust.', answer: true },
+        { text: 'The passage states that advertising always communicates objective and accurate information about products.', answer: false },
+        { text: 'Digital advertising algorithms use browsing history and behavioural data to deliver targeted messages.', answer: true },
+        { text: 'According to the passage, understanding advertising techniques has no practical value for consumers.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-76',
+  type: 'reading',
+  title: 'Passage 76',
+  text: `Nostalgia, the sentimental longing for a past time or place, is a universal human experience that has been studied extensively by psychologists and neuroscientists in recent decades. Originally classified as a medical disorder when first described by a Swiss physician in the seventeenth century, nostalgia is now understood as a normal and generally beneficial emotional state. Research has shown that nostalgic experiences increase feelings of social connectedness, self-continuity, and meaning in life, particularly during periods of loneliness, uncertainty, or transition. The emotion is typically triggered by sensory cues such as music, smell, or photographs that are associated with personally significant memories from the past.
+
+Neuroscientific studies have linked nostalgia to activity in brain regions associated with reward, memory, and social cognition, including the hippocampus and the medial prefrontal cortex. Interestingly, nostalgic memories tend to be positive in character, even when the period being recalled contained difficulties, suggesting that the brain selectively retrieves and reconstructs memories in a way that emphasises their emotional warmth. This positive bias serves a psychological function, helping people to cope with current challenges by reinforcing a sense of personal identity and resilience. Commercially, nostalgia is widely exploited by marketers who use retro aesthetics, revival products, and references to shared cultural memories to create emotional connections with consumers. Understanding nostalgia therefore has implications for psychology, marketing, and the broader study of how humans construct meaning from their personal histories.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'what nostalgia is, why it occurs, and its psychological, neurological, and commercial significance',
+        'why nostalgia was classified as a medical disorder in the seventeenth century and how views have changed',
+        'how the hippocampus and medial prefrontal cortex work together to generate nostalgic emotional responses',
+        'the reason nostalgic memories are always positive and never include any recollection of past difficulties',
+        'how marketers exploit nostalgia through retro products and cultural references to increase consumer spending'
+      ],
+      answer: 'what nostalgia is, why it occurs, and its psychological, neurological, and commercial significance'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, what psychological function does the positive bias in nostalgic memories serve?',
+      options: [
+        'it prevents people from forming new memories that could replace the positive associations of the past',
+        'it enables the brain to permanently delete painful memories and replace them with more accurate ones',
+        'it helps people cope with current challenges by reinforcing a sense of personal identity and resilience',
+        'it encourages people to recreate past experiences in order to restore the emotional state they once felt',
+        'it triggers the release of dopamine whenever past memories are recalled, regardless of their actual content'
+      ],
+      answer: 'it helps people cope with current challenges by reinforcing a sense of personal identity and resilience'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Nostalgia is significant in both psychology and wider culture because... 1. research shows it increases feelings of social connectedness, self-continuity, and meaning during difficult periods 2. it was permanently classified as a serious medical disorder following research conducted in the twentieth century 3. nostalgic memories tend to be positive in character even when the recalled period contained real difficulties 4. neuroscientific studies have linked nostalgia to brain regions associated with reward, memory, and social cognition 5. marketers exploit nostalgia through retro aesthetics and cultural references to create emotional consumer connections',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 3',
+        'C) 1, 3, 4',
+        'D) 2, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'E) 1, 4, 5'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Nostalgia is now understood as a normal and generally beneficial emotional state rather than a medical disorder.', answer: true },
+        { text: 'The passage states that nostalgic feelings are most commonly triggered by logical reasoning about the past.', answer: false },
+        { text: 'Neuroscientific studies have linked nostalgia to activity in the hippocampus and medial prefrontal cortex.', answer: true },
+        { text: 'According to the passage, the brain recalls nostalgic memories with complete accuracy including all negative aspects.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-77',
+  type: 'reading',
+  title: 'Passage 77',
+  text: `The Silk Road was not a single road but a vast network of overland and maritime trade routes connecting China, Central Asia, the Middle East, and Europe, active from roughly the second century BC until the fifteenth century AD. It earned its name from the highly prized Chinese silk that travelled westward along its routes, though it carried a far broader range of goods including spices, glassware, precious metals, textiles, and paper. The exchange was not limited to commodities. Ideas, religions, technologies, and diseases also spread along these routes, making the Silk Road one of the most significant vectors of cultural transmission in the ancient and medieval world. Buddhism, Islam, and Christianity all spread partly through the networks that commerce created.
+
+The cities that grew along the Silk Road, including Samarkand, Kashgar, and Dunhuang, became cosmopolitan centres of learning, art, and exchange, where merchants, pilgrims, and scholars from vastly different backgrounds interacted. The decline of overland Silk Road trade began in the fifteenth century as European powers developed sea routes to Asia, offering faster and less dangerous alternatives to the long overland journey. Despite its decline, the legacy of the Silk Road endures in the cultural, linguistic, and genetic diversity of the regions it connected, and in the technologies and ideas that diffused across Eurasia during its centuries of operation. Today, China\'s Belt and Road Initiative has revived interest in the concept of Eurasian connectivity, drawing deliberate parallels with the historical routes.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the Silk Road\'s role as a network of trade and cultural exchange and its lasting legacy across Eurasia',
+        'why Chinese silk was the most valuable commodity traded along the overland routes of the ancient world',
+        'how the cities of Samarkand and Kashgar became the most important centres of learning in the medieval world',
+        'the reason European sea routes caused the complete and immediate collapse of all Silk Road trade networks',
+        'how Buddhism, Islam, and Christianity each used the Silk Road as their primary means of global expansion'
+      ],
+      answer: 'the Silk Road\'s role as a network of trade and cultural exchange and its lasting legacy across Eurasia'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why did overland Silk Road trade begin to decline in the fifteenth century?',
+      options: [
+        'because political instability in Central Asia made the overland routes too dangerous for merchant caravans',
+        'because the goods traded along the Silk Road were replaced by locally produced alternatives in most regions',
+        'because European powers developed sea routes to Asia that offered faster and less dangerous alternatives',
+        'because the Chinese government imposed heavy taxes on Silk Road merchants that made trade uneconomical',
+        'because the spread of diseases along the routes reduced the populations of the key trading cities significantly'
+      ],
+      answer: 'because European powers developed sea routes to Asia that offered faster and less dangerous alternatives'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The Silk Road had a profound and lasting impact on world history because... 1. it facilitated the exchange of goods, ideas, religions, technologies, and diseases across Eurasia for centuries 2. the cities along its routes became cosmopolitan centres where merchants and scholars from different cultures met 3. it was a single well-maintained road that allowed fast and safe travel between China and the Mediterranean 4. its legacy endures in the cultural, linguistic, and genetic diversity of the regions it once connected 5. China\'s Belt and Road Initiative is a direct continuation of the same trade routes used in ancient times',
+      options: [
+        'A) 1, 3, 5',
+        'B) 2, 3, 4',
+        'C) 1, 2, 4',
+        'D) 3, 4, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 2, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The Silk Road was a network of trade routes connecting China, Central Asia, the Middle East, and Europe.', answer: true },
+        { text: 'The passage states that only physical goods such as silk and spices were exchanged along the Silk Road.', answer: false },
+        { text: 'The decline of overland Silk Road trade began as European powers developed sea routes to Asia.', answer: true },
+        { text: 'According to the passage, the legacy of the Silk Road has had no lasting cultural or demographic effects.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-78',
+  type: 'reading',
+  title: 'Passage 78',
+  text: `Electric vehicles represent one of the most significant shifts in the history of personal transportation, offering the prospect of dramatically reduced greenhouse gas emissions from the road transport sector, which currently accounts for a substantial share of global carbon output. Unlike internal combustion engines, which burn fossil fuels and produce exhaust emissions directly, electric motors are powered by energy stored in batteries and produce no direct tailpipe emissions. When charged using electricity from renewable sources such as solar or wind power, electric vehicles can operate with a near-zero carbon footprint across their entire lifetime. Battery technology has advanced rapidly, with the range of leading electric models now exceeding five hundred kilometres on a single charge.
+
+Despite their environmental potential, electric vehicles face several challenges that have slowed their widespread adoption. The upfront purchase cost remains higher than equivalent petrol or diesel models in many markets, though falling battery prices are narrowing this gap. Charging infrastructure is still underdeveloped in many regions, creating range anxiety among potential buyers who worry about being unable to recharge during longer journeys. The environmental impact of mining the lithium, cobalt, and nickel required for battery production raises concerns about the full lifecycle sustainability of the technology. Governments around the world are responding with purchase subsidies, investments in charging networks, and mandates to phase out new internal combustion engine vehicles by target dates ranging from 2030 to 2040 in various countries.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the environmental benefits of electric vehicles, the challenges they face, and the policy responses driving adoption',
+        'why battery technology advances have made electric vehicles the dominant form of personal transport globally',
+        'how the mining of lithium and cobalt for batteries undermines all the environmental benefits of electric vehicles',
+        'the reason charging infrastructure remains the single greatest obstacle to widespread electric vehicle adoption',
+        'how government subsidies and phase-out mandates have already eliminated the sale of petrol vehicles worldwide'
+      ],
+      answer: 'the environmental benefits of electric vehicles, the challenges they face, and the policy responses driving adoption'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, under what conditions can electric vehicles operate with a near-zero carbon footprint?',
+      options: [
+        'when they are manufactured using recycled materials and assembled in facilities powered by renewable energy',
+        'when they are driven exclusively in urban areas where speeds are low and energy consumption is minimised',
+        'when they are charged using electricity generated from renewable sources such as solar or wind power',
+        'when battery technology advances sufficiently to eliminate the need for lithium and cobalt in production',
+        'when governments require all charging stations to be powered exclusively by certified green energy suppliers'
+      ],
+      answer: 'when they are charged using electricity generated from renewable sources such as solar or wind power'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The transition to electric vehicles is complex because... 1. upfront purchase costs remain higher than equivalent petrol or diesel models in many markets currently 2. electric vehicles produce more greenhouse gas emissions during operation than modern internal combustion engines 3. charging infrastructure is underdeveloped in many regions, creating range anxiety among potential buyers 4. the mining of lithium, cobalt, and nickel for batteries raises concerns about full lifecycle sustainability 5. governments have refused to introduce subsidies or phase-out mandates to support the transition to electric vehicles',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 3',
+        'C) 1, 3, 4',
+        'D) 2, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'Electric vehicles produce no direct tailpipe emissions as they are powered by energy stored in batteries.', answer: true },
+        { text: 'The passage states that the upfront cost of electric vehicles is now lower than equivalent petrol models everywhere.', answer: false },
+        { text: 'Concerns exist about the environmental impact of mining lithium, cobalt, and nickel for battery production.', answer: true },
+        { text: 'According to the passage, all governments have set an identical target date of 2030 to phase out combustion engines.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-79',
+  type: 'reading',
+  title: 'Passage 79',
+  text: `Stress is the body\'s physiological and psychological response to perceived threats or demands, and while short-term stress can enhance performance and focus, chronic stress has well-documented harmful effects on virtually every system in the body. When the brain perceives a threat, it activates the hypothalamic-pituitary-adrenal axis, triggering the release of stress hormones including cortisol and adrenaline. These hormones prepare the body for rapid action by increasing heart rate, redirecting blood flow to the muscles, and suppressing non-essential functions such as digestion and immune activity. This fight-or-flight response was adaptive in environments where threats were immediate and physical, but in modern life, where stressors are often psychological and prolonged, it can cause significant physiological damage over time.
+
+Chronic elevation of cortisol disrupts sleep, impairs memory and concentration, weakens immune function, and increases the risk of cardiovascular disease, obesity, and type two diabetes. The relationship between stress and mental health is equally significant, with prolonged stress being a major risk factor for anxiety disorders and depression. Research suggests that social support, regular physical activity, mindfulness practices, and adequate sleep are among the most effective strategies for managing chronic stress and mitigating its health consequences. Understanding the mechanisms through which stress affects the body is essential not only for individual health management but also for designing workplaces, schools, and healthcare systems that minimise unnecessary chronic stress across entire populations.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'how stress affects the body and mind, its long-term health consequences, and strategies to manage it',
+        'why the fight-or-flight response is considered the most damaging physiological mechanism in the human body',
+        'how cortisol and adrenaline released during stress permanently damage the cardiovascular and immune systems',
+        'the reason psychological stressors in modern life are more harmful than the physical threats of ancestral environments',
+        'how mindfulness and physical activity have been proven to eliminate the health risks associated with chronic stress'
+      ],
+      answer: 'how stress affects the body and mind, its long-term health consequences, and strategies to manage it'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, why is the fight-or-flight response problematic in modern life?',
+      options: [
+        'because it causes the body to release too much adrenaline, which permanently damages the heart over time',
+        'because modern humans lack the physical fitness needed to complete the fight-or-flight response successfully',
+        'because stressors today are often prolonged and psychological rather than immediate and physical in nature',
+        'because the hormones released during the response suppress brain function, making rational decisions impossible',
+        'because modern diets prevent the body from producing sufficient cortisol to sustain the response effectively'
+      ],
+      answer: 'because stressors today are often prolonged and psychological rather than immediate and physical in nature'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: Understanding how stress affects the body is important because... 1. chronic cortisol elevation disrupts sleep, impairs memory, and increases the risk of cardiovascular disease 2. the fight-or-flight response was originally designed for psychological stressors rather than physical threats 3. prolonged stress is a major risk factor for anxiety disorders and depression in addition to physical health problems 4. social support, physical activity, mindfulness, and adequate sleep are among the most effective management strategies 5. all stress responses are identical in every individual regardless of personality, history, or current circumstances',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 2, 3',
+        'C) 1, 3, 4',
+        'D) 2, 3, 5',
+        'E) 1, 4, 5'
+      ],
+      answer: 'C) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The body\'s stress response involves the release of cortisol and adrenaline, which increase heart rate and redirect blood flow.', answer: true },
+        { text: 'The passage states that short-term stress always causes the same harmful effects as chronic long-term stress.', answer: false },
+        { text: 'Prolonged stress is described as a major risk factor for anxiety disorders and depression.', answer: true },
+        { text: 'According to the passage, chronic stress has no measurable effect on the immune system or cardiovascular health.', answer: false }
+      ]
+    }
+  ]
+},
+{
+  id: 'reading-80',
+  type: 'reading',
+  title: 'Passage 80',
+  text: `The ozone layer is a region of the Earth\'s stratosphere, located approximately fifteen to thirty-five kilometres above the surface, where ozone molecules absorb the majority of the sun\'s harmful ultraviolet radiation. Without this protective shield, increased ultraviolet exposure would cause dramatic rises in skin cancer, cataracts, and immune system suppression in humans, as well as damage to marine ecosystems and agricultural crops. In the 1970s, scientists discovered that the ozone layer was being depleted by synthetic chemicals known as chlorofluorocarbons, or CFCs, which were widely used in refrigerants, aerosol propellants, and industrial processes. When CFCs reach the stratosphere, they break down and release chlorine atoms that catalytically destroy ozone molecules.
+
+The discovery of an ozone hole above Antarctica in 1985 prompted international concern and led to the Montreal Protocol of 1987, widely regarded as one of the most successful environmental agreements in history. Under this treaty, nations agreed to phase out the production and use of CFCs and other ozone-depleting substances. Subsequent monitoring has confirmed that the ozone layer is gradually recovering, with scientists projecting that it will return to pre-1980 levels by the middle of this century if compliance continues. The success of the Montreal Protocol is often cited as evidence that international cooperation can effectively address global environmental threats, offering a model for tackling other challenges such as climate change that require coordinated action across national borders.`,
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'the ozone layer\'s role in protecting life, the threat posed by CFCs, and the success of international action',
+        'why the discovery of the ozone hole above Antarctica in 1985 was the most significant environmental event ever',
+        'how chlorine atoms released by CFCs destroy ozone molecules through a catalytic chemical reaction process',
+        'the reason the Montreal Protocol is considered more successful than all other international environmental treaties',
+        'how increased ultraviolet radiation caused by ozone depletion has affected marine ecosystems and crop yields'
+      ],
+      answer: 'the ozone layer\'s role in protecting life, the threat posed by CFCs, and the success of international action'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'According to the passage, how do CFCs damage the ozone layer?',
+      options: [
+        'they absorb ultraviolet radiation in the stratosphere, preventing ozone molecules from forming naturally',
+        'they rise into the stratosphere and directly bond with ozone molecules, permanently neutralising them',
+        'they break down in the stratosphere and release chlorine atoms that catalytically destroy ozone molecules',
+        'they reduce the temperature of the stratosphere, causing ozone molecules to condense and fall toward Earth',
+        'they block the solar radiation that ozone molecules need to form, gradually reducing their concentration'
+      ],
+      answer: 'they break down in the stratosphere and release chlorine atoms that catalytically destroy ozone molecules'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence: The story of the ozone layer offers important lessons for environmental policy because... 1. international cooperation through the Montreal Protocol successfully led to the phase-out of ozone-depleting substances 2. the ozone layer has already fully recovered to its pre-1980 levels as a direct result of the Montreal Protocol 3. monitoring has confirmed the ozone layer is gradually recovering and may reach pre-1980 levels by mid-century 4. the success of the Montreal Protocol demonstrates that coordinated international action can address global threats 5. CFCs were so widely used in industrial and consumer products that their effects were impossible to reverse',
+      options: [
+        'A) 2, 4, 5',
+        'B) 1, 3, 4',
+        'C) 2, 3, 5',
+        'D) 1, 4, 5',
+        'E) 1, 2, 3'
+      ],
+      answer: 'B) 1, 3, 4'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'TRUE/FALSE',
+      statements: [
+        { text: 'The ozone layer absorbs the majority of the sun\'s harmful ultraviolet radiation in the stratosphere.', answer: true },
+        { text: 'The passage states that the ozone hole above Antarctica was discovered in the 1970s before CFCs were identified.', answer: false },
+        { text: 'The Montreal Protocol of 1987 led nations to agree to phase out the production and use of CFCs.', answer: true },
+        { text: 'According to the passage, the ozone layer has already fully recovered to its pre-1980 condition today.', answer: false }
+      ]
+    }
+  ]
+},
+ ]
+  },
+
+  // ╔══════════════════════════════════════════════════╗
+  // ║  LEVEL 8 — C1+: İrəliləmiş II                   ║
+  // ╚══════════════════════════════════════════════════╝
+  {
+    id: 'listening',
+    name: 'LISTENINGS',
+    icon: '🎧',
+    color: '#7c3aed',
+    quizzes: [
+      {
+        id: 'listening-1',
+        type: 'listening',
+        title: 'Passage 1',
+        audio: 'mp3/1.mp3',
+        questions: [
+          {
+            id: 'q1',
+            type: 'mcq',
+            q: 'What is the conversation mainly about?',
+            options: [
+              'A neighbor complaining about loud music',
+              'A tenant reporting a broken window to the manager',
+              'A manager asking a tenant to pay rent',
+              'Kids being punished for playing baseball'
+            ],
+            answer: 'A tenant reporting a broken window to the manager'
+          },
+          {
+            id: 'q2',
+            type: 'mcq',
+            q: 'Which statement is true according to the conversation?',
+            options: [
+              'Janet was at home when the window broke.',
+              'The manager refused to help Janet.',
+              'There was a baseball near the broken glass.',
+              'Janet will pay for the repair herself.'
+            ],
+            answer: 'There was a baseball near the broken glass.'
+          },
+          {
+            id: 'q3',
+            type: 'mcq',
+            q: 'Choose the correct answer to the question according to the conversation. Why does Janet think the kids broke the window?',
+            options: [
+              'Because she saw them throw a ball at the window.',
+              'Because the kids admitted breaking it.',
+              'Because she found a baseball next to the broken glass.',
+              'Because the manager told her about the kids.'
+            ],
+            answer: 'Because she found a baseball next to the broken glass.'
+          },
+          {
+            id: 'q4',
+            type: 'mcq',
+            q: 'Complete the sentence according to the conversation. The manager says it will take ...',
+            options: [
+              'a few hours to repair the window.',
+              'a couple of days to repair the window.',
+              'a week to replace the window.',
+              'three days to find a repairman.'
+            ],
+            answer: 'a couple of days to repair the window.'
+          },
+          {
+            id: 'q5',
+            type: 'mcq',
+            q: 'Complete the sentence according to the conversation. Janet does not have to pay for the damage because ...',
+            options: [
+              'the manager is responsible for all repairs.',
+              'the kids already paid for the damage.',
+              'she was not the one who broke the window.',
+              'the repairman agreed to fix it for free.'
+            ],
+            answer: 'she was not the one who broke the window.'
+          },
+          {
+            id: 'q6',
+            type: 'typein',
+            q: 'Write your answer to the question. What sport were the kids playing before Janet left her apartment?',
+            answer: 'baseball'
+          }
+        ]
+      },
+    ]
   },
 
 ];
