@@ -20296,6 +20296,5 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
     }
   ]
 }       
-]
-  }
+
 window.LEVELS = LEVELS;
