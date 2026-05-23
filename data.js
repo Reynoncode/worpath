@@ -18639,6 +18639,1111 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
       ]
     }
   ]
+},
+      {
+  id: 'listening-12',
+  type: 'listening',
+  title: 'Passage 11 — The history of the Olympic Games',
+  audio: 'mp3/12.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How to participate in the Olympic Games',
+        'The history and development of the Olympic Games',
+        'The life of Pierre de Coubertin',
+        'Famous athletes in the Olympic Games'
+      ],
+      answer: 'The history and development of the Olympic Games'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why did the ancient Olympic Games stop?',
+      options: [
+        'Because Greece lost a war against Rome.',
+        'Because a Roman emperor banned them.',
+        'Because there were not enough athletes to compete.',
+        'Because the games became too expensive to organise.'
+      ],
+      answer: 'Because a Roman emperor banned them.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. The five Olympic rings represent ...',
+      options: [
+        'the five original sports of the ancient Olympics.',
+        'the five countries that started the modern Olympics.',
+        'the five continents that participate in the games.',
+        'the five values of the Olympic movement.'
+      ],
+      answer: 'the five continents that participate in the games.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The first ancient Olympic Games were held in 776 BC.', answer: true },
+        { text: 'Women were allowed to compete in the ancient Olympics.', answer: false },
+        { text: 'The first modern Olympics were held in Athens in 1896.', answer: true },
+        { text: 'The Olympic motto is "Faster, Higher, Stronger."', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-13',
+  type: 'listening',
+  title: 'Passage 12 — Why people dream',
+  audio: 'mp3/13.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How the brain works during sleep',
+        'Why people dream and different theories about it',
+        'How to remember your dreams after waking up',
+        'The life of the chemist August Kekulé'
+      ],
+      answer: 'Why people dream and different theories about it'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What did August Kekulé discover in a dream?',
+      options: [
+        'A new theory about how the brain works.',
+        'The structure of a chemical compound called benzene.',
+        'A solution to a problem in mathematics.',
+        'The stages of sleep including REM.'
+      ],
+      answer: 'The structure of a chemical compound called benzene.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. People forget their dreams quickly because ...',
+      options: [
+        'dreams are not stored in long-term memory.',
+        'the brain quickly moves on to processing new information.',
+        'REM sleep ends too fast for the brain to remember.',
+        'most dreams happen in the early stages of sleep.'
+      ],
+      answer: 'the brain quickly moves on to processing new information.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'On average, a person has between three and six dreams every night.', answer: true },
+        { text: 'Scientists have fully explained why people dream.', answer: false },
+        { text: 'Most dreaming happens during REM sleep.', answer: true },
+        { text: 'During REM sleep, the brain is completely inactive.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-14',
+  type: 'listening',
+  title: 'Passage 13 — The Great Wall of China',
+  audio: 'mp3/14.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The life of Emperor Qin Shi Huang',
+        'The history and features of the Great Wall of China',
+        'How China protected itself from invasions',
+        'The tourism industry in China'
+      ],
+      answer: 'The history and features of the Great Wall of China'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why was the Great Wall originally built?',
+      options: [
+        'To connect different cities in northern China.',
+        'To show the power and wealth of China.',
+        'To protect China from invasions from the north.',
+        'To create jobs for soldiers and peasants.'
+      ],
+      answer: 'To protect China from invasions from the north.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Most of the Great Wall that exists today was built ...',
+      options: [
+        'during the reign of Emperor Qin Shi Huang.',
+        'more than 2,000 years ago by prisoners.',
+        'during the Ming Dynasty between 1368 and 1644.',
+        'after China became a UNESCO World Heritage Site.'
+      ],
+      answer: 'during the Ming Dynasty between 1368 and 1644.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The total length of the Great Wall is about 21,196 kilometres.', answer: true },
+        { text: 'The wall was built entirely during the reign of one emperor.', answer: false },
+        { text: 'Hundreds of thousands of people died during the construction of the wall.', answer: true },
+        { text: 'All sections of the Great Wall are in perfect condition today.', answer: false }
+      ]
+    }
+  ]
+},{
+  id: 'listening-15',
+  type: 'listening',
+  title: 'Passage 14 — How a volcano erupts',
+  audio: 'mp3/15.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The most dangerous volcanoes in the world',
+        'How volcanoes form and erupt',
+        'The effects of volcanic eruptions on people',
+        'The Ring of Fire and its location'
+      ],
+      answer: 'How volcanoes form and erupt'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What is the difference between magma and lava?',
+      options: [
+        'Magma is hotter than lava.',
+        'Lava is found deep inside the Earth while magma flows on the surface.',
+        'Magma is liquid rock inside the Earth and lava is magma that reaches the surface.',
+        'There is no difference between magma and lava.'
+      ],
+      answer: 'Magma is liquid rock inside the Earth and lava is magma that reaches the surface.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Volcanoes are not only destructive because ...',
+      options: [
+        'they are located far from populated areas.',
+        'they also create new land and make soil fertile.',
+        'most eruptions are slow and gentle.',
+        'scientists can now predict when they will erupt.'
+      ],
+      answer: 'they also create new land and make soil fertile.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'There are about 1,500 active volcanoes in the world.', answer: true },
+        { text: 'Most active volcanoes are located around the Atlantic Ocean.', answer: false },
+        { text: 'Magma rises because it is lighter than the solid rock around it.', answer: true },
+        { text: 'The eruption of Mount St. Helens happened in 1990.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-16',
+  type: 'listening',
+  title: 'Passage 15 — The story of Coca-Cola',
+  audio: 'mp3/16.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How soft drinks are made',
+        'The history and global success of Coca-Cola',
+        'The life of John Pemberton',
+        'Why Coca-Cola became popular during World War II'
+      ],
+      answer: 'The history and global success of Coca-Cola'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How did Coca-Cola become internationally famous?',
+      options: [
+        'Because John Pemberton sold it in many countries.',
+        'Because Asa Candler advertised it around the world.',
+        'Because it was supplied to American soldiers during World War II.',
+        'Because the recipe was shared with companies in other countries.'
+      ],
+      answer: 'Because it was supplied to American soldiers during World War II.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. John Pemberton originally created Coca-Cola because ...',
+      options: [
+        'he wanted to start a successful drinks business.',
+        'he was trying to create a medicine for headaches.',
+        'he discovered that coca leaves tasted good with water.',
+        'he was asked to create a drink for soldiers.'
+      ],
+      answer: 'he was trying to create a medicine for headaches.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Coca-Cola was invented in 1886 by a pharmacist.', answer: true },
+        { text: 'Asa Candler bought the Coca-Cola recipe for 2,300 dollars.', answer: true },
+        { text: 'The exact recipe of Coca-Cola is known to the public.', answer: false },
+        { text: 'Around 1.9 billion servings of Coca-Cola are consumed every day.', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-17',
+  type: 'listening',
+  title: 'Passage 16 — Why sharks are important for the ocean',
+  audio: 'mp3/17.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'Why sharks are dangerous to humans',
+        'The importance of sharks for the ocean ecosystem',
+        'How sharks hunt their prey in the ocean',
+        'The history of sharks on Earth'
+      ],
+      answer: 'The importance of sharks for the ocean ecosystem'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What would happen if sharks disappeared from the ocean?',
+      options: [
+        'Other fish would become apex predators.',
+        'Coral reefs would grow larger and healthier.',
+        'The entire marine ecosystem could collapse.',
+        'Humans would be able to swim in the ocean more safely.'
+      ],
+      answer: 'The entire marine ecosystem could collapse.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Shark finning is considered cruel and unsustainable because ...',
+      options: [
+        'it makes sharks afraid of humans.',
+        'about 100 million sharks are killed by humans every year for their fins.',
+        'it destroys coral reefs and other parts of the ocean.',
+        'it prevents sharks from hunting weak and sick animals.'
+      ],
+      answer: 'about 100 million sharks are killed by humans every year for their fins.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Sharks have existed for more than 450 million years.', answer: true },
+        { text: 'Sharks are at the bottom of the ocean food chain.', answer: false },
+        { text: 'Without sharks, populations of certain fish would grow too large.', answer: true },
+        { text: 'Shark finning is the practice of releasing sharks back into the ocean.', answer: false }
+      ]
+    }
+  ]
+},
+      
+{
+  id: 'listening-18',
+  type: 'listening',
+  title: 'Passage 17 — The life of Marie Curie',
+  audio: 'mp3/18.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The history of radioactivity research',
+        'The life and achievements of Marie Curie',
+        'How women gained the right to study at universities',
+        'The discovery of polonium and radium'
+      ],
+      answer: 'The life and achievements of Marie Curie'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why did Marie Curie move to Paris?',
+      options: [
+        'Because she wanted to meet Pierre Curie.',
+        'Because women were not allowed to study at universities in Poland.',
+        'Because Paris had the best physics laboratory in the world.',
+        'Because she received a scholarship from the University of Paris.'
+      ],
+      answer: 'Because women were not allowed to study at universities in Poland.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Marie Curie named the element polonium ...',
+      options: [
+        'after her husband Pierre Curie.',
+        'after the city of Paris where she studied.',
+        'after her home country Poland.',
+        'after a famous Polish scientist.'
+      ],
+      answer: 'after her home country Poland.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Marie Curie was born in Paris, France.', answer: false },
+        { text: 'Marie Curie won two Nobel Prizes in two different sciences.', answer: true },
+        { text: 'Marie Curie developed mobile X-ray units during World War I.', answer: true },
+        { text: 'Marie Curie died because of her exposure to radiation.', answer: true }
+      ]
+    }
+  ]
+},
+    {
+  id: 'listening-19',
+  type: 'listening',
+  title: 'Passage 18 — How airports work',
+  audio: 'mp3/19.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The busiest airports in the world',
+        'How airports are organised and how they work',
+        'The job of an air traffic controller',
+        'How passengers check in for their flights'
+      ],
+      answer: 'How airports are organised and how they work'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What do air traffic controllers do?',
+      options: [
+        'They check passengers\' passports and tickets.',
+        'They manage the movement of aircraft and communicate with pilots.',
+        'They search passengers for dangerous items.',
+        'They direct passengers to the correct departure lounge.'
+      ],
+      answer: 'They manage the movement of aircraft and communicate with pilots.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. After check-in, passengers go through security because ...',
+      options: [
+        'they need to collect their boarding pass.',
+        'staff need to check they are not carrying dangerous items.',
+        'they must hand over their luggage to airport staff.',
+        'they need to find their departure gate.'
+      ],
+      answer: 'staff need to check they are not carrying dangerous items.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The busiest airport in the world is in the United States.', answer: true },
+        { text: 'Passengers hand over their luggage during the security check.', answer: false },
+        { text: 'Air traffic controllers work in a building called the control tower.', answer: true },
+        { text: 'Large airports only have flights and no other facilities.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-20',
+  type: 'listening',
+  title: 'Passage 19 — The history of football',
+  audio: 'mp3/20.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The rules of modern football',
+        'The history and development of football',
+        'The FIFA World Cup and its winners',
+        'How football spread to different countries'
+      ],
+      answer: 'The history and development of football'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. What did the Football Association do in 1863?',
+      options: [
+        'It organised the first international football match.',
+        'It created official rules for football for the first time.',
+        'It separated football from rugby permanently.',
+        'It hosted the first FIFA World Cup in London.'
+      ],
+      answer: 'It created official rules for football for the first time.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Football spread quickly around the world because ...',
+      options: [
+        'the Football Association sent coaches to other countries.',
+        'the FIFA World Cup became popular in the early 20th century.',
+        'British sailors and traders brought it to other countries.',
+        'many countries copied the rules from England.'
+      ],
+      answer: 'British sailors and traders brought it to other countries.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Modern football was developed in England in the 19th century.', answer: true },
+        { text: 'The first international football match ended with a goalless draw.', answer: true },
+        { text: 'The first FIFA World Cup was held in Brazil in 1930.', answer: false },
+        { text: 'Uruguay won the first FIFA World Cup tournament.', answer: true }
+      ]
+    }
+  ]
+},
+  {
+  id: 'listening-20',
+  type: 'listening',
+  title: 'Passage 20',
+  audio: 'mp3/20.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How sunlight is formed in the atmosphere',
+        'Why the sky appears blue and how light behaves in the atmosphere',
+        'Why sunsets are red and orange',
+        'The difference between planets with different atmospheres'
+      ],
+      answer: 'Why the sky appears blue and how light behaves in the atmosphere'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why does the sky look red or orange at sunset?',
+      options: [
+        'Because the sun produces more red light in the evening.',
+        'Because sunlight travels through more atmosphere and most blue light is scattered away.',
+        'Because red light has a shorter wavelength than blue light.',
+        'Because the atmosphere is thicker at sunrise and sunset.'
+      ],
+      answer: 'Because sunlight travels through more atmosphere and most blue light is scattered away.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Blue light is scattered more than red light because ...',
+      options: [
+        'it is brighter and stronger than other colours.',
+        'it travels faster through the atmosphere.',
+        'it has a shorter wavelength.',
+        'it is produced in greater amounts by the sun.'
+      ],
+      answer: 'it has a shorter wavelength.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Sunlight is made up of all the colours of the rainbow.', answer: true },
+        { text: 'Red light has a shorter wavelength than blue light.', answer: false },
+        { text: 'The scattering of blue light in the atmosphere is called Rayleigh scattering.', answer: true },
+        { text: 'The sky on Mars appears blue like the sky on Earth.', answer: false }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-21',
+  type: 'listening',
+  title: 'Passage 21',
+  audio: 'mp3/21.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The education system in Japan',
+        'The daily school life of a Japanese student',
+        'Why Japanese students work so hard',
+        'How Japanese schools are different from American schools'
+      ],
+      answer: 'The daily school life of a Japanese student'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why do Japanese students clean their own school?',
+      options: [
+        'Because cleaning is part of the school curriculum.',
+        'Because the school cannot afford to hire janitors.',
+        'Because it teaches them to respect their environment.',
+        'Because parents ask them to keep the school tidy.'
+      ],
+      answer: 'Because it teaches them to respect their environment.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. After lessons, many Japanese students stay at school because ...',
+      options: [
+        'they need to finish their homework before going home.',
+        'they participate in club activities such as sports and music.',
+        'they have to clean the school before they can leave.',
+        'their parents pick them up late in the evening.'
+      ],
+      answer: 'they participate in club activities such as sports and music.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Most Japanese students travel to school by bus.', answer: false },
+        { text: 'A normal school day in Japan lasts about eight hours.', answer: true },
+        { text: 'Most Japanese schools have janitors to clean the building.', answer: false },
+        { text: 'Education is highly valued in Japanese culture.', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-22',
+  type: 'listening',
+  title: 'Passage 22',
+  audio: 'mp3/22.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The marine life that lives in coral reefs',
+        'How coral reefs are formed and why they are important',
+        'The Great Barrier Reef and its location',
+        'How climate change affects the ocean'
+      ],
+      answer: 'How coral reefs are formed and why they are important'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How do coral reefs grow over time?',
+      options: [
+        'New polyps attach themselves to rocks on the ocean floor.',
+        'New polyps grow on top of the skeletons of dead polyps.',
+        'Coral polyps join together to form large structures.',
+        'Dead polyps are replaced by new ones of a different species.'
+      ],
+      answer: 'New polyps grow on top of the skeletons of dead polyps.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Coral bleaching happens when ...',
+      options: [
+        'coral polyps grow too large for the reef.',
+        'the water becomes too shallow for coral to survive.',
+        'rising sea temperatures caused by climate change affect the corals.',
+        'too many fish live in the reef and damage the coral.'
+      ],
+      answer: 'rising sea temperatures caused by climate change affect the corals.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Coral polyps produce a hard skeleton made of calcium carbonate.', answer: true },
+        { text: 'Coral reefs can grow in cold water with little sunlight.', answer: false },
+        { text: 'The Great Barrier Reef stretches for over 2,300 kilometres.', answer: true },
+        { text: 'When corals bleach, they grow faster than usual.', answer: false }
+      ]
+    }
+  ]
+},
+    {
+  id: 'listening-23',
+  type: 'listening',
+  title: 'Passage 23',
+  audio: 'mp3/23.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How large ships are built and tested',
+        'The story of the Titanic and the lessons learned from it',
+        'Famous disasters in the history of ocean travel',
+        'The life of explorer Robert Ballard'
+      ],
+      answer: 'The story of the Titanic and the lessons learned from it'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why did so many people die when the Titanic sank?',
+      options: [
+        'Because the ship sank too quickly for anyone to escape.',
+        'Because there were not enough lifeboats for everyone on board.',
+        'Because the water was too cold for people to survive.',
+        'Because the crew did not warn passengers in time.'
+      ],
+      answer: 'Because there were not enough lifeboats for everyone on board.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. After the Titanic disaster, maritime safety laws changed because ...',
+      options: [
+        'ships were no longer allowed to travel in the North Atlantic.',
+        'ships were required to carry enough lifeboats for everyone on board.',
+        'ships had to travel at a slower speed in dangerous waters.',
+        'ships were required to have better radar systems.'
+      ],
+      answer: 'ships were required to carry enough lifeboats for everyone on board.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The Titanic set sail from Southampton on the 10th of April 1912.', answer: true },
+        { text: 'The Titanic sank after hitting an iceberg on its second voyage.', answer: false },
+        { text: 'More than 1,500 people died when the Titanic sank.', answer: true },
+        { text: 'The wreck of the Titanic was discovered in 1985.', answer: true }
+      ]
+    }
+  ]
+},
+      
+{
+  id: 'listening-24',
+  type: 'listening',
+  title: 'Passage 24',
+  audio: 'mp3/24.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How the brain controls our body temperature',
+        'Different theories about why people yawn',
+        'Why yawning is contagious among humans',
+        'How animals and humans yawn differently'
+      ],
+      answer: 'Different theories about why people yawn'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why is yawning considered contagious?',
+      options: [
+        'Because yawning spreads like a disease between people.',
+        'Because seeing or reading about yawning makes people yawn too.',
+        'Because tired people always yawn at the same time.',
+        'Because yawning is a habit that people learn from others.'
+      ],
+      answer: 'Because seeing or reading about yawning makes people yawn too.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. People who are more empathetic ...',
+      options: [
+        'yawn less than other people.',
+        'yawn more when they see others yawn.',
+        'yawn only when they are tired or bored.',
+        'yawn to show that they are listening carefully.'
+      ],
+      answer: 'yawn more when they see others yawn.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Scientists have found one agreed explanation for why people yawn.', answer: false },
+        { text: 'Yawning stretches the muscles in the jaw and face.', answer: true },
+        { text: 'Babies only start yawning after they are born.', answer: false },
+        { text: 'Some scientists believe yawning is a form of communication in animals.', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-25',
+  type: 'listening',
+  title: 'Passage 25',
+  audio: 'mp3/25.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How coffee is grown and produced today',
+        'The history and spread of coffee around the world',
+        'Why coffee became popular in Europe',
+        'The legend of Kaldi and his goats'
+      ],
+      answer: 'The history and spread of coffee around the world'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How did coffee reach Europe?',
+      options: [
+        'Through trade routes between Africa and Europe.',
+        'Through European travellers who visited the Middle East.',
+        'Through Arab merchants who sold coffee in European markets.',
+        'Through monks who shared the recipe with European churches.'
+      ],
+      answer: 'Through European travellers who visited the Middle East.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Coffee houses in the Middle East were popular because ...',
+      options: [
+        'they served the best quality coffee in the world.',
+        'they were the only places where coffee could be bought.',
+        'they were meeting places where people talked and listened to music.',
+        'they were owned by wealthy merchants who imported coffee from Ethiopia.'
+      ],
+      answer: 'they were meeting places where people talked and listened to music.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The story of coffee begins in Yemen, Africa.', answer: false },
+        { text: 'By the 15th century, coffee was being grown and traded in Yemen.', answer: true },
+        { text: 'Some Europeans initially thought coffee was dangerous.', answer: true },
+        { text: 'Brazil is the world\'s largest producer of coffee today.', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-26',
+  type: 'listening',
+  title: 'Passage 26',
+  audio: 'mp3/26.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'Why landfills are harmful to the environment',
+        'How the recycling process works and why it is important',
+        'How to separate waste correctly at home',
+        'Why aluminium is the easiest material to recycle'
+      ],
+      answer: 'How the recycling process works and why it is important'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why does recycling save energy?',
+      options: [
+        'Because recycling centres use solar power.',
+        'Because it takes less energy to process recycled materials than to make new ones.',
+        'Because recycled products last longer than new products.',
+        'Because landfills produce energy from the waste they contain.'
+      ],
+      answer: 'Because it takes less energy to process recycled materials than to make new ones.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Recycling alone is not enough because ...',
+      options: [
+        'not all materials can be recycled effectively.',
+        'recycling centres do not have enough capacity.',
+        'reducing the amount of waste we produce is even more important.',
+        'many people do not know how to separate their waste correctly.'
+      ],
+      answer: 'reducing the amount of waste we produce is even more important.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Landfills produce harmful gases that damage the environment.', answer: true },
+        { text: 'Glass is shredded and reshaped into new products during recycling.', answer: false },
+        { text: 'Recycling aluminium uses 95 percent less energy than producing new aluminium.', answer: true },
+        { text: 'Recycling increases the amount of waste that goes to landfill.', answer: false }
+      ]
+    }
+  ]
+},
+      
+{
+  id: 'listening-27',
+  type: 'listening',
+  title: 'Passage 27',
+  audio: 'mp3/27.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The most famous paintings in the world',
+        'The life and achievements of Leonardo da Vinci',
+        'How Renaissance artists were trained in Italy',
+        'The scientific discoveries of the 15th century'
+      ],
+      answer: 'The life and achievements of Leonardo da Vinci'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. Why is Leonardo da Vinci called the ultimate Renaissance man?',
+      options: [
+        'Because he lived during the Renaissance period in Italy.',
+        'Because he was the most famous painter of his time.',
+        'Because he had great talent and knowledge in many different fields.',
+        'Because he trained many other artists and scientists.'
+      ],
+      answer: 'Because he had great talent and knowledge in many different fields.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Most of Leonardo\'s inventions were never built because ...',
+      options: [
+        'the technology needed to build them did not exist in his lifetime.',
+        'he kept his ideas secret in his private notebooks.',
+        'the Church did not allow him to build flying machines.',
+        'he spent most of his time painting rather than inventing.'
+      ],
+      answer: 'the technology needed to build them did not exist in his lifetime.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Leonardo da Vinci was born in Florence, Italy.', answer: false },
+        { text: 'The Mona Lisa is kept in the Louvre Museum in Paris.', answer: true },
+        { text: 'Leonardo studied the human body to advance his understanding of medicine.', answer: true },
+        { text: 'Leonardo da Vinci died in Italy at the age of 67.', answer: false }
+      ]
+    }
+  ]
+},
+      
+
+{
+  id: 'listening-28',
+  type: 'listening',
+  title: 'Passage 28',
+  audio: 'mp3/28.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How scientists study animal behaviour',
+        'Why animals migrate and examples of migration',
+        'The longest migration routes in the world',
+        'How birds find their way back home in spring'
+      ],
+      answer: 'Why animals migrate and examples of migration'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How do some animals navigate during migration?',
+      options: [
+        'They follow other animals that know the route.',
+        'They use the position of the sun, stars or the Earth\'s magnetic field.',
+        'They remember the route from when they were born.',
+        'They follow rivers and coastlines to find their destination.'
+      ],
+      answer: 'They use the position of the sun, stars or the Earth\'s magnetic field.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Salmon migrate back to the rivers where they were born in order to ...',
+      options: [
+        'find food that is not available in the ocean.',
+        'escape from predators in the sea.',
+        'lay their eggs.',
+        'find warmer water during winter.'
+      ],
+      answer: 'lay their eggs.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Animals migrate mainly to escape from predators.', answer: false },
+        { text: 'The Arctic tern travels about 70,000 kilometres in a round trip every year.', answer: true },
+        { text: 'Wildebeest migrate across the Serengeti in search of fresh grass and water.', answer: true },
+        { text: 'Scientists have fully explained how all animals navigate during migration.', answer: false }
+      ]
+    }
+  ]
+},
+      
+{
+  id: 'listening-29',
+  type: 'listening',
+  title: 'Passage 29',
+  audio: 'mp3/29.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'How to travel around London by public transport',
+        'The history and features of the London Underground',
+        'Why the London Underground map is famous',
+        'How electric trains replaced steam trains in London'
+      ],
+      answer: 'The history and features of the London Underground'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How were Underground stations used during World War II?',
+      options: [
+        'They were closed to the public for safety reasons.',
+        'They were used to store food and supplies for soldiers.',
+        'They were used as bomb shelters by Londoners.',
+        'They were used as military headquarters.'
+      ],
+      answer: 'They were used as bomb shelters by Londoners.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. Harry Beck\'s Underground map was revolutionary because ...',
+      options: [
+        'it was the first map of the London Underground ever created.',
+        'it showed the exact distances between all the stations.',
+        'it simplified the complex network into a clear and easy-to-read diagram.',
+        'it was the first map to use different colours for different lines.'
+      ],
+      answer: 'it simplified the complex network into a clear and easy-to-read diagram.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'The London Underground first opened in 1863.', answer: true },
+        { text: 'The early Underground trains were powered by electricity.', answer: false },
+        { text: 'The deepest station on the Underground is 58 metres below street level.', answer: true },
+        { text: 'Harry Beck designed the Underground map in 1931.', answer: true }
+      ]
+    }
+  ]
+},
+      {
+  id: 'listening-30',
+  type: 'listening',
+  title: 'Passage 30',
+  audio: 'mp3/30.mp3',
+  questions: [
+    {
+      id: 'q1',
+      type: 'mcq',
+      q: 'What is the passage mainly about?',
+      options: [
+        'The highest mountains in the world',
+        'How different types of mountains are formed',
+        'How tectonic plates move and why',
+        'Why mountains are important for the environment'
+      ],
+      answer: 'How different types of mountains are formed'
+    },
+    {
+      id: 'q2',
+      type: 'mcq',
+      q: 'Choose the correct answer according to the passage. How were the Himalayas formed?',
+      options: [
+        'Through volcanic activity beneath the ocean.',
+        'When the Indian plate collided with the Eurasian plate.',
+        'When blocks of rock were pushed up by fault lines.',
+        'When magma pushed through the Earth\'s surface and hardened.'
+      ],
+      answer: 'When the Indian plate collided with the Eurasian plate.'
+    },
+    {
+      id: 'q3',
+      type: 'mcq',
+      q: 'Complete the sentence according to the passage. The Himalayas are still growing today because ...',
+      options: [
+        'volcanic activity beneath the mountains continues to push them upwards.',
+        'the tectonic plates that formed them are still moving and colliding.',
+        'erosion from rivers and wind adds new material to the mountains.',
+        'fault lines beneath the Himalayas are still active.'
+      ],
+      answer: 'the tectonic plates that formed them are still moving and colliding.'
+    },
+    {
+      id: 'q4',
+      type: 'truefalse',
+      q: 'Decide whether the statements are TRUE or FALSE.',
+      statements: [
+        { text: 'Mountains cover about one quarter of the Earth\'s land surface.', answer: true },
+        { text: 'Tectonic plates move several metres per year.', answer: false },
+        { text: 'Mount Fuji in Japan is an example of a volcanic mountain.', answer: true },
+        { text: 'The Sierra Nevada mountains were formed by tectonic plate collision.', answer: false }
+      ]
+    }
+  ]
 }
 
 
@@ -18676,14 +19781,8 @@ The discovery of an ozone hole above Antarctica in 1985 prompted international c
 
 
 
-
-
-
-
-
-
       
-]
+];
 
 
 window.LEVELS = LEVELS;
