@@ -13,7 +13,31 @@ const KIDS_GRAMMAR_LEVELS = [
     icon: '🧒',
     color: '#E91E8C',
     quizzes: [
-      // Məlumatlar sonra əlavə olunacaq
+      // Quiz 1
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 2
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 3
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 4
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 5
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
     ]
   },
 
@@ -26,13 +50,36 @@ const KIDS_GRAMMAR_LEVELS = [
     icon: '📖',
     color: '#8B5CF6',
     quizzes: [
-      // Məlumatlar sonra əlavə olunacaq
+      // Quiz 1
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 2
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 3
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 4
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
+      // Quiz 5
+      [
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+      ],
     ]
   },
 
 ];
 
-// Mövcud LEVELS array-inə əlavə et
 if (window.LEVELS) {
   window.LEVELS = [...KIDS_GRAMMAR_LEVELS, ...window.LEVELS];
 } else {
