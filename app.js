@@ -1950,7 +1950,7 @@ function loadProgress() {
     for (let i = 0; i < lvl.quizzes.length; i++) {
   const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
   if (!progress[lvl.id][i]) {
-const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening';
+const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar';
 progress[lvl.id][i] = (i === 0 || isExam || isOpenSection) ? 'unlocked' : 'locked';
   } else if (isExam && progress[lvl.id][i] === 'locked') {
     progress[lvl.id][i] = 'unlocked';
@@ -2096,6 +2096,12 @@ function restoreNormalQuizBody() {
   document.getElementById('opt-0').addEventListener('click', () => handleAnswer(0));
   document.getElementById('opt-1').addEventListener('click', () => handleAnswer(1));
 }
+
+elLevelList.innerHTML = '';
+const kidsList = document.getElementById('kids-list');
+const grammarList = document.getElementById('grammar-list');
+if (kidsList) kidsList.innerHTML = '';
+if (grammarList) grammarList.innerHTML = '';
 
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
