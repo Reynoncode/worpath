@@ -2175,10 +2175,15 @@ function renderLevels() {
       });
     });
 
-    // Reading və Listening 4-cü pagə gedər
-if (lvl.id === 'reading' || lvl.id === 'listening') {
+  if (lvl.id === 'reading' || lvl.id === 'listening') {
   const skillsPage = document.getElementById('skills-page-content');
   if (skillsPage) skillsPage.appendChild(card);
+} else if (lvl.id === 'kids') {
+  const kidsPage = document.getElementById('page-0');
+  if (kidsPage) kidsPage.appendChild(card);
+} else if (lvl.id === 'grammar') {
+  const grammarPage = document.getElementById('page-1');
+  if (grammarPage) grammarPage.appendChild(card);
 } else {
   elLevelList.appendChild(card);
 }
