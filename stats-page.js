@@ -291,7 +291,6 @@ if (window.QuizHomeworkManager?.renderCard) {
 
     window.restoreNormalQuizBody();
     window.elQuestionHint.textContent = 'Səhv sözlər — qarışıq təkrar';
-    document.getElementById('stats-screen').classList.add('hidden');
     window.showQuizScreen();
     window.showQuestion();
   }
