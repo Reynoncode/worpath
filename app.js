@@ -2678,7 +2678,8 @@ function closeOverlayPanel(instant = false) {
 }
 
 function toggleLevel(card) {
-  const isOpen = card.classList.contains('open');
+  const overlay = document.getElementById('level-fullscreen-overlay');
+  const isOpen = card.classList.contains('open') || !!overlay;
 
 // Bütün açıq kartları bağla (classList.remove-u animasiya bitənə saxla)
 document.querySelectorAll('.level-card.open').forEach(c => {
@@ -2824,8 +2825,10 @@ if (innerIcon && iconStyles[lvl.id]) {
 
 stickyHeader.appendChild(bar);
 stickyHeader.appendChild(headerInner);
-stickyHeader.addEventListener('click', () => toggleLevel(card));
-    // Scroll body
+stickyHeader.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleLevel(card);
+});    // Scroll body
     const scrollBody = document.createElement('div');
     scrollBody.style.cssText = `
       flex: 1;
