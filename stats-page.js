@@ -227,18 +227,14 @@ const StatsPage = (() => {
       </div>
     `;
 
-   // Ev tapşırığı kartını asinxron doldur
-// Module-lar gec yüklənir, polling ilə gözlə
-const _waitForHw = setInterval(() => {
+setTimeout(() => {
   if (window.HomeworkManager?.renderCard) {
-    clearInterval(_waitForHw);
     window.HomeworkManager.renderCard("stats-homework-card");
   }
   if (window.QuizHomeworkManager?.renderCard) {
     window.QuizHomeworkManager.renderCard("stats-homework-card");
   }
-}, 200);
-setTimeout(() => clearInterval(_waitForHw), 5000);
+}, 1000);
     
     // Sinif otağı düyməsi
 const _waitForCls = setInterval(() => {
