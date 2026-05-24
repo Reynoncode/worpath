@@ -2208,8 +2208,7 @@ function renderLevels() {
       if (grammarList) grammarList.appendChild(card);
     } else {
       elLevelList.appendChild(card);
-     });
-    }); 
+     }); 
 }
 
   if (lvl.id === 'reading' || lvl.id === 'listening') {
