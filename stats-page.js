@@ -228,18 +228,28 @@ const StatsPage = (() => {
     `;
 
    // Ev tapşırığı kartını asinxron doldur
-if (window.HomeworkManager?.renderCard) {
-  window.HomeworkManager.renderCard("stats-homework-card");
-}
-if (window.QuizHomeworkManager?.renderCard) {
-  window.QuizHomeworkManager.renderCard("stats-homework-card");
-}
+// Module-lar gec yüklənir, polling ilə gözlə
+const _waitForHw = setInterval(() => {
+  if (window.HomeworkManager?.renderCard) {
+    clearInterval(_waitForHw);
+    window.HomeworkManager.renderCard("stats-homework-card");
+  }
+  if (window.QuizHomeworkManager?.renderCard) {
+    window.QuizHomeworkManager.renderCard("stats-homework-card");
+  }
+}, 200);
+setTimeout(() => clearInterval(_waitForHw), 5000);
+    
     // Sinif otağı düyməsi
-const clsBtn = document.getElementById('stats-classroom-btn-inline');
-if (clsBtn && window.ClassroomManager) {
-  clsBtn.style.display = 'flex';
-  clsBtn.onclick = () => ClassroomManager.open();
-}
+const _waitForCls = setInterval(() => {
+  const clsBtn = document.getElementById('stats-classroom-btn-inline');
+  if (clsBtn && window.ClassroomManager) {
+    clearInterval(_waitForCls);
+    clsBtn.style.display = 'flex';
+    clsBtn.onclick = () => ClassroomManager.open();
+  }
+}, 200);
+setTimeout(() => clearInterval(_waitForCls), 5000);
 
 // Auth bar-ı yenilə
 if (window.AuthManager) {
