@@ -2179,11 +2179,11 @@ function renderLevels() {
   const skillsPage = document.getElementById('skills-page-content');
   if (skillsPage) skillsPage.appendChild(card);
 } else if (lvl.id === 'kids') {
-  const kidsPage = document.getElementById('page-0');
-  if (kidsPage) kidsPage.appendChild(card);
+  const kidsList = document.getElementById('kids-list');
+  if (kidsList) kidsList.appendChild(card);
 } else if (lvl.id === 'grammar') {
-  const grammarPage = document.getElementById('page-1');
-  if (grammarPage) grammarPage.appendChild(card);
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
 } else {
   elLevelList.appendChild(card);
 }
