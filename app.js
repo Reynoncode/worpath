@@ -2116,15 +2116,12 @@ function restoreNormalQuizBody() {
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
   renderStarCount();
-
-  // Hər dəfə sıfırla
   elLevelList.innerHTML = '';
   const kidsList = document.getElementById('kids-list');
   const grammarList = document.getElementById('grammar-list');
   if (kidsList) kidsList.innerHTML = '';
   if (grammarList) grammarList.innerHTML = '';
   
-
   const subtitle = document.getElementById('page-subtitle');
   if (subtitle) {
     subtitle.innerHTML = `
@@ -2155,7 +2152,8 @@ function renderLevels() {
     const card = document.createElement('div');
     card.className = 'level-card';
     card.dataset.level = lvl.id;
-    
+    card.dataset.levelIdx = li;  // ← əlavə edildi
+
     card.innerHTML = `
       <div class="level-header" role="button" aria-expanded="false">
         <div class="level-bar" style="background:${lvl.color}"></div>
@@ -2198,6 +2196,21 @@ function renderLevels() {
         startQuiz(li, qi);
       });
     });
+
+    if (lvl.id === 'reading' || lvl.id === 'listening') {
+      const skillsPage = document.getElementById('skills-page-content');
+      if (skillsPage) skillsPage.appendChild(card);
+    } else if (lvl.id === 'kids') {
+      const kidsList = document.getElementById('kids-list');
+      if (kidsList) kidsList.appendChild(card);
+    } else if (lvl.id === 'grammar') {
+      const grammarList = document.getElementById('grammar-list');
+      if (grammarList) grammarList.appendChild(card);
+    } else {
+      elLevelList.appendChild(card);
+    }
+  });
+}
 
   if (lvl.id === 'reading' || lvl.id === 'listening') {
     const skillsPage = document.getElementById('skills-page-content');
@@ -2723,8 +2736,8 @@ if (existingOverlay) {
     const appHeader = document.querySelector('.app-header');
     const headerH = appHeader ? appHeader.offsetHeight : 56;
 
-    const li = Array.from(document.querySelectorAll('.level-card')).indexOf(card);
-    const lvl = LEVELS[li];
+    const li = parseInt(card.dataset.levelIdx, 10);
+const lvl = LEVELS[li];
 
     // Kartın pozisyasını tap
     const cardRect = card.getBoundingClientRect();
