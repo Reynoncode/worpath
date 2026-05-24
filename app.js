@@ -2208,20 +2208,6 @@ function renderLevels() {
       if (grammarList) grammarList.appendChild(card);
     } else {
       elLevelList.appendChild(card);
-     }); 
-}
-
-  if (lvl.id === 'reading' || lvl.id === 'listening') {
-    const skillsPage = document.getElementById('skills-page-content');
-    if (skillsPage) skillsPage.appendChild(card);
-  } else if (lvl.id === 'kids') {
-    const kidsList = document.getElementById('kids-list');
-    if (kidsList) kidsList.appendChild(card);
-  } else if (lvl.id === 'grammar') {
-    const grammarList = document.getElementById('grammar-list');
-    if (grammarList) grammarList.appendChild(card);
-  } else {
-    elLevelList.appendChild(card);
   }
   });
 }
