@@ -2175,7 +2175,13 @@ function renderLevels() {
       });
     });
 
-    elLevelList.appendChild(card);
+    // Reading və Listening 4-cü pagə gedər
+if (lvl.id === 'reading' || lvl.id === 'listening') {
+  const skillsPage = document.getElementById('skills-page-content');
+  if (skillsPage) skillsPage.appendChild(card);
+} else {
+  elLevelList.appendChild(card);
+}
   });
 }
 
@@ -3492,6 +3498,98 @@ window.showQuizScreen        = showQuizScreen;
 window.showQuestion          = showQuestion;
 window.quiz                  = quiz;
 window.elQuestionHint        = elQuestionHint;
-// ── Init ──────────────────────────────────────────────────
+
+// ══════════════════════════════════════════
+//  5-PAGE SWIPE SYSTEM
+// ══════════════════════════════════════════
+
+const TOTAL_PAGES  = 5;
+const DEFAULT_PAGE = 2; // 0-based, 3-cü səhifə
+
+let currentPage = DEFAULT_PAGE;
+
+const pageContainer = document.getElementById('page-container');
+const navDots       = document.querySelectorAll('.nav-dot');
+
+function goToPage(idx, animate = true) {
+  if (idx < 0 || idx >= TOTAL_PAGES) return;
+  currentPage = idx;
+
+  if (!animate) pageContainer.style.transition = 'none';
+  pageContainer.style.transform = `translateX(-${idx * 20}%)`;
+  if (!animate) requestAnimationFrame(() => {
+    pageContainer.style.transition = '';
+  });
+
+  navDots.forEach((dot, i) => {
+    dot.classList.toggle('active', i === idx);
+  });
+
+  // Page 4 (stats) render
+  if (idx === 4 && window.StatsPage) StatsPage.render();
+}
+
+// ── Touch / swipe ──────────────────────────
+let swipeStartX   = 0;
+let swipeStartY   = 0;
+let swipeStartT   = 0;
+let swipingH      = false;
+let swipeDeltaX   = 0;
+const SWIPE_THRESHOLD = 50;
+const SWIPE_MAX_ANGLE = 35; // derəcə
+
+pageContainer.addEventListener('touchstart', (e) => {
+  // Quiz ekranı açıqdursa swipe deaktiv
+  if (!elQuizScreen.classList.contains('hidden')) return;
+  if (!elResultScreen.classList.contains('hidden')) return;
+
+  swipeStartX = e.touches[0].clientX;
+  swipeStartY = e.touches[0].clientY;
+  swipeStartT = Date.now();
+  swipingH    = false;
+  swipeDeltaX = 0;
+}, { passive: true });
+
+pageContainer.addEventListener('touchmove', (e) => {
+  if (!elQuizScreen.classList.contains('hidden')) return;
+
+  const dx = e.touches[0].clientX - swipeStartX;
+  const dy = e.touches[0].clientY - swipeStartY;
+
+  if (!swipingH && Math.abs(dx) + Math.abs(dy) > 8) {
+    const angle = Math.abs(Math.atan2(dy, dx) * 180 / Math.PI);
+    swipingH = angle < SWIPE_MAX_ANGLE || angle > (180 - SWIPE_MAX_ANGLE);
+  }
+
+  if (swipingH) {
+    swipeDeltaX = dx;
+    // Canlı sürüşmə effekti
+    const base = currentPage * 20;
+    const pct  = (dx / window.innerWidth) * 20;
+    pageContainer.style.transition = 'none';
+    pageContainer.style.transform  = `translateX(calc(-${base}% + ${dx}px))`;
+  }
+}, { passive: true });
+
+pageContainer.addEventListener('touchend', () => {
+  if (!swipingH) return;
+  const elapsed = Date.now() - swipeStartT;
+  const fast    = elapsed < 250 && Math.abs(swipeDeltaX) > 30;
+
+  pageContainer.style.transition = '';
+
+  if ((swipeDeltaX < -SWIPE_THRESHOLD || fast && swipeDeltaX < 0) && currentPage < TOTAL_PAGES - 1) {
+    goToPage(currentPage + 1);
+  } else if ((swipeDeltaX > SWIPE_THRESHOLD || fast && swipeDeltaX > 0) && currentPage > 0) {
+    goToPage(currentPage - 1);
+  } else {
+    goToPage(currentPage); // snap geri
+  }
+
+  swipingH = false;
+});
+
+// ── Init ──────────────────────────────────
+goToPage(DEFAULT_PAGE, false);
 loadProgress();
 renderLevels();
