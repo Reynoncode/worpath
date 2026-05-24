@@ -203,6 +203,20 @@ const QUIZ_NAMES = {
     44:  'Memory, Legacy & History',
     46:  'Abundance & Scarcity',
   },
+    'kids': {
+    0: 'Quiz 1',
+    1: 'Quiz 2',
+    2: 'Quiz 3',
+    3: 'Quiz 4',
+    4: 'Quiz 5',
+  },
+  'grammar': {
+    0: 'Quiz 1',
+    1: 'Quiz 2',
+    2: 'Quiz 3',
+    3: 'Quiz 4',
+    4: 'Quiz 5',
+  },
 };
 
 // ── Storage keys ──────────────────────────────────────────
@@ -217,6 +231,8 @@ const EXAM_IDS = {
   'b2': new Set([2, 6, 11, 15, 18, 21, 26, 31, 34, 37, 40, 43, 47, 51, 54 ]),
   'c1': new Set([2, 5, 9, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 53 ]),
   'c2': new Set([2, 5, 10, 15, 19, 24, 28, 33, 38, 42, 45, 48, 51, 55, 58, 62, 65, 69, 73])
+  'kids':    new Set([]),   // exam yoxdursa boş
+  'grammar': new Set([]),   // exam yoxdursa boş
 };
 
 // ── Hər exam hansı quiz ID-lərini əhatə edir ─────────────
