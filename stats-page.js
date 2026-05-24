@@ -167,12 +167,18 @@ const StatsPage = (() => {
       <div style="background:#F5F0E8;min-height:100vh;padding:20px 20px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
 
         <!-- Başlıq -->
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-          <span style="font-size:22px;font-weight:700;color:#1A1A1A;">Statistika</span>
-          <span style="display:flex;align-items:center;gap:5px;background:#FAEEDA;color:#633806;border:1px solid #FAC775;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:600;">
-            🔥 ${s.streak} STREAK
-          </span>
-        </div>
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+  <span style="font-size:22px;font-weight:700;color:#1A1A1A;">Statistika</span>
+  <div style="display:flex;align-items:center;gap:8px;">
+    <button id="stats-classroom-btn-inline" style="display:none;align-items:center;gap:5px;background:#1A1A1A;color:#fff;border:none;border-radius:99px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600;">
+      🏫 Sinif Otağı
+    </button>
+    <div id="stats-auth-bar"></div>
+    <span style="display:flex;align-items:center;gap:5px;background:#FAEEDA;color:#633806;border:1px solid #FAC775;border-radius:99px;padding:5px 12px;font-size:12px;font-weight:600;">
+      🔥 ${s.streak} STREAK
+    </span>
+  </div>
+</div>
 
         
 
@@ -227,6 +233,45 @@ if (window.HomeworkManager?.renderCard) {
 }
 if (window.QuizHomeworkManager?.renderCard) {
   window.QuizHomeworkManager.renderCard("stats-homework-card");
+}
+    // Sinif otağı düyməsi
+const clsBtn = document.getElementById('stats-classroom-btn-inline');
+if (clsBtn && window.ClassroomManager) {
+  clsBtn.style.display = 'flex';
+  clsBtn.onclick = () => ClassroomManager.open();
+}
+
+// Auth bar-ı yenilə
+if (window.AuthManager) {
+  const user = AuthManager.getCurrentUser();
+  if (user) {
+    // renderAuthButton birbaşa çağır — auth.js-dən
+    const authBar = document.getElementById('stats-auth-bar');
+    if (authBar) {
+      const name  = user.displayName ? user.displayName.split(' ')[0] : user.email;
+      const photo = user.photoURL || '';
+      authBar.innerHTML = `
+        <div style="display:flex;align-items:center;gap:8px;cursor:pointer;"
+             onclick="AuthManager.openProfileModal()">
+          ${photo
+            ? `<img src="${photo}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid #E8E2D9;" />`
+            : `<div style="width:28px;height:28px;border-radius:50%;background:#EDEAE2;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#6B7280;">${name.charAt(0).toUpperCase()}</div>`
+          }
+          <span style="font-size:12px;font-weight:600;color:#1A1A1A;">${name}</span>
+        </div>
+      `;
+    }
+  } else {
+    const authBar = document.getElementById('stats-auth-bar');
+    if (authBar) {
+      authBar.innerHTML = `
+        <button onclick="AuthManager.signIn()"
+          style="display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #E8E2D9;border-radius:99px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600;color:#1A1A1A;">
+          Giriş et
+        </button>
+      `;
+    }
+  }
 }
   }
 
