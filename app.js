@@ -3514,12 +3514,15 @@ const navDots       = document.querySelectorAll('.nav-dot');
 function goToPage(idx, animate = true) {
   if (idx < 0 || idx >= TOTAL_PAGES) return;
   currentPage = idx;
-
   if (!animate) pageContainer.style.transition = 'none';
   pageContainer.style.transform = `translateX(-${idx * 20}%)`;
   if (!animate) requestAnimationFrame(() => {
     pageContainer.style.transition = '';
   });
+  // Nav dots click
+navDots.forEach((dot, i) => {
+  dot.addEventListener('click', () => goToPage(i));
+});
 
   navDots.forEach((dot, i) => {
     dot.classList.toggle('active', i === idx);
