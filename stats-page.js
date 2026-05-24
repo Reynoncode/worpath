@@ -251,7 +251,6 @@ setTimeout(() => clearInterval(_waitForCls), 5000);
 if (window.AuthManager) {
   const user = AuthManager.getCurrentUser();
   if (user) {
-    // renderAuthButton birbaşa çağır — auth.js-dən
     const authBar = document.getElementById('stats-auth-bar');
     if (authBar) {
       const name  = user.displayName ? user.displayName.split(' ')[0] : user.email;
@@ -279,7 +278,20 @@ if (window.AuthManager) {
     }
   }
 }
+
+// ← BUNU ƏLAVƏ ET
+const headerProfileAvatar = document.getElementById('header-profile-avatar');
+if (headerProfileAvatar && window.AuthManager) {
+  const user = AuthManager.getCurrentUser();
+  if (user && user.photoURL) {
+    headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
+  } else if (user) {
+    const name = user.displayName ? user.displayName.split(' ')[0] : user.email;
+    headerProfileAvatar.textContent = name.charAt(0).toUpperCase();
   }
+}
+
+  } // ← render() bağlanan mötərizə
 
   // ─── Səhv sözləri təkrar et ───────────────────────────────────────────────
   function startWrongWordsRetake() {
