@@ -191,7 +191,7 @@ const StatsPage = (() => {
     { val: "📋", lbl: "Ev tapşırığı", sub: null, isHomework: true },
     ].map(c => `
 <div style="background:#EDEAE2;border-radius:10px;padding:0;overflow:hidden;" id="${c.isHomework ? 'stats-homework-card' : ''}">
-  ${c.isHomework ? '' : `
+  ${c.isHomework ? '<div style="padding:14px 16px;"><div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">EV TAPŞIRIĞI</div><div style="font-size:13px;color:#9CA3AF;">Yüklənir...</div></div>' : `
     <div style="padding:14px 16px;">
       <div style="font-size:24px;font-weight:700;color:#1A1A1A;">${c.val}</div>
       <div style="font-size:12px;color:#6B7280;margin-top:3px;">${c.lbl}</div>
