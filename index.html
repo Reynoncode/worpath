@@ -60,11 +60,55 @@
       </div>
     </header>
 
-    <!-- ── LEVEL LIST ─────────────────────────── -->
-    <main class="main-content">
-      <div id="page-subtitle" class="page-subtitle"></div>
-      <div class="level-list" id="level-list"></div>
-    </main>
+    <!-- Nav dots -->
+    <div class="page-nav-dots" id="page-nav-dots">
+      <div class="nav-dot" data-page="0"></div>
+      <div class="nav-dot" data-page="1"></div>
+      <div class="nav-dot active" data-page="2"></div>
+      <div class="nav-dot" data-page="3"></div>
+      <div class="nav-dot" data-page="4"></div>
+    </div>
+
+    <!-- 5 page -->
+    <div id="page-container">
+
+      <!-- PAGE 1: Kids -->
+      <div class="page" id="page-0">
+        <div class="page-coming-soon">
+          <span>🧒</span>
+          <h2>Kids</h2>
+          <p>Uşaqlar üçün bölüm<br>tezliklə əlavə olunacaq</p>
+        </div>
+      </div>
+
+      <!-- PAGE 2: Grammar -->
+      <div class="page" id="page-1">
+        <div class="page-coming-soon">
+          <span>📖</span>
+          <h2>Grammar</h2>
+          <p>Azərbaycan təhsil sisteminə<br>uyğun qrammatika bölümü<br>tezliklə əlavə olunacaq</p>
+        </div>
+      </div>
+
+      <!-- PAGE 3: Ana səhifə -->
+      <div class="page" id="page-2">
+        <main class="main-content">
+          <div id="page-subtitle" class="page-subtitle"></div>
+          <div class="level-list" id="level-list"></div>
+        </main>
+      </div>
+
+      <!-- PAGE 4: Reading / Listening -->
+      <div class="page" id="page-3">
+        <main class="main-content" id="skills-page-content"></main>
+      </div>
+
+      <!-- PAGE 5: Stats / Profile -->
+      <div class="page" id="page-4">
+        <div id="stats-root"></div>
+      </div>
+
+    </div>
 
   </div>
 
@@ -248,11 +292,10 @@
   <script>
     Stats.updateStreak();
 
-   document.getElementById('stats-btn').addEventListener('click', function () {
-  closeOverlayPanel(true);
-  StatsPage.render('stats-container');
-  document.getElementById('stats-screen').classList.remove('hidden');
-});
+  document.getElementById('stats-btn').addEventListener('click', function () {
+      goToPage(4);
+    });
+    
     document.getElementById('stats-close-btn').addEventListener('click', function () {
       document.getElementById('stats-screen').classList.add('hidden');
     });
