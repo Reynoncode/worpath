@@ -3591,7 +3591,41 @@ pageContainer.addEventListener('touchend', () => {
 
   swipingH = false;
 });
+// ── Mouse drag (kompüter üçün) ──────────────────
+let mouseStartX = 0;
+let mouseDragging = false;
+let mouseDeltaX = 0;
 
+pageContainer.addEventListener('mousedown', (e) => {
+  if (!elQuizScreen.classList.contains('hidden')) return;
+  mouseStartX = e.clientX;
+  mouseDragging = true;
+  mouseDeltaX = 0;
+  pageContainer.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!mouseDragging) return;
+  mouseDeltaX = e.clientX - mouseStartX;
+  const base = currentPage * 20;
+  pageContainer.style.transition = 'none';
+  pageContainer.style.transform = `translateX(calc(-${base}% + ${mouseDeltaX}px))`;
+});
+
+document.addEventListener('mouseup', () => {
+  if (!mouseDragging) return;
+  mouseDragging = false;
+  pageContainer.style.cursor = '';
+  pageContainer.style.transition = '';
+
+  if (mouseDeltaX < -50 && currentPage < TOTAL_PAGES - 1) {
+    goToPage(currentPage + 1);
+  } else if (mouseDeltaX > 50 && currentPage > 0) {
+    goToPage(currentPage - 1);
+  } else {
+    goToPage(currentPage);
+  }
+});
 // ── Init ──────────────────────────────────
 goToPage(DEFAULT_PAGE, false);
 StatsPage.render('stats-root');
