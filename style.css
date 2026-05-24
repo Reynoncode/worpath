@@ -399,10 +399,10 @@ button { font-family: var(--font); }
 }
 
 #skills-page-content {
+  padding: 24px 16px 80px;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 16px 16px 32px;
 }
 /* ── ACCORDION BODY ─────────────────────────── */
 .level-body {
