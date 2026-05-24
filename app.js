@@ -3591,5 +3591,6 @@ pageContainer.addEventListener('touchend', () => {
 
 // ── Init ──────────────────────────────────
 goToPage(DEFAULT_PAGE, false);
+StatsPage.render('stats-root');
 loadProgress();
 renderLevels();
