@@ -81,3 +81,6 @@ const KIDS_GRAMMAR_LEVELS = [
 ];
 
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
+
+// LEVELS-ə birləşdir
+KIDS_GRAMMAR_LEVELS.forEach(lvl => LEVELS.push(lvl));
