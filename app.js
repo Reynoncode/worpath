@@ -2184,22 +2184,17 @@ function renderLevels() {
     });
 
   if (lvl.id === 'reading' || lvl.id === 'listening') {
-  const skillsPage = document.getElementById('skills-page-content');
-  if (typeof KIDS_GRAMMAR_LEVELS !== 'undefined') {
-  KIDS_GRAMMAR_LEVELS.forEach(lvl => {
-    if (!LEVELS.find(l => l.id === lvl.id)) {
-      LEVELS.push(lvl);
-    }
-  if (skillsPage) skillsPage.appendChild(card);
-} else if (lvl.id === 'kids') {
-  const kidsList = document.getElementById('kids-list');
-  if (kidsList) kidsList.appendChild(card);
-} else if (lvl.id === 'grammar') {
-  const grammarList = document.getElementById('grammar-list');
-  if (grammarList) grammarList.appendChild(card);
-} else {
-  elLevelList.appendChild(card);
-}
+    const skillsPage = document.getElementById('skills-page-content');
+    if (skillsPage) skillsPage.appendChild(card);
+  } else if (lvl.id === 'kids') {
+    const kidsList = document.getElementById('kids-list');
+    if (kidsList) kidsList.appendChild(card);
+  } else if (lvl.id === 'grammar') {
+    const grammarList = document.getElementById('grammar-list');
+    if (grammarList) grammarList.appendChild(card);
+  } else {
+    elLevelList.appendChild(card);
+  }
   });
 }
 
