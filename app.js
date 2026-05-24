@@ -2119,8 +2119,10 @@ function renderLevels() {
   elLevelList.innerHTML = '';
   const kidsList = document.getElementById('kids-list');
   const grammarList = document.getElementById('grammar-list');
+  const skillsPage = document.getElementById('skills-page-content');
   if (kidsList) kidsList.innerHTML = '';
   if (grammarList) grammarList.innerHTML = '';
+  if (skillsPage) skillsPage.innerHTML = '';
   
   const subtitle = document.getElementById('page-subtitle');
   if (subtitle) {
