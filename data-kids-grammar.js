@@ -80,8 +80,4 @@ const KIDS_GRAMMAR_LEVELS = [
 
 ];
 
-if (window.LEVELS) {
-  window.LEVELS = [...KIDS_GRAMMAR_LEVELS, ...window.LEVELS];
-} else {
-  window.LEVELS = KIDS_GRAMMAR_LEVELS;
-}
+window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
