@@ -2097,15 +2097,17 @@ function restoreNormalQuizBody() {
   document.getElementById('opt-1').addEventListener('click', () => handleAnswer(1));
 }
 
-elLevelList.innerHTML = '';
-const kidsList = document.getElementById('kids-list');
-const grammarList = document.getElementById('grammar-list');
-if (kidsList) kidsList.innerHTML = '';
-if (grammarList) grammarList.innerHTML = '';
-
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
   renderStarCount();
+
+  // Hər dəfə sıfırla
+  elLevelList.innerHTML = '';
+  const kidsList = document.getElementById('kids-list');
+  const grammarList = document.getElementById('grammar-list');
+  if (kidsList) kidsList.innerHTML = '';
+  if (grammarList) grammarList.innerHTML = '';
+  
 
   const subtitle = document.getElementById('page-subtitle');
   if (subtitle) {
@@ -2183,6 +2185,11 @@ function renderLevels() {
 
   if (lvl.id === 'reading' || lvl.id === 'listening') {
   const skillsPage = document.getElementById('skills-page-content');
+  if (typeof KIDS_GRAMMAR_LEVELS !== 'undefined') {
+  KIDS_GRAMMAR_LEVELS.forEach(lvl => {
+    if (!LEVELS.find(l => l.id === lvl.id)) {
+      LEVELS.push(lvl);
+    }
   if (skillsPage) skillsPage.appendChild(card);
 } else if (lvl.id === 'kids') {
   const kidsList = document.getElementById('kids-list');
