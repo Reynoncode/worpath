@@ -348,6 +348,12 @@ button { font-family: var(--font); }
 .level-card[data-level="reading"]   .level-icon { background: #e0f2fe; border-color: #7dd3fc; color: #0369a1; }
 .level-card[data-level="listening"] .level-icon { background: #ede9fe; border-color: #c4b5fd; color: #6d28d9; }
 
+.level-card[data-level="kids"]    .level-bar { background: #E91E8C; }
+.level-card[data-level="grammar"] .level-bar { background: #8B5CF6; }
+
+.level-card[data-level="kids"]    .level-icon { background: #fce4f0; border-color: #f48cbf; color: #9C1260; }
+.level-card[data-level="grammar"] .level-icon { background: #ede9fe; border-color: #c4b5fd; color: #5B21B6; }
+
 .level-icon {
   width: 42px;
   height: 42px;
