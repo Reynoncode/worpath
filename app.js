@@ -2773,6 +2773,8 @@ const iconStyles = {
   'c2':        { background: '#d5dde3', borderColor: '#8fa5b3', color: '#0D1317' },
   'reading':   { background: '#e0f2fe', borderColor: '#7dd3fc', color: '#0369a1' },
   'listening': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#6d28d9' },
+  'kids':      { background: '#fce4f0', borderColor: '#f48cbf', color: '#9C1260' },
+  'grammar':   { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
 };
 
 const innerIcon = headerInner.querySelector('.level-icon');
