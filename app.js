@@ -2565,6 +2565,10 @@ function renderQuizPath(lvl, li) {
   if (lvl.id === 'listening') {
   return renderListeningPath(lvl, li);
 }
+    if (lvl.id === 'grammar') {       
+    return renderGrammarPath(lvl, li); 
+  }  
+  
   let html = '<div class="quiz-path">';
   let quizCounter = 0;
   let examCounter = 0;
