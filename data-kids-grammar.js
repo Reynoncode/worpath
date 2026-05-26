@@ -399,30 +399,375 @@ const KIDS_GRAMMAR_LEVELS = [
   { en: 'strong → ____', tr: 'strength', wrong: 'strongness' },
 ],
 
-      // ── Bölmə 2 ──────────────────────────────────────
-      // index: 4
-      {
-        type: 'section_divider',
-        title: 'Bölmə 2 — Common vs Proper nouns · Konkret vs Mücərrəd',
-      },
+     // ── Bölmə 2 ──────────────────────────────────────
+{
+  type: 'section_divider',
+  title: 'Bölmə 2 — Common vs Proper nouns · Konkret vs Mücərrəd',
+},
 
-      // index: 5 — Dərs 2.1
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 2.1 — Common vs Proper noun fərqi',
-        cards: [],
-      },
+// Dərs 2.1 — Common vs Proper noun fərqi
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — Common vs Proper nouns',
+  cards: [
 
-      // index: 6 — Dərs 2.2
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 2.2 — Concrete vs Abstract isimlər',
-        cards: [],
-      },
+    // ── Ekran 1: Ümumi və Xüsusi isimlər ─────────────────
+    {
+      type: 'lesson',
+      title: 'Ümumi və Xüsusi isimlər',
+      content: 'İsimlər iki böyük qrupa bölünür:\n\nCommon nouns (Ümumi isimlər) — eyni qəbildən olan əşyaların adını bildirir. Kiçik hərflə yazılır.\n\nProper nouns (Xüsusi isimlər) — eyni qəbildən olan əşyaları bir-birindən fərqləndirmək üçün verilən adlardır. Həmişə böyük hərflə yazılır.',
+      examples: [
+        { word: 'a city, a country, a lake', az: 'Common noun — kiçik hərflə' },
+        { word: 'Baku, Azerbaijan',          az: 'Proper noun — böyük hərflə' },
+        { word: 'peace, weather',            az: 'Common noun — kiçik hərflə' },
+        { word: 'January, Monday',           az: 'Proper noun — böyük hərflə' },
+      ],
+      tip: 'Azərbaycan dilindən fərqli olaraq ingilis dilində ay və həftə günlərinin adları həmişə böyük hərflə yazılır.',
+    },
 
-      // index: 7 — Mini-quiz 2
-      [],
+    // ── Ekran 2: Proper nouns kateqoriyaları ─────────────
+    {
+      type: 'lesson',
+      title: 'Proper nouns — hansı sözlər daxildir?',
+      content: 'Aşağıdakı kateqoriyalar həmişə böyük hərflə yazılır:',
+      table: [
+        ['Kateqoriya',                 'Nümunə'],
+        ['İnsan adları',               'Anar, Sara'],
+        ['Coğrafi adlar',              'Azerbaijan, Baku, Caspian Sea'],
+        ['Ayların adları',             'January, February, March'],
+        ['Həftə günlərinin adları',    'Monday, Tuesday, Sunday'],
+        ['Gəmi, otel, meydan adları',  'Titanic, Hilton, Times Square'],
+        ['Teatr, klub, jurnal adları', 'The Globe, Vogue'],
+      ],
+      note: 'Common noun ilə Proper noun arasındakı fərq: a lake (hər hansı göl) — Caspian Sea (konkret, xüsusi ad verilmiş göl).',
+    },
 
+    // ── Mini-check: Common vs Proper ─────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Baku" hansı növ isimdir?',
+          options: ['Common noun', 'Proper noun', 'Abstract noun', 'Collective noun'],
+          answer: 'Proper noun',
+        },
+        {
+          q: '"a city" hansı növ isimdir?',
+          options: ['Proper noun', 'Abstract noun', 'Common noun', 'Compound noun'],
+          answer: 'Common noun',
+        },
+        {
+          q: 'Hansı söz mütləq böyük hərflə yazılır?',
+          options: ['country', 'lake', 'Monday', 'peace'],
+          answer: 'Monday',
+        },
+        {
+          q: '"Caspian Sea" nə üçün böyük hərflə yazılır?',
+          options: [
+            'Mücərrəd isim olduğuna görə',
+            'Xüsusi ad olduğuna görə',
+            'Cəm formada olduğuna görə',
+            'Sayılmayan isim olduğuna görə',
+          ],
+          answer: 'Xüsusi ad olduğuna görə',
+        },
+        {
+          q: 'Hansı sırada hər iki söz də Common noun-dur?',
+          options: ['Anar, Sara', 'January, Monday', 'weather, lake', 'Baku, Titanic'],
+          answer: 'weather, lake',
+        },
+        {
+          q: '"february" yazılışında nə səhvdir?',
+          options: [
+            'Heç nə — düzgündür',
+            'Böyük hərflə yazılmalıdır',
+            'Kiçik hərflə yazılmalıdır',
+            'Sözün özü yanlışdır',
+          ],
+          answer: 'Böyük hərflə yazılmalıdır',
+        },
+      ],
+    },
+  ],
+},
+
+// Dərs 2.2 — Concrete vs Abstract isimlər
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — Concrete vs Abstract · Countable vs Uncountable',
+  cards: [
+
+    // ── Ekran 1: Common noun-un 2 qrupu ──────────────────
+    {
+      type: 'lesson',
+      title: 'Ümumi isimlər — Konkret və Mücərrəd',
+      content: 'Common nouns özü də 2 qrupa bölünür:\n\nI. Konkret isimlər (Concrete nouns) — fiziki əşyaların adını bildirir. Əl ilə toxunmaq, gözlə görmək mümkündür.\n\nII. Mücərrəd isimlər (Abstract nouns) — gözlə görünməyən, əl ilə toxunulmayan isimlərdir. Hərəkət, vəziyyət və keyfiyyət adlarını bildirir.',
+      examples: [
+        { word: 'a pen, bread, a city, a table', az: 'Concrete — görünür, toxunulur' },
+        { word: 'happiness, love, freedom',      az: 'Abstract — görünmür, toxunulmur' },
+        { word: 'knowledge, hate',               az: 'Abstract — hərəkət, keyfiyyət adı' },
+      ],
+      tip: 'Özünə sual ver: Bu şeyi görə bilərəm ya hiss edə bilərəm? Yalnız hiss edirəmsə — abstract.',
+    },
+
+    // ── Ekran 2: Concrete → Countable vs Uncountable ─────
+    {
+      type: 'lesson',
+      title: 'Konkret isimlər — Sayılan və Sayılmayan',
+      content: 'Konkret isimlər özü də 2 yarımqrupa bölünür:\n\na) Sayılan isimlər (Countable nouns)\nb) Sayılmayan isimlər (Uncountable nouns)',
+      table: [
+        ['Xüsusiyyət',          'Countable',          'Uncountable'],
+        ['Cəm forması',         'var: books',         'yoxdur'],
+        ['a / an artiklı',      'işlənir: a book',    'işlənmir'],
+        ['Rəqəm',               'işlənir: 3 books',   'işlənmir'],
+        ['"çox" mənasında',     'many books',         'much milk'],
+        ['"az" mənasında',      'few books',          'little butter'],
+        ['Felin forması',       'cəm fel: books are', 'tək fel: milk is'],
+      ],
+      examples: [
+        { word: 'a book → many books / few books', az: 'Countable' },
+        { word: 'much milk / little butter',       az: 'Uncountable' },
+        { word: 'Many books are on the table.',    az: 'Cəm fel' },
+      ],
+    },
+
+    // ── Mini-check: Countable vs Uncountable ─────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"milk" hansı növ isimdir?',
+          options: ['Countable', 'Uncountable', 'Proper noun', 'Abstract noun'],
+          answer: 'Uncountable',
+        },
+        {
+          q: 'Countable isimlərlə hansı söz işlənir ("az" mənasında)?',
+          options: ['little', 'much', 'few', 'less'],
+          answer: 'few',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'Many butters are in the fridge.',
+            'Few milks are left.',
+            'Many books are on the table.',
+            'Much books are here.',
+          ],
+          answer: 'Many books are on the table.',
+        },
+        {
+          q: '"a / an" artiklı hansı isimlərlə işlənir?',
+          options: [
+            'Yalnız Uncountable',
+            'Yalnız Countable',
+            'Həm Countable, həm Uncountable',
+            'Yalnız Abstract',
+          ],
+          answer: 'Yalnız Countable',
+        },
+        {
+          q: '"bread" hansı növ isimdir?',
+          options: ['Countable', 'Proper noun', 'Uncountable', 'Abstract noun'],
+          answer: 'Uncountable',
+        },
+      ],
+    },
+
+    // ── Ekran 3: Abstract nouns — qaydalar ───────────────
+    {
+      type: 'lesson',
+      title: 'Abstract nouns — diqqət ediləcək qaydalar',
+      content: 'Mücərrəd isimlər adətən bu qaydalara tabedir:\n\n• Sayılmır, cəmlənmir\n• a / an artiklı ilə işlənmir\n• Özündən sonra fel təkdə olur',
+      examples: [
+        { word: 'Knowledge is power.',  az: 'Fel tək — "is"' },
+        { word: 'Love is beautiful.',   az: 'Fel tək — "is"' },
+      ],
+      note: 'Vacib istisna: Mücərrəd isimin qarşısında sifət gələrsə, a / an artiklı işlənir.',
+    },
+
+    // ── Ekran 4: Sifətli abstract noun istisnaları ────────
+    {
+      type: 'lesson',
+      title: 'Abstract noun + sifət → a / an işlənir',
+      content: 'Mücərrəd ismin qarşısında sifət olduqda a / an artiklı mütləq işlənir:',
+      table: [
+        ['İfadə',           'Sifət'],
+        ['a good knowledge', '"good" sifəti var'],
+        ['a long distance',  '"long" sifəti var'],
+        ['a long silence',   '"long" sifəti var'],
+        ['a hard life',      '"hard" sifəti var'],
+        ['a good salary',    '"good" sifəti var'],
+        ['a bad impression', '"bad" sifəti var'],
+        ['a thick population',  '"thick" sifəti var'],
+        ['a terrible storm',    '"terrible" sifəti var'],
+        ['a single cloud',      '"single" sifəti var'],
+        ['a long period',       '"long" sifəti var'],
+      ],
+      tip: 'Qayda: sifət + abstract noun → mütləq a / an. Sifətsiz abstract noun → a / an işlənmir.',
+    },
+
+    // ── Mini-check: Abstract nouns ───────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'A love is beautiful.',
+            'Love is beautiful.',
+            'Loves is beautiful.',
+            'The loves are beautiful.',
+          ],
+          answer: 'Love is beautiful.',
+        },
+        {
+          q: 'Hansı halda "a" artiklı işlənir?',
+          options: [
+            'love',
+            'a hard life',
+            'freedom',
+            'knowledge',
+          ],
+          answer: 'a hard life',
+        },
+        {
+          q: '"happiness" hansı növ isimdir?',
+          options: ['Concrete', 'Countable', 'Abstract', 'Proper noun'],
+          answer: 'Abstract',
+        },
+        {
+          q: 'Abstract isimlərin arxasında fel necə olur?',
+          options: ['Cəm', 'Tək', 'İstənilən formada', 'Həmişə "are"'],
+          answer: 'Tək',
+        },
+        {
+          q: 'Hansı ifadə düzgündür?',
+          options: [
+            'a knowledge',
+            'a good knowledge',
+            'good knowledges',
+            'the knowledges',
+          ],
+          answer: 'a good knowledge',
+        },
+        {
+          q: '"freedom" cəmlənə bilərmi?',
+          options: [
+            'Bəli, freedoms olur',
+            'Xeyr, mücərrəd isim olduğuna görə cəmlənmir',
+            'Bəli, xüsusi hallarda',
+            'Bəli, freedomes olur',
+          ],
+          answer: 'Xeyr, mücərrəd isim olduğuna görə cəmlənmir',
+        },
+      ],
+    },
+
+    // ── Ekran 5: Cins kateqoriyası ────────────────────────
+    {
+      type: 'lesson',
+      title: 'İsimlərin cinsi (Gender)',
+      content: 'İngilis dilində cins kateqoriyası əsasən üçüncü şəxs əvəzliklərində özünü göstərir: he, she, it\n\nQadın cinsi düzəldən şəkilçi: -ess',
+      table: [
+        ['Kişi cinsi', 'Qadın cinsi'],
+        ['actor',      'actress'],
+        ['lion',       'lioness'],
+        ['waiter',     'waitress'],
+      ],
+      note: 'Xüsusi qaydalar:\n• Ölkə adları həmişə qadın cinsinə aid edilir: "Azerbaijan is our country. She is an independent country."\n• Ölkə ərazi mənasında işləndikdə orta cinsə aid edilə bilər: "Its area is 84 square kilometres."\n• Həşəratlar, quşlar, balıqlar həmişə orta cinsə (it) aid edilir.',
+    },
+
+    // ── Mini-check: Gender ────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"actor" sözünün qadın cinsi necədir?',
+          options: ['actoress', 'actress', 'actorness', 'actrice'],
+          answer: 'actress',
+        },
+        {
+          q: 'Ölkə adları hansı cinsə aid edilir?',
+          options: ['Kişi cinsi (he)', 'Orta cins (it)', 'Qadın cinsi (she)', 'Cins yoxdur'],
+          answer: 'Qadın cinsi (she)',
+        },
+        {
+          q: 'Həşəratlar ingilis dilində hansı əvəzliklə əvəz edilir?',
+          options: ['he', 'she', 'it', 'they'],
+          answer: 'it',
+        },
+        {
+          q: 'Qadın cinsi düzəldən şəkilçi hansıdır?',
+          options: ['-er', '-ness', '-ess', '-ity'],
+          answer: '-ess',
+        },
+        {
+          q: '"Azerbaijan is our country. ___ is an independent country." — boşluğa nə gəlir?',
+          options: ['He', 'It', 'She', 'They'],
+          answer: 'She',
+        },
+      ],
+    },
+
+    // ── Ekran 6: Tam xülasə cədvəli ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Bölmə 2 — Tam xülasə',
+      content: 'Bütün isim növlərini bir yerdə görək:',
+      table: [
+        ['Növ',          'Xüsusiyyət',                   'Nümunə'],
+        ['Common noun',  'kiçik hərflə',                 'city, lake, peace'],
+        ['Proper noun',  'böyük hərflə',                 'Baku, Monday, Sara'],
+        ['Concrete',     'görünür, toxunulur',            'pen, bread, table'],
+        ['Abstract',     'hiss edilir, görünmür',         'love, freedom, hate'],
+        ['Countable',    'sayılır, cəmlənir, a/an alır',  'book → books'],
+        ['Uncountable',  'sayılmır, a/an almır',          'milk, bread, water'],
+      ],
+      tip: 'Bir isim həm Proper, həm Concrete ola bilər: "Caspian Sea" — xüsusi ad, fiziki yer.',
+    },
+  ],
+},
+
+// ── Bölmə 2 — Ümumi Quiz ─────────────────────────────────
+[
+  // Common vs Proper
+  { en: 'Baku',          tr: 'Proper noun',    wrong: 'Common noun'  },
+  { en: 'a city',        tr: 'Common noun',    wrong: 'Proper noun'  },
+  { en: 'January',       tr: 'Proper noun',    wrong: 'Common noun'  },
+  { en: 'a lake',        tr: 'Common noun',    wrong: 'Proper noun'  },
+  { en: 'Tuesday',       tr: 'Proper noun',    wrong: 'Common noun'  },
+  { en: 'weather',       tr: 'Common noun',    wrong: 'Proper noun'  },
+
+  // Concrete vs Abstract
+  { en: 'happiness',     tr: 'Abstract',       wrong: 'Concrete'     },
+  { en: 'a pen',         tr: 'Concrete',       wrong: 'Abstract'     },
+  { en: 'freedom',       tr: 'Abstract',       wrong: 'Concrete'     },
+  { en: 'a table',       tr: 'Concrete',       wrong: 'Abstract'     },
+  { en: 'knowledge',     tr: 'Abstract',       wrong: 'Concrete'     },
+  { en: 'bread',         tr: 'Concrete',       wrong: 'Abstract'     },
+
+  // Countable vs Uncountable
+  { en: 'milk',          tr: 'Uncountable',    wrong: 'Countable'    },
+  { en: 'a book',        tr: 'Countable',      wrong: 'Uncountable'  },
+  { en: 'water',         tr: 'Uncountable',    wrong: 'Countable'    },
+  { en: 'a chair',       tr: 'Countable',      wrong: 'Uncountable'  },
+
+  // many / much / few / little
+  { en: 'Çox kitab → ____', tr: 'many books',  wrong: 'much books'   },
+  { en: 'Çox süd → ____',   tr: 'much milk',   wrong: 'many milk'    },
+  { en: 'Az pul → ____',    tr: 'little money',wrong: 'few money'    },
+  { en: 'Az uşaq → ____',   tr: 'few children',wrong: 'little children' },
+
+  // Abstract noun + sifət
+  { en: 'a good ____',   tr: 'knowledge',      wrong: 'knowledges'   },
+  { en: 'a hard ____',   tr: 'life',           wrong: 'lives'        },
+
+  // Gender
+  { en: 'actor → ____',  tr: 'actress',        wrong: 'actoress'     },
+  { en: 'Ölkə → hansı əvəzlik?', tr: 'she',   wrong: 'it'           },
+  { en: 'Həşərat → hansı əvəzlik?', tr: 'it', wrong: 'she'          },
+  { en: 'lion → ____',   tr: 'lioness',        wrong: 'lionness'     },
+],
       // ── Bölmə 3 ──────────────────────────────────────
       // index: 8
       {
