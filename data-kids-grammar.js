@@ -1139,33 +1139,7 @@ const KIDS_GRAMMAR_LEVELS = [
         { en: 'A lot of water ___ wasted.',         tr: 'is',              wrong: 'are'             },
       ],
 
-      // index: 9 — Dərs 3.1
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 3.1 — Countable və Uncountable isimlər',
-        cards: [],
-      },
-
-      // index: 10 — Dərs 3.2
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 3.2 — A lot of, many, much fərqi',
-        cards: [],
-      },
-
-      // index: 11 — Dərs 3.3
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 3.3 — Mücərrəd isimlərin artikl ilə istifadəsi',
-        cards: [],
-      },
-
-      // index: 12 — Mini-quiz 3
-      [],
-
-      // index: 13 — Test 1
-      [],
-
+ 
       // ── Bölmə 4 ──────────────────────────────────────
       // index: 14
       {
