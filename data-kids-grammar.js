@@ -770,12 +770,374 @@ const KIDS_GRAMMAR_LEVELS = [
   { en: 'Həşərat → hansı əvəzlik?', tr: 'it', wrong: 'she'          },
   { en: 'lion → ____',   tr: 'lioness',        wrong: 'lionness'     },
 ],
-      // ── Bölmə 3 ──────────────────────────────────────
-      // index: 8
+     // ── Bölmə 3 ──────────────────────────────────────
       {
         type: 'section_divider',
-        title: 'Bölmə 3 — Countable vs Uncountable nouns',
+        title: 'Bölmə 3 — Countable vs Uncountable · Much / Many / Few / Little',
       },
+
+      // Dərs 3.1 — Countable nouns
+      {
+        type: 'grammar_lesson',
+        title: 'Dərs 3.1 — Countable nouns',
+        cards: [
+
+          // ── Ekran 1: Countable — əsas qaydalar ──────────
+          {
+            type: 'lesson',
+            title: 'Sayılan isimlər (Countable nouns)',
+            content: 'Sayılan isimlər saymağın mümkün olduğu bütün isimlərdir.',
+            table: [
+              ['Xüsusiyyət',       'Nümunə'],
+              ['Tək + a / an',     'a book, a student'],
+              ['Cəm forması var',  'books, students'],
+              ['"çox" → many',     'many books'],
+              ['"az" → few',       'few students'],
+              ['Fel cəm gəlir',    'Many books are here.'],
+            ],
+            tip: 'many və few-dan sonra isim cəm, fel də cəm gəlir.',
+          },
+
+          // ── Mini-check: Countable ────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: 'Countable isimlərlə "çox" mənasında hansı söz işlənir?',
+                options: ['much', 'many', 'little', 'a lot'],
+                answer: 'many',
+              },
+              {
+                q: 'Hansı cümlə düzgündür?',
+                options: [
+                  'Few student is here.',
+                  'Few students are here.',
+                  'Few students is here.',
+                  'A few student are here.',
+                ],
+                answer: 'Few students are here.',
+              },
+              {
+                q: '"a book" — bu hansı növ isimdir?',
+                options: ['Uncountable', 'Abstract', 'Countable', 'Proper noun'],
+                answer: 'Countable',
+              },
+              {
+                q: 'Countable isimlərlə "az" mənasında hansı söz işlənir?',
+                options: ['little', 'much', 'few', 'less'],
+                answer: 'few',
+              },
+              {
+                q: '"Many teachers ___ this rule." — boşluğa nə gəlir?',
+                options: ['knows', 'know', 'is knowing', 'has known'],
+                answer: 'know',
+              },
+            ],
+          },
+        ],
+      },
+
+      // Dərs 3.2 — Uncountable nouns
+      {
+        type: 'grammar_lesson',
+        title: 'Dərs 3.2 — Uncountable nouns',
+        cards: [
+
+          // ── Ekran 1: Uncountable — əsas qaydalar ────────
+          {
+            type: 'lesson',
+            title: 'Sayılmayan isimlər (Uncountable nouns)',
+            content: 'Sayılmayan isimlər say bildirməyən, bölünməz kimi qəbul edilən isimlərdir.',
+            table: [
+              ['Xüsusiyyət',          'Nümunə'],
+              ['Cəm forması yoxdur',  'milk, water, bread'],
+              ['a / an almır',        '❌ a milk, a water'],
+              ['Rəqəm işlənmir',      '❌ 3 milks'],
+              ['"çox" → much',        'much milk'],
+              ['"az" → little',       'little butter'],
+              ['Fel tək gəlir',       'Water is important.'],
+            ],
+            tip: 'Much time was wasted. — fel tək, isim tək.',
+          },
+
+          // ── Ekran 2: Qruplar — Maye, Ərzaq ─────────────
+          {
+            type: 'lesson',
+            title: 'Sayılmayan isimlər — Qrup 1',
+            content: 'Bu qruplar həmişə uncountable-dır:',
+            table: [
+              ['Qrup',      'Nümunələr'],
+              ['Maye adları', 'water, milk, tea, coffee, juice, oil, wine'],
+              ['Ərzaq adları', 'bread, butter, cheese, meat, rice, sugar, flour, salt'],
+            ],
+            tip: 'Bu isimlər qarşısında heç vaxt a / an işlənmir, cəmlənmir.',
+          },
+
+          // ── Ekran 3: Qruplar — Material, Metal, Digər ──
+          {
+            type: 'lesson',
+            title: 'Sayılmayan isimlər — Qrup 2',
+            content: 'Daha geniş uncountable qrupları:',
+            table: [
+              ['Qrup',          'Nümunələr'],
+              ['Material adları', 'silk, cotton, wool, wood, paper, glass, marble'],
+              ['Metal adları',    'iron, silver, gold, bronze'],
+              ['Digər',           'advice, information, progress, traffic, knowledge,\nluggage, furniture, news, weather, money, work,\nrain, snow, sand, dust'],
+            ],
+            note: 'Diqqət: "news" görünüşcə cəm kimi görünür, amma tekdir: "The news is good."',
+          },
+
+          // ── Mini-check: Uncountable ──────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"furniture" hansı növ isimdir?',
+                options: ['Countable', 'Uncountable', 'Proper noun', 'Abstract'],
+                answer: 'Uncountable',
+              },
+              {
+                q: 'Hansı cümlə düzgündür?',
+                options: [
+                  'The news are good.',
+                  'The news is good.',
+                  'A news is good.',
+                  'Many news are good.',
+                ],
+                answer: 'The news is good.',
+              },
+              {
+                q: '"rice" uncountable olduğu üçün necə işlənir?',
+                options: [
+                  'a rice, many rices',
+                  'much rice, little rice',
+                  'few rice, a rice',
+                  'rices are, a rice is',
+                ],
+                answer: 'much rice, little rice',
+              },
+              {
+                q: 'Hansı söz countable-dır?',
+                options: ['luggage', 'sand', 'student', 'wool'],
+                answer: 'student',
+              },
+              {
+                q: '"Much time ___ wasted." — boşluğa nə gəlir?',
+                options: ['were', 'are', 'was', 'have been'],
+                answer: 'was',
+              },
+              {
+                q: 'Aşağıdakılardan hansı uncountable-dır?',
+                options: ['book', 'teacher', 'advice', 'student'],
+                answer: 'advice',
+              },
+            ],
+          },
+        ],
+      },
+
+      // Dərs 3.3 — Much / Many / Few / Little / A lot of
+      {
+        type: 'grammar_lesson',
+        title: 'Dərs 3.3 — Much · Many · Few · Little · A lot of',
+        cards: [
+
+          // ── Ekran 1: Müqayisə cədvəli ───────────────────
+          {
+            type: 'lesson',
+            title: 'Much / Many / Few / Little — müqayisə',
+            content: 'Bu dörd söz isim növünə görə fərqlənir:',
+            table: [
+              ['Söz',    'İsim növü',        'Məna', 'Nümunə'],
+              ['many',   'countable (cəm)',  'çox',  'many books'],
+              ['much',   'uncountable (tək)','çox',  'much water'],
+              ['few',    'countable (cəm)',  'az',   'few students'],
+              ['little', 'uncountable (tək)','az',   'little time'],
+            ],
+            tip: 'many / much — çox. few / little — az. Countable → many/few. Uncountable → much/little.',
+          },
+
+          // ── Ekran 2: A lot of — tam izah ────────────────
+          {
+            type: 'lesson',
+            title: 'A lot of — nə vaxt işlənir?',
+            content: '"a lot of" həm countable, həm uncountable, həm mücərrəd isimlərlə işlənir.\n\nAncaq yalnız TƏSDİQ cümlədə işlənir.',
+            table: [
+              ['Cümlə növü', 'Düzgün forma',              'Yanlış'],
+              ['Təsdiq',     'There are a lot of cars.',   '—'],
+              ['Sual',       'Are there many cars?',       '❌ a lot of cars?'],
+              ['İnkar',      'There aren\'t many cars.',   '❌ a lot of cars.'],
+            ],
+            examples: [
+              { word: 'A lot of students are in the yard.', az: 'countable → fel cəm' },
+              { word: 'A lot of water is wasted.',          az: 'uncountable → fel tək' },
+            ],
+          },
+
+          // ── Ekran 3: A lot (zərf) · A few / A little ───
+          {
+            type: 'lesson',
+            title: 'A lot (zərf) · A few · A little',
+            content: '"a lot" feldən SONRA gəlir — zərf olur, "of" işlənmir:',
+            examples: [
+              { word: 'He reads a lot.',   az: 'O çox oxuyur.' },
+              { word: 'He reads much.',    az: 'Eyni məna.' },
+            ],
+            table: [
+              ['İfadə',    'İsim növü',   'Məna',      'Çalar'],
+              ['few',      'countable',   'az',        'mənfi — yetərsiz'],
+              ['a few',    'countable',   'bir neçə',  'müsbət — var'],
+              ['little',   'uncountable', 'az',        'mənfi — yetərsiz'],
+              ['a little', 'uncountable', 'bir az',    'müsbət — var'],
+            ],
+            note: 'I have few books. I can\'t give you one.\nI have a few books. I can give you one.',
+          },
+
+          // ── Mini-check: Much/Many/Few/Little/A lot of ───
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"There isn\'t ___ time left." — boşluğa nə gəlir?',
+                options: ['many', 'few', 'much', 'a lot of'],
+                answer: 'much',
+              },
+              {
+                q: '"I have ___ friends, so I feel lonely." — doğru variant?',
+                options: ['a few', 'few', 'little', 'a little'],
+                answer: 'few',
+              },
+              {
+                q: '"Are there ___ students in the class?" — doğru variant?',
+                options: ['much', 'a lot of', 'many', 'little'],
+                answer: 'many',
+              },
+              {
+                q: '"I have ___ money, I can help you." — doğru variant?',
+                options: ['few', 'little', 'a few', 'a little'],
+                answer: 'a little',
+              },
+              {
+                q: 'Hansı cümlə düzgündür?',
+                options: [
+                  'Are there a lot of cars?',
+                  'There are a lot of cars.',
+                  'There aren\'t a lot of cars.',
+                  'Is there a lot of cars?',
+                ],
+                answer: 'There are a lot of cars.',
+              },
+              {
+                q: '"He speaks ___." — zərf kimi doğru variant?',
+                options: ['much money', 'a lot of', 'a lot', 'many'],
+                answer: 'a lot',
+              },
+              {
+                q: '"A lot of information ___ ready." — boşluğa nə gəlir?',
+                options: ['are', 'were', 'is', 'have been'],
+                answer: 'is',
+              },
+              {
+                q: '"I have ___ books. I can give you one." — doğru variant?',
+                options: ['few', 'little', 'a few', 'a little'],
+                answer: 'a few',
+              },
+            ],
+          },
+        ],
+      },
+
+      // ── Bölmə 3 — Ümumi Quiz ────────────────────────────
+      [
+        // Countable vs Uncountable
+        { en: 'student',     tr: 'Countable',   wrong: 'Uncountable' },
+        { en: 'milk',        tr: 'Uncountable',  wrong: 'Countable'  },
+        { en: 'furniture',   tr: 'Uncountable',  wrong: 'Countable'  },
+        { en: 'book',        tr: 'Countable',    wrong: 'Uncountable' },
+        { en: 'advice',      tr: 'Uncountable',  wrong: 'Countable'  },
+        { en: 'teacher',     tr: 'Countable',    wrong: 'Uncountable' },
+        { en: 'knowledge',   tr: 'Uncountable',  wrong: 'Countable'  },
+        { en: 'rice',        tr: 'Uncountable',  wrong: 'Countable'  },
+
+        // many / much / few / little
+        { en: 'Çox kitab → ____',   tr: 'many books',   wrong: 'much books'   },
+        { en: 'Çox su → ____',      tr: 'much water',   wrong: 'many water'   },
+        { en: 'Az tələbə → ____',   tr: 'few students', wrong: 'little students' },
+        { en: 'Az vaxt → ____',     tr: 'little time',  wrong: 'few time'     },
+
+        // a few / a little
+        { en: 'Bir neçə kitabım var → ____', tr: 'a few books',   wrong: 'few books'   },
+        { en: 'Bir az pulum var → ____',     tr: 'a little money',wrong: 'little money' },
+
+        // a lot of
+        { en: 'Təsdiq: Çox maşın var → ____', tr: 'a lot of cars',  wrong: 'many cars'   },
+        { en: 'Sual: Çox maşın var? → ____',  tr: 'many cars?',     wrong: 'a lot of cars?' },
+
+        // fel uyğunluğu
+        { en: 'A lot of water ___ wasted.',      tr: 'is',  wrong: 'are' },
+        { en: 'A lot of students ___ in yard.',  tr: 'are', wrong: 'is'  },
+        { en: 'Much time ___ wasted.',           tr: 'was', wrong: 'were'},
+        { en: 'The news ___ good.',              tr: 'is',  wrong: 'are' },
+
+        // zərf
+        { en: 'O çox oxuyur → He reads ____',   tr: 'a lot',        wrong: 'a lot of'   },
+      ],
+
+     // ── Test 1 — Bölmə 1, 2, 3 yekun testi ─────────────
+      [
+        // Bölmə 1 — Quruluş
+        { en: '"railway" hansı quruluş?',           tr: 'Compound noun',   wrong: 'Derivative noun' },
+        { en: '"teacher" hansı quruluş?',           tr: 'Derivative noun', wrong: 'Simple noun'     },
+        { en: '"rain" hansı quruluş?',              tr: 'Simple noun',     wrong: 'Compound noun'   },
+        { en: '"toothbrush" hansı quruluş?',        tr: 'Compound noun',   wrong: 'Simple noun'     },
+        { en: '"kindness" hansı quruluş?',          tr: 'Derivative noun', wrong: 'Compound noun'   },
+
+        // Bölmə 1 — Şəkilçilər
+        { en: 'teach → ____',                       tr: 'teacher',         wrong: 'teachness'       },
+        { en: 'free → ____',                        tr: 'freedom',         wrong: 'freehood'        },
+        { en: 'strong → ____',                      tr: 'strength',        wrong: 'strongness'      },
+        { en: '"heroism" hansı şəkilçi?',           tr: '-ism',            wrong: '-hood'           },
+        { en: '"darkness" hansı şəkilçi?',          tr: '-ness',           wrong: '-dom'            },
+        { en: '"friendship" hansı şəkilçi?',        tr: '-ship',           wrong: '-ism'            },
+        { en: 'develop → ____',                     tr: 'development',     wrong: 'developness'     },
+
+        // Bölmə 2 — Common / Proper
+        { en: '"August" hansı növ?',                tr: 'Proper noun',     wrong: 'Common noun'     },
+        { en: '"a lake" hansı növ?',                tr: 'Common noun',     wrong: 'Proper noun'     },
+        { en: '"Tuesday" hansı növ?',               tr: 'Proper noun',     wrong: 'Common noun'     },
+
+        // Bölmə 2 — Concrete / Abstract
+        { en: '"happiness" hansı növ?',             tr: 'Abstract',        wrong: 'Concrete'        },
+        { en: '"a table" hansı növ?',               tr: 'Concrete',        wrong: 'Abstract'        },
+        { en: '"freedom" hansı növ?',               tr: 'Abstract',        wrong: 'Concrete'        },
+
+        // Bölmə 2 — Artıkl qaydası
+        { en: '"a terrible storm" — artıkl niyə?',  tr: 'Sifət var',       wrong: 'Countable-dır'   },
+        { en: '"___ hard life" — boşluğa nə?',      tr: 'a',               wrong: 'the'             },
+        { en: 'actor → ____',                       tr: 'actress',         wrong: 'actoress'        },
+
+        // Bölmə 3 — Countable / Uncountable
+        { en: 'Hansı countable-dır?',               tr: 'student',         wrong: 'furniture'       },
+        { en: 'Hansı uncountable-dır?',             tr: 'advice',          wrong: 'book'            },
+        { en: '"rice" hansı növ?',                  tr: 'Uncountable',     wrong: 'Countable'       },
+        { en: 'The news ___ good.',                 tr: 'is',              wrong: 'are'             },
+
+        // Bölmə 3 — Many / Much / Few / Little
+        { en: 'Çox kitab → ____',                   tr: 'many books',      wrong: 'much books'      },
+        { en: 'Az vaxt → ____',                     tr: 'little time',     wrong: 'few time'        },
+        { en: 'There isn\'t ___ time.',             tr: 'much',            wrong: 'many'            },
+        { en: 'Are there ___ students?',            tr: 'many',            wrong: 'much'            },
+
+        // Bölmə 3 — A few / A little
+        { en: 'Pulum var, kömək edərəm → ____',     tr: 'a little money',  wrong: 'little money'    },
+        { en: 'Kitabım var, verə bilərəm → ____',   tr: 'a few books',     wrong: 'few books'       },
+
+        // Bölmə 3 — A lot of / A lot
+        { en: 'There is ___ information.',          tr: 'a lot of',        wrong: 'many'            },
+        { en: 'He speaks ____.',                    tr: 'a lot',           wrong: 'a lot of'        },
+        { en: 'Sual cümləsində → ____',             tr: 'many cars?',      wrong: 'a lot of cars?'  },
+        { en: 'A lot of water ___ wasted.',         tr: 'is',              wrong: 'are'             },
+      ],
 
       // index: 9 — Dərs 3.1
       {
