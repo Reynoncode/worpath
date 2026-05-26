@@ -2285,5 +2285,554 @@ button { font-family: var(--font); }
   line-height: 1.6;
 }
 
+/* ============================================================
+   WORDPATH — GRAMMAR ENGINE STYLES
+   styles.css-ə əlavə olunacaq blok
+============================================================ */
+
+/* ── Grammar quiz body ───────────────────────────────────── */
+
+.quiz-body.grammar-mode {
+  padding: 0;
+  gap: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow-y: auto;
+}
+
+/* ============================================================
+   LESSON KARTI
+============================================================ */
+
+.grammar-lesson-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 16px 16px 24px;
+  gap: 14px;
+}
+
+.grammar-lesson-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--r);
+  padding: 22px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+/* Bölüm badge-i — "Bölmə 1 — İsmin növləri" kimi */
+.gl-section-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #EDE9FE;
+  border: 1.5px solid #C4B5FD;
+  font-size: 11px;
+  font-weight: 800;
+  color: #5B21B6;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Kart başlığı */
+.gl-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+}
+
+/* Mətn paraqrafları */
+.gl-para {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.gl-para strong {
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.gl-para em {
+  font-style: italic;
+  color: var(--text-mid);
+}
+
+/* ── Examples ──────────────────────────────────────────────── */
+
+.gl-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #F8F5FF;
+  border: 1.5px solid #E4DAFF;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+/* Chip — sadə string nümunəsi */
+.gl-example-chip {
+  display: inline-block;
+  background: #EDE9FE;
+  border: 1.5px solid #C4B5FD;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #5B21B6;
+  margin: 2px 3px 2px 0;
+}
+
+/* Row — {word, az, note} formatı */
+.gl-example-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 3px 0;
+  border-bottom: 1px solid #EDE9FE;
+}
+
+.gl-example-row:last-child {
+  border-bottom: none;
+}
+
+.gl-ex-word {
+  font-size: 15px;
+  font-weight: 800;
+  color: #5B21B6;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.gl-ex-az {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+.gl-ex-note {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-faint);
+  font-style: italic;
+  margin-left: auto;
+}
+
+/* ── Table ──────────────────────────────────────────────────── */
+
+.gl-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+}
+
+.gl-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.gl-table-head th {
+  background: #F4F0FF;
+  color: #5B21B6;
+  font-weight: 800;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1.5px solid #DDD5FF;
+}
+
+.gl-table td {
+  padding: 10px 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.gl-table tr:last-child td {
+  border-bottom: none;
+}
+
+.gl-table tr:nth-child(even) td {
+  background: #FAFAF8;
+}
+
+/* ── Note & Tip ─────────────────────────────────────────────── */
+
+.gl-note {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #FFF8EC;
+  border: 1.5px solid #FFE5A0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #7A5500;
+  line-height: 1.6;
+}
+
+.gl-note-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.gl-tip {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: #F0FDF4;
+  border: 1.5px solid #86EFAC;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #166534;
+  line-height: 1.6;
+}
+
+.gl-tip-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ============================================================
+   NEXT BUTTON (lesson + mini-check + badge)
+============================================================ */
+
+.grammar-next-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 17px;
+  background: #5B21B6;
+  color: #fff;
+  border: none;
+  border-radius: var(--rs);
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.1s;
+  letter-spacing: 0.2px;
+  flex-shrink: 0;
+}
+
+.grammar-next-btn svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: #fff;
+}
+
+.grammar-next-btn:active {
+  transform: scale(0.97);
+  opacity: 0.88;
+}
+
+.grammar-finish-btn {
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
+  box-shadow: 0 4px 16px rgba(91,33,182,0.30);
+}
+
+/* ============================================================
+   MINI CHECK KARTI
+============================================================ */
+
+.grammar-minicheck-wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 16px 16px 24px;
+  gap: 14px;
+}
+
+/* Header */
+.gmc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2px;
+}
+
+.gmc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #EDE9FE;
+  border: 1.5px solid #C4B5FD;
+  font-size: 12px;
+  font-weight: 800;
+  color: #5B21B6;
+}
+
+.gmc-badge svg {
+  width: 13px;
+  height: 13px;
+  stroke: #5B21B6;
+}
+
+.gmc-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-faint);
+}
+
+/* Suallar siyahısı */
+.gmc-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Tək sual */
+.gmc-question {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+
+.gmc-q-correct { border-color: var(--completed); background: #F4FBF7; }
+.gmc-q-wrong   { border-color: var(--wrong);     background: #FEF5F5; }
+
+.gmc-q-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* Variantlar */
+.gmc-options {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.gmc-opt-btn {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  font-family: var(--font);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s, transform 0.1s;
+  line-height: 1.4;
+}
+
+.gmc-opt-btn:active:not(.disabled) {
+  transform: scale(0.98);
+}
+
+.gmc-opt-btn.disabled {
+  cursor: default;
+}
+
+.gmc-opt-correct {
+  background: #EAF8F1 !important;
+  border-color: var(--completed) !important;
+  color: #207A44 !important;
+  font-weight: 700 !important;
+}
+
+.gmc-opt-wrong {
+  background: #FDEEEE !important;
+  border-color: var(--wrong) !important;
+  color: #A83030 !important;
+}
+
+/* Feedback mesajı */
+.gmc-feedback {
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 7px;
+  line-height: 1.4;
+}
+
+.gmc-fb-correct {
+  background: #EAF8F1;
+  color: #207A44;
+}
+
+.gmc-fb-wrong {
+  background: #FDEEEE;
+  color: #A83030;
+}
+
+/* ============================================================
+   BADGE KARTI (bölüm sonu)
+============================================================ */
+
+.grammar-badge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 28px 20px 32px;
+  gap: 24px;
+}
+
+.grammar-badge-card {
+  background: var(--surface);
+  border: 1.5px solid #C4B5FD;
+  border-radius: 24px;
+  padding: 36px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(91,33,182,0.10);
+
+  /* Başlanğıcda gizli — animasiya üçün */
+  opacity: 0;
+  transform: scale(0.88) translateY(12px);
+  transition: opacity 0.45s cubic-bezier(0.34,1.1,0.64,1),
+              transform 0.45s cubic-bezier(0.34,1.1,0.64,1);
+}
+
+.grammar-badge-card.gb-animate {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Arxa fon parıltısı */
+.gb-glow {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* Badge ikonu */
+.gb-icon {
+  font-size: 64px;
+  line-height: 1;
+  filter: drop-shadow(0 4px 12px rgba(91,33,182,0.20));
+  animation: gb-bounce 0.6s cubic-bezier(0.34,1.6,0.64,1) 0.4s both;
+}
+
+@keyframes gb-bounce {
+  0%   { transform: scale(0.4) rotate(-8deg); opacity: 0; }
+  100% { transform: scale(1)   rotate(0deg);  opacity: 1; }
+}
+
+.gb-title {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+}
+
+.gb-desc {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-mid);
+  line-height: 1.6;
+  max-width: 240px;
+}
+
+/* Stats (isteğe bağlı) */
+.gb-stats {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.gb-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: #F4F0FF;
+  border: 1.5px solid #DDD5FF;
+  border-radius: 12px;
+  padding: 10px 18px;
+  min-width: 64px;
+}
+
+.gb-stat-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: #5B21B6;
+  line-height: 1;
+}
+
+.gb-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================================
+   GRAMMAR PATH — xüsusi node stilləri
+============================================================ */
+
+/* Dərs node-u — kitab ikonu göstərilir */
+.path-node.grammar-lesson-node {
+  font-size: 22px;
+}
+
+/* Badge node-u — medal ikonu */
+.path-node.grammar-badge-node {
+  font-size: 26px;
+  width: 68px;
+  height: 68px;
+  border-width: 2.5px;
+  border-style: dashed;
+}
+
+.path-node.grammar-badge-node.unlocked {
+  border-style: dashed;
+  animation: pulse 2s ease infinite;
+}
+
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
