@@ -1964,19 +1964,26 @@ function loadProgress() {
   LEVELS.forEach((lvl) => {
     if (!progress[lvl.id]) progress[lvl.id] = [];
     for (let i = 0; i < lvl.quizzes.length; i++) {
-  const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
-  if (!progress[lvl.id][i]) {
-const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar';
-progress[lvl.id][i] = (i === 0 || isExam || isOpenSection) ? 'unlocked' : 'locked';
-  } else if (isExam && progress[lvl.id][i] === 'locked') {
-    progress[lvl.id][i] = 'unlocked';
-  }
-}
+
+      // ── Section divider — progress-ə daxil edilmir ──
+      const item = lvl.quizzes[i];
+      if (item && !Array.isArray(item) && item.type === 'section_divider') {
+        progress[lvl.id][i] = 'divider';
+        continue;
+      }
+
+      const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
+      if (!progress[lvl.id][i]) {
+        const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar';
+        progress[lvl.id][i] = (i === 0 || isExam || isOpenSection) ? 'unlocked' : 'locked';
+      } else if (isExam && progress[lvl.id][i] === 'locked') {
+        progress[lvl.id][i] = 'unlocked';
+      }
+    }
   });
 
   saveProgress();
 }
-
 function saveProgress() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
 }
