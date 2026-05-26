@@ -767,7 +767,7 @@ const KIDS_GRAMMAR_LEVELS = [
   { en: 'Ölkə → hansı əvəzlik?', tr: 'she',   wrong: 'it'           },
   { en: 'Həşərat → hansı əvəzlik?', tr: 'it', wrong: 'she'          },
   { en: 'lion → ____',   tr: 'lioness',        wrong: 'lionness'     },
-],
+]
       // ── Bölmə 3 ──────────────────────────────────────
       // index: 8
       {
