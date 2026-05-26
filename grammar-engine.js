@@ -23,6 +23,11 @@ function startGrammarLesson(levelIdx, quizIdx) {
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
 
+  if (!item || !item.cards || item.cards.length === 0) {
+    console.warn('Grammar lesson: cards yoxdur və ya boşdur', quizIdx);
+    return;
+  }
+
   grammarState.levelIdx     = levelIdx;
   grammarState.quizIdx      = quizIdx;
   grammarState.item         = item;
