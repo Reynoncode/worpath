@@ -229,6 +229,8 @@ const KIDS_GRAMMAR_LEVELS = [
     },
   ],
 },
+            ],
+},
       // index: 2 — Dərs 1.2
       {
         type: 'grammar_lesson',
