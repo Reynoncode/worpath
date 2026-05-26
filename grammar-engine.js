@@ -512,45 +512,7 @@ function renderGrammarPath(lvl, li) {
   return html;
 }
 
-// ============================================================
-//  APP.JS-Ə HOOK
-//  startQuiz funksiyasına grammar_lesson yönləndirməsini əlavə et
-// ============================================================
-
-// Orijinal startQuiz-i saxla
-const _originalStartQuiz = window.startQuiz || startQuiz;
-
-function startQuiz(levelIdx, quizIdx) {
-  closeOverlayPanel(true);
-  const lvl  = LEVELS[levelIdx];
-  const item = lvl.quizzes[quizIdx];
-
-  // Section divider — tıklanmır
-  if (item && !Array.isArray(item) && item.type === 'section_divider') return;
-
-  // Grammar lesson yoxlaması — ƏN ƏVVƏL
-  if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
-    startGrammarLesson(levelIdx, quizIdx);
-    return;
-  }
-
-  // Qalan bütün məntiqi orijinal funksiyaya ötür
-  _originalStartQuiz(levelIdx, quizIdx);
-}
-
-// renderQuizPath-ə grammar hook
-const _originalRenderQuizPath = window.renderQuizPath || renderQuizPath;
-
-function renderQuizPath(lvl, li) {
-  if (lvl.id === 'grammar') {
-    return renderGrammarPath(lvl, li);
-  }
-  return _originalRenderQuizPath(lvl, li);
-}
-
-// Global-a çıxart
-window.startGrammarLesson  = startGrammarLesson;
-window.renderGrammarPath   = renderGrammarPath;
-window.grammarState        = grammarState;
-window.startQuiz           = startQuiz;
-window.renderQuizPath      = renderQuizPath;
+// ── Global export ─────────────────────────────────────────
+window.startGrammarLesson = startGrammarLesson;
+window.renderGrammarPath  = renderGrammarPath;
+window.grammarState       = grammarState;
