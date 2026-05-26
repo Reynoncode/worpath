@@ -425,6 +425,33 @@ const KIDS_GRAMMAR_LEVELS = [
             note: '-er / -or şəkilçisi "iş görən şəxs" mənası verir: teach → teacher (müəllim).',
           },
 
+          // ── Mini-quiz: Feldən düzələn isimlər ────────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"teacher" sözündə hansı şəkilçi isim düzəldir?',
+      options: ['-er', '-ness', '-dom', '-hood'],
+      answer: '-er',
+    },
+    {
+      q: 'Hansı söz feldən düzəlmiş isimdir?',
+      options: ['wisdom', 'meeting', 'village', 'kingdom'],
+      answer: 'meeting',
+    },
+    {
+      q: '"develop" felindən isim düzəltmək üçün hansı şəkilçi lazımdır?',
+      options: ['-ness', '-ity', '-ment', '-hood'],
+      answer: '-ment',
+    },
+    {
+      q: 'Hansı söz "-tion / -sion" şəkilçisi ilə düzəlmişdir?',
+      options: ['darkness', 'friendship', 'revision', 'strength'],
+      answer: 'revision',
+    },
+  ],
+},
+
           // ── Ekran 3: Sifət + şəkilçi ─────────────────────
           {
             type: 'lesson',
@@ -439,7 +466,27 @@ const KIDS_GRAMMAR_LEVELS = [
             ],
             tip: '-ness şəkilçisi demək olar ki, istənilən sifətə əlavə edilə bilər.',
           },
-
+        // ── Mini-quiz: Sifətdən düzələn isimlər ──────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"happy" sifətindən isim düzəltmək üçün hansı şəkilçi lazımdır?',
+      options: ['-ment', '-ness', '-ship', '-ing'],
+      answer: '-ness',
+    },
+    {
+      q: 'Hansı söz sifətdən düzəlmiş isimdir?',
+      options: ['meeting', 'village', 'width', 'typist'],
+      answer: 'width',
+    },
+    {
+      q: '"popular" sözündən hansı isim düzəlir?',
+      options: ['popularity', 'popularing', 'popularhood', 'popularism'],
+      answer: 'popularity',
+    },
+  ],
+},
           // ── Ekran 4: Digər şəkilçilər ────────────────────
           {
             type: 'lesson',
@@ -455,7 +502,32 @@ const KIDS_GRAMMAR_LEVELS = [
             ],
             note: '-ist şəkilçisi həm peşəni (dentist), həm də ideologiyanın tərəfdarını (communist) bildirir.',
           },
-
+// ── Mini-quiz: Digər şəkilçilər ──────────────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"friendship" sözündə hansı şəkilçi var?',
+      options: ['-hood', '-ism', '-ship', '-dom'],
+      answer: '-ship',
+    },
+    {
+      q: 'Hansı söz "-ism" şəkilçisi ilə düzəlmişdir?',
+      options: ['dentist', 'heroism', 'village', 'childhood'],
+      answer: 'heroism',
+    },
+    {
+      q: '"typist" sözündəki "-ist" şəkilçisi nə bildirir?',
+      options: ['yer, məkan', 'ideologiya', 'peşə sahibi', 'vəziyyət, dövr'],
+      answer: 'peşə sahibi',
+    },
+    {
+      q: 'Hansı şəkilçi "vəziyyət, dövr" mənası verir?',
+      options: ['-ship', '-ism', '-age', '-hood'],
+      answer: '-hood',
+    },
+  ],
+},
           // ── Ekran 5: Xülasə ──────────────────────────────
           {
             type: 'lesson',
@@ -480,7 +552,47 @@ const KIDS_GRAMMAR_LEVELS = [
             ],
             tip: 'Bu şəkilçilərdən birini gördükdə o sözün isim olma ehtimalı çox yüksəkdir.',
           },
-
+// ── Mini-quiz: Ümumi təkrar — şəkilçilər ─────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"actor" sözü hansı şəkilçi ilə düzəlmişdir?',
+      options: ['-ment', '-or', '-ness', '-th'],
+      answer: '-or',
+    },
+    {
+      q: 'Hansı söz "-dom" şəkilçisi ilə düzəlmişdir?',
+      options: ['meeting', 'wisdom', 'package', 'dentist'],
+      answer: 'wisdom',
+    },
+    {
+      q: '"strength" sözündəki şəkilçi hansıdır?',
+      options: ['-ness', '-ity', '-th', '-age'],
+      answer: '-th',
+    },
+    {
+      q: 'Hansı söz "-age" şəkilçisi ilə düzəlmişdir?',
+      options: ['leadership', 'cottage', 'revision', 'darkness'],
+      answer: 'cottage',
+    },
+    {
+      q: '"carving" sözü hansı feldən düzəlmişdir?',
+      options: ['carry', 'care', 'carve', 'card'],
+      answer: 'carve',
+    },
+    {
+      q: 'Hansı şəkilçi sifətə əlavə edilir?',
+      options: ['-er', '-ment', '-ness', '-or'],
+      answer: '-ness',
+    },
+    {
+      q: '"neighbourhood" sözündə neçə morfem var?',
+      options: ['2', '3', '4', '1'],
+      answer: '3',
+    },
+  ],
+},
         ],
       },
 
