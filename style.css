@@ -2834,5 +2834,52 @@ button { font-family: var(--font); }
   animation: pulse 2s ease infinite;
 }
 
+/* ── Section Divider (bölmə ayırıcısı) ─────────────────────── */
+
+.grammar-section-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 4px 6px;
+  width: 100%;
+}
+
+.grammar-section-line {
+  flex: 1;
+  height: 1.5px;
+  background: #DDD5FF;
+  border-radius: 2px;
+}
+
+.grammar-section-title {
+  font-size: 11px;
+  font-weight: 800;
+  color: #7C3AED;
+  text-align: center;
+  white-space: nowrap;
+  background: #F4F0FF;
+  border: 1.5px solid #DDD5FF;
+  border-radius: 20px;
+  padding: 4px 12px;
+  letter-spacing: 0.2px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Grammar quiz node (mini-quiz / test) ───────────────────── */
+.path-node.grammar-quiz-node {
+  width: 56px;
+  height: 56px;
+  font-size: 15px;
+}
+
+/* ── Grammar lesson node ─────────────────────────────────────── */
+.path-node.grammar-lesson-node {
+  font-size: 20px;
+  width: 60px;
+  height: 60px;
+}
+
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
