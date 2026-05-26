@@ -595,9 +595,29 @@ const KIDS_GRAMMAR_LEVELS = [
 },
         ],
       },
-
-      // index: 3 — Mini-quiz 1
-      [],
+// index: 3 — Bölmə 1 ümumi quiz
+[
+  { en: 'teacher',      tr: 'Düzəltmə',  wrong: 'Sadə'      },
+  { en: 'book',         tr: 'Sadə',      wrong: 'Mürəkkəb'  },
+  { en: 'sunrise',      tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
+  { en: 'rain',         tr: 'Sadə',      wrong: 'Düzəltmə'  },
+  { en: 'happiness',    tr: 'Düzəltmə',  wrong: 'Mürəkkəb'  },
+  { en: 'toothbrush',   tr: 'Mürəkkəb',  wrong: 'Sadə'      },
+  { en: 'hero____m',    tr: '-is',       wrong: '-er'        },
+  { en: 'teach → ____', tr: 'teacher',   wrong: 'teachness'  },
+  { en: 'waterfall',    tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
+  { en: 'stone',        tr: 'Sadə',      wrong: 'Düzəltmə'  },
+  { en: 'free → ____',  tr: 'freedom',   wrong: 'freeship'   },
+  { en: 'kind → ____',  tr: 'kindness',  wrong: 'kindment'   },
+  { en: 'friendship',   tr: 'Düzəltmə',  wrong: 'Mürəkkəb'  },
+  { en: 'bedroom',      tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
+  { en: 'develop → ____', tr: 'development', wrong: 'developness' },
+  { en: 'kingdom',      tr: 'Düzəltmə',  wrong: 'Sadə'      },
+  { en: 'hand',         tr: 'Sadə',      wrong: 'Mürəkkəb'  },
+  { en: 'lead → ____ship', tr: 'leadership', wrong: 'leaderhood' },
+  { en: 'earthquake',   tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
+  { en: 'strong → ____', tr: 'strength', wrong: 'strongness' },
+],
 
       // ── Bölmə 2 ──────────────────────────────────────
       // index: 4
