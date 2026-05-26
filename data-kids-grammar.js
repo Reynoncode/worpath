@@ -90,6 +90,66 @@ const KIDS_GRAMMAR_LEVELS = [
             tip: 'Sadə isimlər ən qısa və ən çox işlənən isim növüdür.',
           },
 
+          // ── Mini-quiz: Sadə isimi seç (1) — Asan ────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Sadə isimi seç',
+      options: ['book', 'teacher'],
+      answer: 'book',
+    },
+  ],
+},
+
+// ── Mini-quiz: Sadə isimi seç (2) ────────────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Sadə isimi seç',
+      options: ['darkness', 'sun'],
+      answer: 'sun',
+    },
+  ],
+},
+
+// ── Mini-quiz: Sadə isimi seç (3) ────────────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Sadə isimi seç',
+      options: ['freedom', 'chair'],
+      answer: 'chair',
+    },
+  ],
+},
+
+// ── Mini-quiz: Sadə isimi seç (4) ────────────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Sadə isimi seç',
+      options: ['railway', 'road'],
+      answer: 'road',
+    },
+  ],
+},
+
+// ── Mini-quiz: Sadə isimi seç (5) — Çətin ────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Sadə isimi seç',
+      options: ['self-control', 'rain'],
+      answer: 'rain',
+    },
+  ],
+},
+
           // ── Ekran 3: Düzəltmə isimlər ───────────────────
           {
             type: 'lesson',
