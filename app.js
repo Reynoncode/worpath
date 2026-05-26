@@ -2983,11 +2983,19 @@ function startRetakeMode(levelIdx, quizIdx) {
 // ══════════════════════════════════════════════
 //  NORMAL QUIZ
 // ══════════════════════════════════════════════
-
 function startQuiz(levelIdx, quizIdx) {
   closeOverlayPanel(true);
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
+
+  // Section divider — tıklanmır
+  if (item && !Array.isArray(item) && item.type === 'section_divider') return;
+
+  // Grammar lesson
+  if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
+    startGrammarLesson(levelIdx, quizIdx);
+    return;
+  }
 
   // Reading quiz yoxlaması
   if (item && !Array.isArray(item) && item.type === 'reading') {
