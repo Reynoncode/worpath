@@ -40,181 +40,194 @@ const KIDS_GRAMMAR_LEVELS = [
     ],
   },
 
-quizzes: [
-
-  // index: 0 — Section divider
+  // ╔══════════════════════════════════════════════════╗
+  // ║  GRAMMAR BÖLÜMÜ — NOUNS (İsimlər)               ║
+  // ╚══════════════════════════════════════════════════╝
   {
-    type: 'section_divider',
-    title: 'Bölmə 1 — İsmin növləri: sadə, düzəltmə, mürəkkəb',
-  },
+    id: 'grammar',
+    name: 'GRAMMAR',
+    icon: '📖',
+    color: '#8B5CF6',
+    quizzes: [
 
-  // index: 1 — Dərs 1.1
-  {
-    type: 'grammar_lesson',
-    title: 'Dərs 1.1 — Sadə, düzəltmə, mürəkkəb isimlər',
-    cards: [
-      // ── Ekran 1: Giriş ───────────────────────────────
+      // ── Bölmə 1 ──────────────────────────────────────
+      // index: 0
       {
-        type: 'lesson',
-        title: 'İsim (The Noun)',
-        content: 'İsim canlı və cansız əşyaların, yerlərin, hisslərin və fikirlərin adını bildirir.\n\nİsimlər quruluşca 3 növdür:',
-        examples: [
-          { word: 'Simple noun',     az: 'Sadə isim',     note: '— yalnız bir kökdən ibarət' },
-          { word: 'Derivative noun', az: 'Düzəltmə isim', note: '— kök + şəkilçi' },
-          { word: 'Compound noun',   az: 'Mürəkkəb isim', note: '— iki və ya daha çox söz' },
+        type: 'section_divider',
+        title: 'Bölmə 1 — İsmin növləri: sadə, düzəltmə, mürəkkəb',
+      },
+
+      // index: 1 — Dərs 1.1
+      {
+        type: 'grammar_lesson',
+        title: 'Dərs 1.1 — Sadə, düzəltmə, mürəkkəb isimlər',
+        cards: [
+
+          // ── Ekran 1: Giriş ───────────────────────────────
+          {
+            type: 'lesson',
+            title: 'İsim (The Noun)',
+            content: 'İsim canlı və cansız əşyaların, yerlərin, hisslərin və fikirlərin adını bildirir.\n\nİsimlər quruluşca 3 növdür:',
+            examples: [
+              { word: 'Simple noun',     az: 'Sadə isim',     note: '— yalnız bir kökdən ibarət' },
+              { word: 'Derivative noun', az: 'Düzəltmə isim', note: '— kök + şəkilçi' },
+              { word: 'Compound noun',   az: 'Mürəkkəb isim', note: '— iki və ya daha çox söz' },
+            ],
+          },
+
+          // ── Ekran 2: Sadə isimlər ────────────────────────
+          {
+            type: 'lesson',
+            title: '1. Sadə isimlər (Simple nouns)',
+            content: 'Sadə isimlər yalnız bir kökdən ibarətdir — heç bir şəkilçi əlavə edilmir.',
+            examples: [
+              { word: 'book',  az: 'kitab' },
+              { word: 'pen',   az: 'qələm' },
+              { word: 'cat',   az: 'pişik' },
+              { word: 'sun',   az: 'günəş' },
+              { word: 'chair', az: 'stul'  },
+            ],
+            tip: 'Sadə isimlər ən qısa və ən çox işlənən isim növüdür.',
+          },
+
+          // ── Ekran 3: Düzəltmə isimlər ───────────────────
+          {
+            type: 'lesson',
+            title: '2. Düzəltmə isimlər (Derivative nouns)',
+            content: 'Düzəltmə isimlər kök sözə şəkilçi əlavə etməklə yaranır.\n\nBu şəkilçilər sözün mənasını dəyişdirir və ondan isim düzəldir:',
+            examples: [
+              { word: 'teach → teacher',       az: '-er şəkilçisi ilə' },
+              { word: 'happy → happiness',     az: '-ness şəkilçisi ilə' },
+              { word: 'develop → development', az: '-ment şəkilçisi ilə' },
+              { word: 'free → freedom',        az: '-dom şəkilçisi ilə' },
+              { word: 'child → childhood',     az: '-hood şəkilçisi ilə' },
+            ],
+            note: 'Şəkilçi əlavə olunduqda kök sözün yazılışı bəzən dəyişə bilər: happy → happiness.',
+          },
+
+          // ── Ekran 4: Mürəkkəb isimlər ───────────────────
+          {
+            type: 'lesson',
+            title: '3. Mürəkkəb isimlər (Compound nouns)',
+            content: 'Mürəkkəb isimlər iki və ya daha çox sözdən birləşərək yeni bir məna yaradır.\n\nYazılış 3 cür ola bilər:',
+            examples: [
+              { word: 'flowerbed',    az: 'bitişik yazılır' },
+              { word: 'railway',      az: 'bitişik yazılır' },
+              { word: 'full moon',    az: 'ayrı yazılır' },
+              { word: 'self-control', az: 'tire ilə yazılır' },
+              { word: 'sunrise',      az: 'bitişik yazılır' },
+            ],
+            tip: 'Mürəkkəb isimlərdə əsas məna ikinci sözdə olur: flower + bed = çiçəklik (çarpayı növü).',
+          },
+
+          // ── Ekran 5: Müqayisə cədvəli ───────────────────
+          {
+            type: 'lesson',
+            title: 'Müqayisə: 3 növ bir arada',
+            content: 'Üç növü yan-yana görərək fərqi daha asan mənimsəyəcəksən:',
+            table: [
+              ['Növ',        'Quruluş',       'Nümunə'],
+              ['Simple',     'kök',           'book, sun, pen'],
+              ['Derivative', 'kök + şəkilçi', 'teacher, freedom'],
+              ['Compound',   'söz + söz',     'sunrise, self-control'],
+            ],
+            note: 'Bəzən bir söz həm düzəltmə, həm mürəkkəb ola bilər: "workmanship" — work + man + -ship.',
+          },
+
         ],
       },
 
-    // ── Ekran 2: Sadə isimlər ────────────────────────
-    {
-      type: 'lesson',
-      title: '1. Sadə isimlər (Simple nouns)',
-      content: 'Sadə isimlər yalnız bir kökdən ibarətdir — heç bir şəkilçi əlavə edilmir.',
-      examples: [
-        { word: 'book',  az: 'kitab' },
-        { word: 'pen',   az: 'qələm' },
-        { word: 'cat',   az: 'pişik' },
-        { word: 'sun',   az: 'günəş' },
-        { word: 'chair', az: 'stul'  },
-      ],
-      tip: 'Sadə isimlər ən qısa və ən çox işlənən isim növüdür.',
-    },
+      // index: 2 — Dərs 1.2
+      {
+        type: 'grammar_lesson',
+        title: 'Dərs 1.2 — İsim düzəldən şəkilçilər',
+        cards: [
 
-    // ── Ekran 3: Düzəltmə isimlər ───────────────────
-    {
-      type: 'lesson',
-      title: '2. Düzəltmə isimlər (Derivative nouns)',
-      content: 'Düzəltmə isimlər kök sözə şəkilçi əlavə etməklə yaranır.\n\nBu şəkilçilər sözün mənasını dəyişdirir və ondan isim düzəldir:',
-      examples: [
-        { word: 'teach → teacher',    az: '-er şəkilçisi ilə' },
-        { word: 'happy → happiness',  az: '-ness şəkilçisi ilə' },
-        { word: 'develop → development', az: '-ment şəkilçisi ilə' },
-        { word: 'free → freedom',     az: '-dom şəkilçisi ilə' },
-        { word: 'child → childhood',  az: '-hood şəkilçisi ilə' },
-      ],
-      note: 'Şəkilçi əlavə olunduqda kök sözün yazılışı bəzən dəyişə bilər: happy → happiness.',
-    },
+          // ── Ekran 1: Giriş ───────────────────────────────
+          {
+            type: 'lesson',
+            title: 'İsim düzəldən şəkilçilər',
+            content: 'Şəkilçi əlavə etməklə fel, sifət və başqa söz növlərindən isim düzəltmək olar.\n\nBu şəkilçiləri bilmək yeni sözləri asanlıqa tanımağa kömək edir.',
+            tip: 'Şəkilçini tanısan, sözün mənasını bilməsən belə onun isim olduğunu anlayarsan.',
+          },
 
-    // ── Ekran 4: Mürəkkəb isimlər ───────────────────
-    {
-      type: 'lesson',
-      title: '3. Mürəkkəb isimlər (Compound nouns)',
-      content: 'Mürəkkəb isimlər iki və ya daha çox sözdən birləşərək yeni bir məna yaradır.\n\nYazılış 3 cür ola bilər:',
-      examples: [
-        { word: 'flowerbed',    az: 'bitişik yazılır' },
-        { word: 'railway',      az: 'bitişik yazılır' },
-        { word: 'full moon',    az: 'ayrı yazılır' },
-        { word: 'self-control', az: 'tire ilə yazılır' },
-        { word: 'sunrise',      az: 'bitişik yazılır' },
-      ],
-      tip: 'Mürəkkəb isimlərdə əsas məna ikinci sözdə olur: flower + bed = çiçəklik (çarpayı növü).',
-    },
+          // ── Ekran 2: Fel + şəkilçi ───────────────────────
+          {
+            type: 'lesson',
+            title: 'Feldən düzələn isimlər',
+            content: 'Aşağıdakı şəkilçilər fellərə əlavə edilərək isim yaradır:',
+            table: [
+              ['Şəkilçi',       'Nümunə fel',  'Düzələn isim'],
+              ['-er / -or',     'teach, work', 'teacher, worker'],
+              ['-ment',         'develop',     'development'],
+              ['-tion / -sion', 'station',     'profession, revision'],
+              ['-ance / -ence', 'perform',     'performance, dependence'],
+              ['-ing',          'meet, weed',  'meeting, weeding'],
+            ],
+            note: '-er / -or şəkilçisi "iş görən şəxs" mənası verir: teach → teacher (müəllim).',
+          },
 
-    // ── Ekran 5: Müqayisə cədvəli ───────────────────
-    {
-      type: 'lesson',
-      title: 'Müqayisə: 3 növ bir arada',
-      content: 'Üç növü yan-yana görərək fərqi daha asan mənimsəyəcəksən:',
-      table: [
-        ['Növ',            'Quruluş',           'Nümunə'],
-        ['Simple',         'kök',               'book, sun, pen'],
-        ['Derivative',     'kök + şəkilçi',     'teacher, freedom'],
-        ['Compound',       'söz + söz',         'sunrise, self-control'],
-      ],
-      note: 'Bəzən bir söz həm düzəltmə, həm mürəkkəb ola bilər: "workmanship" — work + man + -ship.',
-    },
+          // ── Ekran 3: Sifət + şəkilçi ─────────────────────
+          {
+            type: 'lesson',
+            title: 'Sifətdən düzələn isimlər',
+            content: 'Sifətlərə şəkilçi əlavə edərək isim düzəltmək olar:',
+            table: [
+              ['Şəkilçi', 'Nümunə sifət', 'Düzələn isim'],
+              ['-ness',   'happy, kind',  'happiness, kindness'],
+              ['-ity',    'popular',      'popularity, celebrity'],
+              ['-th',     'strong, wide', 'strength, width'],
+              ['-dom',    'free, wise',   'freedom, wisdom'],
+            ],
+            tip: '-ness şəkilçisi demək olar ki, istənilən sifətə əlavə edilə bilər.',
+          },
 
-  ],
-},
+          // ── Ekran 4: Digər şəkilçilər ────────────────────
+          {
+            type: 'lesson',
+            title: 'Digər mühüm şəkilçilər',
+            content: 'Bəzi şəkilçilər müstəqil kök sözlərə əlavə edilir:',
+            table: [
+              ['Şəkilçi', 'Məna',               'Nümunə'],
+              ['-hood',   'vəziyyət, dövr',     'childhood, brotherhood'],
+              ['-ship',   'xüsusiyyət, vəzifə', 'leadership, friendship'],
+              ['-ism',    'ideologiya, sistem',  'heroism, communism'],
+              ['-ist',    'peşə sahibi',         'typist, dentist'],
+              ['-age',    'yer, vəziyyət',       'village, package'],
+            ],
+            note: '-ist şəkilçisi həm peşəni (dentist), həm də ideologiyanın tərəfdarını (communist) bildirir.',
+          },
 
-// index: 2 — Dərs 1.2
-{
-  type: 'grammar_lesson',
-  title: 'Dərs 1.2 — İsim düzəldən şəkilçilər',
-  cards: [
+          // ── Ekran 5: Xülasə ──────────────────────────────
+          {
+            type: 'lesson',
+            title: 'Şəkilçilərin ümumi xülasəsi',
+            content: 'Bütün şəkilçiləri bir yerdə görmək üçün:',
+            table: [
+              ['Şəkilçi',         'Nümunə'],
+              ['-er / -or',       'teacher, writer, actor'],
+              ['-ness',           'happiness, darkness'],
+              ['-ment',           'development, department'],
+              ['-hood',           'childhood, neighbourhood'],
+              ['-ship',           'friendship, leadership'],
+              ['-ism',            'heroism, communism'],
+              ['-dom',            'freedom, kingdom'],
+              ['-tion / -sion',   'station, revision'],
+              ['-ence / -ance',   'dependence, performance'],
+              ['-ing',            'meeting, carving'],
+              ['-ity',            'popularity, celebrity'],
+              ['-age',            'village, cottage'],
+              ['-th',             'strength, length, depth'],
+              ['-ist',            'typist, dentist'],
+            ],
+            tip: 'Bu şəkilçilərdən birini gördükdə o sözün isim olma ehtimalı çox yüksəkdir.',
+          },
 
-    // ── Ekran 1: Giriş ───────────────────────────────
-    {
-      type: 'lesson',
-      title: 'İsim düzəldən şəkilçilər',
-      content: 'Şəkilçi əlavə etməklə fel, sifət və başqa söz növlərindən isim düzəltmək olar.\n\nBu şəkilçiləri bilmək yeni sözləri asanlıqa tanımağa kömək edir.',
-      tip: 'Şəkilçini tanısan, sözün mənasını bilməsən belə onun isim olduğunu anlayarsan.',
-    },
+        ],
+      },
 
-    // ── Ekran 2: Fel + şəkilçi ───────────────────────
-    {
-      type: 'lesson',
-      title: 'Feldən düzələn isimlər',
-      content: 'Aşağıdakı şəkilçilər fellərə əlavə edilərək isim yaradır:',
-      table: [
-        ['Şəkilçi',  'Nümunə fel',  'Düzələn isim'],
-        ['-er / -or', 'teach, work', 'teacher, worker'],
-        ['-ment',     'develop',     'development'],
-        ['-tion/-sion','station',    'profession, revision'],
-        ['-ance/-ence','perform',    'performance, dependence'],
-        ['-ing',      'meet, weed',  'meeting, weeding'],
-      ],
-      note: '-er / -or şəkilçisi "iş görən şəxs" mənası verir: teach → teacher (müəllim).',
-    },
-
-    // ── Ekran 3: Sifət + şəkilçi ─────────────────────
-    {
-      type: 'lesson',
-      title: 'Sifətdən düzələn isimlər',
-      content: 'Sifətlərə şəkilçi əlavə edərək isim düzəltmək olar:',
-      table: [
-        ['Şəkilçi', 'Nümunə sifət', 'Düzələn isim'],
-        ['-ness',   'happy, kind',   'happiness, kindness'],
-        ['-ity',    'popular',       'popularity, celebrity'],
-        ['-th',     'strong, wide',  'strength, width'],
-        ['-dom',    'free, wise',    'freedom, wisdom'],
-      ],
-      tip: '-ness şəkilçisi demək olar ki, istənilən sifətə əlavə edilə bilər.',
-    },
-
-    // ── Ekran 4: Digər şəkilçilər ────────────────────
-    {
-      type: 'lesson',
-      title: 'Digər mühüm şəkilçilər',
-      content: 'Bəzi şəkilçilər müstəqil kök sözlərə əlavə edilir:',
-      table: [
-        ['Şəkilçi',  'Məna',              'Nümunə'],
-        ['-hood',    'vəziyyət, dövr',    'childhood, brotherhood'],
-        ['-ship',    'xüsusiyyət, vəzifə','leadership, friendship'],
-        ['-ism',     'ideologiya, sistem','heroism, communism'],
-        ['-ist',     'peşə sahibi',       'typist, dentist'],
-        ['-age',     'yer, vəziyyət',     'village, package'],
-      ],
-      note: '-ist şəkilçisi həm peşəni (dentist), həm də ideologiyanın tərəfdarını (communist) bildirir.',
-    },
-
-    // ── Ekran 5: Xülasə ──────────────────────────────
-    {
-      type: 'lesson',
-      title: 'Şəkilçilərin ümumi xülasəsi',
-      content: 'Bütün şəkilçiləri bir yerdə görmək üçün:',
-      table: [
-        ['Şəkilçi',         'Nümunə'],
-        ['-er / -or',       'teacher, writer, actor'],
-        ['-ness',           'happiness, darkness'],
-        ['-ment',           'development, department'],
-        ['-hood',           'childhood, neighbourhood'],
-        ['-ship',           'friendship, leadership'],
-        ['-ism',            'heroism, communism'],
-        ['-dom',            'freedom, kingdom'],
-        ['-tion/-sion',     'station, revision'],
-        ['-ence/-ance',     'dependence, performance'],
-        ['-ing',            'meeting, carving'],
-        ['-ity',            'popularity, celebrity'],
-        ['-age',            'village, cottage'],
-        ['-th',             'strength, length, depth'],
-        ['-ist',            'typist, dentist'],
-      ],
-      tip: 'Bu şəkilçilərdən birini gördükdə o sözün isim olma ehtimalı çox yüksəkdir.',
-    },
-
-  ],
-},
+      // index: 3 — Mini-quiz 1
+      [],
 
       // ── Bölmə 2 ──────────────────────────────────────
       // index: 4
@@ -394,7 +407,7 @@ quizzes: [
       // index: 33 — Dərs 7.1
       {
         type: 'grammar_lesson',
-        title: 'Dərs 7.1 — \'s (tək) / \' (cəm) qaydası',
+        title: "Dərs 7.1 — 's (tək) / ' (cəm) qaydası",
         cards: [],
       },
 
