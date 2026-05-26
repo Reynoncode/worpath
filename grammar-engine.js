@@ -428,39 +428,56 @@ function finishGrammarLesson() {
 function renderGrammarPath(lvl, li) {
   let html = '<div class="quiz-path grammar-path">';
 
+  // Quiz counter — section_divider-ları saymırıq
+  let quizCounter = 0;
+
   lvl.quizzes.forEach((item, qi) => {
-    const status  = getStatus(li, qi);
-    const isDone  = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
+
+    // ── Section divider ───────────────────────
+    if (item && !Array.isArray(item) && item.type === 'section_divider') {
+      html += `
+        <div class="grammar-section-divider">
+          <div class="grammar-section-line"></div>
+          <div class="grammar-section-title">${item.title}</div>
+          <div class="grammar-section-line"></div>
+        </div>
+      `;
+      return; // node render etmə, path-line da yox
+    }
+
+    quizCounter++;
+
+    const status   = getStatus(li, qi);
+    const isDone   = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
     const isLocked = status === 'locked';
 
     // Tip ikonası
-    let typeIcon = '';
+    let typeIcon  = '';
     let typeClass = '';
 
-    if (item && item.type === 'grammar_lesson') {
-      // Badge kartı var mı?
-      const hasBadge = item.cards && item.cards.some(c => c.type === 'badge');
-      if (hasBadge) {
-        typeIcon  = isDone ? '✓' : (isLocked ? '' : '🏅');
-        typeClass = 'grammar-badge-node';
-      } else {
-        typeIcon  = isDone ? '✓' : (isLocked ? '' : '📖');
-        typeClass = 'grammar-lesson-node';
-      }
+    if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
+      typeIcon  = isDone ? '' : (isLocked ? '' : '📖');
+      typeClass = 'grammar-lesson-node';
     } else if (Array.isArray(item)) {
-      typeIcon  = isDone ? '✓' : (isLocked ? '' : qi + 1);
-      typeClass = '';
+      // Mini-quiz vs Test — fərqli ikon
+      typeIcon  = isDone ? '' : (isLocked ? '' : quizCounter);
+      typeClass = 'grammar-quiz-node';
     }
 
-    if (qi > 0) html += '<div class="path-line"></div>';
+    // Path line — section divider-dan sonra ilk node-dan əvvəl xətt olmur
+    // (divider özü vizual ayırıcı rolunu oynayır)
+    const prevItem = lvl.quizzes[qi - 1];
+    const prevIsDivider = prevItem && !Array.isArray(prevItem) && prevItem.type === 'section_divider';
+    if (qi > 0 && !prevIsDivider) {
+      html += '<div class="path-line"></div>';
+    }
+
     html += `<div class="path-node-wrap">`;
 
-    // Node
     let nodeClass = `path-node ${typeClass}`;
 
     if (isDone) {
-      nodeClass += ' level-done';
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">
+      html += `<div class="${nodeClass} level-done" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"/>
         </svg>
@@ -475,7 +492,6 @@ function renderGrammarPath(lvl, li) {
       </div>`;
 
     } else {
-      // Completed badge sayı
       const completedSoFar = progress[lvl.id].filter(s =>
         ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
       ).length;
@@ -488,8 +504,7 @@ function renderGrammarPath(lvl, li) {
       </div>`;
     }
 
-    // Label
-    const label = (QUIZ_NAMES[lvl.id]?.[qi]) || item?.title || `Dərs ${qi + 1}`;
+    const label = (QUIZ_NAMES[lvl.id]?.[qi]) || item?.title || `Dərs ${quizCounter}`;
     html += `<div class="node-label">${label}</div></div>`;
   });
 
@@ -509,6 +524,9 @@ function startQuiz(levelIdx, quizIdx) {
   closeOverlayPanel(true);
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
+
+  // Section divider — tıklanmır
+  if (item && !Array.isArray(item) && item.type === 'section_divider') return;
 
   // Grammar lesson yoxlaması — ƏN ƏVVƏL
   if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
