@@ -50,7 +50,7 @@ const KIDS_GRAMMAR_LEVELS = [
     color: '#8B5CF6',
     quizzes: [
 
-    // index: 1 — Dərs 1.1
+  // index: 1 — Dərs 1.1
       {
         type: 'grammar_lesson',
         title: 'Dərs 1.1 — Sadə, düzəltmə, mürəkkəb isimlər',
@@ -83,12 +83,12 @@ const KIDS_GRAMMAR_LEVELS = [
             tip: 'Sadə isimlər ən qısa və ən çox işlənən isim növüdür.',
           },
 
-          // ── Mini-quiz: Sadə isimi seç ────────────────────
-          { type: 'mini_check', questions: [{ q: 'Sadə isimi seç', options: ['book', 'teacher'], answer: 'book' }] },
-          { type: 'mini_check', questions: [{ q: 'Sadə isimi seç', options: ['darkness', 'sun'], answer: 'sun' }] },
-          { type: 'mini_check', questions: [{ q: 'Sadə isimi seç', options: ['freedom', 'chair'], answer: 'chair' }] },
-          { type: 'mini_check', questions: [{ q: 'Sadə isimi seç', options: ['railway', 'road'], answer: 'road' }] },
-          { type: 'mini_check', questions: [{ q: 'Sadə isimi seç', options: ['self-control', 'rain'], answer: 'rain' }] },
+          // ── Quiz: Sadə isimi seç ─────────────────────────
+          { en: 'Sadə isimi seç', tr: 'book',  wrong: 'teacher'     },
+          { en: 'Sadə isimi seç', tr: 'sun',   wrong: 'darkness'    },
+          { en: 'Sadə isimi seç', tr: 'chair', wrong: 'freedom'     },
+          { en: 'Sadə isimi seç', tr: 'road',  wrong: 'railway'     },
+          { en: 'Sadə isimi seç', tr: 'rain',  wrong: 'self-control'},
 
           // ── Ekran 3: Düzəltmə isimlər ───────────────────
           {
@@ -105,12 +105,12 @@ const KIDS_GRAMMAR_LEVELS = [
             note: 'Şəkilçi əlavə olunduqda kök sözün yazılışı bəzən dəyişə bilər: happy → happiness.',
           },
 
-          // ── Mini-quiz: Düzəltmə isimi seç ───────────────
-          { type: 'mini_check', questions: [{ q: 'Düzəltmə isimi seç', options: ['teacher', 'book'], answer: 'teacher' }] },
-          { type: 'mini_check', questions: [{ q: 'Düzəltmə isimi seç', options: ['sunrise', 'happiness'], answer: 'happiness' }] },
-          { type: 'mini_check', questions: [{ q: 'Düzəltmə isimi seç', options: ['freedom', 'railway'], answer: 'freedom' }] },
-          { type: 'mini_check', questions: [{ q: 'Düzəltmə isimi seç', options: ['childhood', 'flowerbed'], answer: 'childhood' }] },
-          { type: 'mini_check', questions: [{ q: 'Düzəltmə isimi seç', options: ['self-control', 'development'], answer: 'development' }] },
+          // ── Quiz: Düzəltmə isimi seç ────────────────────
+          { en: 'Düzəltmə isimi seç', tr: 'teacher',     wrong: 'book'         },
+          { en: 'Düzəltmə isimi seç', tr: 'happiness',   wrong: 'sunrise'      },
+          { en: 'Düzəltmə isimi seç', tr: 'freedom',     wrong: 'railway'      },
+          { en: 'Düzəltmə isimi seç', tr: 'childhood',   wrong: 'flowerbed'    },
+          { en: 'Düzəltmə isimi seç', tr: 'development', wrong: 'self-control' },
 
           // ── Ekran 4: Mürəkkəb isimlər ───────────────────
           {
@@ -127,12 +127,12 @@ const KIDS_GRAMMAR_LEVELS = [
             tip: 'Mürəkkəb isimlərdə əsas məna ikinci sözdə olur: flower + bed = çiçəklik (çarpayı növü).',
           },
 
-          // ── Mini-quiz: Mürəkkəb isimi seç ───────────────
-          { type: 'mini_check', questions: [{ q: 'Mürəkkəb isimi seç', options: ['sunrise', 'pen'], answer: 'sunrise' }] },
-          { type: 'mini_check', questions: [{ q: 'Mürəkkəb isimi seç', options: ['kindness', 'railway'], answer: 'railway' }] },
-          { type: 'mini_check', questions: [{ q: 'Mürəkkəb isimi seç', options: ['flowerbed', 'freedom'], answer: 'flowerbed' }] },
-          { type: 'mini_check', questions: [{ q: 'Mürəkkəb isimi seç', options: ['leadership', 'full moon'], answer: 'full moon' }] },
-          { type: 'mini_check', questions: [{ q: 'Mürəkkəb isimi seç', options: ['self-control', 'development'], answer: 'self-control' }] },
+          // ── Quiz: Mürəkkəb isimi seç ────────────────────
+          { en: 'Mürəkkəb isimi seç', tr: 'sunrise',      wrong: 'pen'         },
+          { en: 'Mürəkkəb isimi seç', tr: 'railway',      wrong: 'kindness'    },
+          { en: 'Mürəkkəb isimi seç', tr: 'flowerbed',    wrong: 'freedom'     },
+          { en: 'Mürəkkəb isimi seç', tr: 'full moon',    wrong: 'leadership'  },
+          { en: 'Mürəkkəb isimi seç', tr: 'self-control', wrong: 'development' },
 
           // ── Ekran 5: Müqayisə cədvəli ───────────────────
           {
@@ -148,26 +148,87 @@ const KIDS_GRAMMAR_LEVELS = [
             note: 'Bəzən bir söz həm düzəltmə, həm mürəkkəb ola bilər: "workmanship" — work + man + -ship.',
           },
 
-          // ── Mini-quiz: Ümumi təkrar ──────────────────────
-          { type: 'mini_check', questions: [{ q: '"road" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Sadə' }] },
-          { type: 'mini_check', questions: [{ q: '"kingdom" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Düzəltmə' }] },
-          { type: 'mini_check', questions: [{ q: '"toothbrush" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Mürəkkəb' }] },
-          { type: 'mini_check', questions: [{ q: '"rain" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Sadə' }] },
-          { type: 'mini_check', questions: [{ q: '"friendship" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Düzəltmə' }] },
-          { type: 'mini_check', questions: [{ q: '"bedroom" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Mürəkkəb' }] },
-          { type: 'mini_check', questions: [{ q: '"stone" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Sadə' }] },
-          { type: 'mini_check', questions: [{ q: '"kindness" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Düzəltmə' }] },
-          { type: 'mini_check', questions: [{ q: '"earthquake" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Mürəkkəb' }] },
-          { type: 'mini_check', questions: [{ q: '"hand" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Sadə' }] },
-          { type: 'mini_check', questions: [{ q: '"heroism" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Düzəltmə' }] },
-          { type: 'mini_check', questions: [{ q: '"waterfall" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Mürəkkəb' }] },
-          { type: 'mini_check', questions: [{ q: '"tree" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Sadə' }] },
-          { type: 'mini_check', questions: [{ q: '"neighbourhood" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Düzəltmə' }] },
-          { type: 'mini_check', questions: [{ q: '"footprint" hansı növ isimdir?', options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'], answer: 'Mürəkkəb' }] },
-
-        ],
-      },
-
+         // ── Mini-quiz: Ümumi təkrar ───────────────────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"road" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"kingdom" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Düzəltmə',
+    },
+    {
+      q: '"toothbrush" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Mürəkkəb',
+    },
+    {
+      q: '"rain" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"friendship" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Düzəltmə',
+    },
+    {
+      q: '"bedroom" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Mürəkkəb',
+    },
+    {
+      q: '"stone" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"kindness" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Düzəltmə',
+    },
+    {
+      q: '"earthquake" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Mürəkkəb',
+    },
+    {
+      q: '"hand" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"heroism" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Düzəltmə',
+    },
+    {
+      q: '"waterfall" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Mürəkkəb',
+    },
+    {
+      q: '"tree" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"neighbourhood" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Düzəltmə',
+    },
+    {
+      q: '"footprint" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Mürəkkəb',
+    },
+  ],
+},
       // index: 2 — Dərs 1.2
       {
         type: 'grammar_lesson',
@@ -198,7 +259,7 @@ const KIDS_GRAMMAR_LEVELS = [
             note: '-er / -or şəkilçisi "iş görən şəxs" mənası verir: teach → teacher (müəllim).',
           },
 
-          // ── Mini-quiz: Feldən düzələn ────────────────────
+          // ── Mini-check: Feldən düzələn ───────────────────
           { type: 'mini_check', questions: [{ q: '"teacher" sözündə hansı şəkilçi isim düzəldir?', options: ['-er', '-ness', '-dom', '-hood'], answer: '-er' }] },
           { type: 'mini_check', questions: [{ q: 'Hansı söz feldən düzəlmiş isimdir?', options: ['wisdom', 'meeting', 'village', 'kingdom'], answer: 'meeting' }] },
           { type: 'mini_check', questions: [{ q: '"develop" felindən isim düzəltmək üçün hansı şəkilçi lazımdır?', options: ['-ness', '-ity', '-ment', '-hood'], answer: '-ment' }] },
@@ -219,7 +280,7 @@ const KIDS_GRAMMAR_LEVELS = [
             tip: '-ness şəkilçisi demək olar ki, istənilən sifətə əlavə edilə bilər.',
           },
 
-          // ── Mini-quiz: Sifətdən düzələn ─────────────────
+          // ── Mini-check: Sifətdən düzələn ────────────────
           { type: 'mini_check', questions: [{ q: '"happy" sifətindən isim düzəltmək üçün hansı şəkilçi lazımdır?', options: ['-ment', '-ness', '-ship', '-ing'], answer: '-ness' }] },
           { type: 'mini_check', questions: [{ q: 'Hansı söz sifətdən düzəlmiş isimdir?', options: ['meeting', 'village', 'width', 'typist'], answer: 'width' }] },
           { type: 'mini_check', questions: [{ q: '"popular" sözündən hansı isim düzəlir?', options: ['popularity', 'popularing', 'popularhood', 'popularism'], answer: 'popularity' }] },
@@ -240,7 +301,7 @@ const KIDS_GRAMMAR_LEVELS = [
             note: '-ist şəkilçisi həm peşəni (dentist), həm də ideologiyanın tərəfdarını (communist) bildirir.',
           },
 
-          // ── Mini-quiz: Digər şəkilçilər ─────────────────
+          // ── Mini-check: Digər şəkilçilər ─────────────────
           { type: 'mini_check', questions: [{ q: '"friendship" sözündə hansı şəkilçi var?', options: ['-hood', '-ism', '-ship', '-dom'], answer: '-ship' }] },
           { type: 'mini_check', questions: [{ q: 'Hansı söz "-ism" şəkilçisi ilə düzəlmişdir?', options: ['dentist', 'heroism', 'village', 'childhood'], answer: 'heroism' }] },
           { type: 'mini_check', questions: [{ q: '"typist" sözündəki "-ist" şəkilçisi nə bildirir?', options: ['yer, məkan', 'ideologiya', 'peşə sahibi', 'vəziyyət, dövr'], answer: 'peşə sahibi' }] },
@@ -271,15 +332,47 @@ const KIDS_GRAMMAR_LEVELS = [
             tip: 'Bu şəkilçilərdən birini gördükdə o sözün isim olma ehtimalı çox yüksəkdir.',
           },
 
-          // ── Mini-quiz: Ümumi təkrar — şəkilçilər ────────
-          { type: 'mini_check', questions: [{ q: '"actor" sözü hansı şəkilçi ilə düzəlmişdir?', options: ['-ment', '-or', '-ness', '-th'], answer: '-or' }] },
-          { type: 'mini_check', questions: [{ q: 'Hansı söz "-dom" şəkilçisi ilə düzəlmişdir?', options: ['meeting', 'wisdom', 'package', 'dentist'], answer: 'wisdom' }] },
-          { type: 'mini_check', questions: [{ q: '"strength" sözündəki şəkilçi hansıdır?', options: ['-ness', '-ity', '-th', '-age'], answer: '-th' }] },
-          { type: 'mini_check', questions: [{ q: 'Hansı söz "-age" şəkilçisi ilə düzəlmişdir?', options: ['leadership', 'cottage', 'revision', 'darkness'], answer: 'cottage' }] },
-          { type: 'mini_check', questions: [{ q: '"carving" sözü hansı feldən düzəlmişdir?', options: ['carry', 'care', 'carve', 'card'], answer: 'carve' }] },
-          { type: 'mini_check', questions: [{ q: 'Hansı şəkilçi sifətə əlavə edilir?', options: ['-er', '-ment', '-ness', '-or'], answer: '-ness' }] },
-          { type: 'mini_check', questions: [{ q: '"neighbourhood" sözündə neçə morfem var?', options: ['2', '3', '4', '1'], answer: '3' }] },
-
+          // ── Mini-quiz: Ümumi təkrar — şəkilçilər ─────────────
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"actor" sözü hansı şəkilçi ilə düzəlmişdir?',
+      options: ['-ment', '-or', '-ness', '-th'],
+      answer: '-or',
+    },
+    {
+      q: 'Hansı söz "-dom" şəkilçisi ilə düzəlmişdir?',
+      options: ['meeting', 'wisdom', 'package', 'dentist'],
+      answer: 'wisdom',
+    },
+    {
+      q: '"strength" sözündəki şəkilçi hansıdır?',
+      options: ['-ness', '-ity', '-th', '-age'],
+      answer: '-th',
+    },
+    {
+      q: 'Hansı söz "-age" şəkilçisi ilə düzəlmişdir?',
+      options: ['leadership', 'cottage', 'revision', 'darkness'],
+      answer: 'cottage',
+    },
+    {
+      q: '"carving" sözü hansı feldən düzəlmişdir?',
+      options: ['carry', 'care', 'carve', 'card'],
+      answer: 'carve',
+    },
+    {
+      q: 'Hansı şəkilçi sifətə əlavə edilir?',
+      options: ['-er', '-ment', '-ness', '-or'],
+      answer: '-ness',
+    },
+    {
+      q: '"neighbourhood" sözündə neçə morfem var?',
+      options: ['2', '3', '4', '1'],
+      answer: '3',
+    },
+  ],
+},
         ],
       },
 // index: 3 — Bölmə 1 ümumi quiz
