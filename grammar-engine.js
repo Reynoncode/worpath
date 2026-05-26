@@ -341,6 +341,50 @@ function renderGrammarBadge(card, container) {
   document.getElementById('grammar-next-btn').addEventListener('click', grammarNextCard);
 }
 
+function renderGrammarQuizCard(card, container, idx) {
+  const correct = card.tr;
+  const wrong   = card.wrong;
+  const options = [correct, wrong].sort(() => Math.random() - 0.5);
+
+  container.innerHTML = `
+    <div class="grammar-lesson-wrap">
+      <div class="grammar-lesson-card">
+        <div class="gl-title">${card.en}</div>
+        <div class="gmc-options" style="margin-top:24px">
+          ${options.map(opt => `
+            <button class="gmc-opt-btn" data-opt="${opt}">${opt}</button>
+          `).join('')}
+        </div>
+        <div id="gqc-feedback" style="min-height:32px;margin-top:12px"></div>
+      </div>
+    </div>
+  `;
+
+  container.querySelectorAll('.gmc-opt-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (grammarState.locked) return;
+      grammarState.locked = true;
+
+      const chosen  = btn.dataset.opt;
+      const isRight = chosen === correct;
+
+      container.querySelectorAll('.gmc-opt-btn').forEach(b => {
+        b.disabled = true;
+        if (b.dataset.opt === correct) b.classList.add('gmc-opt-correct');
+        else if (b === btn && !isRight) b.classList.add('gmc-opt-wrong');
+      });
+
+      document.getElementById('gqc-feedback').innerHTML = isRight
+        ? '<div class="gmc-feedback gmc-fb-correct">✓ Düzgün!</div>'
+        : `<div class="gmc-feedback gmc-fb-wrong">✗ Düzgün cavab: <strong>${correct}</strong></div>`;
+
+      setTimeout(() => {
+        grammarState.locked = false;
+        grammarNextCard();
+      }, 900);
+    });
+  });
+}
 // ============================================================
 //  NAVİGASİYA
 // ============================================================
