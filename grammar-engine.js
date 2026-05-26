@@ -62,6 +62,8 @@ function renderGrammarCard() {
     renderGrammarMiniCheck(card, quizBody, idx);
   } else if (card.type === 'badge') {
     renderGrammarBadge(card, quizBody);
+  } else {
+    renderGrammarQuizCard(card, quizBody, idx);
   }
 }
 
