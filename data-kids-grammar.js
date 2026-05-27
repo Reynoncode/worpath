@@ -6089,95 +6089,717 @@ const VERBS_LEVEL = {
     // ║  QRUP 3 — Bitmiş zaman formaları (Perfect)             ║
     // ══════════════════════════════════════════════════════════
 
-    // ── Bölmə 7 ───────────────────────────────────────────────
+   // ── Dərs 7.1 — have/has + P II ──────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 7.1 — have/has + P II',
+  cards: [
+
+    // ── Ekran 1: Düzəlmə qaydası ─────────────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 7 — Present Perfect',
+      type: 'lesson',
+      title: 'Present Perfect necə düzəlir?',
+      content: 'Present Perfect "to have" köməkçi felinin indiki zaman formaları (have/has) və əsas felin P II (keçmiş zaman feli sifəti) vasitəsilə düzəlir.\n\nDüzəlmə: have/has + P II',
+      table: [
+        ['Şəxs',      'Tək',                  'Cəm'],
+        ['I',         'I have answered',       'We have answered'],
+        ['You',       'You have answered',     'You have answered'],
+        ['He/She/It', 'He has answered',       'They have answered'],
+      ],
+      tip: 'have → I, You, We, They\nhas → He, She, It\n\nP II qaydalı fellərdə: fel + -ed (answered, worked)\nP II qaydasız fellərdə: 3-cü sütun (written, gone, seen)',
     },
 
-    // ── index: 23 — Dərs 7.1 ─────────────────────────────────
+    // ── Ekran 2: Sual forması ────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 7.1 — have/has + P II (keçmiş zaman feli sifəti)',
-      cards: [
-        {
-          type: 'lesson',
-          title: 'Dərs 7.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
-        },
+      type: 'lesson',
+      title: 'Present Perfect — sual forması',
+      content: 'Sual formasını düzəltmək üçün have/has mübtədadan əvvələ keçir:',
+      table: [
+        ['Şəxs',          'Sual'],
+        ['I',             'Have I answered?'],
+        ['You',           'Have you answered?'],
+        ['He / She / It', 'Has he/she answered?'],
+        ['We',            'Have we answered?'],
+        ['They',          'Have they answered?'],
+      ],
+      note: 'Qısa cavab:\nYes, I have. / No, I haven\'t.\nYes, he has. / No, he hasn\'t.\nYes, we have. / No, we haven\'t.',
+    },
+
+    // ── Ekran 3: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Perfect — inkar forması',
+      content: 'İnkar formasını düzəltmək üçün have/has-dan sonra "not" əlavə edilir:',
+      table: [
+        ['Şəxs',     'Tam inkar',                   'Qısa inkar'],
+        ['I',        'I have not answered',          'I haven\'t answered'],
+        ['You',      'You have not answered',        'You haven\'t answered'],
+        ['He/She',   'He has not answered',          'He hasn\'t answered'],
+        ['We',       'We have not answered',         'We haven\'t answered'],
+        ['They',     'They have not answered',       'They haven\'t answered'],
+      ],
+      tip: 'have not → haven\'t\nhas not → hasn\'t',
+    },
+
+    // ── Ekran 4: Sual-inkar forması ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual-inkar forması',
+      content: 'Sual-inkar forması iki cür düzəlir:',
+      table: [
+        ['Tam forma',                  'Qısa forma'],
+        ['Have I not answered?',       'Haven\'t I answered?'],
+        ['Have you not answered?',     'Haven\'t you answered?'],
+        ['Has he not answered?',       'Hasn\'t he answered?'],
+        ['Have we not answered?',      'Haven\'t we answered?'],
+        ['Have they not answered?',    'Haven\'t they answered?'],
       ],
     },
 
-    // ── index: 24 — Dərs 7.2 ─────────────────────────────────
+    // ── Quiz: have / has seçimi ──────────────────────────
+    { en: '"I ___ answered."',                          tr: 'have',  wrong: 'has'  },
+    { en: '"She ___ answered."',                        tr: 'has',   wrong: 'have' },
+    { en: '"They ___ answered."',                       tr: 'have',  wrong: 'has'  },
+    { en: '"He ___ answered."',                         tr: 'has',   wrong: 'have' },
+    { en: '"We ___ answered."',                         tr: 'have',  wrong: 'has'  },
+    { en: '"You ___ answered."',                        tr: 'have',  wrong: 'has'  },
+    { en: '"I haven\'t answered." — tam forması?',      tr: 'I have not answered',  wrong: 'I has not answered'  },
+    { en: '"He hasn\'t answered." — tam forması?',      tr: 'He has not answered',  wrong: 'He have not answered' },
+
+    // ── Mini-check ───────────────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 7.2 — İşlənmə: bitmiş, nəticəsi var',
-      cards: [
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 7.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"She ___ finished her homework." — boşluğa nə gəlir?',
+          options: ['have', 'had', 'has', 'is'],
+          answer: 'has',
+        },
+        {
+          q: '"They ___ already eaten." — boşluğa nə gəlir?',
+          options: ['has', 'was', 'have', 'is'],
+          answer: 'have',
+        },
+        {
+          q: '"___ he answered?" — sual forması?',
+          options: ['Have', 'Had', 'Has', 'Is'],
+          answer: 'Has',
+        },
+        {
+          q: '"I haven\'t answered." — tam forması hansıdır?',
+          options: [
+            'I has not answered',
+            'I have not answered',
+            'I had not answered',
+            'I are not answered',
+          ],
+          answer: 'I have not answered',
+        },
+        {
+          q: '"We ___ never seen snow." — boşluq?',
+          options: ['has', 'had', 'is', 'have'],
+          answer: 'have',
+        },
+        {
+          q: 'Hansı qısa forma YANLIŞ-dır?',
+          options: ['I\'ve answered', 'He\'s answered', 'They\'ve answered', 'She\'ve answered'],
+          answer: 'She\'ve answered',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 25 — Mini-quiz 7 ───────────────────────────────
-    // have/has seç · since/for fərqi · already/yet/ever/never yerləşdir
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+// ── Dərs 7.2 — İşlənmə: since, for, zaman zərfləri ──────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 7.2 — İşlənmə: since, for, zaman zərfləri',
+  cards: [
 
-    // ── Bölmə 8 ───────────────────────────────────────────────
+    // ── Ekran 1: 3 əsas işlənmə halı ─────────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 8 — Past Perfect',
+      type: 'lesson',
+      title: 'Present Perfect — nə vaxt işlədilir?',
+      content: '3 əsas işlənmə halı var:',
+      table: [
+        ['Hal',   'İzah',                                    'Nümunə'],
+        ['1',     'Bitmiş, nəticəsi indiki ana aiddir',      'I have written the letter. You may post it.'],
+        ['2',     'Təkrarən baş verib bitmiş hərəkət',       'I\'ve written it over and over.'],
+        ['3',     'Keçmişdə başlamış, hələ davam edir',      'We have known each other for ten years.'],
+      ],
+      examples: [
+        { word: 'I have done my homework. Now I can play.', az: 'Ev tapşırığımı etmişəm. İndi oynaya bilərəm.' },
+        { word: 'She has gone to Baku.', az: 'O Bakıya getmişdir.' },
+        { word: 'I have known him for two years.', az: 'Onu iki ildir tanıyıram.' },
+      ],
+      tip: 'Azərbaycan dilinə:\n→ Əsasən nəqli keçmiş (-mış/-miş)\n→ "for" ilə işləndikdə indiki zaman (-ır/-ir)',
     },
 
-    // ── index: 26 — Dərs 8.1 ─────────────────────────────────
+    // ── Ekran 2: Since vs For ─────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 8.1 — had + P II (bütün şəxslər)',
-      cards: [
-        {
-          type: 'lesson',
-          title: 'Dərs 8.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
-        },
+      type: 'lesson',
+      title: 'Since vs For — fərq',
+      content: '"since" başlanğıc nöqtəni, "for" isə müddəti bildirir:',
+      table: [
+        ['Söz',    'Mənası',       'Nə bildirir',      'Nümunə'],
+        ['since',  '-dən bəri',    'Başlanğıc nöqtə',  'since 2010, since Monday, since morning'],
+        ['for',    '...-dır ki',   'Müddət',           'for ten years, for two days, for a long time'],
+      ],
+      examples: [
+        { word: 'I have lived here since 2015.',        az: '2015-ci ildən bəri burada yaşayıram.' },
+        { word: 'She has been ill since Monday.',       az: 'Bazar ertəsindən bəri xəstədir.' },
+        { word: 'I have lived here for ten years.',     az: 'On ildir ki burada yaşayıram.' },
+        { word: 'She has been ill for three days.',     az: 'Üç gündür xəstədir.' },
+      ],
+      note: 'since → tarix, gün, hadisə, an bildirir\nfor → rəqəm + zaman vahidi bildirir',
+    },
+
+    // ── Ekran 3: Zaman zərfləri ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Perfect — zaman zərfləri',
+      content: 'Present Perfect ilə işlənən zaman zərfləri:',
+      table: [
+        ['Zərf',          'Mənası',              'Hansı cümlədə'],
+        ['already',       'artıq',               'Təsdiq'],
+        ['yet',           'hələ',                'İnkar / Sual'],
+        ['ever',          'heç vaxt / -mı',      'Sual'],
+        ['never',         'heç vaxt',            'İnkar'],
+        ['recently',      'bu yaxınlarda',       'Təsdiq'],
+        ['lately',        'son zamanlar',        'Təsdiq'],
+        ['today',         'bu gün',              'Hər hansı'],
+        ['this week',     'bu həftə',            'Hər hansı'],
+        ['over and over', 'dəfələrlə',           'Təsdiq'],
+      ],
+      examples: [
+        { word: 'I have already done it.',          az: 'Artıq etmişəm.' },
+        { word: 'I haven\'t done it yet.',          az: 'Hələ etməmişəm.' },
+        { word: 'Have you ever seen the sea?',      az: 'Heç dənizi görmüsənmi?' },
+        { word: 'I have never seen him before.',    az: 'Onu əvvəllər heç görməmişəm.' },
       ],
     },
 
-    // ── index: 27 — Dərs 8.2 ─────────────────────────────────
+    // ── Quiz: since / for seçimi ──────────────────────────
+    { en: '"I have lived here ___ 2010."',              tr: 'since',  wrong: 'for'   },
+    { en: '"She has been ill ___ three days."',         tr: 'for',    wrong: 'since' },
+    { en: '"He has worked here ___ Monday."',           tr: 'since',  wrong: 'for'   },
+    { en: '"We have known each other ___ ten years."',  tr: 'for',    wrong: 'since' },
+    { en: '"I haven\'t seen her ___ last week."',       tr: 'since',  wrong: 'for'   },
+    { en: '"They have been friends ___ a long time."',  tr: 'for',    wrong: 'since' },
+
+    // ── Quiz: zaman zərfləri ──────────────────────────────
+    { en: '"I have ___ done it." — artıq?',             tr: 'already', wrong: 'yet'   },
+    { en: '"I haven\'t done it ___." — hələ?',          tr: 'yet',     wrong: 'already' },
+    { en: '"Have you ___ been to London?" — heç?',      tr: 'ever',    wrong: 'never' },
+    { en: '"I have ___ seen snow." — heç vaxt?',        tr: 'never',   wrong: 'ever'  },
+
+    // ── Mini-check ───────────────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 8.2 — İşlənmə: keçmişdən əvvəl bitmiş',
-      cards: [
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 8.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"She has lived here ___ 2018." — boşluq?',
+          options: ['for', 'during', 'since', 'ago'],
+          answer: 'since',
+        },
+        {
+          q: '"I have known him ___ five years." — boşluq?',
+          options: ['since', 'ago', 'before', 'for'],
+          answer: 'for',
+        },
+        {
+          q: '"Have you ___ eaten sushi?" — boşluq?',
+          options: ['never', 'yet', 'already', 'ever'],
+          answer: 'ever',
+        },
+        {
+          q: '"I haven\'t finished ___ ." — hələ bitirməmişəm?',
+          options: ['already', 'ever', 'never', 'yet'],
+          answer: 'yet',
+        },
+        {
+          q: 'Hansı cümlə YANLIŞ-dır?',
+          options: [
+            'I have already eaten.',
+            'She has never seen snow.',
+            'Have you finished yet?',
+            'I have seen him yesterday.',
+          ],
+          answer: 'I have seen him yesterday.',
+        },
+        {
+          q: '"I have known him for two years." — Azərbaycanca?',
+          options: [
+            'Onu iki il əvvəl tanıdım.',
+            'Onu iki ildir tanıyıram.',
+            'Onu iki il sonra tanıyacağam.',
+            'Onu iki il ərzində tanımışdım.',
+          ],
+          answer: 'Onu iki ildir tanıyıram.',
+        },
+        {
+          q: 'Present Perfect Azərbaycan dilinə necə tərcümə olunur?',
+          options: [
+            'Şühudi keçmiş (-dı/-di)',
+            'Nəqli keçmiş (-mış/-miş)',
+            'Gələcək zaman (-acaq/-əcək)',
+            'Uzaq keçmiş (-mışdı/-mişdi)',
+          ],
+          answer: 'Nəqli keçmiş (-mış/-miş)',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 28 — Mini-quiz 8 ───────────────────────────────
-    // had seç · when/after/before ilə doğru zaman · by that time tanı
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+// ── Mini-quiz 7 ───────────────────────────────────────────
+// have/has seç · since/for fərqi · already/yet/ever/never
+[
+  // have / has seçimi
+  { en: '"I ___ finished."',                              tr: 'have',   wrong: 'has'   },
+  { en: '"She ___ finished."',                            tr: 'has',    wrong: 'have'  },
+  { en: '"They ___ finished."',                           tr: 'have',   wrong: 'has'   },
+  { en: '"He ___ never been there."',                     tr: 'has',    wrong: 'have'  },
+  { en: '"We ___ already eaten."',                        tr: 'have',   wrong: 'has'   },
 
-    // ── index: 29 — Test 3 ────────────────────────────────────
-    // Bitmiş zaman formaları (Bölmə 7–8) · 10 sual
-    // Present/Past Perfect fərqi · since/for · ardıcıllıq
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+  // since / for fərqi
+  { en: '"I have studied ___ Monday."',                   tr: 'since',  wrong: 'for'   },
+  { en: '"She has been ill ___ a week."',                 tr: 'for',    wrong: 'since' },
+  { en: '"He has lived here ___ 2015."',                  tr: 'since',  wrong: 'for'   },
+  { en: '"We have waited ___ two hours."',                tr: 'for',    wrong: 'since' },
+  { en: '"I haven\'t seen her ___ last year."',           tr: 'since',  wrong: 'for'   },
 
-    // ── index: 30 — Final Test ────────────────────────────────
-    // Bütün zaman formaları · 20 sual
-    // 8 bölmə · 3 qrup · qarışıq · Present/Past/Future/Perfect/Continuous
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+  // already / yet / ever / never
+  { en: '"I have ___ done it." — artıq',                  tr: 'already', wrong: 'yet'   },
+  { en: '"I haven\'t done it ___." — hələ',               tr: 'yet',     wrong: 'already' },
+  { en: '"Have you ___ been to Paris?" — heç',            tr: 'ever',    wrong: 'never' },
+  { en: '"I have ___ eaten sushi." — heç vaxt',           tr: 'never',   wrong: 'ever'  },
+
+  // Düzgün / yanlış cümlə
+  { en: '"I have seen him yesterday." — düzdür?',         tr: 'Xeyr',   wrong: 'Bəli'  },
+  { en: '"She has just arrived." — düzdür?',              tr: 'Bəli',   wrong: 'Xeyr'  },
+  { en: '"Have you ever visited Baku?" — düzdür?',        tr: 'Bəli',   wrong: 'Xeyr'  },
+  { en: '"I have never saw him." — düzdür?',              tr: 'Xeyr',   wrong: 'Bəli'  },
+
+  // Azərbaycana tərcümə
+  { en: '"She has gone." — Azərbaycanca?',                tr: 'O getmişdir.',      wrong: 'O gedirdi.'        },
+  { en: '"I have known him for 2 years." — Azərbaycanca?',tr: 'Onu 2 ildir tanıyıram.', wrong: 'Onu 2 il əvvəl tanıdım.' },
+],
+
+// ── Dərs 8.1 — had + P II ────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 8.1 — had + P II',
+  cards: [
+
+    // ── Ekran 1: Düzəlmə qaydası ─────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Perfect necə düzəlir?',
+      content: 'Past Perfect "to have" köməkçi felinin keçmiş zaman forması "had" və əsas felin P II vasitəsilə düzəlir. Bütün şəxslərdə "had" işlənir — dəyişmir.\n\nDüzəlmə: had + P II',
+      table: [
+        ['Şəxs',      'Tək',               'Cəm'],
+        ['I',         'I had written',     'We had written'],
+        ['You',       'You had written',   'You had written'],
+        ['He/She/It', 'He had written',    'They had written'],
+      ],
+      tip: 'had → bütün şəxslərdə eynidir, dəyişmir.\n\nQısa forma: I\'d written / She\'d written',
+    },
+
+    // ── Ekran 2: Sual forması ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Perfect — sual forması',
+      content: 'Sual formasını düzəltmək üçün "had" mübtədadan əvvələ keçir:',
+      table: [
+        ['Şəxs',          'Sual'],
+        ['I',             'Had I written?'],
+        ['You',           'Had you written?'],
+        ['He / She / It', 'Had he/she written?'],
+        ['We',            'Had we written?'],
+        ['They',          'Had they written?'],
+      ],
+      note: 'Qısa cavab:\nYes, I had. / No, I hadn\'t.\nYes, he had. / No, he hadn\'t.',
+    },
+
+    // ── Ekran 3: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Perfect — inkar forması',
+      content: 'İnkar formasını düzəltmək üçün "had"-dan sonra "not" əlavə edilir:',
+      table: [
+        ['Şəxs',     'Tam inkar',                  'Qısa inkar'],
+        ['I',        'I had not written',           'I hadn\'t written'],
+        ['You',      'You had not written',         'You hadn\'t written'],
+        ['He/She',   'He had not written',          'He hadn\'t written'],
+        ['We',       'We had not written',          'We hadn\'t written'],
+        ['They',     'They had not written',        'They hadn\'t written'],
+      ],
+      tip: 'had not → hadn\'t',
+    },
+
+    // ── Ekran 4: Sual-inkar forması ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual-inkar forması',
+      content: 'Sual-inkar forması iki cür düzəlir:',
+      table: [
+        ['Tam forma',                   'Qısa forma'],
+        ['Had I not written?',          'Hadn\'t I written?'],
+        ['Had you not written?',        'Hadn\'t you written?'],
+        ['Had he not written?',         'Hadn\'t he written?'],
+        ['Had we not written?',         'Hadn\'t we written?'],
+        ['Had they not written?',       'Hadn\'t they written?'],
+      ],
+    },
+
+    // ── Quiz: had seçimi ──────────────────────────────────
+    { en: '"I ___ written the letter."',                   tr: 'had',  wrong: 'have' },
+    { en: '"She ___ already left."',                       tr: 'had',  wrong: 'has'  },
+    { en: '"They ___ finished before we came."',           tr: 'had',  wrong: 'have' },
+    { en: '"He ___ never seen snow before."',              tr: 'had',  wrong: 'has'  },
+    { en: '"We ___ eaten before she arrived."',            tr: 'had',  wrong: 'have' },
+    { en: '"I hadn\'t written." — tam forması?',           tr: 'I had not written',   wrong: 'I have not written'  },
+    { en: '"Hadn\'t she finished?" — tam forması?',        tr: 'Had she not finished?', wrong: 'Has she not finished?' },
+
+    // ── Mini-check ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ already left when I arrived." — boşluq?',
+          options: ['has', 'have', 'had', 'is'],
+          answer: 'had',
+        },
+        {
+          q: '"___ they finished before you came?" — sual?',
+          options: ['Have', 'Has', 'Had', 'Did'],
+          answer: 'Had',
+        },
+        {
+          q: '"I hadn\'t written." — tam forması?',
+          options: [
+            'I have not written',
+            'I had not written',
+            'I has not written',
+            'I was not written',
+          ],
+          answer: 'I had not written',
+        },
+        {
+          q: 'Past Perfect-də bütün şəxslərdə hansı köməkçi fel işlənir?',
+          options: ['have', 'has', 'had', 'was'],
+          answer: 'had',
+        },
+        {
+          q: '"He\'d written." — tam forması?',
+          options: [
+            'He have written',
+            'He has written',
+            'He had written',
+            'He was written',
+          ],
+          answer: 'He had written',
+        },
+        {
+          q: 'Hansı qısa forma YANLIŞ-dır?',
+          options: ['I\'d written', 'She\'d written', 'They\'d written', 'We\'s written'],
+          answer: 'We\'s written',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 8.2 — İşlənmə: when/after/before + ardıcıllıq ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 8.2 — İşlənmə: when/after/before + ardıcıllıq',
+  cards: [
+
+    // ── Ekran 1: Əsas qayda ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Perfect — əsas işlənmə qaydası',
+      content: 'Past Perfect keçmişdəki iki hərəkətdən birincisini bildirir.\n\nBirinci baş verən hərəkət → Past Perfect\nİkinci baş verən hərəkət → Simple Past',
+      examples: [
+        { word: 'When we came, she had already done her homework.', az: 'Biz gələndə o ev tapşırığını artıq etmişdi.' },
+        { word: 'By the time I arrived, they had left.', az: 'Mən gələnə qədər onlar getmişdilər.' },
+      ],
+      tip: 'Əvvəl baş verən → Past Perfect\nSonra baş verən → Simple Past',
+    },
+
+    // ── Ekran 2: when / before / after ilə qayda ─────────
+    {
+      type: 'lesson',
+      title: 'when / before / after ilə qayda',
+      content: 'Bağlayıcıya görə hansı tərəfin Past Perfect olduğu dəyişir:',
+      table: [
+        ['Bağlayıcı', 'Past Perfect olan tərəf',   'Simple Past olan tərəf'],
+        ['when',      'Baş cümlə',                  'when olan budaq cümlə'],
+        ['before',    'Baş cümlə',                  'before olan budaq cümlə'],
+        ['after',     'after olan budaq cümlə',     'Baş cümlə'],
+      ],
+      examples: [
+        { word: 'When I came, she had already left.',      az: 'Mən gələndə o artıq getmişdi.' },
+        { word: 'She had left before I came.',             az: 'O, mən gəlməmişdən əvvəl getmişdi.' },
+        { word: 'After he had written, he went to sleep.', az: 'Yazdıqdan sonra yatmağa getdi.' },
+      ],
+      note: 'after ilə — əksinədir!\nafter olan tərəf Past Perfect-dir çünki həmin hərəkət birinci baş verib.',
+    },
+
+    // ── Ekran 3: Zaman zərfləri ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Perfect — zaman zərfləri',
+      content: 'Past Perfect aşağıdakı zaman zərfləri ilə işlənir:',
+      table: [
+        ['Zərf',                    'Mənası'],
+        ['by that time',            'o vaxta qədər'],
+        ['by the end of the year',  'ilin sonuna qədər'],
+        ['by five o\'clock yesterday', 'dünən saat beşə qədər'],
+        ['by Saturday',             'şənbəyə qədər'],
+        ['already',                 'artıq'],
+        ['just',                    'yenicə'],
+        ['never',                   'heç vaxt'],
+        ['before',                  'əvvəl'],
+        ['after',                   'sonra'],
+      ],
+      examples: [
+        { word: 'By that time she had finished her work.',       az: 'O vaxta qədər işini qurtarmışdı.' },
+        { word: 'By five o\'clock he had already left.',         az: 'Saat beşə qədər o artıq getmişdi.' },
+      ],
+    },
+
+    // ── Ekran 4: Hardly / No sooner ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Hardly...when · No sooner...than',
+      content: 'Past Perfect "hardly...when" və "no sooner...than" bağlayıcıları ilə işlənir.\n\nMənası: "Yenicə...ki", "Heç...ki"\n\nVacib qayda — inversiya: "had" mübtədadan əvvələ keçir.',
+      table: [
+        ['Bağlayıcı',           'Mənası',      'Nümunə'],
+        ['No sooner...than',    'yenicə...ki', 'No sooner had I arrived than it rained.'],
+        ['Hardly...when',       'heç...ki',    'Hardly had I arrived when it rained.'],
+      ],
+      examples: [
+        { word: 'No sooner had I turned round than I bumped into a stranger.', az: 'Yenicə küçənin tinini dönmüşdüm ki, yad adamla toqquşdum.' },
+        { word: 'Hardly had I turned round when I bumped into a stranger.',    az: 'Heç küçənin tinini dönməmişdim ki, yad adamla toqquşdum.' },
+      ],
+      note: 'İnversiya: "had" cümlənin əvvəlinə keçir!\nNo sooner had I... / Hardly had she...',
+    },
+
+    // ── Ekran 5: Azərbaycan dilinə tərcümə ───────────────
+    {
+      type: 'lesson',
+      title: 'Past Perfect Azərbaycan dilinə necə tərcümə olunur?',
+      content: 'Past Perfect Azərbaycan dilinin uzaq keçmiş zaman forması kimi tərcümə olunur.',
+      table: [
+        ['İngilis',                   'Azərbaycan'],
+        ['I had written.',            'Mən yazmışdım.'],
+        ['She had gone.',             'O getmişdi.'],
+        ['They had finished.',        'Onlar qurtarmışdılar.'],
+      ],
+      examples: [
+        { word: 'We had finished our work before the rain began.', az: 'Yağış başlayandan əvvəl biz işimizi qurtarmışdıq.' },
+      ],
+    },
+
+    // ── Quiz: when / before / after ───────────────────────
+    { en: '"When I came, she ___ already left."',              tr: 'had',         wrong: 'has'   },
+    { en: '"After he ___ written, he went to sleep."',         tr: 'had',         wrong: 'has'   },
+    { en: '"She had left ___ I came."',                        tr: 'before',      wrong: 'after' },
+    { en: '"___ he had written, he went to sleep."',           tr: 'After',       wrong: 'Before' },
+    { en: '"By that time she ___ finished."',                  tr: 'had',         wrong: 'has'   },
+    { en: '"Hardly had I arrived ___ it rained."',             tr: 'when',        wrong: 'than'  },
+    { en: '"No sooner had I arrived ___ it rained."',          tr: 'than',        wrong: 'when'  },
+    { en: '"I had written." — Azərbaycanca?',                  tr: 'Mən yazmışdım.',  wrong: 'Mən yazmışam.' },
+
+    // ── Mini-check ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"When I arrived, she ___ already left." — boşluq?',
+          options: ['has', 'have', 'is', 'had'],
+          answer: 'had',
+        },
+        {
+          q: '"After he ___ the letter, he went to sleep." — boşluq?',
+          options: ['wrote', 'has written', 'had written', 'was writing'],
+          answer: 'had written',
+        },
+        {
+          q: '"___ had she left when he arrived." — boşluq?',
+          options: ['When', 'After', 'Hardly', 'Since'],
+          answer: 'Hardly',
+        },
+        {
+          q: 'Hansı cümlə DOĞRU-dur?',
+          options: [
+            'When I came, she already left.',
+            'She had left before I had come.',
+            'After he had finished, he went home.',
+            'By that time they have arrived.',
+          ],
+          answer: 'After he had finished, he went home.',
+        },
+        {
+          q: '"She had gone." — Azərbaycanca?',
+          options: [
+            'O gedirdi.',
+            'O gedəcəkdi.',
+            'O getmişdi.',
+            'O getmişdir.',
+          ],
+          answer: 'O getmişdi.',
+        },
+        {
+          q: 'Past Perfect Azərbaycan dilinə necə tərcümə olunur?',
+          options: [
+            'Şühudi keçmiş (-dı/-di)',
+            'Nəqli keçmiş (-mış/-miş)',
+            'Uzaq keçmiş (-mışdı/-mişdi)',
+            'İndiki zaman (-ır/-ir)',
+          ],
+          answer: 'Uzaq keçmiş (-mışdı/-mişdi)',
+        },
+        {
+          q: '"No sooner had I arrived ___ it rained." — boşluq?',
+          options: ['when', 'since', 'than', 'after'],
+          answer: 'than',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 8 ───────────────────────────────────────────
+// had seç · when/after/before · by that time · hardly/no sooner
+[
+  // had seçimi
+  { en: '"I ___ written the letter."',                        tr: 'had',    wrong: 'have'  },
+  { en: '"She ___ already left."',                            tr: 'had',    wrong: 'has'   },
+  { en: '"They ___ finished before we came."',                tr: 'had',    wrong: 'have'  },
+  { en: '"He ___ never seen snow before that day."',          tr: 'had',    wrong: 'has'   },
+  { en: '"We ___ eaten before she arrived."',                 tr: 'had',    wrong: 'have'  },
+
+  // when / before / after ardıcıllıq
+  { en: '"When I came, she ___ already left."',               tr: 'had',         wrong: 'has'    },
+  { en: '"She had left ___ I came."',                         tr: 'before',      wrong: 'after'  },
+  { en: '"___ he had written, he went to sleep."',            tr: 'After',       wrong: 'Before' },
+  { en: '"After he had written, he ___ to sleep."',           tr: 'went',        wrong: 'had gone' },
+
+  // by that time zərfləri
+  { en: '"By that time she ___ finished."',                   tr: 'had',         wrong: 'has'   },
+  { en: '"By ___ o\'clock he had left."',                     tr: 'five',        wrong: 'now'   },
+
+  // hardly / no sooner
+  { en: '"Hardly had I arrived ___ it rained."',              tr: 'when',        wrong: 'than'  },
+  { en: '"No sooner had I arrived ___ it rained."',           tr: 'than',        wrong: 'when'  },
+  { en: '"___ had I turned when I saw him." — inversiya?',    tr: 'Hardly',      wrong: 'Never' },
+
+  // Düzgün / yanlış cümlə
+  { en: '"When I came, she already left." — düzdür?',         tr: 'Xeyr',        wrong: 'Bəli'  },
+  { en: '"After he had finished, he went home." — düzdür?',   tr: 'Bəli',        wrong: 'Xeyr'  },
+  { en: '"By that time they have arrived." — düzdür?',        tr: 'Xeyr',        wrong: 'Bəli'  },
+
+  // Azərbaycana tərcümə
+  { en: '"She had gone." — Azərbaycanca?',                    tr: 'O getmişdi.',       wrong: 'O getmişdir.'      },
+  { en: '"I had written." — Azərbaycanca?',                   tr: 'Mən yazmışdım.',    wrong: 'Mən yazmışam.'     },
+  { en: 'Past Perfect Azərbaycanda hansı zamandır?',          tr: 'Uzaq keçmiş',       wrong: 'Nəqli keçmiş'      },
+],
+
+// ── Final Test — Felin zaman formaları (50 sual) ──────────
+[
+  // ── Simple Present ────────────────────────────────────
+  { en: '"She ___ to school every day."',                     tr: 'goes',         wrong: 'go'          },
+  { en: '"___ he speak English?"',                            tr: 'Does',         wrong: 'Do'          },
+  { en: '"They ___ not like coffee."',                        tr: 'do',           wrong: 'does'        },
+  { en: '"Water ___ at 100 degrees."',                        tr: 'boils',        wrong: 'boil'        },
+  { en: '"I will call you if she ___."',                      tr: 'comes',        wrong: 'will come'   },
+  { en: '"He ___ soundly every night."',                      tr: 'sleeps',       wrong: 'sleep'       },
+  { en: '"___ they live here?"',                              tr: 'Do',           wrong: 'Does'        },
+  { en: '"She doesn\'t ___."',                                tr: 'work',         wrong: 'works'       },
+
+  // ── Simple Past ───────────────────────────────────────
+  { en: '"I ___ to Baku yesterday."',                         tr: 'went',         wrong: 'go'          },
+  { en: '"She ___ a letter last night."',                     tr: 'wrote',        wrong: 'writes'      },
+  { en: '"___ you finish the work?"',                         tr: 'Did',          wrong: 'Does'        },
+  { en: '"They ___ not come to the party."',                  tr: 'did',          wrong: 'does'        },
+  { en: '"He ___ in the village when he was young."',         tr: 'lived',        wrong: 'lives'       },
+  { en: '"asked" — -ed necə oxunur?',                         tr: '[t]',          wrong: '[id]'        },
+  { en: '"added" — -ed necə oxunur?',                         tr: '[id]',         wrong: '[t]'         },
+  { en: '"played" — -ed necə oxunur?',                        tr: '[d]',          wrong: '[t]'         },
+  { en: '"write" felinin Simple Past forması?',               tr: 'wrote',        wrong: 'written'     },
+  { en: '"speak" felinin Simple Past forması?',               tr: 'spoke',        wrong: 'spoken'      },
+  { en: '"cut" felinin Simple Past forması?',                 tr: 'cut',          wrong: 'cutted'      },
+  { en: '"send" felinin Simple Past forması?',                tr: 'sent',         wrong: 'sended'      },
+
+  // ── Simple Future ─────────────────────────────────────
+  { en: '"I ___ go to London next year."',                    tr: 'shall',        wrong: 'will'        },
+  { en: '"She ___ call you tomorrow."',                       tr: 'will',         wrong: 'shall'       },
+  { en: '"___ I help you?"',                                  tr: 'Shall',        wrong: 'Will'        },
+  { en: '"I shan\'t work." — tam forması?',                   tr: 'I shall not work',  wrong: 'I will not work' },
+  { en: '"He won\'t come." — tam forması?',                   tr: 'He will not come',  wrong: 'He shall not come' },
+  { en: '"She ___ going to cook dinner." — hazırlaşır',       tr: 'is',           wrong: 'will'        },
+  { en: '"The train is about ___ start."',                    tr: 'to',           wrong: 'for'         },
+  { en: 'Simple Future zaman zərfi?',                         tr: 'tomorrow',     wrong: 'yesterday'   },
+
+  // ── Future in the Past ────────────────────────────────
+  { en: '"I ___ come." — Future in the Past, I şəxsi',       tr: 'should',       wrong: 'would'       },
+  { en: '"She ___ come." — Future in the Past',               tr: 'would',        wrong: 'should'      },
+  { en: '"He said that he ___ return in time."',              tr: 'would',        wrong: 'will'        },
+  { en: '"I wouldn\'t come." — tam forması?',                 tr: 'I would not come',  wrong: 'I should not come' },
+  { en: 'Future in the Past zaman zərfi?',                    tr: 'the next day', wrong: 'tomorrow'    },
+
+  // ── Present Continuous ────────────────────────────────
+  { en: '"She ___ writing now."',                             tr: 'is',           wrong: 'are'         },
+  { en: '"They ___ playing at the moment."',                  tr: 'are',          wrong: 'is'          },
+  { en: '"Look! He ___ running."',                            tr: 'is',           wrong: 'was'         },
+  { en: '"I am not writing." — qısa forması?',                tr: 'I\'m not writing',  wrong: 'I aren\'t writing' },
+  { en: '"to know" — Present Continuous-da işlənir?',         tr: 'Xeyr',         wrong: 'Bəli'        },
+  { en: '"I am thinking of you." — "think" burada?',          tr: 'fikirləşmək',  wrong: 'məncə'       },
+  { en: '"to belong to" — stativ feldir?',                    tr: 'Bəli',         wrong: 'Xeyr'        },
+  { en: 'Present Continuous zaman zərfi?',                    tr: 'now',          wrong: 'yesterday'   },
+
+  // ── Past Continuous ───────────────────────────────────
+  { en: '"She ___ writing at that time."',                    tr: 'was',          wrong: 'were'        },
+  { en: '"They ___ playing when I came."',                    tr: 'were',         wrong: 'was'         },
+  { en: '"When I came, my sister ___ writing something."',    tr: 'was',          wrong: 'is'          },
+  { en: '"I ___ working all day long yesterday."',            tr: 'was',          wrong: 'were'        },
+  { en: 'Past Continuous zaman zərfi?',                       tr: 'at that time yesterday', wrong: 'just'  },
+
+  // ── Present Perfect ───────────────────────────────────
+  { en: '"She ___ finished her homework."',                   tr: 'has',          wrong: 'have'        },
+  { en: '"They ___ already eaten."',                          tr: 'have',         wrong: 'has'         },
+  { en: '"I ___ never seen snow."',                           tr: 'have',         wrong: 'has'         },
+  { en: '"Have you ___ been to Paris?"',                      tr: 'ever',         wrong: 'never'       },
+  { en: '"I haven\'t done it ___."',                          tr: 'yet',          wrong: 'already'     },
+  { en: '"I have lived here ___ 2015."',                      tr: 'since',        wrong: 'for'         },
+  { en: '"She has been ill ___ three days."',                 tr: 'for',          wrong: 'since'       },
+  { en: '"I have seen him yesterday." — düzdür?',             tr: 'Xeyr',         wrong: 'Bəli'        },
+  { en: '"She has gone." — Azərbaycanca?',                    tr: 'O getmişdir.', wrong: 'O gedirdi.'  },
+
+  // ── Past Perfect ──────────────────────────────────────
+  { en: '"When I came, she ___ already left."',               tr: 'had',          wrong: 'has'         },
+  { en: '"After he ___ written, he went to sleep."',          tr: 'had',          wrong: 'has'         },
+  { en: '"She had left ___ I came."',                         tr: 'before',       wrong: 'after'       },
+  { en: '"By that time she ___ finished."',                   tr: 'had',          wrong: 'has'         },
+  { en: '"Hardly had I arrived ___ it rained."',              tr: 'when',         wrong: 'than'        },
+  { en: '"No sooner had I arrived ___ it rained."',           tr: 'than',         wrong: 'when'        },
+  { en: '"I hadn\'t written." — tam forması?',                tr: 'I had not written', wrong: 'I have not written' },
+  { en: '"She had gone." — Azərbaycanca?',                    tr: 'O getmişdi.',  wrong: 'O getmişdir.' },
+
+  // ── Qarışıq: zaman tanıma ─────────────────────────────
+  { en: '"She is reading now." — hansı zamandır?',            tr: 'Present Continuous',  wrong: 'Simple Present'   },
+  { en: '"She reads every day." — hansı zamandır?',           tr: 'Simple Present',      wrong: 'Present Continuous' },
+  { en: '"She was reading at 5." — hansı zamandır?',          tr: 'Past Continuous',     wrong: 'Present Continuous' },
+  { en: '"She read yesterday." — hansı zamandır?',            tr: 'Simple Past',         wrong: 'Past Perfect'     },
+  { en: '"She has read it." — hansı zamandır?',               tr: 'Present Perfect',     wrong: 'Past Perfect'     },
+  { en: '"She had read it." — hansı zamandır?',               tr: 'Past Perfect',        wrong: 'Present Perfect'  },
+  { en: '"She will read tomorrow." — hansı zamandır?',        tr: 'Simple Future',       wrong: 'Future in the Past' },
+  { en: '"He said she would read." — hansı zamandır?',        tr: 'Future in the Past',  wrong: 'Simple Future'    },
+],
 
   ],
 };
