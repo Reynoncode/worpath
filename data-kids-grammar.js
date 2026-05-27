@@ -5446,101 +5446,644 @@ const VERBS_LEVEL = {
     // ║  QRUP 2 — Davamedici zaman formaları (Continuous)      ║
     // ══════════════════════════════════════════════════════════
 
-    // ── Bölmə 5 ───────────────────────────────────────────────
+// ── Dərs 5.1 — am/is/are + fel-ing ──────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.1 — am/is/are + fel-ing',
+  cards: [
+
+    // ── Ekran 1: Düzəlmə qaydası ─────────────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 5 — Present Continuous',
+      type: 'lesson',
+      title: 'Present Continuous necə düzəlir?',
+      content: 'Present Continuous "to be" felinin indiki zaman formaları (am/is/are) və əsas felin üzərinə "-ing" sonluğu əlavə etməklə düzəlir.\n\nDüzəlmə: am/is/are + fel + ing',
+      table: [
+        ['Şəxs',      'Tək',             'Cəm'],
+        ['I',         'I am writing',    'We are writing'],
+        ['You',       'You are writing', 'You are writing'],
+        ['He/She/It', 'He is writing',   'They are writing'],
+      ],
+      tip: 'Qısa təsdiq formaları:\nI\'m writing · You\'re writing · He\'s writing · They\'re writing',
     },
 
-    // ── index: 15 — Dərs 5.1 ─────────────────────────────────
+    // ── Ekran 2: Sual forması ────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 5.1 — am/is/are + fel-ing',
-      cards: [
-        {
-          type: 'lesson',
-          title: 'Dərs 5.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
-        },
+      type: 'lesson',
+      title: 'Present Continuous — sual forması',
+      content: 'Sual formasını düzəltmək üçün "to be"-nin şəxs formaları mübtədadan əvvələ keçir:',
+      table: [
+        ['Şəxs',          'Sual'],
+        ['I',             'Am I writing?'],
+        ['You',           'Are you writing?'],
+        ['He / She / It', 'Is he (she) writing?'],
+        ['We',            'Are we writing?'],
+        ['They',          'Are they writing?'],
+      ],
+      note: 'Qısa cavab:\nYes, I am. / No, I\'m not.\nYes, he is. / No, he isn\'t.',
+    },
+
+    // ── Ekran 3: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Continuous — inkar forması',
+      content: 'İnkar formasını düzəltmək üçün "to be" felinin şəxs formasından sonra "not" əlavə edilir:',
+      table: [
+        ['Şəxs',     'Tam inkar',              'Qısa inkar'],
+        ['I',        'I am not writing',       'I\'m not writing'],
+        ['You',      'You are not writing',    'You aren\'t writing'],
+        ['He/She',   'He is not writing',      'He isn\'t writing'],
+        ['We',       'We are not writing',     'We aren\'t writing'],
+        ['They',     'They are not writing',   'They aren\'t writing'],
+      ],
+      tip: 'Diqqət: "amn\'t" nadir işlənir. I şəxsində adətən "I\'m not" işlənir.',
+    },
+
+    // ── Ekran 4: Sual-inkar forması ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual-inkar forması',
+      content: 'Sual-inkar forması iki cür düzəlir:',
+      table: [
+        ['Tam forma',               'Qısa forma'],
+        ['Am I not writing?',       'Amn\'t I writing?'],
+        ['Are you not writing?',    'Aren\'t you writing?'],
+        ['Is he not writing?',      'Isn\'t he writing?'],
+        ['Are we not writing?',     'Aren\'t we writing?'],
+        ['Are they not writing?',   'Aren\'t they writing?'],
       ],
     },
 
-    // ── index: 16 — Dərs 5.2 ─────────────────────────────────
+    // ── Quiz: am/is/are seçimi ───────────────────────────
+    { en: '"I ___ writing." — boşluq?',          tr: 'am',  wrong: 'is'  },
+    { en: '"She ___ writing." — boşluq?',         tr: 'is',  wrong: 'are' },
+    { en: '"They ___ writing." — boşluq?',        tr: 'are', wrong: 'is'  },
+    { en: '"We ___ writing." — boşluq?',          tr: 'are', wrong: 'am'  },
+    { en: '"He ___ writing." — boşluq?',          tr: 'is',  wrong: 'are' },
+    { en: '"You ___ writing." — boşluq?',         tr: 'are', wrong: 'is'  },
+    { en: '"I\'m writing." — tam forması?',        tr: 'I am writing',   wrong: 'I is writing'  },
+    { en: '"He isn\'t writing." — tam forması?',   tr: 'He is not writing', wrong: 'He are not writing' },
+
+    // ── Mini-check ───────────────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 5.2 — İşlənmə: danışıq anında',
-      cards: [
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 5.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"She ___ reading a book." — boşluğa nə gəlir?',
+          options: ['am', 'are', 'is', 'be'],
+          answer: 'is',
+        },
+        {
+          q: '"We ___ playing football." — boşluğa nə gəlir?',
+          options: ['is', 'am', 'be', 'are'],
+          answer: 'are',
+        },
+        {
+          q: '"I\'m not writing." — tam forması hansıdır?',
+          options: ['I is not writing', 'I am not writing', 'I are not writing', 'I be not writing'],
+          answer: 'I am not writing',
+        },
+        {
+          q: '"___ he sleeping?" — sual forması?',
+          options: ['Am', 'Are', 'Is', 'Be'],
+          answer: 'Is',
+        },
+        {
+          q: '"They aren\'t coming." — tam forması?',
+          options: ['They is not coming', 'They am not coming', 'They are not coming', 'They be not coming'],
+          answer: 'They are not coming',
+        },
+        {
+          q: 'Hansı qısa forma YANLIŞ-dır?',
+          options: ['I\'m writing', 'He\'s writing', 'They\'re writing', 'We\'s writing'],
+          answer: 'We\'s writing',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 17 — Dərs 5.3 ─────────────────────────────────
+// ── Dərs 5.2 — İşlənmə: danışıq anında ─────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.2 — İşlənmə: danışıq anında',
+  cards: [
+
+    // ── Ekran 1: İşlənmə qaydası ─────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 5.3 — Continuous zamanda işlənməyən fellər',
-      cards: [
+      type: 'lesson',
+      title: 'Present Continuous — nə vaxt işlənir?',
+      content: 'Bu zaman forması danışıq zamanı ilə eyni anda baş verən, icra edilən hərəkətləri bildirmək üçün işlədilir.\n\nAzərbaycan dilinə indiki zaman kimi tərcümə olunur.',
+      examples: [
+        { word: 'Look! The child is returning from school.', az: 'Bax! Uşaq məktəbdən qayıdır.' },
+        { word: 'Listen! Your sister is singing.', az: 'Qulaq as! Bacın oxuyur.' },
+        { word: 'I am writing a letter now.', az: 'Mən indi məktub yazıram.' },
+        { word: 'She is reading at the moment.', az: 'O, hal-hazırda oxuyur.' },
+      ],
+      tip: 'Qayda: danışıq anında baş verən hərəkət → Present Continuous.',
+    },
+
+    // ── Ekran 2: Zaman zərfləri ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'Zaman zərfləri',
+      content: 'Present Continuous ilə işlənən zaman zərfləri:',
+      table: [
+        ['Zaman zərfi',          'Mənası'],
+        ['now',                  'indi'],
+        ['at the moment',        'hal-hazırda'],
+        ['at the present moment','bu an'],
+        ['Look!',                'Bax! (cümlə əvvəlində)'],
+        ['Listen!',              'Qulaq as! (cümlə əvvəlində)'],
+      ],
+      examples: [
+        { word: 'She is cooking now.', az: 'O indi bişirir.' },
+        { word: 'At the moment, they are working.', az: 'Hal-hazırda onlar işləyirlər.' },
+      ],
+      note: 'Cümlənin əvvəlində "Look!" və ya "Listen!" varsa — Present Continuous işlənir.',
+    },
+
+    // ── Quiz: zaman zərfləri ─────────────────────────────
+    { en: 'Present Continuous zaman zərfi?',            tr: 'now',            wrong: 'yesterday'     },
+    { en: '"at the ___" — Present Continuous zərfi?',   tr: 'moment',         wrong: 'time'          },
+    { en: '"Look! She ___ coming." — boşluq?',          tr: 'is',             wrong: 'was'           },
+    { en: '"Listen! They ___ singing." — boşluq?',      tr: 'are',            wrong: 'were'          },
+    { en: '"I am reading ___ moment." — boşluq?',       tr: 'at the present', wrong: 'at that'       },
+    { en: '"___ the moment, he is working." — boşluq?', tr: 'At',             wrong: 'In'            },
+
+    // ── Mini-check ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 5.3 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: 'Present Continuous hansı zaman zərfi ilə işlənir?',
+          options: ['yesterday', 'now', 'last week', 'ago'],
+          answer: 'now',
+        },
+        {
+          q: '"Look! The dog ___ running." — boşluğa nə gəlir?',
+          options: ['run', 'ran', 'is', 'are'],
+          answer: 'is',
+        },
+        {
+          q: '"She is working ___ the moment." — boşluq?',
+          options: ['in', 'on', 'at', 'by'],
+          answer: 'at',
+        },
+        {
+          q: 'Hansı cümlə Present Continuous-dur?',
+          options: [
+            'She worked yesterday.',
+            'She works every day.',
+            'She is working now.',
+            'She will work tomorrow.',
+          ],
+          answer: 'She is working now.',
+        },
+        {
+          q: '"Listen! They ___ singing." — boşluq?',
+          options: ['was', 'is', 'am', 'are'],
+          answer: 'are',
+        },
+        {
+          q: 'Present Continuous Azərbaycan dilinə necə tərcümə olunur?',
+          options: [
+            'Keçmiş zaman (-dı/-di)',
+            'İndiki zaman (-ır/-ir)',
+            'Gələcək zaman (-acaq/-əcək)',
+            'Nəqli keçmiş (-mış/-miş)',
+          ],
+          answer: 'İndiki zaman (-ır/-ir)',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 18 — Mini-quiz 5 ───────────────────────────────
-    // am/is/are seç · stativ fel tap · now/at the moment tanı
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+// ── Dərs 5.3 — Continuous zamanda işlənməyən fellər ─────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.3 — Continuous zamanda işlənməyən fellər',
+  cards: [
 
-    // ── Bölmə 6 ───────────────────────────────────────────────
+    // ── Ekran 1: Stativ fellər ────────────────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 6 — Past Continuous',
+      type: 'lesson',
+      title: 'Stativ fellər nədir?',
+      content: 'Bir qisim fellər hərəkət bildirmədikləri üçün davamedici zamanda işlənmirlər. Bunlara "stativ fellər" deyilir.\n\n3 əsas qrup var:\n\n1. Zehni fəaliyyət bildirənlər\n2. Hissi qavrayış bildirənlər\n3. Mücərrəd əlaqə bildirənlər',
+      table: [
+        ['Qrup',                       'Fellər'],
+        ['Zehni fəaliyyət',            'like, see, know, notice, hear, want, wish, dream, think, understand, realize, remember'],
+        ['Hissi qavrayış',             'hate, love'],
+        ['Mücərrəd əlaqə',             'belong to, depend on'],
+      ],
+      tip: 'Bu fellər heç vaxt "-ing" ilə işlənmir!\n✗ I am knowing → ✓ I know\n✗ She is loving → ✓ She loves',
     },
 
-    // ── index: 19 — Dərs 6.1 ─────────────────────────────────
+    // ── Ekran 2: "think" felinin xüsusiyyəti ─────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 6.1 — was/were + fel-ing',
-      cards: [
+      type: 'lesson',
+      title: '"think" felinin xüsus işlənməsi',
+      content: '"think" feli mənasından asılı olaraq iki cür işlənir:',
+      table: [
+        ['Məna',              'Forma',              'Nümunə'],
+        ['fikirləşmək',       'Continuous ola bilər','I am thinking of you.'],
+        ['məncə / zənn etmək','Continuous olmaz',   'I think you are right.'],
+      ],
+      examples: [
+        { word: 'I am thinking of you.',   az: 'Sizin haqqınızda fikirləşirəm.' },
+        { word: 'I think you are right.',  az: 'Məncə siz haqlısınız.' },
+      ],
+      note: '"fikirləşmək" mənasında → Continuous ola bilər.\n"məncə/zənn etmək" mənasında → Continuous olmaz.',
+    },
+
+    // ── Quiz: stativ fellər ───────────────────────────────
+    { en: '"to know" — stativ feldir?',           tr: 'Bəli',  wrong: 'Xeyr' },
+    { en: '"to run" — stativ feldir?',             tr: 'Xeyr', wrong: 'Bəli' },
+    { en: '"to love" — davamedici formada işlənir?', tr: 'Xeyr', wrong: 'Bəli' },
+    { en: '"to belong to" — mənası?',              tr: 'məxsus olmaq', wrong: 'asılı olmaq' },
+    { en: '"to depend on" — mənası?',              tr: 'asılı olmaq',  wrong: 'məxsus olmaq' },
+    { en: '"I am thinking of you." — "think" burada?', tr: 'fikirləşmək', wrong: 'məncə' },
+    { en: '"I think you are right." — "think" burada?', tr: 'məncə', wrong: 'fikirləşmək' },
+    { en: '"I am knowing." — bu cümlə düzdür?',   tr: 'Xeyr', wrong: 'Bəli' },
+
+    // ── Mini-check ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 6.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: 'Hansı fel davamedici formada işlənə BİLMƏZ?',
+          options: ['run', 'write', 'know', 'play'],
+          answer: 'know',
+        },
+        {
+          q: '"She ___ (love) him." — düzgün forma?',
+          options: ['is loving', 'are loving', 'loves', 'loving'],
+          answer: 'loves',
+        },
+        {
+          q: '"I am thinking of you." — burada "think" nə mənasındadır?',
+          options: ['məncə', 'zənn etmək', 'fikirləşmək', 'bilmək'],
+          answer: 'fikirləşmək',
+        },
+        {
+          q: 'Hansı fel stativ deyil?',
+          options: ['hate', 'love', 'know', 'write'],
+          answer: 'write',
+        },
+        {
+          q: '"to belong to" — mənası nədir?',
+          options: ['asılı olmaq', 'məxsus olmaq', 'fikirləşmək', 'eşitmək'],
+          answer: 'məxsus olmaq',
+        },
+        {
+          q: 'Hansı cümlə YANLIŞ-dır?',
+          options: [
+            'I know him.',
+            'She loves music.',
+            'I am knowing him.',
+            'They want to leave.',
+          ],
+          answer: 'I am knowing him.',
+        },
+        {
+          q: '"I think you are right." — bu cümlədə "think" Continuous-da işlənmir, çünki:',
+          options: [
+            '"think" həmişə stativ feldir',
+            'Bu cümlədə "think" "məncə" mənasındadır',
+            'Sual formasıdır',
+            'İnkar formasıdır',
+          ],
+          answer: 'Bu cümlədə "think" "məncə" mənasındadır',
         },
       ],
     },
+  ],
+},
+// ── Mini-quiz 5 ───────────────────────────────────────────
+// am/is/are seç · stativ fel tap · now/at the moment tanı
+[
+  // am / is / are seçimi
+  { en: '"I ___ writing now."',                      tr: 'am',   wrong: 'is'   },
+  { en: '"She ___ reading at the moment."',           tr: 'is',   wrong: 'are'  },
+  { en: '"They ___ playing now."',                    tr: 'are',  wrong: 'is'   },
+  { en: '"We ___ working at the moment."',            tr: 'are',  wrong: 'am'   },
+  { en: '"He ___ sleeping now."',                     tr: 'is',   wrong: 'are'  },
 
-    // ── index: 20 — Dərs 6.2 ─────────────────────────────────
+  // Stativ fellər
+  { en: '"to know" — davamedici formada işlənir?',    tr: 'Xeyr', wrong: 'Bəli' },
+  { en: '"to write" — stativ feldir?',                tr: 'Xeyr', wrong: 'Bəli' },
+  { en: '"to love" — davamedici formada işlənir?',    tr: 'Xeyr', wrong: 'Bəli' },
+  { en: '"to run" — stativ feldir?',                  tr: 'Xeyr', wrong: 'Bəli' },
+  { en: '"to belong to" — stativ feldir?',            tr: 'Bəli', wrong: 'Xeyr' },
+
+  // Düzgün / yanlış cümlə
+  { en: '"I am knowing him." — düzdür?',              tr: 'Xeyr', wrong: 'Bəli' },
+  { en: '"She is running now." — düzdür?',            tr: 'Bəli', wrong: 'Xeyr' },
+  { en: '"They are loving music." — düzdür?',         tr: 'Xeyr', wrong: 'Bəli' },
+  { en: '"He is playing now." — düzdür?',             tr: 'Bəli', wrong: 'Xeyr' },
+
+  // Zaman zərfləri
+  { en: 'Present Continuous zaman zərfi?',            tr: 'now',          wrong: 'yesterday'   },
+  { en: '"at the ___" — Present Continuous zərfi?',   tr: 'moment',       wrong: 'time'        },
+  { en: '"Look! She ___ coming."',                    tr: 'is',           wrong: 'was'         },
+  { en: '"Listen! They ___ singing."',                tr: 'are',          wrong: 'were'        },
+
+  // "think" felinin xüsusiyyəti
+  { en: '"I am thinking of you." — "think" burada?', tr: 'fikirləşmək',  wrong: 'məncə'       },
+  { en: '"I think you are right." — "think" burada?',tr: 'məncə',        wrong: 'fikirləşmək' },
+],
+  
+
+// ── Dərs 6.1 — was/were + fel-ing ───────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 6.1 — was/were + fel-ing',
+  cards: [
+
+    // ── Ekran 1: Düzəlmə qaydası ─────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 6.2 — İşlənmə: keçmişdə dəqiq vaxt',
-      cards: [
-        {
-          type: 'lesson',
-          title: 'Dərs 6.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
-        },
+      type: 'lesson',
+      title: 'Past Continuous necə düzəlir?',
+      content: 'Past Continuous "to be" felinin keçmiş zaman formaları (was/were) və əsas felin üzərinə "-ing" sonluğu əlavə etməklə düzəlir.\n\nDüzəlmə: was/were + fel + ing',
+      table: [
+        ['Şəxs',      'Tək',               'Cəm'],
+        ['I',         'I was writing',     'We were writing'],
+        ['You',       'You were writing',  'You were writing'],
+        ['He/She/It', 'He was writing',    'They were writing'],
+      ],
+      tip: 'was → I, He, She, It\nwere → You, We, They',
+    },
+
+    // ── Ekran 2: Sual forması ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Continuous — sual forması',
+      content: 'Sual formasını düzəltmək üçün "to be"-nin şəxs formaları mübtədadan əvvələ keçir:',
+      table: [
+        ['Şəxs',          'Sual'],
+        ['I',             'Was I writing?'],
+        ['You',           'Were you writing?'],
+        ['He / She / It', 'Was he (she) writing?'],
+        ['We',            'Were we writing?'],
+        ['They',          'Were they writing?'],
+      ],
+      note: 'Qısa cavab:\nYes, I was. / No, I wasn\'t.\nYes, they were. / No, they weren\'t.',
+    },
+
+    // ── Ekran 3: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Continuous — inkar forması',
+      content: 'İnkar formasını düzəltmək üçün "to be" felindən sonra "not" əlavə edilir:',
+      table: [
+        ['Şəxs',     'Tam inkar',                 'Qısa inkar'],
+        ['I',        'I was not writing',          'I wasn\'t writing'],
+        ['You',      'You were not writing',       'You weren\'t writing'],
+        ['He/She',   'He was not writing',         'He wasn\'t writing'],
+        ['We',       'We were not writing',        'We weren\'t writing'],
+        ['They',     'They were not writing',      'They weren\'t writing'],
+      ],
+      tip: 'was not → wasn\'t\nwere not → weren\'t',
+    },
+
+    // ── Ekran 4: Sual-inkar forması ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual-inkar forması',
+      content: 'Sual-inkar forması iki cür düzəlir:',
+      table: [
+        ['Tam forma',                  'Qısa forma'],
+        ['Was I not writing?',         'Wasn\'t I writing?'],
+        ['Were you not writing?',      'Weren\'t you writing?'],
+        ['Was he/she not writing?',    'Wasn\'t he/she writing?'],
+        ['Were we not writing?',       'Weren\'t we writing?'],
+        ['Were they not writing?',     'Weren\'t they writing?'],
       ],
     },
 
-    // ── index: 21 — Mini-quiz 6 ───────────────────────────────
-    // was/were seç · when ilə uyğun zaman · davamedici zərfi tanı
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+    // ── Quiz: was / were seçimi ──────────────────────────
+    { en: '"I ___ writing."',           tr: 'was',  wrong: 'were' },
+    { en: '"She ___ writing."',         tr: 'was',  wrong: 'were' },
+    { en: '"They ___ writing."',        tr: 'were', wrong: 'was'  },
+    { en: '"We ___ writing."',          tr: 'were', wrong: 'was'  },
+    { en: '"He ___ writing."',          tr: 'was',  wrong: 'were' },
+    { en: '"You ___ writing."',         tr: 'were', wrong: 'was'  },
+    { en: '"I wasn\'t writing." — tam?', tr: 'I was not writing',  wrong: 'I were not writing' },
+    { en: '"Weren\'t they?" — tam?',    tr: 'Were they not?',     wrong: 'Was they not?'      },
 
-    // ── index: 22 — Test 2 ────────────────────────────────────
-    // Davamedici zaman formaları (Bölmə 5–6) · 10 sual
-    // Present/Past Continuous fərqi · stativ fellər · zaman zərfləri
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+    // ── Mini-check ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ reading a book." — Past Continuous?',
+          options: ['am', 'were', 'was', 'is'],
+          answer: 'was',
+        },
+        {
+          q: '"We ___ playing football." — Past Continuous?',
+          options: ['was', 'am', 'is', 'were'],
+          answer: 'were',
+        },
+        {
+          q: '"I wasn\'t writing." — tam forması?',
+          options: ['I were not writing', 'I am not writing', 'I was not writing', 'I be not writing'],
+          answer: 'I was not writing',
+        },
+        {
+          q: '"___ he sleeping?" — Past Continuous sual?',
+          options: ['Am', 'Were', 'Was', 'Is'],
+          answer: 'Was',
+        },
+        {
+          q: '"They weren\'t coming." — tam forması?',
+          options: ['They was not coming', 'They am not coming', 'They were not coming', 'They be not coming'],
+          answer: 'They were not coming',
+        },
+        {
+          q: 'Hansı forma YANLIŞ-dır?',
+          options: ['I was writing', 'He was writing', 'We was writing', 'They were writing'],
+          answer: 'We was writing',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 6.2 — İşlənmə: keçmişdə dəqiq vaxt ────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 6.2 — İşlənmə: keçmişdə dəqiq vaxt',
+  cards: [
+
+    // ── Ekran 1: Əsas işlənmə halları ────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Continuous — nə vaxt işlənir?',
+      content: 'Past Continuous 3 halda işlənir:\n\n1. Keçmişdə dəqiq bir vaxtda baş verən hərəkəti bildirmək üçün — "when" ilə başlanan budaq cümlə ilə\n\n2. Zərf birləşmələri ilə: at that time yesterday, at two o\'clock yesterday\n\n3. Keçmişdə müəyyən müddət davam edən hərəkətləri bildirmək üçün — "all day long", "the whole day" ilə',
+      examples: [
+        { word: 'When I came, my sister was writing something.', az: 'Mən gələndə bacım nəsə yazırdı.' },
+        { word: 'We were going on an excursion at that time yesterday.', az: 'Dünən bu vaxt biz ekskursiyaya gedirdik.' },
+        { word: 'I was working at my English all day long yesterday.', az: 'Dünən bütün gün ingilis dilim üzərində işləyirdim.' },
+        { word: 'I was beginning to learn English.', az: 'Mən ingilis dilini öyrənməyə başlayırdım.' },
+      ],
+    },
+
+    // ── Ekran 2: "when" ilə işlənmə ──────────────────────
+    {
+      type: 'lesson',
+      title: '"when" ilə Past Continuous + Simple Past',
+      content: '"when" ilə başlanan budaq cümlədə Simple Past, baş cümlədə isə Past Continuous işlənir.\n\nYəni: davam edən hərəkət (Past Continuous) + onu kəsən hərəkət (Simple Past / when)',
+      table: [
+        ['Davam edən hərəkət (Past Continuous)', 'Kəsən hərəkət (when + Simple Past)'],
+        ['My sister was writing',                'when I came.'],
+        ['He was sleeping',                      'when the phone rang.'],
+        ['They were playing',                    'when it started to rain.'],
+      ],
+      tip: 'Qayda: when + Simple Past → baş cümlədə Past Continuous\n"When I came" — gəldim (Simple Past)\n"was writing" — yazırdı (Past Continuous)',
+    },
+
+    // ── Ekran 3: Zaman zərfləri ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'Zaman zərfləri',
+      content: 'Past Continuous ilə işlənən zaman zərfləri:',
+      table: [
+        ['Zaman zərfi',              'Mənası'],
+        ['at that time yesterday',   'dünən bu vaxt'],
+        ['at two o\'clock yesterday','dünən saat 2-də'],
+        ['all day long',             'bütün gün boyu'],
+        ['the whole day',            'bütün gün'],
+        ['when',                     'nə vaxt ki / -anda/-əndə'],
+      ],
+      examples: [
+        { word: 'We were going on an excursion at that time yesterday.', az: 'Dünən bu vaxt biz ekskursiyaya gedirdik.' },
+        { word: 'I was working all day long.', az: 'Mən bütün gün işləyirdim.' },
+      ],
+      note: 'Azərbaycan dilinə felin şühudi keçmiş zaman forması (-ırdı/-irdi) və ya keçmiş davam forması ilə tərcümə olunur.',
+    },
+
+    // ── Ekran 4: Present Continuous vs Past Continuous ───
+    {
+      type: 'lesson',
+      title: 'Present Continuous vs Past Continuous — müqayisə',
+      content: 'İki formanın əsas fərqləri:',
+      table: [
+        ['Xüsusiyyət',      'Present Continuous',         'Past Continuous'],
+        ['Köməkçi fel',     'am / is / are',              'was / were'],
+        ['Zaman',           'İndi baş verir',             'Keçmişdə baş verirdi'],
+        ['Zaman zərfi',     'now, at the moment',         'at that time yesterday, when, all day long'],
+        ['Nümunə',          'She is writing now.',        'She was writing when I came.'],
+        ['Az. tərcümə',     'yazır (indiki zaman)',       'yazırdı (keçmiş davam)'],
+      ],
+    },
+
+    // ── Quiz: işlənmə ────────────────────────────────────
+    { en: '"When I came, she ___ writing." — boşluq?',      tr: 'was',              wrong: 'is'              },
+    { en: '"___ that time yesterday" — zərf?',              tr: 'at',               wrong: 'in'              },
+    { en: '"all day ___" — tam ifadə?',                     tr: 'long',             wrong: 'time'            },
+    { en: '"when" ilə hansı zaman işlənir?',                tr: 'Past Continuous',  wrong: 'Simple Future'   },
+    { en: '"She was writing" → Az. dilində?',               tr: 'yazırdı',          wrong: 'yazacaq'         },
+
+    // ── Mini-check ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"When I came, my sister ___ writing." — boşluq?',
+          options: ['is', 'are', 'was', 'were'],
+          answer: 'was',
+        },
+        {
+          q: 'Past Continuous hansı zaman zərfi ilə işlənir?',
+          options: ['now', 'tomorrow', 'at that time yesterday', 'every day'],
+          answer: 'at that time yesterday',
+        },
+        {
+          q: '"I was working ___ day long." — boşluq?',
+          options: ['whole', 'every', 'all', 'that'],
+          answer: 'all',
+        },
+        {
+          q: 'Hansı cümlə Past Continuous-dur?',
+          options: [
+            'She writes every day.',
+            'She is writing now.',
+            'She was writing when I came.',
+            'She will write tomorrow.',
+          ],
+          answer: 'She was writing when I came.',
+        },
+        {
+          q: '"We were going on an excursion at that time yesterday." — Az. dilində?',
+          options: [
+            'Biz ekskursiyaya gedəcəyik.',
+            'Biz ekskursiyaya getdik.',
+            'Dünən bu vaxt biz ekskursiyaya gedirdik.',
+            'Biz ekskursiyaya gedirik.',
+          ],
+          answer: 'Dünən bu vaxt biz ekskursiyaya gedirdik.',
+        },
+        {
+          q: '"when" ilə başlanan budaq cümlədə hansı zaman işlənir?',
+          options: ['Past Continuous', 'Simple Past', 'Present Continuous', 'Simple Future'],
+          answer: 'Simple Past',
+        },
+        {
+          q: 'Past Continuous-da "was" hansı şəxslərdə işlənir?',
+          options: ['You, We, They', 'I, He, She, It', 'Bütün şəxslərdə', 'Yalnız I şəxsində'],
+          answer: 'I, He, She, It',
+        },
+        {
+          q: 'Past Continuous Azərbaycan dilinə necə tərcümə olunur?',
+          options: [
+            'Gələcək zaman (-acaq/-əcək)',
+            'İndiki zaman (-ır/-ir)',
+            'Keçmiş davam forması (-ırdı/-irdi)',
+            'Nəqli keçmiş (-mış/-miş)',
+          ],
+          answer: 'Keçmiş davam forması (-ırdı/-irdi)',
+        },
+      ],
+    },
+  ],
+},
+
+    // ── Mini-quiz 6 ───────────────────────────────────────────
+// was/were seç · when ilə uyğun zaman · davamedici zərfi tanı
+[
+  // was / were seçimi
+  { en: '"I ___ writing at that time."',              tr: 'was',  wrong: 'were' },
+  { en: '"She ___ reading when I came."',             tr: 'was',  wrong: 'were' },
+  { en: '"They ___ playing all day long."',           tr: 'were', wrong: 'was'  },
+  { en: '"We ___ working yesterday."',                tr: 'were', wrong: 'was'  },
+  { en: '"He ___ sleeping when the phone rang."',     tr: 'was',  wrong: 'were' },
+
+  // İnkar forması
+  { en: '"I ___ not writing." — was/were?',           tr: 'was',  wrong: 'were' },
+  { en: '"They ___ not coming." — was/were?',         tr: 'were', wrong: 'was'  },
+  { en: '"wasn\'t" — tam forması?',                   tr: 'was not', wrong: 'were not' },
+  { en: '"weren\'t" — tam forması?',                  tr: 'were not', wrong: 'was not' },
+
+  // when ilə işlənmə
+  { en: '"When I came, she ___ writing." — boşluq?',  tr: 'was',          wrong: 'is'           },
+  { en: '"when" budaq cümləsində hansı zaman?',       tr: 'Simple Past',  wrong: 'Past Continuous' },
+  { en: '"When he called, they ___ sleeping."',       tr: 'were',         wrong: 'was'          },
+
+  // Zaman zərfləri
+  { en: 'Past Continuous zaman zərfi?',               tr: 'at that time yesterday', wrong: 'now'        },
+  { en: '"all day ___" — tam ifadə?',                 tr: 'long',                   wrong: 'time'       },
+  { en: '"the ___ day" — davam ifadəsi?',             tr: 'whole',                  wrong: 'next'       },
+  { en: '"at ___ o\'clock yesterday" — boşluq?',      tr: 'two',                    wrong: 'the'        },
+
+  // Düzgün / yanlış cümlə
+  { en: '"We was writing." — düzdür?',                tr: 'Xeyr', wrong: 'Bəli' },
+  { en: '"She was writing when I came." — düzdür?',   tr: 'Bəli', wrong: 'Xeyr' },
+
+  // Azərbaycana tərcümə
+  { en: '"She was writing." → Az. dilində?',          tr: 'yazırdı',   wrong: 'yazacaq'  },
+  { en: 'Past Continuous → Az. forması?',             tr: '-ırdı/-irdi', wrong: '-acaq/-əcək' },
+],
 
     // ══════════════════════════════════════════════════════════
     // ║  QRUP 3 — Bitmiş zaman formaları (Perfect)             ║
@@ -5639,15 +6182,6 @@ const VERBS_LEVEL = {
   ],
 };
 
-// ── Sayta əlavə et ────────────────────────────────────────────
-// Bu sətri data faylının sonuna, KIDS_GRAMMAR_LEVELS-in
-// push edildiyi yerə əlavə et:
-//
-//   KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
-//   LEVELS.push(VERBS_LEVEL);
-//
-// və ya birbaşa array-ə əlavə et:
-//   window.KIDS_GRAMMAR_LEVELS = [...KIDS_GRAMMAR_LEVELS, VERBS_LEVEL];
 
 KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
