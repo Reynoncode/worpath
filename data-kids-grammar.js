@@ -1140,29 +1140,247 @@ const KIDS_GRAMMAR_LEVELS = [
       ],
 
  
-      // ── Bölmə 4 ──────────────────────────────────────
-      // index: 14
+   // ── Bölmə 4 ──────────────────────────────────────
       {
         type: 'section_divider',
-        title: 'Bölmə 4 — Kollektiv, topluluq bildirən isimlər',
+        title: 'Bölmə 4 — Kollektiv isimlər · Topluluq bildirən isimlər',
       },
 
-      // index: 15 — Dərs 4.1
+      // Dərs 4.1 — Collective nouns
       {
         type: 'grammar_lesson',
         title: 'Dərs 4.1 — Collective nouns: family, crowd, crew',
-        cards: [],
+        cards: [
+
+          // ── Ekran 1: Kollektiv isimlər ───────────────────
+          {
+            type: 'lesson',
+            title: 'Kollektiv isimlər (Collective nouns)',
+            content: 'Kollektiv isimlər bir ad altında bir neçə nəfər və ya əşyanı bildirən isimlərdir.',
+            examples: [
+              { word: 'family',  az: 'ailə' },
+              { word: 'crowd',   az: 'izdiham' },
+              { word: 'company', az: 'şirkət, dəstə' },
+              { word: 'crew',    az: 'ekipaj, heyət' },
+            ],
+            tip: 'Kollektiv isimlər sayılan isimlərdir — tək və cəm olurlar. Cəm olduqda fel də cəm gəlir.',
+          },
+
+          // ── Mini-check: Kollektiv isimlər ───────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: 'Kollektiv isimlər hansı növ isimdir?',
+                options: ['Sayılmayan', 'Sayılan', 'Mücərrəd', 'Xüsusi'],
+                answer: 'Sayılan',
+              },
+              {
+                q: '"The crowds ___ enormous." — boşluğa nə gəlir?',
+                options: ['was', 'is', 'were', 'has been'],
+                answer: 'were',
+              },
+              {
+                q: 'Hansı söz kollektiv isimdir?',
+                options: ['happiness', 'crew', 'milk', 'Monday'],
+                answer: 'crew',
+              },
+            ],
+          },
+
+          // ── Ekran 2: Family qaydası ──────────────────────
+          {
+            type: 'lesson',
+            title: 'Family — tək mi, cəm mi?',
+            content: '"family" sözü digər kollektiv isimlərdən fərqli olaraq həm tək, həm cəm fel ala bilir.\n\nQayda:\n• Ailə bütövlükdə götürülərsə → fel təkdə olur\n• Ailənin üzvləri ayrı-ayrılıqda götürülərsə → fel cəmdə olur',
+            examples: [
+              { word: 'My family is large.',         az: 'ailə bir bütün kimi' },
+              { word: 'My family are early risers.', az: 'hər bir üzv ayrıca' },
+            ],
+            note: 'Hər iki halda da "family" sözü cəmlik şəkilçisi almır — yəni bu kontekstdə "families" forması işlənmir.',
+          },
+
+          // ── Mini-check: Family ───────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"My family ___ large." — ailə bir bütün kimi. Boşluğa nə gəlir?',
+                options: ['are', 'were', 'is', 'have'],
+                answer: 'is',
+              },
+              {
+                q: '"My family ___ early risers." — hər üzv ayrıca. Boşluğa nə gəlir?',
+                options: ['is', 'was', 'has', 'are'],
+                answer: 'are',
+              },
+              {
+                q: '"families" forması bu kontekstdə işlənirmi?',
+                options: ['Bəli, həmişə', 'Xeyr, işlənmir', 'Bəli, bəzən', 'Yalnız cəmdə'],
+                answer: 'Xeyr, işlənmir',
+              },
+            ],
+          },
+
+          // ── Ekran 3: Police, Cattle, Poultry ────────────
+          {
+            type: 'lesson',
+            title: 'Police · Cattle · Poultry',
+            content: 'Bu isimlər cəm şəkilçisi qəbul etmir, lakin həmişə cəmlik bildirir və özündən sonra həmişə cəm fel tələb edir.',
+            table: [
+              ['İsim',    'Mənası',     'Fel'],
+              ['police',  'polis',      'həmişə cəm'],
+              ['cattle',  'mal-qara',   'həmişə cəm'],
+              ['poultry', 'ev quşları', 'həmişə cəm'],
+            ],
+            examples: [
+              { word: 'The police were there.',                  az: '✅' },
+              { word: 'The cattle were grazing in the meadow.', az: '✅' },
+              { word: 'The poultry are kept in the barn.',       az: '✅' },
+            ],
+            note: 'Bu isimlərə a / an artiklı işlənmir, cəm şəkilçisi də almırlar.',
+          },
+
+          // ── Mini-check: Police/Cattle/Poultry ───────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"The police ___ there." — boşluğa nə gəlir?',
+                options: ['was', 'is', 'were', 'has been'],
+                answer: 'were',
+              },
+              {
+                q: 'Bu isimlər cəm şəkilçisi alırmı?',
+                options: ['Bəli', 'Xeyr', 'Bəzən', 'Yalnız "police"'],
+                answer: 'Xeyr',
+              },
+              {
+                q: '"a cattle" forması düzgündürmü?',
+                options: ['Bəli', 'Xeyr, a / an işlənmir', 'Bəli, tək halda', 'Bəzən işlənir'],
+                answer: 'Xeyr, a / an işlənmir',
+              },
+            ],
+          },
+
+        ],
       },
 
-      // index: 16 — Dərs 4.2
+      // Dərs 4.2 — People, Money, Youth, Linen
       {
         type: 'grammar_lesson',
-        title: 'Dərs 4.2 — Police, cattle, people, money',
-        cards: [],
+        title: 'Dərs 4.2 — People · Money · Youth · Linen',
+        cards: [
+
+          // ── Ekran 1: People ──────────────────────────────
+          {
+            type: 'lesson',
+            title: 'People — xüsusi qayda',
+            content: '"people" ismi həmişə cəmdir və özündən sonra həmişə cəm fel gəlir.',
+            examples: [
+              { word: 'People are strange sometimes.',     az: 'cəm fel' },
+              { word: 'Many people were at the concert.', az: 'cəm fel' },
+            ],
+            note: 'İstisna: "people" xalq mənasında işləndikdə tək olur və -s şəkilçisi qəbul edə bilir.\n• The people of Azerbaijan — Azərbaycan xalqı (tək)\n• The peoples of the world — dünyanın xalqları (bir neçə xalq, cəm)',
+          },
+
+          // ── Mini-check: People ───────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"People ___ strange sometimes." — boşluğa nə gəlir?',
+                options: ['is', 'was', 'are', 'has'],
+                answer: 'are',
+              },
+              {
+                q: '"peoples" forması nə vaxt işlənir?',
+                options: ['Həmişə', 'Heç vaxt', 'Bir neçə xalq mənasında', 'Yalnız sual cümlədə'],
+                answer: 'Bir neçə xalq mənasında',
+              },
+              {
+                q: '"The people of Azerbaijan" — burada "people" hansı mənadadır?',
+                options: ['İnsanlar (cəm)', 'Xalq (tək)', 'Dəstə', 'Kollektiv isim'],
+                answer: 'Xalq (tək)',
+              },
+            ],
+          },
+
+          // ── Ekran 2: Money, Youth, Linen ─────────────────
+          {
+            type: 'lesson',
+            title: 'Money · Youth · Linen',
+            content: 'Bu isimlər görünüşcə cəm kimi görünə bilər, lakin həmişə tək formada işlənir və tək fel tələb edir.',
+            table: [
+              ['İsim',  'Mənası',        'Qayda'],
+              ['money', 'pul',           'həmişə tək'],
+              ['youth', 'gənclik',       'həmişə tək'],
+              ['linen', 'mələfə, kətan', 'həmişə tək'],
+            ],
+            examples: [
+              { word: 'Money makes money.',    az: 'tək fel' },
+              { word: 'Much money was spent.', az: 'much ilə — uncountable kimi' },
+            ],
+            tip: '"çox" mənasında much, "az" mənasında little ilə işlənir. Sayılmır.',
+          },
+
+          // ── Mini-check: Money/Youth/Linen ────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"Money ___ money." — boşluğa nə gəlir?',
+                options: ['make', 'are making', 'makes', 'have made'],
+                answer: 'makes',
+              },
+              {
+                q: '"money" ilə "çox" mənasında hansı söz işlənir?',
+                options: ['many', 'few', 'much', 'a few'],
+                answer: 'much',
+              },
+              {
+                q: '"money" sayılırmı?',
+                options: ['Bəli', 'Xeyr', 'Bəzən', 'Yalnız cəmdə'],
+                answer: 'Xeyr',
+              },
+              {
+                q: 'Hansı söz həmişə tək formada işlənir?',
+                options: ['crowd', 'crew', 'youth', 'family'],
+                answer: 'youth',
+              },
+            ],
+          },
+
+        ],
       },
 
-      // index: 17 — Mini-quiz 4
-      [],
+      // ── Bölmə 4 — Ümumi Quiz ─────────────────────────────
+      [
+        { en: 'crowd',   tr: 'Kollektiv isim', wrong: 'Mücərrəd isim' },
+        { en: 'family',  tr: 'Kollektiv isim', wrong: 'Sayılmayan'    },
+        { en: 'crew',    tr: 'Kollektiv isim', wrong: 'Xüsusi isim'   },
+
+        { en: 'The crowds ___ enormous.',              tr: 'were',  wrong: 'was'  },
+        { en: 'My family ___ large. (bir bütün)',      tr: 'is',    wrong: 'are'  },
+        { en: 'My family ___ early risers. (üzvlər)', tr: 'are',   wrong: 'is'   },
+        { en: 'The police ___ there.',                 tr: 'were',  wrong: 'was'  },
+        { en: 'The cattle ___ grazing.',               tr: 'were',  wrong: 'was'  },
+        { en: 'People ___ strange sometimes.',         tr: 'are',   wrong: 'is'   },
+        { en: 'Money ___ money.',                      tr: 'makes', wrong: 'make' },
+
+        { en: '"a cattle" düzgündürmü?',        tr: 'Xeyr', wrong: 'Bəli' },
+        { en: '"polices" forması düzgündürmü?', tr: 'Xeyr', wrong: 'Bəli' },
+
+        { en: 'The peoples of the world — nə mənada?', tr: 'Bir neçə xalq',    wrong: 'İnsanlar' },
+        { en: 'The people of Azerbaijan — nə mənada?', tr: 'Azərbaycan xalqı', wrong: 'İnsanlar' },
+
+        { en: 'money — "çox" mənasında ____', tr: 'much money',   wrong: 'many money' },
+        { en: 'money — "az" mənasında ____',  tr: 'little money', wrong: 'few money'  },
+        { en: 'youth',  tr: 'həmişə tək', wrong: 'həmişə cəm' },
+        { en: 'linen',  tr: 'həmişə tək', wrong: 'həmişə cəm' },
+        { en: 'police', tr: 'həmişə cəm', wrong: 'həmişə tək' },
+        { en: 'cattle', tr: 'həmişə cəm', wrong: 'həmişə tək' },
+      ],
 
       // ── Bölmə 5 ──────────────────────────────────────
       // index: 18
