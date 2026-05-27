@@ -1382,57 +1382,454 @@ const KIDS_GRAMMAR_LEVELS = [
         { en: 'cattle', tr: 'həmişə cəm', wrong: 'həmişə tək' },
       ],
 
-      // ── Bölmə 5 ──────────────────────────────────────
-      // index: 18
+   // ── Bölmə 5 ──────────────────────────────────────
       {
         type: 'section_divider',
         title: 'Bölmə 5 — Plural nouns (Cəm formaları) — tam qaydalar',
       },
 
-      // index: 19 — Dərs 5.1
+      // Dərs 5.1 — -s / -es qaydası
       {
         type: 'grammar_lesson',
         title: 'Dərs 5.1 — -s / -es qaydası',
-        cards: [],
+        cards: [
+
+          // ── Ekran 1: Əsas qayda ──────────────────────────
+          {
+            type: 'lesson',
+            title: 'Cəm formasının düzəldilməsi',
+            content: 'İsimlərin cəm forması əsasən –s və ya –es şəkilçisi vasitəsilə düzəldilir.\n\nAdi qayda → -s əlavə et:',
+            examples: [
+              { word: 'a boy → boys',   az: '' },
+              { word: 'a girl → girls', az: '' },
+              { word: 'a pen → pens',   az: '' },
+            ],
+            tip: 'Sonu s, ss, sh, ch, tch, x, z, o hərfləri ilə bitən isimlərin cəmi -es ilə düzəlir.',
+          },
+
+          // ── Ekran 2: -es cədvəli ─────────────────────────
+          {
+            type: 'lesson',
+            title: '-es əlavə edilən hallar',
+            content: 'Sonu aşağıdakı hərflərlə bitən isimlər -es alır:',
+            table: [
+              ['Tək',     'Cəm'],
+              ['a box',   'boxes'],
+              ['a bench', 'benches'],
+              ['a bus',   'buses'],
+              ['a bush',  'bushes'],
+              ['a watch', 'watches'],
+            ],
+          },
+
+          // ── Mini-check: -s / -es ─────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"box" sözünün cəmi necədir?',
+                options: ['boxs', 'boxes', 'boxies', 'boxen'],
+                answer: 'boxes',
+              },
+              {
+                q: '"bench" sözünün cəmi necədir?',
+                options: ['benchs', 'benchies', 'benches', 'benchens'],
+                answer: 'benches',
+              },
+              {
+                q: '"pen" sözünün cəmi necədir?',
+                options: ['penes', 'pens', 'penies', 'pensen'],
+                answer: 'pens',
+              },
+              {
+                q: 'Hansı sözün cəmi -es ilə düzəlir?',
+                options: ['boy', 'girl', 'watch', 'pen'],
+                answer: 'watch',
+              },
+              {
+                q: '"bus" sözünün cəmi necədir?',
+                options: ['buss', 'busies', 'bus', 'buses'],
+                answer: 'buses',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 20 — Dərs 5.2
+      // Dərs 5.2 — Qaydasız cəm formaları
       {
         type: 'grammar_lesson',
         title: 'Dərs 5.2 — Qaydasız cəm formaları',
-        cards: [],
+        cards: [
+
+          // ── Ekran 1: 7 qaydasız isim ─────────────────────
+          {
+            type: 'lesson',
+            title: 'Kökdəki saitin dəyişməsi ilə cəm',
+            content: 'İngilis dilində 7 isim var ki, onların cəm forması kökdəki saitin dəyişməsi ilə düzəlir. Bunları əzbərləmək lazımdır.',
+            table: [
+              ['Tək',     'Cəm',      'Tələffüz'],
+              ['a man',   'men',      '[men]'],
+              ['a woman', 'women',    '[wimin]'],
+              ['a foot',  'feet',     '[fiːt]'],
+              ['a tooth', 'teeth',    '[tiːθ]'],
+              ['a goose', 'geese',    '[giːs]'],
+              ['a mouse', 'mice',     '[mais]'],
+              ['a louse', 'lice',     '[lais]'],
+            ],
+            note: 'Bir isim isə həm kök saiti dəyişir, həm də -en şəkilçisi alır: a child → children',
+          },
+
+          // ── Mini-check: Qaydasız cəm ─────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"man" sözünün cəmi necədir?',
+                options: ['mans', 'manes', 'men', 'menn'],
+                answer: 'men',
+              },
+              {
+                q: '"tooth" sözünün cəmi necədir?',
+                options: ['tooths', 'toothes', 'teeths', 'teeth'],
+                answer: 'teeth',
+              },
+              {
+                q: '"child" sözünün cəmi necədir?',
+                options: ['childs', 'childes', 'children', 'childen'],
+                answer: 'children',
+              },
+              {
+                q: '"mouse" sözünün cəmi necədir?',
+                options: ['mouses', 'mices', 'mice', 'mouse'],
+                answer: 'mice',
+              },
+              {
+                q: '"foot" sözünün cəmi necədir?',
+                options: ['foots', 'footes', 'feets', 'feet'],
+                answer: 'feet',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 21 — Dərs 5.3
+      // Dərs 5.3 — Man/Woman olan mürəkkəb isimlər
       {
         type: 'grammar_lesson',
-        title: 'Dərs 5.3 — -f / -fe → -ves',
-        cards: [],
+        title: 'Dərs 5.3 — Man/Woman olan mürəkkəb isimlər',
+        cards: [
+
+          // ── Ekran 1: Postman → Postmen ───────────────────
+          {
+            type: 'lesson',
+            title: 'Postman → Postmen',
+            content: 'Tərkibində man və ya woman sözü olan mürəkkəb isimlərin cəmini düzəldərkən man → men, woman → women olur.',
+            table: [
+              ['Tək',           'Cəm'],
+              ['postman',       'postmen'],
+              ['policeman',     'policemen'],
+              ['woman writer',  'women writers'],
+              ['woman doctor',  'women doctors'],
+            ],
+            note: 'Vacib istisna: Tərkibində "man" morfemi olan bəzi sözlər bu qaydaya tabe olmur — onların cəmi adi -s ilə düzəlir:\n• German → Germans\n• Roman → Romans\n• Norman → Normans',
+          },
+
+          // ── Mini-check: Man/Woman ─────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"postman" sözünün cəmi necədir?',
+                options: ['postmans', 'postmens', 'postmen', 'postmanes'],
+                answer: 'postmen',
+              },
+              {
+                q: '"German" sözünün cəmi necədir?',
+                options: ['Germaen', 'Germanen', 'Germens', 'Germans'],
+                answer: 'Germans',
+              },
+              {
+                q: '"woman doctor" sözünün cəmi necədir?',
+                options: ['woman doctors', 'women doctor', 'women doctors', 'womans doctors'],
+                answer: 'women doctors',
+              },
+              {
+                q: 'Nə üçün "Roman" → "Romans" olur, "Romanmen" yox?',
+                options: [
+                  'Çünki qaydasız isimdir',
+                  'Çünki "man" burada ayrı morfem deyil',
+                  'Çünki xüsusi isimdir',
+                  'Çünki -es alır',
+                ],
+                answer: 'Çünki "man" burada ayrı morfem deyil',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 22 — Dərs 5.4
+      // Dərs 5.4 — -f / -fe ilə bitən isimlər
       {
         type: 'grammar_lesson',
-        title: 'Dərs 5.4 — -o → -oes: potato, hero, negro',
-        cards: [],
+        title: 'Dərs 5.4 — -f / -fe → -ves',
+        cards: [
+
+          // ── Ekran 1: Wife → Wives ─────────────────────────
+          {
+            type: 'lesson',
+            title: 'Wife → Wives',
+            content: 'İsim -f və ya -fe ilə bitirsə, cəm düzəldərkən f / fe → v olur və -es əlavə edilir.',
+            table: [
+              ['Tək',   'Cəm',    'Tələffüz'],
+              ['wife',  'wives',  '[waivz]'],
+              ['knife', 'knives', '[naivz]'],
+              ['leaf',  'leaves', '[liːvz]'],
+              ['loaf',  'loaves', '[louvz]'],
+              ['half',  'halves', '[hɑːvz]'],
+              ['life',  'lives',  '[laivz]'],
+              ['wolf',  'wolves', '[wulvz]'],
+              ['shelf', 'shelves','[ʃelvz]'],
+            ],
+          },
+
+          // ── Ekran 2: İstisnalar ───────────────────────────
+          {
+            type: 'lesson',
+            title: '-f / -ff dəyişməyən istisnalar',
+            content: 'Bu sözlər -f / -ff ilə bitsə də dəyişmir, sadəcə -s alır:',
+            table: [
+              ['Tək',           'Cəm'],
+              ['a roof',        'roofs'],
+              ['a chief',       'chiefs'],
+              ['a cliff',       'cliffs'],
+              ['a handkerchief','handkerchiefs'],
+            ],
+            note: 'İki forması olan isimlər:\n• hoof → hoofs / hooves\n• scarf → scarfs / scarves',
+          },
+
+          // ── Mini-check: -f/-fe ───────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"wife" sözünün cəmi necədir?',
+                options: ['wifes', 'wifes', 'wives', 'wiven'],
+                answer: 'wives',
+              },
+              {
+                q: '"roof" sözünün cəmi necədir?',
+                options: ['rooves', 'roofen', 'roofes', 'roofs'],
+                answer: 'roofs',
+              },
+              {
+                q: '"leaf" sözünün cəmi necədir?',
+                options: ['leafs', 'leafes', 'leaves', 'leaven'],
+                answer: 'leaves',
+              },
+              {
+                q: '"shelf" sözünün cəmi necədir?',
+                options: ['shelfs', 'shelfes', 'shelves', 'shelfen'],
+                answer: 'shelves',
+              },
+              {
+                q: '"chief" sözünün cəmi necədir?',
+                options: ['chieves', 'chiefen', 'chiefes', 'chiefs'],
+                answer: 'chiefs',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 23 — Dərs 5.5
+      // Dərs 5.5 — -o ilə bitən isimlər
       {
         type: 'grammar_lesson',
-        title: 'Dərs 5.5 — -y qaydası: city→cities, day→days',
-        cards: [],
+        title: 'Dərs 5.5 — -o → -oes: potato, hero',
+        cards: [
+
+          // ── Ekran 1: -oes qaydası ─────────────────────────
+          {
+            type: 'lesson',
+            title: 'Potato → Potatoes',
+            content: 'İsim -o hərfi ilə bitirsə cəmi -es ilə düzəlir:',
+            table: [
+              ['Tək',      'Cəm'],
+              ['potato',   'potatoes'],
+              ['hero',     'heroes'],
+              ['negro',    'negroes'],
+              ['tomato',   'tomatoes'],
+              ['volcano',  'volcanoes'],
+            ],
+          },
+
+          // ── Ekran 2: İstisnalar ───────────────────────────
+          {
+            type: 'lesson',
+            title: '-o istisnalar — yalnız -s alır',
+            content: 'Əcnəbi mənşəli (xüsusilə musiqi, texnologiya) sözlər adətən yalnız -s alır:',
+            table: [
+              ['Tək',    'Cəm'],
+              ['radio',  'radios'],
+              ['piano',  'pianos'],
+              ['solo',   'solos'],
+              ['zero',   'zeros'],
+              ['photo',  'photos'],
+              ['zoo',    'zoos'],
+              ['video',  'videos'],
+            ],
+            tip: 'Əzbərləmə qaydası: Əcnəbi mənşəli sözlər adətən yalnız -s alır.',
+          },
+
+          // ── Mini-check: -o ───────────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"potato" sözünün cəmi necədir?',
+                options: ['potatos', 'potatoies', 'potatoes', 'potatens'],
+                answer: 'potatoes',
+              },
+              {
+                q: '"radio" sözünün cəmi necədir?',
+                options: ['radioes', 'radien', 'radios', 'radioies'],
+                answer: 'radios',
+              },
+              {
+                q: '"hero" sözünün cəmi necədir?',
+                options: ['heros', 'heroies', 'heroen', 'heroes'],
+                answer: 'heroes',
+              },
+              {
+                q: '"piano" sözünün cəmi necədir?',
+                options: ['pianoes', 'pianoen', 'pianos', 'pianoies'],
+                answer: 'pianos',
+              },
+              {
+                q: 'Hansı söz -es ilə cəmlənir?',
+                options: ['radio', 'video', 'tomato', 'photo'],
+                answer: 'tomato',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 24 — Dərs 5.6
+      // Dərs 5.6 — -y qaydası
       {
         type: 'grammar_lesson',
-        title: 'Dərs 5.6 — man/woman olan mürəkkəb isimlər',
-        cards: [],
+        title: 'Dərs 5.6 — -y qaydası: city→cities, day→days',
+        cards: [
+
+          // ── Ekran 1: Samit + y ────────────────────────────
+          {
+            type: 'lesson',
+            title: 'City → Cities · Day → Days',
+            content: 'İsim -y ilə bitirsə iki variant var:\n\n1. y-dən əvvəl SAMİT gələrsə → y → i olur, -es əlavə edilir:',
+            table: [
+              ['Tək',      'Cəm'],
+              ['city',     'cities'],
+              ['family',   'families'],
+              ['factory',  'factories'],
+              ['victory',  'victories'],
+              ['baby',     'babies'],
+              ['lady',     'ladies'],
+            ],
+          },
+
+          // ── Ekran 2: Sait + y ─────────────────────────────
+          {
+            type: 'lesson',
+            title: 'Sait + y → sadəcə -s',
+            content: '2. y-dən əvvəl SAİT gələrsə → y dəyişmir, sadəcə -s əlavə edilir:',
+            table: [
+              ['Tək',      'Cəm'],
+              ['a day',    'days'],
+              ['a boy',    'boys'],
+              ['a toy',    'toys'],
+              ['a key',    'keys'],
+              ['a monkey', 'monkeys'],
+            ],
+            tip: 'Qayda: samit + y → -ies. Sait + y → -s.',
+          },
+
+          // ── Mini-check: -y qaydası ───────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"city" sözünün cəmi necədir?',
+                options: ['citys', 'cityies', 'cities', 'cityes'],
+                answer: 'cities',
+              },
+              {
+                q: '"day" sözünün cəmi necədir?',
+                options: ['daies', 'dayes', 'daies', 'days'],
+                answer: 'days',
+              },
+              {
+                q: '"baby" sözünün cəmi necədir?',
+                options: ['babys', 'babyies', 'babies', 'babyes'],
+                answer: 'babies',
+              },
+              {
+                q: '"monkey" sözünün cəmi necədir?',
+                options: ['monkies', 'monkeies', 'monkeys', 'monkeyes'],
+                answer: 'monkeys',
+              },
+              {
+                q: '"factory" sözünün cəmi necədir?',
+                options: ['factorys', 'factoryies', 'factories', 'factoryes'],
+                answer: 'factories',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 25 — Mini-quiz 5
-      [],
+      // ── Bölmə 5 — Ümumi Quiz ─────────────────────────────
+      [
+        // -s / -es
+        { en: 'box → ____',   tr: 'boxes',   wrong: 'boxs'    },
+        { en: 'pen → ____',   tr: 'pens',    wrong: 'penes'   },
+        { en: 'watch → ____', tr: 'watches', wrong: 'watchs'  },
+        { en: 'bus → ____',   tr: 'buses',   wrong: 'buss'    },
+        { en: 'bench → ____', tr: 'benches', wrong: 'benchs'  },
+
+        // Qaydasız cəm
+        { en: 'man → ____',   tr: 'men',      wrong: 'mans'    },
+        { en: 'tooth → ____', tr: 'teeth',    wrong: 'tooths'  },
+        { en: 'child → ____', tr: 'children', wrong: 'childs'  },
+        { en: 'mouse → ____', tr: 'mice',     wrong: 'mouses'  },
+        { en: 'foot → ____',  tr: 'feet',     wrong: 'foots'   },
+        { en: 'goose → ____', tr: 'geese',    wrong: 'gooses'  },
+
+        // Man/Woman mürəkkəb
+        { en: 'postman → ____',      tr: 'postmen',      wrong: 'postmans'     },
+        { en: 'policeman → ____',    tr: 'policemen',    wrong: 'policemans'   },
+        { en: 'woman doctor → ____', tr: 'women doctors',wrong: 'woman doctors'},
+        { en: 'German → ____',       tr: 'Germans',      wrong: 'Germens'      },
+
+        // -f / -fe
+        { en: 'wife → ____',  tr: 'wives',  wrong: 'wifes'  },
+        { en: 'leaf → ____',  tr: 'leaves', wrong: 'leafs'  },
+        { en: 'roof → ____',  tr: 'roofs',  wrong: 'rooves' },
+        { en: 'shelf → ____', tr: 'shelves',wrong: 'shelfs' },
+        { en: 'chief → ____', tr: 'chiefs', wrong: 'chieves'},
+
+        // -o
+        { en: 'potato → ____', tr: 'potatoes', wrong: 'potatos' },
+        { en: 'radio → ____',  tr: 'radios',   wrong: 'radioes' },
+        { en: 'hero → ____',   tr: 'heroes',   wrong: 'heros'   },
+        { en: 'piano → ____',  tr: 'pianos',   wrong: 'pianoes' },
+
+        // -y
+        { en: 'city → ____',    tr: 'cities',   wrong: 'citys'    },
+        { en: 'day → ____',     tr: 'days',     wrong: 'daies'    },
+        { en: 'baby → ____',    tr: 'babies',   wrong: 'babys'    },
+        { en: 'monkey → ____',  tr: 'monkeys',  wrong: 'monkies'  },
+        { en: 'factory → ____', tr: 'factories',wrong: 'factorys' },
+      ],
 
       // ── Bölmə 6 ──────────────────────────────────────
       // index: 26
