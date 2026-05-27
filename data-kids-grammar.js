@@ -3866,43 +3866,361 @@ const VERBS_LEVEL = {
     // ║  QRUP 1 — Qeyri-müəyyən zaman formaları (Indefinite)  ║
     // ══════════════════════════════════════════════════════════
 
-    // ── Bölmə 1 ───────────────────────────────────────────────
+   // ============================================================
+//  VERBS — Bölmə 1: Simple Present (Present Indefinite)
+//  Bu bloku verbs-data.js faylında müvafiq hissələrə yapışdır:
+//
+//  index: 1 → Dərs 1.1 placeholder-ını bu obyektlə əvəz et
+//  index: 2 → Dərs 1.2 placeholder-ını bu obyektlə əvəz et
+//  index: 3 → Mini-quiz 1 array-ini bu array ilə əvəz et
+// ============================================================
+
+// ── index: 1 — Dərs 1.1 ──────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Düzəlmə: to, III şəxs -s/-es',
+  cards: [
+
+    // ── Ekran 1: Əsas qayda ──────────────────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 1 — Simple Present (Present Indefinite)',
+      type: 'lesson',
+      title: 'Simple Present necə düzəlir?',
+      content: 'Simple Present zamanı düzəltmək üçün məsdərdən "to" ədatı atılır, fel olduğu kimi qalır.\n\nYalnız III şəxs təkdə (he/she/it) fel "-s" və ya "-es" sonluğu alır.',
+      table: [
+        ['Şəxs',        'Tək',      'Cəm'],
+        ['I',           'go',       'We go'],
+        ['You',         'go',       'You go'],
+        ['He/She/It',   'goes',     'They go'],
+      ],
+      note: '"-es" əlavə edilən hallar: fel s, ss, sh, ch, tch, x, z, o hərfləri ilə bitirsə III şəxs təkdə "-es" alır.',
     },
 
-    // ── index: 1 — Dərs 1.1 ──────────────────────────────────
+    // ── Ekran 2: -es nümunələri ──────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1.1 — Düzəlmə: to, III şəxs -s/-es',
-      cards: [
+      type: 'lesson',
+      title: '-s və -es nümunələri',
+      content: 'III şəxs təkdə düzgün formanı seç:',
+      examples: [
+        { word: 'teach → he teaches',  az: '-ch ilə bitir → -es' },
+        { word: 'pass → she passes',   az: '-ss ilə bitir → -es' },
+        { word: 'go → he goes',        az: '-o ilə bitir → -es'  },
+        { word: 'watch → she watches', az: '-tch ilə bitir → -es' },
+        { word: 'read → she reads',    az: 'adi hal → -s'        },
+        { word: 'play → he plays',     az: 'adi hal → -s'        },
+      ],
+      tip: 'Adi fellər yalnız -s alır. Xüsusi bitişlər (-s, -sh, -ch, -x, -o) isə -es alır.',
+    },
+
+    // ── Mini-check: -s / -es ─────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 1.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"teach" felinin III şəxs tək forması necədir?',
+          options: ['teachs', 'teaches', 'teachies', 'teaching'],
+          answer: 'teaches',
+        },
+        {
+          q: '"read" felinin III şəxs tək forması necədir?',
+          options: ['reades', 'readings', 'reads', 'reades'],
+          answer: 'reads',
+        },
+        {
+          q: '"go" felinin III şəxs tək forması necədir?',
+          options: ['gos', 'goes', 'goies', 'going'],
+          answer: 'goes',
+        },
+        {
+          q: 'Hansı felin III şəxs tək forması "-es" alır?',
+          options: ['play', 'read', 'work', 'watch'],
+          answer: 'watch',
+        },
+        {
+          q: '"pass" felinin III şəxs tək forması necədir?',
+          options: ['passs', 'passies', 'passes', 'passing'],
+          answer: 'passes',
         },
       ],
     },
 
-    // ── index: 2 — Dərs 1.2 ──────────────────────────────────
+    // ── Ekran 3: Sual forması ────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1.2 — İşlənmə: adat, həqiqət, xarakter',
-      cards: [
+      type: 'lesson',
+      title: 'Simple Present — sual necə düzəlir?',
+      content: 'Sual formasını düzəltmək üçün "to do" köməkçi felindən istifadə edilir.\n\nQayda: "do" / "does" mübtədadan əvvələ keçir. III şəxs təkdə "does" işlənir — bu zaman əsas felin "-s" / "-es" sonluğu düşür.',
+      table: [
+        ['Şəxs',                  'Sual'],
+        ['I / You / We / They',   'Do I/you/we/they go?'],
+        ['He / She / It',         'Does he/she/it go?'],
+      ],
+      examples: [
+        { word: 'Do I go?',        az: '✅ düzgün' },
+        { word: 'Does he go?',     az: '✅ düzgün' },
+        { word: 'Does he goes?',   az: '❌ yanlış — "-s" düşür' },
+      ],
+      note: 'Qısa cavab:\nYes, I do. / No, I don\'t.\nYes, he does. / No, he doesn\'t.',
+    },
+
+    // ── Mini-check: Sual forması ─────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 1.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"___ he speak English well?" — boşluğa nə gəlir?',
+          options: ['Do', 'Is', 'Does', 'Did'],
+          answer: 'Does',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'Does he goes to school?',
+            'Do he go to school?',
+            'Does he go to school?',
+            'Does he going to school?',
+          ],
+          answer: 'Does he go to school?',
+        },
+        {
+          q: '"Do they work here?" — qısa müsbət cavab necədir?',
+          options: ['Yes, they do.', 'Yes, they does.', 'Yes, they are.', 'Yes, they work.'],
+          answer: 'Yes, they do.',
+        },
+        {
+          q: '"Does she like coffee?" — qısa mənfi cavab necədir?',
+          options: ['No, she doesn\'t.', 'No, she don\'t.', 'No, she does.', 'No, she isn\'t.'],
+          answer: 'No, she doesn\'t.',
         },
       ],
     },
 
-    // ── index: 3 — Mini-quiz 1 ────────────────────────────────
-    // Do/Does · Doğru forma tap · Zaman zərfi ilə uyğunlaşdır
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+    // ── Ekran 4: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Present — inkar necə düzəlir?',
+      content: 'İnkar formasını düzəltmək üçün mübtədadan sonra "do not" (don\'t) və ya "does not" (doesn\'t) əlavə edilir.',
+      table: [
+        ['Şəxs',    'Tam inkar',          'Qısa inkar'],
+        ['I',       'I do not read',       'I don\'t read'],
+        ['You',     'You do not read',     'You don\'t read'],
+        ['He/She',  'He does not read',    'He doesn\'t read'],
+        ['We/They', 'We do not read',      'We don\'t read'],
+      ],
+      examples: [
+        { word: 'Don\'t I go? = Do I not go?',       az: 'Sual-inkar forması' },
+        { word: 'Doesn\'t he go? = Does he not go?', az: 'Sual-inkar forması' },
+      ],
+    },
+
+    // ── Mini-check: İnkar forması ────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ like coffee." — boşluğa nə gəlir?',
+          options: ['don\'t', 'doesn\'t', 'isn\'t', 'not'],
+          answer: 'doesn\'t',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'He don\'t work here.',
+            'She doesn\'t works here.',
+            'They doesn\'t work here.',
+            'I don\'t work here.',
+          ],
+          answer: 'I don\'t work here.',
+        },
+        {
+          q: '"We do not go" — qısa forması necədir?',
+          options: ['We doesn\'t go', 'We don\'t go', 'We not go', 'We aren\'t go'],
+          answer: 'We don\'t go',
+        },
+      ],
+    },
+  ],
+},
+
+// ── index: 2 — Dərs 1.2 ──────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — İşlənmə: adat, həqiqət, xarakter',
+  cards: [
+
+    // ── Ekran 1: 4 əsas işlənmə halı ─────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Present — 4 əsas işlənmə halı',
+      content: 'Simple Present aşağıdakı hallarda işlənir:',
+      examples: [
+        { word: '1. Adət halına almış, təkrarlanan hərəkətlər', az: 'every day, usually, always...' },
+        { word: '2. Ümumi həqiqətlər',                          az: 'təbiət, elm faktları'          },
+        { word: '3. Şəxsi xüsusiyyətlər',                      az: 'daimi vərdişlər, bacarıqlar'   },
+        { word: '4. Zaman və şərt budaq cümlələri',             az: 'when, if, before, until...'    },
+      ],
+      tip: 'Zaman zərfləri: every day/week/month/year, usually, always, often, sometimes, seldom, once a week, on Sundays',
+    },
+
+    // ── Ekran 2: Adət + Həqiqət ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'Adət və ümumi həqiqətlər',
+      content: '1. Adət halına almış, təkrarlanan hərəkətlər:',
+      examples: [
+        { word: 'I go to the institute every day.',    az: 'Mən hər gün institutа gedirəm.' },
+        { word: 'They usually have dinner at five.',   az: 'Onlar adətən saat 5-də nahar edirlər.' },
+      ],
+      note: '2. Ümumi həqiqətlər — təbiət və cəmiyyətdə daima doğru olan faktlar:',
+    },
+
+    // ── Ekran 3: Həqiqətlər + Xüsusiyyətlər ─────────────
+    {
+      type: 'lesson',
+      title: 'Ümumi həqiqətlər və şəxsi xüsusiyyətlər',
+      content: 'Ümumi həqiqətlər:',
+      examples: [
+        { word: 'The sun rises in the East.',          az: 'Günəş şərqdən doğur.' },
+        { word: 'Water boils at 100 degrees.',         az: 'Su 100 dərəcədə qaynayır.' },
+        { word: 'The Earth travels around the Sun.',   az: 'Yer Günəşin ətrafında fırlanır.' },
+        { word: 'He sleeps soundly.',                  az: 'O möhkəm yatır. (xüsusiyyət)' },
+        { word: 'She plays tennis well.',              az: 'O tennis yaxşı oynayır. (xüsusiyyət)' },
+      ],
+    },
+
+    // ── Mini-check: İşlənmə halları ──────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"The sun rises in the East." — bu cümlə Simple Present-in hansı işlənmə halıdır?',
+          options: ['Adət', 'Ümumi həqiqət', 'Xüsusiyyət', 'Şərt budaq cümləsi'],
+          answer: 'Ümumi həqiqət',
+        },
+        {
+          q: '"I go to the institute every day." — hansı işlənmə halıdır?',
+          options: ['Ümumi həqiqət', 'Şərt budaq cümləsi', 'Adət', 'Xüsusiyyət'],
+          answer: 'Adət',
+        },
+        {
+          q: '"She plays tennis well." — hansı işlənmə halıdır?',
+          options: ['Adət', 'Ümumi həqiqət', 'Şərt budaq cümləsi', 'Xüsusiyyət'],
+          answer: 'Xüsusiyyət',
+        },
+        {
+          q: 'Hansı zaman zərfi Simple Present ilə işlənir?',
+          options: ['yesterday', 'tomorrow', 'usually', 'right now'],
+          answer: 'usually',
+        },
+      ],
+    },
+
+    // ── Ekran 4: Zaman + Şərt budaq cümlələri ───────────
+    {
+      type: 'lesson',
+      title: 'Zaman və şərt budaq cümlələri',
+      content: '"till", "until", "when", "before", "as soon as", "if" bağlayıcılarından sonra gələcək zamanda baş verəcək hərəkətlər Simple Present ilə verilir.\n\nQayda:\n• Budaq cümlə (bağlayıcı olan tərəf) → Simple Present\n• Baş cümlə → Future (will/shall)',
+      examples: [
+        { word: 'I shall go to the cinema if she comes.',    az: 'if → Simple Present' },
+        { word: 'When it stops raining, we will go out.',    az: 'when → Simple Present' },
+        { word: 'Call me as soon as you arrive.',            az: 'as soon as → Simple Present' },
+      ],
+      tip: 'Bağlayıcıdan sonra "will" işlənmir — bu ən çox yol verilən səhvdir!',
+    },
+
+    // ── Mini-check: Zaman + Şərt budaq cümlələri ────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I shall go if she ___." — boşluğa nə gəlir?',
+          options: ['will come', 'comes', 'is coming', 'came'],
+          answer: 'comes',
+        },
+        {
+          q: '"When it ___ raining, we will go out." — boşluğa nə gəlir?',
+          options: ['will stop', 'stopped', 'stops', 'is stopping'],
+          answer: 'stops',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'Call me as soon as you will arrive.',
+            'Call me as soon as you arrive.',
+            'Call me as soon as you arrived.',
+            'Call me as soon as you are arriving.',
+          ],
+          answer: 'Call me as soon as you arrive.',
+        },
+        {
+          q: '"if", "when", "before" bağlayıcılarından sonra gələcəyi ifadə etmək üçün hansı zaman işlənir?',
+          options: ['Simple Future', 'Simple Past', 'Simple Present', 'Present Continuous'],
+          answer: 'Simple Present',
+        },
+        {
+          q: '"Till she ___, I will wait here." — boşluğa nə gəlir?',
+          options: ['will come', 'is coming', 'came', 'comes'],
+          answer: 'comes',
+        },
+      ],
+    },
+
+    // ── Ekran 5: Azərbaycana tərcümə + Xülasə ───────────
+    {
+      type: 'lesson',
+      title: 'Xülasə — Simple Present',
+      content: 'Simple Present bir qayda olaraq Azərbaycan dilinin indiki zaman forması kimi tərcümə olunur.',
+      table: [
+        ['İngilis',                        'Azərbaycan'],
+        ['I go to school.',                'Mən məktəbə gedirəm.'],
+        ['She reads books.',               'O kitab oxuyur.'],
+        ['The sun rises in the East.',     'Günəş şərqdən doğur.'],
+      ],
+      note: 'Düzəlmə xülasəsi:\n• Əsas forma: to → at (to go → go)\n• III şəxs tək: -s / -es\n• Sual: Do / Does + məsdər\n• İnkar: don\'t / doesn\'t + məsdər',
+    },
+  ],
+},
+
+// ── index: 3 — Mini-quiz 1 ────────────────────────────────
+// Do/Does · Doğru forma tap · Zaman zərfi ilə uyğunlaşdır
+[
+  // III şəxs tək forması
+  { en: 'teach → he ____',           tr: 'teaches',    wrong: 'teachs'      },
+  { en: 'go → she ____',             tr: 'goes',       wrong: 'gos'         },
+  { en: 'read → he ____',            tr: 'reads',      wrong: 'reades'      },
+  { en: 'watch → she ____',          tr: 'watches',    wrong: 'watchs'      },
+  { en: 'play → he ____',            tr: 'plays',      wrong: 'plaies'      },
+  { en: 'pass → she ____',           tr: 'passes',     wrong: 'passs'       },
+
+  // Do / Does sual
+  { en: '"___ she like coffee?"',    tr: 'Does',       wrong: 'Do'          },
+  { en: '"___ they work here?"',     tr: 'Do',         wrong: 'Does'        },
+  { en: '"___ he go to school?"',    tr: 'Does',       wrong: 'Do'          },
+  { en: '"___ we need help?"',       tr: 'Do',         wrong: 'Does'        },
+
+  // İnkar
+  { en: 'She ___ like coffee.',      tr: 'doesn\'t',   wrong: 'don\'t'      },
+  { en: 'They ___ work here.',       tr: 'don\'t',     wrong: 'doesn\'t'    },
+  { en: 'He ___ read books.',        tr: 'doesn\'t',   wrong: 'don\'t'      },
+
+  // Düzgün / yanlış forma
+  { en: 'Does he go? — düzgündürmü?',   tr: 'Bəli',   wrong: 'Xeyr'        },
+  { en: 'Does he goes? — düzgündürmü?', tr: 'Xeyr',   wrong: 'Bəli'        },
+  { en: 'Do she go? — düzgündürmü?',    tr: 'Xeyr',   wrong: 'Bəli'        },
+
+  // İşlənmə halları
+  { en: '"The sun rises in the East." — hansı hal?', tr: 'Ümumi həqiqət', wrong: 'Adət'       },
+  { en: '"I go there every day." — hansı hal?',      tr: 'Adət',          wrong: 'Ümumi həqiqət' },
+  { en: '"She plays tennis well." — hansı hal?',     tr: 'Xüsusiyyət',    wrong: 'Adət'       },
+
+  // Zaman + şərt budaq cümlələri
+  { en: '"If she ___, I will go." — boşluq',         tr: 'comes',         wrong: 'will come'  },
+  { en: '"When it ___ raining, we\'ll go out."',     tr: 'stops',         wrong: 'will stop'  },
+  { en: '"Call me as soon as you ___."',              tr: 'arrive',        wrong: 'will arrive'},
+
+  // Zaman zərfləri
+  { en: 'Simple Present ilə işlənən zərf',           tr: 'usually',       wrong: 'yesterday'  },
+  { en: 'Simple Present ilə işlənən zərf',           tr: 'every day',     wrong: 'tomorrow'   },
+],
+   
 
     // ── Bölmə 2 ───────────────────────────────────────────────
     {
