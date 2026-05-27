@@ -3812,6 +3812,438 @@ const KIDS_GRAMMAR_LEVELS = [
   },
 
 ];
+// ============================================================
+//  WORDPATH — VERBS DATA (Feil — Məlum növ)
+//  Bu faylı KIDS_GRAMMAR_LEVELS array-inin sonuna push et:
+//    KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
+//  və ya birbaşa LEVELS-ə:
+//    LEVELS.push(VERBS_LEVEL);
+// ============================================================
+
+const VERBS_LEVEL = {
+  id: 'verbs',
+  name: 'VERBS',
+  icon: '⚡',
+  color: '#F59E0B',
+
+  // ══════════════════════════════════════════════════════════
+  //  BADGE-LƏR
+  // ══════════════════════════════════════════════════════════
+  badges: [
+    {
+      id: 'indefinite_master',
+      title: 'Indefinite Master',
+      description: 'Qeyri-müəyyən zaman formalarını tamamla',
+      icon: '🕐',
+      unlockedBy: 'test_1', // Bölmə 1–4 testini bitirdikdə
+    },
+    {
+      id: 'continuous_master',
+      title: 'Continuous Master',
+      description: 'Davamedici zaman formalarını tamamla',
+      icon: '🔄',
+      unlockedBy: 'test_2', // Bölmə 5–6 testini bitirdikdə
+    },
+    {
+      id: 'perfect_master',
+      title: 'Perfect Master',
+      description: 'Bitmiş zaman formalarını tamamla',
+      icon: '✅',
+      unlockedBy: 'test_3', // Bölmə 7–8 testini bitirdikdə
+    },
+    {
+      id: 'tenses_master',
+      title: 'Tenses Master',
+      description: 'Bütün testləri bitir',
+      icon: '🏆',
+      unlockedBy: 'final_test',
+    },
+  ],
+
+  quizzes: [
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 1 — Qeyri-müəyyən zaman formaları (Indefinite)  ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── Bölmə 1 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 1 — Simple Present (Present Indefinite)',
+    },
+
+    // ── index: 1 — Dərs 1.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.1 — Düzəlmə: to, III şəxs -s/-es',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 2 — Dərs 1.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.2 — İşlənmə: adat, həqiqət, xarakter',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 3 — Mini-quiz 1 ────────────────────────────────
+    // Do/Does · Doğru forma tap · Zaman zərfi ilə uyğunlaşdır
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── Bölmə 2 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 2 — Simple Past (Past Indefinite)',
+    },
+
+    // ── index: 4 — Dərs 2.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.1 — Qaydalı fellər: fel + -ed',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 5 — Dərs 2.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.2 — Qaydasız fellər',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 6 — Dərs 2.3 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.3 — İşlənmə + Qarışıq fellər',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.3 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 7 — Mini-quiz 2 ────────────────────────────────
+    // Qaydalı/qaydasız seç · -ed tələffüzü · did/didn't sual-inkar
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── Bölmə 3 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 3 — Simple Future (Future Indefinite)',
+    },
+
+    // ── index: 8 — Dərs 3.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3.1 — shall/will seç · going vs will · gələcək zərfi tanı',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 3.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 9 — Dərs 3.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3.2 — to be going to + məsdər',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 3.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 10 — Mini-quiz 3 ───────────────────────────────
+    // shall/will seç · going vs will · gələcək zərfi tanı
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── Bölmə 4 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 4 — Future Indefinite in the Past',
+    },
+
+    // ── index: 11 — Dərs 4.1 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.1 — should/would (digərləri)',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 12 — Dərs 4.2 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.2 — İşlənmə: vasitəli nitqdə',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 13 — Mini-quiz 4 ───────────────────────────────
+    // should/would seç · vasitəli nitqdə çevir
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 14 — Test 1 ────────────────────────────────────
+    // Qeyri-müəyyən zaman formaları (Bölmə 1–4) · 12 sual
+    // 4 zaman forması üzrə qarışıq · do/did/will/would · qaydalı/qaydasız
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 2 — Davamedici zaman formaları (Continuous)      ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── Bölmə 5 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 5 — Present Continuous',
+    },
+
+    // ── index: 15 — Dərs 5.1 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5.1 — am/is/are + fel-ing',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 5.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 16 — Dərs 5.2 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5.2 — İşlənmə: danışıq anında',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 5.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 17 — Dərs 5.3 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5.3 — Continuous zamanda işlənməyən fellər',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 5.3 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 18 — Mini-quiz 5 ───────────────────────────────
+    // am/is/are seç · stativ fel tap · now/at the moment tanı
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── Bölmə 6 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 6 — Past Continuous',
+    },
+
+    // ── index: 19 — Dərs 6.1 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 6.1 — was/were + fel-ing',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 6.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 20 — Dərs 6.2 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 6.2 — İşlənmə: keçmişdə dəqiq vaxt',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 6.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 21 — Mini-quiz 6 ───────────────────────────────
+    // was/were seç · when ilə uyğun zaman · davamedici zərfi tanı
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 22 — Test 2 ────────────────────────────────────
+    // Davamedici zaman formaları (Bölmə 5–6) · 10 sual
+    // Present/Past Continuous fərqi · stativ fellər · zaman zərfləri
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 3 — Bitmiş zaman formaları (Perfect)             ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── Bölmə 7 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 7 — Present Perfect',
+    },
+
+    // ── index: 23 — Dərs 7.1 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 7.1 — have/has + P II (keçmiş zaman feli sifəti)',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 7.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 24 — Dərs 7.2 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 7.2 — İşlənmə: bitmiş, nəticəsi var',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 7.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 25 — Mini-quiz 7 ───────────────────────────────
+    // have/has seç · since/for fərqi · already/yet/ever/never yerləşdir
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── Bölmə 8 ───────────────────────────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 8 — Past Perfect',
+    },
+
+    // ── index: 26 — Dərs 8.1 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 8.1 — had + P II (bütün şəxslər)',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 8.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 27 — Dərs 8.2 ─────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 8.2 — İşlənmə: keçmişdən əvvəl bitmiş',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 8.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+        },
+      ],
+    },
+
+    // ── index: 28 — Mini-quiz 8 ───────────────────────────────
+    // had seç · when/after/before ilə doğru zaman · by that time tanı
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 29 — Test 3 ────────────────────────────────────
+    // Bitmiş zaman formaları (Bölmə 7–8) · 10 sual
+    // Present/Past Perfect fərqi · since/for · ardıcıllıq
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 30 — Final Test ────────────────────────────────
+    // Bütün zaman formaları · 20 sual
+    // 8 bölmə · 3 qrup · qarışıq · Present/Past/Future/Perfect/Continuous
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+  ],
+};
+
+// ── Sayta əlavə et ────────────────────────────────────────────
+// Bu sətri data faylının sonuna, KIDS_GRAMMAR_LEVELS-in
+// push edildiyi yerə əlavə et:
+//
+//   KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
+//   LEVELS.push(VERBS_LEVEL);
+//
+// və ya birbaşa array-ə əlavə et:
+//   window.KIDS_GRAMMAR_LEVELS = [...KIDS_GRAMMAR_LEVELS, VERBS_LEVEL];
 
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
 // LEVELS-ə birləşdir
