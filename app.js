@@ -233,7 +233,8 @@ const EXAM_IDS = {
   'c2': new Set([2, 5, 10, 15, 19, 24, 28, 33, 38, 42, 45, 48, 51, 55, 58, 62, 65, 69, 73]),
   'kids':    new Set([]),
   'grammar': new Set([]),
-  'verbs':   new Set([])
+  'verbs':   new Set([]),
+  'passive': new Set([])
 };
 
 // ── Hər exam hansı quiz ID-lərini əhatə edir ─────────────
@@ -1975,8 +1976,7 @@ function loadProgress() {
 
       const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
       if (!progress[lvl.id][i]) {
-const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs';        progress[lvl.id][i] = (i === 0 || isExam || isOpenSection) ? 'unlocked' : 'locked';
-      } else if (isExam && progress[lvl.id][i] === 'locked') {
+const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive';      } else if (isExam && progress[lvl.id][i] === 'locked') {
         progress[lvl.id][i] = 'unlocked';
       }
     }
@@ -2218,6 +2218,12 @@ function renderLevels() {
 } else if (lvl.id === 'verbs') {
   const grammarList = document.getElementById('grammar-list');
   if (grammarList) grammarList.appendChild(card);
+
+} else if (lvl.id === 'passive') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+}
+    
 } else {
   elLevelList.appendChild(card);
 }
@@ -2575,8 +2581,8 @@ function renderQuizPath(lvl, li) {
   if (lvl.id === 'listening') {
   return renderListeningPath(lvl, li);
 }
-  if (lvl.id === 'grammar' || lvl.id === 'verbs') {       
-  return renderGrammarPath(lvl, li); 
+if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive') {
+  return renderGrammarPath(lvl, li);
 }
   
   let html = '<div class="quiz-path">';
