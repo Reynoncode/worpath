@@ -5106,50 +5106,341 @@ const VERBS_LEVEL = {
   { en: '"Tom will write me." — qəti gələcək?', tr: 'yazacaq', wrong: 'yazar'   },
   { en: '"Tom will write me." — qeyri-qəti?',   tr: 'yazar',   wrong: 'yazacaq' },
 ],
-    // ── Bölmə 4 ───────────────────────────────────────────────
+   // ============================================================
+//  BÖLMƏ 4 — Future Indefinite in the Past
+//  (Keçmişə nəzərən gələcək zamanın qeyri-müəyyən forması)
+//  grammar-data.js faylına əlavə et
+// ============================================================
+
+// ── Bölmə 4 Divider ──────────────────────────────────────
+{
+  type: 'section_divider',
+  title: 'Bölmə 4 — Future Indefinite in the Past',
+},
+
+// ── Dərs 4.1 — should / would + məsdər ──────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.1 — should / would + məsdər',
+  cards: [
+
+    // ── Ekran 1: Giriş + düzəlmə qaydası ─────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 4 — Future Indefinite in the Past',
+      type: 'lesson',
+      title: 'Future in the Past nədir?',
+      content: 'Bu zaman forması keçmiş bir vaxtdan baxaraq gələcəkdə baş verəcək hərəkətləri bildirir.\n\nBaşqa sözlə: keçmişdə düşünülmüş, deyilmiş və ya bilinmiş gələcək hərəkət.\n\nDüzəlmə: should / would + əsas felin məsdəri (to-suz)\n\n• should — I və We şəxslərində\n• would — qalan bütün şəxslərdə',
+      table: [
+        ['Şəxs',     'Tək',                'Cəm'],
+        ['I',        'I should come',      'We should come'],
+        ['You',      'You would come',     'You would come'],
+        ['He/She/It','He would come',      'They would come'],
+      ],
+      tip: 'Bu forma Simple Future-un (shall/will) keçmiş versiyasıdır:\nshall → should | will → would',
     },
 
-    // ── index: 11 — Dərs 4.1 ─────────────────────────────────
+    // ── Ekran 2: Sual forması ────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 4.1 — should/would (digərləri)',
-      cards: [
+      type: 'lesson',
+      title: 'Future in the Past — sual forması',
+      content: 'Sual formasını düzəltmək üçün should / would mübtədadan əvvələ keçir:',
+      table: [
+        ['Şəxs',          'Sual'],
+        ['I',             'Should I come?'],
+        ['You',           'Would you come?'],
+        ['He / She / It', 'Would he come?'],
+        ['We',            'Should we come?'],
+        ['They',          'Would they come?'],
+      ],
+      note: 'Qısa cavab:\nYes, I should. / No, I shouldn\'t.\nYes, he would. / No, he wouldn\'t.',
+    },
+
+    // ── Ekran 3: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Future in the Past — inkar forması',
+      content: 'İnkar formasını düzəltmək üçün should / would-dan sonra "not" əlavə edilir:',
+      table: [
+        ['Şəxs',     'Tam inkar',                'Qısa inkar'],
+        ['I',        'I should not come',        'I shouldn\'t come'],
+        ['You',      'You would not come',       'You wouldn\'t come'],
+        ['He/She',   'He would not come',        'He wouldn\'t come'],
+        ['We',       'We should not come',       'We shouldn\'t come'],
+        ['They',     'They would not come',      'They wouldn\'t come'],
+      ],
+      tip: 'Qısa təsdiq: I\'d, you\'d, he\'d, she\'d, we\'d, they\'d\nQısa inkar: shouldn\'t (I/We), wouldn\'t (qalanlar)',
+    },
+
+    // ── Ekran 4: Sual-inkar + qısa formalar ─────────────
+    {
+      type: 'lesson',
+      title: 'Sual-inkar forması',
+      content: 'Sual-inkar forması iki cür düzəlir:',
+      table: [
+        ['Tam forma',               'Qısa forma'],
+        ['Should I not come?',      'Shouldn\'t I come?'],
+        ['Should we not come?',     'Shouldn\'t we come?'],
+        ['Would you not come?',     'Wouldn\'t you come?'],
+        ['Would he not come?',      'Wouldn\'t he come?'],
+        ['Would they not come?',    'Wouldn\'t they come?'],
+      ],
+      note: '"I\'d come" — qısa təsdiq forması.\n"I shouldn\'t come" / "You wouldn\'t come" — qısa inkar formalar.',
+    },
+
+    // ── Quiz: should / would seçimi ──────────────────────
+    { en: '"I ___ come to the meeting."',       tr: 'should',    wrong: 'would'    },
+    { en: '"She ___ return in time."',           tr: 'would',     wrong: 'should'   },
+    { en: '"We ___ not go there."',              tr: 'should',    wrong: 'would'    },
+    { en: '"They ___ not come." — qısa?',        tr: 'wouldn\'t', wrong: 'shouldn\'t' },
+    { en: '"I ___ not go." — qısa?',             tr: 'shouldn\'t', wrong: 'wouldn\'t' },
+    { en: '"I\'d come." — tam forması?',          tr: 'I would come', wrong: 'I should come' },
+
+    // ── Mini-check: should/would ─────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 4.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"I ___ finish the work." — düzgün forma?',
+          options: ['will', 'would', 'should', 'shall'],
+          answer: 'should',
+        },
+        {
+          q: '"He ___ return in time." — düzgün forma?',
+          options: ['should', 'shall', 'would', 'will'],
+          answer: 'would',
+        },
+        {
+          q: '"I would not go." — qısa inkar forması?',
+          options: ['I shouldn\'t go', 'I won\'t go', 'I wouldn\'t go', 'I don\'t go'],
+          answer: 'I wouldn\'t go',
+        },
+        {
+          q: '"I\'d come." — bu ifadə nədir?',
+          options: ['I should come — qısa', 'I would come — qısa', 'I shall come — qısa', 'I will come — qısa'],
+          answer: 'I would come — qısa',
+        },
+        {
+          q: 'Hansı cümlə YANLIŞ-dır?',
+          options: [
+            'She would come.',
+            'Should I go?',
+            'Would he come?',
+            'Should he come?',
+          ],
+          answer: 'Should he come?',
+        },
+        {
+          q: '"We ___ not come." — qısa inkar?',
+          options: ['We wouldn\'t', 'We shouldn\'t', 'We won\'t', 'We don\'t'],
+          answer: 'We shouldn\'t',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 12 — Dərs 4.2 ─────────────────────────────────
+// ── Dərs 4.2 — İşlənmə və Zaman zərfləri ───────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.2 — İşlənmə: vasitəli nitqdə çevrilmə',
+  cards: [
+
+    // ── Ekran 1: Əsas işlənmə halı ──────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 4.2 — İşlənmə: vasitəli nitqdə',
-      cards: [
+      type: 'lesson',
+      title: 'Future in the Past — nə vaxt işlənir?',
+      content: 'Bu zaman forması bir halda işlənir:\n\nBaş cümlə keçmiş zamanda olduqda, budaq cümlədəki gələcəyə aid hərəkəti bildirmək üçün.\n\nYəni: "dedi ki, gələcək", "bildi ki, qayıdacaq" — belə cümlələrdə.',
+      examples: [
+        { word: 'I knew that he would return in time.', az: 'Mən bilirdim ki, o vaxtında qayıdacaq.' },
+        { word: 'He said that they would come.',        az: 'O dedi ki, onlar gələcəklər.' },
+        { word: 'She thought he would win.',            az: 'O düşünürdü ki, o qazanacaq.' },
+        { word: 'I hoped you would help me.',           az: 'Ümid edirdim ki, sən mənə kömək edəcəksən.' },
+      ],
+      tip: 'Qayda: baş cümlədə keçmiş zaman → budaq cümlədə Future in the Past (would/should).',
+    },
+
+    // ── Ekran 2: Simple Future → Future in the Past ───────
+    {
+      type: 'lesson',
+      title: 'Simple Future → Future in the Past çevrilməsi',
+      content: 'Vasitəsiz nitqi vasitəli nitqə çevirərkən zaman dəyişir:\n\nSimple Future → Future in the Past\nshall → should | will → would',
+      table: [
+        ['Vasitəsiz nitq (birbaşa)',                   'Vasitəli nitq (keçmiş)'],
+        ['"I will finish my work in time."',           'He said he would finish his work in time.'],
+        ['"She will come tomorrow."',                  'He said she would come the next day.'],
+        ['"We shall go to Baku."',                     'They said they should go to Baku.'],
+        ['"I will help you."',                         'She promised she would help me.'],
+      ],
+      note: 'Diqqət: "tomorrow" → "the next day" kimi dəyişir.\n"I will" → "he/she would" kimi şəxs əvəzlikləri də dəyişir.',
+    },
+
+    // ── Quiz: çevrilmə ───────────────────────────────────
+    { en: '"will" → vasitəli nitqdə?',               tr: 'would',        wrong: 'should'      },
+    { en: '"shall" → vasitəli nitqdə?',              tr: 'should',       wrong: 'would'       },
+    { en: '"tomorrow" → vasitəli nitqdə?',           tr: 'the next day', wrong: 'yesterday'   },
+    { en: '"He said he ___ come." — boşluq?',        tr: 'would',        wrong: 'will'        },
+    { en: '"She said we ___ go." — boşluq?',         tr: 'should',       wrong: 'shall'       },
+
+    // ── Ekran 3: Zaman zərfləri + Az. dilinə tərcümə ─────
+    {
+      type: 'lesson',
+      title: 'Zaman zərfləri və Azərbaycan dilinə tərcümə',
+      content: 'Future in the Past ilə işlənən zaman zərfləri:',
+      table: [
+        ['Zaman zərfi',          'Mənası'],
+        ['the next day',         'ertəsi gün'],
+        ['the following day',    'növbəti gün'],
+        ['the following week',   'növbəti həftə'],
+        ['the following month',  'növbəti ay'],
+      ],
+      examples: [
+        { word: 'He said he would come the next day.', az: 'O dedi ki, ertəsi gün gələcək.' },
+        { word: 'She promised to call the following day.', az: 'O ertəsi gün zəng edəcəyini vəd etdi.' },
+      ],
+      note: 'Azərbaycan dilinə -acaq/-əcək kimi tərcümə olunur.\n"He said that they would come." — O dedi ki, onlar gələcəklər.',
+    },
+
+    // ── Ekran 4: Simple Future vs Future in the Past ──────
+    {
+      type: 'lesson',
+      title: 'Simple Future vs Future in the Past — müqayisə',
+      content: 'İki formanı fərqləndirən əsas cəhətlər:',
+      table: [
+        ['Xüsusiyyət',        'Simple Future',                    'Future in the Past'],
+        ['Köməkçi fel',       'shall / will',                     'should / would'],
+        ['Baş cümlə',         'İndiki zaman',                     'Keçmiş zaman'],
+        ['İşlənmə',           'Birbaşa gələcək hərəkət',          'Vasitəli nitqdə gələcək'],
+        ['Nümunə',            '"She will come."',                 '"He said she would come."'],
+        ['Az. tərcüməsi',     'gələcək (-acaq/-əcək)',            'gələcək (-acaq/-əcək)'],
+      ],
+      tip: 'Hər ikisi Azərbaycan dilinə eyni (-acaq/-əcək) kimi tərcümə olunur. Fərq yalnız ingilis dilinin daxilindədir.',
+    },
+
+    // ── Ekran 5: Praktik nümunələr ───────────────────────
+    {
+      type: 'lesson',
+      title: 'Praktik nümunələr — çevrilmə tapşırıqları',
+      content: 'Aşağıdakı vasitəsiz nitqlərin vasitəli nitqə çevrilməsinə bax:',
+      table: [
+        ['Vasitəsiz nitq',                         'Vasitəli nitq'],
+        ['"I will go." (he)',                       'He said he would go.'],
+        ['"We shall return." (they)',               'They said they should return.'],
+        ['"She will not come." (he)',               'He said she would not come.'],
+        ['"I will help you." (she)',                'She said she would help me.'],
+        ['"They will win." (I)',                    'I knew they would win.'],
+        ['"I will call you tomorrow." (she)',       'She said she would call me the next day.'],
+      ],
+      note: 'Xülasə qayda:\nI/We + will → I/We + would\nhe/she/they + will → he/she/they + would\nI/We + shall → I/We + should',
+    },
+
+    // ── Mini-check: İşlənmə + vasitəli nitq ─────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 4.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"I knew that he ___ return in time." — boşluğa nə gəlir?',
+          options: ['will', 'shall', 'would', 'should'],
+          answer: 'would',
+        },
+        {
+          q: '"He said that they ___ come." — boşluğa nə gəlir?',
+          options: ['will', 'shall', 'would', 'should'],
+          answer: 'would',
+        },
+        {
+          q: '"She said we ___ go to Baku." — (we = I + she) boşluğa nə gəlir?',
+          options: ['would', 'will', 'should', 'shall'],
+          answer: 'should',
+        },
+        {
+          q: '"I will come tomorrow." → vasitəli nitqdə? (he)',
+          options: [
+            'He said he will come tomorrow.',
+            'He said he would come the next day.',
+            'He said he should come the next day.',
+            'He said he would come tomorrow.',
+          ],
+          answer: 'He said he would come the next day.',
+        },
+        {
+          q: 'Future in the Past Azərbaycan dilinə necə tərcümə olunur?',
+          options: [
+            'Keçmiş zaman (-dı/-di)',
+            'İndiki zaman (-ır/-ir)',
+            'Gələcək zaman (-acaq/-əcək)',
+            'Nəqli keçmiş (-mış/-miş)',
+          ],
+          answer: 'Gələcək zaman (-acaq/-əcək)',
+        },
+        {
+          q: '"tomorrow" vasitəli nitqdə nəyə çevrilir?',
+          options: ['yesterday', 'the next day', 'soon', 'that day'],
+          answer: 'the next day',
+        },
+        {
+          q: 'Bu cümlələrdən hansı Future in the Past-dır?',
+          options: [
+            'She will come tomorrow.',
+            'I knew she would come.',
+            'She is going to come.',
+            'She came yesterday.',
+          ],
+          answer: 'I knew she would come.',
+        },
+        {
+          q: '"He said he ___ finish the work." — "he" III şəxsdir, boşluq?',
+          options: ['shall', 'should', 'will', 'would'],
+          answer: 'would',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 13 — Mini-quiz 4 ───────────────────────────────
-    // should/would seç · vasitəli nitqdə çevir
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+// ── Mini-quiz 4 — Bölmə 4 ümumi quiz ────────────────────
+[
+  // should / would — düzəlmə
+  { en: '"I ___ come to the party."',            tr: 'should',      wrong: 'would'       },
+  { en: '"She ___ return in time."',             tr: 'would',       wrong: 'should'      },
+  { en: '"We ___ go to Baku."',                  tr: 'should',      wrong: 'would'       },
+  { en: '"They ___ not come." — qısa?',          tr: 'wouldn\'t',   wrong: 'shouldn\'t'  },
+  { en: '"I ___ not go." — qısa?',               tr: 'shouldn\'t',  wrong: 'wouldn\'t'   },
 
-    // ── index: 14 — Test 1 ────────────────────────────────────
-    // Qeyri-müəyyən zaman formaları (Bölmə 1–4) · 12 sual
-    // 4 zaman forması üzrə qarışıq · do/did/will/would · qaydalı/qaydasız
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+  // Sual forması
+  { en: '"___ I come?" — I şəxsdə sual?',        tr: 'Should',      wrong: 'Would'       },
+  { en: '"___ she come?" — sual?',               tr: 'Would',       wrong: 'Should'      },
+  { en: '"___ we go?" — sual?',                  tr: 'Should',      wrong: 'Would'       },
+
+  // Qısa formalar
+  { en: '"I\'d come." — tam forması?',            tr: 'I would come',   wrong: 'I should come' },
+  { en: '"wouldn\'t" — tam forması?',             tr: 'would not',      wrong: 'should not'    },
+  { en: '"shouldn\'t" — tam forması?',            tr: 'should not',     wrong: 'would not'     },
+
+  // Simple Future → Future in the Past çevrilməsi
+  { en: '"will" → vasitəli nitqdə?',             tr: 'would',       wrong: 'should'      },
+  { en: '"shall" → vasitəli nitqdə?',            tr: 'should',      wrong: 'would'       },
+  { en: '"tomorrow" → vasitəli nitqdə?',         tr: 'the next day', wrong: 'yesterday'  },
+
+  // Vasitəli nitq — boşluq doldur
+  { en: '"He said he ___ come." — boşluq?',      tr: 'would',       wrong: 'will'        },
+  { en: '"She said we ___ return." — boşluq?',   tr: 'should',      wrong: 'shall'       },
+  { en: '"I knew they ___ win." — boşluq?',      tr: 'would',       wrong: 'will'        },
+  { en: '"She hoped I ___ help her." — boşluq?', tr: 'would',       wrong: 'will'        },
+
+  // Hansı cümlə Future in the Past-dır?
+  { en: 'Future in the Past: hansı cümlədir?',   tr: 'I knew she would come.', wrong: 'She will come tomorrow.' },
+
+  // Zaman zərfləri
+  { en: 'Future in the Past zaman zərfi?',        tr: 'the next day',      wrong: 'yesterday'  },
+  { en: '"the ___ day" — vasitəli nitqdə?',       tr: 'following',         wrong: 'next after' },
+
+  // Müqayisə: Simple Future vs Future in the Past
+  { en: '"She will come." → baş cümlə indiki?',  tr: 'Simple Future',     wrong: 'Future in the Past' },
+  { en: '"He said she would come." → baş cümlə keçmiş?', tr: 'Future in the Past', wrong: 'Simple Future' },
+
+  // Az. dilinə tərcümə
+  { en: '"He said they would come." — Az. dilində?', tr: 'onlar gələcəklər', wrong: 'onlar gəldilər' },
+  { en: 'Future in the Past → Az. dilindəki forma?', tr: '-acaq / -əcək',    wrong: '-dı / -di'      },
+],
 
     // ══════════════════════════════════════════════════════════
     // ║  QRUP 2 — Davamedici zaman formaları (Continuous)      ║
