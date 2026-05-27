@@ -4222,57 +4222,565 @@ const VERBS_LEVEL = {
 ],
    
 
-    // ── Bölmə 2 ───────────────────────────────────────────────
+ // ============================================================
+//  BÖLMƏ 2 — Simple Past (Past Indefinite)
+//  grammar-data.js faylına əlavə et
+// ============================================================
+
+// ── Bölmə 2 Divider ──────────────────────────────────────
+{
+  type: 'section_divider',
+  title: 'Bölmə 2 — Simple Past (Past Indefinite)',
+},
+
+// ── Dərs 2.1 — Qaydalı fellər ────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — Qaydalı fellər və -ed tələffüzü',
+  cards: [
+
+    // ── Ekran 1: Düzəlmə qaydası ─────────────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 2 — Simple Past (Past Indefinite)',
+      type: 'lesson',
+      title: 'Simple Past necə düzəlir?',
+      content: 'Simple Past zamanı keçmişdə baş vermiş hərəkətləri bildirir.\n\nQaydalı fellərin (regular verbs) keçmiş zaman formasını düzəltmək üçün:\n• Məsdərdən "to" atılır\n• Felin sonuna "-ed" əlavə edilir\n• Bütün şəxslərdə eyni qalır',
+      table: [
+        ['Şəxs', 'Tək', 'Cəm'],
+        ['I',        'worked', 'We worked'],
+        ['You',      'worked', 'You worked'],
+        ['He/She/It','worked', 'They worked'],
+      ],
+      tip: 'Simple Present-dən fərqli olaraq Simple Past-da III şəxs təkdə əlavə dəyişiklik olmur — hamı eyni formadadır.',
     },
 
-    // ── index: 4 — Dərs 2.1 ──────────────────────────────────
+    // ── Ekran 2: -ed tələffüzü ───────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2.1 — Qaydalı fellər: fel + -ed',
-      cards: [
+      type: 'lesson',
+      title: '"-ed" sonluğunun tələffüzü',
+      content: '"-ed" sonluğu üç cür tələffüz edilir. Bu, feldən əvvəlki səsdən asılıdır:',
+      table: [
+        ['Tələffüz', 'Şərt',                          'Nümunə'],
+        ['[d]',      'Sait və cingiltili samitdən sonra', 'played, lived, opened'],
+        ['[t]',      'Kar samitdən sonra',               'asked, worked, stopped'],
+        ['[ɪd]',     '"d" və "t" samitlərindən sonra',   'added, wanted, started'],
+      ],
+      note: 'Yalnız "d" və "t" ilə bitən fellərdə "-ed" [ɪd] kimi tam bir heca əmələ gətirir.',
+    },
+
+    // ── Quiz: -ed tələffüzü ──────────────────────────────
+    { en: '"played" — "-ed" necə oxunur?',  tr: '[d]',  wrong: '[t]'  },
+    { en: '"asked" — "-ed" necə oxunur?',   tr: '[t]',  wrong: '[ɪd]' },
+    { en: '"wanted" — "-ed" necə oxunur?',  tr: '[ɪd]', wrong: '[d]'  },
+    { en: '"lived" — "-ed" necə oxunur?',   tr: '[d]',  wrong: '[ɪd]' },
+    { en: '"stopped" — "-ed" necə oxunur?', tr: '[t]',  wrong: '[d]'  },
+
+    // ── Ekran 3: Sual forması ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Past — sual forması',
+      content: 'Sual formasını düzəltmək üçün "did" köməkçi feli mübtədadan əvvələ keçir.\n\nBu zaman əsas felin "-ed" sonluğu düşür — fel başlanğıc formasına qayıdır.',
+      table: [
+        ['Şəxs',          'Sual forması'],
+        ['I / You / We / They', 'Did I / you / we / they work?'],
+        ['He / She / It',       'Did he / she / it work?'],
+      ],
+      examples: [
+        { word: 'Did he work?', az: '✅ düzgün' },
+        { word: 'Did he worked?', az: '❌ yanlış — "did" artıq keçmişi bildirir' },
+      ],
+      note: 'Qısa cavab: "Yes, I did." / "No, I didn\'t." / "Yes, he did." / "No, he didn\'t."',
+    },
+
+    // ── Ekran 4: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Past — inkar forması',
+      content: 'İnkar formasını düzəltmək üçün mübtədadan sonra "did not" (didn\'t) əlavə edilir.\n\nBurada da əsas felin "-ed" sonluğu düşür.',
+      table: [
+        ['Şəxs',   'Tam inkar',            'Qısa inkar'],
+        ['I',      'I did not work',       'I didn\'t work'],
+        ['You',    'You did not work',     'You didn\'t work'],
+        ['He/She', 'He did not work',      'He didn\'t work'],
+        ['We/They','We did not work',      'We didn\'t work'],
+      ],
+      tip: 'Sual-inkar: "Did I not go?" = "Didn\'t I go?" — hər ikisi düzgündür.',
+    },
+
+    // ── Mini-check: Qaydalı fellər ───────────────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 2.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"She ___ to school yesterday." — Boşluğa nə gəlir?',
+          options: ['go', 'goes', 'went', 'walked'],
+          answer: 'walked',
+        },
+        {
+          q: '"___ he speak English well?" — sual forması?',
+          options: ['Do', 'Does', 'Did', 'Was'],
+          answer: 'Did',
+        },
+        {
+          q: 'Hansı cümlə YANLIŞ-dır?',
+          options: [
+            'She didn\'t go to school.',
+            'Did he played football?',
+            'I didn\'t like coffee.',
+            'They didn\'t work here.',
+          ],
+          answer: 'Did he played football?',
+        },
+        {
+          q: '"worked" sözündəki "-ed" necə oxunur?',
+          options: ['[d]', '[t]', '[ɪd]', '[ed]'],
+          answer: '[t]',
+        },
+        {
+          q: '"added" sözündəki "-ed" necə oxunur?',
+          options: ['[d]', '[t]', '[ɪd]', '[æd]'],
+          answer: '[ɪd]',
+        },
+        {
+          q: '"I ___ my homework last night." — Boşluğa nə gəlir?',
+          options: ['finish', 'finishes', 'finished', 'finishing'],
+          answer: 'finished',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — Qaydasız fellər ───────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — Qaydasız fellər (Irregular Verbs)',
+  cards: [
+
+    // ── Ekran 1: Giriş + qruplar ─────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qaydasız fellər — 5 qrup',
+      content: 'Qaydasız fellərin (irregular verbs) keçmiş zamanı "-ed" ilə deyil, müxtəlif yollarla düzəlir.\n\nBu fellər 5 qrupa bölünür:',
+      examples: [
+        { word: '1. Kök + "-en" artır',        az: 'write → wrote → written' },
+        { word: '2. Kök + "-d"/"-t" artır',    az: 'sell → sold → sold' },
+        { word: '3. "-d" samiti "-t"-yə çevrilir', az: 'spend → spent → spent' },
+        { word: '4. Heç dəyişmir',             az: 'cut → cut → cut' },
+        { word: '5. Hər üç forması fərqlidir', az: 'go → went → gone' },
+      ],
+      tip: 'Bu fellərin keçmiş zaman formalarını əzbərləmək lazımdır — qayda yoxdur!',
+    },
+
+    // ── Ekran 2: Qrup 1 — kök dəyişir + en ──────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 1 — Kök dəyişir + "-en" artır',
+      content: 'Bu fellərin Past Simple formasında kökdəki sait dəyişir:\n(Past Participle — P II — "-en" qəbul edir)',
+      table: [
+        ['Məsdər', 'Past Simple', 'P II'],
+        ['write',  'wrote',      'written'],
+        ['speak',  'spoke',      'spoken'],
+        ['break',  'broke',      'broken'],
+        ['drive',  'drove',      'driven'],
+        ['give',   'gave',       'given'],
+        ['ride',   'rode',       'ridden'],
+        ['choose', 'chose',      'chosen'],
+        ['freeze', 'froze',      'frozen'],
+        ['take',   'took',       'taken'],
+      ],
+    },
+
+    // ── Quiz: Qrup 1 ─────────────────────────────────────
+    { en: 'write → Past Simple?',  tr: 'wrote',  wrong: 'writed'  },
+    { en: 'speak → Past Simple?',  tr: 'spoke',  wrong: 'speaked' },
+    { en: 'break → Past Simple?',  tr: 'broke',  wrong: 'breaked' },
+    { en: 'drive → Past Simple?',  tr: 'drove',  wrong: 'drived'  },
+    { en: 'give → Past Simple?',   tr: 'gave',   wrong: 'gived'   },
+
+    // ── Ekran 3: Qrup 2 — kök dəyişir + -d/-t ───────────
+    {
+      type: 'lesson',
+      title: 'Qrup 2 — Kök dəyişir + "-d"/"-t" artır',
+      content: 'Bu fellərdə kökdəki sait dəyişir VƏ sonuna "d" ya "t" samiti artır.\nPast Simple = P II (eyni forma):',
+      table: [
+        ['Məsdər', 'Past Simple', 'P II'],
+        ['sell',   'sold',  'sold'],
+        ['tell',   'told',  'told'],
+        ['feel',   'felt',  'felt'],
+        ['keep',   'kept',  'kept'],
+        ['sleep',  'slept', 'slept'],
+        ['meet',   'met',   'met'],
+        ['leave',  'left',  'left'],
+        ['lose',   'lost',  'lost'],
+        ['find',   'found', 'found'],
+        ['hear',   'heard', 'heard'],
+      ],
+    },
+
+    // ── Ekran 4: Qrup 3 — d→t çevrilir ──────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 3 — "-d" samiti "-t"-yə çevrilir',
+      content: 'Bu fellərdə kökün sonundakı "d" samiti "t"-yə çevrilir:\nPast Simple = P II (eyni forma):',
+      table: [
+        ['Məsdər', 'Past Simple', 'P II'],
+        ['spend',  'spent', 'spent'],
+        ['send',   'sent',  'sent'],
+        ['bend',   'bent',  'bent'],
+        ['build',  'built', 'built'],
+        ['lend',   'lent',  'lent'],
+      ],
+    },
+
+    // ── Ekran 5: Qrup 4 — dəyişmir ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 4 — Dəyişməyən fellər',
+      content: 'Bu fellər məsdər, Past Simple və P II formalarında eyni qalır:',
+      examples: [
+        { word: 'cut → cut → cut',       az: 'kəsmək' },
+        { word: 'put → put → put',       az: 'qoymaq' },
+        { word: 'let → let → let',       az: 'icazə vermək' },
+        { word: 'hit → hit → hit',       az: 'vurmaq' },
+        { word: 'hurt → hurt → hurt',    az: 'incitmək' },
+        { word: 'cost → cost → cost',    az: 'dəymək (qiymət)' },
+        { word: 'set → set → set',       az: 'qurmaq' },
+        { word: 'read → read → read',    az: 'oxumaq ([riːd]→[red])' },
+        { word: 'spread → spread → spread', az: 'yaymaq' },
+        { word: 'shut → shut → shut',    az: 'bağlamaq' },
+      ],
+      tip: '"read" Past Simple-da eyni yazılır amma [red] kimi oxunur!',
+    },
+
+    // ── Ekran 6: Qrup 5 + Naqis fellər ──────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 5 — Hər üç forması fərqli + Naqis fellər',
+      content: 'Ən qeyri-müntəzəm qrup — hər üç forma tamamilə fərqlidir:',
+      table: [
+        ['Məsdər', 'Past Simple', 'P II'],
+        ['be',     'was / were', 'been'],
+        ['go',     'went',       'gone'],
+        ['do',     'did',        'done'],
+        ['see',    'saw',        'seen'],
+        ['buy',    'bought',     'bought'],
+        ['bring',  'brought',    'brought'],
+        ['think',  'thought',    'thought'],
+        ['teach',  'taught',     'taught'],
+        ['catch',  'caught',     'caught'],
+      ],
+      note: 'Modal fellərin keçmiş formaları:\ncan → could | will → would | may → might | shall → should\n\n"must" felinin keçmiş forması yoxdur — əvəzinə "had to" işlədilir.',
+    },
+
+    // ── Quiz: Qaydasız + Naqis ───────────────────────────
+    { en: 'sell → Past Simple?',   tr: 'sold',    wrong: 'selled'  },
+    { en: 'feel → Past Simple?',   tr: 'felt',    wrong: 'feeled'  },
+    { en: 'go → Past Simple?',     tr: 'went',    wrong: 'goed'    },
+    { en: 'cut → Past Simple?',    tr: 'cut',     wrong: 'cutted'  },
+    { en: 'buy → Past Simple?',    tr: 'bought',  wrong: 'buyed'   },
+    { en: '"can" → keçmiş forması?', tr: 'could', wrong: 'canned'  },
+    { en: '"will" → keçmiş forması?', tr: 'would', wrong: 'willed' },
+
+    // ── Mini-check: Qaydasız fellər ──────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"speak" felinin Past Simple forması hansıdır?',
+          options: ['speaked', 'spoke', 'spoken', 'spake'],
+          answer: 'spoke',
+        },
+        {
+          q: 'Hansı fel Past Simple-da dəyişmir?',
+          options: ['write', 'speak', 'cut', 'go'],
+          answer: 'cut',
+        },
+        {
+          q: '"can" felinin keçmiş forması nədir?',
+          options: ['canned', 'was can', 'could', 'might'],
+          answer: 'could',
+        },
+        {
+          q: '"feel" → Past Simple?',
+          options: ['feeled', 'felt', 'fallen', 'feel'],
+          answer: 'felt',
+        },
+        {
+          q: '"read" felinin Past Simple tələffüzü necədir?',
+          options: ['[riːd]', '[red]', '[rɪd]', '[reɪd]'],
+          answer: '[red]',
+        },
+        {
+          q: '"will" felinin keçmiş forması nədir?',
+          options: ['willed', 'would', 'should', 'could'],
+          answer: 'would',
+        },
+        {
+          q: '"send" → Past Simple?',
+          options: ['sended', 'sent', 'sind', 'sand'],
+          answer: 'sent',
+        },
+        {
+          q: '"go" → Past Simple?',
+          options: ['goed', 'gone', 'went', 'going'],
+          answer: 'went',
+        },
+        {
+          q: '"build" → Past Simple?',
+          options: ['builded', 'built', 'bild', 'builed'],
+          answer: 'built',
+        },
+        {
+          q: '"must" felinin keçmiş forması nədir?',
+          options: ['musted', 'should', 'could', 'had to'],
+          answer: 'had to',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.3 — İşlənmə + Qarışıq fellər ─────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.3 — İşlənmə, Zaman zərfləri və Qarışıq fellər',
+  cards: [
+
+    // ── Ekran 1: 3 işlənmə halı ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Past — 3 əsas işlənmə halı',
+      content: 'Simple Past zamanı üç əsas halda işlədilir:',
+      examples: [
+        { word: '1. Keçmişdə baş vermiş hərəkət', az: '"He went to the park yesterday."' },
+        { word: '2. Keçmişdə ardıcıl hərəkətlər', az: '"He came in, greeted them and sat down."' },
+        { word: '3. Keçmişdə müddətli hərəkət',   az: '"When I lived in the village, I swam every day."' },
+      ],
+      tip: 'Azərbaycan dilinə şühudi keçmiş zaman kimi tərcümə olunur (-dı/-di/-du/-dü).',
+    },
+
+    // ── Ekran 2: Zaman zərfləri ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Past — zaman zərfləri',
+      content: 'Bu zərflər hərəkətin keçmişdə baş verdiyini bildirir. Cümlədə bu zərflərdən biri varsa Simple Past işlənir:',
+      table: [
+        ['Zaman zərfi',               'Mənası'],
+        ['yesterday',                 'dünən'],
+        ['the day before yesterday',  'srağagün'],
+        ['... ago',                   '... əvvəl (two days ago)'],
+        ['last week / month / year',  'keçən həftə/ay/il'],
+        ['once',                      'bir dəfə, bir vaxtlar'],
+        ['in 1994',                   '1994-cü ildə'],
+        ['during the war',            'müharibə zamanı'],
+        ['in my childhood / youth',   'uşaqlığımda / gəncliyimdə'],
+        ['on Monday / on Sunday',     'bazar ertəsi / bazar günü'],
+        ['the other day',             'bu yaxınlarda (keçmiş)'],
+      ],
+      note: 'Diqqət: "yesterday", "ago", "last" kimi zərflər olduqda mütləq Simple Past işlənir — Present Perfect deyil!',
+    },
+
+    // ── Ekran 3: used to + məsdər ────────────────────────
+    {
+      type: 'lesson',
+      title: '"used to" — keçmişin vərdişi',
+      content: 'Keçmişdə müntəzəm təkrarlanan, lakin artıq baş verməyən hərəkətlər üçün "used to + məsdər" işlənir.',
+      examples: [
+        { word: 'I used to go to the river.',      az: 'Mən çayda üzərdim. (indi etmirəm)' },
+        { word: 'She used to play piano.',         az: 'O piano çalardı. (indi çalmır)' },
+        { word: 'We used to live in Baku.',        az: 'Biz Bakıda yaşayardıq. (indi yaşamırıq)' },
+        { word: 'When I was young I used to swim.', az: 'Gənc olanda üzərdim.' },
+      ],
+      note: 'Azərbaycan dilinə müzarəli keçmiş zaman kimi tərcümə olunur (-ər, -irdim kimi).\nI went to the forest every day. — Hər gün meşəyə gedərdim.',
+    },
+
+    // ── Mini-check: used to ──────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"used to" + _____ ? — hansı forma gəlir?',
+          options: ['məsdər (to-suz)', 'məsdər (to ilə)', '-ing forması', '-ed forması'],
+          answer: 'məsdər (to-suz)',
+        },
+        {
+          q: '"I ___ swim in the river." — doğru forma?',
+          options: ['use to', 'used to', 'am used to', 'was using'],
+          answer: 'used to',
+        },
+        {
+          q: '"used to" nə bildirir?',
+          options: [
+            'İndiki vərdiş',
+            'Keçmişdə olan amma artıq olmayan vərdiş',
+            'Gələcəkdə olacaq hərəkət',
+            'Bitmiş hərəkət',
+          ],
+          answer: 'Keçmişdə olan amma artıq olmayan vərdiş',
         },
       ],
     },
 
-    // ── index: 5 — Dərs 2.2 ──────────────────────────────────
+    // ── Ekran 4: Qarışıq fellər ──────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2.2 — Qaydasız fellər',
-      cards: [
-        {
-          type: 'lesson',
-          title: 'Dərs 2.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
-        },
+      type: 'lesson',
+      title: 'Qarışıq fellər (Mixed Verbs)',
+      content: 'Qarışıq fellər (mixed verbs) — Past Simple forması qaydalı (-ed), Past Participle (P II) forması qaydasız olan fellərdir:',
+      table: [
+        ['Məsdər', 'Past Simple', 'P II'],
+        ['show',   'showed',      'shown'],
+        ['learn',  'learned',     'learnt'],
+        ['burn',   'burned',      'burnt'],
+        ['dream',  'dreamed',     'dreamt'],
+        ['sew',    'sewed',       'sewn'],
+      ],
+      note: 'Bu fellərin Past Simple forması qaydalı (-ed) düzəlir, lakin P II forması qaydasız olur.',
+    },
+
+    // ── Ekran 5: Müqayisə cədvəli ────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Present vs Simple Past — müqayisə',
+      content: 'İki zamanı fərqləndirən əsas cəhətlər:',
+      table: [
+        ['Xüsusiyyət',         'Simple Present',            'Simple Past'],
+        ['Zaman',             'İndiki, adət',               'Keçmiş'],
+        ['Qaydalı fel',       'work / works',               'worked'],
+        ['Sual köməkçisi',    'do / does',                  'did'],
+        ['İnkar',             'don\'t / doesn\'t',          'didn\'t'],
+        ['III şəxs tək',      'works (-s əlavəsi)',          'worked (dəyişmir)'],
+        ['Zaman zərfi',       'every day, usually',         'yesterday, ago, last'],
+        ['Az. dilindəki forma', 'İndiki zaman (-ır/-ir)',   'Keçmiş zaman (-dı/-di)'],
       ],
     },
 
-    // ── index: 6 — Dərs 2.3 ──────────────────────────────────
+    // ── Mini-check: İşlənmə + Qarışıq fellər ─────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2.3 — İşlənmə + Qarışıq fellər',
-      cards: [
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 2.3 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"He ___ to the park yesterday." — Boşluğa nə gəlir?',
+          options: ['go', 'goes', 'went', 'going'],
+          answer: 'went',
+        },
+        {
+          q: 'Hansı zaman zərfi Simple Past ilə işlənir?',
+          options: ['already', 'yet', 'yesterday', 'recently'],
+          answer: 'yesterday',
+        },
+        {
+          q: '"show" felinin Past Simple forması nədir?',
+          options: ['shown', 'showed', 'shew', 'showded'],
+          answer: 'showed',
+        },
+        {
+          q: 'Simple Past Azərbaycan dilinə necə tərcümə olunur?',
+          options: [
+            'İndiki zaman (-ır/-ir)',
+            'Şühudi keçmiş (-dı/-di)',
+            'Nəqli keçmiş (-mış/-miş)',
+            'Gələcək zaman (-acaq/-əcək)',
+          ],
+          answer: 'Şühudi keçmiş (-dı/-di)',
+        },
+        {
+          q: '"used to" niyə işlənir?',
+          options: [
+            'Keçmişdə bir dəfə baş verən hərəkət üçün',
+            'Keçmişdə müntəzəm olan amma artıq olmayan vərdiş üçün',
+            'Gələcəkdə olacaq hərəkət üçün',
+            'İndiki vərdiş üçün',
+          ],
+          answer: 'Keçmişdə müntəzəm olan amma artıq olmayan vərdiş üçün',
+        },
+        {
+          q: '"She ___ coffee every day when she was a student." — Boşluğa nə gəlir?',
+          options: ['drinks', 'drank', 'used to drink', 'is drinking'],
+          answer: 'used to drink',
+        },
+        {
+          q: 'Ardıcıl keçmiş hərəkətlər üçün hansı cümlə düzgündür?',
+          options: [
+            'He comes in, greets and sits down.',
+            'He came in, greeted and sat down.',
+            'He has come in, greeted and sat down.',
+            'He was coming in, greeted and sat down.',
+          ],
+          answer: 'He came in, greeted and sat down.',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 7 — Mini-quiz 2 ────────────────────────────────
-    // Qaydalı/qaydasız seç · -ed tələffüzü · did/didn't sual-inkar
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+// ── Mini-quiz 2 — Bölmə 2 ümumi quiz ────────────────────
+[
+  // Qaydalı fellər — düzəlmə
+  { en: '"work" → Past Simple?',   tr: 'worked',   wrong: 'workes'   },
+  { en: '"play" → Past Simple?',   tr: 'played',   wrong: 'plaied'   },
+  { en: '"study" → Past Simple?',  tr: 'studied',  wrong: 'studyed'  },
+  { en: '"stop" → Past Simple?',   tr: 'stopped',  wrong: 'stoped'   },
 
+  // -ed tələffüzü
+  { en: '"opened" → tələffüz?',  tr: '[d]',  wrong: '[t]'  },
+  { en: '"worked" → tələffüz?',  tr: '[t]',  wrong: '[d]'  },
+  { en: '"started" → tələffüz?', tr: '[ɪd]', wrong: '[t]'  },
+  { en: '"lived" → tələffüz?',   tr: '[d]',  wrong: '[ɪd]' },
+
+  // Sual forması
+  { en: 'Sual: "He worked." → ____', tr: 'Did he work?',  wrong: 'Did he worked?' },
+  { en: '"___ she speak English?" — sual?', tr: 'Did', wrong: 'Does' },
+
+  // İnkar forması
+  { en: '"I ___ go to school." — inkar?', tr: 'didn\'t', wrong: 'don\'t' },
+  { en: '"He ___ work yesterday." — inkar?', tr: 'didn\'t', wrong: 'doesn\'t' },
+
+  // Qaydasız fellər — Qrup 1
+  { en: 'write → Past Simple?',  tr: 'wrote',  wrong: 'writed'  },
+  { en: 'speak → Past Simple?',  tr: 'spoke',  wrong: 'speaked' },
+  { en: 'give → Past Simple?',   tr: 'gave',   wrong: 'gived'   },
+  { en: 'drive → Past Simple?',  tr: 'drove',  wrong: 'drived'  },
+
+  // Qaydasız fellər — Qrup 2
+  { en: 'sell → Past Simple?',   tr: 'sold',   wrong: 'selled'  },
+  { en: 'feel → Past Simple?',   tr: 'felt',   wrong: 'feeled'  },
+  { en: 'leave → Past Simple?',  tr: 'left',   wrong: 'leaved'  },
+  { en: 'find → Past Simple?',   tr: 'found',  wrong: 'finded'  },
+
+  // Qrup 3 — d→t
+  { en: 'spend → Past Simple?',  tr: 'spent',  wrong: 'spended' },
+  { en: 'send → Past Simple?',   tr: 'sent',   wrong: 'sended'  },
+  { en: 'build → Past Simple?',  tr: 'built',  wrong: 'builded' },
+
+  // Qrup 4 — dəyişmir
+  { en: 'cut → Past Simple?',    tr: 'cut',    wrong: 'cutted'  },
+  { en: 'put → Past Simple?',    tr: 'put',    wrong: 'putted'  },
+  { en: 'read [riːd] → Past Simple tələffüz?', tr: '[red]', wrong: '[riːd]' },
+
+  // Qrup 5 — hər üçü fərqli
+  { en: 'go → Past Simple?',     tr: 'went',   wrong: 'goed'    },
+  { en: 'buy → Past Simple?',    tr: 'bought', wrong: 'buyed'   },
+  { en: 'think → Past Simple?',  tr: 'thought', wrong: 'thinked' },
+  { en: 'teach → Past Simple?',  tr: 'taught', wrong: 'teached' },
+
+  // Modal fellər
+  { en: '"can" → keçmiş forması?',  tr: 'could',  wrong: 'canned'  },
+  { en: '"will" → keçmiş forması?', tr: 'would',  wrong: 'willed'  },
+  { en: '"must" → keçmiş əvəzliyici?', tr: 'had to', wrong: 'should' },
+
+  // used to
+  { en: '"Keçmişdə üzərdim" → ____', tr: 'used to swim', wrong: 'use to swim'  },
+  { en: '"Uşaqlıqda piano çalardım" → ____', tr: 'used to play piano', wrong: 'was used to play piano' },
+
+  // Zaman zərfləri
+  { en: 'Simple Past ilə işlənən zərf?', tr: 'yesterday', wrong: 'already'    },
+  { en: '"two days ____" — zaman zərfi?', tr: 'ago',       wrong: 'before'     },
+  { en: '"___ week" — zaman zərfi?',      tr: 'last',      wrong: 'next'        },
+
+  // Qarışıq fellər
+  { en: '"show" → Past Simple?',  tr: 'showed', wrong: 'shown'   },
+  { en: '"learn" → Past Simple?', tr: 'learned', wrong: 'learnt' },
+],
     // ── Bölmə 3 ───────────────────────────────────────────────
     {
       type: 'section_divider',
