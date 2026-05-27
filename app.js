@@ -1975,8 +1975,7 @@ function loadProgress() {
 
       const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
       if (!progress[lvl.id][i]) {
-        const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar';
-        progress[lvl.id][i] = (i === 0 || isExam || isOpenSection) ? 'unlocked' : 'locked';
+const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs';        progress[lvl.id][i] = (i === 0 || isExam || isOpenSection) ? 'unlocked' : 'locked';
       } else if (isExam && progress[lvl.id][i] === 'locked') {
         progress[lvl.id][i] = 'unlocked';
       }
