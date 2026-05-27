@@ -2218,12 +2218,9 @@ function renderLevels() {
 } else if (lvl.id === 'verbs') {
   const grammarList = document.getElementById('grammar-list');
   if (grammarList) grammarList.appendChild(card);
-
 } else if (lvl.id === 'passive') {
   const grammarList = document.getElementById('grammar-list');
   if (grammarList) grammarList.appendChild(card);
-}
-    
 } else {
   elLevelList.appendChild(card);
 }
