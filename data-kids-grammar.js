@@ -6708,6 +6708,10 @@ const VERBS_LEVEL = {
   { en: '"I had written." — Azərbaycanca?',                   tr: 'Mən yazmışdım.',    wrong: 'Mən yazmışam.'     },
   { en: 'Past Perfect Azərbaycanda hansı zamandır?',          tr: 'Uzaq keçmiş',       wrong: 'Nəqli keçmiş'      },
 ],
+    {
+  type: 'section_divider',
+  title: 'VERBS - ÜMUMİ İMTAHAN',
+},
 
 // ── Final Test — Felin zaman formaları (50 sual) ──────────
 [
