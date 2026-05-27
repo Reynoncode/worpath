@@ -3862,19 +3862,7 @@ const VERBS_LEVEL = {
 
   quizzes: [
 
-    // ══════════════════════════════════════════════════════════
-    // ║  QRUP 1 — Qeyri-müəyyən zaman formaları (Indefinite)  ║
-    // ══════════════════════════════════════════════════════════
-
-   // ============================================================
-//  VERBS — Bölmə 1: Simple Present (Present Indefinite)
-//  Bu bloku verbs-data.js faylında müvafiq hissələrə yapışdır:
-//
-//  index: 1 → Dərs 1.1 placeholder-ını bu obyektlə əvəz et
-//  index: 2 → Dərs 1.2 placeholder-ını bu obyektlə əvəz et
-//  index: 3 → Mini-quiz 1 array-ini bu array ilə əvəz et
-// ============================================================
-
+   
 // ── index: 1 — Dərs 1.1 ──────────────────────────────────
 {
   type: 'grammar_lesson',
@@ -4228,10 +4216,8 @@ const VERBS_LEVEL = {
 // ============================================================
 
 // ── Bölmə 2 Divider ──────────────────────────────────────
-{
-  type: 'section_divider',
-  title: 'Bölmə 2 — Simple Past (Past Indefinite)',
-},
+{ type: 'section_divider', title: 'Bölmə 1 — Simple Present (Present Indefinite)' },
+
 
 // ── Dərs 2.1 — Qaydalı fellər ────────────────────────────
 {
