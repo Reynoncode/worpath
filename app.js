@@ -2997,6 +2997,24 @@ function startQuiz(levelIdx, quizIdx) {
     return;
   }
 
+  // Grammar bölmə quiz-ləri (array formatında)
+if (lvl.id === 'grammar' && Array.isArray(item)) {
+  quiz.mode     = 'normal';
+  quiz.levelIdx = levelIdx;
+  quiz.quizIdx  = quizIdx;
+  quiz.mistakes = 0;
+  quiz.index    = 0;
+  quiz.locked   = false;
+  quiz.chanceUsed   = false;
+  quiz.chanceActive = false;
+  quiz.words = shuffle(item.filter(w => w && w.en && w.tr && w.wrong));
+  restoreNormalQuizBody();
+  elQuestionHint.textContent = 'Düzgün cavabı tap';
+  showQuizScreen();
+  showQuestion();
+  return;
+}
+
   // Reading quiz yoxlaması
   if (item && !Array.isArray(item) && item.type === 'reading') {
     startReadingQuiz(levelIdx, quizIdx);
