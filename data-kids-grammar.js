@@ -6794,7 +6794,302 @@ const VERBS_LEVEL = {
   ],
 };
 
+// ============================================================
+//  WORDPATH — PASSIVE VOICE DATA (Məchul növ)
+//  Data faylının sonuna əlavə et:
+//
+//  KIDS_GRAMMAR_LEVELS.push(PASSIVE_LEVEL);
+//
+//  app.js — EXAM_IDS-ə əlavə et:
+//  'passive': new Set([])
+//
+//  app.js — renderLevels()-də əlavə et:
+//  } else if (lvl.id === 'passive') {
+//    const grammarList = document.getElementById('grammar-list');
+//    if (grammarList) grammarList.appendChild(card);
+//  }
+//
+//  app.js — renderQuizPath()-də əlavə et:
+//  if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive') {
+//    return renderGrammarPath(lvl, li);
+//  }
+//
+//  app.js — loadProgress()-də əlavə et:
+//  const isOpenSection = ... || lvl.id === 'passive';
+// ============================================================
 
+const PASSIVE_LEVEL = {
+  id: 'passive',
+  name: 'PASSIVE VOICE',
+  icon: '🔄',
+  color: '#10B981',
+
+  quizzes: [
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 1 — Qeyri-müəyyən zaman formalarının məchul növü ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── index: 0 — Qrup 1 bölücüsü ───────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Qrup 1 — Qeyri-müəyyən zaman formalarının məchul növü',
+    },
+
+    // ── index: 1 — Bölmə 1 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 1 — Present / Past / Future Indefinite Passive',
+    },
+
+    // ── index: 2 — Dərs 1.1 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.1 — Present Indefinite Passive',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nam/is/are + P II\nI am invited / He is invited\nSual: am/is/are əvvələ · İnkar: not\nAzərbaycanca: -ilir/-ilir/-ilir',
+        },
+      ],
+    },
+
+    // ── index: 3 — Dərs 1.2 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.2 — Past Indefinite Passive',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nwas/were + P II\nI was invited / They were invited\nSual: was/were əvvələ · İnkar: not\nAzərbaycanca: -ildı/-ildi/-ildi',
+        },
+      ],
+    },
+
+    // ── index: 4 — Dərs 1.3 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.3 — Future Indefinite Passive',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.3 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nshall be / will be + P II\nI shall be invited / He will be invited\nSual: shall/will əvvələ · İnkar: not',
+        },
+      ],
+    },
+
+    // ── index: 5 — Mini-quiz 1 ────────────────────────────────
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 6 — Bölmə 2 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 2 — Present / Past Perfect Passive',
+    },
+
+    // ── index: 7 — Dərs 2.1 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.1 — Present Perfect Passive',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nhave been / has been + P II\nI have been invited / He has been invited\nSual: have/has əvvələ · İnkar: not',
+        },
+      ],
+    },
+
+    // ── index: 8 — Dərs 2.2 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.2 — Past Perfect Passive',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nhad been + P II\nI had been invited / They had been invited\nSual: had əvvələ · İnkar: not',
+        },
+      ],
+    },
+
+    // ── index: 9 — Mini-quiz 2 ────────────────────────────────
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 10 — Bölmə 3 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 3 — Modal fellərin məchul növü',
+    },
+
+    // ── index: 11 — Dərs 3.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3.1 — Modal + be + P II',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 3.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nmust be done · can be written\nshould be finished · may be sent · could be seen',
+        },
+      ],
+    },
+
+    // ── index: 12 — Mini-quiz 3 ───────────────────────────────
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 13 — Test 1 ────────────────────────────────────
+    // Passive Voice formaları (Bölmə 1–3) · 12 sual
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 2 — Məlum cümləni məchul cümləyə çevirmə        ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── index: 14 — Qrup 2 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Qrup 2 — Məlum cümləni məchul cümləyə çevirmə',
+    },
+
+    // ── index: 15 — Bölmə 4 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 4 — Çevirmənin əsas qaydaları',
+    },
+
+    // ── index: 16 — Dərs 4.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.1 — Əsas çevirmə qaydası',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nMəlum tamamlığı → məchul mübtəda\nto be müvafiq zaman forması + P II\nİcraçı: by + isim (cümlə sonunda)\nI write a letter → A letter is written by me',
+        },
+      ],
+    },
+
+    // ── index: 17 — Dərs 4.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.2 — Əvəzlik dəyişməsi',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nObyekt → şəxs əvəzliyinə çevirilir\nme→I · him→he · her→she\nus→we · them→they\nBy + I→me · he→him · she→her',
+        },
+      ],
+    },
+
+    // ── index: 18 — Mini-quiz 4 ───────────────────────────────
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 19 — Bölmə 5 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 5 — Canlı / cansız tamamlıq qaydaları',
+    },
+
+    // ── index: 20 — Dərs 5.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5.1 — Canlı + cansız tamamlıq',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 5.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nCanlı tamamlıq → məchul mübtədada olur\nI give him a book →\nHe is given a book by me',
+        },
+      ],
+    },
+
+    // ── index: 21 — Dərs 5.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5.2 — İki tamamlıq qaydası',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 5.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nİki canlı / iki cansız olduqda\nBirinci gələn tamamlıq → mübtəda\nZaman məlum cümlə ilə eyni qalır',
+        },
+      ],
+    },
+
+    // ── index: 22 — Mini-quiz 5 ───────────────────────────────
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 23 — Bölmə 6 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 6 — Bütün zaman formalarında çevirmə təcrübəsi',
+    },
+
+    // ── index: 24 — Dərs 6.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 6.1 — Zaman formaları ilə çevirmə',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 6.1 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nPresent: is/are written\nPast: was/were written\nFuture: will be written\nPerfect: have/has/had been written',
+        },
+      ],
+    },
+
+    // ── index: 25 — Dərs 6.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 6.2 — Azərbaycana tərcümə',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 6.2 — Tezliklə əlavə olunacaq',
+          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nis written → yazılır\nwas written → yazıldı\nwill be written → yazılacaq\nhas been written → yazılmışdır',
+        },
+      ],
+    },
+
+    // ── index: 26 — Mini-quiz 6 ───────────────────────────────
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 27 — Test 2 ────────────────────────────────────
+    // Məlum → Məchul çevirmə (Bölmə 4–6) · 12 sual
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+    // ── index: 28 — Final Test ────────────────────────────────
+    // Passive Voice tam test · 20+ sual
+    [
+      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+    ],
+
+  ],
+};
+
+KIDS_GRAMMAR_LEVELS.push(PASSIVE_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
 // LEVELS-ə birləşdir
