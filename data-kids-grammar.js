@@ -1832,38 +1832,452 @@ const KIDS_GRAMMAR_LEVELS = [
       ],
 
       // ── Bölmə 6 ──────────────────────────────────────
-      // index: 26
       {
         type: 'section_divider',
         title: 'Bölmə 6 — Xüsusi cəm halları',
       },
 
-      // index: 27 — Dərs 6.1
+      // Dərs 6.1 — Yalnız tək formada işlənən isimlər
       {
         type: 'grammar_lesson',
         title: 'Dərs 6.1 — Yalnız tək formada işlənən isimlər',
-        cards: [],
+        cards: [
+
+          // ── Ekran 1: Giriş ───────────────────────────────
+          {
+            type: 'lesson',
+            title: 'Həmişə tək — advice, information və başqaları',
+            content: 'İngilis dilində bəzi isimlər var ki, onlar heç vaxt cəmlənmir, həmişə tək formada işlənir.\n\n• a / an artiklı ilə işlənmir\n• Özündən sonra fel təkdə gəlir\n• Çox mənasında much, az mənasında little işlənir',
+            table: [
+              ['İsim',        'Mənası'],
+              ['advice',      'məsləhət'],
+              ['information', 'məlumat'],
+              ['progress',    'nailiyyət, tərəqqi'],
+              ['traffic',     'nəqliyyat'],
+              ['knowledge',   'bilik'],
+              ['luggage',     'yük, baqaj'],
+              ['baggage',     'yük, baqaj'],
+              ['furniture',   'mebel'],
+            ],
+            examples: [
+              { word: 'Can you give me some advice?',  az: '✅ düzgün' },
+              { word: 'Can you give me some advices?', az: '❌ yanlış' },
+              { word: 'Much information is needed.',   az: 'much + tək fel' },
+              { word: 'Little progress was made.',     az: 'little + tək fel' },
+            ],
+          },
+
+          // ── Mini-check: Həmişə tək (1) ───────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"advice" sözünün cəm forması varmı?',
+                options: ['Bəli, advices', 'Xeyr, cəmlənmir', 'Bəli, advicen', 'Bəzən işlənir'],
+                answer: 'Xeyr, cəmlənmir',
+              },
+              {
+                q: '"information" ilə "çox" mənasında hansı söz işlənir?',
+                options: ['many', 'few', 'much', 'a few'],
+                answer: 'much',
+              },
+              {
+                q: '"Much progress ___ made." — boşluğa nə gəlir?',
+                options: ['were', 'are', 'was', 'have been'],
+                answer: 'was',
+              },
+              {
+                q: 'Hansı cümlə düzgündür?',
+                options: [
+                  'Can you give me some advices?',
+                  'Can you give me some advice?',
+                  'Can you give me an advice?',
+                  'Can you give me a advice?',
+                ],
+                answer: 'Can you give me some advice?',
+              },
+              {
+                q: '"furniture" hansı növ isimdir?',
+                options: ['Countable', 'Proper noun', 'Uncountable', 'Collective'],
+                answer: 'Uncountable',
+              },
+            ],
+          },
+
+          // ── Ekran 2: Hair və Fruit ───────────────────────
+          {
+            type: 'lesson',
+            title: 'Hair · Fruit — xüsusi qaydalar',
+            content: 'Bu iki ismin ayrıca qaydasına diqqət etmək lazımdır.',
+            examples: [
+              { word: 'Her hair is beautiful.',  az: 'hair — həmişə tək' },
+              { word: 'His hair is short.',      az: 'tək fel — "is"' },
+              { word: 'I like fruit.',           az: 'fruit — ümumi mənada tək' },
+              { word: 'Fruit is useful.',        az: 'tək fel — "is"' },
+            ],
+            note: 'İstisna: "fruit" müxtəlif növ meyvələr mənasında işləndikdə cəm forması işlənə bilər:\nThere are a lot of fruits in our garden.\n— Bağımızda çoxlu (növ) meyvə var.',
+          },
+
+          // ── Mini-check: Hair / Fruit ─────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"Her hair ___ beautiful." — boşluğa nə gəlir?',
+                options: ['are', 'were', 'is', 'have'],
+                answer: 'is',
+              },
+              {
+                q: '"fruits" forması nə vaxt işlənə bilər?',
+                options: [
+                  'Həmişə',
+                  'Heç vaxt',
+                  'Müxtəlif növ meyvələr mənasında',
+                  'Yalnız sual cümlədə',
+                ],
+                answer: 'Müxtəlif növ meyvələr mənasında',
+              },
+              {
+                q: 'Hansı cümlə düzgündür?',
+                options: [
+                  'Fruit are useful.',
+                  'Fruits is useful.',
+                  'Fruit is useful.',
+                  'A fruit is useful.',
+                ],
+                answer: 'Fruit is useful.',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 28 — Dərs 6.2
+      // Dərs 6.2 — Yalnız cəm formada işlənən isimlər
       {
         type: 'grammar_lesson',
         title: 'Dərs 6.2 — Yalnız cəm formada işlənən isimlər',
-        cards: [],
+        cards: [
+
+          // ── Ekran 1: Scissors, Trousers və s. ───────────
+          {
+            type: 'lesson',
+            title: 'Həmişə cəm — scissors, trousers və başqaları',
+            content: 'Bəzi isimlər həmişə cəm formada işlənir — sonunda –s var, tək forması yoxdur və həmişə cəm fel tələb edir.\n\nİki eyni hissədən ibarət olanlar:',
+            table: [
+              ['İsim',       'Mənası'],
+              ['scissors',   'qayçı'],
+              ['tongs',      'kəlbətin'],
+              ['spectacles', 'eynək'],
+              ['glasses',    'eynək, durbin'],
+              ['scales',     'tərəzi'],
+              ['trousers',   'şalvar'],
+              ['jeans',      'cins şalvar'],
+              ['tights',     'kolqotka'],
+              ['pyjamas',    'pijama'],
+              ['shorts',     'şort'],
+              ['shoes',      'ayaqqabı'],
+              ['gloves',     'əlcək'],
+              ['mittens',    'tək barmaq əlcək'],
+              ['boots',      'çəkmə'],
+              ['socks',      'corab'],
+              ['stockings',  'uzun corab'],
+            ],
+          },
+
+          // ── Ekran 2: Digər həmişə cəm isimlər ───────────
+          {
+            type: 'lesson',
+            title: 'Konkret əşya bildirən həmişə cəm isimlər',
+            content: 'Bəzi konkret əşya bildirən isimlər də həmişə cəmdir:',
+            table: [
+              ['İsim',    'Mənası'],
+              ['goods',   'mal, əmtəə'],
+              ['stairs',  'pilləkən'],
+              ['clothes', 'paltar'],
+            ],
+            examples: [
+              { word: 'Where are my scissors?',  az: '✅ düzgün' },
+              { word: 'Where is my scissors?',   az: '❌ yanlış' },
+              { word: 'These trousers are new.', az: '✅ cəm fel' },
+              { word: 'The clothes are clean.',  az: '✅ cəm fel' },
+            ],
+          },
+
+          // ── Mini-check: Həmişə cəm (1) ───────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"Where ___ my scissors?" — boşluğa nə gəlir?',
+                options: ['is', 'was', 'are', 'has'],
+                answer: 'are',
+              },
+              {
+                q: '"These trousers ___ new." — boşluğa nə gəlir?',
+                options: ['is', 'was', 'are', 'has been'],
+                answer: 'are',
+              },
+              {
+                q: 'Hansı isim həmişə cəm formada işlənir?',
+                options: ['advice', 'furniture', 'scissors', 'information'],
+                answer: 'scissors',
+              },
+              {
+                q: '"clothes" sözü necə işlənir?',
+                options: ['Həmişə tək', 'Həmişə cəm', 'Həm tək, həm cəm', 'Sayılmayan'],
+                answer: 'Həmişə cəm',
+              },
+              {
+                q: 'Hansı cümlə düzgündür?',
+                options: [
+                  'My jeans is blue.',
+                  'My jeans are blue.',
+                  'My jeans was blue.',
+                  'A jeans is blue.',
+                ],
+                answer: 'My jeans are blue.',
+              },
+            ],
+          },
+
+          // ── Ekran 3: A pair of ───────────────────────────
+          {
+            type: 'lesson',
+            title: 'A pair of — bir ədəd mənasında',
+            content: 'Həmişə cəm olan bu isimlər bir ədəd mənasında işlənəndə "a pair of" ifadəsi ilə verilir.',
+            examples: [
+              { word: 'a pair of scissors', az: 'bir qayçı' },
+              { word: 'a pair of trousers', az: 'bir şalvar' },
+              { word: 'a pair of glasses',  az: 'bir eynək' },
+              { word: 'a pair of shoes',    az: 'bir cüt ayaqqabı' },
+              { word: 'a pair of gloves',   az: 'bir cüt əlcək' },
+              { word: 'a pair of socks',    az: 'bir cüt corab' },
+            ],
+            note: 'İki, üç cüt mənasında:\n• two pairs of trousers — iki şalvar\n• three pairs of shoes — üç cüt ayaqqabı',
+          },
+
+          // ── Mini-check: A pair of ────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"Bir qayçı" ingilis dilində necə deyilir?',
+                options: ['a scissors', 'one scissors', 'a pair of scissors', 'scissor'],
+                answer: 'a pair of scissors',
+              },
+              {
+                q: '"two pairs of trousers" nə deməkdir?',
+                options: ['iki cüt şalvar', 'iki şalvar', 'iki gödəkçə', 'iki cüt corab'],
+                answer: 'iki şalvar',
+              },
+              {
+                q: 'Hansı ifadə düzgündür?',
+                options: ['a trouser', 'a trousers', 'a pair of trousers', 'one trouser'],
+                answer: 'a pair of trousers',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 29 — Dərs 6.3
+      // Dərs 6.3 — Formaca cəm, mənaca tək + eyni forma
       {
         type: 'grammar_lesson',
-        title: 'Dərs 6.3 — Formaca cəm, mənaca tək + eyni forma',
-        cards: [],
+        title: 'Dərs 6.3 — Formaca cəm, mənaca tək · Eyni forma',
+        cards: [
+
+          // ── Ekran 1: Holiday xüsusi qaydası ─────────────
+          {
+            type: 'lesson',
+            title: 'Holiday — bayram yoxsa tətil?',
+            content: '"holiday" sözü mənasına görə fərqli işlənir:',
+            examples: [
+              { word: 'Today is a holiday.',       az: 'bayram mənasında — tək fel' },
+              { word: 'The holiday is tomorrow.',  az: 'bayram mənasında — tək fel' },
+              { word: 'The holidays are over.',    az: 'tətil mənasında — cəm fel' },
+              { word: 'My holidays were wonderful.', az: 'tətil mənasında — cəm fel' },
+            ],
+            tip: 'Bayram → tək. Tətil → cəm (-s alır).',
+          },
+
+          // ── Mini-check: Holiday ──────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"Today ___ a holiday." — boşluğa nə gəlir?',
+                options: ['are', 'were', 'is', 'have'],
+                answer: 'is',
+              },
+              {
+                q: '"The holidays ___ over." — boşluğa nə gəlir?',
+                options: ['is', 'was', 'are', 'has been'],
+                answer: 'are',
+              },
+              {
+                q: '"holidays" (cəm) nə mənasında işlənir?',
+                options: ['Bayram', 'Tətil', 'Həm bayram, həm tətil', 'Heç biri'],
+                answer: 'Tətil',
+              },
+            ],
+          },
+
+          // ── Ekran 2: News, Phonetics, Physics ───────────
+          {
+            type: 'lesson',
+            title: 'News · Phonetics · Physics — sonunda -s var, amma tək',
+            content: 'Bəzi isimlər var ki, sonunda -s şəkilçisi olmasına baxmayaraq həmişə təkdə işlənir.\n\nnews — xəbər:\n• Formaca cəmdir, mənaca təkdir\n• a / an artiklı ilə işlənmir\n• Özündən sonra fel təkdə gəlir',
+            examples: [
+              { word: 'The news is good.',              az: '✅ düzgün' },
+              { word: 'The news are good.',             az: '❌ yanlış' },
+              { word: 'There is a lot of news today.',  az: '✅ tək fel' },
+            ],
+            note: 'Azərbaycan dilinə həm tək, həm cəmdə tərcümə oluna bilər:\nThe news is interesting. — Xəbər/Xəbərlər maraqlıdır.',
+          },
+
+          // ── Ekran 3: Elm adları ──────────────────────────
+          {
+            type: 'lesson',
+            title: 'Elm adları — həmişə tək',
+            content: 'Sonunda -s olmasına baxmayaraq həmişə tək, sayılmayan, artıklsız, özündən sonra fel tək:',
+            table: [
+              ['İsim',        'Mənası'],
+              ['phonetics',   'fonetika'],
+              ['physics',     'fizika'],
+              ['optics',      'optika'],
+              ['linguistics', 'dilçilik'],
+              ['gymnastics',  'gimnastika'],
+              ['economics',   'iqtisadiyyat'],
+              ['mathematics', 'riyaziyyat'],
+            ],
+            examples: [
+              { word: 'Phonetics is a branch of linguistics.', az: 'tək fel' },
+              { word: 'Physics is difficult.',                 az: 'tək fel' },
+            ],
+          },
+
+          // ── Mini-check: News / Elm adları ────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"The news ___ good." — boşluğa nə gəlir?',
+                options: ['are', 'were', 'is', 'have been'],
+                answer: 'is',
+              },
+              {
+                q: '"Physics ___ difficult." — boşluğa nə gəlir?',
+                options: ['are', 'were', 'is', 'have been'],
+                answer: 'is',
+              },
+              {
+                q: '"a news" ifadəsi düzgündürmü?',
+                options: ['Bəli', 'Xeyr, artıkl işlənmir', 'Bəli, tək mənasında', 'Bəzən'],
+                answer: 'Xeyr, artıkl işlənmir',
+              },
+              {
+                q: 'Hansı söz formaca cəm, mənaca təkdir?',
+                options: ['trousers', 'scissors', 'news', 'clothes'],
+                answer: 'news',
+              },
+            ],
+          },
+
+          // ── Ekran 4: Sheep, Fish, Deer ───────────────────
+          {
+            type: 'lesson',
+            title: 'Sheep · Fish · Deer — tək də belədir, cəm də',
+            content: 'Bəzi isimlər heç bir cəmlik şəkilçisi qəbul etmədən həm tək, həm cəm ola bilir.',
+            table: [
+              ['İsim',  'Tək',       'Cəm'],
+              ['sheep', 'a sheep',   '5 sheep'],
+              ['fish',  'a fish',    '5 fish'],
+              ['deer',  'a deer',    '5 deer'],
+              ['swine', 'a swine',   '5 swine'],
+            ],
+            examples: [
+              { word: 'A sheep is in the garden.',    az: 'tək — fel tək' },
+              { word: 'Five sheep are in the garden.',az: 'cəm — fel cəm' },
+              { word: 'Some sheep are grazing.',      az: 'cəm — fel cəm' },
+            ],
+            note: '"fish" üçün xüsusi hal: Qarşısında different / various işləndikdə "fishes" forması işlənə bilər:\nThere are various fishes in the Caspian Sea.',
+          },
+
+          // ── Mini-check: Sheep / Fish / Deer ─────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"Five sheep ___ in the garden." — boşluğa nə gəlir?',
+                options: ['is', 'was', 'are', 'has'],
+                answer: 'are',
+              },
+              {
+                q: '"A deer ___ in the forest." — boşluğa nə gəlir?',
+                options: ['are', 'were', 'is', 'have'],
+                answer: 'is',
+              },
+              {
+                q: '"fish" sözünün cəmi necədir?',
+                options: ['fishes', 'fishies', 'fish', 'fishen'],
+                answer: 'fish',
+              },
+              {
+                q: '"fishes" forması nə vaxt işlənə bilər?',
+                options: [
+                  'Həmişə',
+                  'Heç vaxt',
+                  'Müxtəlif növ balıqlar mənasında',
+                  'Yalnız sual cümlədə',
+                ],
+                answer: 'Müxtəlif növ balıqlar mənasında',
+              },
+              {
+                q: 'Hansı söz tək də cəm də eyni formadadır?',
+                options: ['man', 'child', 'deer', 'tooth'],
+                answer: 'deer',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 30 — Mini-quiz 6
-      [],
+      // ── Bölmə 6 — Ümumi Quiz ─────────────────────────────
+      [
+        // Həmişə tək
+        { en: 'advice — cəmi varmı?',        tr: 'Xeyr',  wrong: 'Bəli'  },
+        { en: 'furniture — cəmi varmı?',     tr: 'Xeyr',  wrong: 'Bəli'  },
+        { en: 'Much progress ___ made.',     tr: 'was',   wrong: 'were'  },
+        { en: 'Much information ___ needed.',tr: 'is',    wrong: 'are'   },
 
-      // index: 31 — Test 2
-      [],
+        // Hair / Fruit
+        { en: 'Her hair ___ beautiful.',     tr: 'is',    wrong: 'are'   },
+        { en: 'Fruit ___ useful.',           tr: 'is',    wrong: 'are'   },
+        { en: 'fruits — nə vaxt işlənir?',   tr: 'Müxtəlif növ meyvə', wrong: 'Həmişə' },
+
+        // Həmişə cəm
+        { en: 'Where ___ my scissors?',      tr: 'are',   wrong: 'is'    },
+        { en: 'My jeans ___ blue.',          tr: 'are',   wrong: 'is'    },
+        { en: 'The clothes ___ clean.',      tr: 'are',   wrong: 'is'    },
+        { en: 'Bir qayçı → ____',            tr: 'a pair of scissors', wrong: 'a scissors' },
+        { en: 'İki şalvar → ____',           tr: 'two pairs of trousers', wrong: 'two trousers' },
+
+        // Holiday
+        { en: 'Today ___ a holiday. (bayram)', tr: 'is',  wrong: 'are'  },
+        { en: 'The holidays ___ over. (tətil)',tr: 'are', wrong: 'is'   },
+
+        // News / Elm adları
+        { en: 'The news ___ good.',          tr: 'is',    wrong: 'are'  },
+        { en: 'Physics ___ difficult.',      tr: 'is',    wrong: 'are'  },
+        { en: 'Phonetics ___ interesting.',  tr: 'is',    wrong: 'are'  },
+        { en: '"a news" düzgündürmü?',       tr: 'Xeyr',  wrong: 'Bəli' },
+
+        // Sheep / Fish / Deer
+        { en: 'Five sheep ___ grazing.',     tr: 'are',   wrong: 'is'   },
+        { en: 'A deer ___ in the forest.',   tr: 'is',    wrong: 'are'  },
+        { en: 'fish — adı cəmi necədir?',    tr: 'fish',  wrong: 'fishes' },
+        { en: '"various fishes" — nə mənada?', tr: 'Müxtəlif növ balıq', wrong: 'Səhvdir' },
+      ],
 
       // ── Bölmə 7 ──────────────────────────────────────
       // index: 32
