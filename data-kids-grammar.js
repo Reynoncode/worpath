@@ -2279,30 +2279,399 @@ const KIDS_GRAMMAR_LEVELS = [
         { en: '"various fishes" — nə mənada?', tr: 'Müxtəlif növ balıq', wrong: 'Səhvdir' },
       ],
 
-      // ── Bölmə 7 ──────────────────────────────────────
-      // index: 32
+    // ── Bölmə 7 ──────────────────────────────────────
       {
         type: 'section_divider',
         title: 'Bölmə 7 — Possessive case (Yiyəlik hal)',
       },
 
-      // index: 33 — Dərs 7.1
+      // Dərs 7.1 — 's (tək) / ' (cəm) qaydası
       {
         type: 'grammar_lesson',
         title: "Dərs 7.1 — 's (tək) / ' (cəm) qaydası",
-        cards: [],
+        cards: [
+
+          // ── Ekran 1: İsmin halları ───────────────────────
+          {
+            type: 'lesson',
+            title: 'İngilis dilində ismin halları',
+            content: 'İngilis dilində ismin yalnız iki halı var:',
+            table: [
+              ['Hal',        'İngilis adı',          'Xüsusiyyəti'],
+              ['Ümumi hal',  'The Common case',       'Heç bir şəkilçi almır'],
+              ['Yiyəlik hal','The Possessive case',   "'s və ya ' alır"],
+            ],
+            examples: [
+              { word: 'a table, a boy, a bench',       az: 'Ümumi hal — şəkilçisiz' },
+              { word: "the boy's ball",                 az: 'Yiyəlik hal — oğlanın topu' },
+              { word: "the teacher's book",             az: 'Yiyəlik hal — müəllimin kitabı' },
+            ],
+            tip: "Azərbaycan dilindəki -ın/-in/-un/-ün şəkilçisinə uyğun gəlir.",
+          },
+
+          // ── Ekran 2: 's və ' fərqi ───────────────────────
+          {
+            type: 'lesson',
+            title: "'s və ' — fərq nədir?",
+            content: 'Yiyəlik hal iki cür düzəlir:\n\nTək isimlərdə → \'s əlavə edilir:\nCəm isimlərdə → yalnız \' əlavə edilir.',
+            examples: [
+              { word: "the boy's ball",      az: 'tək — oğlanın topu' },
+              { word: "the teacher's pen",   az: 'tək — müəllimin qələmi' },
+              { word: "the cat's tail",      az: 'tək — pişiyin quyruğu' },
+              { word: "the boys' ball",      az: 'cəm — oğlanların topu' },
+              { word: "the teachers' room",  az: 'cəm — müəllimlərin otağı' },
+            ],
+            note: "Səbəb: Cəm isimlərinin sonunda artıq -s şəkilçisi var, ona görə yalnız apostrof ' işlənir.",
+          },
+
+          // ── Mini-check: 's / ' ───────────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"oğlanın topu" — tək. Necə yazılır?',
+                options: ["the boys' ball", "the boy's ball", "the boys's ball", "the boy ball"],
+                answer: "the boy's ball",
+              },
+              {
+                q: '"müəllimlərin otağı" — cəm. Necə yazılır?',
+                options: ["the teacher's room", "the teachers's room", "the teachers' room", "the teachers room"],
+                answer: "the teachers' room",
+              },
+              {
+                q: 'Cəm isimlərdə niyə yalnız \' işlənir?',
+                options: [
+                  'Çünki qaydasızdır',
+                  'Çünki sonunda artıq -s var',
+                  'Çünki cansız isimdir',
+                  'Çünki xüsusi addır',
+                ],
+                answer: 'Çünki sonunda artıq -s var',
+              },
+              {
+                q: '"pişiyin quyruğu" — necə yazılır?',
+                options: ["the cats' tail", "the cat tail", "the cat's tail", "the cats's tail"],
+                answer: "the cat's tail",
+              },
+              {
+                q: 'İngilis dilində ismin neçə halı var?',
+                options: ['3', '4', '2', '6'],
+                answer: '2',
+              },
+            ],
+          },
+
+          // ── Ekran 3: Kökü dəyişən cəm isimlər ──────────
+          {
+            type: 'lesson',
+            title: "Men's · Children's — həm tək, həm cəmdə 's",
+            content: "Cəm forması -s almadan kökdən dəyişən isimlərin həm tək, həm cəm yiyəlik halı 's vasitəsilə düzəlir. Çünki bu isimlərin sonunda cəm -s-i yoxdur.",
+            table: [
+              ['Tək yiyəlik',       'Mənası',           'Cəm yiyəlik',         'Mənası'],
+              ["the man's cap",     'kişinin şapkası',  "the men's caps",      'kişilərin şapkaları'],
+              ["the child's toy",   'uşağın oyuncağı',  "the children's toys", 'uşaqların oyuncaqları'],
+              ["the woman's bag",   'qadının çantası',  "the women's bags",    'qadınların çantaları'],
+            ],
+          },
+
+          // ── Mini-check: Kökü dəyişən cəm ────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"uşaqların oyuncaqları" necə yazılır?',
+                options: ["the childs' toys", "the children's toys", "the childrens' toys", "the children toys"],
+                answer: "the children's toys",
+              },
+              {
+                q: '"kişilərin şapkaları" necə yazılır?',
+                options: ["the mans' caps", "the men' caps", "the men's caps", "the mens' caps"],
+                answer: "the men's caps",
+              },
+              {
+                q: 'Nə üçün "children\'s" — apostrofdan sonra -s işlənir?',
+                options: [
+                  'Çünki xüsusi qayda var',
+                  'Çünki "children" -s almadan kökdən dəyişir',
+                  'Çünki tək isimdir',
+                  'Çünki cansız isimdir',
+                ],
+                answer: 'Çünki "children" -s almadan kökdən dəyişir',
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 34 — Dərs 7.2
+      // Dərs 7.2 — Cansız sözün possessive-i
       {
         type: 'grammar_lesson',
-        title: 'Dərs 7.2 — Cansız sözün possessive-i',
-        cards: [],
+        title: "Dərs 7.2 — Cansız sözün possessive-i · Xüsusi hallar",
+        cards: [
+
+          // ── Ekran 1: Sonu -s ilə bitən isimlər ──────────
+          {
+            type: 'lesson',
+            title: "Dickens's yoxsa Dickens'?",
+            content: "Sonu -s hərfi ilə bitən isimlərin yiyəlik halı iki cür düzələ bilər. Hər iki forma düzgündür.",
+            examples: [
+              { word: "Dickens's father", az: "Variant 1 — 's əlavə et" },
+              { word: "Dickens' father",  az: "Variant 2 — yalnız ' əlavə et" },
+            ],
+            tip: "Hər iki yazılış qəbul edilir. Praktikada ikinci variant (') daha çox işlənir.",
+          },
+
+          // ── Ekran 2: Mürəkkəb isimlərin yiyəlik halı ────
+          {
+            type: 'lesson',
+            title: "Father-in-law's house",
+            content: "Mürəkkəb isimlərin yiyəlik halını düzəldərkən 's şəkilçisi axırıncı komponentə əlavə edilir.",
+            examples: [
+              { word: "my father-in-law's house",       az: 'qaynatamın evi' },
+              { word: "the editor-in-chief's office",   az: 'baş redaktorun kabineti' },
+            ],
+          },
+
+          // ── Ekran 3: Birgə və ayrı yiyəlik ──────────────
+          {
+            type: 'lesson',
+            title: "Tom and Nick's — yoxsa Tom's and Nick's?",
+            content: "Eyni bir əşya iki şəxsə məxsusdursa → 's yalnız axırıncı ismə əlavə edilir.\n\nHər şəxsə ayrı-ayrılıqda məxsusdursa → 's hər birinə əlavə edilir.",
+            examples: [
+              { word: "Tom and Nick's father", az: "eyni ata — 's yalnız axırda" },
+              { word: "Tom and Nick's house",  az: "eyni ev — birgə mülkiyyət" },
+              { word: "Tom's and Nick's eyes", az: "ayrı-ayrı gözlər" },
+              { word: "Tom's and Nick's cars", az: "ayrı maşınlar" },
+            ],
+          },
+
+          // ── Mini-check: Xüsusi hallar ────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"Tomun və Nikin evi" (eyni ev) necə yazılır?',
+                options: [
+                  "Tom's and Nick's house",
+                  "Tom and Nick's house",
+                  "Tom's and Nick house",
+                  "Tom and Nick house",
+                ],
+                answer: "Tom and Nick's house",
+              },
+              {
+                q: '"Tomun maşını və Nikin maşını" (ayrı maşınlar) necə yazılır?',
+                options: [
+                  "Tom and Nick's cars",
+                  "Tom's and Nick cars",
+                  "Tom's and Nick's cars",
+                  "Tom Nick's cars",
+                ],
+                answer: "Tom's and Nick's cars",
+              },
+              {
+                q: '"my father-in-law\'s house" — \'s hara əlavə edilib?',
+                options: ['father-a', 'law-a', 'in-ə', 'axırıncı komponentə'],
+                answer: 'axırıncı komponentə',
+              },
+            ],
+          },
+
+          // ── Ekran 4: Cansız isimlər — of ────────────────
+          {
+            type: 'lesson',
+            title: 'Cansız isimlər — of sözönü',
+            content: "Cansız varlıqları bildirən isimlərin yiyəlik halı bir qayda olaraq of sözönü vasitəsilə düzəlir. 's işlənmir.",
+            examples: [
+              { word: 'the leg of the table',    az: 'stolun qılçası' },
+              { word: 'the centre of the city',  az: 'şəhərin mərkəzi' },
+              { word: 'the pages of the book',   az: 'kitabın səhifələri' },
+              { word: 'the top of the mountain', az: 'dağın zirvəsi' },
+            ],
+          },
+
+          // ── Ekran 5: Cansız olsa da 's işlənən hallar ───
+          {
+            type: 'lesson',
+            title: "Cansız olsa da 's işlənən isimlər",
+            content: "Bəzi cansız isimlər istisna olaraq 's ilə işlənir:\n\n1. Fəsillərin, ayların, həftə günlərinin adları\n2. Ölkə və şəhər adları\n3. Müəyyən coğrafi və təbii obyektlər\n4. Zaman bildirən sözlər — yalnız 's\n5. today, tomorrow, yesterday — həmişə 's",
+            examples: [
+              { word: "December's frost",      az: 'dekabrın şaxtası' },
+              { word: "London's beauty",       az: 'Londonun gözəlliyi' },
+              { word: "the river's bank",      az: 'çayın sahili' },
+              { word: "a moment's silence",    az: 'bir anlıq sükut' },
+              { word: "two days' rest",        az: 'iki günlük istirahət' },
+              { word: "today's newspaper",     az: 'bu günkü qəzet' },
+              { word: "yesterday's news",      az: 'dünənki xəbər' },
+              { word: "tomorrow's work",       az: 'sabahkı iş' },
+            ],
+            note: "the bank of the river = the river's bank — hər iki forma düzgündür (3-cü qrup üçün).\nZaman sözlərində isə yalnız 's işlənir, of işlənmir.",
+          },
+
+          // ── Mini-check: Cansız + 's ──────────────────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"stolun qılçası" — necə yazılır?',
+                options: [
+                  "the table's leg",
+                  "the leg of the table",
+                  "the table leg",
+                  "the leg's table",
+                ],
+                answer: 'the leg of the table',
+              },
+              {
+                q: '"bu günkü qəzet" — necə yazılır?',
+                options: [
+                  'the newspaper of today',
+                  "todays newspaper",
+                  "today's newspaper",
+                  "today newspaper",
+                ],
+                answer: "today's newspaper",
+              },
+              {
+                q: '"bir həftəlik tətil" — necə yazılır?',
+                options: [
+                  'the holiday of a week',
+                  "a week's holiday",
+                  "a weeks holiday",
+                  "holiday of week",
+                ],
+                answer: "a week's holiday",
+              },
+              {
+                q: '"Londonun gözəlliyi" necə yazılır?',
+                options: [
+                  'the beauty of London',
+                  "London's beauty",
+                  'Hər ikisi düzgündür',
+                  'Heç biri',
+                ],
+                answer: 'Hər ikisi düzgündür',
+              },
+              {
+                q: '"dünənki xəbər" — necə yazılır?',
+                options: [
+                  'the news of yesterday',
+                  "yesterdays news",
+                  "yesterday's news",
+                  "yesterday news",
+                ],
+                answer: "yesterday's news",
+              },
+              {
+                q: '"iki günlük istirahət" — necə yazılır?',
+                options: [
+                  'the rest of two days',
+                  "two day's rest",
+                  "two days' rest",
+                  "two days rest",
+                ],
+                answer: "two days' rest",
+              },
+            ],
+          },
+
+          // ── Mini-quiz: Ümumi təkrar — Possessive ────────
+          {
+            type: 'mini_check',
+            questions: [
+              {
+                q: '"müəllimin qələmi" — tək. Necə yazılır?',
+                options: ["the teachers' pen", "the teacher pen", "the teacher's pen", "the teachers pen"],
+                answer: "the teacher's pen",
+              },
+              {
+                q: '"qadınların çantaları" — cəm (kökü dəyişən). Necə yazılır?',
+                options: ["the woman's bags", "the womans' bags", "the women bags", "the women's bags"],
+                answer: "the women's bags",
+              },
+              {
+                q: '"şəhərin mərkəzi" — cansız isim. Necə yazılır?',
+                options: [
+                  "the city's centre",
+                  'the centre of the city',
+                  'Hər ikisi düzgündür',
+                  'Heç biri',
+                ],
+                answer: 'the centre of the city',
+              },
+              {
+                q: '"dağın zirvəsi" — necə yazılır?',
+                options: [
+                  "the mountain's top",
+                  'the top of the mountain',
+                  'Hər ikisi düzgündür',
+                  'Heç biri',
+                ],
+                answer: 'the top of the mountain',
+              },
+              {
+                q: '"bir saatlıq yol" — necə yazılır?',
+                options: [
+                  'the drive of an hour',
+                  "an hour's drive",
+                  "an hours drive",
+                  "an hour drive",
+                ],
+                answer: "an hour's drive",
+              },
+              {
+                q: '"sabahkı iş" — necə yazılır?',
+                options: [
+                  'the work of tomorrow',
+                  "tomorrows work",
+                  "tomorrow's work",
+                  "tomorrow work",
+                ],
+                answer: "tomorrow's work",
+              },
+            ],
+          },
+        ],
       },
 
-      // index: 35 — Mini-quiz 7
-      [],
+      // ── Bölmə 7 — Ümumi Quiz ─────────────────────────────
+      [
+        // Tək 's
+        { en: "oğlanın topu → ____",         tr: "the boy's ball",       wrong: "the boys' ball"      },
+        { en: "pişiyin quyruğu → ____",      tr: "the cat's tail",       wrong: "the cats' tail"      },
+        { en: "müəllimin kitabı → ____",     tr: "the teacher's book",   wrong: "the teachers' book"  },
 
+        // Cəm '
+        { en: "oğlanların topu → ____",      tr: "the boys' ball",       wrong: "the boy's ball"      },
+        { en: "müəllimlərin otağı → ____",   tr: "the teachers' room",   wrong: "the teacher's room"  },
+
+        // Kökü dəyişən cəm
+        { en: "uşaqların oyuncaqları → ____",tr: "the children's toys",  wrong: "the childrens' toys" },
+        { en: "kişilərin şapkaları → ____",  tr: "the men's caps",       wrong: "the mens' caps"      },
+        { en: "qadınların çantaları → ____", tr: "the women's bags",     wrong: "the womans' bags"    },
+
+        // Birgə / ayrı yiyəlik
+        { en: "eyni ev (Tom və Nick) → ____",    tr: "Tom and Nick's house",  wrong: "Tom's and Nick's house" },
+        { en: "ayrı maşınlar → ____",            tr: "Tom's and Nick's cars", wrong: "Tom and Nick's cars"    },
+
+        // Cansız — of
+        { en: "stolun qılçası → ____",       tr: "the leg of the table",    wrong: "the table's leg"       },
+        { en: "kitabın səhifələri → ____",   tr: "the pages of the book",   wrong: "the book's pages"      },
+        { en: "dağın zirvəsi → ____",        tr: "the top of the mountain", wrong: "the mountain's top"    },
+
+        // Cansız amma 's
+        { en: "dekabrın şaxtası → ____",     tr: "December's frost",     wrong: "the frost of December" },
+        { en: "Londonun gözəlliyi → ____",   tr: "London's beauty",      wrong: "the beauty of London"  },
+        { en: "çayın sahili → ____",         tr: "the river's bank",     wrong: "the bank of river"     },
+
+        // Zaman sözləri
+        { en: "bu günkü qəzet → ____",       tr: "today's newspaper",    wrong: "the newspaper of today" },
+        { en: "dünənki xəbər → ____",        tr: "yesterday's news",     wrong: "the news of yesterday"  },
+        { en: "sabahkı iş → ____",           tr: "tomorrow's work",      wrong: "the work of tomorrow"   },
+        { en: "bir həftəlik tətil → ____",   tr: "a week's holiday",     wrong: "the holiday of a week"  },
+        { en: "iki günlük istirahət → ____", tr: "two days' rest",       wrong: "the rest of two days"   },
+        { en: "bir saatlıq yol → ____",      tr: "an hour's drive",      wrong: "the drive of an hour"   },
+      ],
       // ── Bölmə 8 ──────────────────────────────────────
       // index: 36
       {
