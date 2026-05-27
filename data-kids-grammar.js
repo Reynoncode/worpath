@@ -7482,7 +7482,341 @@ const INDIRECT_SPEECH_LEVEL = {
 
   ],
 };
+// ============================================================
+//  WORDPATH — SEQUENCE OF TENSES DATA (Zamanların uzlaşması)
+//  Data faylının sonuna əlavə et:
+//
+//  KIDS_GRAMMAR_LEVELS.push(SEQUENCE_TENSES_LEVEL);
+//
+//  app.js — EXAM_IDS-ə əlavə et:
+//  'sequence_tenses': new Set([])
+//
+//  app.js — renderLevels()-də əlavə et:
+//  } else if (lvl.id === 'sequence_tenses') {
+//    const grammarList = document.getElementById('grammar-list');
+//    if (grammarList) grammarList.appendChild(card);
+//  }
+//
+//  app.js — renderQuizPath()-də əlavə et:
+//  if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' ||
+//      lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses') {
+//    return renderGrammarPath(lvl, li);
+//  }
+//
+//  app.js — loadProgress()-də əlavə et:
+//  const isOpenSection = ... || lvl.id === 'sequence_tenses';
+// ============================================================
 
+const SEQUENCE_TENSES_LEVEL = {
+  id: 'sequence_tenses',
+  name: 'SEQUENCE OF TENSES',
+  icon: '⏱️',
+  color: '#0EA5E9',
+
+  quizzes: [
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 1 — Uzlaşmanın əsas qaydaları                   ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── index: 0 — Qrup 1 bölücüsü ───────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Qrup 1 — Zamanların uzlaşmasının əsas qaydaları',
+    },
+
+    // ── index: 1 — Bölmə 1 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 1 — Uzlaşma nədir və əsas prinsip',
+    },
+
+    // ── index: 2 — Dərs 1.1 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.1 — Zamanların uzlaşması nədir?',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.1 — Zamanların uzlaşması nədir?',
+          content: 'Sequence of Tenses — Zamanların uzlaşması\n\nBaş cümlədəki fel keçmiş zamanda olduqda tamamlıq budaq cümləsindəki fel də mütləq keçmiş zaman formalarından birində işlənməlidir.\n\n✦ I heard that he was ill.\n   (heard → keçmiş, was → keçmiş)\n\n✦ She said that she knew the answer.\n   (said → keçmiş, knew → keçmiş)\n\nBu hadisəyə zamanların uzlaşması deyilir.',
+        },
+      ],
+    },
+
+    // ── index: 3 — Dərs 1.2 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.2 — if, when, after, before, till ilə uzlaşma',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.2 — if, when, after, before, till ilə uzlaşma',
+          content: 'when, if, after, before, as soon as, till, until bağlayıcıları ilə:\n\n✦ Budaq cümlə → Present Simple (indiki qeyri-müəyyən)\n✦ Baş cümlə → Future Simple (gələcək qeyri-müəyyən)\n\nIf my mother comes, I shall go to the cinema.\nAs soon as he arrives, we will start.\n\nBaş cümlə əmr formasında olsa:\nGo to school if mother comes.\n\nQAYDA: Bu bağlayıcılarla gələcək mənada belə indiki zaman işlənir.',
+        },
+      ],
+    },
+
+    // ── index: 4 — Mini-quiz 1 ────────────────────────────────
+    [
+      { en: 'I heard that he ___ ill.', tr: 'was', wrong: 'is' },
+      { en: 'If my mother ___, I shall go to the cinema.', tr: 'comes', wrong: 'will come' },
+      { en: 'She said that she ___ the answer.', tr: 'knew', wrong: 'knows' },
+      { en: 'As soon as he ___, we will start.', tr: 'arrives', wrong: 'will arrive' },
+      { en: 'Baş cümlə keçmiş zamanda olduqda budaq cümlə hansı zamanda olur?', tr: 'Keçmiş zaman formalarından birində', wrong: 'İndiki zamanda' },
+      { en: 'Go to school if mother ___.', tr: 'comes', wrong: 'will come' },
+      { en: 'Till he ___, I will wait here.', tr: 'comes', wrong: 'will come' },
+    ],
+
+    // ── index: 5 — Bölmə 2 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 2 — Eyni vaxtda baş verən hərəkətlər',
+    },
+
+    // ── index: 6 — Dərs 2.1 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.1 — when ilə eyni vaxtda baş verən hərəkət',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.1 — when ilə eyni vaxtda baş verən hərəkət',
+          content: 'Baş cümlə ilə budaq cümlədəki hərəkət eyni vaxtda baş verərsə:\n\n✦ Budaq cümlə (when ilə) → Past Simple\n✦ Baş cümlə → Past Continuous və ya Past Simple\n\nWhen I came, my friend was writing something.\n(came → Past Simple · was writing → Past Continuous)\n\nWhen my father came, I was preparing my lessons.\n\nQAYDA: when olan tərəf Past Simple, baş cümlə Past Continuous.',
+        },
+      ],
+    },
+
+    // ── index: 7 — Dərs 2.2 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.2 — while ilə eyni vaxtda baş verən hərəkət',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.2 — while ilə eyni vaxtda baş verən hərəkət',
+          content: 'while ilə verilən budaq cümlələrdə:\n\n✦ while olan tərəf → Past Continuous\n✦ Baş cümlə → Past Simple və ya Past Continuous\n\nWhile I was coming, he prepared his lessons.\n(was coming → Past Cont. · prepared → Past Simple)\n\nWhile I was coming, he was preparing his lessons.\n(was coming → Past Cont. · was preparing → Past Cont.)\n\nQAYDA: while hər zaman davamedici zaman tələb edir.',
+        },
+      ],
+    },
+
+    // ── index: 8 — Mini-quiz 2 ────────────────────────────────
+    [
+      { en: 'When I came, my friend ___ something.', tr: 'was writing', wrong: 'wrote' },
+      { en: 'While I ___ coming, he prepared his lessons.', tr: 'was', wrong: 'am' },
+      { en: 'When my father came, I ___ my lessons.', tr: 'was preparing', wrong: 'prepared' },
+      { en: 'While she ___ TV, the phone rang.', tr: 'was watching', wrong: 'watched' },
+      { en: 'when olan tərəf hansı zamanda olur (eyni vaxtda)?', tr: 'Past Simple', wrong: 'Past Continuous' },
+      { en: 'while olan tərəf hansı zamanda olur?', tr: 'Past Continuous', wrong: 'Past Simple' },
+      { en: 'While they ___, I was reading.', tr: 'were sleeping', wrong: 'slept' },
+    ],
+
+    // ── index: 9 — Bölmə 3 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 3 — Ardıcıl baş verən hərəkətlər: before, when, after',
+    },
+
+    // ── index: 10 — Dərs 3.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3.1 — before / when ilə əvvəl baş verən hərəkət',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 3.1 — before / when ilə əvvəl baş verən hərəkət',
+          content: 'Budaq cümlədəki hərəkət baş cümlədəkindən ƏVVƏL baş veribsə:\n\n✦ before / when olan tərəf → Past Simple\n✦ Baş cümlə → Past Perfect\n\nWhen I came, my sister had done her homework.\n(came → Past Simple · had done → Past Perfect)\n\nBefore my father came, I had done my homework.\n\nMəna: Ev tapşırığı atam gəlməzdən əvvəl artıq bitmişdi.',
+        },
+      ],
+    },
+
+    // ── index: 11 — Dərs 3.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3.2 — after ilə ardıcıl hərəkət',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 3.2 — after ilə ardıcıl hərəkət',
+          content: 'after ilə olan budaq cümlələrdə əksinə olur:\n\n✦ after olan tərəf → Past Perfect (1-ci hərəkət)\n✦ Baş cümlə → Past Simple (2-ci hərəkət)\n\nAfter my mother had slept, I came.\n(had slept → Past Perfect · came → Past Simple)\n\nAfter he had finished his work, he went home.\n\nQAYDA: after = bu iş bitmişdi, sonra o baş verdi.',
+        },
+      ],
+    },
+
+    // ── index: 12 — Mini-quiz 3 ───────────────────────────────
+    [
+      { en: 'When I came, my sister ___ her homework.', tr: 'had done', wrong: 'did' },
+      { en: 'Before my father came, I ___ my homework.', tr: 'had done', wrong: 'did' },
+      { en: 'After my mother ___ slept, I came.', tr: 'had', wrong: 'has' },
+      { en: 'after olan tərəf hansı zamanda olur?', tr: 'Past Perfect', wrong: 'Past Simple' },
+      { en: 'before olan tərəf hansı zamanda olur?', tr: 'Past Simple', wrong: 'Past Perfect' },
+      { en: 'After he ___ his work, he went home.', tr: 'had finished', wrong: 'finished' },
+      { en: 'When she arrived, they ___ already left.', tr: 'had', wrong: 'have' },
+    ],
+
+    // ── index: 13 — Test 1 ────────────────────────────────────
+    // Uzlaşmanın əsas qaydaları (Bölmə 1–3) · 12 sual
+    [
+      { en: 'I heard that he ___ ill.', tr: 'was', wrong: 'is' },
+      { en: 'If it ___, we will go out.', tr: 'stops raining', wrong: 'will stop raining' },
+      { en: 'When I came, my friend ___ something.', tr: 'was writing', wrong: 'wrote' },
+      { en: 'While she ___ TV, the phone rang.', tr: 'was watching', wrong: 'watched' },
+      { en: 'Before he came, I ___ my work.', tr: 'had finished', wrong: 'finished' },
+      { en: 'After they ___ eaten, they left.', tr: 'had', wrong: 'have' },
+      { en: 'As soon as he ___, call me.', tr: 'arrives', wrong: 'will arrive' },
+      { en: 'She said that she ___ the answer.', tr: 'knew', wrong: 'knows' },
+      { en: 'When my father came, I ___ my lessons.', tr: 'was preparing', wrong: 'had prepared' },
+      { en: 'After my mother ___ slept, I came home.', tr: 'had', wrong: 'has' },
+      { en: 'Till he ___, I will stay here.', tr: 'comes', wrong: 'will come' },
+      { en: 'While they ___, I was cooking.', tr: 'were sleeping', wrong: 'slept' },
+    ],
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 2 — Xüsusi hallar və uzlaşmanın pozulması       ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── index: 14 — Qrup 2 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Qrup 2 — Xüsusi bağlayıcılar və uzlaşmanın pozulması',
+    },
+
+    // ── index: 15 — Bölmə 4 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 4 — since və gələcəyə aid hərəkətlər',
+    },
+
+    // ── index: 16 — Dərs 4.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.1 — since ilə Present Perfect',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.1 — since ilə Present Perfect',
+          content: 'since + keçmiş qeyri-müəyyən olan budaq cümlə, since then, since + illər/günlər verilərsə:\n\n✦ Baş cümlə → Present Perfect\n\nI haven\'t seen her since he came.\nShe has lived here since 2010.\nI have known him since Monday.\n\nQAYDA: since → "o vaxtdan bəri" mənası verir və baş cümlə Present Perfect tələb edir.',
+        },
+      ],
+    },
+
+    // ── index: 17 — Dərs 4.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.2 — Keçmişə nəzərən gələcək zaman (would)',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.2 — Keçmişə nəzərən gələcək zaman (would)',
+          content: 'Baş cümlə keçmiş qeyri-müəyyən zamanda olarsa, budaq cümlədə gələcəyə aid hərəkətlər keçmişə nəzərən gələcək zamanda olur:\n\n✦ will → would\n✦ shall → would\n\nHe said that he would come.\n(said → keçmiş · would come → keçmişə nəzərən gələcək)\n\nShe told me that she would help.\nThey said they would arrive at 6.',
+        },
+      ],
+    },
+
+    // ── index: 18 — Mini-quiz 4 ───────────────────────────────
+    [
+      { en: 'I haven\'t seen her since he ___.', tr: 'came', wrong: 'comes' },
+      { en: 'She ___ lived here since 2010.', tr: 'has', wrong: 'had' },
+      { en: 'He said that he ___ come.', tr: 'would', wrong: 'will' },
+      { en: 'She told me that she ___ help me.', tr: 'would', wrong: 'will' },
+      { en: 'since bağlayıcısı ilə baş cümlə hansı zamanda olur?', tr: 'Present Perfect', wrong: 'Past Simple' },
+      { en: 'I ___ known him since Monday.', tr: 'have', wrong: 'had' },
+      { en: 'They said they ___ arrive at 6.', tr: 'would', wrong: 'will' },
+    ],
+
+    // ── index: 19 — Bölmə 5 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 5 — Uzlaşmanın pozulduğu hallar',
+    },
+
+    // ── index: 20 — Dərs 5.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5.1 — Ümumi həqiqətlər və müqayisə budaq cümləsi',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 5.1 — Ümumi həqiqətlər və müqayisə budaq cümləsi',
+          content: 'Uzlaşma POZULABİLƏR — 3 hal:\n\n1. Ümumi həqiqətlər:\n   The teacher said that the Earth goes around the Sun.\n   (goes → indiki zaman, dəyişmir — həmişə doğrudur)\n\n2. Müqayisə budaq cümlələri:\n   She skated better last year than you skate now.\n   (skate now → indiki zaman saxlanılır)\n\n3. Təyin budaq cümlələri:\n   I read the article which was published some days ago.\n   (zamanı dəqiq bilindiyindən dəyişmir)',
+        },
+      ],
+    },
+
+    // ── index: 21 — Dərs 5.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5.2 — Bütün qaydaların xülasəsi',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 5.2 — Bütün qaydaların xülasəsi',
+          content: 'XÜLASƏ CƏDVƏL:\n\nif/when/till/until → Present Simple + will/shall\nwhen (eyni vaxt) → Past Simple + Past Continuous\nwhile → Past Continuous + Past Simple/Cont.\nbefore/when (əvvəl) → Past Simple + Past Perfect\nafter → Past Perfect + Past Simple\nsince → Past Simple + Present Perfect\nbaş cümlə keçmiş → would (gələcək mənada)\n\nPOZULMA HALLAR:\n→ Ümumi həqiqətlər\n→ Müqayisə budaq cümlələri\n→ Təyin budaq cümlələri',
+        },
+      ],
+    },
+
+    // ── index: 22 — Mini-quiz 5 ───────────────────────────────
+    [
+      { en: 'The teacher said that the Earth ___ around the Sun.', tr: 'goes', wrong: 'went' },
+      { en: 'She skated better last year than you ___ now.', tr: 'skate', wrong: 'skated' },
+      { en: 'Ümumi həqiqətlərdə uzlaşma pozulurmu?', tr: 'Bəli, indiki zaman saxlanılır', wrong: 'Xeyr, həmişə keçmiş olur' },
+      { en: 'I ___ seen her since he came.', tr: 'haven\'t', wrong: 'hadn\'t' },
+      { en: 'He said that he ___ come tomorrow.', tr: 'would', wrong: 'will' },
+      { en: 'Müqayisə budaq cümlələrində uzlaşma pozulurmu?', tr: 'Bəli', wrong: 'Xeyr' },
+    ],
+
+    // ── index: 23 — Test 2 ────────────────────────────────────
+    // Xüsusi hallar + uzlaşmanın pozulması (Bölmə 4–5) · 12 sual
+    [
+      { en: 'I haven\'t seen him since he ___ here.', tr: 'came', wrong: 'comes' },
+      { en: 'She ___ lived here since 2015.', tr: 'has', wrong: 'had' },
+      { en: 'He said that he ___ finish it.', tr: 'would', wrong: 'will' },
+      { en: 'The teacher said that water ___ at 100°C.', tr: 'boils', wrong: 'boiled' },
+      { en: 'She danced better then than you ___ now.', tr: 'dance', wrong: 'danced' },
+      { en: 'They told me they ___ be late.', tr: 'would', wrong: 'will' },
+      { en: 'I ___ not spoken to her since Monday.', tr: 'have', wrong: 'had' },
+      { en: 'He said the Sun ___ in the east.', tr: 'rises', wrong: 'rose' },
+      { en: 'She said she ___ call me the next day.', tr: 'would', wrong: 'will' },
+      { en: 'I ___ known her since we were children.', tr: 'have', wrong: 'had' },
+      { en: 'He runs faster now than he ___ last year.', tr: 'ran', wrong: 'runs' },
+      { en: 'They said they ___ arrive by noon.', tr: 'would', wrong: 'will' },
+    ],
+
+    // ── index: 24 — Final Test ────────────────────────────────
+    // Sequence of Tenses tam test · 20+ sual
+    [
+      { en: 'I heard that he ___ ill.', tr: 'was', wrong: 'is' },
+      { en: 'If it rains, we ___ stay home.', tr: 'shall', wrong: 'would' },
+      { en: 'When I came, she ___ dinner.', tr: 'was cooking', wrong: 'cooked' },
+      { en: 'While he ___ sleeping, the phone rang.', tr: 'was', wrong: 'is' },
+      { en: 'Before she came, I ___ the dishes.', tr: 'had washed', wrong: 'washed' },
+      { en: 'After he ___ eaten, he left.', tr: 'had', wrong: 'has' },
+      { en: 'As soon as she ___, call me.', tr: 'arrives', wrong: 'will arrive' },
+      { en: 'She said that she ___ help us.', tr: 'would', wrong: 'will' },
+      { en: 'I haven\'t seen him since he ___.', tr: 'left', wrong: 'leaves' },
+      { en: 'She ___ worked here since 2018.', tr: 'has', wrong: 'had' },
+      { en: 'While I ___ reading, he came in.', tr: 'was', wrong: 'am' },
+      { en: 'When they arrived, we ___ already started.', tr: 'had', wrong: 'have' },
+      { en: 'The teacher said the Earth ___ round.', tr: 'is', wrong: 'was' },
+      { en: 'Till he ___, I will not leave.', tr: 'comes', wrong: 'will come' },
+      { en: 'After my mother ___ slept, I came.', tr: 'had', wrong: 'has' },
+      { en: 'He skates better now than he ___ last year.', tr: 'skated', wrong: 'skates' },
+      { en: 'She told me she ___ be there.', tr: 'would', wrong: 'will' },
+      { en: 'When my father came, I ___ my homework.', tr: 'was doing', wrong: 'had done' },
+      { en: 'Before he called, I ___ asleep.', tr: 'had fallen', wrong: 'fell' },
+      { en: 'While they ___, we arrived.', tr: 'were talking', wrong: 'talked' },
+      { en: 'I ___ not seen her since Monday.', tr: 'have', wrong: 'had' },
+      { en: 'She said that she ___ come the next day.', tr: 'would', wrong: 'will' },
+    ],
+
+  ],
+};
+
+// ── Sayta əlavə et ────────────────────────────────────────
+// Data faylının sonuna əlavə et (KIDS_GRAMMAR_LEVELS.forEach-dan əvvəl):
+//
+//   KIDS_GRAMMAR_LEVELS.push(SEQUENCE_TENSES_LEVEL);
 
 
 KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
