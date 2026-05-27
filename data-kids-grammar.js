@@ -4245,6 +4245,7 @@ const VERBS_LEVEL = {
 // və ya birbaşa array-ə əlavə et:
 //   window.KIDS_GRAMMAR_LEVELS = [...KIDS_GRAMMAR_LEVELS, VERBS_LEVEL];
 
+KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
 // LEVELS-ə birləşdir
 KIDS_GRAMMAR_LEVELS.forEach(lvl => LEVELS.push(lvl));
