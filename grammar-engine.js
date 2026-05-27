@@ -23,29 +23,26 @@ function startGrammarLesson(levelIdx, quizIdx) {
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
 
-  // Əgər array-dirsə — normal quiz kimi başlat (Bölmə ümumi quiz-ləri)
-  if (Array.isArray(item)) {
-    // Normal quiz flow-una ötür
-    quiz.mode     = 'normal';
-    quiz.levelIdx = levelIdx;
-    quiz.quizIdx  = quizIdx;
-    quiz.mistakes = 0;
-    quiz.index    = 0;
-    quiz.locked   = false;
-    quiz.chanceUsed   = false;
-    quiz.chanceActive = false;
-    quiz.words = shuffle(item.filter(w => w && w.en && w.tr && w.wrong));
-    restoreNormalQuizBody();
-    elQuestionHint.textContent = 'Düzgün cavabı tap';
-    showQuizScreen();
-    showQuestion();
-    return;
-  }
-
   if (!item || !item.cards || item.cards.length === 0) {
     console.warn('Grammar lesson: cards yoxdur və ya boşdur', quizIdx);
     return;
   }
+
+  grammarState.levelIdx     = levelIdx;
+  grammarState.quizIdx      = quizIdx;
+  grammarState.item         = item;
+  grammarState.cardIdx      = 0;
+  grammarState.miniAnswers  = {};
+  grammarState.sectionsDone = 0;
+  grammarState.totalCards   = item.cards.length;
+  grammarState.locked       = false;
+
+  quiz.mode   = 'grammar';
+  quiz.locked = false;
+
+  showQuizScreen();
+  renderGrammarCard();
+}
 
 // ============================================================
 //  RENDER — cari kartı göstər
