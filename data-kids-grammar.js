@@ -4781,44 +4781,331 @@ const VERBS_LEVEL = {
   { en: '"show" → Past Simple?',  tr: 'showed', wrong: 'shown'   },
   { en: '"learn" → Past Simple?', tr: 'learned', wrong: 'learnt' },
 ],
-    // ── Bölmə 3 ───────────────────────────────────────────────
+ // ============================================================
+//  BÖLMƏ 3 — Simple Future (Future Indefinite)
+//  grammar-data.js faylına əlavə et
+// ============================================================
+
+// ── Bölmə 3 Divider ──────────────────────────────────────
+{
+  type: 'section_divider',
+  title: 'Bölmə 3 — Simple Future (Future Indefinite)',
+},
+
+// ── Dərs 3.1 — shall / will + məsdər ────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — shall / will + məsdər',
+  cards: [
+
+    // ── Ekran 1: Düzəlmə qaydası ─────────────────────────
     {
-      type: 'section_divider',
-      title: 'Bölmə 3 — Simple Future (Future Indefinite)',
+      type: 'lesson',
+      title: 'Simple Future necə düzəlir?',
+      content: 'Simple Future zamanı gələcəkdə baş verəcək hərəkətləri bildirir.\n\nDüzəlmə: shall / will + əsas felin məsdəri (to-suz)\n\n• shall — I və We şəxslərində\n• will — qalan bütün şəxslərdə',
+      table: [
+        ['Şəxs',     'Tək',               'Cəm'],
+        ['I',        'I shall work',      'We shall work'],
+        ['You',      'You will work',     'You will work'],
+        ['He/She/It','He will work',      'They will work'],
+      ],
+      tip: 'Azərbaycan dilinə gələcək zaman şəkilçisi (-acaq/-əcək) kimi tərcümə edilir.',
     },
 
-    // ── index: 8 — Dərs 3.1 ──────────────────────────────────
+    // ── Ekran 2: Sual forması ────────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3.1 — shall/will seç · going vs will · gələcək zərfi tanı',
-      cards: [
+      type: 'lesson',
+      title: 'Simple Future — sual forması',
+      content: 'Sual formasını düzəltmək üçün shall / will mübtədadan əvvələ keçir:',
+      table: [
+        ['Şəxs',          'Sual'],
+        ['I',             'Shall I work?'],
+        ['You',           'Will you work?'],
+        ['He / She / It', 'Will he work?'],
+        ['We',            'Shall we work?'],
+        ['They',          'Will they work?'],
+      ],
+      note: 'Qısa cavab:\nYes, I shall. / No, I shan\'t.\nYes, he will. / No, he won\'t.',
+    },
+
+    // ── Ekran 3: İnkar forması ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Future — inkar forması',
+      content: 'İnkar formasını düzəltmək üçün shall / will-dən sonra "not" əlavə edilir:',
+      table: [
+        ['Şəxs',     'Tam inkar',              'Qısa inkar'],
+        ['I',        'I shall not work',       'I shan\'t work'],
+        ['You',      'You will not work',      'You won\'t work'],
+        ['He/She',   'He will not work',       'He won\'t work'],
+        ['We',       'We shall not work',      'We shan\'t work'],
+        ['They',     'They will not work',     'They won\'t work'],
+      ],
+      tip: 'Qısa təsdiq: I\'ll, you\'ll, he\'ll, she\'ll, we\'ll, they\'ll.\nQısa inkar: shan\'t (I/We) , won\'t (qalanlar).',
+    },
+
+    // ── Ekran 4: Sual-inkar + Az. dilinə tərcümə ─────────
+    {
+      type: 'lesson',
+      title: 'Sual-inkar və Azərbaycan dilinə tərcümə',
+      content: 'Sual-inkar forması:\n"Shall I not work?" = "Shan\'t I work?"\n"Will he not work?" = "Won\'t he work?"\n\nAzərbaycan dilinə iki cür tərcümə olunur:',
+      examples: [
+        { word: 'Qəti gələcək → -acaq/-əcək', az: '"Tom will write me." — Tom mənə məktub yazacaq.' },
+        { word: 'Qeyri-qəti gələcək → -ar/-ər', az: '"Tom will write me." — Tom mənə məktub yazar.' },
+      ],
+      note: 'Əgər hərəkətin icrası qətidirsə -acaq/-əcək, qeyri-qətidirsə -ar/-ər kimi tərcümə edilir.',
+    },
+
+    // ── Quiz: shall/will ─────────────────────────────────
+    { en: '"I ___ go to school." — düzgün forma?',       tr: 'shall',   wrong: 'will'    },
+    { en: '"She ___ come tomorrow." — düzgün forma?',     tr: 'will',    wrong: 'shall'   },
+    { en: '"We ___ work next week." — düzgün forma?',     tr: 'shall',   wrong: 'will'    },
+    { en: '"They ___ not come." — qısa inkar?',           tr: 'won\'t',  wrong: 'shan\'t' },
+    { en: '"I ___ not go." — qısa inkar?',                tr: 'shan\'t', wrong: 'won\'t'  },
+    { en: '"___ he come tomorrow?" — sual?',              tr: 'Will',    wrong: 'Shall'   },
+
+    // ── Mini-check: shall/will ───────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 3.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"I ___ work tomorrow." — Boşluğa nə gəlir?',
+          options: ['will', 'shall', 'would', 'should'],
+          answer: 'shall',
+        },
+        {
+          q: '"He ___ come to the party." — Boşluğa nə gəlir?',
+          options: ['shall', 'will', 'would', 'should'],
+          answer: 'will',
+        },
+        {
+          q: '"I will not go." — qısa inkar forması nədir?',
+          options: ['I shan\'t go', 'I won\'t go', 'I wouldn\'t go', 'I don\'t go'],
+          answer: 'I won\'t go',
+        },
+        {
+          q: '"We shall not work." — qısa inkar forması?',
+          options: ['We won\'t work', 'We shan\'t work', 'We wouldn\'t work', 'We don\'t work'],
+          answer: 'We shan\'t work',
+        },
+        {
+          q: 'Hansı cümlə YANLIŞ-dır?',
+          options: [
+            'She will come tomorrow.',
+            'Shall I go?',
+            'Will we go?',
+            'Shall he come?',
+          ],
+          answer: 'Shall he come?',
+        },
+        {
+          q: '"I\'ll work." — bu nədir?',
+          options: ['Qısa inkar', 'Tam inkar', 'Qısa təsdiq', 'Sual forması'],
+          answer: 'Qısa təsdiq',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 9 — Dərs 3.2 ──────────────────────────────────
+// ── Dərs 3.2 — to be going to + to be about to ──────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — to be going to · to be about to · Zaman zərfləri',
+  cards: [
+
+    // ── Ekran 1: going to vs will ─────────────────────────
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3.2 — to be going to + məsdər',
-      cards: [
+      type: 'lesson',
+      title: 'Gələcəyin iki əlavə forması',
+      content: 'Müasir ingilis dilində gələcək hərəkəti bildirmək üçün shall/will-dən başqa iki birləşmə də işlənir:',
+      examples: [
+        { word: 'to be going to + məsdər', az: 'bir şeyi etməyə hazırlaşmaq' },
+        { word: 'to be about to + məsdər', az: 'bir şeyi etmək üzrə olmaq (çox yaxın gələcək)' },
+      ],
+      tip: '"going to" planlaşdırılmış hərəkəti, "about to" çox yaxın zamanda baş verəcək hərəkəti bildirir.',
+    },
+
+    // ── Ekran 2: to be going to — tam izah ───────────────
+    {
+      type: 'lesson',
+      title: 'to be going to + məsdər',
+      content: '"to be" feli şəxslərə görə dəyişir (am / is / are):\n\nI am going to read this novel.\nHe is going to visit us.\nThey are going to leave.',
+      table: [
+        ['Şəxs',     'Forma'],
+        ['I',        'I am going to work'],
+        ['You',      'You are going to work'],
+        ['He/She/It','He is going to work'],
+        ['We/They',  'We are going to work'],
+      ],
+      examples: [
+        { word: 'I am going to read this novel.',    az: 'Mən bu romanı oxumağa hazırlaşıram.' },
+        { word: 'She is going to study medicine.',   az: 'O tibb oxumağa hazırlaşır.' },
+        { word: 'They are going to travel abroad.',  az: 'Onlar xaricə getməyə hazırlaşırlar.' },
+      ],
+      note: 'Sual: "Am I going to work?" / "Is he going to work?"\nİnkar: "I am not going to work." / "He isn\'t going to work."',
+    },
+
+    // ── Quiz: going to ───────────────────────────────────
+    { en: '"I ___ going to study." — boşluq?',      tr: 'am',  wrong: 'is'    },
+    { en: '"She ___ going to leave." — boşluq?',    tr: 'is',  wrong: 'are'   },
+    { en: '"They ___ going to work." — boşluq?',    tr: 'are', wrong: 'is'    },
+    { en: '"going to" nə bildirir?',                 tr: 'Hazırlaşmaq', wrong: 'Etmək üzrə olmaq' },
+
+    // ── Ekran 3: to be about to ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'to be about to + məsdər',
+      content: '"to be about to" çox yaxın zamanda, az sonra baş verəcək hərəkəti bildirir.\nAzərbaycan dilinə "etmək üzrədir / etmək üzrəyəm" kimi tərcümə olunur.',
+      examples: [
+        { word: 'The train is about to start.',    az: 'Qatar yola düşmək üzrədir.' },
+        { word: 'I am about to leave.',            az: 'Mən getmək üzrəyəm.' },
+        { word: 'She is about to cry.',            az: 'O ağlamaq üzrədir.' },
+        { word: 'They are about to arrive.',       az: 'Onlar gəlib çatmaq üzrədirlər.' },
+      ],
+      tip: '"about to" — saniyələr/dəqiqələr sonra baş verəcək hərəkət. "going to" — ümumi plan.',
+    },
+
+    // ── Ekran 4: Üç formanın müqayisəsi ──────────────────
+    {
+      type: 'lesson',
+      title: 'shall/will vs going to vs about to — müqayisə',
+      content: 'Üç formanı bir arada görək:',
+      table: [
+        ['Forma',              'İşlənmə',                          'Nümunə'],
+        ['shall / will',       'Ümumi gələcək hərəkət, qərar',     'I will call you.'],
+        ['to be going to',     'Planlaşdırılmış hərəkət',          'I am going to call you.'],
+        ['to be about to',     'Çox yaxın gələcək (saniyələr)',    'I am about to call you.'],
+      ],
+      note: 'Müasir ingilis danışıq dilində "will" çox vaxt "going to" ilə əvəz olunur.',
+    },
+
+    // ── Ekran 5: Zaman zərfləri ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'Simple Future — zaman zərfləri',
+      content: 'Bu zərflər hərəkətin gələcəkdə baş verəcəyini bildirir:',
+      table: [
+        ['Zaman zərfi',               'Mənası'],
+        ['tomorrow',                  'sabah'],
+        ['the day after tomorrow',    'birisigün'],
+        ['next week / month / year',  'gələn həftə/ay/il'],
+        ['soon',                      'tezliklə'],
+        ['in a week / in two days',   'bir həftəyə / iki gündə'],
+        ['in a moment',               'bir an içində'],
+        ['in the near future',        'yaxın gələcəkdə'],
+      ],
+      tip: 'Vacib qayda: zaman/şərt budaq cümlələrindən sonra gələcək hərəkət Simple Present ilə verilir!\n"I shall go if she comes." — "comes" → Simple Present, "shall go" → Simple Future.',
+    },
+
+    // ── Mini-check: going to + about to + zaman zərfləri ─
+    {
+      type: 'mini_check',
+      questions: [
         {
-          type: 'lesson',
-          title: 'Dərs 3.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.',
+          q: '"The train ___ about to start." — boşluğa nə gəlir?',
+          options: ['am', 'is', 'are', 'be'],
+          answer: 'is',
+        },
+        {
+          q: '"I am ___ to read this novel." — boşluğa nə gəlir?',
+          options: ['about', 'going', 'will', 'shall'],
+          answer: 'going',
+        },
+        {
+          q: '"going to" ilə "about to" arasındakı fərq nədir?',
+          options: [
+            'Fərq yoxdur — eyni mənalıdır',
+            '"going to" plan, "about to" çox yaxın gələcək',
+            '"about to" plan, "going to" çox yaxın gələcək',
+            '"going to" keçmiş, "about to" gələcək',
+          ],
+          answer: '"going to" plan, "about to" çox yaxın gələcək',
+        },
+        {
+          q: 'Hansı zaman zərfi Simple Future ilə işlənir?',
+          options: ['yesterday', 'ago', 'tomorrow', 'already'],
+          answer: 'tomorrow',
+        },
+        {
+          q: '"I shall go if she ___." — budaq cümlədə hansı zaman?',
+          options: ['will come', 'comes', 'came', 'is coming'],
+          answer: 'comes',
+        },
+        {
+          q: '"She is going to study medicine." — mənası nədir?',
+          options: [
+            'O tibb oxumuşdur.',
+            'O tibb oxuyur.',
+            'O tibb oxumağa hazırlaşır.',
+            'O tibb oxumaq üzrədir.',
+          ],
+          answer: 'O tibb oxumağa hazırlaşır.',
+        },
+        {
+          q: '"They are about to arrive." — mənası nədir?',
+          options: [
+            'Onlar gəliblər.',
+            'Onlar gəlmək üzrədirlər.',
+            'Onlar gələcəklər (plan).',
+            'Onlar gəldilər.',
+          ],
+          answer: 'Onlar gəlmək üzrədirlər.',
         },
       ],
     },
+  ],
+},
 
-    // ── index: 10 — Mini-quiz 3 ───────────────────────────────
-    // shall/will seç · going vs will · gələcək zərfi tanı
-    [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
-    ],
+// ── Mini-quiz 3 — Bölmə 3 ümumi quiz ────────────────────
+[
+  // shall / will — düzəlmə
+  { en: '"I ___ work tomorrow."',        tr: 'shall',   wrong: 'will'    },
+  { en: '"She ___ come next week."',     tr: 'will',    wrong: 'shall'   },
+  { en: '"We ___ go to Baku soon."',     tr: 'shall',   wrong: 'will'    },
+  { en: '"He ___ not come." — qısa?',    tr: 'won\'t',  wrong: 'shan\'t' },
+  { en: '"I ___ not go." — qısa?',       tr: 'shan\'t', wrong: 'won\'t'  },
 
+  // Sual forması
+  { en: '"___ I go?" — I şəxsdə sual?',  tr: 'Shall',   wrong: 'Will'   },
+  { en: '"___ she work?" — sual?',        tr: 'Will',    wrong: 'Shall'  },
+  { en: '"___ we leave?" — sual?',        tr: 'Shall',   wrong: 'Will'   },
+
+  // Qısa formalar
+  { en: '"I\'ll work." — bu nədir?',      tr: 'Qısa təsdiq', wrong: 'Qısa inkar' },
+  { en: '"won\'t" — tam forması nədir?',  tr: 'will not',    wrong: 'shall not'  },
+  { en: '"shan\'t" — tam forması nədir?', tr: 'shall not',   wrong: 'will not'   },
+
+  // going to
+  { en: '"I ___ going to study."',        tr: 'am',  wrong: 'is'    },
+  { en: '"She ___ going to leave."',      tr: 'is',  wrong: 'are'   },
+  { en: '"They ___ going to work."',      tr: 'are', wrong: 'is'    },
+  { en: '"going to" nə bildirir?',        tr: 'Plan, hazırlaşmaq', wrong: 'Çox yaxın gələcək' },
+
+  // about to
+  { en: '"The train is about to ___."',   tr: 'start',   wrong: 'started' },
+  { en: '"about to" nə bildirir?',        tr: 'Çox yaxın gələcək (etmək üzrə)', wrong: 'Plan, hazırlaşmaq' },
+  { en: '"I am ___ to leave."',           tr: 'about',   wrong: 'going'   },
+
+  // going to vs about to
+  { en: '"Planlaşdırılmış hərəkət" → ____', tr: 'going to', wrong: 'about to' },
+  { en: '"Saniyələr sonra baş verər" → ____', tr: 'about to', wrong: 'going to' },
+
+  // Zaman zərfləri
+  { en: 'Simple Future ilə işlənən zərf?',    tr: 'tomorrow',  wrong: 'yesterday' },
+  { en: '"___ week" — gələcək zaman zərfi?',  tr: 'next',      wrong: 'last'      },
+  { en: '"in two ___" — zaman zərfi?',         tr: 'days',      wrong: 'ago'       },
+  { en: '"the day ___ tomorrow"',              tr: 'after',     wrong: 'before'    },
+
+  // Budaq cümlə qaydası
+  { en: '"I shall go if she ___."',        tr: 'comes',      wrong: 'will come'  },
+  { en: '"When it stops raining, we ___."',tr: 'will go out', wrong: 'go out'    },
+  { en: '"Call me as soon as you ___."',   tr: 'arrive',     wrong: 'will arrive' },
+
+  // Az. dilinə tərcümə
+  { en: '"Tom will write me." — qəti gələcək?', tr: 'yazacaq', wrong: 'yazar'   },
+  { en: '"Tom will write me." — qeyri-qəti?',   tr: 'yazar',   wrong: 'yazacaq' },
+],
     // ── Bölmə 4 ───────────────────────────────────────────────
     {
       type: 'section_divider',
