@@ -232,7 +232,8 @@ const EXAM_IDS = {
   'c1': new Set([2, 5, 9, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 53 ]),
   'c2': new Set([2, 5, 10, 15, 19, 24, 28, 33, 38, 42, 45, 48, 51, 55, 58, 62, 65, 69, 73]),
   'kids':    new Set([]),
-  'grammar': new Set([])
+  'grammar': new Set([]),
+  'verbs':   new Set([])
 };
 
 // ── Hər exam hansı quiz ID-lərini əhatə edir ─────────────
