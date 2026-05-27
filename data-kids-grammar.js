@@ -2672,41 +2672,1143 @@ const KIDS_GRAMMAR_LEVELS = [
         { en: "iki günlük istirahət → ____", tr: "two days' rest",       wrong: "the rest of two days"   },
         { en: "bir saatlıq yol → ____",      tr: "an hour's drive",      wrong: "the drive of an hour"   },
       ],
-      // ── Bölmə 8 ──────────────────────────────────────
-      // index: 36
-      {
-        type: 'section_divider',
-        title: 'Bölmə 8 — Sayılmayan isimlər sözlüyü (Vocabulary bank)',
-      },
+     // ══════════════════════════════════════════════════════════════
+//  BÖLMƏ 8 — Sayılmayan isimlər sözlüyü (Vocabulary bank)
+//  index: 36 → 41
+// ══════════════════════════════════════════════════════════════
 
-      // index: 37 — Dərs 8.1
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 8.1 — Qida və içki adları',
-        cards: [],
-      },
+// ── index: 36 — Bölmə 8 bölücüsü ────────────────────────────
+{
+  type: 'section_divider',
+  title: 'Bölmə 8 — Sayılmayan isimlər sözlüyü (Vocabulary bank)',
+},
 
-      // index: 38 — Dərs 8.2
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 8.2 — Material adları',
-        cards: [],
-      },
+// ── index: 37 — Dərs 8.1 ─────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 8.1 — Qida və içki adları',
+  cards: [
 
-      // index: 39 — Dərs 8.3
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 8.3 — Mücərrəd isimlər',
-        cards: [],
-      },
+    // ── Ekran 1: Giriş ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Yemək və içki — hamısı sayılmayandır',
+      content: 'Aşağıdakı bütün isimlər uncountable-dır.\nHeç biri a/an almır, cəmlənmir, özündən sonra fel tək gəlir.',
+      examples: [
+        { word: 'Water is important.',     az: '✅ tək fel' },
+        { word: 'Bread is delicious.',     az: '✅ tək fel' },
+        { word: '❌ a water, waters',      az: 'yanlış — a/an və cəm işlənmir' },
+      ],
+      tip: 'Maye, taxıl, ət, süd məhsulları — hamısı uncountable. "much" və "little" ilə işlənir.',
+    },
 
-      // index: 40 — Mini-quiz 8
-      [],
+    // ── Ekran 2: İçkilər ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İçki adları (Drinks)',
+      content: 'Bu içkilərin hamısı sayılmayandir:',
+      table: [
+        ['İngilis',    'Tələffüz',    'Azərbaycan'],
+        ['water',      '[wotə]',      'su'],
+        ['milk',       '[milk]',      'süd'],
+        ['tea',        '[tiː]',       'çay'],
+        ['coffee',     '[kofiː]',     'kofe'],
+        ['beer',       '[biə]',       'pivə'],
+        ['wine',       '[wain]',      'çaxır'],
+        ['juice',      '[dʒuːs]',     'şirə'],
+        ['oil',        '[oil]',       'neft, yağ'],
+        ['champagne',  '[ʃæmpein]',   'şampan'],
+      ],
+    },
 
-      // index: 41 — Test 3 (Final)
-      [],
+    // ── Mini-check: İçkilər ────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"milk" ilə hansı söz işlənir ("çox" mənasında)?',
+          options: ['many', 'few', 'much', 'a few'],
+          answer: 'much',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'I want a water.',
+            'I want water.',
+            'I want waters.',
+            'I want many water.',
+          ],
+          answer: 'I want water.',
+        },
+        {
+          q: '"juice" hansı növ isimdir?',
+          options: ['Countable', 'Uncountable', 'Proper noun', 'Abstract'],
+          answer: 'Uncountable',
+        },
+        {
+          q: '"tea" ilə "az" mənasında hansı söz işlənir?',
+          options: ['few', 'many', 'little', 'a few'],
+          answer: 'little',
+        },
+      ],
+    },
 
-    ],
+    // ── Ekran 3: Qida adları — 1 ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qida adları — Part 1',
+      content: 'Aşağıdakı qida adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis',  'Tələffüz',    'Azərbaycan'],
+        ['bread',    '[bred]',      'çörək'],
+        ['butter',   '[bʌtə]',     'yağ'],
+        ['cheese',   '[tʃiːz]',    'pendir'],
+        ['meat',     '[miːt]',      'ət'],
+        ['rice',     '[rais]',      'düyü'],
+        ['flour',    '[flauə]',     'un'],
+        ['sugar',    '[ʃugə]',      'qənd'],
+        ['salt',     '[soːlt]',     'duz'],
+        ['honey',    '[hʌni]',      'bal'],
+      ],
+    },
+
+    // ── Ekran 4: Qida adları — 2 ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qida adları — Part 2',
+      content: 'Daha çox qida adları:',
+      table: [
+        ['İngilis',   'Tələffüz',    'Azərbaycan'],
+        ['cream',     '[kriːm]',     'krem'],
+        ['jam',       '[dʒæm]',      'mürəbbə'],
+        ['toast',     '[toust]',     'qızardılmış çörək'],
+        ['cake',      '[keik]',      'tort, piroq'],
+        ['food',      '[fuːd]',      'ərzaq'],
+        ['fruit',     '[fruːt]',     'meyvə'],
+        ['mustard',   '[mʌstəd]',    'xardal'],
+        ['pepper',    '[pepə]',      'istiot'],
+      ],
+    },
+
+    // ── Mini-check: Qida adları ────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"bread" — düzgün işlənişi hansıdır?',
+          options: ['a bread', 'some breads', 'much bread', 'many breads'],
+          answer: 'much bread',
+        },
+        {
+          q: '"sugar" ilə "az" mənasında hansı söz işlənir?',
+          options: ['few', 'a few', 'little', 'many'],
+          answer: 'little',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'There is a cheese on the table.',
+            'There are cheeses on the table.',
+            'There is some cheese on the table.',
+            'There are many cheese on the table.',
+          ],
+          answer: 'There is some cheese on the table.',
+        },
+        {
+          q: '"Rice ___ healthy." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have been'],
+          answer: 'is',
+        },
+        {
+          q: 'Hansı söz "qida" mənasındadır?',
+          options: ['juice', 'food', 'silk', 'iron'],
+          answer: 'food',
+        },
+        {
+          q: '"fruit" sözü ümumi mənada necə işlənir?',
+          options: [
+            'a fruit, many fruits',
+            'much fruit, little fruit',
+            'few fruit, a few fruits',
+            'a lot of fruits',
+          ],
+          answer: 'much fruit, little fruit',
+        },
+      ],
+    },
+
+    // ── Mini-quiz: 8.1 ümumi təkrar ────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"meat" hansı növ isimdir?',
+          options: ['Countable', 'Uncountable', 'Collective', 'Proper noun'],
+          answer: 'Uncountable',
+        },
+        {
+          q: '"coffee" ilə hansı ifadə düzgündür?',
+          options: ['a coffee', 'many coffees', 'much coffee', 'few coffees'],
+          answer: 'much coffee',
+        },
+        {
+          q: 'Hansı söz içki deyil?',
+          options: ['milk', 'wine', 'flour', 'juice'],
+          answer: 'flour',
+        },
+        {
+          q: '"honey ___ sweet." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: 'Hansı qida adı "mürəbbə" deməkdir?',
+          options: ['cream', 'toast', 'jam', 'mustard'],
+          answer: 'jam',
+        },
+        {
+          q: '"salt" — düzgün işlənişi hansıdır?',
+          options: ['a salt', 'many salts', 'much salt', 'few salts'],
+          answer: 'much salt',
+        },
+        {
+          q: '"butter" ilə "az" mənasında hansı söz işlənir?',
+          options: ['few', 'many', 'much', 'little'],
+          answer: 'little',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'Much meats are on the table.',
+            'A meat is on the table.',
+            'Much meat is on the table.',
+            'Many meat are on the table.',
+          ],
+          answer: 'Much meat is on the table.',
+        },
+      ],
+    },
+  ],
+},
+
+// ── index: 38 — Dərs 8.2 ─────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 8.2 — Material adları',
+  cards: [
+
+    // ── Ekran 1: Giriş ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Materiallar — hamısı sayılmayandır',
+      content: 'Material, metal, parça, yanacaq adları uncountable-dır.\nHeç biri a/an almır, cəmlənmir, özündən sonra fel tək gəlir.',
+      examples: [
+        { word: 'Gold is expensive.',    az: '✅ tək fel' },
+        { word: 'Silk is soft.',         az: '✅ tək fel' },
+        { word: '❌ a gold, silks',      az: 'yanlış' },
+      ],
+      tip: 'Materialın adını gördüyündə — much/little ilə işlət, a/an alma.',
+    },
+
+    // ── Ekran 2: Parça və toxuculuq ────────────────────────
+    {
+      type: 'lesson',
+      title: 'Parça və toxuculuq (Fabric)',
+      content: 'Bu parça adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis', 'Tələffüz', 'Azərbaycan'],
+        ['silk',    '[silk]',   'ipək'],
+        ['wool',    '[wuːl]',   'yun'],
+        ['cotton',  '[kotn]',   'pambıq'],
+        ['linen',   '[linin]',  'mələfə, kətan'],
+      ],
+    },
+
+    // ── Mini-check: Parça adları ───────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"silk" hansı növ isimdir?',
+          options: ['Countable', 'Uncountable', 'Proper noun', 'Collective'],
+          answer: 'Uncountable',
+        },
+        {
+          q: '"wool" ilə hansı ifadə düzgündür?',
+          options: ['a wool', 'many wools', 'much wool', 'few wools'],
+          answer: 'much wool',
+        },
+        {
+          q: 'Hansı söz "pambıq" deməkdir?',
+          options: ['silk', 'linen', 'wool', 'cotton'],
+          answer: 'cotton',
+        },
+        {
+          q: '"linen" — "mələfə, kətan" mənasındadır. Hansı cümlə düzgündür?',
+          options: [
+            'A linen is soft.',
+            'Linen is soft.',
+            'Linens are soft.',
+            'Many linen is soft.',
+          ],
+          answer: 'Linen is soft.',
+        },
+      ],
+    },
+
+    // ── Ekran 3: Tikinti materialları ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Tikinti və istehsal materialları',
+      content: 'Bu materialların hamısı uncountable-dır:',
+      table: [
+        ['İngilis',    'Tələffüz',    'Azərbaycan'],
+        ['wood',       '[wud]',       'taxta'],
+        ['paper',      '[peipə]',     'kağız'],
+        ['glass',      '[glɑːs]',     'şüşə'],
+        ['cardboard',  '[kɑːdbɔːd]',  'karton'],
+        ['rubber',     '[rʌbə]',      'rezin'],
+        ['chalk',      '[tʃoːk]',     'təbaşir'],
+      ],
+    },
+
+    // ── Mini-check: Tikinti materialları ──────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"glass" — "şüşə" mənasında. Hansı cümlə düzgündür?',
+          options: [
+            'A glass is everywhere.',
+            'Glasses is used in windows.',
+            'Glass is used in windows.',
+            'Many glass is used.',
+          ],
+          answer: 'Glass is used in windows.',
+        },
+        {
+          q: '"wood" ilə "çox" mənasında hansı söz işlənir?',
+          options: ['many', 'few', 'much', 'a few'],
+          answer: 'much',
+        },
+        {
+          q: 'Hansı söz "təbaşir" deməkdir?',
+          options: ['rubber', 'cardboard', 'chalk', 'paper'],
+          answer: 'chalk',
+        },
+        {
+          q: '"paper" — düzgün işlənişi hansıdır?',
+          options: ['a paper', 'many papers', 'much paper', 'few papers'],
+          answer: 'much paper',
+        },
+      ],
+    },
+
+    // ── Ekran 4: Metal adları ──────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Metal adları (Metals)',
+      content: 'Metal adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis',  'Tələffüz',    'Azərbaycan'],
+        ['iron',     '[aiən]',      'dəmir'],
+        ['gold',     '[gould]',     'qızıl'],
+        ['silver',   '[silvə]',     'gümüş'],
+        ['bronze',   '[bronz]',     'bürünc'],
+        ['coal',     '[koul]',      'kömür'],
+      ],
+    },
+
+    // ── Ekran 5: Yanacaq və xammal ─────────────────────────
+    {
+      type: 'lesson',
+      title: 'Yanacaq və xammal (Fuel)',
+      content: 'Yanacaq adları da uncountable-dır:',
+      table: [
+        ['İngilis',  'Tələffüz',   'Azərbaycan'],
+        ['gas',      '[gæz]',      'qaz'],
+        ['petrol',   '[petrol]',   'benzin'],
+        ['ink',      '[iŋk]',      'mürəkkəb'],
+      ],
+    },
+
+    // ── Mini-check: Metal və yanacaq ──────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"gold" hansı növ isimdir?',
+          options: ['Countable', 'Uncountable', 'Proper noun', 'Collective'],
+          answer: 'Uncountable',
+        },
+        {
+          q: '"iron" ilə hansı ifadə düzgündür?',
+          options: ['an iron', 'many irons', 'much iron', 'few irons'],
+          answer: 'much iron',
+        },
+        {
+          q: '"petrol" — "benzin" mənasındadır. Hansı cümlə düzgündür?',
+          options: [
+            'A petrol is expensive.',
+            'Petrols are expensive.',
+            'Petrol is expensive.',
+            'Many petrol is expensive.',
+          ],
+          answer: 'Petrol is expensive.',
+        },
+        {
+          q: 'Hansı söz metal adı deyil?',
+          options: ['gold', 'bronze', 'coal', 'cotton'],
+          answer: 'cotton',
+        },
+        {
+          q: '"silver ___ valuable." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have been'],
+          answer: 'is',
+        },
+        {
+          q: 'Hansı söz "mürəkkəb" deməkdir (yazı üçün)?',
+          options: ['gas', 'petrol', 'ink', 'coal'],
+          answer: 'ink',
+        },
+      ],
+    },
+
+    // ── Mini-quiz: 8.2 ümumi təkrar ────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"cotton" hansı növ isimdir?',
+          options: ['Countable', 'Proper noun', 'Uncountable', 'Collective'],
+          answer: 'Uncountable',
+        },
+        {
+          q: '"wool" ilə "az" mənasında hansı söz işlənir?',
+          options: ['few', 'many', 'much', 'little'],
+          answer: 'little',
+        },
+        {
+          q: 'Hansı söz "taxta" deməkdir?',
+          options: ['rubber', 'glass', 'wood', 'chalk'],
+          answer: 'wood',
+        },
+        {
+          q: '"Bronze ___ an ancient metal." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"gas" — düzgün işlənişi hansıdır?',
+          options: ['a gas', 'many gases', 'much gas', 'few gases'],
+          answer: 'much gas',
+        },
+        {
+          q: 'Hansı söz "bürünc" deməkdir?',
+          options: ['iron', 'silver', 'gold', 'bronze'],
+          answer: 'bronze',
+        },
+        {
+          q: '"paper" nə deməkdir?',
+          options: ['taxta', 'kağız', 'rezin', 'karton'],
+          answer: 'kağız',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'A silk is beautiful.',
+            'Silks are beautiful.',
+            'Silk is beautiful.',
+            'Many silk is beautiful.',
+          ],
+          answer: 'Silk is beautiful.',
+        },
+      ],
+    },
+  ],
+},
+
+// ── index: 39 — Dərs 8.3 ─────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 8.3 — Mücərrəd isimlər',
+  cards: [
+
+    // ── Ekran 1: Giriş ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Hiss, keyfiyyət, vəziyyət adları',
+      content: 'Mücərrəd isimlər gözlə görünmür, əllə toxunulmur. Bunlar hisslər, keyfiyyətlər, vəziyyətlər, proseslərdir.\n\nBütün mücərrəd isimlər uncountable-dır:\n• a/an almır\n• cəmlənmir\n• özündən sonra fel tək gəlir',
+      examples: [
+        { word: 'Love is beautiful.',      az: '✅ tək fel' },
+        { word: 'Knowledge is power.',     az: '✅ tək fel' },
+        { word: '❌ a love, knowledges',   az: 'yanlış' },
+      ],
+      tip: 'İstisna: Sifət + abstract noun → a/an işlənir: "a great love", "a good knowledge".',
+    },
+
+    // ── Ekran 2: Hisslər ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Hisslər və münasibətlər (Feelings)',
+      content: 'Bu hiss adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis',    'Tələffüz',    'Azərbaycan'],
+        ['love',       '[lʌv]',       'sevgi'],
+        ['hate',       '[heit]',      'nifrət'],
+        ['joy',        '[dʒoi]',      'sevinc'],
+        ['anger',      '[æŋgə]',      'hirs, qəzəb'],
+        ['fear',       '[fiə]',       'qorxu'],
+        ['hope',       '[houp]',      'ümid'],
+        ['pity',       '[piti]',      'təəssüf'],
+        ['laughter',   '[lɑːftə]',    'gülüş'],
+        ['horror',     '[horə]',      'dəhşət'],
+      ],
+    },
+
+    // ── Mini-check: Hisslər ────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"love" hansı növ isimdir?',
+          options: ['Countable', 'Proper noun', 'Abstract', 'Collective'],
+          answer: 'Abstract',
+        },
+        {
+          q: '"Anger ___ dangerous." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'A fear is natural.',
+            'Fear is natural.',
+            'Fears are natural.',
+            'Many fear is natural.',
+          ],
+          answer: 'Fear is natural.',
+        },
+        {
+          q: '"joy" nə deməkdir?',
+          options: ['qorxu', 'nifrət', 'sevinc', 'dəhşət'],
+          answer: 'sevinc',
+        },
+        {
+          q: '"laughter" ilə hansı söz işlənir ("çox" mənasında)?',
+          options: ['many', 'few', 'much', 'a few'],
+          answer: 'much',
+        },
+      ],
+    },
+
+    // ── Ekran 3: Keyfiyyət adları ──────────────────────────
+    {
+      type: 'lesson',
+      title: 'Keyfiyyət və xüsusiyyət adları (Qualities)',
+      content: 'Bu keyfiyyət adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis',    'Tələffüz',     'Azərbaycan'],
+        ['beauty',     '[bjuːti]',     'gözəllik'],
+        ['happiness',  '[hæpinis]',    'xoşbəxtlik'],
+        ['health',     '[helθ]',       'sağlamlıq'],
+        ['strength',   '[streŋθ]',     'güc, qüvvə'],
+        ['luck',       '[lʌk]',        'bəxt'],
+        ['courage',    '[kʌriʤ]',      'cəsarət'],
+        ['patience',   '[peiʃəns]',    'səbr'],
+        ['stupidness', '[stjuːpidnis]', 'axmaqlıq'],
+        ['wealth',     '[welθ]',       'var-dövlət'],
+      ],
+    },
+
+    // ── Mini-check: Keyfiyyət adları ──────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"happiness" hansı növ isimdir?',
+          options: ['Countable', 'Proper noun', 'Abstract', 'Concrete'],
+          answer: 'Abstract',
+        },
+        {
+          q: '"Beauty ___ important." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"courage" nə deməkdir?',
+          options: ['səbr', 'bəxt', 'cəsarət', 'güc'],
+          answer: 'cəsarət',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'A health is important.',
+            'Health are important.',
+            'Health is important.',
+            'Healths are important.',
+          ],
+          answer: 'Health is important.',
+        },
+        {
+          q: '"wealth" nə deməkdir?',
+          options: ['sağlamlıq', 'bəxt', 'güc', 'var-dövlət'],
+          answer: 'var-dövlət',
+        },
+        {
+          q: '"luck" ilə hansı ifadə düzgündür?',
+          options: ['a luck', 'many lucks', 'much luck', 'few lucks'],
+          answer: 'much luck',
+        },
+      ],
+    },
+
+    // ── Ekran 4: Fəaliyyət adları ─────────────────────────
+    {
+      type: 'lesson',
+      title: 'Fəaliyyət və proses adları (Activities)',
+      content: 'Bu fəaliyyət adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis',       'Tələffüz',       'Azərbaycan'],
+        ['knowledge',     '[noliʤ]',        'bilik'],
+        ['education',     '[edjuːkeiʃn]',   'təhsil'],
+        ['progress',      '[progres]',      'tərəqqi, inkişaf'],
+        ['experience',    '[ikspiriəns]',   'təcrübə'],
+        ['information',   '[infoːmeiʃn]',   'məlumat'],
+        ['advice',        '[ædvais]',       'məsləhət'],
+        ['help',          '[help]',         'kömək'],
+        ['research',      '[risəːtʃ]',      'araşdırma'],
+        ['travel',        '[trævl]',        'səyahət'],
+        ['trade',         '[treid]',        'ticarət'],
+        ['business',      '[biznes]',       'iş'],
+      ],
+    },
+
+    // ── Mini-check: Fəaliyyət adları ──────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"knowledge" ilə hansı söz işlənir ("çox" mənasında)?',
+          options: ['many', 'few', 'much', 'a few'],
+          answer: 'much',
+        },
+        {
+          q: '"Education ___ important." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"advice" — cəm forması varmı?',
+          options: ['Bəli, advices', 'Xeyr, cəmlənmir', 'Bəli, advicen', 'Bəzən işlənir'],
+          answer: 'Xeyr, cəmlənmir',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'Can you give me an advice?',
+            'Can you give me advices?',
+            'Can you give me some advice?',
+            'Can you give me a little advices?',
+          ],
+          answer: 'Can you give me some advice?',
+        },
+        {
+          q: '"experience" nə deməkdir?',
+          options: ['bilik', 'məsləhət', 'təcrübə', 'araşdırma'],
+          answer: 'təcrübə',
+        },
+        {
+          q: '"research" ilə hansı ifadə düzgündür?',
+          options: ['a research', 'many researches', 'much research', 'few researches'],
+          answer: 'much research',
+        },
+      ],
+    },
+
+    // ── Ekran 5: Gündəlik həyat adları ────────────────────
+    {
+      type: 'lesson',
+      title: 'Gündəlik həyat adları (Daily life)',
+      content: 'Bu gündəlik həyat adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis',      'Tələffüz',       'Azərbaycan'],
+        ['furniture',    '[fəːnitʃə]',     'mebel'],
+        ['money',        '[mʌni]',         'pul'],
+        ['work',         '[wəːk]',         'iş'],
+        ['homework',     '[houmwəːk]',     'ev tapşırığı'],
+        ['hometask',     '[houmtɑːsk]',    'ev tapşırığı'],
+        ['housework',    '[hauswəːk]',     'ev işi'],
+        ['shopping',     '[ʃopiŋ]',        'bazarlıq'],
+        ['parking',      '[pɑːkiŋ]',       'maşın saxlama'],
+        ['smoking',      '[smoukiŋ]',      'papiros çəkmə'],
+        ['mail',         '[meil]',         'poçt'],
+        ['transport',    '[trænspoːt]',    'nəqliyyat'],
+        ['traffic',      '[træfik]',       'nəqliyyat'],
+        ['shampoo',      '[ʃæmpuː]',       'şampun'],
+        ['toothpaste',   '[tuːθpɑːst]',    'diş pastası'],
+        ['soap',         '[soup]',         'sabun'],
+        ['garbage',      '[gɑːbiʤ]',       'zibil'],
+        ['rubbish',      '[rʌbiʃ]',        'zibil'],
+        ['chess',        '[tʃes]',         'şahmat'],
+      ],
+    },
+
+    // ── Mini-check: Gündəlik həyat ────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"furniture" — düzgün işlənişi hansıdır?',
+          options: ['a furniture', 'many furnitures', 'much furniture', 'few furnitures'],
+          answer: 'much furniture',
+        },
+        {
+          q: '"traffic" nə deməkdir?',
+          options: ['bazarlıq', 'poçt', 'nəqliyyat', 'zibil'],
+          answer: 'nəqliyyat',
+        },
+        {
+          q: '"The homework ___ finished." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: 'Hansı söz "sabun" deməkdir?',
+          options: ['shampoo', 'toothpaste', 'soap', 'garbage'],
+          answer: 'soap',
+        },
+        {
+          q: '"rubbish" və "garbage" — nə deməkdir?',
+          options: ['bazarlıq', 'zibil', 'poçt', 'mebel'],
+          answer: 'zibil',
+        },
+        {
+          q: '"chess" ilə hansı ifadə düzgündür?',
+          options: ['a chess', 'many chesses', 'much chess', 'Chess are fun'],
+          answer: 'much chess',
+        },
+      ],
+    },
+
+    // ── Ekran 6: Digər mücərrəd isimlər — 1 ───────────────
+    {
+      type: 'lesson',
+      title: 'Digər mücərrəd isimlər — Part 1',
+      content: 'Bu mücərrəd isimlər də uncountable-dır:',
+      table: [
+        ['İngilis',    'Tələffüz',     'Azərbaycan'],
+        ['life',       '[laif]',       'həyat'],
+        ['death',      '[deθ]',        'ölüm'],
+        ['time',       '[taim]',       'vaxt'],
+        ['peace',      '[piːs]',       'sülh'],
+        ['marriage',   '[mæriʤ]',      'evlilik'],
+        ['damage',     '[dæmiʤ]',      'zərər, ziyan'],
+        ['harm',       '[hɑːm]',       'ziyan'],
+        ['fun',        '[fʌn]',        'zarafat'],
+        ['music',      '[mjuːzik]',    'musiqi'],
+        ['dancing',    '[dɑːnsiŋ]',    'rəqs'],
+        ['writing',    '[raitiŋ]',     'yazı'],
+        ['spelling',   '[speliŋ]',     'hərfləmə'],
+        ['pollution',  '[pəluːʃən]',   'çirklənmə'],
+        ['power',      '[pauə]',       'güc, qüvvət'],
+      ],
+    },
+
+    // ── Ekran 7: Digər mücərrəd isimlər — 2 ───────────────
+    {
+      type: 'lesson',
+      title: 'Digər mücərrəd isimlər — Part 2',
+      content: 'Daha çox mücərrəd isimlər:',
+      table: [
+        ['İngilis',          'Tələffüz',            'Azərbaycan'],
+        ['capital',          '[kæpitəl]',            'kapital'],
+        ['chaos',            '[kaous]',              'xaos'],
+        ['nonsense',         '[nosens]',             'cəfəngiyyat'],
+        ['dirt',             '[dəːt]',               'çirk, kir'],
+        ['gossip',           '[gosip]',              'şayiə'],
+        ['hospitality',      '[hospitæbiliti]',      'qonaqpərvərlik'],
+        ['choice',           '[tʃois]',              'seçim'],
+        ['hobby',            '[hobi]',               'məşğuliyyət'],
+        ['charity',          '[tʃæriti]',            'xeyriyyə'],
+        ['applause',         '[æplos]',              'alqış'],
+        ['assistance',       '[æsistəns]',           'yardım'],
+        ['communication',    '[komjunikeiʃn]',       'rabitə'],
+        ['behaviour',        '[biheivə]',            'davranış'],
+        ['co-operation',     '[kouopəreiʃn]',        'əməkdaşlıq'],
+        ['economy',          '[ikonomi]',            'iqtisadiyyat'],
+        ['prohibition',      '[prohiʃn]',            'qadağan'],
+        ['evidence',         '[evidəns]',            'dəlil, sübut'],
+        ['flu',              '[fluː]',               'soyuqdəymə'],
+      ],
+    },
+
+    // ── Mini-check: Digər mücərrəd isimlər ────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"peace" hansı növ isimdir?',
+          options: ['Countable', 'Proper noun', 'Abstract', 'Concrete'],
+          answer: 'Abstract',
+        },
+        {
+          q: '"Music ___ wonderful." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"pollution" nə deməkdir?',
+          options: ['ziyan', 'çirklənmə', 'sülh', 'xaos'],
+          answer: 'çirklənmə',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'A fun is important.',
+            'Funs are important.',
+            'Fun is important.',
+            'Many fun is important.',
+          ],
+          answer: 'Fun is important.',
+        },
+        {
+          q: '"gossip" nə deməkdir?',
+          options: ['xəbər', 'şayiə', 'məsləhət', 'cəfəngiyyat'],
+          answer: 'şayiə',
+        },
+        {
+          q: '"behaviour" ilə hansı ifadə düzgündür?',
+          options: ['a behaviour', 'many behaviours', 'much behaviour', 'few behaviours'],
+          answer: 'much behaviour',
+        },
+        {
+          q: '"flu" nə deməkdir?',
+          options: ['soyuqdəymə', 'ziyan', 'çirk', 'seçim'],
+          answer: 'soyuqdəymə',
+        },
+        {
+          q: '"hospitality" nə deməkdir?',
+          options: ['iqtisadiyyat', 'əməkdaşlıq', 'qonaqpərvərlik', 'yardım'],
+          answer: 'qonaqpərvərlik',
+        },
+      ],
+    },
+
+    // ── Ekran 8: Təbiət adları ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Təbiət hadisələri (Nature)',
+      content: 'Təbiət adlarının hamısı uncountable-dır:',
+      table: [
+        ['İngilis',     'Tələffüz',     'Azərbaycan'],
+        ['water',       '[wotə]',       'su'],
+        ['air',         '[eə]',         'hava'],
+        ['weather',     '[weðə]',       'hava (şərait)'],
+        ['rain',        '[rein]',       'yağış'],
+        ['snow',        '[snou]',       'qar'],
+        ['ice',         '[ais]',        'buz'],
+        ['sand',        '[sænd]',       'qum'],
+        ['mud',         '[mʌd]',        'palçıq'],
+        ['dust',        '[dʌst]',       'toz'],
+        ['grass',       '[grɑːs]',      'ot'],
+        ['sunlight',    '[sʌnlait]',    'gün işığı'],
+        ['moonlight',   '[muːnlait]',   'ay işığı'],
+        ['sunshine',    '[sʌnʃain]',    'günəş işığı'],
+        ['light',       '[lait]',       'işıq'],
+        ['dark',        '[dɑːk]',       'qaranlıq'],
+        ['thunder',     '[θʌndə]',      'şimşək, ildırım'],
+        ['lightning',   '[laitniŋ]',    'şimşək'],
+      ],
+    },
+
+    // ── Mini-check: Təbiət adları ─────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"rain" hansı növ isimdir?',
+          options: ['Countable', 'Uncountable', 'Proper noun', 'Collective'],
+          answer: 'Uncountable',
+        },
+        {
+          q: '"Snow ___ beautiful in winter." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"thunder" nə deməkdir?',
+          options: ['ildırım', 'qum', 'buz', 'toz'],
+          answer: 'ildırım',
+        },
+        {
+          q: '"dust" ilə hansı ifadə düzgündür?',
+          options: ['a dust', 'many dusts', 'much dust', 'few dusts'],
+          answer: 'much dust',
+        },
+        {
+          q: '"sunshine" nə deməkdir?',
+          options: ['ay işığı', 'günəş işığı', 'şimşək', 'toz'],
+          answer: 'günəş işığı',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'A weather is cold today.',
+            'Weathers are cold today.',
+            'The weather is cold today.',
+            'Many weather is cold.',
+          ],
+          answer: 'The weather is cold today.',
+        },
+        {
+          q: '"mud" nə deməkdir?',
+          options: ['qar', 'buz', 'palçıq', 'ot'],
+          answer: 'palçıq',
+        },
+      ],
+    },
+
+    // ── Mini-quiz: 8.3 ümumi təkrar — böyük ───────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Hansı söz hiss bildirmir?',
+          options: ['love', 'anger', 'furniture', 'fear'],
+          answer: 'furniture',
+        },
+        {
+          q: '"knowledge" ilə hansı ifadə düzgündür?',
+          options: ['a knowledge', 'many knowledges', 'much knowledge', 'few knowledges'],
+          answer: 'much knowledge',
+        },
+        {
+          q: '"Pollution ___ a big problem." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"charity" nə deməkdir?',
+          options: ['cəsarət', 'xeyriyyə', 'yardım', 'əməkdaşlıq'],
+          answer: 'xeyriyyə',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'A progress is made.',
+            'Progresses are made.',
+            'Progress is made.',
+            'Many progress are made.',
+          ],
+          answer: 'Progress is made.',
+        },
+        {
+          q: '"evidence" nə deməkdir?',
+          options: ['şayiə', 'cəfəngiyyat', 'dəlil, sübut', 'qadağan'],
+          answer: 'dəlil, sübut',
+        },
+        {
+          q: '"economy" ilə hansı söz işlənir ("az" mənasında)?',
+          options: ['few', 'many', 'a few', 'little'],
+          answer: 'little',
+        },
+        {
+          q: 'Hansı söz gündəlik həyata aid deyil?',
+          options: ['furniture', 'traffic', 'anger', 'shopping'],
+          answer: 'anger',
+        },
+        {
+          q: '"communication" nə deməkdir?',
+          options: ['davranış', 'rabitə', 'əməkdaşlıq', 'iqtisadiyyat'],
+          answer: 'rabitə',
+        },
+        {
+          q: '"ice" ilə hansı ifadə düzgündür?',
+          options: ['an ice', 'many ices', 'much ice', 'few ices'],
+          answer: 'much ice',
+        },
+      ],
+    },
+  ],
+},
+
+// ── index: 40 — Mini-quiz 8 (Bölmə 8 ümumi quiz) ─────────────
+[
+  // ── Qida və içki ───────────────────────────────────────────
+  { en: 'water',       tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'milk',        tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'Çox çay → ____',       tr: 'much tea',      wrong: 'many tea'     },
+  { en: 'Az qənd → ____',       tr: 'little sugar',  wrong: 'few sugar'    },
+  { en: 'bread',       tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'rice',        tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'Honey ___ sweet.',     tr: 'is',            wrong: 'are'          },
+  { en: 'Flour ___ needed.',    tr: 'is',            wrong: 'are'          },
+  { en: 'Az yağ → ____',        tr: 'little butter', wrong: 'few butter'   },
+  { en: 'Çox un → ____',        tr: 'much flour',    wrong: 'many flour'   },
+  { en: '"a juice" düzgündürmü?',         tr: 'Xeyr',          wrong: 'Bəli'         },
+  { en: '"many rices" düzgündürmü?',      tr: 'Xeyr',          wrong: 'Bəli'         },
+
+  // ── Material adları ────────────────────────────────────────
+  { en: 'silk',        tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'gold',        tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'iron',        tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'Silk ___ expensive.',  tr: 'is',            wrong: 'are'          },
+  { en: 'Gold ___ valuable.',   tr: 'is',            wrong: 'are'          },
+  { en: 'Çox kağız → ____',     tr: 'much paper',    wrong: 'many paper'   },
+  { en: 'Az benzin → ____',     tr: 'little petrol', wrong: 'few petrol'   },
+  { en: '"a cotton" düzgündürmü?',        tr: 'Xeyr',          wrong: 'Bəli'         },
+  { en: 'wool — "az" mənasında → ____',   tr: 'little wool',   wrong: 'few wool'     },
+  { en: 'chalk nə deməkdir?',             tr: 'təbaşir',       wrong: 'taxta'        },
+  { en: 'ink nə deməkdir?',              tr: 'mürəkkəb',      wrong: 'benzin'       },
+  { en: 'coal nə deməkdir?',             tr: 'kömür',         wrong: 'dəmir'        },
+
+  // ── Hisslər ────────────────────────────────────────────────
+  { en: 'love',        tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'anger',       tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'Love ___ beautiful.',  tr: 'is',            wrong: 'are'          },
+  { en: 'Fear ___ natural.',    tr: 'is',            wrong: 'are'          },
+  { en: 'joy nə deməkdir?',              tr: 'sevinc',        wrong: 'qorxu'        },
+  { en: 'pity nə deməkdir?',             tr: 'təəssüf',       wrong: 'sevgi'        },
+  { en: '"a fear" düzgündürmü?',          tr: 'Xeyr',          wrong: 'Bəli'         },
+
+  // ── Keyfiyyət adları ───────────────────────────────────────
+  { en: 'happiness',   tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'strength',    tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'Health ___ important.',   tr: 'is',           wrong: 'are'          },
+  { en: 'Beauty ___ in the eye.', tr: 'is',           wrong: 'are'          },
+  { en: 'courage nə deməkdir?',          tr: 'cəsarət',       wrong: 'səbr'         },
+  { en: 'wealth nə deməkdir?',           tr: 'var-dövlət',    wrong: 'sağlamlıq'    },
+  { en: 'Çox bəxt → ____',         tr: 'much luck',     wrong: 'many luck'    },
+
+  // ── Fəaliyyət adları ───────────────────────────────────────
+  { en: 'knowledge',   tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'advice',      tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'Knowledge ___ power.',    tr: 'is',            wrong: 'are'          },
+  { en: 'Progress ___ made.',      tr: 'is',            wrong: 'are'          },
+  { en: '"advices" düzgündürmü?',         tr: 'Xeyr',          wrong: 'Bəli'         },
+  { en: '"researches" düzgündürmü?',      tr: 'Xeyr',          wrong: 'Bəli'         },
+  { en: 'experience nə deməkdir?',        tr: 'təcrübə',       wrong: 'məsləhət'     },
+  { en: 'Çox məsləhət → ____',     tr: 'much advice',   wrong: 'many advice'  },
+
+  // ── Gündəlik həyat ─────────────────────────────────────────
+  { en: 'furniture',   tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'traffic',     tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'Furniture ___ expensive.', tr: 'is',          wrong: 'are'          },
+  { en: 'traffic nə deməkdir?',          tr: 'nəqliyyat',     wrong: 'bazarlıq'     },
+  { en: 'soap nə deməkdir?',             tr: 'sabun',         wrong: 'şampun'       },
+  { en: 'garbage nə deməkdir?',          tr: 'zibil',         wrong: 'poçt'         },
+  { en: '"a furniture" düzgündürmü?',     tr: 'Xeyr',          wrong: 'Bəli'         },
+
+  // ── Digər mücərrəd isimlər ─────────────────────────────────
+  { en: 'pollution',   tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'peace',       tr: 'Abstract',     wrong: 'Concrete'   },
+  { en: 'Music ___ wonderful.',     tr: 'is',            wrong: 'are'          },
+  { en: 'Peace ___ important.',     tr: 'is',            wrong: 'are'          },
+  { en: 'gossip nə deməkdir?',           tr: 'şayiə',         wrong: 'cəfəngiyyat'  },
+  { en: 'flu nə deməkdir?',              tr: 'soyuqdəymə',    wrong: 'ziyan'        },
+  { en: 'charity nə deməkdir?',          tr: 'xeyriyyə',      wrong: 'yardım'       },
+  { en: 'evidence nə deməkdir?',         tr: 'dəlil, sübut',  wrong: 'şayiə'        },
+  { en: 'hospitality nə deməkdir?',      tr: 'qonaqpərvərlik',wrong: 'əməkdaşlıq'  },
+
+  // ── Təbiət hadisələri ──────────────────────────────────────
+  { en: 'rain',        tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'snow',        tr: 'Uncountable',  wrong: 'Countable'  },
+  { en: 'Snow ___ cold.',         tr: 'is',            wrong: 'are'          },
+  { en: 'Weather ___ nice today.',tr: 'is',            wrong: 'are'          },
+  { en: 'thunder nə deməkdir?',          tr: 'şimşək, ildırım',wrong: 'toz'         },
+  { en: 'mud nə deməkdir?',              tr: 'palçıq',        wrong: 'qum'          },
+  { en: 'sunshine nə deməkdir?',         tr: 'günəş işığı',   wrong: 'ay işığı'     },
+  { en: 'Çox toz → ____',          tr: 'much dust',     wrong: 'many dust'    },
+  { en: '"a snow" düzgündürmü?',         tr: 'Xeyr',          wrong: 'Bəli'         },
+],
+
+// ── index: 41 — Test 3 (Final — Bölmə 1-dən 8-ə qədər) ───────
+[
+  // ── Bölmə 1: Quruluş ───────────────────────────────────────
+  { en: '"sunrise" hansı quruluş?',          tr: 'Compound noun',   wrong: 'Derivative noun' },
+  { en: '"kindness" hansı quruluş?',         tr: 'Derivative noun', wrong: 'Simple noun'     },
+  { en: '"hand" hansı quruluş?',             tr: 'Simple noun',     wrong: 'Compound noun'   },
+  { en: 'teach → ____',                      tr: 'teacher',         wrong: 'teachness'       },
+  { en: 'develop → ____',                    tr: 'development',     wrong: 'developness'     },
+  { en: 'free → ____',                       tr: 'freedom',         wrong: 'freehood'        },
+  { en: '"heroism" hansı şəkilçi?',          tr: '-ism',            wrong: '-ship'           },
+  { en: '"childhood" hansı şəkilçi?',        tr: '-hood',           wrong: '-dom'            },
+
+  // ── Bölmə 2: Common / Proper / Concrete / Abstract ─────────
+  { en: '"February" hansı növ?',             tr: 'Proper noun',     wrong: 'Common noun'     },
+  { en: '"a lake" hansı növ?',               tr: 'Common noun',     wrong: 'Proper noun'     },
+  { en: '"freedom" hansı növ?',              tr: 'Abstract',        wrong: 'Concrete'        },
+  { en: '"a table" hansı növ?',              tr: 'Concrete',        wrong: 'Abstract'        },
+  { en: '"a good knowledge" — niyə a?',      tr: 'Sifət var',       wrong: 'Countable-dır'   },
+  { en: 'actor → ____',                      tr: 'actress',         wrong: 'actoress'        },
+  { en: 'Ölkə → hansı əvəzlik?',            tr: 'she',             wrong: 'it'              },
+
+  // ── Bölmə 3: Countable / Uncountable / Many / Much ─────────
+  { en: '"advice" hansı növ?',               tr: 'Uncountable',     wrong: 'Countable'       },
+  { en: '"student" hansı növ?',              tr: 'Countable',       wrong: 'Uncountable'     },
+  { en: 'Çox kitab → ____',                  tr: 'many books',      wrong: 'much books'      },
+  { en: 'Az vaxt → ____',                    tr: 'little time',     wrong: 'few time'        },
+  { en: 'The news ___ good.',                tr: 'is',              wrong: 'are'             },
+  { en: 'There are ___ information.',        tr: 'a lot of',        wrong: 'many'            },
+  { en: 'He speaks ____.',                   tr: 'a lot',           wrong: 'a lot of'        },
+
+  // ── Bölmə 4: Kollektiv isimlər ─────────────────────────────
+  { en: 'The police ___ there.',             tr: 'were',            wrong: 'was'             },
+  { en: 'My family ___ large. (bir bütün)',  tr: 'is',              wrong: 'are'             },
+  { en: 'People ___ strange.',               tr: 'are',             wrong: 'is'              },
+  { en: 'Money ___ money.',                  tr: 'makes',           wrong: 'make'            },
+  { en: 'cattle — "çox" mənasında → ____',   tr: 'much',            wrong: 'many'            },
+
+  // ── Bölmə 5: Cəm formaları ─────────────────────────────────
+  { en: 'box → ____',                        tr: 'boxes',           wrong: 'boxs'            },
+  { en: 'tooth → ____',                      tr: 'teeth',           wrong: 'tooths'          },
+  { en: 'child → ____',                      tr: 'children',        wrong: 'childs'          },
+  { en: 'wife → ____',                       tr: 'wives',           wrong: 'wifes'           },
+  { en: 'roof → ____',                       tr: 'roofs',           wrong: 'rooves'          },
+  { en: 'potato → ____',                     tr: 'potatoes',        wrong: 'potatos'         },
+  { en: 'radio → ____',                      tr: 'radios',          wrong: 'radioes'         },
+  { en: 'city → ____',                       tr: 'cities',          wrong: 'citys'           },
+  { en: 'day → ____',                        tr: 'days',            wrong: 'daies'           },
+  { en: 'postman → ____',                    tr: 'postmen',         wrong: 'postmans'        },
+  { en: 'German → ____',                     tr: 'Germans',         wrong: 'Germens'         },
+
+  // ── Bölmə 6: Xüsusi cəm halları ────────────────────────────
+  { en: 'Where ___ my scissors?',            tr: 'are',             wrong: 'is'              },
+  { en: 'Five sheep ___ grazing.',           tr: 'are',             wrong: 'is'              },
+  { en: 'Physics ___ difficult.',            tr: 'is',              wrong: 'are'             },
+  { en: 'Her hair ___ beautiful.',           tr: 'is',              wrong: 'are'             },
+  { en: 'Bir qayçı → ____',                  tr: 'a pair of scissors', wrong: 'a scissors'   },
+  { en: 'Today ___ a holiday. (bayram)',     tr: 'is',              wrong: 'are'             },
+
+  // ── Bölmə 7: Possessive case ───────────────────────────────
+  { en: 'oğlanın topu → ____',              tr: "the boy's ball",    wrong: "the boys' ball"    },
+  { en: 'müəllimlərin otağı → ____',        tr: "the teachers' room",wrong: "the teacher's room"},
+  { en: 'uşaqların oyuncaqları → ____',     tr: "the children's toys",wrong: "the childrens' toys"},
+  { en: 'stolun qılçası → ____',            tr: 'the leg of the table',wrong: "the table's leg" },
+  { en: 'bu günkü qəzet → ____',           tr: "today's newspaper", wrong: 'the newspaper of today'},
+  { en: 'iki günlük istirahət → ____',      tr: "two days' rest",    wrong: 'the rest of two days'},
+  { en: 'eyni ev (Tom və Nick) → ____',     tr: "Tom and Nick's house",wrong: "Tom's and Nick's house"},
+
+  // ── Bölmə 8: Vocabulary bank ───────────────────────────────
+  { en: 'silk',                              tr: 'Uncountable',     wrong: 'Countable'       },
+  { en: 'gold',                              tr: 'Uncountable',     wrong: 'Countable'       },
+  { en: 'love',                              tr: 'Abstract',        wrong: 'Concrete'        },
+  { en: 'knowledge',                         tr: 'Abstract',        wrong: 'Concrete'        },
+  { en: 'Honey ___ sweet.',                  tr: 'is',              wrong: 'are'             },
+  { en: 'Music ___ wonderful.',              tr: 'is',              wrong: 'are'             },
+  { en: 'Çox mürəkkəb → ____',               tr: 'much ink',        wrong: 'many ink'        },
+  { en: 'Az palçıq → ____',                  tr: 'little mud',      wrong: 'few mud'         },
+  { en: 'joy nə deməkdir?',                  tr: 'sevinc',          wrong: 'qorxu'           },
+  { en: 'courage nə deməkdir?',              tr: 'cəsarət',         wrong: 'səbr'            },
+  { en: 'pollution nə deməkdir?',            tr: 'çirklənmə',       wrong: 'ziyan'           },
+  { en: 'hospitality nə deməkdir?',          tr: 'qonaqpərvərlik',  wrong: 'əməkdaşlıq'     },
+  { en: 'thunder nə deməkdir?',              tr: 'şimşək, ildırım', wrong: 'toz'             },
+  { en: 'charity nə deməkdir?',              tr: 'xeyriyyə',        wrong: 'yardım'          },
+  { en: '"a flour" düzgündürmü?',            tr: 'Xeyr',            wrong: 'Bəli'            },
+  { en: '"advices" düzgündürmü?',            tr: 'Xeyr',            wrong: 'Bəli'            },
+],],
   },
 
 ];
