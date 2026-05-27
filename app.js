@@ -2213,12 +2213,15 @@ function renderLevels() {
     } else if (lvl.id === 'kids') {
       const kidsList = document.getElementById('kids-list');
       if (kidsList) kidsList.appendChild(card);
-    } else if (lvl.id === 'grammar') {
-      const grammarList = document.getElementById('grammar-list');
-      if (grammarList) grammarList.appendChild(card);
-    } else {
-      elLevelList.appendChild(card);
-  }
+   } else if (lvl.id === 'grammar') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'verbs') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else {
+  elLevelList.appendChild(card);
+}
   });
 }
 
