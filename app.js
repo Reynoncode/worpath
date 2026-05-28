@@ -3601,6 +3601,47 @@ let currentPage = DEFAULT_PAGE;
 const pageContainer = document.getElementById('page-container');
 const navDots       = document.querySelectorAll('.nav-dot');
 
+// app.js — goToPage-dən əvvəl əlavə edin:
+window._updateHeaderProfileBtn = function (pageIndex) {
+  const btn    = document.getElementById('header-profile-btn');
+  const avatar = document.getElementById('header-profile-avatar');
+  if (!btn || !avatar) return;
+
+  if (pageIndex === 4) {
+    const role = window.__userRole || 'guest';
+    if (role === 'teacher') {
+      avatar.innerHTML = `
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>`;
+      avatar.style.background = '#1A1A1A';
+      avatar.style.color = '#fff';
+      return;
+    }
+  }
+
+  // Normal profil avatarı bərpa et
+  if (window.AuthManager) {
+    const user = AuthManager.getCurrentUser();
+    if (user && user.photoURL) {
+      avatar.innerHTML = `<img src="${user.photoURL}"
+        style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
+      avatar.style.background = 'transparent';
+    } else if (user) {
+      const name = user.displayName ? user.displayName.split(' ')[0] : user.email;
+      avatar.textContent = name.charAt(0).toUpperCase();
+      avatar.style.background = '#EDEAE2';
+      avatar.style.color = '#6B7280';
+    } else {
+      avatar.textContent = '?';
+      avatar.style.background = '#EDEAE2';
+      avatar.style.color = '#6B7280';
+    }
+  }
+};
 function goToPage(idx, animate = true) {
   if (idx < 0 || idx >= TOTAL_PAGES) return;
   currentPage = idx;
