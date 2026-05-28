@@ -3,9 +3,6 @@
 // ============================================================
 const KIDS_GRAMMAR_LEVELS = [
 
-  // ╔══════════════════════════════════════════════════╗
-  // ║  KIDS BÖLÜMÜ                                    ║
-  // ╚══════════════════════════════════════════════════╝
   {
     id: 'kids',
     name: 'KIDS',
@@ -3816,54 +3813,12 @@ const KIDS_GRAMMAR_LEVELS = [
   },
 
 ];
-// ============================================================
-//  WORDPATH — VERBS DATA (Feil — Məlum növ)
-//  Bu faylı KIDS_GRAMMAR_LEVELS array-inin sonuna push et:
-//    KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
-//  və ya birbaşa LEVELS-ə:
-//    LEVELS.push(VERBS_LEVEL);
-// ============================================================
 
 const VERBS_LEVEL = {
   id: 'verbs',
   name: 'VERBS',
   icon: '⚡',
   color: '#F59E0B',
-
-  // ══════════════════════════════════════════════════════════
-  //  BADGE-LƏR
-  // ══════════════════════════════════════════════════════════
-  badges: [
-    {
-      id: 'indefinite_master',
-      title: 'Indefinite Master',
-      description: 'Qeyri-müəyyən zaman formalarını tamamla',
-      icon: '🕐',
-      unlockedBy: 'test_1', // Bölmə 1–4 testini bitirdikdə
-    },
-    {
-      id: 'continuous_master',
-      title: 'Continuous Master',
-      description: 'Davamedici zaman formalarını tamamla',
-      icon: '🔄',
-      unlockedBy: 'test_2', // Bölmə 5–6 testini bitirdikdə
-    },
-    {
-      id: 'perfect_master',
-      title: 'Perfect Master',
-      description: 'Bitmiş zaman formalarını tamamla',
-      icon: '✅',
-      unlockedBy: 'test_3', // Bölmə 7–8 testini bitirdikdə
-    },
-    {
-      id: 'tenses_master',
-      title: 'Tenses Master',
-      description: 'Bütün testləri bitir',
-      icon: '🏆',
-      unlockedBy: 'final_test',
-    },
-  ],
-
   quizzes: [
 
    
