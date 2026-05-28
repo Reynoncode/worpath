@@ -56,11 +56,10 @@ const KIDS_GRAMMAR_LEVELS = [
 },
 
   // index: 1 — Dərs 1.1
-      {
-        type: 'grammar_lesson',
-        title: 'Dərs 1.1 — Sadə, düzəltmə, mürəkkəb isimlər',
-        cards: [
-
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Sadə, düzəltmə, mürəkkəb isimlər',
+  cards: [
           // ── Ekran 1: Giriş ───────────────────────────────
           {
             type: 'lesson',
