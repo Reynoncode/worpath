@@ -3,10 +3,10 @@
 import { auth, db } from "./firebase.js";
 import {
   collection, doc, addDoc, getDocs, query,
-  where, getDoc, serverTimestamp, onSnapshot, getDocsFromServer
+  where, getDoc, setDoc, serverTimestamp, getDocsFromServer
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// ─── Səviyyə konfiqurasiyası (stats-ui.js ilə eyni) ─────────────────────────
+// ─── Səviyyə konfiqurasiyası ─────────────────────────────────────────────────
 const LEVELS = [
   { label: "A1", color: "#C0392B", total: 123 },
   { label: "A2", color: "#E67E22", total: 93  },
@@ -17,8 +17,8 @@ const LEVELS = [
 ];
 
 const STATUS_PHASE_MAP = {
-  'completed': 1, 'phase2_unlocked': 1,
-  'phase2_completed': 2, 'phase3_unlocked': 2, 'level_done': 3,
+  "completed": 1, "phase2_unlocked": 1,
+  "phase2_completed": 2, "phase3_unlocked": 2, "level_done": 3,
 };
 
 // ─── Tələbə datasından irəliləmə hesabla ────────────────────────────────────
@@ -85,7 +85,7 @@ function renderStudentDropdown(userData, displayName) {
         <div style="flex:1;height:6px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
           <div style="width:${d.pct}%;height:100%;background:${lv.color};border-radius:99px;"></div>
         </div>
-        <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${d.pct > 0 ? lv.color : '#C4B8A8'};">${d.pct}%</span>
+        <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${d.pct > 0 ? lv.color : "#C4B8A8"};">${d.pct}%</span>
         <span style="font-size:11px;color:#9CA3AF;width:52px;text-align:right;">${d.done}/${d.total}</span>
       </div>
     `;
@@ -122,7 +122,6 @@ function renderStudentDropdown(userData, displayName) {
 
   return `
     <div style="padding:14px;background:#F5F0E8;border-radius:0 0 12px 12px;">
-      <!-- Ümumi rəqəmlər -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;">
         <div style="background:#EDEAE2;border-radius:10px;padding:10px 12px;">
           <div style="font-size:20px;font-weight:700;color:#1A1A1A;">${p.totalLearned}</div>
@@ -138,13 +137,11 @@ function renderStudentDropdown(userData, displayName) {
         </div>
       </div>
 
-      <!-- Səviyyə irəliləməsi -->
       <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
         <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Səviyyə üzrə irəliləmə</div>
         ${levelRows}
       </div>
 
-      <!-- Səhv analizi -->
       <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Səhv analizi</div>
       ${errHTML}
     </div>
@@ -157,6 +154,75 @@ async function fetchStudentData(email) {
   const snap = await getDocsFromServer(q);
   if (snap.empty) return null;
   return snap.docs[0].data();
+}
+
+// ─── Tələbəyə "student" rolu ver ─────────────────────────────────────────────
+// Sinif otağına əlavə olunanda həmin mailin sahibi tələbə statusu alır.
+// Əgər hesab hələ açılmayıbsa, users kolleksiyasında placeholder yazırıq;
+// hesab açılanda onAuthStateChanged onun uid-ini tapıb rolu tətbiq edəcək.
+async function grantStudentRole(email, classId) {
+  const lowerEmail = email.toLowerCase();
+
+  // users kolleksiyasında həmin emaili axtar
+  const q    = query(collection(db, "users"), where("email", "==", lowerEmail));
+  const snap = await getDocsFromServer(q);
+
+  if (!snap.empty) {
+    // Hesab var — role: "student" əlavə et
+    const userDoc = snap.docs[0];
+    const { updateDoc, arrayUnion } = await import(
+      "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+    );
+    await updateDoc(doc(db, "users", userDoc.id), {
+      role:            "student",
+      enrolledClasses: arrayUnion(classId),
+    });
+  } else {
+    // Hesab yoxdur — pendingStudents-ə yaz (giriş edəndə tətbiq olunacaq)
+    await setDoc(doc(db, "pendingStudents", lowerEmail.replace(/[@.]/g, "_")), {
+      email:    lowerEmail,
+      classId,
+      role:     "student",
+      addedAt:  serverTimestamp(),
+    });
+  }
+}
+
+// ─── Tələbə rolunu ləğv et ───────────────────────────────────────────────────
+async function revokeStudentRole(email, classId) {
+  const lowerEmail = email.toLowerCase();
+  const q    = query(collection(db, "users"), where("email", "==", lowerEmail));
+  const snap = await getDocsFromServer(q);
+
+  if (snap.empty) {
+    // pendingStudents-dən sil
+    const { deleteDoc } = await import(
+      "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+    );
+    const pendingRef = doc(db, "pendingStudents", lowerEmail.replace(/[@.]/g, "_"));
+    await deleteDoc(pendingRef).catch(() => {});
+    return;
+  }
+
+  const userDoc  = snap.docs[0];
+  const userData = userDoc.data();
+  const { updateDoc, arrayRemove } = await import(
+    "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+  );
+
+  const updatedClasses = (userData.enrolledClasses || []).filter(c => c !== classId);
+
+  if (updatedClasses.length === 0) {
+    // Başqa sinifdə deyilsə rolu sil
+    await updateDoc(doc(db, "users", userDoc.id), {
+      role:            "guest",
+      enrolledClasses: [],
+    });
+  } else {
+    await updateDoc(doc(db, "users", userDoc.id), {
+      enrolledClasses: arrayRemove(classId),
+    });
+  }
 }
 
 // ─── Sinif siyahısını yüklə ─────────────────────────────────────────────────
@@ -175,6 +241,10 @@ async function createClass(name, studentEmails, teacherUid, teacherEmail) {
     students:  studentEmails,
     createdAt: serverTimestamp()
   });
+
+  // Hər tələbəyə student rolu ver
+  await Promise.all(studentEmails.map(email => grantStudentRole(email, ref.id)));
+
   return ref.id;
 }
 
@@ -196,6 +266,9 @@ async function _addStudentToClass(classId) {
   );
   await updateDoc(ref, { students: arrayUnion(email) });
 
+  // Tələbəyə student rolu ver
+  await grantStudentRole(email, classId);
+
   input.value = "";
   const updatedSnap = await getDoc(ref);
   await renderClassDetail({ id: classId, ...updatedSnap.data() }, "class-detail-container");
@@ -211,6 +284,9 @@ async function _removeStudentFromClass(classId, email) {
   );
   await updateDoc(ref, { students: arrayRemove(email) });
 
+  // Tələbənin rolunu ləğv et
+  await revokeStudentRole(email, classId);
+
   const updatedSnap = await getDoc(ref);
   await renderClassDetail({ id: classId, ...updatedSnap.data() }, "class-detail-container");
 }
@@ -222,7 +298,6 @@ async function renderClassDetail(classData, containerId) {
 
   container.innerHTML = `<div style="text-align:center;padding:20px;color:#9CA3AF;font-size:13px;">Yüklənir...</div>`;
 
-  // Hər tələbənin datasını çək
   const students = await Promise.all(
     classData.students.map(async (email) => {
       const data = await fetchStudentData(email);
@@ -231,7 +306,6 @@ async function renderClassDetail(classData, containerId) {
     })
   );
 
-  // İrəliləməyə görə sırala (öyrənilmiş söz sayı)
   students.sort((a, b) => (b.progress?.totalLearned || 0) - (a.progress?.totalLearned || 0));
 
   const medals = ["🥇", "🥈", "🥉"];
@@ -263,7 +337,13 @@ async function renderClassDetail(classData, containerId) {
             style="background:none;border:none;color:#FCA5A5;font-size:18px;cursor:pointer;padding:0 2px;flex-shrink:0;line-height:1;">×</button>
         </div>
         <div id="drop-${safeEmail}" style="display:none;">
-          ${st.data ? renderStudentDropdown(st.data, st.displayName) : '<div style="padding:16px;text-align:center;color:#9CA3AF;font-size:13px;">Bu tələbə hələ giriş etməyib</div>'}
+          ${st.data
+            ? renderStudentDropdown(st.data, st.displayName)
+            : `<div style="padding:16px;text-align:center;color:#9CA3AF;font-size:13px;">
+                Bu tələbə hələ giriş etməyib
+                <div style="font-size:11px;margin-top:4px;color:#C4B8A8;">Sinif otağına əlavə edilib, tezliklə aktivləşəcək</div>
+               </div>`
+          }
         </div>
       </div>
     `;
@@ -274,13 +354,11 @@ async function renderClassDetail(classData, containerId) {
   container.innerHTML = `
     <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;overflow:hidden;">
 
-      <!-- Sinif başlığı + düymələr -->
       <div style="padding:12px 14px;background:#F5F0E8;border-bottom:1px solid #E8E2D9;display:flex;align-items:center;gap:8px;">
         <div style="flex:1;min-width:0;">
           <div style="font-size:14px;font-weight:700;color:#1A1A1A;">${classData.name}</div>
           <div style="font-size:12px;color:#9CA3AF;">${students.length} tələbə</div>
         </div>
-        <!-- + Tələbə düyməsi -->
         <button onclick="ClassroomManager._toggleAddStudent('${safeClassId}')"
           id="toggle-add-student-btn"
           style="display:flex;align-items:center;gap:5px;background:#1A1A1A;color:#fff;border:none;border-radius:99px;
@@ -290,8 +368,7 @@ async function renderClassDetail(classData, containerId) {
           </svg>
           Tələbə
         </button>
-        <!-- Ev tapşırığı düyməsi -->
-        <button onclick="ClassroomManager._openHomeworkPanel('${safeClassId}', '${classData.name.replace(/'/g,"\\'")}') "
+        <button onclick="ClassroomManager._openHomeworkPanel('${safeClassId}', '${classData.name.replace(/'/g, "\\'")}')"
           style="display:flex;align-items:center;gap:5px;background:#FAEEDA;color:#633806;border:1px solid #FAC775;border-radius:99px;
                  padding:7px 13px;font-size:12px;font-weight:600;cursor:pointer;flex-shrink:0;white-space:nowrap;">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -303,12 +380,14 @@ async function renderClassDetail(classData, containerId) {
         </button>
       </div>
 
-      ${rows || '<div style="padding:20px;text-align:center;color:#9CA3AF;font-size:13px;">Tələbə yoxdur</div>'}
+      ${rows || `<div style="padding:20px;text-align:center;color:#9CA3AF;font-size:13px;">Tələbə yoxdur</div>`}
     </div>
 
-    <!-- Tələbə əlavə et (default gizli) -->
     <div id="add-student-panel" style="display:none;margin-top:10px;background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;">
       <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:8px;">Yeni tələbə əlavə et</div>
+      <div style="font-size:11px;color:#9CA3AF;margin-bottom:8px;">
+        Tələbənin Gmail ünvanını daxil edin. Əlavə edilən tələbə saytda giriş etdikdə Grammar və Reading/Listening bölümləri avtomatik açılacaq.
+      </div>
       <div style="display:flex;gap:8px;">
         <input id="add-student-input" type="email" placeholder="telebe@gmail.com"
           style="flex:1;padding:10px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:13px;background:#F9F7F3;outline:none;" />
@@ -317,7 +396,6 @@ async function renderClassDetail(classData, containerId) {
       </div>
     </div>
 
-    <!-- Ev tapşırığı panel (default gizli) -->
     <div id="homework-panel" style="display:none;margin-top:10px;background:#F5F0E8;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;">
     </div>
   `;
@@ -373,7 +451,6 @@ function _toggleStudent(key) {
     if (chev) chev.textContent = "▼";
     openDropdowns.delete(key);
   } else {
-    // Başqalarını bağla
     openDropdowns.forEach(k => {
       const d = document.getElementById(`drop-${k}`);
       const c = document.getElementById(`chev-${k}`);
@@ -396,7 +473,6 @@ async function openClassroomModal() {
     return;
   }
 
-  // Modal varsa sil
   const existing = document.getElementById("classroom-modal");
   if (existing) existing.remove();
 
@@ -412,7 +488,6 @@ async function openClassroomModal() {
   `;
 
   modal.innerHTML = `
-    <!-- Header -->
     <div style="display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid #E8E2D9;flex-shrink:0;">
       <button onclick="document.getElementById('classroom-modal').remove()"
         style="background:none;border:none;cursor:pointer;padding:4px;color:#9CA3AF;display:flex;align-items:center;justify-content:center;">
@@ -423,7 +498,6 @@ async function openClassroomModal() {
       <span style="font-size:16px;font-weight:700;color:#1A1A1A;">Sinif Otağı</span>
     </div>
 
-    <!-- İçərik -->
     <div style="flex:1;overflow-y:auto;padding:16px 18px 24px;" id="classroom-content">
       ${renderClassList(classes)}
     </div>
@@ -466,16 +540,17 @@ function _showCreateForm() {
 
       <div style="font-size:15px;font-weight:700;color:#1A1A1A;margin-bottom:14px;">Yeni Sinif Yarat</div>
 
-      <!-- Sinif adı -->
       <div style="margin-bottom:12px;">
         <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:5px;">Sinif adı</div>
         <input id="class-name-input" placeholder="məs: 7A, İngilis qrupu 1"
           style="width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:14px;background:#fff;outline:none;" />
       </div>
 
-      <!-- Tələbə emailləri -->
       <div style="margin-bottom:14px;">
         <div style="font-size:12px;font-weight:600;color:#6B7280;margin-bottom:5px;">Tələbə Gmail-ləri</div>
+        <div style="font-size:11px;color:#9CA3AF;margin-bottom:8px;">
+          Əlavə etdiyiniz tələbələr saytda giriş etdikdə Grammar və Reading/Listening bölümləri avtomatik açılacaq.
+        </div>
         <div id="email-list" style="margin-bottom:8px;"></div>
         <div style="display:flex;gap:8px;">
           <input id="email-input" type="email" placeholder="telebe@gmail.com"
@@ -526,8 +601,8 @@ function _renderEmailList() {
 
 // ─── Sinif yarat (submit) ────────────────────────────────────────────────────
 async function _submitCreate() {
-  const user  = auth.currentUser;
-  const name  = document.getElementById("class-name-input")?.value.trim();
+  const user   = auth.currentUser;
+  const name   = document.getElementById("class-name-input")?.value.trim();
   const emails = window._pendingEmails || [];
 
   if (!name) { alert("Sinif adı yazın."); return; }
