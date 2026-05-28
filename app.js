@@ -1979,8 +1979,7 @@ function loadProgress() {
 
       const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
       if (!progress[lvl.id][i]) {
-const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' || lvl.id === 'indirect_speech'; || lvl.id === 'sequence_tenses'; || lvl.id === 'adjectives';    } else if (isExam && progress[lvl.id][i] === 'locked') {
-        progress[lvl.id][i] = 'unlocked';
+const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' || lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses' || lvl.id === 'adjectives';        progress[lvl.id][i] = 'unlocked';
       }
     }
   });
