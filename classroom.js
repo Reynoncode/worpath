@@ -154,27 +154,7 @@ async function fetchStudentData(email) {
   const snap = await getDocsFromServer(q);
   if (snap.empty) return null;
   return snap.docs[0].data();
-}
 
-// ─── Tələbəyə "student" rolu ver ─────────────────────────────────────────────
-// Sinif otağına əlavə olunanda həmin mailin sahibi tələbə statusu alır.
-// Əgər hesab hələ açılmayıbsa, users kolleksiyasında placeholder yazırıq;
-// hesab açılanda onAuthStateChanged onun uid-ini tapıb rolu tətbiq edəcək.
-async function revokeStudentRole(email, classId) {
-  const lowerEmail = email.toLowerCase();
-
-  // classes/{classId}.students-dən emaili çıxar
-  const { updateDoc, arrayRemove, deleteDoc } = await import(
-    "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
-  );
-  await updateDoc(doc(db, "classes", classId), {
-    students: arrayRemove(lowerEmail),
-  });
-
-  // pendingStudents-dən də sil (hesab açılmayıbsa)
-  const pendingRef = doc(db, "pendingStudents", lowerEmail.replace(/[@.]/g, "_"));
-  await deleteDoc(pendingRef).catch(() => {});
-}
 
 // ─── Tələbə rolunu ləğv et ───────────────────────────────────────────────────
 async function revokeStudentRole(email, classId) {
