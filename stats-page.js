@@ -167,7 +167,7 @@ const StatsPage = (() => {
       <div style="background:#F5F0E8;min-height:100vh;padding:20px 20px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
 
         <!-- Başlıq -->
-// render() içindəki "Başlıq" div-ini bununla əvəzləyin:
+
 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
   <span style="font-size:22px;font-weight:700;color:#1A1A1A;">Statistika</span>
   <span style="display:flex;align-items:center;gap:5px;background:#FAEEDA;color:#633806;
