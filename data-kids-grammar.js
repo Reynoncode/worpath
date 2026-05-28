@@ -8752,6 +8752,346 @@ const SEQUENCE_TENSES_LEVEL = {
 
   ],
 };
+// ============================================================
+//  WORDPATH — ADJECTIVES DATA (Sifət)
+//  Data faylının sonuna əlavə et:
+//
+//  KIDS_GRAMMAR_LEVELS.push(ADJECTIVES_LEVEL);
+//
+//  app.js — EXAM_IDS-ə əlavə et:
+//  'adjectives': new Set([])
+//
+//  app.js — renderLevels()-də əlavə et:
+//  } else if (lvl.id === 'adjectives') {
+//    const grammarList = document.getElementById('grammar-list');
+//    if (grammarList) grammarList.appendChild(card);
+//  }
+//
+//  app.js — renderQuizPath()-də əlavə et:
+//  if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' ||
+//      lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses' ||
+//      lvl.id === 'adjectives') {
+//    return renderGrammarPath(lvl, li);
+//  }
+//
+//  app.js — loadProgress()-də əlavə et:
+//  const isOpenSection = ... || lvl.id === 'adjectives';
+// ============================================================
+
+const ADJECTIVES_LEVEL = {
+  id: 'adjectives',
+  name: 'ADJECTIVES',
+  icon: '🎨',
+  color: '#F59E0B',
+
+  quizzes: [
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 1 — Sifətin növləri və şəkilçiləri              ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── index: 0 — Qrup 1 bölücüsü ───────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Qrup 1 — Sifətin növləri və şəkilçiləri',
+    },
+
+    // ── index: 1 — Bölmə 1 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 1 — Sifət nədir və növləri',
+    },
+
+    // ── index: 2 — Dərs 1.1 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.1 — Sifət nədir?',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.1 — Sifət nədir?',
+          content: 'Sifət şəxs və ya əşyanın əlamətini, keyfiyyətini bildirir.\n\n✦ a clever boy\n✦ a long street\n✦ green leaves\n\nSifət aid olduğu isimdən əvvəl gəlir.\nİsim hansı halda, cinsdə, miqdarda olsun — sifət bir formada qalır.\n\n✦ an interesting book\n✦ five interesting books\n\nSifət zərflə təyin oluna bilir:\n✦ The task was too difficult.',
+        },
+      ],
+    },
+
+    // ── index: 3 — Dərs 1.2 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.2 — Sifətin növləri: sadə, düzəltmə, mürəkkəb',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.2 — Sifətin növləri',
+          content: '1. Sadə sifətlər:\n   long, short, black, cool\n\n2. Düzəltmə sifətlər — şəkilçi ilə düzəlir:\n   -less → hopeless\n   -like → manlike, womanlike\n   -ish → boyish, childish\n   -ed → blue-eyed, lion-hearted\n   -ful → careful, useful\n   -able/-ible → eatable, responsible\n   -ous → famous, dangerous\n   -y → windy, cloudy, foggy\n   -ly → weekly, daily, monthly\n   -ic → patriotic, cosmic\n   -ive → active, passive\n   -en → golden, wooden\n\n3. Mürəkkəb sifətlər:\n   blue-eyed, snow-white, peace-loving',
+        },
+      ],
+    },
+
+    // ── index: 4 — Dərs 1.3 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1.3 — Əsli və nisbi sifətlər',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 1.3 — Əsli və nisbi sifətlər',
+          content: 'Sifətlər məna baxımından 2 qrupa bölünür:\n\n1. Əsli sifətlər — kökdən sifətlərdir:\n   long, short, big, clever\n\n2. Nisbi sifətlər — "-en" şəkilçisi vasitəsilə düzəlir:\n   gold → golden\n   wool → woolen\n   wood → wooden\n   silk → silken\n\nQAYDA: Əsli sifətlərin dərəcəsi var.\nNisbi sifətlərin dərəcəsi olmur.',
+        },
+      ],
+    },
+
+    // ── index: 5 — Mini-quiz 1 ────────────────────────────────
+    [
+      { en: '"hopeless" sözündəki şəkilçi hansıdır?', tr: '-less', wrong: '-ful' },
+      { en: '"golden" sözü hansı sifət növünə aiddir?', tr: 'Nisbi sifət', wrong: 'Əsli sifət' },
+      { en: '"careful" sözündəki şəkilçi hansıdır?', tr: '-ful', wrong: '-less' },
+      { en: '"blue-eyed" hansı növ sifətdir?', tr: 'Mürəkkəb', wrong: 'Sadə' },
+      { en: '"dangerous" sözündəki şəkilçi hansıdır?', tr: '-ous', wrong: '-ive' },
+      { en: 'Sifət isimdən ___ gəlir.', tr: 'əvvəl', wrong: 'sonra' },
+      { en: '"windy" sözündəki şəkilçi hansıdır?', tr: '-y', wrong: '-ly' },
+      { en: '"weekly" sözündəki şəkilçi hansıdır?', tr: '-ly', wrong: '-y' },
+      { en: '"wooden" sözü hansı şəkilçi ilə düzəlib?', tr: '-en', wrong: '-ous' },
+      { en: '"active" sözündəki şəkilçi hansıdır?', tr: '-ive', wrong: '-ic' },
+    ],
+
+    // ── index: 6 — Bölmə 2 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 2 — Sifətin dərəcələri',
+    },
+
+    // ── index: 7 — Dərs 2.1 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.1 — Sintetik və analitik yol',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.1 — Sintetik və analitik yol',
+          content: 'Sifətin 3 dərəcəsi var:\n1. Adi dərəcə (positive)\n2. Müqayisə dərəcəsi (comparative)\n3. Üstünlük dərəcəsi (superlative)\n\nSİNTETİK YOL (şəkilçi ilə):\n→ Birhecalı sifətlər\n→ -er, -e, -ow, -fle, -y ilə bitən ikihecalı sifətlər\nlong → longer → longest\nshort → shorter → shortest\nhappy → happier → happiest\n\nANALİTİK YOL (köməkçi söz ilə):\n→ Çoxhecalı sifətlər\n→ Digər ikihecalı sifətlər\ninteresting → more interesting → most interesting',
+        },
+      ],
+    },
+
+    // ── index: 8 — Dərs 2.2 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.2 — Adi dərəcə: as…as, not so…as',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.2 — Adi dərəcə: as…as, not so…as',
+          content: 'Adi dərəcədə sifət morfoloji formaya malik olmur.\n\nas … as → eyni dərəcəli keyfiyyət:\n✦ My room is as large as yours.\n   (Mənim otağım səninki kimi böyükdür)\n\nnot so … as / not as … as → qeyri-bərabər keyfiyyət:\n✦ My brother is not so strong as yours.\n   (Mənim qardaşım sənin kimi güclü deyil)\n\nQAYDA: as…as, not so…as, too, very, quite, rather — sifət ADİ dərəcədə olur.',
+        },
+      ],
+    },
+
+    // ── index: 9 — Dərs 2.3 ───────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.3 — Müqayisə dərəcəsi: than, much',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.3 — Müqayisə dərəcəsi: than, much',
+          content: 'Müqayisə dərəcəsi bir şəxsin/əşyanın digərindən üstün olduğunu bildirir.\nBağlayıcı: than (-dan/-dən, daha)\n\n✦ My room is larger than yours.\n✦ This question is more important than that one.\n\n"much" ilə qüvvətləndirmə:\n✦ This table is much thinner than that one.\n✦ This book is much more interesting than that one.\n\nQAYDA: than, much, a little → sifət MÜQAYİSƏ dərəcəsində olur.\nMüqayisə dərəcəsindən sonra tək sayıla bilən isim gələrsə → a/an işlənir.',
+        },
+      ],
+    },
+
+    // ── index: 10 — Dərs 2.4 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2.4 — Üstünlük dərəcəsi: the + est / most',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 2.4 — Üstünlük dərəcəsi',
+          content: 'Üstünlük dərəcəsi əşya/şəxsin öz sinfindəki ən yüksək keyfiyyətini bildirir.\n\n✦ Ali is the strongest boy in our class.\n✦ My grandfather is the oldest man in the village.\n✦ My brother is the cleverest of all the boys at school.\n\nQAYDA: Üstünlük dərəcəsinin qarşısında həmişə "the" işlənir.\n\nTanıma əlaməti — cümlədə bunlar varsa → ÜSTÜNLÜK dərəcəsi:\nthe · ever · of all · which of · in the world\nin class · at school · in the family · among boys',
+        },
+      ],
+    },
+
+    // ── index: 11 — Mini-quiz 2 ───────────────────────────────
+    [
+      { en: '"happy" sifətinin müqayisə dərəcəsi necədir?', tr: 'happier', wrong: 'more happy' },
+      { en: '"interesting" sifətinin üstünlük dərəcəsi necədir?', tr: 'most interesting', wrong: 'interestingest' },
+      { en: 'My room is as large ___ yours.', tr: 'as', wrong: 'than' },
+      { en: 'This book is ___ more interesting than that one.', tr: 'much', wrong: 'very' },
+      { en: 'Ali is ___ strongest boy in our class.', tr: 'the', wrong: 'a' },
+      { en: 'Cümlədə "than" varsa sifət hansı dərəcədə olur?', tr: 'Müqayisə dərəcəsi', wrong: 'Üstünlük dərəcəsi' },
+      { en: 'Cümlədə "of all" varsa sifət hansı dərəcədə olur?', tr: 'Üstünlük dərəcəsi', wrong: 'Müqayisə dərəcəsi' },
+      { en: '"long" sifətinin sintetik yolla üstünlük dərəcəsi necədir?', tr: 'longest', wrong: 'most long' },
+      { en: 'My brother is not so strong ___ yours.', tr: 'as', wrong: 'than' },
+      { en: 'Cümlədə "very" varsa sifət hansı dərəcədə olur?', tr: 'Adi dərəcə', wrong: 'Müqayisə dərəcəsi' },
+    ],
+
+    // ── index: 12 — Test 1 ────────────────────────────────────
+    // Sifətin növləri + dərəcələr (Bölmə 1–2) · 12 sual
+    [
+      { en: '"useful" sözündəki şəkilçi hansıdır?', tr: '-ful', wrong: '-less' },
+      { en: '"short" sifətinin müqayisə dərəcəsi necədir?', tr: 'shorter', wrong: 'more short' },
+      { en: 'She is ___ clever as her sister.', tr: 'as', wrong: 'so' },
+      { en: 'This is ___ longest street in the city.', tr: 'the', wrong: 'a' },
+      { en: '"responsible" sözündəki şəkilçi hansıdır?', tr: '-ible', wrong: '-ful' },
+      { en: 'He is much ___ than his brother.', tr: 'stronger', wrong: 'strong' },
+      { en: '"wooden" hansı sifət növünə aiddir?', tr: 'Nisbi sifət', wrong: 'Əsli sifət' },
+      { en: 'Cümlədə "in the world" varsa sifət hansı dərəcədə olur?', tr: 'Üstünlük dərəcəsi', wrong: 'Müqayisə dərəcəsi' },
+      { en: '"patriotic" sözündəki şəkilçi hansıdır?', tr: '-ic', wrong: '-ive' },
+      { en: 'My room is ___ larger than yours.', tr: 'much', wrong: 'very' },
+      { en: '"childish" sözündəki şəkilçi hansıdır?', tr: '-ish', wrong: '-ly' },
+      { en: '"interesting" sifəti neçə hecalıdır və dərəcəsi necə düzəlir?', tr: 'Çoxhecalı — analitik yol', wrong: 'Birhecalı — sintetik yol' },
+    ],
+
+    // ══════════════════════════════════════════════════════════
+    // ║  QRUP 2 — İstisnalar və xüsusi formalar               ║
+    // ══════════════════════════════════════════════════════════
+
+    // ── index: 13 — Qrup 2 bölücüsü ──────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Qrup 2 — Qeyri-düzgün formalar və xüsusi sifətlər',
+    },
+
+    // ── index: 14 — Bölmə 3 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 3 — Qeyri-düzgün müqayisə formaları',
+    },
+
+    // ── index: 15 — Dərs 3.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3.1 — Kökdən dəyişən sifətlər',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 3.1 — Kökdən dəyişən sifətlər',
+          content: 'Bəzi sifətlərin müqayisə və üstünlük dərəcəsi kökdən dəyişir:\n\ngood  → better  → best\nbad   → worse   → worst\nlittle → less   → least\nmany  ┐\nmuch  ┘ → more  → most\n\n✦ She is a good student. (adi)\n✦ She is better than me. (müqayisə)\n✦ She is the best in class. (üstünlük)',
+        },
+      ],
+    },
+
+    // ── index: 16 — Dərs 3.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3.2 — İki formalı sifətlər: far, near, old, late, little',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 3.2 — İki formalı sifətlər',
+          content: 'Bir neçə sifətin iki müqayisə forması var:\n\nfar   → farther/further → farthest/furthest\nnear  → nearer → nearest / next\nold   → older/elder → oldest/eldest\nlate  → later → last / latter → last\n\nfarther/farthest = məsafə\nfurther/furthest = məsafə VƏ "sonra, daha"\nnext = sıra ilə (the next year)\nnearest = ən yaxın məsafə\nelder/eldest = eyni ailədir (böyük qardaş)\nolder/oldest = yaş (ümumi)\nlatter = ikisindən axırıncısı\nlast = sonuncu, keçən',
+        },
+      ],
+    },
+
+    // ── index: 17 — Mini-quiz 3 ───────────────────────────────
+    [
+      { en: '"good" sifətinin müqayisə dərəcəsi necədir?', tr: 'better', wrong: 'gooder' },
+      { en: '"bad" sifətinin üstünlük dərəcəsi necədir?', tr: 'worst', wrong: 'baddest' },
+      { en: 'My elder brother lives in Moscow. "elder" burada nə mənadadır?', tr: 'Böyük (eyni ailə)', wrong: 'Daha yaşlı (ümumi)' },
+      { en: 'The shop is at the ___ end of the street. (məsafə)', tr: 'farthest', wrong: 'furthest' },
+      { en: 'I am ___ than my friend. (yaş, ümumi)', tr: 'older', wrong: 'elder' },
+      { en: '"many" sifətinin müqayisə dərəcəsi necədir?', tr: 'more', wrong: 'manier' },
+      { en: 'The ___ year he entered the institute. (sıra ilə)', tr: 'next', wrong: 'nearest' },
+      { en: 'QEYD: "elder" sifətindən sonra hansı bağlayıcı işlənmir?', tr: 'than', wrong: 'as' },
+    ],
+
+    // ── index: 18 — Bölmə 4 bölücüsü ─────────────────────────
+    {
+      type: 'section_divider',
+      title: 'Bölmə 4 — Xüsusi sifətlər: farther/further, elder/older, latter/last',
+    },
+
+    // ── index: 19 — Dərs 4.1 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.1 — farther/further, nearest/next fərqi',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.1 — farther/further, nearest/next fərqi',
+          content: 'farther / farthest → məsafə:\n✦ The shop is at the farthest end of the street.\n\nfurther / furthest → məsafə + "sonra, daha":\n✦ She refused to go any further.\n✦ What happened further? (Sonra nə baş verdi?)\n✦ Further discussion is not necessary. (Daha müzakirə lazım deyil)\n\nnearest → ən yaxın məsafə:\n✦ It is the nearest way to our village.\n\nnext → sıra ilə (o biri, gələn):\n✦ The next year he entered the institute.\n✦ I shall go to Moscow next year.',
+        },
+      ],
+    },
+
+    // ── index: 20 — Dərs 4.2 ──────────────────────────────────
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4.2 — elder/older, latter/last, later fərqi',
+      cards: [
+        {
+          type: 'lesson',
+          title: 'Dərs 4.2 — elder/older, latter/last, later fərqi',
+          content: 'older/oldest → ümumi yaş:\n✦ I am older than my friend.\n\nelder/eldest → eyni ailə üzvləri, yüksək rütbə:\n✦ My elder brother lives in Moscow.\n✦ She was the eldest child of the family.\n⚠️ elder-dən sonra "than" işlənmir!\n\nlater (than) → zamanla əlaqədar (gec):\n✦ It was later than I expected.\n\nlatter → sıra bildirir (ikisindən axırıncısı):\n✦ Tom and Brown are students. The latter studies here.\n\nlast → sonuncu, keçən:\n✦ We went to the theatre last week.',
+        },
+      ],
+    },
+
+    // ── index: 21 — Mini-quiz 4 ───────────────────────────────
+    [
+      { en: '"What happened ___?" (Sonra nə baş verdi?)', tr: 'further', wrong: 'farther' },
+      { en: 'She was ___ child of the family. (ən böyük — ailə)', tr: 'the eldest', wrong: 'the oldest' },
+      { en: 'It was ___ than I expected. (zamanla — gec)', tr: 'later', wrong: 'latter' },
+      { en: 'Tom and Brown are students. ___ studies here. (ikisindən axırıncısı)', tr: 'The latter', wrong: 'The last' },
+      { en: 'We went to the theatre ___ week. (keçən)', tr: 'last', wrong: 'latter' },
+      { en: 'It is ___ way to our village. (ən yaxın məsafə)', tr: 'the nearest', wrong: 'the next' },
+      { en: 'I am ___ than my friend. (ümumi yaş)', tr: 'older', wrong: 'elder' },
+    ],
+
+    // ── index: 22 — Test 2 ────────────────────────────────────
+    // Qeyri-düzgün formalar + xüsusi sifətlər (Bölmə 3–4) · 12 sual
+    [
+      { en: '"good" sifətinin üstünlük dərəcəsi necədir?', tr: 'best', wrong: 'goodest' },
+      { en: '"bad" sifətinin müqayisə dərəcəsi necədir?', tr: 'worse', wrong: 'badder' },
+      { en: 'My ___ brother lives in Baku. (böyük — eyni ailə)', tr: 'elder', wrong: 'older' },
+      { en: 'I am ___ than my friend. (yaş — ümumi)', tr: 'older', wrong: 'elder' },
+      { en: '___ discussion is not necessary. (daha, bundan əlavə)', tr: 'Further', wrong: 'Farther' },
+      { en: 'The shop is at ___ end of the street. (məsafə — ən uzaq)', tr: 'the farthest', wrong: 'the furthest' },
+      { en: 'It was ___ than I expected.', tr: 'later', wrong: 'latter' },
+      { en: '"little" sifətinin müqayisə dərəcəsi necədir?', tr: 'less', wrong: 'littler' },
+      { en: 'The ___ year he could enter the institute. (sıra — o biri il)', tr: 'next', wrong: 'nearest' },
+      { en: 'She was ___ child of the family.', tr: 'the eldest', wrong: 'the oldest' },
+      { en: '"much" sifətinin üstünlük dərəcəsi necədir?', tr: 'most', wrong: 'muchest' },
+      { en: 'We went to the theatre ___ week.', tr: 'last', wrong: 'latter' },
+    ],
+
+    // ── index: 23 — Final Test ────────────────────────────────
+    // Adjectives tam test · 20+ sual
+    [
+      { en: '"hopeless" sözündəki şəkilçi hansıdır?', tr: '-less', wrong: '-ful' },
+      { en: '"golden" hansı sifət növünə aiddir?', tr: 'Nisbi sifət', wrong: 'Əsli sifət' },
+      { en: '"long" sifətinin müqayisə dərəcəsi necədir?', tr: 'longer', wrong: 'more long' },
+      { en: 'My room is as large ___ yours.', tr: 'as', wrong: 'than' },
+      { en: 'Ali is ___ strongest boy in our class.', tr: 'the', wrong: 'a' },
+      { en: '"good" sifətinin müqayisə dərəcəsi necədir?', tr: 'better', wrong: 'gooder' },
+      { en: '"bad" sifətinin üstünlük dərəcəsi necədir?', tr: 'worst', wrong: 'baddest' },
+      { en: 'Cümlədə "than" varsa sifət hansı dərəcədə olur?', tr: 'Müqayisə dərəcəsi', wrong: 'Üstünlük dərəcəsi' },
+      { en: 'Cümlədə "of all" varsa sifət hansı dərəcədə olur?', tr: 'Üstünlük dərəcəsi', wrong: 'Müqayisə dərəcəsi' },
+      { en: '"interesting" sifəti analitik yolla düzəlir. Müqayisə dərəcəsi necədir?', tr: 'more interesting', wrong: 'interestinger' },
+      { en: 'This book is ___ more interesting than that one.', tr: 'much', wrong: 'very' },
+      { en: 'My ___ brother lives in Moscow. (eyni ailə)', tr: 'elder', wrong: 'older' },
+      { en: 'I am ___ than my friend. (ümumi yaş)', tr: 'older', wrong: 'elder' },
+      { en: 'The shop is at the ___ end of the street. (məsafə)', tr: 'farthest', wrong: 'furthest' },
+      { en: '"Further discussion is not necessary." — "further" burada nə mənadadır?', tr: 'Daha, bundan əlavə', wrong: 'Daha uzaq məsafə' },
+      { en: 'It was ___ than I expected. (zamanla)', tr: 'later', wrong: 'latter' },
+      { en: 'Tom and Brown are here. ___ is my friend. (ikisindən axırıncısı)', tr: 'The latter', wrong: 'The last' },
+      { en: 'We went to the cinema ___ week.', tr: 'last', wrong: 'latter' },
+      { en: '"little" sifətinin üstünlük dərəcəsi necədir?', tr: 'least', wrong: 'littlest' },
+      { en: 'It is ___ way to our village. (ən yaxın məsafə)', tr: 'the nearest', wrong: 'the next' },
+      { en: 'She was ___ child of the family. (ən böyük — ailə)', tr: 'the eldest', wrong: 'the oldest' },
+      { en: '"childish" sözündəki şəkilçi hansıdır?', tr: '-ish', wrong: '-ic' },
+    ],
+
+  ],
+};
+
+// ── Sayta əlavə et ────────────────────────────────────────
+// Data faylının sonuna əlavə et (KIDS_GRAMMAR_LEVELS.forEach-dan əvvəl):
+//
+//   KIDS_GRAMMAR_LEVELS.push(ADJECTIVES_LEVEL);
 
 // ── Sayta əlavə et ────────────────────────────────────────
 // Data faylının sonuna əlavə et (KIDS_GRAMMAR_LEVELS.forEach-dan əvvəl):
@@ -8762,6 +9102,7 @@ const SEQUENCE_TENSES_LEVEL = {
 KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(PASSIVE_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(INDIRECT_SPEECH_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(ADJECTIVES_LEVEL);
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
 // LEVELS-ə birləşdir
 KIDS_GRAMMAR_LEVELS.forEach(lvl => LEVELS.push(lvl));
