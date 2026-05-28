@@ -281,7 +281,7 @@
   <script type="module" src="homework.js"></script>
   <script type="module" src="classroom.js"></script>
 
- <script>
+<script>
   Stats.updateStreak();
 
   document.getElementById('stats-close-btn').addEventListener('click', function () {
@@ -292,21 +292,23 @@
     if (window.ClassroomManager) ClassroomManager.open();
   });
 
- document.getElementById('header-profile-btn').addEventListener('click', function () {
-  const activeDot = document.querySelector('.nav-dot.active');
-  const currentPage = activeDot ? parseInt(activeDot.dataset.page) : -1;
+  document.getElementById('header-profile-btn').addEventListener('click', function () {
+    const activeDot = document.querySelector('.nav-dot.active');
+    const currentPage = activeDot ? parseInt(activeDot.dataset.page) : -1;
 
-  if (currentPage === 4 && window.__userRole === 'teacher') {
-    if (window.ClassroomManager) ClassroomManager.open();
-  } else {
+    if (currentPage === 4) {
+      if (window.ClassroomManager) {
+        ClassroomManager.open();
+        return;
+      }
+    }
+
     if (window.AuthManager) {
       const user = AuthManager.getCurrentUser();
       if (user) AuthManager.openProfileModal();
       else AuthManager.signIn();
     }
-  }
-});
-
+  });
 </script>
 
 </body>
