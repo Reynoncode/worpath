@@ -2589,8 +2589,7 @@ function renderQuizPath(lvl, li) {
   if (lvl.id === 'listening') {
   return renderListeningPath(lvl, li);
 }
-if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' || lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses' ||
-//      lvl.id === 'adjectives')) {
+if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' || lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses' || lvl.id === 'adjectives') {
   return renderGrammarPath(lvl, li);
 }
 
