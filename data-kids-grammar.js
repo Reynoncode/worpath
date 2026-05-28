@@ -6793,31 +6793,6 @@ const VERBS_LEVEL = {
 
   ],
 };
-
-// ============================================================
-//  WORDPATH — PASSIVE VOICE DATA (Məchul növ)
-//  Data faylının sonuna əlavə et:
-//
-//  KIDS_GRAMMAR_LEVELS.push(PASSIVE_LEVEL);
-//
-//  app.js — EXAM_IDS-ə əlavə et:
-//  'passive': new Set([])
-//
-//  app.js — renderLevels()-də əlavə et:
-//  } else if (lvl.id === 'passive') {
-//    const grammarList = document.getElementById('grammar-list');
-//    if (grammarList) grammarList.appendChild(card);
-//  }
-//
-//  app.js — renderQuizPath()-də əlavə et:
-//  if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive') {
-//    return renderGrammarPath(lvl, li);
-//  }
-//
-//  app.js — loadProgress()-də əlavə et:
-//  const isOpenSection = ... || lvl.id === 'passive';
-// ============================================================
-
 const PASSIVE_LEVEL = {
   id: 'passive',
   name: 'PASSIVE VOICE',
@@ -6825,10 +6800,6 @@ const PASSIVE_LEVEL = {
   color: '#10B981',
 
   quizzes: [
-
-    // ══════════════════════════════════════════════════════════
-    // ║  QRUP 1 — Qeyri-müəyyən zaman formalarının məchul növü ║
-    // ══════════════════════════════════════════════════════════
 
     // ── index: 0 — Qrup 1 bölücüsü ───────────────────────────
     {
@@ -6847,10 +6818,93 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 1.1 — Present Indefinite Passive',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 1.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nam/is/are + P II\nI am invited / He is invited\nSual: am/is/are əvvələ · İnkar: not\nAzərbaycanca: -ilir/-ilir/-ilir',
+          title: 'Present Indefinite Passive necə düzəlir?',
+          content: 'Məchul növdə işin icraçısı məlum olmur.\n\nDüzəlmə: am / is / are + P II',
+          table: [
+            ['Şəxs',      'Təsdiq'],
+            ['I',         'I am invited'],
+            ['You',       'You are invited'],
+            ['He / She',  'He is invited'],
+            ['We',        'We are invited'],
+            ['They',      'They are invited'],
+          ],
+          tip: 'am → I\nis → He, She, It\nare → You, We, They',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Sual və inkar forması',
+          content: 'Sual: am/is/are mübtədadan əvvələ keçir.\nİnkar: am/is/are + not əlavə edilir.',
+          table: [
+            ['Sual',              'İnkar'],
+            ['Am I invited?',     'I am not invited'],
+            ['Are you invited?',  'You are not invited'],
+            ['Is he invited?',    'He is not invited'],
+            ['Are we invited?',   'We are not invited'],
+            ['Are they invited?', 'They are not invited'],
+          ],
+          note: 'Azərbaycana tərcümə:\nis invited → dəvət edilir\nare invited → dəvət edilirlər',
+        },
+
+        // Ekran 3
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Present Indefinite Passive cümlələri:',
+          examples: [
+            { word: 'English is spoken here.',       az: 'Burada ingilis dilində danışılır.' },
+            { word: 'The letters are written.',      az: 'Məktublar yazılır.' },
+            { word: 'I am invited to the party.',    az: 'Mən ziyafətə dəvət edilirəm.' },
+            { word: 'The room is cleaned every day.', az: 'Otaq hər gün təmizlənir.' },
+          ],
+          tip: 'İcraçını bildirmək üçün "by" sözönü işlənir:\nThe letter is written by him.',
+        },
+
+        // Quiz
+        { en: '"I ___ invited."',                    tr: 'am',   wrong: 'is'   },
+        { en: '"She ___ invited."',                  tr: 'is',   wrong: 'are'  },
+        { en: '"They ___ invited."',                 tr: 'are',  wrong: 'is'   },
+        { en: '"English ___ spoken here."',          tr: 'is',   wrong: 'are'  },
+        { en: '"The books ___ sold."',               tr: 'are',  wrong: 'is'   },
+        { en: '"___ I invited?" — sual',             tr: 'Am',   wrong: 'Is'   },
+        { en: '"___ he called?" — sual',             tr: 'Is',   wrong: 'Are'  },
+        { en: '"I am not invited." — qısa?',         tr: 'I\'m not invited', wrong: 'I isn\'t invited' },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"The letter ___ written every day."',
+              options: ['am', 'are', 'is', 'be'],
+              answer: 'is',
+            },
+            {
+              q: '"They ___ invited to the meeting."',
+              options: ['am', 'is', 'be', 'are'],
+              answer: 'are',
+            },
+            {
+              q: '"___ English spoken here?" — sual',
+              options: ['Am', 'Do', 'Is', 'Are'],
+              answer: 'Is',
+            },
+            {
+              q: '"is invited" — Azərbaycanca?',
+              options: ['dəvət etdi', 'dəvət edilir', 'dəvət edəcək', 'dəvət etmişdi'],
+              answer: 'dəvət edilir',
+            },
+            {
+              q: 'Present Indefinite Passive düzəlmə qaydası?',
+              options: ['was/were + P II', 'have/has + P II', 'am/is/are + P II', 'will be + P II'],
+              answer: 'am/is/are + P II',
+            },
+          ],
         },
       ],
     },
@@ -6860,10 +6914,93 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 1.2 — Past Indefinite Passive',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 1.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nwas/were + P II\nI was invited / They were invited\nSual: was/were əvvələ · İnkar: not\nAzərbaycanca: -ildı/-ildi/-ildi',
+          title: 'Past Indefinite Passive necə düzəlir?',
+          content: 'Düzəlmə: was / were + P II',
+          table: [
+            ['Şəxs',      'Təsdiq'],
+            ['I',         'I was invited'],
+            ['You',       'You were invited'],
+            ['He / She',  'He was invited'],
+            ['We',        'We were invited'],
+            ['They',      'They were invited'],
+          ],
+          tip: 'was → I, He, She, It\nwere → You, We, They',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Sual və inkar forması',
+          content: 'Sual: was/were mübtədadan əvvələ keçir.\nİnkar: was/were + not əlavə edilir.',
+          table: [
+            ['Sual',               'İnkar'],
+            ['Was I invited?',     'I was not invited'],
+            ['Were you invited?',  'You were not invited'],
+            ['Was he invited?',    'He was not invited'],
+            ['Were we invited?',   'We were not invited'],
+            ['Were they invited?', 'They were not invited'],
+          ],
+          note: 'Azərbaycana tərcümə:\nwas invited → dəvət edildi\nwere invited → dəvət edildilər',
+        },
+
+        // Ekran 3
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Past Indefinite Passive cümlələri:',
+          examples: [
+            { word: 'The letter was written yesterday.',  az: 'Məktub dünən yazıldı.' },
+            { word: 'They were invited to the party.',    az: 'Onlar ziyafətə dəvət edildilər.' },
+            { word: 'The book was published in 2010.',    az: 'Kitab 2010-cu ildə çap edildi.' },
+            { word: 'The windows were broken.',           az: 'Pəncərələr sındırıldı.' },
+          ],
+          tip: 'İcraçı: by + isim\nThe letter was written by her.',
+        },
+
+        // Quiz
+        { en: '"I ___ invited yesterday."',              tr: 'was',  wrong: 'were'  },
+        { en: '"They ___ invited last week."',           tr: 'were', wrong: 'was'   },
+        { en: '"She ___ called last night."',            tr: 'was',  wrong: 'were'  },
+        { en: '"We ___ told about it."',                 tr: 'were', wrong: 'was'   },
+        { en: '"___ he invited?" — sual',                tr: 'Was',  wrong: 'Were'  },
+        { en: '"___ they told?" — sual',                 tr: 'Were', wrong: 'Was'   },
+        { en: '"was invited" — Azərbaycanca?',           tr: 'dəvət edildi',    wrong: 'dəvət edilir'   },
+        { en: '"were broken" — Azərbaycanca?',           tr: 'sındırıldılar',   wrong: 'sındırılırlar'  },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"The letter ___ written yesterday."',
+              options: ['is', 'are', 'were', 'was'],
+              answer: 'was',
+            },
+            {
+              q: '"They ___ invited last night."',
+              options: ['was', 'is', 'are', 'were'],
+              answer: 'were',
+            },
+            {
+              q: '"___ she called?" — sual',
+              options: ['Were', 'Are', 'Was', 'Is'],
+              answer: 'Was',
+            },
+            {
+              q: '"was written" — Azərbaycanca?',
+              options: ['yazılır', 'yazılacaq', 'yazıldı', 'yazılmışdı'],
+              answer: 'yazıldı',
+            },
+            {
+              q: 'Past Indefinite Passive düzəlmə qaydası?',
+              options: ['am/is/are + P II', 'had been + P II', 'will be + P II', 'was/were + P II'],
+              answer: 'was/were + P II',
+            },
+          ],
         },
       ],
     },
@@ -6873,17 +7010,112 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 1.3 — Future Indefinite Passive',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 1.3 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nshall be / will be + P II\nI shall be invited / He will be invited\nSual: shall/will əvvələ · İnkar: not',
+          title: 'Future Indefinite Passive necə düzəlir?',
+          content: 'Düzəlmə: shall be / will be + P II',
+          table: [
+            ['Şəxs',      'Təsdiq'],
+            ['I',         'I shall be invited'],
+            ['You',       'You will be invited'],
+            ['He / She',  'He will be invited'],
+            ['We',        'We shall be invited'],
+            ['They',      'They will be invited'],
+          ],
+          tip: 'shall be → I, We\nwill be → You, He, She, It, They',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Sual və inkar forması',
+          content: 'Sual: shall/will mübtədadan əvvələ keçir.\nİnkar: shall/will + not əlavə edilir.',
+          table: [
+            ['Sual',                   'İnkar'],
+            ['Shall I be invited?',    'I shall not be invited'],
+            ['Will you be invited?',   'You will not be invited'],
+            ['Will he be invited?',    'He will not be invited'],
+            ['Will they be invited?',  'They will not be invited'],
+          ],
+          note: 'Azərbaycana tərcümə:\nwill be invited → dəvət ediləcək\nshall be invited → dəvət ediləcəyəm',
+        },
+
+        // Ekran 3
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Future Indefinite Passive cümlələri:',
+          examples: [
+            { word: 'The letter will be sent tomorrow.', az: 'Məktub sabah göndəriləcək.' },
+            { word: 'I shall be invited to the party.',  az: 'Mən ziyafətə dəvət ediləcəyəm.' },
+            { word: 'The work will be done next week.',  az: 'İş gələn həftə görüləcək.' },
+            { word: 'New houses will be built here.',    az: 'Burada yeni evlər tikilecək.' },
+          ],
+        },
+
+        // Quiz
+        { en: '"I ___ invited." — Future Passive',       tr: 'shall be', wrong: 'will be'  },
+        { en: '"She ___ invited." — Future Passive',     tr: 'will be',  wrong: 'shall be' },
+        { en: '"They ___ told." — Future Passive',       tr: 'will be',  wrong: 'shall be' },
+        { en: '"We ___ invited." — Future Passive',      tr: 'shall be', wrong: 'will be'  },
+        { en: '"___ I be invited?" — sual',              tr: 'Shall',    wrong: 'Will'     },
+        { en: '"___ he be called?" — sual',              tr: 'Will',     wrong: 'Shall'    },
+        { en: '"will be sent" — Azərbaycanca?',          tr: 'göndəriləcək',   wrong: 'göndərildi'      },
+        { en: '"shall not be invited" — qısa?',          tr: 'shan\'t be invited', wrong: 'won\'t be invited' },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"The letter ___ sent tomorrow."',
+              options: ['is', 'was', 'will be', 'has been'],
+              answer: 'will be',
+            },
+            {
+              q: '"I ___ invited." — Future Passive, I şəxsi',
+              options: ['will be', 'am', 'shall be', 'was'],
+              answer: 'shall be',
+            },
+            {
+              q: '"___ she be called?" — sual',
+              options: ['Shall', 'Is', 'Was', 'Will'],
+              answer: 'Will',
+            },
+            {
+              q: '"will be built" — Azərbaycanca?',
+              options: ['tikilir', 'tikildi', 'tikilmişdir', 'tikilecək'],
+              answer: 'tikilecək',
+            },
+            {
+              q: 'Future Indefinite Passive düzəlmə qaydası?',
+              options: ['was/were + P II', 'am/is/are + P II', 'shall be/will be + P II', 'have been + P II'],
+              answer: 'shall be/will be + P II',
+            },
+          ],
         },
       ],
     },
 
     // ── index: 5 — Mini-quiz 1 ────────────────────────────────
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"I ___ invited." — Present Passive',          tr: 'am',       wrong: 'is'       },
+      { en: '"She ___ called." — Present Passive',         tr: 'is',       wrong: 'are'      },
+      { en: '"They ___ told." — Past Passive',             tr: 'were',     wrong: 'was'      },
+      { en: '"He ___ invited." — Past Passive',            tr: 'was',      wrong: 'were'     },
+      { en: '"It ___ sent tomorrow." — Future Passive',    tr: 'will be',  wrong: 'shall be' },
+      { en: '"We ___ invited." — Future Passive',          tr: 'shall be', wrong: 'will be'  },
+      { en: '"is invited" — Azərbaycanca?',                tr: 'dəvət edilir',   wrong: 'dəvət edildi'    },
+      { en: '"was written" — Azərbaycanca?',               tr: 'yazıldı',        wrong: 'yazılır'         },
+      { en: '"will be built" — Azərbaycanca?',             tr: 'tikilecək',      wrong: 'tikilir'         },
+      { en: '"___ English spoken here?" — Present',        tr: 'Is',       wrong: 'Was'      },
+      { en: '"___ the letter sent?" — Past',               tr: 'Was',      wrong: 'Is'       },
+      { en: '"___ the work be done?" — Future',            tr: 'Will',     wrong: 'Was'      },
+      { en: 'Present Passive düzəlmə?',                    tr: 'am/is/are + P II',      wrong: 'was/were + P II'      },
+      { en: 'Past Passive düzəlmə?',                       tr: 'was/were + P II',        wrong: 'am/is/are + P II'     },
+      { en: 'Future Passive düzəlmə?',                     tr: 'shall be/will be + P II', wrong: 'have/has been + P II' },
     ],
 
     // ── index: 6 — Bölmə 2 bölücüsü ──────────────────────────
@@ -6897,10 +7129,90 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 2.1 — Present Perfect Passive',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 2.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nhave been / has been + P II\nI have been invited / He has been invited\nSual: have/has əvvələ · İnkar: not',
+          title: 'Present Perfect Passive necə düzəlir?',
+          content: 'Düzəlmə: have been / has been + P II',
+          table: [
+            ['Şəxs',      'Təsdiq'],
+            ['I',         'I have been invited'],
+            ['You',       'You have been invited'],
+            ['He / She',  'He has been invited'],
+            ['We',        'We have been invited'],
+            ['They',      'They have been invited'],
+          ],
+          tip: 'have been → I, You, We, They\nhas been → He, She, It',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Sual və inkar forması',
+          content: 'Sual: have/has mübtədadan əvvələ keçir.\nİnkar: have/has + not əlavə edilir.',
+          table: [
+            ['Sual',                        'İnkar'],
+            ['Have I been invited?',        'I have not been invited'],
+            ['Have you been invited?',      'You haven\'t been invited'],
+            ['Has he been invited?',        'He has not been invited'],
+            ['Have they been invited?',     'They haven\'t been invited'],
+          ],
+          note: 'Azərbaycana tərcümə:\nhas been invited → dəvət edilmişdir\nhave been written → yazılmışlar',
+        },
+
+        // Ekran 3
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Present Perfect Passive cümlələri:',
+          examples: [
+            { word: 'The letter has been written.',      az: 'Məktub yazılmışdır.' },
+            { word: 'I have been invited to the party.', az: 'Mən ziyafətə dəvət edilmişəm.' },
+            { word: 'The books have been sold.',         az: 'Kitablar satılmışdır.' },
+            { word: 'Has the work been done?',           az: 'İş görülmüşdürmü?' },
+          ],
+        },
+
+        // Quiz
+        { en: '"I ___ invited." — Present Perfect Passive',     tr: 'have been', wrong: 'has been'  },
+        { en: '"She ___ invited." — Present Perfect Passive',   tr: 'has been',  wrong: 'have been' },
+        { en: '"They ___ told." — Present Perfect Passive',     tr: 'have been', wrong: 'has been'  },
+        { en: '"___ he invited?" — Present Perfect Passive',    tr: 'Has',       wrong: 'Have'      },
+        { en: '"___ they told?" — Present Perfect Passive',     tr: 'Have',      wrong: 'Has'       },
+        { en: '"has been written" — Azərbaycanca?',             tr: 'yazılmışdır',  wrong: 'yazılmışdı'   },
+        { en: '"have been sold" — Azərbaycanca?',               tr: 'satılmışlar',  wrong: 'satılırdılar' },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"The letter ___ written." — Present Perfect Passive',
+              options: ['have been', 'was', 'is', 'has been'],
+              answer: 'has been',
+            },
+            {
+              q: '"They ___ invited." — Present Perfect Passive',
+              options: ['has been', 'was', 'were', 'have been'],
+              answer: 'have been',
+            },
+            {
+              q: '"___ the book published?" — Present Perfect Passive',
+              options: ['Were', 'Was', 'Have', 'Has'],
+              answer: 'Has',
+            },
+            {
+              q: '"has been invited" — Azərbaycanca?',
+              options: ['dəvət edildi', 'dəvət edilir', 'dəvət edilmişdir', 'dəvət edilmişdi'],
+              answer: 'dəvət edilmişdir',
+            },
+            {
+              q: 'Present Perfect Passive düzəlmə qaydası?',
+              options: ['was/were + P II', 'had been + P II', 'have been/has been + P II', 'will be + P II'],
+              answer: 'have been/has been + P II',
+            },
+          ],
         },
       ],
     },
@@ -6910,17 +7222,105 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 2.2 — Past Perfect Passive',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 2.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nhad been + P II\nI had been invited / They had been invited\nSual: had əvvələ · İnkar: not',
+          title: 'Past Perfect Passive necə düzəlir?',
+          content: 'Düzəlmə: had been + P II\nBütün şəxslərdə "had been" işlənir.',
+          table: [
+            ['Şəxs',      'Təsdiq'],
+            ['I',         'I had been invited'],
+            ['You',       'You had been invited'],
+            ['He / She',  'He had been invited'],
+            ['We',        'We had been invited'],
+            ['They',      'They had been invited'],
+          ],
+          tip: 'had been → bütün şəxslərdə eynidir',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Sual və inkar forması',
+          content: 'Sual: had mübtədadan əvvələ keçir.\nİnkar: had + not əlavə edilir.',
+          table: [
+            ['Sual',                       'İnkar'],
+            ['Had I been invited?',        'I had not been invited'],
+            ['Had you been invited?',      'You hadn\'t been invited'],
+            ['Had he been invited?',       'He had not been invited'],
+            ['Had they been invited?',     'They hadn\'t been invited'],
+          ],
+          note: 'Azərbaycana tərcümə:\nhad been invited → dəvət edilmişdi\nhad been written → yazılmışdı',
+        },
+
+        // Ekran 3
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Past Perfect Passive cümlələri:',
+          examples: [
+            { word: 'The letter had been written before he came.',  az: 'O gəlməmişdən əvvəl məktub yazılmışdı.' },
+            { word: 'I had been invited before the event.',         az: 'Hadisədən əvvəl dəvət edilmişdim.' },
+            { word: 'The work had been done by that time.',         az: 'O vaxta qədər iş görülmüşdü.' },
+            { word: 'Had the letter been sent?',                    az: 'Məktub göndərilmişdimi?' },
+          ],
+        },
+
+        // Quiz
+        { en: '"I ___ invited." — Past Perfect Passive',     tr: 'had been', wrong: 'have been'  },
+        { en: '"She ___ told." — Past Perfect Passive',      tr: 'had been', wrong: 'has been'   },
+        { en: '"___ he invited?" — Past Perfect Passive',    tr: 'Had',      wrong: 'Have'       },
+        { en: '"had been written" — Azərbaycanca?',          tr: 'yazılmışdı',    wrong: 'yazılmışdır'  },
+        { en: '"had been invited" — Azərbaycanca?',          tr: 'dəvət edilmişdi', wrong: 'dəvət edilmişdir' },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"The letter ___ written before he came."',
+              options: ['has been', 'have been', 'was', 'had been'],
+              answer: 'had been',
+            },
+            {
+              q: '"___ the work done?" — Past Perfect Passive',
+              options: ['Has', 'Have', 'Was', 'Had'],
+              answer: 'Had',
+            },
+            {
+              q: '"had been sent" — Azərbaycanca?',
+              options: ['göndərilir', 'göndərildi', 'göndərilmişdi', 'göndərilmişdir'],
+              answer: 'göndərilmişdi',
+            },
+            {
+              q: 'Past Perfect Passive düzəlmə qaydası?',
+              options: ['have been + P II', 'was/were + P II', 'will be + P II', 'had been + P II'],
+              answer: 'had been + P II',
+            },
+            {
+              q: 'Past Perfect Passive-də bütün şəxslərdə hansı forma işlənir?',
+              options: ['have been', 'has been', 'had been', 'will be'],
+              answer: 'had been',
+            },
+          ],
         },
       ],
     },
 
     // ── index: 9 — Mini-quiz 2 ────────────────────────────────
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"I ___ invited." — Present Perfect Passive',       tr: 'have been', wrong: 'has been'  },
+      { en: '"She ___ invited." — Present Perfect Passive',     tr: 'has been',  wrong: 'have been' },
+      { en: '"They ___ told." — Past Perfect Passive',          tr: 'had been',  wrong: 'have been' },
+      { en: '"He ___ invited." — Past Perfect Passive',         tr: 'had been',  wrong: 'has been'  },
+      { en: '"___ he invited?" — Present Perfect Passive',      tr: 'Has',       wrong: 'Had'       },
+      { en: '"___ they told?" — Past Perfect Passive',          tr: 'Had',       wrong: 'Have'      },
+      { en: '"has been written" — Azərbaycanca?',               tr: 'yazılmışdır',   wrong: 'yazılmışdı'    },
+      { en: '"had been written" — Azərbaycanca?',               tr: 'yazılmışdı',    wrong: 'yazılmışdır'   },
+      { en: '"have been sold" — Azərbaycanca?',                 tr: 'satılmışlar',   wrong: 'satılmışdılar' },
+      { en: 'Present Perfect Passive düzəlmə?',                 tr: 'have been/has been + P II', wrong: 'had been + P II'         },
+      { en: 'Past Perfect Passive düzəlmə?',                    tr: 'had been + P II',           wrong: 'have been/has been + P II'},
     ],
 
     // ── index: 10 — Bölmə 3 bölücüsü ─────────────────────────
@@ -6934,28 +7334,116 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 3.1 — Modal + be + P II',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 3.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nmust be done · can be written\nshould be finished · may be sent · could be seen',
+          title: 'Modal fellərin məchul növü necə düzəlir?',
+          content: 'Düzəlmə: Modal fel + be + P II\n\nModal feldən sonra məsdər "to"-suz işlənir.',
+          table: [
+            ['Modal fel',  'Məchul növ',         'Mənası'],
+            ['must',       'must be done',       'görülməlidir'],
+            ['can',        'can be written',     'yazıla bilər'],
+            ['should',     'should be finished', 'bitirilməlidir'],
+            ['may',        'may be sent',        'göndərilə bilər'],
+            ['could',      'could be seen',      'görülə bilərdi'],
+          ],
+          tip: 'Modal + be + P II\nHeç vaxt "been" işlənmir — yalnız "be"!',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Modal fellərin məchul növü ilə cümlələr:',
+          examples: [
+            { word: 'The work must be done.',        az: 'İş görülməlidir.' },
+            { word: 'The letter can be written.',    az: 'Məktub yazıla bilər.' },
+            { word: 'It should be finished today.',  az: 'Bu gün bitirilməlidir.' },
+            { word: 'The door may be opened.',       az: 'Qapı açıla bilər.' },
+            { word: 'The problem could be solved.',  az: 'Problem həll edilə bilərdi.' },
+          ],
+          note: 'İnkar: Modal + not + be + P II\nThe work must not be done.\nThe letter cannot be written.',
+        },
+
+        // Quiz
+        { en: '"The work ___ be done."',              tr: 'must',   wrong: 'should be' },
+        { en: '"The letter ___ be written."',         tr: 'can',    wrong: 'could be'  },
+        { en: 'Modal Passive düzəlmə?',               tr: 'modal + be + P II',   wrong: 'modal + been + P II' },
+        { en: '"must be done" — Azərbaycanca?',       tr: 'görülməlidir',  wrong: 'görüldü'          },
+        { en: '"can be written" — Azərbaycanca?',     tr: 'yazıla bilər',  wrong: 'yazıldı'          },
+        { en: '"should be finished" — Azərbaycanca?', tr: 'bitirilməlidir', wrong: 'bitirildi'       },
+        { en: '"The door ___ not be opened."',        tr: 'must',   wrong: 'is'        },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: 'Modal Passive düzəlmə qaydası?',
+              options: ['modal + been + P II', 'modal + be + P II', 'modal + is + P II', 'modal + was + P II'],
+              answer: 'modal + be + P II',
+            },
+            {
+              q: '"The work ___ be done." — vaciblik',
+              options: ['can', 'may', 'must', 'could'],
+              answer: 'must',
+            },
+            {
+              q: '"must be done" — Azərbaycanca?',
+              options: ['görüldü', 'görülürdü', 'görülməlidir', 'görülə bilər'],
+              answer: 'görülməlidir',
+            },
+            {
+              q: '"can be written" — Azərbaycanca?',
+              options: ['yazıldı', 'yazılır', 'yazıla bilər', 'yazılmalıdır'],
+              answer: 'yazıla bilər',
+            },
+            {
+              q: 'Hansı forma YANLIŞ-dır?',
+              options: ['must be done', 'can be written', 'should be finished', 'could been seen'],
+              answer: 'could been seen',
+            },
+          ],
         },
       ],
     },
 
     // ── index: 12 — Mini-quiz 3 ───────────────────────────────
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"The work ___ be done." — vaciblik',         tr: 'must',   wrong: 'can'       },
+      { en: '"The letter ___ be written." — imkan',       tr: 'can',    wrong: 'must'      },
+      { en: '"It ___ be finished today." — lazımdır',     tr: 'should', wrong: 'could'     },
+      { en: '"must be done" — Azərbaycanca?',             tr: 'görülməlidir', wrong: 'görüldü'    },
+      { en: '"can be written" — Azərbaycanca?',           tr: 'yazıla bilər', wrong: 'yazılmalıdır' },
+      { en: 'Modal Passive düzəlmə?',                     tr: 'modal + be + P II', wrong: 'modal + been + P II' },
+      { en: '"could been seen" — düzdür?',                tr: 'Xeyr',   wrong: 'Bəli'      },
+      { en: '"must be done" — inkarı?',                   tr: 'must not be done', wrong: 'must be not done' },
     ],
 
     // ── index: 13 — Test 1 ────────────────────────────────────
-    // Passive Voice formaları (Bölmə 1–3) · 12 sual
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"I ___ invited." — Present Passive',          tr: 'am',        wrong: 'is'          },
+      { en: '"She ___ called." — Present Passive',         tr: 'is',        wrong: 'are'         },
+      { en: '"They ___ told." — Past Passive',             tr: 'were',      wrong: 'was'         },
+      { en: '"He ___ invited." — Past Passive',            tr: 'was',       wrong: 'were'        },
+      { en: '"It ___ sent tomorrow." — Future Passive',    tr: 'will be',   wrong: 'shall be'    },
+      { en: '"We ___ invited." — Future Passive',          tr: 'shall be',  wrong: 'will be'     },
+      { en: '"She ___ invited." — Present Perfect Passive',tr: 'has been',  wrong: 'have been'   },
+      { en: '"They ___ told." — Past Perfect Passive',     tr: 'had been',  wrong: 'have been'   },
+      { en: '"must be done" — Azərbaycanca?',              tr: 'görülməlidir',   wrong: 'görüldü'       },
+      { en: '"was written" — Azərbaycanca?',               tr: 'yazıldı',        wrong: 'yazılır'       },
+      { en: '"will be built" — Azərbaycanca?',             tr: 'tikilecək',      wrong: 'tikilir'       },
+      { en: '"has been invited" — Azərbaycanca?',          tr: 'dəvət edilmişdir', wrong: 'dəvət edilmişdi' },
+      { en: '"had been written" — Azərbaycanca?',          tr: 'yazılmışdı',     wrong: 'yazılmışdır'   },
+      { en: 'Present Passive düzəlmə?',                    tr: 'am/is/are + P II',         wrong: 'was/were + P II'          },
+      { en: 'Past Passive düzəlmə?',                       tr: 'was/were + P II',           wrong: 'am/is/are + P II'         },
+      { en: 'Future Passive düzəlmə?',                     tr: 'shall be/will be + P II',   wrong: 'have been + P II'         },
+      { en: 'Present Perfect Passive düzəlmə?',            tr: 'have been/has been + P II', wrong: 'had been + P II'          },
+      { en: 'Past Perfect Passive düzəlmə?',               tr: 'had been + P II',           wrong: 'have been/has been + P II'},
+      { en: 'Modal Passive düzəlmə?',                      tr: 'modal + be + P II',         wrong: 'modal + been + P II'      },
+      { en: '"could been seen" — düzdür?',                 tr: 'Xeyr',      wrong: 'Bəli'        },
     ],
-
-    // ══════════════════════════════════════════════════════════
-    // ║  QRUP 2 — Məlum cümləni məchul cümləyə çevirmə        ║
-    // ══════════════════════════════════════════════════════════
 
     // ── index: 14 — Qrup 2 bölücüsü ──────────────────────────
     {
@@ -6974,10 +7462,94 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 4.1 — Əsas çevirmə qaydası',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 4.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nMəlum tamamlığı → məchul mübtəda\nto be müvafiq zaman forması + P II\nİcraçı: by + isim (cümlə sonunda)\nI write a letter → A letter is written by me',
+          title: 'Məlum cümləni məchul cümləyə çevirmə',
+          content: 'Çevirmənin 4 addımı:',
+          table: [
+            ['Addım', 'İzah'],
+            ['1',     'Məlum cümlənin tamamlığı → məchul cümlənin mübtədası olur'],
+            ['2',     'to be-nin müvafiq zaman forması qoyulur'],
+            ['3',     'Əsas fel P II-də qoyulur'],
+            ['4',     'İcraçı: by + isim cümlənin sonunda (istəyə görə)'],
+          ],
+          tip: 'Məlum: I write a letter.\nMəchul: A letter is written (by me).',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Zaman formasına görə çevirmə',
+          content: 'Məlum cümlə hansı zamandaysa məchul cümlə də o zamanda olur:',
+          table: [
+            ['Məlum zaman',     'Məchul forma'],
+            ['Simple Present',  'am/is/are + P II'],
+            ['Simple Past',     'was/were + P II'],
+            ['Simple Future',   'will be/shall be + P II'],
+            ['Present Perfect', 'have been/has been + P II'],
+            ['Past Perfect',    'had been + P II'],
+          ],
+          examples: [
+            { word: 'She writes a letter. → A letter is written by her.',       az: 'Məktub onun tərəfindən yazılır.' },
+            { word: 'She wrote a letter. → A letter was written by her.',       az: 'Məktub onun tərəfindən yazıldı.' },
+            { word: 'She will write a letter. → A letter will be written.',     az: 'Məktub yazılacaq.' },
+          ],
+        },
+
+        // Ekran 3
+        {
+          type: 'lesson',
+          title: '"by" sözönü — icraçını bildirmək',
+          content: '"by" sözönü işin icraçısını bildirir və cümlənin sonunda gəlir.',
+          examples: [
+            { word: 'The book is written by the author.',     az: 'Kitab müəllif tərəfindən yazılır.' },
+            { word: 'The letter was sent by her.',            az: 'Məktub onun tərəfindən göndərildi.' },
+            { word: 'The work will be done by the team.',     az: 'İş komanda tərəfindən görüləcək.' },
+          ],
+          note: '"by" + isim → tərəfindən\nİcraçı məlum deyilsə "by" işlənmir.',
+        },
+
+        // Quiz
+        { en: '"I write a letter." → məchul mübtəda?',      tr: 'A letter',  wrong: 'I'          },
+        { en: '"She sent the book." → məchul mübtəda?',     tr: 'The book',  wrong: 'She'        },
+        { en: 'İcraçını bildirən sözönü?',                  tr: 'by',        wrong: 'with'       },
+        { en: '"by her" — Azərbaycanca?',                   tr: 'onun tərəfindən', wrong: 'onunla' },
+        { en: '"I write" → Passive Present?',               tr: 'is written',  wrong: 'was written' },
+        { en: '"She wrote" → Passive Past?',                tr: 'was written', wrong: 'is written'  },
+        { en: '"He will send" → Passive Future?',           tr: 'will be sent', wrong: 'is sent'    },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"I write a letter." → məchul cümlənin mübtədası?',
+              options: ['I', 'write', 'A letter', 'by me'],
+              answer: 'A letter',
+            },
+            {
+              q: '"She wrote the letter." → Passive Past forması?',
+              options: ['The letter is written.', 'The letter was written.', 'The letter will be written.', 'The letter has been written.'],
+              answer: 'The letter was written.',
+            },
+            {
+              q: 'İcraçını bildirən sözönü?',
+              options: ['with', 'for', 'by', 'to'],
+              answer: 'by',
+            },
+            {
+              q: '"The book is written by the author." — "by" nə bildirir?',
+              options: ['vasitəni', 'icraçını', 'zamanı', 'yeri'],
+              answer: 'icraçını',
+            },
+            {
+              q: '"He will send the letter." → Passive?',
+              options: ['The letter is sent.', 'The letter was sent.', 'The letter will be sent.', 'The letter has been sent.'],
+              answer: 'The letter will be sent.',
+            },
+          ],
         },
       ],
     },
@@ -6987,17 +7559,95 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 4.2 — Əvəzlik dəyişməsi',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 4.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nObyekt → şəxs əvəzliyinə çevirilir\nme→I · him→he · her→she\nus→we · them→they\nBy + I→me · he→him · she→her',
+          title: 'Məchul cümlədə əvəzlik dəyişməsi',
+          content: 'Məlum cümlənin tamamlığı obyekt əvəzlikdirsə, məchul cümlədə mübtəda olarkən şəxs əvəzliyinə çevrilir.',
+          table: [
+            ['Obyekt hal', 'Adlıq hal'],
+            ['me',         'I'],
+            ['you',        'you'],
+            ['him',        'he'],
+            ['her',        'she'],
+            ['it',         'it'],
+            ['us',         'we'],
+            ['them',       'they'],
+          ],
+          tip: 'Məlum mübtəda "by" ilə verilərkən şəxs əvəzliyi obyekt hala keçir:\nI → by me · he → by him · she → by her',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Əvəzlik dəyişməsi ilə çevirmə:',
+          examples: [
+            { word: 'I do my homework. → My homework is done by me.',           az: 'Ev tapşırığım mənim tərəfimdən edilir.' },
+            { word: 'She sent him a letter. → He was sent a letter by her.',    az: 'Ona onun tərəfindən məktub göndərildi.' },
+            { word: 'They invited us. → We were invited by them.',              az: 'Biz onlar tərəfindən dəvət edildik.' },
+            { word: 'He saw her. → She was seen by him.',                       az: 'O, onun tərəfindən görüldü.' },
+          ],
+          note: 'Məlum: They invited us.\nMəchul: We were invited by them.\nthey → them (by ilə), us → we (mübtəda)',
+        },
+
+        // Quiz
+        { en: 'Məchul mübtəda: "him" → ?',        tr: 'he',   wrong: 'him'  },
+        { en: 'Məchul mübtəda: "her" → ?',        tr: 'she',  wrong: 'her'  },
+        { en: 'Məchul mübtəda: "them" → ?',       tr: 'they', wrong: 'them' },
+        { en: 'Məchul mübtəda: "us" → ?',         tr: 'we',   wrong: 'us'   },
+        { en: 'Məchul mübtəda: "me" → ?',         tr: 'I',    wrong: 'me'   },
+        { en: '"by" ilə: "I" → ?',                tr: 'by me',   wrong: 'by I'   },
+        { en: '"by" ilə: "she" → ?',              tr: 'by her',  wrong: 'by she' },
+        { en: '"by" ilə: "they" → ?',             tr: 'by them', wrong: 'by they'},
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"They invited us." → Passive? Mübtəda?',
+              options: ['They', 'Us', 'Them', 'We'],
+              answer: 'We',
+            },
+            {
+              q: '"She saw him." → "him" məchul cümlədə?',
+              options: ['him', 'his', 'he', 'her'],
+              answer: 'he',
+            },
+            {
+              q: '"I wrote it." → Passive-də "I" necə olur?',
+              options: ['I', 'me', 'my', 'mine'],
+              answer: 'me',
+            },
+            {
+              q: '"They invited us." → Passive: "___ were invited by them."',
+              options: ['Us', 'Our', 'We', 'Them'],
+              answer: 'We',
+            },
+            {
+              q: '"He saw her." → Passive?',
+              options: ['Her was seen by him.', 'She was seen by him.', 'She was seen by he.', 'Her was seen by he.'],
+              answer: 'She was seen by him.',
+            },
+          ],
         },
       ],
     },
 
     // ── index: 18 — Mini-quiz 4 ───────────────────────────────
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"I write a letter." → məchul mübtəda?',        tr: 'A letter',   wrong: 'I'           },
+      { en: '"She sent the book." → məchul mübtəda?',       tr: 'The book',   wrong: 'She'         },
+      { en: 'İcraçını bildirən sözönü?',                    tr: 'by',         wrong: 'with'        },
+      { en: '"They invited us." → Passive mübtədası?',      tr: 'We',         wrong: 'They'        },
+      { en: '"She saw him." → "him" məchul mübtəda?',       tr: 'he',         wrong: 'him'         },
+      { en: '"I wrote it." → "I" by ilə?',                  tr: 'by me',      wrong: 'by I'        },
+      { en: '"He will send the letter." → Passive?',        tr: 'The letter will be sent.', wrong: 'The letter is sent.'  },
+      { en: '"She wrote the letter." → Passive?',           tr: 'The letter was written.', wrong: 'The letter is written.' },
+      { en: '"by her" — Azərbaycanca?',                     tr: 'onun tərəfindən', wrong: 'onunla'  },
+      { en: '"They saw us." → Passive?',                    tr: 'We were seen by them.', wrong: 'Us were seen by them.' },
     ],
 
     // ── index: 19 — Bölmə 5 bölücüsü ─────────────────────────
@@ -7011,10 +7661,77 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 5.1 — Canlı + cansız tamamlıq',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 5.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nCanlı tamamlıq → məchul mübtədada olur\nI give him a book →\nHe is given a book by me',
+          title: 'Canlı və cansız tamamlıq',
+          content: 'Məlum cümlədə həm canlı, həm cansız tamamlıq olarsa:\n\nCanlı tamamlıq → məchul cümlənin mübtədası olur.',
+          examples: [
+            { word: 'I give him a book.',              az: 'Mən ona kitab verirəm.' },
+            { word: '→ He is given a book by me.',     az: '→ Ona mənim tərəfimdən kitab verilir.' },
+            { word: 'She sent me a letter.',           az: 'O mənə məktub göndərdi.' },
+            { word: '→ I was sent a letter by her.',   az: '→ Mənə onun tərəfindən məktub göndərildi.' },
+          ],
+          tip: 'Canlı tamamlıq həmişə üstünlük alır.\nhim → he (mübtəda), me → I (mübtəda)',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'İki tamamlıq qaydası',
+          content: 'İki canlı və ya iki cansız tamamlıq olduqda:\n\nBirinci gələn tamamlıq → məchul cümlənin mübtədası olur.',
+          examples: [
+            { word: 'I write a letter to my friend.',           az: 'Mən dostuma məktub yazıram.' },
+            { word: '→ My friend is written a letter by me.',   az: '→ Dostuma mənim tərəfimdən məktub yazılır.' },
+            { word: 'She gave the book to Tom.',                az: 'O kitabı Toma verdi.' },
+            { word: '→ Tom was given the book by her.',         az: '→ Toma onun tərəfindən kitab verildi.' },
+          ],
+          note: 'Zaman məlum cümlə ilə eyni qalır.\nMəlum: Simple Past → Məchul: was/were + P II',
+        },
+
+        // Quiz
+        { en: '"I give him a book." → canlı tamamlıq?',        tr: 'him',      wrong: 'a book'    },
+        { en: '"I give him a book." → məchul mübtəda?',        tr: 'He',       wrong: 'A book'    },
+        { en: '"She sent me a letter." → məchul mübtəda?',     tr: 'I',        wrong: 'A letter'  },
+        { en: '"He gave her the money." → məchul mübtəda?',    tr: 'She',      wrong: 'The money' },
+        { en: 'Canlı tamamlıq məchul cümlədə nə olur?',       tr: 'mübtəda',  wrong: 'tamamlıq'  },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"I give him a book." → Passive mübtədası?',
+              options: ['I', 'A book', 'He', 'Him'],
+              answer: 'He',
+            },
+            {
+              q: '"She sent me a letter." → Passive?',
+              options: [
+                'A letter was sent me by her.',
+                'I was sent a letter by her.',
+                'Me was sent a letter by her.',
+                'A letter was sent by her to I.',
+              ],
+              answer: 'I was sent a letter by her.',
+            },
+            {
+              q: '"He gave her the money." → Passive mübtədası?',
+              options: ['He', 'Her', 'She', 'The money'],
+              answer: 'She',
+            },
+            {
+              q: 'Canlı + cansız tamamlıq olduqda məchul mübtəda?',
+              options: ['Cansız tamamlıq olur', 'Canlı tamamlıq olur', 'Hər ikisi olur', 'Heç biri olmur'],
+              answer: 'Canlı tamamlıq olur',
+            },
+            {
+              q: '"I write a letter to my friend." → Passive mübtədası?',
+              options: ['I', 'A letter', 'My friend', 'By me'],
+              answer: 'My friend',
+            },
+          ],
         },
       ],
     },
@@ -7022,19 +7739,66 @@ const PASSIVE_LEVEL = {
     // ── index: 21 — Dərs 5.2 ──────────────────────────────────
     {
       type: 'grammar_lesson',
-      title: 'Dərs 5.2 — İki tamamlıq qaydası',
+      title: 'Dərs 5.2 — İki tamamlıq — əlavə qaydalar',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 5.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nİki canlı / iki cansız olduqda\nBirinci gələn tamamlıq → mübtəda\nZaman məlum cümlə ilə eyni qalır',
+          title: 'Bütün zamanlarla çevirmə təcrübəsi',
+          content: 'Canlı tamamlıq qaydası bütün zaman formalarında eyni işləyir:',
+          table: [
+            ['Məlum',                          'Məchul'],
+            ['I give him a book.',             'He is given a book.'],
+            ['I gave him a book.',             'He was given a book.'],
+            ['I will give him a book.',        'He will be given a book.'],
+            ['I have given him a book.',       'He has been given a book.'],
+            ['I had given him a book.',        'He had been given a book.'],
+          ],
+          tip: 'Mübtəda həmişə canlı tamamlıqdır.\nZaman forması dəyişir, qayda eyni qalır.',
+        },
+
+        // Quiz
+        { en: '"I gave him a book." → Passive (Past)?',        tr: 'He was given a book.',       wrong: 'He is given a book.'        },
+        { en: '"I give him a book." → Passive (Present)?',     tr: 'He is given a book.',        wrong: 'He was given a book.'       },
+        { en: '"I will give him a book." → Passive (Future)?', tr: 'He will be given a book.',   wrong: 'He is given a book.'        },
+        { en: '"I have given him a book." → Passive?',         tr: 'He has been given a book.',  wrong: 'He had been given a book.'  },
+        { en: '"I had given him a book." → Passive?',          tr: 'He had been given a book.',  wrong: 'He has been given a book.'  },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"I gave him a book." → Passive?',
+              options: ['He is given a book.', 'He was given a book.', 'He will be given a book.', 'He has been given a book.'],
+              answer: 'He was given a book.',
+            },
+            {
+              q: '"She will send them a letter." → Passive?',
+              options: ['They are sent a letter.', 'They were sent a letter.', 'They will be sent a letter.', 'They have been sent a letter.'],
+              answer: 'They will be sent a letter.',
+            },
+            {
+              q: '"He has given her the book." → Passive?',
+              options: ['She was given the book.', 'She is given the book.', 'She has been given the book.', 'She had been given the book.'],
+              answer: 'She has been given the book.',
+            },
+          ],
         },
       ],
     },
 
     // ── index: 22 — Mini-quiz 5 ───────────────────────────────
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"I give him a book." → məchul mübtəda?',           tr: 'He',       wrong: 'A book'    },
+      { en: '"She sent me a letter." → məchul mübtəda?',        tr: 'I',        wrong: 'A letter'  },
+      { en: '"He gave her the money." → məchul mübtəda?',       tr: 'She',      wrong: 'The money' },
+      { en: '"I gave him a book." → Passive (Past)?',           tr: 'He was given a book.',      wrong: 'He is given a book.'       },
+      { en: '"I give him a book." → Passive (Present)?',        tr: 'He is given a book.',       wrong: 'He was given a book.'      },
+      { en: '"I will give him a book." → Passive?',             tr: 'He will be given a book.',  wrong: 'He is given a book.'       },
+      { en: 'Canlı + cansız tamamlıqda məchul mübtəda?',        tr: 'Canlı tamamlıq',  wrong: 'Cansız tamamlıq' },
+      { en: '"I write a letter to my friend." → mübtəda?',      tr: 'My friend', wrong: 'A letter'  },
     ],
 
     // ── index: 23 — Bölmə 6 bölücüsü ─────────────────────────
@@ -7048,10 +7812,77 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 6.1 — Zaman formaları ilə çevirmə',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 6.1 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nPresent: is/are written\nPast: was/were written\nFuture: will be written\nPerfect: have/has/had been written',
+          title: 'Bütün Passive formaları — xülasə',
+          content: 'Bütün zaman formalarının məchul növü bir arada:',
+          table: [
+            ['Zaman',             'Passive forma',               'Nümunə'],
+            ['Simple Present',    'am/is/are + P II',            'is written'],
+            ['Simple Past',       'was/were + P II',             'was written'],
+            ['Simple Future',     'will be/shall be + P II',     'will be written'],
+            ['Present Perfect',   'have been/has been + P II',   'has been written'],
+            ['Past Perfect',      'had been + P II',             'had been written'],
+            ['Modal',             'modal + be + P II',           'must be written'],
+          ],
+          tip: 'Hər zaman formasını ayrıca əzbərlə:\nPresent → is/are\nPast → was/were\nFuture → will be',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Çevirmə məşqi',
+          content: 'Məlum cümlələrin bütün zamanlarla məchul forması:',
+          examples: [
+            { word: 'They build houses here. → Houses are built here.',               az: 'Burada evlər tikilir.' },
+            { word: 'They built houses. → Houses were built.',                        az: 'Evlər tikildi.' },
+            { word: 'They will build houses. → Houses will be built.',                az: 'Evlər tikilecək.' },
+            { word: 'They have built houses. → Houses have been built.',              az: 'Evlər tikilmişdir.' },
+            { word: 'They had built houses. → Houses had been built.',                az: 'Evlər tikilmişdi.' },
+            { word: 'They must build houses. → Houses must be built.',                az: 'Evlər tikilməlidir.' },
+          ],
+        },
+
+        // Quiz
+        { en: '"They write letters." → Passive Present?',      tr: 'Letters are written.',         wrong: 'Letters were written.'         },
+        { en: '"They wrote letters." → Passive Past?',         tr: 'Letters were written.',        wrong: 'Letters are written.'          },
+        { en: '"They will write." → Passive Future?',          tr: 'It will be written.',          wrong: 'It is written.'                },
+        { en: '"They have written." → Passive Present Perf?',  tr: 'It has been written.',         wrong: 'It had been written.'          },
+        { en: '"They had written." → Passive Past Perf?',      tr: 'It had been written.',         wrong: 'It has been written.'          },
+        { en: '"They must write." → Passive Modal?',           tr: 'It must be written.',          wrong: 'It must been written.'         },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"They build houses." → Passive?',
+              options: ['Houses were built.', 'Houses are built.', 'Houses will be built.', 'Houses have been built.'],
+              answer: 'Houses are built.',
+            },
+            {
+              q: '"She has written the letter." → Passive?',
+              options: ['The letter was written.', 'The letter is written.', 'The letter has been written.', 'The letter had been written.'],
+              answer: 'The letter has been written.',
+            },
+            {
+              q: '"They must finish the work." → Passive?',
+              options: ['The work must been finished.', 'The work must be finished.', 'The work is must finished.', 'The work be must finished.'],
+              answer: 'The work must be finished.',
+            },
+            {
+              q: '"He had sent the letter." → Passive?',
+              options: ['The letter was sent.', 'The letter has been sent.', 'The letter had been sent.', 'The letter will be sent.'],
+              answer: 'The letter had been sent.',
+            },
+            {
+              q: '"We will invite them." → Passive?',
+              options: ['They are invited.', 'They were invited.', 'They will be invited.', 'They have been invited.'],
+              answer: 'They will be invited.',
+            },
+          ],
         },
       ],
     },
@@ -7061,56 +7892,165 @@ const PASSIVE_LEVEL = {
       type: 'grammar_lesson',
       title: 'Dərs 6.2 — Azərbaycana tərcümə',
       cards: [
+
+        // Ekran 1
         {
           type: 'lesson',
-          title: 'Dərs 6.2 — Tezliklə əlavə olunacaq',
-          content: 'Bu dərs hazırlanır. Materiallar tezliklə əlavə ediləcək.\n\nis written → yazılır\nwas written → yazıldı\nwill be written → yazılacaq\nhas been written → yazılmışdır',
+          title: 'Passive Voice Azərbaycana necə tərcümə olunur?',
+          content: 'Hər zaman formasının Azərbaycan dili qarşılığı:',
+          table: [
+            ['Passive forma',       'Azərbaycanca',         'Nümunə'],
+            ['is/are written',      'yazılır',              'The letter is written.'],
+            ['was/were written',    'yazıldı',              'The letter was written.'],
+            ['will be written',     'yazılacaq',            'The letter will be written.'],
+            ['has been written',    'yazılmışdır',          'The letter has been written.'],
+            ['had been written',    'yazılmışdı',           'The letter had been written.'],
+            ['must be written',     'yazılmalıdır',         'The letter must be written.'],
+            ['can be written',      'yazıla bilər',         'The letter can be written.'],
+          ],
+          tip: 'Passive formasını azərbaycanca tanımaq:\n-ilir/-ilir → Present\n-ildi → Past\n-ilecək → Future\n-ilmişdir → Present Perfect\n-ilmişdi → Past Perfect',
+        },
+
+        // Ekran 2
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Passive cümlələrin Azərbaycana tərcüməsi:',
+          examples: [
+            { word: 'English is spoken here.',            az: 'Burada ingilis dilində danışılır.' },
+            { word: 'The letter was sent yesterday.',     az: 'Məktub dünən göndərildi.' },
+            { word: 'The work will be done tomorrow.',    az: 'İş sabah görüləcək.' },
+            { word: 'The book has been published.',       az: 'Kitab çap edilmişdir.' },
+            { word: 'The letter had been written.',       az: 'Məktub yazılmışdı.' },
+            { word: 'The work must be finished.',         az: 'İş bitirilməlidir.' },
+          ],
+        },
+
+        // Quiz
+        { en: '"is written" — Azərbaycanca?',          tr: 'yazılır',       wrong: 'yazıldı'       },
+        { en: '"was written" — Azərbaycanca?',         tr: 'yazıldı',       wrong: 'yazılır'       },
+        { en: '"will be written" — Azərbaycanca?',     tr: 'yazılacaq',     wrong: 'yazıldı'       },
+        { en: '"has been written" — Azərbaycanca?',    tr: 'yazılmışdır',   wrong: 'yazılmışdı'    },
+        { en: '"had been written" — Azərbaycanca?',    tr: 'yazılmışdı',    wrong: 'yazılmışdır'   },
+        { en: '"must be written" — Azərbaycanca?',     tr: 'yazılmalıdır',  wrong: 'yazıla bilər'  },
+        { en: '"can be written" — Azərbaycanca?',      tr: 'yazıla bilər',  wrong: 'yazılmalıdır'  },
+
+        // Mini-check
+        {
+          type: 'mini_check',
+          questions: [
+            {
+              q: '"The letter is written." — Azərbaycanca?',
+              options: ['Məktub yazıldı.', 'Məktub yazılır.', 'Məktub yazılacaq.', 'Məktub yazılmışdır.'],
+              answer: 'Məktub yazılır.',
+            },
+            {
+              q: '"The work was done." — Azərbaycanca?',
+              options: ['İş görülür.', 'İş görüləcək.', 'İş görüldü.', 'İş görülmüşdür.'],
+              answer: 'İş görüldü.',
+            },
+            {
+              q: '"The book has been published." — Azərbaycanca?',
+              options: ['Kitab çap edildi.', 'Kitab çap edilir.', 'Kitab çap edilmişdir.', 'Kitab çap edilmişdi.'],
+              answer: 'Kitab çap edilmişdir.',
+            },
+            {
+              q: '"The letter had been sent." — Azərbaycanca?',
+              options: ['Məktub göndərildi.', 'Məktub göndərilir.', 'Məktub göndərilmişdi.', 'Məktub göndərilmişdir.'],
+              answer: 'Məktub göndərilmişdi.',
+            },
+            {
+              q: '"The work must be finished." — Azərbaycanca?',
+              options: ['İş bitiriləcək.', 'İş bitirildi.', 'İş bitirilə bilər.', 'İş bitirilməlidir.'],
+              answer: 'İş bitirilməlidir.',
+            },
+          ],
         },
       ],
     },
 
     // ── index: 26 — Mini-quiz 6 ───────────────────────────────
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"They write letters." → Passive?',              tr: 'Letters are written.',       wrong: 'Letters were written.'      },
+      { en: '"They wrote letters." → Passive?',             tr: 'Letters were written.',      wrong: 'Letters are written.'       },
+      { en: '"They will write it." → Passive?',             tr: 'It will be written.',        wrong: 'It is written.'             },
+      { en: '"She has written it." → Passive?',             tr: 'It has been written.',       wrong: 'It had been written.'       },
+      { en: '"He had written it." → Passive?',              tr: 'It had been written.',       wrong: 'It has been written.'       },
+      { en: '"They must write it." → Passive?',             tr: 'It must be written.',        wrong: 'It must been written.'      },
+      { en: '"is written" — Azərbaycanca?',                 tr: 'yazılır',     wrong: 'yazıldı'      },
+      { en: '"was written" — Azərbaycanca?',                tr: 'yazıldı',     wrong: 'yazılır'      },
+      { en: '"will be written" — Azərbaycanca?',            tr: 'yazılacaq',   wrong: 'yazıldı'      },
+      { en: '"has been written" — Azərbaycanca?',           tr: 'yazılmışdır', wrong: 'yazılmışdı'   },
+      { en: '"had been written" — Azərbaycanca?',           tr: 'yazılmışdı',  wrong: 'yazılmışdır'  },
+      { en: '"must be written" — Azərbaycanca?',            tr: 'yazılmalıdır', wrong: 'yazıla bilər' },
     ],
 
     // ── index: 27 — Test 2 ────────────────────────────────────
-    // Məlum → Məchul çevirmə (Bölmə 4–6) · 12 sual
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: '"I write a letter." → məchul mübtəda?',              tr: 'A letter',    wrong: 'I'           },
+      { en: '"She sent him a book." → məchul mübtəda?',           tr: 'He',          wrong: 'A book'      },
+      { en: '"They invited us." → Passive mübtədası?',            tr: 'We',          wrong: 'They'        },
+      { en: '"He saw her." → Passive?',                           tr: 'She was seen by him.',    wrong: 'Her was seen by him.'   },
+      { en: '"I gave him a book." → Passive (Past)?',             tr: 'He was given a book.',    wrong: 'He is given a book.'    },
+      { en: '"She will send them a letter." → Passive?',          tr: 'They will be sent a letter.', wrong: 'They are sent a letter.' },
+      { en: '"He has given her the book." → Passive?',            tr: 'She has been given the book.', wrong: 'She was given the book.' },
+      { en: '"They build houses." → Passive?',                    tr: 'Houses are built.',       wrong: 'Houses were built.'     },
+      { en: '"She has written the letter." → Passive?',           tr: 'The letter has been written.', wrong: 'The letter was written.' },
+      { en: '"They must finish the work." → Passive?',            tr: 'The work must be finished.',   wrong: 'The work must been finished.' },
+      { en: '"is written" — Azərbaycanca?',                       tr: 'yazılır',       wrong: 'yazıldı'       },
+      { en: '"was written" — Azərbaycanca?',                      tr: 'yazıldı',       wrong: 'yazılır'       },
+      { en: '"will be written" — Azərbaycanca?',                  tr: 'yazılacaq',     wrong: 'yazıldı'       },
+      { en: '"has been written" — Azərbaycanca?',                 tr: 'yazılmışdır',   wrong: 'yazılmışdı'    },
+      { en: '"had been written" — Azərbaycanca?',                 tr: 'yazılmışdı',    wrong: 'yazılmışdır'   },
+      { en: '"by her" — Azərbaycanca?',                           tr: 'onun tərəfindən', wrong: 'onunla'      },
+      { en: 'Canlı + cansız tamamlıqda məchul mübtəda?',          tr: 'Canlı tamamlıq',  wrong: 'Cansız tamamlıq' },
+      { en: '"He had sent the letter." → Passive?',               tr: 'The letter had been sent.', wrong: 'The letter has been sent.' },
     ],
 
     // ── index: 28 — Final Test ────────────────────────────────
-    // Passive Voice tam test · 20+ sual
     [
-      { en: 'PLACEHOLDER', tr: 'A', wrong: 'B' },
+      { en: 'Present Passive düzəlmə?',                           tr: 'am/is/are + P II',           wrong: 'was/were + P II'            },
+      { en: 'Past Passive düzəlmə?',                              tr: 'was/were + P II',             wrong: 'am/is/are + P II'           },
+      { en: 'Future Passive düzəlmə?',                            tr: 'shall be/will be + P II',     wrong: 'have been + P II'           },
+      { en: 'Present Perfect Passive düzəlmə?',                   tr: 'have been/has been + P II',   wrong: 'had been + P II'            },
+      { en: 'Past Perfect Passive düzəlmə?',                      tr: 'had been + P II',             wrong: 'have been/has been + P II'  },
+      { en: 'Modal Passive düzəlmə?',                             tr: 'modal + be + P II',           wrong: 'modal + been + P II'        },
+      { en: '"I ___ invited." — Present Passive',                 tr: 'am',        wrong: 'is'          },
+      { en: '"She ___ invited." — Present Passive',               tr: 'is',        wrong: 'are'         },
+      { en: '"They ___ told." — Past Passive',                    tr: 'were',      wrong: 'was'         },
+      { en: '"He ___ invited." — Past Passive',                   tr: 'was',       wrong: 'were'        },
+      { en: '"It ___ sent tomorrow." — Future Passive',           tr: 'will be',   wrong: 'shall be'    },
+      { en: '"We ___ invited." — Future Passive',                 tr: 'shall be',  wrong: 'will be'     },
+      { en: '"She ___ invited." — Present Perfect Passive',       tr: 'has been',  wrong: 'have been'   },
+      { en: '"They ___ told." — Past Perfect Passive',            tr: 'had been',  wrong: 'have been'   },
+      { en: '"is written" — Azərbaycanca?',                       tr: 'yazılır',       wrong: 'yazıldı'       },
+      { en: '"was written" — Azərbaycanca?',                      tr: 'yazıldı',       wrong: 'yazılır'       },
+      { en: '"will be written" — Azərbaycanca?',                  tr: 'yazılacaq',     wrong: 'yazıldı'       },
+      { en: '"has been written" — Azərbaycanca?',                 tr: 'yazılmışdır',   wrong: 'yazılmışdı'    },
+      { en: '"had been written" — Azərbaycanca?',                 tr: 'yazılmışdı',    wrong: 'yazılmışdır'   },
+      { en: '"must be written" — Azərbaycanca?',                  tr: 'yazılmalıdır',  wrong: 'yazıla bilər'  },
+      { en: '"can be written" — Azərbaycanca?',                   tr: 'yazıla bilər',  wrong: 'yazılmalıdır'  },
+      { en: '"I write a letter." → məchul mübtəda?',              tr: 'A letter',    wrong: 'I'           },
+      { en: '"She sent him a book." → məchul mübtəda?',           tr: 'He',          wrong: 'A book'      },
+      { en: '"They invited us." → Passive mübtədası?',            tr: 'We',          wrong: 'They'        },
+      { en: '"He saw her." → Passive?',                           tr: 'She was seen by him.',   wrong: 'Her was seen by him.'  },
+      { en: 'Məchul mübtəda: "him" → ?',                         tr: 'he',    wrong: 'him'  },
+      { en: 'Məchul mübtəda: "them" → ?',                        tr: 'they',  wrong: 'them' },
+      { en: '"by" ilə: "she" → ?',                               tr: 'by her',  wrong: 'by she' },
+      { en: '"They build houses." → Passive?',                    tr: 'Houses are built.',          wrong: 'Houses were built.'         },
+      { en: '"She has written the letter." → Passive?',           tr: 'The letter has been written.', wrong: 'The letter was written.'  },
+      { en: '"He had sent the letter." → Passive?',               tr: 'The letter had been sent.',  wrong: 'The letter has been sent.'  },
+      { en: '"They must finish the work." → Passive?',            tr: 'The work must be finished.', wrong: 'The work must been finished.' },
+      { en: '"could been seen" — düzdür?',                        tr: 'Xeyr',  wrong: 'Bəli'  },
+      { en: 'Canlı + cansız tamamlıqda məchul mübtəda?',          tr: 'Canlı tamamlıq', wrong: 'Cansız tamamlıq' },
+      { en: '"I gave him a book." → Passive (Past)?',             tr: 'He was given a book.',    wrong: 'He is given a book.'    },
+      { en: '"She will send them a letter." → Passive?',          tr: 'They will be sent a letter.', wrong: 'They are sent a letter.' },
+      { en: '"İcraçını bildirən sözönü?',                         tr: 'by',    wrong: 'with'  },
+      { en: '"by her" — Azərbaycanca?',                           tr: 'onun tərəfindən', wrong: 'onunla' },
     ],
 
   ],
 };
-// ============================================================
-//  WORDPATH — DIRECT & INDIRECT SPEECH DATA (Vasitəli nitq)
-//  Data faylının sonuna əlavə et:
-//
-//  KIDS_GRAMMAR_LEVELS.push(INDIRECT_SPEECH_LEVEL);
-//
-//  app.js — EXAM_IDS-ə əlavə et:
-//  'indirect_speech': new Set([])
-//
-//  app.js — renderLevels()-də əlavə et:
-//  } else if (lvl.id === 'indirect_speech') {
-//    const grammarList = document.getElementById('grammar-list');
-//    if (grammarList) grammarList.appendChild(card);
-//  }
-//
-//  app.js — renderQuizPath()-də əlavə et:
-//  if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' || lvl.id === 'indirect_speech') {
-//    return renderGrammarPath(lvl, li);
-//  }
-//
-//  app.js — loadProgress()-də əlavə et:
-//  const isOpenSection = ... || lvl.id === 'indirect_speech';
-// ============================================================
 
 const INDIRECT_SPEECH_LEVEL = {
   id: 'indirect_speech',
