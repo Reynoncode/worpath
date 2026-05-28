@@ -5431,7 +5431,10 @@ const VERBS_LEVEL = {
   { en: '"He said they would come." — Az. dilində?', tr: 'onlar gələcəklər', wrong: 'onlar gəldilər' },
   { en: 'Future in the Past → Az. dilindəki forma?', tr: '-acaq / -əcək',    wrong: '-dı / -di'      },
 ],
-
+ {
+  type: 'section_divider',
+  title: 'Bölmə 5 —  Present Continuous',
+},
     // ══════════════════════════════════════════════════════════
     // ║  QRUP 2 — Davamedici zaman formaları (Continuous)      ║
     // ══════════════════════════════════════════════════════════
@@ -5783,7 +5786,10 @@ const VERBS_LEVEL = {
   { en: '"I think you are right." — "think" burada?',tr: 'məncə',        wrong: 'fikirləşmək' },
 ],
   
-
+ {
+  type: 'section_divider',
+  title: 'Bölmə 6 — Past Continuous',
+},
 // ── Dərs 6.1 — was/were + fel-ing ───────────────────────
 {
   type: 'grammar_lesson',
@@ -6074,7 +6080,10 @@ const VERBS_LEVEL = {
   { en: '"She was writing." → Az. dilində?',          tr: 'yazırdı',   wrong: 'yazacaq'  },
   { en: 'Past Continuous → Az. forması?',             tr: '-ırdı/-irdi', wrong: '-acaq/-əcək' },
 ],
-
+ {
+  type: 'section_divider',
+  title: 'Bölmə 7 — Present Perfect',
+},
     // ══════════════════════════════════════════════════════════
     // ║  QRUP 3 — Bitmiş zaman formaları (Perfect)             ║
     // ══════════════════════════════════════════════════════════
@@ -6375,6 +6384,11 @@ const VERBS_LEVEL = {
   { en: '"She has gone." — Azərbaycanca?',                tr: 'O getmişdir.',      wrong: 'O gedirdi.'        },
   { en: '"I have known him for 2 years." — Azərbaycanca?',tr: 'Onu 2 ildir tanıyıram.', wrong: 'Onu 2 il əvvəl tanıdım.' },
 ],
+    
+ {
+  type: 'section_divider',
+  title: 'Bölmə 8 — Past Perfect',
+},
 
 // ── Dərs 8.1 — had + P II ────────────────────────────────
 {
