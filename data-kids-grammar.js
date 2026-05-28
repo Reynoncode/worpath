@@ -45,7 +45,7 @@ const KIDS_GRAMMAR_LEVELS = [
   // ╚══════════════════════════════════════════════════╝
   {
     id: 'grammar',
-    name: 'GRAMMAR',
+    name: 'NOUNS - İSİMLƏR',
     icon: '📖',
     color: '#8B5CF6',
     quizzes: [
