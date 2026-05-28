@@ -154,7 +154,7 @@ async function fetchStudentData(email) {
   const snap = await getDocsFromServer(q);
   if (snap.empty) return null;
   return snap.docs[0].data();
-
+}
 
 // ─── Tələbə rolunu ləğv et ───────────────────────────────────────────────────
 async function revokeStudentRole(email, classId) {
