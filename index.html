@@ -292,23 +292,20 @@
     if (window.ClassroomManager) ClassroomManager.open();
   });
 
-  document.getElementById('header-profile-btn').addEventListener('click', function () {
-    // Aktivdə neçənci səhifədir?
-    const activeDot = document.querySelector('.nav-dot.active');
-    const currentPage = activeDot ? parseInt(activeDot.dataset.page) : -1;
+ document.getElementById('header-profile-btn').addEventListener('click', function () {
+  const activeDot = document.querySelector('.nav-dot.active');
+  const currentPage = activeDot ? parseInt(activeDot.dataset.page) : -1;
 
-    if (currentPage === 4) {
-      // Statistika səhifəsi → Sinif Otağı
-      if (window.ClassroomManager) ClassroomManager.open();
-    } else {
-      // Digər səhifələr → Profil
-      if (window.AuthManager) {
-        const user = AuthManager.getCurrentUser();
-        if (user) AuthManager.openProfileModal();
-        else AuthManager.signIn();
-      }
+  if (currentPage === 4 && window.__userRole === 'teacher') {
+    if (window.ClassroomManager) ClassroomManager.open();
+  } else {
+    if (window.AuthManager) {
+      const user = AuthManager.getCurrentUser();
+      if (user) AuthManager.openProfileModal();
+      else AuthManager.signIn();
     }
-  });
+  }
+});
 
 </script>
 
