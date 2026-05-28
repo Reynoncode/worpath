@@ -321,7 +321,7 @@ const KIDS_GRAMMAR_LEVELS = [
 
     ],
   },
-];
+
 
   // ╔══════════════════════════════════════════════════╗
   // ║  GRAMMAR BÖLÜMÜ — NOUNS (İsimlər)               ║
