@@ -8092,120 +8092,336 @@ const INDIRECT_SPEECH_LEVEL = {
 //  25      — Final Test
 // ============================================================
 
+  // ============================================================
+//  INDIRECT SPEECH — TAM DƏRS KARTLARI (v2)
+//  köhnə quizzes massivini bu ilə əvəz et
+// ============================================================
+
   quizzes: [
 
     // ══════════════════════════════════════════════════════════
     // ║  QRUP 1 — Vasitəsiz nitqdən vasitəli nitqə çevirmə    ║
     // ══════════════════════════════════════════════════════════
 
-    // ── index: 0 — Qrup 1 bölücüsü ───────────────────────────
+    // ── index: 0 ─ Qrup 1 bölücüsü ───────────────────────────
     {
       type: 'section_divider',
       title: 'Qrup 1 — Vasitəsiz nitqdən vasitəli nitqə çevirmə',
     },
 
-    // ── index: 1 — Bölmə 1 bölücüsü ──────────────────────────
+    // ── index: 1 ─ Bölmə 1 bölücüsü ──────────────────────────
     {
       type: 'section_divider',
       title: 'Bölmə 1 — Əsas qaydalar: nəqli cümlənin çevrilməsi',
     },
 
-    // ── index: 2 — Dərs 1.1 ───────────────────────────────────
+    // ── index: 2 ─ Dərs 1.1 ──────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 1.1 — Giriş + əsas dəyişikliklər',
       cards: [
+
+        // ── Ekran 1: Giriş ───────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 1.1 — Giriş + əsas dəyişikliklər',
-          content: 'Vasitəsiz nitqi vasitəli nitqə çevirərkən:\n\n1. Dırnaqlar atılır → "that" bağlayıcısı əlavə olunur\n   Jane said: "I don\'t understand"\n   → Jane said that she didn\'t understand\n\n2. Şəxs əvəzlikləri mənaya uyğun dəyişir\n   He says: "I am a doctor"\n   → He says that he is a doctor\n\n3. say + tamamlıq → tell\n   He says to me: "I am a driver"\n   → He tells me that he is a driver\n   (tamamlıq yoxdursa say dəyişmir)\n\n4. Baş cümlə indiki zamanda olarsa budaq cümlə dəyişmir\n   He says that he is a doctor.\n\nQEYD: "that" bağlayıcısı işlənməyə də bilər:\n   He says he is a pupil. ✔',
+          title: 'Vasitəli və vasitəsiz nitq',
+          content: 'Kimsənin sözlərini olduğu kimi aktaranda — vasitəsiz nitq, öz sözlərinlə danışanda — vasitəli nitq işlənirik.\n\nVasitəsiz → vasitəli nitqə çevirərkən 4 əsas dəyişiklik baş verir:',
+          examples: [
+            { word: '1. Dırnaqlar atılır',         az: '"that" bağlayıcısı əlavə olunur' },
+            { word: '2. Şəxs əvəzlikləri dəyişir', az: 'I → he/she, my → his/her' },
+            { word: '3. say + tamamlıq → tell',     az: 'tamamlıq yoxdursa say qalır' },
+            { word: '4. Zamanlar dəyişir',          az: 'baş cümlə keçmişdə olduqda' },
+          ],
+        },
+
+        // ── Ekran 2: Dırnaq + that ──────────────────────────
+        {
+          type: 'lesson',
+          title: '1. Dırnaqlar atılır → "that" əlavə olunur',
+          content: 'Vasitəsiz nitqin dırnaqları atılır, cümlə "that" bağlayıcısı ilə baş cümləyə bağlanır.',
+          examples: [
+            { word: 'Jane said: "I don\'t understand."',     az: '→ Jane said that she didn\'t understand.' },
+            { word: 'He said: "I am tired."',                az: '→ He said that he was tired.' },
+          ],
+          note: '"that" bağlayıcısı işlənməyə də bilər: He says he is a pupil. ✔',
+        },
+
+        // ── Ekran 3: Əvəzlik dəyişməsi ──────────────────────
+        {
+          type: 'lesson',
+          title: '2. Şəxs əvəzliklərinin dəyişməsi',
+          content: 'Şəxs əvəzlikləri mənaya uyğun olaraq dəyişir:',
+          table: [
+            ['Vasitəsiz nitqdə', 'Vasitəli nitqdə'],
+            ['I',               'he / she'],
+            ['my',              'his / her'],
+            ['we',              'they'],
+            ['our',             'their'],
+            ['me',              'him / her'],
+          ],
+          examples: [
+            { word: 'He says: "I am a doctor."', az: '→ He says that he is a doctor.' },
+          ],
+        },
+
+        // ── Ekran 4: say → tell ──────────────────────────────
+        {
+          type: 'lesson',
+          title: '3. say → tell (tamamlıq varsa)',
+          content: 'Vasitəsiz nitq "say" feli ilə başlayırsa:',
+          examples: [
+            { word: 'Tamamlıq VARSA → say → tell',   az: 'He says to me: "I am a driver." → He tells me that he is a driver.' },
+            { word: 'Tamamlıq YOXDURSA → say qalır', az: 'She said: "I am tired." → She said that she was tired.' },
+          ],
+          tip: 'say to me → tell me · say to him → tell him',
+        },
+
+        // ── Ekran 5: Baş cümlə indikidə ─────────────────────
+        {
+          type: 'lesson',
+          title: '4. Baş cümlə indiki zamanda — budaq cümlə dəyişmir',
+          content: 'Baş cümlənin feli indiki, gələcək və ya bitmiş zamanda olarsa budaq cümlə olduğu zamanda qalır:',
+          examples: [
+            { word: 'He says: "I am a doctor."',            az: '→ He says that he is a doctor. ✔' },
+            { word: 'He has said: "I sent them the book."', az: '→ He has said that he sent them the book. ✔' },
+            { word: 'He will say: "I sent them the book."', az: '→ He will say that he sent them the book. ✔' },
+          ],
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: '"that" bağlayıcısı vasitəli nitqdə mütləq işlənməlidirmi?', options: ['Bəli, mütləq', 'Xeyr, işlənməyə də bilər'], answer: 'Xeyr, işlənməyə də bilər' },
+            { q: 'say + tamamlıq → ___', options: ['tell', 'ask', 'say', 'speak'], answer: 'tell' },
+            { q: '"I" əvəzliyi vasitəli nitqdə nə olur?', options: ['he / she', 'they', 'we', 'you'], answer: 'he / she' },
+            { q: 'Baş cümlə indiki zamanda olarsa budaq cümlə necə olur?', options: ['Dəyişmir', 'Keçmiş zamana keçir', 'Gələcəyə keçir', 'Silinir'], answer: 'Dəyişmir' },
+            { q: 'Jane said: "I don\'t understand." → Jane said that ___ understand.', options: ['she didn\'t', 'I didn\'t', 'she doesn\'t', 'I don\'t'], answer: 'she didn\'t' },
+          ],
         },
       ],
     },
 
-    // ── index: 3 — Dərs 1.2 ───────────────────────────────────
+    // ── index: 3 ─ Dərs 1.2 ──────────────────────────────────
     {
       type: 'grammar_lesson',
-      title: 'Dərs 1.2 — Zamanların dəyişməsi (baş cümlə keçmişdə)',
+      title: 'Dərs 1.2 — Zamanların dəyişməsi',
       cards: [
+
+        // ── Ekran 1: Giriş ───────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 1.2 — Zamanların dəyişməsi',
-          content: 'Baş cümlə keçmiş zamanda olduqda:\n\na) Present Simple → Past Simple\n   "I am sure I don\'t know"\n   → he was sure he didn\'t know\n\nb) Present Continuous → Past Continuous\n   "I am preparing my lessons"\n   → he was preparing his lessons\n\nc) Present Perfect → Past Perfect\n   "I have never seen him"\n   → he had never seen him in his life\n\nd) Past Simple → Past Perfect\n   "I saw the boys yesterday"\n   → he had seen the boys the day before\n\ng) will / shall → would\n   "I shall finish my work in time"\n   → he would finish his work in time',
+          title: 'Zamanların dəyişməsi (Backshift)',
+          content: 'Baş cümlənin feli keçmiş zamanda olduqda budaq cümlədəki zamanlar da geriyə — keçmişə — doğru "sürüşür".\n\nBu hadisəyə backshift deyilir.',
+          tip: 'Qayda sadədir: hər zaman bir addım geriyə gedir.',
+        },
+
+        // ── Ekran 2: Cədvəl ──────────────────────────────────
+        {
+          type: 'lesson',
+          title: 'Zamanların dəyişmə cədvəli',
+          content: 'Baş cümlə keçmiş zamanda olduqda:',
+          table: [
+            ['Vasitəsiz nitqdə',     'Vasitəli nitqdə'],
+            ['Present Simple',       'Past Simple'],
+            ['Present Continuous',   'Past Continuous'],
+            ['Present Perfect',      'Past Perfect'],
+            ['Past Simple',          'Past Perfect'],
+            ['will / shall',         'would'],
+          ],
+        },
+
+        // ── Ekran 3: Nümunələr ──────────────────────────────
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Hər dəyişməni nümunə ilə görək:',
+          examples: [
+            { word: '"I am sure I don\'t know."',       az: '→ he was sure he didn\'t know  (Pres.Simple → Past Simple)' },
+            { word: '"I am preparing my lessons."',     az: '→ he was preparing his lessons  (Pres.Cont. → Past Cont.)' },
+            { word: '"I have never seen him."',         az: '→ he had never seen him  (Pres.Perfect → Past Perfect)' },
+            { word: '"I saw the boys yesterday."',      az: '→ he had seen the boys the day before  (Past Simple → Past Perfect)' },
+            { word: '"I shall finish my work in time."',az: '→ he would finish his work in time  (will/shall → would)' },
+          ],
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: 'Present Simple → vasitəli nitqdə ___', options: ['Past Simple', 'Past Perfect', 'Past Continuous', 'dəyişmir'], answer: 'Past Simple' },
+            { q: 'Present Perfect → vasitəli nitqdə ___', options: ['Past Perfect', 'Past Simple', 'Past Continuous', 'dəyişmir'], answer: 'Past Perfect' },
+            { q: '"I will come." → He said he ___ come.', options: ['would', 'will', 'shall', 'could'], answer: 'would' },
+            { q: '"I am reading." → She said she ___ reading.', options: ['was', 'is', 'has been', 'had been'], answer: 'was' },
+            { q: '"I have finished." → He said he ___ finished.', options: ['had', 'has', 'was', 'did'], answer: 'had' },
+            { q: 'Past Simple → vasitəli nitqdə ___', options: ['Past Perfect', 'Past Simple', 'dəyişmir', 'would'], answer: 'Past Perfect' },
+            { q: 'will / shall → vasitəli nitqdə ___', options: ['would', 'will', 'should', 'could'], answer: 'would' },
+          ],
         },
       ],
     },
 
-    // ── index: 4 — Dərs 1.3 ───────────────────────────────────
+    // ── index: 4 ─ Dərs 1.3 ──────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 1.3 — Zamanların dəyişmədiyi hallar',
       cards: [
+
+        // ── Ekran 1: Giriş ───────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 1.3 — Zamanların dəyişmədiyi hallar',
-          content: 'Aşağıdakı hallarda zamanlar DEYİŞMİR:\n\n1. Ümumi həqiqətlər (tarixi faktlar):\n   "Ch. Dickens was born in 1812"\n   → The teacher said that Ch. Dickens was born in 1812 ✔\n\n2. Zaman budaq cümləsi ilə bildirilərsə\n   Past Simple dəyişmir:\n   "I went home when it began to rain"\n   → he said he went home when it began to rain ✔\n\n3. Past Continuous dəyişmir:\n   "I was going home at two o\'clock"\n   → she was going home at two o\'clock ✔\n\n4. Past Perfect dəyişmir:\n   "I had not thought of it"\n   → he had not thought of it ✔',
+          title: 'Zamanlar hər zaman dəyişmirmi?',
+          content: 'Bəzi hallarda zamanlar dəyişmir — backshift tətbiq edilmir.\n\nBu 4 istisna halı bilmək çox vacibdir:',
+          examples: [
+            { word: '1. Tarixi faktlar və ümumi həqiqətlər', az: 'həmişə doğru olduğu üçün dəyişmir' },
+            { word: '2. Zaman budaq cümləsi ilə bildirilərsə', az: 'Past Simple dəyişmir' },
+            { word: '3. Past Continuous',                      az: 'dəyişmir' },
+            { word: '4. Past Perfect',                         az: 'artıq keçmişin keçmişidir, dəyişmir' },
+          ],
+        },
+
+        // ── Ekran 2: Nümunələr ──────────────────────────────
+        {
+          type: 'lesson',
+          title: 'İstisna halların nümunələri',
+          content: 'Hər istisna halı nümunə ilə:',
+          examples: [
+            { word: '"Ch. Dickens was born in 1812."',           az: '→ The teacher said that Dickens was born in 1812. ✔ (tarixi fakt)' },
+            { word: '"I went home when it began to rain."',      az: '→ he said he went home when it began to rain. ✔ (zaman budaq cümləsi)' },
+            { word: '"I was going home at two o\'clock."',       az: '→ she said she was going home at two o\'clock. ✔ (Past Cont.)' },
+            { word: '"I had not thought of it."',                az: '→ the doctor said he had not thought of it. ✔ (Past Perfect)' },
+          ],
+          note: 'Tarixi faktlar, elmi həqiqətlər həmişə indiki zamanda qalır: the Earth goes around the Sun.',
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: '"Dickens was born in 1812." — vasitəli nitqdə zaman dəyişirmi?', options: ['Xeyr, tarixi fakt', 'Bəli, Past Perfect olur'], answer: 'Xeyr, tarixi fakt' },
+            { q: 'Past Perfect vasitəli nitqdə dəyişirmi?', options: ['Xeyr, dəyişmir', 'Bəli, daha dərin keçmişə keçir'], answer: 'Xeyr, dəyişmir' },
+            { q: 'Past Continuous vasitəli nitqdə dəyişirmi?', options: ['Xeyr, dəyişmir', 'Bəli, Past Perfect Continuous olur'], answer: 'Xeyr, dəyişmir' },
+            { q: '"I went home when it rained." → she said she ___ home when it rained.', options: ['went', 'had gone', 'was going', 'goes'], answer: 'went' },
+            { q: '"I was cooking at 6." → he said he ___ at 6.', options: ['was cooking', 'had been cooking', 'cooked', 'is cooking'], answer: 'was cooking' },
+          ],
         },
       ],
     },
 
-    // ── index: 5 — Mini-quiz 1 ────────────────────────────────
+    // ── index: 5 ─ Mini-quiz 1 ────────────────────────────────
     [
       { en: 'Jane said: "I don\'t understand." → Jane said that she ___ understand.', tr: 'didn\'t', wrong: 'doesn\'t' },
       { en: 'He says to me: "I am a driver." → He ___ me that he is a driver.', tr: 'tells', wrong: 'says' },
-      { en: 'She said: "I am happy." → She said that she ___ happy.', tr: 'was', wrong: 'is' },
-      { en: 'He said: "I have finished." → He said that he ___ finished.', tr: 'had', wrong: 'has' },
-      { en: 'He said: "I will come." → He said that he ___ come.', tr: 'would', wrong: 'will' },
-      { en: '"that" bağlayıcısı vasitəli nitqdə mütləq işlənməlidirmi?', tr: 'Xeyr, işlənməyə də bilər', wrong: 'Bəli, mütləq işlənməlidir' },
+      { en: '"I am preparing my lessons." → He said he ___ his lessons.', tr: 'was preparing', wrong: 'is preparing' },
+      { en: '"I have never seen him." → She said she ___ never seen him.', tr: 'had', wrong: 'has' },
+      { en: '"I will come." → He said he ___ come.', tr: 'would', wrong: 'will' },
+      { en: '"that" bağlayıcısı işlənməyə də bilər — doğrudurmu?', tr: 'Bəli', wrong: 'Xeyr' },
       { en: 'say + tamamlıq → ___', tr: 'tell', wrong: 'ask' },
-      { en: '"I saw him yesterday." → He said he ___ him the day before.', tr: 'had seen', wrong: 'saw' },
+      { en: '"I saw them yesterday." → He said he ___ them the day before.', tr: 'had seen', wrong: 'saw' },
+      { en: '"Dickens was born in 1812." → The teacher said Dickens ___ born in 1812.', tr: 'was', wrong: 'had been' },
+      { en: '"I was going home at two." → She said she ___ home at two.', tr: 'was going', wrong: 'had been going' },
     ],
 
-    // ── index: 6 — Bölmə 2 bölücüsü ──────────────────────────
+    // ── index: 6 ─ Bölmə 2 bölücüsü ──────────────────────────
     {
       type: 'section_divider',
       title: 'Bölmə 2 — Zaman və məkan sözlərinin dəyişməsi',
     },
 
-    // ── index: 7 — Dərs 2.1 ───────────────────────────────────
+    // ── index: 7 ─ Dərs 2.1 ──────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 2.1 — Yaxın → uzaq sözlər',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 2.1 — Yaxın → uzaq sözlər',
-          content: 'Vasitəli nitqdə məkanca yaxın sözlər uzaq sözlərlə əvəz edilir:\n\nthis   → that\nthese  → those\nhere   → there\nnow    → then\ntoday  → that day\n\n✦ "I like this book"\n→ she said she liked that book\n\n✦ "Come here now"\n→ he told her to go there then',
+          title: 'Məkan sözlərinin dəyişməsi',
+          content: 'Vasitəli nitqdə danışan artıq o yerdə deyil — buna görə yaxın məkan sözləri uzaq sözlərlə əvəz edilir:',
+          table: [
+            ['Vasitəsiz nitqdə', 'Vasitəli nitqdə'],
+            ['this',             'that'],
+            ['these',            'those'],
+            ['here',             'there'],
+            ['now',              'then'],
+            ['today',            'that day'],
+          ],
+          examples: [
+            { word: '"I like this book."',   az: '→ she said she liked that book.' },
+            { word: '"Come here now."',       az: '→ he told her to go there then.' },
+          ],
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: '"this" → vasitəli nitqdə ___', options: ['that', 'those', 'here', 'then'], answer: 'that' },
+            { q: '"these" → vasitəli nitqdə ___', options: ['those', 'that', 'there', 'then'], answer: 'those' },
+            { q: '"here" → vasitəli nitqdə ___', options: ['there', 'that', 'then', 'before'], answer: 'there' },
+            { q: '"now" → vasitəli nitqdə ___', options: ['then', 'there', 'that day', 'before'], answer: 'then' },
+            { q: '"today" → vasitəli nitqdə ___', options: ['that day', 'then', 'there', 'the next day'], answer: 'that day' },
+          ],
         },
       ],
     },
 
-    // ── index: 8 — Dərs 2.2 ───────────────────────────────────
+    // ── index: 8 ─ Dərs 2.2 ──────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 2.2 — Zaman zərflərinin dəyişməsi',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 2.2 — Zaman zərflərinin dəyişməsi',
-          content: 'Vasitəli nitqdə zamanca yaxın sözlər uzaq sözlərlə əvəz edilir:\n\ntomorrow  → the next day / the following day\nyesterday → the day before / the previous day\nago       → before\nlast week → the previous week\nnext year → the following year\n\n✦ "I saw him yesterday"\n→ he said he had seen him the day before\n\n✦ "I will come tomorrow"\n→ she said she would come the next day',
+          title: 'Zaman zərflərinin dəyişməsi',
+          content: 'Zamanca yaxın sözlər də vasitəli nitqdə uzaq sözlərlə əvəz edilir:',
+          table: [
+            ['Vasitəsiz nitqdə', 'Vasitəli nitqdə'],
+            ['tomorrow',         'the next day / the following day'],
+            ['yesterday',        'the day before / the previous day'],
+            ['ago',              'before'],
+            ['last week',        'the previous week'],
+            ['next year',        'the following year'],
+          ],
+          examples: [
+            { word: '"I saw him yesterday."',     az: '→ he said he had seen him the day before.' },
+            { word: '"I will come tomorrow."',    az: '→ she said she would come the next day.' },
+            { word: '"I met her two days ago."',  az: '→ she said she had met her two days before.' },
+          ],
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: '"tomorrow" → vasitəli nitqdə ___', options: ['the next day', 'the day before', 'then', 'before'], answer: 'the next day' },
+            { q: '"yesterday" → vasitəli nitqdə ___', options: ['the day before', 'the next day', 'then', 'ago'], answer: 'the day before' },
+            { q: '"ago" → vasitəli nitqdə ___', options: ['before', 'then', 'after', 'the day before'], answer: 'before' },
+            { q: '"I did it today." → He said he ___ it that day.', options: ['had done', 'did', 'does', 'was doing'], answer: 'had done' },
+            { q: '"next year" → vasitəli nitqdə ___', options: ['the following year', 'the previous year', 'that year', 'next year'], answer: 'the following year' },
+          ],
         },
       ],
     },
 
-    // ── index: 9 — Mini-quiz 2 ────────────────────────────────
+    // ── index: 9 ─ Mini-quiz 2 ────────────────────────────────
     [
       { en: '"I like this book." → She said she liked ___ book.', tr: 'that', wrong: 'this' },
       { en: '"I live here." → He said he lived ___.', tr: 'there', wrong: 'here' },
       { en: '"I will come tomorrow." → She said she would come ___.', tr: 'the next day', wrong: 'tomorrow' },
       { en: '"I saw him yesterday." → He said he had seen him ___.', tr: 'the day before', wrong: 'yesterday' },
-      { en: '"These are my books." → He said ___ were his books.', tr: 'those', wrong: 'these' },
+      { en: '"These are mine." → He said ___ were his.', tr: 'those', wrong: 'these' },
       { en: '"I met her two days ago." → She said she had met her two days ___.', tr: 'before', wrong: 'ago' },
       { en: '"I am busy now." → He said he was busy ___.', tr: 'then', wrong: 'now' },
-      { en: '"I did it today." → She said she had done it ___.', tr: 'that day', wrong: 'today' },
+      { en: '"I will come next year." → She said she would come ___.', tr: 'the following year', wrong: 'next year' },
+      { en: '"this" → ___', tr: 'that', wrong: 'those' },
+      { en: '"I did it today." → He said he ___ it that day.', tr: 'had done', wrong: 'did' },
     ],
 
-    // ── index: 10 — Test 1 ────────────────────────────────────
+    // ── index: 10 ─ Test 1 ────────────────────────────────────
     // Nəqli cümlə + zaman/məkan dəyişməsi (Bölmə 1–2) · 12 sual
     [
       { en: 'He said: "I am a teacher." → He said that ___ a teacher.', tr: 'he was', wrong: 'I was' },
@@ -8214,11 +8430,11 @@ const INDIRECT_SPEECH_LEVEL = {
       { en: '"I will call you tomorrow." → She said she ___ call me the next day.', tr: 'would', wrong: 'will' },
       { en: '"I like this house." → She said she liked ___ house.', tr: 'that', wrong: 'this' },
       { en: '"I live here." → He said he lived ___.', tr: 'there', wrong: 'here' },
-      { en: '"Ch. Dickens was born in 1812." → The teacher said Dickens ___ born in 1812.', tr: 'was', wrong: 'had been' },
+      { en: '"Dickens was born in 1812." → The teacher said Dickens ___ born in 1812.', tr: 'was', wrong: 'had been' },
       { en: '"I was cooking at 6." → She said she ___ at 6.', tr: 'was cooking', wrong: 'had been cooking' },
       { en: '"I saw them yesterday." → He said he ___ them the day before.', tr: 'had seen', wrong: 'saw' },
       { en: '"I went home when it rained." → She said she ___ home when it rained.', tr: 'went', wrong: 'had gone' },
-      { en: '"I will come tomorrow." → He said he ___ come the next day.', tr: 'would', wrong: 'will' },
+      { en: '"I will come tomorrow." → He said he would come ___.', tr: 'the next day', wrong: 'tomorrow' },
       { en: '"these" → vasitəli nitqdə ___', tr: 'those', wrong: 'that' },
     ],
 
@@ -8226,45 +8442,103 @@ const INDIRECT_SPEECH_LEVEL = {
     // ║  QRUP 2 — Sual, əmr və xahiş cümlələrinin çevrilməsi  ║
     // ══════════════════════════════════════════════════════════
 
-    // ── index: 11 — Qrup 2 bölücüsü ──────────────────────────
+    // ── index: 11 ─ Qrup 2 bölücüsü ──────────────────────────
     {
       type: 'section_divider',
       title: 'Qrup 2 — Sual, əmr və xahiş cümlələrinin çevrilməsi',
     },
 
-    // ── index: 12 — Bölmə 3 bölücüsü ─────────────────────────
+    // ── index: 12 ─ Bölmə 3 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
       title: 'Bölmə 3 — Ümumi sualların vasitəli nitqə çevrilməsi',
     },
 
-    // ── index: 13 — Dərs 3.1 ──────────────────────────────────
+    // ── index: 13 ─ Dərs 3.1 ─────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 3.1 — Əsas qayda',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 3.1 — Ümumi sual: əsas qayda',
-          content: 'Ümumi sualın vasitəli nitqə çevrilməsi:\n\n1. Sual → tamamlıq budaq cümləsinə çevrilir\n2. "if" / "whether" bağlayıcısı ilə bağlanır (ən çox if)\n3. Söz sırası: mübtəda → xəbər\n4. "do / does / did" atılır\n5. say → ask\n\n✦ He says: "Do you go to school?"\n→ He asks if I go to school\n\n✦ She asked: "Are you ready?"\n→ She asked if I was ready',
+          title: 'Ümumi sual nədir?',
+          content: 'Ümumi sual "hə/yox" cavabı tələb edən sualdır. Vasitəli nitqə çevirərkən 5 qayda var:',
+          examples: [
+            { word: '1. Tamamlıq budaq cümləsinə çevrilir',  az: 'sual cümləsi → xəbər cümləsi' },
+            { word: '2. "if" / "whether" bağlayıcısı',       az: 'baş cümləyə bağlayır (ən çox if)' },
+            { word: '3. Söz sırası: mübtəda → xəbər',        az: 'sual sırası deyil, cümlə sırası' },
+            { word: '4. "do / does / did" atılır',           az: 'köməkçi fel lazım deyil' },
+            { word: '5. say → ask',                          az: 'sual verən üçün ask işlənir' },
+          ],
+        },
+
+        // ── Ekran 2: Nümunələr ──────────────────────────────
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Qaydaları nümunələrlə görək:',
+          examples: [
+            { word: '"Do you go to school in the morning?"', az: '→ He asks if I go to school in the morning.' },
+            { word: '"Do you like tea?"',                    az: '→ He asked if I liked tea.' },
+            { word: '"Is she coming?"',                      az: '→ He asked if she was coming.' },
+            { word: '"Have you finished?"',                  az: '→ She asked if I had finished.' },
+            { word: '"Will you help me?"',                   az: '→ He asked if I would help him.' },
+          ],
+          note: 'Zamanlar nəqli cümlədəki kimi eyni qaydada dəyişir.',
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: 'Ümumi sualda say → ___', options: ['ask', 'tell', 'order', 'say'], answer: 'ask' },
+            { q: '"Do you like music?" → He asked ___ I liked music.', options: ['if', 'that', 'whether or if — hər ikisi', 'what'], answer: 'if' },
+            { q: 'Ümumi sualda "do" köməkçisi vasitəli nitqdə nə olur?', options: ['Atılır', 'Qalır', 'would olur', 'did olur'], answer: 'Atılır' },
+            { q: 'Ümumi sualda söz sırası necədir?', options: ['mübtəda → xəbər', 'xəbər → mübtəda', 'dəyişmir', 'serbest'], answer: 'mübtəda → xəbər' },
+            { q: '"Will she come?" → He asked if she ___ come.', options: ['would', 'will', 'shall', 'could'], answer: 'would' },
+          ],
         },
       ],
     },
 
-    // ── index: 14 — Dərs 3.2 ──────────────────────────────────
+    // ── index: 14 ─ Dərs 3.2 ─────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 3.2 — Nümunələr',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 3.2 — Ümumi sual nümunələri',
-          content: '"Do you go to school in the morning?"\n→ He asks if I go to school in the morning\n\n"Do you like tea?"\n→ He asked if I liked tea\n\n"Is she coming?"\n→ He asked if she was coming\n\n"Have you finished?"\n→ She asked if I had finished\n\n"Will you help me?"\n→ He asked if I would help him\n\nQEYD: Zamanlar nəqli cümlədəki eyni qaydada dəyişir.',
+          title: 'Ümumi sual — əlavə nümunələr',
+          content: 'Müxtəlif zaman formalarında ümumi sualların çevrilməsi:',
+          table: [
+            ['Vasitəsiz nitq',          'Vasitəli nitq'],
+            ['"Do you go to school?"',  'He asked if I went to school.'],
+            ['"Is she coming?"',        'He asked if she was coming.'],
+            ['"Have you finished?"',    'She asked if I had finished.'],
+            ['"Will you help me?"',     'He asked if I would help him.'],
+            ['"Are you ready?"',        'She asked if I was ready.'],
+          ],
+          note: '"Do you go to school in the morning?" cümləsindəki kimi "do" atılır və zaman dəyişir.',
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: '"Are you tired?" → She asked if ___ tired.', options: ['I was', 'am I', 'I am', 'was I'], answer: 'I was' },
+            { q: '"Have you eaten?" → He asked if I ___ eaten.', options: ['had', 'have', 'was', 'did'], answer: 'had' },
+            { q: '"Do you speak English?" → He asked ___ I spoke English.', options: ['if', 'that', 'what', 'where'], answer: 'if' },
+            { q: '"Is he your brother?" → She asked if ___ my brother.', options: ['he was', 'is he', 'he is', 'was he'], answer: 'he was' },
+          ],
         },
       ],
     },
 
-    // ── index: 15 — Mini-quiz 3 ───────────────────────────────
+    // ── index: 15 ─ Mini-quiz 3 ───────────────────────────────
     [
       { en: '"Do you like music?" → He asked ___ I liked music.', tr: 'if', wrong: 'that' },
       { en: 'Ümumi sualda "do" köməkçisi vasitəli nitqdə nə olur?', tr: 'Atılır', wrong: 'Qalır' },
@@ -8275,39 +8549,95 @@ const INDIRECT_SPEECH_LEVEL = {
       { en: 'Ümumi sualda say → ___', tr: 'ask', wrong: 'tell' },
     ],
 
-    // ── index: 16 — Bölmə 4 bölücüsü ─────────────────────────
+    // ── index: 16 ─ Bölmə 4 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
       title: 'Bölmə 4 — Xüsusi sualların vasitəli nitqə çevrilməsi',
     },
 
-    // ── index: 17 — Dərs 4.1 ──────────────────────────────────
+    // ── index: 17 ─ Dərs 4.1 ─────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 4.1 — Əsas qayda',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 4.1 — Xüsusi sual: əsas qayda',
-          content: 'Xüsusi sualın vasitəli nitqə çevrilməsi:\n\n1. Sual sözü (where/when/what/who/how) saxlanılır\n2. Söz sırası: mübtəda → xəbər\n3. "do / does / did" atılır\n4. Şəxs əvəzliyi dəyişir\n5. say → ask\n\n✦ He says: "Where do you live?"\n→ He asks me where I live\n\n✦ He asked me: "Where is your friend?"\n→ He asked me where my friend was',
+          title: 'Xüsusi sual nədir?',
+          content: 'Xüsusi sual sual sözü ilə başlayan sualdır (where, when, what, who, how...).\nVasitəli nitqə çevirərkən 5 qayda:',
+          examples: [
+            { word: '1. Sual sözü saxlanılır',          az: 'where, when, what, who, how...' },
+            { word: '2. Söz sırası: mübtəda → xəbər',  az: 'sual sırası deyil, cümlə sırası' },
+            { word: '3. "do / does / did" atılır',      az: 'köməkçi fel lazım deyil' },
+            { word: '4. Şəxs əvəzliyi dəyişir',        az: 'nəqli cümləkdəki kimi' },
+            { word: '5. say → ask',                     az: 'sual üçün ask işlənir' },
+          ],
+          note: 'Xüsusi sualda "if/whether" işlənmir — sual sözü özü bağlayıcı rolunu oynayır.',
+        },
+
+        // ── Ekran 2: Nümunələr ──────────────────────────────
+        {
+          type: 'lesson',
+          title: 'Nümunələr',
+          content: 'Xüsusi sualların çevrilməsi:',
+          examples: [
+            { word: '"Where do you live?"',                    az: '→ He asks me where I live.' },
+            { word: '"Where is your friend?"',                 az: '→ He asked me where my friend was.' },
+            { word: '"When will they send you the book?"',     az: '→ He asked me when they would send me the book.' },
+          ],
+          tip: 'do/does/did atılır: "Where do you live?" → where I live (do yoxdur)',
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: 'Xüsusi sualda say → ___', options: ['ask', 'tell', 'order', 'say'], answer: 'ask' },
+            { q: '"Where do you live?" → He asked me ___ I lived.', options: ['where', 'if', 'that', 'when'], answer: 'where' },
+            { q: 'Xüsusi sualda "if/whether" işlənirmi?', options: ['Xeyr', 'Bəli', 'Bəzən'], answer: 'Xeyr' },
+            { q: '"do" köməkçisi xüsusi sualda atılırmı?', options: ['Bəli', 'Xeyr', 'Bəzən'], answer: 'Bəli' },
+          ],
         },
       ],
     },
 
-    // ── index: 18 — Dərs 4.2 ──────────────────────────────────
+    // ── index: 18 ─ Dərs 4.2 ─────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 4.2 — Nümunələr',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 4.2 — Xüsusi sual nümunələri',
-          content: '"Where do you live?"\n→ He asks me where I live\n\n"Where is your friend?"\n→ He asked me where my friend was\n\n"When will they send you the book?"\n→ He asked me when they would send me the book\n\n"What are you doing?"\n→ She asked what I was doing\n\n"How did you find it?"\n→ He asked how I had found it\n\nQEYD: if/whether işlənmir — sual sözü özü bağlayıcı rolunu oynayır.',
+          title: 'Xüsusi sual — əlavə nümunələr',
+          content: 'Müxtəlif sual sözləri ilə nümunələr:',
+          table: [
+            ['Vasitəsiz nitq',                            'Vasitəli nitq'],
+            ['"Where do you live?"',                      'He asked where I lived.'],
+            ['"What are you doing?"',                     'She asked what I was doing.'],
+            ['"How did you find it?"',                    'He asked how I had found it.'],
+            ['"Who is that man?"',                        'She asked who that man was.'],
+            ['"When will they send the book?"',           'He asked when they would send the book.'],
+          ],
+          note: 'Hər sual sözü (where, what, how, who, when) bağlayıcı rolunu özü oynayır.',
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: '"What are you doing?" → She asked ___ I was doing.', options: ['what', 'if what', 'that', 'if'], answer: 'what' },
+            { q: '"How did you do it?" → He asked how I ___ it.', options: ['had done', 'did', 'does', 'was doing'], answer: 'had done' },
+            { q: '"Who is that girl?" → She asked ___ that girl was.', options: ['who', 'if who', 'that', 'if'], answer: 'who' },
+            { q: '"When will he come?" → She asked ___ he would come.', options: ['when', 'if when', 'if', 'that'], answer: 'when' },
+          ],
         },
       ],
     },
 
-    // ── index: 19 — Mini-quiz 4 ───────────────────────────────
+    // ── index: 19 ─ Mini-quiz 4 ───────────────────────────────
     [
       { en: '"Where do you live?" → He asked me ___ I lived.', tr: 'where', wrong: 'if' },
       { en: '"What are you doing?" → She asked ___ I was doing.', tr: 'what', wrong: 'if what' },
@@ -8318,39 +8648,125 @@ const INDIRECT_SPEECH_LEVEL = {
       { en: '"Who is that girl?" → She asked ___ that girl was.', tr: 'who', wrong: 'if who' },
     ],
 
-    // ── index: 20 — Bölmə 5 bölücüsü ─────────────────────────
+    // ── index: 20 ─ Bölmə 5 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
       title: 'Bölmə 5 — Əmr və xahiş cümlələrinin çevrilməsi',
     },
 
-    // ── index: 21 — Dərs 5.1 ──────────────────────────────────
+    // ── index: 21 ─ Dərs 5.1 ─────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 5.1 — Əmr cümləsi',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 5.1 — Əmr cümləsi',
-          content: 'Əmr bildirən cümlədə:\n→ say → tell / order\n→ Əmr forması məsdərlə əvəz edilir\n\n✦ He said to her: "Come at six o\'clock."\n→ He told her to come at six o\'clock\n\n✦ She said to him: "Open the door!"\n→ She told him to open the door\n\nİnkar əmr — məsdərin qarşısında "not":\n✦ I said to her: "Don\'t open the window."\n→ I told her not to open the window\n\n✦ He said: "Don\'t be late."\n→ He told them not to be late',
+          title: 'Əmr cümləsinin vasitəli nitqə çevrilməsi',
+          content: 'Əmr cümləsini çevirərkən 2 əsas qayda:',
+          examples: [
+            { word: '1. say → tell / order',               az: 'əmr bildirən cümlədə' },
+            { word: '2. Əmr forması → məsdər (to + fel)',  az: 'felin əmr forması məsdərlə əvəz edilir' },
+          ],
+        },
+
+        // ── Ekran 2: Nümunələr ──────────────────────────────
+        {
+          type: 'lesson',
+          title: 'Müsbət əmr nümunələri',
+          content: 'Əmr cümləsinin çevrilməsi:',
+          examples: [
+            { word: '"Come at six o\'clock."',  az: '→ He told her to come at six o\'clock.' },
+            { word: '"Open the door!"',         az: '→ She told him to open the door.' },
+            { word: '"Sit down."',              az: '→ She told them to sit down.' },
+          ],
+        },
+
+        // ── Ekran 3: İnkar əmr ──────────────────────────────
+        {
+          type: 'lesson',
+          title: 'İnkar əmr cümləsi',
+          content: 'İnkar əmr cümlələrini çevirərkən məsdərin qarşısında "not" işlənir:',
+          examples: [
+            { word: '"Don\'t open the window."', az: '→ I told her not to open the window.' },
+            { word: '"Don\'t be late."',          az: '→ He told them not to be late.' },
+          ],
+          note: 'Formula: tell/order + (kim) + not to + fel',
+          tip: 'Müsbət: told her to come  ·  İnkar: told her not to come',
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: 'Əmr bildirən cümlədə say → ___', options: ['tell / order', 'ask', 'say', 'speak'], answer: 'tell / order' },
+            { q: '"Come here!" → He ___ her to come there.', options: ['told', 'asked', 'said', 'ordered'], answer: 'told' },
+            { q: '"Don\'t open the door." → He told her ___ open the door.', options: ['not to', 'to not', 'don\'t', 'not'], answer: 'not to' },
+            { q: 'Əmr forması vasitəli nitqdə nə ilə əvəz edilir?', options: ['to + fel (məsdər)', 'keçmiş zaman', 'would + fel', 'fel + ing'], answer: 'to + fel (məsdər)' },
+            { q: '"Don\'t be late." → She told him ___ late.', options: ['not to be', 'to not be', 'don\'t be', 'not be'], answer: 'not to be' },
+          ],
         },
       ],
     },
 
-    // ── index: 22 — Dərs 5.2 ──────────────────────────────────
+    // ── index: 22 ─ Dərs 5.2 ─────────────────────────────────
     {
       type: 'grammar_lesson',
       title: 'Dərs 5.2 — Xahiş cümləsi',
       cards: [
+
+        // ── Ekran 1 ──────────────────────────────────────────
         {
           type: 'lesson',
-          title: 'Dərs 5.2 — Xahiş cümləsi',
-          content: 'Xahiş bildirən cümlədə:\n→ say → ask\n→ Əmr forması məsdərlə əvəz edilir\n\n✦ He said to her: "Please open the window."\n→ He asked her to open the window\n\n✦ She said: "Please help me."\n→ She asked him to help her\n\nİnkar xahiş:\n✦ He said: "Please don\'t make noise."\n→ He asked them not to make noise\n\nXÜLASƏ:\nƏmr → tell / order + to + məsdər\nXahiş → ask + to + məsdər\nİnkar → not + to + məsdər',
+          title: 'Xahiş cümləsinin vasitəli nitqə çevrilməsi',
+          content: 'Xahiş bildirən cümlədə say → ask işlənir.\nƏmr forması yenə məsdərlə əvəz edilir:',
+          examples: [
+            { word: '"Please open the window."',  az: '→ He asked her to open the window.' },
+            { word: '"Please help me."',           az: '→ She asked him to help her.' },
+            { word: '"Please sit down."',          az: '→ She asked him to sit down.' },
+          ],
+        },
+
+        // ── Ekran 2: İnkar xahiş ────────────────────────────
+        {
+          type: 'lesson',
+          title: 'İnkar xahiş cümləsi',
+          content: 'İnkar xahiş cümlələrini çevirərkən də "not" işlənir:',
+          examples: [
+            { word: '"Please don\'t make noise."', az: '→ He asked them not to make noise.' },
+            { word: '"Please don\'t be rude."',    az: '→ She asked them not to be rude.' },
+          ],
+        },
+
+        // ── Ekran 3: Xülasə ─────────────────────────────────
+        {
+          type: 'lesson',
+          title: 'Əmr vs Xahiş — xülasə',
+          content: 'Fərqi bir cədvəldə görək:',
+          table: [
+            ['Növ',          'say → ___',     'Formula',                  'Nümunə'],
+            ['Əmr',          'tell / order',  'tell + kim + to + fel',    '"Come!" → told to come'],
+            ['Xahiş',        'ask',           'ask + kim + to + fel',     '"Please come." → asked to come'],
+            ['İnkar əmr',    'tell',          'tell + kim + not to + fel', '"Don\'t come." → told not to come'],
+            ['İnkar xahiş',  'ask',           'ask + kim + not to + fel', '"Please don\'t." → asked not to'],
+          ],
+        },
+
+        // ── Mini-check ───────────────────────────────────────
+        {
+          type: 'mini_check',
+          questions: [
+            { q: 'Xahiş bildirən cümlədə say → ___', options: ['ask', 'tell', 'order', 'say'], answer: 'ask' },
+            { q: '"Please help me." → She ___ him to help her.', options: ['asked', 'told', 'ordered', 'said'], answer: 'asked' },
+            { q: '"Please don\'t make noise." → He asked them ___ noise.', options: ['not to make', 'to not make', 'don\'t make', 'not make'], answer: 'not to make' },
+            { q: 'Əmr — tell · Xahiş — ___', options: ['ask', 'tell', 'order', 'say'], answer: 'ask' },
+          ],
         },
       ],
     },
 
-    // ── index: 23 — Mini-quiz 5 ───────────────────────────────
+    // ── index: 23 ─ Mini-quiz 5 ───────────────────────────────
     [
       { en: '"Come here!" → He ___ her to come there.', tr: 'told', wrong: 'asked' },
       { en: '"Please help me." → She ___ him to help her.', tr: 'asked', wrong: 'told' },
@@ -8359,10 +8775,10 @@ const INDIRECT_SPEECH_LEVEL = {
       { en: 'Xahiş bildirən cümlədə say → ___', tr: 'ask', wrong: 'tell' },
       { en: '"Don\'t be late." → She told him ___ late.', tr: 'not to be', wrong: 'to not be' },
       { en: '"Please sit down." → She asked him ___ down.', tr: 'to sit', wrong: 'sitting' },
-      { en: 'Əmr forması vasitəli nitqdə nə ilə əvəz edilir?', tr: 'Məsdər (to + fel)', wrong: 'Keçmiş zaman' },
+      { en: 'Əmr forması vasitəli nitqdə nə ilə əvəz edilir?', tr: 'to + fel (məsdər)', wrong: 'keçmiş zaman' },
     ],
 
-    // ── index: 24 — Test 2 ────────────────────────────────────
+    // ── index: 24 ─ Test 2 ────────────────────────────────────
     // Sual + əmr + xahiş çevrilməsi (Bölmə 3–5) · 12 sual
     [
       { en: '"Do you speak English?" → He asked ___ I spoke English.', tr: 'if', wrong: 'that' },
@@ -8379,7 +8795,7 @@ const INDIRECT_SPEECH_LEVEL = {
       { en: '"Is she your sister?" → He asked if ___ his sister.', tr: 'she was', wrong: 'is she' },
     ],
 
-    // ── index: 25 — Final Test ────────────────────────────────
+    // ── index: 25 ─ Final Test ────────────────────────────────
     // Direct & Indirect Speech tam test · 40+ sual
     [
       { en: 'He said: "I am a doctor." → He said that ___ a doctor.', tr: 'he was', wrong: 'I was' },
@@ -8408,22 +8824,21 @@ const INDIRECT_SPEECH_LEVEL = {
       { en: '"Don\'t be late, please." → She asked them ___ late.', tr: 'not to be', wrong: 'to not be' },
       { en: '"Who is that girl?" → He asked ___ that girl was.', tr: 'who', wrong: 'if who' },
       { en: 'say + tamamlıq → ___', tr: 'tell', wrong: 'ask' },
-      { en: '"that" bağlayıcısı işlənməyə də bilər — doğrudurmu?', tr: 'Bəli, doğrudur', wrong: 'Xeyr' },
+      { en: '"that" bağlayıcısı işlənməyə də bilər — doğrudurmu?', tr: 'Bəli', wrong: 'Xeyr' },
       { en: 'Xüsusi sualda if/whether işlənirmi?', tr: 'Xeyr', wrong: 'Bəli' },
       { en: 'İnkar əmr cümləsi → məsdərin qarşısında ___ işlənir.', tr: 'not', wrong: 'don\'t' },
       { en: '"How did you find it?" → He asked how I ___ it.', tr: 'had found', wrong: 'found' },
       { en: '"I had not thought of it." → She said she ___ thought of it.', tr: 'had not', wrong: 'has not' },
       { en: '"I am preparing dinner." → He said he ___ dinner.', tr: 'was preparing', wrong: 'is preparing' },
       { en: '"today" → vasitəli nitqdə ___', tr: 'that day', wrong: 'the next day' },
-      { en: '"yesterday" → vasitəli nitqdə ___', tr: 'the day before', wrong: 'the previous day — hər ikisi' },
+      { en: '"ago" → vasitəli nitqdə ___', tr: 'before', wrong: 'after' },
       { en: '"Don\'t make noise, please." → He asked them ___ noise.', tr: 'not to make', wrong: 'to not make' },
       { en: '"Is she your friend?" → He asked if ___ my friend.', tr: 'she was', wrong: 'is she' },
-      { en: '"now" → vasitəli nitqdə ___', tr: 'then', wrong: 'at that time' },
+      { en: '"now" → vasitəli nitqdə ___', tr: 'then', wrong: 'here' },
       { en: '"here" → vasitəli nitqdə ___', tr: 'there', wrong: 'here' },
-      { en: '"ago" → vasitəli nitqdə ___', tr: 'before', wrong: 'after' },
       { en: 'Əmr bildirən: say → ___ / xahiş bildirən: say → ___', tr: 'tell · ask', wrong: 'ask · tell' },
+      { en: 'Present Continuous → vasitəli nitqdə ___', tr: 'Past Continuous', wrong: 'Past Perfect' },
     ],
-
   ],
 };
 // ============================================================
