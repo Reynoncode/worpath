@@ -50,10 +50,15 @@ const KIDS_GRAMMAR_LEVELS = [
     color: '#8B5CF6',
     quizzes: [
 
+      {
+  type: 'section_divider',
+  title: 'Bölmə 1 — Sadə, düzəltmə, mürəkkəb isimlər',
+},
+
   // index: 1 — Dərs 1.1
       {
         type: 'grammar_lesson',
-        title: 'Dərs 1.1 — Sadə, düzəltmə, mürəkkəb isimlər',},
+        title: 'Dərs 1.1 — Sadə, düzəltmə, mürəkkəb isimlər',
         cards: [
 
           // ── Ekran 1: Giriş ───────────────────────────────
