@@ -49,9 +49,17 @@ async function fetchUserRole(user) {
   const tSnap = await getDocs(tQuery);
   if (!tSnap.empty) return "teacher";
 
-  // 2. Tələbə yoxlaması — users/{uid}.role === "student"
+  // 2. Tələbə yoxlaması — users/{uid}.role
   const userData = await loadUserData(user.uid);
   if (userData?.role === "student") return "student";
+
+  // 3. pendingStudents-də varsa (hələ işlənməyibsə)
+  try {
+    const key = user.email.toLowerCase().replace(/[@.]/g, "_");
+    const pendingRef  = doc(db, "pendingStudents", key);
+    const pendingSnap = await getDoc(pendingRef);
+    if (pendingSnap.exists()) return "student";
+  } catch (_) {}
 
   return "guest";
 }
