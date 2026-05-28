@@ -160,32 +160,20 @@ async function fetchStudentData(email) {
 // Sinif otağına əlavə olunanda həmin mailin sahibi tələbə statusu alır.
 // Əgər hesab hələ açılmayıbsa, users kolleksiyasında placeholder yazırıq;
 // hesab açılanda onAuthStateChanged onun uid-ini tapıb rolu tətbiq edəcək.
-async function grantStudentRole(email, classId) {
+async function revokeStudentRole(email, classId) {
   const lowerEmail = email.toLowerCase();
 
-  // users kolleksiyasında həmin emaili axtar
-  const q    = query(collection(db, "users"), where("email", "==", lowerEmail));
-  const snap = await getDocsFromServer(q);
+  // classes/{classId}.students-dən emaili çıxar
+  const { updateDoc, arrayRemove, deleteDoc } = await import(
+    "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
+  );
+  await updateDoc(doc(db, "classes", classId), {
+    students: arrayRemove(lowerEmail),
+  });
 
-  if (!snap.empty) {
-    // Hesab var — role: "student" əlavə et
-    const userDoc = snap.docs[0];
-    const { updateDoc, arrayUnion } = await import(
-      "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
-    );
-    await updateDoc(doc(db, "users", userDoc.id), {
-      role:            "student",
-      enrolledClasses: arrayUnion(classId),
-    });
-  } else {
-    // Hesab yoxdur — pendingStudents-ə yaz (giriş edəndə tətbiq olunacaq)
-    await setDoc(doc(db, "pendingStudents", lowerEmail.replace(/[@.]/g, "_")), {
-      email:    lowerEmail,
-      classId,
-      role:     "student",
-      addedAt:  serverTimestamp(),
-    });
-  }
+  // pendingStudents-dən də sil (hesab açılmayıbsa)
+  const pendingRef = doc(db, "pendingStudents", lowerEmail.replace(/[@.]/g, "_"));
+  await deleteDoc(pendingRef).catch(() => {});
 }
 
 // ─── Tələbə rolunu ləğv et ───────────────────────────────────────────────────
