@@ -3620,6 +3620,8 @@ navDots.forEach((dot, i) => {
 
   // Page 4 (stats) render
   if (idx === 4 && window.StatsPage) StatsPage.render();
+  // ← BU SƏTRİ ƏLAVƏ EDİN:
+  if (window._updateHeaderProfileBtn) _updateHeaderProfileBtn(idx);
 }
 
 // ── Touch / swipe ──────────────────────────
