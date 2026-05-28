@@ -298,15 +298,15 @@
 
     if (currentPage === 4) {
       if (window.ClassroomManager) ClassroomManager.open();
-    } else {
-      if (window.AuthManager) {
-        const user = AuthManager.getCurrentUser();
-        if (user) AuthManager.openProfileModal();
-        else AuthManager.signIn();
-      }
+      return;
+    }
+
+    if (window.AuthManager) {
+      const user = AuthManager.getCurrentUser();
+      if (user) AuthManager.openProfileModal();
+      else AuthManager.signIn();
     }
   });
-
 </script>
 
 </body>
