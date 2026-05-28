@@ -297,18 +297,16 @@
     const currentPage = activeDot ? parseInt(activeDot.dataset.page) : -1;
 
     if (currentPage === 4) {
-      if (window.ClassroomManager) {
-        ClassroomManager.open();
-        return;
+      if (window.ClassroomManager) ClassroomManager.open();
+    } else {
+      if (window.AuthManager) {
+        const user = AuthManager.getCurrentUser();
+        if (user) AuthManager.openProfileModal();
+        else AuthManager.signIn();
       }
     }
-
-    if (window.AuthManager) {
-      const user = AuthManager.getCurrentUser();
-      if (user) AuthManager.openProfileModal();
-      else AuthManager.signIn();
-    }
   });
+
 </script>
 
 </body>
