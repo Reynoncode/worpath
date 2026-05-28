@@ -2990,8 +2990,8 @@ button { font-family: var(--font); }
 
 /* Kart mətnləri */
 [data-theme="dark"] .level-name,
-[data-theme="dark"] .node-label,
-[data-theme="dark"] .level-meta { color: #dce8f2; }
+[data-theme="dark"] .node-label, 
+[data-theme="dark"] .level-meta { color: #1246ff; }
 
 /* ── Ulduz badge ─────────────────────────────────────────────── */
 [data-theme="dark"] .stat-badge {
