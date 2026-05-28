@@ -1,41 +1,327 @@
 // ============================================================
 //  WORDPATH — KIDS & GRAMMAR DATA
 // ============================================================
+// pic → kids/{pic}.png  (cəmi 237 şəkil)
 const KIDS_GRAMMAR_LEVELS = [
-
   {
     id: 'kids',
     name: 'KIDS',
     icon: '🧒',
     color: '#E91E8C',
     quizzes: [
-      // Quiz 1
+
+      // ── Quiz 1 · Animals (27 söz | pic 1–27) ──────────────────────────
       [
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'bear',       wen: 'bird',       pic: 1  },
+        { en: 'bee',        wen: 'spider',      pic: 2  },
+        { en: 'bird',       wen: 'bee',         pic: 3  },
+        { en: 'cat',        wen: 'dog',         pic: 4  },
+        { en: 'chicken',    wen: 'duck',        pic: 5  },
+        { en: 'cow',        wen: 'horse',       pic: 6  },
+        { en: 'crocodile',  wen: 'lizard',      pic: 7  },
+        { en: 'dog',        wen: 'cat',         pic: 8  },
+        { en: 'donkey',     wen: 'horse',       pic: 9  },
+        { en: 'duck',       wen: 'chicken',     pic: 10 },
+        { en: 'elephant',   wen: 'hippo',       pic: 11 },
+        { en: 'fish',       wen: 'frog',        pic: 12 },
+        { en: 'frog',       wen: 'fish',        pic: 13 },
+        { en: 'giraffe',    wen: 'zebra',       pic: 14 },
+        { en: 'goat',       wen: 'sheep',       pic: 15 },
+        { en: 'hippo',      wen: 'elephant',    pic: 16 },
+        { en: 'horse',      wen: 'donkey',      pic: 17 },
+        { en: 'jellyfish',  wen: 'fish',        pic: 18 },
+        { en: 'lizard',     wen: 'crocodile',   pic: 19 },
+        { en: 'monkey',     wen: 'bear',        pic: 20 },
+        { en: 'mouse',      wen: 'cat',         pic: 21 },
+        { en: 'polar bear', wen: 'bear',        pic: 22 },
+        { en: 'sheep',      wen: 'goat',        pic: 23 },
+        { en: 'snake',      wen: 'lizard',      pic: 24 },
+        { en: 'spider',     wen: 'bee',         pic: 25 },
+        { en: 'tiger',      wen: 'cat',         pic: 26 },
+        { en: 'zebra',      wen: 'horse',       pic: 27 },
       ],
-      // Quiz 2
+
+      // ── Quiz 2 · Fruits & Vegetables (18 söz | pic 28–45) ────────────
       [
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'apple',      wen: 'pear',        pic: 28 },
+        { en: 'banana',     wen: 'lemon',       pic: 29 },
+        { en: 'bean',       wen: 'pea',         pic: 30 },
+        { en: 'carrot',     wen: 'potato',      pic: 31 },
+        { en: 'coconut',    wen: 'orange',      pic: 32 },
+        { en: 'grape',      wen: 'apple',       pic: 33 },
+        { en: 'kiwi',       wen: 'lime',        pic: 34 },
+        { en: 'lemon',      wen: 'lime',        pic: 35 },
+        { en: 'lime',       wen: 'lemon',       pic: 36 },
+        { en: 'mango',      wen: 'orange',      pic: 37 },
+        { en: 'onion',      wen: 'potato',      pic: 38 },
+        { en: 'orange',     wen: 'lemon',       pic: 39 },
+        { en: 'pea',        wen: 'bean',        pic: 40 },
+        { en: 'pear',       wen: 'apple',       pic: 41 },
+        { en: 'pineapple',  wen: 'coconut',     pic: 42 },
+        { en: 'potato',     wen: 'onion',       pic: 43 },
+        { en: 'tomato',     wen: 'apple',       pic: 44 },
+        { en: 'watermelon', wen: 'pineapple',   pic: 45 },
       ],
-      // Quiz 3
+
+      // ── Quiz 3 · Food & Drinks (17 söz | pic 46–62) ──────────────────
       [
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'bread',      wen: 'cake',        pic: 46 },
+        { en: 'burger',     wen: 'pie',         pic: 47 },
+        { en: 'cake',       wen: 'bread',       pic: 48 },
+        { en: 'candy',      wen: 'chocolate',   pic: 49 },
+        { en: 'chips',      wen: 'bread',       pic: 50 },
+        { en: 'chocolate',  wen: 'candy',       pic: 51 },
+        { en: 'egg',        wen: 'meat',        pic: 52 },
+        { en: 'ice cream',  wen: 'cake',        pic: 53 },
+        { en: 'juice',      wen: 'milk',        pic: 54 },
+        { en: 'lemonade',   wen: 'juice',       pic: 55 },
+        { en: 'meat',       wen: 'sausage',     pic: 56 },
+        { en: 'meatballs',  wen: 'meat',        pic: 57 },
+        { en: 'milk',       wen: 'juice',       pic: 58 },
+        { en: 'pie',        wen: 'cake',        pic: 59 },
+        { en: 'rice',       wen: 'bread',       pic: 60 },
+        { en: 'sausage',    wen: 'meat',        pic: 61 },
+        { en: 'water',      wen: 'juice',       pic: 62 },
       ],
-      // Quiz 4
+
+      // ── Quiz 4 · Colors (11 söz | pic 63–73) ─────────────────────────
       [
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'black',      wen: 'brown',       pic: 63 },
+        { en: 'blue',       wen: 'purple',      pic: 64 },
+        { en: 'brown',      wen: 'black',       pic: 65 },
+        { en: 'gray',       wen: 'white',       pic: 66 },
+        { en: 'green',      wen: 'blue',        pic: 67 },
+        { en: 'orange',     wen: 'yellow',      pic: 68 },
+        { en: 'pink',       wen: 'red',         pic: 69 },
+        { en: 'purple',     wen: 'blue',        pic: 70 },
+        { en: 'red',        wen: 'pink',        pic: 71 },
+        { en: 'white',      wen: 'gray',        pic: 72 },
+        { en: 'yellow',     wen: 'orange',      pic: 73 },
       ],
-      // Quiz 5
+
+      // ── Quiz 5 · Family (8 söz | pic 74–81) ──────────────────────────
       [
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
-        { en: 'cat', tr: 'pişik', wrong: 'it', wen: 'dog', def: 'a small furry animal' },
+        { en: 'baby',        wen: 'child',       pic: 74 },
+        { en: 'brother',     wen: 'sister',      pic: 75 },
+        { en: 'cousin',      wen: 'brother',     pic: 76 },
+        { en: 'father',      wen: 'grandfather', pic: 77 },
+        { en: 'grandfather', wen: 'father',      pic: 78 },
+        { en: 'grandmother', wen: 'mother',      pic: 79 },
+        { en: 'mother',      wen: 'grandmother', pic: 80 },
+        { en: 'sister',      wen: 'brother',     pic: 81 },
       ],
+
+      // ── Quiz 6 · Body Parts (12 söz | pic 82–93) ─────────────────────
+      [
+        { en: 'arm',   wen: 'leg',   pic: 82 },
+        { en: 'ear',   wen: 'eye',   pic: 83 },
+        { en: 'eye',   wen: 'ear',   pic: 84 },
+        { en: 'face',  wen: 'head',  pic: 85 },
+        { en: 'foot',  wen: 'hand',  pic: 86 },
+        { en: 'hair',  wen: 'face',  pic: 87 },
+        { en: 'hand',  wen: 'foot',  pic: 88 },
+        { en: 'head',  wen: 'face',  pic: 89 },
+        { en: 'leg',   wen: 'arm',   pic: 90 },
+        { en: 'mouth', wen: 'nose',  pic: 91 },
+        { en: 'nose',  wen: 'mouth', pic: 92 },
+        { en: 'tail',  wen: 'leg',   pic: 93 },
+      ],
+
+      // ── Quiz 7 · Clothes (14 söz | pic 94–107) ───────────────────────
+      [
+        { en: 'baseball cap', wen: 'hat',          pic: 94  },
+        { en: 'boots',        wen: 'shoe',          pic: 95  },
+        { en: 'dress',        wen: 'skirt',         pic: 96  },
+        { en: 'glasses',      wen: 'hat',           pic: 97  },
+        { en: 'hat',          wen: 'baseball cap',  pic: 98  },
+        { en: 'jacket',       wen: 'shirt',         pic: 99  },
+        { en: 'jeans',        wen: 'trousers',      pic: 100 },
+        { en: 'shirt',        wen: 'jacket',        pic: 101 },
+        { en: 'shoe',         wen: 'boots',         pic: 102 },
+        { en: 'shorts',       wen: 'trousers',      pic: 103 },
+        { en: 'skirt',        wen: 'dress',         pic: 104 },
+        { en: 'sock',         wen: 'shoe',          pic: 105 },
+        { en: 'T-shirt',      wen: 'shirt',         pic: 106 },
+        { en: 'trousers',     wen: 'shorts',        pic: 107 },
+      ],
+
+      // ── Quiz 8 · House & Rooms (9 söz | pic 108–116) ─────────────────
+      [
+        { en: 'apartment',   wen: 'house',       pic: 108 },
+        { en: 'bathroom',    wen: 'bedroom',     pic: 109 },
+        { en: 'bedroom',     wen: 'bathroom',    pic: 110 },
+        { en: 'dining room', wen: 'kitchen',     pic: 111 },
+        { en: 'garden',      wen: 'park',        pic: 112 },
+        { en: 'hall',        wen: 'room',        pic: 113 },
+        { en: 'house',       wen: 'apartment',   pic: 114 },
+        { en: 'kitchen',     wen: 'dining room', pic: 115 },
+        { en: 'living room', wen: 'bedroom',     pic: 116 },
+      ],
+
+      // ── Quiz 9 · Furniture & Objects (19 söz | pic 117–135) ──────────
+      [
+        { en: 'armchair',  wen: 'chair',     pic: 117 },
+        { en: 'bath',      wen: 'bed',       pic: 118 },
+        { en: 'bed',       wen: 'sofa',      pic: 119 },
+        { en: 'bookcase',  wen: 'cupboard',  pic: 120 },
+        { en: 'box',       wen: 'bag',       pic: 121 },
+        { en: 'chair',     wen: 'armchair',  pic: 122 },
+        { en: 'clock',     wen: 'lamp',      pic: 123 },
+        { en: 'cupboard',  wen: 'bookcase',  pic: 124 },
+        { en: 'desk',      wen: 'table',     pic: 125 },
+        { en: 'door',      wen: 'window',    pic: 126 },
+        { en: 'floor',     wen: 'wall',      pic: 127 },
+        { en: 'lamp',      wen: 'clock',     pic: 128 },
+        { en: 'mat',       wen: 'rug',       pic: 129 },
+        { en: 'mirror',    wen: 'window',    pic: 130 },
+        { en: 'rug',       wen: 'mat',       pic: 131 },
+        { en: 'sofa',      wen: 'armchair',  pic: 132 },
+        { en: 'table',     wen: 'desk',      pic: 133 },
+        { en: 'wall',      wen: 'floor',     pic: 134 },
+        { en: 'window',    wen: 'door',      pic: 135 },
+      ],
+
+      // ── Quiz 10 · Sports & Games (10 söz | pic 136–145) ──────────────
+      [
+        { en: 'badminton',     wen: 'tennis',      pic: 136 },
+        { en: 'baseball',      wen: 'basketball',  pic: 137 },
+        { en: 'basketball',    wen: 'baseball',    pic: 138 },
+        { en: 'board game',    wen: 'game',        pic: 139 },
+        { en: 'football',      wen: 'basketball',  pic: 140 },
+        { en: 'hockey',        wen: 'football',    pic: 141 },
+        { en: 'skateboarding', wen: 'football',    pic: 142 },
+        { en: 'swimming',      wen: 'football',    pic: 143 },
+        { en: 'table tennis',  wen: 'tennis',      pic: 144 },
+        { en: 'tennis',        wen: 'badminton',   pic: 145 },
+      ],
+
+      // ── Quiz 11 · Transport (10 söz | pic 146–155) ───────────────────
+      [
+        { en: 'bike',       wen: 'motorbike', pic: 146 },
+        { en: 'boat',       wen: 'ship',      pic: 147 },
+        { en: 'bus',        wen: 'car',       pic: 148 },
+        { en: 'car',        wen: 'bus',       pic: 149 },
+        { en: 'helicopter', wen: 'plane',     pic: 150 },
+        { en: 'motorbike',  wen: 'bike',      pic: 151 },
+        { en: 'plane',      wen: 'helicopter',pic: 152 },
+        { en: 'ship',       wen: 'boat',      pic: 153 },
+        { en: 'train',      wen: 'bus',       pic: 154 },
+        { en: 'truck',      wen: 'car',       pic: 155 },
+      ],
+
+      // ── Quiz 12 · Nature (6 söz | pic 156–161) ───────────────────────
+      [
+        { en: 'beach',  wen: 'sea',    pic: 156 },
+        { en: 'flower', wen: 'tree',   pic: 157 },
+        { en: 'sea',    wen: 'beach',  pic: 158 },
+        { en: 'shell',  wen: 'flower', pic: 159 },
+        { en: 'sun',    wen: 'flower', pic: 160 },
+        { en: 'tree',   wen: 'flower', pic: 161 },
+      ],
+
+      // ── Quiz 13 · Toys & Hobbies (14 söz | pic 162–175) ─────────────
+      [
+        { en: 'ball',       wen: 'balloon',    pic: 162 },
+        { en: 'balloon',    wen: 'ball',        pic: 163 },
+        { en: 'bat',        wen: 'ball',        pic: 164 },
+        { en: 'camera',     wen: 'phone',       pic: 165 },
+        { en: 'doll',       wen: 'teddy bear',  pic: 166 },
+        { en: 'guitar',     wen: 'piano',       pic: 167 },
+        { en: 'kite',       wen: 'balloon',     pic: 168 },
+        { en: 'music',      wen: 'song',        pic: 169 },
+        { en: 'painting',   wen: 'drawing',     pic: 170 },
+        { en: 'piano',      wen: 'guitar',      pic: 171 },
+        { en: 'radio',      wen: 'camera',      pic: 172 },
+        { en: 'robot',      wen: 'doll',        pic: 173 },
+        { en: 'teddy bear', wen: 'doll',        pic: 174 },
+        { en: 'toy',        wen: 'doll',        pic: 175 },
+      ],
+
+      // ── Quiz 14 · Places (7 söz | pic 176–182) ───────────────────────
+      [
+        { en: 'bookshop',   wen: 'shop',       pic: 176 },
+        { en: 'park',       wen: 'garden',     pic: 177 },
+        { en: 'playground', wen: 'park',       pic: 178 },
+        { en: 'school',     wen: 'classroom',  pic: 179 },
+        { en: 'shop',       wen: 'bookshop',   pic: 180 },
+        { en: 'street',     wen: 'road',       pic: 181 },
+        { en: 'zoo',        wen: 'park',       pic: 182 },
+      ],
+
+      // ── Quiz 15 · Feelings & Adjectives (19 söz | pic 183–201) ──────
+      [
+        { en: 'angry',     wen: 'sad',       pic: 183 },
+        { en: 'beautiful', wen: 'nice',      pic: 184 },
+        { en: 'big',       wen: 'small',     pic: 185 },
+        { en: 'clean',     wen: 'dirty',     pic: 186 },
+        { en: 'dirty',     wen: 'clean',     pic: 187 },
+        { en: 'funny',     wen: 'silly',     pic: 188 },
+        { en: 'good',      wen: 'nice',      pic: 189 },
+        { en: 'happy',     wen: 'sad',       pic: 190 },
+        { en: 'long',      wen: 'short',     pic: 191 },
+        { en: 'new',       wen: 'old',       pic: 192 },
+        { en: 'nice',      wen: 'good',      pic: 193 },
+        { en: 'old',       wen: 'new',       pic: 194 },
+        { en: 'sad',       wen: 'happy',     pic: 195 },
+        { en: 'scary',     wen: 'funny',     pic: 196 },
+        { en: 'short',     wen: 'long',      pic: 197 },
+        { en: 'silly',     wen: 'funny',     pic: 198 },
+        { en: 'small',     wen: 'big',       pic: 199 },
+        { en: 'ugly',      wen: 'beautiful', pic: 200 },
+        { en: 'young',     wen: 'old',       pic: 201 },
+      ],
+
+      // ── Quiz 16 · Time (8 söz | pic 202–209) ─────────────────────────
+      [
+        { en: 'afternoon', wen: 'evening',   pic: 202 },
+        { en: 'birthday',  wen: 'day',       pic: 203 },
+        { en: 'day',       wen: 'night',     pic: 204 },
+        { en: 'evening',   wen: 'afternoon', pic: 205 },
+        { en: 'morning',   wen: 'afternoon', pic: 206 },
+        { en: 'night',     wen: 'day',       pic: 207 },
+        { en: 'today',     wen: 'day',       pic: 208 },
+        { en: 'year',      wen: 'day',       pic: 209 },
+      ],
+
+      // ── Quiz 17 · People (8 söz | pic 210–217) ───────────────────────
+      [
+        { en: 'alien',   wen: 'monster', pic: 210 },
+        { en: 'boy',     wen: 'girl',    pic: 211 },
+        { en: 'child',   wen: 'baby',    pic: 212 },
+        { en: 'girl',    wen: 'boy',     pic: 213 },
+        { en: 'man',     wen: 'woman',   pic: 214 },
+        { en: 'monster', wen: 'alien',   pic: 215 },
+        { en: 'person',  wen: 'man',     pic: 216 },
+        { en: 'woman',   wen: 'man',     pic: 217 },
+      ],
+
+      // ── Quiz 18 · Actions (20 söz | pic 218–237) ─────────────────────
+      [
+        { en: 'bounce', wen: 'jump',  pic: 218 },
+        { en: 'catch',  wen: 'throw', pic: 219 },
+        { en: 'clap',   wen: 'wave',  pic: 220 },
+        { en: 'draw',   wen: 'paint', pic: 221 },
+        { en: 'drink',  wen: 'eat',   pic: 222 },
+        { en: 'eat',    wen: 'drink', pic: 223 },
+        { en: 'fly',    wen: 'jump',  pic: 224 },
+        { en: 'jump',   wen: 'run',   pic: 225 },
+        { en: 'kick',   wen: 'throw', pic: 226 },
+        { en: 'paint',  wen: 'draw',  pic: 227 },
+        { en: 'run',    wen: 'walk',  pic: 228 },
+        { en: 'sing',   wen: 'dance', pic: 229 },
+        { en: 'sit',    wen: 'stand', pic: 230 },
+        { en: 'sleep',  wen: 'sit',   pic: 231 },
+        { en: 'smile',  wen: 'wave',  pic: 232 },
+        { en: 'swim',   wen: 'run',   pic: 233 },
+        { en: 'throw',  wen: 'catch', pic: 234 },
+        { en: 'walk',   wen: 'run',   pic: 235 },
+        { en: 'wave',   wen: 'clap',  pic: 236 },
+        { en: 'write',  wen: 'draw',  pic: 237 },
+      ],
+
     ],
   },
+];
 
   // ╔══════════════════════════════════════════════════╗
   // ║  GRAMMAR BÖLÜMÜ — NOUNS (İsimlər)               ║
