@@ -2962,7 +2962,36 @@ button { font-family: var(--font); }
   background: #091420;
   border-bottom-color: #1a3248;
 }
+/* Kart arxa planları — explicit override */
+[data-theme="dark"] .level-card,
+[data-theme="dark"] .level-body,
+[data-theme="dark"] .quiz-path,
+[data-theme="dark"] .question-card,
+[data-theme="dark"] .result-stats,
+[data-theme="dark"] .modal-sheet,
+[data-theme="dark"] .chance-sheet,
+[data-theme="dark"] .quit-card,
+[data-theme="dark"] .grammar-lesson-card,
+[data-theme="dark"] .grammar-badge-card,
+[data-theme="dark"] .gmc-question,
+[data-theme="dark"] .reading-text-card,
+[data-theme="dark"] .listening-player-card,
+[data-theme="dark"] .tf-card,
+[data-theme="dark"] .level-result-card,
+[data-theme="dark"] .word-match-item,
+[data-theme="dark"] .option-btn,
+[data-theme="dark"] .reading-option-btn,
+[data-theme="dark"] .listening-option-btn,
+[data-theme="dark"] .reading-node-circle,
+[data-theme="dark"] .listening-node-circle {
+  background: #142233;
+  border-color: #1d3348;
+}
 
+/* Kart mətnləri */
+[data-theme="dark"] .level-name,
+[data-theme="dark"] .node-label,
+[data-theme="dark"] .level-meta { color: #dce8f2; }
 
 /* ── Ulduz badge ─────────────────────────────────────────────── */
 [data-theme="dark"] .stat-badge {
