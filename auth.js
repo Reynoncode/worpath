@@ -37,11 +37,10 @@ async function loadUserData(uid) {
 }
 
 // ─── Rol yoxla ───────────────────────────────────────────────────────────────
-// approvedTeachers/{docId} → { email: "x@gmail.com" }
 async function fetchUserRole(user) {
   if (!user) return "guest";
 
-  // 1. Müəllim yoxlaması
+  // 1. Müəllim yoxlaması — dəyişmir
   const tQuery = query(
     collection(db, "approvedTeachers"),
     where("email", "==", user.email.toLowerCase())
@@ -49,15 +48,19 @@ async function fetchUserRole(user) {
   const tSnap = await getDocs(tQuery);
   if (!tSnap.empty) return "teacher";
 
-  // 2. Tələbə yoxlaması — users/{uid}.role
-  const userData = await loadUserData(user.uid);
-  if (userData?.role === "student") return "student";
+  // 2. Tələbə yoxlaması — classes kolleksiyasına bax
+  //    (müəllim students array-inə email yazır, bunu oxumaq icazəlidir)
+  const cQuery = query(
+    collection(db, "classes"),
+    where("students", "array-contains", user.email.toLowerCase())
+  );
+  const cSnap = await getDocs(cQuery);
+  if (!cSnap.empty) return "student";
 
-  // 3. pendingStudents-də varsa (hələ işlənməyibsə)
+  // 3. pendingStudents — dəyişmir
   try {
-    const key = user.email.toLowerCase().replace(/[@.]/g, "_");
-    const pendingRef  = doc(db, "pendingStudents", key);
-    const pendingSnap = await getDoc(pendingRef);
+    const key         = user.email.toLowerCase().replace(/[@.]/g, "_");
+    const pendingSnap = await getDoc(doc(db, "pendingStudents", key));
     if (pendingSnap.exists()) return "student";
   } catch (_) {}
 
