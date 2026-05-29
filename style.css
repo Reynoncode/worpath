@@ -3287,17 +3287,16 @@ button { font-family: var(--font); }
   color: #dce8f2;
 }
 
-/* SONRA */
 #stats-classroom-btn {
   background: var(--surface) !important;
-  color: #1A1A1A;
-  border: 1px solid #E8E2D9 !important;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border) !important;
 }
 
 [data-theme="dark"] #stats-classroom-btn {
   background: var(--surface) !important;
-  color: #dce8f2;
-  border-color: #1d3348 !important;
+  color: var(--text-primary);
+  border-color: var(--border) !important;
 }
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
