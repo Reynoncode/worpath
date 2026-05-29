@@ -548,12 +548,14 @@ function renderGrammarPath(lvl, li) {
       ).length;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
 
-      html += `<div class="${nodeClass} unlocked ${pulseClass}"
-        data-quiz-idx="${qi}" data-status="unlocked"
-        style="color:${lvl.color}; border-color:${lvl.color}; background:white;">
-        ${typeIcon}
-      </div>`;
-    }
+   const isGrammar = item && !Array.isArray(item) && item.type === 'grammar_lesson';
+const bgStyle = isGrammar ? `background:${lvl.color}18;` : `background:white;`;
+
+html += `<div class="${nodeClass} unlocked ${pulseClass}"
+  data-quiz-idx="${qi}" data-status="unlocked"
+  style="color:${lvl.color}; border-color:${lvl.color}; ${bgStyle}">
+  ${typeIcon}
+</div>`;
 
     const label = (QUIZ_NAMES[lvl.id]?.[qi]) || item?.title || `Dərs ${quizCounter}`;
     html += `<div class="node-label">${label}</div></div>`;
