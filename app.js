@@ -236,7 +236,18 @@ const EXAM_IDS = {
   'verbs':   new Set([]),
   'passive': new Set([]),
   'indirect_speech': new Set([]),
-  'adjectives': new Set([])
+  'adjectives': new Set([]),
+  'sequence_tenses': new Set([]),
+'pronoun': new Set([]),
+'article': new Set([]),
+'questions': new Set([]),
+'modal_verbs': new Set([]),
+'prepositions': new Set([]),
+'adverb': new Set([]),
+'complex_object': new Set([]),
+'subject_verb_agreement': new Set([]),
+'imperative': new Set([]),
+'exclamatory': new Set([])
 
 };
 
@@ -1977,10 +1988,18 @@ function loadProgress() {
         continue;
       }
 
-      const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
-      if (!progress[lvl.id][i]) {
-const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening' || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' || lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses' || lvl.id === 'adjectives';        progress[lvl.id][i] = 'unlocked';
-      }
+     const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
+if (!progress[lvl.id][i]) {
+  const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening'
+    || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs'
+    || lvl.id === 'passive' || lvl.id === 'indirect_speech'
+    || lvl.id === 'sequence_tenses' || lvl.id === 'adjectives'
+    || lvl.id === 'pronoun' || lvl.id === 'article' || lvl.id === 'questions'
+    || lvl.id === 'modal_verbs' || lvl.id === 'prepositions'
+    || lvl.id === 'adverb' || lvl.id === 'complex_object'
+    || lvl.id === 'subject_verb_agreement' || lvl.id === 'imperative'
+    || lvl.id === 'exclamatory';
+}
     }
   });
 
@@ -2839,6 +2858,17 @@ const iconStyles = {
   'passive':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
   'indirect_speech': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
   'adjectives':      { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
+  'sequence_tenses': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'pronoun': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'article': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'questions': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'modal_verbs': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'prepositions': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'adverb': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'complex_object': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'subject_verb_agreement': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'imperative': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+'exclamatory': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
 };
 
 const innerIcon = headerInner.querySelector('.level-icon');
