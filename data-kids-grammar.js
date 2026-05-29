@@ -9771,35 +9771,6 @@ const ADJECTIVES_LEVEL = {
 // ║  Aşağıdakı obyektləri LEVELS massivə əlavə et           ║
 // ╚══════════════════════════════════════════════════════════╝
 
-// ── 6. SEQUENCE OF TENSES ────────────────────────────────────
-const SEQUENCE_TENSES_LEVEL = {
-  id: 'sequence_tenses',
-  name: 'SEQUENCE OF TENSES',
-  icon: '⏳',
-  color: '#8B5CF6',
-  quizzes: [
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — Zamanların uzlaşması',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — when / if / after / before ilə',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — while / since / after ilə',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 4 — Uzlaşmanın pozulduğu hallar',
-      cards: [],
-    },
-  ],
-};
 
 // ── 7. PRONOUN (ƏVƏZLİK) ────────────────────────────────────
 const PRONOUN_LEVEL = {
