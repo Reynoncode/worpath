@@ -70,6 +70,7 @@ const StatsPage = (() => {
       subText:      dark ? '#6d90a8'  : '#6B7280',
       faintText:    dark ? '#3f5e72'  : '#9CA3AF',
       numColor:     dark ? '#ffffff'  : '#1A1A1A',
+      labelColor:   dark ? '#dce8f2'  : '#1A1A1A',
       progressBg:   dark ? '#1d3348'  : '#F0ECE4',
       rowBorder:    dark ? '#1d3348'  : '#F3F4F6',
       wordColor:    dark ? '#dce8f2'  : '#1a1a1a',
@@ -132,7 +133,7 @@ const StatsPage = (() => {
       <div style="margin-bottom:8px;">
         <button
           onclick="StatsPage._toggle('${sev}')"
-          style="width:100%;display:flex;align-items:center;gap:8px;background:${bg};border:1px solid ${border};border-radius:${headRadius};padding:9px 14px;cursor:pointer;font-size:13px;font-weight:600;color:${cfg.textColor};transition:border-radius 0.15s;"
+          style="width:100%;display:flex;align-items:center;gap:8px;background:${bg};border:1px solid ${border};border-radius:${headRadius};padding:9px 14px;cursor:pointer;font-size:13px;font-weight:600;color:${t.labelColor};transition:border-radius 0.15s;"
           id="sp-head-${sev}"
           aria-expanded="${isOpen}">
           ${cfg.icon}
@@ -141,7 +142,8 @@ const StatsPage = (() => {
           <span style="margin-left:auto;font-size:12px;" id="sp-chevron-${sev}">${isOpen ? "▲" : "▼"}</span>
         </button>
         <div id="sp-body-${sev}"
-style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? "" : "display:none;"}">          ${rows}
+          style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? "" : "display:none;"}>
+          ${rows}
         </div>
       </div>
     `;
@@ -163,6 +165,7 @@ style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border
     head.style.borderRadius = openState[sev] ? "10px 10px 0 0" : "10px";
     head.style.background   = t.dark ? cfg.bgDark : cfg.bg;
     head.style.borderColor  = t.dark ? cfg.borderDark : cfg.border;
+    head.style.color        = t.labelColor;
     head.setAttribute("aria-expanded", openState[sev]);
   }
 
@@ -232,12 +235,12 @@ style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border
             <div style="background:${t.cardBg};border-radius:10px;padding:0;overflow:hidden;" id="${c.isHomework ? 'stats-homework-card' : ''}">
               ${c.isHomework
                 ? `<div style="padding:14px 16px;">
-                     <div style="font-size:11px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">EV TAPŞIRIĞI</div>
+                     <div style="font-size:11px;font-weight:600;color:${t.labelColor};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">EV TAPŞIRIĞI</div>
                      <div style="font-size:13px;color:${t.faintText};">Yüklənir...</div>
                    </div>`
                 : `<div style="padding:14px 16px;">
                      <div style="font-size:24px;font-weight:700;color:${t.numColor};">${c.val}</div>
-                     <div style="font-size:12px;color:${t.subText};margin-top:3px;">${c.lbl}</div>
+                     <div style="font-size:12px;color:${t.numColor};margin-top:3px;">${c.lbl}</div>
                      ${c.sub ? `<div style="font-size:11px;color:${c.subColor};margin-top:3px;font-weight:500;">${c.sub}</div>` : ""}
                    </div>`
               }
@@ -247,13 +250,13 @@ style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border
 
         <!-- Səviyyə irəliləməsi -->
         <div style="background:${t.whiteBg};border:1px solid ${t.cardBorder};border-radius:14px;padding:14px 16px;margin-bottom:12px;">
-          <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Səviyyə üzrə irəliləmə</div>
+          <div style="font-size:12px;font-weight:600;color:${t.labelColor};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Səviyyə üzrə irəliləmə</div>
           ${levelRows}
         </div>
 
         <!-- Səhv analizi -->
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
+          <div style="font-size:12px;font-weight:600;color:${t.labelColor};text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
           ${s.errorWords.length > 0 ? `
             <button onclick="StatsPage._retryWrongs()"
               style="display:flex;align-items:center;gap:5px;background:#085041;color:#fff;border:none;border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;">
