@@ -2825,16 +2825,20 @@ const lvl = LEVELS[li];
 
     // level-icon rəngini inline stil ilə qoru
 const iconStyles = {
-  'a1':        { background: '#f9e5e3', borderColor: '#e8b3ae', color: '#8B1A11' },
-  'a2':        { background: '#fdf0e0', borderColor: '#f5c98a', color: '#9A4F08' },
-  'b1':        { background: '#fdf8e1', borderColor: '#f0d060', color: '#7D6608' },
-  'b2':        { background: '#e4f7ed', borderColor: '#82d9a8', color: '#145A32' },
-  'c1':        { background: '#e3f0fa', borderColor: '#85bce0', color: '#1A4971' },
-  'c2':        { background: '#d5dde3', borderColor: '#8fa5b3', color: '#0D1317' },
-  'reading':   { background: '#e0f2fe', borderColor: '#7dd3fc', color: '#0369a1' },
-  'listening': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#6d28d9' },
-  'kids':      { background: '#fce4f0', borderColor: '#f48cbf', color: '#9C1260' },
-  'grammar':   { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'a1':              { background: '#f9e5e3', borderColor: '#e8b3ae', color: '#8B1A11' },
+  'a2':              { background: '#fdf0e0', borderColor: '#f5c98a', color: '#9A4F08' },
+  'b1':              { background: '#fdf8e1', borderColor: '#f0d060', color: '#7D6608' },
+  'b2':              { background: '#e4f7ed', borderColor: '#82d9a8', color: '#145A32' },
+  'c1':              { background: '#e3f0fa', borderColor: '#85bce0', color: '#1A4971' },
+  'c2':              { background: '#d5dde3', borderColor: '#8fa5b3', color: '#0D1317' },
+  'reading':         { background: '#e0f2fe', borderColor: '#7dd3fc', color: '#0369a1' },
+  'listening':       { background: '#ede9fe', borderColor: '#c4b5fd', color: '#6d28d9' },
+  'kids':            { background: '#fce4f0', borderColor: '#f48cbf', color: '#9C1260' },
+  'grammar':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'verbs':           { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
+  'passive':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
+  'indirect_speech': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
+  'adjectives':      { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
 };
 
 const innerIcon = headerInner.querySelector('.level-icon');
