@@ -9772,7 +9772,7 @@ const ADJECTIVES_LEVEL = {
 // ╚══════════════════════════════════════════════════════════╝
 
 // ── 6. SEQUENCE OF TENSES ────────────────────────────────────
-{
+const SEQUENCE_TENSES_LEVEL = {
   id: 'sequence_tenses',
   name: 'SEQUENCE OF TENSES',
   icon: '⏳',
@@ -9799,10 +9799,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 7. PRONOUN (ƏVƏZLİK) ────────────────────────────────────
-{
+const PRONOUN_LEVEL = {
   id: 'pronoun',
   name: 'PRONOUN — ƏVƏZLİK',
   icon: '🔤',
@@ -9834,10 +9834,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 8. ARTICLE (ARTİKL) ─────────────────────────────────────
-{
+const ARTICLE_LEVEL = {
   id: 'article',
   name: 'ARTICLE — ARTİKL',
   icon: '📌',
@@ -9859,10 +9859,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
-{
+const QUESTIONS_LEVEL = {
   id: 'questions',
   name: 'QUESTIONS — SUALLAR',
   icon: '❓',
@@ -9884,10 +9884,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 10. MODAL VERBS ──────────────────────────────────────────
-{
+const MODAL_VERBS_LEVEL = {
   id: 'modal_verbs',
   name: 'MODAL VERBS',
   icon: '🔧',
@@ -9914,10 +9914,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 11. PREPOSITIONS (SÖZÖNLƏRİ) ────────────────────────────
-{
+const PREPOSITIONS_LEVEL = {
   id: 'prepositions',
   name: 'PREPOSITIONS — SÖZÖNLƏRİ',
   icon: '📍',
@@ -9949,10 +9949,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 12. ADVERB (ZƏRF) ───────────────────────────────────────
-{
+const ADVERB_LEVEL = {
   id: 'adverb',
   name: 'ADVERB — ZƏRF',
   icon: '💫',
@@ -9984,10 +9984,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 13. COMPLEX OBJECT ──────────────────────────────────────
-{
+const COMPLEX_OBJECT_LEVEL = {
   id: 'complex_object',
   name: 'COMPLEX OBJECT',
   icon: '🔗',
@@ -10009,10 +10009,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 14. SUBJECT-VERB AGREEMENT ───────────────────────────────
-{
+const SUBJECT_VERB_AGREEMENT_LEVEL = {
   id: 'subject_verb_agreement',
   name: 'SUBJECT-VERB AGREEMENT',
   icon: '⚖️',
@@ -10034,10 +10034,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 15. THE IMPERATIVE (ƏMR CÜMLƏSİ) ────────────────────────
-{
+const IMPERATIVE_LEVEL = {
   id: 'imperative',
   name: 'THE IMPERATIVE — ƏMR',
   icon: '📢',
@@ -10059,10 +10059,10 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
+};
 
 // ── 16. EXCLAMATORY SENTENCES (NİDA CÜMLƏSİ) ────────────────
-{
+const EXCLAMATORY_LEVEL = {
   id: 'exclamatory',
   name: 'EXCLAMATORY SENTENCES',
   icon: '❗',
@@ -10084,9 +10084,7 @@ const ADJECTIVES_LEVEL = {
       cards: [],
     },
   ],
-},
-
-
+};
 
 KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(PASSIVE_LEVEL);
@@ -10104,5 +10102,3 @@ KIDS_GRAMMAR_LEVELS.push(SUBJECT_VERB_AGREEMENT_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(IMPERATIVE_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(EXCLAMATORY_LEVEL);
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
-// LEVELS-ə birləşdir
-KIDS_GRAMMAR_LEVELS.forEach(lvl => LEVELS.push(lvl));
