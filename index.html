@@ -27,11 +27,21 @@
   localStorage.setItem('theme', isDark ? 'light' : 'dark');
   updateToggleIcon();
 
-     // Logo dəyişimi
+ function updateToggleIcon() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const moon = document.querySelector('#darkToggleBtn .icon-moon');
+  const sun  = document.querySelector('#darkToggleBtn .icon-sun');
+  if (moon && sun) {
+    moon.style.display = isDark ? 'none'  : 'block';
+    sun.style.display  = isDark ? 'block' : 'none';
+  }
+
+  // Logo dəyişimi
   const logoImg = document.querySelector('.logo-icon img');
   if (logoImg) {
-    logoImg.src = isDark ? 'mp3/logo.png' : 'mp3/logodark.png';
+    logoImg.src = isDark ? 'mp3/logodark.png' : 'mp3/logo.png';
   }
+}
 
   // ← YENİ: stats açıqdırsa yenidən render et
   const statsScreen = document.getElementById('stats-screen');
