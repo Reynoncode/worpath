@@ -3375,7 +3375,74 @@ button { font-family: var(--font); }
   background: #142233;
   border-color: #1d3348;
 }
+/* ── Profil modal ───────────────────────────── */
+[data-theme="dark"] #profile-modal {
+  background: rgba(0, 0, 0, 0.65) !important;
+}
 
+[data-theme="dark"] #profile-sheet {
+  background: #142233 !important;
+  color: #dce8f2;
+}
+
+/* Handle çubuğu */
+[data-theme="dark"] #profile-sheet [style*="background:#"] {
+  background: #1d3348 !important;
+}
+
+/* İSTİFADƏÇİ ADI label */
+[data-theme="dark"] #profile-sheet label,
+[data-theme="dark"] #profile-sheet small,
+[data-theme="dark"] #profile-sheet p {
+  color: #6d90a8;
+}
+
+/* Username input */
+[data-theme="dark"] #profile-sheet input {
+  background: #0d1b2a !important;
+  border-color: #1d3348 !important;
+  color: #dce8f2 !important;
+}
+
+/* Email bölümü (border-box) */
+[data-theme="dark"] #profile-sheet [style*="border"] {
+  background: #0d1b2a !important;
+  border-color: #1d3348 !important;
+  color: #dce8f2 !important;
+}
+
+/* Çıxış et düyməsi */
+[data-theme="dark"] #profile-sheet [style*="rgb(254"] ,
+[data-theme="dark"] #profile-sheet [class*="logout"],
+[data-theme="dark"] #profile-sheet [class*="cixis"],
+[data-theme="dark"] #profile-sheet [class*="signout"],
+[data-theme="dark"] #profile-sheet [class*="sign-out"] {
+  background: #280c0c !important;
+  border-color: #4a1818 !important;
+  color: #e07878 !important;
+}
+
+/* NAİLİYYƏTLƏR bölümü */
+[data-theme="dark"] #profile-sheet [class*="achievement"],
+[data-theme="dark"] #profile-sheet [class*="nailijj"],
+[data-theme="dark"] #profile-sheet [class*="nailiyy"] {
+  background: #0d1b2a !important;
+  border-color: #1d3348 !important;
+}
+
+/* Achievement kartları (kiçik kvadratlar) */
+[data-theme="dark"] #profile-sheet [class*="achievement-item"],
+[data-theme="dark"] #profile-sheet [class*="badge-item"],
+[data-theme="dark"] #profile-sheet [class*="item"] {
+  background: #1d3348 !important;
+}
+
+/* Bütün mətnlər */
+[data-theme="dark"] #profile-sheet span,
+[data-theme="dark"] #profile-sheet h2,
+[data-theme="dark"] #profile-sheet h3 {
+  color: #dce8f2;
+}
 /* ═══════════════════════════════════════════════════════════ */
 
 /* ── UTILITY ────────────────────────────────── */
