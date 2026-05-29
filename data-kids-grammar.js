@@ -9127,7 +9127,7 @@ const INDIRECT_SPEECH_LEVEL = {
 const SEQUENCE_TENSES_LEVEL = {
   id: 'sequence_tenses',
   name: 'SEQUENCE OF TENSES',
-  icon: '⏱️',
+  icon: '<i class="ti ti-clock"></i>',
   color: '#5EEAD4',
 
   quizzes: [
@@ -9938,7 +9938,7 @@ const ADVERB_LEVEL = {
 const COMPLEX_OBJECT_LEVEL = {
   id: 'complex_object',
   name: 'COMPLEX OBJECT',
-  icon: '<i class="ti ti-layers"></i>',
+  icon: '<i class="ti ti-stack"></i>',
   color: '#60A5FA',
   quizzes: [
     {
