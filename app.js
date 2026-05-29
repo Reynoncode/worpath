@@ -2169,7 +2169,6 @@ const iconStyles = {
   'exclamatory':     { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
 };
 
-function renderLevels() {
 
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
