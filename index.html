@@ -27,6 +27,12 @@
   localStorage.setItem('theme', isDark ? 'light' : 'dark');
   updateToggleIcon();
 
+     // Logo dəyişimi
+  const logoImg = document.querySelector('.logo-icon img');
+  if (logoImg) {
+    logoImg.src = isDark ? 'mp3/logo.png' : 'mp3/logodark.png';
+  }
+
   // ← YENİ: stats açıqdırsa yenidən render et
   const statsScreen = document.getElementById('stats-screen');
   if (statsScreen && !statsScreen.classList.contains('hidden')) {
