@@ -486,13 +486,13 @@ function renderGrammarPath(lvl, li) {
 
     // ── Section divider ───────────────────────
     if (item && !Array.isArray(item) && item.type === 'section_divider') {
-      html += `
-        <div class="grammar-section-divider">
-          <div class="grammar-section-line"></div>
-          <div class="grammar-section-title">${item.title}</div>
-          <div class="grammar-section-line"></div>
-        </div>
-      `;
+     html += `
+  <div class="grammar-section-divider">
+    <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
+    <div class="grammar-section-title" style="color:${lvl.color}; border-color:${lvl.color}33; background:${lvl.color}11;">${item.title}</div>
+    <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
+  </div>
+`;
       return; // node render etmə, path-line da yox
     }
 
