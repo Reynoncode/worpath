@@ -279,16 +279,17 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-// ─── Header avatar yenilə ────────────────────────────────────────────────────
+// SONRA
 function _updateHeaderAvatar(user) {
   const avatar = document.getElementById("header-profile-avatar");
   if (!avatar) return;
 
   if (user) {
     if (user.photoURL) {
-      avatar.innerHTML = `<img src="${user.photoURL}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
+      avatar.innerHTML = `<img src="${user.photoURL}" style="width:100%;height:100%;border-radius:10px;object-fit:cover;display:block;" />`;
     } else {
       const name = user.displayName ? user.displayName.split(" ")[0] : user.email;
+      avatar.innerHTML = "";
       avatar.textContent = name.charAt(0).toUpperCase();
       avatar.style.fontSize = "13px";
       avatar.style.fontWeight = "700";
