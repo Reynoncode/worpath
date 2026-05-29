@@ -169,15 +169,19 @@ const StatsPage = (() => {
     head.setAttribute("aria-expanded", openState[sev]);
   }
 
-  // ─── ANA RENDER FUNKSİYASI ────────────────────────────────────────────────
+// ─── ANA RENDER FUNKSİYASI ────────────────────────────────────────────────
   function render(containerId) {
     const el = document.getElementById(containerId);
     if (!el) return;
 
+    // Hər render-də state sıfırla
+    openState.critical = false;
+    openState.medium   = false;
+    openState.light    = false;
+
     const t = getTheme();
     const s = Stats.getStats();
     const phasesByLevel = getPhasesByLevel();
-
     const grouped = { critical: [], medium: [], light: [] };
     s.errorWords.forEach(w => grouped[w.severity].push(w));
 
