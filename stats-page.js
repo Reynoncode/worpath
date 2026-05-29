@@ -142,8 +142,9 @@ const StatsPage = (() => {
           <span style="margin-left:auto;font-size:12px;" id="sp-chevron-${sev}">${isOpen ? "▲" : "▼"}</span>
         </button>
         <div id="sp-body-${sev}"
-          style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? "" : "display:none;"}>
-          ${rows}
+// SONRA (düzgün)
+style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? '' : 'display:none;'}">
+${rows}
         </div>
       </div>
     `;
@@ -289,8 +290,8 @@ const StatsPage = (() => {
     if (headerProfileAvatar && window.AuthManager) {
       const user = AuthManager.getCurrentUser();
       if (user && user.photoURL) {
-        headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
-      } else if (user) {
+// SONRA
+headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:100%;height:100%;border-radius:10px;object-fit:cover;display:block;" />`;      } else if (user) {
         const name = user.displayName ? user.displayName.split(' ')[0] : user.email;
         headerProfileAvatar.textContent = name.charAt(0).toUpperCase();
       }
