@@ -330,7 +330,7 @@ const KIDS_GRAMMAR_LEVELS = [
     id: 'grammar',
     name: 'NOUNS - İSİMLƏR',
     icon: '📖',
-    color: '#8B5CF6',
+    color: '#D4A96A',
     quizzes: [
 
       {
@@ -4104,7 +4104,7 @@ const VERBS_LEVEL = {
   id: 'verbs',
   name: 'VERBS',
   icon: '⚡',
-  color: '#F59E0B',
+  color: '#FBBD3E',
   quizzes: [
 
    
@@ -7056,7 +7056,7 @@ const PASSIVE_LEVEL = {
   id: 'passive',
   name: 'PASSIVE VOICE',
   icon: '🔄',
-  color: '#10B981',
+  color: '#93C5FD',
 
   quizzes: [
 
@@ -8315,7 +8315,7 @@ const INDIRECT_SPEECH_LEVEL = {
   id: 'indirect_speech',
   name: 'DIRECT & INDIRECT SPEECH',
   icon: '💬',
-  color: '#8B5CF6',
+  color: '#6EE7B7',
 
 // ============================================================
 //  WORDPATH — DIRECT & INDIRECT SPEECH (TAM DƏRS KARTLARI)
@@ -9129,7 +9129,7 @@ const SEQUENCE_TENSES_LEVEL = {
   id: 'sequence_tenses',
   name: 'SEQUENCE OF TENSES',
   icon: '⏱️',
-  color: '#0EA5E9',
+  color: '#5EEAD4',
 
   quizzes: [
 
@@ -9460,7 +9460,7 @@ const ADJECTIVES_LEVEL = {
   id: 'adjectives',
   name: 'ADJECTIVES',
   icon: '🎨',
-  color: '#F59E0B',
+  color: '#F0ABFC',
 
   quizzes: [
 
@@ -9777,7 +9777,7 @@ const PRONOUN_LEVEL = {
   id: 'pronoun',
   name: 'PRONOUN — ƏVƏZLİK',
   icon: '🔤',
-  color: '#8B5CF6',
+  color: '#A5B4FC',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9812,7 +9812,7 @@ const ARTICLE_LEVEL = {
   id: 'article',
   name: 'ARTICLE — ARTİKL',
   icon: '📌',
-  color: '#8B5CF6',
+  color: '#FCD34D',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9837,7 +9837,7 @@ const QUESTIONS_LEVEL = {
   id: 'questions',
   name: 'QUESTIONS — SUALLAR',
   icon: '❓',
-  color: '#8B5CF6',
+  color: '#7DD3FC',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9862,7 +9862,7 @@ const MODAL_VERBS_LEVEL = {
   id: 'modal_verbs',
   name: 'MODAL VERBS',
   icon: '🔧',
-  color: '#8B5CF6',
+  color: '#86EFAC',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9892,7 +9892,7 @@ const PREPOSITIONS_LEVEL = {
   id: 'prepositions',
   name: 'PREPOSITIONS — SÖZÖNLƏRİ',
   icon: '📍',
-  color: '#8B5CF6',
+  color: '#FDBA74',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9927,7 +9927,7 @@ const ADVERB_LEVEL = {
   id: 'adverb',
   name: 'ADVERB — ZƏRF',
   icon: '💫',
-  color: '#8B5CF6',
+  color: '#E879F9',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9962,7 +9962,7 @@ const COMPLEX_OBJECT_LEVEL = {
   id: 'complex_object',
   name: 'COMPLEX OBJECT',
   icon: '🔗',
-  color: '#8B5CF6',
+  color: '#60A5FA',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9987,7 +9987,7 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
   id: 'subject_verb_agreement',
   name: 'SUBJECT-VERB AGREEMENT',
   icon: '⚖️',
-  color: '#8B5CF6',
+  color: '#34D399',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -10012,7 +10012,7 @@ const IMPERATIVE_LEVEL = {
   id: 'imperative',
   name: 'THE IMPERATIVE — ƏMR',
   icon: '📢',
-  color: '#8B5CF6',
+  color: '#FDA4AF',
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -10037,7 +10037,7 @@ const EXCLAMATORY_LEVEL = {
   id: 'exclamatory',
   name: 'EXCLAMATORY SENTENCES',
   icon: '❗',
-  color: '#8B5CF6',
+  color: '#FDE68A',
   quizzes: [
     {
       type: 'grammar_lesson',
