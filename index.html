@@ -82,7 +82,10 @@
             </svg>
           </button>
 
-
+<!-- profil düyməsi -->
+<button class="header-action-btn" id="header-profile-btn" title="Profil">
+  <div id="header-profile-avatar" style="display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#6B7280;">?</div>
+</button>
 
          <button class="header-action-btn dark-toggle-btn" id="darkToggleBtn"
         onclick="toggleDarkMode()" aria-label="Dark mode">
@@ -296,7 +299,16 @@
         </svg>
       </button>
 
-      
+      <button id="stats-classroom-btn"
+  style="display:none;align-items:center;gap:5px;border:none;
+         border-radius:99px;padding:6px 12px;cursor:pointer;font-size:12px;font-weight:600;margin-left:8px;">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+       stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+    <polyline points="9 22 9 12 15 12 15 22"/>
+  </svg>
+  Sinif Otağı
+</button>
 
       <div id="stats-auth-bar" style="margin-left:auto;"></div>
     </div>
