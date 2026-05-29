@@ -2251,6 +2251,39 @@ function renderLevels() {
 } else if (lvl.id === 'adjectives') {
   const grammarList = document.getElementById('grammar-list');
   if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'sequence_tenses') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'pronoun') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'article') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'questions') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'modal_verbs') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'prepositions') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'adverb') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'complex_object') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'subject_verb_agreement') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'imperative') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
+} else if (lvl.id === 'exclamatory') {
+  const grammarList = document.getElementById('grammar-list');
+  if (grammarList) grammarList.appendChild(card);
 } else {
   elLevelList.appendChild(card);
 }
@@ -2608,7 +2641,13 @@ function renderQuizPath(lvl, li) {
   if (lvl.id === 'listening') {
   return renderListeningPath(lvl, li);
 }
-if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' || lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses' || lvl.id === 'adjectives') {
+if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive'
+  || lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses'
+  || lvl.id === 'adjectives' || lvl.id === 'pronoun' || lvl.id === 'article'
+  || lvl.id === 'questions' || lvl.id === 'modal_verbs'
+  || lvl.id === 'prepositions' || lvl.id === 'adverb'
+  || lvl.id === 'complex_object' || lvl.id === 'subject_verb_agreement'
+  || lvl.id === 'imperative' || lvl.id === 'exclamatory') {
   return renderGrammarPath(lvl, li);
 }
 
