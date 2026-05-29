@@ -2931,12 +2931,11 @@ button { font-family: var(--font); }
 
 
 /* ── Toggle düyməsinin stilləri ─────────────────────────────── */
+.dark-toggle-btn .icon-sun  { display: none  !important; }
+.dark-toggle-btn .icon-moon { display: block !important; }
 
-.dark-toggle-btn .icon-sun { display: none; }
-.dark-toggle-btn .icon-moon { display: block; }
-
-[data-theme="dark"] .dark-toggle-btn .icon-sun  { display: block; }
-[data-theme="dark"] .dark-toggle-btn .icon-moon { display: none;  }
+[data-theme="dark"] .dark-toggle-btn .icon-sun  { display: block !important; }
+[data-theme="dark"] .dark-toggle-btn .icon-moon { display: none  !important; }
 
 
 /* ══════════════════════════════════════════════════════════════
