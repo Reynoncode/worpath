@@ -22,11 +22,17 @@
   })();
 
   function toggleDarkMode() {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    updateToggleIcon();
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  updateToggleIcon();
+
+  // ← YENİ: stats açıqdırsa yenidən render et
+  const statsScreen = document.getElementById('stats-screen');
+  if (statsScreen && !statsScreen.classList.contains('hidden')) {
+    StatsPage.render('stats-container');
   }
+}
 
   function updateToggleIcon() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -316,27 +322,6 @@
   ════════════════════════════════════════════ -->
   <script src="stats.js"></script>
   <script src="stats-page.js"></script>
-<script src="stats-page-dark.js"></script>
-<script>
-  // Bridge — dark/light moduna görə düzgün versiyonu işlədir
-  const _spLight = StatsPage;
-  const _spDark  = StatsPageDark;
-
-  StatsPage = {
-    render: function(id) {
-      const dk = document.documentElement.getAttribute('data-theme') === 'dark';
-      (dk ? _spDark : _spLight).render(id);
-    },
-    _toggle: function(sev) {
-      const dk = document.documentElement.getAttribute('data-theme') === 'dark';
-      (dk ? _spDark : _spLight)._toggle(sev);
-    },
-    _retryWrongs: function() {
-      const dk = document.documentElement.getAttribute('data-theme') === 'dark';
-      (dk ? _spDark : _spLight)._retryWrongs();
-    }
-  };
-</script>
   <script src="data.js"></script>
   <script src="data-kids-grammar.js"></script>
   <script src="grammar-engine.js"></script>
