@@ -14,16 +14,28 @@
 <body>
   <div id="app">
 
-    <script>
+<script>
   (function() {
     if (localStorage.getItem('theme') === 'dark')
       document.documentElement.setAttribute('data-theme', 'dark');
+    document.addEventListener('DOMContentLoaded', updateToggleIcon);
   })();
 
   function toggleDarkMode() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
     localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    updateToggleIcon();
+  }
+
+  function updateToggleIcon() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const moon = document.querySelector('#darkToggleBtn .icon-moon');
+    const sun  = document.querySelector('#darkToggleBtn .icon-sun');
+    if (moon && sun) {
+      moon.style.display = isDark ? 'none'  : 'block';
+      sun.style.display  = isDark ? 'block' : 'none';
+    }
   }
 </script>
 
