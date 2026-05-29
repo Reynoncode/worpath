@@ -9766,21 +9766,343 @@ const ADJECTIVES_LEVEL = {
   ],
 };
 
-// ── Sayta əlavə et ────────────────────────────────────────
-// Data faylının sonuna əlavə et (KIDS_GRAMMAR_LEVELS.forEach-dan əvvəl):
-//
-//   KIDS_GRAMMAR_LEVELS.push(ADJECTIVES_LEVEL);
+// ╔══════════════════════════════════════════════════════════╗
+// ║  WORDPATH — YENİ QRAMMATİKA BÖLÜMLƏR                    ║
+// ║  Aşağıdakı obyektləri LEVELS massivə əlavə et           ║
+// ╚══════════════════════════════════════════════════════════╝
 
-// ── Sayta əlavə et ────────────────────────────────────────
-// Data faylının sonuna əlavə et (KIDS_GRAMMAR_LEVELS.forEach-dan əvvəl):
-//
-//   KIDS_GRAMMAR_LEVELS.push(SEQUENCE_TENSES_LEVEL);
+// ── 6. SEQUENCE OF TENSES ────────────────────────────────────
+{
+  id: 'sequence_tenses',
+  name: 'SEQUENCE OF TENSES',
+  icon: '⏳',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Zamanların uzlaşması',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — when / if / after / before ilə',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — while / since / after ilə',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4 — Uzlaşmanın pozulduğu hallar',
+      cards: [],
+    },
+  ],
+},
+
+// ── 7. PRONOUN (ƏVƏZLİK) ────────────────────────────────────
+{
+  id: 'pronoun',
+  name: 'PRONOUN — ƏVƏZLİK',
+  icon: '🔤',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Şəxs & Yiyəlik əvəzlikləri',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — Qayıdış & İşarə əvəzlikləri',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Sual & Nisbi əvəzliklər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4 — Təyin & Qeyri-müəyyən əvəzliklər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5 — İnkar əvəzlikləri',
+      cards: [],
+    },
+  ],
+},
+
+// ── 8. ARTICLE (ARTİKL) ─────────────────────────────────────
+{
+  id: 'article',
+  name: 'ARTICLE — ARTİKL',
+  icon: '📌',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — A / An — qeyri-müəyyən artikl',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — The — müəyyən artikl',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Artikl işlənməyən hallar',
+      cards: [],
+    },
+  ],
+},
+
+// ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
+{
+  id: 'questions',
+  name: 'QUESTIONS — SUALLAR',
+  icon: '❓',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Ümumi & Xüsusi suallar',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — Wh- sual sözləri',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Seçmə & Ayrılan suallar',
+      cards: [],
+    },
+  ],
+},
+
+// ── 10. MODAL VERBS ──────────────────────────────────────────
+{
+  id: 'modal_verbs',
+  name: 'MODAL VERBS',
+  icon: '🔧',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Can / Could / To be able to',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — May / Might',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Must / Have to',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4 — Should / Ought to / Need',
+      cards: [],
+    },
+  ],
+},
+
+// ── 11. PREPOSITIONS (SÖZÖNLƏRİ) ────────────────────────────
+{
+  id: 'prepositions',
+  name: 'PREPOSITIONS — SÖZÖNLƏRİ',
+  icon: '📍',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Yer bildirən sözönlər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — Zaman bildirən sözönlər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — İstiqamət bildirən sözönlər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4 — Mücərrəd əlaqə bildirən sözönlər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5 — Sözönlü fellər & sabit ifadələr',
+      cards: [],
+    },
+  ],
+},
+
+// ── 12. ADVERB (ZƏRF) ───────────────────────────────────────
+{
+  id: 'adverb',
+  name: 'ADVERB — ZƏRF',
+  icon: '💫',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Zərfin növləri',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — Zərfin dərəcələri',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Zərfin cümlədə yeri',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 4 — Too / Also / Either / Else / Only / Just',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 5 — Make and Do fərqi',
+      cards: [],
+    },
+  ],
+},
+
+// ── 13. COMPLEX OBJECT ──────────────────────────────────────
+{
+  id: 'complex_object',
+  name: 'COMPLEX OBJECT',
+  icon: '🔗',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — to + məsdər ilə işlənən fellər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — Məsdərsiz işlənən fellər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Participle I ilə işlənmə',
+      cards: [],
+    },
+  ],
+},
+
+// ── 14. SUBJECT-VERB AGREEMENT ───────────────────────────────
+{
+  id: 'subject_verb_agreement',
+  name: 'SUBJECT-VERB AGREEMENT',
+  icon: '⚖️',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — And / Either...or / Neither...nor ilə',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — With / Together with & Qeyri-müəyyən əvəzliklər',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Ölçü, vaxt & There is/are',
+      cards: [],
+    },
+  ],
+},
+
+// ── 15. THE IMPERATIVE (ƏMR CÜMLƏSİ) ────────────────────────
+{
+  id: 'imperative',
+  name: 'THE IMPERATIVE — ƏMR',
+  icon: '📢',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Əmr cümləsinin quruluşu',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — Do ilə qüvvətləndirmə & İnkar forma',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Let ilə I və III şəxs',
+      cards: [],
+    },
+  ],
+},
+
+// ── 16. EXCLAMATORY SENTENCES (NİDA CÜMLƏSİ) ────────────────
+{
+  id: 'exclamatory',
+  name: 'EXCLAMATORY SENTENCES',
+  icon: '❗',
+  color: '#8B5CF6',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — What ilə nida cümləsi',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — How ilə nida cümləsi',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — What vs How — fərqlər',
+      cards: [],
+    },
+  ],
+},
+
 
 
 KIDS_GRAMMAR_LEVELS.push(VERBS_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(PASSIVE_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(INDIRECT_SPEECH_LEVEL);
 KIDS_GRAMMAR_LEVELS.push(ADJECTIVES_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(SEQUENCE_TENSES_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(PRONOUN_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(ARTICLE_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(QUESTIONS_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(MODAL_VERBS_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(PREPOSITIONS_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(ADVERB_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(COMPLEX_OBJECT_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(SUBJECT_VERB_AGREEMENT_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(IMPERATIVE_LEVEL);
+KIDS_GRAMMAR_LEVELS.push(EXCLAMATORY_LEVEL);
 window.KIDS_GRAMMAR_LEVELS = KIDS_GRAMMAR_LEVELS;
 // LEVELS-ə birləşdir
 KIDS_GRAMMAR_LEVELS.forEach(lvl => LEVELS.push(lvl));
