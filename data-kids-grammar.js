@@ -326,13 +326,12 @@ const KIDS_GRAMMAR_LEVELS = [
   // ╔══════════════════════════════════════════════════╗
   // ║  GRAMMAR BÖLÜMÜ — NOUNS (İsimlər)               ║
   // ╚══════════════════════════════════════════════════╝
-  {
+{
     id: 'grammar',
     name: 'NOUNS - İSİMLƏR',
-    icon: '📖',
+    icon: '<i class="ti ti-box"></i>',
     color: '#D4A96A',
     quizzes: [
-
       {
   type: 'section_divider',
   title: 'Bölmə 1 — Sadə, düzəltmə, mürəkkəb isimlər',
@@ -4103,7 +4102,7 @@ const KIDS_GRAMMAR_LEVELS = [
 const VERBS_LEVEL = {
   id: 'verbs',
   name: 'VERBS',
-  icon: '⚡',
+  icon: '<i class="ti ti-bolt"></i>',
   color: '#FBBD3E',
   quizzes: [
 
@@ -7055,7 +7054,7 @@ const VERBS_LEVEL = {
 const PASSIVE_LEVEL = {
   id: 'passive',
   name: 'PASSIVE VOICE',
-  icon: '🔄',
+  icon: '<i class="ti ti-refresh"></i>',
   color: '#93C5FD',
 
   quizzes: [
@@ -8314,7 +8313,7 @@ const PASSIVE_LEVEL = {
 const INDIRECT_SPEECH_LEVEL = {
   id: 'indirect_speech',
   name: 'DIRECT & INDIRECT SPEECH',
-  icon: '💬',
+  icon: '<i class="ti ti-message-2"></i>',
   color: '#6EE7B7',
 
 // ============================================================
@@ -9430,36 +9429,12 @@ const SEQUENCE_TENSES_LEVEL = {
 
   ],
 };
-// ============================================================
-//  WORDPATH — ADJECTIVES DATA (Sifət)
-//  Data faylının sonuna əlavə et:
-//
-//  KIDS_GRAMMAR_LEVELS.push(ADJECTIVES_LEVEL);
-//
-//  app.js — EXAM_IDS-ə əlavə et:
-//  'adjectives': new Set([])
-//
-//  app.js — renderLevels()-də əlavə et:
-//  } else if (lvl.id === 'adjectives') {
-//    const grammarList = document.getElementById('grammar-list');
-//    if (grammarList) grammarList.appendChild(card);
-//  }
-//
-//  app.js — renderQuizPath()-də əlavə et:
-//  if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive' ||
-//      lvl.id === 'indirect_speech' || lvl.id === 'sequence_tenses' ||
-//      lvl.id === 'adjectives') {
-//    return renderGrammarPath(lvl, li);
-//  }
-//
-//  app.js — loadProgress()-də əlavə et:
-//  const isOpenSection = ... || lvl.id === 'adjectives';
-// ============================================================
+
 
 const ADJECTIVES_LEVEL = {
   id: 'adjectives',
   name: 'ADJECTIVES',
-  icon: '🎨',
+  icon: '<i class="ti ti-palette"></i>',
   color: '#F0ABFC',
 
   quizzes: [
@@ -9776,7 +9751,7 @@ const ADJECTIVES_LEVEL = {
 const PRONOUN_LEVEL = {
   id: 'pronoun',
   name: 'PRONOUN — ƏVƏZLİK',
-  icon: '🔤',
+  icon: '<i class="ti ti-user"></i>',
   color: '#A5B4FC',
   quizzes: [
     {
@@ -9811,8 +9786,9 @@ const PRONOUN_LEVEL = {
 const ARTICLE_LEVEL = {
   id: 'article',
   name: 'ARTICLE — ARTİKL',
-  icon: '📌',
+  icon: '<i class="ti ti-tag"></i>',
   color: '#FCD34D',
+
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9836,7 +9812,7 @@ const ARTICLE_LEVEL = {
 const QUESTIONS_LEVEL = {
   id: 'questions',
   name: 'QUESTIONS — SUALLAR',
-  icon: '❓',
+  icon: '<i class="ti ti-help-circle"></i>',
   color: '#7DD3FC',
   quizzes: [
     {
@@ -9861,7 +9837,7 @@ const QUESTIONS_LEVEL = {
 const MODAL_VERBS_LEVEL = {
   id: 'modal_verbs',
   name: 'MODAL VERBS',
-  icon: '🔧',
+  icon: '<i class="ti ti-key"></i>',
   color: '#86EFAC',
   quizzes: [
     {
@@ -9891,7 +9867,7 @@ const MODAL_VERBS_LEVEL = {
 const PREPOSITIONS_LEVEL = {
   id: 'prepositions',
   name: 'PREPOSITIONS — SÖZÖNLƏRİ',
-  icon: '📍',
+  icon: '<i class="ti ti-map-pin"></i>',
   color: '#FDBA74',
   quizzes: [
     {
@@ -9926,8 +9902,9 @@ const PREPOSITIONS_LEVEL = {
 const ADVERB_LEVEL = {
   id: 'adverb',
   name: 'ADVERB — ZƏRF',
-  icon: '💫',
+  icon: '<i class="ti ti-trending-up"></i>',
   color: '#E879F9',
+
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -9961,7 +9938,7 @@ const ADVERB_LEVEL = {
 const COMPLEX_OBJECT_LEVEL = {
   id: 'complex_object',
   name: 'COMPLEX OBJECT',
-  icon: '🔗',
+  icon: '<i class="ti ti-layers"></i>',
   color: '#60A5FA',
   quizzes: [
     {
@@ -9986,8 +9963,9 @@ const COMPLEX_OBJECT_LEVEL = {
 const SUBJECT_VERB_AGREEMENT_LEVEL = {
   id: 'subject_verb_agreement',
   name: 'SUBJECT-VERB AGREEMENT',
-  icon: '⚖️',
+  icon: '<i class="ti ti-scale"></i>',
   color: '#34D399',
+
   quizzes: [
     {
       type: 'grammar_lesson',
@@ -10011,7 +9989,7 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
 const IMPERATIVE_LEVEL = {
   id: 'imperative',
   name: 'THE IMPERATIVE — ƏMR',
-  icon: '📢',
+  icon: '<i class="ti ti-speakerphone"></i>',
   color: '#FDA4AF',
   quizzes: [
     {
@@ -10036,7 +10014,7 @@ const IMPERATIVE_LEVEL = {
 const EXCLAMATORY_LEVEL = {
   id: 'exclamatory',
   name: 'EXCLAMATORY SENTENCES',
-  icon: '❗',
+  icon: '<i class="ti ti-exclamation-mark"></i>',
   color: '#FDE68A',
   quizzes: [
     {
