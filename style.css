@@ -3248,6 +3248,32 @@ button { font-family: var(--font); }
 [data-theme="dark"] #profile-sheet h3 {
   color: #dce8f2;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   HEADER — Profil düyməsi və Sinif Otağı düyməsi
+══════════════════════════════════════════════════════════════ */
+#header-profile-btn {
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#header-profile-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+#stats-classroom-btn {
+  background: transparent !important;
+  color: #1A1A1A;
+  border: 1px solid #E8E2D9;
+}
+
+[data-theme="dark"] #stats-classroom-btn {
+  color: #dce8f2;
+  border-color: #1d3348;
+}
 /* ═══════════════════════════════════════════════════════════ */
 
 /* ── UTILITY ────────────────────────────────── */
