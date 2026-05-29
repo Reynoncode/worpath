@@ -316,6 +316,27 @@
   ════════════════════════════════════════════ -->
   <script src="stats.js"></script>
   <script src="stats-page.js"></script>
+<script src="stats-page-dark.js"></script>
+<script>
+  // Bridge — dark/light moduna görə düzgün versiyonu işlədir
+  const _spLight = StatsPage;
+  const _spDark  = StatsPageDark;
+
+  StatsPage = {
+    render: function(id) {
+      const dk = document.documentElement.getAttribute('data-theme') === 'dark';
+      (dk ? _spDark : _spLight).render(id);
+    },
+    _toggle: function(sev) {
+      const dk = document.documentElement.getAttribute('data-theme') === 'dark';
+      (dk ? _spDark : _spLight)._toggle(sev);
+    },
+    _retryWrongs: function() {
+      const dk = document.documentElement.getAttribute('data-theme') === 'dark';
+      (dk ? _spDark : _spLight)._retryWrongs();
+    }
+  };
+</script>
   <script src="data.js"></script>
   <script src="data-kids-grammar.js"></script>
   <script src="grammar-engine.js"></script>
