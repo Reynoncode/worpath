@@ -3185,16 +3185,15 @@ elChanceAccept.addEventListener('click', () => {
     return;
   }
   quiz.chanceUsed = true;
+  quiz.mistakes--;  // ← əlavə edildi
   Stats.useStarFix(quiz.words[quiz.index]?.en || '');
   hideChanceModal();
   setTimeout(() => showQuestion(), 260);
 });
-
 elChanceDecline.addEventListener('click', () => {
   hideChanceModal();
   proceedAfterWrong();
 });
-
 function proceedAfterWrong() {
   setTimeout(() => {
     quiz.index++;
