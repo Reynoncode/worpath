@@ -2141,6 +2141,36 @@ function restoreNormalQuizBody() {
   document.getElementById('opt-1').addEventListener('click', () => handleAnswer(1));
 }
 
+const iconStyles = {
+  'a1':              { background: '#f9e5e3', borderColor: '#e8b3ae', color: '#8B1A11' },
+  'a2':              { background: '#fdf0e0', borderColor: '#f5c98a', color: '#9A4F08' },
+  'b1':              { background: '#fdf8e1', borderColor: '#f0d060', color: '#7D6608' },
+  'b2':              { background: '#e4f7ed', borderColor: '#82d9a8', color: '#145A32' },
+  'c1':              { background: '#e3f0fa', borderColor: '#85bce0', color: '#1A4971' },
+  'c2':              { background: '#d5dde3', borderColor: '#8fa5b3', color: '#0D1317' },
+  'reading':         { background: '#e0f2fe', borderColor: '#7dd3fc', color: '#0369a1' },
+  'listening':       { background: '#ede9fe', borderColor: '#c4b5fd', color: '#6d28d9' },
+  'kids':            { background: '#fce4f0', borderColor: '#f48cbf', color: '#9C1260' },
+  'grammar':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'verbs':           { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'passive':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'indirect_speech': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'adjectives':      { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'sequence_tenses': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'pronoun':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'article':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'questions':       { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'modal_verbs':     { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'prepositions':    { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'adverb':          { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'complex_object':  { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'subject_verb_agreement': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'imperative':      { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+  'exclamatory':     { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
+};
+
+function renderLevels() {
+
 // ── Render level list ─────────────────────────────────────
 function renderLevels() {
   renderStarCount();
@@ -2175,19 +2205,23 @@ function renderLevels() {
 
   elLevelList.innerHTML = '';
 
-  LEVELS.forEach((lvl, li) => {
+LEVELS.forEach((lvl, li) => {
     const done  = progress[lvl.id].filter(s => s === 'completed').length;
     const total = lvl.quizzes.length;
-
     const card = document.createElement('div');
     card.className = 'level-card';
     card.dataset.level = lvl.id;
-    card.dataset.levelIdx = li;  // ← əlavə edildi
+    card.dataset.levelIdx = li;
+
+    const iStyle = iconStyles[lvl.id];
+    const iconInlineStyle = iStyle
+      ? `style="background:${iStyle.background}; border:1.5px solid ${iStyle.borderColor}; color:${iStyle.color}; width:42px; height:42px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:13px; font-weight:800;"`
+      : '';
 
     card.innerHTML = `
       <div class="level-header" role="button" aria-expanded="false">
         <div class="level-bar" style="background:${lvl.color}"></div>
-        <span class="level-icon">${lvl.icon}</span>
+        <span class="level-icon" ${iconInlineStyle}>${lvl.icon}</span>
         <div class="level-info">
           <div class="level-name">${lvl.name}</div>
           <div class="level-meta">${done} / ${total} tamamlandı</div>
@@ -2881,34 +2915,7 @@ const lvl = LEVELS[li];
     const innerBar = headerInner.querySelector('.level-bar');
     if (innerBar) innerBar.style.display = 'none';
 
-    // level-icon rəngini inline stil ilə qoru
-const iconStyles = {
-  'a1':              { background: '#f9e5e3', borderColor: '#e8b3ae', color: '#8B1A11' },
-  'a2':              { background: '#fdf0e0', borderColor: '#f5c98a', color: '#9A4F08' },
-  'b1':              { background: '#fdf8e1', borderColor: '#f0d060', color: '#7D6608' },
-  'b2':              { background: '#e4f7ed', borderColor: '#82d9a8', color: '#145A32' },
-  'c1':              { background: '#e3f0fa', borderColor: '#85bce0', color: '#1A4971' },
-  'c2':              { background: '#d5dde3', borderColor: '#8fa5b3', color: '#0D1317' },
-  'reading':         { background: '#e0f2fe', borderColor: '#7dd3fc', color: '#0369a1' },
-  'listening':       { background: '#ede9fe', borderColor: '#c4b5fd', color: '#6d28d9' },
-  'kids':            { background: '#fce4f0', borderColor: '#f48cbf', color: '#9C1260' },
-  'grammar':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-  'verbs':           { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
-  'passive':         { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
-  'indirect_speech': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
-  'adjectives':      { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },  // ← əlavə et
-  'sequence_tenses': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'pronoun': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'article': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'questions': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'modal_verbs': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'prepositions': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'adverb': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'complex_object': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'subject_verb_agreement': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'imperative': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-'exclamatory': { background: '#ede9fe', borderColor: '#c4b5fd', color: '#5B21B6' },
-};
+ 
 
 const innerIcon = headerInner.querySelector('.level-icon');
 if (innerIcon && iconStyles[lvl.id]) {
