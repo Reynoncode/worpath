@@ -542,25 +542,24 @@ function renderGrammarPath(lvl, li) {
         </svg>
       </div>`;
 
-    } else {
+} else {
       const completedSoFar = progress[lvl.id].filter(s =>
         ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
       ).length;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
+      const isGrammar = item && !Array.isArray(item) && item.type === 'grammar_lesson';
+      const bgStyle = isGrammar ? `background:${lvl.color}18;` : `background:white;`;
 
-   const isGrammar = item && !Array.isArray(item) && item.type === 'grammar_lesson';
-const bgStyle = isGrammar ? `background:${lvl.color}18;` : `background:white;`;
-
-html += `<div class="${nodeClass} unlocked ${pulseClass}"
-  data-quiz-idx="${qi}" data-status="unlocked"
-  style="color:${lvl.color}; border-color:${lvl.color}; ${bgStyle}">
-  ${typeIcon}
-</div>`;
+      html += `<div class="${nodeClass} unlocked ${pulseClass}"
+        data-quiz-idx="${qi}" data-status="unlocked"
+        style="color:${lvl.color}; border-color:${lvl.color}; ${bgStyle}">
+        ${typeIcon}
+      </div>`;
+    }  // ← bu çatışmırdı
 
     const label = (QUIZ_NAMES[lvl.id]?.[qi]) || item?.title || `Dərs ${quizCounter}`;
     html += `<div class="node-label">${label}</div></div>`;
   });
-
   html += '</div>';
   return html;
 }
