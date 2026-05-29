@@ -141,8 +141,7 @@ const StatsPage = (() => {
           <span style="margin-left:auto;font-size:12px;" id="sp-chevron-${sev}">${isOpen ? "▲" : "▼"}</span>
         </button>
         <div id="sp-body-${sev}"
-          style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? "" : "display:none;}">
-          ${rows}
+style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? "" : "display:none;"}">          ${rows}
         </div>
       </div>
     `;
