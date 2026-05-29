@@ -367,6 +367,11 @@ button { font-family: var(--font); }
   border: 1.5px solid transparent;
 }
 
+.level-icon i {
+  font-size: 20px;
+  color: inherit;
+}
+
 .level-info { flex: 1; min-width: 0; }
 
 .level-name {
