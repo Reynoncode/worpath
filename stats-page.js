@@ -1,5 +1,6 @@
 /**
  * WordPath — Statistika Səhifəsi (UI)
+ * Dark və Light mode dəstəyi daxildir.
  * stats.js faylından sonra yüklənməlidir.
  *
  * İSTİFADƏ:
@@ -9,12 +10,12 @@
 const StatsPage = (() => {
 
   const LEVELS = [
-    { label: "A1", color: "#C0392B", sublevelKeys: ["a1"],            total: 123 },
-    { label: "A2", color: "#E67E22", sublevelKeys: ["a2"],            total: 93  },
+    { label: "A1", color: "#C0392B", sublevelKeys: ["a1"],             total: 123 },
+    { label: "A2", color: "#E67E22", sublevelKeys: ["a2"],             total: 93  },
     { label: "B1", color: "#D4AC0D", sublevelKeys: ["b1","b1a","b1b"], total: 135 },
     { label: "B2", color: "#1E8449", sublevelKeys: ["b2","b2a","b2b"], total: 165 },
     { label: "C1", color: "#2471A3", sublevelKeys: ["c1","c1a","c1b"], total: 147 },
-    { label: "C2", color: "#1B2A3B", sublevelKeys: ["c2"],            total: 174 },
+    { label: "C2", color: "#1B2A3B", sublevelKeys: ["c2"],             total: 174 },
   ];
 
   const STATUS_PHASE_MAP = {
@@ -51,30 +52,78 @@ const StatsPage = (() => {
     return counts;
   }
 
+  // ─── Tema köməkçisi ───────────────────────────────────────────────────────
+  function isDark() {
+    return document.documentElement.getAttribute('data-theme') === 'dark';
+  }
+
+  // ─── Rəng dəstləri ────────────────────────────────────────────────────────
+  function getTheme() {
+    const dark = isDark();
+    return {
+      dark,
+      pageBg:       dark ? '#0d1b2a'  : '#F5F0E8',
+      cardBg:       dark ? '#142233'  : '#EDEAE2',
+      cardBorder:   dark ? '#1d3348'  : '#E8E2D9',
+      whiteBg:      dark ? '#142233'  : '#fff',
+      titleColor:   dark ? '#ffffff'  : '#1A1A1A',
+      subText:      dark ? '#6d90a8'  : '#6B7280',
+      faintText:    dark ? '#3f5e72'  : '#9CA3AF',
+      numColor:     dark ? '#ffffff'  : '#1A1A1A',
+      progressBg:   dark ? '#1d3348'  : '#F0ECE4',
+      rowBorder:    dark ? '#1d3348'  : '#F3F4F6',
+      wordColor:    dark ? '#dce8f2'  : '#1a1a1a',
+      streakBg:     dark ? '#2a1e08'  : '#FAEEDA',
+      streakBorder: dark ? '#7a5a10'  : '#FAC775',
+      streakColor:  dark ? '#d4a040'  : '#633806',
+    };
+  }
+
+  // ─── Səhv qrupu konfiqurasiyası ───────────────────────────────────────────
   const SEV_CFG = {
-    critical: { label: "Kritik zəiflik", icon: "⚠️", bg: "#FFF1F0", border: "#FCA5A5", textColor: "#991B1B" },
-    medium:   { label: "Orta səviyyə",   icon: "⚡", bg: "#FFFBEB", border: "#FCD34D", textColor: "#92400E" },
-    light:    { label: "Yüngül səhv",    icon: "ℹ️", bg: "#F0FDF4", border: "#86EFAC", textColor: "#14532D" },
+    critical: {
+      label: "Kritik zəiflik", icon: "⚠️",
+      bg: "#FFF1F0", border: "#FCA5A5", textColor: "#991B1B",
+      bgDark: "#2a0c0c", borderDark: "#7a2020",
+    },
+    medium: {
+      label: "Orta səviyyə", icon: "⚡",
+      bg: "#FFFBEB", border: "#FCD34D", textColor: "#92400E",
+      bgDark: "#2a1e08", borderDark: "#7a5a10",
+    },
+    light: {
+      label: "Yüngül səhv", icon: "ℹ️",
+      bg: "#F0FDF4", border: "#86EFAC", textColor: "#14532D",
+      bgDark: "#0a2418", borderDark: "#1a6a3a",
+    },
   };
 
-  function renderGroup(sev, words, openState) {
+  // ─── Açıq/bağlı vəziyyəti ─────────────────────────────────────────────────
+  const openState = { critical: false, medium: false, light: false };
+
+  // ─── Səhv qrupu render ────────────────────────────────────────────────────
+  function renderGroup(sev, words) {
     const cfg = SEV_CFG[sev];
+    const t = getTheme();
     const isOpen = openState[sev];
     const headRadius = isOpen ? "10px 10px 0 0" : "10px";
 
+    const bg     = t.dark ? cfg.bgDark     : cfg.bg;
+    const border = t.dark ? cfg.borderDark : cfg.border;
+
     const rows = words.map(w => `
-      <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid #F3F4F6;${w.starFixed ? "opacity:0.72;" : ""}">
+      <div style="display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid ${t.rowBorder};${w.starFixed ? "opacity:0.72;" : ""}">
         <div style="flex:1;min-width:0;">
           <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;">
-            <span style="font-size:14px;font-weight:600;color:#1a1a1a;">${w.word}</span>
+            <span style="font-size:14px;font-weight:600;color:${t.wordColor};">${w.word}</span>
             <span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:#E1F5EE;color:#085041;">${w.level}</span>
             ${w.starFixed ? `<span style="font-size:10px;font-weight:600;padding:1px 7px;border-radius:99px;background:#FAEEDA;color:#633806;border:1px solid #FAC775;">⭐ düzəldildi</span>` : ""}
           </div>
-          <div style="font-size:12px;color:#6B7280;margin-top:2px;">${w.translation}</div>
+          <div style="font-size:12px;color:${t.subText};margin-top:2px;">${w.translation}</div>
         </div>
         <div style="text-align:center;flex-shrink:0;">
           <div style="font-size:16px;font-weight:700;color:${cfg.textColor};">${w.errors}</div>
-          <div style="font-size:10px;color:#9CA3AF;">səhv</div>
+          <div style="font-size:10px;color:${t.faintText};">səhv</div>
         </div>
       </div>
     `).join("");
@@ -83,32 +132,38 @@ const StatsPage = (() => {
       <div style="margin-bottom:8px;">
         <button
           onclick="StatsPage._toggle('${sev}')"
-          style="width:100%;display:flex;align-items:center;gap:8px;background:${cfg.bg};border:1px solid ${cfg.border};border-radius:${headRadius};padding:9px 14px;cursor:pointer;font-size:13px;font-weight:600;color:${cfg.textColor};transition:border-radius 0.15s;"
+          style="width:100%;display:flex;align-items:center;gap:8px;background:${bg};border:1px solid ${border};border-radius:${headRadius};padding:9px 14px;cursor:pointer;font-size:13px;font-weight:600;color:${cfg.textColor};transition:border-radius 0.15s;"
           id="sp-head-${sev}"
           aria-expanded="${isOpen}">
           ${cfg.icon}
           ${cfg.label}
-          <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:${cfg.border};color:${cfg.textColor};">${words.length} söz</span>
+          <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:${border};color:${cfg.textColor};">${words.length} söz</span>
           <span style="margin-left:auto;font-size:12px;" id="sp-chevron-${sev}">${isOpen ? "▲" : "▼"}</span>
         </button>
         <div id="sp-body-${sev}"
-          style="background:#fff;border:1px solid ${cfg.border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? "" : "display:none;"}">
+          style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? "" : "display:none;}">
           ${rows}
         </div>
       </div>
     `;
   }
 
-  const openState = { critical: false, medium: false, light: false };
-  
+  // ─── Toggle ───────────────────────────────────────────────────────────────
   function _toggle(sev) {
     openState[sev] = !openState[sev];
     const body    = document.getElementById(`sp-body-${sev}`);
     const chevron = document.getElementById(`sp-chevron-${sev}`);
     const head    = document.getElementById(`sp-head-${sev}`);
+    const t   = getTheme();
+    const cfg = SEV_CFG[sev];
+
     body.style.display      = openState[sev] ? "" : "none";
+    body.style.background   = t.whiteBg;
+    body.style.borderColor  = t.dark ? cfg.borderDark : cfg.border;
     chevron.textContent     = openState[sev] ? "▲" : "▼";
     head.style.borderRadius = openState[sev] ? "10px 10px 0 0" : "10px";
+    head.style.background   = t.dark ? cfg.bgDark : cfg.bg;
+    head.style.borderColor  = t.dark ? cfg.borderDark : cfg.border;
     head.setAttribute("aria-expanded", openState[sev]);
   }
 
@@ -117,102 +172,91 @@ const StatsPage = (() => {
     const el = document.getElementById(containerId);
     if (!el) return;
 
+    const t = getTheme();
     const s = Stats.getStats();
     const phasesByLevel = getPhasesByLevel();
 
     const grouped = { critical: [], medium: [], light: [] };
     s.errorWords.forEach(w => grouped[w.severity].push(w));
 
+    // Səviyyə irəliləmə sətirləri
     const levelRows = LEVELS.map(lv => {
       const done = phasesByLevel[lv.label] || 0;
       const pct  = lv.total > 0 ? Math.min(100, Math.round((done / lv.total) * 100)) : 0;
 
-      const badge = `
-        <div style="
-          width:30px;height:30px;
-          border-radius:5px;
-          background:${lv.color};
-          display:flex;align-items:center;justify-content:center;
-          flex-shrink:0;
-        ">
-          <span style="font-size:10px;font-weight:800;color:#fff;letter-spacing:0.2px;">${lv.label}</span>
-        </div>
-      `;
-
       return `
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
-          ${badge}
-          <div style="flex:1;height:6px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
+          <div style="width:30px;height:30px;border-radius:5px;background:${lv.color};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span style="font-size:10px;font-weight:800;color:#fff;letter-spacing:0.2px;">${lv.label}</span>
+          </div>
+          <div style="flex:1;height:6px;background:${t.progressBg};border-radius:99px;overflow:hidden;">
             <div style="width:${pct}%;height:100%;background:${lv.color};border-radius:99px;transition:width 0.6s ease;"></div>
           </div>
-          <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${pct > 0 ? lv.color : "#C4B8A8"};">${pct}%</span>
-          <span style="font-size:11px;color:#9CA3AF;width:52px;text-align:right;">${done}/${lv.total}</span>
+          <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${pct > 0 ? lv.color : t.faintText};">${pct}%</span>
+          <span style="font-size:11px;color:${t.faintText};width:52px;text-align:right;">${done}/${lv.total}</span>
         </div>
       `;
     }).join("");
 
+    // Səhv qrupları
     const errGroups = ["critical", "medium", "light"]
       .filter(sev => grouped[sev].length > 0)
-      .map(sev => renderGroup(sev, grouped[sev], openState))
+      .map(sev => renderGroup(sev, grouped[sev]))
       .join("");
 
     const noErrors = s.errorWords.length === 0 ? `
-      <div style="background:#F0FDF4;border:1px solid #86EFAC;border-radius:12px;padding:24px;text-align:center;">
+      <div style="background:${t.dark ? '#0a2418' : '#F0FDF4'};border:1px solid ${t.dark ? '#1a6a3a' : '#86EFAC'};border-radius:12px;padding:24px;text-align:center;">
         <div style="font-size:32px;margin-bottom:8px;">🎉</div>
-        <div style="font-size:14px;font-weight:600;color:#14532D;">Heç bir səhv yoxdur!</div>
+        <div style="font-size:14px;font-weight:600;color:${t.dark ? '#3aaa6a' : '#14532D'};">Heç bir səhv yoxdur!</div>
       </div>
     ` : "";
 
     el.innerHTML = `
-      <div style="background:#F5F0E8;min-height:100vh;padding:20px 20px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+      <div style="background:${t.pageBg};min-height:100vh;padding:20px 20px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
 
         <!-- Başlıq -->
-
-<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-  <span style="font-size:22px;font-weight:700;color:#1A1A1A;">Statistika</span>
-  <span style="display:flex;align-items:center;gap:5px;background:#FAEEDA;color:#633806;
-               border:1px solid #FAC775;border-radius:99px;padding:5px 12px;
-               font-size:12px;font-weight:600;">
-    🔥 ${s.streak} STREAK
-  </span>
-</div>
-
-        
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+          <span style="font-size:22px;font-weight:700;color:${t.titleColor};">Statistika</span>
+          <span style="display:flex;align-items:center;gap:5px;background:${t.streakBg};color:${t.streakColor};border:1px solid ${t.streakBorder};border-radius:99px;padding:5px 12px;font-size:12px;font-weight:600;">
+            🔥 ${s.streak} STREAK
+          </span>
+        </div>
 
         <!-- 4 kart -->
-<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px;">
-  ${[
-    { val: s.totalLearned,       lbl: "Öyrənilmiş söz",  sub: null },
-    { val: `${s.correctRate}%`,  lbl: "Düzgün cavab",    sub: null },
-    { val: s.totalErrors,        lbl: "Ümumi səhv sayı", sub: `${s.starFixedCount} ulduzla düzəldildi`, subColor: "#D97706" },
-    { val: "📋", lbl: "Ev tapşırığı", sub: null, isHomework: true },
-    ].map(c => `
-<div style="background:#EDEAE2;border-radius:10px;padding:0;overflow:hidden;" id="${c.isHomework ? 'stats-homework-card' : ''}">
-  ${c.isHomework ? '<div style="padding:14px 16px;"><div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">EV TAPŞIRIĞI</div><div style="font-size:13px;color:#9CA3AF;">Yüklənir...</div></div>' : `
-    <div style="padding:14px 16px;">
-      <div style="font-size:24px;font-weight:700;color:#1A1A1A;">${c.val}</div>
-      <div style="font-size:12px;color:#6B7280;margin-top:3px;">${c.lbl}</div>
-      ${c.sub ? `<div style="font-size:11px;color:${c.subColor};margin-top:3px;font-weight:500;">${c.sub}</div>` : ""}
-    </div>
-  `}
-</div>
-`).join("")}
-</div>
-
-        
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px;">
+          ${[
+            { val: s.totalLearned,       lbl: "Öyrənilmiş söz",  sub: null },
+            { val: `${s.correctRate}%`,  lbl: "Düzgün cavab",    sub: null },
+            { val: s.totalErrors,        lbl: "Ümumi səhv sayı", sub: `${s.starFixedCount} ulduzla düzəldildi`, subColor: "#D97706" },
+            { val: "📋", lbl: "Ev tapşırığı", sub: null, isHomework: true },
+          ].map(c => `
+            <div style="background:${t.cardBg};border-radius:10px;padding:0;overflow:hidden;" id="${c.isHomework ? 'stats-homework-card' : ''}">
+              ${c.isHomework
+                ? `<div style="padding:14px 16px;">
+                     <div style="font-size:11px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">EV TAPŞIRIĞI</div>
+                     <div style="font-size:13px;color:${t.faintText};">Yüklənir...</div>
+                   </div>`
+                : `<div style="padding:14px 16px;">
+                     <div style="font-size:24px;font-weight:700;color:${t.numColor};">${c.val}</div>
+                     <div style="font-size:12px;color:${t.subText};margin-top:3px;">${c.lbl}</div>
+                     ${c.sub ? `<div style="font-size:11px;color:${c.subColor};margin-top:3px;font-weight:500;">${c.sub}</div>` : ""}
+                   </div>`
+              }
+            </div>
+          `).join("")}
+        </div>
 
         <!-- Səviyyə irəliləməsi -->
-        <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:14px 16px;margin-bottom:12px;">
-          <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Səviyyə üzrə irəliləmə</div>
+        <div style="background:${t.whiteBg};border:1px solid ${t.cardBorder};border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+          <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Səviyyə üzrə irəliləmə</div>
           ${levelRows}
         </div>
 
         <!-- Səhv analizi -->
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
+          <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
           ${s.errorWords.length > 0 ? `
-            <button
-              onclick="StatsPage._retryWrongs()"
+            <button onclick="StatsPage._retryWrongs()"
               style="display:flex;align-items:center;gap:5px;background:#085041;color:#fff;border:none;border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;">
               🔁 Təkrar et
             </button>
@@ -224,26 +268,27 @@ const StatsPage = (() => {
       </div>
     `;
 
-setTimeout(() => {
-  if (window.HomeworkManager?.renderCard) {
-    window.HomeworkManager.renderCard("stats-homework-card");
-  }
-  if (window.QuizHomeworkManager?.renderCard) {
-    window.QuizHomeworkManager.renderCard("stats-homework-card");
-  }
-}, 1000);
-    
+    // Ev tapşırığı kartını yüklə
+    setTimeout(() => {
+      if (window.HomeworkManager?.renderCard) {
+        window.HomeworkManager.renderCard("stats-homework-card");
+      }
+      if (window.QuizHomeworkManager?.renderCard) {
+        window.QuizHomeworkManager.renderCard("stats-homework-card");
+      }
+    }, 1000);
 
-const headerProfileAvatar = document.getElementById('header-profile-avatar');
-if (headerProfileAvatar && window.AuthManager) {
-  const user = AuthManager.getCurrentUser();
-  if (user && user.photoURL) {
-    headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
-  } else if (user) {
-    const name = user.displayName ? user.displayName.split(' ')[0] : user.email;
-    headerProfileAvatar.textContent = name.charAt(0).toUpperCase();
-  }
-}
+    // Header avatar
+    const headerProfileAvatar = document.getElementById('header-profile-avatar');
+    if (headerProfileAvatar && window.AuthManager) {
+      const user = AuthManager.getCurrentUser();
+      if (user && user.photoURL) {
+        headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:28px;height:28px;border-radius:50%;object-fit:cover;" />`;
+      } else if (user) {
+        const name = user.displayName ? user.displayName.split(' ')[0] : user.email;
+        headerProfileAvatar.textContent = name.charAt(0).toUpperCase();
+      }
+    }
 
   } // ← render() bağlanan mötərizə
 
@@ -255,11 +300,9 @@ if (headerProfileAvatar && window.AuthManager) {
       return;
     }
 
-    // 20 random səhv söz seç
     const shuffled = [...s.errorWords].sort(() => Math.random() - 0.5);
     const selected = shuffled.slice(0, 20);
 
-    // Hər söz üçün window.LEVELS (data.js)-dən uyğun word object-i tap
     const dataLevels = window.LEVELS;
     if (!dataLevels) {
       alert('LEVELS tapılmadı. data.js yüklənib?');
