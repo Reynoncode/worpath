@@ -2870,7 +2870,7 @@ const lvl = LEVELS[li];
   left: ${cardLeft}px;
   width: ${cardWidth}px;
   height: ${cardRect.height}px;
-  background: #fff;
+  background: ${document.documentElement.getAttribute('data-theme')==='dark' ? '#142233' : '#fff'};
   z-index: 200;
   display: flex;
   flex-direction: column;
@@ -2887,8 +2887,8 @@ const lvl = LEVELS[li];
     const stickyHeader = document.createElement('div');
     stickyHeader.style.cssText = `
       flex-shrink: 0;
-      background: #fff;
-      border-bottom: 1px solid #E8E2D9;
+      background: ${document.documentElement.getAttribute('data-theme')==='dark' ? '#142233' : '#fff'};
+      border-bottom: 1px solid ${document.documentElement.getAttribute('data-theme')==='dark' ? '#1d3348' : '#E8E2D9'};
       cursor: pointer;
       border-radius: 16px 16px 0 0;
       position: relative;
@@ -2947,7 +2947,7 @@ stickyHeader.addEventListener('click', (e) => {
       padding: 12px 16px 32px;
       -ms-overflow-style: none;
       scrollbar-width: none;
-      background: #fff;
+      background: ${document.documentElement.getAttribute('data-theme')==='dark' ? '#142233' : '#fff'};
     `;
 
     // Scrollbar gizlət
