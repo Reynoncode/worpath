@@ -3251,6 +3251,7 @@ button { font-family: var(--font); }
 
 /* ══════════════════════════════════════════════════════════════
    HEADER — Profil düyməsi və Sinif Otağı düyməsi
+══════════════════════════════════════════════════════════════ */
 #header-profile-btn {
   padding: 0;
   overflow: hidden;
