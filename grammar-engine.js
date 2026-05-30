@@ -624,7 +624,7 @@ function renderKidsQuestion() {
   quizBody.innerHTML = `
     <div class="kids-question-wrap">
       <div class="kids-pic-wrap">
-        <img src="kids/${w.pic}.png" alt="${correctWord}" class="kids-pic"
+        <img src="kids/${w.pic}.jpg" alt="${correctWord}" class="kids-pic"
           onerror="this.style.opacity='0.3'" />
       </div>
       <button class="kids-audio-btn" onclick="kidsPlayAudio('${correctWord}')" title="Dinlə">
