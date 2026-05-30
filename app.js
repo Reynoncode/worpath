@@ -3318,6 +3318,7 @@ function handleAnswer(btnIdx) {
         : (reviewState.levelId?.toUpperCase() || '');
       Stats.recordAnswer(w.en, lvlId, w.tr || '', true);
       if (window.AuthManager) AuthManager.syncStats()
+      if (window.checkAndNotify) checkAndNotify();
     }
 
     if (quiz.mode === 'leveltest') {
@@ -3345,7 +3346,7 @@ function handleAnswer(btnIdx) {
         : (reviewState.levelId?.toUpperCase() || '');
       Stats.recordAnswer(w.en, lvlId, w.tr || '', false);
       if (window.AuthManager) AuthManager.syncStats(); 
-
+      if (window.checkAndNotify) checkAndNotify(); 
     }
 
     if (quiz.mode === 'review') reviewState.wrong++;
@@ -3466,9 +3467,12 @@ function finishQuiz() {
         if (quiz.mode === 'phase2') {
           progress[lvl.id][quiz.quizIdx] = 'phase2_completed';
           saveProgress();
+          if (window.checkAndNotify) checkAndNotify();
         } else {
           progress[lvl.id][quiz.quizIdx] = 'level_done';
           saveProgress();
+          if (window.checkAndNotify) checkAndNotify(); 
+          
         }
 
         const isPhase3 = quiz.mode === 'phase3';
@@ -3519,6 +3523,7 @@ function finishQuiz() {
 
     if (won) {
       markCompleted(quiz.levelIdx, quiz.quizIdx);
+      if (window.checkAndNotify) checkAndNotify();
       const lvl          = LEVELS[quiz.levelIdx];
       const isExam       = isExamItem(lvl.quizzes[quiz.quizIdx], lvl.id, quiz.quizIdx);
       const nextPlayable = findNextPlayableQuiz(quiz.levelIdx, quiz.quizIdx);
@@ -3856,8 +3861,6 @@ document.addEventListener('mouseup', () => {
   }
 });
 // ── Init ──────────────────────────────────
-Stats.recordAnswer(word, level, translation, isCorrect);
-checkAndNotify(); // ← buraya
 goToPage(DEFAULT_PAGE, false);
 StatsPage.render('stats-root');
 loadProgress();
