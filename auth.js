@@ -256,11 +256,15 @@ const LOCAL_PROGRESS_KEY = "wordpath_v1";
 // ─── Firestore-a yaz ────────────────────────────────────────────────────────
 async function saveUserData(uid, statsData, progressData) {
   const ref = doc(db, "users", uid);
-  await setDoc(ref, {
-    stats:     statsData,
-    progress:  progressData,
-    updatedAt: serverTimestamp()
-  }, { merge: true });
+ const existingDoc = await getDoc(ref);
+const existingPhoto = existingDoc.exists() ? existingDoc.data().photoURL : null;
+
+await setDoc(ref, {
+  email:       user.email,
+  displayName: user.displayName || "",
+  photoURL:    existingPhoto || user.photoURL || "",
+  lastLogin:   serverTimestamp()
+}, { merge: true });
 }
 
 // ─── Firestore-dan oxu ──────────────────────────────────────────────────────
@@ -620,11 +624,11 @@ async function openProfileModal() {
             <div style="font-size:11px;font-weight:600;color:#6B7280;margin-bottom:5px;text-transform:uppercase;letter-spacing:0.06em;">İstifadəçi adı</div>
             <div style="display:flex;gap:8px;align-items:center;">
               <input id="profile-name-input" value="${savedName}"
-                style="flex:1;padding:9px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:14px;font-weight:600;background:#fff;outline:none;color:#1A1A1A;" />
-              <button onclick="AuthManager._saveName()"
-                style="background:#1A1A1A;color:#fff;border:none;border-radius:10px;padding:9px 14px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">
-                Saxla
-              </button>
+  style="width:60%;padding:9px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:14px;font-weight:600;background:#fff;outline:none;color:#1A1A1A;" />
+<button onclick="AuthManager._saveName()"
+  style="flex-shrink:0;background:#1A1A1A;color:#fff;border:none;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">
+  Saxla
+</button>
             </div>
             <div id="profile-save-msg" style="font-size:11px;color:#16A34A;margin-top:4px;display:none;">✓ Saxlandı</div>
           </div>
