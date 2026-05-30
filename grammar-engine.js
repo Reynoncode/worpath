@@ -568,3 +568,231 @@ function renderGrammarPath(lvl, li) {
 window.startGrammarLesson = startGrammarLesson;
 window.renderGrammarPath  = renderGrammarPath;
 window.grammarState       = grammarState;
+
+// ============================================================
+//  WORDPATH — KIDS ENGINE
+//  grammar-engine.js-in sonuna əlavə et
+// ============================================================
+
+// ── Kids State ────────────────────────────────────────────
+const kidsState = {
+  levelIdx:  null,
+  quizIdx:   null,
+  words:     [],
+  index:     0,
+  mistakes:  0,
+  locked:    false,
+};
+
+// ── Kids Quiz Başlat ──────────────────────────────────────
+function startKidsQuiz(levelIdx, quizIdx) {
+  const lvl  = KIDS_GRAMMAR_LEVELS[0]; // həmişə kids
+  const words = lvl.quizzes[quizIdx];
+
+  if (!words || words.length === 0) {
+    console.warn('Kids quiz: boşdur', quizIdx);
+    return;
+  }
+
+  kidsState.levelIdx = levelIdx;
+  kidsState.quizIdx  = quizIdx;
+  kidsState.words    = [...words].sort(() => Math.random() - 0.5);
+  kidsState.index    = 0;
+  kidsState.mistakes = 0;
+  kidsState.locked   = false;
+
+  quiz.mode   = 'kids';
+  quiz.locked = false;
+
+  showQuizScreen();
+  renderKidsQuestion();
+}
+
+// ── Sual Göstər ───────────────────────────────────────────
+function renderKidsQuestion() {
+  const w        = kidsState.words[kidsState.index];
+  const total    = kidsState.words.length;
+  const isDark   = document.documentElement.getAttribute('data-theme') === 'dark';
+
+  // Progress
+  elProgressFill.style.width = `${(kidsState.index / total) * 100}%`;
+  elQCounter.textContent     = `${kidsState.index + 1}/${total}`;
+
+  const correctWord = KIDS_WORDS[w.correct];
+  const wrongWord   = KIDS_WORDS[w.wrong];
+  const options     = [correctWord, wrongWord].sort(() => Math.random() - 0.5);
+
+  const bg     = isDark ? '#0d1b2a' : '#fff';
+  const border = isDark ? '#1d3348' : '#E8E2D9';
+  const text   = isDark ? '#dce8f2' : '#1A1A1A';
+
+  const quizBody = document.querySelector('.quiz-body');
+  quizBody.className = 'quiz-body kids-mode';
+
+  quizBody.innerHTML = `
+    <div class="kids-question-wrap">
+
+      <!-- Rəsm -->
+      <div class="kids-pic-wrap">
+        <img
+          src="kids/${w.pic}.png"
+          alt="${correctWord}"
+          class="kids-pic"
+          onerror="this.style.opacity='0.3'"
+        />
+      </div>
+
+      <!-- Səsləndirmə düyməsi -->
+      <button class="kids-audio-btn" onclick="kidsPlayAudio('${correctWord}')" title="Dinlə">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+          <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+        </svg>
+      </button>
+
+      <!-- Cavab düymələri -->
+      <div class="kids-options">
+        ${options.map(opt => `
+          <button
+            class="kids-opt-btn"
+            data-word="${opt}"
+            onclick="kidsHandleAnswer(this, '${correctWord}')"
+          >${opt}</button>
+        `).join('')}
+      </div>
+
+      <!-- Feedback -->
+      <div class="kids-feedback" id="kids-feedback"></div>
+
+    </div>
+  `;
+
+  // Avtomatik səsləndir
+  setTimeout(() => kidsPlayAudio(correctWord), 400);
+}
+
+// ── Cavab İşlə ────────────────────────────────────────────
+function kidsHandleAnswer(btn, correctWord) {
+  if (kidsState.locked) return;
+  kidsState.locked = true;
+
+  const chosen    = btn.dataset.word;
+  const isCorrect = chosen === correctWord;
+  const feedback  = document.getElementById('kids-feedback');
+
+  // Bütün düymələri deaktiv et
+  document.querySelectorAll('.kids-opt-btn').forEach(b => {
+    b.disabled = true;
+    if (b.dataset.word === correctWord) b.classList.add('kids-opt-correct');
+    else if (b === btn && !isCorrect)   b.classList.add('kids-opt-wrong');
+  });
+
+  if (isCorrect) {
+    feedback.textContent = '✓';
+    feedback.className   = 'kids-feedback kids-fb-correct';
+    kidsPlayAudio(correctWord);
+  } else {
+    kidsState.mistakes++;
+    feedback.textContent = `✗  ${correctWord}`;
+    feedback.className   = 'kids-feedback kids-fb-wrong';
+    kidsPlayAudio(correctWord);
+  }
+
+  setTimeout(() => {
+    kidsState.locked = false;
+    kidsState.index++;
+    if (kidsState.index >= kidsState.words.length) {
+      finishKidsQuiz();
+    } else {
+      renderKidsQuestion();
+    }
+  }, 900);
+}
+
+// ── Səsləndirmə ───────────────────────────────────────────
+function kidsPlayAudio(word) {
+  try {
+    // kids/audio/{word}.mp3 — fayllar varsa işləyir
+    const audio = new Audio(`kids/audio/${word.toLowerCase().replace(/ /g, '_')}.mp3`);
+    audio.play().catch(() => {
+      // Web Speech API fallback
+      if ('speechSynthesis' in window) {
+        const utt = new SpeechSynthesisUtterance(word);
+        utt.lang = 'en-US';
+        utt.rate = 0.85;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utt);
+      }
+    });
+  } catch(_) {}
+}
+
+// ── Quiz Bitişi ───────────────────────────────────────────
+function finishKidsQuiz() {
+  elProgressFill.style.width = '100%';
+
+  const total   = kidsState.words.length;
+  const correct = total - kidsState.mistakes;
+  const pct     = Math.round((correct / total) * 100);
+
+  let emoji, title;
+  if (pct === 100)    { emoji = '🏆'; title = 'Əla!'; }
+  else if (pct >= 80) { emoji = '🎉'; title = 'Çox yaxşı!'; }
+  else if (pct >= 60) { emoji = '👍'; title = 'Pis deyil!'; }
+  else if (pct >= 40) { emoji = '📚'; title = 'Daha çox məşq et!'; }
+  else                { emoji = '💪'; title = 'Davam et!'; }
+
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+    elResultStats.classList.remove('hidden');
+    elLevelResultCard.classList.add('hidden');
+
+    elResultEmoji.textContent = emoji;
+    elResultTitle.textContent = title;
+    elResultDesc.textContent  = `${total} sualdan ${correct} düzgün`;
+
+    elStatCorrect.textContent = correct;
+    elStatWrong.textContent   = kidsState.mistakes;
+    elStatPct.textContent     = `${pct}%`;
+
+    if (pct === 100) {
+      markCompleted(kidsState.levelIdx, kidsState.quizIdx);
+      if (window.checkAndNotify) checkAndNotify();
+    }
+
+    const nextPlayable = findNextPlayableQuiz(kidsState.levelIdx, kidsState.quizIdx);
+
+    if (nextPlayable !== null) {
+      elResultMainBtn.textContent = 'Növbəti →';
+      elResultMainBtn.onclick = () => {
+        startKidsQuiz(kidsState.levelIdx, nextPlayable);
+        elResultScreen.classList.add('hidden');
+      };
+    } else {
+      elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
+      elResultMainBtn.onclick = () => {
+        const li = kidsState.levelIdx;
+        closeOverlays();
+        renderLevels();
+        scrollToCurrentNode(li);
+      };
+    }
+
+    elResultBackBtn.classList.remove('hidden');
+    elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+    elResultBackBtn.onclick = () => {
+      const li = kidsState.levelIdx;
+      closeOverlays();
+      renderLevels();
+      scrollToCurrentNode(li);
+    };
+  }, 300);
+}
+
+// ── Global Export ─────────────────────────────────────────
+window.startKidsQuiz    = startKidsQuiz;
+window.kidsHandleAnswer = kidsHandleAnswer;
+window.kidsPlayAudio    = kidsPlayAudio;
+window.kidsState        = kidsState;
