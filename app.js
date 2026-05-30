@@ -1987,8 +1987,8 @@ function loadProgress() {
         progress[lvl.id][i] = 'divider';
         continue;
       }
-
-     const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
+      
+const isExam = EXAM_IDS[lvl.id] && EXAM_IDS[lvl.id].has(i);
 if (!progress[lvl.id][i]) {
   const isOpenSection = lvl.id === 'reading' || lvl.id === 'listening'
     || lvl.id === 'kids' || lvl.id === 'grammar' || lvl.id === 'verbs'
@@ -1999,6 +1999,14 @@ if (!progress[lvl.id][i]) {
     || lvl.id === 'adverb' || lvl.id === 'complex_object'
     || lvl.id === 'subject_verb_agreement' || lvl.id === 'imperative'
     || lvl.id === 'exclamatory';
+
+  if (isOpenSection) {
+    progress[lvl.id][i] = 'unlocked';  // ← BU SƏTİR YOX İDİ
+  } else if (i === 0) {
+    progress[lvl.id][i] = 'unlocked';
+  } else {
+    progress[lvl.id][i] = 'locked';
+  }
 }
     }
   });
