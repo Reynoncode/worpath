@@ -3371,3 +3371,161 @@ button { font-family: var(--font); }
 
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
+/* ============================================================
+   KIDS QUIZ — CSS
+   style.css-in ən sonuna əlavə et
+   ============================================================ */
+
+/* Quiz body kids modda */
+.quiz-body.kids-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background: var(--bg, #F5F0E8);
+}
+
+/* Ümumi wrap */
+.kids-question-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Rəsm hissəsi — yuxarıda sabit ── */
+.kids-pic-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 52vh;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+[data-theme="dark"] .kids-pic-wrap {
+  background: #142233;
+}
+
+.kids-pic {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* ── Səsləndirmə düyməsi ── */
+.kids-audio-btn {
+  margin-top: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #E91E8C;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(233,30,140,0.3);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.kids-audio-btn:active {
+  transform: scale(0.92);
+  box-shadow: 0 1px 4px rgba(233,30,140,0.2);
+}
+
+.kids-audio-btn svg {
+  width: 22px;
+  height: 22px;
+  stroke: #fff;
+}
+
+/* ── Cavab düymələri ── */
+.kids-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: calc(100% - 40px);
+  margin-top: 20px;
+  flex-shrink: 0;
+}
+
+.kids-opt-btn {
+  padding: 18px 8px;
+  border-radius: 16px;
+  border: 2px solid #E8E2D9;
+  background: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1A1A1A;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.12s, border-color 0.15s, background 0.15s;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+[data-theme="dark"] .kids-opt-btn {
+  background: #142233;
+  border-color: #1d3348;
+  color: #dce8f2;
+}
+
+.kids-opt-btn:active {
+  transform: scale(0.96);
+}
+
+.kids-opt-btn.kids-opt-correct {
+  background: #F0FDF4;
+  border-color: #4ade80;
+  color: #16A34A;
+}
+
+[data-theme="dark"] .kids-opt-btn.kids-opt-correct {
+  background: #0a2418;
+  border-color: #4ade80;
+  color: #4ade80;
+}
+
+.kids-opt-btn.kids-opt-wrong {
+  background: #FFF1F0;
+  border-color: #FCA5A5;
+  color: #DC2626;
+}
+
+[data-theme="dark"] .kids-opt-btn.kids-opt-wrong {
+  background: #2a0c0c;
+  border-color: #7a2020;
+  color: #f87171;
+}
+
+.kids-opt-btn:disabled {
+  cursor: default;
+}
+
+/* ── Feedback ── */
+.kids-feedback {
+  margin-top: 14px;
+  font-size: 20px;
+  font-weight: 800;
+  min-height: 28px;
+  text-align: center;
+}
+
+.kids-fb-correct {
+  color: #16A34A;
+}
+
+.kids-fb-wrong {
+  color: #DC2626;
+}
