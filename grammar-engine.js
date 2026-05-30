@@ -7,9 +7,9 @@
 const grammarState = {
   levelIdx:    null,
   quizIdx:     null,
-  item:        null,       // grammar_lesson obyekti
-  cardIdx:     0,          // cards[] içindəki cari kart
-  miniAnswers: {},         // { cardIdx: { qIdx: bool } }
+  item:        null,
+  cardIdx:     0,
+  miniAnswers: {},
   sectionsDone: 0,
   totalCards:  0,
   locked:      false,
@@ -49,12 +49,11 @@ function startGrammarLesson(levelIdx, quizIdx) {
 // ============================================================
 
 function renderGrammarCard() {
-  const item    = grammarState.item;
-  const idx     = grammarState.cardIdx;
-  const card    = item.cards[idx];
-  const total   = grammarState.totalCards;
+  const item  = grammarState.item;
+  const idx   = grammarState.cardIdx;
+  const card  = item.cards[idx];
+  const total = grammarState.totalCards;
 
-  // Progress
   elProgressFill.style.width = `${(idx / total) * 100}%`;
   elQCounter.textContent     = `${idx + 1}/${total}`;
 
@@ -73,6 +72,49 @@ function renderGrammarCard() {
 }
 
 // ============================================================
+//  GERİ/İRƏLİ DÜYMƏLƏRI — köməkçi funksiyalar
+// ============================================================
+
+function buildNavButtons(nextLabel, isFinish) {
+  isFinish = isFinish || false;
+  const hasPrev    = grammarState.cardIdx > 0;
+  const nextFlex   = hasPrev ? '2' : '1';
+  const finishCls  = isFinish ? ' grammar-finish-btn' : '';
+
+  const backHTML = hasPrev ? `
+    <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Geri
+    </button>
+  ` : '';
+
+  return `
+    <div class="grammar-nav-row">
+      ${backHTML}
+      <button class="grammar-next-btn${finishCls}" id="grammar-next-btn"
+              style="flex:${nextFlex};">
+        ${nextLabel}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+  `;
+}
+
+function attachNavListeners() {
+  const nextBtn = document.getElementById('grammar-next-btn');
+  if (nextBtn) nextBtn.addEventListener('click', grammarNextCard);
+
+  const backBtn = document.getElementById('grammar-back-btn');
+  if (backBtn) backBtn.addEventListener('click', grammarPrevCard);
+}
+
+// ============================================================
 //  LESSON KARTI
 // ============================================================
 
@@ -82,13 +124,11 @@ function renderGrammarLesson(card, container) {
   const hasNote     = !!card.note;
   const hasTip      = !!card.tip;
 
-  // Examples HTML
   let examplesHTML = '';
   if (hasExamples) {
     examplesHTML = `
       <div class="gl-examples">
         ${card.examples.map(ex => {
-          // {word, az} formatı və ya sadə string
           if (typeof ex === 'object') {
             return `<div class="gl-example-row">
               <span class="gl-ex-word">${ex.word}</span>
@@ -102,7 +142,6 @@ function renderGrammarLesson(card, container) {
     `;
   }
 
-  // Table HTML
   let tableHTML = '';
   if (hasTable) {
     tableHTML = `
@@ -121,19 +160,16 @@ function renderGrammarLesson(card, container) {
     `;
   }
 
-  // Note HTML
   let noteHTML = '';
   if (hasNote) {
     noteHTML = `<div class="gl-note"><span class="gl-note-icon">📌</span>${card.note}</div>`;
   }
 
-  // Tip HTML
   let tipHTML = '';
   if (hasTip) {
     tipHTML = `<div class="gl-tip"><span class="gl-tip-icon">💡</span>${card.tip}</div>`;
   }
 
-  // Content paragrafları — \n\n ilə bölünür
   let contentHTML = '';
   if (card.content) {
     contentHTML = card.content
@@ -153,18 +189,11 @@ function renderGrammarLesson(card, container) {
         ${noteHTML}
         ${tipHTML}
       </div>
-      <button class="grammar-next-btn" id="grammar-next-btn">
-        Davam et
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </button>
+      ${buildNavButtons('Davam et')}
     </div>
   `;
 
-  document.getElementById('grammar-next-btn').addEventListener('click', () => {
-    grammarNextCard();
-  });
+  attachNavListeners();
 }
 
 // ============================================================
@@ -172,7 +201,6 @@ function renderGrammarLesson(card, container) {
 // ============================================================
 
 function renderGrammarMiniCheck(card, container, cardIdx) {
-  // Əvvəlki cavablar
   const prevAnswers = grammarState.miniAnswers[cardIdx] || {};
   const allDone     = card.questions.every((_, qi) => prevAnswers[qi] !== undefined);
 
@@ -181,7 +209,7 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
     const wasRight = prevAnswers[qi] === true;
 
     return `
-      <div class="gmc-question ${answered ? (wasRight ? 'gmc-q-correct' : 'gmc-q-wrong') : ''}" 
+      <div class="gmc-question ${answered ? (wasRight ? 'gmc-q-correct' : 'gmc-q-wrong') : ''}"
            data-qi="${qi}">
         <div class="gmc-q-text">${q.q}</div>
         <div class="gmc-options" id="gmc-opts-${qi}">
@@ -207,7 +235,8 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
     <div class="grammar-minicheck-wrap">
       <div class="gmc-header">
         <div class="gmc-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
           </svg>
           Bilikləri yoxla
@@ -217,18 +246,10 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
       <div class="gmc-questions-list" id="gmc-list">
         ${questionsHTML}
       </div>
-      ${allDone ? `
-        <button class="grammar-next-btn" id="grammar-next-btn">
-          Davam et
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"/>
-          </svg>
-        </button>
-      ` : ''}
+      ${allDone ? buildNavButtons('Davam et') : ''}
     </div>
   `;
 
-  // Event listeners
   if (!allDone) {
     container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -236,8 +257,7 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
       });
     });
   } else {
-    const nextBtn = document.getElementById('grammar-next-btn');
-    if (nextBtn) nextBtn.addEventListener('click', grammarNextCard);
+    attachNavListeners();
   }
 }
 
@@ -249,7 +269,6 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
   const q       = card.questions[qi];
   const correct = chosen === q.answer;
 
-  // Həmin sualın düymələrini deaktiv et
   const optsWrap = document.getElementById(`gmc-opts-${qi}`);
   if (!optsWrap) return;
 
@@ -260,7 +279,6 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
     else if (b === btn && !correct) b.classList.add('gmc-opt-wrong');
   });
 
-  // Feedback əlavə et
   const qEl = btn.closest('.gmc-question');
   if (qEl) {
     qEl.classList.add(correct ? 'gmc-q-correct' : 'gmc-q-wrong');
@@ -272,12 +290,10 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
     qEl.appendChild(fb);
   }
 
-  // State yenilə
   if (!grammarState.miniAnswers[cardIdx]) grammarState.miniAnswers[cardIdx] = {};
-  grammarState.miniAnswers[cardIdx][qi]              = correct;
-  grammarState.miniAnswers[cardIdx][qi + '_chosen']  = parseInt(btn.dataset.oi);
+  grammarState.miniAnswers[cardIdx][qi]             = correct;
+  grammarState.miniAnswers[cardIdx][qi + '_chosen'] = parseInt(btn.dataset.oi);
 
-  // Hamısı cavablanıbsa "Davam et" düyməsini göstər
   const totalQ   = card.questions.length;
   const answered = Object.keys(grammarState.miniAnswers[cardIdx])
     .filter(k => !k.includes('_chosen')).length;
@@ -285,15 +301,10 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
   if (answered >= totalQ) {
     const wrap = document.querySelector('.grammar-minicheck-wrap');
     if (wrap && !document.getElementById('grammar-next-btn')) {
-      const nextBtn = document.createElement('button');
-      nextBtn.className = 'grammar-next-btn';
-      nextBtn.id        = 'grammar-next-btn';
-      nextBtn.innerHTML = `Davam et
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>`;
-      nextBtn.addEventListener('click', grammarNextCard);
-      wrap.appendChild(nextBtn);
+      const navDiv = document.createElement('div');
+      navDiv.innerHTML = buildNavButtons('Davam et');
+      wrap.appendChild(navDiv.firstElementChild);
+      attachNavListeners();
     }
   }
 }
@@ -304,6 +315,9 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
 
 function renderGrammarBadge(card, container) {
   elProgressFill.style.width = '100%';
+
+  const isLast   = grammarState.cardIdx + 1 >= grammarState.totalCards;
+  const btnLabel = isLast ? 'Tamamla 🎉' : 'Növbəti bölüm →';
 
   container.innerHTML = `
     <div class="grammar-badge-wrap">
@@ -323,22 +337,16 @@ function renderGrammarBadge(card, container) {
           </div>
         ` : ''}
       </div>
-      <button class="grammar-next-btn grammar-finish-btn" id="grammar-next-btn">
-        ${grammarState.cardIdx + 1 >= grammarState.totalCards ? 'Tamamla 🎉' : 'Növbəti bölüm →'}
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </button>
+      ${buildNavButtons(btnLabel, isLast)}
     </div>
   `;
 
-  // Badge animasiyası
   setTimeout(() => {
     const badgeEl = container.querySelector('.grammar-badge-card');
     if (badgeEl) badgeEl.classList.add('gb-animate');
   }, 100);
 
-  document.getElementById('grammar-next-btn').addEventListener('click', grammarNextCard);
+  attachNavListeners();
 }
 
 function renderGrammarQuizCard(card, container, idx) {
@@ -385,18 +393,23 @@ function renderGrammarQuizCard(card, container, idx) {
     });
   });
 }
+
 // ============================================================
 //  NAVİGASİYA
 // ============================================================
 
 function grammarNextCard() {
   grammarState.cardIdx++;
-
   if (grammarState.cardIdx >= grammarState.totalCards) {
     finishGrammarLesson();
     return;
   }
+  renderGrammarCard();
+}
 
+function grammarPrevCard() {
+  if (grammarState.cardIdx <= 0) return;
+  grammarState.cardIdx--;
   renderGrammarCard();
 }
 
@@ -407,7 +420,6 @@ function grammarNextCard() {
 function finishGrammarLesson() {
   elProgressFill.style.width = '100%';
 
-  // Mini-check nəticələrini hesabla
   let totalQ = 0, correctQ = 0;
   Object.values(grammarState.miniAnswers).forEach(obj => {
     Object.entries(obj).forEach(([k, v]) => {
@@ -472,28 +484,23 @@ function finishGrammarLesson() {
 }
 
 // ============================================================
-//  GRAMMAR PATH — kartda göstərmək üçün
-//  renderQuizPath-ə hook olur (app.js-də çağrılır)
+//  GRAMMAR PATH
 // ============================================================
 
 function renderGrammarPath(lvl, li) {
   let html = '<div class="quiz-path grammar-path">';
-
-  // Quiz counter — section_divider-ları saymırıq
   let quizCounter = 0;
 
   lvl.quizzes.forEach((item, qi) => {
-
-    // ── Section divider ───────────────────────
     if (item && !Array.isArray(item) && item.type === 'section_divider') {
-     html += `
-  <div class="grammar-section-divider">
-    <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
-    <div class="grammar-section-title" style="color:${lvl.color}; border-color:${lvl.color}33; background:${lvl.color}11;">${item.title}</div>
-    <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
-  </div>
-`;
-      return; // node render etmə, path-line da yox
+      html += `
+        <div class="grammar-section-divider">
+          <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
+          <div class="grammar-section-title" style="color:${lvl.color}; border-color:${lvl.color}33; background:${lvl.color}11;">${item.title}</div>
+          <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
+        </div>
+      `;
+      return;
     }
 
     quizCounter++;
@@ -502,7 +509,6 @@ function renderGrammarPath(lvl, li) {
     const isDone   = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
     const isLocked = status === 'locked';
 
-    // Tip ikonası
     let typeIcon  = '';
     let typeClass = '';
 
@@ -510,14 +516,11 @@ function renderGrammarPath(lvl, li) {
       typeIcon  = isDone ? '' : (isLocked ? '' : '📖');
       typeClass = 'grammar-lesson-node';
     } else if (Array.isArray(item)) {
-      // Mini-quiz vs Test — fərqli ikon
       typeIcon  = isDone ? '' : (isLocked ? '' : quizCounter);
       typeClass = 'grammar-quiz-node';
     }
 
-    // Path line — section divider-dan sonra ilk node-dan əvvəl xətt olmur
-    // (divider özü vizual ayırıcı rolunu oynayır)
-    const prevItem = lvl.quizzes[qi - 1];
+    const prevItem      = lvl.quizzes[qi - 1];
     const prevIsDivider = prevItem && !Array.isArray(prevItem) && prevItem.type === 'section_divider';
     if (qi > 0 && !prevIsDivider) {
       html += '<div class="path-line"></div>';
@@ -533,7 +536,6 @@ function renderGrammarPath(lvl, li) {
           <polyline points="20 6 9 17 4 12"/>
         </svg>
       </div>`;
-
     } else if (isLocked) {
       html += `<div class="${nodeClass} locked" data-quiz-idx="${qi}" data-status="locked">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round">
@@ -541,25 +543,25 @@ function renderGrammarPath(lvl, li) {
           <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
         </svg>
       </div>`;
-
-} else {
+    } else {
       const completedSoFar = progress[lvl.id].filter(s =>
         ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
       ).length;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
-      const isGrammar = item && !Array.isArray(item) && item.type === 'grammar_lesson';
-      const bgStyle = isGrammar ? `background:${lvl.color}18;` : `background:white;`;
+      const isGrammar  = item && !Array.isArray(item) && item.type === 'grammar_lesson';
+      const bgStyle    = isGrammar ? `background:${lvl.color}18;` : `background:white;`;
 
       html += `<div class="${nodeClass} unlocked ${pulseClass}"
         data-quiz-idx="${qi}" data-status="unlocked"
         style="color:${lvl.color}; border-color:${lvl.color}; ${bgStyle}">
         ${typeIcon}
       </div>`;
-    }  // ← bu çatışmırdı
+    }
 
     const label = (QUIZ_NAMES[lvl.id]?.[qi]) || item?.title || `Dərs ${quizCounter}`;
     html += `<div class="node-label">${label}</div></div>`;
   });
+
   html += '</div>';
   return html;
 }
@@ -571,10 +573,8 @@ window.grammarState       = grammarState;
 
 // ============================================================
 //  WORDPATH — KIDS ENGINE
-//  grammar-engine.js-in sonuna əlavə et
 // ============================================================
 
-// ── Kids State ────────────────────────────────────────────
 const kidsState = {
   levelIdx:  null,
   quizIdx:   null,
@@ -584,9 +584,8 @@ const kidsState = {
   locked:    false,
 };
 
-// ── Kids Quiz Başlat ──────────────────────────────────────
 function startKidsQuiz(levelIdx, quizIdx) {
-  const lvl  = KIDS_GRAMMAR_LEVELS[0]; // həmişə kids
+  const lvl   = KIDS_GRAMMAR_LEVELS[0];
   const words = lvl.quizzes[quizIdx];
 
   if (!words || words.length === 0) {
@@ -608,13 +607,10 @@ function startKidsQuiz(levelIdx, quizIdx) {
   renderKidsQuestion();
 }
 
-// ── Sual Göstər ───────────────────────────────────────────
 function renderKidsQuestion() {
-  const w        = kidsState.words[kidsState.index];
-  const total    = kidsState.words.length;
-  const isDark   = document.documentElement.getAttribute('data-theme') === 'dark';
+  const w      = kidsState.words[kidsState.index];
+  const total  = kidsState.words.length;
 
-  // Progress
   elProgressFill.style.width = `${(kidsState.index / total) * 100}%`;
   elQCounter.textContent     = `${kidsState.index + 1}/${total}`;
 
@@ -622,27 +618,15 @@ function renderKidsQuestion() {
   const wrongWord   = KIDS_WORDS[w.wrong];
   const options     = [correctWord, wrongWord].sort(() => Math.random() - 0.5);
 
-  const bg     = isDark ? '#0d1b2a' : '#fff';
-  const border = isDark ? '#1d3348' : '#E8E2D9';
-  const text   = isDark ? '#dce8f2' : '#1A1A1A';
-
   const quizBody = document.querySelector('.quiz-body');
   quizBody.className = 'quiz-body kids-mode';
 
   quizBody.innerHTML = `
     <div class="kids-question-wrap">
-
-      <!-- Rəsm -->
       <div class="kids-pic-wrap">
-        <img
-          src="kids/${w.pic}.png"
-          alt="${correctWord}"
-          class="kids-pic"
-          onerror="this.style.opacity='0.3'"
-        />
+        <img src="kids/${w.pic}.png" alt="${correctWord}" class="kids-pic"
+          onerror="this.style.opacity='0.3'" />
       </div>
-
-      <!-- Səsləndirmə düyməsi -->
       <button class="kids-audio-btn" onclick="kidsPlayAudio('${correctWord}')" title="Dinlə">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
           <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
@@ -650,29 +634,19 @@ function renderKidsQuestion() {
           <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
         </svg>
       </button>
-
-      <!-- Cavab düymələri -->
       <div class="kids-options">
         ${options.map(opt => `
-          <button
-            class="kids-opt-btn"
-            data-word="${opt}"
-            onclick="kidsHandleAnswer(this, '${correctWord}')"
-          >${opt}</button>
+          <button class="kids-opt-btn" data-word="${opt}"
+            onclick="kidsHandleAnswer(this, '${correctWord}')">${opt}</button>
         `).join('')}
       </div>
-
-      <!-- Feedback -->
       <div class="kids-feedback" id="kids-feedback"></div>
-
     </div>
   `;
 
-  // Avtomatik səsləndir
   setTimeout(() => kidsPlayAudio(correctWord), 400);
 }
 
-// ── Cavab İşlə ────────────────────────────────────────────
 function kidsHandleAnswer(btn, correctWord) {
   if (kidsState.locked) return;
   kidsState.locked = true;
@@ -681,7 +655,6 @@ function kidsHandleAnswer(btn, correctWord) {
   const isCorrect = chosen === correctWord;
   const feedback  = document.getElementById('kids-feedback');
 
-  // Bütün düymələri deaktiv et
   document.querySelectorAll('.kids-opt-btn').forEach(b => {
     b.disabled = true;
     if (b.dataset.word === correctWord) b.classList.add('kids-opt-correct');
@@ -710,7 +683,6 @@ function kidsHandleAnswer(btn, correctWord) {
   }, 900);
 }
 
-// ── Səsləndirmə ───────────────────────────────────────────
 function kidsPlayAudio(word) {
   try {
     const audio = new Audio(`kids/audio/${word.toLowerCase().replace(/ /g, '_')}.mp3`);
@@ -721,14 +693,11 @@ function kidsPlayAudio(word) {
 function kidsSpeech(word) {
   if (!('speechSynthesis' in window)) return;
   speechSynthesis.cancel();
-
   const utt   = new SpeechSynthesisUtterance(word);
   utt.lang    = 'en-US';
-  utt.rate    = 0.72;   // yavaş
-  utt.pitch   = 1.6;    // yüksək ton — qız səsi effekti
+  utt.rate    = 0.72;
+  utt.pitch   = 1.6;
   utt.volume  = 1.0;
-
-  // Mövcud səslər içindən qadın səsini tap
   const voices = speechSynthesis.getVoices();
   const female = voices.find(v =>
     v.lang.startsWith('en') && (
@@ -741,11 +710,9 @@ function kidsSpeech(word) {
     )
   );
   if (female) utt.voice = female;
-
   speechSynthesis.speak(utt);
 }
 
-// ── Quiz Bitişi ───────────────────────────────────────────
 function finishKidsQuiz() {
   elProgressFill.style.width = '100%';
 
@@ -808,7 +775,6 @@ function finishKidsQuiz() {
   }, 300);
 }
 
-// ── Global Export ─────────────────────────────────────────
 window.startKidsQuiz    = startKidsQuiz;
 window.kidsHandleAnswer = kidsHandleAnswer;
 window.kidsPlayAudio    = kidsPlayAudio;
