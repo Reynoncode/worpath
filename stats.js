@@ -19,6 +19,7 @@ const Stats = (() => {
     return {
       stars: 0,
       streak: { count: 0, lastDate: null },
+      perfectStreak: 0,
       words: {}
       // words["söz"] = { level, translation, attempts, correct, errors, starFixed }
     };
@@ -49,10 +50,10 @@ const Stats = (() => {
   }
 
   // ─── Cavab qeydiyyatı ────────────────────────────────────────────────────
-  // word       — ingilis sözü (unikal açar)
-  // level      — "A1", "A2", "B1", "B2", "C1", "C2"
+  // word        — ingilis sözü (unikal açar)
+  // level       — "A1", "A2", "B1", "B2", "C1", "C2"
   // translation — azərbaycan tərcüməsi
-  // isCorrect  — true / false
+  // isCorrect   — true / false
   function recordAnswer(word, level, translation, isCorrect) {
     const data = load();
     if (!data.words[word]) {
@@ -60,8 +61,13 @@ const Stats = (() => {
     }
     const w = data.words[word];
     w.attempts++;
-    if (isCorrect) w.correct++;
-    else           w.errors++;
+    if (isCorrect) {
+      w.correct++;
+      data.perfectStreak = (data.perfectStreak || 0) + 1;
+    } else {
+      w.errors++;
+      data.perfectStreak = 0;
+    }
     save(data);
   }
 
@@ -89,7 +95,7 @@ const Stats = (() => {
     const data = load();
 
     // Ümumi rəqəmlər
-    const allWords    = Object.values(data.words);
+    const allWords     = Object.values(data.words);
     const totalLearned = allWords.filter(w => w.correct > 0).length;
     const totalAttempts = allWords.reduce((s, w) => s + w.attempts, 0);
     const totalCorrect  = allWords.reduce((s, w) => s + w.correct,  0);
@@ -108,14 +114,15 @@ const Stats = (() => {
       }));
 
     return {
-      stars:        data.stars,
-      streak:       data.streak.count,
+      stars:         data.stars,
+      streak:        data.streak.count,
+      perfectStreak: data.perfectStreak || 0,
       totalLearned,
       correctRate,
       totalErrors,
       starFixedCount,
       errorWords,
-      rawWords:     data.words
+      rawWords:      data.words
     };
   }
 
