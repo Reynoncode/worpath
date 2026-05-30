@@ -3139,7 +3139,10 @@ button { font-family: var(--font); }
 [data-theme="dark"] .gmc-opt-wrong              { background: #280c0c; border-color: var(--wrong); color: #e07878; }
 [data-theme="dark"] .gmc-fb-correct             { background: #0b2418; color: #3aaa6a; }
 [data-theme="dark"] .gmc-fb-wrong               { background: #280c0c; color: #e07878; }
- 
+[data-theme="dark"] .grammar-next-btn[style*="#F5F0E8"] {
+  background: #1d3348 !important;
+  color: #dce8f2 !important;
+}
 
 
 /* ══════════════════════════════════════════════════════════════
