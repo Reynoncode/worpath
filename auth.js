@@ -440,7 +440,8 @@ function renderAuthButton(user) {
 
   if (user) {
     const name  = user.displayName ? user.displayName.split(" ")[0] : user.email;
-    const photo = user.photoURL || "";
+   const snap2 = await getDoc(doc(db, "users", user.uid)).catch(() => null);
+const photo = (snap2?.exists() ? snap2.data().photoURL : null) || user.photoURL || "";
     container.innerHTML = `
       <div style="display:flex;align-items:center;gap:8px;cursor:pointer;"
            onclick="AuthManager.openProfileModal()">
@@ -494,30 +495,37 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-function _updateHeaderAvatar(user) {
+async function _updateHeaderAvatar(user) {
   const avatar = document.getElementById("header-profile-avatar");
   if (!avatar) return;
 
   if (user) {
-    if (user.photoURL) {
-      avatar.innerHTML = `<img src="${user.photoURL}" style="width:100%;height:100%;border-radius:10px;object-fit:cover;display:block;" />`;
-    } else {
+    try {
+      const snap  = await getDoc(doc(db, "users", user.uid));
+      const photo = (snap.exists() ? snap.data().photoURL : null) || user.photoURL || "";
+
+      if (photo) {
+        avatar.innerHTML = `<img src="${photo}" style="width:100%;height:100%;border-radius:10px;object-fit:cover;display:block;" />`;
+      } else {
+        const name = user.displayName ? user.displayName.split(" ")[0] : user.email;
+        avatar.innerHTML       = "";
+        avatar.textContent     = name.charAt(0).toUpperCase();
+        avatar.style.fontSize  = "13px";
+        avatar.style.fontWeight = "700";
+        avatar.style.color     = "#6B7280";
+      }
+    } catch(_) {
       const name = user.displayName ? user.displayName.split(" ")[0] : user.email;
-      avatar.innerHTML  = "";
       avatar.textContent = name.charAt(0).toUpperCase();
-      avatar.style.fontSize   = "13px";
-      avatar.style.fontWeight = "700";
-      avatar.style.color      = "#6B7280";
     }
   } else {
-    avatar.innerHTML  = "";
-    avatar.textContent = "?";
+    avatar.innerHTML        = "";
+    avatar.textContent      = "?";
     avatar.style.fontSize   = "13px";
     avatar.style.fontWeight = "700";
     avatar.style.color      = "#6B7280";
   }
 }
-
 // ─── Şəkli resize et ────────────────────────────────────────────────────────
 function resizeImage(file, maxSize = 400, quality = 0.8) {
   return new Promise((resolve) => {
@@ -624,7 +632,7 @@ async function openProfileModal() {
             <div style="font-size:11px;font-weight:600;color:#6B7280;margin-bottom:5px;text-transform:uppercase;letter-spacing:0.06em;">İstifadəçi adı</div>
             <div style="display:flex;gap:8px;align-items:center;">
               <input id="profile-name-input" value="${savedName}"
-  style="width:60%;padding:9px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:14px;font-weight:600;background:#fff;outline:none;color:#1A1A1A;" />
+  style="width:75%;padding:9px 12px;border:1px solid #E8E2D9;border-radius:10px;font-size:14px;font-weight:600;background:#fff;outline:none;color:#1A1A1A;" />
 <button onclick="AuthManager._saveName()"
   style="flex-shrink:0;background:#1A1A1A;color:#fff;border:none;border-radius:10px;padding:9px 12px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;">
   Saxla
