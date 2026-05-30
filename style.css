@@ -620,13 +620,14 @@ button { font-family: var(--font); }
   animation: goldPulse 1.8s ease-in-out infinite;
 }
 
-/* Level tamamlandı — qızıl + metal sweep */
+/* Level tamamlandı — level rəngi + metal sweep */
 .path-node.level-done {
-  background: #eab308 !important;
-  border-color: #eab308 !important;
-  box-shadow: 0 4px 12px rgba(234,179,8,0.35);
+  background: var(--lvl-color) !important;
+  border-color: var(--lvl-color) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--lvl-color) 35%, transparent);
   overflow: hidden;
   position: relative;
+  animation: levelPulse 1.8s ease-in-out infinite;
 }
 
 .path-node.level-done svg polyline {
@@ -652,6 +653,12 @@ button { font-family: var(--font); }
   pointer-events: none;
 }
 
+/* Dark mode — level rənglərinin tünd versiyası */
+[data-theme="dark"] .path-node.level-done {
+  background: color-mix(in srgb, var(--lvl-color) 55%, #0d1b2a) !important;
+  border-color: color-mix(in srgb, var(--lvl-color) 70%, #0d1b2a) !important;
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--lvl-color) 25%, transparent);
+}
 @keyframes metalSweep {
   0%        { left: -75%; }
   60%, 100% { left: 125%; }
