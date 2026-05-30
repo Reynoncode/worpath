@@ -2927,10 +2927,43 @@ const lvl = LEVELS[li];
 
 const innerIcon = headerInner.querySelector('.level-icon');
 if (innerIcon && iconStyles[lvl.id]) {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
   const s = iconStyles[lvl.id];
-  innerIcon.style.background     = s.background;
-  innerIcon.style.borderColor    = s.borderColor;
-  innerIcon.style.color          = s.color;
+  
+  // Dark mode üçün tünd rənglər — CSS-dəki !important blokları ilə eyni
+  const darkIconStyles = {
+    'a1':              { background: '#1a0e0d', borderColor: '#5a1a14', color: '#e8a09a' },
+    'a2':              { background: '#1a1108', borderColor: '#5a3a10', color: '#e8b070' },
+    'b1':              { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+    'b2':              { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+    'c1':              { background: '#0a1220', borderColor: '#1a3258', color: '#4a8fe7' },
+    'c2':              { background: '#0d1114', borderColor: '#2a3840', color: '#6d90a8' },
+    'reading':         { background: '#091418', borderColor: '#0e3848', color: '#22b8d4' },
+    'listening':       { background: '#100d1e', borderColor: '#2e1a5a', color: '#9d7aff' },
+    'kids':            { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+    'grammar':         { background: '#100d1e', borderColor: '#2e1a5a', color: '#9d7aff' },
+    'verbs':           { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+    'passive':         { background: '#0a1220', borderColor: '#1a3258', color: '#4a8fe7' },
+    'indirect_speech': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+    'adjectives':      { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+    'sequence_tenses': { background: '#091418', borderColor: '#0e3848', color: '#22b8d4' },
+    'pronoun':         { background: '#0e0e20', borderColor: '#2a2a5a', color: '#a5b4fc' },
+    'article':         { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+    'questions':       { background: '#091418', borderColor: '#0e3848', color: '#7dd3fc' },
+    'modal_verbs':     { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+    'prepositions':    { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+    'adverb':          { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+    'complex_object':  { background: '#0a1220', borderColor: '#1a3258', color: '#4a8fe7' },
+    'subject_verb_agreement': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+    'imperative':      { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+    'exclamatory':     { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+  };
+
+  const activeStyle = isDark ? (darkIconStyles[lvl.id] || s) : s;
+
+  innerIcon.style.background     = activeStyle.background;
+  innerIcon.style.borderColor    = activeStyle.borderColor;
+  innerIcon.style.color          = activeStyle.color;
   innerIcon.style.width          = '42px';
   innerIcon.style.height         = '42px';
   innerIcon.style.borderRadius   = '10px';
@@ -2940,7 +2973,7 @@ if (innerIcon && iconStyles[lvl.id]) {
   innerIcon.style.flexShrink     = '0';
   innerIcon.style.fontSize       = '13px';
   innerIcon.style.fontWeight     = '800';
-  innerIcon.style.border         = `1.5px solid ${s.borderColor}`;
+  innerIcon.style.border         = `1.5px solid ${activeStyle.borderColor}`;
 }
 
 stickyHeader.appendChild(bar);
