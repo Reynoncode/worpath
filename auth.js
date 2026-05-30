@@ -10,6 +10,180 @@ import {
   doc, getDoc, setDoc, serverTimestamp, collection, query, where, getDocs
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+
+// ─── Achievement yoxlama sistemi ─────────────────────────────────────────────
+const ACHIEVEMENTS = [
+  { id: 'first_test',      icon: 'ti-flag',           name: 'İlk Addım',         desc: 'İlk testini tamamladın' },
+  { id: 'first_exam',      icon: 'ti-trophy',         name: 'İmtahan Fatehi',    desc: 'İlk imtahanı keçdin' },
+  { id: 'first_phase2',    icon: 'ti-heart',          name: 'İkinci Mərhələ',    desc: 'İlk Phase 2-ni tamamladın' },
+  { id: 'first_phase3',    icon: 'ti-diamond',        name: 'Üçüncü Mərhələ',    desc: 'İlk Phase 3-ü tamamladın' },
+
+  { id: 'a1_done',         icon: 'ti-circle-letter-a', name: 'A1 Başlanğıc',     desc: 'A1 səviyyəsini bitirdin' },
+  { id: 'a1_phase2',       icon: 'ti-star',            name: 'A1 Dərinlik',      desc: 'A1 Phase 2-ni tamamladın' },
+  { id: 'a1_phase3',       icon: 'ti-diamond',         name: 'A1 Ustası',        desc: 'A1 Phase 3-ü tamamladın' },
+
+  { id: 'a2_done',         icon: 'ti-circle-letter-a', name: 'A2 Başlanğıc',     desc: 'A2 səviyyəsini bitirdin' },
+  { id: 'a2_phase2',       icon: 'ti-star',            name: 'A2 Dərinlik',      desc: 'A2 Phase 2-ni tamamladın' },
+  { id: 'a2_phase3',       icon: 'ti-diamond',         name: 'A2 Ustası',        desc: 'A2 Phase 3-ü tamamladın' },
+
+  { id: 'b1_done',         icon: 'ti-circle-letter-b', name: 'B1 Başlanğıc',     desc: 'B1 səviyyəsini bitirdin' },
+  { id: 'b1_phase2',       icon: 'ti-star',            name: 'B1 Dərinlik',      desc: 'B1 Phase 2-ni tamamladın' },
+  { id: 'b1_phase3',       icon: 'ti-diamond',         name: 'B1 Ustası',        desc: 'B1 Phase 3-ü tamamladın' },
+
+  { id: 'b2_done',         icon: 'ti-circle-letter-b', name: 'B2 Başlanğıc',     desc: 'B2 səviyyəsini bitirdin' },
+  { id: 'b2_phase2',       icon: 'ti-star',            name: 'B2 Dərinlik',      desc: 'B2 Phase 2-ni tamamladın' },
+  { id: 'b2_phase3',       icon: 'ti-diamond',         name: 'B2 Ustası',        desc: 'B2 Phase 3-ü tamamladın' },
+
+  { id: 'c1_done',         icon: 'ti-circle-letter-c', name: 'C1 Başlanğıc',     desc: 'C1 səviyyəsini bitirdin' },
+  { id: 'c1_phase2',       icon: 'ti-star',            name: 'C1 Dərinlik',      desc: 'C1 Phase 2-ni tamamladın' },
+  { id: 'c1_phase3',       icon: 'ti-diamond',         name: 'C1 Ustası',        desc: 'C1 Phase 3-ü tamamladın' },
+
+  { id: 'c2_done',         icon: 'ti-circle-letter-c', name: 'C2 Başlanğıc',     desc: 'C2 səviyyəsini bitirdin' },
+  { id: 'c2_phase2',       icon: 'ti-star',            name: 'C2 Dərinlik',      desc: 'C2 Phase 2-ni tamamladın' },
+  { id: 'c2_phase3',       icon: 'ti-diamond',         name: 'C2 Ustası',        desc: 'C2 Phase 3-ü tamamladın' },
+
+  { id: 'streak_3',        icon: 'ti-flame',           name: '3 Günlük Od',      desc: '3 gün ardıcıl çalışdın' },
+  { id: 'streak_7',        icon: 'ti-flame',           name: 'Həftəlik Alov',    desc: '1 həftə streak saxladın' },
+  { id: 'streak_30',       icon: 'ti-flame',           name: 'Aylıq Alov',       desc: '1 ay streak saxladın' },
+  { id: 'streak_90',       icon: 'ti-volcano',         name: 'Yanmaz Əzm',       desc: '3 ay streak saxladın' },
+
+  { id: 'perfect_10',      icon: 'ti-bolt',            name: 'Dəqiq 10',         desc: 'Ardıcıl 10 səhvsiz test' },
+  { id: 'perfect_20',      icon: 'ti-bolt',            name: 'Dəqiq 20',         desc: 'Ardıcıl 20 səhvsiz test' },
+  { id: 'perfect_50',      icon: 'ti-stars',           name: 'Dəqiq 50',         desc: 'Ardıcıl 50 səhvsiz test' },
+  { id: 'perfect_100',     icon: 'ti-crown',           name: 'Mükəmməl 100',     desc: 'Ardıcıl 100 səhvsiz test' },
+
+  { id: 'kids_1',          icon: 'ti-mood-kid',        name: 'Uşaq Dostu',       desc: 'Kids bölümündən 1 hissə bitirdin' },
+  { id: 'kids_3',          icon: 'ti-mood-happy',      name: 'Uşaq Ustası',      desc: 'Kids bölümündən 3 hissə bitirdin' },
+  { id: 'kids_9',          icon: 'ti-palette',         name: 'Kids Qahrəmanı',   desc: 'Kids bölümündən 9 hissə bitirdin' },
+  { id: 'kids_18',         icon: 'ti-school',          name: 'Kids Fatehi',      desc: 'Kids bölümündən 18 hissə bitirdin' },
+
+  { id: 'stars_10',        icon: 'ti-star',            name: 'Ulduz Yığan',      desc: '10 ulduz topladın' },
+  { id: 'stars_20',        icon: 'ti-star-filled',     name: 'Ulduz Sevən',      desc: '20 ulduz topladın' },
+  { id: 'stars_50',        icon: 'ti-sparkles',        name: 'Ulduz Fatehi',     desc: '50 ulduz topladın' },
+];
+
+function checkAchievements() {
+  const unlocked = new Set();
+
+  // Progress oxu
+  let progress = {};
+  try { progress = JSON.parse(localStorage.getItem('wordpath_v1') || '{}'); } catch(_) {}
+
+  // Stats oxu
+  let stats = {};
+  try { stats = JSON.parse(localStorage.getItem('wordpath_stats') || '{}'); } catch(_) {}
+
+  const streak = parseInt(localStorage.getItem('wordpath_streak') || '0', 10);
+  const stars  = parseInt(localStorage.getItem('wordpath_stars')  || '0', 10);
+
+  const CEFR = ['a1','a2','b1','b2','c1','c2'];
+
+  // Hər CEFR üçün status yoxla
+  CEFR.forEach(lvl => {
+    const statuses = progress[lvl] || [];
+    const hasDone    = statuses.some(s => ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s));
+    const hasPhase2  = statuses.some(s => ['phase2_completed','phase3_unlocked','level_done'].includes(s));
+    const hasPhase3  = statuses.some(s => s === 'level_done');
+    const allDone    = statuses.length > 0 && statuses.every(s =>
+      ['completed','phase2_completed','phase3_unlocked','level_done','locked','divider'].includes(s)
+      && s !== 'locked'
+    );
+
+    if (hasDone)   unlocked.add(`${lvl}_done`);
+    if (hasPhase2) unlocked.add(`${lvl}_phase2`);
+    if (hasPhase3) unlocked.add(`${lvl}_phase3`);
+  });
+
+  // İlk test
+  const anyDone = CEFR.some(lvl =>
+    (progress[lvl] || []).some(s => ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s))
+  );
+  if (anyDone) unlocked.add('first_test');
+
+  // İlk exam
+  const anyExamDone = CEFR.some(lvl =>
+    (progress[lvl] || []).some(s => s === 'level_done')
+  );
+  if (anyExamDone) unlocked.add('first_exam');
+
+  // İlk phase2/phase3
+  const anyPhase2 = CEFR.some(lvl =>
+    (progress[lvl] || []).some(s => ['phase2_completed','phase3_unlocked','level_done'].includes(s))
+  );
+  if (anyPhase2) unlocked.add('first_phase2');
+
+  const anyPhase3 = CEFR.some(lvl =>
+    (progress[lvl] || []).some(s => s === 'level_done')
+  );
+  if (anyPhase3) unlocked.add('first_phase3');
+
+  // Streak
+  if (streak >= 3)  unlocked.add('streak_3');
+  if (streak >= 7)  unlocked.add('streak_7');
+  if (streak >= 30) unlocked.add('streak_30');
+  if (streak >= 90) unlocked.add('streak_90');
+
+  // Stars
+  if (stars >= 10) unlocked.add('stars_10');
+  if (stars >= 20) unlocked.add('stars_20');
+  if (stars >= 50) unlocked.add('stars_50');
+
+  // Perfect streak (ardıcıl səhvsiz) — stats-dan
+  const perfectStreak = stats.perfectStreak || 0;
+  if (perfectStreak >= 10)  unlocked.add('perfect_10');
+  if (perfectStreak >= 20)  unlocked.add('perfect_20');
+  if (perfectStreak >= 50)  unlocked.add('perfect_50');
+  if (perfectStreak >= 100) unlocked.add('perfect_100');
+
+  // Kids
+  const kidsDone = (progress['kids'] || []).filter(s =>
+    ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
+  ).length;
+  if (kidsDone >= 1)  unlocked.add('kids_1');
+  if (kidsDone >= 3)  unlocked.add('kids_3');
+  if (kidsDone >= 9)  unlocked.add('kids_9');
+  if (kidsDone >= 18) unlocked.add('kids_18');
+
+  return unlocked;
+}
+
+function renderAchievements() {
+  const unlocked = checkAchievements();
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+  return ACHIEVEMENTS.map(a => {
+    const isUnlocked = unlocked.has(a.id);
+    const cardBg     = isDark
+      ? (isUnlocked ? '#1a2d10' : '#142233')
+      : (isUnlocked ? '#F0FDF4' : '#F5F0E8');
+    const cardBorder = isDark
+      ? (isUnlocked ? '#3a5418' : '#1d3348')
+      : (isUnlocked ? '#86EFAC' : '#E8E2D9');
+    const iconColor  = isDark
+      ? (isUnlocked ? '#4ade80' : '#3f5e72')
+      : (isUnlocked ? '#16A34A' : '#9CA3AF');
+    const nameColor  = isDark
+      ? (isUnlocked ? '#dce8f2' : '#3f5e72')
+      : (isUnlocked ? '#1A1A1A' : '#9CA3AF');
+    const descColor  = isDark ? '#3f5e72' : '#9CA3AF';
+
+    return `
+      <div style="
+        background:${cardBg};
+        border:1px solid ${cardBorder};
+        border-radius:12px;
+        padding:12px 8px;
+        text-align:center;
+        opacity:${isUnlocked ? '1' : '0.55'};
+        transition:opacity 0.2s;
+      ">
+        <i class="ti ${a.icon}" style="font-size:24px;color:${iconColor};display:block;margin-bottom:5px;"></i>
+        <div style="font-size:11px;font-weight:700;color:${nameColor};line-height:1.3;margin-bottom:2px;">${a.name}</div>
+        <div style="font-size:10px;color:${descColor};line-height:1.3;">${isUnlocked ? a.desc : '🔒'}</div>
+      </div>
+    `;
+  }).join('');
+}
 // ─── Local data açarları ────────────────────────────────────────────────────
 const LOCAL_STATS_KEY    = "wordpath_stats";
 const LOCAL_PROGRESS_KEY = "wordpath_v1";
@@ -330,6 +504,8 @@ async function openProfileModal() {
   const user = auth.currentUser;
   if (!user) return;
 
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'; // ← əlavə et
+
   const existingModal = document.getElementById("profile-modal");
   if (existingModal) existingModal.remove();
 
@@ -439,25 +615,14 @@ async function openProfileModal() {
         </button>
 
         <!-- Achievements -->
-        <div style="background:#fff;border:1px solid #E8E2D9;border-radius:14px;padding:16px;">
-          <div style="font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">🏅 Nailiyyətlər</div>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;">
-            ${[
-              { icon:"🎯", label:"İlk test",     desc:"Tezliklə" },
-              { icon:"🔥", label:"7 gün streak", desc:"Tezliklə" },
-              { icon:"📚", label:"100 söz",      desc:"Tezliklə" },
-              { icon:"🏆", label:"İlk exam",     desc:"Tezliklə" },
-              { icon:"⭐", label:"10 ulduz",     desc:"Tezliklə" },
-              { icon:"💎", label:"C2 səviyyə",   desc:"Tezliklə" },
-            ].map(a => `
-              <div style="background:#F5F0E8;border-radius:10px;padding:12px 8px;text-align:center;opacity:0.6;">
-                <div style="font-size:24px;margin-bottom:4px;">${a.icon}</div>
-                <div style="font-size:11px;font-weight:600;color:#1A1A1A;">${a.label}</div>
-                <div style="font-size:10px;color:#9CA3AF;">${a.desc}</div>
-              </div>
-            `).join("")}
-          </div>
-        </div>
+<div style="background:${isDark ? '#142233' : '#fff'};border:1px solid ${isDark ? '#1d3348' : '#E8E2D9'};border-radius:14px;padding:16px;">
+  <div style="font-size:12px;font-weight:700;color:${isDark ? '#6d90a8' : '#6B7280'};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">
+    <i class="ti ti-medal" style="margin-right:4px;"></i> Nailiyyətlər
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+    ${renderAchievements()}
+  </div>
+</div>
 
       </div>
     </div>
