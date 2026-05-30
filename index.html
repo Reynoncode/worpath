@@ -100,15 +100,33 @@
       overlay.style.borderColor = border;
 
       const stickyHeader = overlay.querySelector('div:first-child');
-      if (stickyHeader) {
-        stickyHeader.style.background   = bg;
-        stickyHeader.style.borderBottom = `1px solid ${border}`;
-      }
+if (stickyHeader) {
+  stickyHeader.style.background   = bg;
+  stickyHeader.style.borderBottom = `1px solid ${border}`;
+  // Level adı rəngi
+  const levelName = stickyHeader.querySelector('.level-name');
+  if (levelName) levelName.style.color = newDark ? '#dce8f2' : '#2A2A2A';
+  const levelMeta = stickyHeader.querySelector('.level-meta');
+  if (levelMeta) levelMeta.style.color = newDark ? '#6d90a8' : '#A09D96';
+}
 
-      const scrollBody = overlay.querySelector('div:last-child');
-      if (scrollBody) {
-        scrollBody.style.background = bg;
-      }
+     const scrollBody = overlay.querySelector('div:last-child');
+if (scrollBody) {
+  scrollBody.style.background = bg;
+  // Quiz path node-larını da yenilə
+  scrollBody.querySelectorAll('.path-node.unlocked').forEach(node => {
+    node.style.background = newDark ? '#142233' : 'white';
+  });
+  scrollBody.querySelectorAll('.path-node.completed.phase2-invite').forEach(node => {
+    node.style.background = newDark ? '#142233' : 'white';
+  });
+  scrollBody.querySelectorAll('.path-node.phase2-done').forEach(node => {
+    node.style.background = newDark ? '#142233' : 'white';
+  });
+  scrollBody.querySelectorAll('.path-node.phase3-open').forEach(node => {
+    node.style.background = newDark ? '#142233' : 'white';
+  });
+}
 
       const innerIcon = overlay.querySelector('.level-icon');
       if (innerIcon) {
