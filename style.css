@@ -2566,6 +2566,32 @@ button { font-family: var(--font); }
   box-shadow: 0 4px 16px rgba(91,33,182,0.30);
 }
 
+
+/* ── Grammar nav row (geri + davam et) ── */
+.grammar-nav-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.grammar-back-btn {
+  background: #F5F0E8;
+  color: #4A4740;
+  flex: 1;
+}
+
+.grammar-back-btn svg {
+  stroke: #4A4740;
+}
+
+[data-theme="dark"] .grammar-back-btn {
+  background: #1d3348 !important;
+  color: #dce8f2 !important;
+}
+
+[data-theme="dark"] .grammar-back-btn svg {
+  stroke: #dce8f2 !important;
+}
 /* ============================================================
    MINI CHECK KARTI
 ============================================================ */
