@@ -713,19 +713,36 @@ function kidsHandleAnswer(btn, correctWord) {
 // ── Səsləndirmə ───────────────────────────────────────────
 function kidsPlayAudio(word) {
   try {
-    // kids/audio/{word}.mp3 — fayllar varsa işləyir
     const audio = new Audio(`kids/audio/${word.toLowerCase().replace(/ /g, '_')}.mp3`);
-    audio.play().catch(() => {
-      // Web Speech API fallback
-      if ('speechSynthesis' in window) {
-        const utt = new SpeechSynthesisUtterance(word);
-        utt.lang = 'en-US';
-        utt.rate = 0.85;
-        speechSynthesis.cancel();
-        speechSynthesis.speak(utt);
-      }
-    });
-  } catch(_) {}
+    audio.play().catch(() => kidsSpeech(word));
+  } catch(_) { kidsSpeech(word); }
+}
+
+function kidsSpeech(word) {
+  if (!('speechSynthesis' in window)) return;
+  speechSynthesis.cancel();
+
+  const utt   = new SpeechSynthesisUtterance(word);
+  utt.lang    = 'en-US';
+  utt.rate    = 0.72;   // yavaş
+  utt.pitch   = 1.6;    // yüksək ton — qız səsi effekti
+  utt.volume  = 1.0;
+
+  // Mövcud səslər içindən qadın səsini tap
+  const voices = speechSynthesis.getVoices();
+  const female = voices.find(v =>
+    v.lang.startsWith('en') && (
+      v.name.toLowerCase().includes('female') ||
+      v.name.toLowerCase().includes('woman')  ||
+      v.name.toLowerCase().includes('samantha') ||
+      v.name.toLowerCase().includes('karen')    ||
+      v.name.toLowerCase().includes('victoria') ||
+      v.name.toLowerCase().includes('zira')
+    )
+  );
+  if (female) utt.voice = female;
+
+  speechSynthesis.speak(utt);
 }
 
 // ── Quiz Bitişi ───────────────────────────────────────────
