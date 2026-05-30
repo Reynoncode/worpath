@@ -91,7 +91,93 @@
     if (activeDot && activeDot.dataset.page === '4') {
       StatsPage.render('stats-root');
     }
+    function toggleDarkMode() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  localStorage.setItem('theme', isDark ? 'light' : 'dark');
+  updateToggleIcon();
+
+  // Stats screen açıqdırsa render et
+  const statsScreen = document.getElementById('stats-screen');
+  if (statsScreen && !statsScreen.classList.contains('hidden')) {
+    StatsPage.render('stats-container');
   }
+
+  // Page-4 açıqdırsa render et
+  const activeDot = document.querySelector('.nav-dot.active');
+  if (activeDot && activeDot.dataset.page === '4') {
+    StatsPage.render('stats-root');
+  }
+
+  // ── ƏLAVƏ ET: Açıq overlay varsa yenilə ──────────────
+  const overlay = document.getElementById('level-fullscreen-overlay');
+  if (overlay) {
+    const newDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    const bg     = newDark ? '#142233' : '#fff';
+    const border = newDark ? '#1d3348' : '#E8E2D9';
+
+    overlay.style.background  = bg;
+    overlay.style.borderColor = border;
+
+    const stickyHeader = overlay.querySelector('div:first-child');
+    if (stickyHeader) {
+      stickyHeader.style.background   = bg;
+      stickyHeader.style.borderBottom = `1px solid ${border}`;
+    }
+
+    const scrollBody = overlay.querySelector('div:last-child');
+    if (scrollBody) {
+      scrollBody.style.background = bg;
+    }
+
+    // Icon badge-i yenilə
+    const innerIcon = overlay.querySelector('.level-icon');
+    if (innerIcon) {
+      const card = document.querySelector('.level-card.open');
+      if (card) {
+        const li  = parseInt(card.dataset.levelIdx, 10);
+        const lvl = LEVELS[li];
+        if (lvl && window.iconStyles) {
+          const darkIconStyles = {
+            'a1':              { background: '#1a0e0d', borderColor: '#5a1a14', color: '#e8a09a' },
+            'a2':              { background: '#1a1108', borderColor: '#5a3a10', color: '#e8b070' },
+            'b1':              { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+            'b2':              { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+            'c1':              { background: '#0a1220', borderColor: '#1a3258', color: '#4a8fe7' },
+            'c2':              { background: '#0d1114', borderColor: '#2a3840', color: '#6d90a8' },
+            'reading':         { background: '#091418', borderColor: '#0e3848', color: '#22b8d4' },
+            'listening':       { background: '#100d1e', borderColor: '#2e1a5a', color: '#9d7aff' },
+            'kids':            { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+            'grammar':         { background: '#100d1e', borderColor: '#2e1a5a', color: '#9d7aff' },
+            'verbs':           { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+            'passive':         { background: '#0a1220', borderColor: '#1a3258', color: '#4a8fe7' },
+            'indirect_speech': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+            'adjectives':      { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+            'sequence_tenses': { background: '#091418', borderColor: '#0e3848', color: '#22b8d4' },
+            'pronoun':         { background: '#0e0e20', borderColor: '#2a2a5a', color: '#a5b4fc' },
+            'article':         { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+            'questions':       { background: '#091418', borderColor: '#0e3848', color: '#7dd3fc' },
+            'modal_verbs':     { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+            'prepositions':    { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+            'adverb':          { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+            'complex_object':  { background: '#0a1220', borderColor: '#1a3258', color: '#4a8fe7' },
+            'subject_verb_agreement': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+            'imperative':      { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
+            'exclamatory':     { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+          };
+          const activeStyle = newDark
+            ? (darkIconStyles[lvl.id] || iconStyles[lvl.id])
+            : iconStyles[lvl.id];
+          innerIcon.style.background  = activeStyle.background;
+          innerIcon.style.borderColor = activeStyle.borderColor;
+          innerIcon.style.color       = activeStyle.color;
+          innerIcon.style.border      = `1.5px solid ${activeStyle.borderColor}`;
+        }
+      }
+    }
+  }
+}
+    
 </script>
 
   <div id="app">
