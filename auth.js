@@ -47,10 +47,10 @@ const ACHIEVEMENTS = [
   { id: 'streak_30',       icon: 'ti-flame',           name: 'Aylıq Alov',       desc: '1 ay streak saxladın' },
   { id: 'streak_90',       icon: 'ti-volcano',         name: 'Yanmaz Əzm',       desc: '3 ay streak saxladın' },
 
-  { id: 'perfect_10',      icon: 'ti-bolt',            name: 'Dəqiq 10',         desc: 'Ardıcıl 10 səhvsiz test' },
-  { id: 'perfect_20',      icon: 'ti-bolt',            name: 'Dəqiq 20',         desc: 'Ardıcıl 20 səhvsiz test' },
-  { id: 'perfect_50',      icon: 'ti-stars',           name: 'Dəqiq 50',         desc: 'Ardıcıl 50 səhvsiz test' },
-  { id: 'perfect_100',     icon: 'ti-crown',           name: 'Mükəmməl 100',     desc: 'Ardıcıl 100 səhvsiz test' },
+  { id: 'perfect_10',      icon: 'ti-bolt',            name: 'Dəqiq 10',         desc: 'Ardıcıl 10 səhvsiz cavab' },
+  { id: 'perfect_20',      icon: 'ti-bolt',            name: 'Dəqiq 20',         desc: 'Ardıcıl 20 səhvsiz cavab' },
+  { id: 'perfect_50',      icon: 'ti-stars',           name: 'Dəqiq 50',         desc: 'Ardıcıl 50 səhvsiz cavab' },
+  { id: 'perfect_100',     icon: 'ti-crown',           name: 'Mükəmməl 100',     desc: 'Ardıcıl 100 səhvsiz cavab' },
 
   { id: 'kids_1',          icon: 'ti-mood-kid',        name: 'Uşaq Dostu',       desc: 'Kids bölümündən 1 hissə bitirdin' },
   { id: 'kids_3',          icon: 'ti-mood-happy',      name: 'Uşaq Ustası',      desc: 'Kids bölümündən 3 hissə bitirdin' },
@@ -65,11 +65,9 @@ const ACHIEVEMENTS = [
 function checkAchievements() {
   const unlocked = new Set();
 
-  // Progress oxu
   let progress = {};
   try { progress = JSON.parse(localStorage.getItem('wordpath_v1') || '{}'); } catch(_) {}
 
-  // Stats oxu
   let stats = {};
   try { stats = JSON.parse(localStorage.getItem('wordpath_stats') || '{}'); } catch(_) {}
 
@@ -78,64 +76,47 @@ function checkAchievements() {
 
   const CEFR = ['a1','a2','b1','b2','c1','c2'];
 
-  // Hər CEFR üçün status yoxla
   CEFR.forEach(lvl => {
     const statuses = progress[lvl] || [];
-    const hasDone    = statuses.some(s => ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s));
-    const hasPhase2  = statuses.some(s => ['phase2_completed','phase3_unlocked','level_done'].includes(s));
-    const hasPhase3  = statuses.some(s => s === 'level_done');
-    const allDone    = statuses.length > 0 && statuses.every(s =>
-      ['completed','phase2_completed','phase3_unlocked','level_done','locked','divider'].includes(s)
-      && s !== 'locked'
-    );
-
+    const hasDone   = statuses.some(s => ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s));
+    const hasPhase2 = statuses.some(s => ['phase2_completed','phase3_unlocked','level_done'].includes(s));
+    const hasPhase3 = statuses.some(s => s === 'level_done');
     if (hasDone)   unlocked.add(`${lvl}_done`);
     if (hasPhase2) unlocked.add(`${lvl}_phase2`);
     if (hasPhase3) unlocked.add(`${lvl}_phase3`);
   });
 
-  // İlk test
   const anyDone = CEFR.some(lvl =>
     (progress[lvl] || []).some(s => ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s))
   );
   if (anyDone) unlocked.add('first_test');
 
-  // İlk exam
-  const anyExamDone = CEFR.some(lvl =>
-    (progress[lvl] || []).some(s => s === 'level_done')
-  );
+  const anyExamDone = CEFR.some(lvl => (progress[lvl] || []).some(s => s === 'level_done'));
   if (anyExamDone) unlocked.add('first_exam');
 
-  // İlk phase2/phase3
   const anyPhase2 = CEFR.some(lvl =>
     (progress[lvl] || []).some(s => ['phase2_completed','phase3_unlocked','level_done'].includes(s))
   );
   if (anyPhase2) unlocked.add('first_phase2');
 
-  const anyPhase3 = CEFR.some(lvl =>
-    (progress[lvl] || []).some(s => s === 'level_done')
-  );
+  const anyPhase3 = CEFR.some(lvl => (progress[lvl] || []).some(s => s === 'level_done'));
   if (anyPhase3) unlocked.add('first_phase3');
 
-  // Streak
   if (streak >= 3)  unlocked.add('streak_3');
   if (streak >= 7)  unlocked.add('streak_7');
   if (streak >= 30) unlocked.add('streak_30');
   if (streak >= 90) unlocked.add('streak_90');
 
-  // Stars
   if (stars >= 10) unlocked.add('stars_10');
   if (stars >= 20) unlocked.add('stars_20');
   if (stars >= 50) unlocked.add('stars_50');
 
-  // Perfect streak (ardıcıl səhvsiz) — stats-dan
   const perfectStreak = stats.perfectStreak || 0;
   if (perfectStreak >= 10)  unlocked.add('perfect_10');
   if (perfectStreak >= 20)  unlocked.add('perfect_20');
   if (perfectStreak >= 50)  unlocked.add('perfect_50');
   if (perfectStreak >= 100) unlocked.add('perfect_100');
 
-  // Kids
   const kidsDone = (progress['kids'] || []).filter(s =>
     ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
   ).length;
@@ -147,35 +128,118 @@ function checkAchievements() {
   return unlocked;
 }
 
+// ─── Toast bildiriş sistemi ───────────────────────────────────────────────────
+const ACH_KEY = 'wordpath_achievements';
+
+function _loadUnlocked() {
+  try { return new Set(JSON.parse(localStorage.getItem(ACH_KEY) || '[]')); }
+  catch(_) { return new Set(); }
+}
+
+function _saveUnlocked(set) {
+  localStorage.setItem(ACH_KEY, JSON.stringify([...set]));
+}
+
+let _toastQueue   = [];
+let _toastActive  = false;
+
+function _showNextToast() {
+  if (_toastActive || _toastQueue.length === 0) return;
+  _toastActive = true;
+
+  const ach    = _toastQueue.shift();
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+
+  const toast = document.createElement('div');
+  toast.style.cssText = `
+    position:fixed;top:16px;left:16px;z-index:99999;
+    display:flex;align-items:center;gap:10px;
+    background:${isDark ? '#1a2d10' : '#fff'};
+    border:1.5px solid ${isDark ? '#4ade80' : '#86EFAC'};
+    border-radius:14px;
+    padding:11px 16px 11px 12px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.15);
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    min-width:220px;max-width:300px;
+    transform:translateX(-120%);
+    transition:transform 0.35s cubic-bezier(0.34,1.56,0.64,1);
+    cursor:pointer;
+  `;
+
+  toast.innerHTML = `
+    <div style="
+      width:38px;height:38px;flex-shrink:0;
+      border-radius:10px;
+      background:${isDark ? '#0a2418' : '#F0FDF4'};
+      display:flex;align-items:center;justify-content:center;
+    ">
+      <i class="ti ${ach.icon}" style="font-size:20px;color:${isDark ? '#4ade80' : '#16A34A'};"></i>
+    </div>
+    <div style="min-width:0;">
+      <div style="font-size:10px;font-weight:600;color:${isDark ? '#4ade80' : '#16A34A'};text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">Yeni nailiyyət!</div>
+      <div style="font-size:13px;font-weight:700;color:${isDark ? '#dce8f2' : '#1A1A1A'};line-height:1.3;">${ach.name}</div>
+      <div style="font-size:11px;color:${isDark ? '#6d90a8' : '#6B7280'};margin-top:1px;">${ach.desc}</div>
+    </div>
+  `;
+
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    toast.style.transform = 'translateX(0)';
+  }));
+
+  function dismiss() {
+    clearTimeout(timer);
+    toast.style.transition = 'transform 0.3s ease-in';
+    toast.style.transform  = 'translateX(-120%)';
+    setTimeout(() => {
+      toast.remove();
+      _toastActive = false;
+      _showNextToast();
+    }, 320);
+  }
+
+  const timer = setTimeout(dismiss, 5000);
+  toast.addEventListener('click', dismiss);
+}
+
+// ─── Yeni nailiyyətləri yoxla və bildiriş göstər ─────────────────────────────
+// Hər lazım olan yerdə çağır — Stats.recordAnswer()-dan sonra, exam bitəndə və s.
+function checkAndNotify() {
+  const current  = checkAchievements();
+  const previous = _loadUnlocked();
+  const newOnes  = [...current].filter(id => !previous.has(id));
+
+  if (newOnes.length > 0) {
+    _saveUnlocked(current);
+    newOnes.forEach(id => {
+      const ach = ACHIEVEMENTS.find(a => a.id === id);
+      if (ach) _toastQueue.push(ach);
+    });
+    _showNextToast();
+  }
+}
+
+// checkAndNotify-ni global et — quiz.js və digər fayllardan çağırmaq üçün
+window.checkAndNotify = checkAndNotify;
+
 function renderAchievements() {
   const unlocked = checkAchievements();
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
   return ACHIEVEMENTS.map(a => {
     const isUnlocked = unlocked.has(a.id);
-    const cardBg     = isDark
-      ? (isUnlocked ? '#1a2d10' : '#142233')
-      : (isUnlocked ? '#F0FDF4' : '#F5F0E8');
-    const cardBorder = isDark
-      ? (isUnlocked ? '#3a5418' : '#1d3348')
-      : (isUnlocked ? '#86EFAC' : '#E8E2D9');
-    const iconColor  = isDark
-      ? (isUnlocked ? '#4ade80' : '#3f5e72')
-      : (isUnlocked ? '#16A34A' : '#9CA3AF');
-    const nameColor  = isDark
-      ? (isUnlocked ? '#dce8f2' : '#3f5e72')
-      : (isUnlocked ? '#1A1A1A' : '#9CA3AF');
+    const cardBg     = isDark ? (isUnlocked ? '#1a2d10' : '#142233') : (isUnlocked ? '#F0FDF4' : '#F5F0E8');
+    const cardBorder = isDark ? (isUnlocked ? '#3a5418' : '#1d3348') : (isUnlocked ? '#86EFAC' : '#E8E2D9');
+    const iconColor  = isDark ? (isUnlocked ? '#4ade80' : '#3f5e72') : (isUnlocked ? '#16A34A' : '#9CA3AF');
+    const nameColor  = isDark ? (isUnlocked ? '#dce8f2' : '#3f5e72') : (isUnlocked ? '#1A1A1A' : '#9CA3AF');
     const descColor  = isDark ? '#3f5e72' : '#9CA3AF';
 
     return `
       <div style="
-        background:${cardBg};
-        border:1px solid ${cardBorder};
-        border-radius:12px;
-        padding:12px 8px;
-        text-align:center;
-        opacity:${isUnlocked ? '1' : '0.55'};
-        transition:opacity 0.2s;
+        background:${cardBg};border:1px solid ${cardBorder};border-radius:12px;
+        padding:12px 8px;text-align:center;
+        opacity:${isUnlocked ? '1' : '0.55'};transition:opacity 0.2s;
       ">
         <i class="ti ${a.icon}" style="font-size:24px;color:${iconColor};display:block;margin-bottom:5px;"></i>
         <div style="font-size:11px;font-weight:700;color:${nameColor};line-height:1.3;margin-bottom:2px;">${a.name}</div>
@@ -184,14 +248,10 @@ function renderAchievements() {
     `;
   }).join('');
 }
+
 // ─── Local data açarları ────────────────────────────────────────────────────
 const LOCAL_STATS_KEY    = "wordpath_stats";
 const LOCAL_PROGRESS_KEY = "wordpath_v1";
-
-// ─── Rol sabitleri ───────────────────────────────────────────────────────────
-// "guest"   → giriş etməyib və ya adi istifadəçi
-// "student" → müəllim tərəfindən sinif otağına əlavə edilib
-// "teacher" → approvedTeachers kolleksiyasında maili var
 
 // ─── Firestore-a yaz ────────────────────────────────────────────────────────
 async function saveUserData(uid, statsData, progressData) {
@@ -214,7 +274,6 @@ async function loadUserData(uid) {
 async function fetchUserRole(user) {
   if (!user) return "guest";
 
-  // 1. Müəllim yoxlaması — dəyişmir
   const tQuery = query(
     collection(db, "approvedTeachers"),
     where("email", "==", user.email.toLowerCase())
@@ -222,8 +281,6 @@ async function fetchUserRole(user) {
   const tSnap = await getDocs(tQuery);
   if (!tSnap.empty) return "teacher";
 
-  // 2. Tələbə yoxlaması — classes kolleksiyasına bax
-  //    (müəllim students array-inə email yazır, bunu oxumaq icazəlidir)
   const cQuery = query(
     collection(db, "classes"),
     where("students", "array-contains", user.email.toLowerCase())
@@ -231,7 +288,6 @@ async function fetchUserRole(user) {
   const cSnap = await getDocs(cQuery);
   if (!cSnap.empty) return "student";
 
-  // 3. pendingStudents — dəyişmir
   try {
     const key         = user.email.toLowerCase().replace(/[@.]/g, "_");
     const pendingSnap = await getDoc(doc(db, "pendingStudents", key));
@@ -241,18 +297,15 @@ async function fetchUserRole(user) {
   return "guest";
 }
 
-// ─── Rol tətbiq et (UI + window.__userRole) ──────────────────────────────────
+// ─── Rol tətbiq et ───────────────────────────────────────────────────────────
 async function applyRole(user) {
   const role = await fetchUserRole(user);
   window.__userRole = role;
 
-  // Grammar / Reading / Listening səhifələrini göstər/gizlət
   updateRestrictedPages(role);
 
-  // Sinif otağı düyməsi yalnız müəllimə görünsün
-  const classroomBtn     = document.getElementById("stats-classroom-btn");
+  const classroomBtn       = document.getElementById("stats-classroom-btn");
   const classroomBtnInline = document.getElementById("stats-classroom-btn-inline");
-
   if (classroomBtn)       classroomBtn.style.display       = role === "teacher" ? "flex" : "none";
   if (classroomBtnInline) classroomBtnInline.style.display = role === "teacher" ? "flex" : "none";
 
@@ -260,27 +313,20 @@ async function applyRole(user) {
 }
 
 // ─── Məhdud səhifələri idarə et ─────────────────────────────────────────────
-// guest → grammar (page-1) və skills (page-3) gizli + nav dot gizli
-// student, teacher → hamısı açıq
 function updateRestrictedPages(role) {
   const hasAccess = role === "student" || role === "teacher";
 
-  // Page 1 (Grammar) nav dot
   const dot1 = document.querySelector('.nav-dot[data-page="1"]');
-  // Page 3 (Reading/Listening) nav dot
   const dot3 = document.querySelector('.nav-dot[data-page="3"]');
-
   if (dot1) dot1.style.display = hasAccess ? "" : "none";
   if (dot3) dot3.style.display = hasAccess ? "" : "none";
 
-  // Əgər hal-hazırda məhdud səhifədədirsə, ana səhifəyə yönləndir
   if (!hasAccess && window.currentPage !== undefined) {
     if (window.currentPage === 1 || window.currentPage === 3) {
       if (typeof window.goToPage === "function") window.goToPage(2);
     }
   }
 
-  // Kilit overlay-lərini göstər/gizlət
   showOrHideLockOverlays(role);
 }
 
@@ -289,13 +335,13 @@ function showOrHideLockOverlays(role) {
   const hasAccess = role === "student" || role === "teacher";
 
   ["page-1", "page-3"].forEach(pageId => {
-    const page    = document.getElementById(pageId);
+    const page = document.getElementById(pageId);
     if (!page) return;
 
     const existingLock = page.querySelector(".page-lock-overlay");
 
     if (!hasAccess) {
-      if (existingLock) return; // artıq var
+      if (existingLock) return;
 
       const overlay = document.createElement("div");
       overlay.className = "page-lock-overlay";
@@ -305,8 +351,7 @@ function showOrHideLockOverlays(role) {
         backdrop-filter:blur(6px);
         display:flex;flex-direction:column;
         align-items:center;justify-content:center;
-        gap:12px;
-        pointer-events:all;
+        gap:12px;pointer-events:all;
       `;
 
       const isGrammar = pageId === "page-1";
@@ -325,10 +370,8 @@ function showOrHideLockOverlays(role) {
         </button>
       `;
 
-      // page-ın relative olması üçün
       page.style.position = "relative";
       page.appendChild(overlay);
-
     } else {
       if (existingLock) existingLock.remove();
     }
@@ -422,7 +465,6 @@ onAuthStateChanged(auth, async (user) => {
   renderAuthButton(user);
 
   if (user) {
-    // Profil məlumatlarını Firestore-a qeyd et
     const ref = doc(db, "users", user.uid);
     await setDoc(ref, {
       email:       user.email,
@@ -432,15 +474,10 @@ onAuthStateChanged(auth, async (user) => {
     }, { merge: true });
 
     await syncOnLogin(user.uid);
-
-    // Rol yoxla və tətbiq et
     await applyRole(user);
-
-    // Header avatar yenilə
     _updateHeaderAvatar(user);
 
   } else {
-    // Çıxış etdi → guest
     window.__userRole = "guest";
     updateRestrictedPages("guest");
 
@@ -453,7 +490,6 @@ onAuthStateChanged(auth, async (user) => {
   }
 });
 
-// SONRA
 function _updateHeaderAvatar(user) {
   const avatar = document.getElementById("header-profile-avatar");
   if (!avatar) return;
@@ -463,18 +499,18 @@ function _updateHeaderAvatar(user) {
       avatar.innerHTML = `<img src="${user.photoURL}" style="width:100%;height:100%;border-radius:10px;object-fit:cover;display:block;" />`;
     } else {
       const name = user.displayName ? user.displayName.split(" ")[0] : user.email;
-      avatar.innerHTML = "";
+      avatar.innerHTML  = "";
       avatar.textContent = name.charAt(0).toUpperCase();
-      avatar.style.fontSize = "13px";
+      avatar.style.fontSize   = "13px";
       avatar.style.fontWeight = "700";
-      avatar.style.color = "#6B7280";
+      avatar.style.color      = "#6B7280";
     }
   } else {
-    avatar.innerHTML = "";
+    avatar.innerHTML  = "";
     avatar.textContent = "?";
-    avatar.style.fontSize = "13px";
+    avatar.style.fontSize   = "13px";
     avatar.style.fontWeight = "700";
-    avatar.style.color = "#6B7280";
+    avatar.style.color      = "#6B7280";
   }
 }
 
@@ -504,7 +540,7 @@ async function openProfileModal() {
   const user = auth.currentUser;
   if (!user) return;
 
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark'; // ← əlavə et
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
 
   const existingModal = document.getElementById("profile-modal");
   if (existingModal) existingModal.remove();
@@ -513,12 +549,11 @@ async function openProfileModal() {
   const savedName  = userData?.displayName || user.displayName || "";
   const savedPhoto = userData?.photoURL    || user.photoURL    || "";
 
-  // Rol badge
   const role = window.__userRole || "guest";
   const roleBadges = {
-    teacher: { label: "Müəllim",  bg: "#DCFCE7", color: "#14532D", border: "#86EFAC", icon: "🎓" },
-    student: { label: "Tələbə",   bg: "#EFF6FF", color: "#1E3A5F", border: "#93C5FD", icon: "📖" },
-    guest:   { label: "Qonaq",    bg: "#F5F5F5", color: "#6B7280", border: "#D1D5DB", icon: "👤" },
+    teacher: { label: "Müəllim", bg: "#DCFCE7", color: "#14532D", border: "#86EFAC", icon: "🎓" },
+    student: { label: "Tələbə",  bg: "#EFF6FF", color: "#1E3A5F", border: "#93C5FD", icon: "📖" },
+    guest:   { label: "Qonaq",   bg: "#F5F5F5", color: "#6B7280", border: "#D1D5DB", icon: "👤" },
   };
   const rb = roleBadges[role];
   const roleBadgeHTML = `
@@ -544,26 +579,22 @@ async function openProfileModal() {
       padding:0 0 32px;
       transform:translateY(100%);
       transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);
-      max-height:90vh;
-      overflow-y:auto;
+      max-height:90vh;overflow-y:auto;
       -ms-overflow-style:none;scrollbar-width:none;
     ">
-      <!-- Handle -->
       <div style="display:flex;justify-content:center;padding:12px 0 4px;">
         <div style="width:36px;height:4px;border-radius:99px;background:#D1C9BE;"></div>
       </div>
 
       <div style="padding:16px 20px 0;">
 
-        <!-- Şəkil + Ad -->
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
           <div style="position:relative;flex-shrink:0;" onclick="document.getElementById('profile-photo-input').click()">
             <div id="profile-photo-wrap" style="
               width:64px;height:64px;border-radius:50%;
               background:#EDEAE2;overflow:hidden;
               border:2px solid #E8E2D9;
-              display:flex;align-items:center;justify-content:center;
-              cursor:pointer;
+              display:flex;align-items:center;justify-content:center;cursor:pointer;
             ">
               ${savedPhoto
                 ? `<img id="profile-photo-img" src="${savedPhoto}" style="width:100%;height:100%;object-fit:cover;" />`
@@ -599,30 +630,26 @@ async function openProfileModal() {
           </div>
         </div>
 
-        <!-- Rol badge -->
         <div style="margin-bottom:12px;">${roleBadgeHTML}</div>
 
-        <!-- Email -->
         <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:12px 14px;margin-bottom:12px;">
           <div style="font-size:11px;font-weight:600;color:#9CA3AF;margin-bottom:2px;">Email</div>
           <div style="font-size:13px;color:#1A1A1A;">${user.email}</div>
         </div>
 
-        <!-- Çıxış -->
         <button onclick="AuthManager._confirmSignOut()"
           style="width:100%;background:#FFF1F0;color:#DC2626;border:1px solid #FCA5A5;border-radius:12px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;margin-bottom:16px;">
           🚪 Çıxış et
         </button>
 
-        <!-- Achievements -->
-<div style="background:${isDark ? '#142233' : '#fff'};border:1px solid ${isDark ? '#1d3348' : '#E8E2D9'};border-radius:14px;padding:16px;">
-  <div style="font-size:12px;font-weight:700;color:${isDark ? '#6d90a8' : '#6B7280'};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">
-    <i class="ti ti-medal" style="margin-right:4px;"></i> Nailiyyətlər
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-    ${renderAchievements()}
-  </div>
-</div>
+        <div style="background:${isDark ? '#142233' : '#fff'};border:1px solid ${isDark ? '#1d3348' : '#E8E2D9'};border-radius:14px;padding:16px;">
+          <div style="font-size:12px;font-weight:700;color:${isDark ? '#6d90a8' : '#6B7280'};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">
+            <i class="ti ti-medal" style="margin-right:4px;"></i> Nailiyyətlər
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
+            ${renderAchievements()}
+          </div>
+        </div>
 
       </div>
     </div>
@@ -724,12 +751,12 @@ function _confirmSignOut() {
 
 // ─── Public API ─────────────────────────────────────────────────────────────
 window.AuthManager = {
-  signIn:              signInWithGoogle,
-  signOut:             signOutUser,
+  signIn:             signInWithGoogle,
+  signOut:            signOutUser,
   syncStats,
-  getCurrentUser:      () => auth.currentUser,
+  getCurrentUser:     () => auth.currentUser,
   openProfileModal,
-  _closeProfileModal:  closeProfileModal,
+  _closeProfileModal: closeProfileModal,
   _handlePhotoChange,
   _saveName,
   _confirmSignOut,
@@ -737,6 +764,5 @@ window.AuthManager = {
   updateRestrictedPages,
 };
 
-// İlk yükləmədə guest kimi tətbiq et (auth yüklənənə qədər)
 window.__userRole = "guest";
 updateRestrictedPages("guest");
