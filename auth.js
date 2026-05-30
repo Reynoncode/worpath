@@ -464,29 +464,28 @@ async function renderAuthButton(user) {
 // ─── Auth vəziyyəti dəyişikliyi ─────────────────────────────────────────────
 onAuthStateChanged(auth, async (user) => {
   renderAuthButton(user);
-
   if (user) {
     const ref = doc(db, "users", user.uid);
+    const existingSnap  = await getDoc(ref);
+    const existingPhoto = existingSnap.exists() ? existingSnap.data().photoURL : null;
+
     await setDoc(ref, {
       email:       user.email,
       displayName: user.displayName || "",
-      photoURL:    user.photoURL    || "",
+      photoURL:    existingPhoto || user.photoURL || "",
       lastLogin:   serverTimestamp()
     }, { merge: true });
 
     await syncOnLogin(user.uid);
     await applyRole(user);
     _updateHeaderAvatar(user);
-
   } else {
     window.__userRole = "guest";
     updateRestrictedPages("guest");
-
     const classroomBtn       = document.getElementById("stats-classroom-btn");
     const classroomBtnInline = document.getElementById("stats-classroom-btn-inline");
     if (classroomBtn)       classroomBtn.style.display       = "none";
     if (classroomBtnInline) classroomBtnInline.style.display = "none";
-
     _updateHeaderAvatar(null);
   }
 });
