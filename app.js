@@ -3136,7 +3136,11 @@ function startQuiz(levelIdx, quizIdx) {
     startGrammarLesson(levelIdx, quizIdx);
     return;
   }
-
+  // Kids quiz
+if (lvl.id === 'kids') {
+  startKidsQuiz(levelIdx, quizIdx);
+  return;
+}
   // Grammar bölmə quiz-ləri (array formatında)
 if (lvl.id === 'grammar' && Array.isArray(item)) {
   quiz.mode     = 'normal';
