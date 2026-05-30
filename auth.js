@@ -434,14 +434,15 @@ async function signOutUser() {
 }
 
 // ─── Auth button render ──────────────────────────────────────────────────────
-function renderAuthButton(user) {
+async function renderAuthButton(user) {
   const container = document.getElementById("stats-auth-bar");
   if (!container) return;
 
   if (user) {
     const name  = user.displayName ? user.displayName.split(" ")[0] : user.email;
-   const snap2 = await getDoc(doc(db, "users", user.uid)).catch(() => null);
-const photo = (snap2?.exists() ? snap2.data().photoURL : null) || user.photoURL || "";
+    const snap2 = await getDoc(doc(db, "users", user.uid)).catch(() => null);
+    const photo = (snap2?.exists() ? snap2.data().photoURL : null) || user.photoURL || "";
+
     container.innerHTML = `
       <div style="display:flex;align-items:center;gap:8px;cursor:pointer;"
            onclick="AuthManager.openProfileModal()">
@@ -464,7 +465,6 @@ const photo = (snap2?.exists() ? snap2.data().photoURL : null) || user.photoURL 
     `;
   }
 }
-
 // ─── Auth vəziyyəti dəyişikliyi ─────────────────────────────────────────────
 onAuthStateChanged(auth, async (user) => {
   renderAuthButton(user);
