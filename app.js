@@ -2713,12 +2713,11 @@ if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive'
  const inner = isExam
   ? '🏆'
   : `<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
-    
-  if (status === 'level_done') {
-      const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
-      const examInner = isExam ? '🏆' : inner;
-      html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${examInner}</div>`;
-    } else if (status === 'phase3_unlocked') {
+ if (status === 'level_done') {
+  const nodeClass = isExam ? 'path-node level-done exam-node' : 'path-node level-done';
+  const examInner = isExam ? '🏆' : inner;
+  html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}" style="--lvl-color:${lvl.color}">${examInner}</div>`;
+} else if (status === 'phase3_unlocked') {
       const nodeClass = isExam ? 'path-node phase3-open exam-node' : 'path-node phase3-open';
       html += `<div class="${nodeClass}" data-quiz-idx="${qi}" data-status="${status}">${inner}</div>`;
     } else if (status === 'phase2_completed') {
