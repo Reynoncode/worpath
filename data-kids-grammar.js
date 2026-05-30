@@ -457,10 +457,9 @@ const KIDS_GRAMMAR_LEVELS = [
         { pic: 236, correct: 236, wrong: 220 }, // 236:wave   vs 220:clap
         { pic: 237, correct: 237, wrong: 221 }, // 237:write  vs 221:draw
       ],
-
     ],
   },
-];
+
   // ╔══════════════════════════════════════════════════╗
   // ║  GRAMMAR BÖLÜMÜ — NOUNS (İsimlər)               ║
   // ╚══════════════════════════════════════════════════╝
