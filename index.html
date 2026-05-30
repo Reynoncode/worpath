@@ -99,7 +99,7 @@
       overlay.style.background  = bg;
       overlay.style.borderColor = border;
 
-      const stickyHeader = overlay.querySelector('div:first-child');
+      const stickyHeader = overlay.querySelector('div[style*="flex-shrink"]');
 if (stickyHeader) {
   stickyHeader.style.background   = bg;
   stickyHeader.style.borderBottom = `1px solid ${border}`;
@@ -110,7 +110,7 @@ if (stickyHeader) {
   if (levelMeta) levelMeta.style.color = newDark ? '#6d90a8' : '#A09D96';
 }
 
-     const scrollBody = overlay.querySelector('div:last-child');
+     const scrollBody = overlay.querySelector('div[style*="overflow-y"]');
 if (scrollBody) {
   scrollBody.style.background = bg;
   // Quiz path node-larını da yenilə
