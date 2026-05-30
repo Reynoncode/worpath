@@ -13,6 +13,45 @@
 </head>
 <body>
   <div id="app">
+<!-- ── LOADING SCREEN ────────────────────────────── -->
+<div id="loading-screen" style="
+  position:fixed;inset:0;z-index:9999;
+  background:#FAF7F2;
+  display:flex;align-items:center;justify-content:center;
+  transition:opacity 0.4s ease;
+">
+  <video id="loading-video" autoplay muted playsinline
+    style="width:100%;height:100%;object-fit:cover;">
+  </video>
+</div>
+
+<script>
+(function() {
+  const isDark = localStorage.getItem('theme') === 'dark';
+  const screen = document.getElementById('loading-screen');
+  const video  = document.getElementById('loading-video');
+
+  // Dark/light moda görə arxa fon və video
+  screen.style.background = isDark ? '#0d1b2a' : '#FAF7F2';
+  video.src = isDark ? 'mp3/loadingdark.mp4' : 'mp3/loading.mp4';
+
+  // Video bitəndə ekranı yox et
+  video.addEventListener('ended', hideLoading);
+
+  // Ehtiyat: 5 saniyədən çox gözləmə
+  const fallback = setTimeout(hideLoading, 5000);
+
+  function hideLoading() {
+    clearTimeout(fallback);
+    screen.style.opacity = '0';
+    setTimeout(() => screen.remove(), 400);
+  }
+
+  // Əgər video yüklənməsə belə gizlət
+  video.addEventListener('error', hideLoading);
+})();
+</script>
+    
 
 <script>
   (function() {
