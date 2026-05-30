@@ -1,7 +1,146 @@
-// ============================================================
 //  WORDPATH — KIDS & GRAMMAR DATA
 // ============================================================
-// pic → kids/{pic}.png  (cəmi 237 şəkil)
+// Yeni Kids format:
+//   { pic: 1, correct: 1, wrong: 3 }
+//   pic     → kids/{n}.png rəsmi
+//   correct → KIDS_WORDS[n] — düzgün cavab
+//   wrong   → KIDS_WORDS[n] — yanlış seçim
+//
+// ID — SÖZ XƏRİTƏSİ (KIDS_WORDS):
+//  1:bear        2:bee         3:bird        4:cat
+//  5:chicken     6:cow         7:crocodile   8:dog
+//  9:donkey     10:duck       11:elephant   12:fish
+// 13:frog       14:giraffe    15:goat       16:hippo
+// 17:horse      18:jellyfish  19:lizard     20:monkey
+// 21:mouse      22:polar bear 23:sheep      24:snake
+// 25:spider     26:tiger      27:zebra
+// 28:apple      29:banana     30:bean       31:carrot
+// 32:coconut    33:grape      34:kiwi       35:lemon
+// 36:lime       37:mango      38:onion      39:orange
+// 40:pea        41:pear       42:pineapple  43:potato
+// 44:tomato     45:watermelon
+// 46:bread      47:burger     48:cake       49:candy
+// 50:chips      51:chocolate  52:egg        53:ice cream
+// 54:juice      55:lemonade   56:meat       57:meatballs
+// 58:milk       59:pie        60:rice       61:sausage
+// 62:water
+// 63:black      64:blue       65:brown      66:gray
+// 67:green      68:orange     69:pink       70:purple
+// 71:red        72:white      73:yellow
+// 74:baby       75:brother    76:cousin     77:father
+// 78:grandfather 79:grandmother 80:mother   81:sister
+// 82:arm        83:ear        84:eye        85:face
+// 86:foot       87:hair       88:hand       89:head
+// 90:leg        91:mouth      92:nose       93:tail
+// 94:baseball cap 95:boots    96:dress      97:glasses
+// 98:hat        99:jacket    100:jeans     101:shirt
+//102:shoe      103:shorts    104:skirt     105:sock
+//106:T-shirt   107:trousers
+//108:apartment 109:bathroom  110:bedroom   111:dining room
+//112:garden    113:hall      114:house     115:kitchen
+//116:living room
+//117:armchair  118:bath      119:bed       120:bookcase
+//121:box       122:chair     123:clock     124:cupboard
+//125:desk      126:door      127:floor     128:lamp
+//129:mat       130:mirror    131:rug       132:sofa
+//133:table     134:wall      135:window
+//136:badminton 137:baseball  138:basketball 139:board game
+//140:football  141:hockey    142:skateboarding 143:swimming
+//144:table tennis 145:tennis
+//146:bike      147:boat      148:bus       149:car
+//150:helicopter 151:motorbike 152:plane    153:ship
+//154:train     155:truck
+//156:beach     157:flower    158:sea       159:shell
+//160:sun       161:tree
+//162:ball      163:balloon   164:bat       165:camera
+//166:doll      167:guitar    168:kite      169:music
+//170:painting  171:piano     172:radio     173:robot
+//174:teddy bear 175:toy
+//176:bookshop  177:park      178:playground 179:school
+//180:shop      181:street    182:zoo
+//183:angry     184:beautiful 185:big       186:clean
+//187:dirty     188:funny     189:good      190:happy
+//191:long      192:new       193:nice      194:old
+//195:sad       196:scary     197:short     198:silly
+//199:small     200:ugly      201:young
+//202:afternoon 203:birthday  204:day       205:evening
+//206:morning   207:night     208:today     209:year
+//210:alien     211:boy       212:child     213:girl
+//214:man       215:monster   216:person    217:woman
+//218:bounce    219:catch     220:clap      221:draw
+//222:drink     223:eat       224:fly       225:jump
+//226:kick      227:paint     228:run       229:sing
+//230:sit       231:sleep     232:smile     233:swim
+//234:throw     235:walk      236:wave      237:write
+
+const KIDS_WORDS = {
+    1: 'bear',        2: 'bee',         3: 'bird',        4: 'cat',
+    5: 'chicken',     6: 'cow',         7: 'crocodile',   8: 'dog',
+    9: 'donkey',     10: 'duck',       11: 'elephant',   12: 'fish',
+   13: 'frog',       14: 'giraffe',    15: 'goat',       16: 'hippo',
+   17: 'horse',      18: 'jellyfish',  19: 'lizard',     20: 'monkey',
+   21: 'mouse',      22: 'polar bear', 23: 'sheep',      24: 'snake',
+   25: 'spider',     26: 'tiger',      27: 'zebra',
+   28: 'apple',      29: 'banana',     30: 'bean',       31: 'carrot',
+   32: 'coconut',    33: 'grape',      34: 'kiwi',       35: 'lemon',
+   36: 'lime',       37: 'mango',      38: 'onion',      39: 'orange',
+   40: 'pea',        41: 'pear',       42: 'pineapple',  43: 'potato',
+   44: 'tomato',     45: 'watermelon',
+   46: 'bread',      47: 'burger',     48: 'cake',       49: 'candy',
+   50: 'chips',      51: 'chocolate',  52: 'egg',        53: 'ice cream',
+   54: 'juice',      55: 'lemonade',   56: 'meat',       57: 'meatballs',
+   58: 'milk',       59: 'pie',        60: 'rice',       61: 'sausage',
+   62: 'water',
+   63: 'black',      64: 'blue',       65: 'brown',      66: 'gray',
+   67: 'green',      68: 'orange',     69: 'pink',       70: 'purple',
+   71: 'red',        72: 'white',      73: 'yellow',
+   74: 'baby',       75: 'brother',    76: 'cousin',     77: 'father',
+   78: 'grandfather',79: 'grandmother',80: 'mother',     81: 'sister',
+   82: 'arm',        83: 'ear',        84: 'eye',        85: 'face',
+   86: 'foot',       87: 'hair',       88: 'hand',       89: 'head',
+   90: 'leg',        91: 'mouth',      92: 'nose',       93: 'tail',
+   94: 'baseball cap',95: 'boots',    96: 'dress',       97: 'glasses',
+   98: 'hat',        99: 'jacket',    100: 'jeans',     101: 'shirt',
+  102: 'shoe',      103: 'shorts',    104: 'skirt',     105: 'sock',
+  106: 'T-shirt',   107: 'trousers',
+  108: 'apartment', 109: 'bathroom',  110: 'bedroom',   111: 'dining room',
+  112: 'garden',    113: 'hall',      114: 'house',     115: 'kitchen',
+  116: 'living room',
+  117: 'armchair',  118: 'bath',      119: 'bed',       120: 'bookcase',
+  121: 'box',       122: 'chair',     123: 'clock',     124: 'cupboard',
+  125: 'desk',      126: 'door',      127: 'floor',     128: 'lamp',
+  129: 'mat',       130: 'mirror',    131: 'rug',       132: 'sofa',
+  133: 'table',     134: 'wall',      135: 'window',
+  136: 'badminton', 137: 'baseball',  138: 'basketball',139: 'board game',
+  140: 'football',  141: 'hockey',    142: 'skateboarding',143: 'swimming',
+  144: 'table tennis',145: 'tennis',
+  146: 'bike',      147: 'boat',      148: 'bus',       149: 'car',
+  150: 'helicopter',151: 'motorbike', 152: 'plane',     153: 'ship',
+  154: 'train',     155: 'truck',
+  156: 'beach',     157: 'flower',    158: 'sea',       159: 'shell',
+  160: 'sun',       161: 'tree',
+  162: 'ball',      163: 'balloon',   164: 'bat',       165: 'camera',
+  166: 'doll',      167: 'guitar',    168: 'kite',      169: 'music',
+  170: 'painting',  171: 'piano',     172: 'radio',     173: 'robot',
+  174: 'teddy bear',175: 'toy',
+  176: 'bookshop',  177: 'park',      178: 'playground',179: 'school',
+  180: 'shop',      181: 'street',    182: 'zoo',
+  183: 'angry',     184: 'beautiful', 185: 'big',       186: 'clean',
+  187: 'dirty',     188: 'funny',     189: 'good',      190: 'happy',
+  191: 'long',      192: 'new',       193: 'nice',      194: 'old',
+  195: 'sad',       196: 'scary',     197: 'short',     198: 'silly',
+  199: 'small',     200: 'ugly',      201: 'young',
+  202: 'afternoon', 203: 'birthday',  204: 'day',       205: 'evening',
+  206: 'morning',   207: 'night',     208: 'today',     209: 'year',
+  210: 'alien',     211: 'boy',       212: 'child',     213: 'girl',
+  214: 'man',       215: 'monster',   216: 'person',    217: 'woman',
+  218: 'bounce',    219: 'catch',     220: 'clap',      221: 'draw',
+  222: 'drink',     223: 'eat',       224: 'fly',       225: 'jump',
+  226: 'kick',      227: 'paint',     228: 'run',       229: 'sing',
+  230: 'sit',       231: 'sleep',     232: 'smile',     233: 'swim',
+  234: 'throw',     235: 'walk',      236: 'wave',      237: 'write',
+};
+
 const KIDS_GRAMMAR_LEVELS = [
   {
     id: 'kids',
@@ -10,319 +149,318 @@ const KIDS_GRAMMAR_LEVELS = [
     color: '#E91E8C',
     quizzes: [
 
-      // ── Quiz 1 · Animals (27 söz | pic 1–27) ──────────────────────────
+      // ── Quiz 1 · Animals (27 söz | id 1–27) ──────────────────────────
       [
-        { en: 'bear',       wen: 'bird',       pic: 1  },
-        { en: 'bee',        wen: 'spider',      pic: 2  },
-        { en: 'bird',       wen: 'bee',         pic: 3  },
-        { en: 'cat',        wen: 'dog',         pic: 4  },
-        { en: 'chicken',    wen: 'duck',        pic: 5  },
-        { en: 'cow',        wen: 'horse',       pic: 6  },
-        { en: 'crocodile',  wen: 'lizard',      pic: 7  },
-        { en: 'dog',        wen: 'cat',         pic: 8  },
-        { en: 'donkey',     wen: 'horse',       pic: 9  },
-        { en: 'duck',       wen: 'chicken',     pic: 10 },
-        { en: 'elephant',   wen: 'hippo',       pic: 11 },
-        { en: 'fish',       wen: 'frog',        pic: 12 },
-        { en: 'frog',       wen: 'fish',        pic: 13 },
-        { en: 'giraffe',    wen: 'zebra',       pic: 14 },
-        { en: 'goat',       wen: 'sheep',       pic: 15 },
-        { en: 'hippo',      wen: 'elephant',    pic: 16 },
-        { en: 'horse',      wen: 'donkey',      pic: 17 },
-        { en: 'jellyfish',  wen: 'fish',        pic: 18 },
-        { en: 'lizard',     wen: 'crocodile',   pic: 19 },
-        { en: 'monkey',     wen: 'bear',        pic: 20 },
-        { en: 'mouse',      wen: 'cat',         pic: 21 },
-        { en: 'polar bear', wen: 'bear',        pic: 22 },
-        { en: 'sheep',      wen: 'goat',        pic: 23 },
-        { en: 'snake',      wen: 'lizard',      pic: 24 },
-        { en: 'spider',     wen: 'bee',         pic: 25 },
-        { en: 'tiger',      wen: 'cat',         pic: 26 },
-        { en: 'zebra',      wen: 'horse',       pic: 27 },
+        { pic:  1, correct:  1, wrong:  3 },  //  1:bear      vs  3:bird
+        { pic:  2, correct:  2, wrong: 25 },  //  2:bee       vs 25:spider
+        { pic:  3, correct:  3, wrong:  2 },  //  3:bird      vs  2:bee
+        { pic:  4, correct:  4, wrong:  8 },  //  4:cat       vs  8:dog
+        { pic:  5, correct:  5, wrong: 10 },  //  5:chicken   vs 10:duck
+        { pic:  6, correct:  6, wrong: 17 },  //  6:cow       vs 17:horse
+        { pic:  7, correct:  7, wrong: 19 },  //  7:crocodile vs 19:lizard
+        { pic:  8, correct:  8, wrong:  4 },  //  8:dog       vs  4:cat
+        { pic:  9, correct:  9, wrong: 17 },  //  9:donkey    vs 17:horse
+        { pic: 10, correct: 10, wrong:  5 },  // 10:duck      vs  5:chicken
+        { pic: 11, correct: 11, wrong: 16 },  // 11:elephant  vs 16:hippo
+        { pic: 12, correct: 12, wrong: 13 },  // 12:fish      vs 13:frog
+        { pic: 13, correct: 13, wrong: 12 },  // 13:frog      vs 12:fish
+        { pic: 14, correct: 14, wrong: 27 },  // 14:giraffe   vs 27:zebra
+        { pic: 15, correct: 15, wrong: 23 },  // 15:goat      vs 23:sheep
+        { pic: 16, correct: 16, wrong: 11 },  // 16:hippo     vs 11:elephant
+        { pic: 17, correct: 17, wrong:  9 },  // 17:horse     vs  9:donkey
+        { pic: 18, correct: 18, wrong: 12 },  // 18:jellyfish vs 12:fish
+        { pic: 19, correct: 19, wrong:  7 },  // 19:lizard    vs  7:crocodile
+        { pic: 20, correct: 20, wrong:  1 },  // 20:monkey    vs  1:bear
+        { pic: 21, correct: 21, wrong:  4 },  // 21:mouse     vs  4:cat
+        { pic: 22, correct: 22, wrong:  1 },  // 22:polar bear vs 1:bear
+        { pic: 23, correct: 23, wrong: 15 },  // 23:sheep     vs 15:goat
+        { pic: 24, correct: 24, wrong: 19 },  // 24:snake     vs 19:lizard
+        { pic: 25, correct: 25, wrong:  2 },  // 25:spider    vs  2:bee
+        { pic: 26, correct: 26, wrong:  4 },  // 26:tiger     vs  4:cat
+        { pic: 27, correct: 27, wrong: 17 },  // 27:zebra     vs 17:horse
       ],
 
-      // ── Quiz 2 · Fruits & Vegetables (18 söz | pic 28–45) ────────────
+      // ── Quiz 2 · Fruits & Vegetables (18 söz | id 28–45) ─────────────
       [
-        { en: 'apple',      wen: 'pear',        pic: 28 },
-        { en: 'banana',     wen: 'lemon',       pic: 29 },
-        { en: 'bean',       wen: 'pea',         pic: 30 },
-        { en: 'carrot',     wen: 'potato',      pic: 31 },
-        { en: 'coconut',    wen: 'orange',      pic: 32 },
-        { en: 'grape',      wen: 'apple',       pic: 33 },
-        { en: 'kiwi',       wen: 'lime',        pic: 34 },
-        { en: 'lemon',      wen: 'lime',        pic: 35 },
-        { en: 'lime',       wen: 'lemon',       pic: 36 },
-        { en: 'mango',      wen: 'orange',      pic: 37 },
-        { en: 'onion',      wen: 'potato',      pic: 38 },
-        { en: 'orange',     wen: 'lemon',       pic: 39 },
-        { en: 'pea',        wen: 'bean',        pic: 40 },
-        { en: 'pear',       wen: 'apple',       pic: 41 },
-        { en: 'pineapple',  wen: 'coconut',     pic: 42 },
-        { en: 'potato',     wen: 'onion',       pic: 43 },
-        { en: 'tomato',     wen: 'apple',       pic: 44 },
-        { en: 'watermelon', wen: 'pineapple',   pic: 45 },
+        { pic: 28, correct: 28, wrong: 41 },  // 28:apple      vs 41:pear
+        { pic: 29, correct: 29, wrong: 35 },  // 29:banana     vs 35:lemon
+        { pic: 30, correct: 30, wrong: 40 },  // 30:bean       vs 40:pea
+        { pic: 31, correct: 31, wrong: 43 },  // 31:carrot     vs 43:potato
+        { pic: 32, correct: 32, wrong: 39 },  // 32:coconut    vs 39:orange
+        { pic: 33, correct: 33, wrong: 28 },  // 33:grape      vs 28:apple
+        { pic: 34, correct: 34, wrong: 36 },  // 34:kiwi       vs 36:lime
+        { pic: 35, correct: 35, wrong: 36 },  // 35:lemon      vs 36:lime
+        { pic: 36, correct: 36, wrong: 35 },  // 36:lime       vs 35:lemon
+        { pic: 37, correct: 37, wrong: 39 },  // 37:mango      vs 39:orange
+        { pic: 38, correct: 38, wrong: 43 },  // 38:onion      vs 43:potato
+        { pic: 39, correct: 39, wrong: 35 },  // 39:orange     vs 35:lemon
+        { pic: 40, correct: 40, wrong: 30 },  // 40:pea        vs 30:bean
+        { pic: 41, correct: 41, wrong: 28 },  // 41:pear       vs 28:apple
+        { pic: 42, correct: 42, wrong: 32 },  // 42:pineapple  vs 32:coconut
+        { pic: 43, correct: 43, wrong: 38 },  // 43:potato     vs 38:onion
+        { pic: 44, correct: 44, wrong: 28 },  // 44:tomato     vs 28:apple
+        { pic: 45, correct: 45, wrong: 42 },  // 45:watermelon vs 42:pineapple
       ],
 
-      // ── Quiz 3 · Food & Drinks (17 söz | pic 46–62) ──────────────────
+      // ── Quiz 3 · Food & Drinks (17 söz | id 46–62) ───────────────────
       [
-        { en: 'bread',      wen: 'cake',        pic: 46 },
-        { en: 'burger',     wen: 'pie',         pic: 47 },
-        { en: 'cake',       wen: 'bread',       pic: 48 },
-        { en: 'candy',      wen: 'chocolate',   pic: 49 },
-        { en: 'chips',      wen: 'bread',       pic: 50 },
-        { en: 'chocolate',  wen: 'candy',       pic: 51 },
-        { en: 'egg',        wen: 'meat',        pic: 52 },
-        { en: 'ice cream',  wen: 'cake',        pic: 53 },
-        { en: 'juice',      wen: 'milk',        pic: 54 },
-        { en: 'lemonade',   wen: 'juice',       pic: 55 },
-        { en: 'meat',       wen: 'sausage',     pic: 56 },
-        { en: 'meatballs',  wen: 'meat',        pic: 57 },
-        { en: 'milk',       wen: 'juice',       pic: 58 },
-        { en: 'pie',        wen: 'cake',        pic: 59 },
-        { en: 'rice',       wen: 'bread',       pic: 60 },
-        { en: 'sausage',    wen: 'meat',        pic: 61 },
-        { en: 'water',      wen: 'juice',       pic: 62 },
+        { pic: 46, correct: 46, wrong: 48 },  // 46:bread     vs 48:cake
+        { pic: 47, correct: 47, wrong: 59 },  // 47:burger    vs 59:pie
+        { pic: 48, correct: 48, wrong: 46 },  // 48:cake      vs 46:bread
+        { pic: 49, correct: 49, wrong: 51 },  // 49:candy     vs 51:chocolate
+        { pic: 50, correct: 50, wrong: 46 },  // 50:chips     vs 46:bread
+        { pic: 51, correct: 51, wrong: 49 },  // 51:chocolate vs 49:candy
+        { pic: 52, correct: 52, wrong: 56 },  // 52:egg       vs 56:meat
+        { pic: 53, correct: 53, wrong: 48 },  // 53:ice cream vs 48:cake
+        { pic: 54, correct: 54, wrong: 58 },  // 54:juice     vs 58:milk
+        { pic: 55, correct: 55, wrong: 54 },  // 55:lemonade  vs 54:juice
+        { pic: 56, correct: 56, wrong: 61 },  // 56:meat      vs 61:sausage
+        { pic: 57, correct: 57, wrong: 56 },  // 57:meatballs vs 56:meat
+        { pic: 58, correct: 58, wrong: 54 },  // 58:milk      vs 54:juice
+        { pic: 59, correct: 59, wrong: 48 },  // 59:pie       vs 48:cake
+        { pic: 60, correct: 60, wrong: 46 },  // 60:rice      vs 46:bread
+        { pic: 61, correct: 61, wrong: 56 },  // 61:sausage   vs 56:meat
+        { pic: 62, correct: 62, wrong: 54 },  // 62:water     vs 54:juice
       ],
 
-      // ── Quiz 4 · Colors (11 söz | pic 63–73) ─────────────────────────
+      // ── Quiz 4 · Colours (11 söz | id 63–73) ─────────────────────────
       [
-        { en: 'black',      wen: 'brown',       pic: 63 },
-        { en: 'blue',       wen: 'purple',      pic: 64 },
-        { en: 'brown',      wen: 'black',       pic: 65 },
-        { en: 'gray',       wen: 'white',       pic: 66 },
-        { en: 'green',      wen: 'blue',        pic: 67 },
-        { en: 'orange',     wen: 'yellow',      pic: 68 },
-        { en: 'pink',       wen: 'red',         pic: 69 },
-        { en: 'purple',     wen: 'blue',        pic: 70 },
-        { en: 'red',        wen: 'pink',        pic: 71 },
-        { en: 'white',      wen: 'gray',        pic: 72 },
-        { en: 'yellow',     wen: 'orange',      pic: 73 },
+        { pic: 63, correct: 63, wrong: 65 },  // 63:black  vs 65:brown
+        { pic: 64, correct: 64, wrong: 70 },  // 64:blue   vs 70:purple
+        { pic: 65, correct: 65, wrong: 63 },  // 65:brown  vs 63:black
+        { pic: 66, correct: 66, wrong: 72 },  // 66:gray   vs 72:white
+        { pic: 67, correct: 67, wrong: 64 },  // 67:green  vs 64:blue
+        { pic: 68, correct: 68, wrong: 73 },  // 68:orange vs 73:yellow
+        { pic: 69, correct: 69, wrong: 71 },  // 69:pink   vs 71:red
+        { pic: 70, correct: 70, wrong: 64 },  // 70:purple vs 64:blue
+        { pic: 71, correct: 71, wrong: 69 },  // 71:red    vs 69:pink
+        { pic: 72, correct: 72, wrong: 66 },  // 72:white  vs 66:gray
+        { pic: 73, correct: 73, wrong: 68 },  // 73:yellow vs 68:orange
       ],
 
-      // ── Quiz 5 · Family (8 söz | pic 74–81) ──────────────────────────
+      // ── Quiz 5 · Family (8 söz | id 74–81) ───────────────────────────
       [
-        { en: 'baby',        wen: 'child',       pic: 74 },
-        { en: 'brother',     wen: 'sister',      pic: 75 },
-        { en: 'cousin',      wen: 'brother',     pic: 76 },
-        { en: 'father',      wen: 'grandfather', pic: 77 },
-        { en: 'grandfather', wen: 'father',      pic: 78 },
-        { en: 'grandmother', wen: 'mother',      pic: 79 },
-        { en: 'mother',      wen: 'grandmother', pic: 80 },
-        { en: 'sister',      wen: 'brother',     pic: 81 },
+        { pic: 74, correct: 74, wrong: 212 }, // 74:baby        vs 212:child
+        { pic: 75, correct: 75, wrong: 81  }, // 75:brother     vs  81:sister
+        { pic: 76, correct: 76, wrong: 75  }, // 76:cousin      vs  75:brother
+        { pic: 77, correct: 77, wrong: 78  }, // 77:father      vs  78:grandfather
+        { pic: 78, correct: 78, wrong: 77  }, // 78:grandfather vs  77:father
+        { pic: 79, correct: 79, wrong: 80  }, // 79:grandmother vs  80:mother
+        { pic: 80, correct: 80, wrong: 79  }, // 80:mother      vs  79:grandmother
+        { pic: 81, correct: 81, wrong: 75  }, // 81:sister      vs  75:brother
       ],
 
-      // ── Quiz 6 · Body Parts (12 söz | pic 82–93) ─────────────────────
+      // ── Quiz 6 · Body Parts (12 söz | id 82–93) ──────────────────────
       [
-        { en: 'arm',   wen: 'leg',   pic: 82 },
-        { en: 'ear',   wen: 'eye',   pic: 83 },
-        { en: 'eye',   wen: 'ear',   pic: 84 },
-        { en: 'face',  wen: 'head',  pic: 85 },
-        { en: 'foot',  wen: 'hand',  pic: 86 },
-        { en: 'hair',  wen: 'face',  pic: 87 },
-        { en: 'hand',  wen: 'foot',  pic: 88 },
-        { en: 'head',  wen: 'face',  pic: 89 },
-        { en: 'leg',   wen: 'arm',   pic: 90 },
-        { en: 'mouth', wen: 'nose',  pic: 91 },
-        { en: 'nose',  wen: 'mouth', pic: 92 },
-        { en: 'tail',  wen: 'leg',   pic: 93 },
+        { pic: 82, correct: 82, wrong: 90 },  // 82:arm   vs 90:leg
+        { pic: 83, correct: 83, wrong: 84 },  // 83:ear   vs 84:eye
+        { pic: 84, correct: 84, wrong: 83 },  // 84:eye   vs 83:ear
+        { pic: 85, correct: 85, wrong: 89 },  // 85:face  vs 89:head
+        { pic: 86, correct: 86, wrong: 88 },  // 86:foot  vs 88:hand
+        { pic: 87, correct: 87, wrong: 85 },  // 87:hair  vs 85:face
+        { pic: 88, correct: 88, wrong: 86 },  // 88:hand  vs 86:foot
+        { pic: 89, correct: 89, wrong: 85 },  // 89:head  vs 85:face
+        { pic: 90, correct: 90, wrong: 82 },  // 90:leg   vs 82:arm
+        { pic: 91, correct: 91, wrong: 92 },  // 91:mouth vs 92:nose
+        { pic: 92, correct: 92, wrong: 91 },  // 92:nose  vs 91:mouth
+        { pic: 93, correct: 93, wrong: 90 },  // 93:tail  vs 90:leg
       ],
 
-      // ── Quiz 7 · Clothes (14 söz | pic 94–107) ───────────────────────
+      // ── Quiz 7 · Clothes (14 söz | id 94–107) ────────────────────────
       [
-        { en: 'baseball cap', wen: 'hat',          pic: 94  },
-        { en: 'boots',        wen: 'shoe',          pic: 95  },
-        { en: 'dress',        wen: 'skirt',         pic: 96  },
-        { en: 'glasses',      wen: 'hat',           pic: 97  },
-        { en: 'hat',          wen: 'baseball cap',  pic: 98  },
-        { en: 'jacket',       wen: 'shirt',         pic: 99  },
-        { en: 'jeans',        wen: 'trousers',      pic: 100 },
-        { en: 'shirt',        wen: 'jacket',        pic: 101 },
-        { en: 'shoe',         wen: 'boots',         pic: 102 },
-        { en: 'shorts',       wen: 'trousers',      pic: 103 },
-        { en: 'skirt',        wen: 'dress',         pic: 104 },
-        { en: 'sock',         wen: 'shoe',          pic: 105 },
-        { en: 'T-shirt',      wen: 'shirt',         pic: 106 },
-        { en: 'trousers',     wen: 'shorts',        pic: 107 },
+        { pic:  94, correct:  94, wrong:  98 }, //  94:baseball cap vs  98:hat
+        { pic:  95, correct:  95, wrong: 102 }, //  95:boots        vs 102:shoe
+        { pic:  96, correct:  96, wrong: 104 }, //  96:dress        vs 104:skirt
+        { pic:  97, correct:  97, wrong:  98 }, //  97:glasses      vs  98:hat
+        { pic:  98, correct:  98, wrong:  94 }, //  98:hat          vs  94:baseball cap
+        { pic:  99, correct:  99, wrong: 101 }, //  99:jacket       vs 101:shirt
+        { pic: 100, correct: 100, wrong: 107 }, // 100:jeans        vs 107:trousers
+        { pic: 101, correct: 101, wrong:  99 }, // 101:shirt        vs  99:jacket
+        { pic: 102, correct: 102, wrong:  95 }, // 102:shoe         vs  95:boots
+        { pic: 103, correct: 103, wrong: 107 }, // 103:shorts       vs 107:trousers
+        { pic: 104, correct: 104, wrong:  96 }, // 104:skirt        vs  96:dress
+        { pic: 105, correct: 105, wrong: 102 }, // 105:sock         vs 102:shoe
+        { pic: 106, correct: 106, wrong: 101 }, // 106:T-shirt      vs 101:shirt
+        { pic: 107, correct: 107, wrong: 103 }, // 107:trousers     vs 103:shorts
       ],
 
-      // ── Quiz 8 · House & Rooms (9 söz | pic 108–116) ─────────────────
+      // ── Quiz 8 · House & Rooms (9 söz | id 108–116) ──────────────────
       [
-        { en: 'apartment',   wen: 'house',       pic: 108 },
-        { en: 'bathroom',    wen: 'bedroom',     pic: 109 },
-        { en: 'bedroom',     wen: 'bathroom',    pic: 110 },
-        { en: 'dining room', wen: 'kitchen',     pic: 111 },
-        { en: 'garden',      wen: 'park',        pic: 112 },
-        { en: 'hall',        wen: 'room',        pic: 113 },
-        { en: 'house',       wen: 'apartment',   pic: 114 },
-        { en: 'kitchen',     wen: 'dining room', pic: 115 },
-        { en: 'living room', wen: 'bedroom',     pic: 116 },
+        { pic: 108, correct: 108, wrong: 114 }, // 108:apartment   vs 114:house
+        { pic: 109, correct: 109, wrong: 110 }, // 109:bathroom    vs 110:bedroom
+        { pic: 110, correct: 110, wrong: 109 }, // 110:bedroom     vs 109:bathroom
+        { pic: 111, correct: 111, wrong: 115 }, // 111:dining room vs 115:kitchen
+        { pic: 112, correct: 112, wrong: 177 }, // 112:garden      vs 177:park
+        { pic: 113, correct: 113, wrong: 116 }, // 113:hall        vs 116:living room
+        { pic: 114, correct: 114, wrong: 108 }, // 114:house       vs 108:apartment
+        { pic: 115, correct: 115, wrong: 111 }, // 115:kitchen     vs 111:dining room
+        { pic: 116, correct: 116, wrong: 110 }, // 116:living room vs 110:bedroom
       ],
 
-      // ── Quiz 9 · Furniture & Objects (19 söz | pic 117–135) ──────────
+      // ── Quiz 9 · Furniture & Objects (19 söz | id 117–135) ───────────
       [
-        { en: 'armchair',  wen: 'chair',     pic: 117 },
-        { en: 'bath',      wen: 'bed',       pic: 118 },
-        { en: 'bed',       wen: 'sofa',      pic: 119 },
-        { en: 'bookcase',  wen: 'cupboard',  pic: 120 },
-        { en: 'box',       wen: 'bag',       pic: 121 },
-        { en: 'chair',     wen: 'armchair',  pic: 122 },
-        { en: 'clock',     wen: 'lamp',      pic: 123 },
-        { en: 'cupboard',  wen: 'bookcase',  pic: 124 },
-        { en: 'desk',      wen: 'table',     pic: 125 },
-        { en: 'door',      wen: 'window',    pic: 126 },
-        { en: 'floor',     wen: 'wall',      pic: 127 },
-        { en: 'lamp',      wen: 'clock',     pic: 128 },
-        { en: 'mat',       wen: 'rug',       pic: 129 },
-        { en: 'mirror',    wen: 'window',    pic: 130 },
-        { en: 'rug',       wen: 'mat',       pic: 131 },
-        { en: 'sofa',      wen: 'armchair',  pic: 132 },
-        { en: 'table',     wen: 'desk',      pic: 133 },
-        { en: 'wall',      wen: 'floor',     pic: 134 },
-        { en: 'window',    wen: 'door',      pic: 135 },
+        { pic: 117, correct: 117, wrong: 122 }, // 117:armchair vs 122:chair
+        { pic: 118, correct: 118, wrong: 119 }, // 118:bath     vs 119:bed
+        { pic: 119, correct: 119, wrong: 132 }, // 119:bed      vs 132:sofa
+        { pic: 120, correct: 120, wrong: 124 }, // 120:bookcase vs 124:cupboard
+        { pic: 121, correct: 121, wrong: 119 }, // 121:box      vs 119:bed
+        { pic: 122, correct: 122, wrong: 117 }, // 122:chair    vs 117:armchair
+        { pic: 123, correct: 123, wrong: 128 }, // 123:clock    vs 128:lamp
+        { pic: 124, correct: 124, wrong: 120 }, // 124:cupboard vs 120:bookcase
+        { pic: 125, correct: 125, wrong: 133 }, // 125:desk     vs 133:table
+        { pic: 126, correct: 126, wrong: 135 }, // 126:door     vs 135:window
+        { pic: 127, correct: 127, wrong: 134 }, // 127:floor    vs 134:wall
+        { pic: 128, correct: 128, wrong: 123 }, // 128:lamp     vs 123:clock
+        { pic: 129, correct: 129, wrong: 131 }, // 129:mat      vs 131:rug
+        { pic: 130, correct: 130, wrong: 135 }, // 130:mirror   vs 135:window
+        { pic: 131, correct: 131, wrong: 129 }, // 131:rug      vs 129:mat
+        { pic: 132, correct: 132, wrong: 117 }, // 132:sofa     vs 117:armchair
+        { pic: 133, correct: 133, wrong: 125 }, // 133:table    vs 125:desk
+        { pic: 134, correct: 134, wrong: 127 }, // 134:wall     vs 127:floor
+        { pic: 135, correct: 135, wrong: 126 }, // 135:window   vs 126:door
       ],
 
-      // ── Quiz 10 · Sports & Games (10 söz | pic 136–145) ──────────────
+      // ── Quiz 10 · Sports & Games (10 söz | id 136–145) ───────────────
       [
-        { en: 'badminton',     wen: 'tennis',      pic: 136 },
-        { en: 'baseball',      wen: 'basketball',  pic: 137 },
-        { en: 'basketball',    wen: 'baseball',    pic: 138 },
-        { en: 'board game',    wen: 'game',        pic: 139 },
-        { en: 'football',      wen: 'basketball',  pic: 140 },
-        { en: 'hockey',        wen: 'football',    pic: 141 },
-        { en: 'skateboarding', wen: 'football',    pic: 142 },
-        { en: 'swimming',      wen: 'football',    pic: 143 },
-        { en: 'table tennis',  wen: 'tennis',      pic: 144 },
-        { en: 'tennis',        wen: 'badminton',   pic: 145 },
+        { pic: 136, correct: 136, wrong: 145 }, // 136:badminton     vs 145:tennis
+        { pic: 137, correct: 137, wrong: 138 }, // 137:baseball      vs 138:basketball
+        { pic: 138, correct: 138, wrong: 137 }, // 138:basketball    vs 137:baseball
+        { pic: 139, correct: 139, wrong: 140 }, // 139:board game    vs 140:football
+        { pic: 140, correct: 140, wrong: 138 }, // 140:football      vs 138:basketball
+        { pic: 141, correct: 141, wrong: 140 }, // 141:hockey        vs 140:football
+        { pic: 142, correct: 142, wrong: 140 }, // 142:skateboarding vs 140:football
+        { pic: 143, correct: 143, wrong: 140 }, // 143:swimming      vs 140:football
+        { pic: 144, correct: 144, wrong: 145 }, // 144:table tennis  vs 145:tennis
+        { pic: 145, correct: 145, wrong: 136 }, // 145:tennis        vs 136:badminton
       ],
 
-      // ── Quiz 11 · Transport (10 söz | pic 146–155) ───────────────────
+      // ── Quiz 11 · Transport (10 söz | id 146–155) ────────────────────
       [
-        { en: 'bike',       wen: 'motorbike', pic: 146 },
-        { en: 'boat',       wen: 'ship',      pic: 147 },
-        { en: 'bus',        wen: 'car',       pic: 148 },
-        { en: 'car',        wen: 'bus',       pic: 149 },
-        { en: 'helicopter', wen: 'plane',     pic: 150 },
-        { en: 'motorbike',  wen: 'bike',      pic: 151 },
-        { en: 'plane',      wen: 'helicopter',pic: 152 },
-        { en: 'ship',       wen: 'boat',      pic: 153 },
-        { en: 'train',      wen: 'bus',       pic: 154 },
-        { en: 'truck',      wen: 'car',       pic: 155 },
+        { pic: 146, correct: 146, wrong: 151 }, // 146:bike        vs 151:motorbike
+        { pic: 147, correct: 147, wrong: 153 }, // 147:boat        vs 153:ship
+        { pic: 148, correct: 148, wrong: 149 }, // 148:bus         vs 149:car
+        { pic: 149, correct: 149, wrong: 148 }, // 149:car         vs 148:bus
+        { pic: 150, correct: 150, wrong: 152 }, // 150:helicopter  vs 152:plane
+        { pic: 151, correct: 151, wrong: 146 }, // 151:motorbike   vs 146:bike
+        { pic: 152, correct: 152, wrong: 150 }, // 152:plane       vs 150:helicopter
+        { pic: 153, correct: 153, wrong: 147 }, // 153:ship        vs 147:boat
+        { pic: 154, correct: 154, wrong: 148 }, // 154:train       vs 148:bus
+        { pic: 155, correct: 155, wrong: 149 }, // 155:truck       vs 149:car
       ],
 
-      // ── Quiz 12 · Nature (6 söz | pic 156–161) ───────────────────────
+      // ── Quiz 12 · Nature (6 söz | id 156–161) ────────────────────────
       [
-        { en: 'beach',  wen: 'sea',    pic: 156 },
-        { en: 'flower', wen: 'tree',   pic: 157 },
-        { en: 'sea',    wen: 'beach',  pic: 158 },
-        { en: 'shell',  wen: 'flower', pic: 159 },
-        { en: 'sun',    wen: 'flower', pic: 160 },
-        { en: 'tree',   wen: 'flower', pic: 161 },
+        { pic: 156, correct: 156, wrong: 158 }, // 156:beach  vs 158:sea
+        { pic: 157, correct: 157, wrong: 161 }, // 157:flower vs 161:tree
+        { pic: 158, correct: 158, wrong: 156 }, // 158:sea    vs 156:beach
+        { pic: 159, correct: 159, wrong: 157 }, // 159:shell  vs 157:flower
+        { pic: 160, correct: 160, wrong: 157 }, // 160:sun    vs 157:flower
+        { pic: 161, correct: 161, wrong: 157 }, // 161:tree   vs 157:flower
       ],
 
-      // ── Quiz 13 · Toys & Hobbies (14 söz | pic 162–175) ─────────────
+      // ── Quiz 13 · Toys & Hobbies (14 söz | id 162–175) ───────────────
       [
-        { en: 'ball',       wen: 'balloon',    pic: 162 },
-        { en: 'balloon',    wen: 'ball',        pic: 163 },
-        { en: 'bat',        wen: 'ball',        pic: 164 },
-        { en: 'camera',     wen: 'phone',       pic: 165 },
-        { en: 'doll',       wen: 'teddy bear',  pic: 166 },
-        { en: 'guitar',     wen: 'piano',       pic: 167 },
-        { en: 'kite',       wen: 'balloon',     pic: 168 },
-        { en: 'music',      wen: 'song',        pic: 169 },
-        { en: 'painting',   wen: 'drawing',     pic: 170 },
-        { en: 'piano',      wen: 'guitar',      pic: 171 },
-        { en: 'radio',      wen: 'camera',      pic: 172 },
-        { en: 'robot',      wen: 'doll',        pic: 173 },
-        { en: 'teddy bear', wen: 'doll',        pic: 174 },
-        { en: 'toy',        wen: 'doll',        pic: 175 },
+        { pic: 162, correct: 162, wrong: 163 }, // 162:ball      vs 163:balloon
+        { pic: 163, correct: 163, wrong: 162 }, // 163:balloon   vs 162:ball
+        { pic: 164, correct: 164, wrong: 162 }, // 164:bat       vs 162:ball
+        { pic: 165, correct: 165, wrong: 172 }, // 165:camera    vs 172:radio
+        { pic: 166, correct: 166, wrong: 174 }, // 166:doll      vs 174:teddy bear
+        { pic: 167, correct: 167, wrong: 171 }, // 167:guitar    vs 171:piano
+        { pic: 168, correct: 168, wrong: 163 }, // 168:kite      vs 163:balloon
+        { pic: 169, correct: 169, wrong: 167 }, // 169:music     vs 167:guitar
+        { pic: 170, correct: 170, wrong: 221 }, // 170:painting  vs 221:draw
+        { pic: 171, correct: 171, wrong: 167 }, // 171:piano     vs 167:guitar
+        { pic: 172, correct: 172, wrong: 165 }, // 172:radio     vs 165:camera
+        { pic: 173, correct: 173, wrong: 166 }, // 173:robot     vs 166:doll
+        { pic: 174, correct: 174, wrong: 166 }, // 174:teddy bear vs 166:doll
+        { pic: 175, correct: 175, wrong: 166 }, // 175:toy       vs 166:doll
       ],
 
-      // ── Quiz 14 · Places (7 söz | pic 176–182) ───────────────────────
+      // ── Quiz 14 · Places (7 söz | id 176–182) ────────────────────────
       [
-        { en: 'bookshop',   wen: 'shop',       pic: 176 },
-        { en: 'park',       wen: 'garden',     pic: 177 },
-        { en: 'playground', wen: 'park',       pic: 178 },
-        { en: 'school',     wen: 'classroom',  pic: 179 },
-        { en: 'shop',       wen: 'bookshop',   pic: 180 },
-        { en: 'street',     wen: 'road',       pic: 181 },
-        { en: 'zoo',        wen: 'park',       pic: 182 },
+        { pic: 176, correct: 176, wrong: 180 }, // 176:bookshop   vs 180:shop
+        { pic: 177, correct: 177, wrong: 112 }, // 177:park       vs 112:garden
+        { pic: 178, correct: 178, wrong: 177 }, // 178:playground vs 177:park
+        { pic: 179, correct: 179, wrong: 110 }, // 179:school     vs 110:bedroom
+        { pic: 180, correct: 180, wrong: 176 }, // 180:shop       vs 176:bookshop
+        { pic: 181, correct: 181, wrong: 177 }, // 181:street     vs 177:park
+        { pic: 182, correct: 182, wrong: 177 }, // 182:zoo        vs 177:park
       ],
 
-      // ── Quiz 15 · Feelings & Adjectives (19 söz | pic 183–201) ──────
+      // ── Quiz 15 · Feelings & Adjectives (19 söz | id 183–201) ────────
       [
-        { en: 'angry',     wen: 'sad',       pic: 183 },
-        { en: 'beautiful', wen: 'nice',      pic: 184 },
-        { en: 'big',       wen: 'small',     pic: 185 },
-        { en: 'clean',     wen: 'dirty',     pic: 186 },
-        { en: 'dirty',     wen: 'clean',     pic: 187 },
-        { en: 'funny',     wen: 'silly',     pic: 188 },
-        { en: 'good',      wen: 'nice',      pic: 189 },
-        { en: 'happy',     wen: 'sad',       pic: 190 },
-        { en: 'long',      wen: 'short',     pic: 191 },
-        { en: 'new',       wen: 'old',       pic: 192 },
-        { en: 'nice',      wen: 'good',      pic: 193 },
-        { en: 'old',       wen: 'new',       pic: 194 },
-        { en: 'sad',       wen: 'happy',     pic: 195 },
-        { en: 'scary',     wen: 'funny',     pic: 196 },
-        { en: 'short',     wen: 'long',      pic: 197 },
-        { en: 'silly',     wen: 'funny',     pic: 198 },
-        { en: 'small',     wen: 'big',       pic: 199 },
-        { en: 'ugly',      wen: 'beautiful', pic: 200 },
-        { en: 'young',     wen: 'old',       pic: 201 },
+        { pic: 183, correct: 183, wrong: 195 }, // 183:angry     vs 195:sad
+        { pic: 184, correct: 184, wrong: 193 }, // 184:beautiful vs 193:nice
+        { pic: 185, correct: 185, wrong: 199 }, // 185:big       vs 199:small
+        { pic: 186, correct: 186, wrong: 187 }, // 186:clean     vs 187:dirty
+        { pic: 187, correct: 187, wrong: 186 }, // 187:dirty     vs 186:clean
+        { pic: 188, correct: 188, wrong: 198 }, // 188:funny     vs 198:silly
+        { pic: 189, correct: 189, wrong: 193 }, // 189:good      vs 193:nice
+        { pic: 190, correct: 190, wrong: 195 }, // 190:happy     vs 195:sad
+        { pic: 191, correct: 191, wrong: 197 }, // 191:long      vs 197:short
+        { pic: 192, correct: 192, wrong: 194 }, // 192:new       vs 194:old
+        { pic: 193, correct: 193, wrong: 189 }, // 193:nice      vs 189:good
+        { pic: 194, correct: 194, wrong: 192 }, // 194:old       vs 192:new
+        { pic: 195, correct: 195, wrong: 190 }, // 195:sad       vs 190:happy
+        { pic: 196, correct: 196, wrong: 188 }, // 196:scary     vs 188:funny
+        { pic: 197, correct: 197, wrong: 191 }, // 197:short     vs 191:long
+        { pic: 198, correct: 198, wrong: 188 }, // 198:silly     vs 188:funny
+        { pic: 199, correct: 199, wrong: 185 }, // 199:small     vs 185:big
+        { pic: 200, correct: 200, wrong: 184 }, // 200:ugly      vs 184:beautiful
+        { pic: 201, correct: 201, wrong: 194 }, // 201:young     vs 194:old
       ],
 
-      // ── Quiz 16 · Time (8 söz | pic 202–209) ─────────────────────────
+      // ── Quiz 16 · Time (8 söz | id 202–209) ──────────────────────────
       [
-        { en: 'afternoon', wen: 'evening',   pic: 202 },
-        { en: 'birthday',  wen: 'day',       pic: 203 },
-        { en: 'day',       wen: 'night',     pic: 204 },
-        { en: 'evening',   wen: 'afternoon', pic: 205 },
-        { en: 'morning',   wen: 'afternoon', pic: 206 },
-        { en: 'night',     wen: 'day',       pic: 207 },
-        { en: 'today',     wen: 'day',       pic: 208 },
-        { en: 'year',      wen: 'day',       pic: 209 },
+        { pic: 202, correct: 202, wrong: 205 }, // 202:afternoon vs 205:evening
+        { pic: 203, correct: 203, wrong: 204 }, // 203:birthday  vs 204:day
+        { pic: 204, correct: 204, wrong: 207 }, // 204:day       vs 207:night
+        { pic: 205, correct: 205, wrong: 202 }, // 205:evening   vs 202:afternoon
+        { pic: 206, correct: 206, wrong: 202 }, // 206:morning   vs 202:afternoon
+        { pic: 207, correct: 207, wrong: 204 }, // 207:night     vs 204:day
+        { pic: 208, correct: 208, wrong: 204 }, // 208:today     vs 204:day
+        { pic: 209, correct: 209, wrong: 204 }, // 209:year      vs 204:day
       ],
 
-      // ── Quiz 17 · People (8 söz | pic 210–217) ───────────────────────
+      // ── Quiz 17 · People (8 söz | id 210–217) ────────────────────────
       [
-        { en: 'alien',   wen: 'monster', pic: 210 },
-        { en: 'boy',     wen: 'girl',    pic: 211 },
-        { en: 'child',   wen: 'baby',    pic: 212 },
-        { en: 'girl',    wen: 'boy',     pic: 213 },
-        { en: 'man',     wen: 'woman',   pic: 214 },
-        { en: 'monster', wen: 'alien',   pic: 215 },
-        { en: 'person',  wen: 'man',     pic: 216 },
-        { en: 'woman',   wen: 'man',     pic: 217 },
+        { pic: 210, correct: 210, wrong: 215 }, // 210:alien   vs 215:monster
+        { pic: 211, correct: 211, wrong: 213 }, // 211:boy     vs 213:girl
+        { pic: 212, correct: 212, wrong: 74  }, // 212:child   vs  74:baby
+        { pic: 213, correct: 213, wrong: 211 }, // 213:girl    vs 211:boy
+        { pic: 214, correct: 214, wrong: 217 }, // 214:man     vs 217:woman
+        { pic: 215, correct: 215, wrong: 210 }, // 215:monster vs 210:alien
+        { pic: 216, correct: 216, wrong: 214 }, // 216:person  vs 214:man
+        { pic: 217, correct: 217, wrong: 214 }, // 217:woman   vs 214:man
       ],
 
-      // ── Quiz 18 · Actions (20 söz | pic 218–237) ─────────────────────
+      // ── Quiz 18 · Actions (20 söz | id 218–237) ──────────────────────
       [
-        { en: 'bounce', wen: 'jump',  pic: 218 },
-        { en: 'catch',  wen: 'throw', pic: 219 },
-        { en: 'clap',   wen: 'wave',  pic: 220 },
-        { en: 'draw',   wen: 'paint', pic: 221 },
-        { en: 'drink',  wen: 'eat',   pic: 222 },
-        { en: 'eat',    wen: 'drink', pic: 223 },
-        { en: 'fly',    wen: 'jump',  pic: 224 },
-        { en: 'jump',   wen: 'run',   pic: 225 },
-        { en: 'kick',   wen: 'throw', pic: 226 },
-        { en: 'paint',  wen: 'draw',  pic: 227 },
-        { en: 'run',    wen: 'walk',  pic: 228 },
-        { en: 'sing',   wen: 'dance', pic: 229 },
-        { en: 'sit',    wen: 'stand', pic: 230 },
-        { en: 'sleep',  wen: 'sit',   pic: 231 },
-        { en: 'smile',  wen: 'wave',  pic: 232 },
-        { en: 'swim',   wen: 'run',   pic: 233 },
-        { en: 'throw',  wen: 'catch', pic: 234 },
-        { en: 'walk',   wen: 'run',   pic: 235 },
-        { en: 'wave',   wen: 'clap',  pic: 236 },
-        { en: 'write',  wen: 'draw',  pic: 237 },
+        { pic: 218, correct: 218, wrong: 225 }, // 218:bounce vs 225:jump
+        { pic: 219, correct: 219, wrong: 234 }, // 219:catch  vs 234:throw
+        { pic: 220, correct: 220, wrong: 236 }, // 220:clap   vs 236:wave
+        { pic: 221, correct: 221, wrong: 227 }, // 221:draw   vs 227:paint
+        { pic: 222, correct: 222, wrong: 223 }, // 222:drink  vs 223:eat
+        { pic: 223, correct: 223, wrong: 222 }, // 223:eat    vs 222:drink
+        { pic: 224, correct: 224, wrong: 225 }, // 224:fly    vs 225:jump
+        { pic: 225, correct: 225, wrong: 228 }, // 225:jump   vs 228:run
+        { pic: 226, correct: 226, wrong: 234 }, // 226:kick   vs 234:throw
+        { pic: 227, correct: 227, wrong: 221 }, // 227:paint  vs 221:draw
+        { pic: 228, correct: 228, wrong: 235 }, // 228:run    vs 235:walk
+        { pic: 229, correct: 229, wrong: 230 }, // 229:sing   vs 230:sit
+        { pic: 230, correct: 230, wrong: 232 }, // 230:sit    vs 232:smile
+        { pic: 231, correct: 231, wrong: 230 }, // 231:sleep  vs 230:sit
+        { pic: 232, correct: 232, wrong: 236 }, // 232:smile  vs 236:wave
+        { pic: 233, correct: 233, wrong: 228 }, // 233:swim   vs 228:run
+        { pic: 234, correct: 234, wrong: 219 }, // 234:throw  vs 219:catch
+        { pic: 235, correct: 235, wrong: 228 }, // 235:walk   vs 228:run
+        { pic: 236, correct: 236, wrong: 220 }, // 236:wave   vs 220:clap
+        { pic: 237, correct: 237, wrong: 221 }, // 237:write  vs 221:draw
       ],
 
     ],
   },
-
-
+];
   // ╔══════════════════════════════════════════════════╗
   // ║  GRAMMAR BÖLÜMÜ — NOUNS (İsimlər)               ║
   // ╚══════════════════════════════════════════════════╝
