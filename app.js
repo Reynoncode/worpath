@@ -3856,6 +3856,8 @@ document.addEventListener('mouseup', () => {
   }
 });
 // ── Init ──────────────────────────────────
+Stats.recordAnswer(word, level, translation, isCorrect);
+checkAndNotify(); // ← buraya
 goToPage(DEFAULT_PAGE, false);
 StatsPage.render('stats-root');
 loadProgress();
