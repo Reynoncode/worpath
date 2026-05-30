@@ -3332,33 +3332,32 @@ button { font-family: var(--font); }
 [data-theme="dark"] .level-card[data-level="imperative"].open         { border-color: #8B5CF6; }
 [data-theme="dark"] .level-card[data-level="exclamatory"].open        { border-color: #8B5CF6; }
 
-/* ── Level icon arxa plan (dark modda solğun, --bg rənginə yaxın) ── */
-[data-theme="dark"] .level-card[data-level="a1"] .level-icon        { background: #1a0e0d; border-color: #5a1a14; }
-[data-theme="dark"] .level-card[data-level="a2"] .level-icon        { background: #1a1108; border-color: #5a3a10; }
-[data-theme="dark"] .level-card[data-level="b1"] .level-icon        { background: #161408; border-color: #504208; }
-[data-theme="dark"] .level-card[data-level="b2"] .level-icon        { background: #0a1810; border-color: #1a4828; }
-[data-theme="dark"] .level-card[data-level="c1"] .level-icon        { background: #0a1220; border-color: #1a3258; }
-[data-theme="dark"] .level-card[data-level="c2"] .level-icon        { background: #0d1114; border-color: #2a3840; }
-[data-theme="dark"] .level-card[data-level="reading"] .level-icon   { background: #091418; border-color: #0e3848; }
-[data-theme="dark"] .level-card[data-level="listening"] .level-icon { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="kids"] .level-icon      { background: #1a0814; border-color: #5a1040; }
-[data-theme="dark"] .level-card[data-level="grammar"] .level-icon   { background: #100d1e; border-color: #2e1a5a; }
+[data-theme="dark"] .level-card[data-level="a1"] .level-icon        { background: #1a0e0d !important; border-color: #5a1a14 !important; color: #e8a09a !important; }
+[data-theme="dark"] .level-card[data-level="a2"] .level-icon        { background: #1a1108 !important; border-color: #5a3a10 !important; color: #e8b070 !important; }
+[data-theme="dark"] .level-card[data-level="b1"] .level-icon        { background: #161408 !important; border-color: #504208 !important; color: #d4b840 !important; }
+[data-theme="dark"] .level-card[data-level="b2"] .level-icon        { background: #0a1810 !important; border-color: #1a4828 !important; color: #4aaa70 !important; }
+[data-theme="dark"] .level-card[data-level="c1"] .level-icon        { background: #0a1220 !important; border-color: #1a3258 !important; color: #4a8fe7 !important; }
+[data-theme="dark"] .level-card[data-level="c2"] .level-icon        { background: #0d1114 !important; border-color: #2a3840 !important; color: #6d90a8 !important; }
+[data-theme="dark"] .level-card[data-level="reading"] .level-icon   { background: #091418 !important; border-color: #0e3848 !important; color: #22b8d4 !important; }
+[data-theme="dark"] .level-card[data-level="listening"] .level-icon { background: #100d1e !important; border-color: #2e1a5a !important; color: #9d7aff !important; }
+[data-theme="dark"] .level-card[data-level="kids"] .level-icon      { background: #1a0814 !important; border-color: #5a1040 !important; color: #e870b0 !important; }
+[data-theme="dark"] .level-card[data-level="grammar"] .level-icon   { background: #100d1e !important; border-color: #2e1a5a !important; color: #9d7aff !important; }
+[data-theme="dark"] .level-card[data-level="nouns"] .level-icon              { background: #1a1108 !important; border-color: #5a3a10 !important; color: #e8b070 !important; }
+[data-theme="dark"] .level-card[data-level="verbs"] .level-icon              { background: #161408 !important; border-color: #504208 !important; color: #d4b840 !important; }
+[data-theme="dark"] .level-card[data-level="passive"] .level-icon            { background: #0a1220 !important; border-color: #1a3258 !important; color: #4a8fe7 !important; }
+[data-theme="dark"] .level-card[data-level="indirect_speech"] .level-icon    { background: #0a1810 !important; border-color: #1a4828 !important; color: #4aaa70 !important; }
+[data-theme="dark"] .level-card[data-level="adjectives"] .level-icon         { background: #1a0814 !important; border-color: #5a1040 !important; color: #e870b0 !important; }
+[data-theme="dark"] .level-card[data-level="sequence_tenses"] .level-icon    { background: #091418 !important; border-color: #0e3848 !important; color: #22b8d4 !important; }
+[data-theme="dark"] .level-card[data-level="pronoun"] .level-icon            { background: #0e0e20 !important; border-color: #2a2a5a !important; color: #a5b4fc !important; }
+[data-theme="dark"] .level-card[data-level="article"] .level-icon            { background: #161408 !important; border-color: #504208 !important; color: #d4b840 !important; }
+[data-theme="dark"] .level-card[data-level="questions"] .level-icon          { background: #091418 !important; border-color: #0e3848 !important; color: #7dd3fc !important; }
+[data-theme="dark"] .level-card[data-level="modal_verbs"] .level-icon        { background: #0a1810 !important; border-color: #1a4828 !important; color: #4aaa70 !important; }
+[data-theme="dark"] .level-card[data-level="prepositions"] .level-icon       { background: #161408 !important; border-color: #504208 !important; color: #d4b840 !important; }
+[data-theme="dark"] .level-card[data-level="adverb"] .level-icon             { background: #1a0814 !important; border-color: #5a1040 !important; color: #e870b0 !important; }
+[data-theme="dark"] .level-card[data-level="complex_object"] .level-icon     { background: #0a1220 !important; border-color: #1a3258 !important; color: #4a8fe7 !important; }
+[data-theme="dark"] .level-card[data-level="subject_verb_agreement"] .level-icon { background: #0a1810 !important; border-color: #1a4828 !important; color: #4aaa70 !important; }
+[data-theme="dark"] .level-card[data-level="imperative"] .level-icon         { background: #1a0814 !important; border-color: #5a1040 !important; color: #e870b0 !important; }
+[data-theme="dark"] .level-card[data-level="exclamatory"] .level-icon        { background: #161408 !important; border-color: #504208 !important; color: #d4b840 !important; }
 
-/* Grammar alt səviyyələri — hamısı bənövşəyi tonda */
-[data-theme="dark"] .level-card[data-level="verbs"] .level-icon              { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="passive"] .level-icon            { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="indirect_speech"] .level-icon    { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="adjectives"] .level-icon         { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="sequence_tenses"] .level-icon    { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="pronoun"] .level-icon            { background: #0e0e20; border-color: #2a2a5a; }
-[data-theme="dark"] .level-card[data-level="article"] .level-icon            { background: #161408; border-color: #504208; }
-[data-theme="dark"] .level-card[data-level="questions"] .level-icon          { background: #091418; border-color: #0e3848; }
-[data-theme="dark"] .level-card[data-level="modal_verbs"] .level-icon        { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="prepositions"] .level-icon       { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="adverb"] .level-icon             { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="complex_object"] .level-icon     { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="subject_verb_agreement"] .level-icon { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="imperative"] .level-icon         { background: #100d1e; border-color: #2e1a5a; }
-[data-theme="dark"] .level-card[data-level="exclamatory"] .level-icon        { background: #100d1e; border-color: #2e1a5a; }
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
