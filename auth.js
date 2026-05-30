@@ -256,15 +256,11 @@ const LOCAL_PROGRESS_KEY = "wordpath_v1";
 // ─── Firestore-a yaz ────────────────────────────────────────────────────────
 async function saveUserData(uid, statsData, progressData) {
   const ref = doc(db, "users", uid);
- const existingDoc = await getDoc(ref);
-const existingPhoto = existingDoc.exists() ? existingDoc.data().photoURL : null;
-
-await setDoc(ref, {
-  email:       user.email,
-  displayName: user.displayName || "",
-  photoURL:    existingPhoto || user.photoURL || "",
-  lastLogin:   serverTimestamp()
-}, { merge: true });
+  await setDoc(ref, {
+    stats:     statsData,
+    progress:  progressData,
+    updatedAt: serverTimestamp()
+  }, { merge: true });
 }
 
 // ─── Firestore-dan oxu ──────────────────────────────────────────────────────
