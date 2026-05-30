@@ -2001,9 +2001,11 @@ if (!progress[lvl.id][i]) {
     || lvl.id === 'exclamatory';
 
   if (isOpenSection) {
-    progress[lvl.id][i] = 'unlocked';  // ← BU SƏTİR YOX İDİ
+    progress[lvl.id][i] = 'unlocked';
   } else if (i === 0) {
     progress[lvl.id][i] = 'unlocked';
+  } else if (isExam) {
+    progress[lvl.id][i] = 'unlocked'; // ← exam həmişə açıq
   } else {
     progress[lvl.id][i] = 'locked';
   }
