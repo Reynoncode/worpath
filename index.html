@@ -91,17 +91,7 @@
     if (activeDot && activeDot.dataset.page === '4') {
       StatsPage.render('stats-root');
     }
-    function toggleDarkMode() {
-  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  localStorage.setItem('theme', isDark ? 'light' : 'dark');
-  updateToggleIcon();
-
-  // Stats screen açıqdırsa render et
-  const statsScreen = document.getElementById('stats-screen');
-  if (statsScreen && !statsScreen.classList.contains('hidden')) {
-    StatsPage.render('stats-container');
-  }
+   
 
   // Page-4 açıqdırsa render et
   const activeDot = document.querySelector('.nav-dot.active');
