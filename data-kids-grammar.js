@@ -10968,14 +10968,12 @@ const PRONOUN_LEVEL = {
   name: 'PRONOUN — ƏVƏZLİK',
   icon: '<i class="ti ti-user"></i>',
   color: '#A5B4FC',
-  quizzes: [// ══════════════════════════════════════════════════════════
-// ║  ƏVƏZLİK (PRONOUNS) — Tam bölüm                       ║
+  quizzes: [
+      
+// ══════════════════════════════════════════════════════════
+// ║  ƏVƏZLİK (PRONOUNS) — Tam bölüm                        ║
 // ══════════════════════════════════════════════════════════
 
-// ┌─────────────────────────────────────────────────────────┐
-// │  MƏRHƏLƏ 1 — Şəxs əvəzlikləri                         │
-// │  Personal Pronouns                                      │
-// └─────────────────────────────────────────────────────────┘
 
 // ── Dərs 1.1 — Adlıq hal ─────────────────────────────────
 {
@@ -12605,10 +12603,10 @@ const PRONOUN_LEVEL = {
   { en: '"A number of books ___." — fel hansı sayda?',                 tr: 'Cəm (are)',            wrong: 'Tək (is)'            },
   { en: '"The number of books ___." — fel hansı sayda?',               tr: 'Tək (is)',             wrong: 'Cəm (are)'           },
   { en: '"a lot" felə aid olduqda "of" işlənirmi?',                    tr: 'Xeyr',                 wrong: 'Bəli'                },
-],},
+],
+      
   ],
 };
-
 // ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
 const QUESTIONS_LEVEL = {
   id: 'questions',
