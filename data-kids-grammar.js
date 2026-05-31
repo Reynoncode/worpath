@@ -14194,33 +14194,850 @@ const QUESTIONS_LEVEL = {
 // ── 10. MODAL VERBS ──────────────────────────────────────────
 const MODAL_VERBS_LEVEL = {
   id: 'modal_verbs',
-  name: 'MODAL VERBS',
+  name: 'MODAL VERBS — MODAL FELLƏR',
   icon: '<i class="ti ti-key"></i>',
   color: '#86EFAC',
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  MODAL FELLƏR — Tam bölüm                             ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 1 — Can / May / Must                             │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 1 — Can / Could / To be able to ────────────────
+
+// ── Dərs 1.1 — Can / Could ───────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Can / Could',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — Can / Could / To be able to',
-      cards: [],
+      type: 'lesson',
+      title: 'Modal fellərin ümumi xüsusiyyətləri',
+      content:
+        'Modal fellərin 5 əsas xüsusiyyəti var:\n\n' +
+        '1. Modal feldən sonra məsdər "to" hissəciksiz işlənir (yalnız "ought to" istisna).\n' +
+        '2. III şəxs təkdə "-s" sonluğu qəbul etmir.\n' +
+        '3. Sual cümləsi: modal fel mübtədadan əvvələ keçir.\n' +
+        '4. Modal fellərin şəxssiz formaları yoxdur.\n' +
+        '5. İnkar: modal feldən sonra "not" artırılır.',
+      table: [
+        ['Xüsusiyyət',              'Nümunə'],
+        ['to-suz məsdər',           'She can swim. (swim — to-suz)'],
+        ['III şəxs -s almır',       'He can (not cans), She must (not musts)'],
+        ['Sual: modal əvvələ keçir','Can I work? / May she go?'],
+        ['İnkar: modal + not',      'She cannot swim. / I must not go.'],
+      ],
     },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — May / Might',
-      cards: [],
+      type: 'lesson',
+      title: 'Can / Could — mənası və formaları',
+      content:
+        '"Can" — bacarmaq, bilmək mənasını verir.\n\n' +
+        'İki zaman forması var:\n' +
+        '• İndiki zaman: can\n' +
+        '• Keçmiş qeyri-müəyyən: could\n\n' +
+        'Şəxslər üzrə dəyişmir. Özündən sonra to-suz məsdər işlənir.',
+      table: [
+        ['Forma',     'Nümunə'],
+        ['Təsdiq',    'I / You / He / She / We / They can work.'],
+        ['Keçmiş',    'I / You / He / She / We / They could work.'],
+        ['Sual',      'Can I work? / Can you work? / Could you work?'],
+        ['İnkar',     'I cannot (can\'t) work. / I could not (couldn\'t) work.'],
+      ],
+      tip: 'Qısa cavab: Yes, I can. / No, I can\'t.\nYes, he could. / No, he couldn\'t.',
     },
+
+    { en: '"Can" nə mənasını verir?',                                  tr: 'Bacarmaq, bilmək',     wrong: 'Vaciblik'            },
+    { en: '"Can" neçə zaman forması var?',                             tr: '2 (can / could)',       wrong: '3'                  },
+    { en: '"Can"ın keçmiş forması nədir?',                             tr: 'could',                wrong: 'caned'              },
+    { en: '"Can" III şəxs təkdə "-s" alırmı?',                        tr: 'Xeyr',                 wrong: 'Bəli'               },
+    { en: '"Can"ın inkar forması?',                                    tr: 'cannot / can\'t',      wrong: 'don\'t can'         },
+    { en: '"She cannot swim." — düzgün inkar formasımı?',              tr: 'Bəli',                 wrong: 'Xeyr'               },
+    { en: 'Modal feldən sonra hansı məsdər işlənir?',                  tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'      },
+    { en: 'Modal fellərin şəxssiz formaları varmı?',                   tr: 'Xeyr',                 wrong: 'Bəli'               },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Must / Have to',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 4 — Should / Ought to / Need',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ swim very well." — boşluğa nə gəlir?',
+          options: ['cans', 'can to', 'can', 'is can'],
+          answer: 'can',
+        },
+        {
+          q: '"Can I work?" — bu hansı forma?',
+          options: ['İnkar', 'Sual', 'Keçmiş', 'Gələcək'],
+          answer: 'Sual',
+        },
+        {
+          q: '"Could you work?" — "could" hansı zamandır?',
+          options: ['İndiki', 'Gələcək', 'Keçmiş qeyri-müəyyən', 'İndiki bitmiş'],
+          answer: 'Keçmiş qeyri-müəyyən',
+        },
+        {
+          q: 'Modal feldən sonra hansı məsdər işlənir?',
+          options: ['to + məsdər', 'to-suz məsdər', 'feli sifət', 'feli bağlama'],
+          answer: 'to-suz məsdər',
+        },
+      ],
     },
   ],
-};
+},
 
+// ── Dərs 1.2 — To be able to ─────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — To be able to',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"To be able to" — can-ın əvəzedicisi',
+      content:
+        '"To be able to" — can felinin əvəzedicisidir.\n' +
+        'Şəraitdən asılı olaraq bir şeyi bacarmaq, bilmək mənasında işlənir.\n\n' +
+        '"Can"dan fərqli olaraq "to be able to" şəxslər üzrə dəyişir və bütün zamanları var.',
+      table: [
+        ['Şəxs',        'İndiki zaman'],
+        ['I',           'am able to work'],
+        ['You',         'are able to work'],
+        ['He / She',    'is able to work'],
+        ['We / You / They', 'are able to work'],
+      ],
+      tip: 'Sual verərkən am/is/are/was/were/shall/will/have/has/had mübtədadan əvvələ keçir.',
+    },
+
+    {
+      type: 'lesson',
+      title: '"To be able to" — bütün zamanlar',
+      content: '"To be able to" bütün zamanlar üzrə:',
+      table: [
+        ['Zaman',                    'Forma',                      'Nümunə'],
+        ['İndiki q/m',               'am/is/are able to',          'I am able to work.'],
+        ['Keçmiş q/m',               'was/were able to',           'He was able to work.'],
+        ['Gələcək q/m',              'shall/will be able to',      'I shall be able to work.'],
+        ['İndiki bitmiş',            'have/has been able to',      'I have been able to work.'],
+        ['Keçmiş bitmiş',            'had been able to',           'I had been able to work.'],
+      ],
+      examples: [
+        { word: 'Am I able to work?',           az: 'İş görə bilərəmmi?' },
+        { word: 'Was he able to work?',         az: 'O iş görə bilirdimi?' },
+        { word: 'I am not able to work.',       az: 'Mən iş görə bilmirəm.' },
+        { word: 'I wasn\'t able to work.',      az: 'Mən iş görə bilmirdim.' },
+        { word: 'Shall I be able to work?',     az: 'İş görə biləcəyəmmi?' },
+      ],
+    },
+
+    { en: '"To be able to" neyin əvəzedicisidir?',                     tr: 'can',                  wrong: 'must'               },
+    { en: '"To be able to" şəxslər üzrə dəyişirmi?',                  tr: 'Bəli',                 wrong: 'Xeyr'               },
+    { en: '"To be able to"nun bütün zamanları varmı?',                 tr: 'Bəli',                 wrong: 'Xeyr'               },
+    { en: '"He ___ able to work." (indiki) — boşluq?',                tr: 'is',                   wrong: 'are'                },
+    { en: '"Keçmiş q/m-də to be able to" forması?',                   tr: 'was/were able to',     wrong: 'had been able to'   },
+    { en: '"Gələcək q/m-də to be able to" forması?',                  tr: 'shall/will be able to', wrong: 'have been able to' },
+    { en: '"İndiki bitmiş zamanda to be able to" forması?',           tr: 'have/has been able to', wrong: 'was/were able to'  },
+    { en: '"I am not able to work." — inkar düzgündürmü?',            tr: 'Bəli',                 wrong: 'Xeyr'               },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ I able to work?" (indiki, sual) — boşluq?',
+          options: ['Is', 'Are', 'Am', 'Was'],
+          answer: 'Am',
+        },
+        {
+          q: '"She ___ able to swim last year." (keçmiş) — boşluq?',
+          options: ['is', 'are', 'has been', 'was'],
+          answer: 'was',
+        },
+        {
+          q: '"I ___ been able to finish the work." (indiki bitmiş) — boşluq?',
+          options: ['was', 'had', 'have', 'am'],
+          answer: 'have',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 1 ───────────────────────────────────────────
+[
+  { en: '"Can"ın keçmiş forması nədir?',                              tr: 'could',                wrong: 'caned'               },
+  { en: '"Can" III şəxs təkdə "-s" alırmı?',                         tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Can"ın inkar forması?',                                     tr: 'cannot / can\'t',      wrong: 'don\'t can'          },
+  { en: 'Modal feldən sonra hansı məsdər işlənir?',                   tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'       },
+  { en: '"To be able to" neyin əvəzedicisidir?',                      tr: 'can',                  wrong: 'must'                },
+  { en: '"To be able to" şəxslər üzrə dəyişirmi?',                   tr: 'Bəli',                 wrong: 'Xeyr'                },
+  { en: '"Keçmiş q/m-də to be able to" forması?',                    tr: 'was/were able to',     wrong: 'had been able to'    },
+  { en: '"Gələcək q/m-də to be able to" forması?',                   tr: 'shall/will be able to', wrong: 'have been able to'  },
+  { en: '"İndiki bitmiş zamanda to be able to" forması?',            tr: 'have/has been able to', wrong: 'was/were able to'   },
+  { en: '"can" → "to be able to"ya çevirmək: "I can work" →?',       tr: 'I am able to work.',   wrong: 'I be able to work.'  },
+],
+
+
+// ── Bölmə 2 — May / Might · Must / Have to ───────────────
+
+// ── Dərs 2.1 — May / Might ───────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — May / Might',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"May" modal feli',
+      content:
+        '"May" — olar, olarmı; icazə, mümkünlük və güman bildirir.\n\n' +
+        'İki zaman forması var:\n' +
+        '• İndiki q/m: may\n' +
+        '• Keçmiş q/m: might\n\n' +
+        'Şəxslər üzrə dəyişmir. to-suz məsdər işlənir.\n\n' +
+        'Qısa cavab: Yes, you may. / No, you mayn\'t.\n' +
+        'Qətilik bildirərkən "may" ilə verilən suallara "must" ilə cavab verilə bilər:\n' +
+        'May I smoke? — No, you mustn\'t.',
+      table: [
+        ['Forma',   'Nümunə'],
+        ['Təsdiq',  'I / You / He / She / We / They may work.'],
+        ['Sual',    'May I work? / May she work?'],
+        ['İnkar',   'I may not work. / He may not work.'],
+        ['Keçmiş',  'I might do. / They might do.'],
+      ],
+      tip: '"May" indiki q/m-da ancaq icazə mənasında işlənir.\n"Might" yalnız vasitəli nitqdə işlənir:\nThey said that I might take her book.',
+    },
+
+    { en: '"May" nə mənasını verir?',                                  tr: 'İcazə, mümkünlük, güman', wrong: 'Vaciblik'       },
+    { en: '"May"ın keçmiş forması nədir?',                             tr: 'might',                wrong: 'mayed'              },
+    { en: '"May" şəxslər üzrə dəyişirmi?',                            tr: 'Xeyr',                 wrong: 'Bəli'               },
+    { en: '"May I smoke?" — qısa inkar cavab?',                        tr: 'No, you mayn\'t.',     wrong: 'No, you mustn\'t.'  },
+    { en: '"Qətilik bildirərkən may suala hansı fel ilə cavab vermək olar?',tr: 'must',             wrong: 'can'               },
+    { en: '"Might" hansı nitqdə işlənir?',                             tr: 'Vasitəli nitq',        wrong: 'Vasitəsiz nitq'     },
+    { en: '"May" indiki q/m-da hansı mənada işlənir?',                 tr: 'Yalnız icazə',         wrong: 'Vaciblik'           },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ I take your book?" (icazə) — boşluq?',
+          options: ['Must', 'Should', 'May', 'Need'],
+          answer: 'May',
+        },
+        {
+          q: '"They said that I ___ take her book." — vasitəli nitq, boşluq?',
+          options: ['may', 'might', 'must', 'should'],
+          answer: 'might',
+        },
+        {
+          q: '"May I smoke?" — qısa inkar cavab?',
+          options: ['No, you can\'t.', 'No, you mayn\'t.', 'No, you shouldn\'t.', 'No, you needn\'t.'],
+          answer: 'No, you mayn\'t.',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — Must / Have to ────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — Must / Have to',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"Must" modal feli',
+      content:
+        '"Must" — vaciblik, zərurət, güman və ehtimal bildirir.\n\n' +
+        'Yalnız indiki zaman forması var. Şəxslər üzrə dəyişmir. to-suz məsdər işlənir.\n\n' +
+        'İnkar mənası: must not — qadağa (etmə mənası — "not allowed to").\n\n' +
+        'Qısa cavab: Yes, I must. / No, I mustn\'t.',
+      table: [
+        ['Forma',   'Nümunə'],
+        ['Təsdiq',  'I / You / He / She / We / They must work.'],
+        ['Sual',    'Must I work? / Must he work?'],
+        ['İnkar',   'I must not go. / You must not go.'],
+      ],
+      tip: '"Must" yalnız indiki zamanda işlənir. Digər zamanlarda "have to" əvəzedicisi işlənir.',
+    },
+
+    {
+      type: 'lesson',
+      title: '"Have to" — must-un əvəzedicisi',
+      content:
+        '"Have to" — şəraitdən asılı olaraq bir şeyin vacib olduğunu bildirir.\n\n' +
+        '"Must"dan fərqli olaraq bütün zamanları var.\n' +
+        'Sual və inkar do/does/did köməkçi feli ilə düzəlir.\n\n' +
+        'Asıl vaciblik (must) vs Şəraitdən asılı vaciblik (have to):\n' +
+        'must → özündən asılı vaciblik\n' +
+        'have to → xarici şəraitdən asılı vaciblik',
+      table: [
+        ['Şəxs',         'İndiki'],
+        ['I / You / We / They', 'have to come'],
+        ['He / She',     'has to come'],
+      ],
+      tip: 'Qısa cavab: Yes, I do. / No, I don\'t.\nYes, he does. / No, he doesn\'t.',
+    },
+
+    { en: '"Must" nə mənasını verir?',                                 tr: 'Vaciblik, zərurət, güman', wrong: 'İcazə'          },
+    { en: '"Must" neçə zaman forması var?',                            tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'     },
+    { en: '"Must" şəxslər üzrə dəyişirmi?',                           tr: 'Xeyr',                 wrong: 'Bəli'               },
+    { en: '"Must not" nə mənasındadır?',                               tr: 'Qadağa — etmə',        wrong: 'Lazım deyil'        },
+    { en: '"Have to" ilə sual/inkar hansı fellərlə düzəlir?',          tr: 'do / does / did',      wrong: 'have / has'         },
+    { en: '"He ___ to come." (indiki) — boşluq?',                     tr: 'has',                  wrong: 'have'               },
+    { en: '"Must" vs "have to" — fərq nədir?',                        tr: 'must = daxili, have to = xarici vaciblik', wrong: 'Heç bir fərq yoxdur' },
+    { en: '"Have to"nun qısa cavabı hansı fellərlə verilir?',          tr: 'do / does',            wrong: 'have / has'         },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ he have to come?" (sual, indiki) — boşluq?',
+          options: ['Must', 'Has', 'Does', 'Is'],
+          answer: 'Does',
+        },
+        {
+          q: '"You ___ not smoke here." (qadağa) — boşluq?',
+          options: ['have', 'should', 'must', 'need'],
+          answer: 'must',
+        },
+        {
+          q: '"Yes, I ___." (have to-nun qısa cavabı) — boşluq?',
+          options: ['have', 'must', 'do', 'am'],
+          answer: 'do',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.3 — Have to: bütün zaman formaları ────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.3 — Have to: bütün zaman formaları',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"Have to" — bütün zamanlar',
+      content: '"Have to" bütün zamanlar üzrə:',
+      table: [
+        ['Zaman',              'Forma',                    'Sual / İnkar'],
+        ['İndiki q/m',         'have to / has to',         'Do/Does + have to / don\'t/doesn\'t have to'],
+        ['Keçmiş q/m',         'had to',                   'Did + have to / didn\'t have to'],
+        ['Gələcək q/m',        'shall/will have to',       'Shall/Will + have to'],
+        ['İndiki bitmiş',      'have/has had to',          'Haven\'t/Hasn\'t had to'],
+        ['Keçmiş bitmiş',      'had had to',               'Hadn\'t had to'],
+      ],
+      examples: [
+        { word: 'I have to come.',             az: 'Mən gəlməliyəm.' },
+        { word: 'Did I have to come?',         az: 'Gəlməli idimmi?' },
+        { word: 'I didn\'t have to come.',     az: 'Gəlməli deyildim.' },
+        { word: 'I shall have to come.',       az: 'Gəlməli olacağam.' },
+        { word: 'Shall I have to come?',       az: 'Gəlməli olacağammı?' },
+      ],
+      tip: 'Keçmiş q/m-də "had to" işlənir, sual/inkarı "did" ilə düzəlir. Keçmişlik "did"-də göstərilir, "have to" dəyişmir.',
+    },
+
+    { en: '"Have to"nun keçmiş forması nədir?',                        tr: 'had to',               wrong: 'have had to'        },
+    { en: '"Had to"nun sualı hansı fellərlə düzəlir?',                 tr: 'did',                  wrong: 'had'                },
+    { en: '"Have to"nun gələcək forması?',                             tr: 'shall/will have to',   wrong: 'going to have to'   },
+    { en: '"Have to"nun indiki bitmiş forması?',                       tr: 'have/has had to',      wrong: 'had had to'         },
+    { en: '"Did I have to come?" — inkar forması?',                    tr: 'I didn\'t have to come.', wrong: 'I hadn\'t have to come.' },
+    { en: '"Shall I have to come?" — bu hansı zaman?',                 tr: 'Gələcək q/m sual',     wrong: 'İndiki q/m sual'    },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I ___ to come yesterday." (keçmiş) — boşluq?',
+          options: ['have had', 'has had', 'had', 'did have'],
+          answer: 'had',
+        },
+        {
+          q: '"___ she have to come?" (keçmiş, sual) — boşluq?',
+          options: ['Does', 'Has', 'Did', 'Had'],
+          answer: 'Did',
+        },
+        {
+          q: '"I ___ have to come tomorrow." (gələcək) — boşluq?',
+          options: ['am', 'do', 'shall', 'have'],
+          answer: 'shall',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 2 ───────────────────────────────────────────
+[
+  { en: '"May"ın keçmiş forması nədir?',                              tr: 'might',                wrong: 'mayed'               },
+  { en: '"May" şəxslər üzrə dəyişirmi?',                             tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Might" hansı nitqdə işlənir?',                              tr: 'Vasitəli nitq',        wrong: 'Vasitəsiz nitq'      },
+  { en: '"Must" neçə zaman forması var?',                             tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'      },
+  { en: '"Must not" nə mənasındadır?',                                tr: 'Qadağa — etmə',        wrong: 'Lazım deyil'         },
+  { en: '"Have to" ilə sual/inkar hansı fellərlə düzəlir?',          tr: 'do / does / did',      wrong: 'have / has'          },
+  { en: '"He ___ to come." (indiki) — boşluq?',                      tr: 'has',                  wrong: 'have'                },
+  { en: '"Have to"nun keçmiş forması nədir?',                         tr: 'had to',               wrong: 'have had to'         },
+  { en: '"Had to"nun sualı hansı fellərlə düzəlir?',                  tr: 'did',                  wrong: 'had'                 },
+  { en: '"Must" vs "have to" — fərq nədir?',                         tr: 'must = daxili, have to = xarici vaciblik', wrong: 'Heç bir fərq yoxdur' },
+],
+
+// ── Test 1 — Can / May / Must (Bölmə 1–2) ────────────────
+[
+  { en: '"Can" nə mənasını verir?',                                    tr: 'Bacarmaq, bilmək',     wrong: 'Vaciblik'            },
+  { en: '"Can"ın keçmiş forması?',                                     tr: 'could',                wrong: 'caned'               },
+  { en: '"Can" III şəxs təkdə "-s" alırmı?',                          tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: 'Modal feldən sonra hansı məsdər işlənir?',                    tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'       },
+  { en: '"To be able to" neyin əvəzedicisidir?',                       tr: 'can',                  wrong: 'must'                },
+  { en: '"To be able to" şəxslər üzrə dəyişirmi?',                    tr: 'Bəli',                 wrong: 'Xeyr'                },
+  { en: '"Keçmiş q/m-də to be able to" forması?',                     tr: 'was/were able to',     wrong: 'had been able to'    },
+  { en: '"Gələcək q/m-də to be able to" forması?',                    tr: 'shall/will be able to', wrong: 'have been able to'  },
+  { en: '"May" nə mənasını verir?',                                    tr: 'İcazə, mümkünlük, güman', wrong: 'Vaciblik'        },
+  { en: '"May"ın keçmiş forması?',                                     tr: 'might',                wrong: 'mayed'               },
+  { en: '"Might" hansı nitqdə işlənir?',                               tr: 'Vasitəli nitq',        wrong: 'Vasitəsiz nitq'      },
+  { en: '"Must" neçə zaman forması var?',                              tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'      },
+  { en: '"Must not" nə mənasındadır?',                                 tr: 'Qadağa — etmə',        wrong: 'Lazım deyil'         },
+  { en: '"Have to" ilə sual/inkar hansı fellərlə düzəlir?',           tr: 'do / does / did',      wrong: 'have / has'          },
+  { en: '"Have to"nun keçmiş forması?',                                tr: 'had to',               wrong: 'have had to'         },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 2 — Should / Need / Modal fellərin ümumi         │
+// │           xüsusiyyətləri                               │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 3 — Should / Ought to · Need ───────────────────
+
+// ── Dərs 3.1 — Should / Ought to ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — Should / Ought to',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"Should" modal feli',
+      content:
+        '"Should" — gərək, -malı/-məli; bir şeyin məsləhət şəklində vacib olduğunu bildirir.\n\n' +
+        'Bütün şəxslərdə dəyişmir. to-suz məsdər işlənir.',
+      table: [
+        ['Forma',   'Nümunə'],
+        ['Təsdiq',  'I / You / He / She / We / They should go.'],
+        ['Sual',    'Should I go?'],
+        ['İnkar',   'I shouldn\'t go.'],
+      ],
+      tip: '"Ought to" should feli kimi gərəklik bildirir. Şəxslər üzrə dəyişmir.\nFərq: "ought to" daha güclü məcburiyyət bildirir.\n\nQeyd: "ought" yeganə modal feldir ki, özündən sonra "to" işlənir.',
+    },
+
+    {
+      type: 'lesson',
+      title: '"Ought to" — should ilə müqayisə',
+      content:
+        '"Ought to" — should kimi gərəklik bildirir. Şəxslər üzrə dəyişmir.\n\n' +
+        '"Ought to" yeganə modal feldir ki, özündən sonra "to" işlənir.',
+      table: [
+        ['Should',          'Ought to'],
+        ['I should go.',    'I ought to go.'],
+        ['You should go.',  'You ought to go.'],
+        ['He should go.',   'He ought to go.'],
+      ],
+      examples: [
+        { word: 'I should go.',    az: 'Getməliyəm (məsləhət).' },
+        { word: 'I ought to go.',  az: 'Getməliyəm (gərəklik).' },
+      ],
+      tip: 'Bütün modal fellərdən sonra to-suz məsdər işlənir — "ought to" YEGANƏ istisnandır.',
+    },
+
+    { en: '"Should" nə mənasını verir?',                               tr: 'Məsləhət / gərəklik',  wrong: 'İcazə'              },
+    { en: '"Should" bütün şəxslərdə dəyişirmi?',                      tr: 'Xeyr, dəyişmir',       wrong: 'Bəli, dəyişir'      },
+    { en: '"Should"dan sonra hansı məsdər işlənir?',                   tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'      },
+    { en: '"Ought to"dan sonra hansı məsdər işlənir?',                 tr: 'to ilə məsdər',        wrong: 'to-suz məsdər'      },
+    { en: 'Hansı modal feldən sonra "to" işlənir?',                    tr: 'ought to',             wrong: 'should'             },
+    { en: '"I shouldn\'t go." — düzgün inkar formasımı?',             tr: 'Bəli',                 wrong: 'Xeyr'               },
+    { en: '"Should" ilə "ought to" mənaca bənzərmi?',                  tr: 'Bəli',                 wrong: 'Xeyr'               },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"You ___ study harder." (məsləhət) — boşluq?',
+          options: ['must', 'can', 'should', 'may'],
+          answer: 'should',
+        },
+        {
+          q: '"I ought ___ go." — boşluq?',
+          options: ['to', 'not', 'to not', 'heç nə'],
+          answer: 'to',
+        },
+        {
+          q: '"Should I go?" — qısa inkar cavab?',
+          options: ['No, I shouldn\'t.', 'No, I mustn\'t.', 'No, I needn\'t.', 'No, I can\'t.'],
+          answer: 'No, I shouldn\'t.',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.2 — Need: əsas fel vs modal fel ───────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — Need: əsas fel vs modal fel',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"Need" — əsas fel və modal fel',
+      content:
+        '"Need" həm əsas fel, həm də modal feldir.\n\n' +
+        'Əsas fel kimi:\n' +
+        '• Özündən sonra isim gəlir və ya "to" ilə məsdər işlənir\n' +
+        '• Həm təsdiq, həm sual, həm inkar cümlədə işlənir\n' +
+        '• Sual/inkarı do/does/did ilə düzəlir\n' +
+        '• Bütün zamanları var\n' +
+        '• III şəxs təkdə "-s" qəbul edir\n' +
+        '• "Ehtiyacı olmaq" mənasını verir\n\n' +
+        'Modal fel kimi:\n' +
+        '• Özündən sonra to-suz fel işlənir\n' +
+        '• Yalnız indiki q/m-da işlənir\n' +
+        '• İnkar: need not (needn\'t)\n' +
+        '• "Lazım deyil" mənasını verir',
+    },
+
+    {
+      type: 'lesson',
+      title: '"Need" — müqayisəli cədvəl',
+      content: 'Əsas fel vs modal fel fərqləri:',
+      table: [
+        ['Xüsusiyyət',          'Əsas fel (need)',                  'Modal fel (need)'],
+        ['Sonrakı fel',         'isim / to + məsdər',              'to-suz məsdər'],
+        ['Cümlə növü',          'Təsdiq, sual, inkar',             'Əsasən inkar/sual'],
+        ['Sual/inkar',          'do/does/did ilə',                 'need + not (needn\'t)'],
+        ['Zamanlar',            'Bütün zamanlar',                  'Yalnız indiki q/m'],
+        ['III şəxs tək',        'needs (s alır)',                  'need (s almır)'],
+        ['Mənası',              'ehtiyacı olmaq',                  'lazım deyil'],
+      ],
+      examples: [
+        { word: 'She needs a pen. (əsas fel — isim)',            az: 'Onun qələmə ehtiyacı var.' },
+        { word: 'She needs to buy a pen. (əsas fel — to+məsdər)', az: 'O qələm almalıdır.' },
+        { word: 'Need she go? (modal fel)',                      az: 'O getməlidirsə?' },
+        { word: 'She needn\'t go. (modal fel)',                  az: 'O getməyə ehtiyac yoxdur.' },
+        { word: 'Does she need to go? (əsas fel — sual)',        az: 'O getməli olurmu?' },
+        { word: 'She doesn\'t need to go. (əsas fel — inkar)',   az: 'O getməyə ehtiyac yoxdur.' },
+      ],
+    },
+
+    { en: '"Need" modal fel kimi nə mənasını verir?',                  tr: 'Lazım deyil',          wrong: 'Ehtiyacı olmaq'     },
+    { en: '"Need" əsas fel kimi nə mənasını verir?',                   tr: 'Ehtiyacı olmaq',       wrong: 'Lazım deyil'        },
+    { en: '"Need" modal fel kimi yalnız hansı zamanda işlənir?',       tr: 'İndiki q/m',           wrong: 'Bütün zamanlar'     },
+    { en: '"Need" modal fel kimi III şəxs təkdə "-s" alırmı?',        tr: 'Xeyr',                 wrong: 'Bəli'               },
+    { en: '"Need" əsas fel kimi III şəxs təkdə "-s" alırmı?',         tr: 'Bəli (needs)',         wrong: 'Xeyr'               },
+    { en: '"Need" modal fel kimi inkar forması?',                      tr: 'need not / needn\'t',  wrong: 'don\'t need'        },
+    { en: '"Need" əsas fel kimi sual/inkarı hansı fellərlə düzəlir?',  tr: 'do/does/did',          wrong: 'need/needn\'t'      },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ to buy a pen." (əsas fel, indiki) — boşluq?',
+          options: ['need', 'needs', 'needn\'t', 'ought'],
+          answer: 'needs',
+        },
+        {
+          q: '"You ___ go. It\'s not necessary." (modal fel, inkar) — boşluq?',
+          options: ['don\'t need', 'doesn\'t need', 'needn\'t', 'mustn\'t'],
+          answer: 'needn\'t',
+        },
+        {
+          q: '"___ she need to go?" (əsas fel, sual) — boşluq?',
+          options: ['Need', 'Does', 'Is', 'Has'],
+          answer: 'Does',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.3 — Need: 6 fərqin cədvəli ───────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.3 — Need: 6 fərqin cədvəli (tam xülasə)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Need — 6 əsas fərq',
+      content: '"Need" əsas fel vs modal fel — 6 fərq:',
+      table: [
+        ['#', 'Əsas fel',                          'Modal fel'],
+        ['1', 'isim / to+məsdər işlənir',          'to-suz fel işlənir'],
+        ['2', 'Bütün zamanlar var',                'Yalnız indiki q/m'],
+        ['3', 'III şəxs tək: needs (-s alır)',     'III şəxs tək: need (-s almır)'],
+        ['4', 'do/does/did ilə sual/inkar',        'needn\'t ilə inkar'],
+        ['5', '"Ehtiyacı olmaq" mənası',           '"Lazım deyil" mənası'],
+        ['6', 'Təsdiq, sual, inkar cümlədə',       'Əsasən inkar/sual cümlədə'],
+      ],
+      tip: 'Əsas fel inkarı: don\'t/doesn\'t need to go.\nModal fel inkarı: needn\'t go.\nHər ikisi "lazım deyil" mənasını verir, amma əsas fel daha rəsmi deyildir.',
+    },
+
+    { en: '"need" əsas fel kimi sonrakı fel?',                         tr: 'to + məsdər',          wrong: 'to-suz məsdər'      },
+    { en: '"need" modal fel kimi sonrakı fel?',                        tr: 'to-suz məsdər',        wrong: 'to + məsdər'        },
+    { en: '"She needs to go." — "need" hansı formada işlənib?',        tr: 'Əsas fel',             wrong: 'Modal fel'          },
+    { en: '"She needn\'t go." — "need" hansı formada işlənib?',       tr: 'Modal fel',            wrong: 'Əsas fel'           },
+    { en: '"Does she need to go?" — "need" hansı formada işlənib?',   tr: 'Əsas fel',             wrong: 'Modal fel'          },
+    { en: '"needn\'t" = "don\'t need to" — mənaca bərabərmi?',        tr: 'Bəli',                 wrong: 'Xeyr'               },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ a new book." (əsas fel, isim, indiki) — boşluq?',
+          options: ['need', 'needs', 'needn\'t', 'needed'],
+          answer: 'needs',
+        },
+        {
+          q: '"Need I go?" — "need" hansı formada işlənib?',
+          options: ['Əsas fel', 'Modal fel', 'Köməkçi fel', 'Feli bağlama'],
+          answer: 'Modal fel',
+        },
+        {
+          q: '"She ___ need to come. It\'s not necessary." (əsas fel inkar) — boşluq?',
+          options: ['needn\'t', 'doesn\'t', 'mustn\'t', 'shouldn\'t'],
+          answer: 'doesn\'t',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 3 ───────────────────────────────────────────
+[
+  { en: '"Should" nə mənasını verir?',                                tr: 'Məsləhət / gərəklik',  wrong: 'İcazə'               },
+  { en: '"Should"dan sonra hansı məsdər işlənir?',                    tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'       },
+  { en: '"Ought to"dan sonra hansı məsdər işlənir?',                  tr: 'to ilə məsdər',        wrong: 'to-suz məsdər'       },
+  { en: 'Hansı modal feldən sonra "to" işlənir?',                     tr: 'ought to',             wrong: 'should'              },
+  { en: '"Need" modal fel kimi nə mənasını verir?',                   tr: 'Lazım deyil',          wrong: 'Ehtiyacı olmaq'      },
+  { en: '"Need" modal fel kimi yalnız hansı zamanda işlənir?',        tr: 'İndiki q/m',           wrong: 'Bütün zamanlar'      },
+  { en: '"Need" əsas fel kimi III şəxs təkdə "-s" alırmı?',          tr: 'Bəli (needs)',         wrong: 'Xeyr'                },
+  { en: '"Need" modal fel kimi III şəxs təkdə "-s" alırmı?',         tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"needn\'t" = "don\'t need to" — mənaca bərabərmi?',         tr: 'Bəli',                 wrong: 'Xeyr'                },
+  { en: '"Need" əsas fel kimi sual/inkarı hansı fellərlə düzəlir?',   tr: 'do/does/did',          wrong: 'need/needn\'t'       },
+],
+
+
+// ── Bölmə 4 — Modal fellərin 5 ümumi xüsusiyyəti ─────────
+
+// ── Dərs 4.1 — 5 əsas xüsusiyyət ────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.1 — Modal fellərin 5 əsas xüsusiyyəti',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Modal fellərin 5 əsas xüsusiyyəti',
+      content: 'Bütün modal fellərə aid ümumi xüsusiyyətlər:',
+      table: [
+        ['#', 'Xüsusiyyət',                                  'İstisna'],
+        ['1', 'to-suz məsdər işlənir',                      'ought to — to işlənir'],
+        ['2', 'III şəxs tək -s almır',                      'need (əsas fel kimi) -s alır'],
+        ['3', 'Sual: modal fel mübtədadan əvvələ keçir',     'have to — do/does/did işlənir'],
+        ['4', 'Şəxssiz formaları yoxdur',                   'Yoxdur'],
+        ['5', 'İnkar: modal + not',                         'have to — don\'t/doesn\'t have to'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Dərs 4.2 — Bütün modal fellər xülasəsi',
+      content: 'Modal fellərin tam formaları:',
+      table: [
+        ['Modal fel',  'Keçmiş / Alternativ forma',      'Mənası'],
+        ['can',        'could',                          'bacarmaq, bilmək'],
+        ['will',       'would',                          'gələcək, arzu'],
+        ['shall',      'should',                         'gərəklik, məsləhət'],
+        ['may',        'might',                          'icazə, güman'],
+        ['must',       '(yalnız indiki)',                 'vaciblik, zərurət'],
+        ['need',       '(yalnız indiki — modal kimi)',   'lazım deyil'],
+        ['ought to',   '—',                              'gərəklik'],
+      ],
+      tip: '"will → would", "shall → should", "can → could", "may → might" — keçmiş formaları vasitəli nitqdə və şərt cümlələrində işlənir.',
+    },
+
+    { en: 'Modal fellərin şəxssiz formaları varmı?',                   tr: 'Xeyr',                 wrong: 'Bəli'               },
+    { en: 'Hansı modal feldən sonra "to" işlənir?',                    tr: 'ought to',             wrong: 'should'             },
+    { en: '"can"ın keçmiş / alternativ forması?',                      tr: 'could',                wrong: 'caned'              },
+    { en: '"will"in keçmiş / alternativ forması?',                     tr: 'would',                wrong: 'willed'             },
+    { en: '"shall"ın keçmiş / alternativ forması?',                    tr: 'should',               wrong: 'shalled'            },
+    { en: '"may"ın keçmiş / alternativ forması?',                      tr: 'might',                wrong: 'mayed'              },
+    { en: '"must" neçə zaman forması var?',                            tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'     },
+    { en: '"need" modal fel kimi neçə zaman forması var?',             tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'     },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Modal fellərdən sonra ümumiyyətlə hansı forma işlənir?',
+          options: ['to + məsdər', 'to-suz məsdər', 'feli sifət', 'feli bağlama'],
+          answer: 'to-suz məsdər',
+        },
+        {
+          q: 'Hansı modal fel yalnız indiki zamanda işlənir?',
+          options: ['can', 'may', 'must', 'need (modal)'],
+          answer: 'must',
+        },
+        {
+          q: '"She ___ (can) finish the work." — doğru forma?',
+          options: ['cans', 'can to', 'can', 'is can'],
+          answer: 'can',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 4.3 — Modal fellərin mənalarına görə müqayisəsi ─
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.3 — Modal fellərin mənalarına görə müqayisəsi',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Mənaya görə qruplaşdırma',
+      content: 'Modal fellər mənalarına görə qruplaşdırılır:',
+      table: [
+        ['Məna',        'Modal fel(lər)',                'Nümunə'],
+        ['Bacarmaq',    'can / could / to be able to',  'I can swim.'],
+        ['İcazə',       'may / can',                    'May I go? / Can I go?'],
+        ['Vaciblik',    'must / have to',               'You must go. / You have to go.'],
+        ['Məsləhət',    'should / ought to',            'You should rest.'],
+        ['Lazım deyil', 'needn\'t / don\'t need to',   'You needn\'t go.'],
+        ['Qadağa',      'must not',                     'You mustn\'t smoke here.'],
+        ['Güman',       'may / might / must',           'He may be at home.'],
+      ],
+      tip: '"must not" — qadağa (etmə)\n"needn\'t / don\'t have to" — lazım deyil (etməyə məcbur deyilsən)',
+    },
+
+    { en: '"Bacarmaq" mənasını hansı modal fellər bildirir?',          tr: 'can / could / to be able to', wrong: 'must / have to' },
+    { en: '"Vaciblik" mənasını hansı modal fellər bildirir?',          tr: 'must / have to',       wrong: 'should / ought to'  },
+    { en: '"Məsləhət" mənasını hansı modal fellər bildirir?',          tr: 'should / ought to',    wrong: 'must / have to'     },
+    { en: '"Qadağa" mənasını hansı modal fel bildirir?',               tr: 'must not',             wrong: 'needn\'t'           },
+    { en: '"Lazım deyil" mənasını hansı modal fel bildirir?',          tr: 'needn\'t / don\'t need to', wrong: 'must not'      },
+    { en: '"must not" vs "needn\'t" — fərq nədir?',                   tr: 'mustn\'t = qadağa, needn\'t = lazım deyil', wrong: 'Heç bir fərq yoxdur' },
+    { en: '"İcazə" mənasını hansı modal fellər bildirir?',             tr: 'may / can',            wrong: 'must / should'      },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"You ___ smoke here." (qadağa) — hansı modal fel?',
+          options: ['needn\'t', 'shouldn\'t', 'mustn\'t', 'can\'t'],
+          answer: 'mustn\'t',
+        },
+        {
+          q: '"You ___ come if you don\'t want to." (lazım deyil) — hansı modal fel?',
+          options: ['mustn\'t', 'shouldn\'t', 'can\'t', 'needn\'t'],
+          answer: 'needn\'t',
+        },
+        {
+          q: '"You ___ see a doctor." (məsləhət) — hansı modal fel?',
+          options: ['must', 'may', 'should', 'need'],
+          answer: 'should',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 4 ───────────────────────────────────────────
+[
+  { en: 'Modal fellərin şəxssiz formaları varmı?',                    tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"can"ın alternativ forması?',                                 tr: 'could',                wrong: 'caned'               },
+  { en: '"will"in alternativ forması?',                               tr: 'would',                wrong: 'willed'              },
+  { en: '"may"ın alternativ forması?',                                 tr: 'might',                wrong: 'mayed'               },
+  { en: '"shall"ın alternativ forması?',                              tr: 'should',               wrong: 'shalled'             },
+  { en: '"Bacarmaq" mənasını hansı modal fellər bildirir?',           tr: 'can / could / to be able to', wrong: 'must / have to'},
+  { en: '"Vaciblik" mənasını hansı modal fellər bildirir?',           tr: 'must / have to',       wrong: 'should / ought to'   },
+  { en: '"Məsləhət" mənasını hansı modal fellər bildirir?',           tr: 'should / ought to',    wrong: 'must / have to'      },
+  { en: '"mustn\'t" vs "needn\'t" — fərq nədir?',                    tr: 'mustn\'t = qadağa, needn\'t = lazım deyil', wrong: 'Heç bir fərq yoxdur' },
+  { en: 'Hansı modal feldən sonra "to" işlənir?',                     tr: 'ought to',             wrong: 'should'              },
+  { en: '"must" neçə zaman forması var?',                             tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'      },
+  { en: '"need" modal fel kimi yalnız hansı zamanda işlənir?',        tr: 'İndiki q/m',           wrong: 'Bütün zamanlar'      },
+],
+
+// ── Test 2 — Should / Need / Ümumi xüsusiyyətlər ─────────
+[
+  { en: '"Should" nə mənasını verir?',                                 tr: 'Məsləhət / gərəklik',  wrong: 'İcazə'              },
+  { en: '"Should"dan sonra hansı məsdər işlənir?',                     tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'      },
+  { en: '"Ought to"dan sonra hansı məsdər işlənir?',                   tr: 'to ilə məsdər',        wrong: 'to-suz məsdər'      },
+  { en: 'Hansı modal feldən sonra "to" işlənir?',                      tr: 'ought to',             wrong: 'should'             },
+  { en: '"Need" modal fel kimi nə mənasını verir?',                    tr: 'Lazım deyil',          wrong: 'Ehtiyacı olmaq'     },
+  { en: '"Need" əsas fel kimi III şəxs təkdə "-s" alırmı?',           tr: 'Bəli (needs)',         wrong: 'Xeyr'               },
+  { en: '"Need" modal fel kimi III şəxs təkdə "-s" alırmı?',          tr: 'Xeyr',                 wrong: 'Bəli'               },
+  { en: '"needn\'t" = "don\'t need to" — mənaca bərabərmi?',          tr: 'Bəli',                 wrong: 'Xeyr'               },
+  { en: '"mustn\'t" vs "needn\'t" — fərq nədir?',                     tr: 'mustn\'t = qadağa, needn\'t = lazım deyil', wrong: 'Heç bir fərq yoxdur' },
+  { en: 'Modal fellərin şəxssiz formaları varmı?',                     tr: 'Xeyr',                 wrong: 'Bəli'               },
+  { en: '"Bacarmaq" mənasını hansı modal fellər bildirir?',            tr: 'can / could / to be able to', wrong: 'must / have to'},
+  { en: '"Vaciblik" mənasını hansı modal fellər bildirir?',            tr: 'must / have to',       wrong: 'should / ought to'  },
+  { en: '"Məsləhət" mənasını hansı modal fellər bildirir?',            tr: 'should / ought to',    wrong: 'must / have to'     },
+  { en: '"Qadağa" mənasını hansı modal fel bildirir?',                 tr: 'must not',             wrong: 'needn\'t'           },
+  { en: '"İcazə" mənasını hansı modal fellər bildirir?',               tr: 'may / can',            wrong: 'must / should'      },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  FINAL TEST — Modal Verbs tam test · 30+ sual          │
+// └─────────────────────────────────────────────────────────┘
+[
+  // Can / Could
+  { en: '"Can" nə mənasını verir?',                                    tr: 'Bacarmaq, bilmək',     wrong: 'Vaciblik'            },
+  { en: '"Can"ın keçmiş forması?',                                     tr: 'could',                wrong: 'caned'               },
+  { en: '"Can" III şəxs təkdə "-s" alırmı?',                          tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Can"ın inkar forması?',                                      tr: 'cannot / can\'t',      wrong: 'don\'t can'          },
+  // To be able to
+  { en: '"To be able to" neyin əvəzedicisidir?',                       tr: 'can',                  wrong: 'must'                },
+  { en: '"To be able to" şəxslər üzrə dəyişirmi?',                    tr: 'Bəli',                 wrong: 'Xeyr'                },
+  { en: '"Keçmiş q/m-də to be able to" forması?',                     tr: 'was/were able to',     wrong: 'had been able to'    },
+  { en: '"Gələcək q/m-də to be able to" forması?',                    tr: 'shall/will be able to', wrong: 'have been able to'  },
+  // May / Might
+  { en: '"May" nə mənasını verir?',                                    tr: 'İcazə, mümkünlük, güman', wrong: 'Vaciblik'        },
+  { en: '"May"ın keçmiş forması?',                                     tr: 'might',                wrong: 'mayed'               },
+  { en: '"Might" hansı nitqdə işlənir?',                               tr: 'Vasitəli nitq',        wrong: 'Vasitəsiz nitq'      },
+  // Must / Have to
+  { en: '"Must" neçə zaman forması var?',                              tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'      },
+  { en: '"Must not" nə mənasındadır?',                                 tr: 'Qadağa — etmə',        wrong: 'Lazım deyil'         },
+  { en: '"Have to" ilə sual/inkar hansı fellərlə düzəlir?',           tr: 'do / does / did',      wrong: 'have / has'          },
+  { en: '"Have to"nun keçmiş forması?',                                tr: 'had to',               wrong: 'have had to'         },
+  { en: '"Must" vs "have to" — fərq nədir?',                          tr: 'must = daxili, have to = xarici vaciblik', wrong: 'Heç bir fərq yoxdur' },
+  // Should / Ought to / Need
+  { en: '"Should" nə mənasını verir?',                                 tr: 'Məsləhət / gərəklik',  wrong: 'İcazə'               },
+  { en: 'Hansı modal feldən sonra "to" işlənir?',                      tr: 'ought to',             wrong: 'should'              },
+  { en: '"Need" modal fel kimi nə mənasını verir?',                    tr: 'Lazım deyil',          wrong: 'Ehtiyacı olmaq'      },
+  { en: '"Need" əsas fel kimi III şəxs təkdə "-s" alırmı?',           tr: 'Bəli (needs)',         wrong: 'Xeyr'                },
+  { en: '"Need" modal fel kimi III şəxs təkdə "-s" alırmı?',          tr: 'Xeyr',                 wrong: 'Bəli'                },
+  // Ümumi xüsusiyyətlər
+  { en: 'Modal feldən sonra ümumiyyətlə hansı məsdər işlənir?',        tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'       },
+  { en: 'Modal fellərin şəxssiz formaları varmı?',                     tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"can"ın alternativ forması?',                                  tr: 'could',                wrong: 'caned'               },
+  { en: '"will"in alternativ forması?',                                 tr: 'would',                wrong: 'willed'              },
+  // Mənalar üzrə müqayisə
+  { en: '"Bacarmaq" mənasını hansı modal fellər bildirir?',            tr: 'can / could / to be able to', wrong: 'must / have to'},
+  { en: '"Vaciblik" mənasını hansı modal fellər bildirir?',            tr: 'must / have to',       wrong: 'should / ought to'   },
+  { en: '"Məsləhət" mənasını hansı modal fellər bildirir?',            tr: 'should / ought to',    wrong: 'must / have to'      },
+  { en: '"Qadağa" mənasını hansı modal fel bildirir?',                 tr: 'must not',             wrong: 'needn\'t'            },
+  { en: '"mustn\'t" vs "needn\'t" — fərq nədir?',                     tr: 'mustn\'t = qadağa, needn\'t = lazım deyil', wrong: 'Heç bir fərq yoxdur' },
+  { en: '"İcazə" mənasını hansı modal fellər bildirir?',               tr: 'may / can',            wrong: 'must / should'       },
+],
+
+  ],
+};
 // ── 11. PREPOSITIONS (SÖZÖNLƏRİ) ────────────────────────────
 const PREPOSITIONS_LEVEL = {
   id: 'prepositions',
