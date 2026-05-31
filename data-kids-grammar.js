@@ -12607,31 +12607,32 @@ const PRONOUN_LEVEL = {
     },
   ],
 };
+// ── 8. ARTICLE (ARTİKL) ─────────────────────────────────────
+const ARTICLE_LEVEL = {
+  id: 'article',
+  name: 'ARTICLE — ARTİKL',
+  icon: '<i class="ti ti-tag"></i>',
+  color: '#FCD34D',
 
-// ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
-const QUESTIONS_LEVEL = {
-  id: 'ARTICLE_LEVEL',
-  name: 'QUESTIONS — SUALLAR',
-  icon: '<i class="ti ti-help-circle"></i>',
-  color: '#7DD3FC',
   quizzes: [
     {
       type: 'grammar_lesson',
-      title: 'Dərs 1 — Ümumi & Xüsusi suallar',
+      title: 'Dərs 1 — A / An — qeyri-müəyyən artikl',
       cards: [],
     },
     {
       type: 'grammar_lesson',
-      title: 'Dərs 2 — Wh- sual sözləri',
+      title: 'Dərs 2 — The — müəyyən artikl',
       cards: [],
     },
     {
       type: 'grammar_lesson',
-      title: 'Dərs 3 — Seçmə & Ayrılan suallar',
+      title: 'Dərs 3 — Artikl işlənməyən hallar',
       cards: [],
     },
   ],
 };
+
 
 // ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
 const QUESTIONS_LEVEL = {
