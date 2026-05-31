@@ -12615,21 +12615,738 @@ const ARTICLE_LEVEL = {
   color: '#FCD34D',
 
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  ARTİKL — Tam bölüm                                    ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 1 — Qeyri-müəyyənlik artiklı (a / an)            │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 1 — a / an: əsas qayda və tələffüz ─────────────
+{
+  type: 'grammar_lesson',
+  title: 'Bölmə 1 — a / an: əsas qayda və tələffüz',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — A / An — qeyri-müəyyən artikl',
-      cards: [],
+      type: 'lesson',
+      title: 'Artikl nədir?',
+      content:
+        'Artikl köməkçi nitq hissəsidir. Artikl ancaq ismin əlamətidir.\n\n' +
+        'Artiklın iki növü var:\n' +
+        '• Qeyri-müəyyənlik artiklı — a / an\n' +
+        '• Müəyyənlik artiklı — the\n\n' +
+        '"a / an" artiklı "bir \ hər hansı bir", "the" artiklı isə "o \ həmin" mənalarını verir. ' +
+        'Ancaq çox vaxt dilimizə tərcümə olunmurlar.\n\n' +
+        'Ex: I have a book. The book is interesting.\n' +
+        'Mənim bir kitabım var. Həmin kitab maraqlıdır.',
+      table: [
+        ['Artikl', 'Növ', 'Məna'],
+        ['a / an', 'Qeyri-müəyyən', 'bir / hər hansı bir'],
+        ['the',    'Müəyyən',       'o / həmin'],
+      ],
+      tip: 'Artikl həmişə təyin etdiyi isimdən əvvəl gəlir. Əgər isimin qarşısında sifət gələrsə, artikl sifətdən əvvəl işlənir, ancaq ismə aid olur.',
     },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — The — müəyyən artikl',
-      cards: [],
+      type: 'lesson',
+      title: 'a yoxsa an? — seçim qaydası',
+      content:
+        '"a" — samitlə başlayan sözlərin qarşısında işlənir.\n' +
+        '"an" — sait səslə başlayan sözlərin qarşısında işlənir.\n\n' +
+        'Diqqət: Yazılışa yox, tələffüzə baxılır!\n\n' +
+        'Oxunmayan "h" ilə başlayan sözlərin qarşısında "an" işlənir:\n' +
+        'an hour [ən\'auə], an honourable person\n\n' +
+        'Samit səs verən "y" və "u" hərfləri ilə başlayan sözlərin qarşısında "a" işlənir:\n' +
+        'a yard [ə\'ja:d], a uniform [ə\'ju:nıfɔ:m], a university',
+      table: [
+        ['a (samit səs)',       'an (sait səs)'],
+        ['a book',             'an orange'],
+        ['a chair',            'an armchair'],
+        ['a dog',              'an engineer'],
+        ['a university',       'an hour'],
+        ['a yard',             'an honest judge'],
+        ['a uniform',          'an umbrella'],
+        ['a one-way street',   'an SOS'],
+      ],
+      tip: '"a/an" artiklı qədim ingilis dilində "bir (one)" sözündən yaranıb. Bütün sayıla bilən tək isimlər a/an artiklı ilə işlənməlidir.',
     },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Artikl işlənməyən hallar',
-      cards: [],
+      type: 'lesson',
+      title: 'a/an artiklı işlənməyən hallar',
+      content:
+        'Aşağıdakı isimlərin qarşısında a/an artiklı işlənmir:\n\n' +
+        '• Sayıla bilməyən isimlər: advice, bread, news\n' +
+        '• Cəm isimlər: books, shoes, men\n' +
+        '• Xüsusi isimlər: Baku, England, George\n\n' +
+        'Yalnız sayıla bilən tək isimlərin qarşısında yiyəlik əvəzlikləri, "that" işarə əvəzliyi, ' +
+        '"no" inkar əvəzliyi gələrsə — artiklsız işlənir.\n\n' +
+        'Əgər ismin qarşısında "all" və "both" əvəzlikləri gələrsə, artikl onlardan sonra gəlir:\n' +
+        'All the children — Uşaqların hamısı\n' +
+        'Both the boys — Oğlanların hər ikisi',
+      table: [
+        ['Düzgün',           'Yanlış'],
+        ['a book',           'a books ✗'],
+        ['an advice ✗',      'some advice ✓'],
+        ['a Baku ✗',         'Baku ✓'],
+        ['my book (artiklsız)', 'a my book ✗'],
+      ],
     },
+
+    { en: '"a" artiklı hansı səslə başlayan sözlərlə işlənir?',         tr: 'Samit səs',           wrong: 'Sait səs'           },
+    { en: '"an" artiklı hansı səslə başlayan sözlərlə işlənir?',        tr: 'Sait səs',            wrong: 'Samit səs'          },
+    { en: '"an hour" — niyə "an" işlənir?',                             tr: 'h oxunmur, sait səs', wrong: 'h samitdir'         },
+    { en: '"a university" — niyə "a" işlənir?',                         tr: 'y səsi ilə tələffüz', wrong: 'Sait hərflə yazılır'},
+    { en: 'Sayıla bilməyən isimlərin qarşısında a/an işlənirmi?',       tr: 'Xeyr',                wrong: 'Bəli'               },
+    { en: 'Cəm isimlərin qarşısında a/an işlənirmi?',                   tr: 'Xeyr',                wrong: 'Bəli'               },
+    { en: '"All the children" — artikl "all"dan əvvəl gəlirmi?',        tr: 'Xeyr, sonra gəlir',  wrong: 'Bəli, əvvəl gəlir'  },
+    { en: '"a/an" artiklı nə mənasından yaranıb?',                      tr: 'bir (one)',           wrong: 'bu (this)'          },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Hansı sözün qarşısında "an" işlənir?',
+          options: ['a university', 'an book', 'an hour', 'a umbrella'],
+          answer: 'an hour',
+        },
+        {
+          q: '"___ uniform" — boşluğa nə gəlir?',
+          options: ['an', 'a', 'the', 'heç nə'],
+          answer: 'a',
+        },
+        {
+          q: 'Hansı ismin qarşısında a/an işlənə bilməz?',
+          options: ['book', 'chair', 'news', 'dog'],
+          answer: 'news',
+        },
+        {
+          q: '"Both ___ boys" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+        {
+          q: '"___ honest judge" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'an',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Bölmə 2 — a / an: 12 işlənmə halı ───────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Bölmə 2 — a / an: 12 işlənmə halı',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'İşlənmə halları 1–6',
+      content: 'a/an artiklının əsas işlənmə halları:',
+      table: [
+        ['#', 'Hal',                                        'Nümunə'],
+        ['1', 'İlk dəfə çəkilən sayılan tək isim',         'My brother bought a new house.'],
+        ['2', 'Peşa / məşğuliyyət',                        'My brother is a doctor.'],
+        ['3', 'Nida: What + sayılan tək isim',             'What a nice day it is!'],
+        ['4', 'have ifadələri',                            'to have a rest / a walk / a bath'],
+        ['5', 'Təsvir etdikdə',                            'Sadig was a fifteen year old boy.'],
+        ['6', 'Ölçü, vaxt, məbləğ, məsafə',               'a quarter of an hour / twice a day'],
+      ],
+      tip: 'Peşa bildirən sözlər həmişə a/an artiklı ilə işlənir: a doctor, a teacher, a police officer.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'İşlənmə halları 7–12',
+      content: 'Davamı:',
+      table: [
+        ['#', 'Hal',                                              'Nümunə'],
+        ['7', 'hundred / thousand / million',                    'a hundred years, a thousand times'],
+        ['8', 'Sayılan tək isim predikat funksiyasında',        'It is a book.'],
+        ['9', 'such / quite / rather + sayılan tək isim',       'Such a nice girl. Quite a little boy.'],
+        ['10','Sabit ifadələr',                                  'a cup of tea, a piece of paper'],
+        ['11','There is + sayılan tək isim',                    'There is a car in the yard.'],
+        ['12','Seçmə sualda sayılan tək isim',                  'Are you a pupil or a student?'],
+      ],
+      tip: 'period, population, distance, salary kimi mücərrəd isimlər də bəzən a/an artiklı ilə işlənə bilir.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'have ifadələri — tam siyahı',
+      content: 'Aşağıdakı "have" ifadələri həmişə a/an artiklı ilə işlənir:',
+      table: [
+        ['İfadə',                  'Azərbaycanca'],
+        ['to have a rest',         'istirahət etmək'],
+        ['to have a talk',         'söhbət etmək'],
+        ['to have a bath',         'vanna qəbul etmək'],
+        ['to have a shower',       'duş qəbul etmək'],
+        ['to have a walk',         'gəzintiyə çıxmaq'],
+        ['to have a good time',    'yaxşı vaxt keçirmək'],
+        ['to have a baby',         'uşağı olmaq'],
+        ['to have a headache',     'başağrısı olmaq'],
+        ['to have an accident',    'qəzaya uğramaq'],
+      ],
+      tip: 'Qeyd: "have" feli yemək adları ilə işlənərsə a/an artiklı işlənmir:\nWe have breakfast at 8. (artiklsız)',
+    },
+
+    {
+      type: 'lesson',
+      title: 'such / quite / very / rather + a/an',
+      content:
+        'Bu sözlər sayıla bilən tək isimdən əvvəl gəldikdə a/an artiklı işlənir.\n' +
+        'Artiklın yeri hər sözlə fərqlidir:',
+      table: [
+        ['Söz',    'Artiklın yeri',        'Nümunə'],
+        ['such',   'such-dan sonra',       'He is such a clever boy.'],
+        ['quite',  'quite-dən sonra',      'He is quite a clever boy.'],
+        ['rather', 'həm əvvəl, həm sonra', 'He is rather a clever boy. / He is a rather clever boy.'],
+        ['very',   'very-dən əvvəl',       'He is a very clever boy.'],
+        ['so',     'sifətdən əvvəl',       'She spoke with so slight an accent.'],
+        ['too',    'sifətdən əvvəl',       'It is too heavy a parcel for me.'],
+        ['as',     'sifətdən əvvəl',       'It is not as easy a thing as you think.'],
+        ['how',    'sifətdən əvvəl',       'How small an amount of capital!'],
+        ['like',   'like-dan sonra',       'She sings like a singer.'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Sifət + isim işlənən xüsusi hallar',
+      content:
+        'İsimin qarşısında onu təyin edən sifət işlənərsə, artikl sifətdən əvvələ keçir və onunla uyğunlaşır:\n\n' +
+        'a book → an interesting book\n' +
+        'an answer → a wrong answer\n' +
+        'an apple → a red apple\n\n' +
+        'İsimin qarşısında onu təyin edən başqa bir isim işlənərsə, artikl o birinci ismə keçir:\n\n' +
+        'a door → an iron door\n' +
+        'an exam → a physics exam\n' +
+        'a book → an English book\n\n' +
+        'Sayıla bilməyən isim qarşısında sifət işlənərsə a/an işlənə bilir:\n' +
+        'an education → a good education\n' +
+        'a noise → a loud noise',
+    },
+
+    { en: '"My brother is ___ doctor." — boşluğa nə gəlir?',           tr: 'a',                   wrong: 'the'                },
+    { en: '"What ___ nice day!" — boşluğa nə gəlir?',                  tr: 'a',                   wrong: 'an'                 },
+    { en: '"to have ___ rest" — boşluğa nə gəlir?',                    tr: 'a',                   wrong: 'the'                },
+    { en: '"There is ___ car in the yard." — boşluğa nə gəlir?',       tr: 'a',                   wrong: 'the'                },
+    { en: '"It is ___ book." — boşluğa nə gəlir?',                     tr: 'a',                   wrong: 'the'                },
+    { en: '"Such ___ nice girl." — boşluğa nə gəlir?',                 tr: 'a',                   wrong: 'the'                },
+    { en: '"a hundred years" — "a" burada nə mənasındadır?',           tr: 'bir (one)',            wrong: 'hər hansı bir'      },
+    { en: '"We have breakfast" — niyə artiklsızdır?',                  tr: 'Yemək adı ilə "have"', wrong: 'Sayılmayan isimdir' },
+    { en: '"a book" → "an interesting book" — artikl niyə dəyişdi?',   tr: 'Sifət sait səslə başlayır', wrong: 'Cəm isimdir' },
+    { en: '"twice a day" — "a" burada nə mənasındadır?',               tr: 'hər (per)',            wrong: 'bir (one)'          },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Are you ___ pupil or ___ student?" — boşluqlara nə gəlir?',
+          options: ['the / the', 'a / a', 'an / a', 'a / an'],
+          answer: 'a / a',
+        },
+        {
+          q: '"He is ___ very clever boy." — boşluğa nə gəlir?',
+          options: ['such', 'quite', 'a', 'the'],
+          answer: 'a',
+        },
+        {
+          q: '"to have ___ accident" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'an',
+        },
+        {
+          q: '"___ excellent supper" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'an',
+        },
+        {
+          q: '"a door" → "___ iron door" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'an',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Bölmə 2 — Dərs 2.3: all/both + the + isim ─────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.3 — all/both + the + isim · sifət + isim · artikl yeri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'many / rather / quite / such + a/an',
+      content:
+        'Bu sözlər sayılan tək isimlə işlənir:\n\n' +
+        'many + a/an + sayılan tək isim\n' +
+        'rather + a/an + sayılan tək isim\n' +
+        'quite + a/an + sayılan tək isim\n' +
+        'such + a/an + sayılan tək isim',
+      examples: [
+        { word: 'Many a woman would welcome such a chance.', az: 'Çox qadın belə bir fürsəti alqışlayardı.' },
+        { word: 'It is rather a pity, I say.',              az: 'Mən deyirəm ki, bu olduqca yazıqdır.' },
+      ],
+      tip: 'Sira sayı miqdar ifadə edərkən + a/an = "əlavə bir" mənasında işlənir: a second book.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'a/an "per" mənasında',
+      content:
+        '"a/an" artiklı "bir" mənasında "per" sözü ilə sinonimdir:',
+      table: [
+        ['a ilə',           'per ilə',          'Məna'],
+        ['once a day',      'once per day',      'gündə bir dəfə'],
+        ['twice a week',    'twice per week',    'həftədə iki dəfə'],
+        ['2 dollars a dozen', '2 dollars per dozen', 'dəst başına 2 dollar'],
+        ['40 miles a gallon', '40 miles per gallon', 'qallon başına 40 mil'],
+      ],
+    },
+
+    { en: '"many ___ woman" — boşluğa nə gəlir?',                     tr: 'a',                   wrong: 'the'                },
+    { en: '"a/an" artiklı "per" ilə sinonimdir?',                      tr: 'Bəli',                wrong: 'Xeyr'               },
+    { en: '"once a day" = "once ___ day"',                             tr: 'per',                 wrong: 'the'                },
+    { en: '"a second book" — "a" burada nə mənasındadır?',             tr: 'Əlavə bir',           wrong: 'İkinci'             },
+    { en: 'Akronimlər hansı artiklı ala bilər?',                       tr: 'a / an (tələffüzə görə)', wrong: 'Həmişə "the"'  },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ MP" — boşluğa nə gəlir? (M — "em" kimi oxunur)',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'an',
+        },
+        {
+          q: '"___ NATO" — boşluğa nə gəlir? (N — "en" kimi oxunur)',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'a',
+        },
+        {
+          q: '"twice ___ week" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'per'],
+          answer: 'a',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Test 1 — Qeyri-müəyyən artikl (Bölmə 1–2) ────────────
+[
+  { en: '"a" artiklı hansı səslə başlayan sözlərlə işlənir?',          tr: 'Samit səs',            wrong: 'Sait səs'            },
+  { en: '"an" artiklı hansı səslə başlayan sözlərlə işlənir?',         tr: 'Sait səs',             wrong: 'Samit səs'           },
+  { en: '"an hour" — niyə "an"?',                                      tr: 'h oxunmur',            wrong: 'h samitdir'          },
+  { en: '"a university" — niyə "a"?',                                  tr: 'y səsi ilə tələffüz',  wrong: 'Sait hərflə yazılır' },
+  { en: 'Cəm isimlərin qarşısında a/an işlənirmi?',                    tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: 'Sayıla bilməyən isimlərin qarşısında a/an işlənirmi?',        tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"My brother is ___ doctor." — boşluq?',                       tr: 'a',                    wrong: 'the'                 },
+  { en: '"What ___ nice day!" — boşluq?',                              tr: 'a',                    wrong: 'an'                  },
+  { en: '"to have ___ rest" — boşluq?',                                tr: 'a',                    wrong: 'the'                 },
+  { en: '"to have ___ accident" — boşluq?',                            tr: 'an',                   wrong: 'a'                   },
+  { en: '"We have breakfast" — niyə artiklsız?',                       tr: 'Yemək adı ilə "have"', wrong: 'Sayılmayan isimdir'  },
+  { en: '"It is ___ book." — boşluq?',                                 tr: 'a',                    wrong: 'the'                 },
+  { en: '"Such ___ nice girl." — boşluq?',                             tr: 'a',                    wrong: 'the'                 },
+  { en: '"He is ___ very clever boy." — boşluq?',                      tr: 'a',                    wrong: 'such'                },
+  { en: '"twice a day" — "a" nə mənasındadır?',                        tr: 'hər (per)',             wrong: 'bir (one)'           },
+  { en: '"a hundred years" — "a" nə mənasındadır?',                    tr: 'bir (one)',             wrong: 'hər hansı bir'       },
+  { en: '"There is ___ car in the yard." — boşluq?',                   tr: 'a',                    wrong: 'the'                 },
+  { en: '"Are you ___ pupil or ___ student?" — boşluqlar?',            tr: 'a / a',                wrong: 'the / the'           },
+  { en: '"a book" → "___ interesting book" — boşluq?',                 tr: 'an',                   wrong: 'a'                   },
+  { en: '"a door" → "___ iron door" — boşluq?',                        tr: 'an',                   wrong: 'a'                   },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 2 — Müəyyənlik artiklı (the)                     │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 3 — the: əsas qayda və tələffüz ────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Bölmə 3 — the: əsas qayda və tələffüz',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"the" artiklı — giriş',
+      content:
+        '"the" müəyyənlik artiklı "this" işarə əvəzliyindən yaranmışdır.\n\n' +
+        'İki cür tələffüz edilir:\n' +
+        '• Samitlə başlayan sözlərdən əvvəl [ðə]: the book [ðə buk], the pen [ðə pen]\n' +
+        '• Saitlə və tələffüz olunmayan "h" ilə başlayan sözlərdən əvvəl [ði:]: the artist, the hour\n\n' +
+        'a/an artiklından fərqli olaraq "the" müəyyənlik artiklı həm sayıla bilən tək, həm cəm, ' +
+        'həm sayıla bilməyən, həm də xüsusi isimlərin qarşısında işlənə bilir.',
+      table: [
+        ['[ðə] — samitdən əvvəl', '[ði:] — saitdən əvvəl'],
+        ['the book',              'the artist'],
+        ['the pen',               'the hour'],
+        ['the yard',              'the engineer'],
+        ['the house',             'the orange'],
+      ],
+      tip: 'Müəyyənlik artiklı həm sayıla bilən tək, həm cəm, həm sayıla bilməyən, həm də xüsusi isimlərlə işlənə bilir.',
+    },
+
+    {
+      type: 'lesson',
+      title: '"the" artiklının işlənmə halları — I qrup',
+      content: 'Əsas işlənmə halları:',
+      table: [
+        ['Hal',                                                    'Nümunə'],
+        ['İkinci dəfə çəkilən, hər ikiyə məlum olan isim',        'I see a car. The car is red.'],
+        ['Sıra sayları ilə',                                       'January is the first month.'],
+        ['Sifət isimsizləşdikdə (the + adj = cəm isim)',          'the old (qocalar), the poor (kasiblar)'],
+        ['Soyad + s → ailə bildirəndə',                           'The Browns — Braunlar ailəsi'],
+        ['Sonu -sh/-ch/-ese ilə bitən millət adları (cəmdə)',     'the English, the French, the Japanese'],
+        ['Musiqi alətləri ilə',                                    'play the piano, the violin, the drums'],
+        ['Pul vahidləri ilə',                                      'the euro, the peso'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: '"the" artiklının işlənmə halları — II qrup',
+      content: 'Coğrafi adlar və xüsusi isimlər:',
+      table: [
+        ['Hal',                                               'Nümunə'],
+        ['"of" sözönü ilə işlənən xüsusi isimlər',          'The University of Virginia, The Fourth of July'],
+        ['Cəmdə olan xüsusi isimlər',                        'The Blue Ridge Mountains, The Johnsons'],
+        ['Birlik və ittifaq bildirən xüsusi isimlər',        'The United Arab Emirates, The Commonwealth'],
+        ['Göl qrupları, sıradağlar, ada qrupları',           'the Alps, the Great Lakes, the Canary Islands'],
+        ['Okean, dəniz, çay adları',                         'the Atlantic Ocean, the Amazon, the Nile'],
+        ['Bəzi ölkə adları',                                  'the Netherlands, the Philippines, the Sudan'],
+        ['Dini kitabların adları',                            'the Quran, the Bible'],
+        ['Tarixi hadisələr',                                  'the battle of Plassey, the mutiny of 1857'],
+      ],
+      tip: 'Qeyd: Tək dağ zirvələri (Mount Kenya), küçə adları (Downing Street), qitə adları (Europe, Asia) "the" almaz.',
+    },
+
+    {
+      type: 'lesson',
+      title: '"the" artiklının işlənmə halları — III qrup',
+      content: 'Digər xüsusi hallar:',
+      table: [
+        ['Hal',                                                        'Nümunə'],
+        ['Elmi təsnifləndirmə zamanı',                                'The zebra is native to Africa.'],
+        ['Simvol və ya rəmz bildirərkən',                             'The Merlion is a symbol of Singapore.'],
+        ['Nisbi əvəzliklərdən əvvəl işlənən isimlərlə',              'The paintings (which are) in the gallery'],
+        ['Müqayisə dərəcəsi ilə',                                     'I like the bigger roller coaster.'],
+        ['on illiklər',                                                'He was born in the 1920s.'],
+        ['Bəzi tibb müəssisələri ilə',                                 'the beach, the hospital'],
+        ['the + world/sky/sun/moon/earth/environment',                'The environment / The sun'],
+        ['Ölçü bildirən söz = "hər" mənasında',                      'You get paid by the hour.'],
+        ['one of + the',                                               'One of the famous writers'],
+      ],
+    },
+
+    { en: '"the" artiklı samitdən əvvəl necə tələffüz olunur?',        tr: '[ðə]',                 wrong: '[ði:]'              },
+    { en: '"the" artiklı saitdən əvvəl necə tələffüz olunur?',         tr: '[ði:]',                wrong: '[ðə]'               },
+    { en: '"the" artiklı hansı isimlə işlənə bilməz?',                 tr: 'Hamısı ilə işlənə bilir', wrong: 'Cəm isimlər'    },
+    { en: '"the old" — bu ifadə nə mənasındadır?',                     tr: 'Qocalar (isimləşmiş)', wrong: 'Qoca (sifət)'      },
+    { en: '"The Browns" nə mənasındadır?',                             tr: 'Braunlar ailəsi',       wrong: 'Braun adlı bir nəfər'},
+    { en: '"play the piano" — niyə "the" işlənir?',                    tr: 'Musiqi aləti',          wrong: 'İkinci dəfə çəkilir'},
+    { en: '"the first month" — "the" niyə işlənir?',                   tr: 'Sıra sayısı',           wrong: 'İkinci dəfə çəkilir'},
+    { en: '"the English" — nə mənasındadır?',                          tr: 'İngilislər (millət)',   wrong: 'İngilis (tək)'      },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I see a car. ___ car is red." — boşluğa nə gəlir?',
+          options: ['A', 'An', 'The', 'heç nə'],
+          answer: 'The',
+        },
+        {
+          q: '"January is ___ first month." — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+        {
+          q: '"___ French invented champagne." — boşluğa nə gəlir?',
+          options: ['A', 'An', 'The', 'heç nə'],
+          answer: 'The',
+        },
+        {
+          q: '"play ___ violin" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+        {
+          q: '"___ Alps" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Bölmə 4 — the: geniş işlənmə halları ─────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Bölmə 4 — the: geniş işlənmə halları',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Dərs 4.1 — Unikal + coğrafi adlar',
+      content:
+        'Dünyada tək olan isimlər "the" ilə işlənir:',
+      table: [
+        ['Qrup',               'Nümunə'],
+        ['Göy cisimləri',      'the sun, the moon, the Earth'],
+        ['Okeanlar, dənizlər', 'the Atlantic Ocean, the Caspian Sea'],
+        ['Çaylar',             'the Kur, the Araz, the Amazon, the Nile'],
+        ['Dağ silsilələri',    'the Alps, the Caucasus, the Andes'],
+        ['Ölkə qrupları',     'the United States, the Netherlands'],
+        ['Qəzetlər',           'the Times, the Guardian'],
+        ['Tarixi abidələr',   'the Eiffel Tower, the White House, the Kremlin'],
+        ['Dini kitablar',      'the Quran, the Bible'],
+      ],
+      tip: 'Qeyd: Tək dağ zirvələri "the" almaz: Mount Kenya, Mount Vesuvius.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Dərs 4.2 — Üstünlük + digər hallar',
+      content: 'Üstünlük dərəcəsi və digər xüsusi işlənmə halları:',
+      table: [
+        ['Hal',                              'Nümunə'],
+        ['Superlative',                      'the best, the most interesting'],
+        ['Sıra sayları',                     'the first, the second'],
+        ['all/both + the',                   'All the students / Both the boys'],
+        ['Musiqi alətləri',                  'play the piano, play the guitar'],
+        ['Millətlər (-sh/-ch/-ese)',          'the English, the French, the Chinese'],
+        ['Cümlə daxrinda müəyyənlik',        'the house at the end of the street'],
+        ['the same / wrong / right / only',  'the same book / the only child (ailəcə tək)'],
+        ['the very (elə həmin)',             'That is the very book I needed.'],
+      ],
+      tip: 'Qeyd: "an only child" — ailənin tək övladı mənasında işlənər.',
+    },
+
+    { en: '"the sun" — niyə "the" işlənir?',                           tr: 'Dünyada tək olan',    wrong: 'İkinci dəfə çəkilir' },
+    { en: '"the Times" — niyə "the" işlənir?',                         tr: 'Qəzet adı',           wrong: 'Coğrafi ad'          },
+    { en: '"the best" — niyə "the" işlənir?',                          tr: 'Superlative dərəcəsi', wrong: 'İkinci dəfə çəkilir'},
+    { en: '"the Eiffel Tower" — niyə "the"?',                          tr: 'Dünyada tək yer',     wrong: 'Millət adı'          },
+    { en: '"Mount Kenya" — "the" alırmı?',                             tr: 'Xeyr',                wrong: 'Bəli'               },
+    { en: '"the Nile" — niyə "the"?',                                  tr: 'Çay adı',             wrong: 'Ölkə adı'           },
+    { en: '"the same book" — "the" hansı sözlə işlənir?',              tr: 'same',                wrong: 'book'               },
+    { en: '"the Caspian Sea" — niyə "the"?',                           tr: 'Dəniz adı',           wrong: 'Ölkə adı'           },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ Alps" — boşluq?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+        {
+          q: '"___ Mount Vesuvius" — boşluq?',
+          options: ['a', 'the', 'heç nə', 'an'],
+          answer: 'heç nə',
+        },
+        {
+          q: '"___ Times" (qəzet) — boşluq?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+        {
+          q: '"___ Quran" — boşluq?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+        {
+          q: '"___ United States" — boşluq?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Test 2 — Müəyyən artikl + artiklsız (Bölmə 3–5) ──────
+[
+  { en: '"the" artiklı samitdən əvvəl necə tələffüz olunur?',          tr: '[ðə]',                 wrong: '[ði:]'               },
+  { en: '"the" artiklı saitdən əvvəl necə tələffüz olunur?',           tr: '[ði:]',                wrong: '[ðə]'                },
+  { en: '"I see a car. ___ car is red." — boşluq?',                    tr: 'The',                  wrong: 'A'                   },
+  { en: '"play ___ piano" — boşluq?',                                  tr: 'the',                  wrong: 'a'                   },
+  { en: '"___ Alps" — boşluq?',                                        tr: 'the',                  wrong: 'heç nə'              },
+  { en: '"___ Mount Vesuvius" — boşluq?',                              tr: 'heç nə',               wrong: 'the'                 },
+  { en: '"___ English" (millət) — boşluq?',                            tr: 'The',                  wrong: 'An'                  },
+  { en: '"___ best student" — boşluq?',                                tr: 'the',                  wrong: 'a'                   },
+  { en: '"___ same book" — boşluq?',                                   tr: 'the',                  wrong: 'a'                   },
+  { en: '"___ Quran" — boşluq?',                                       tr: 'the',                  wrong: 'a'                   },
+  { en: '"___ United States" — boşluq?',                               tr: 'the',                  wrong: 'heç nə'              },
+  { en: '"Go to ___ school" (məktəbə getmək — əsas məna) — boşluq?',  tr: 'heç nə (artiklsız)',   wrong: 'the'                 },
+  { en: '"go to ___ cinema" (binadan söhbət) — boşluq?',               tr: 'the',                  wrong: 'heç nə'              },
+  { en: '"by ___  car" — boşluq?',                                     tr: 'heç nə (artiklsız)',   wrong: 'a'                   },
+  { en: '"at ___ home" — boşluq?',                                     tr: 'heç nə (artiklsız)',   wrong: 'the'                 },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  BÖLMƏ 5 — Artiklsız işlənmə halları                   │
+// └─────────────────────────────────────────────────────────┘
+
+{
+  type: 'grammar_lesson',
+  title: 'Bölmə 5 — Artiklsız işlənmə halları (Zero Article)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Dərs 5.1 — Artikl işlənməyən hallar',
+      content:
+        'Sıfır artikl (zero article) — bəzi nitq hissələri özlərindən sonra artikl işlənməsinə icazə vermir:',
+      table: [
+        ['Hal',                                        'Nümunə'],
+        ['Yiyəlik əvəzliklərindən sonra',             'my bag, its tail, their house'],
+        ['Yiyəlik halında olan isim sonra (\'s)',     'Tom\'s pencil, the pupils\' names'],
+        ['İşarə əvəzliklərindən sonra',               'this table, that girl, these books'],
+        ['"no" inkar əvəzliyindən sonra',             'no child, no children'],
+        ['Şirkət adları',                             'Samsung, Sony, Oxford University Press'],
+        ['Xüsusi isimlər (şəxs, şəhər)',             'Paris, Sue, Baku'],
+        ['Qitə adları',                               'Europe, Asia, Africa, Australia'],
+        ['Tək ölkə adları',                           'Turkey, Japan, Azerbaijan'],
+        ['İdman adları',                              'basketball, badminton, chess'],
+        ['Elm və fənn adları',                        'maths, geography, physics'],
+        ['Həftənin günləri və aylar',                 'Friday, May, January'],
+        ['Rənglər',                                   'blue, white, red'],
+        ['Universitet adları (şəxs adı ilə)',         'Cambridge University, Robert College'],
+        ['Kimyəvi elementlər',                        'CO₂, H₂O'],
+      ],
+      tip: 'Qeyd: THE North Atlantic Treaty Organization, THE BBC, THE UNESCO — bu kimi qısaltmalar "the" alır.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Dərs 5.2 — Sabit ifadələr artiklsız',
+      content: 'Aşağıdakı sabit ifadələrdə artikl işlənmir:',
+      table: [
+        ['İfadə',                   'Azərbaycanca'],
+        ['at home / at work',       'evdə / işdə'],
+        ['at school / at university','məktəbdə / universitetdə (əsas məna)'],
+        ['at hospital / in prison', 'xəstəxanada / həbsxanada (əsas məna)'],
+        ['go to bed',               'yatmağa getmək'],
+        ['go to church',            'kilsəyə getmək (ibadət)'],
+        ['by car / by bus / by plane','maşınla / avtobusla / təyyarə ilə'],
+        ['on foot',                 'piyada'],
+        ['at night / by day',       'gecə / gündüz'],
+        ['at dawn / at sunrise',    'şəfəqdə / günəş doğanda'],
+        ['from time to time',       'vaxtaşırı'],
+        ['step by step',            'addım-addım'],
+        ['in fact / in brief',      'əslində / qısaca'],
+        ['at once',                 'dərhal'],
+        ['listen to music',         'musiqi dinləmək (ümumi)'],
+        ['play basketball/chess',   'basketbol/şahmat oynamaq'],
+        ['have breakfast/lunch/dinner', 'səhər/nahar/şam yeməyi yemək'],
+      ],
+      tip: 'Qeyd: go to THE cinema (bina), listen to THE beautiful music (konkret musiqi) — burada artikl işlənir.',
+    },
+
+    { en: '"my bag" — niyə artiklsız?',                                tr: 'Yiyəlik əvəzliyindən sonra', wrong: 'Sayılmayan isimdir'},
+    { en: '"this table" — niyə artiklsız?',                            tr: 'İşarə əvəzliyindən sonra', wrong: 'Cəm isimdir'       },
+    { en: '"no child" — niyə artiklsız?',                              tr: '"no" inkar əvəzliyindən sonra', wrong: 'Xüsusi isimdir'},
+    { en: '"Europe" — artikl alırmı?',                                 tr: 'Xeyr (qitə adı)',         wrong: 'Bəli, "the"'        },
+    { en: '"play basketball" — artikl işlənirmi?',                     tr: 'Xeyr (idman adı)',        wrong: 'Bəli, "the"'        },
+    { en: '"go to school" (dərs üçün) — artikl işlənirmi?',           tr: 'Xeyr (əsas məna)',        wrong: 'Bəli, "the"'        },
+    { en: '"go to the cinema" — niyə "the" işlənir?',                  tr: 'Binadan söhbət gedir',    wrong: 'İkinci dəfə çəkilir' },
+    { en: '"by car" — artikl işlənirmi?',                              tr: 'Xeyr',                    wrong: 'Bəli, "a"'          },
+    { en: '"have breakfast" — artikl işlənirmi?',                      tr: 'Xeyr',                    wrong: 'Bəli, "a"'          },
+    { en: '"Samsung" — artikl alırmı?',                                tr: 'Xeyr (şirkət adı)',       wrong: 'Bəli, "the"'        },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ Friday" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'heç nə',
+        },
+        {
+          q: '"___ maths" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'heç nə',
+        },
+        {
+          q: '"go to ___ bed" — boşluğa nə gəlir?',
+          options: ['a', 'the', 'heç nə', 'an'],
+          answer: 'heç nə',
+        },
+        {
+          q: '"___ Tom\'s pencil" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'heç nə',
+        },
+        {
+          q: '"play ___ chess" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'heç nə',
+        },
+      ],
+    },
+  ],
+},
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  FINAL TEST — Artikl tam test · 30+ sual               │
+// └─────────────────────────────────────────────────────────┘
+[
+  // a / an seçimi
+  { en: '"___ hour" — boşluq?',                                        tr: 'an',                   wrong: 'a'                   },
+  { en: '"___ university" — boşluq?',                                  tr: 'a',                    wrong: 'an'                  },
+  { en: '"___ honest judge" — boşluq?',                                tr: 'an',                   wrong: 'a'                   },
+  { en: '"___ uniform" — boşluq?',                                     tr: 'a',                    wrong: 'an'                  },
+  { en: '"___ MP" (em-pi) — boşluq?',                                  tr: 'an',                   wrong: 'a'                   },
+
+  // İşlənmə halları
+  { en: '"My brother is ___ doctor." — boşluq?',                       tr: 'a',                    wrong: 'the'                 },
+  { en: '"What ___ nice day!" — boşluq?',                              tr: 'a',                    wrong: 'the'                 },
+  { en: '"to have ___ shower" — boşluq?',                              tr: 'a',                    wrong: 'the'                 },
+  { en: '"It is ___ book." — boşluq?',                                 tr: 'a',                    wrong: 'the'                 },
+  { en: '"Such ___ nice girl." — boşluq?',                             tr: 'a',                    wrong: 'the'                 },
+  { en: '"There is ___ car." — boşluq?',                               tr: 'a',                    wrong: 'the'                 },
+  { en: '"Are you ___ pupil or ___ student?" — boşluqlar?',            tr: 'a / a',                wrong: 'the / the'           },
+  { en: '"twice ___ day" — boşluq?',                                   tr: 'a',                    wrong: 'the'                 },
+  { en: '"___ hundred years" — boşluq?',                               tr: 'a',                    wrong: 'the'                 },
+  { en: '"We have breakfast" — niyə artiklsız?',                       tr: 'Yemək adı ilə "have"', wrong: 'Sayılmayan isimdir'  },
+
+  // the — işlənmə halları
+  { en: '"I see a car. ___ car is red." — boşluq?',                    tr: 'The',                  wrong: 'A'                   },
+  { en: '"January is ___ first month." — boşluq?',                     tr: 'the',                  wrong: 'a'                   },
+  { en: '"play ___ piano" — boşluq?',                                  tr: 'the',                  wrong: 'a'                   },
+  { en: '"___ French" (millət) — boşluq?',                             tr: 'The',                  wrong: 'A'                   },
+  { en: '"___ Alps" — boşluq?',                                        tr: 'the',                  wrong: 'heç nə'              },
+  { en: '"___ Nile" — boşluq?',                                        tr: 'the',                  wrong: 'heç nə'              },
+  { en: '"___ Bible" — boşluq?',                                       tr: 'the',                  wrong: 'heç nə'              },
+  { en: '"___ best student" — boşluq?',                                tr: 'the',                  wrong: 'a'                   },
+  { en: '"___ same book" — boşluq?',                                   tr: 'the',                  wrong: 'a'                   },
+  { en: '"___ Browns" (ailə) — boşluq?',                               tr: 'The',                  wrong: 'A'                   },
+
+  // Sabit ifadələr + artiklsız
+  { en: '"___ Europe" — boşluq?',                                      tr: 'heç nə',               wrong: 'the'                 },
+  { en: '"___ Mount Kenya" — boşluq?',                                  tr: 'heç nə',               wrong: 'the'                 },
+  { en: '"go to ___ bed" — boşluq?',                                   tr: 'heç nə',               wrong: 'the'                 },
+  { en: '"by ___ car" — boşluq?',                                      tr: 'heç nə',               wrong: 'a'                   },
+  { en: '"play ___ basketball" — boşluq?',                             tr: 'heç nə',               wrong: 'the'                 },
+  { en: '"at ___ home" — boşluq?',                                     tr: 'heç nə',               wrong: 'the'                 },
+  { en: '"go to ___ cinema" (bina) — boşluq?',                         tr: 'the',                  wrong: 'heç nə'              },
+  { en: '"___ my bag" — "my"dən əvvəl artikl işlənirmi?',              tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"___ this table" — "this"dən əvvəl artikl işlənirmi?',        tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"___ Samsung" — artikl alırmı?',                              tr: 'Xeyr',                  wrong: 'Bəli, "the"'         },      
+      ],
   ],
 };
 
