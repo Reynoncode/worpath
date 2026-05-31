@@ -10968,58 +10968,1644 @@ const PRONOUN_LEVEL = {
   name: 'PRONOUN — ƏVƏZLİK',
   icon: '<i class="ti ti-user"></i>',
   color: '#A5B4FC',
-  quizzes: [
+  quizzes: [// ══════════════════════════════════════════════════════════
+// ║  ƏVƏZLİK (PRONOUNS) — Tam bölüm                       ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 1 — Şəxs əvəzlikləri                         │
+// │  Personal Pronouns                                      │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 1.1 — Adlıq hal ─────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Adlıq hal (Nominative case)',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — Şəxs & Yiyəlik əvəzlikləri',
-      cards: [],
+      type: 'lesson',
+      title: 'Şəxs əvəzlikləri — Adlıq hal',
+      content:
+        'İngilis dilində şəxs əvəzliklərinin iki halı var: adlıq hal və obyekt hal.\n\n' +
+        'Adlıq hal Azərbaycan dilindəki adlıq hala uyğundur. ' +
+        'Şəxs əvəzliyi cümlədə mübtəda funksiyasında çıxış edir və cümlənin əvvəlində gəlir.',
+      table: [
+        ['Şəxs əvəzliyi', 'Azərbaycanca', 'Şəxs'],
+        ['I',   'mən',   '1-ci tək'],
+        ['you', 'sən',   '2-ci tək'],
+        ['he',  'o (kişi)',  '3-cü tək'],
+        ['she', 'o (qadın)', '3-cü tək'],
+        ['it',  'o (cansız)', '3-cü tək'],
+        ['we',  'biz',   '1-ci cəm'],
+        ['you', 'siz',   '2-ci cəm'],
+        ['they','onlar', '3-cü cəm'],
+      ],
+      tip: 'Diqqət: "I" əvəzliyi həmişə böyük hərflə yazılır. Üçüncü şəxsin təki üçün he / she / it — hər üçü Azərbaycancaya "o" kimi tərcümə olunur.',
     },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — Qayıdış & İşarə əvəzlikləri',
-      cards: [],
+      type: 'lesson',
+      title: 'Adlıq hal — işlənmə qaydası',
+      content:
+        'Şəxs əvəzliyi adlıq halda cümlədə mübtəda kimi işlənir.\n\n' +
+        'Cəmdə he / she / it → they ilə ifadə olunur.',
+      examples: [
+        { word: 'I am a student.',        az: 'Mən tələbəyəm.' },
+        { word: 'She is a teacher.',      az: 'O müəllimədir.' },
+        { word: 'They are doctors.',      az: 'Onlar həkimlərdir.' },
+        { word: 'We go to school.',       az: 'Biz məktəbə gedirik.' },
+        { word: 'It is a book.',          az: 'O kitabdır.' },
+      ],
+      tip: 'Şəxs əvəzliyi adlıq halda həmişə cümlənin əvvəlində — xəbərdən əvvəl gəlir.',
     },
+
+    { en: '"I" əvəzliyi necə yazılır?',                          tr: 'Həmişə böyük hərflə',   wrong: 'Həmişə kiçik hərflə'  },
+    { en: '"She" Azərbaycancaya necə tərcümə olunur?',           tr: 'O (qadın)',              wrong: 'Onlar'                },
+    { en: '"They" əvəzliyi neçənci şəxsin cəmidir?',             tr: '3-cü şəxsin cəmi',      wrong: '1-ci şəxsin cəmi'     },
+    { en: '"It" hansı cins üçün işlənir?',                       tr: 'Cansız varlıqlar',       wrong: 'Yalnız heyvanlar'     },
+    { en: 'Adlıq hal cümlədə hansı funksiyada işlənir?',         tr: 'Mübtəda',               wrong: 'Tamamlıq'             },
+    { en: '"We" Azərbaycancaya necə tərcümə olunur?',            tr: 'Biz',                   wrong: 'Siz'                  },
+    { en: '"He / she / it" cəmdə hansı əvəzliklə ifadə olunur?', tr: 'They',                  wrong: 'We'                   },
+    { en: 'Şəxs əvəzliyi adlıq halda cümlənin harasında gəlir?', tr: 'Əvvəlində',             wrong: 'Sonunda'              },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Sual & Nisbi əvəzliklər',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 4 — Təyin & Qeyri-müəyyən əvəzliklər',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 5 — İnkar əvəzlikləri',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Hansı əvəzlik həmişə böyük hərflə yazılır?',
+          options: ['he', 'I', 'we', 'they'],
+          answer: 'I',
+        },
+        {
+          q: '"O (kişi)" mənasında hansı əvəzlik işlənir?',
+          options: ['it', 'she', 'he', 'they'],
+          answer: 'he',
+        },
+        {
+          q: 'Adlıq hal cümlədə hansı funksiyada çıxış edir?',
+          options: ['Tamamlıq', 'Təyin', 'Mübtəda', 'Zərflik'],
+          answer: 'Mübtəda',
+        },
+        {
+          q: '"He, she, it" cəmdə hansı əvəzliklə ifadə olunur?',
+          options: ['we', 'you', 'they', 'it'],
+          answer: 'they',
+        },
+      ],
     },
   ],
-};
+},
 
-// ── 8. ARTICLE (ARTİKL) ─────────────────────────────────────
-const ARTICLE_LEVEL = {
-  id: 'article',
-  name: 'ARTICLE — ARTİKL',
-  icon: '<i class="ti ti-tag"></i>',
-  color: '#FCD34D',
+// ── Dərs 1.2 — Obyekt hal ────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — Obyekt hal (Object case)',
+  cards: [
 
-  quizzes: [
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — A / An — qeyri-müəyyən artikl',
-      cards: [],
+      type: 'lesson',
+      title: 'Şəxs əvəzlikləri — Obyekt hal',
+      content:
+        'Obyekt hal Azərbaycan dilindəki yönlük və təsirlik hala uyğundur.\n\n' +
+        'Həm vasitəli, həm də vasitəsiz tamamlıq vəzifəsində işlənir.',
+      table: [
+        ['Adlıq hal', 'Obyekt hal', 'Azərbaycanca'],
+        ['I',    'me',   'məni / mənə'],
+        ['you',  'you',  'səni / sənə'],
+        ['he',   'him',  'onu / ona (kişi)'],
+        ['she',  'her',  'onu / ona (qadın)'],
+        ['it',   'it',   'onu / ona (cansız)'],
+        ['we',   'us',   'bizi / bizə'],
+        ['you',  'you',  'sizi / sizə'],
+        ['they', 'them', 'onları / onlara'],
+      ],
+      tip: 'Diqqət: "you" əvəzliyi həm adlıq, həm obyekt halda eyni formada qalır.',
     },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — The — müəyyən artikl',
-      cards: [],
+      type: 'lesson',
+      title: 'Sözönləri ilə obyekt hal',
+      content:
+        'Obyekt hal sözönləri ilə birlikdə işlənir. Hər sözönü fərqli məna verir:',
+      table: [
+        ['Sözönü', 'Azərbaycanca', 'Nümunə'],
+        ['to',    'yönlük hal (-a/-ə)',      'He sent this book to me.'],
+        ['speak + to', 'ilə (-la/-lə)',      'I spoke to him.'],
+        ['by',    'tərəfindən',              'The money is sent by them.'],
+        ['with',  'ilə (-la/-lə)',           'I went with him.'],
+        ['for',   'üçün',                   'The book is for you.'],
+        ['about', 'haqqında',               'He has written about you.'],
+        ['from',  'çıxışlıq hal (-dan/-dən)', 'I got a letter from her.'],
+      ],
+      examples: [
+        { word: 'He has sent this book to me.',   az: 'O bu kitabı mənə göndərib.' },
+        { word: 'I spoke to him.',                az: 'Mən onunla danışdım.' },
+        { word: 'The money is sent by them.',     az: 'Pul onların tərəfindən göndərilib.' },
+        { word: 'I went with him.',               az: 'Mən onunla getdim.' },
+        { word: 'The book is for you.',           az: 'Kitab sizin üçündür.' },
+        { word: 'He has written about you.',      az: 'O sənin haqqında yazmışdır.' },
+        { word: 'I got a letter from her.',       az: 'Mən ondan məktub aldım.' },
+      ],
     },
+
+    { en: '"I" əvəzliyinin obyekt hal forması nədir?',             tr: 'me',     wrong: 'my'    },
+    { en: '"He" əvəzliyinin obyekt hal forması nədir?',            tr: 'him',    wrong: 'his'   },
+    { en: '"They" əvəzliyinin obyekt hal forması nədir?',          tr: 'them',   wrong: 'their' },
+    { en: '"We" əvəzliyinin obyekt hal forması nədir?',            tr: 'us',     wrong: 'our'   },
+    { en: '"She" əvəzliyinin obyekt hal forması nədir?',           tr: 'her',    wrong: 'hers'  },
+    { en: '"for" sözönü ilə obyekt hal necə tərcümə olunur?',      tr: 'üçün',   wrong: 'ilə'   },
+    { en: '"by" sözönü ilə obyekt hal necə tərcümə olunur?',       tr: 'tərəfindən', wrong: 'üçün' },
+    { en: '"with" sözönü ilə obyekt hal necə tərcümə olunur?',     tr: 'ilə (-la/-lə)', wrong: 'tərəfindən' },
+    { en: '"about" sözönü ilə obyekt hal necə tərcümə olunur?',    tr: 'haqqında',  wrong: 'üçün' },
+    { en: '"from" sözönü ilə obyekt hal necə tərcümə olunur?',     tr: 'çıxışlıq hal (-dan/-dən)', wrong: 'yönlük hal' },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Artikl işlənməyən hallar',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"He" əvəzliyinin obyekt forması hansıdır?',
+          options: ['he', 'his', 'him', 'her'],
+          answer: 'him',
+        },
+        {
+          q: '"The book is ___ you." — boşluğa hansı sözönü gəlir? (sizin üçün)',
+          options: ['to', 'by', 'for', 'from'],
+          answer: 'for',
+        },
+        {
+          q: '"I went ___ him." — hansı sözönü işlənir? (onunla)',
+          options: ['to', 'with', 'for', 'about'],
+          answer: 'with',
+        },
+        {
+          q: '"They" əvəzliyinin obyekt forması hansıdır?',
+          options: ['their', 'they', 'theirs', 'them'],
+          answer: 'them',
+        },
+        {
+          q: '"by" sözönü ilə cümlə xəbəri hansı növdə olur?',
+          options: ['Məlum növ', 'Məchul növ', 'Qayıdış növ', 'Qarşılıq növ'],
+          answer: 'Məchul növ',
+        },
+      ],
     },
+  ],
+},
+
+// ── Quiz 1 — Şəxs əvəzlikləri yekun ─────────────────────
+[
+  { en: '"I" əvəzliyinin obyekt forması nədir?',                   tr: 'me',                   wrong: 'my'                  },
+  { en: '"She" əvəzliyinin obyekt forması nədir?',                 tr: 'her',                  wrong: 'she'                 },
+  { en: '"We" əvəzliyinin obyekt forması nədir?',                  tr: 'us',                   wrong: 'our'                 },
+  { en: '"They" əvəzliyinin obyekt forması nədir?',                tr: 'them',                 wrong: 'their'               },
+  { en: 'Adlıq hal cümlədə hansı funksiyada işlənir?',            tr: 'Mübtəda',              wrong: 'Tamamlıq'            },
+  { en: 'Obyekt hal cümlədə hansı funksiyada işlənir?',           tr: 'Tamamlıq',             wrong: 'Mübtəda'             },
+  { en: '"for" sözönü ilə obyekt hal necə tərcümə olunur?',       tr: 'üçün',                 wrong: 'ilə'                 },
+  { en: '"by" sözönü ilə hansı növ xəbər işlənir?',               tr: 'Məchul növ',           wrong: 'Məlum növ'           },
+  { en: '"with" sözönü ilə obyekt hal necə tərcümə olunur?',      tr: '-la/-lə (ilə)',        wrong: 'tərəfindən'          },
+  { en: '"about" sözönü Azərbaycancaya necə tərcümə olunur?',     tr: 'haqqında',             wrong: 'üçün'                },
+  { en: '"He spoke to him." — "to" burada necə tərcümə olunur?',  tr: '-la/-lə (ilə)',        wrong: '-a/-ə (yönlük)'      },
+  { en: '"I" əvəzliyi necə yazılır?',                             tr: 'Həmişə böyük hərflə',  wrong: 'Həmişə kiçik hərflə' },
+  { en: 'Üçüncü şəxs təkinin neçə forması var?',                  tr: '3 (he / she / it)',    wrong: '2 (he / she)'        },
+  { en: '"from" sözönü ilə obyekt hal hansı hala uyğundur?',      tr: 'Çıxışlıq hal',         wrong: 'Yönlük hal'          },
+  { en: '"you" əvəzliyi adlıq və obyekt halda eyni formadamı?',   tr: 'Bəli',                 wrong: 'Xeyr'                },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 2 — Yiyəlik əvəzlikləri                       │
+// │  Possessive Pronouns                                    │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 2.1 — İsimlə işlənən forma ─────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — Yiyəlik əvəzlikləri: isimlə işlənən forma',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Yiyəlik əvəzlikləri — isimlə işlənən forma',
+      content:
+        'Yiyəlik əvəzliyinin iki forması var.\n\n' +
+        '1-ci forma — isimlə işlənən forma. Bu forma özündən sonra mütləq isim tələb edir ' +
+        'və cümlədə təyin funksiyasında işlənir.',
+      table: [
+        ['Şəxs əvəzliyi', 'Yiyəlik (isimlə)', 'Azərbaycanca'],
+        ['I',    'my',    'mənim'],
+        ['you',  'your',  'sənin'],
+        ['he',   'his',   'onun (kişi)'],
+        ['she',  'her',   'onun (qadın)'],
+        ['it',   'its',   'onun (cansız)'],
+        ['we',   'our',   'bizim'],
+        ['you',  'your',  'sizin'],
+        ['they', 'their', 'onların'],
+      ],
+      tip: 'Bu forma özündən sonra mütləq isim tələb edir: my book, your pen, his car. Azərbaycan dilinə şəxs əvəzliyinin yiyəlik halı ilə tərcümə olunur.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Yiyəlik əvəzlikləri — isimlə işlənmə nümunələri',
+      content:
+        'İsimlə işlənən yiyəlik əvəzliyi cümlədə həmişə təyin funksiyasını yerinə yetirir.\n\n' +
+        'İsimdən əvvəl yiyəlik əvəzliyi işləndikdə artikl işlənmir.',
+      examples: [
+        { word: 'My aunt was an actress.',       az: 'Mənim bibim aktrisa idi.' },
+        { word: 'His book is on the table.',     az: 'Onun kitabı masanın üstündədir.' },
+        { word: 'Their house is very big.',      az: 'Onların evi çox böyükdür.' },
+        { word: 'Our teacher is kind.',          az: 'Bizim müəllimimiz mehriban­dır.' },
+        { word: 'Its colour is red.',            az: 'Onun rəngi qırmızıdır.' },
+      ],
+      tip: 'Diqqət: isimdən əvvəl yiyəlik əvəzliyi işləndikdə nə a/an, nə də the artikli işlənmir.',
+    },
+
+    { en: '"my" hansı şəxsin yiyəlik formasıdır?',                  tr: '1-ci şəxs tək (I)',    wrong: '2-ci şəxs tək'       },
+    { en: '"their" hansı şəxsin yiyəlik formasıdır?',               tr: '3-cü şəxs cəm (they)', wrong: '1-ci şəxs cəm'       },
+    { en: '"his" hansı şəxsin yiyəlik formasıdır?',                 tr: '3-cü şəxs tək kişi',   wrong: '3-cü şəxs tək qadın' },
+    { en: 'İsimlə işlənən yiyəlik əvəzliyi cümlədə hansı funksiyadadır?', tr: 'Təyin',           wrong: 'Mübtəda'             },
+    { en: 'Yiyəlik əvəzliyindən sonra nə gəlir (isimlə forma)?',   tr: 'Mütləq isim',          wrong: 'Köməkçi fel'          },
+    { en: '"our" Azərbaycancaya necə tərcümə olunur?',              tr: 'bizim',                wrong: 'onların'             },
+    { en: '"its" nəyin yiyəlik formasıdır?',                        tr: 'it (cansız varlıq)',   wrong: 'he (kişi)'           },
+    { en: 'Yiyəlik əvəzliyindən əvvəl artikl işlənirmi?',          tr: 'Xeyr, işlənmir',       wrong: 'Bəli, "the" işlənir' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She" əvəzliyinin isimlə işlənən yiyəlik forması hansıdır?',
+          options: ['she', 'her', 'hers', 'his'],
+          answer: 'her',
+        },
+        {
+          q: '"___ book is on the table." (onun — kişi) — boşluğa nə gəlir?',
+          options: ['Her', 'Their', 'His', 'Its'],
+          answer: 'His',
+        },
+        {
+          q: 'İsimlə işlənən yiyəlik əvəzliyi cümlədə hansı funksiyada çıxış edir?',
+          options: ['Mübtəda', 'Xəbər', 'Tamamlıq', 'Təyin'],
+          answer: 'Təyin',
+        },
+        {
+          q: '"My ___ was an actress." — boşluğa nə gəlir?',
+          options: ['she', 'her', 'aunt', 'our'],
+          answer: 'aunt',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — Müstəqil (isimsiz) forma ──────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — Yiyəlik əvəzlikləri: müstəqil (isimsiz) forma',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Yiyəlik əvəzlikləri — müstəqil (isimsiz) forma',
+      content:
+        'Müstəqil forma tək işlənir — özündən sonra isim tələb etmir.\n\n' +
+        'Bu forma cümlədə mübtəda, ismi xəbər və tamamlıq funksiyasında çıxış edir.',
+      table: [
+        ['Isimlə forma', 'Müstəqil forma', 'Azərbaycanca'],
+        ['my',    'mine',   'mənimki'],
+        ['your',  'yours',  'səninki'],
+        ['his',   'his',    'onunku (kişi)'],
+        ['her',   'hers',   'onunku (qadın)'],
+        ['its',   'its',    'onunku (cansız)'],
+        ['our',   'ours',   'bizimki'],
+        ['your',  'yours',  'sizinki'],
+        ['their', 'theirs', 'onlarınkı'],
+      ],
+      tip: '"of" sözü ilə işləndikdə müstəqil forma təyin funksiyasında çıxış edir: Nick is an uncle of ours.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'İki formanın fərqi',
+      content:
+        'Hansı formanı seçmək — isimdən asılıdır:\n\n' +
+        '• Özündən sonra isim gəlirsə → isimlə forma (my, your, his...)\n' +
+        '• Özündən sonra isim gəlmirsə → müstəqil forma (mine, yours, his...)',
+      table: [
+        ['İsimlə forma (isim tələb edir)',  'Müstəqil forma (isim tələb etmir)'],
+        ['This is my book.',                'This book is mine.'],
+        ['Is this your pen?',              'Is this pen yours?'],
+        ['His car is fast.',               'That car is his.'],
+        ['Their house is big.',            'That house is theirs.'],
+      ],
+      examples: [
+        { word: 'Nick is an uncle of ours.',    az: 'Nick bizim əmimizdir.' },
+        { word: 'This book is mine.',           az: 'Bu kitab mənimkidir.' },
+        { word: 'Is that pen yours?',           az: 'O qələm səninkidirmi?' },
+      ],
+      tip: '"of + müstəqil forma" birləşməsi yiyəlik mənasını bildirir: a friend of mine — mənim bir dostum.',
+    },
+
+    { en: '"mine" hansı formanın müstəqil variantıdır?',             tr: 'my',      wrong: 'me'    },
+    { en: '"yours" hansı şəxsin müstəqil yiyəlik formasıdır?',      tr: 'you',     wrong: 'they'  },
+    { en: '"theirs" Azərbaycancaya necə tərcümə olunur?',           tr: 'onlarınkı', wrong: 'bizimki' },
+    { en: '"hers" hansı şəxsin müstəqil formasıdır?',               tr: 'she',     wrong: 'he'    },
+    { en: '"ours" hansı şəxsin müstəqil formasıdır?',               tr: 'we',      wrong: 'they'  },
+    { en: 'Müstəqil forma özündən sonra isim tələb edirmi?',        tr: 'Xeyr',    wrong: 'Bəli'  },
+    { en: '"This book is ___." (mənimki) — boşluğa nə gəlir?',     tr: 'mine',    wrong: 'my'    },
+    { en: '"Nick is an uncle of ___." (bizimki) — boşluq?',        tr: 'ours',    wrong: 'our'   },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"This is ___ pen." (sənin) — isimlə forma hansıdır?',
+          options: ['yours', 'your', 'mine', 'hers'],
+          answer: 'your',
+        },
+        {
+          q: '"This pen is ___." (sənin) — müstəqil forma hansıdır?',
+          options: ['your', 'you', 'yours', 'mine'],
+          answer: 'yours',
+        },
+        {
+          q: 'Müstəqil forma cümlədə hansı funksiyalarda çıxış edə bilər?',
+          options: [
+            'Yalnız mübtəda',
+            'Mübtəda, ismi xəbər, tamamlıq',
+            'Yalnız tamamlıq',
+            'Yalnız xəbər',
+          ],
+          answer: 'Mübtəda, ismi xəbər, tamamlıq',
+        },
+        {
+          q: '"a friend of ___" (mənim bir dostum) — boşluğa nə gəlir?',
+          options: ['me', 'my', 'mine', 'I'],
+          answer: 'mine',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 2 — Yiyəlik əvəzlikləri yekun ───────────────────
+[
+  { en: '"my" özündən sonra nə tələb edir?',                        tr: 'İsim',                 wrong: 'Fel'                 },
+  { en: '"mine" özündən sonra nə tələb edir?',                      tr: 'Heç nə (isimsiz)',      wrong: 'İsim'                },
+  { en: '"their" Azərbaycancaya necə tərcümə olunur?',              tr: 'onların',               wrong: 'onlarınkı'           },
+  { en: '"theirs" Azərbaycancaya necə tərcümə olunur?',             tr: 'onlarınkı',             wrong: 'onların'             },
+  { en: '"his" həm isimlə, həm müstəqil formada eyni yazılır?',     tr: 'Bəli',                  wrong: 'Xeyr'                },
+  { en: '"This book is ___." (mənimki) — boşluğa nə gəlir?',       tr: 'mine',                  wrong: 'my'                  },
+  { en: '"___ book is on the table." (onların) — boşluq?',         tr: 'Their',                 wrong: 'Theirs'              },
+  { en: 'Yiyəlik əvəzliyinin neçə forması var?',                    tr: '2',                     wrong: '3'                   },
+  { en: '"ours" hansı formanın müstəqil variantıdır?',              tr: 'our',                   wrong: 'us'                  },
+  { en: '"a friend of ___" (sənin bir dostun) — boşluq?',          tr: 'yours',                 wrong: 'your'                },
+  { en: 'İsimlə işlənən yiyəlik əvəzliyindən əvvəl artikl olurmu?', tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: 'Müstəqil forma "of" ilə işləndikdə hansı funksiyadır?',    tr: 'Təyin',                 wrong: 'Mübtəda'             },
+  { en: '"her" həm obyekt hal, həm yiyəlik formasımı?',             tr: 'Bəli',                  wrong: 'Xeyr'                },
+  { en: '"hers" hansı şəxsin müstəqil yiyəlik formasıdır?',         tr: 'she',                   wrong: 'he'                  },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 3 — Qayıdış + İşarə əvəzlikləri              │
+// │  Reflexive + Demonstrative Pronouns                     │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 3.1 — Qayıdış əvəzlikləri ──────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — Qayıdış əvəzlikləri (Reflexive Pronouns)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Qayıdış əvəzliklərinin düzəlişi',
+      content:
+        'Qayıdış əvəzliklərinin hamısı düzəltmə sözlərdir.\n\n' +
+        '• 1-ci və 2-ci şəxs: yiyəlik əvəzliyi + self (tək) / selves (cəm)\n' +
+        '• 3-cü şəxs tək: him / her / it + self\n' +
+        '• 3-cü şəxs cəm: them + selves',
+      table: [
+        ['Şəxs',       'Qayıdış əvəzliyi', 'Azərbaycanca'],
+        ['I',          'myself',            'özüm'],
+        ['you (tək)',  'yourself',          'özün'],
+        ['he',         'himself',           'özü (kişi)'],
+        ['she',        'herself',           'özü (qadın)'],
+        ['it',         'itself',            'özü (cansız)'],
+        ['we',         'ourselves',         'özümüz'],
+        ['you (cəm)',  'yourselves',        'özünüz'],
+        ['they',       'themselves',        'özləri'],
+      ],
+      tip: '"Help yourself!" — yemək təklif edərkən işlənən sabit ifadə.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Qayıdış əvəzliklərinin işlənmə qaydaları',
+      content:
+        'Qayıdış əvəzlikləri yalnız ismi əvəzlik kimi işlənir.\n\n' +
+        '• Əsasən vasitəsiz tamamlıq kimi cümlənin sonunda gəlir\n' +
+        '• Mənanı gücləndirmək üçün aid olduğu sözün yanında gəlir\n' +
+        '• Sözönündən sonra işlənə bilir: "by himself" → özü tək',
+      examples: [
+        { word: 'I do my homework myself.',    az: 'Ev tapşırığımı özüm edirəm.' },
+        { word: 'I myself do my homework.',    az: 'Ev tapşırığımı məhz özüm edirəm.' },
+        { word: 'He thinks too much of himself.', az: 'O özü haqqında çox fikirləşir.' },
+        { word: 'She lives by herself.',       az: 'O özü tək yaşayır.' },
+      ],
+      tip: '"by + qayıdış əvəzliyi" → "özü tək / tənha" mənasını verir.',
+    },
+
+    { en: '"I" şəxsinin qayıdış əvəzliyi nədir?',                   tr: 'myself',     wrong: 'yourself'   },
+    { en: '"they" şəxsinin qayıdış əvəzliyi nədir?',                tr: 'themselves', wrong: 'ourselves'  },
+    { en: '"he" şəxsinin qayıdış əvəzliyi nədir?',                  tr: 'himself',    wrong: 'herself'    },
+    { en: '"we" şəxsinin qayıdış əvəzliyi nədir?',                  tr: 'ourselves',  wrong: 'themselves' },
+    { en: '"by himself" necə tərcümə olunur?',                       tr: 'özü tək',    wrong: 'özündən'    },
+    { en: 'Qayıdış əvəzliyi cümlədə əsasən hansı funksiyadadır?',   tr: 'Vasitəsiz tamamlıq', wrong: 'Mübtəda' },
+    { en: '"Help yourself!" nə vaxt işlənir?',                       tr: 'Yemək təklif edərkən', wrong: 'Kömək istəyərkən' },
+    { en: '"herself" hansı şəxsə aiddir?',                           tr: 'she',        wrong: 'he'         },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She looked at ___." (özünə baxdı) — boşluğa nə gəlir?',
+          options: ['himself', 'itself', 'herself', 'myself'],
+          answer: 'herself',
+        },
+        {
+          q: '"by himself" necə tərcümə olunur?',
+          options: ['onunla birlikdə', 'özü tək', 'ona görə', 'onun üçün'],
+          answer: 'özü tək',
+        },
+        {
+          q: '"We did it ___." (özümüz) — boşluq?',
+          options: ['ourselves', 'themselves', 'yourself', 'itself'],
+          answer: 'ourselves',
+        },
+        {
+          q: 'Qayıdış əvəzliyi mənanı gücləndirmək üçün cümlənin harasında gəlir?',
+          options: ['Həmişə sonda', 'Aid olduğu sözün yanında', 'Cümlənin əvvəlində', 'Feldan əvvəl'],
+          answer: 'Aid olduğu sözün yanında',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.2 — İşarə əvəzlikləri ────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — İşarə əvəzlikləri (Demonstrative Pronouns)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'İşarə əvəzlikləri: this / that / these / those',
+      content:
+        'İşarə əvəzlikləri: this, that, the same, such.\n\n' +
+        '"this" və "that" əvəzliklərinin cəm forması var.\n' +
+        'İngilis dilində işarə əvəzliyi təyin etdiyi isimlə kəmiyyətcə uzlaşır.',
+      table: [
+        ['Tək',   'Cəm',    'Azərbaycanca',  'İşlənmə'],
+        ['this',  'these',  'bu / bunlar',   'Yaxın (zaman və məkan)'],
+        ['that',  'those',  'o / onlar',     'Uzaq (zaman və məkan)'],
+      ],
+      examples: [
+        { word: 'This book is mine.',         az: 'Bu kitab mənimdir.' },
+        { word: 'These books are mine.',      az: 'Bu kitablar mənimdir.' },
+        { word: 'That house is big.',         az: 'O ev böyükdür.' },
+        { word: 'Those days were great.',     az: 'O günlər əla idi.' },
+        { word: 'These days are busy.',       az: 'Bu günlər məşğuldur.' },
+      ],
+      tip: 'İsimdən əvvəl işarə əvəzliyi olduqda artikl işlənmir. Həmçinin: Give me another book. I have read this one.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'The same və Such',
+      content:
+        '"the same" həmişə müəyyənlik artikli ilə işlənir → "eyni, həmin" mənasında.\n\n' +
+        '"such" → "elə, belə" mənasında.\n' +
+        'Sayıla bilən tək isimdən əvvəl such + a/an işlənir.',
+      table: [
+        ['Əvəzlik',    'Xüsusiyyət',                          'Azərbaycanca'],
+        ['the same',  'həmişə "the" ilə işlənir',            'eyni, həmin'],
+        ['such',      'sayılan tək isimdən əvvəl "a/an" gəlir', 'elə, belə'],
+      ],
+      examples: [
+        { word: 'He said the same thing.',         az: 'O eyni şeyi dedi.' },
+        { word: 'Such a book is hard to find.',    az: 'Belə bir kitab tapmaq çətindir.' },
+        { word: 'I have never seen such a man.',   az: 'Mən heç vaxt belə bir adam görmədim.' },
+      ],
+      tip: '"such" işlənməsi üçün mütləq isim olmalıdır. "The same" isə həmişə "the" ilə gəlir.',
+    },
+
+    { en: '"this" cəm forması nədir?',                               tr: 'these',      wrong: 'those'    },
+    { en: '"that" cəm forması nədir?',                               tr: 'those',      wrong: 'these'    },
+    { en: '"these days" Azərbaycancaya necə tərcümə olunur?',        tr: 'bu günlər',  wrong: 'o günlər' },
+    { en: '"those days" Azərbaycancaya necə tərcümə olunur?',        tr: 'o günlər',   wrong: 'bu günlər'},
+    { en: '"the same" həmişə hansı artikl ilə işlənir?',             tr: '"the" ilə',  wrong: '"a" ilə'  },
+    { en: '"such" Azərbaycancaya necə tərcümə olunur?',              tr: 'elə, belə',  wrong: 'eyni, həmin' },
+    { en: 'İşarə əvəzliyindən əvvəl artikl işlənirmi?',             tr: 'Xeyr',       wrong: 'Bəli'     },
+    { en: '"Such a book" — burada niyə "a" işlənir?',               tr: 'Sayılan tək isim', wrong: 'Sayılmayan isim' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ books are mine." (bu kitablar) — boşluğa nə gəlir?',
+          options: ['This', 'That', 'These', 'Those'],
+          answer: 'These',
+        },
+        {
+          q: '"___ house is big." (uzaqda olan ev) — boşluğa nə gəlir?',
+          options: ['This', 'These', 'Those', 'That'],
+          answer: 'That',
+        },
+        {
+          q: '"the same" həmişə hansı söz ilə işlənir?',
+          options: ['a', 'an', 'the', 'heç biri'],
+          answer: 'the',
+        },
+        {
+          q: '"Such ___ book is hard to find." — boşluğa nə gəlir?',
+          options: ['the', 'a', 'an', 'heç nə'],
+          answer: 'a',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 3 — Qayıdış + İşarə yekun ──────────────────────
+[
+  { en: '"she" şəxsinin qayıdış əvəzliyi nədir?',                  tr: 'herself',              wrong: 'himself'             },
+  { en: '"they" şəxsinin qayıdış əvəzliyi nədir?',                 tr: 'themselves',           wrong: 'ourselves'           },
+  { en: '"by himself" necə tərcümə olunur?',                        tr: 'özü tək',              wrong: 'onunla birlikdə'     },
+  { en: 'Qayıdış əvəzlikləri cümlədə əsasən hansı funksiyadadır?', tr: 'Vasitəsiz tamamlıq',   wrong: 'Mübtəda'             },
+  { en: '"Help yourself!" ifadəsi nə vaxt işlənir?',               tr: 'Yemək təklif edərkən', wrong: 'Kömək istəyərkən'    },
+  { en: '"I myself" — "myself" burada hansı funksiyadadır?',        tr: 'Gücləndirilmiş əlavə', wrong: 'Vasitəsiz tamamlıq' },
+  { en: '"this" cəm forması nədir?',                                tr: 'these',                wrong: 'those'               },
+  { en: '"those days" Azərbaycancaya necə tərcümə olunur?',         tr: 'o günlər',             wrong: 'bu günlər'           },
+  { en: '"the same" həmişə hansı artikl ilə işlənir?',             tr: 'the',                  wrong: 'a'                   },
+  { en: '"such" Azərbaycancaya necə tərcümə olunur?',              tr: 'elə, belə',            wrong: 'eyni, həmin'         },
+  { en: '"such" işlənməsi üçün nə lazımdır?',                      tr: 'İsim olmalıdır',       wrong: 'Fel olmalıdır'       },
+  { en: 'İşarə əvəzliyindən əvvəl artikl işlənirmi?',             tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"ourselves" hansı şəxsə aiddir?',                          tr: 'we',                   wrong: 'they'                },
+  { en: '"that" cəm forması nədir?',                                tr: 'those',                wrong: 'these'               },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 4 — Sual əvəzlikləri                          │
+// │  Interrogative Pronouns                                 │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 4.1 — Who / Whom / Whose ────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.1 — Who / Whom / Whose',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Who — canlı varlıqlara sual',
+      content:
+        '"Who" ilə canlı mübtədaya sual veririk.\n\n' +
+        '"Who" mübtəda olduqda xəbər təkdə olur.\n' +
+        '"Who" əvəzliyi mürəkkəb ismi xəbərin ad hissəsi olduqda mübtəda ilə uzlaşır.',
+      table: [
+        ['Cümlə',                       'Sual',                          'İzah'],
+        ['Ann teaches you English.',    'Who teaches you English?',      'Who → mübtəda, xəbər tək'],
+        ['The boy was the first man.',  'Who was the first spaceman?',   'Who → mübtəda'],
+        ['These are students.',        'Who are these students?',       'Who → xəbər cəmlə uzlaşır'],
+      ],
+      examples: [
+        { word: 'Who teaches you English?',   az: 'Sizin ingilis dili müəlliminiz kimdir?' },
+        { word: 'Who was the first spaceman?', az: 'Birinci kosmonaft kim olub?' },
+        { word: 'Who are these students?',    az: 'Bu tələbələr kimdir?' },
+      ],
+      tip: '"Who" mübtəda funksiyasında işlənərkən köməkçi fel tələb olunmur.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Whom — tamamlığa sual',
+      content:
+        '"Whom" tamamlığa sual verir. "Whom"-dan sonra mütləq köməkçi fel gəlir.\n\n' +
+        'Sözönlü tamamlıq olarsa sözönü "whom"-dan əvvələ keçir.\n\n' +
+        '"Who" ilə tamamlığa da sual vermək olar, amma fərq var: ' +
+        '"who" ilə tamamlığa sual verəndə sözönü axırda qalır.',
+      table: [
+        ['Cümlə',               'Whom ilə sual',                    'Who ilə sual'],
+        ['I give him a book.',  'Whom do I give a book?',           'Who do I give a book to?'],
+        ['I give a book to him.', 'To whom do I give a book?',     'Who do I give a book to?'],
+      ],
+      examples: [
+        { word: 'Whom do I give a book?',    az: 'Mən kitabı kimə verirəm?' },
+        { word: 'To whom did she speak?',    az: 'O kiminlə danışdı?' },
+        { word: 'Who do I give a book to?',  az: 'Mən kitabı kimə verirəm?' },
+      ],
+      tip: 'Fərq: "whom" ilə sözönü əvvələ keçir; "who" ilə sözönü sonda qalır.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Whose — mənsubiyyət bildirir',
+      content:
+        '"Whose" mənsubiyyət, sahiblik bildirir.\n\n' +
+        'Həmişə sifəti əvəzlik kimi işlənir — aid olduğu ismin qarşısında gəlir.\n' +
+        'Bu halda ismin qarşısında heç bir artikl işlənmir.\n' +
+        '"Whose" ilə yiyəlik halda ismə və yiyəlik əvəzliyinə sual verilir.',
+      examples: [
+        { word: 'Whose book is this?',       az: 'Bu kimin kitabıdır?' },
+        { word: 'Whose pen did you take?',   az: 'Sən kimin qələmini götürdün?' },
+      ],
+      tip: '"Whose" → "kimin" kimi tərcümə olunur. Həmişə özündən sonra isim gəlir.',
+    },
+
+    { en: '"Who" mübtəda olduqda xəbər hansı sayda olur?',           tr: 'Tək',          wrong: 'Cəm'            },
+    { en: '"Whom"-dan sonra nə gəlməlidir?',                         tr: 'Köməkçi fel',  wrong: 'İsim'           },
+    { en: '"Whose" Azərbaycancaya necə tərcümə olunur?',             tr: 'kimin',        wrong: 'hansı'          },
+    { en: '"Whom" ilə sözönlü tamamlıqda sözönü hara keçir?',       tr: 'Cümlənin əvvəlinə', wrong: 'Sona'      },
+    { en: '"Who" ilə sözönlü tamamlıqda sözönü hara qalır?',        tr: 'Sonda',        wrong: 'Əvvəldə'        },
+    { en: '"Whose" özündən sonra nə tələb edir?',                    tr: 'İsim',         wrong: 'Köməkçi fel'    },
+    { en: '"Who are these students?" — "who" burada hansı funksiyadır?', tr: 'Xəbər hissəsi', wrong: 'Mübtəda'   },
+    { en: '"Whose book is this?" — "whose" hansı halda ismə sual verir?', tr: 'Yiyəlik hal', wrong: 'Adlıq hal' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I give him a book." — tamamlığa "whom" ilə sual?',
+          options: [
+            'Who I give a book?',
+            'Whom do I give a book?',
+            'Whose do I give a book?',
+            'Who gives a book?',
+          ],
+          answer: 'Whom do I give a book?',
+        },
+        {
+          q: '"Whose" Azərbaycancaya necə tərcümə olunur?',
+          options: ['hansı', 'nə', 'kimin', 'kimdən'],
+          answer: 'kimin',
+        },
+        {
+          q: '"To ___ did she speak?" — boşluğa nə gəlir?',
+          options: ['who', 'whose', 'whom', 'which'],
+          answer: 'whom',
+        },
+        {
+          q: '"Who teaches you English?" — "who" burada hansı funksiyadır?',
+          options: ['Tamamlıq', 'Xəbər', 'Mübtəda', 'Təyin'],
+          answer: 'Mübtəda',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 4.2 — What / Which ──────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.2 — What / Which',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'What — cansız varlıqlara sual',
+      content:
+        '"What" adətən cansız varlıqlarla işlənir.\n\n' +
+        'Lakin adamların sənəti, vəzifəsini soruşanda "what" şəxsə aid olur.\n\n' +
+        '"What" həm sifəti əvəzlik (what book), həm də ismi əvəzlik (what has happened) kimi işlənə bilir.\n' +
+        'İsmi əvəzlik kimi işlənərkən "hansı?" sualı ilə tərcümə olunur.',
+      table: [
+        ['İşlənmə',             'Nümunə',                          'Azərbaycanca'],
+        ['Cansız mübtəda',      'What is it?',                     'Bu nədir?'],
+        ['Sənət / vəzifə',     'What is he?',                     'O nəçidir?'],
+        ['İsmi əvəzlik',        'What has happened?',              'Nə olub?'],
+        ['Sifəti əvəzlik',      'What book is it?',                'O hansı kitabdır?'],
+        ['Sifəti əvəzlik',      'What book did you buy?',          'Siz hansı kitabı aldınız?'],
+      ],
+      tip: '"What" cansız mübtəda ilə işlənərkən xəbər tək olur.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Which — seçmə mənası',
+      content:
+        '"Which" seçmə mənasına malikdir.\n\n' +
+        'Mövcud olan 2 şəxs və ya əşyadan münasib olanı soruşarkən işlədilir.\n' +
+        'Həm şəxsə, həm əşyaya aid verilə bilər.\n' +
+        '"Which" → "hansı" kimi tərcümə olunur.',
+      examples: [
+        { word: 'Which book do you want to read?',                            az: 'Hansı kitabı oxumaq istəyirsiniz?' },
+        { word: 'Which room do you like — the dining room or bedroom?',       az: 'Hansı otağı bəyənirsiniz — yemək otağını, yoxsa yataq otağını?' },
+      ],
+      table: [
+        ['What',   'Ümumi sual (nə? kim? nəçi?)',          'What is this? / What is he?'],
+        ['Which',  'Seçim sualı — mövcud olanlardan biri', 'Which book do you prefer?'],
+      ],
+      tip: '"What" — ümumi; "Which" — konkret seçim arasından soruşur.',
+    },
+
+    { en: '"What" adətən hansı varlıqlarla işlənir?',                tr: 'Cansız varlıqlar',     wrong: 'Canlı varlıqlar'     },
+    { en: '"What is he?" cümləsi nəyi soruşur?',                     tr: 'Sənəti / vəzifəsini',  wrong: 'Adını'               },
+    { en: '"Which" Azərbaycancaya necə tərcümə olunur?',             tr: 'hansı',                wrong: 'nə'                  },
+    { en: '"Which" nə vaxt işlənir?',                                tr: 'Mövcud seçimlər arasında', wrong: 'Ümumi sorğularda' },
+    { en: '"What book did you buy?" — "what" burada hansı növdür?',  tr: 'Sifəti əvəzlik',       wrong: 'İsmi əvəzlik'        },
+    { en: '"What has happened?" — "what" burada hansı növdür?',      tr: 'İsmi əvəzlik',         wrong: 'Sifəti əvəzlik'      },
+    { en: '"What" cansız mübtəda ilə işlənərkən xəbər hansı sayda?', tr: 'Tək',                  wrong: 'Cəm'                 },
+    { en: '"Which" həm şəxsə, həm əşyaya aid olub olmadığı?',        tr: 'Bəli, hər ikisinə',    wrong: 'Xeyr, yalnız əşyaya' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ is he?" (O nəçidir?) — boşluğa nə gəlir?',
+          options: ['Who', 'Whose', 'Which', 'What'],
+          answer: 'What',
+        },
+        {
+          q: '"___ book do you prefer?" (seçim arasında) — boşluğa nə gəlir?',
+          options: ['What', 'Who', 'Which', 'Whose'],
+          answer: 'Which',
+        },
+        {
+          q: '"What" ismi əvəzlik kimi işlənərkən necə tərcümə olunur?',
+          options: ['nə', 'kim', 'hansı', 'nəçi'],
+          answer: 'hansı',
+        },
+        {
+          q: '"Which" ilə "what" arasındakı əsas fərq nədir?',
+          options: [
+            'Birincisi canlı, ikincisi cansız üçün',
+            'Which seçim sualı, what ümumi sual',
+            'Which insan üçün, what əşya üçün',
+            'Heç bir fərq yoxdur',
+          ],
+          answer: 'Which seçim sualı, what ümumi sual',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 4 — Sual əvəzlikləri yekun ──────────────────────
+[
+  { en: '"Who" mübtəda olduqda xəbər hansı sayda olur?',           tr: 'Tək',                  wrong: 'Cəm'                 },
+  { en: '"Whom"-dan sonra mütləq nə gəlir?',                        tr: 'Köməkçi fel',          wrong: 'İsim'                },
+  { en: '"Whose" Azərbaycancaya necə tərcümə olunur?',             tr: 'kimin',                wrong: 'hansı'               },
+  { en: '"Whom" ilə sözönlü tamamlıqda sözönü hara keçir?',        tr: 'Əvvələ',               wrong: 'Sona'                },
+  { en: '"Who" ilə sözönlü tamamlıqda sözönü hara qalır?',         tr: 'Sonda',                wrong: 'Əvvəldə'             },
+  { en: '"What is he?" cümləsi nəyi soruşur?',                      tr: 'Sənəti / vəzifəsini',  wrong: 'Adını'               },
+  { en: '"What" cansız mübtəda ilə işlənərkən xəbər hansı sayda?', tr: 'Tək',                  wrong: 'Cəm'                 },
+  { en: '"Which" nə vaxt işlənir?',                                 tr: 'Seçim arasında',       wrong: 'Ümumi sorğularda'    },
+  { en: '"Which" Azərbaycancaya necə tərcümə olunur?',             tr: 'hansı',                wrong: 'nə'                  },
+  { en: '"Who are these students?" — "who" hansı funksiyadır?',     tr: 'Xəbər hissəsi',        wrong: 'Mübtəda'             },
+  { en: '"What book is it?" — "what" hansı növ əvəzlikdir?',       tr: 'Sifəti əvəzlik',       wrong: 'İsmi əvəzlik'        },
+  { en: '"What has happened?" — "what" hansı növ əvəzlikdir?',     tr: 'İsmi əvəzlik',         wrong: 'Sifəti əvəzlik'      },
+  { en: '"Whose" özündən sonra mütləq nə tələb edir?',             tr: 'İsim',                 wrong: 'Köməkçi fel'         },
+  { en: '"Which" həm canlı, həm cansıza aid ola bilərmi?',         tr: 'Bəli',                 wrong: 'Xeyr'                },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 5 — Təyin əvəzlikləri                         │
+// │  Defining Pronouns                                      │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 5.1 — All / Each / Every ────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.1 — All / Each / Every',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'All — ümumləşdirici əvəzlik',
+      content:
+        '"All" ümumləşdirici mənaya malikdir. Həm tək, həm cəm isimlərlə işlənə bilər.\n\n' +
+        '• Canlı varlıqları bildirdikdə fel cəmdə olur\n' +
+        '• Mücərrəd varlıqları bildirdikdə fel təkdə olur\n' +
+        '• Sayılmayan isim gələrsə fel tək gəlir\n' +
+        '• Şəxs əvəzliklərindən sonra əlavə kimi işlənə bilər',
+      table: [
+        ['Nümunə',                                'İzah'],
+        ['All were present at the meeting.',      'Canlı → fel cəm'],
+        ['All the students are in the yard.',     'Canlı → fel cəm'],
+        ['All that glisters is not gold.',        'Mücərrəd → fel tək'],
+        ['All information is useful.',            'Sayılmayan → fel tək'],
+        ['It all seemed useless.',               'Şəxs əvəzliyinə əlavə'],
+      ],
+      tip: '"All" → "hamı, bütün" kimi tərcümə olunur.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Each vs Every',
+      content:
+        '"Each" — əvvəlcədən xatırladılmış qrup içindəki hər birini ayrı-ayrılıqda bildirir.\n\n' +
+        '"Every" — sayıla bilən isimlərin qarşısında sifəti əvəzlik kimi işlənir.\n\n' +
+        '• "each of" işlənir — amma "every of" heç vaxt işlənmir!\n' +
+        '• Hər ikisi mübtəda olduqda fel tək gəlir.',
+      table: [
+        ['Each',                                         'Every'],
+        ['Xatırladılmış qrupdan hər biri ayrı-ayrı',   'Ümumi qrupun hər bir üzvü'],
+        ['Each of them got a new flat.',                'Every man must be honest.'],
+        ['Each had a red flag.',                        'Every student passed.'],
+        ['"each of" işlənir',                           '"every of" heç vaxt işlənmir'],
+      ],
+      examples: [
+        { word: 'Each of them got a new flat.',    az: 'Onların hər biri yeni mənzil aldı.' },
+        { word: 'Every man must be honest.',       az: 'Hər bir adam dürüst olmalıdır.' },
+        { word: 'Everybody is here.',             az: 'Hamı buradadır.' },
+        { word: 'Everything is clear.',           az: 'Hər şey aydındır.' },
+      ],
+      tip: 'Everybody / Everyone → hər kəs / hamı (şəxsə aid). Everything → hər şey (əşyaya aid). Hər ikisindən sonra fel tək gəlir.',
+    },
+
+    { en: '"All" canlı varlıqlarla işlənərkən fel hansı sayda olur?',   tr: 'Cəm',                 wrong: 'Tək'                },
+    { en: '"All" sayılmayan isimlə işlənərkən fel hansı sayda olur?',   tr: 'Tək',                 wrong: 'Cəm'                },
+    { en: '"all" Azərbaycancaya necə tərcümə olunur?',                  tr: 'hamı, bütün',         wrong: 'hər biri'           },
+    { en: '"each" ilə "every"dən fərqli olaraq nə işlənir?',           tr: 'each of',             wrong: 'every of'           },
+    { en: '"every of" işlənirmi?',                                       tr: 'Xeyr, işlənmir',      wrong: 'Bəli, işlənir'      },
+    { en: '"Everybody" mübtəda olduqda fel hansı sayda gəlir?',         tr: 'Tək',                 wrong: 'Cəm'                },
+    { en: '"Everything" hansı varlıqlara aid işlənir?',                 tr: 'Əşyalara',            wrong: 'Şəxslərə'           },
+    { en: '"each" mübtəda olduqda fel hansı sayda gəlir?',              tr: 'Tək',                 wrong: 'Cəm'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"All information ___ useful." — boşluğa nə gəlir?',
+          options: ['are', 'were', 'is', 'have been'],
+          answer: 'is',
+        },
+        {
+          q: '"___ of them got a new flat." — boşluğa nə gəlir?',
+          options: ['Every', 'All', 'Each', 'Both'],
+          answer: 'Each',
+        },
+        {
+          q: '"Everything ___." — fel hansı sayda olur?',
+          options: ['Cəm', 'Tək', 'İkisi də olar', 'Asılı deyil'],
+          answer: 'Tək',
+        },
+        {
+          q: '"Every ___" — özündən sonra nə gəlir?',
+          options: ['of + əvəzlik', 'Mütləq isim', 'Köməkçi fel', 'Heç nə'],
+          answer: 'Mütləq isim',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 5.2 — Both / Either / Neither ───────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.2 — Both / Either / Neither',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Both — hər iki',
+      content:
+        '"Both" əvvəlcədən xatırladılmış iki şəxs, əşya və ya fikri bildirir.\n\n' +
+        '• Həm artikl, həm artiklsiz işlənir\n' +
+        '• Mübtəda olduqda xəbər cəm olur\n' +
+        '• Both ... and ... → həm ... həm də (yalnız təsdiq cümlədə)\n' +
+        '• "Both"un inkarı "neither" ilə düzəlir',
+      table: [
+        ['Forma',               'Nümunə',                                    'Azərbaycanca'],
+        ['Müstəqil',            'Both were present.',                         'Hər ikisi iştirak etdi.'],
+        ['Şəxs əvəzliyilə',    'We both / both of us / both of them',        'hər ikimiz / hər ikiniz...'],
+        ['both...and',          'Both my sister and brother are doctors.',    'Həm bacım, həm qardaşım həkimdir.'],
+      ],
+      tip: '"Both ... and" yalnız təsdiq cümlədə işlənir. İnkarı "neither ... nor" ilə düzəlir.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Either — ikisindən biri / hər ikisi',
+      content:
+        '"Either" əvvəl xatırladılmış 2 şəxs və ya əşyaya aid işlənir.\n\n' +
+        '2 mənası var:\n' +
+        '1. İstədiyin, hər hansı ikisindən biri\n' +
+        '2. Hər ikisi\n\n' +
+        'Mübtəda olduqda fel tək olur.\n\n' +
+        'Həmçinin inkar cümləni təsdiq etmək üçün cümlənin sonunda gəlir.',
+      examples: [
+        { word: 'Take either book.',                   az: 'İstədiyin kitabı götür.' },
+        { word: 'I have two pens. You can take either.', az: 'Mənim 2 qələmim var. İstədiyini götürə bilərsən.' },
+        { word: 'I don\'t go to school. My sister doesn\'t go to school either.', az: 'Mən məktəbə getmirəm. Bacım da.' },
+      ],
+      tip: '"either...or" → ya...ya da (təsdiq cümlədə). Mübtəda olduqda axırıncı mübtəda ilə uzlaşır.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Either...or / Neither...nor + too / either fərqi',
+      content:
+        '"either ... or" → ya ... ya da (təsdiq cümlədə)\n' +
+        '"neither ... nor" → nə ... nə də (inkar mənada)\n\n' +
+        '"too" → həmçinin, da/də (təsdiq cümlənin sonunda)\n' +
+        '"either" → həmçinin, da/də (inkar cümlənin sonunda)\n\n' +
+        'Qısa təsdiq: "so + köməkçi fel + şəxs"\n' +
+        'Qısa inkar: "neither + köməkçi fel + şəxs"',
+      table: [
+        ['Cümlə',                                      'Cavab (qısa)'],
+        ['I go to school.',                            'So does my sister. / I do too.'],
+        ['I don\'t go to school.',                     'Neither does my sister. / I don\'t either.'],
+        ['Either my brothers or my sister is home.',   'Ya qardaşlarım ya da bacım evdədir.'],
+        ['Neither my sister nor my brothers are home.','Nə bacım, nə qardaşlarım evdədir.'],
+      ],
+      tip: '"either...or" — axırıncı mübtəda ilə uzlaşma: either...or my sister IS / either...or my brothers ARE.',
+    },
+
+    { en: '"Both" mübtəda olduqda xəbər hansı sayda olur?',            tr: 'Cəm',              wrong: 'Tək'              },
+    { en: '"both...and" yalnız hansı cümlədə işlənir?',                tr: 'Təsdiq cümlədə',   wrong: 'İnkar cümlədə'   },
+    { en: '"Both"un inkarı nədir?',                                     tr: 'neither',          wrong: 'either'          },
+    { en: '"Either" mübtəda olduqda fel hansı sayda olur?',             tr: 'Tək',              wrong: 'Cəm'             },
+    { en: '"too" hansı cümlənin sonunda işlənir?',                      tr: 'Təsdiq cümlə',     wrong: 'İnkar cümlə'     },
+    { en: '"either" (sonda) hansı cümlənin sonunda işlənir?',           tr: 'İnkar cümlə',      wrong: 'Təsdiq cümlə'    },
+    { en: '"neither...nor" Azərbaycancaya necə tərcümə olunur?',        tr: 'nə...nə də',       wrong: 'ya...ya da'      },
+    { en: '"either...or" Azərbaycancaya necə tərcümə olunur?',          tr: 'ya...ya da',       wrong: 'nə...nə də'      },
+    { en: '"neither" mübtəda olduqda fel hansı sayda gəlir?',           tr: 'Tək',              wrong: 'Cəm'             },
+    { en: 'Qısa inkar cümləni necə düzəldirik?',                       tr: 'neither + köməkçi fel + şəxs', wrong: 'so + köməkçi fel + şəxs' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Both my sister and brother ___ doctors." — boşluq?',
+          options: ['is', 'was', 'are', 'were'],
+          answer: 'are',
+        },
+        {
+          q: '"I don\'t like it. My friend doesn\'t like it ___." — boşluq?',
+          options: ['too', 'also', 'either', 'neither'],
+          answer: 'either',
+        },
+        {
+          q: '"Either my brothers or my sister ___ home." — boşluq?',
+          options: ['are', 'were', 'is', 'have been'],
+          answer: 'is',
+        },
+        {
+          q: '"I can\'t speak English. ___ can I." — boşluq?',
+          options: ['So', 'Too', 'Either', 'Neither'],
+          answer: 'Neither',
+        },
+        {
+          q: '"both...and" inkarı nədir?',
+          options: ['either...or', 'neither...nor', 'not...and', 'no...and'],
+          answer: 'neither...nor',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 5.3 — Other / Another / Else ────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.3 — Other / Another / Else',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Other — digər, başqa',
+      content:
+        '"Other" əvvəlcə xatırladılmış şəxsdən fərqlənən digər şəxs və ya əşya haqqında danışarkən işlənir.\n\n' +
+        '• Həm tək, həm cəm isimlə işlənir\n' +
+        '• Özü cəm ola bilər (others) — amma "others"dan sonra isim gəlmir\n' +
+        '• "the other" → o biri (ikidən biri haqqında)',
+      table: [
+        ['Forma',        'Nümunə',                                      'Azərbaycanca'],
+        ['other (sifət)', 'Give me another book, I need other ideas.',  'başqa, digər'],
+        ['others (isim)', 'I have lost my pen and others.',             'başqaları'],
+        ['the other',    'One is a doctor, the other is a teacher.',    'o biri'],
+        ['the others',   'One left, the others stayed.',                'digərləri'],
+      ],
+      examples: [
+        { word: 'Mr Brown has two sons. One is a doctor, the other is a teacher.', az: 'Cənab Braunun 2 oğlu var. Biri həkim, o birisi müəllimdir.' },
+        { word: 'You must be tender to the others.',                               az: 'Siz başqalarına qarşı nəzakətli olmalısınız.' },
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Another — başqa bir / bir ... də',
+      content:
+        '"Another" düzəltmə sözdür: an + other.\n\n' +
+        'Buna görə yalnız sayıla bilən tək isimlərə işlənir.\n' +
+        '"another pen" ✓ — "another pens" ✗ → "other pens" ✓\n\n' +
+        '2 mənası var:\n' +
+        '1. Başqa bir (əvvəlkindən fərqli) — sonrakı cümlə inkar olur\n' +
+        '2. Bir ... da/də (əlavə) — sonrakı cümlə kifayətsizliyi göstərir',
+      examples: [
+        { word: 'Give me another pen. This one doesn\'t write.',      az: 'Mənə başqa bir qələm verin. Bu yazmır.' },
+        { word: 'Bring me another cup of tea. I am very thirsty.',    az: 'Mənə bir fincan da çay gətirin. Çox susamışam.' },
+      ],
+      tip: '"another" + cəm isim işlənmir → "another pen" ✓ / "other pens" ✓ / "another pens" ✗',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Else — başqa / savayı',
+      content:
+        '"Else" sual əvəzliklərindən (who, what) sonra işlənir.\n\n' +
+        '3 nöqtədən sonra:\n' +
+        '• İsim gəlirsə → "other" işlənir\n' +
+        '• Köməkçi fel / fel gəlirsə → "else" işlənir\n\n' +
+        '"Else" qeyri-müəyyən əvəzliklərdən (somebody, something, nobody...) sonra da işlənir.',
+      table: [
+        ['"else" işlənir',                         '"other" işlənir'],
+        ['Who else is there?',                     'What other films did you see?'],
+        ['What else do you want?',                 'What other books do you need?'],
+        ['Where else did you go?',                 '—'],
+        ['There is something else I want to say.', '—'],
+        ['Ask somebody else about it.',            '—'],
+      ],
+      tip: '"else"-dən sonra mütləq köməkçi fel / fel gəlir, isim gəlmir.',
+    },
+
+    { en: '"another" yalnız hansı isimlərlə işlənir?',               tr: 'Sayılan tək isimlər',  wrong: 'Sayılmayan isimlər'  },
+    { en: '"another pens" düzdürmü?',                                  tr: 'Xeyr, "other pens"',  wrong: 'Bəli'                },
+    { en: '"the other" nə zaman işlənir?',                             tr: 'İkidən birini bildirərkən', wrong: 'Üçdən birini bildirərkən' },
+    { en: '"else"-dən sonra nə gəlir?',                                tr: 'Köməkçi fel / fel',   wrong: 'İsim'                },
+    { en: '"other" (sözündən sonra) özündən sonra nə tələb etmir?',   tr: '"others"-dan sonra isim gəlmir', wrong: '"others"-dan sonra isim gəlir' },
+    { en: '"another" söz nə + nədən düzəlmişdir?',                    tr: 'an + other',           wrong: 'any + other'         },
+    { en: '"Give me another pen." — "another" burada hansı mənadır?', tr: 'Başqa bir (əvvəlkindən fərqli)', wrong: 'Bir ... da/də (əlavə)' },
+    { en: '"Bring me another cup of tea." — "another" hansı mənadır?', tr: 'Bir ... da/də (əlavə)', wrong: 'Başqa bir (əvvəlkindən fərqli)' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"What ___ do you want?" (başqa) — "else" yoxsa "other"?',
+          options: ['other', 'else', 'another', 'others'],
+          answer: 'else',
+        },
+        {
+          q: '"What ___ films did you see?" — "else" yoxsa "other"?',
+          options: ['else', 'others', 'other', 'another'],
+          answer: 'other',
+        },
+        {
+          q: '"another pens" düzdürmü?',
+          options: ['Bəli', 'Xeyr — "other pens" olmalıdır', 'Bəli, cəmdə də işlənir', 'Kontekstdən asılıdır'],
+          answer: 'Xeyr — "other pens" olmalıdır',
+        },
+        {
+          q: '"One is a doctor, the ___ is a teacher." — boşluğa nə gəlir?',
+          options: ['another', 'other', 'others', 'else'],
+          answer: 'other',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 5 — Təyin əvəzlikləri yekun ─────────────────────
+[
+  { en: '"All" canlılarla işlənərkən fel hansı sayda olur?',           tr: 'Cəm',                  wrong: 'Tək'                 },
+  { en: '"All" sayılmayan isimlə işlənərkən fel hansı sayda olur?',    tr: 'Tək',                  wrong: 'Cəm'                 },
+  { en: '"each of" işlənirmi?',                                         tr: 'Bəli',                 wrong: 'Xeyr'                },
+  { en: '"every of" işlənirmi?',                                        tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Everybody" mübtəda olduqda fel hansı sayda?',                tr: 'Tək',                  wrong: 'Cəm'                 },
+  { en: '"Everything" hansı varlıqlara aid işlənir?',                  tr: 'Əşyalara',             wrong: 'Şəxslərə'            },
+  { en: '"Both" mübtəda olduqda xəbər hansı sayda olur?',              tr: 'Cəm',                  wrong: 'Tək'                 },
+  { en: '"both...and" yalnız hansı cümlədə işlənir?',                  tr: 'Təsdiq cümlədə',       wrong: 'İnkar cümlədə'       },
+  { en: '"both...and"ın inkarı nədir?',                                 tr: 'neither...nor',        wrong: 'either...or'         },
+  { en: '"Either" mübtəda olduqda fel hansı sayda olur?',              tr: 'Tək',                  wrong: 'Cəm'                 },
+  { en: '"too" hansı cümlənin sonunda işlənir?',                       tr: 'Təsdiq',               wrong: 'İnkar'               },
+  { en: '"either" (sonda) hansı cümlənin sonunda işlənir?',            tr: 'İnkar',                wrong: 'Təsdiq'              },
+  { en: '"neither...nor" Azərbaycancaya necə tərcümə olunur?',         tr: 'nə...nə də',           wrong: 'ya...ya da'          },
+  { en: '"another" yalnız hansı isimlərə işlənir?',                    tr: 'Sayılan tək isimlər',  wrong: 'Sayılmayan isimlər'  },
+  { en: '"another pens" düzdürmü?',                                     tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"else"-dən sonra nə gəlir?',                                   tr: 'Köməkçi fel / fel',    wrong: 'İsim'                },
+  { en: '"the other" nə zaman işlənir?',                                tr: 'İkidən birini bildirərkən', wrong: 'Üçdən birini bildirərkən' },
+  { en: '"neither" mübtəda olduqda fel hansı sayda gəlir?',            tr: 'Tək',                  wrong: 'Cəm'                 },
+  { en: '"What else" — "else"-dən sonra nə gəlir?',                    tr: 'Köməkçi fel',          wrong: 'İsim'                },
+  { en: '"What other films" — burada niyə "other" işlənir?',          tr: 'Sonra isim gəlir',      wrong: 'Sonra fel gəlir'     },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 6 — Qeyri-müəyyən, İnkar, Nisbi əvəzliklər   │
+// │  Indefinite + Negative + Relative Pronouns             │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 6.1 — Qeyri-müəyyən əvəzliklər ─────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 6.1 — Qeyri-müəyyən əvəzliklər (Indefinite Pronouns)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Some / Any',
+      content:
+        '"Some" və "any" həm sayılan, həm sayılmayan isimlərlə işlənir.\n\n' +
+        '• "some" → adətən təsdiq cümlədə\n' +
+        '• "any" → adətən sual və inkar cümlədə\n' +
+        '• "any" → şərt cümlədə "istədiyin" mənasında\n' +
+        '• "some" bəzən inkar cümlədə "bəzi" mənasında işlənir\n' +
+        '• Sayılan isimlə: "bir neçə" mənası; sayılmayan isimlə: "bir az" mənası',
+      table: [
+        ['',       'Some',                      'Any'],
+        ['Cümlə',  'Adətən təsdiq',             'Adətən sual/inkar'],
+        ['Məna',   'bir neçə / bir az / bəzi',  'istədiyin / heç bir'],
+        ['Nümunə', 'Some pupils are in the yard.', 'Do you have any books?'],
+        ['İstisna', 'Some birds can\'t fly.',   'If you have any time, come.'],
+      ],
+      tip: '"some" və "any"-dən sonra həmişə isim gəlir. Əgər isim artıq çəkilibirsə, yalnız "some/any" işlənə bilir: Bring me some paper. We haven\'t any.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Somebody / Anyone / Something / Anything',
+      content:
+        'Şəxsə aid:\n' +
+        '• somebody / someone → kimsə (təsdiq cümlədə)\n' +
+        '• anybody / anyone → heç kim (sual/inkar cümlədə)\n\n' +
+        'Əşyaya aid:\n' +
+        '• something → nəisə bir şey (təsdiq cümlədə)\n' +
+        '• anything → heç bir şey (sual/inkar cümlədə)\n\n' +
+        'Hamısından sonra isim gəlmir. Mübtəda olduqda fel tək gəlir.',
+      table: [
+        ['Əvəzlik',    'Aid olduğu', 'İşlənmə',        'Azərbaycanca'],
+        ['somebody',   'Şəxs',      'Təsdiq',          'kimsə'],
+        ['anybody',    'Şəxs',      'Sual/inkar',      'heç kim'],
+        ['something',  'Əşya',      'Təsdiq',          'nəisə bir şey'],
+        ['anything',   'Əşya',      'Sual/inkar',      'heç bir şey / bir şeymi'],
+      ],
+      examples: [
+        { word: 'Somebody is at the door.',        az: 'Qapıda kimsə var.' },
+        { word: 'Does anybody come?',              az: 'Kimsə gəlir?' },
+        { word: 'There is something on the table.',az: 'Masanın üstündə nəsə var.' },
+        { word: 'I don\'t want anything.',         az: 'Mən heç nə istəmirəm.' },
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Many / Much / A lot of',
+      content:
+        '"Many" → sayılan isimlərlə (cəm isim, cəm fel)\n' +
+        '"Much" → sayılmayan isimlərlə (tək isim, tək fel)\n\n' +
+        'Hər ikisi əsasən sual və inkar cümlədə işlənir.\n\n' +
+        '"A lot of" → təsdiq cümlədə işlənir (sualda/inkarda many/much əvəz edir)\n\n' +
+        '"Much" felə də aid ola bilər — feldən sonra gəlir.\n' +
+        '"A lot" felə aid olduqda "of" olmur, feldən sonra gəlir.',
+      table: [
+        ['',        'Many',                  'Much',                   'A lot of'],
+        ['İsim',    'Sayılan (cəm)',         'Sayılmayan (tək)',        'Hər ikisi'],
+        ['Cümlə',   'Sual/inkar',            'Sual/inkar',             'Yalnız təsdiq'],
+        ['Nümunə',  'Many books',            'Much milk',              'A lot of books/milk'],
+        ['Feldən sonra', '—',               'She speaks much.',        'She speaks a lot.'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Few / Little / A few / A little',
+      content:
+        '"few" → sayılan isimlərlə — mənfi məna (az, kifayətsiz)\n' +
+        '"little" → sayılmayan isimlərlə — mənfi məna (az, kifayətsiz)\n\n' +
+        '"a few" → sayılan isimlərlə — müsbət məna (bir neçə, bəzi)\n' +
+        '"a little" → sayılmayan isimlərlə — müsbət məna (bir az)\n\n' +
+        'Isimsiz də işlənə bilər.',
+      table: [
+        ['Forma',     'İsim növü',   'Məna',      'Nümunə'],
+        ['few',       'Sayılan',     'Az (mənfi)', 'I have few books. I can\'t give you.'],
+        ['a few',     'Sayılan',     'Bir neçə',   'I have a few books. I can give you.'],
+        ['little',    'Sayılmayan',  'Az (mənfi)', 'I have little money. I can\'t give it.'],
+        ['a little',  'Sayılmayan',  'Bir az',     'I have a little money. I can give you.'],
+      ],
+      tip: '"a" artiklı ilə: müsbət məna → "I have a few / a little" — verə bilərəm. Artikl olmadan: mənfi məna → "I have few / little" — verə bilmirəm.',
+    },
+
+    { en: '"some" adətən hansı cümlədə işlənir?',                    tr: 'Təsdiq',             wrong: 'İnkar'              },
+    { en: '"any" adətən hansı cümlədə işlənir?',                     tr: 'Sual/inkar',         wrong: 'Təsdiq'             },
+    { en: '"a lot of" hansı cümlədə işlənir?',                       tr: 'Təsdiq',             wrong: 'İnkar'              },
+    { en: '"many" hansı isimlərlə işlənir?',                         tr: 'Sayılan (cəm)',       wrong: 'Sayılmayan (tək)'   },
+    { en: '"much" hansı isimlərlə işlənir?',                         tr: 'Sayılmayan (tək)',    wrong: 'Sayılan (cəm)'      },
+    { en: '"somebody" hansı cümlədə işlənir?',                       tr: 'Təsdiq',             wrong: 'Sual/inkar'         },
+    { en: '"anybody" hansı cümlədə işlənir?',                        tr: 'Sual/inkar',         wrong: 'Təsdiq'             },
+    { en: '"a few" ilə "few" arasındakı fərq nədir?',                tr: 'a few müsbət, few mənfi məna', wrong: 'Heç bir fərq yoxdur' },
+    { en: '"a little" Azərbaycancaya necə tərcümə olunur?',          tr: 'bir az (müsbət)',     wrong: 'az (mənfi)'         },
+    { en: '"something" hansı varlıqlara aid işlənir?',               tr: 'Əşyalara',           wrong: 'Şəxslərə'           },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"There are ___ students in the yard." (bir neçə — müsbət) — boşluq?',
+          options: ['few', 'little', 'a few', 'a little'],
+          answer: 'a few',
+        },
+        {
+          q: '"I have ___ money. I can\'t give it to you." — boşluq?',
+          options: ['a little', 'a few', 'many', 'little'],
+          answer: 'little',
+        },
+        {
+          q: '"___ books are on the table." (çox — təsdiq) — boşluq?',
+          options: ['Many', 'Much', 'A lot of', 'Few'],
+          answer: 'A lot of',
+        },
+        {
+          q: '"Does ___ come?" — boşluğa nə gəlir?',
+          options: ['somebody', 'nobody', 'anybody', 'everybody'],
+          answer: 'anybody',
+        },
+        {
+          q: '"She speaks ___." (çox — felə aid) — boşluq?',
+          options: ['many', 'much', 'a lot of', 'a lot'],
+          answer: 'a lot',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 6.2 — İnkar əvəzlikləri ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 6.2 — İnkar əvəzlikləri (Negative Pronouns)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'İnkar əvəzliklərinin cədvəli',
+      content:
+        'İngilis dilindəki inkar əvəzlikləri cümləni tək başına inkar edir.\n\n' +
+        'Bir cümlədə yalnız bir inkarlıq mümkündür — ikinci inkarlıq heç vaxt işlənmər.',
+      table: [
+        ['Əvəzlik',  'Azərbaycanca',           'Xüsusiyyət'],
+        ['no',       'heç bir',                'İsimin qarşısında gəlir, artikl işlənmir'],
+        ['none',     'heç biri / heç kim',     '"no"nun müstəqil (isimsiz) forması'],
+        ['nobody',   'heç kim / heç kəs',      'Şəxsə aid, isimsiz, fel tək'],
+        ['no one',   'heç kim / heç kəs',      'Şəxsə aid, isimsiz, fel tək'],
+        ['nothing',  'heç nə / heç bir şey',   'Əşyaya aid, isimsiz, fel tək'],
+        ['neither',  'heç biri ... deyil',     'İki şeydən heç biri, fel tək'],
+      ],
+      examples: [
+        { word: 'No man he knew in that village.',     az: 'O kənddə heç bir adam tanımır.' },
+        { word: 'None of them dared to speak.',        az: 'Onlardan heç kim danışmağa cürət etmədi.' },
+        { word: 'I know nobody in this village.',      az: 'Mən bu kənddə heç kimi tanımıram.' },
+        { word: 'Neither of my friends was there.',    az: 'Dostlarımdan heç biri orada deyildi.' },
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'İnkar əvəzliklərinin işlənmə qaydası',
+      content:
+        '"no" → isimin qarşısında gəlir, cümləni inkar edir. İsim artiklsiz olur.\n\n' +
+        '"none" → "no"nun müstəqil (isimsiz) formasıdır. Həm şəxsə, həm əşyaya aid işlənə bilər.\n\n' +
+        '"nobody / no one" → şəxsə aid. Mübtəda olduqda fel tək.\n\n' +
+        '"nothing" → əşyaya aid. Mübtəda olduqda fel tək.\n\n' +
+        '"neither" → iki şeydən heç biri. Həm tək, həm isimlə işlənir. Mübtəda olduqda fel tək.',
+      table: [
+        ['Bir cümlədə İKİ inkar? → YANLIŞ',           'Bir cümlədə BİR inkar → DÜZGÜN'],
+        ['I don\'t know nobody. ✗',                   'I know nobody. ✓'],
+        ['He didn\'t see nothing. ✗',                 'He saw nothing. ✓'],
+        ['Nobody didn\'t come. ✗',                    'Nobody came. ✓'],
+      ],
+      tip: 'İnkar əvəzliyi olan cümlədə "not/didn\'t/don\'t" kimi əlavə inkar işlənmir!',
+    },
+
+    { en: '"no" isimin qarşısında gəldikdə artikl işlənirmi?',          tr: 'Xeyr',             wrong: 'Bəli'            },
+    { en: '"none" "no"nun hansı formasıdır?',                           tr: 'Müstəqil (isimsiz)', wrong: 'Cəm forması'   },
+    { en: '"nobody" hansı varlıqlara aid işlənir?',                     tr: 'Şəxslərə',         wrong: 'Əşyalara'        },
+    { en: '"nothing" hansı varlıqlara aid işlənir?',                    tr: 'Əşyalara',         wrong: 'Şəxslərə'        },
+    { en: '"neither" mübtəda olduqda fel hansı sayda gəlir?',           tr: 'Tək',              wrong: 'Cəm'             },
+    { en: 'Bir cümlədə neçə inkarlıq ola bilər?',                       tr: 'Bir',              wrong: 'İki'             },
+    { en: '"I know nobody." — bu cümlə düzdürmü?',                      tr: 'Bəli',             wrong: 'Xeyr'            },
+    { en: '"I don\'t know nobody." — bu cümlə düzdürmü?',              tr: 'Xeyr (ikiqat inkar)', wrong: 'Bəli'          },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ of my friends was there." (heç biri) — boşluq?',
+          options: ['Nobody', 'Nothing', 'Neither', 'None'],
+          answer: 'Neither',
+        },
+        {
+          q: '"I know ___ in this village." — boşluq? (heç kimi)',
+          options: ['nothing', 'nobody', 'neither', 'no one of'],
+          answer: 'nobody',
+        },
+        {
+          q: '"___ man he knew in that village." — boşluq?',
+          options: ['None', 'Nobody', 'No', 'Neither'],
+          answer: 'No',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'I don\'t know nothing.',
+            'I know nothing.',
+            'I don\'t know no one.',
+            'Nobody didn\'t come.',
+          ],
+          answer: 'I know nothing.',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 6.3 — Nisbi əvəzliklər ──────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 6.3 — Nisbi əvəzliklər (Relative Pronouns)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Nisbi əvəzliklər — cədvəl',
+      content:
+        'Nisbi əvəzliklər eyni vaxtda iki vəzifə daşıyır:\n' +
+        '1. Cümlə üzvü olur (mübtəda, tamamlıq)\n' +
+        '2. Təyin budaq cümləsini baş cümləyə bağlayır (bağlayıcı)',
+      table: [
+        ['Əvəzlik', 'Aid olduğu',                 'Funksiya',              'Nümunə'],
+        ['who',     'İnsan bildirən isimlər',      'Mübtəda / tamamlıq',   'People who live here are poor.'],
+        ['whom',    'İnsan bildirən isimlər',      'Yalnız tamamlıq',      'The man whom we waited for...'],
+        ['which',   'Cansız / heyvan',             'Mübtəda / tamamlıq',   'The bird which can speak...'],
+        ['whose',   'Mənsubiyyət (canlı)',         'Təyin',                'The boy whose father is ill...'],
+        ['that',    'Həm insan, həm cansız',       'Mübtəda / tamamlıq',   'The chair that has a broken leg...'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Who / Whom / Which / Whose / That — fərqlər',
+      content:
+        '"who" → insanlara aid, həm mübtəda, həm tamamlıq\n' +
+        '"whom" → insanlara aid, yalnız tamamlıq\n' +
+        '"which" → cansız varlıqlara və heyvanlara aid\n' +
+        '"whose" → mənsubiyyət bildirir (canlı varlıqlar), əvəz edilə bilmir\n' +
+        '"that" → həm who/whom, həm which yerinə işlənir. "Whose" əvəz edilmir.',
+      examples: [
+        { word: 'The man who is standing in the corridor is our teacher.',    az: 'Dəhlizin qabağında dayanan adam bizim müəllimimizdir.' },
+        { word: 'The man whom we are waiting for is a writer.',               az: 'Bizim gözlədiyimiz adam yazıçıdır.' },
+        { word: 'The bird which can speak is the parrot.',                    az: 'Danışmağı bacaran quş tutuquşudur.' },
+        { word: 'The boy whose father is in hospital is crying.',             az: 'Atası xəstəxanada olan oğlan ağlayır.' },
+        { word: 'Don\'t sit on the chair that has a broken leg.',             az: 'Ayağı sınıq olan stulda oturma.' },
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Where / In which',
+      content:
+        'Yer bildirən zərflər olduqda "where" və ya "in which" işlədilir.',
+      examples: [
+        { word: 'We arrived at the house where I lived.',          az: 'Mən yaşadığım evə çatdıq.' },
+        { word: 'We arrived at the house in which I lived.',       az: 'Mən yaşadığım evə çatdıq.' },
+      ],
+      table: [
+        ['Bağlayıcı',  'İşlənmə',                         'Nümunə'],
+        ['where',      'Yer bildirən isimlərdən sonra',    'the house where I lived'],
+        ['in which',   '"where" yerinə işlənə bilir',      'the house in which I lived'],
+      ],
+      tip: '"whose" heç vaxt "that" ilə əvəz edilə bilmir — bunu xatırla!',
+    },
+
+    { en: '"who" nisbi əvəzliyi hansı varlıqlara aid işlənir?',          tr: 'İnsanlara',            wrong: 'Cansız varlıqlara'  },
+    { en: '"whom" yalnız hansı funksiyada işlənir?',                     tr: 'Tamamlıq',             wrong: 'Mübtəda'            },
+    { en: '"which" hansı varlıqlara aid işlənir?',                       tr: 'Cansız / heyvan',       wrong: 'İnsanlara'          },
+    { en: '"that" nisbi əvəzliyi kimi əvəz edə bilir?',                 tr: 'Who/whom/which',        wrong: 'Whose'              },
+    { en: '"whose" "that" ilə əvəz edilə bilirmi?',                     tr: 'Xeyr',                 wrong: 'Bəli'               },
+    { en: 'Yer bildirən zərflər yerinə hansı işlənir?',                  tr: 'where / in which',     wrong: 'that / which'       },
+    { en: 'Nisbi əvəzliklər eyni vaxtda neçə vəzifə daşıyır?',          tr: '2',                    wrong: '1'                  },
+    { en: '"whose" mənsubiyyəti bildirərkən hansı varlıqlara aid olur?', tr: 'Canlı varlıqlara',     wrong: 'Cansız varlıqlara'  },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"The man ___ we are waiting for is a writer." — boşluğa nə gəlir?',
+          options: ['who', 'whose', 'which', 'whom'],
+          answer: 'whom',
+        },
+        {
+          q: '"The bird ___ can speak is the parrot." — boşluq?',
+          options: ['who', 'whose', 'which', 'whom'],
+          answer: 'which',
+        },
+        {
+          q: '"The boy ___ father is in hospital is crying." — boşluq?',
+          options: ['who', 'that', 'whose', 'which'],
+          answer: 'whose',
+        },
+        {
+          q: '"We arrived at the house ___ I lived." — iki düzgün variant?',
+          options: [
+            'that / whose',
+            'where / in which',
+            'who / whom',
+            'which / whose',
+          ],
+          answer: 'where / in which',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 6.4 — Xüsusi qeydlər (Notes) ───────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 6.4 — Xüsusi qeydlər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'A number of / The number of',
+      content:
+        '"A number of" + isim cəm gəlir, fel də cəm gəlir.\n\n' +
+        '"The number of" + isim cəm gəlir, fel tək gəlir.\n' +
+        '("the number" — nəyinsə sayı mənasında)',
+      table: [
+        ['İfadə',          'İsim',  'Fel',  'Nümunə'],
+        ['a number of',    'Cəm',   'Cəm',  'A number of books are on the table.'],
+        ['the number of',  'Cəm',   'Tək',  'The number of books is unknown.'],
+      ],
+      examples: [
+        { word: 'A number of books are on the table.',    az: 'Masanın üstündə bir neçə kitab var.' },
+        { word: 'The number of books is unknown.',        az: 'Kitabların sayı məlum deyil.' },
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Politics + very/too + a lot of/a lot',
+      content:
+        '"Politics" — fənn mənasında → fel tək\n' +
+        '"Politics" — kiminsə siyasəti mənasında → fel cəm\n\n' +
+        '"a lot of" → yalnız təsdiq cümlədə, ismə aid olur\n' +
+        '"a lot" → felə aid olur, feldən sonra gəlir, "of" olmur\n\n' +
+        '"very" / "too" → sifət və ya zərfə aid olur\n' +
+        '"very many books" → lap çox kitab\n' +
+        '"too many questions" → daha çox sual (artıq)',
+      table: [
+        ['İfadə',         'Aid olduğu',    'Nümunə'],
+        ['a lot of',      'İsmə',          'A lot of books are sold.'],
+        ['a lot',         'Felə',          'She speaks a lot.'],
+        ['very many',     'Sifət/zərf',    'very many books'],
+        ['too many',      'Sifət/zərf',    'too many questions'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Any of / None of / A lot of — felə təsiri',
+      content:
+        'Aşağıdakı ifadələrdən sonra sayılmayan isim gələrsə fel tək olur:\n\n' +
+        '• any of, none of, a lot of, a plenty of, all (of)',
+      table: [
+        ['İfadə',          'Nümunə',                              'Fel'],
+        ['a lot of + sayılmayan', 'A lot of information is ready.', 'Tək'],
+        ['none of + sayılmayan',  'None of the milk was left.',     'Tək'],
+        ['all of + sayılmayan',   'All of the water is gone.',      'Tək'],
+      ],
+      tip: 'Sayılan isimlərlə bu ifadələr cəm feli tələb edir.',
+    },
+
+    { en: '"A number of books ___." — fel hansı sayda olur?',           tr: 'Cəm (are)',           wrong: 'Tək (is)'           },
+    { en: '"The number of books ___." — fel hansı sayda olur?',         tr: 'Tək (is)',            wrong: 'Cəm (are)'          },
+    { en: '"Politics" fənn mənasında — fel hansı sayda olur?',          tr: 'Tək',                 wrong: 'Cəm'                },
+    { en: '"a lot of" yalnız hansı cümlədə işlənir?',                   tr: 'Təsdiq',              wrong: 'İnkar'              },
+    { en: '"a lot" felə aid olduqda "of" işlənirmi?',                   tr: 'Xeyr',                wrong: 'Bəli'               },
+    { en: '"very" / "too" nəyə aid olur?',                              tr: 'Sifət / zərfə',       wrong: 'İsmə'               },
+    { en: '"A lot of information ___ ready." — boşluğa nə gəlir?',     tr: 'is',                  wrong: 'are'                },
+    { en: '"She speaks ___." (çox — felə aid) — boşluq?',               tr: 'a lot',               wrong: 'a lot of'           },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"A number of students ___ in the yard." — boşluq?',
+          options: ['is', 'was', 'are', 'has been'],
+          answer: 'are',
+        },
+        {
+          q: '"The number of students ___ unknown." — boşluq?',
+          options: ['are', 'were', 'is', 'have been'],
+          answer: 'is',
+        },
+        {
+          q: '"She reads ___." (çox — felə aid) — boşluq?',
+          options: ['a lot of', 'much', 'many', 'a lot'],
+          answer: 'a lot',
+        },
+        {
+          q: '"A lot of information ___ ready." — boşluq?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 6 — Mərhələ 6 yekun ──────────────────────────────
+[
+  // Qeyri-müəyyən
+  { en: '"some" adətən hansı cümlədə işlənir?',                        tr: 'Təsdiq',               wrong: 'İnkar'               },
+  { en: '"any" adətən hansı cümlədə işlənir?',                         tr: 'Sual/inkar',           wrong: 'Təsdiq'              },
+  { en: '"somebody" hansı cümlədə işlənir?',                           tr: 'Təsdiq',               wrong: 'Sual/inkar'          },
+  { en: '"anybody" hansı cümlədə işlənir?',                            tr: 'Sual/inkar',           wrong: 'Təsdiq'              },
+  { en: '"many" hansı isimlərlə işlənir?',                             tr: 'Sayılan (cəm)',         wrong: 'Sayılmayan (tək)'    },
+  { en: '"much" hansı isimlərlə işlənir?',                             tr: 'Sayılmayan (tək)',      wrong: 'Sayılan (cəm)'       },
+  { en: '"a few" hansı mənaya malikdir?',                              tr: 'Bir neçə (müsbət)',     wrong: 'Az (mənfi)'          },
+  { en: '"little" hansı mənaya malikdir?',                             tr: 'Az (mənfi)',            wrong: 'Bir az (müsbət)'     },
+  // İnkar
+  { en: 'Bir cümlədə neçə inkarlıq ola bilər?',                       tr: 'Bir',                  wrong: 'İki'                 },
+  { en: '"nobody" hansı varlıqlara aid işlənir?',                      tr: 'Şəxslərə',             wrong: 'Əşyalara'            },
+  { en: '"nothing" hansı varlıqlara aid işlənir?',                     tr: 'Əşyalara',             wrong: 'Şəxslərə'            },
+  { en: '"neither" mübtəda olduqda fel hansı sayda gəlir?',            tr: 'Tək',                  wrong: 'Cəm'                 },
+  // Nisbi
+  { en: '"who" nisbi əvəzliyi hansı varlıqlara aid işlənir?',          tr: 'İnsanlara',            wrong: 'Cansız varlıqlara'   },
+  { en: '"whom" yalnız hansı funksiyada işlənir?',                     tr: 'Tamamlıq',             wrong: 'Mübtəda'             },
+  { en: '"which" hansı varlıqlara aid işlənir?',                       tr: 'Cansız / heyvan',       wrong: 'İnsanlara'           },
+  { en: '"whose" "that" ilə əvəz edilə bilirmi?',                      tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: 'Yer bildirən zərflər yerinə hansı işlənir?',                  tr: 'where / in which',     wrong: 'that / which'        },
+  // Qeydlər
+  { en: '"A number of books ___." — fel hansı sayda?',                 tr: 'Cəm (are)',            wrong: 'Tək (is)'            },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  FINAL QUIZ — Əvəzlik (Pronoun) — Bütün bölüm         │
+// └─────────────────────────────────────────────────────────┘
+[
+  // Şəxs əvəzlikləri — adlıq hal
+  { en: '"I" əvəzliyi necə yazılır?',                                   tr: 'Həmişə böyük hərflə',  wrong: 'Həmişə kiçik hərflə' },
+  { en: 'Adlıq hal cümlədə hansı funksiyada işlənir?',                 tr: 'Mübtəda',              wrong: 'Tamamlıq'            },
+  { en: '"he / she / it" cəmdə hansı əvəzliklə ifadə olunur?',        tr: 'they',                 wrong: 'we'                  },
+  // Şəxs əvəzlikləri — obyekt hal
+  { en: '"he" əvəzliyinin obyekt forması nədir?',                       tr: 'him',                  wrong: 'his'                 },
+  { en: '"they" əvəzliyinin obyekt forması nədir?',                     tr: 'them',                 wrong: 'their'               },
+  { en: '"by" sözönü ilə hansı növ xəbər işlənir?',                    tr: 'Məchul növ',           wrong: 'Məlum növ'           },
+  { en: '"for" sözönü ilə obyekt hal necə tərcümə olunur?',            tr: 'üçün',                 wrong: 'ilə'                 },
+  // Yiyəlik əvəzlikləri
+  { en: '"my" özündən sonra nə tələb edir?',                            tr: 'İsim',                 wrong: 'Heç nə'              },
+  { en: '"mine" özündən sonra nə tələb edir?',                          tr: 'Heç nə (isimsiz)',     wrong: 'İsim'                },
+  { en: '"their" ilə "theirs" fərqi nədir?',                           tr: '"their" isimlə, "theirs" isimsiz', wrong: 'Heç bir fərq yoxdur' },
+  { en: '"a friend of ___" (sənin bir dostun) — boşluq?',              tr: 'yours',                wrong: 'your'                },
+  // Qayıdış əvəzlikləri
+  { en: '"she" şəxsinin qayıdış əvəzliyi nədir?',                      tr: 'herself',              wrong: 'himself'             },
+  { en: '"by himself" necə tərcümə olunur?',                           tr: 'özü tək',              wrong: 'onunla birlikdə'     },
+  // İşarə əvəzlikləri
+  { en: '"this" cəm forması nədir?',                                    tr: 'these',                wrong: 'those'               },
+  { en: '"the same" həmişə hansı artikl ilə işlənir?',                 tr: 'the',                  wrong: 'a'                   },
+  { en: '"such" işlənməsi üçün nə lazımdır?',                          tr: 'İsim olmalıdır',       wrong: 'Fel olmalıdır'       },
+  // Sual əvəzlikləri
+  { en: '"Who" mübtəda olduqda xəbər hansı sayda olur?',               tr: 'Tək',                  wrong: 'Cəm'                 },
+  { en: '"Whom"-dan sonra mütləq nə gəlir?',                           tr: 'Köməkçi fel',          wrong: 'İsim'                },
+  { en: '"Whose" Azərbaycancaya necə tərcümə olunur?',                 tr: 'kimin',                wrong: 'hansı'               },
+  { en: '"Which" — nə vaxt işlənir?',                                   tr: 'Seçim arasında',       wrong: 'Ümumi sorğularda'    },
+  { en: '"What is he?" cümləsi nəyi soruşur?',                         tr: 'Sənəti / vəzifəsini',  wrong: 'Adını'               },
+  // Təyin əvəzlikləri
+  { en: '"each of" işlənirmi?',                                         tr: 'Bəli',                 wrong: 'Xeyr'                },
+  { en: '"every of" işlənirmi?',                                        tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Both" mübtəda olduqda xəbər hansı sayda olur?',              tr: 'Cəm',                  wrong: 'Tək'                 },
+  { en: '"both...and"ın inkarı nədir?',                                 tr: 'neither...nor',        wrong: 'either...or'         },
+  { en: '"too" hansı cümlənin sonunda işlənir?',                       tr: 'Təsdiq',               wrong: 'İnkar'               },
+  { en: '"either" (sonda) hansı cümlənin sonunda işlənir?',            tr: 'İnkar',                wrong: 'Təsdiq'              },
+  { en: '"another" yalnız hansı isimlərə işlənir?',                    tr: 'Sayılan tək isimlər',  wrong: 'Sayılmayan isimlər'  },
+  { en: '"else"-dən sonra nə gəlir?',                                   tr: 'Köməkçi fel / fel',    wrong: 'İsim'                },
+  // Qeyri-müəyyən əvəzliklər
+  { en: '"some" adətən hansı cümlədə işlənir?',                        tr: 'Təsdiq',               wrong: 'İnkar'               },
+  { en: '"a lot of" hansı cümlədə işlənir?',                           tr: 'Təsdiq',               wrong: 'İnkar'               },
+  { en: '"a few" hansı mənaya malikdir?',                              tr: 'Bir neçə (müsbət)',     wrong: 'Az (mənfi)'          },
+  { en: '"much" hansı isimlərlə işlənir?',                             tr: 'Sayılmayan (tək)',      wrong: 'Sayılan (cəm)'       },
+  // İnkar əvəzliklər
+  { en: 'Bir cümlədə neçə inkarlıq ola bilər?',                       tr: 'Bir',                  wrong: 'İki'                 },
+  { en: '"nobody" hansı varlıqlara aid işlənir?',                      tr: 'Şəxslərə',             wrong: 'Əşyalara'            },
+  { en: '"nothing" hansı varlıqlara aid işlənir?',                     tr: 'Əşyalara',             wrong: 'Şəxslərə'            },
+  // Nisbi əvəzliklər
+  { en: '"which" nisbi əvəzliyi hansı varlıqlara aid işlənir?',        tr: 'Cansız / heyvan',       wrong: 'İnsanlara'           },
+  { en: '"whose" "that" ilə əvəz edilə bilirmi?',                      tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"whom" yalnız hansı funksiyada işlənir?',                     tr: 'Tamamlıq',             wrong: 'Mübtəda'             },
+  // Qeydlər
+  { en: '"A number of books ___." — fel hansı sayda?',                 tr: 'Cəm (are)',            wrong: 'Tək (is)'            },
+  { en: '"The number of books ___." — fel hansı sayda?',               tr: 'Tək (is)',             wrong: 'Cəm (are)'           },
+  { en: '"a lot" felə aid olduqda "of" işlənirmi?',                    tr: 'Xeyr',                 wrong: 'Bəli'                },
+],
   ],
 };
 
