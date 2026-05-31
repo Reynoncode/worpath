@@ -12606,7 +12606,7 @@ const PRONOUN_LEVEL = {
    ],
     },
   ],
-},
+}; 
 // ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
 const QUESTIONS_LEVEL = {
   id: 'questions',
