@@ -16348,38 +16348,942 @@ const PREPOSITIONS_LEVEL = {
 const ADVERB_LEVEL = {
   id: 'adverb',
   name: 'ADVERB — ZƏRF',
-  icon: '<i class="ti ti-trending-up"></i>',
-  color: '#E879F9',
-
+  icon: '<i class="ti ti-bolt"></i>',
+  color: '#86EFAC',
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  ADVERB — Tam bölüm                                   ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 1 — Zərfin əsasları  (What is an adverb?)    │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 1.1 — Zərf nədir? Tərif + mənaya görə növlər ───
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Zərf nədir?',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — Zərfin növləri',
-      cards: [],
+      type: 'lesson',
+      title: 'Zərfin tərifi',
+      content:
+        'Zərf — hərəkətin əlamətini və ya hərəkətin hansı şəraitdə, nə halda, ' +
+        'harada, necə, nə zaman icra olunduğunu bildirən nitq hissəsidir.\n\n' +
+        'Zərf cümlədə əsasən felə aid olur.\n\n' +
+        'Nümunələr:\n' +
+        '• She came yesterday. — O dünən gəldi.\n' +
+        '• Ali speaks well. — Əli yaxşı danışır.',
+      table: [
+        ['Sual',     'Mənası',              'Nümunə'],
+        ['Necə?',    'Tərzi-hərəkət',       'quickly, well, fast'],
+        ['Harada?',  'Yer',                 'here, there, inside'],
+        ['Nə zaman?','Zaman',               'today, soon, before'],
+        ['Nə qədər?','Dərəcə / ölçü',       'very, almost, enough'],
+        ['Nə üçün?', 'Səbəb / nəticə',      'therefore, accordingly'],
+        ['Nə qədər tez-tez?', 'Təkrar',     'often, seldom, sometimes'],
+      ],
     },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — Zərfin dərəcələri',
-      cards: [],
+      type: 'lesson',
+      title: 'Zərfin 6 mənaca növü',
+      content: 'Mənalarına görə zərflər 6 qrupa bölünür:',
+      table: [
+        ['#', 'Növ',                        'Nümunələr'],
+        ['1', 'Zaman zərfləri',             'today, tomorrow, before, after, still, yet, soon, once'],
+        ['2', 'Yer zərfləri',               'here, there, inside, outside, downstairs, upstairs, homeward'],
+        ['3', 'Səbəb-nəticə zərfləri',      'therefore, consequently, accordingly'],
+        ['4', 'Tərzi-hərəkət zərfləri',     'daily, always, usually, quickly, fast, hard'],
+        ['5', 'Təkrar zərfləri',            'often, seldom, sometimes, scarcely'],
+        ['6', 'Dərəcə-ölçü zərfləri',       'nearly, almost, hardly, much, very, enough, little, too'],
+      ],
+      tip: '"therefore" — ona görə, onun üçün\n"consequently" — nəticə olaraq\n"accordingly" — ona görə, əsasən\n"scarcely" — güclə, çətinliklə',
     },
+
+    { en: 'Zərf cümlədə əsasən nəyə aid olur?',                       tr: 'Felə',                  wrong: 'İsmə'               },
+    { en: '"today, tomorrow, before, after" — hansı növ zərflərdir?',  tr: 'Zaman zərfləri',        wrong: 'Yer zərfləri'       },
+    { en: '"here, there, inside, outside" — hansı növ zərflərdir?',   tr: 'Yer zərfləri',          wrong: 'Zaman zərfləri'     },
+    { en: '"therefore, consequently" — hansı növ zərflərdir?',        tr: 'Səbəb-nəticə zərfləri', wrong: 'Dərəcə zərfləri'   },
+    { en: '"often, seldom, sometimes" — hansı növ zərflərdir?',       tr: 'Təkrar zərfləri',       wrong: 'Tərzi-hərəkət'      },
+    { en: '"very, almost, enough, too" — hansı növ zərflərdir?',      tr: 'Dərəcə-ölçü zərfləri', wrong: 'Təkrar zərfləri'    },
+    { en: '"quickly, fast, hard, well" — hansı növ zərflərdir?',      tr: 'Tərzi-hərəkət zərfləri', wrong: 'Zaman zərfləri'  },
+    { en: '"scarcely" nə mənasını verir?',                             tr: 'Güclə, çətinliklə',     wrong: 'Tez-tez'            },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Zərfin cümlədə yeri',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 4 — Too / Also / Either / Else / Only / Just',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 5 — Make and Do fərqi',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She came yesterday." — "yesterday" hansı növ zərfdir?',
+          options: ['Yer zərfi', 'Zaman zərfi', 'Tərzi-hərəkət', 'Dərəcə'],
+          answer: 'Zaman zərfi',
+        },
+        {
+          q: '"He works very hard." — "very" hansı növ zərfdir?',
+          options: ['Zaman', 'Yer', 'Dərəcə-ölçü', 'Təkrar'],
+          answer: 'Dərəcə-ölçü',
+        },
+        {
+          q: 'Zərf cümlədə əsasən nəyə aid olur?',
+          options: ['İsmə', 'Sifətə', 'Felə', 'Əvəzliyə'],
+          answer: 'Felə',
+        },
+      ],
     },
   ],
-};
+},
 
+// ── Dərs 1.2 — Quruluşca növlər: Sadə · Düzəltmə · Mürəkkəb ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — Quruluşca növlər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Zərfin quruluşca 3 növü',
+      content: 'Zərflər quruluşca 3 növə bölünür:',
+      table: [
+        ['Növ',         'İzah',                              'Nümunələr'],
+        ['Sadə',        'Kök şəklindədir',                   'here, there, fast, hard, well'],
+        ['Düzəltmə',    'Şəkilçi artırmaqla düzəlir',        'quickly, homeward, slowly, nicely'],
+        ['Mürəkkəb',    'İki sözdən birləşir',               'sometimes, somewhere, anyhow, anywhere'],
+      ],
+      tip: 'Zərflər əsasən sifətin üzərinə "-ly" artırmaqla düzəlir:\nslow → slowly\nnice → nicely\nquick → quickly',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Həm sifət, həm zərf olan sözlər',
+      content:
+        'Bəzi sözlər həm sifət, həm də zərf kimi işlənə bilər:\n' +
+        'hard, fast, early, late, near, short, far, straight, big, long\n\n' +
+        'Qayda:\n' +
+        '• İsimdən əvvəl gəlsə → sifət\n' +
+        '• Feldən sonra işlənsə → zərf',
+      table: [
+        ['Söz',   'Sifət (isimdən əvvəl)',      'Zərf (feldən sonra)'],
+        ['hard',  'hard work — çətin iş',        'He works hard. — o çox işləyir'],
+        ['fast',  'fast car — sürətli maşın',    'She runs fast. — o sürətli qaçır'],
+        ['early', 'early morning — erkən səhər', 'Come early. — erkən gəl'],
+        ['late',  'late arrival — gec gəliş',    'He came late. — o gec gəldi'],
+      ],
+      tip: 'Diqqət: "hardly, nearly, lately" — yalnız zərfdir, sifət deyil!\n• hardly — güclə, çətinliklə\n• nearly — demək olar ki\n• lately — son zamanlar',
+    },
+
+    { en: '"here, there, fast, hard" — quruluşca hansı növ zərflərdir?', tr: 'Sadə zərflər',       wrong: 'Düzəltmə zərflər'   },
+    { en: '"quickly, homeward, slowly" — quruluşca hansı növ?',          tr: 'Düzəltmə zərflər',  wrong: 'Mürəkkəb zərflər'   },
+    { en: '"sometimes, somewhere, anywhere" — quruluşca hansı növ?',     tr: 'Mürəkkəb zərflər',  wrong: 'Sadə zərflər'        },
+    { en: 'Zərflər əsasən hansı şəkilçi ilə düzəlir?',                  tr: '-ly',               wrong: '-er'                 },
+    { en: '"hard work" — "hard" hansı nitq hissəsidir?',                 tr: 'Sifət',             wrong: 'Zərf'                },
+    { en: '"He works hard." — "hard" hansı nitq hissəsidir?',            tr: 'Zərf',              wrong: 'Sifət'               },
+    { en: '"hardly" nə mənasını verir?',                                  tr: 'Güclə, çətinliklə', wrong: 'Çox çətin'           },
+    { en: '"lately" nə mənasını verir?',                                  tr: 'Son zamanlar',      wrong: 'Gec-gec'             },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She runs fast." — "fast" hansı nitq hissəsidir?',
+          options: ['Sifət', 'Zərf', 'İsim', 'Fel'],
+          answer: 'Zərf',
+        },
+        {
+          q: '"quickly" — quruluşca hansı növ zərfdir?',
+          options: ['Sadə', 'Mürəkkəb', 'Düzəltmə', 'Xüsusi'],
+          answer: 'Düzəltmə',
+        },
+        {
+          q: '"hardly" nə mənasını verir?',
+          options: ['Çox çətin', 'Güclə, çətinliklə', 'Çox sərt', 'Bir az'],
+          answer: 'Güclə, çətinliklə',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 1 — Zərfin əsasları (Növlər + nümunələr — 15 sual) ──
+[
+  { en: 'Zərf cümlədə əsasən nəyə aid olur?',                         tr: 'Felə',                  wrong: 'İsmə'               },
+  { en: '"today, tomorrow, before" — hansı növ zərflərdir?',          tr: 'Zaman zərfləri',        wrong: 'Yer zərfləri'       },
+  { en: '"here, there, outside" — hansı növ zərflərdir?',             tr: 'Yer zərfləri',          wrong: 'Zaman zərfləri'     },
+  { en: '"therefore, consequently" — hansı növ zərflərdir?',          tr: 'Səbəb-nəticə zərfləri', wrong: 'Dərəcə zərfləri'   },
+  { en: '"often, seldom, sometimes" — hansı növ zərflərdir?',         tr: 'Təkrar zərfləri',       wrong: 'Tərzi-hərəkət'      },
+  { en: '"very, almost, enough" — hansı növ zərflərdir?',             tr: 'Dərəcə-ölçü zərfləri', wrong: 'Təkrar zərfləri'    },
+  { en: '"quickly, fast, hard" — hansı növ zərflərdir?',              tr: 'Tərzi-hərəkət zərfləri', wrong: 'Zaman zərfləri'  },
+  { en: '"here, there, fast" — quruluşca hansı növ?',                 tr: 'Sadə zərflər',          wrong: 'Düzəltmə'           },
+  { en: '"quickly, homeward, slowly" — quruluşca hansı növ?',         tr: 'Düzəltmə zərflər',     wrong: 'Mürəkkəb'           },
+  { en: '"sometimes, somewhere" — quruluşca hansı növ?',              tr: 'Mürəkkəb zərflər',     wrong: 'Sadə zərflər'        },
+  { en: 'Zərflər əsasən hansı şəkilçi ilə düzəlir?',                  tr: '-ly',                   wrong: '-er'                },
+  { en: '"hard work" — "hard" hansı nitq hissəsidir?',                tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"He works hard." — "hard" hansı nitq hissəsidir?',           tr: 'Zərf',                  wrong: 'Sifət'              },
+  { en: '"hardly" nə mənasını verir?',                                 tr: 'Güclə, çətinliklə',    wrong: 'Çox çətin'          },
+  { en: '"nearly" nə mənasını verir?',                                 tr: 'Demək olar ki',         wrong: 'Yaxında'            },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 2 — Zərfin dərəcələri  (Degrees of adverbs)  │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 2.1 — Sintetik yol (-er / -est) ────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — Sintetik yol (-er / -est)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Zərfin dərəcələri — Sintetik üsul',
+      content:
+        'İngilis dilində yalnız keyfiyyət zərflərinin dərəcə kateqoriyası var.\n\n' +
+        'Sintetik üsul: zərfin sonuna şəkilçi əlavə etməklə.\n\n' +
+        'Birhecalı zərflərdə:\n' +
+        '• Müqayisə dərəcəsi: + -er\n' +
+        '• Üstünlük dərəcəsi: + -est',
+      table: [
+        ['Adi dərəcə', 'Müqayisə dərəcəsi', 'Üstünlük dərəcəsi'],
+        ['fast',       'faster',             'fastest'],
+        ['hard',       'harder',             'hardest'],
+        ['long',       'longer',             'longest'],
+        ['early',      'earlier',            'earliest'],
+      ],
+      tip: '"early" zərfinin müqayisə və üstünlük dərəcəsi "-er / -est" ilə düzəlir,\nçünki "-ly" burada zərf düzəldən şəkilçi deyil, kökün özündədir.',
+    },
+
+    { en: 'Sintetik üsul nə deməkdir?',                               tr: 'Zərfin sonuna şəkilçi əlavə etmək', wrong: 'Əvvələ söz əlavə etmək' },
+    { en: '"fast"ın müqayisə dərəcəsi?',                              tr: 'faster',                wrong: 'more fast'          },
+    { en: '"fast"ın üstünlük dərəcəsi?',                              tr: 'fastest',               wrong: 'most fast'          },
+    { en: '"hard"ın müqayisə dərəcəsi?',                              tr: 'harder',                wrong: 'more hard'          },
+    { en: '"hard"ın üstünlük dərəcəsi?',                              tr: 'hardest',               wrong: 'most hard'          },
+    { en: '"early"ın müqayisə dərəcəsi?',                             tr: 'earlier',               wrong: 'more early'         },
+    { en: '"early"ın üstünlük dərəcəsi?',                             tr: 'earliest',              wrong: 'most early'         },
+    { en: 'Hansı dərəcə növlərinin dərəcəsi var?',                    tr: 'Yalnız keyfiyyət zərflərinin', wrong: 'Bütün zərflərin' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"fast" → müqayisə dərəcəsi?',
+          options: ['most fast', 'more fast', 'faster', 'fastest'],
+          answer: 'faster',
+        },
+        {
+          q: '"early" → üstünlük dərəcəsi?',
+          options: ['most early', 'more early', 'earliest', 'earlier'],
+          answer: 'earliest',
+        },
+        {
+          q: 'Sintetik üsulda nə edilir?',
+          options: ['Əvvələ "more" artırılır', 'Sonuna şəkilçi artırılır', 'Söz dəyişir', 'Heç nə edilmir'],
+          answer: 'Sonuna şəkilçi artırılır',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — Analitik yol (more/most) + -ly zərfləri ─
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — Analitik yol (more / most)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Zərfin dərəcələri — Analitik üsul',
+      content:
+        'Analitik üsul: zərfin əvvəlinə köməkçi söz əlavə etməklə.\n\n' +
+        'İki və çoxhecalı zərflərdə:\n' +
+        '• Müqayisə dərəcəsi: more + zərf\n' +
+        '• Üstünlük dərəcəsi: most + zərf\n\n' +
+        'Bütün "-ly" ilə düzələn zərflərin dərəcəsi more/most ilə düzəlir.\n\n' +
+        'Müqayisə dərəcəsi "much" ilə qüvvətləndirilir.',
+      table: [
+        ['Adi dərəcə', 'Müqayisə dərəcəsi',      'Üstünlük dərəcəsi'],
+        ['nicely',     'more nicely',              'most nicely'],
+        ['quickly',    'more quickly',             'most quickly'],
+        ['slowly',     'more slowly',              'most slowly'],
+        ['carefully',  'more carefully',           'most carefully'],
+      ],
+      tip: 'Müqayisə dərəcəsini qüvvətləndirmək üçün "much" işlənir:\n"She works much more carefully than him."',
+    },
+
+    { en: 'Analitik üsul nə deməkdir?',                              tr: 'Əvvələ köməkçi söz əlavə etmək', wrong: 'Sonuna şəkilçi əlavə etmək' },
+    { en: '"-ly" ilə düzələn zərflərin müqayisə dərəcəsi?',          tr: 'more + zərf',           wrong: 'zərf + -er'         },
+    { en: '"-ly" ilə düzələn zərflərin üstünlük dərəcəsi?',          tr: 'most + zərf',           wrong: 'zərf + -est'        },
+    { en: '"nicely"nin müqayisə dərəcəsi?',                           tr: 'more nicely',           wrong: 'nicer'              },
+    { en: '"quickly"nin üstünlük dərəcəsi?',                          tr: 'most quickly',          wrong: 'quickliest'         },
+    { en: 'Müqayisə dərəcəsi hansı sözlə qüvvətləndirilir?',         tr: 'much',                  wrong: 'very'               },
+    { en: '"She works ___ more carefully." — boşluq?',                tr: 'much',                  wrong: 'very'               },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"slowly" → müqayisə dərəcəsi?',
+          options: ['slower', 'slowlier', 'more slowly', 'most slowly'],
+          answer: 'more slowly',
+        },
+        {
+          q: '"carefully" → üstünlük dərəcəsi?',
+          options: ['most carefully', 'more carefully', 'carefulliest', 'carefulest'],
+          answer: 'most carefully',
+        },
+        {
+          q: 'Müqayisə dərəcəsini hansı söz qüvvətləndirir?',
+          options: ['very', 'too', 'much', 'so'],
+          answer: 'much',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.3 — İstisnalar: well/badly/much/little + 2 formalılar ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.3 — İstisnalar',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Köklə dəyişən zərflər (istisnalar)',
+      content: 'Bəzi zərflərin dərəcələri kökün dəyişməsi yolu ilə düzəlir:',
+      table: [
+        ['Adi dərəcə', 'Müqayisə dərəcəsi', 'Üstünlük dərəcəsi'],
+        ['well',       'better',             'best'],
+        ['badly',      'worse',              'worst'],
+        ['much',       'more',               'most'],
+        ['little',     'less',               'least'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: '2 müqayisə və 2 üstünlük dərəcəsi olan zərflər',
+      content: 'Bəzi zərflərin 2 müqayisə və 2 üstünlük dərəcəsi var:',
+      table: [
+        ['Adi',  'Müqayisə 1', 'Müqayisə 2', 'Üstünlük 1', 'Üstünlük 2'],
+        ['near', 'nearer',     '—',           'nearest',    'next'],
+        ['far',  'farther',    'further',     'farthest',   'furthest'],
+        ['late', 'later',      '—',           'latest',     'last'],
+      ],
+      tip: '"further/furthest" — həm uzaqlıq, həm də məcazi mənada (əlavə) işlənir:\n"further information" — əlavə məlumat',
+    },
+
+    { en: '"well"in müqayisə dərəcəsi?',                             tr: 'better',                wrong: 'weller'              },
+    { en: '"well"in üstünlük dərəcəsi?',                             tr: 'best',                  wrong: 'wellest'             },
+    { en: '"badly"nin müqayisə dərəcəsi?',                           tr: 'worse',                 wrong: 'badlier'             },
+    { en: '"badly"nin üstünlük dərəcəsi?',                           tr: 'worst',                 wrong: 'badliest'            },
+    { en: '"much"un müqayisə dərəcəsi?',                             tr: 'more',                  wrong: 'mucher'              },
+    { en: '"little"in müqayisə dərəcəsi?',                           tr: 'less',                  wrong: 'littler'             },
+    { en: '"little"in üstünlük dərəcəsi?',                           tr: 'least',                 wrong: 'littlest'            },
+    { en: '"far"ın 2-ci müqayisə dərəcəsi?',                         tr: 'further',               wrong: 'farer'               },
+    { en: '"late"nin 2-ci üstünlük dərəcəsi?',                       tr: 'last',                  wrong: 'later'               },
+    { en: '"near"in üstünlük dərəcəsinin 2-ci forması?',             tr: 'next',                  wrong: 'nearest'             },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"well" → üstünlük dərəcəsi?',
+          options: ['weller', 'better', 'best', 'most well'],
+          answer: 'best',
+        },
+        {
+          q: '"badly" → müqayisə dərəcəsi?',
+          options: ['badlier', 'more badly', 'worse', 'worst'],
+          answer: 'worse',
+        },
+        {
+          q: '"far" → 2-ci müqayisə dərəcəsi?',
+          options: ['farer', 'farther', 'further', 'farthest'],
+          answer: 'further',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.4 — Dərəcəni cümlədə tanı (as…as · than · of all / ever) ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.4 — Dərəcəni cümlədə tanı',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Cümlədə hansı dərəcəni tapmaq',
+      content: 'Cümlədəki açar sözlərə görə dərəcəni tanımaq olar:',
+      table: [
+        ['Açar söz',                                      'Dərəcə',             'Nümunə'],
+        ['as...as / not so...as / not as...as / too / very / rather / quite', 'Adi dərəcə',   'She runs as fast as him.'],
+        ['that / much / a little / a bit',                'Müqayisə dərəcəsi',  'She runs much faster.'],
+        ['which / of all / ever / in the world / at home', 'Üstünlük dərəcəsi', 'She runs fastest of all.'],
+      ],
+      tip: 'Üstünlük dərəcəsindəki zərfin qarşısında "the" artiklı heç vaxt işlənmir!\n(Sifətdən fərqlidir: "the best student" — burada "the" işlənir, amma "she runs fastest" — işlənmir)',
+    },
+
+    { en: '"as...as" cümlədə hansı dərəcəni göstərir?',              tr: 'Adi dərəcə',            wrong: 'Müqayisə dərəcəsi'  },
+    { en: '"not so...as" cümlədə hansı dərəcəni göstərir?',          tr: 'Adi dərəcə',            wrong: 'Üstünlük dərəcəsi'  },
+    { en: '"a little, a bit" cümlədə hansı dərəcəni göstərir?',      tr: 'Müqayisə dərəcəsi',     wrong: 'Adi dərəcə'         },
+    { en: '"much" cümlədə hansı dərəcəni qüvvətləndirir?',           tr: 'Müqayisə dərəcəsi',     wrong: 'Üstünlük dərəcəsi'  },
+    { en: '"of all" cümlədə hansı dərəcəni göstərir?',               tr: 'Üstünlük dərəcəsi',     wrong: 'Müqayisə dərəcəsi'  },
+    { en: '"ever, in the world" cümlədə hansı dərəcəni göstərir?',   tr: 'Üstünlük dərəcəsi',     wrong: 'Adi dərəcə'         },
+    { en: 'Üstünlük dərəcəsindəki zərfin qarşısında "the" işlənirmi?', tr: 'Xeyr',               wrong: 'Bəli'               },
+    { en: '"very, too, quite, rather" — hansı dərəcəni göstərir?',   tr: 'Adi dərəcə',            wrong: 'Müqayisə dərəcəsi'  },
+    { en: '"that" sözü cümlədə hansı dərəcəni göstərir?',            tr: 'Müqayisə dərəcəsi',     wrong: 'Üstünlük dərəcəsi'  },
+    { en: '"which of, at school" cümlədə hansı dərəcəni göstərir?',  tr: 'Üstünlük dərəcəsi',     wrong: 'Adi dərəcə'         },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She sings as well as her sister." — hansı dərəcə?',
+          options: ['Müqayisə', 'Üstünlük', 'Adi', 'Dəyişmir'],
+          answer: 'Adi',
+        },
+        {
+          q: '"He runs much faster than me." — hansı dərəcə?',
+          options: ['Adi', 'Üstünlük', 'Müqayisə', 'İstisna'],
+          answer: 'Müqayisə',
+        },
+        {
+          q: '"She works best of all." — hansı dərəcə?',
+          options: ['Adi', 'Müqayisə', 'Üstünlük', 'Analitik'],
+          answer: 'Üstünlük',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 2 — Dərəcələr (Sintetik · Analitik · İstisna — 20 sual) ──
+[
+  { en: 'Sintetik üsulda nə edilir?',                                tr: 'Sonuna şəkilçi artırılır', wrong: 'Əvvələ söz artırılır' },
+  { en: '"fast"ın müqayisə dərəcəsi?',                              tr: 'faster',                wrong: 'more fast'            },
+  { en: '"fast"ın üstünlük dərəcəsi?',                              tr: 'fastest',               wrong: 'most fast'            },
+  { en: '"early"ın müqayisə dərəcəsi?',                             tr: 'earlier',               wrong: 'more early'           },
+  { en: '"-ly" ilə düzələn zərflərin müqayisə dərəcəsi?',           tr: 'more + zərf',           wrong: 'zərf + -er'           },
+  { en: '"nicely"nin üstünlük dərəcəsi?',                           tr: 'most nicely',           wrong: 'niceliest'            },
+  { en: 'Müqayisə dərəcəsi hansı sözlə qüvvətləndirilir?',         tr: 'much',                  wrong: 'very'                 },
+  { en: '"well"in müqayisə dərəcəsi?',                              tr: 'better',                wrong: 'weller'               },
+  { en: '"well"in üstünlük dərəcəsi?',                              tr: 'best',                  wrong: 'wellest'              },
+  { en: '"badly"nin müqayisə dərəcəsi?',                            tr: 'worse',                 wrong: 'badlier'              },
+  { en: '"badly"nin üstünlük dərəcəsi?',                            tr: 'worst',                 wrong: 'badliest'             },
+  { en: '"much"un müqayisə dərəcəsi?',                              tr: 'more',                  wrong: 'mucher'               },
+  { en: '"little"in müqayisə dərəcəsi?',                            tr: 'less',                  wrong: 'littler'              },
+  { en: '"far"ın 2-ci müqayisə dərəcəsi?',                          tr: 'further',               wrong: 'farer'                },
+  { en: '"late"nin 2-ci üstünlük dərəcəsi?',                        tr: 'last',                  wrong: 'later'                },
+  { en: '"as...as" cümlədə hansı dərəcəni göstərir?',               tr: 'Adi dərəcə',            wrong: 'Müqayisə dərəcəsi'    },
+  { en: '"a little, a bit" cümlədə hansı dərəcəni göstərir?',       tr: 'Müqayisə dərəcəsi',     wrong: 'Adi dərəcə'           },
+  { en: '"of all" cümlədə hansı dərəcəni göstərir?',                tr: 'Üstünlük dərəcəsi',     wrong: 'Müqayisə dərəcəsi'    },
+  { en: 'Üstünlük dərəcəsindəki zərfin qarşısında "the" işlənirmi?', tr: 'Xeyr',                wrong: 'Bəli'                  },
+  { en: '"very, too, quite" — hansı dərəcəni göstərir?',            tr: 'Adi dərəcə',            wrong: 'Müqayisə dərəcəsi'    },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 3 — Zərfin cümlədə yeri  (Position)          │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 3.1 — Tərzi-hərəkət zərfləri (feldən sonra · tamamlıqdan sonra) ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — Tərzi-hərəkət zərflərinin yeri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Tərzi-hərəkət zərflərinin cümlədə yeri',
+      content:
+        'Tərzi-hərəkət zərflərinin yeri əsasən feldən sonradır.\n\n' +
+        'Əgər cümlədə feldən sonra tamamlıq varsa, zərf tamamlıqdan sonra gəlir.\n\n' +
+        'Diqqət: zərf fel ilə tamamlıq arasında dura bilməz!\n\n' +
+        'Cümlədə feldən sonra məsdər olduqda zərf feldən əvvəl gəlir.',
+      table: [
+        ['Hal',                          'Zərfin yeri',        'Nümunə'],
+        ['Sadə cümlə (fel + zərf)',      'Feldən sonra',       'She was walking slowly.'],
+        ['Tamamlıq varsa',               'Tamamlıqdan sonra',  'He recited the poem loudly.'],
+        ['Feldən sonra məsdər varsa',    'Feldən əvvəl',       'He seriously began to study.'],
+      ],
+      tip: '❌ Səhv: He recited loudly the poem.\n✅ Düzgün: He recited the poem loudly.\n\nZərf heç vaxt fel ilə tamamlıq arasına girə bilməz!',
+    },
+
+    { en: 'Tərzi-hərəkət zərfinin yeri əsasən haradadır?',            tr: 'Feldən sonra',          wrong: 'Feldən əvvəl'        },
+    { en: 'Cümlədə tamamlıq varsa zərf haraya gəlir?',                tr: 'Tamamlıqdan sonra',     wrong: 'Feldən əvvəl'        },
+    { en: 'Zərf fel ilə tamamlıq arasında dura bilərmi?',             tr: 'Xeyr',                  wrong: 'Bəli'               },
+    { en: 'Feldən sonra məsdər olduqda zərf haraya gəlir?',           tr: 'Feldən əvvəl',          wrong: 'Tamamlıqdan sonra'  },
+    { en: '"She was walking slowly." — "slowly" düzgün yerdədir?',    tr: 'Bəli',                  wrong: 'Xeyr'               },
+    { en: '"He seriously began to study." — "seriously" düzgün?',     tr: 'Bəli',                  wrong: 'Xeyr'               },
+    { en: '"He recited loudly the poem." — düzgündürmü?',             tr: 'Xeyr',                  wrong: 'Bəli'               },
+    { en: '"He recited the poem loudly." — düzgündürmü?',             tr: 'Bəli',                  wrong: 'Xeyr'               },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She was walking ___." — "slowly" haraya gəlir?',
+          options: ['Feldən əvvəl', 'Feldən sonra', 'Cümlənin əvvəlinə', 'Tamamlıqdan əvvəl'],
+          answer: 'Feldən sonra',
+        },
+        {
+          q: '"He recited ___ the poem ___." — "loudly" hansı yerdə olmalıdır?',
+          options: ['Feldən əvvəl', 'Feldən sonra, tamamlıqdan əvvəl', 'Tamamlıqdan sonra', 'Cümlənin əvvəlində'],
+          answer: 'Tamamlıqdan sonra',
+        },
+        {
+          q: '"He ___ began to study." — "seriously" haraya gəlir?',
+          options: ['Məsdərdən sonra', 'Cümlənin sonuna', 'Feldən əvvəl', 'Tamamlıqdan sonra'],
+          answer: 'Feldən əvvəl',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.2 — Qeyri-müəyyən zaman zərfləri ─────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — Qeyri-müəyyən zaman zərflərinin yeri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Qeyri-müəyyən zaman zərfləri',
+      content:
+        'Qeyri-müəyyən zaman zərfləri:\n' +
+        'always, often, seldom, ever, never, just, already, sometimes, soon, yet\n\n' +
+        '• Sometimes — əsasən cümlənin əvvəlində gəlir\n' +
+        '• Yet — inkar cümlədə sonda gəlir',
+      table: [
+        ['Hal',                                   'Qayda',                      'Nümunə'],
+        ['1 mübtəda + 1 xəbər',                   'İkisinin arasında',          'He often goes to the library.'],
+        ['Köməkçi + əsas fel',                    'Köməkçi ilə əsas fel arasında', 'I shall never forget you.'],
+        ['2 köməkçi fel',                         'Birinci köməkçidən sonra',   'The letter has already been sent.'],
+        ['Modal fellər (can/may/must)',            'Modal feldən sonra',         'I must always greet her.'],
+        ['"have to" əvəzedici',                   '"have to"-dan əvvəl',        'I often had to help her.'],
+        ['"used to"',                             '"used to"-dan əvvəl',        'He often used to go to the village.'],
+      ],
+    },
+
+    { en: '"always, often, never, just, already" — hansı zərf növüdür?', tr: 'Qeyri-müəyyən zaman zərfləri', wrong: 'Yer zərfləri' },
+    { en: '"Sometimes" əsasən cümlənin harasında gəlir?',             tr: 'Əvvəlində',             wrong: 'Sonunda'             },
+    { en: '"Yet" inkar cümlədə harada gəlir?',                        tr: 'Sonunda',               wrong: 'Əvvəlində'           },
+    { en: '"He often goes to the library." — "often" düzgün yerdədir?', tr: 'Bəli',               wrong: 'Xeyr'               },
+    { en: '1 köməkçi + 1 əsas fel olduqda zərf haraya gəlir?',        tr: 'Köməkçi ilə əsas fel arasına', wrong: 'Əsas feldən sonra' },
+    { en: '"I shall never forget you." — "never" düzgün yerdədir?',   tr: 'Bəli',                  wrong: 'Xeyr'               },
+    { en: '"have to" vasitəsilə ifadə olunduqda zərf haraya gəlir?',  tr: '"have to"-dan əvvəl',   wrong: '"have to"-dan sonra' },
+    { en: '"used to" ilə zərf haraya gəlir?',                         tr: '"used to"-dan əvvəl',   wrong: '"used to"-dan sonra' },
+    { en: 'Modal fellərdən sonra qeyri-müəyyən zaman zərfləri gəlirmi?', tr: 'Bəli',              wrong: 'Xeyr'               },
+    { en: '"The letter has already been sent." — zərf neçənci köməkçidən sonra?', tr: 'Birincisindn sonra', wrong: 'Hər ikisindən sonra' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I ___ never ___ forget you." — "never" haraya gəlir (shall forget)?',
+          options: ['"shall"dan əvvəl', '"shall" ilə "forget" arasına', '"forget"dən sonra', 'Cümlənin sonuna'],
+          answer: '"shall" ilə "forget" arasına',
+        },
+        {
+          q: '"I ___ had to help her." — "often" haraya gəlir?',
+          options: ['"had to"-dan sonra', '"had to"-dan əvvəl', 'Cümlənin sonuna', '"help"-dən sonra'],
+          answer: '"had to"-dan əvvəl',
+        },
+        {
+          q: '"___ she goes to school." — "Sometimes" haraya gəlir?',
+          options: ['Ortaya', 'Sona', 'Əvvələ', 'Feldən sonra'],
+          answer: 'Əvvələ',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 3 — Cümlədə yeri (Tərzi-hərəkət + Qeyri-müəyyən — 18 sual) ──
+[
+  { en: 'Tərzi-hərəkət zərfinin yeri əsasən haradadır?',             tr: 'Feldən sonra',          wrong: 'Feldən əvvəl'        },
+  { en: 'Cümlədə tamamlıq varsa zərf haraya gəlir?',                 tr: 'Tamamlıqdan sonra',     wrong: 'Feldən əvvəl'        },
+  { en: 'Zərf fel ilə tamamlıq arasında dura bilərmi?',              tr: 'Xeyr',                  wrong: 'Bəli'               },
+  { en: 'Feldən sonra məsdər olduqda zərf haraya gəlir?',            tr: 'Feldən əvvəl',          wrong: 'Tamamlıqdan sonra'  },
+  { en: '"He recited loudly the poem." — düzgündürmü?',              tr: 'Xeyr',                  wrong: 'Bəli'               },
+  { en: '"Sometimes" əsasən cümlənin harasında gəlir?',              tr: 'Əvvəlində',             wrong: 'Sonunda'            },
+  { en: '"Yet" inkar cümlədə harada gəlir?',                         tr: 'Sonunda',               wrong: 'Əvvəlində'          },
+  { en: '1 köməkçi + 1 əsas fel olduqda zərf haraya gəlir?',         tr: 'Köməkçi ilə əsas fel arasına', wrong: 'Əsas feldən sonra' },
+  { en: '"I shall never forget you." — "never" düzgün yerdədir?',    tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '2 köməkçi fel olduqda qeyri-müəyyən zərf haraya gəlir?',   tr: 'Birinci köməkçidən sonra', wrong: 'İkinci köməkçidən sonra' },
+  { en: '"have to" vasitəsilə ifadə olduqda zərf haraya gəlir?',     tr: '"have to"-dan əvvəl',   wrong: '"have to"-dan sonra' },
+  { en: '"used to" ilə zərf haraya gəlir?',                          tr: '"used to"-dan əvvəl',   wrong: '"used to"-dan sonra' },
+  { en: 'Modal fellərdən sonra zərf gəlirmi?',                       tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"He seriously began to study." — "seriously" düzgündürmü?', tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"always, often, never, just, already" — hansı növdür?',     tr: 'Qeyri-müəyyən zaman zərfləri', wrong: 'Yer zərfləri' },
+  { en: '"She was walking slowly." — "slowly" düzgün yerdədir?',     tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"He often used to go to the village." — "often" düzgün?',   tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"I must always greet her." — "always" düzgün yerdədir?',    tr: 'Bəli',                  wrong: 'Xeyr'               },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 4 — Sifətlə işlənən fellər + Xüsusi zərflər  │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 4.1 — Zərflə işlənməyən fellər ────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.1 — Zərflə işlənməyən fellər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Sifətlə işlənən fellər',
+      content:
+        'Bir qrup fellər var ki, onlardan sonra zərf yox, sifət işlənir:\n\n' +
+        'to be, to become, to grow (olmaq mənasında)\n' +
+        'to taste, to sound, to remain, to smell, to seem, to feel, to look\n\n' +
+        'Diqqət: "to get" — yalnız "olmaq" mənasında sifətlə işlənir.\n' +
+        'Digər mənalarda (almaq, çatmaq, minmək, düşmək) zərflə işlənir.',
+      table: [
+        ['Fel',        'Mənası',            'İşlənmə',         'Nümunə'],
+        ['to be',      'olmaq',             'Həmişə sifət',    'She is tired.'],
+        ['to become',  'olmaq',             'Həmişə sifət',    'He became sad.'],
+        ['to grow',    'olmaq (mənasında)', 'Sifət',           'He grew old.'],
+        ['to taste',   'dadmaq',            'Həmişə sifət',    'It tastes sweet.'],
+        ['to sound',   'səslənmək',         'Həmişə sifət',    'It sounds good.'],
+        ['to remain',  'qalmaq',            'Həmişə sifət',    'She remained calm.'],
+        ['to smell',   'iyi gəlmək',        'Həmişə sifət',    'It smells nice.'],
+        ['to seem',    'görünmək',          'Həmişə sifət',    'He seems tired.'],
+        ['to feel',    'hiss etmək',        'Həmişə sifət',    'I feel good / well.'],
+        ['to look',    'görünmək',          'Sifət (söz önsüz)', 'She looks nice.'],
+        ['to get',     'olmaq mənasında',   'Sifət',           'He got tired.'],
+      ],
+      tip: '"to be well" və "to feel well" — insanın əhval-ruhiyyəsinə aiddir.\n"I feel well." ✅ (yaxşı hiss etmək)\n"The film is good." ✅ (good — sifət, filmin özü haqqında)\n\n"lonely, lovely" — sifətdir\n"alone" — zərfdir: to stay alone, to be alone',
+    },
+
+    { en: '"to be, to become" — hansı nitq hissəsi ilə işlənir?',    tr: 'Sifət',                 wrong: 'Zərf'               },
+    { en: '"to grow" — hansı mənada sifətlə işlənir?',               tr: 'Olmaq mənasında',       wrong: 'Becərmək mənasında' },
+    { en: '"to taste, to sound, to smell" — sonrasında nə gəlir?',   tr: 'Sifət',                 wrong: 'Zərf'               },
+    { en: '"to look" — hansı mənada sifətlə işlənir?',               tr: 'Görünmək mənasında (söz önsüz)', wrong: 'Baxmaq mənasında' },
+    { en: '"to feel" — hansı nitq hissəsi ilə işlənir?',             tr: 'Sifət',                 wrong: 'Zərf'               },
+    { en: '"I feel well." — düzgündürmü?',                            tr: 'Bəli',                  wrong: 'Xeyr'               },
+    { en: '"to get" — yalnız hansı mənada sifətlə işlənir?',         tr: 'Olmaq mənasında',       wrong: 'Almaq mənasında'    },
+    { en: '"lonely, lovely" — hansı nitq hissəsidir?',               tr: 'Sifət',                 wrong: 'Zərf'               },
+    { en: '"alone" — hansı nitq hissəsidir?',                        tr: 'Zərf',                  wrong: 'Sifət'              },
+    { en: '"to look nice" — "nice" hansı nitq hissəsidir?',          tr: 'Sifət',                 wrong: 'Zərf'               },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ tired." (to get — olmaq) — "tired" hansı nitq hissəsidir?',
+          options: ['Zərf', 'Sifət', 'İsim', 'Fel'],
+          answer: 'Sifət',
+        },
+        {
+          q: '"It ___ sweet." (to taste) — boşluğa nə gəlir?',
+          options: ['tastes sweetly', 'tastes sweet', 'tastes sweetness', 'sweetly tastes'],
+          answer: 'tastes sweet',
+        },
+        {
+          q: '"to stay ___" — "alone" bu cümlədə hansı nitq hissəsidir?',
+          options: ['Sifət', 'İsim', 'Zərf', 'Bağlayıcı'],
+          answer: 'Zərf',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 4.2 — Xüsusi zərflər (too/also/either · else/even/only · enough) ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.2 — Xüsusi zərflər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'too / also / either — "həmçinin, da, də"',
+      content:
+        'Üçü də "həmçinin, da, də" kimi tərcümə olunur, lakin işlənmə yeri fərqlidir:',
+      table: [
+        ['Zərf',   'Cümlə növü',                    'Yeri',              'Nümunə'],
+        ['too',    'Təsdiq / sual cümləsi',          'Cümlənin sonunda',  'I like it too.'],
+        ['also',   'Təsdiq / sual cümləsi',          'Cümlənin ortasında', 'She also likes it.'],
+        ['either', 'İnkar cümləsini dəstəkləyir',   'Cümlənin sonunda',  'I don\'t like it either.'],
+      ],
+      tip: '"too" → təsdiq cümlə sonu\n"also" → cümlə ortası\n"either" → inkar cümlə sonu',
+    },
+
+    {
+      type: 'lesson',
+      title: 'else · even · only · just + "enough"',
+      content:
+        '"else" — daha, "even" — hətta, "only" — yalnız, "just" — elə, məhz\n' +
+        'Bu zərflər mənayı qüvvətləndirmək üçün işlədilir.\n\n' +
+        '"enough" xüsusi zərfdir:\n' +
+        '• İsimdən əvvəl gəlir: enough time, enough money\n' +
+        '• Sifətdən sonra gəlir: hot enough, cold enough',
+      table: [
+        ['Zərf',    'Mənası',    'Nümunə'],
+        ['else',    'daha',      'What else do you need?'],
+        ['even',    'hətta',     'Even he knows it.'],
+        ['only',    'yalnız',    'Only she can do it.'],
+        ['just',    'elə, məhz', 'Just do it.'],
+        ['enough',  'kifayət',   'enough time / hot enough'],
+      ],
+      tip: '"enough" isimdən əvvəl, sifətdən sonra gəlir:\n✅ enough time (isim)\n✅ hot enough (sifət)\n❌ enough hot / time enough',
+    },
+
+    { en: '"too" hansı cümlədə işlənir?',                             tr: 'Təsdiq / sual',         wrong: 'İnkar'              },
+    { en: '"too" cümlənin harasında gəlir?',                          tr: 'Sonunda',               wrong: 'Ortasında'          },
+    { en: '"also" cümlənin harasında gəlir?',                         tr: 'Ortasında',             wrong: 'Sonunda'            },
+    { en: '"either" hansı cümlədə işlənir?',                          tr: 'İnkar cümləsini dəstəkləyir', wrong: 'Təsdiq cümlə' },
+    { en: '"either" cümlənin harasında gəlir?',                       tr: 'Sonunda',               wrong: 'Ortasında'          },
+    { en: '"enough" isimdən əvvəl gəlirmi?',                          tr: 'Bəli',                  wrong: 'Xeyr'               },
+    { en: '"enough" sifətdən sonra gəlirmi?',                         tr: 'Bəli',                  wrong: 'Xeyr'               },
+    { en: '"hot enough" — düzgündürmü?',                              tr: 'Bəli',                  wrong: 'Xeyr'               },
+    { en: '"enough hot" — düzgündürmü?',                              tr: 'Xeyr',                  wrong: 'Bəli'               },
+    { en: '"even" nə mənasını verir?',                                tr: 'Hətta',                 wrong: 'Yalnız'             },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I don\'t like it ___." — "either" doğru işlənib?',
+          options: ['Xeyr, "too" olmalıdır', 'Xeyr, "also" olmalıdır', 'Bəli', 'Xeyr, "even" olmalıdır'],
+          answer: 'Bəli',
+        },
+        {
+          q: '"___ time" → "enough" haraya gəlir?',
+          options: ['Sonra (time enough)', 'Əvvəl (enough time)', 'Araya (time enough more)', 'Fərq etməz'],
+          answer: 'Əvvəl (enough time)',
+        },
+        {
+          q: '"She ___ likes coffee." — "also" haraya gəlir?',
+          options: ['Cümlənin sonuna', 'Cümlənin əvvəlinə', 'Cümlənin ortasına (feldən əvvəl)', 'İsmə əvvəl'],
+          answer: 'Cümlənin ortasına (feldən əvvəl)',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 4 — Fellər + Xüsusi zərflər (16 sual) ───────────
+[
+  { en: '"to be, to become" — sonrasında sifət mi, zərf mi?',         tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"to grow" — hansı mənada sifətlə işlənir?',                  tr: 'Olmaq mənasında',       wrong: 'Becərmək mənasında' },
+  { en: '"to taste, to sound, to smell" — sonrasında nə gəlir?',      tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"to look" — söz önsüz hansı nitq hissəsi ilə işlənir?',     tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"to get" — yalnız hansı mənada sifətlə işlənir?',            tr: 'Olmaq mənasında',       wrong: 'Almaq mənasında'    },
+  { en: '"alone" — hansı nitq hissəsidir?',                           tr: 'Zərf',                  wrong: 'Sifət'              },
+  { en: '"lonely, lovely" — hansı nitq hissəsidir?',                  tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"I feel well." — düzgündürmü?',                              tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"too" hansı cümlədə işlənir?',                               tr: 'Təsdiq / sual',         wrong: 'İnkar'              },
+  { en: '"also" cümlənin harasında gəlir?',                           tr: 'Ortasında',             wrong: 'Sonunda'            },
+  { en: '"either" hansı cümlədə işlənir?',                            tr: 'İnkar cümləsini dəstəkləyir', wrong: 'Təsdiq cümlə' },
+  { en: '"enough" isimdən əvvəl gəlirmi?',                            tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"enough" sifətdən sonra gəlirmi?',                           tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"hot enough" — düzgündürmü?',                                tr: 'Bəli',                  wrong: 'Xeyr'               },
+  { en: '"even" nə mənasını verir?',                                  tr: 'Hətta',                 wrong: 'Yalnız'             },
+  { en: '"only" nə mənasını verir?',                                  tr: 'Yalnız',                wrong: 'Hətta'              },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MƏRHƏLƏ 5 — Make və Do                                │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 5.1 — "to make" ifadələri ──────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.1 — "to make" ifadələri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"to make" — düzəltmək, hazırlamaq',
+      content: '"to make" — düzəltmək mənasında işlənən sabit ifadələr:',
+      table: [
+        ['İfadə',                  'Azərbaycanca'],
+        ['make money',             'pul qazanmaq'],
+        ['make up a sentence',     'cümlə qurmaq'],
+        ['make tea',               'çay dəmləmək'],
+        ['make dinner',            'nahar hazırlamaq'],
+        ['make a dress',           'paltar tikmək'],
+        ['make progress',          'nailiyyət əldə etmək'],
+        ['make a film',            'film çəkmək'],
+        ['make a note',            'qeyd götürmək'],
+        ['make a bed',             'çarpayını yığışdırmaq'],
+        ['make up one\'s mind',    'qərara almaq'],
+        ['make a fire',            'tonqal yandırmaq'],
+      ],
+    },
+
+    { en: '"make money" nə mənasını verir?',                          tr: 'Pul qazanmaq',          wrong: 'Pul xərcləmək'      },
+    { en: '"make progress" nə mənasını verir?',                       tr: 'Nailiyyət əldə etmək',  wrong: 'İrəli getmək'        },
+    { en: '"make a bed" nə mənasını verir?',                          tr: 'Çarpayını yığışdırmaq', wrong: 'Çarpayı almaq'       },
+    { en: '"make up one\'s mind" nə mənasını verir?',                 tr: 'Qərara almaq',          wrong: 'Fikrini dəyişmək'   },
+    { en: '"make a note" nə mənasını verir?',                         tr: 'Qeyd götürmək',         wrong: 'Nota yazmaq'         },
+    { en: '"make a film" nə mənasını verir?',                         tr: 'Film çəkmək',           wrong: 'Film izləmək'        },
+    { en: '"make a fire" nə mənasını verir?',                         tr: 'Tonqal yandırmaq',      wrong: 'Yanğın söndürmək'   },
+    { en: '"make tea" nə mənasını verir?',                            tr: 'Çay dəmləmək',          wrong: 'Çay içmək'          },
+    { en: '"make dinner" nə mənasını verir?',                         tr: 'Nahar hazırlamaq',      wrong: 'Nahar etmək'         },
+    { en: '"make a dress" nə mənasını verir?',                        tr: 'Paltar tikmək',         wrong: 'Paltar almaq'        },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ progress in English." — hansı fel?',
+          options: ['does', 'takes', 'makes', 'gives'],
+          answer: 'makes',
+        },
+        {
+          q: '"He ___ up his mind." — hansı fel?',
+          options: ['does', 'makes', 'takes', 'gives'],
+          answer: 'makes',
+        },
+        {
+          q: '"___ tea" — hansı fel?',
+          options: ['do', 'make', 'have', 'take'],
+          answer: 'make',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 5.2 — "to do" ifadələri ────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.2 — "to do" ifadələri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"to do" — etmək',
+      content: '"to do" — etmək mənasında işlənən sabit ifadələr:',
+      table: [
+        ['İfadə',                  'Azərbaycanca'],
+        ['do shopping',            'bazarlıq etmək'],
+        ['do one\'s best',         'əlindən gələni etmək'],
+        ['do one\'s lesson',       'dərslərini etmək'],
+        ['do housework',           'ev işlərini etmək'],
+        ['do homework',            'ev tapşırığını etmək'],
+        ['do morning exercise',    'səhər idmanı etmək'],
+        ['do exercises',           'tapşırıqlar etmək'],
+        ['do sums',                'misallar etmək'],
+        ['do good',                'yaxşılıq etmək'],
+        ['do smb. a favour',       'bir kəsə yaxşılıq etmək'],
+        ['do research',            'araşdırma aparmaq'],
+        ['do business',            'kommersiya ilə məşğul olmaq'],
+        ['do damage',              'xətər yetirmək, zərər vermək'],
+      ],
+    },
+
+    { en: '"do shopping" nə mənasını verir?',                         tr: 'Bazarlıq etmək',        wrong: 'Alış-veriş planlamaq' },
+    { en: '"do one\'s best" nə mənasını verir?',                      tr: 'Əlindən gələni etmək',  wrong: 'Ən yaxşısını almaq'  },
+    { en: '"do homework" nə mənasını verir?',                         tr: 'Ev tapşırığını etmək',  wrong: 'Ev işlərini etmək'   },
+    { en: '"do housework" nə mənasını verir?',                        tr: 'Ev işlərini etmək',     wrong: 'Ev tapşırığını etmək' },
+    { en: '"do research" nə mənasını verir?',                         tr: 'Araşdırma aparmaq',     wrong: 'Axtarış etmək'       },
+    { en: '"do damage" nə mənasını verir?',                           tr: 'Xətər yetirmək, zərər vermək', wrong: 'Zərər almaq' },
+    { en: '"do good" nə mənasını verir?',                             tr: 'Yaxşılıq etmək',        wrong: 'Yaxşı olmaq'         },
+    { en: '"do sums" nə mənasını verir?',                             tr: 'Misallar etmək',        wrong: 'Cəmləmək'            },
+    { en: '"do business" nə mənasını verir?',                         tr: 'Kommersiya ilə məşğul olmaq', wrong: 'İş görmək'    },
+    { en: '"do morning exercise" nə mənasını verir?',                 tr: 'Səhər idmanı etmək',    wrong: 'Səhər tapşırıqları'  },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She ___ her homework every day." — hansı fel?',
+          options: ['makes', 'does', 'takes', 'gives'],
+          answer: 'does',
+        },
+        {
+          q: '"They ___ research on climate change." — hansı fel?',
+          options: ['make', 'take', 'do', 'give'],
+          answer: 'do',
+        },
+        {
+          q: '"___ shopping" — hansı fel?',
+          options: ['make', 'take', 'do', 'have'],
+          answer: 'do',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Quiz 5 — Make and Do (make mi, do mu? — 12 sual) ─────
+[
+  { en: '"make money" — make mi, do mu?',                             tr: 'make',                  wrong: 'do'                 },
+  { en: '"make progress" — make mi, do mu?',                          tr: 'make',                  wrong: 'do'                 },
+  { en: '"make a bed" — make mi, do mu?',                             tr: 'make',                  wrong: 'do'                 },
+  { en: '"make up one\'s mind" — make mi, do mu?',                    tr: 'make',                  wrong: 'do'                 },
+  { en: '"do shopping" — make mi, do mu?',                            tr: 'do',                    wrong: 'make'               },
+  { en: '"do homework" — make mi, do mu?',                            tr: 'do',                    wrong: 'make'               },
+  { en: '"do research" — make mi, do mu?',                            tr: 'do',                    wrong: 'make'               },
+  { en: '"do damage" — make mi, do mu?',                              tr: 'do',                    wrong: 'make'               },
+  { en: '"make a film" — make mi, do mu?',                            tr: 'make',                  wrong: 'do'                 },
+  { en: '"do one\'s best" — make mi, do mu?',                         tr: 'do',                    wrong: 'make'               },
+  { en: '"make tea" — make mi, do mu?',                               tr: 'make',                  wrong: 'do'                 },
+  { en: '"do good" — make mi, do mu?',                                tr: 'do',                    wrong: 'make'               },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  FINAL TEST — Zərf (Adverb) — 30+ sual                 │
+// └─────────────────────────────────────────────────────────┘
+[
+  // Növlər
+  { en: 'Zərf cümlədə əsasən nəyə aid olur?',                        tr: 'Felə',                  wrong: 'İsmə'               },
+  { en: '"today, tomorrow, before" — hansı növ zərflərdir?',         tr: 'Zaman zərfləri',        wrong: 'Yer zərfləri'       },
+  { en: '"here, there, outside" — hansı növ zərflərdir?',            tr: 'Yer zərfləri',          wrong: 'Zaman zərfləri'     },
+  { en: '"often, seldom, sometimes" — hansı növ zərflərdir?',        tr: 'Təkrar zərfləri',       wrong: 'Tərzi-hərəkət'      },
+  { en: '"very, almost, enough" — hansı növ zərflərdir?',            tr: 'Dərəcə-ölçü zərfləri', wrong: 'Təkrar zərfləri'    },
+  // Quruluş
+  { en: '"here, there, fast" — quruluşca hansı növ?',                tr: 'Sadə zərflər',          wrong: 'Düzəltmə'           },
+  { en: '"quickly, slowly, homeward" — quruluşca hansı növ?',        tr: 'Düzəltmə zərflər',     wrong: 'Mürəkkəb'           },
+  { en: '"sometimes, somewhere" — quruluşca hansı növ?',             tr: 'Mürəkkəb zərflər',     wrong: 'Sadə'               },
+  { en: '"hard work" — "hard" hansı nitq hissəsidir?',               tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"He works hard." — "hard" hansı nitq hissəsidir?',          tr: 'Zərf',                  wrong: 'Sifət'              },
+  // Dərəcələr
+  { en: '"fast"ın müqayisə dərəcəsi?',                               tr: 'faster',                wrong: 'more fast'          },
+  { en: '"fast"ın üstünlük dərəcəsi?',                               tr: 'fastest',               wrong: 'most fast'          },
+  { en: '"-ly" zərflərin müqayisə dərəcəsi?',                        tr: 'more + zərf',           wrong: 'zərf + -er'         },
+  { en: '"well"in müqayisə dərəcəsi?',                               tr: 'better',                wrong: 'weller'             },
+  { en: '"badly"nin üstünlük dərəcəsi?',                             tr: 'worst',                 wrong: 'badliest'           },
+  { en: '"much"un müqayisə dərəcəsi?',                               tr: 'more',                  wrong: 'mucher'             },
+  { en: '"little"in müqayisə dərəcəsi?',                             tr: 'less',                  wrong: 'littler'            },
+  { en: '"as...as" cümlədə hansı dərəcəni göstərir?',                tr: 'Adi dərəcə',            wrong: 'Müqayisə'           },
+  { en: '"of all" cümlədə hansı dərəcəni göstərir?',                 tr: 'Üstünlük dərəcəsi',    wrong: 'Müqayisə'           },
+  { en: 'Üstünlük dərəcəsindəki zərfin qarşısında "the" işlənirmi?', tr: 'Xeyr',                 wrong: 'Bəli'               },
+  // Cümlədə yer
+  { en: 'Tərzi-hərəkət zərfinin yeri əsasən haradadır?',             tr: 'Feldən sonra',          wrong: 'Feldən əvvəl'       },
+  { en: 'Zərf fel ilə tamamlıq arasında dura bilərmi?',              tr: 'Xeyr',                  wrong: 'Bəli'               },
+  { en: '"Sometimes" cümlənin harasında gəlir?',                     tr: 'Əvvəlində',             wrong: 'Sonunda'            },
+  { en: '1 köməkçi + 1 əsas fel olduqda qeyri-müəyyən zərf haraya gəlir?', tr: 'Köməkçi ilə əsas fel arasına', wrong: 'Əsas feldən sonra' },
+  { en: '"have to" vasitəsilə ifadə olduqda zərf haraya gəlir?',     tr: '"have to"-dan əvvəl',  wrong: '"have to"-dan sonra' },
+  // Sifətlə işlənən fellər + xüsusi zərflər
+  { en: '"to be, to become" — sonrasında sifət mi, zərf mi?',        tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"to taste, to sound, to smell" — sonrasında nə gəlir?',     tr: 'Sifət',                 wrong: 'Zərf'               },
+  { en: '"too" cümlənin harasında gəlir?',                           tr: 'Sonunda',               wrong: 'Ortasında'          },
+  { en: '"either" hansı cümlədə işlənir?',                           tr: 'İnkar cümləsini dəstəkləyir', wrong: 'Təsdiq cümlə' },
+  { en: '"enough" sifətdən sonra gəlirmi?',                          tr: 'Bəli',                  wrong: 'Xeyr'               },
+  // Make and Do
+  { en: '"make progress" — make mi, do mu?',                         tr: 'make',                  wrong: 'do'                 },
+  { en: '"do homework" — make mi, do mu?',                           tr: 'do',                    wrong: 'make'               },
+  { en: '"make a bed" — make mi, do mu?',                            tr: 'make',                  wrong: 'do'                 },
+  { en: '"do research" — make mi, do mu?',                           tr: 'do',                    wrong: 'make'               },
+],
+
+  ],
+};
 // ── 13. COMPLEX OBJECT ──────────────────────────────────────
 const COMPLEX_OBJECT_LEVEL = {
   id: 'complex_object',
