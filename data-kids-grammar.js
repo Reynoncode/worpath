@@ -13358,24 +13358,839 @@ const QUESTIONS_LEVEL = {
   icon: '<i class="ti ti-help-circle"></i>',
   color: '#7DD3FC',
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  SUAL CÜMLƏLƏRİ — Tam bölüm                           ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  BÖLMƏ 1 — Ümumi suallar (Yes/No) + Xüsusi suallar    │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 1.1 — Ümumi suallar (Yes/No) ────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Ümumi suallar (Yes/No questions)',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — Ümumi & Xüsusi suallar',
-      cards: [],
+      type: 'lesson',
+      title: 'Ümumi suallar nədir?',
+      content:
+        'Bütöv cümləyə verilən suala ümumi sual deyilir.\n\n' +
+        'Ümumi suallar qısa təsdiq və qısa inkar cavab tələb edir:\n' +
+        'Yes, I do. / No, I don\'t.\n\n' +
+        'Düzəltmə qaydası:\n' +
+        '• Cümlədə am / is / are / was / were / shall / will / can / may / must / have got / has got varsa — ' +
+        'həmin köməkçi fel mübtədadan əvvələ keçir.\n' +
+        '• Bunlar yoxdursa — zamana uyğun do / does / did mübtədadan əvvələ əlavə edilir.\n\n' +
+        'Cümlədə iki və ya üç köməkçi fel olduqda yalnız birinci köməkçi fel mübtədadan əvvələ keçir.',
+      table: [
+        ['Nəqli cümlə',                                  'Ümumi sual'],
+        ['I am a teacher.',                              'Am I a teacher?'],
+        ['I go to school.',                              'Do I go to school?'],
+        ['He speaks English.',                           'Does he speak English?'],
+        ['She went home.',                               'Did she go home?'],
+        ['A lot of houses will be built next year.',     'Will a lot of houses be built next year?'],
+      ],
+      tip: 'Qısa cavab: Yes, you are. / No, you are not.\nYes, I do. / No, I don\'t.\nYes, he does. / No, he doesn\'t.',
     },
+
+    { en: 'Ümumi sual hansı cavab tələb edir?',                        tr: 'Yes / No',             wrong: 'Tam cümlə'           },
+    { en: '"I am a teacher." → ümumi sual?',                           tr: 'Am I a teacher?',      wrong: 'Do I am a teacher?'  },
+    { en: '"I go to school." → ümumi sual?',                           tr: 'Do I go to school?',   wrong: 'Am I go to school?'  },
+    { en: '"He speaks English." → ümumi sual?',                        tr: 'Does he speak English?', wrong: 'Do he speak English?' },
+    { en: '"She went home." → ümumi sual?',                            tr: 'Did she go home?',     wrong: 'Does she go home?'   },
+    { en: 'İki köməkçi fel olduqda hansı əvvələ keçir?',               tr: 'Birinci köməkçi fel',  wrong: 'İkinci köməkçi fel'  },
+    { en: '"Yes, he does." — bu qısa cavabın mənfi forması?',          tr: 'No, he doesn\'t.',     wrong: 'No, he don\'t.'      },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — Wh- sual sözləri',
-      cards: [],
-    },
-    {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Seçmə & Ayrılan suallar',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She can swim." → ümumi sual?',
+          options: ['Does she can swim?', 'Can she swim?', 'Is she swim?', 'Do she swim?'],
+          answer: 'Can she swim?',
+        },
+        {
+          q: '"They were at home." → ümumi sual?',
+          options: ['Did they were at home?', 'Do they were at home?', 'Were they at home?', 'Are they at home?'],
+          answer: 'Were they at home?',
+        },
+        {
+          q: '"He plays football." → qısa inkar cavab?',
+          options: ['No, he don\'t.', 'No, he doesn\'t.', 'No, he didn\'t.', 'No, he isn\'t.'],
+          answer: 'No, he doesn\'t.',
+        },
+      ],
     },
   ],
-};
+},
 
+// ── Dərs 1.2 — Xüsusi suallar (Wh/How) ──────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — Xüsusi suallar (Wh/How questions)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Xüsusi suallar nədir?',
+      content:
+        'Cümlənin ayrı-ayrı üzvlərinə verilən suallara xüsusi suallar deyilir.\n\n' +
+        'Sual əvəzlikləri: who, whom, whose, which, what\n' +
+        'Sual zərfləri: where, when, why, how\n' +
+        'Mürəkkəb sual sözləri: how many/much, how often, how long, how old, how far, what kind of, what time\n\n' +
+        'Ümumi söz sırası (mübtədadan başqa üzvlərə sual verərkən):\n' +
+        'Wh + köməkçi fel + mübtəda + əsas fel + digər üzvlər',
+      table: [
+        ['Sual sözü',     'Nə soruşur'],
+        ['who',           'canlı mübtəda'],
+        ['whom',          'canlı tamamlıq'],
+        ['whose',         'yiyəlik — kimin'],
+        ['what',          'cansız mübtəda / tamamlıq / xəbər'],
+        ['which',         'seçim — hansı'],
+        ['where',         'yer zərfi'],
+        ['when',          'zaman zərfi'],
+        ['why',           'səbəb zərfliyi'],
+        ['how',           'tərzi-keyfiyyət zərfi'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'Mübtədaya sual — söz sırası dəyişmir',
+      content:
+        '"Who?" ilə canlı mübtədaya sual veririk.\n' +
+        '"What?" ilə cansız mübtədaya sual veririk.\n\n' +
+        'Mübtədaya sual verərkən söz sırası dəyişmir — mübtədanı götürüb yerinə sual əvəzliyini qoyuruq.\n' +
+        'Köməkçi do/does/did işlənmir.\n' +
+        'Cümlə Simple Present-də olarsa felə -s/-es əlavə edilir.',
+      table: [
+        ['Cümlə',                        'Sual'],
+        ['I go to school.',              'Who goes to school?'],
+        ['A tragic event took place.',   'What event took place?'],
+        ['It makes me tell the lie.',    'What makes you tell the lie?'],
+        ['I don\'t go to school.',       'Who doesn\'t go to school?'],
+      ],
+      tip: 'Mübtədanın təyininə sual verərkən də söz sırası dəyişmir, köməkçi fel işlənmir.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Digər üzvlərə sual — söz sırası dəyişir',
+      content:
+        'Mübtədadan başqa bütün üzvlərə sual verərkən söz sırası dəyişir:\n\n' +
+        'Wh + köməkçi fel + mübtəda + əsas fel + digər üzvlər\n\n' +
+        'Canlı tamamlığa "whom" ilə və "who" ilə sual vermək olar.\n' +
+        'Fərq: "whom" ilə sözönü cümlənin əvvəlinə keçir, "who" ilə sonda qalır.',
+      table: [
+        ['Cümlə',                        'Whom ilə sual',                 'Who ilə sual'],
+        ['I give a pen to my sister.',   'To whom do I give a pen?',      'Who do I give a pen to?'],
+        ['I give a pen to my sister.',   'Whom do I give a pen to?',      'Who do I give a pen to?'],
+      ],
+      examples: [
+        { word: 'I live in Baku.',           az: 'Where do I live?' },
+        { word: 'She went home yesterday.',  az: 'When did she go home?' },
+        { word: 'I can speak English well.', az: 'How can you speak English?' },
+      ],
+    },
+
+    { en: 'Mübtədaya sual verərkən söz sırası dəyişirmi?',             tr: 'Xeyr, dəyişmir',       wrong: 'Bəli, dəyişir'       },
+    { en: '"Who goes to school?" — bu hansı üzvə sualıdır?',           tr: 'Mübtəda',              wrong: 'Tamamlıq'            },
+    { en: 'Mübtədaya sual verərkən do/does/did işlənirmi?',            tr: 'Xeyr',                 wrong: 'Bəli'                },
+    { en: '"To whom do I give a pen?" — sözönü haradadır?',            tr: 'whom-dan əvvəl',        wrong: 'Cümlənin sonunda'    },
+    { en: '"Who do I give a pen to?" — sözönü haradadır?',             tr: 'Cümlənin sonunda',      wrong: 'whom-dan əvvəl'      },
+    { en: 'Xüsusi sual söz sırası (digər üzvlər)?',                    tr: 'Wh + köməkçi + mübtəda + fel', wrong: 'Köməkçi + mübtəda + Wh + fel' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Ann teaches you English." → mübtədaya sual?',
+          options: ['Who do teach English?', 'Who teaches you English?', 'Who you teach English?', 'Whom teaches English?'],
+          answer: 'Who teaches you English?',
+        },
+        {
+          q: '"I give a pen to my sister." → canlı tamamlığa "whom" ilə sual?',
+          options: ['Who do I give a pen?', 'Whom I give a pen to?', 'To whom do I give a pen?', 'Whom gives a pen?'],
+          answer: 'To whom do I give a pen?',
+        },
+        {
+          q: '"She went home." → zaman zərfinə sual?',
+          options: ['Where did she go?', 'When did she go home?', 'Why she went home?', 'How did she go?'],
+          answer: 'When did she go home?',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 1.3 — Who / Whom / Whose fərqi ─────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.3 — Who / Whom / Whose fərqi',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Who / Whom / Whose',
+      content:
+        '"Who" — canlı mübtədaya sual verir. Söz sırası dəyişmir.\n\n' +
+        '"Whom" — canlı tamamlığa sual verir. Söz sırası dəyişir.\n' +
+        'Sözönlü tamamlıqda sözönü whom-dan əvvələ keçir.\n\n' +
+        '"Whose" — yiyəlik halında olan isim və yiyəlik əvəzliyinə sual verir.\n' +
+        '• Mübtədanın təyininə sual verərkən — söz sırası dəyişmir\n' +
+        '• Tamamlığın təyininə sual verərkən — söz sırası dəyişir',
+      table: [
+        ['Sual',   'Funksiya',      'Söz sırası', 'Nümunə'],
+        ['Who',    'Mübtəda',       'Dəyişmir',   'Who goes to school?'],
+        ['Whom',   'Tamamlıq',      'Dəyişir',    'To whom do I give a pen?'],
+        ['Whose',  'Yiyəlik (təyin)','Mübtədada dəyişmir / tamamlıqda dəyişir', 'Whose sister is a doctor?'],
+      ],
+      examples: [
+        { word: 'My sister is a doctor.',        az: 'Whose sister is a doctor? (söz sırası dəyişmir)' },
+        { word: 'I give my pen to my sister.',   az: 'Whose sister do I give a pen? (söz sırası dəyişir)' },
+      ],
+    },
+
+    { en: '"Who" hansı üzvə sual verir?',                              tr: 'Canlı mübtəda',        wrong: 'Canlı tamamlıq'      },
+    { en: '"Whom" hansı üzvə sual verir?',                             tr: 'Canlı tamamlıq',       wrong: 'Mübtəda'             },
+    { en: '"Whose" nəyə sual verir?',                                  tr: 'Yiyəlik — kimin',      wrong: 'Yer zərfi'           },
+    { en: '"Whose sister is a doctor?" — söz sırası dəyişibmi?',       tr: 'Xeyr (mübtədanın təyini)', wrong: 'Bəli'           },
+    { en: '"To whom do I give a pen?" — sözönü haradadır?',            tr: 'whom-dan əvvəl',        wrong: 'Cümlənin sonunda'   },
+    { en: '"Who do I give a pen to?" — "who" hansı funksiyadır?',      tr: 'Tamamlıq',             wrong: 'Mübtəda'             },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"My sister is a doctor." → "whose" ilə sual?',
+          options: ['Whose is your sister a doctor?', 'Whose sister is a doctor?', 'Whom sister is a doctor?', 'Who sister is doctor?'],
+          answer: 'Whose sister is a doctor?',
+        },
+        {
+          q: '"I spoke to him." → "whom" ilə sual?',
+          options: ['Who did you speak?', 'Whom did you speak to?', 'To whom did you speak?', 'Whose did you speak?'],
+          answer: 'To whom did you speak?',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 1.4 — What / Which fərqi ────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.4 — What / Which fərqi',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'What vs Which',
+      content:
+        '"What" — seçim qoyulmur, ümumi mənada sual verilir.\n' +
+        '"Which" — seçim qoyulur; 2 və ya 3 əşya arasında "or" bağlayıcısı ilə.\n\n' +
+        '"Which" ilə sıra sayına da sual vermək olar.\n' +
+        '"Which" ilə səciyyələndirici təyinə sual veririk.',
+      table: [
+        ['What',                                          'Which'],
+        ['Ümumi sual — seçim yoxdur',                    'Seçim var — 2-3 əşya arasında'],
+        ['What is the largest river in Azerbaijan?',      'Which is larger: the Kur or the Araz?'],
+        ['What book did you read?',                      'Which boy is your brother? (səciyyələndirici)'],
+      ],
+      examples: [
+        { word: 'What is the largest river in Azerbaijan?',          az: 'Azərbaycanda ən böyük çay hansıdır?' },
+        { word: 'Which is the largest river: the Kur or the Araz?', az: 'Hansı daha böyükdür: Kür, yoxsa Araz?' },
+        { word: 'The boy standing at the door is my brother.',       az: 'Which boy is your brother?' },
+      ],
+      tip: '"What" ilə "hansı" mənasında sual verərkən seçim qoyulmur. "Which" ilə seçim "or" ilə qoyulur.',
+    },
+
+    { en: '"What" ilə sual verərkən seçim qoyulurmu?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"Which" ilə sual verərkən seçim qoyulurmu?',              tr: 'Bəli',                  wrong: 'Xeyr'                },
+    { en: '"Which" ilə seçim hansı bağlayıcı ilə qoyulur?',          tr: 'or',                    wrong: 'and'                 },
+    { en: '"Which" ilə hansı növ təyinə sual veririk?',              tr: 'Səciyyələndirici təyin', wrong: 'Təsviri təyin'       },
+    { en: '"What" ilə hansı növ təyinə sual veririk?',               tr: 'Prenozativ (növ) təyin', wrong: 'Səciyyələndirici'   },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"The Kur or the Araz?" — seçimli sual üçün hansı sual sözü işlənir?',
+          options: ['What', 'Who', 'Which', 'Whose'],
+          answer: 'Which',
+        },
+        {
+          q: '"What is your job?" — bu cümlə nəyi soruşur?',
+          options: ['Adını', 'Peşəsini', 'Yaşını', 'Ünvanını'],
+          answer: 'Peşəsini',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 1.5 — What ilə xəbərə, mübtədaya, tamamlığa sual
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.5 — What ilə xəbərə, mübtədaya, tamamlığa sual',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'What ilə xəbərə sual',
+      content:
+        '"What" ilə xəbərə sual verərkən söz sırası dəyişir:\n' +
+        'What + köməkçi fel + mübtəda + əsas "do"\n\n' +
+        'Əsas "do" dəyişmir — yalnız davamedici zamanda "doing", bitmiş zamanda "done" ola bilir.',
+      examples: [
+        { word: 'I was reading a book.',   az: 'What was I doing?' },
+        { word: 'She has done the work.',  az: 'What has she done?' },
+      ],
+      table: [
+        ['What ilə soruşulan mövzular',    'Nümunə'],
+        ['Hava',                           'What is the weather like today?'],
+        ['Gün',                            'What day is it today?'],
+        ['Tarix',                          'What date is it today?'],
+        ['Fəsil',                          'What season is it now?'],
+        ['Ölçü',                           'What size is your shirt?'],
+        ['Rəng',                           'What colour is your skirt?'],
+        ['Peşə',                           'What are you? / What do you do?'],
+      ],
+      tip: '"What are you?" — peşəni soruşur.\n"Who are you?" — adı / kimliyini soruşur.',
+    },
+
+    { en: '"What was I doing?" — bu hansı üzvə sualıdır?',            tr: 'Xəbər',                wrong: 'Mübtəda'             },
+    { en: '"What are you?" — bu nəyi soruşur?',                       tr: 'Peşəni',               wrong: 'Adı'                 },
+    { en: '"Who are you?" — bu nəyi soruşur?',                        tr: 'Adı / kimliyini',      wrong: 'Peşəni'              },
+    { en: '"What day is it?" — bu nəyi soruşur?',                     tr: 'Günü',                 wrong: 'Tarixi'              },
+    { en: '"What colour is your skirt?" — bu nəyi soruşur?',          tr: 'Rəngi',                wrong: 'Ölçünü'             },
+    { en: '"I was reading a book." → what ilə xəbərə sual?',          tr: 'What was I doing?',    wrong: 'What was I read?'   },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"What do you do?" — bu cümlə nəyi soruşur?',
+          options: ['Adını', 'Yaşını', 'Peşəsini', 'Ünvanını'],
+          answer: 'Peşəsini',
+        },
+        {
+          q: '"I give a pen to my sister." → cansız tamamlığa sual?',
+          options: ['Who do I give to my sister?', 'What do I give to my sister?', 'Which do I give my sister?', 'Whom do I give?'],
+          answer: 'What do I give to my sister?',
+        },
+        {
+          q: '"What size is your shirt?" — bu nəyi soruşur?',
+          options: ['Rəngi', 'Ölçünü', 'Növünü', 'Qiymətini'],
+          answer: 'Ölçünü',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 1 ───────────────────────────────────────────
+[
+  { en: '"I go to school." → do/does/did seç?',                        tr: 'Do',                   wrong: 'Does'                },
+  { en: '"She speaks English." → do/does/did seç?',                    tr: 'Does',                 wrong: 'Do'                  },
+  { en: '"They went home." → do/does/did seç?',                        tr: 'Did',                  wrong: 'Does'                },
+  { en: 'Mübtədaya sual verərkən söz sırası dəyişirmi?',               tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: 'Mübtədaya sual verərkən do/does/did işlənirmi?',              tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Who" hansı üzvə sual verir?',                                tr: 'Canlı mübtəda',        wrong: 'Canlı tamamlıq'      },
+  { en: '"Whom" hansı üzvə sual verir?',                               tr: 'Canlı tamamlıq',       wrong: 'Mübtəda'             },
+  { en: '"Whose" nəyə sual verir?',                                    tr: 'Yiyəlik — kimin',      wrong: 'Yer zərfi'           },
+  { en: '"What" ilə sual verərkən seçim qoyulurmu?',                  tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Which" ilə seçim hansı bağlayıcı ilə qoyulur?',             tr: 'or',                   wrong: 'and'                 },
+  { en: '"What are you?" — bu nəyi soruşur?',                         tr: 'Peşəni',               wrong: 'Adı'                 },
+  { en: '"Who are you?" — bu nəyi soruşur?',                          tr: 'Adı / kimliyini',      wrong: 'Peşəni'              },
+  { en: '"To whom do I give a pen?" — sözönü haradadır?',             tr: 'whom-dan əvvəl',        wrong: 'Cümlənin sonunda'   },
+  { en: '"What was I doing?" — bu hansı üzvə sualıdır?',              tr: 'Xəbər',                wrong: 'Mübtəda'             },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  BÖLMƏ 2 — How ilə mürəkkəb sual sözləri              │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 2.1 — How many/much · How often · How long ──────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — How many/much · How often · How long',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'How many / How much',
+      content:
+        '"How many" — sayılan isimlərlə işlənir → neçə?\n' +
+        '"How much" — sayılmayan isimlərlə işlənir → nə qədər?\n\n' +
+        'Hər ikisinin söz sırası dəyişir:\n' +
+        'How many/much + isim + köməkçi fel + mübtəda + əsas fel?',
+      table: [
+        ['How many',                     'How much'],
+        ['Sayılan isim — neçə',          'Sayılmayan isim — nə qədər'],
+        ['How many books do you have?',  'How much water do you drink?'],
+        ['How many students are there?', 'How much money does he earn?'],
+      ],
+    },
+
+    {
+      type: 'lesson',
+      title: 'How often / How long',
+      content:
+        '"How often" — neçə dəfə? Əsasən every day/week/month, usually, often, never kimi ' +
+        'qeyri-müəyyən zərflərə sual verilir.\n\n' +
+        '"How long" — nə qədər müddətdir ki? Davam müddətinə sual verilir.\n' +
+        'Davam müddətini zaman zərfindən ayırmaq üçün: zaman zərfinin qarşısında "for" və ya ' +
+        '"another" gəlir, ya da xəbər "to last / to continue" ilə ifadə olunur.',
+      table: [
+        ['Sual sözü',    'Nümunə cümlə',                       'Sual'],
+        ['How often',   'I go to school every day.',           'How often do you go to school?'],
+        ['How long',    'I want to stay there another week.',  'How long do you want to stay there?'],
+        ['How long',    'Our lesson lasts 45 minutes.',        'How long does our lesson last?'],
+        ['How long',    'I have known him for 2 years.',       'How long have you known him?'],
+      ],
+      tip: '"When" ilə indiki bitmiş və keçmiş bitmiş zamanlara sual verilmir. Bu hallarda sual keçmiş qeyri-müəyyən zamanda olur.',
+    },
+
+    { en: '"How many" hansı isimlərlə işlənir?',                      tr: 'Sayılan isim',          wrong: 'Sayılmayan isim'     },
+    { en: '"How much" hansı isimlərlə işlənir?',                      tr: 'Sayılmayan isim',       wrong: 'Sayılan isim'        },
+    { en: '"How often" nəyə sual verir?',                             tr: 'Tezliyə — neçə dəfə',  wrong: 'Müddətə — nə qədər'  },
+    { en: '"How long" nəyə sual verir?',                              tr: 'Davam müddətinə',       wrong: 'Tezliyə'             },
+    { en: '"Our lesson lasts 45 minutes." → sual?',                   tr: 'How long does our lesson last?', wrong: 'How often does our lesson last?' },
+    { en: '"When" ilə indiki bitmiş zamana sual verilirmi?',          tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: 'Davam müddəti zərfinin əvvəlində hansı söz gəlir?',       tr: 'for / another',         wrong: 'since / still'       },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I drink a lot of water every day." → "How often" ilə sual?',
+          options: ['How long do you drink water?', 'How often do you drink water?', 'How much do you drink?', 'How many do you drink?'],
+          answer: 'How often do you drink water?',
+        },
+        {
+          q: '"I have known him for 2 years." → "How long" ilə sual?',
+          options: ['How long do you know him?', 'How long have you known him?', 'How often have you known him?', 'How long you have known him?'],
+          answer: 'How long have you known him?',
+        },
+        {
+          q: '"How ___ books do you have?" — boşluq?',
+          options: ['much', 'many', 'long', 'often'],
+          answer: 'many',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — How old · How far · How tall · How big ───
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — How old · How far · How tall · How big',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'How + sifət/zərf — mürəkkəb sual sözləri',
+      content:
+        '"How" sual əvəzliyi sifət və zərflə yanaşı işlənərək mürəkkəb sual sözləri formalaşdırır.\n\n' +
+        'Söz sırası həmişə dəyişir.',
+      table: [
+        ['Sual sözü',      'Nəyi soruşur',            'Nümunə'],
+        ['How old',        'Yaşı',                    'How old are you?'],
+        ['How far',        'Məsafəni',                'How far is it from here?'],
+        ['How tall',       'Boy / hündürlüyü',        'How tall is he?'],
+        ['How big',        'Böyüklüyünü / sahəsini',  'How big is your house?'],
+        ['What kind of',   'Növünü — nə cür',         'What kind of music do you like?'],
+        ['What time',      'Vaxtı — nə vaxt',         'What time does the train leave?'],
+      ],
+      tip: '"Why" ilə "for" işlənmir. Əvəzində "What ... for?" ilə səbəb soruşmaq olar. Söz sırası dəyişir.',
+    },
+
+    { en: '"How old" nəyi soruşur?',                                  tr: 'Yaşı',                 wrong: 'Hündürlüyü'          },
+    { en: '"How far" nəyi soruşur?',                                  tr: 'Məsafəni',             wrong: 'Böyüklüyü'           },
+    { en: '"How tall" nəyi soruşur?',                                 tr: 'Boy / hündürlüyü',     wrong: 'Yaşı'                },
+    { en: '"How big" nəyi soruşur?',                                  tr: 'Böyüklüyü / sahəsi',   wrong: 'Məsafəni'            },
+    { en: '"What kind of" nəyi soruşur?',                             tr: 'Növünü — nə cür',      wrong: 'Vaxtı'               },
+    { en: '"What time" nəyi soruşur?',                                tr: 'Vaxtı',                wrong: 'Növünü'              },
+    { en: '"Why" ilə "for" işlənirmi?',                               tr: 'Xeyr',                 wrong: 'Bəli'                },
+    { en: '"Why" əvəzinə nə ilə sual vermək olar?',                   tr: 'What ... for?',        wrong: 'How come?'           },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"He is 25 years old." → sual?',
+          options: ['How long is he?', 'How old is he?', 'How big is he?', 'How tall is he?'],
+          answer: 'How old is he?',
+        },
+        {
+          q: '"What kind of music do you like?" — bu nəyi soruşur?',
+          options: ['Musiqinin adını', 'Musiqinin növünü', 'Musiqinin müəllifini', 'Musiqinin uzunluğunu'],
+          answer: 'Musiqinin növünü',
+        },
+        {
+          q: '"Why do you study English?" — "why"nin ekvivalenti?',
+          options: ['How come you study?', 'What do you study for?', 'For what you study?', 'What for you study?'],
+          answer: 'What do you study for?',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.3 — Təyin növləri + Which ────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.3 — Təyin növləri + Which ilə səciyyələndirici təyin',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'İngilis dilində 3 növ təyin',
+      content:
+        'İngilis dilində əsasən 3 növ təyin var:',
+      table: [
+        ['Növ',                    'İfadə vasitəsi',          'Artikl',           'Sual'],
+        ['Təsviri təyin',          'Sifətlə (isimdən əvvəl)', 'a/an (sayılan tək)', 'what kind of...?'],
+        ['Səciyyələndirici təyin', 'Feli sifətlə (əvvəl/sonra)', 'the (həmişə)',  'which?'],
+        ['Prenozativ (növ) təyin', 'İsim və ya sifətlə',      'Heç bir artikl',   'what...?'],
+      ],
+      examples: [
+        { word: 'A clever boy (təsviri)',                      az: 'what kind of boy?' },
+        { word: 'The boy standing at the door (səciyyələndirici)', az: 'which boy?' },
+        { word: 'An English book (prenozativ/növ)',            az: 'what book?' },
+      ],
+      tip: '"Which" ilə sıra sayına da sual veririk:\nThe first boy is my brother. → Which boy is your brother?',
+    },
+
+    { en: 'Təsviri təyinə sual sözü?',                                tr: 'what kind of?',        wrong: 'which?'              },
+    { en: 'Səciyyələndirici təyinə sual sözü?',                       tr: 'which?',               wrong: 'what kind of?'       },
+    { en: 'Prenozativ (növ) təyinə sual sözü?',                       tr: 'what...?',             wrong: 'which?'              },
+    { en: 'Səciyyələndirici təyin olan ismin artiklı?',               tr: 'the (həmişə)',          wrong: 'a/an'               },
+    { en: 'Təsviri təyin olan sayılan tək ismin artiklı?',            tr: 'a/an',                 wrong: 'the'                 },
+    { en: 'Prenozativ (növ) təyin olan ismin artiklı?',               tr: 'Heç bir artikl',        wrong: 'the'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"The boy standing at the door" — bu hansı növ təyindir?',
+          options: ['Təsviri', 'Prenozativ', 'Səciyyələndirici', 'Zərflik'],
+          answer: 'Səciyyələndirici',
+        },
+        {
+          q: '"A clever boy" — bu hansı növ təyindir?',
+          options: ['Səciyyələndirici', 'Prenozativ', 'Təsviri', 'Yiyəlik'],
+          answer: 'Təsviri',
+        },
+        {
+          q: '"An English book" — bu hansı növ təyindir?',
+          options: ['Təsviri', 'Səciyyələndirici', 'Prenozativ', 'Zərflik'],
+          answer: 'Prenozativ',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 2 ───────────────────────────────────────────
+[
+  { en: '"How many" hansı isimlərlə işlənir?',                        tr: 'Sayılan isim',          wrong: 'Sayılmayan isim'     },
+  { en: '"How much" hansı isimlərlə işlənir?',                        tr: 'Sayılmayan isim',       wrong: 'Sayılan isim'        },
+  { en: '"How often" nəyə sual verir?',                               tr: 'Tezliyə — neçə dəfə',  wrong: 'Müddətə'             },
+  { en: '"How long" nəyə sual verir?',                                tr: 'Davam müddətinə',       wrong: 'Tezliyə'             },
+  { en: '"How old" nəyi soruşur?',                                    tr: 'Yaşı',                  wrong: 'Hündürlüyü'          },
+  { en: '"How far" nəyi soruşur?',                                    tr: 'Məsafəni',              wrong: 'Böyüklüyü'           },
+  { en: '"How tall" nəyi soruşur?',                                   tr: 'Boy / hündürlüyü',      wrong: 'Yaşı'                },
+  { en: '"What kind of" nəyi soruşur?',                               tr: 'Növünü — nə cür',       wrong: 'Vaxtı'               },
+  { en: '"Why" ilə "for" işlənirmi?',                                 tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: 'Səciyyələndirici təyinə sual sözü?',                         tr: 'which?',                wrong: 'what kind of?'       },
+  { en: 'Təsviri təyinə sual sözü?',                                  tr: 'what kind of?',         wrong: 'which?'              },
+  { en: 'Prenozativ (növ) təyinə sual sözü?',                         tr: 'what...?',              wrong: 'which?'              },
+  { en: '"When" ilə indiki bitmiş zamana sual verilirmi?',            tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: 'Davam müddəti zərfinin əvvəlində hansı söz gəlir?',         tr: 'for / another',          wrong: 'since / still'       },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  BÖLMƏ 3 — Seçmə suallar + Ayrılan suallar            │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Dərs 3.1 — Alternative questions ────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — Seçmə suallar (Alternative questions)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Seçmə suallar nədir?',
+      content:
+        'İki fikirdən birini seçmək üçün işlədilən sual cümləsidir.\n\n' +
+        'İki hissədən ibarət olur:\n' +
+        '• Birinci hissə — ümumi sual forması\n' +
+        '• İkinci hissə — "or" bağlayıcısı + alternativ söz\n\n' +
+        '"or" bağlayıcısının sabit yeri yoxdur — hansı sözə əvəzləyici verilərsə, onun yanında qoyulur.\n\n' +
+        'Bu tip sual cümlələrinə yes/no cavabı verilmir — tam cavab verilir.',
+      table: [
+        ['Sual',                              'Cavab'],
+        ['Do you go to school or home?',      'I go home. / Home.'],
+        ['Is he a teacher or a doctor?',      'He is a doctor. / A doctor.'],
+        ['Did she call you or write to you?', 'She wrote to me. / She wrote.'],
+      ],
+      tip: '"Or" bağlayıcısı birinci hissənin sonunda deyil, əvəzlənən sözün yanında gəlir.',
+    },
+
+    { en: 'Seçmə sualın ikinci hissəsi hansı bağlayıcı ilə başlayır?',tr: 'or',                   wrong: 'and'                 },
+    { en: 'Seçmə suala yes/no cavabı verilirmi?',                     tr: 'Xeyr',                 wrong: 'Bəli'                },
+    { en: '"or" bağlayıcısının sabit yeri varmı?',                    tr: 'Xeyr',                 wrong: 'Bəli'                },
+    { en: '"Do you go to school or home?" — cavab?',                  tr: 'I go home.',           wrong: 'Yes, I do.'          },
+    { en: 'Seçmə sualın birinci hissəsi hansı sual formasındadır?',   tr: 'Ümumi sual forması',   wrong: 'Xüsusi sual forması' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Is he a teacher or a doctor?" — düzgün cavab hansıdır?',
+          options: ['Yes, he is.', 'No, he isn\'t.', 'He is a doctor.', 'He is.'],
+          answer: 'He is a doctor.',
+        },
+        {
+          q: 'Seçmə sualda "or" bağlayıcısı haraya qoyulur?',
+          options: ['Cümlənin əvvəlinə', 'Birinci hissənin sonuna', 'Əvəzlənən sözün yanına', 'Cümlənin sonuna'],
+          answer: 'Əvəzlənən sözün yanına',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.2 — Tag questions ─────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — Ayrılan suallar (Tag questions)',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Tag questions nədir?',
+      content:
+        'Tag questions da iki hissədən ibarətdir:\n' +
+        '• Birinci hissə — adi nəqli cümlə\n' +
+        '• İkinci hissə — qısa sual (köməkçi fel + şəxs əvəzliyi)\n\n' +
+        'Qayda:\n' +
+        '• Birinci hissə təsdiq olarsa → ikinci hissə inkar\n' +
+        '• Birinci hissə inkar olarsa → ikinci hissə təsdiq\n\n' +
+        'Mübtəda mütləq şəxs əvəzliyi ilə əvəzlənməlidir.\n\n' +
+        'Birinci şəxs təkdə "am" formasının yerinə "are" yazılır:\n' +
+        'I am a teacher, aren\'t I?\n' +
+        'I am not a pupil, am I?',
+      table: [
+        ['Nəqli cümlə',             'Tag sualı'],
+        ['He is a teacher,',        'isn\'t he?'],
+        ['She can swim,',           'can\'t she?'],
+        ['They went home,',         'didn\'t they?'],
+        ['You don\'t like it,',     'do you?'],
+        ['She can\'t drive,',       'can she?'],
+        ['I am a teacher,',         'aren\'t I?'],
+      ],
+      tip: 'Cavab: Yes, I am. / No, I\'m not. (tam cavab da ola bilər)',
+    },
+
+    { en: 'Tag sualının birinci hissəsi təsdiqdirsə, ikinci hissə?', tr: 'İnkar',                 wrong: 'Təsdiq'              },
+    { en: 'Tag sualının birinci hissəsi inkardırsa, ikinci hissə?',  tr: 'Təsdiq',                wrong: 'İnkar'               },
+    { en: '"I am a teacher, ___ I?" — boşluq?',                     tr: 'aren\'t',               wrong: 'isn\'t'              },
+    { en: '"He is a teacher, ___ he?" — boşluq?',                   tr: 'isn\'t',                wrong: 'aren\'t'             },
+    { en: '"She can swim, ___ she?" — boşluq?',                     tr: 'can\'t',                wrong: 'isn\'t'              },
+    { en: '"They went home, ___ they?" — boşluq?',                  tr: 'didn\'t',               wrong: 'weren\'t'            },
+    { en: '"You don\'t like it, ___ you?" — boşluq?',               tr: 'do',                    wrong: 'don\'t'              },
+    { en: 'Tag sualında mübtəda nə ilə əvəzlənir?',                 tr: 'Şəxs əvəzliyi',         wrong: 'İsim'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She can\'t drive, ___ she?" — boşluq?',
+          options: ['can\'t', 'isn\'t', 'can', 'doesn\'t'],
+          answer: 'can',
+        },
+        {
+          q: '"I am a teacher, ___ I?" — birinci şəxs tək üçün düzgün tag?',
+          options: ['amn\'t', 'am not', 'isn\'t', 'aren\'t'],
+          answer: 'aren\'t',
+        },
+        {
+          q: '"They went home, ___ they?" — boşluq?',
+          options: ['weren\'t', 'didn\'t', 'don\'t', 'haven\'t'],
+          answer: 'didn\'t',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.3 — Tag questions: əvəzlik dəyişmələri ────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.3 — Tag questions: əvəzlik dəyişmələri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Xüsusi əvəzlik dəyişmələri',
+      content:
+        'Tag suallarında aşağıdakı xüsusi əvəzlik dəyişmələrinə diqqət yetirmək lazımdır:',
+      table: [
+        ['Birinci hissədəki mübtəda',        'Tag-dakı əvəzlik',  'Nümunə'],
+        ['this / that',                      'it',                'This is a book, isn\'t it?'],
+        ['these / those',                    'they',              'These are books, aren\'t they?'],
+        ['everybody / everyone / someone / somebody / none / nobody', 'they', 'Everybody took the test, didn\'t they?'],
+        ['everything / something / nothing', 'it',                'Everything is OK, isn\'t it?'],
+        ['I (am)',                           'aren\'t I',         'I am a teacher, aren\'t I?'],
+        ['I am not',                         'am I',              'I am not a pupil, am I?'],
+      ],
+      tip: 'Qısa cavab: Yes, I am. / No, I\'m not.\nYes, he is. / No, he isn\'t.',
+    },
+
+    { en: '"This is a book, ___ it?" — boşluq?',                    tr: 'isn\'t',                wrong: 'aren\'t'             },
+    { en: '"These are books, ___ they?" — boşluq?',                 tr: 'aren\'t',               wrong: 'isn\'t'              },
+    { en: '"Everybody took the test, ___ they?" — boşluq?',         tr: 'didn\'t',               wrong: 'didn\'t he'          },
+    { en: '"Everything is OK, ___ it?" — boşluq?',                  tr: 'isn\'t',                wrong: 'aren\'t'             },
+    { en: '"Nobody came, ___ they?" — boşluq?',                     tr: 'did',                   wrong: 'didn\'t'             },
+    { en: '"this/that" tag sualında hansı əvəzliklə əvəzlənir?',    tr: 'it',                    wrong: 'they'                },
+    { en: '"these/those" tag sualında hansı əvəzliklə əvəzlənir?',  tr: 'they',                  wrong: 'it'                  },
+    { en: '"everybody" tag sualında hansı əvəzliklə əvəzlənir?',    tr: 'they',                  wrong: 'it'                  },
+    { en: '"everything" tag sualında hansı əvəzliklə əvəzlənir?',   tr: 'it',                    wrong: 'they'                },
+    { en: '"nothing" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'it',                    wrong: 'they'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"That is your book, ___ ___?" — boşluqlar?',
+          options: ['isn\'t it', 'aren\'t it', 'isn\'t that', 'don\'t it'],
+          answer: 'isn\'t it',
+        },
+        {
+          q: '"Nobody came, ___ ___?" — boşluqlar?',
+          options: ['didn\'t they', 'did they', 'didn\'t he', 'did he'],
+          answer: 'did they',
+        },
+        {
+          q: '"Something is wrong, ___ ___?" — boşluqlar?',
+          options: ['isn\'t something', 'aren\'t they', 'isn\'t it', 'doesn\'t it'],
+          answer: 'isn\'t it',
+        },
+        {
+          q: '"I am not late, ___ I?" — boşluq?',
+          options: ['aren\'t', 'am not', 'am', 'isn\'t'],
+          answer: 'am',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 3 ───────────────────────────────────────────
+[
+  { en: 'Seçmə sualın ikinci hissəsi hansı bağlayıcı ilə başlayır?', tr: 'or',                   wrong: 'and'                 },
+  { en: 'Seçmə suala yes/no cavabı verilirmi?',                      tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Do you go to school or home?" — cavab?',                   tr: 'I go home.',           wrong: 'Yes, I do.'          },
+  { en: 'Tag sualının birinci hissəsi təsdiqdirsə, ikinci hissə?',   tr: 'İnkar',                wrong: 'Təsdiq'              },
+  { en: '"I am a teacher, ___ I?" — boşluq?',                       tr: 'aren\'t',              wrong: 'isn\'t'              },
+  { en: '"She can swim, ___ she?" — boşluq?',                       tr: 'can\'t',               wrong: 'isn\'t'              },
+  { en: '"this/that" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'it',                   wrong: 'they'                },
+  { en: '"these/those" tag sualında hansı əvəzliklə əvəzlənir?',    tr: 'they',                 wrong: 'it'                  },
+  { en: '"everybody" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'they',                 wrong: 'it'                  },
+  { en: '"everything" tag sualında hansı əvəzliklə əvəzlənir?',     tr: 'it',                   wrong: 'they'                },
+  { en: '"Nothing happened, ___ it?" — boşluq?',                    tr: 'did',                  wrong: 'didn\'t'             },
+  { en: 'Tag sualında mübtəda nə ilə əvəzlənir?',                   tr: 'Şəxs əvəzliyi',        wrong: 'İsim'                },
+],
+
+
+// ── Test 1 — Ümumi + Xüsusi suallar (Bölmə 1–2) ─────────
+[
+  { en: '"I go to school." → do/does/did seç?',                       tr: 'Do',                   wrong: 'Does'                },
+  { en: '"She speaks English." → do/does/did seç?',                   tr: 'Does',                 wrong: 'Do'                  },
+  { en: '"They went home." → do/does/did seç?',                       tr: 'Did',                  wrong: 'Does'                },
+  { en: 'Mübtədaya sual verərkən söz sırası dəyişirmi?',              tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: 'Mübtədaya sual verərkən do/does/did işlənirmi?',             tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Who" hansı üzvə sual verir?',                               tr: 'Canlı mübtəda',        wrong: 'Canlı tamamlıq'      },
+  { en: '"Whom" hansı üzvə sual verir?',                              tr: 'Canlı tamamlıq',       wrong: 'Mübtəda'             },
+  { en: '"Whose" nəyə sual verir?',                                   tr: 'Yiyəlik — kimin',      wrong: 'Yer zərfi'           },
+  { en: '"What" ilə sual verərkən seçim qoyulurmu?',                 tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Which" ilə seçim hansı bağlayıcı ilə qoyulur?',            tr: 'or',                   wrong: 'and'                 },
+  { en: '"How many" hansı isimlərlə işlənir?',                        tr: 'Sayılan isim',         wrong: 'Sayılmayan isim'     },
+  { en: '"How much" hansı isimlərlə işlənir?',                        tr: 'Sayılmayan isim',      wrong: 'Sayılan isim'        },
+  { en: '"How often" nəyə sual verir?',                               tr: 'Tezliyə — neçə dəfə', wrong: 'Müddətə'             },
+  { en: '"How long" nəyə sual verir?',                                tr: 'Davam müddətinə',      wrong: 'Tezliyə'             },
+  { en: '"How old" nəyi soruşur?',                                    tr: 'Yaşı',                 wrong: 'Hündürlüyü'          },
+  { en: '"How far" nəyi soruşur?',                                    tr: 'Məsafəni',             wrong: 'Böyüklüyü'           },
+  { en: '"Why" ilə "for" işlənirmi?',                                 tr: 'Xeyr',                wrong: 'Bəli'                 },
+  { en: 'Səciyyələndirici təyinə sual sözü?',                         tr: 'which?',               wrong: 'what kind of?'       },
+  { en: '"When" ilə indiki bitmiş zamana sual verilirmi?',            tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"What are you?" — bu nəyi soruşur?',                         tr: 'Peşəni',               wrong: 'Adı'                 },
+  { en: '"Who are you?" — bu nəyi soruşur?',                         tr: 'Adı / kimliyini',      wrong: 'Peşəni'              },
+  { en: '"To whom do I give a pen?" — sözönü haradadır?',            tr: 'whom-dan əvvəl',        wrong: 'Cümlənin sonunda'    },
+],
+
+// ── Test 2 — Seçmə + Ayrılan suallar (Bölmə 3) ──────────
+[
+  { en: 'Seçmə sualın ikinci hissəsi hansı bağlayıcı ilə başlayır?', tr: 'or',                   wrong: 'and'                 },
+  { en: 'Seçmə suala yes/no cavabı verilirmi?',                      tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"or" bağlayıcısının sabit yeri varmı?',                     tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Do you go to school or home?" — cavab?',                   tr: 'I go home.',           wrong: 'Yes, I do.'          },
+  { en: 'Tag sualının birinci hissəsi təsdiqdirsə, ikinci hissə?',   tr: 'İnkar',                wrong: 'Təsdiq'              },
+  { en: 'Tag sualının birinci hissəsi inkardırsa, ikinci hissə?',    tr: 'Təsdiq',               wrong: 'İnkar'               },
+  { en: '"I am a teacher, ___ I?" — boşluq?',                       tr: 'aren\'t',              wrong: 'isn\'t'              },
+  { en: '"She can swim, ___ she?" — boşluq?',                       tr: 'can\'t',               wrong: 'isn\'t'              },
+  { en: '"They went home, ___ they?" — boşluq?',                    tr: 'didn\'t',              wrong: 'weren\'t'            },
+  { en: '"this/that" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'it',                   wrong: 'they'                },
+  { en: '"these/those" tag sualında hansı əvəzliklə əvəzlənir?',    tr: 'they',                 wrong: 'it'                  },
+  { en: '"everybody" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'they',                 wrong: 'it'                  },
+  { en: '"everything" tag sualında hansı əvəzliklə əvəzlənir?',     tr: 'it',                   wrong: 'they'                },
+  { en: '"nothing" tag sualında hansı əvəzliklə əvəzlənir?',        tr: 'it',                   wrong: 'they'                },
+  { en: 'Tag sualında mübtəda nə ilə əvəzlənir?',                   tr: 'Şəxs əvəzliyi',        wrong: 'İsim'                },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  FINAL TEST — Questions tam test · 20 sual             │
+// └─────────────────────────────────────────────────────────┘
+[
+  // Ümumi suallar
+  { en: '"He speaks English." → ümumi sual?',                         tr: 'Does he speak English?', wrong: 'Do he speak English?' },
+  { en: '"She went home." → ümumi sual?',                             tr: 'Did she go home?',     wrong: 'Does she go home?'   },
+  { en: 'İki köməkçi fel olduqda hansı əvvələ keçir?',               tr: 'Birinci köməkçi fel',  wrong: 'İkinci köməkçi fel'  },
+  // Xüsusi suallar
+  { en: '"Who goes to school?" — bu hansı üzvə sualıdır?',           tr: 'Mübtəda',              wrong: 'Tamamlıq'            },
+  { en: 'Mübtədaya sual verərkən do/does/did işlənirmi?',            tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"To whom do I give a pen?" — sözönü haradadır?',            tr: 'whom-dan əvvəl',        wrong: 'Cümlənin sonunda'   },
+  { en: '"Who do I give a pen to?" — sözönü haradadır?',             tr: 'Cümlənin sonunda',      wrong: 'whom-dan əvvəl'     },
+  { en: '"What are you?" — nəyi soruşur?',                           tr: 'Peşəni',               wrong: 'Adı'                 },
+  { en: '"What was I doing?" — hansı üzvə sualıdır?',                tr: 'Xəbər',                wrong: 'Mübtəda'             },
+  // How sualları
+  { en: '"How many" hansı isimlərlə işlənir?',                       tr: 'Sayılan isim',         wrong: 'Sayılmayan isim'     },
+  { en: '"How often" nəyə sual verir?',                              tr: 'Tezliyə — neçə dəfə',  wrong: 'Müddətə'             },
+  { en: '"How long" nəyə sual verir?',                               tr: 'Davam müddətinə',       wrong: 'Tezliyə'             },
+  { en: '"Why" ilə "for" işlənirmi?',                                tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"Which" ilə seçim hansı bağlayıcı ilə qoyulur?',           tr: 'or',                    wrong: 'and'                },
+  // Seçmə sual
+  { en: 'Seçmə suala yes/no cavabı verilirmi?',                      tr: 'Xeyr',                 wrong: 'Bəli'                },
+  { en: '"or" bağlayıcısının sabit yeri varmı?',                     tr: 'Xeyr',                 wrong: 'Bəli'                },
+  // Tag suallar
+  { en: 'Tag sualının birinci hissəsi təsdiqdirsə, ikinci hissə?',   tr: 'İnkar',                wrong: 'Təsdiq'              },
+  { en: '"I am a teacher, ___ I?" — boşluq?',                       tr: 'aren\'t',              wrong: 'isn\'t'              },
+  { en: '"this/that" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'it',                   wrong: 'they'                },
+  { en: '"everybody" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'they',                 wrong: 'it'                  },
+],
+
+  ],
+};
 // ── 10. MODAL VERBS ──────────────────────────────────────────
 const MODAL_VERBS_LEVEL = {
   id: 'modal_verbs',
