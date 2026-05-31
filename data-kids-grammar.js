@@ -12607,6 +12607,32 @@ const PRONOUN_LEVEL = {
     },
   ],
 };
+
+// ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
+const QUESTIONS_LEVEL = {
+  id: 'ARTICLE_LEVEL',
+  name: 'QUESTIONS — SUALLAR',
+  icon: '<i class="ti ti-help-circle"></i>',
+  color: '#7DD3FC',
+  quizzes: [
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 1 — Ümumi & Xüsusi suallar',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 2 — Wh- sual sözləri',
+      cards: [],
+    },
+    {
+      type: 'grammar_lesson',
+      title: 'Dərs 3 — Seçmə & Ayrılan suallar',
+      cards: [],
+    },
+  ],
+};
+
 // ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
 const QUESTIONS_LEVEL = {
   id: 'questions',
