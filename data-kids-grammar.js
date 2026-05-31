@@ -15045,31 +15045,1302 @@ const PREPOSITIONS_LEVEL = {
   icon: '<i class="ti ti-map-pin"></i>',
   color: '#FDBA74',
   quizzes: [
+   // ══════════════════════════════════════════════════════════
+// ║  SÖZÖNLƏR (PREPOSITIONS) — Tam bölüm                  ║
+// ══════════════════════════════════════════════════════════
+// Struktur: 5 Bölmə · 2 Qrup · (dərs + mini-quiz) + test
+// ──────────────────────────────────────────────────────────
+
+// ╔══════════════════════════════════════════════════════╗
+// ║  QRUP 1 — Yer və Zaman bildirən sözönlər            ║
+// ╚══════════════════════════════════════════════════════╝
+
+// ┌──────────────────────────────────────────────────────┐
+// │  BÖLMƏ 1 — in / on / at (yer + zaman)               │
+// └──────────────────────────────────────────────────────┘
+
+// ── Dərs 1.1 — "in" yer + zaman ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — "in" yer + zaman',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — Yer bildirən sözönlər',
-      cards: [],
+      type: 'lesson',
+      title: '"in" — yer mənası',
+      content:
+        '"in" şəxsin və ya əşyanın nəyinsə daxilində, sərhədli bir ərazidə ' +
+        'olduğunu bildirir.',
+      table: [
+        ['İfadə',               'Azərbaycanca'],
+        ['in the room',         'otaqda'],
+        ['in the city',         'şəhərdə'],
+        ['in the park',         'parkda'],
+        ['in the yard',         'həyətdə'],
+        ['in the street',       'küçədə'],
+        ['in the sky',          'səmada'],
+        ['in the book',         'kitabın içində'],
+        ['in the corner',       'küncdə (otağın)'],
+        ['in the box',          'qutuda'],
+        ['in the bag',          'çantada'],
+        ['in the world',        'dünyada'],
+        ['in the sea',          'dənizdə'],
+        ['in Azerbaijan',       'Azərbaycanda'],
+        ['in Baku',             'Bakıda'],
+        ['in the north/south',  'şimalda / cənubda'],
+        ['in a car / in a taxi','maşınla / taksi ilə'],
+        ['in hospital',         'xəstəxanada'],
+        ['in prison',           'həbsdə'],
+        ['in bed',              'yataqda'],
+        ['in the open air',     'açıq havada'],
+        ['in the shade',        'kölgədə'],
+      ],
+      tip:
+        'Ölkə, şəhər, kənd — "in" ilə.\n' +
+        'Coğrafi cəhətlər (north/south) — "in" ilə.\n' +
+        'Artikl olarsa nəqliyyat vasitələri "by" ilə işlənməz: in a car (✓) · by car (✓) · by a car (✗)',
     },
+
+    // ── Dərs-içi quiz: "in" yer ──────────────────────────
+    { en: '"___ the room" — boşluğa nə gəlir?',                  tr: 'in',    wrong: 'on'   },
+    { en: '"___ Azerbaijan" — ölkə adının qarşısında?',           tr: 'in',    wrong: 'at'   },
+    { en: '"___ the sky" — hansı sözön?',                        tr: 'in',    wrong: 'on'   },
+    { en: '"___ hospital" — xəstəxanada mənası?',                tr: 'in',    wrong: 'at'   },
+    { en: '"___ the north" — coğrafi cəhətin önündə?',           tr: 'in',    wrong: 'on'   },
+    { en: '"___ a car" — maşınla (artikl ilə)?',                 tr: 'in',    wrong: 'by'   },
+    { en: '"___ the open air" — açıq havada?',                   tr: 'in',    wrong: 'at'   },
+    { en: '"___ the street" — küçədə?',                          tr: 'in',    wrong: 'on'   },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — Zaman bildirən sözönlər',
-      cards: [],
+      type: 'lesson',
+      title: '"in" — zaman mənası',
+      content: '"in" aşağıdakı zaman ifadələrinin qarşısında işlənir:',
+      table: [
+        ['İşlənmə konteksti',             'Nümunə'],
+        ['Günün 3 hissəsi',               'in the morning / afternoon / evening'],
+        ['Aylar (tarixsiz)',              'in May · in September'],
+        ['İllər',                         'in 1994 · in 2005'],
+        ['Fəsillər',                      'in spring · in summer · in winter'],
+        ['Gələcək zaman zərfi',           'in two days · in a week'],
+        ['Əsrlər',                        'in the XX century'],
+        ['Dövrlər',                       'in my life · in my youth'],
+      ],
     },
+
+    // ── Dərs-içi quiz: "in" zaman ─────────────────────────
+    { en: '"___ the morning" — hansı sözön?',                    tr: 'in',    wrong: 'at'   },
+    { en: '"___ May" — ay adının önündə (tarixsiz)?',            tr: 'in',    wrong: 'on'   },
+    { en: '"___ 1994" — il göstərərkən?',                        tr: 'in',    wrong: 'on'   },
+    { en: '"___ spring" — fəsil adının önündə?',                 tr: 'in',    wrong: 'at'   },
+    { en: '"___ two days" — gələcək zaman zərfi?',               tr: 'in',    wrong: 'for'  },
+    { en: '"___ the XX century" — əsr ifadəsinin önündə?',       tr: 'in',    wrong: 'at'   },
+  ],
+},
+
+// ── Dərs 1.2 — "on" yer + zaman ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — "on" yer + zaman',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — İstiqamət bildirən sözönlər',
-      cards: [],
+      type: 'lesson',
+      title: '"on" — yer mənası',
+      content:
+        '"on" şəxsin və ya əşyanın üfüqi və ya şaquli vəziyyətdə ' +
+        'nəyinsə üstündə olduğunu bildirir. Azərbaycanca: üstündə, -da/-də.',
+      table: [
+        ['İfadə',                   'Azərbaycanca'],
+        ['on the table',            'stolun üstündə'],
+        ['on the wall',             'divarda'],
+        ['on the right / left',     'sağda / solda'],
+        ['on the floor',            'döşəmədə / mərtəbədə'],
+        ['on the ground',           'yerdə'],
+        ['on the Earth',            'yer kürəsində'],
+        ['on the isle / beach',     'adada / çimərlikdə'],
+        ['on the coast',            'dəniz sahilində'],
+        ['on TV',                   'televizorda'],
+        ['on the map',              'xəritədə'],
+        ['on the farm',             'fermada'],
+        ['on the way',              'yolda'],
+        ['on holiday / vacation',   'tətildə / məzuniyyətdə'],
+        ['on business',             'iş üçün / biznes məqsədilə'],
+        ['on sale',                 'satışda'],
+        ['on a bus/train/ship/plane','avtobusla / qatarla / gəmiylə / təyyarəylə'],
+        ['on page',                 'neçənci səhifədə'],
+        ['on average',              'orta hesabla'],
+      ],
+      tip:
+        '"on" kitabın, filmin, mövzunun məzmunu haqqında danışarkən:\n' +
+        'I have a book on history — tarihdən kitabım var.',
     },
+
+    // ── Dərs-içi quiz: "on" yer ───────────────────────────
+    { en: '"___ the table" — stolun üstündə?',                   tr: 'on',    wrong: 'in'   },
+    { en: '"___ the wall" — divarda?',                           tr: 'on',    wrong: 'at'   },
+    { en: '"___ TV" — televizorda?',                             tr: 'on',    wrong: 'in'   },
+    { en: '"___ the right" — sağda?',                            tr: 'on',    wrong: 'at'   },
+    { en: '"___ the floor" — döşəmədə?',                         tr: 'on',    wrong: 'in'   },
+    { en: '"___ a bus" — avtobusla?',                            tr: 'on',    wrong: 'by'   },
+    { en: '"___ the map" — xəritədə?',                           tr: 'on',    wrong: 'in'   },
+    { en: '"___ sale" — satışda?',                               tr: 'on',    wrong: 'at'   },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 4 — Mücərrəd əlaqə bildirən sözönlər',
-      cards: [],
+      type: 'lesson',
+      title: '"on" — zaman mənası',
+      content: '"on" aşağıdakı zaman ifadələrinin qarşısında işlənir:',
+      table: [
+        ['İşlənmə konteksti',                         'Nümunə'],
+        ['Həftənin günləri',                           'on Monday · on Sunday'],
+        ['Gün + günün hissəsi',                        'on Friday morning / evening'],
+        ['Tarix (ay + rəqəm)',                         'on the 4th of March'],
+        ['Xüsusi günlər',                              'on New Year\'s Eve · on Christmas Day'],
+        ['Gün + sifət',                                'on a warm spring day'],
+      ],
+      tip:
+        'Christmas Day — "on" ilə.\n' +
+        '"at Christmas" — "day" olmadan "at" ilə.\n' +
+        'on Monday morning (✓) — gün + günün hissəsi birlikdədirsə "on" işlənir.',
     },
+
+    // ── Dərs-içi quiz: "on" zaman ─────────────────────────
+    { en: '"___ Monday" — həftənin gününün önündə?',             tr: 'on',    wrong: 'in'   },
+    { en: '"___ Friday morning" — gün + günün hissəsi?',         tr: 'on',    wrong: 'in'   },
+    { en: '"___ the 4th of March" — tarix?',                     tr: 'on',    wrong: 'in'   },
+    { en: '"___ New Year\'s Eve" — xüsusi gün?',                 tr: 'on',    wrong: 'at'   },
+    { en: '"___ Christmas Day" — "day" sözü varsa?',             tr: 'on',    wrong: 'at'   },
+  ],
+},
+
+// ── Dərs 1.3 — "at" yer + zaman ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.3 — "at" yer + zaman',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 5 — Sözönlü fellər & sabit ifadələr',
-      cards: [],
+      type: 'lesson',
+      title: '"at" — yer mənası',
+      content:
+        '"at" əsasən yer bildirir: yanında, kənarında, arxasında, -da/-də. ' +
+        'Adətən nisbətən kiçik obyektlərin yanında işlənir.',
+      table: [
+        ['İfadə',                       'Azərbaycanca'],
+        ['at home',                     'evdə'],
+        ['at school',                   'məktəbdə'],
+        ['at the lesson',               'dərsdə'],
+        ['at the party',                'şənlikdə / ziyafətdə'],
+        ['at the station',              'vağzalda'],
+        ['at the airport',              'aeroportda'],
+        ['at the bus stop',             'avtobus dayanacağında'],
+        ['at the traffic light',        'işıqforunda'],
+        ['at the corner of the street', 'küçənin tinində'],
+        ['at the door / gate',          'qapının / darvazanın ağzında'],
+        ['at the concert',              'konsertdə'],
+        ['at the football match',       'futbol oyununda'],
+        ['at the window',               'pəncərənin yanında'],
+        ['at the desk',                 'parta arxasında'],
+        ['at my uncle\'s',              'əmimgildə'],
+        ['at the doctor\'s',            'həkimdə'],
+        ['at the baker\'s',             'çörək mağazasında'],
+        ['at the age of 5',             'beş yaşında'],
+        ['at 65 Nizami street',         'Nizami küçəsi 65-də'],
+      ],
+      tip:
+        'Küçə adı nömrəsiz verilərsə → "in": in Nizami street.\n' +
+        'Nömrə ilə verilərsə → "at": at 65 Nizami street.\n' +
+        'Cinema, theatre, stadium, concert — "at" ilə.\n' +
+        'Hotel və restaurant — həm "at", həm "in" ilə işlənə bilər.',
     },
+
+    // ── Dərs-içi quiz: "at" yer ───────────────────────────
+    { en: '"___ home" — evdə?',                                  tr: 'at',    wrong: 'in'   },
+    { en: '"___ school" — məktəbdə?',                            tr: 'at',    wrong: 'in'   },
+    { en: '"___ the station" — vağzalda?',                       tr: 'at',    wrong: 'in'   },
+    { en: '"___ the corner" — küçənin tinində?',                 tr: 'at',    wrong: 'on'   },
+    { en: '"___ the window" — pəncərənin yanında?',              tr: 'at',    wrong: 'in'   },
+    { en: '"___ the bus stop" — avtobus dayanacağında?',         tr: 'at',    wrong: 'on'   },
+    { en: '"___ the concert" — konsertdə?',                      tr: 'at',    wrong: 'in'   },
+    { en: '"in Nizami street" vs "___ 65 Nizami street" — nömrə ilə?', tr: 'at', wrong: 'in' },
+
+    {
+      type: 'lesson',
+      title: '"at" — zaman mənası',
+      content: '"at" aşağıdakı zaman ifadələrinin qarşısında işlənir:',
+      table: [
+        ['İşlənmə konteksti',           'Nümunə'],
+        ['Saatlar',                     'at 8 o\'clock · at 9 p.m.'],
+        ['Gecə vaxtı',                  'at night · at midnight · at noon'],
+        ['Dəqiq an',                    'at that moment · at the same time'],
+        ['Keçmiş davamedici + dəqiq vaxt', 'at this time yesterday'],
+        ['Sabit ifadələr',              'at last · at once · at first · at present'],
+        ['Nahar/şam vaxtı',             'at dinner · at supper'],
+        ['Həftə sonu',                  'at the weekend'],
+      ],
+      tip:
+        '"During the night" — artikl ilə verilərsə "at" yox, "during" işlənir.\n' +
+        '"at noon" (saat 12) — "in" yox, "at" ilə.',
+    },
+
+    // ── Dərs-içi quiz: "at" zaman ─────────────────────────
+    { en: '"___ 8 o\'clock" — saat ifadəsi?',                   tr: 'at',    wrong: 'on'   },
+    { en: '"___ night" — gecə vaxtı?',                           tr: 'at',    wrong: 'in'   },
+    { en: '"___ noon" — saat 12?',                               tr: 'at',    wrong: 'in'   },
+    { en: '"___ the weekend" — həftə sonu?',                     tr: 'at',    wrong: 'on'   },
+    { en: '"___ once" — dərhal mənasında?',                      tr: 'at',    wrong: 'in'   },
+    { en: '"___ present" — hal-hazırda?',                        tr: 'at',    wrong: 'in'   },
+  ],
+},
+
+// ── Dərs 1.4 — in / on / at müqayisəsi + fərqlər ─────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.4 — in / on / at müqayisəsi + fərqlər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'in / on / at — yer müqayisəsi',
+      content: 'Hansı sözönün işlənəcəyini cümlənin kontekstinə görə müəyyənləşdir:',
+      table: [
+        ['Nümunə 1',              'Nümunə 2',              'Fərq'],
+        ['in the street (küçədə)','at the corner (tində)', 'ərazi vs nöqtə'],
+        ['in Nizami street',      'at 65 Nizami street',   'ad vs nömrə'],
+        ['at the window',         'on the wall',           'kiçik obj. vs üst'],
+        ['in the morning',        'on Monday morning',     'zaman hissəsi vs gün+hissə'],
+        ['in May',                'on the 4th of May',     'ay vs tarix'],
+        ['in the morning',        'at noon',               'hissə vs dəqiq an'],
+        ['at school',             'in the school building','yer (məkan) vs bina içi'],
+        ['on a bus',              'in a car/taxi',         'ictimai vs fərdi nəqliyyat'],
+        ['at Christmas',          'on Christmas Day',      '"day" yoxdur vs var'],
+      ],
+    },
+
+    // ── Dərs-içi quiz: müqayisə ──────────────────────────
+    { en: '"___ the morning" — günün hissəsi?',                  tr: 'in',    wrong: 'at'   },
+    { en: '"___ Monday morning" — gün + hissə birlikdə?',        tr: 'on',    wrong: 'in'   },
+    { en: '"___ May" — ay adı (tarixsiz)?',                      tr: 'in',    wrong: 'on'   },
+    { en: '"___ the 4th of May" — tarix?',                       tr: 'on',    wrong: 'in'   },
+    { en: '"___ noon" — saat 12?',                               tr: 'at',    wrong: 'in'   },
+    { en: '"___ a bus" — ictimai nəqliyyat?',                    tr: 'on',    wrong: 'in'   },
+    { en: '"___ a car" — fərdi nəqliyyat (artikl ilə)?',         tr: 'in',    wrong: 'on'   },
+    { en: '"___ school" — məktəbdə (ümumi məkan)?',              tr: 'at',    wrong: 'in'   },
+    { en: '"___ Christmas" — "day" sözü yoxdur?',                tr: 'at',    wrong: 'on'   },
+    { en: '"___ Christmas Day" — "day" sözü var?',               tr: 'on',    wrong: 'at'   },
+
+    // ── Mini-check 1 ──────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ the morning" vs "___ Monday morning" — fərq nədir?',
+          options: [
+            'Hər ikisi "in" ilə',
+            '"in" günün hissəsi, "on" gün+hissə',
+            'Hər ikisi "on" ilə',
+            '"at" günün hissəsi, "in" gün+hissə',
+          ],
+          answer: '"in" günün hissəsi, "on" gün+hissə',
+        },
+        {
+          q: '"___ 65 Nizami street" — nömrə ilə küçə ünvanı?',
+          options: ['in', 'on', 'at', 'by'],
+          answer: 'at',
+        },
+        {
+          q: '"___ a taxi" — taksidə (artikl ilə)?',
+          options: ['by', 'on', 'at', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"___ a train" — qatarla?',
+          options: ['in', 'at', 'on', 'by'],
+          answer: 'on',
+        },
+        {
+          q: '"___ the weekend" — həftə sonu?',
+          options: ['in', 'on', 'at', 'by'],
+          answer: 'at',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 1 ── in/on/at sec: yer yoxsa zaman, fərqli kontekstdə ──
+[
+  // Yer — in
+  { en: '"___ the room"',                      tr: 'in',   wrong: 'at'  },
+  { en: '"___ the sky"',                       tr: 'in',   wrong: 'on'  },
+  { en: '"___ Azerbaijan"',                    tr: 'in',   wrong: 'at'  },
+  { en: '"___ hospital"',                      tr: 'in',   wrong: 'at'  },
+  { en: '"___ the sea"',                       tr: 'in',   wrong: 'on'  },
+  // Yer — on
+  { en: '"___ the table"',                     tr: 'on',   wrong: 'in'  },
+  { en: '"___ the wall"',                      tr: 'on',   wrong: 'at'  },
+  { en: '"___ TV"',                            tr: 'on',   wrong: 'in'  },
+  { en: '"___ the map"',                       tr: 'on',   wrong: 'at'  },
+  { en: '"___ the beach"',                     tr: 'on',   wrong: 'at'  },
+  // Yer — at
+  { en: '"___ home"',                          tr: 'at',   wrong: 'in'  },
+  { en: '"___ the station"',                   tr: 'at',   wrong: 'in'  },
+  { en: '"___ the window"',                    tr: 'at',   wrong: 'on'  },
+  { en: '"___ the concert"',                   tr: 'at',   wrong: 'in'  },
+  { en: '"___ the bus stop"',                  tr: 'at',   wrong: 'on'  },
+  // Zaman — in
+  { en: '"___ the evening"',                   tr: 'in',   wrong: 'at'  },
+  { en: '"___ 1994"',                          tr: 'in',   wrong: 'on'  },
+  { en: '"___ spring"',                        tr: 'in',   wrong: 'at'  },
+  { en: '"___ two days"',                      tr: 'in',   wrong: 'for' },
+  // Zaman — on
+  { en: '"___ Monday"',                        tr: 'on',   wrong: 'in'  },
+  { en: '"___ the 4th of March"',              tr: 'on',   wrong: 'in'  },
+  { en: '"___ Friday morning"',                tr: 'on',   wrong: 'in'  },
+  // Zaman — at
+  { en: '"___ 8 o\'clock"',                   tr: 'at',   wrong: 'in'  },
+  { en: '"___ night"',                         tr: 'at',   wrong: 'in'  },
+  { en: '"___ the weekend"',                   tr: 'at',   wrong: 'on'  },
+  { en: '"___ noon"',                          tr: 'at',   wrong: 'in'  },
+  // Fərq sualları
+  { en: '"in Nizami street" vs "___ 65 Nizami" — nömrə ilə?', tr: 'at', wrong: 'in' },
+  { en: '"___ a car" (artikl ilə)',             tr: 'in',   wrong: 'by'  },
+  { en: '"___ Christmas" ("day" yoxdur)',       tr: 'at',   wrong: 'on'  },
+  { en: '"___ Christmas Day" ("day" var)',      tr: 'on',   wrong: 'at'  },
+],
+
+
+// ┌──────────────────────────────────────────────────────┐
+// │  BÖLMƏ 2 — Mövqe bildirən sözönlər                  │
+// └──────────────────────────────────────────────────────┘
+
+// ── Dərs 2.1 — under / above / over / behind ─────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — under / above / over / behind',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'under / above / over / behind',
+      content: '',
+      table: [
+        ['Sözön',    'Mənası',                    'Nümunə'],
+        ['under',    'altında',                   'under the table — stolun altında'],
+        ['above',    'yuxarısında (yuxarıda)',    'The flag is above the window.'],
+        ['over',     'üzərində / üstündən',       'over the river — çayın üzərində'],
+        ['over',     'o tayında',                 'a house over the river — çayın o tayında'],
+        ['behind',   'arxasında',                 'There is a garden behind the house.'],
+      ],
+      note:
+        'in the sun — günəşin altında (under yox!)\n' +
+        'in the rain — yağışda\n' +
+        'in the shade — kölgədə\n' +
+        'all over the world — bütün dünyada\n' +
+        'over (bitmiş/sona çatmış mənasında): The lesson is over.',
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"___ the table" — stolun altında?',                   tr: 'under',   wrong: 'below'  },
+    { en: '"The flag is ___ the window." — yuxarısında?',        tr: 'above',   wrong: 'over'   },
+    { en: '"___ the river" — çayın üzərində (körpü kimi)?',      tr: 'over',    wrong: 'above'  },
+    { en: '"in the sun" — günəşin altında? ("under" işlənirmi?)', tr: 'Xeyr, "in"', wrong: 'Bəli, "under"' },
+    { en: '"___ the house" — evin arxasında?',                   tr: 'behind',  wrong: 'under'  },
+    { en: '"all ___ the world" — bütün dünyada?',                tr: 'over',    wrong: 'above'  },
+  ],
+},
+
+// ── Dərs 2.2 — near / beside / between / among ───────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — near / beside / between / among',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'near / beside / next to / between / among',
+      content: '',
+      table: [
+        ['Sözön',        'Mənası',                         'Nümunə'],
+        ['near',         'yaxınlığında (böyük obj.)',       'near school — məktəbin yanında'],
+        ['at',           'yanında (kiçik obj.)',            'at the window — pəncərənin yanında'],
+        ['beside',       'yanında, yanaşı',                'Sadiq was sitting beside Arzu.'],
+        ['next to',      'bitişik, yanında',               'next to the door — qapının yanında'],
+        ['between',      'ikisinin arasında',              'between the sofa and the bookcase'],
+        ['among',        'ikidən artıq arasında',          'Distribute books among students.'],
+        ['in the middle of', 'ortasında / mərkəzində',    'in the middle of the room'],
+      ],
+      tip:
+        '"near" böyük obyektlər (məktəb, bina), "at" kiçik obyektlər (pəncərə, stol).\n' +
+        '"between" — 2 şəxs/əşya arasında.\n' +
+        '"among" — 3 və daha çox şəxs/əşya arasında. Üstünlük dərəcəsini tələb edir.',
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"___ the sofa and the bookcase" — ikisinin arasında?', tr: 'between', wrong: 'among' },
+    { en: '"___ students" — çox şagird arasında?',               tr: 'among',   wrong: 'between'},
+    { en: '"___ school" — məktəbin yanında (böyük obj.)?',       tr: 'near',    wrong: 'at'    },
+    { en: '"___ the window" — pəncərənin yanında (kiçik obj.)?', tr: 'at',      wrong: 'near'  },
+    { en: '"___ the room" — otağın ortasında?',                  tr: 'in the middle of', wrong: 'between' },
+    { en: '"Sadiq was sitting ___ Arzu." — yanaşı?',             tr: 'beside',  wrong: 'between'},
+  ],
+},
+
+// ── Dərs 2.3 — in front of / opposite / across / round / below ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.3 — in front of / opposite / across / round / below',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'in front of / opposite / across / round / around / below',
+      content: '',
+      table: [
+        ['Sözön',         'Mənası',                    'Nümunə'],
+        ['in front of',   'qarşısında / qabağında',    'trees in front of our school'],
+        ['opposite',      'üzbəüz / qarşı-qarşıya',    'sitting opposite us'],
+        ['across',        'o biri tərəfdə / eninə',    'My home is across the street.'],
+        ['round/around',  'ətrafında / dövrəsində',    'We walked round the town.'],
+        ['below',         'aşağıda / altında',         '20° below zero'],
+        ['towards',       'tərəfə / sarı',             'driving towards the shore'],
+      ],
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"___ our school" — məktəbin qarşısında?',             tr: 'in front of', wrong: 'opposite' },
+    { en: '"sitting ___ us" — üzbəüz oturmaq?',                  tr: 'opposite',    wrong: 'across'   },
+    { en: '"My home is ___ the street." — yolun o biri tərəfi?', tr: 'across',      wrong: 'opposite' },
+    { en: '"walking ___ the town" — şəhər ətrafında dolaşmaq?',  tr: 'round',       wrong: 'across'   },
+    { en: '"20° ___ zero" — sıfırdan aşağı?',                    tr: 'below',       wrong: 'under'    },
+    { en: '"driving ___ the shore" — sahilə tərəf?',             tr: 'towards',     wrong: 'across'   },
+
+    // ── Mini-check 2 ──────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"between" ilə "among" arasındakı fərq nədir?',
+          options: [
+            'İkisi eynidir',
+            '"between" 2, "among" 3+ arasında',
+            '"between" 3+, "among" 2 arasında',
+            '"among" yalnız insanlara aiddir',
+          ],
+          answer: '"between" 2, "among" 3+ arasında',
+        },
+        {
+          q: '"near" ilə "at" arasındakı fərq?',
+          options: [
+            '"near" kiçik, "at" böyük obyektlər',
+            '"near" böyük, "at" kiçik obyektlər',
+            'İkisi eynidir',
+            '"at" yalnız zamanla işlənir',
+          ],
+          answer: '"near" böyük, "at" kiçik obyektlər',
+        },
+        {
+          q: '"in the sun" — günəşin altında mənasında hansı sözön?',
+          options: ['under', 'below', 'in', 'above'],
+          answer: 'in',
+        },
+        {
+          q: '"above" ilə "over" fərqi?',
+          options: [
+            '"above" üzərindən keçmə, "over" yalnız yuxarıda',
+            '"above" yuxarıda, "over" üzərindən/üstündən/o tayında',
+            'İkisi tamamilə eynidir',
+            '"over" yalnız məsafə bildirir',
+          ],
+          answer: '"above" yuxarıda, "over" üzərindən/üstündən/o tayında',
+        },
+        {
+          q: '"My home is ___ the street." — hansı sözön?',
+          options: ['opposite', 'in front of', 'across', 'beside'],
+          answer: 'across',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Test 1 — in/on/at + Mövqe sözönləri (Bölmə 1-2) ──────
+[
+  // in — yer
+  { en: '"___ the room"',                                        tr: 'in',          wrong: 'at'         },
+  { en: '"___ the bag"',                                         tr: 'in',          wrong: 'on'         },
+  { en: '"___ Azerbaijan"',                                      tr: 'in',          wrong: 'at'         },
+  { en: '"___ hospital"',                                        tr: 'in',          wrong: 'at'         },
+  { en: '"___ the sea"',                                         tr: 'in',          wrong: 'on'         },
+  { en: '"___ the corner" (otağın küncdə)',                      tr: 'in',          wrong: 'at'         },
+  { en: '"___ prison"',                                          tr: 'in',          wrong: 'at'         },
+  { en: '"___ bed"',                                             tr: 'in',          wrong: 'on'         },
+  // in — zaman
+  { en: '"___ the morning"',                                     tr: 'in',          wrong: 'at'         },
+  { en: '"___ May"',                                             tr: 'in',          wrong: 'on'         },
+  { en: '"___ 1994"',                                            tr: 'in',          wrong: 'on'         },
+  { en: '"___ spring"',                                          tr: 'in',          wrong: 'at'         },
+  { en: '"___ two days"',                                        tr: 'in',          wrong: 'for'        },
+  // on — yer
+  { en: '"___ the table"',                                       tr: 'on',          wrong: 'in'         },
+  { en: '"___ the wall"',                                        tr: 'on',          wrong: 'at'         },
+  { en: '"___ TV"',                                              tr: 'on',          wrong: 'in'         },
+  { en: '"___ the floor"',                                       tr: 'on',          wrong: 'in'         },
+  { en: '"___ the map"',                                         tr: 'on',          wrong: 'at'         },
+  { en: '"___ a bus"',                                           tr: 'on',          wrong: 'in'         },
+  { en: '"___ the farm"',                                        tr: 'on',          wrong: 'in'         },
+  { en: '"___ holiday"',                                         tr: 'on',          wrong: 'at'         },
+  { en: '"___ sale"',                                            tr: 'on',          wrong: 'at'         },
+  // on — zaman
+  { en: '"___ Monday"',                                          tr: 'on',          wrong: 'in'         },
+  { en: '"___ Friday morning"',                                  tr: 'on',          wrong: 'in'         },
+  { en: '"___ the 4th of March"',                                tr: 'on',          wrong: 'in'         },
+  { en: '"___ Christmas Day"',                                   tr: 'on',          wrong: 'at'         },
+  // at — yer
+  { en: '"___ home"',                                            tr: 'at',          wrong: 'in'         },
+  { en: '"___ school"',                                          tr: 'at',          wrong: 'in'         },
+  { en: '"___ the station"',                                     tr: 'at',          wrong: 'in'         },
+  { en: '"___ the window"',                                      tr: 'at',          wrong: 'on'         },
+  { en: '"___ the concert"',                                     tr: 'at',          wrong: 'in'         },
+  { en: '"___ the traffic light"',                               tr: 'at',          wrong: 'on'         },
+  { en: '"___ the corner of the street"',                        tr: 'at',          wrong: 'in'         },
+  // at — zaman
+  { en: '"___ 8 o\'clock"',                                      tr: 'at',          wrong: 'in'         },
+  { en: '"___ night"',                                           tr: 'at',          wrong: 'in'         },
+  { en: '"___ noon"',                                            tr: 'at',          wrong: 'in'         },
+  { en: '"___ the weekend"',                                     tr: 'at',          wrong: 'on'         },
+  { en: '"___ midnight"',                                        tr: 'at',          wrong: 'in'         },
+  // Mövqe sözönləri
+  { en: '"___ the table" — stolun altında?',                     tr: 'under',       wrong: 'below'      },
+  { en: '"___ the river" — çayın üzərindən?',                    tr: 'over',        wrong: 'above'      },
+  { en: '"___ the window" — pəncərənin yuxarısında?',            tr: 'above',       wrong: 'over'       },
+  { en: '"___ the house" — evin arxasında?',                     tr: 'behind',      wrong: 'under'      },
+  { en: '"___ the sofa and bookcase" — ikisinin arasında?',      tr: 'between',     wrong: 'among'      },
+  { en: '"___ students" — çox şagird arasında?',                 tr: 'among',       wrong: 'between'    },
+  { en: '"___ our school" — məktəbin qarşısında?',               tr: 'in front of', wrong: 'opposite'   },
+  { en: '"sitting ___ us" — üzbəüz?',                            tr: 'opposite',    wrong: 'across'     },
+  { en: '"___ the street" — yolun o biri tərəfi?',               tr: 'across',      wrong: 'opposite'   },
+  { en: '"___ the town" — şəhər ətrafında?',                     tr: 'round',       wrong: 'across'     },
+  { en: '"___ zero" — sıfırdan aşağı?',                          tr: 'below',       wrong: 'under'      },
+  { en: '"driving ___ the shore" — sahilə tərəf?',               tr: 'towards',     wrong: 'across'     },
+  // Fərq sualları
+  { en: '"in the sun" — günəşin altında?',                       tr: 'in (not under)', wrong: 'under'   },
+  { en: '"___ a car" (artikl ilə, fərdi nəqliyyat)',              tr: 'in',          wrong: 'on'         },
+  { en: '"___ Christmas" ("day" yoxdur)',                         tr: 'at',          wrong: 'on'         },
+  { en: '"near school" vs "___ the window" — kiçik obj. üçün?',  tr: 'at',          wrong: 'near'       },
+],
+
+
+// ╔══════════════════════════════════════════════════════╗
+// ║  QRUP 2 — İstiqamət · Mücərrəd əlaqə · Sabit ifadələr ║
+// ╚══════════════════════════════════════════════════════╝
+
+// ┌──────────────────────────────────────────────────────┐
+// │  BÖLMƏ 3 — İstiqamət bildirən sözönlər              │
+// └──────────────────────────────────────────────────────┘
+
+// ── Dərs 3.1 — to / into / from / out of ─────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — to / into / from / out of',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'to / into / from / out of',
+      content: '',
+      table: [
+        ['Sözön',    'Mənası',                          'Nümunə'],
+        ['to',       '-a/-ə, tərəf, gilə',              'I go to London. / go to my friend.'],
+        ['to',       'heç vaxt "home" ilə işlənmir',    'to go home (to go to home — yanlış)'],
+        ['into',     'içinə / içərisinə (hərəkət)',     'Put books into your bag.'],
+        ['from',     '-dan/-dən (ayrılma)',              'I come from school.'],
+        ['out of',   'örtülü yerdən bayıra',            'out of the room — otaqdan çıxmaq'],
+      ],
+      tip:
+        '"to" + yer → istiqamət bildirir.\n' +
+        '"into" = bayırdan örtülü yerə hərəkət. "in" = içəridə olmaq (vəziyyət).\n' +
+        '"out of" = örtülü yerdən bayıra hərəkət. "out" = bayırda olmaq (vəziyyət).',
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"I go ___ London." — istiqamət?',                     tr: 'to',      wrong: 'into'  },
+    { en: '"___ go home" — "home"dan əvvəl "to" işlənirmi?',    tr: 'Xeyr',    wrong: 'Bəli'  },
+    { en: '"Put books ___ your bag." — çantanın içinə?',         tr: 'into',    wrong: 'in'    },
+    { en: '"I come ___ school." — məktəbdən?',                   tr: 'from',    wrong: 'out of'},
+    { en: '"___ the room" — otaqdan çıxmaq (hərəkət)?',         tr: 'out of',  wrong: 'from'  },
+    { en: '"get ___ a car" — maşına minmək?',                    tr: 'into',    wrong: 'to'    },
+  ],
+},
+
+// ── Dərs 3.2 — along / towards / up / down ───────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — along / towards / up / down',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'along / towards / up / down',
+      content: '',
+      table: [
+        ['Sözön',      'Mənası',                     'Nümunə'],
+        ['along',      'boyunca / istiqamətdə',      'along the river — çay boyunca'],
+        ['towards',    'tərəfə / sarı',              'driving towards the shore'],
+        ['up',         'yuxarıya doğru / yaxınlaşma','up the stairs — pillə ilə yuxarı'],
+        ['down',       'aşağıya olan hərəkət',       'to sit down · to fall down'],
+      ],
+      examples: [
+        { word: 'Hurry up!',            az: 'Tələsin!' },
+        { word: 'to get up',            az: 'yataqdan qalxmaq' },
+        { word: 'to run up',            az: 'qiymətləri qaldırmaq / yaxınlaşmaq' },
+        { word: 'to come up to smb.',   az: 'kiməsə yaxınlaşmaq' },
+        { word: 'to write down',        az: 'köçürmək / yazmaq' },
+        { word: 'to fall down',         az: 'yıxılmaq' },
+        { word: 'to jump down',         az: 'aşağı tullanmaq' },
+      ],
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"___ the river" — çay boyunca?',                      tr: 'along',    wrong: 'towards' },
+    { en: '"driving ___ the shore" — sahilə sarı?',              tr: 'towards',  wrong: 'along'   },
+    { en: '"___ the stairs" — pillə ilə yuxarı?',                tr: 'up',       wrong: 'down'    },
+    { en: '"to sit ___" — əyləşmək?',                            tr: 'down',     wrong: 'up'      },
+    { en: '"to get ___" — yataqdan qalxmaq?',                    tr: 'up',       wrong: 'down'    },
+    { en: '"to write ___" — köçürmək?',                          tr: 'down',     wrong: 'up'      },
+
+    // ── Mini-quiz 3 ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"to" sözönü "home" sözündən əvvəl işlənirmi?',
+          options: ['Bəli, həmişə', 'Xeyr, heç vaxt', 'Bəzən', 'Yalnız gələcək zamanda'],
+          answer: 'Xeyr, heç vaxt',
+        },
+        {
+          q: '"into" ilə "in" arasındakı fərq?',
+          options: [
+            '"into" vəziyyət, "in" hərəkət',
+            '"into" hərəkət (içinə), "in" vəziyyət (içəridə)',
+            'İkisi eynidir',
+            '"in" hərəkət bildirir',
+          ],
+          answer: '"into" hərəkət (içinə), "in" vəziyyət (içəridə)',
+        },
+        {
+          q: '"along" nə mənasına gəlir?',
+          options: ['tərəfə', 'arasında', 'boyunca', 'altında'],
+          answer: 'boyunca',
+        },
+        {
+          q: '"to come up to smb." nə deməkdir?',
+          options: ['kimdənsə uzaqlaşmaq', 'kiməsə yaxınlaşmaq', 'kimsəyə baxmaq', 'kimdənsə soruşmaq'],
+          answer: 'kiməsə yaxınlaşmaq',
+        },
+      ],
+    },
+  ],
+},
+
+
+// ┌──────────────────────────────────────────────────────┐
+// │  BÖLMƏ 4 — Mücərrəd əlaqə: with/by/about/of/for… │
+// └──────────────────────────────────────────────────────┘
+
+// ── Dərs 4.1 — with / by / about ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.1 — with / by / about',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'with / by / about',
+      content: '',
+      table: [
+        ['Sözön',   'Mənası',                              'Nümunə'],
+        ['with',    'ilə / -la/-lə',                       'with my father — atamla'],
+        ['with',    'cansız: alətlə',                      'to cut with a knife — bıçaqla kəsmək'],
+        ['by',      'nəqliyyat vasitəsi ilə (artikl yox)', 'by bus · by car · by train'],
+        ['by',      'yanında (artikl ilə)',                'by the car — maşının yanında'],
+        ['by',      'tərəfindən (məchul)',                 'written by our teacher'],
+        ['by',      'qədər (keçmiş bitmiş + vaxt)',        'by five o\'clock yesterday'],
+        ['by',      'ilə (üsul)',                          'by heart · by hand · by chek'],
+        ['about',   'haqqında / barəsində',                'about your friend'],
+        ['about',   'təxminən',                            'about eight million'],
+      ],
+      tip:
+        '"by + nəqliyyat" — aralarında artikl olmur: by bus (✓) · by a bus (✗).\n' +
+        '"in a car/taxi" — artikl olarsa "in" işlənir.\n' +
+        '"with" cansız isimlə: alət/vasitə bildirərkən.',
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"___ my father" — atamla?',                           tr: 'with',    wrong: 'by'    },
+    { en: '"___ bus" — avtobusla (artikl yox)?',                 tr: 'by',      wrong: 'on'    },
+    { en: '"written ___ our teacher" — məchul?',                 tr: 'by',      wrong: 'with'  },
+    { en: '"___ your friend" — dostun haqqında?',                tr: 'about',   wrong: 'of'    },
+    { en: '"___ heart" — əzbərdən?',                             tr: 'by',      wrong: 'with'  },
+    { en: '"___ eight million" — təxminən?',                     tr: 'about',   wrong: 'by'    },
+    { en: '"to cut ___ a knife" — bıçaqla kəsmək?',             tr: 'with',    wrong: 'by'    },
+    { en: '"___ five o\'clock yesterday" — keçmiş bitmiş + vaxt?', tr: 'by',   wrong: 'at'    },
+  ],
+},
+
+// ── Dərs 4.2 — of / for / without / off ──────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.2 — of / for / without / off',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'of / for / without / off',
+      content: '',
+      table: [
+        ['Sözön',      'Mənası',                           'Nümunə'],
+        ['of',         '-ın/-nin (yiyəlik)',               'the title of the film'],
+        ['of',         'miqdar ifadəsi',                   'a cup of coffee · a loaf of bread'],
+        ['for',        'üçün',                             'for you — sənin üçün'],
+        ['for',        'müddət bildirir (bitmiş zaman)',   'for five years — beş ildir ki'],
+        ['for',        'ilk/bir dəfə',                     'for the first time'],
+        ['without',    '-sız/-siz (inkar)',                'without your help'],
+        ['off',        'inkarlıq / əks məna fellər',       'put off · switch off · take off'],
+      ],
+      note:
+        '"for + zaman" → bitmiş zaman tələb edir:\n' +
+        'I have known him for five years.\n\n' +
+        '"wait for" (isim) vs "wait to" (fel):\n' +
+        'I\'m waiting for you. / I\'m waiting to see you.',
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"the title ___ the film" — filmin adı?',              tr: 'of',       wrong: 'for'   },
+    { en: '"a cup ___ coffee" — miqdar ifadəsi?',                tr: 'of',       wrong: 'for'   },
+    { en: '"___ you" — sənin üçün?',                             tr: 'for',      wrong: 'of'    },
+    { en: '"for five years" — hansı zaman işlənir?',             tr: 'Bitmiş',   wrong: 'Keçmiş'},
+    { en: '"___ your help" — köməyin olmadan?',                  tr: 'without',  wrong: 'off'   },
+    { en: '"to put ___" — söndürmək?',                           tr: 'off',      wrong: 'out'   },
+    { en: '"to take ___" — soyunmaq?',                           tr: 'off',      wrong: 'out'   },
+    { en: '"I\'m waiting ___ you." — şəxsə gözləmək (isim)?',   tr: 'for',      wrong: 'to'    },
+  ],
+},
+
+// ── Dərs 4.3 — after / before / during / till / until ────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.3 — after / before / during / till / until',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'after / before / during / while / till / until',
+      content: '',
+      table: [
+        ['Sözön',    'Mənası',                            'Qeyd'],
+        ['after',    'sonra',                             'after school · after dinner'],
+        ['after',    'şərəfinə',                          'after the guests — qonaqların şərəfinə'],
+        ['after',    'fel birləşmələri',                  'look after · take after · go on'],
+        ['before',   'əvvəl / qabaq',                    'before lesson · before dinner'],
+        ['during',   'ərzində (isim ilə)',                'during the lesson · during summer'],
+        ['while',    'ərzində (cümlə ilə)',               'while + keçmiş davamedici zaman'],
+        ['till/until','qədər / dək',                     'till evening · until Monday'],
+      ],
+      tip:
+        '"during" özündən sonra isim tələb edir.\n' +
+        '"while" özündən sonra tam cümlə tələb edir (fel var).\n' +
+        '"the day after tomorrow" — birisigün.\n' +
+        '"the day before yesterday" — sırağagün.',
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"___ school" — məktəbdən sonra?',                     tr: 'after',    wrong: 'before' },
+    { en: '"___ lesson" — dərsdən əvvəl?',                       tr: 'before',   wrong: 'after'  },
+    { en: '"___ the lesson" — dərs ərzində (isim ilə)?',         tr: 'during',   wrong: 'while'  },
+    { en: '"___ I was reading" — oxuyarkən (cümlə ilə)?',        tr: 'while',    wrong: 'during' },
+    { en: '"___ evening" — axşamadək?',                          tr: 'till',     wrong: 'during' },
+    { en: '"the day ___ tomorrow" — birisigün?',                 tr: 'after',    wrong: 'before' },
+    { en: '"the day ___ yesterday" — sırağagün?',               tr: 'before',   wrong: 'after'  },
+    { en: '"look ___" — qayğısına qalmaq?',                      tr: 'after',    wrong: 'before' },
+
+    // ── Mini-quiz 4 ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"during" ilə "while" arasındakı fərq?',
+          options: [
+            'İkisi eynidir',
+            '"during" isim, "while" cümlə (fel) tələb edir',
+            '"while" isim, "during" cümlə tələb edir',
+            '"during" yalnız keçmiş zamanda işlənir',
+          ],
+          answer: '"during" isim, "while" cümlə (fel) tələb edir',
+        },
+        {
+          q: '"for five years" — hansı zaman forması ilə işlənir?',
+          options: ['Keçmiş sadə', 'İndiki sadə', 'Bitmiş zaman', 'Gələcək zaman'],
+          answer: 'Bitmiş zaman',
+        },
+        {
+          q: '"by bus" ilə "in a car" arasındakı fərq?',
+          options: [
+            '"by" fərdi, "in" ictimai nəqliyyat',
+            '"by" ictimai/ümumi, "in" artikl ilə fərdi nəqliyyat',
+            'İkisi eynidir',
+            '"in" həmişə nəqliyyat bildirir',
+          ],
+          answer: '"by" ictimai/ümumi, "in" artikl ilə fərdi nəqliyyat',
+        },
+        {
+          q: '"I\'m waiting ___ you" vs "I\'m waiting ___ see you" — boşluqlar?',
+          options: [
+            'hər ikisi "for"',
+            'hər ikisi "to"',
+            '"for" (isim) / "to" (fel)',
+            '"to" (isim) / "for" (fel)',
+          ],
+          answer: '"for" (isim) / "to" (fel)',
+        },
+        {
+          q: '"the day before yesterday" nə deməkdir?',
+          options: ['birisigün', 'sabah', 'sırağagün', 'bu gün'],
+          answer: 'sırağagün',
+        },
+      ],
+    },
+  ],
+},
+
+
+// ┌──────────────────────────────────────────────────────┐
+// │  BÖLMƏ 5 — Sabit ifadələr + Sözönü olmayan fellər   │
+// └──────────────────────────────────────────────────────┘
+
+// ── Dərs 5.1 — Sabit ifadələr siyahısı ───────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.1 — Sabit ifadələr siyahısı',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Əsas sabit ifadələr — I',
+      content: '',
+      table: [
+        ['İfadə',                    'Azərbaycanca'],
+        ['all over the world',       'bütün dünyada'],
+        ['to be interested in',      'maraqlanmaq'],
+        ['to depend on',             'asılı olmaq'],
+        ['to look after',            'qayğısına qalmaq'],
+        ['to take care of',          'qayğısına qalmaq'],
+        ['to be afraid of',          'qorxmaq'],
+        ['to fall in love with',     'vurulmaq'],
+        ['to be good at smth',       'bir işdə bacarıqlı olmaq'],
+        ['to arrive at',             'stansiyaya, partiyə çatmaq'],
+        ['to arrive in',             'şəhərə çatmaq'],
+        ['to be in a hurry',         'tələsmək'],
+        ['to be busy with/in',       'məşğul olmaq'],
+        ['to be tired of',           'yorulmaq'],
+        ['to be pleased with',       'razı qalmaq'],
+        ['to be devoted to',         'həsr olunmaq'],
+        ['to be famous for',         'nə iləsə məşhur olmaq'],
+        ['to be grateful to smb.',   'minnətdar olmaq'],
+        ['to belong to',             'məxsus olmaq / aid olmaq'],
+        ['by heart',                 'əzbərdən'],
+        ['by hand',                  'əllə'],
+        ['by the way',               'yeri gəlmişkən'],
+        ['in time',                  'vaxtında'],
+        ['in short',                 'qısası'],
+        ['at once',                  'dərhal'],
+        ['at last',                  'nəhayət'],
+        ['at least',                 'heç olmasa'],
+        ['at present',               'hal-hazırda'],
+        ['at first',                 'əvvəlcə'],
+      ],
+    },
+
+    // ── Dərs-içi quiz: sabit ifadələr I ──────────────────
+    { en: '"to be interested ___" — maraqlanmaq?',               tr: 'in',      wrong: 'at'   },
+    { en: '"to depend ___" — asılı olmaq?',                      tr: 'on',      wrong: 'of'   },
+    { en: '"to be afraid ___" — qorxmaq?',                       tr: 'of',      wrong: 'from' },
+    { en: '"to be good ___ smth" — bacarıqlı olmaq?',            tr: 'at',      wrong: 'in'   },
+    { en: '"to arrive ___ the city" — şəhərə çatmaq?',          tr: 'in',      wrong: 'at'   },
+    { en: '"to arrive ___ the station" — stansiyaya çatmaq?',   tr: 'at',      wrong: 'in'   },
+    { en: '"___ heart" — əzbərdən?',                             tr: 'by',      wrong: 'in'   },
+    { en: '"___ time" — vaxtında?',                              tr: 'in',      wrong: 'at'   },
+    { en: '"___ last" — nəhayət?',                               tr: 'at',      wrong: 'in'   },
+    { en: '"___ once" — dərhal?',                                tr: 'at',      wrong: 'in'   },
+
+    {
+      type: 'lesson',
+      title: 'Əsas sabit ifadələr — II',
+      content: '',
+      table: [
+        ['İfadə',                      'Azərbaycanca'],
+        ['to look for',                'axtarmaq'],
+        ['to look at',                 'baxmaq'],
+        ['to look like',               'bənzəmək (zahirən)'],
+        ['to take after',              'bənzəmək (xarakterinə)'],
+        ['to laugh at',                'gülmək'],
+        ['to smile at',                'gülümsəmək'],
+        ['to shout at',                'üstünə qışqırmaq'],
+        ['to throw at',                'atmaq (daş, gül)'],
+        ['to speak to/about',          'danışmaq'],
+        ['to talk about',              'haqqında söhbət etmək'],
+        ['to listen to',               'qulaq asmaq'],
+        ['to write to smb.',           'kiməsə yazmaq'],
+        ['to pay attention to',        'diqqət vermək'],
+        ['to prefer smth to smth',     'üstün tutmaq'],
+        ['to wait for',                'gözləmək (isim)'],
+        ['to ask for',                 'xahiş etmək'],
+        ['to thank smb for smth',      'təşəkkür etmək'],
+        ['to be late for',             'gecikmək'],
+        ['to be ready for',            'hazır olmaq'],
+        ['to be sorry for',            'peşman olmaq'],
+        ['to go for a walk',           'gəzməyə getmək'],
+        ['to think of',                'fikirləşmək'],
+        ['to be made of',              'nədənsə hazırlanmaq'],
+        ['to be full of',              'dolu olmaq'],
+        ['to agree with',              'razılaşmaq'],
+        ['to be angry with smb.',      'kiməsə acıqlanmaq'],
+        ['to be angry at smth',        'nəyə isə acıqlanmaq'],
+        ['to take part in',            'iştirak etmək'],
+        ['to move to',                 'köçmək'],
+        ['to fall in love with',       'vurulmaq'],
+        ['to shake hands with',        'əlini sıxmaq'],
+        ['to spend money on smth',     'bir şeyə pul xərcləmək'],
+        ['to get into trouble',        'falakətə düçar olmaq'],
+        ['instead of',                 'əvəzinə / yerinə'],
+        ['on the right/left',          'sağda / solda'],
+        ['on business',                'iş üçün'],
+        ['on my return',               'mən qayıdanda'],
+        ['in honour of somebody',      'kiminsə şərəfinə'],
+        ['a number of + cəm isim',     'bir neçə (fel cəm)'],
+        ['the number of + cəm isim',   'sayı (fel tək)'],
+      ],
+    },
+
+    // ── Dərs-içi quiz: sabit ifadələr II ─────────────────
+    { en: '"to look ___" — axtarmaq?',                           tr: 'for',     wrong: 'at'   },
+    { en: '"to look ___" — baxmaq?',                             tr: 'at',      wrong: 'for'  },
+    { en: '"to look ___" — bənzəmək (zahirən)?',                 tr: 'like',    wrong: 'after'},
+    { en: '"to take ___" — bənzəmək (xarakter)?',               tr: 'after',   wrong: 'like' },
+    { en: '"to laugh ___" — gülmək?',                            tr: 'at',      wrong: 'about'},
+    { en: '"to listen ___" — qulaq asmaq?',                      tr: 'to',      wrong: 'at'   },
+    { en: '"to wait ___ you" — sənə gözləmək (isim)?',           tr: 'for',     wrong: 'to'   },
+    { en: '"to agree ___" — razılaşmaq?',                        tr: 'with',    wrong: 'to'   },
+    { en: '"to take part ___" — iştirak etmək?',                 tr: 'in',      wrong: 'at'   },
+    { en: '"to think ___" — fikirləşmək?',                       tr: 'of',      wrong: 'about'},
+  ],
+},
+
+// ── Dərs 5.2 — Sözönü almayan fellər ─────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.2 — Sözönü almayan fellər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Sözönü olmayan fellər — heç vaxt sözönü almırlar',
+      content:
+        'Aşağıdakı fellər bilavasitə tamamlıq alır — heç vaxt sözönü ' +
+        'işlənmir. Azərbaycan dilindəki qarşılıqlarına baxmayaraq, ingilis ' +
+        'dilindəki bu fellər sözönüsüz işlənir.',
+      table: [
+        ['Fel',       'Azərbaycanca',           'Yanlış forma'],
+        ['to address','müraciət etmək',         'address to (✗)'],
+        ['to reach',  'çatmaq',                 'reach to (✗)'],
+        ['to catch',  'tutmaq / yetişmək',      'catch to (✗)'],
+        ['to watch',  'seyr etmək / baxmaq',    'watch at (✗)'],
+        ['to enter',  'içəri keçmək / girmək',  'enter into (✗)'],
+        ['to learn',  'öyrənmək',               'learn about (✗)'],
+        ['to visit',  'ziyarət etmək',          'visit to (✗)'],
+        ['to approach','yaxınlaşmaq',           'approach to (✗)'],
+        ['to meet',   'görüşmək / tanış olmaq', 'meet with (✗)'],
+      ],
+      tip:
+        'X enter to the room → Enter the room (✓)\n' +
+        'X He visited to London → He visited London (✓)\n' +
+        'X She approached to him → She approached him (✓)',
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"He ___ the room." — içəri girdi (sözönü işlənirmi?)', tr: 'entered (sözönü yox)', wrong: 'entered into' },
+    { en: '"She ___ London." — ziyarət etdi?',                   tr: 'visited (sözön yox)',  wrong: 'visited to'   },
+    { en: '"He ___ him." — yaxınlaşdı?',                         tr: 'approached (sözön yox)', wrong: 'approached to' },
+    { en: '"to watch" felindən sonra sözön işlənirmi?',          tr: 'Xeyr',                 wrong: 'Bəli ("at")' },
+    { en: '"to meet" felindən sonra "with" işlənirmi?',          tr: 'Xeyr',                 wrong: 'Bəli'         },
+    { en: '"to reach" felindən sonra "to" işlənirmi?',           tr: 'Xeyr',                 wrong: 'Bəli'         },
+  ],
+},
+
+// ── Dərs 5.3 — Mənasını dəyişdirən fel+sözönü birləşmələri ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 5.3 — Mənasını dəyişdirən fel+sözönü birləşmələri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Fel + sözönü — mənası dəyişən birləşmələr',
+      content: 'Sözönü feldən sonra gəldikdə felin mənasını tamamilə dəyişdirir:',
+      table: [
+        ['Birləşmə',          'Azərbaycanca'],
+        ['look at',           'baxmaq'],
+        ['look for',          'axtarmaq'],
+        ['look after',        'qayğısına qalmaq'],
+        ['look like',         'bənzəmək (zahirən)'],
+        ['take after',        'bənzəmək (xarakter)'],
+        ['take off',          'soyunmaq / qalxmaq (təyyarə)'],
+        ['take part in',      'iştirak etmək'],
+        ['take care of',      'qayğısına qalmaq'],
+        ['put on',            'geyinmək'],
+        ['put off',           'söndürmək / təxirə salmaq'],
+        ['get on',            'minmək / yaxşı keçinmək'],
+        ['get off / out of',  'düşmək'],
+        ['get into',          'minmək (maşına)'],
+        ['get up',            'yataqdan qalxmaq'],
+        ['switch on/turn on', 'yandırmaq'],
+        ['switch off/turn off','söndürmək'],
+        ['go on',             'davam etmək'],
+        ['run off',           'qaçıb uzaqlaşmaq'],
+        ['depend on',         'asılı olmaq'],
+        ['to try on',         'geyib baxmaq'],
+        ['to go for a walk',  'gəzməyə getmək'],
+        ['to leave for',      'harasa yola düşmək'],
+      ],
+    },
+
+    // ── Dərs-içi quiz ─────────────────────────────────────
+    { en: '"look at/for/after" — hansı mənası axtarmaqdır?',     tr: 'look for',   wrong: 'look at'   },
+    { en: '"put on" nə deməkdir?',                               tr: 'geyinmək',   wrong: 'söndürmək' },
+    { en: '"put off" nə deməkdir?',                              tr: 'söndürmək / təxirə salmaq', wrong: 'geyinmək' },
+    { en: '"get up" nə deməkdir?',                               tr: 'yataqdan qalxmaq', wrong: 'minmək' },
+    { en: '"go on" nə deməkdir?',                                tr: 'davam etmək', wrong: 'getmək'   },
+    { en: '"switch on" nə deməkdir?',                            tr: 'yandırmaq',  wrong: 'söndürmək' },
+    { en: '"switch off" nə deməkdir?',                           tr: 'söndürmək',  wrong: 'yandırmaq' },
+    { en: '"take off" nə deməkdir?',                             tr: 'soyunmaq / qalxmaq', wrong: 'geyinmək' },
+
+    // ── Mini-quiz 5 ───────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"look at" ilə "look for" arasındakı fərq?',
+          options: [
+            '"look at" axtarmaq, "look for" baxmaq',
+            '"look at" baxmaq, "look for" axtarmaq',
+            'İkisi eynidir',
+            '"look for" qayğısına qalmaq',
+          ],
+          answer: '"look at" baxmaq, "look for" axtarmaq',
+        },
+        {
+          q: '"to enter" felindən sonra sözön işlənirmi?',
+          options: ['Bəli, "into"', 'Bəli, "in"', 'Xeyr, sözönsüz', 'Bəzən "to"'],
+          answer: 'Xeyr, sözönsüz',
+        },
+        {
+          q: '"a number of books" — fel necə olur?',
+          options: ['tək', 'cəm', 'hər ikisi olar', 'yalnız keçmiş'],
+          answer: 'cəm',
+        },
+        {
+          q: '"the number of books" — fel necə olur?',
+          options: ['cəm', 'tək', 'hər ikisi olar', 'yalnız indiki'],
+          answer: 'tək',
+        },
+        {
+          q: '"to be angry ___ smb." — kiməsə acıqlanmaq?',
+          options: ['at', 'on', 'with', 'about'],
+          answer: 'with',
+        },
+        {
+          q: '"to be angry ___ smth" — nəyə isə acıqlanmaq?',
+          options: ['with', 'on', 'about', 'at'],
+          answer: 'at',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Test 2 — İstiqamət + Mücərrəd + Sabit ifadələr (Bölmə 3–5) ──
+[
+  // İstiqamət — to / into / from / out of
+  { en: '"I go ___ London." — istiqamət?',                       tr: 'to',        wrong: 'into'    },
+  { en: '"go ___ home" — "to" işlənirmi?',                       tr: 'Xeyr',      wrong: 'Bəli'    },
+  { en: '"put books ___ your bag" — içinə (hərəkət)?',           tr: 'into',      wrong: 'in'      },
+  { en: '"I come ___ school." — məktəbdən?',                     tr: 'from',      wrong: 'out of'  },
+  { en: '"get ___ a car" — maşına minmək?',                      tr: 'into',      wrong: 'on'      },
+  { en: '"___ the room" — otaqdan çıxmaq?',                      tr: 'out of',    wrong: 'from'    },
+  // Along / towards / up / down
+  { en: '"___ the river" — çay boyunca?',                        tr: 'along',     wrong: 'towards' },
+  { en: '"driving ___ the shore" — sarı?',                       tr: 'towards',   wrong: 'along'   },
+  { en: '"___ the stairs" — yuxarı?',                            tr: 'up',        wrong: 'down'    },
+  { en: '"to sit ___" — əyləşmək?',                              tr: 'down',      wrong: 'up'      },
+  { en: '"to write ___" — köçürmək?',                            tr: 'down',      wrong: 'up'      },
+  { en: '"to come ___ to smb." — yaxınlaşmaq?',                  tr: 'up',        wrong: 'down'    },
+  // with / by / about
+  { en: '"___ my father" — atamla?',                             tr: 'with',      wrong: 'by'      },
+  { en: '"___ bus" — avtobusla (artikl yox)?',                   tr: 'by',        wrong: 'on'      },
+  { en: '"written ___ our teacher" — məchul?',                   tr: 'by',        wrong: 'with'    },
+  { en: '"___ eight million" — təxminən?',                       tr: 'about',     wrong: 'by'      },
+  { en: '"___ heart" — əzbərdən?',                               tr: 'by',        wrong: 'in'      },
+  { en: '"to cut ___ a knife" — bıçaqla?',                       tr: 'with',      wrong: 'by'      },
+  { en: '"___ five o\'clock yesterday" — keçmiş bitmiş + vaxt?', tr: 'by',       wrong: 'at'      },
+  // of / for / without / off
+  { en: '"the title ___ the film" — yiyəlik?',                   tr: 'of',        wrong: 'for'     },
+  { en: '"a cup ___ coffee" — miqdar?',                          tr: 'of',        wrong: 'for'     },
+  { en: '"___ you" — sənin üçün?',                               tr: 'for',       wrong: 'of'      },
+  { en: '"I have known him ___ five years." — müddət?',           tr: 'for',       wrong: 'since'   },
+  { en: '"___ your help" — köməyin olmadan?',                     tr: 'without',   wrong: 'off'     },
+  { en: '"to switch ___" — söndürmək?',                           tr: 'off',       wrong: 'out'     },
+  // after / before / during / while / till
+  { en: '"___ school" — məktəbdən sonra?',                       tr: 'after',     wrong: 'before'  },
+  { en: '"___ lesson" — dərsdən əvvəl?',                         tr: 'before',    wrong: 'after'   },
+  { en: '"___ the lesson" — dərs ərzində (isim)?',               tr: 'during',    wrong: 'while'   },
+  { en: '"___ I was reading" — oxuyarkən (cümlə)?',              tr: 'while',     wrong: 'during'  },
+  { en: '"___ evening" — axşamadək?',                             tr: 'till',      wrong: 'until'   },
+  { en: '"the day ___ tomorrow" — birisigün?',                    tr: 'after',     wrong: 'before'  },
+  { en: '"the day ___ yesterday" — sırağagün?',                  tr: 'before',    wrong: 'after'   },
+  // Sabit ifadələr
+  { en: '"to be interested ___" — maraqlanmaq?',                 tr: 'in',        wrong: 'at'      },
+  { en: '"to depend ___" — asılı olmaq?',                        tr: 'on',        wrong: 'of'      },
+  { en: '"to be afraid ___" — qorxmaq?',                         tr: 'of',        wrong: 'from'    },
+  { en: '"to arrive ___ the city" — şəhərə?',                    tr: 'in',        wrong: 'at'      },
+  { en: '"to arrive ___ the station" — stansiyaya?',             tr: 'at',        wrong: 'in'      },
+  { en: '"to look ___ " — axtarmaq?',                             tr: 'for',       wrong: 'at'      },
+  { en: '"to look ___" — baxmaq?',                               tr: 'at',        wrong: 'for'     },
+  { en: '"to look ___" — qayğısına qalmaq?',                     tr: 'after',     wrong: 'for'     },
+  { en: '"to laugh ___" — gülmək?',                              tr: 'at',        wrong: 'about'   },
+  { en: '"to listen ___" — qulaq asmaq?',                        tr: 'to',        wrong: 'at'      },
+  { en: '"to agree ___" — razılaşmaq?',                           tr: 'with',      wrong: 'to'      },
+  { en: '"to take part ___" — iştirak etmək?',                   tr: 'in',        wrong: 'at'      },
+  { en: '"to think ___" — fikirləşmək?',                         tr: 'of',        wrong: 'about'   },
+  { en: '"to be made ___" — nədənsə hazırlanmaq?',               tr: 'of',        wrong: 'from'    },
+  { en: '"to be full ___" — dolu olmaq?',                        tr: 'of',        wrong: 'with'    },
+  { en: '"to spend money ___" — pul xərcləmək?',                 tr: 'on',        wrong: 'for'     },
+  // Sözönsüz fellər
+  { en: '"He ___ the room." — girmək (sözönsüz)?',               tr: 'entered',   wrong: 'entered into' },
+  { en: '"She ___ London." — ziyarət (sözönsüz)?',               tr: 'visited',   wrong: 'visited to'   },
+  { en: '"to approach" felindən sonra "to" işlənirmi?',          tr: 'Xeyr',      wrong: 'Bəli'    },
+  { en: '"to watch" felindən sonra sözön işlənirmi?',            tr: 'Xeyr',      wrong: 'Bəli ("at")' },
+  // Fel+sözön birləşmələri
+  { en: '"put on" nə deməkdir?',                                  tr: 'geyinmək',  wrong: 'söndürmək'},
+  { en: '"put off" nə deməkdir?',                                 tr: 'söndürmək', wrong: 'geyinmək'},
+  { en: '"go on" nə deməkdir?',                                   tr: 'davam etmək', wrong: 'getmək'},
+  { en: '"switch on" nə deməkdir?',                               tr: 'yandırmaq', wrong: 'söndürmək'},
+  { en: '"take off" nə deməkdir?',                                tr: 'soyunmaq / qalxmaq', wrong: 'geyinmək'},
+  // a/the number of
+  { en: '"a number of books" — fel necə?',                        tr: 'cəm',       wrong: 'tək'     },
+  { en: '"the number of books" — fel necə?',                      tr: 'tək',       wrong: 'cəm'     },
+],
+
+
+// ── Final Test — Sözönlər (Prepositions) tam test ─────────
+[
+  // in — yer (seçmə)
+  { en: '"___ the room"',                                         tr: 'in',           wrong: 'at'          },
+  { en: '"___ the sky"',                                          tr: 'in',           wrong: 'on'          },
+  { en: '"___ Azerbaijan"',                                       tr: 'in',           wrong: 'at'          },
+  { en: '"___ hospital"',                                         tr: 'in',           wrong: 'at'          },
+  { en: '"___ bed"',                                              tr: 'in',           wrong: 'on'          },
+  { en: '"___ a car" (artikl ilə, fərdi)',                        tr: 'in',           wrong: 'on'          },
+  // in — zaman
+  { en: '"___ the morning"',                                      tr: 'in',           wrong: 'at'          },
+  { en: '"___ May"',                                              tr: 'in',           wrong: 'on'          },
+  { en: '"___ 1994"',                                             tr: 'in',           wrong: 'on'          },
+  { en: '"___ spring"',                                           tr: 'in',           wrong: 'at'          },
+  { en: '"___ two days"',                                         tr: 'in',           wrong: 'for'         },
+  // on — yer
+  { en: '"___ the table"',                                        tr: 'on',           wrong: 'in'          },
+  { en: '"___ the wall"',                                         tr: 'on',           wrong: 'at'          },
+  { en: '"___ TV"',                                               tr: 'on',           wrong: 'in'          },
+  { en: '"___ a bus"',                                            tr: 'on',           wrong: 'in'          },
+  { en: '"___ the map"',                                          tr: 'on',           wrong: 'at'          },
+  { en: '"___ sale"',                                             tr: 'on',           wrong: 'at'          },
+  // on — zaman
+  { en: '"___ Monday"',                                           tr: 'on',           wrong: 'in'          },
+  { en: '"___ Friday morning"',                                   tr: 'on',           wrong: 'in'          },
+  { en: '"___ the 4th of March"',                                 tr: 'on',           wrong: 'in'          },
+  { en: '"___ Christmas Day"',                                    tr: 'on',           wrong: 'at'          },
+  // at — yer
+  { en: '"___ home"',                                             tr: 'at',           wrong: 'in'          },
+  { en: '"___ school"',                                           tr: 'at',           wrong: 'in'          },
+  { en: '"___ the station"',                                      tr: 'at',           wrong: 'in'          },
+  { en: '"___ the concert"',                                      tr: 'at',           wrong: 'in'          },
+  { en: '"___ the corner of the street"',                         tr: 'at',           wrong: 'in'          },
+  // at — zaman
+  { en: '"___ night"',                                            tr: 'at',           wrong: 'in'          },
+  { en: '"___ noon"',                                             tr: 'at',           wrong: 'in'          },
+  { en: '"___ the weekend"',                                      tr: 'at',           wrong: 'on'          },
+  // Mövqe sözönləri
+  { en: '"___ the table" — stolun altında?',                      tr: 'under',        wrong: 'below'       },
+  { en: '"___ the river" — çayın üzərindən?',                     tr: 'over',         wrong: 'above'       },
+  { en: '"___ the window" — pəncərənin yuxarısında?',             tr: 'above',        wrong: 'over'        },
+  { en: '"___ the house" — arxasında?',                           tr: 'behind',       wrong: 'under'       },
+  { en: '"___ the sofa and bookcase" — 2 əşyanın arasında?',      tr: 'between',      wrong: 'among'       },
+  { en: '"___ students" — çox şagird arasında?',                  tr: 'among',        wrong: 'between'     },
+  { en: '"___ our school" — qarşısında?',                         tr: 'in front of',  wrong: 'opposite'    },
+  { en: '"sitting ___ us" — üzbəüz?',                             tr: 'opposite',     wrong: 'across'      },
+  { en: '"___ the street" — o biri tərəfdə?',                     tr: 'across',       wrong: 'opposite'    },
+  { en: '"___ zero" — sıfırdan aşağı?',                           tr: 'below',        wrong: 'under'       },
+  // İstiqamət
+  { en: '"I go ___ London."',                                     tr: 'to',           wrong: 'into'        },
+  { en: '"put books ___ your bag" — içinə?',                      tr: 'into',         wrong: 'in'          },
+  { en: '"I come ___ school."',                                    tr: 'from',         wrong: 'out of'      },
+  { en: '"___ the room" — otaqdan çıxmaq?',                       tr: 'out of',       wrong: 'from'        },
+  { en: '"go ___ home" — "to" işlənirmi?',                        tr: 'Xeyr',         wrong: 'Bəli'        },
+  { en: '"___ the river" — boyunca?',                              tr: 'along',        wrong: 'towards'     },
+  { en: '"to get ___" — yataqdan qalxmaq?',                       tr: 'up',           wrong: 'down'        },
+  { en: '"to sit ___" — əyləşmək?',                               tr: 'down',         wrong: 'up'          },
+  // Mücərrəd əlaqə
+  { en: '"___ my father" — atamla?',                              tr: 'with',         wrong: 'by'          },
+  { en: '"___ bus" — avtobusla (artikl yox)?',                    tr: 'by',           wrong: 'on'          },
+  { en: '"written ___ our teacher" — məchul?',                    tr: 'by',           wrong: 'with'        },
+  { en: '"___ heart" — əzbərdən?',                                tr: 'by',           wrong: 'in'          },
+  { en: '"a cup ___ coffee"',                                      tr: 'of',           wrong: 'for'         },
+  { en: '"___ you" — sənin üçün?',                                tr: 'for',          wrong: 'of'          },
+  { en: '"___ five years" — müddət (bitmiş zaman)?',              tr: 'for',          wrong: 'since'       },
+  { en: '"___ your help" — köməyin olmadan?',                     tr: 'without',      wrong: 'off'         },
+  // Sabit ifadələr
+  { en: '"to be interested ___"',                                  tr: 'in',           wrong: 'at'          },
+  { en: '"to depend ___"',                                         tr: 'on',           wrong: 'of'          },
+  { en: '"to be afraid ___"',                                      tr: 'of',           wrong: 'from'        },
+  { en: '"to arrive ___ the city"',                               tr: 'in',           wrong: 'at'          },
+  { en: '"to arrive ___ the station"',                            tr: 'at',           wrong: 'in'          },
+  { en: '"to look ___ " — axtarmaq?',                              tr: 'for',          wrong: 'at'          },
+  { en: '"to look ___" — qayğısına qalmaq?',                      tr: 'after',        wrong: 'for'         },
+  { en: '"to laugh ___"',                                          tr: 'at',           wrong: 'about'       },
+  { en: '"to listen ___"',                                         tr: 'to',           wrong: 'at'          },
+  { en: '"to agree ___"',                                          tr: 'with',         wrong: 'to'          },
+  { en: '"to take part ___"',                                      tr: 'in',           wrong: 'at'          },
+  { en: '"to spend money ___"',                                    tr: 'on',           wrong: 'for'         },
+  { en: '"to be full ___"',                                        tr: 'of',           wrong: 'with'        },
+  { en: '"to be made ___"',                                        tr: 'of',           wrong: 'from'        },
+  // Sözönsüz fellər
+  { en: '"to enter" — sözönsüz?',                                  tr: 'Bəli',         wrong: 'Xeyr'        },
+  { en: '"to visit" — sözönsüz?',                                  tr: 'Bəli',         wrong: 'Xeyr'        },
+  { en: '"to approach to" — düzdür?',                              tr: 'Xeyr',         wrong: 'Bəli'        },
+  { en: '"to watch at" — düzdür?',                                 tr: 'Xeyr',         wrong: 'Bəli'        },
+  // Fel+sözön
+  { en: '"put on" nə deməkdir?',                                   tr: 'geyinmək',     wrong: 'söndürmək'   },
+  { en: '"put off" nə deməkdir?',                                  tr: 'söndürmək',    wrong: 'geyinmək'    },
+  { en: '"switch on" nə deməkdir?',                                tr: 'yandırmaq',    wrong: 'söndürmək'   },
+  { en: '"go on" nə deməkdir?',                                    tr: 'davam etmək',  wrong: 'getmək'      },
+  { en: '"take off" nə deməkdir?',                                 tr: 'soyunmaq',     wrong: 'geyinmək'    },
+  // a/the number of
+  { en: '"a number of books" — fel?',                              tr: 'cəm',          wrong: 'tək'         },
+  { en: '"the number of books" — fel?',                            tr: 'tək',          wrong: 'cəm'         },
+  // during / while / after / before
+  { en: '"___ the lesson" — dərs ərzində (isim)?',                 tr: 'during',       wrong: 'while'       },
+  { en: '"___ I was reading" — oxuyarkən (cümlə)?',               tr: 'while',        wrong: 'during'      },
+  { en: '"the day ___ tomorrow" — birisigün?',                     tr: 'after',        wrong: 'before'      },
+  { en: '"the day ___ yesterday" — sırağagün?',                   tr: 'before',       wrong: 'after'       },
+],
   ],
 };
 
