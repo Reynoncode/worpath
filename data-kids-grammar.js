@@ -149,6 +149,11 @@ const KIDS_GRAMMAR_LEVELS = [
     color: '#E91E8C',
     quizzes: [
 
+        {
+  type: 'section_divider',
+  title: 'Animals / Heyvanlar',
+},
+        
       // ── Quiz 1 · Animals (27 söz | id 1–27) ──────────────────────────
       [
         { pic:  1, correct:  1, wrong:  3 },  //  1:bear      vs  3:bird
