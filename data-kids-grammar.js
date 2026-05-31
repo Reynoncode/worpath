@@ -12604,7 +12604,6 @@ const PRONOUN_LEVEL = {
   { en: '"The number of books ___." — fel hansı sayda?',               tr: 'Tək (is)',             wrong: 'Cəm (are)'           },
   { en: '"a lot" felə aid olduqda "of" işlənirmi?',                    tr: 'Xeyr',                 wrong: 'Bəli'                },
    ],
-    },
   ],
 }; 
 // ── 9. QUESTIONS (SUAL CÜMLƏLƏRİ) ──────────────────────────
