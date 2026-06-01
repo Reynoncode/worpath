@@ -16492,7 +16492,7 @@ const ADVERB_LEVEL = {
   id: 'adverb',
   name: 'ADVERB — ZƏRF',
   icon: '<i class="ti ti-bolt"></i>',
-  color: '#86EFAC',
+  color: '#e879f9',
   quizzes: [
 
 // ══════════════════════════════════════════════════════════
@@ -17456,7 +17456,7 @@ const COMPLEX_OBJECT_LEVEL = {
   id: 'complex_object',
   name: 'COMPLEX OBJECT — MÜRƏKKƏB TAMAMLIQ',
   icon: '<i class="ti ti-link"></i>',
-  color: '#86EFAC',
+  color: '#60a5fa',
   quizzes: [
 
 // ══════════════════════════════════════════════════════════
@@ -18074,7 +18074,7 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
   id: 'subject_verb_agreement',
   name: 'SUBJECT-VERB AGREEMENT',
   icon: '<i class="ti ti-scale"></i>',
-  color: '#86EFAC',
+  color: '#36d39a',
   quizzes: [
 
 {
@@ -18658,7 +18658,7 @@ const IMPERATIVE_LEVEL = {
   id: 'imperative',
   name: 'THE IMPERATIVE — ƏMR CÜMLƏSİ',
   icon: '<i class="ti ti-speakerphone"></i>',
-  color: '#86EFAC',
+  color: '#fda4af',
   quizzes: [
 
 // ══════════════════════════════════════════════════════════
@@ -18986,7 +18986,7 @@ const EXCLAMATORY_LEVEL = {
   id: 'exclamatory',
   name: 'EXCLAMATORY SENTENCES — NİDA CÜMLƏLƏRİ',
   icon: '<i class="ti ti-exclamation-mark"></i>',
-  color: '#86EFAC',
+  color: '#fde895',
   quizzes: [
 
 // ══════════════════════════════════════════════════════════
