@@ -8047,7 +8047,7 @@ const PASSIVE_LEVEL = {
     // ── index: 19 — Bölmə 5 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 5 — Canlı / cansız tamamlıq qaydaları',
+      title: 'Canlı / cansız tamamlıq qaydaları',
     },
 
     // ── index: 20 — Dərs 5.1 ──────────────────────────────────
