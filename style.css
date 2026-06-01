@@ -3555,3 +3555,7 @@ button { font-family: var(--font); }
 .kids-fb-wrong {
   color: #DC2626;
 }
+
+.grammar-section-divider {
+  margin-bottom: 28px;
+}
