@@ -571,15 +571,6 @@ function renderGrammarQuizCard(card, container, idx) {
 //  NAVİGASİYA
 // ============================================================
 
-function grammarNextCard() {
-  grammarState.cardIdx++;
-  if (grammarState.cardIdx >= grammarState.totalCards) {
-    finishGrammarLesson();
-    return;
-  }
-  renderGrammarCard();
-}
-
 function grammarPrevCard() {
   if (grammarState.cardIdx <= 0) return;
   grammarState.cardIdx--;
