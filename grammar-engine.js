@@ -682,20 +682,9 @@ function renderGrammarPath(lvl, li) {
       typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-book-open"></i>');
       typeClass = 'grammar-lesson-node';
     } else if (Array.isArray(item)) {
-  // Əvvəlki section_divider-in başlığını yoxla
-  let isExam = false;
-  for (let k = qi - 1; k >= 0; k--) {
-    if (lvl.quizzes[k] && lvl.quizzes[k].type === 'section_divider') {
-      if (lvl.quizzes[k].title && lvl.quizzes[k].title.includes('İMTAHAN')) {
-        isExam = true;
-      }
-      break;
+      typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-writing"></i>');
+      typeClass = 'grammar-quiz-node';
     }
-  }
-  const quizIcon = isExam ? '<i class="ti ti-brain"></i>' : '<i class="ti ti-writing"></i>';
-  typeIcon  = isDone ? '' : (isLocked ? '' : quizIcon);
-  typeClass = 'grammar-quiz-node';
-}
 
     const prevItem      = lvl.quizzes[qi - 1];
     const prevIsDivider = prevItem && !Array.isArray(prevItem) && prevItem.type === 'section_divider';
