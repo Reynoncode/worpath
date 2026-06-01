@@ -3103,7 +3103,7 @@ const KIDS_GRAMMAR_LEVELS = [
 // ── index: 36 — Bölmə 8 bölücüsü ────────────────────────────
 {
   type: 'section_divider',
-  title: 'Sayılmayan isimlər,
+  title: 'Sayılmayan isimlər',
 },
 
 // ── index: 37 — Dərs 8.1 ─────────────────────────────────────
