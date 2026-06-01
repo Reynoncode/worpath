@@ -2408,9 +2408,10 @@ button { font-family: var(--font); }
 /* Row — {word, az, note} formatı */
 .gl-example-row {
   display: flex;
-  align-items: baseline;
-  gap: 10px;
-  padding: 3px 0;
+  flex-direction: column;  /* ← dəyişdi */
+  align-items: flex-start; /* ← dəyişdi */
+  gap: 4px;                /* ← azaldıldı */
+  padding: 6px 0;          /* ← bir az artırıldı */
   border-bottom: 1px solid #EDE9FE;
 }
 
