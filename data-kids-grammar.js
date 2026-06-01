@@ -17284,28 +17284,603 @@ const ADVERB_LEVEL = {
 
   ],
 };
-// ── 13. COMPLEX OBJECT ──────────────────────────────────────
+// ── 13. COMPLEX OBJECT (MÜRƏKKƏB TAMAMLIQ) ──────────────────
 const COMPLEX_OBJECT_LEVEL = {
   id: 'complex_object',
-  name: 'COMPLEX OBJECT',
-  icon: '<i class="ti ti-stack"></i>',
-  color: '#60A5FA',
+  name: 'COMPLEX OBJECT — MÜRƏKKƏB TAMAMLIQ',
+  icon: '<i class="ti ti-link"></i>',
+  color: '#86EFAC',
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  COMPLEX OBJECT — Tam bölüm                           ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 1 — Quruluş + to ilə işlənən fellər             │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 1 — Mürəkkəb tamamlığın quruluşu ───────────────
+
+// ── Dərs 1.1 — Quruluş: I hissə + II hissə ───────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Quruluş: I hissə + II hissə',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — to + məsdər ilə işlənən fellər',
-      cards: [],
+      type: 'lesson',
+      title: 'Mürəkkəb tamamlığın quruluşu',
+      content:
+        'İngilis dilində mürəkkəb tamamlıq 2 hissədən ibarət olur:\n\n' +
+        'I hissə: adlıq halında isim və ya obyekt halında əvəzlik\n' +
+        'II hissə: məsdər (to ilə / to-suz) və ya Participle I (feli sifət I)',
+      table: [
+        ['I hissə',                        'II hissə'],
+        ['adlıq halda isim: father, Anar, the boys', 'məsdər (to ilə): to understand, to write'],
+        ['obyekt əvəzliyi: me, you, him, her, it, us, them', 'məsdər (to-suz): go, write, sing'],
+        ['—',                              'P I (feli sifət I): watching, writing, singing'],
+      ],
+      tip: 'Mürəkkəb tamamlıq bir qrup xüsusi fellərdən sonra işlənir.\n' +
+           'Hansı felə görə II hissə to ilə, to-suz və ya P I ilə işlənir.',
     },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — Məsdərsiz işlənən fellər',
-      cards: [],
+      type: 'lesson',
+      title: 'I hissə — obyekt əvəzlikləri',
+      content: 'I hissədə obyekt halında əvəzliklər işlənir:',
+      table: [
+        ['Şəxs',          'Obyekt əvəzliyi'],
+        ['I',             'me'],
+        ['you',           'you'],
+        ['he',            'him'],
+        ['she',           'her'],
+        ['it',            'it'],
+        ['we',            'us'],
+        ['they',          'them'],
+      ],
+      examples: [
+        { word: 'I want you to understand me.',  az: 'Mən istəyirəm ki, sən məni anlayasan.' },
+        { word: 'I expect her to write to me.',  az: 'Mən gözləyirəm ki, o mənə yazsın.' },
+        { word: 'I heard them singing.',         az: 'Mən onların oxuduğunu eşitdim.' },
+        { word: 'I felt someone watching.',      az: 'Mən birinin baxdığını hiss etdim.' },
+      ],
     },
+
+    { en: 'Mürəkkəb tamamlıq neçə hissədən ibarətdir?',               tr: '2 hissə',               wrong: '3 hissə'             },
+    { en: 'I hissə nədən ibarət olur?',                               tr: 'Adlıq halda isim / obyekt əvəzliyi', wrong: 'Yiyəlik halda isim' },
+    { en: 'II hissə nə ola bilər?',                                   tr: 'Məsdər (to/to-suz) və ya P I', wrong: 'Yalnız məsdər'  },
+    { en: '"me, you, him, her, us, them" — hansı halda əvəzliklərdir?', tr: 'Obyekt halı',          wrong: 'Adlıq halı'          },
+    { en: '"I" əvəzliyinin obyekt forması?',                          tr: 'me',                    wrong: 'my'                  },
+    { en: '"he" əvəzliyinin obyekt forması?',                         tr: 'him',                   wrong: 'his'                 },
+    { en: '"they" əvəzliyinin obyekt forması?',                       tr: 'them',                  wrong: 'their'               },
+    { en: '"we" əvəzliyinin obyekt forması?',                         tr: 'us',                    wrong: 'our'                 },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Participle I ilə işlənmə',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I want ___ to understand me." — I hissədə hansı əvəzlik?',
+          options: ['he', 'his', 'you', 'your'],
+          answer: 'you',
+        },
+        {
+          q: 'Mürəkkəb tamamlığın I hissəsi nədən ibarətdir?',
+          options: ['Yiyəlik əvəzliyi', 'Obyekt əvəzliyi / adlıq isim', 'Fel', 'Sifət'],
+          answer: 'Obyekt əvəzliyi / adlıq isim',
+        },
+        {
+          q: 'II hissə nə ola bilər?',
+          options: ['Yalnız to + məsdər', 'Yalnız to-suz məsdər', 'Məsdər və ya P I', 'Yalnız P I'],
+          answer: 'Məsdər və ya P I',
+        },
+      ],
     },
+  ],
+},
+
+// ── Dərs 1.2 — Cədvəl: I + II hissə nümunələri ──────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — Cədvəl: I + II hissə nümunələri',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'I hissə + II hissə — nümunəli cədvəl',
+      content: 'Mürəkkəb tamamlıqda I və II hissənin birlikdə işlənməsi:',
+      table: [
+        ['Cümlə',                          'I hissə',  'II hissə'],
+        ['I want you to understand.',       'you',      'to understand'],
+        ['I saw him go out.',               'him',      'go out'],
+        ['I felt someone watching.',        'someone',  'watching'],
+        ['I expect her to write.',          'her',      'to write'],
+        ['I heard them singing.',           'them',     'singing'],
+        ['He ordered them to leave.',       'them',     'to leave'],
+        ['She asked him to help her.',      'him',      'to help'],
+        ['I would like you to stay.',       'you',      'to stay'],
+      ],
+      tip: 'to want, to expect, to ask, to order, would like → to ilə məsdər\n' +
+           'to see, to hear, to feel, to watch → to-suz məsdər və ya P I',
+    },
+
+    { en: '"I want you to understand." — I hissə nədir?',             tr: 'you',                   wrong: 'understand'          },
+    { en: '"I want you to understand." — II hissə nədir?',            tr: 'to understand',         wrong: 'you'                 },
+    { en: '"I saw him go out." — I hissə nədir?',                     tr: 'him',                   wrong: 'go'                  },
+    { en: '"I saw him go out." — II hissə nədir?',                    tr: 'go out',                wrong: 'him'                 },
+    { en: '"I felt someone watching." — II hissə nədir?',             tr: 'watching (P I)',        wrong: 'to watch'            },
+    { en: '"I heard them singing." — I hissə nədir?',                 tr: 'them',                  wrong: 'singing'             },
+    { en: '"He ordered them to leave." — II hissə nədir?',            tr: 'to leave',              wrong: 'leave'               },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I expect ___ to write to me." — I hissədə hansı əvəzlik?',
+          options: ['him', 'his', 'he', 'himself'],
+          answer: 'him',
+        },
+        {
+          q: '"I saw him ___ out." — II hissədə hansı forma?',
+          options: ['to go', 'going', 'go', 'gone'],
+          answer: 'go',
+        },
+        {
+          q: '"I felt someone ___." — II hissədə hansı forma?',
+          options: ['watch', 'to watch', 'watched', 'watching'],
+          answer: 'watching',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 1 ───────────────────────────────────────────
+[
+  { en: 'Mürəkkəb tamamlıq neçə hissədən ibarətdir?',                tr: '2 hissə',               wrong: '3 hissə'             },
+  { en: 'I hissə nədən ibarət ola bilər?',                           tr: 'Adlıq isim / obyekt əvəzliyi', wrong: 'Yiyəlik əvəzliyi' },
+  { en: 'II hissə nə ola bilər?',                                    tr: 'Məsdər (to/to-suz) / P I', wrong: 'Yalnız məsdər'    },
+  { en: '"he" əvəzliyinin obyekt forması?',                          tr: 'him',                   wrong: 'his'                 },
+  { en: '"they" əvəzliyinin obyekt forması?',                        tr: 'them',                  wrong: 'their'               },
+  { en: '"I want you to understand." — I hissə?',                    tr: 'you',                   wrong: 'understand'          },
+  { en: '"I saw him go out." — II hissə?',                           tr: 'go out',                wrong: 'him'                 },
+  { en: '"I felt someone watching." — II hissə?',                    tr: 'watching (P I)',        wrong: 'to watch'            },
+  { en: '"I expect her to write." — I hissə?',                       tr: 'her',                   wrong: 'to write'            },
+  { en: '"He ordered them to leave." — II hissə?',                   tr: 'to leave',              wrong: 'leave'               },
+],
+
+
+// ── Bölmə 2 — to ilə işlənən fellər ──────────────────────
+
+// ── Dərs 2.1 — to + məsdər tələb edən fellər ─────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — to + məsdər tələb edən fellər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"to" ilə işlənən fellər',
+      content:
+        'Aşağıdakı fellərdən sonra gələn mürəkkəb tamamlığın\n' +
+        'II hissəsi "to" ilə məsdər şəklində işlənir:\n\n' +
+        'to want — istəmək\n' +
+        'to expect — gözləmək\n' +
+        'to ask — xahiş etmək\n' +
+        'to order — əmr etmək\n' +
+        'to try — cəhd etmək\n' +
+        'to find — tapmaq\n' +
+        'would like — istəmək (nəzakətli)\n' +
+        'to suggest — təklif etmək',
+      table: [
+        ['Fel',          'Mənası',              'Nümunə'],
+        ['to want',      'istəmək',             'I want you to understand me.'],
+        ['to expect',    'gözləmək',            'I expect you to write to me.'],
+        ['to ask',       'xahiş etmək',         'She asked him to help her.'],
+        ['to order',     'əmr etmək',           'He ordered them to leave.'],
+        ['to try',       'cəhd etmək',          'She tried him to come.'],
+        ['to find',      'tapmaq',              'I found it to be difficult.'],
+        ['would like',   'istəmək (nəzakətli)', 'I would like you to stay.'],
+        ['to suggest',   'təklif etmək',        'She suggested him to go.'],
+      ],
+      tip: 'Bu fellər + I hissə (obyekt) + to + məsdər\n' +
+           'Qayda: fel + obyekt + to + V (məsdər)',
+    },
+
+    { en: '"to want" — sonrasında hansı forma işlənir?',              tr: 'obyekt + to + məsdər',  wrong: 'obyekt + məsdər'     },
+    { en: '"to expect" nə mənasını verir?',                           tr: 'Gözləmək',              wrong: 'Əmr etmək'           },
+    { en: '"to ask" — complex object-də nə mənasını verir?',          tr: 'Xahiş etmək',           wrong: 'Sual vermək'         },
+    { en: '"to order" nə mənasını verir?',                            tr: 'Əmr etmək',             wrong: 'Sifariş etmək'       },
+    { en: '"would like" nə mənasını verir?',                          tr: 'İstəmək (nəzakətli)',   wrong: 'Xoşlamaq'            },
+    { en: '"I want you ___ understand me." — boşluq?',                tr: 'to',                    wrong: 'heç nə'              },
+    { en: '"She asked him ___ help her." — boşluq?',                  tr: 'to',                    wrong: 'heç nə'              },
+    { en: '"He ordered them ___ leave." — boşluq?',                   tr: 'to',                    wrong: 'heç nə'              },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I want him ___ come." — boşluq?',
+          options: ['heç nə', 'to', 'for', 'that'],
+          answer: 'to',
+        },
+        {
+          q: '"She asked him ___ help." — boşluq?',
+          options: ['heç nə', 'for', 'to', 'that'],
+          answer: 'to',
+        },
+        {
+          q: '"I would like you ___ stay." — boşluq?',
+          options: ['heç nə', 'that', 'for', 'to'],
+          answer: 'to',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — Nümunələr ─────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — to ilə işlənmə: nümunələr',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"to" ilə işlənmə — genişləndirilmiş nümunələr',
+      content: 'to + məsdər tələb edən fellərin nümunəli cədvəli:',
+      table: [
+        ['Cümlə',                              'Azərbaycanca'],
+        ['I want you to understand me.',        'İstəyirəm ki, sən məni anlayasan.'],
+        ['I expect you to write to me.',        'Gözləyirəm ki, sən mənə yazasan.'],
+        ['She asked him to help her.',          'O ondan kömək etməsini xahiş etdi.'],
+        ['He ordered them to leave.',           'O onlara getmələrini əmr etdi.'],
+        ['I would like you to stay.',           'İstərdim ki, sən qalasan.'],
+        ['She tried him to come early.',        'O onun erkən gəlməsinə çalışdı.'],
+        ['I found it to be difficult.',         'Onun çətin olduğunu gördüm.'],
+      ],
+      tip: 'Azərbaycancaya çeviriş: "I want you to go" → "İstəyirəm ki, sən gedəsən"\n' +
+           'Yəni: fel + ki + mübtəda + xəbər',
+    },
+
+    { en: '"I want you to understand me." — düzgün quruluşdurmu?',   tr: 'Bəli',                  wrong: 'Xeyr'                },
+    { en: '"I expect you to write to me." — II hissə nədir?',        tr: 'to write',              wrong: 'write'               },
+    { en: '"She asked him to help her." — I hissə nədir?',           tr: 'him',                   wrong: 'to help'             },
+    { en: '"He ordered them to leave." — II hissə nədir?',           tr: 'to leave',              wrong: 'them'                },
+    { en: '"I would like you to stay." — I hissə nədir?',            tr: 'you',                   wrong: 'to stay'             },
+    { en: '"I want you understand me." — düzgündürmü?',              tr: 'Xeyr, "to" çatışmır',   wrong: 'Bəli'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I expect ___ to write to me." — I hissəyə hansı əvəzlik?',
+          options: ['he', 'his', 'him', 'himself'],
+          answer: 'him',
+        },
+        {
+          q: '"She asked ___ to help her." — I hissəyə hansı əvəzlik?',
+          options: ['he', 'his', 'him', 'himself'],
+          answer: 'him',
+        },
+        {
+          q: '"I want ___ go." — boşluğa nə gəlir?',
+          options: ['him to', 'him', 'to him', 'for him'],
+          answer: 'him to',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 2 ───────────────────────────────────────────
+[
+  { en: '"to want" — sonrasında hansı forma?',                       tr: 'obyekt + to + məsdər',  wrong: 'obyekt + məsdər'     },
+  { en: '"to expect" nə mənasını verir?',                            tr: 'Gözləmək',              wrong: 'Əmr etmək'           },
+  { en: '"to order" nə mənasını verir?',                             tr: 'Əmr etmək',             wrong: 'Sifariş etmək'       },
+  { en: '"would like" nə mənasını verir?',                           tr: 'İstəmək (nəzakətli)',   wrong: 'Xoşlamaq'            },
+  { en: '"I want you ___ understand." — boşluq?',                   tr: 'to',                    wrong: 'heç nə'              },
+  { en: '"I want you understand me." — düzgündürmü?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"She asked him to help her." — I hissə?',                  tr: 'him',                   wrong: 'to help'             },
+  { en: '"He ordered them to leave." — II hissə?',                  tr: 'to leave',              wrong: 'them'                },
+  { en: '"I expect you to write to me." — II hissə?',               tr: 'to write',              wrong: 'write'               },
+  { en: '"I would like you to stay." — I hissə?',                   tr: 'you',                   wrong: 'to stay'             },
+],
+
+// ── Test 1 — Quruluş + to ilə işlənən fellər (Bölmə 1–2) — 12 sual ──
+[
+  { en: 'Mürəkkəb tamamlıq neçə hissədən ibarətdir?',               tr: '2 hissə',               wrong: '3 hissə'             },
+  { en: 'I hissə nədən ibarət ola bilər?',                          tr: 'Adlıq isim / obyekt əvəzliyi', wrong: 'Yiyəlik əvəzliyi' },
+  { en: 'II hissə nə ola bilər?',                                   tr: 'Məsdər (to/to-suz) / P I', wrong: 'Yalnız məsdər'    },
+  { en: '"he" əvəzliyinin obyekt forması?',                         tr: 'him',                   wrong: 'his'                 },
+  { en: '"they" əvəzliyinin obyekt forması?',                       tr: 'them',                  wrong: 'their'               },
+  { en: '"to want" — sonrasında hansı forma?',                      tr: 'obyekt + to + məsdər',  wrong: 'obyekt + məsdər'     },
+  { en: '"to expect" nə mənasını verir?',                           tr: 'Gözləmək',              wrong: 'Əmr etmək'           },
+  { en: '"to order" nə mənasını verir?',                            tr: 'Əmr etmək',             wrong: 'Sifariş etmək'       },
+  { en: '"I want you ___ understand me." — boşluq?',               tr: 'to',                    wrong: 'heç nə'              },
+  { en: '"She asked him to help her." — I hissə?',                  tr: 'him',                   wrong: 'to help'             },
+  { en: '"He ordered them to leave." — II hissə?',                  tr: 'to leave',              wrong: 'them'                },
+  { en: '"I want you understand me." — düzgündürmü?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 2 — to-suz işlənən fellər + P I ilə işlənmə     │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 3 — to-suz məsdər + P I ilə işlənmə + ümumi fərq ──
+
+// ── Dərs 3.1 — to-suz məsdər tələb edən fellər ───────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — to-suz məsdər tələb edən fellər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'to-suz məsdər işlənən fellər',
+      content:
+        'Aşağıdakı fellərdən sonra gələn mürəkkəb tamamlığın\n' +
+        'II hissəsi to-suz məsdər şəklində işlənir:\n\n' +
+        'to see — görmək\n' +
+        'to watch — baxmaq / izləmək\n' +
+        'to notice — görmək, fərq etmək\n' +
+        'to hear — eşitmək\n' +
+        'to feel — hiss etmək\n' +
+        'to smell — iyləmək\n' +
+        'to make — məcbur etmək\n' +
+        'to let — icazə vermək',
+      table: [
+        ['Fel',       'Mənası',              'Nümunə'],
+        ['to see',    'görmək',              'I saw him go out.'],
+        ['to watch',  'baxmaq, izləmək',     'I watched them play.'],
+        ['to notice', 'görmək, fərq etmək',  'I noticed him leave.'],
+        ['to hear',   'eşitmək',             'I heard her sing.'],
+        ['to feel',   'hiss etmək',          'I felt him move.'],
+        ['to smell',  'iyləmək',             'I smelled something burn.'],
+        ['to make',   'məcbur etmək',        'She made him do it.'],
+        ['to let',    'icazə vermək',        'She let him go.'],
+      ],
+      tip: 'to make + obyekt + to-suz məsdər → məcburetmə\n' +
+           'to let + obyekt + to-suz məsdər → icazə vermə\n\n' +
+           '"I saw him go out." — "go" to-suzdur!\n' +
+           'Passive-də: He was made TO go. (to geri qayıdır)',
+    },
+
+    { en: '"to see" + complex object — II hissə hansı formada?',     tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+    { en: '"to hear" + complex object — II hissə hansı formada?',    tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+    { en: '"to make" complex object-də nə mənasını verir?',          tr: 'Məcbur etmək',          wrong: 'Düzəltmək'           },
+    { en: '"to let" complex object-də nə mənasını verir?',           tr: 'İcazə vermək',          wrong: 'Buraxmaq'            },
+    { en: '"I saw him ___ out." — boşluq?',                          tr: 'go',                    wrong: 'to go'               },
+    { en: '"She made him ___ it." — boşluq?',                        tr: 'do',                    wrong: 'to do'               },
+    { en: '"She let him ___ ." — boşluq?',                           tr: 'go',                    wrong: 'to go'               },
+    { en: '"I heard her ___ ." — boşluq?',                           tr: 'sing',                  wrong: 'to sing'             },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I saw him ___ out." — boşluğa nə gəlir?',
+          options: ['to go', 'going', 'go', 'gone'],
+          answer: 'go',
+        },
+        {
+          q: '"She made him ___ it." — boşluğa nə gəlir?',
+          options: ['to do', 'doing', 'do', 'done'],
+          answer: 'do',
+        },
+        {
+          q: '"She let him ___ ." — boşluğa nə gəlir?',
+          options: ['to go', 'going', 'gone', 'go'],
+          answer: 'go',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.2 — P I ilə işlənmə ───────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — Participle I (P I) ilə işlənmə',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'P I ilə işlənmə — hərəkətin davam etməsi',
+      content:
+        'to see, to watch, to hear, to smell, to feel\n' +
+        'felləri II hissədə to-suz məsdər əvəzinə P I (V+ing) qəbul edə bilir.\n\n' +
+        'Fərq:\n' +
+        '• to-suz məsdər → hərəkəti başdan sona gördük (tam)\n' +
+        '• P I → hərəkətin davam etdiyini gördük (qismən)',
+      table: [
+        ['to-suz məsdər (tam)',              'P I (davam)'],
+        ['I saw him go out.',                'I saw him going out.'],
+        ['I heard her sing.',                'I heard her singing.'],
+        ['I felt him move.',                 'I felt him moving.'],
+        ['I watched them play.',             'I watched them playing.'],
+      ],
+      examples: [
+        { word: 'I felt someone watching me.',   az: 'Birinin mənə baxdığını hiss etdim. (davam)' },
+        { word: 'I saw him writing something.',  az: 'Onun nəsə yazdığını gördüm. (davam)'        },
+        { word: 'She heard them singing.',       az: 'Onların oxuduğunu eşitdi. (davam)'           },
+      ],
+      tip: 'P I (V+ing) = hərəkət davam edirdi, tam bitməmişdi.\n' +
+           'to-suz məsdər = hərəkəti əvvəldən axıra qədər gördük.',
+    },
+
+    { en: 'P I hansı fellərdən sonra işlənə bilər?',                 tr: 'to see, to watch, to hear, to smell, to feel', wrong: 'to want, to expect' },
+    { en: 'P I nəyi bildirir?',                                       tr: 'Hərəkətin davam etdiyini', wrong: 'Hərəkətin bitdiyini' },
+    { en: 'to-suz məsdər nəyi bildirir?',                            tr: 'Hərəkəti tam gördük',   wrong: 'Hərəkətin davam etdiyini' },
+    { en: '"I felt someone watching me." — II hissə hansı formadadır?', tr: 'P I (watching)',     wrong: 'to-suz məsdər'       },
+    { en: '"I saw him writing something." — II hissə hansı forma?',  tr: 'P I (writing)',         wrong: 'to-suz məsdər'       },
+    { en: '"I saw him go out." vs "I saw him going out." — fərq nədir?', tr: 'Tam vs davam eden', wrong: 'Heç bir fərq yoxdur' },
+    { en: '"I heard her ___ ." (davam) — boşluq?',                   tr: 'singing',               wrong: 'sing'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I felt someone ___ me." (davam) — boşluğa nə gəlir?',
+          options: ['watch', 'to watch', 'watched', 'watching'],
+          answer: 'watching',
+        },
+        {
+          q: '"I saw him ___ something." (davam) — boşluğa nə gəlir?',
+          options: ['write', 'to write', 'written', 'writing'],
+          answer: 'writing',
+        },
+        {
+          q: 'P I işləndiyi zaman hərəkət haqqında nə bilirik?',
+          options: ['Tam bitdi', 'Başlamadı', 'Davam edirdi', 'Keçmişdə baş verdi'],
+          answer: 'Davam edirdi',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.3 — to ilə / to-suz / P I fərqi ───────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.3 — to ilə / to-suz / P I fərqi',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Üç formanın müqayisəsi',
+      content: 'Complex object-də II hissənin üç forması:',
+      table: [
+        ['Forma',          'Fellər',                                  'Nümunə'],
+        ['to + məsdər',    'to want, expect, ask, order, would like', 'I want him to go.'],
+        ['to-suz məsdər',  'to see, watch, hear, feel, smell, make, let', 'I saw him go.'],
+        ['P I (V+ing)',    'to see, watch, hear, feel, smell',        'I saw him going.'],
+      ],
+      tip: '"to" qrupu → istak/gözləmə felləri\n' +
+           '"to-suz" qrupu → qavrayış + make/let felləri\n' +
+           '"P I" → qavrayış felləri (davam bildirmək üçün)\n\n' +
+           'make + to-suz: She made him do it.\n' +
+           'let + to-suz: She let him go.',
+    },
+
+    {
+      type: 'lesson',
+      title: 'Tam xülasə cədvəli',
+      content: 'Bütün fellərin II hissə forması:',
+      table: [
+        ['Fel',          'II hissə forması'],
+        ['to want',      'to + məsdər'],
+        ['to expect',    'to + məsdər'],
+        ['to ask',       'to + məsdər'],
+        ['to order',     'to + məsdər'],
+        ['would like',   'to + məsdər'],
+        ['to suggest',   'to + məsdər'],
+        ['to see',       'to-suz məsdər / P I'],
+        ['to watch',     'to-suz məsdər / P I'],
+        ['to hear',      'to-suz məsdər / P I'],
+        ['to feel',      'to-suz məsdər / P I'],
+        ['to smell',     'to-suz məsdər / P I'],
+        ['to notice',    'to-suz məsdər / P I'],
+        ['to make',      'to-suz məsdər'],
+        ['to let',       'to-suz məsdər'],
+      ],
+    },
+
+    { en: '"to want" — II hissə forması?',                           tr: 'to + məsdər',           wrong: 'to-suz məsdər'       },
+    { en: '"to see" — II hissə forması?',                            tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+    { en: '"to make" — II hissə forması?',                           tr: 'to-suz məsdər',         wrong: 'to + məsdər'         },
+    { en: '"to let" — II hissə forması?',                            tr: 'to-suz məsdər',         wrong: 'to + məsdər'         },
+    { en: '"to hear" — II hissə forması?',                           tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+    { en: '"to expect" — II hissə forması?',                         tr: 'to + məsdər',           wrong: 'to-suz məsdər'       },
+    { en: '"I saw him go." vs "I saw him going." — fərq?',           tr: 'go = tam, going = davam', wrong: 'Heç fərq yoxdur'  },
+    { en: '"to notice" — II hissə forması?',                         tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I want him ___ go." — boşluğa nə gəlir?',
+          options: ['heç nə', 'going', 'to', 'for'],
+          answer: 'to',
+        },
+        {
+          q: '"I saw him ___ go." — boşluğa nə gəlir?',
+          options: ['to', 'for', 'heç nə', 'that'],
+          answer: 'heç nə',
+        },
+        {
+          q: '"She made him ___ do it." — "to" işlənirmi?',
+          options: ['Bəli, to lazımdır', 'Xeyr, to-suz', 'P I işlənir', 'İkisi də olar'],
+          answer: 'Xeyr, to-suz',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 3 ───────────────────────────────────────────
+[
+  { en: '"to see" + complex object — II hissə hansı formada?',       tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+  { en: '"to make" complex object-də nə mənasını verir?',            tr: 'Məcbur etmək',          wrong: 'Düzəltmək'           },
+  { en: '"to let" complex object-də nə mənasını verir?',             tr: 'İcazə vermək',          wrong: 'Buraxmaq'            },
+  { en: '"I saw him ___ out." — boşluq?',                            tr: 'go',                    wrong: 'to go'               },
+  { en: '"She made him ___ it." — boşluq?',                          tr: 'do',                    wrong: 'to do'               },
+  { en: 'P I nəyi bildirir?',                                        tr: 'Hərəkətin davam etdiyini', wrong: 'Hərəkətin bitdiyini' },
+  { en: '"I felt someone watching me." — II hissə hansı forma?',     tr: 'P I (watching)',        wrong: 'to-suz məsdər'       },
+  { en: '"to want" — II hissə forması?',                             tr: 'to + məsdər',           wrong: 'to-suz məsdər'       },
+  { en: '"to hear" — II hissə forması?',                             tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+  { en: '"I saw him go." vs "I saw him going." — fərq?',             tr: 'go = tam, going = davam', wrong: 'Heç fərq yoxdur'  },
+],
+
+// ── Test 2 — to-suz + P I + ümumi fərq (Bölmə 3) — 12 sual ──
+[
+  { en: '"to see" — II hissə forması?',                              tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+  { en: '"to make" complex object-də nə mənasını verir?',           tr: 'Məcbur etmək',          wrong: 'Düzəltmək'           },
+  { en: '"to let" complex object-də nə mənasını verir?',            tr: 'İcazə vermək',          wrong: 'Buraxmaq'            },
+  { en: '"I saw him ___ out." — boşluq?',                           tr: 'go',                    wrong: 'to go'               },
+  { en: '"She let him ___ ." — boşluq?',                            tr: 'go',                    wrong: 'to go'               },
+  { en: 'P I nəyi bildirir?',                                       tr: 'Hərəkətin davam etdiyini', wrong: 'Hərəkətin bitdiyini' },
+  { en: 'to-suz məsdər nəyi bildirir?',                             tr: 'Hərəkəti tam gördük',   wrong: 'Davam edirdi'         },
+  { en: '"I felt someone watching me." — II hissə hansı forma?',    tr: 'P I (watching)',        wrong: 'to-suz məsdər'        },
+  { en: '"to want" — II hissə forması?',                            tr: 'to + məsdər',           wrong: 'to-suz məsdər'        },
+  { en: '"to hear" — II hissə forması?',                            tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'          },
+  { en: '"to expect" — II hissə forması?',                          tr: 'to + məsdər',           wrong: 'to-suz məsdər'        },
+  { en: '"to notice" — II hissə forması?',                          tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'          },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  FINAL TEST — Complex Object tam test · 20 sual        │
+// └─────────────────────────────────────────────────────────┘
+[
+  // Quruluş
+  { en: 'Mürəkkəb tamamlıq neçə hissədən ibarətdir?',               tr: '2 hissə',               wrong: '3 hissə'             },
+  { en: 'I hissə nədən ibarət ola bilər?',                          tr: 'Adlıq isim / obyekt əvəzliyi', wrong: 'Yiyəlik əvəzliyi' },
+  { en: 'II hissə nə ola bilər?',                                   tr: 'Məsdər (to/to-suz) / P I', wrong: 'Yalnız məsdər'    },
+  { en: '"he" əvəzliyinin obyekt forması?',                         tr: 'him',                   wrong: 'his'                 },
+  { en: '"they" əvəzliyinin obyekt forması?',                       tr: 'them',                  wrong: 'their'               },
+  // to ilə fellər
+  { en: '"to want" — II hissə forması?',                            tr: 'to + məsdər',           wrong: 'to-suz məsdər'       },
+  { en: '"to expect" nə mənasını verir?',                           tr: 'Gözləmək',              wrong: 'Əmr etmək'           },
+  { en: '"to order" nə mənasını verir?',                            tr: 'Əmr etmək',             wrong: 'Sifariş etmək'       },
+  { en: '"I want you ___ understand me." — boşluq?',               tr: 'to',                    wrong: 'heç nə'              },
+  { en: '"I want you understand me." — düzgündürmü?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+  // to-suz fellər
+  { en: '"to see" — II hissə forması?',                             tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
+  { en: '"to make" complex object-də nə mənasını verir?',          tr: 'Məcbur etmək',          wrong: 'Düzəltmək'           },
+  { en: '"to let" complex object-də nə mənasını verir?',           tr: 'İcazə vermək',          wrong: 'Buraxmaq'            },
+  { en: '"I saw him ___ out." — boşluq?',                          tr: 'go',                    wrong: 'to go'               },
+  { en: '"She made him ___ it." — boşluq?',                        tr: 'do',                    wrong: 'to do'               },
+  // P I
+  { en: 'P I nəyi bildirir?',                                      tr: 'Hərəkətin davam etdiyini', wrong: 'Hərəkətin bitdiyini' },
+  { en: 'to-suz məsdər nəyi bildirir?',                            tr: 'Hərəkəti tam gördük',   wrong: 'Davam edirdi'         },
+  { en: '"I felt someone watching me." — II hissə hansı forma?',   tr: 'P I (watching)',        wrong: 'to-suz məsdər'        },
+  { en: '"I saw him go." vs "I saw him going." — fərq?',           tr: 'go = tam, going = davam', wrong: 'Heç fərq yoxdur'  },
+  // Ümumi
+  { en: '"to hear" — II hissə forması?',                           tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'          },
+],
+
   ],
 };
 
