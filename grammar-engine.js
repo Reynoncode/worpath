@@ -54,11 +54,26 @@ function renderGrammarCard() {
   const card  = item.cards[idx];
   const total = grammarState.totalCards;
 
-  elProgressFill.style.width = `${(idx / total) * 100}%`;
-  elQCounter.textContent     = `${idx + 1}/${total}`;
+// Quiz qruplarını nəzərə alaraq real addım sayını hesabla
+let realIdx = 0;
+let realTotal = 0;
+let i = 0;
+while (i < item.cards.length) {
+  if (!item.cards[i].type) {
+    while (i < item.cards.length && !item.cards[i].type) i++;
+    if (idx >= i - 1 && realIdx === 0) realIdx = realTotal;
+    realTotal++;
+  } else {
+    if (i === idx) realIdx = realTotal;
+    realTotal++;
+    i++;
+  }
+}
+elProgressFill.style.width = `${(realIdx / realTotal) * 100}%`;
+elQCounter.textContent = `${realIdx + 1}/${realTotal}`;
 
-  const quizBody = document.querySelector('.quiz-body');
-  quizBody.className = 'quiz-body grammar-mode';
+const quizBody = document.querySelector('.quiz-body');
+quizBody.className = 'quiz-body grammar-mode';
 
   if (card.type === 'lesson') {
     renderGrammarLesson(card, quizBody);
@@ -206,11 +221,10 @@ function handleGrammarGroupAnswer(btn) {
   }
 }
 function grammarNextCard() {
-  // Əgər quiz qrupu varsa — qrupun sonuna atla
   if (grammarState.quizGroupCards && grammarState.quizGroupStartIdx !== undefined) {
     const groupEnd = grammarState.quizGroupStartIdx + grammarState.quizGroupCards.length;
-    grammarState.cardIdx      = groupEnd;
-    grammarState.quizGroupCards   = null;
+    grammarState.cardIdx         = groupEnd;
+    grammarState.quizGroupCards  = null;
     grammarState.quizGroupStartIdx = undefined;
     grammarState.quizGroupAnswers  = {};
     grammarState.quizGroupOptions  = {};
