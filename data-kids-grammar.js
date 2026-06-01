@@ -10054,6 +10054,11 @@ const ADJECTIVES_LEVEL = {
 // │  What is an adjective?                                  │
 // └─────────────────────────────────────────────────────────┘
 
+      {
+      type: 'section_divider',
+      title: 'Sifətin əsasları',
+},
+
 // ── Dərs 1.1 — Sifət nədir? ──────────────────────────────
 {
   type: 'grammar_lesson',
@@ -10288,6 +10293,11 @@ const ADJECTIVES_LEVEL = {
 // │  MƏRHƏLƏ 2 — Sifətin dərəcələri                        │
 // │  Degrees of Adjectives                                  │
 // └─────────────────────────────────────────────────────────┘
+
+      {
+      type: 'section_divider',
+      title: 'Sifətin dərəcələri',
+},
 
 // ── Dərs 2.1 — Adi dərəcə: as…as, not so…as ─────────────
 {
@@ -10607,6 +10617,11 @@ const ADJECTIVES_LEVEL = {
 // │  Irregular Adjectives                                   │
 // └─────────────────────────────────────────────────────────┘
 
+{
+      type: 'section_divider',
+      title: 'Kökdən dəyişən sifətlər',
+},      
+
 // ── Dərs 3.1 — good / bad / little / many ────────────────
 {
   type: 'grammar_lesson',
@@ -10835,6 +10850,11 @@ const ADJECTIVES_LEVEL = {
 // │  How to identify the degree in a sentence              │
 // └─────────────────────────────────────────────────────────┘
 
+      {
+      type: 'section_divider',
+      title: 'Cümlədə işlənməsi',
+},
+
 // ── Dərs 4.1 — Cümlədə işarə qaydaları ──────────────────
 {
   type: 'grammar_lesson',
@@ -10927,6 +10947,10 @@ const ADJECTIVES_LEVEL = {
   ],
 },
 
+      {
+      type: 'section_divider',
+      title: 'ADJECTİVE - FİNAL İMTAHAN',
+},
 // ── Final Quiz — Sifət (Adjective) ───────────────────────
 [
   // Növ tanımaq
@@ -10997,7 +11021,11 @@ const PRONOUN_LEVEL = {
 // ║  ƏVƏZLİK (PRONOUNS) — Tam bölüm                        ║
 // ══════════════════════════════════════════════════════════
 
-
+{
+      type: 'section_divider',
+      title: 'Əvəzliyin halları',
+},
+      
 // ── Dərs 1.1 — Adlıq hal ─────────────────────────────────
 {
   type: 'grammar_lesson',
@@ -11199,6 +11227,11 @@ const PRONOUN_LEVEL = {
 // │  Possessive Pronouns                                    │
 // └─────────────────────────────────────────────────────────┘
 
+      {
+      type: 'section_divider',
+      title: 'Yiyəlik əvəzlikləri',
+},
+
 // ── Dərs 2.1 — İsimlə işlənən forma ─────────────────────
 {
   type: 'grammar_lesson',
@@ -11393,6 +11426,11 @@ const PRONOUN_LEVEL = {
 // │  Reflexive + Demonstrative Pronouns                     │
 // └─────────────────────────────────────────────────────────┘
 
+      {
+      type: 'section_divider',
+      title: 'Qayıdış və İşarə',
+},
+
 // ── Dərs 3.1 — Qayıdış əvəzlikləri ──────────────────────
 {
   type: 'grammar_lesson',
@@ -11583,6 +11621,11 @@ const PRONOUN_LEVEL = {
 // │  MƏRHƏLƏ 4 — Sual əvəzlikləri                          │
 // │  Interrogative Pronouns                                 │
 // └─────────────────────────────────────────────────────────┘
+
+      {
+      type: 'section_divider',
+      title: 'Sual əvəzlikləri',
+},
 
 // ── Dərs 4.1 — Who / Whom / Whose ────────────────────────
 {
@@ -11798,6 +11841,11 @@ const PRONOUN_LEVEL = {
 // │  MƏRHƏLƏ 5 — Təyin əvəzlikləri                         │
 // │  Defining Pronouns                                      │
 // └─────────────────────────────────────────────────────────┘
+
+      {
+      type: 'section_divider',
+      title: 'Təyin əvəzlikləri',
+},
 
 // ── Dərs 5.1 — All / Each / Every ────────────────────────
 {
@@ -12122,6 +12170,11 @@ const PRONOUN_LEVEL = {
 // │  MƏRHƏLƏ 6 — Qeyri-müəyyən, İnkar, Nisbi əvəzliklər   │
 // │  Indefinite + Negative + Relative Pronouns             │
 // └─────────────────────────────────────────────────────────┘
+
+      {
+      type: 'section_divider',
+      title: 'Qeyri-müəyyən, İnkar, Nisbi əvəzliklər',
+},
 
 // ── Dərs 6.1 — Qeyri-müəyyən əvəzliklər ─────────────────
 {
@@ -12568,6 +12621,10 @@ const PRONOUN_LEVEL = {
   { en: '"A number of books ___." — fel hansı sayda?',                 tr: 'Cəm (are)',            wrong: 'Tək (is)'            },
 ],
 
+      {
+      type: 'section_divider',
+      title: 'PRONOUN - FİNAL İMTAHAN',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL QUIZ — Əvəzlik (Pronoun) — Bütün bölüm         │
@@ -12646,6 +12703,11 @@ const ARTICLE_LEVEL = {
 // ┌─────────────────────────────────────────────────────────┐
 // │  QRUP 1 — Qeyri-müəyyənlik artiklı (a / an)            │
 // └─────────────────────────────────────────────────────────┘
+
+      {
+      type: 'section_divider',
+      title: 'Qeyri-müəyyənlik (a/an)',
+},
 
 // ── Bölmə 1 — a / an: əsas qayda və tələffüz ─────────────
 {
@@ -12993,6 +13055,11 @@ const ARTICLE_LEVEL = {
 // │  QRUP 2 — Müəyyənlik artiklı (the)                     │
 // └─────────────────────────────────────────────────────────┘
 
+      {
+      type: 'section_divider',
+      title: 'Müəyyənlik artiklı (the)',
+},
+
 // ── Bölmə 3 — the: əsas qayda və tələffüz ────────────────
 {
   type: 'grammar_lesson',
@@ -13222,6 +13289,10 @@ const ARTICLE_LEVEL = {
 // │  BÖLMƏ 5 — Artiklsız işlənmə halları                   │
 // └─────────────────────────────────────────────────────────┘
 
+      {
+      type: 'section_divider',
+      title: 'Artiklsız işlənmə halları',
+},
 {
   type: 'grammar_lesson',
   title: 'Bölmə 5 — Artiklsız işlənmə halları (Zero Article)',
@@ -13322,7 +13393,11 @@ const ARTICLE_LEVEL = {
   ],
 },
 
-
+{
+      type: 'section_divider',
+      title: 'ARTİCLE - FİNAL İMTAHAN',
+},
+      
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL TEST — Artikl tam test · 30+ sual               │
 // └─────────────────────────────────────────────────────────┘
@@ -13385,6 +13460,11 @@ const QUESTIONS_LEVEL = {
 // ══════════════════════════════════════════════════════════
 // ║  SUAL CÜMLƏLƏRİ — Tam bölüm                           ║
 // ══════════════════════════════════════════════════════════
+
+      {
+      type: 'section_divider',
+      title: 'Ümumi suallar / Xüsusi suallar',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  BÖLMƏ 1 — Ümumi suallar (Yes/No) + Xüsusi suallar    │
@@ -13737,6 +13817,11 @@ const QUESTIONS_LEVEL = {
 // │  BÖLMƏ 2 — How ilə mürəkkəb sual sözləri              │
 // └─────────────────────────────────────────────────────────┘
 
+    {
+      type: 'section_divider',
+      title: 'How ilə mürəkkəb suallar',
+},  
+
 // ── Dərs 2.1 — How many/much · How often · How long ──────
 {
   type: 'grammar_lesson',
@@ -13943,6 +14028,11 @@ const QUESTIONS_LEVEL = {
 // │  BÖLMƏ 3 — Seçmə suallar + Ayrılan suallar            │
 // └─────────────────────────────────────────────────────────┘
 
+{
+      type: 'section_divider',
+      title: 'Seçmə / Ayrılan suallar',
+},
+      
 // ── Dərs 3.1 — Alternative questions ────────────────────
 {
   type: 'grammar_lesson',
@@ -14180,7 +14270,10 @@ const QUESTIONS_LEVEL = {
   { en: 'Tag sualında mübtəda nə ilə əvəzlənir?',                   tr: 'Şəxs əvəzliyi',        wrong: 'İsim'                },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'QUESTİONS - FİNAL İMTAHAN',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL TEST — Questions tam test · 20 sual             │
 // └─────────────────────────────────────────────────────────┘
