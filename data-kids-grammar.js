@@ -4242,7 +4242,10 @@ const VERBS_LEVEL = {
   icon: '<i class="ti ti-bolt"></i>',
   color: '#FBBD3E',
   quizzes: [
-
+{
+      type: 'section_divider',
+      title: '   Bölüm   ',
+},
    
 // ── index: 1 — Dərs 1.1 ──────────────────────────────────
 {
