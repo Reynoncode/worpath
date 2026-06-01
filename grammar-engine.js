@@ -162,7 +162,7 @@ function renderGrammarQuizGroup(container) {
       <div class="gmc-questions-list">
         ${questionsHTML}
       </div>
-      ${allDone ? buildNavButtons('Davam et') : ''}
+      ${buildNavButtons('Davam et', false, !allDone)}
     </div>
   `;
 
@@ -240,11 +240,13 @@ function grammarNextCard() {
 //  GERİ/İRƏLİ DÜYMƏLƏRI — köməkçi funksiyalar
 // ============================================================
 
-function buildNavButtons(nextLabel, isFinish) {
-  isFinish = isFinish || false;
-  const hasPrev    = grammarState.cardIdx > 0;
-  const nextFlex   = hasPrev ? '2' : '1';
-  const finishCls  = isFinish ? ' grammar-finish-btn' : '';
+function buildNavButtons(nextLabel, isFinish, nextDisabled) {
+  isFinish     = isFinish     || false;
+  nextDisabled = nextDisabled || false;
+  const hasPrev   = grammarState.cardIdx > 0;
+  const nextFlex  = hasPrev ? '2' : '1';
+  const finishCls = isFinish ? ' grammar-finish-btn' : '';
+  const disabledAttr = nextDisabled ? 'disabled style="opacity:0.4;pointer-events:none;"' : '';
 
   const backHTML = hasPrev ? `
     <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
@@ -260,7 +262,7 @@ function buildNavButtons(nextLabel, isFinish) {
     <div class="grammar-nav-row">
       ${backHTML}
       <button class="grammar-next-btn${finishCls}" id="grammar-next-btn"
-              style="flex:${nextFlex};">
+              style="flex:${nextFlex};" ${disabledAttr}>
         ${nextLabel}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
              stroke-linecap="round" stroke-linejoin="round">
