@@ -18455,50 +18455,687 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
 // ── 15. THE IMPERATIVE (ƏMR CÜMLƏSİ) ────────────────────────
 const IMPERATIVE_LEVEL = {
   id: 'imperative',
-  name: 'THE IMPERATIVE — ƏMR',
+  name: 'THE IMPERATIVE — ƏMR CÜMLƏSİ',
   icon: '<i class="ti ti-speakerphone"></i>',
-  color: '#FDA4AF',
+  color: '#86EFAC',
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  THE IMPERATIVE — Tam bölüm                           ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MÖVZU 1 — The Imperative (Əmr Cümləsi)               │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Qrup 1 — Əsas qayda + Do · İnkar · to be əmri ───────
+
+// ── Dərs 1.1 — Əsas qayda ────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — Əsas qayda',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — Əmr cümləsinin quruluşu',
-      cards: [],
+      type: 'lesson',
+      title: 'Əmr cümləsinin əsas qaydası',
+      content:
+        'Əmr, xahiş bildirən cümlələrə deyilir.\n\n' +
+        'Hərəkət əsasən ikinci şəxsə aiddir.\n' +
+        'Felin qarşısından "to" hissəciyi atılır və cümlə fellə başlayır.\n\n' +
+        '"Do" sözü əmrin daha da vacib və mütləq olduğunu bildirir.',
+      table: [
+        ['Məsdər',      'Əmr forması',        'Azərbaycanca'],
+        ['to go',       'Go to school.',       'Məktəbə get.'],
+        ['to read',     'Read the book.',      'Kitabı oxu.'],
+        ['to open',     'Open the window.',    'Pəncərəni aç.'],
+        ['to sit',      'Sit down.',           'Otur.'],
+        ['to go (do)',  'Do go to school.',    'Mütləq məktəbə get.'],
+        ['to read (do)','Do read this book.',  'Mütləq bu kitabı oxu.'],
+      ],
+      tip: '"Do" əmrin önünə gəldikdə "mütləq" mənası verir:\n' +
+           'Do go! — Mütləq get!\n' +
+           'Do read! — Mütləq oxu!',
     },
+
+    { en: 'Əmr cümləsi hansı şəxsə aiddir?',                         tr: 'II şəxs',               wrong: 'I şəxs'              },
+    { en: 'Əmr cümləsində "to" nə olur?',                            tr: 'Atılır',                wrong: 'Qalır'               },
+    { en: 'Əmr cümləsi nə ilə başlayır?',                            tr: 'Fellə',                 wrong: 'İsimlə'              },
+    { en: '"Do" əmr cümləsinin önündə nə mənası verir?',             tr: 'Mütləq',                wrong: 'Etmə'                },
+    { en: '"Do go to school." — "Do" nə üçün işlənir?',              tr: 'Mütləqlik bildirmək',   wrong: 'İnkar bildirmək'     },
+    { en: '"to go" → əmr forması?',                                  tr: 'Go',                    wrong: 'To go'               },
+    { en: '"to read" → əmr forması?',                                tr: 'Read',                  wrong: 'To read'             },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — Do ilə qüvvətləndirmə & İnkar forma',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"to open" → əmr forması?',
+          options: ['To open', 'Opening', 'Open', 'Opens'],
+          answer: 'Open',
+        },
+        {
+          q: '"Do go!" — "Do" nə mənası verir?',
+          options: ['İnkar', 'Mütləq', 'İcazə', 'Xahiş'],
+          answer: 'Mütləq',
+        },
+        {
+          q: 'Əmr cümləsi nə ilə başlayır?',
+          options: ['İsimlə', 'Əvəzliklə', 'Fellə', 'Sifətlə'],
+          answer: 'Fellə',
+        },
+      ],
     },
+  ],
+},
+
+// ── Dərs 1.2 — Do + İnkar + to be əmri (qüvvətləndirmə) ─
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — Do + İnkar + to be',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Let ilə I və III şəxs',
-      cards: [],
+      type: 'lesson',
+      title: 'İnkar əmr + to be əmr forması',
+      content:
+        'İnkar əmr: Don\'t + fel\n\n' +
+        '"to be" felinin əmr forması xüsusidir:\n' +
+        'Təsdiq: Be + sifət\n' +
+        'İnkar: Don\'t be + sifət',
+      table: [
+        ['Forma',        'Nümunə',                'Azərbaycanca'],
+        ['Təsdiq',       'Go.',                   'Get.'],
+        ['Do (mütləq)',  'Do go.',                'Mütləq get.'],
+        ['İnkar',        'Don\'t go.',            'Getmə.'],
+        ['İnkar',        'Don\'t read this.',     'Bunu oxuma.'],
+        ['Be (təsdiq)',  'Be ready!',             'Hazır ol!'],
+        ['Be (təsdiq)',  'Be sure!',              'Əmin ol!'],
+        ['Be (təsdiq)',  'Be quiet!',             'Sakit ol!'],
+        ['Don\'t be',   'Don\'t be angry!',       'Əsəbləşmə!'],
+        ['Don\'t be',   'Don\'t be late!',        'Gecikmə!'],
+      ],
+      tip: '"to be" felinin əmr forması → Be!\n' +
+           '"to be" felinin inkar əmri → Don\'t be!\n\n' +
+           'Don\'t go. ✅\n' +
+           'Don\'t be angry. ✅',
     },
+
+    { en: 'Əmr cümləsinin inkarı necə düzəlir?',                     tr: 'Don\'t + fel',          wrong: 'Not + fel'           },
+    { en: '"to be" felinin əmr forması?',                            tr: 'Be',                    wrong: 'Is'                  },
+    { en: '"to be" felinin inkar əmr forması?',                      tr: 'Don\'t be',             wrong: 'Be not'              },
+    { en: '"Be ready!" — Azərbaycancası?',                           tr: 'Hazır ol!',             wrong: 'Hazır deyilsən!'     },
+    { en: '"Don\'t be angry!" — Azərbaycancası?',                    tr: 'Əsəbləşmə!',           wrong: 'Əsəbi olma!'         },
+    { en: '"Don\'t be late!" — Azərbaycancası?',                     tr: 'Gecikmə!',              wrong: 'Gec olma!'           },
+    { en: '"Don\'t go." — düzgün inkar əmrdirmi?',                   tr: 'Bəli',                  wrong: 'Xeyr'                },
+    { en: '"Be not angry!" — düzgündürmü?',                          tr: 'Xeyr, "Don\'t be" olmalıdır', wrong: 'Bəli'         },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ ready!" — boşluğa nə gəlir? (to be əmri)',
+          options: ['Is', 'Are', 'Be', 'Don\'t be'],
+          answer: 'Be',
+        },
+        {
+          q: '"___ be late!" — boşluğa nə gəlir? (inkar)',
+          options: ['Be not', 'Not be', 'Don\'t', 'Don\'t be'],
+          answer: 'Don\'t',
+        },
+        {
+          q: '"___ go!" — boşluğa nə gəlir? (inkar)',
+          options: ['Not', 'Be not', 'Don\'t', 'No'],
+          answer: 'Don\'t',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 1 — Əmr formasını düzəlt · Do/Don't · Be əmri ──
+[
+  { en: 'Əmr cümləsi hansı şəxsə aiddir?',                          tr: 'II şəxs',               wrong: 'I şəxs'              },
+  { en: 'Əmr cümləsində "to" nə olur?',                             tr: 'Atılır',                wrong: 'Qalır'               },
+  { en: '"Do" əmr cümləsinin önündə nə mənası verir?',              tr: 'Mütləq',                wrong: 'Etmə'                },
+  { en: 'Əmr cümləsinin inkarı necə düzəlir?',                      tr: 'Don\'t + fel',          wrong: 'Not + fel'           },
+  { en: '"to be" felinin əmr forması?',                             tr: 'Be',                    wrong: 'Is'                  },
+  { en: '"to be" felinin inkar əmr forması?',                       tr: 'Don\'t be',             wrong: 'Be not'              },
+  { en: '"Be ready!" — Azərbaycancası?',                            tr: 'Hazır ol!',             wrong: 'Hazır deyilsən!'     },
+  { en: '"Don\'t be angry!" — Azərbaycancası?',                     tr: 'Əsəbləşmə!',           wrong: 'Əsəbi olma!'         },
+  { en: '"Don\'t go." — düzgün inkar əmrdirmi?',                    tr: 'Bəli',                  wrong: 'Xeyr'                },
+  { en: '"to open" → əmr forması?',                                 tr: 'Open',                  wrong: 'To open'             },
+],
+
+
+// ── Qrup 2 — Let ilə I və III şəxs əmri ──────────────────
+
+// ── Dərs 2.1 — Let ilə əmr ───────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — Let ilə əmr',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"Let" ilə I və III şəxs əmri',
+      content:
+        'Hərəkət I və III şəxsə aid edildikdə\n' +
+        '"to let" feli ilə başlayan cümlə növündən istifadə edilir.\n\n' +
+        '"to let" felindən sonra məsdər "to" hissəciksiz işlədilir.\n\n' +
+        '"Let" — gəlin, icazə verin, qoy mənalarını verir.',
+      table: [
+        ['Struktur',                    'Nümunə',                    'Azərbaycanca'],
+        ['Let + obyekt + to-suz məsdər', 'Let him go home.',         'Qoy o evə getsin.'],
+        ['Let + obyekt + to-suz məsdər', 'Let her speak.',           'Qoy o danışsın.'],
+        ['Let + them + to-suz məsdər',   'Let them stay.',           'Qoy onlar qalsın.'],
+        ['Don\'t let + obyekt + ...',    'Don\'t let Fuad go out.',  'Fuada çölə çıxmağa icazə vermə.'],
+      ],
+      tip: '"Let" + obyekt əvəzliyi + to-suz məsdər\n' +
+           'Obyekt əvəzlikləri: him, her, them, us, me\n\n' +
+           '"Let" → icazə vermə / III şəxs əmri\n' +
+           '"Don\'t let" → inkar / icazə vermə',
+    },
+
+    { en: '"Let" əmr cümləsi hansı şəxslər üçündür?',               tr: 'I və III şəxs',         wrong: 'II şəxs'             },
+    { en: '"Let" felindən sonra məsdər hansı formada işlənir?',      tr: 'to-suz məsdər',         wrong: 'to ilə məsdər'       },
+    { en: '"Let" nə mənasını verir?',                                tr: 'Gəlin, icazə verin, qoy', wrong: 'Etmə'              },
+    { en: '"Let him go home." — "him" nədir?',                       tr: 'Obyekt əvəzliyi (III şəxs tək)', wrong: 'Mübtəda'  },
+    { en: '"Don\'t let Fuad go out." — mənası?',                     tr: 'Fuada çölə çıxmağa icazə vermə.', wrong: 'Fuad çölə çıxmasın.' },
+    { en: '"Let her ___ ." — boşluğa nə gəlir?',                    tr: 'to-suz məsdər',         wrong: 'to ilə məsdər'       },
+    { en: '"Let them stay." — düzgündürmü?',                         tr: 'Bəli',                  wrong: 'Xeyr'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Let him ___ home." — boşluğa nə gəlir?',
+          options: ['to go', 'going', 'goes', 'go'],
+          answer: 'go',
+        },
+        {
+          q: '"___ let Fuad go out." — boşluğa nə gəlir? (inkar)',
+          options: ['Not', 'No', 'Don\'t', 'Be not'],
+          answer: 'Don\'t',
+        },
+        {
+          q: '"Let" əmri hansı şəxslər üçün işlənir?',
+          options: ['Yalnız II şəxs', 'Yalnız III şəxs', 'I və III şəxs', 'Bütün şəxslər'],
+          answer: 'I və III şəxs',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — Let's + Don't let ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — Let\'s + Don\'t let',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"Let\'s" — I şəxs cəm əmri',
+      content:
+        'Obyekt əvəzliklərinin I şəxs cəmi (us) əksər hallarda\n' +
+        'ixtisar edilmiş variantda işlədilir:\n\n' +
+        'Let us → Let\'s\n\n' +
+        '"Let\'s" = "Let us" = qısa forma',
+      table: [
+        ['Tam forma',           'Qısa forma',         'Azərbaycanca'],
+        ['Let us go home.',     'Let\'s go home.',    'Gəlin evə gedək.'],
+        ['Let us go out.',      'Let\'s go out.',     'Gəlin çölə çıxaq.'],
+        ['Let us begin.',       'Let\'s begin.',      'Gəlin başlayaq.'],
+        ['Don\'t let them go.', '—',                 'Onların getməsinə icazə vermə.'],
+        ['Don\'t let him leave.','—',                'Onun getməsinə icazə vermə.'],
+      ],
+      tip: '"Let\'s" yalnız I şəxs cəm (us = biz) üçündür.\n' +
+           '"Let\'s go!" = "Let us go!" = Gedək!\n\n' +
+           'İnkar: Don\'t let + obyekt (us üçün: Let\'s not)\n' +
+           'Let\'s not go. = Getməyək.',
+    },
+
+    { en: '"Let\'s" = nəyin qısa formasıdır?',                       tr: 'Let us',                wrong: 'Let them'            },
+    { en: '"Let\'s go home." — Azərbaycancası?',                     tr: 'Gəlin evə gedək.',      wrong: 'Evə getsin.'         },
+    { en: '"Let us go home." = "Let\'s go home." — bərabərmi?',      tr: 'Bəli',                  wrong: 'Xeyr'                },
+    { en: '"Let\'s" hansı şəxs üçündür?',                            tr: 'I şəxs cəm (biz)',      wrong: 'III şəxs tək'        },
+    { en: '"Don\'t let them leave." — mənası?',                      tr: 'Onların getməsinə icazə vermə.', wrong: 'Onlar getməsin.' },
+    { en: '"Let\'s not go." — mənası?',                              tr: 'Getməyək.',             wrong: 'Getməsinlər.'        },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Let ___ go home." — "\'s" açıq yazıldıqda?',
+          options: ['him', 'them', 'us', 'her'],
+          answer: 'us',
+        },
+        {
+          q: '"Let\'s begin!" — Azərbaycancası?',
+          options: ['Başlasın!', 'Başla!', 'Başlayaq!', 'Başlatma!'],
+          answer: 'Başlayaq!',
+        },
+        {
+          q: '"Don\'t let them ___ ." — boşluğa nə gəlir?',
+          options: ['to go', 'going', 'gone', 'go'],
+          answer: 'go',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 2 — Let/Let's seç · obyekt əvəzliyi · Don't let inkar ──
+[
+  { en: '"Let" əmr cümləsi hansı şəxslər üçündür?',                 tr: 'I və III şəxs',         wrong: 'II şəxs'             },
+  { en: '"Let" felindən sonra məsdər hansı formada?',                tr: 'to-suz məsdər',         wrong: 'to ilə məsdər'       },
+  { en: '"Let\'s" = nəyin qısa formasıdır?',                        tr: 'Let us',                wrong: 'Let them'            },
+  { en: '"Let\'s go home." — Azərbaycancası?',                      tr: 'Gəlin evə gedək.',      wrong: 'Evə getsin.'         },
+  { en: '"Let him go home." — "him" nədir?',                        tr: 'Obyekt əvəzliyi (III şəxs)', wrong: 'Mübtəda'       },
+  { en: '"Don\'t let" nə mənasını verir?',                          tr: 'İcazə vermə',           wrong: 'Getmə'               },
+  { en: '"Let them stay." — düzgündürmü?',                          tr: 'Bəli',                  wrong: 'Xeyr'                },
+  { en: '"Let\'s not go." — mənası?',                               tr: 'Getməyək.',             wrong: 'Getməsinlər.'        },
+],
+
+// ── Final Test 1 — The Imperative · 15 sual ──────────────
+[
+  // Əsas qayda
+  { en: 'Əmr cümləsi hansı şəxsə aiddir?',                          tr: 'II şəxs',               wrong: 'I şəxs'              },
+  { en: 'Əmr cümləsində "to" nə olur?',                             tr: 'Atılır',                wrong: 'Qalır'               },
+  { en: 'Əmr cümləsi nə ilə başlayır?',                             tr: 'Fellə',                 wrong: 'İsimlə'              },
+  { en: '"to read" → əmr forması?',                                 tr: 'Read',                  wrong: 'To read'             },
+  // Do / Don't / Be
+  { en: '"Do" əmr cümləsinin önündə nə mənası verir?',              tr: 'Mütləq',                wrong: 'Etmə'                },
+  { en: 'Əmr cümləsinin inkarı necə düzəlir?',                      tr: 'Don\'t + fel',          wrong: 'Not + fel'           },
+  { en: '"to be" felinin əmr forması?',                             tr: 'Be',                    wrong: 'Is'                  },
+  { en: '"to be" felinin inkar əmr forması?',                       tr: 'Don\'t be',             wrong: 'Be not'              },
+  { en: '"Be ready!" — Azərbaycancası?',                            tr: 'Hazır ol!',             wrong: 'Hazır deyilsən!'     },
+  { en: '"Don\'t be late!" — Azərbaycancası?',                      tr: 'Gecikmə!',              wrong: 'Gec olma!'           },
+  // Let / Let's / Don't let
+  { en: '"Let" əmri hansı şəxslər üçün işlənir?',                   tr: 'I və III şəxs',         wrong: 'II şəxs'             },
+  { en: '"Let" felindən sonra məsdər hansı formada?',                tr: 'to-suz məsdər',         wrong: 'to ilə məsdər'       },
+  { en: '"Let\'s" = nəyin qısa formasıdır?',                        tr: 'Let us',                wrong: 'Let them'            },
+  { en: '"Let\'s go home." — Azərbaycancası?',                      tr: 'Gəlin evə gedək.',      wrong: 'Evə getsin.'         },
+  { en: '"Don\'t let them leave." — mənası?',                       tr: 'Onların getməsinə icazə vermə.', wrong: 'Onlar getməsin.' },
+],
+
   ],
 };
 
-// ── 16. EXCLAMATORY SENTENCES (NİDA CÜMLƏSİ) ────────────────
+
+// ── 16. EXCLAMATORY SENTENCES (NİDA CÜMLƏLƏRİ) ──────────────
 const EXCLAMATORY_LEVEL = {
   id: 'exclamatory',
-  name: 'EXCLAMATORY SENTENCES',
+  name: 'EXCLAMATORY SENTENCES — NİDA CÜMLƏLƏRİ',
   icon: '<i class="ti ti-exclamation-mark"></i>',
-  color: '#FDE68A',
+  color: '#86EFAC',
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  EXCLAMATORY SENTENCES — Tam bölüm                    ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  MÖVZU 2 — Exclamatory Sentences (Nida Cümləsi)       │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Qrup 1 — What ilə nida cümləsi ───────────────────────
+
+// ── Dərs 3.1 — What ilə quruluş ──────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — What ilə quruluş',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — What ilə nida cümləsi',
-      cards: [],
+      type: 'lesson',
+      title: 'Nida cümləsinin tərifi və "What" ilə quruluş',
+      content:
+        'Hiss və həyacan bildirən cümlələrə nida cümlələri deyilir.\n' +
+        'İngilis dilində nida cümlələri əsasən "what" və "how" ilə düzəlir.\n' +
+        'Hər ikisi "necə də, nə" vasitəsilə tərcümə edilir.\n\n' +
+        '"What" ilə nida cümləsinin quruluşu:\n' +
+        'What + (a/an) + sifət + isim + (əvəzlik) + (xəbər)',
+      table: [
+        ['Hal',                      'Struktur',                       'Nümunə'],
+        ['Sayılan tək isim',          'What + a/an + sifət + isim',    'What a beautiful name!'],
+        ['Sayılan tək isim + xəbər', 'What + a/an + sifət + isim + xəbər', 'What an interesting book it was!'],
+        ['Sayılmayan/cəm isim',      'What + sifət + isim',            'What beautiful flowers!'],
+        ['Sayılmayan/cəm + xəbər',   'What + sifət + isim + xəbər',   'What nice weather we have!'],
+      ],
+      tip: '"What" ilə nida cümləsi MÜTLƏQ isim tələb edir!\n' +
+           '"What" ilə heç vaxt "the" artiklı işlənmir.\n' +
+           'Sayılan tək isim → a/an mütləq işlənir.\n' +
+           'Sayılmayan/cəm isim → artıkl işlənmir.\n' +
+           'Mübtəda/xəbər olmaya da bilər: "What a beautiful name!"',
     },
+
+    { en: 'Nida cümləsi nə bildirir?',                               tr: 'Hiss və həyacan',       wrong: 'Əmr və xahiş'        },
+    { en: '"What" ilə nida cümləsi mütləq nə tələb edir?',           tr: 'İsim',                  wrong: 'Fel'                 },
+    { en: '"What" ilə heç vaxt hansı artıkl işlənmir?',              tr: '"the" artiklı',         wrong: '"a/an" artiklı'      },
+    { en: 'Sayılan tək isimdə "What" ilə hansı artıkl işlənir?',    tr: 'a / an',                wrong: 'the'                 },
+    { en: 'Sayılmayan/cəm isimdə "What" ilə artıkl işlənirmi?',     tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"What a beautiful name!" — isim sayılanlırmı?',           tr: 'Bəli, sayılan tək isim', wrong: 'Xeyr'              },
+    { en: '"What beautiful flowers!" — artıkl işlənibmi?',           tr: 'Xeyr (cəm isim)',       wrong: 'Bəli'                },
+    { en: '"What" nida cümləsi hərəkət ifadə edirmi?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — How ilə nida cümləsi',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"What ___ beautiful name!" — boşluğa nə gəlir?',
+          options: ['the', 'an', 'a', 'heç nə'],
+          answer: 'a',
+        },
+        {
+          q: '"What ___ flowers!" — boşluğa nə gəlir? (cəm isim)',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'heç nə',
+        },
+        {
+          q: '"What" nida cümləsi mütləq nə tələb edir?',
+          options: ['Fel', 'Zərf', 'İsim', 'Sifət'],
+          answer: 'İsim',
+        },
+      ],
     },
+  ],
+},
+
+// ── Dərs 3.2 — What qaydaları ────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — What qaydaları',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — What vs How — fərqlər',
-      cards: [],
+      type: 'lesson',
+      title: '"What" nida cümləsinin ətraflı qaydaları',
+      content:
+        '"What" ilə nida cümləsinin 4 əsas qaydası:',
+      table: [
+        ['#', 'Qayda',                                         'Nümunə'],
+        ['1', 'Mütləq isim tələb edir',                       'What a name! / What flowers!'],
+        ['2', '"the" artiklı heç vaxt işlənmir',              'What the name! ❌'],
+        ['3', 'Hərəkət ifadə etmir (fel bildirmir)',          'What runs fast! ❌'],
+        ['4', 'Mübtəda/xəbər olmaya bilər',                   'What a beautiful name! ✅'],
+      ],
+      examples: [
+        { word: 'What a beautiful name!',       az: 'Nə gözəl addır!' },
+        { word: 'What a nice day it is!',       az: 'Nə gözəl gündür bu!' },
+        { word: 'What an interesting book it was!', az: 'Nə maraqlı kitab idi!' },
+        { word: 'What beautiful flowers!',      az: 'Nə gözəl çiçəklərdir!' },
+        { word: 'What nice weather we have!',   az: 'Nə gözəl havamız var!' },
+      ],
+      tip: 'a/an seçimi:\n' +
+           '"a" → samitlə başlayan sifət/isim: a beautiful, a nice\n' +
+           '"an" → saitlə başlayan sifət/isim: an interesting, an old',
     },
+
+    { en: '"What a nice day it is!" — "it is" nədir?',               tr: 'Mübtəda + xəbər',       wrong: 'Artıkl'              },
+    { en: '"What a nice day!" — mübtəda/xəbər varmı?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"What an interesting book it was!" — "an" niyə?',         tr: 'Sait hərflə başlayır (i)', wrong: 'Cəm isimdir'     },
+    { en: '"What a beautiful name!" — "a" niyə?',                    tr: 'Samit hərflə başlayır (b)', wrong: 'Cəm isimdir'    },
+    { en: '"What" nida cümləsi hərəkət ifadə edirmi?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"What beautiful flowers!" — niyə artıkl yoxdur?',         tr: 'Cəm isim',              wrong: 'Sayılmayan isim'     },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"What ___ interesting book!" — boşluğa nə gəlir?',
+          options: ['a', 'the', 'heç nə', 'an'],
+          answer: 'an',
+        },
+        {
+          q: '"What beautiful flowers!" — niyə artıkl yoxdur?',
+          options: ['Sayılan tək isim', 'Cəm isim', '"the" işlənir', 'Qayda yoxdur'],
+          answer: 'Cəm isim',
+        },
+        {
+          q: '"What ___ nice weather we have!" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'heç nə',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 3 — What ilə nida düzəlt · a/an işlənir/işlənmir · the yoxdur ──
+[
+  { en: 'Nida cümləsi nə bildirir?',                                 tr: 'Hiss və həyacan',       wrong: 'Əmr və xahiş'        },
+  { en: '"What" ilə nida cümləsi mütləq nə tələb edir?',             tr: 'İsim',                  wrong: 'Fel'                 },
+  { en: '"What" ilə heç vaxt hansı artıkl işlənmir?',                tr: '"the" artiklı',         wrong: '"a/an" artiklı'      },
+  { en: 'Sayılan tək isimdə "What" ilə hansı artıkl işlənir?',      tr: 'a / an',                wrong: 'the'                 },
+  { en: 'Sayılmayan/cəm isimdə artıkl işlənirmi?',                  tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"What ___ beautiful name!" — boşluq?',                      tr: 'a',                     wrong: 'the'                 },
+  { en: '"What ___ interesting book!" — boşluq?',                    tr: 'an',                    wrong: 'a'                   },
+  { en: '"What beautiful flowers!" — niyə artıkl yoxdur?',          tr: 'Cəm isim',              wrong: 'Sayılmayan isim'     },
+  { en: '"What" nida cümləsi hərəkət ifadə edirmi?',                tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"What a nice day it is!" — mübtəda/xəbər varmı?',          tr: 'Bəli (it is)',          wrong: 'Xeyr'                },
+],
+
+
+// ── Qrup 2 — How ilə nida cümləsi + What vs How fərqi ────
+
+// ── Dərs 4.1 — How ilə quruluş ───────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.1 — How ilə quruluş',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"How" ilə nida cümləsinin quruluşu',
+      content:
+        '"How" ilə nida cümləsinin quruluşu:\n' +
+        'How + sifət / zərf + (the + isim) + (mübtəda + xəbər)',
+      table: [
+        ['Struktur',                               'Nümunə'],
+        ['How + sifət + xəbər',                   'How interesting the book was!'],
+        ['How + zərf + xəbər',                    'How well she sings!'],
+        ['How + sifət + isim + xəbər',            'How nice the rose is!'],
+        ['How + zərf (mübtəda/xəbər yoxdur)',     'How interesting!'],
+      ],
+      tip: '"How" ilə:\n' +
+           '• Heç vaxt a/an artiklı işlənmir\n' +
+           '• "the" artiklı işlənə bilir (isim varsa)\n' +
+           '• Hərəkət ifadə edə bilir (How well she sings!)\n' +
+           '• Mübtəda/xəbər olmaya bilər: "How interesting!"',
+    },
+
+    { en: '"How" nida cümləsindən sonra hansı artıkl işlənmir?',     tr: 'a / an',                wrong: 'the'                 },
+    { en: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',           tr: 'Bəli',                  wrong: 'Xeyr'                },
+    { en: '"How" ilə "the" artiklı işlənə bilirmi?',                 tr: 'Bəli (isim varsa)',     wrong: 'Xeyr, heç vaxt'      },
+    { en: '"How interesting the book was!" — "the" niyə işlənir?',  tr: 'İsim (book) var',       wrong: 'Həmişə işlənir'      },
+    { en: '"How well she sings!" — "well" hansı nitq hissəsidir?',   tr: 'Zərf',                  wrong: 'Sifət'               },
+    { en: '"How interesting!" — mübtəda/xəbər varmı?',              tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"How nice the rose is!" — quruluş düzgündürmü?',          tr: 'Bəli',                  wrong: 'Xeyr'                },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"How ___ she sings!" — boşluğa nə gəlir?',
+          options: ['good', 'a', 'an', 'well'],
+          answer: 'well',
+        },
+        {
+          q: '"How interesting ___ book was!" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the', 'heç nə'],
+          answer: 'the',
+        },
+        {
+          q: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',
+          options: ['Xeyr, heç vaxt', 'Bəli', 'Yalnız keçmişdə', 'Yalnız indiki zamanda'],
+          answer: 'Bəli',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 4.2 — What vs How fərqi ─────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.2 — What vs How fərqi',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"What" vs "How" — ətraflı müqayisə',
+      content: '"What" və "How" nida cümlələrinin fərqləri:',
+      table: [
+        ['Xüsusiyyət',              '"What" ilə',                    '"How" ilə'],
+        ['Sonrakı söz növü',        'İsim tələb edir',               'Sifət / zərf tələb edir'],
+        ['a/an artiklı',            'Sayılan tək isimdə işlənir',    'Heç vaxt işlənmir'],
+        ['"the" artiklı',           'Heç vaxt işlənmir',             'İsim varsa işlənə bilir'],
+        ['Hərəkət ifadəsi',         'Yox (fel bildirmir)',           'Bəli (zərflə hərəkət ola bilir)'],
+        ['Mübtəda/xəbər',           'Olmaya bilər',                  'Olmaya bilər'],
+      ],
+      examples: [
+        { word: 'What a nice rose! (isim var)',     az: 'Nə gözəl qızıl güldür! (What → isim)' },
+        { word: 'How nice the rose is! (sifət)',    az: 'Nə qədər gözəldir qızıl gül! (How → sifət)' },
+        { word: 'How nice the rose smells! (zərf)', az: 'Qızıl gül nə gözəl iylənir! (How → hərəkət)' },
+      ],
+      tip: 'Əsas fərq:\n' +
+           '"What" → mütləq isim lazımdır, hərəkət yoxdur\n' +
+           '"How" → sifət/zərf lazımdır, hərəkət ola bilər\n\n' +
+           '"What a beautiful rose!" ✅ (isim var)\n' +
+           '"How beautiful the rose is!" ✅ (sifət var)\n' +
+           '"How beautifully it smells!" ✅ (zərf + hərəkət)',
+    },
+
+    { en: '"What" nida cümləsi mütləq nə tələb edir?',               tr: 'İsim',                  wrong: 'Sifət / zərf'        },
+    { en: '"How" nida cümləsi mütləq nə tələb edir?',                tr: 'Sifət / zərf',          wrong: 'İsim'                },
+    { en: '"What" ilə a/an artiklı işlənirmi?',                      tr: 'Bəli (sayılan tək isim)', wrong: 'Xeyr, heç vaxt'   },
+    { en: '"How" ilə a/an artiklı işlənirmi?',                       tr: 'Xeyr, heç vaxt',        wrong: 'Bəli'                },
+    { en: '"What" ilə "the" artiklı işlənirmi?',                     tr: 'Xeyr, heç vaxt',        wrong: 'Bəli'                },
+    { en: '"How" ilə "the" artiklı işlənə bilirmi?',                 tr: 'Bəli (isim varsa)',     wrong: 'Xeyr, heç vaxt'      },
+    { en: '"What" nida cümləsi hərəkət ifadə edirmi?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',           tr: 'Bəli',                  wrong: 'Xeyr'                },
+    { en: '"What a nice rose!" vs "How nice the rose is!" — fərq?',  tr: 'What → isim, How → sifət', wrong: 'Heç fərq yoxdur' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"How nice the rose ___!" — boşluğa nə gəlir?',
+          options: ['was smelling', 'smell', 'smells', 'to smell'],
+          answer: 'smells',
+        },
+        {
+          q: '"What ___ beautiful rose!" — boşluğa nə gəlir?',
+          options: ['how', 'the', 'an', 'a'],
+          answer: 'a',
+        },
+        {
+          q: '"___ well she sings!" — What mi, How mi?',
+          options: ['What (zərf var)', 'How (zərf var)', 'What (isim var)', 'How (isim var)'],
+          answer: 'How (zərf var)',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 4.3 — Mübtədasız/xəbərsiz nida + Azərbaycanca tərcümə ──
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 4.3 — Mübtədasız/xəbərsiz nida + Azərbaycanca',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Mübtəda/xəbər olmaya bilər + Azərbaycanca tərcümə',
+      content:
+        'Nida cümləsində mübtəda və xəbər olmaya bilər.\n\n' +
+        'Azərbaycancaya necə tərcümə olunur:\n' +
+        '"What" → "Nə (gözəl)..." / "Necə (gözəl)..."\n' +
+        '"How" → "Necə..." / "Nə qədər..."',
+      table: [
+        ['Nida cümləsi',                  'Azərbaycanca',                    'Qeyd'],
+        ['What a beautiful name!',        'Nə gözəl addır!',                 'Mübtəda/xəbər yox'],
+        ['How interesting!',              'Nə maraqlıdır!',                  'Mübtəda/xəbər yox'],
+        ['What a nice day it is!',        'Bu nə gözəl gündür!',             'it is → mübtəda + xəbər'],
+        ['How interesting the book was!', 'O kitab nə maraqlı idi!',         'the book was → mübtəda + xəbər'],
+        ['How well she sings!',           'O necə yaxşı oxuyur!',            'she sings → mübtəda + xəbər'],
+        ['How nice the rose smells!',     'Gül nə gözəl iylənir!',           'the rose smells → mübtəda + xəbər'],
+      ],
+      tip: 'Azərbaycancada hər ikisi "nə gözəl", "necə" ilə ifadə olunur.\n' +
+           'İngilis dilindəki fərq (What/How) Azərbaycancada çox hiss olunmur.',
+    },
+
+    { en: '"What a beautiful name!" — mübtəda/xəbər varmı?',         tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"How interesting!" — mübtəda/xəbər varmı?',              tr: 'Xeyr',                  wrong: 'Bəli'                },
+    { en: '"What a nice day it is!" — "it is" nədir?',               tr: 'Mübtəda + xəbər',       wrong: 'Artıkl'              },
+    { en: '"How well she sings!" — "she sings" nədir?',              tr: 'Mübtəda + xəbər',       wrong: 'Sifət + zərf'        },
+    { en: '"What" → Azərbaycancada necə tərcümə olunur?',            tr: 'Nə (gözəl)...',         wrong: 'Necə yaxşı...'       },
+    { en: '"How" → Azərbaycancada necə tərcümə olunur?',             tr: 'Necə... / Nə qədər...', wrong: 'Nə cür...'           },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"What a beautiful name!" — mübtəda/xəbər varmı?',
+          options: ['Bəli, "name" mübtədadır', 'Bəli, "beautiful" xəbərdir', 'Xeyr', 'Bəli, "a" artıkldır'],
+          answer: 'Xeyr',
+        },
+        {
+          q: '"How well she sings!" — mübtəda nədir?',
+          options: ['How', 'well', 'she', 'sings'],
+          answer: 'she',
+        },
+        {
+          q: '"How nice the rose smells!" — Azərbaycancası?',
+          options: ['Nə gözəl güldür!', 'Gül nə gözəl iylənir!', 'Nə gözəl gül var!', 'Gül nə gözəldir!'],
+          answer: 'Gül nə gözəl iylənir!',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 4 — What/How seç · a/an yoxsa yoxdur · fərqi izah et ──
+[
+  { en: '"What" nida cümləsi mütləq nə tələb edir?',                 tr: 'İsim',                  wrong: 'Sifət / zərf'        },
+  { en: '"How" nida cümləsi mütləq nə tələb edir?',                  tr: 'Sifət / zərf',          wrong: 'İsim'                },
+  { en: '"How" ilə a/an artiklı işlənirmi?',                         tr: 'Xeyr, heç vaxt',        wrong: 'Bəli'                },
+  { en: '"What" ilə "the" artiklı işlənirmi?',                       tr: 'Xeyr, heç vaxt',        wrong: 'Bəli'                },
+  { en: '"How" ilə "the" artiklı işlənə bilirmi?',                   tr: 'Bəli (isim varsa)',     wrong: 'Xeyr, heç vaxt'      },
+  { en: '"What" nida cümləsi hərəkət ifadə edirmi?',                 tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',             tr: 'Bəli',                  wrong: 'Xeyr'                },
+  { en: '"What a beautiful name!" — mübtəda/xəbər varmı?',          tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"What ___ interesting book!" — boşluq?',                    tr: 'an',                    wrong: 'a'                   },
+  { en: '"What ___ flowers!" — boşluq? (cəm)',                       tr: 'heç nə',                wrong: 'a'                   },
+  { en: '"___ well she sings!" — What mi, How mi?',                  tr: 'How',                   wrong: 'What'                },
+  { en: '"What a nice day ___!" — boşluğa nə gəlir? (mübtəda+xəbər)', tr: 'it is',               wrong: 'is it'               },
+],
+
+// ── Final Test 2 — Exclamatory Sentences · 15 sual ───────
+[
+  // What ilə
+  { en: 'Nida cümləsi nə bildirir?',                                 tr: 'Hiss və həyacan',       wrong: 'Əmr və xahiş'        },
+  { en: '"What" ilə nida cümləsi mütləq nə tələb edir?',             tr: 'İsim',                  wrong: 'Sifət / zərf'        },
+  { en: '"What" ilə heç vaxt hansı artıkl işlənmir?',                tr: '"the" artiklı',         wrong: '"a/an" artiklı'      },
+  { en: 'Sayılan tək isimdə "What" ilə hansı artıkl işlənir?',      tr: 'a / an',                wrong: 'the'                 },
+  { en: 'Sayılmayan/cəm isimdə artıkl işlənirmi?',                  tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"What ___ beautiful name!" — boşluq?',                      tr: 'a',                     wrong: 'the'                 },
+  { en: '"What ___ interesting book!" — boşluq?',                    tr: 'an',                    wrong: 'a'                   },
+  { en: '"What beautiful flowers!" — niyə artıkl yoxdur?',          tr: 'Cəm isim',              wrong: 'Sayılmayan isim'     },
+  // How ilə
+  { en: '"How" nida cümləsi mütləq nə tələb edir?',                  tr: 'Sifət / zərf',          wrong: 'İsim'                },
+  { en: '"How" ilə a/an artiklı işlənirmi?',                         tr: 'Xeyr, heç vaxt',        wrong: 'Bəli'                },
+  { en: '"How" ilə "the" artiklı işlənə bilirmi?',                   tr: 'Bəli (isim varsa)',     wrong: 'Xeyr, heç vaxt'      },
+  { en: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',             tr: 'Bəli',                  wrong: 'Xeyr'                },
+  // Fərq + Azərbaycanca
+  { en: '"What" nida cümləsi hərəkət ifadə edirmi?',                 tr: 'Xeyr',                  wrong: 'Bəli'                },
+  { en: '"___ well she sings!" — What mi, How mi?',                  tr: 'How',                   wrong: 'What'                },
+  { en: '"What a beautiful name!" — mübtəda/xəbər varmı?',          tr: 'Xeyr',                  wrong: 'Bəli'                },
+],
+
   ],
 };
 
