@@ -67,10 +67,163 @@ function renderGrammarCard() {
   } else if (card.type === 'badge') {
     renderGrammarBadge(card, quizBody);
   } else {
-    renderGrammarQuizCard(card, quizBody, idx);
+    // ── Tək quiz kartı: ardıcıl olanları qruplaşdır ──
+    // Bu indeksdən əvvəlki kart quiz deyildisə — yeni qrupun başıdır
+    const prevCard = idx > 0 ? item.cards[idx - 1] : null;
+    const prevIsQuiz = prevCard && !prevCard.type;
+
+    if (!prevIsQuiz) {
+      // Qrupun başı — bütün ardıcıl quiz kartlarını topla
+      const groupCards = [];
+      let i = idx;
+      while (i < item.cards.length && !item.cards[i].type) {
+        groupCards.push({ ...item.cards[i], _origIdx: i });
+        i++;
+      }
+      grammarState.quizGroupCards   = groupCards;
+      grammarState.quizGroupStartIdx = idx;
+      grammarState.quizGroupAnswers  = {};
+
+      renderGrammarQuizGroup(quizBody);
+    } else {
+      // Qrupun ortasındayıq — eyni render-i saxla
+      renderGrammarQuizGroup(quizBody);
+    }
   }
 }
 
+function renderGrammarQuizGroup(container) {
+  const group   = grammarState.quizGroupCards;
+  const answers = grammarState.quizGroupAnswers;
+  const allDone = group.every((_, i) => answers[i] !== undefined);
+
+  const questionsHTML = group.map((card, i) => {
+    const answered = answers[i] !== undefined;
+    const wasRight = answers[i] === true;
+    const options  = answered
+      ? [card.tr, card.wrong]
+      : [card.tr, card.wrong].sort(() => Math.random() - 0.5);
+
+    // Shuffle-ı ilk render-də saxla
+    if (!grammarState.quizGroupOptions) grammarState.quizGroupOptions = {};
+    if (!grammarState.quizGroupOptions[i]) {
+      grammarState.quizGroupOptions[i] = [card.tr, card.wrong].sort(() => Math.random() - 0.5);
+    }
+    const opts = grammarState.quizGroupOptions[i];
+
+    return `
+      <div class="gmc-question ${answered ? (wasRight ? 'gmc-q-correct' : 'gmc-q-wrong') : ''}"
+           data-gi="${i}">
+        <div class="gmc-q-text">${card.en}</div>
+        <div class="gmc-options" id="gmcg-opts-${i}">
+          ${opts.map(opt => {
+            let cls = 'gmc-opt-btn';
+            if (answered) {
+              if (opt === card.tr) cls += ' gmc-opt-correct';
+              else if (answers[i + '_chosen'] === opt && opt !== card.tr) cls += ' gmc-opt-wrong';
+              cls += ' disabled';
+            }
+            return `<button class="${cls}" data-gi="${i}" data-opt="${opt}"
+              ${answered ? 'disabled' : ''}>${opt}</button>`;
+          }).join('')}
+        </div>
+        ${answered ? `<div class="gmc-feedback ${wasRight ? 'gmc-fb-correct' : 'gmc-fb-wrong'}">
+          ${wasRight ? '✓ Düzgün!' : `✗ Düzgün cavab: <strong>${card.tr}</strong>`}
+        </div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <div class="grammar-minicheck-wrap">
+      <div class="gmc-header">
+        <div class="gmc-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+          Bilikləri yoxla
+        </div>
+        <div class="gmc-count">${group.length} sual</div>
+      </div>
+      <div class="gmc-questions-list">
+        ${questionsHTML}
+      </div>
+      ${allDone ? buildNavButtons('Davam et') : ''}
+    </div>
+  `;
+
+  if (!allDone) {
+    container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
+      btn.addEventListener('click', () => handleGrammarGroupAnswer(btn));
+    });
+  } else {
+    attachNavListeners();
+  }
+}
+
+function handleGrammarGroupAnswer(btn) {
+  if (grammarState.locked) return;
+
+  const gi      = parseInt(btn.dataset.gi);
+  const chosen  = btn.dataset.opt;
+  const card    = grammarState.quizGroupCards[gi];
+  const correct = chosen === card.tr;
+
+  const optsWrap = document.getElementById(`gmcg-opts-${gi}`);
+  if (!optsWrap) return;
+
+  optsWrap.querySelectorAll('.gmc-opt-btn').forEach(b => {
+    b.disabled = true;
+    b.classList.add('disabled');
+    if (b.dataset.opt === card.tr) b.classList.add('gmc-opt-correct');
+    else if (b === btn && !correct) b.classList.add('gmc-opt-wrong');
+  });
+
+  const qEl = btn.closest('.gmc-question');
+  if (qEl) {
+    qEl.classList.add(correct ? 'gmc-q-correct' : 'gmc-q-wrong');
+    const fb = document.createElement('div');
+    fb.className = `gmc-feedback ${correct ? 'gmc-fb-correct' : 'gmc-fb-wrong'}`;
+    fb.innerHTML = correct ? '✓ Düzgün!' : `✗ Düzgün cavab: <strong>${card.tr}</strong>`;
+    qEl.appendChild(fb);
+  }
+
+  grammarState.quizGroupAnswers[gi]             = correct;
+  grammarState.quizGroupAnswers[gi + '_chosen'] = chosen;
+
+  const answered = Object.keys(grammarState.quizGroupAnswers)
+    .filter(k => !k.includes('_chosen')).length;
+
+  if (answered >= grammarState.quizGroupCards.length) {
+    const wrap = document.querySelector('.grammar-minicheck-wrap');
+    if (wrap && !document.getElementById('grammar-next-btn')) {
+      const navDiv = document.createElement('div');
+      navDiv.innerHTML = buildNavButtons('Davam et');
+      wrap.appendChild(navDiv.firstElementChild);
+      attachNavListeners();
+    }
+  }
+}
+function grammarNextCard() {
+  // Əgər quiz qrupu varsa — qrupun sonuna atla
+  if (grammarState.quizGroupCards && grammarState.quizGroupStartIdx !== undefined) {
+    const groupEnd = grammarState.quizGroupStartIdx + grammarState.quizGroupCards.length;
+    grammarState.cardIdx      = groupEnd;
+    grammarState.quizGroupCards   = null;
+    grammarState.quizGroupStartIdx = undefined;
+    grammarState.quizGroupAnswers  = {};
+    grammarState.quizGroupOptions  = {};
+  } else {
+    grammarState.cardIdx++;
+  }
+
+  if (grammarState.cardIdx >= grammarState.totalCards) {
+    finishGrammarLesson();
+    return;
+  }
+  renderGrammarCard();
+}
 // ============================================================
 //  GERİ/İRƏLİ DÜYMƏLƏRI — köməkçi funksiyalar
 // ============================================================
