@@ -4147,6 +4147,11 @@ const KIDS_GRAMMAR_LEVELS = [
   { en: '"a snow" düzgündürmü?',         tr: 'Xeyr',          wrong: 'Bəli'         },
 ],
 
+
+          {
+      type: 'section_divider',
+      title: 'NOUNS - ÜMUMİ İMTAHAN',
+},
 // ── index: 41 — Test 3 (Final — Bölmə 1-dən 8-ə qədər) ───────
 [
   // ── Bölmə 1: Quruluş ───────────────────────────────────────
@@ -4244,7 +4249,7 @@ const VERBS_LEVEL = {
   quizzes: [
 {
       type: 'section_divider',
-      title: '   Bölüm   ',
+      title: 'Simple Present',
 },
    
 // ── index: 1 — Dərs 1.1 ──────────────────────────────────
@@ -4600,7 +4605,7 @@ const VERBS_LEVEL = {
 // ============================================================
 
 // ── Bölmə 2 Divider ──────────────────────────────────────
-{ type: 'section_divider', title: 'Bölmə 1 — Simple Present (Present Indefinite)' },
+{ type: 'section_divider', title: 'Simple Past' },
 
 
 // ── Dərs 2.1 — Qaydalı fellər ────────────────────────────
@@ -7199,11 +7204,7 @@ const PASSIVE_LEVEL = {
 
   quizzes: [
 
-    // ── index: 0 — Qrup 1 bölücüsü ───────────────────────────
-    {
-      type: 'section_divider',
-      title: 'Qrup 1 — Qeyri-müəyyən zaman formalarının məchul növü',
-    },
+  
 
     // ── index: 1 — Bölmə 1 bölücüsü ──────────────────────────
     {
@@ -7843,12 +7844,7 @@ const PASSIVE_LEVEL = {
       { en: '"could been seen" — düzdür?',                 tr: 'Xeyr',      wrong: 'Bəli'        },
     ],
 
-    // ── index: 14 — Qrup 2 bölücüsü ──────────────────────────
-    {
-      type: 'section_divider',
-      title: 'Qrup 2 — Məlum cümləni məchul cümləyə çevirmə',
-    },
-
+  
     // ── index: 15 — Bölmə 4 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
@@ -8405,6 +8401,11 @@ const PASSIVE_LEVEL = {
       { en: '"He had sent the letter." → Passive?',               tr: 'The letter had been sent.', wrong: 'The letter has been sent.' },
     ],
 
+      {
+      type: 'section_divider',
+      title: 'PASSIVE VOICE - ÜMUMİ İMTAHAN',
+},
+      
     // ── index: 28 — Final Test ────────────────────────────────
     [
       { en: 'Present Passive düzəlmə?',                           tr: 'am/is/are + P II',           wrong: 'was/were + P II'            },
@@ -8501,11 +8502,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ║  QRUP 1 — Vasitəsiz nitqdən vasitəli nitqə çevirmə    ║
     // ══════════════════════════════════════════════════════════
 
-    // ── index: 0 ─ Qrup 1 bölücüsü ───────────────────────────
-    {
-      type: 'section_divider',
-      title: 'Qrup 1 — Vasitəsiz nitqdən vasitəli nitqə çevirmə',
-    },
+ 
 
     // ── index: 1 ─ Bölmə 1 bölücüsü ──────────────────────────
     {
@@ -8840,12 +8837,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ║  QRUP 2 — Sual, əmr və xahiş cümlələrinin çevrilməsi  ║
     // ══════════════════════════════════════════════════════════
 
-    // ── index: 11 ─ Qrup 2 bölücüsü ──────────────────────────
-    {
-      type: 'section_divider',
-      title: 'Qrup 2 — Sual, əmr və xahiş cümlələrinin çevrilməsi',
-    },
-
+   
     // ── index: 12 ─ Bölmə 3 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
@@ -9193,6 +9185,11 @@ const INDIRECT_SPEECH_LEVEL = {
       { en: '"Is she your sister?" → He asked if ___ his sister.', tr: 'she was', wrong: 'is she' },
     ],
 
+{
+      type: 'section_divider',
+      title: ' DİRECT & INDİRECT SPEECH - ÜMUMİ İMTAHAN',
+},
+      
     // ── index: 25 ─ Final Test ────────────────────────────────
     // Direct & Indirect Speech tam test · 40+ sual
     [
@@ -9252,6 +9249,11 @@ const SEQUENCE_TENSES_LEVEL = {
 // ║  ZAMANLARIN UZLAŞMASI (SEQUENCE OF TENSES) — Tam bölüm ║
 // ══════════════════════════════════════════════════════════
 
+{
+      type: 'section_divider',
+      title: 'SEGUENCE OF TENSES',
+},
+      
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 1 — Əsas qayda                                │
 // │  What is Sequence of Tenses?                           │
@@ -9420,6 +9422,11 @@ const SEQUENCE_TENSES_LEVEL = {
 // │  Simultaneous & Sequential Actions                     │
 // └─────────────────────────────────────────────────────────┘
 
+      {
+      type: 'section_divider',
+      title: 'When / While',
+},
+      
 // ── Dərs 2.1 — Eyni vaxtda baş verən hərəkətlər (when, while) ──
 {
   type: 'grammar_lesson',
@@ -9630,6 +9637,11 @@ const SEQUENCE_TENSES_LEVEL = {
   { en: '"After I came, she had left." — düzdür?',                      tr: 'Xeyr',                wrong: 'Bəli'              },
 ],
 
+{
+      type: 'section_divider',
+      title: 'The future indefinite in the past',
+},
+      
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 3 — Since və Gələcəyə aid keçmiş             │
@@ -9818,6 +9830,11 @@ const SEQUENCE_TENSES_LEVEL = {
 ],
 
 
+      {
+      type: 'section_divider',
+      title: 'Istisnalar',
+},
+
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 4 — Uzlaşmanın pozulması (İstisnalar)        │
 // │  Exceptions to the Rule                                │
@@ -9965,7 +9982,10 @@ const SEQUENCE_TENSES_LEVEL = {
   { en: 'Təyin budaq cümlələrindən uzlaşma tələb olunurmu?',           tr: 'Xeyr',                wrong: 'Bəli'              },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'SEGUENCE OF TENSES - ÜMUMİ İMTAHAN',
+},
 // ── Final Quiz — Zamanların uzlaşması ────────────────────
 [
   // Əsas qayda
