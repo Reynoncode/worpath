@@ -244,20 +244,6 @@ const QUIZ_NAMES = {
     71:  'Memory, Legacy & History',
     72:  'Abundance & Scarcity',
   },
-    'kids': {
-    0: 'Quiz 1',
-    1: 'Quiz 2',
-    2: 'Quiz 3',
-    3: 'Quiz 4',
-    4: 'Quiz 5',
-  },
-  'grammar': {
-    0: 'Quiz 1',
-    1: 'Quiz 2',
-    2: 'Quiz 3',
-    3: 'Quiz 4',
-    4: 'Quiz 5',
-  },
 };
 
 // ── Storage keys ──────────────────────────────────────────
