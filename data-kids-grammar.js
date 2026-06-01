@@ -8841,7 +8841,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ── index: 12 ─ Bölmə 3 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: Ümumi sualların vasitəli nitqə çevrilməsi',
+      title: 'Ümumi sualların vasitəli nitqə çevrilməsi',
     },
 
     // ── index: 13 ─ Dərs 3.1 ─────────────────────────────────
