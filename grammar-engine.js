@@ -273,10 +273,18 @@ function buildNavButtons(nextLabel, isFinish) {
 
 function attachNavListeners() {
   const nextBtn = document.getElementById('grammar-next-btn');
-  if (nextBtn) nextBtn.addEventListener('click', grammarNextCard);
+  if (nextBtn) {
+    const newBtn = nextBtn.cloneNode(true);
+    nextBtn.parentNode.replaceChild(newBtn, nextBtn);
+    newBtn.addEventListener('click', grammarNextCard);
+  }
 
   const backBtn = document.getElementById('grammar-back-btn');
-  if (backBtn) backBtn.addEventListener('click', grammarPrevCard);
+  if (backBtn) {
+    const newBack = backBtn.cloneNode(true);
+    backBtn.parentNode.replaceChild(newBack, backBtn);
+    newBack.addEventListener('click', grammarPrevCard);
+  }
 }
 
 // ============================================================
