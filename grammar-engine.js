@@ -82,33 +82,23 @@ quizBody.className = 'quiz-body grammar-mode';
   } else if (card.type === 'badge') {
     renderGrammarBadge(card, quizBody);
   } else {
-    // ── Tək quiz kartı: ardıcıl olanları qruplaşdır ──
-    // Bu indeksdən əvvəlki kart quiz deyildisə — yeni qrupun başıdır
-    const prevCard = idx > 0 ? item.cards[idx - 1] : null;
-    const prevIsQuiz = prevCard && !prevCard.type;
-
-   if (!prevIsQuiz) {
-  const groupCards = [];
-  let i = idx;
-  while (i < item.cards.length && !item.cards[i].type) {
-    groupCards.push({ ...item.cards[i], _origIdx: i });
-    i++;
-  }
-  grammarState.quizGroupCards    = groupCards;
-  grammarState.quizGroupStartIdx = idx;
-  grammarState.quizGroupAnswers  = {};
-  grammarState.quizGroupOptions  = {};
-  renderGrammarQuizGroup(quizBody);
-} else {
-  renderGrammarQuizGroup(quizBody);
-}
+    const groupCards = [];
+    let i = idx;
+    while (i < item.cards.length && !item.cards[i].type) {
+      groupCards.push({ ...item.cards[i], _origIdx: i });
+      i++;
+    }
+    grammarState.quizGroupCards    = groupCards;
+    grammarState.quizGroupStartIdx = idx;
+    if (!grammarState.quizGroupAnswers) grammarState.quizGroupAnswers = {};
+    if (!grammarState.quizGroupOptions) grammarState.quizGroupOptions = {};
+    renderGrammarQuizGroup(quizBody);
   }
 }
 
 function renderGrammarQuizGroup(container) {
   const group   = grammarState.quizGroupCards;
   const answers = grammarState.quizGroupAnswers;
-
   const questionsHTML = group.map((card, i) => {
     const answered = answers[i] !== undefined;
     const wasRight = answers[i] === true;
@@ -204,8 +194,8 @@ function handleGrammarGroupAnswer(btn) {
 function grammarNextCard() {
   if (grammarState.quizGroupCards && grammarState.quizGroupStartIdx !== undefined) {
     const groupEnd = grammarState.quizGroupStartIdx + grammarState.quizGroupCards.length;
-    grammarState.cardIdx         = groupEnd;
-    grammarState.quizGroupCards  = null;
+    grammarState.cardIdx           = groupEnd;
+    grammarState.quizGroupCards    = null;
     grammarState.quizGroupStartIdx = undefined;
     grammarState.quizGroupAnswers  = {};
     grammarState.quizGroupOptions  = {};
@@ -217,6 +207,16 @@ function grammarNextCard() {
     finishGrammarLesson();
     return;
   }
+  renderGrammarCard();
+}
+
+function grammarPrevCard() {
+  if (grammarState.cardIdx <= 0) return;
+  grammarState.cardIdx--;
+  grammarState.quizGroupCards    = null;
+  grammarState.quizGroupStartIdx = undefined;
+  grammarState.quizGroupAnswers  = {};
+  grammarState.quizGroupOptions  = {};
   renderGrammarCard();
 }
 // ============================================================
