@@ -679,12 +679,12 @@ function renderGrammarPath(lvl, li) {
     let typeClass = '';
 
     if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
-      typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-book-open"></i>');
-      typeClass = 'grammar-lesson-node';
-    } else if (Array.isArray(item)) {
-      typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-writing"></i>');
-      typeClass = 'grammar-quiz-node';
-    }
+    typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-book-2"></i>');
+    typeClass = 'grammar-lesson-node';
+  } else if (Array.isArray(item)) {
+    typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-pencil"></i>');
+    typeClass = 'grammar-quiz-node';
+  }
 
     const prevItem      = lvl.quizzes[qi - 1];
     const prevIsDivider = prevItem && !Array.isArray(prevItem) && prevItem.type === 'section_divider';
