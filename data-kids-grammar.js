@@ -528,12 +528,16 @@ const KIDS_GRAMMAR_LEVELS = [
             note: 'Şəkilçi əlavə olunduqda kök sözün yazılışı bəzən dəyişə bilər: happy → happiness.',
           },
 
-          // ── Quiz: Düzəltmə isimi seç ────────────────────
-          { en: 'Düzəltmə isimi seç', tr: 'teacher',     wrong: 'book'         },
-          { en: 'Düzəltmə isimi seç', tr: 'happiness',   wrong: 'sunrise'      },
-          { en: 'Düzəltmə isimi seç', tr: 'freedom',     wrong: 'railway'      },
-          { en: 'Düzəltmə isimi seç', tr: 'childhood',   wrong: 'flowerbed'    },
-          { en: 'Düzəltmə isimi seç', tr: 'development', wrong: 'self-control' },
+         {
+  type: 'mini_check',
+  questions: [
+            { q: 'Düzəltmə isimi seç', options: ['teacher',     'book'        ], answer: 'teacher'     },
+            { q: 'Düzəltmə isimi seç', options: ['happiness',   'sunrise'     ], answer: 'happiness'   },
+            { q: 'Düzəltmə isimi seç', options: ['freedom',     'railway'     ], answer: 'freedom'     },
+            { q: 'Düzəltmə isimi seç', options: ['childhood',   'flowerbed'   ], answer: 'childhood'   },
+            { q: 'Düzəltmə isimi seç', options: ['development', 'self-control'], answer: 'development' },
+          ],
+        },
 
           // ── Ekran 4: Mürəkkəb isimlər ───────────────────
           {
@@ -549,13 +553,16 @@ const KIDS_GRAMMAR_LEVELS = [
             ],
             tip: 'Mürəkkəb isimlərdə əsas məna ikinci sözdə olur: flower + bed = çiçəklik (çarpayı növü).',
           },
-
-          // ── Quiz: Mürəkkəb isimi seç ────────────────────
-          { en: 'Mürəkkəb isimi seç', tr: 'sunrise',      wrong: 'pen'         },
-          { en: 'Mürəkkəb isimi seç', tr: 'railway',      wrong: 'kindness'    },
-          { en: 'Mürəkkəb isimi seç', tr: 'flowerbed',    wrong: 'freedom'     },
-          { en: 'Mürəkkəb isimi seç', tr: 'full moon',    wrong: 'leadership'  },
-          { en: 'Mürəkkəb isimi seç', tr: 'self-control', wrong: 'development' },
+{
+  type: 'mini_check',
+  questions: [
+            { q: 'Mürəkkəb isimi seç', options: ['sunrise',      'pen'        ], answer: 'sunrise'      },
+            { q: 'Mürəkkəb isimi seç', options: ['railway',      'kindness'   ], answer: 'railway'      },
+            { q: 'Mürəkkəb isimi seç', options: ['flowerbed',    'freedom'    ], answer: 'flowerbed'    },
+            { q: 'Mürəkkəb isimi seç', options: ['full moon',    'leadership' ], answer: 'full moon'    },
+            { q: 'Mürəkkəb isimi seç', options: ['self-control', 'development'], answer: 'self-control' },
+          ],
+        },
 
           // ── Ekran 5: Müqayisə cədvəli ───────────────────
           {
@@ -801,28 +808,31 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 // index: 3 — Bölmə 1 ümumi quiz
-[
-  { en: 'teacher',      tr: 'Düzəltmə',  wrong: 'Sadə'      },
-  { en: 'book',         tr: 'Sadə',      wrong: 'Mürəkkəb'  },
-  { en: 'sunrise',      tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
-  { en: 'rain',         tr: 'Sadə',      wrong: 'Düzəltmə'  },
-  { en: 'happiness',    tr: 'Düzəltmə',  wrong: 'Mürəkkəb'  },
-  { en: 'toothbrush',   tr: 'Mürəkkəb',  wrong: 'Sadə'      },
-  { en: 'hero____m',    tr: '-is',       wrong: '-er'        },
-  { en: 'teach → ____', tr: 'teacher',   wrong: 'teachness'  },
-  { en: 'waterfall',    tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
-  { en: 'stone',        tr: 'Sadə',      wrong: 'Düzəltmə'  },
-  { en: 'free → ____',  tr: 'freedom',   wrong: 'freeship'   },
-  { en: 'kind → ____',  tr: 'kindness',  wrong: 'kindment'   },
-  { en: 'friendship',   tr: 'Düzəltmə',  wrong: 'Mürəkkəb'  },
-  { en: 'bedroom',      tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
-  { en: 'develop → ____', tr: 'development', wrong: 'developness' },
-  { en: 'kingdom',      tr: 'Düzəltmə',  wrong: 'Sadə'      },
-  { en: 'hand',         tr: 'Sadə',      wrong: 'Mürəkkəb'  },
-  { en: 'lead → ____ship', tr: 'leadership', wrong: 'leaderhood' },
-  { en: 'earthquake',   tr: 'Mürəkkəb',  wrong: 'Düzəltmə'  },
-  { en: 'strong → ____', tr: 'strength', wrong: 'strongness' },
-],
+{
+  type: 'mini_check',
+  questions: [
+    { q: '"teacher" hansı növ isimdir?',      options: ['Düzəltmə', 'Sadə'],       answer: 'Düzəltmə'   },
+    { q: '"book" hansı növ isimdir?',          options: ['Sadə', 'Mürəkkəb'],       answer: 'Sadə'       },
+    { q: '"sunrise" hansı növ isimdir?',       options: ['Mürəkkəb', 'Düzəltmə'],   answer: 'Mürəkkəb'   },
+    { q: '"rain" hansı növ isimdir?',          options: ['Sadə', 'Düzəltmə'],       answer: 'Sadə'       },
+    { q: '"happiness" hansı növ isimdir?',     options: ['Düzəltmə', 'Mürəkkəb'],   answer: 'Düzəltmə'   },
+    { q: '"toothbrush" hansı növ isimdir?',    options: ['Mürəkkəb', 'Sadə'],       answer: 'Mürəkkəb'   },
+    { q: '"hero____m" — boşluğa nə gəlir?',   options: ['-is', '-er'],             answer: '-is'        },
+    { q: '"teach → ____"',                     options: ['teacher', 'teachness'],   answer: 'teacher'    },
+    { q: '"waterfall" hansı növ isimdir?',     options: ['Mürəkkəb', 'Düzəltmə'],  answer: 'Mürəkkəb'   },
+    { q: '"stone" hansı növ isimdir?',         options: ['Sadə', 'Düzəltmə'],      answer: 'Sadə'       },
+    { q: '"free → ____"',                      options: ['freedom', 'freeship'],    answer: 'freedom'    },
+    { q: '"kind → ____"',                      options: ['kindness', 'kindment'],   answer: 'kindness'   },
+    { q: '"friendship" hansı növ isimdir?',    options: ['Düzəltmə', 'Mürəkkəb'],  answer: 'Düzəltmə'   },
+    { q: '"bedroom" hansı növ isimdir?',       options: ['Mürəkkəb', 'Düzəltmə'],  answer: 'Mürəkkəb'   },
+    { q: '"develop → ____"',                   options: ['development', 'developness'], answer: 'development' },
+    { q: '"kingdom" hansı növ isimdir?',       options: ['Düzəltmə', 'Sadə'],      answer: 'Düzəltmə'   },
+    { q: '"hand" hansı növ isimdir?',          options: ['Sadə', 'Mürəkkəb'],      answer: 'Sadə'       },
+    { q: '"lead → ____ship"',                  options: ['leadership', 'leaderhood'], answer: 'leadership' },
+    { q: '"earthquake" hansı növ isimdir?',    options: ['Mürəkkəb', 'Düzəltmə'],  answer: 'Mürəkkəb'   },
+    { q: '"strong → ____"',                    options: ['strength', 'strongness'], answer: 'strength'   },
+  ],
+},
 
      // ── Bölmə 2 ──────────────────────────────────────
 {
