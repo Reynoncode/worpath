@@ -471,7 +471,7 @@ const KIDS_GRAMMAR_LEVELS = [
     quizzes: [
       {
   type: 'section_divider',
-  title: 'Bölmə 1 — Sadə, düzəltmə, mürəkkəb isimlər',
+  title: 'Sadə, Düzəltmə, Mürəkkəb isimlər',
 },
 
   // index: 1 — Dərs 1.1
@@ -827,7 +827,7 @@ const KIDS_GRAMMAR_LEVELS = [
      // ── Bölmə 2 ──────────────────────────────────────
 {
   type: 'section_divider',
-  title: 'Bölmə 2 — Common vs Proper nouns · Konkret vs Mücərrəd',
+  title: 'Konkret və Mücərrəd isimlər',
 },
 
 // Dərs 2.1 — Common vs Proper noun fərqi
@@ -1196,7 +1196,7 @@ const KIDS_GRAMMAR_LEVELS = [
      // ── Bölmə 3 ──────────────────────────────────────
       {
         type: 'section_divider',
-        title: 'Bölmə 3 — Countable vs Uncountable · Much / Many / Few / Little',
+        title: 'Countable və Uncountable · Much / Many / Few / Little',
       },
 
       // Dərs 3.1 — Countable nouns
@@ -1566,7 +1566,7 @@ const KIDS_GRAMMAR_LEVELS = [
    // ── Bölmə 4 ──────────────────────────────────────
       {
         type: 'section_divider',
-        title: 'Bölmə 4 — Kollektiv isimlər · Topluluq bildirən isimlər',
+        title: 'Topluluq bildirən isimlər',
       },
 
       // Dərs 4.1 — Collective nouns
@@ -1808,7 +1808,7 @@ const KIDS_GRAMMAR_LEVELS = [
    // ── Bölmə 5 ──────────────────────────────────────
       {
         type: 'section_divider',
-        title: 'Bölmə 5 — Plural nouns (Cəm formaları) — tam qaydalar',
+        title: 'Cəm formaları — tam qaydalar',
       },
 
       // Dərs 5.1 — -s / -es qaydası
@@ -2257,7 +2257,7 @@ const KIDS_GRAMMAR_LEVELS = [
       // ── Bölmə 6 ──────────────────────────────────────
       {
         type: 'section_divider',
-        title: 'Bölmə 6 — Xüsusi cəm halları',
+        title: 'Xüsusi cəm halları',
       },
 
       // Dərs 6.1 — Yalnız tək formada işlənən isimlər
@@ -2705,7 +2705,7 @@ const KIDS_GRAMMAR_LEVELS = [
     // ── Bölmə 7 ──────────────────────────────────────
       {
         type: 'section_divider',
-        title: 'Bölmə 7 — Possessive case (Yiyəlik hal)',
+        title: 'Possessive case (Yiyəlik hal)',
       },
 
       // Dərs 7.1 — 's (tək) / ' (cəm) qaydası
@@ -3103,7 +3103,7 @@ const KIDS_GRAMMAR_LEVELS = [
 // ── index: 36 — Bölmə 8 bölücüsü ────────────────────────────
 {
   type: 'section_divider',
-  title: 'Bölmə 8 — Sayılmayan isimlər sözlüyü (Vocabulary bank)',
+  title: 'Sayılmayan isimlər,
 },
 
 // ── index: 37 — Dərs 8.1 ─────────────────────────────────────
@@ -5164,7 +5164,7 @@ const VERBS_LEVEL = {
 // ── Bölmə 3 Divider ──────────────────────────────────────
 {
   type: 'section_divider',
-  title: 'Bölmə 3 — Simple Future (Future Indefinite)',
+  title: 'Simple Future',
 },
 
 // ── Dərs 3.1 — shall / will + məsdər ────────────────────
@@ -5490,7 +5490,7 @@ const VERBS_LEVEL = {
 // ── Bölmə 4 Divider ──────────────────────────────────────
 {
   type: 'section_divider',
-  title: 'Bölmə 4 — Future Indefinite in the Past',
+  title: 'Future Indefinite in the Past',
 },
 
 // ── Dərs 4.1 — should / would + məsdər ──────────────────
@@ -5818,7 +5818,7 @@ const VERBS_LEVEL = {
 ],
  {
   type: 'section_divider',
-  title: 'Bölmə 5 —  Present Continuous',
+  title: 'Present Continuous',
 },
     // ══════════════════════════════════════════════════════════
     // ║  QRUP 2 — Davamedici zaman formaları (Continuous)      ║
@@ -6173,7 +6173,7 @@ const VERBS_LEVEL = {
   
  {
   type: 'section_divider',
-  title: 'Bölmə 6 — Past Continuous',
+  title: 'Past Continuous',
 },
 // ── Dərs 6.1 — was/were + fel-ing ───────────────────────
 {
@@ -6772,7 +6772,7 @@ const VERBS_LEVEL = {
     
  {
   type: 'section_divider',
-  title: 'Bölmə 8 — Past Perfect',
+  title: 'Past Perfect',
 },
 
 // ── Dərs 8.1 — had + P II ────────────────────────────────
@@ -7209,7 +7209,7 @@ const PASSIVE_LEVEL = {
     // ── index: 1 — Bölmə 1 bölücüsü ──────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 1 — Present / Past / Future Indefinite Passive',
+      title: 'Present / Past / Future Indefinite Passive',
     },
 
     // ── index: 2 — Dərs 1.1 ───────────────────────────────────
@@ -7520,7 +7520,7 @@ const PASSIVE_LEVEL = {
     // ── index: 6 — Bölmə 2 bölücüsü ──────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 2 — Present / Past Perfect Passive',
+      title: 'Present / Past Perfect Passive',
     },
 
     // ── index: 7 — Dərs 2.1 ───────────────────────────────────
@@ -7725,7 +7725,7 @@ const PASSIVE_LEVEL = {
     // ── index: 10 — Bölmə 3 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 3 — Modal fellərin məchul növü',
+      title: 'Modal fellərin məchul növü',
     },
 
     // ── index: 11 — Dərs 3.1 ──────────────────────────────────
@@ -7848,7 +7848,7 @@ const PASSIVE_LEVEL = {
     // ── index: 15 — Bölmə 4 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 4 — Çevirmənin əsas qaydaları',
+      title: 'Çevirmənin əsas qaydaları',
     },
 
     // ── index: 16 — Dərs 4.1 ──────────────────────────────────
@@ -8053,7 +8053,7 @@ const PASSIVE_LEVEL = {
     // ── index: 20 — Dərs 5.1 ──────────────────────────────────
     {
       type: 'grammar_lesson',
-      title: 'Dərs 5.1 — Canlı + cansız tamamlıq',
+      title: 'Canlı + cansız tamamlıq',
       cards: [
 
         // Ekran 1
@@ -8198,7 +8198,7 @@ const PASSIVE_LEVEL = {
     // ── index: 23 — Bölmə 6 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 6 — Bütün zaman formalarında çevirmə təcrübəsi',
+      title: 'Bütün zaman formalarında çevrilməsi',
     },
 
     // ── index: 24 — Dərs 6.1 ──────────────────────────────────
@@ -8507,7 +8507,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ── index: 1 ─ Bölmə 1 bölücüsü ──────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 1 — Əsas qaydalar: nəqli cümlənin çevrilməsi',
+      title: 'Əsas qaydalar: nəqli cümlənin çevrilməsi',
     },
 
     // ── index: 2 ─ Dərs 1.1 ──────────────────────────────────
@@ -8720,7 +8720,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ── index: 6 ─ Bölmə 2 bölücüsü ──────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 2 — Zaman və məkan sözlərinin dəyişməsi',
+      title: 'Zaman və məkan sözlərinin dəyişməsi',
     },
 
     // ── index: 7 ─ Dərs 2.1 ──────────────────────────────────
@@ -8841,7 +8841,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ── index: 12 ─ Bölmə 3 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 3 — Ümumi sualların vasitəli nitqə çevrilməsi',
+      title: Ümumi sualların vasitəli nitqə çevrilməsi',
     },
 
     // ── index: 13 ─ Dərs 3.1 ─────────────────────────────────
@@ -8942,7 +8942,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ── index: 16 ─ Bölmə 4 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 4 — Xüsusi sualların vasitəli nitqə çevrilməsi',
+      title: 'Xüsusi sualların vasitəli nitqə çevrilməsi',
     },
 
     // ── index: 17 ─ Dərs 4.1 ─────────────────────────────────
@@ -9041,7 +9041,7 @@ const INDIRECT_SPEECH_LEVEL = {
     // ── index: 20 ─ Bölmə 5 bölücüsü ─────────────────────────
     {
       type: 'section_divider',
-      title: 'Bölmə 5 — Əmr və xahiş cümlələrinin çevrilməsi',
+      title: 'Əmr və xahiş cümlələrinin çevrilməsi',
     },
 
     // ── index: 21 ─ Dərs 5.1 ─────────────────────────────────
@@ -9251,7 +9251,7 @@ const SEQUENCE_TENSES_LEVEL = {
 
 {
       type: 'section_divider',
-      title: 'SEGUENCE OF TENSES',
+      title: 'Əsas qaydalar',
 },
       
 // ┌─────────────────────────────────────────────────────────┐
@@ -10949,7 +10949,7 @@ const ADJECTIVES_LEVEL = {
 
       {
       type: 'section_divider',
-      title: 'ADJECTİVE - FİNAL İMTAHAN',
+      title: 'ADJECTİVE - ÜMUMİ İMTAHAN',
 },
 // ── Final Quiz — Sifət (Adjective) ───────────────────────
 [
@@ -12623,7 +12623,7 @@ const PRONOUN_LEVEL = {
 
       {
       type: 'section_divider',
-      title: 'PRONOUN - FİNAL İMTAHAN',
+      title: 'PRONOUN - ÜMUMİ İMTAHAN',
 },
 
 // ┌─────────────────────────────────────────────────────────┐
@@ -13395,7 +13395,7 @@ const ARTICLE_LEVEL = {
 
 {
       type: 'section_divider',
-      title: 'ARTİCLE - FİNAL İMTAHAN',
+      title: 'ARTİCLE - ÜMUMİ İMTAHAN',
 },
       
 // ┌─────────────────────────────────────────────────────────┐
@@ -14272,7 +14272,7 @@ const QUESTIONS_LEVEL = {
 
 {
       type: 'section_divider',
-      title: 'QUESTİONS - FİNAL İMTAHAN',
+      title: 'QUESTİONS - ÜMUMİ İMTAHAN',
 },
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL TEST — Questions tam test · 20 sual             │
@@ -14318,6 +14318,11 @@ const MODAL_VERBS_LEVEL = {
 // ══════════════════════════════════════════════════════════
 // ║  MODAL FELLƏR — Tam bölüm                             ║
 // ══════════════════════════════════════════════════════════
+
+      {
+      type: 'section_divider',
+      title: 'Can / Could / To be able to',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  QRUP 1 — Can / May / Must                             │
@@ -14496,7 +14501,10 @@ const MODAL_VERBS_LEVEL = {
   { en: '"can" → "to be able to"ya çevirmək: "I can work" →?',       tr: 'I am able to work.',   wrong: 'I be able to work.'  },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'May / Might',
+},
 // ── Bölmə 2 — May / Might · Must / Have to ───────────────
 
 // ── Dərs 2.1 — May / Might ───────────────────────────────
@@ -14722,7 +14730,10 @@ const MODAL_VERBS_LEVEL = {
   { en: '"Have to"nun keçmiş forması?',                                tr: 'had to',               wrong: 'have had to'         },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'Should / Ought to · Need',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  QRUP 2 — Should / Need / Modal fellərin ümumi         │
 // │           xüsusiyyətləri                               │
@@ -14946,6 +14957,10 @@ const MODAL_VERBS_LEVEL = {
   { en: '"Need" əsas fel kimi sual/inkarı hansı fellərlə düzəlir?',   tr: 'do/does/did',          wrong: 'need/needn\'t'       },
 ],
 
+      {
+      type: 'section_divider',
+      title: 'Xüsusiyyətlər',
+},
 
 // ── Bölmə 4 — Modal fellərin 5 ümumi xüsusiyyəti ─────────
 
@@ -15107,7 +15122,11 @@ const MODAL_VERBS_LEVEL = {
   { en: '"İcazə" mənasını hansı modal fellər bildirir?',               tr: 'may / can',            wrong: 'must / should'      },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'MODAL VERBS - ÜMUMİ İMTAHAN',
+},
+      
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL TEST — Modal Verbs tam test · 30+ sual          │
 // └─────────────────────────────────────────────────────────┘
@@ -15166,6 +15185,11 @@ const PREPOSITIONS_LEVEL = {
 // ══════════════════════════════════════════════════════════
 // Struktur: 5 Bölmə · 2 Qrup · (dərs + mini-quiz) + test
 // ──────────────────────────────────────────────────────────
+
+      {
+      type: 'section_divider',
+      title: 'in / on / at (yer + zaman)',
+},
 
 // ╔══════════════════════════════════════════════════════╗
 // ║  QRUP 1 — Yer və Zaman bildirən sözönlər            ║
@@ -15524,7 +15548,10 @@ const PREPOSITIONS_LEVEL = {
   { en: '"___ Christmas Day" ("day" var)',      tr: 'on',   wrong: 'at'  },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'Mövqe bildirən sözönlər',
+},
 // ┌──────────────────────────────────────────────────────┐
 // │  BÖLMƏ 2 — Mövqe bildirən sözönlər                  │
 // └──────────────────────────────────────────────────────┘
@@ -15745,7 +15772,10 @@ const PREPOSITIONS_LEVEL = {
   { en: '"near school" vs "___ the window" — kiçik obj. üçün?',  tr: 'at',          wrong: 'near'       },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'İstiqamət bildirən sözönlər',
+},
 // ╔══════════════════════════════════════════════════════╗
 // ║  QRUP 2 — İstiqamət · Mücərrəd əlaqə · Sabit ifadələr ║
 // ╚══════════════════════════════════════════════════════╝
@@ -15857,7 +15887,10 @@ const PREPOSITIONS_LEVEL = {
     },
   ],
 },
-
+{
+      type: 'section_divider',
+      title: 'Mücərrəd əlaqə: with/by/about/of/for… ',
+},
 
 // ┌──────────────────────────────────────────────────────┐
 // │  BÖLMƏ 4 — Mücərrəd əlaqə: with/by/about/of/for… │
@@ -16028,7 +16061,10 @@ const PREPOSITIONS_LEVEL = {
   ],
 },
 
-
+{
+      type: 'section_divider',
+      title: 'Sabit ifadələr + Sözönü olmayan fellər',
+},
 // ┌──────────────────────────────────────────────────────┐
 // │  BÖLMƏ 5 — Sabit ifadələr + Sözönü olmayan fellər   │
 // └──────────────────────────────────────────────────────┘
@@ -16355,107 +16391,98 @@ const PREPOSITIONS_LEVEL = {
   { en: '"the number of books" — fel necə?',                      tr: 'tək',       wrong: 'cəm'     },
 ],
 
-
+{
+      type: 'section_divider',
+      title: 'PREPOSİTİONS - ÜMUMİ İMTAHAN',
+},
+      
 // ── Final Test — Sözönlər (Prepositions) tam test ─────────
 [
   // in — yer (seçmə)
-  { en: '"___ the room"',                                         tr: 'in',           wrong: 'at'          },
-  { en: '"___ the sky"',                                          tr: 'in',           wrong: 'on'          },
-  { en: '"___ Azerbaijan"',                                       tr: 'in',           wrong: 'at'          },
-  { en: '"___ hospital"',                                         tr: 'in',           wrong: 'at'          },
-  { en: '"___ bed"',                                              tr: 'in',           wrong: 'on'          },
-  { en: '"___ a car" (artikl ilə, fərdi)',                        tr: 'in',           wrong: 'on'          },
-  // in — zaman
-  { en: '"___ the morning"',                                      tr: 'in',           wrong: 'at'          },
-  { en: '"___ May"',                                              tr: 'in',           wrong: 'on'          },
-  { en: '"___ 1994"',                                             tr: 'in',           wrong: 'on'          },
-  { en: '"___ spring"',                                           tr: 'in',           wrong: 'at'          },
-  { en: '"___ two days"',                                         tr: 'in',           wrong: 'for'         },
-  // on — yer
-  { en: '"___ the table"',                                        tr: 'on',           wrong: 'in'          },
-  { en: '"___ the wall"',                                         tr: 'on',           wrong: 'at'          },
-  { en: '"___ TV"',                                               tr: 'on',           wrong: 'in'          },
-  { en: '"___ a bus"',                                            tr: 'on',           wrong: 'in'          },
-  { en: '"___ the map"',                                          tr: 'on',           wrong: 'at'          },
-  { en: '"___ sale"',                                             tr: 'on',           wrong: 'at'          },
-  // on — zaman
-  { en: '"___ Monday"',                                           tr: 'on',           wrong: 'in'          },
-  { en: '"___ Friday morning"',                                   tr: 'on',           wrong: 'in'          },
-  { en: '"___ the 4th of March"',                                 tr: 'on',           wrong: 'in'          },
-  { en: '"___ Christmas Day"',                                    tr: 'on',           wrong: 'at'          },
-  // at — yer
-  { en: '"___ home"',                                             tr: 'at',           wrong: 'in'          },
-  { en: '"___ school"',                                           tr: 'at',           wrong: 'in'          },
-  { en: '"___ the station"',                                      tr: 'at',           wrong: 'in'          },
-  { en: '"___ the concert"',                                      tr: 'at',           wrong: 'in'          },
-  { en: '"___ the corner of the street"',                         tr: 'at',           wrong: 'in'          },
-  // at — zaman
-  { en: '"___ night"',                                            tr: 'at',           wrong: 'in'          },
-  { en: '"___ noon"',                                             tr: 'at',           wrong: 'in'          },
-  { en: '"___ the weekend"',                                      tr: 'at',           wrong: 'on'          },
-  // Mövqe sözönləri
-  { en: '"___ the table" — stolun altında?',                      tr: 'under',        wrong: 'below'       },
-  { en: '"___ the river" — çayın üzərindən?',                     tr: 'over',         wrong: 'above'       },
-  { en: '"___ the window" — pəncərənin yuxarısında?',             tr: 'above',        wrong: 'over'        },
-  { en: '"___ the house" — arxasında?',                           tr: 'behind',       wrong: 'under'       },
-  { en: '"___ the sofa and bookcase" — 2 əşyanın arasında?',      tr: 'between',      wrong: 'among'       },
-  { en: '"___ students" — çox şagird arasında?',                  tr: 'among',        wrong: 'between'     },
-  { en: '"___ our school" — qarşısında?',                         tr: 'in front of',  wrong: 'opposite'    },
-  { en: '"sitting ___ us" — üzbəüz?',                             tr: 'opposite',     wrong: 'across'      },
-  { en: '"___ the street" — o biri tərəfdə?',                     tr: 'across',       wrong: 'opposite'    },
-  { en: '"___ zero" — sıfırdan aşağı?',                           tr: 'below',        wrong: 'under'       },
-  // İstiqamət
-  { en: '"I go ___ London."',                                     tr: 'to',           wrong: 'into'        },
-  { en: '"put books ___ your bag" — içinə?',                      tr: 'into',         wrong: 'in'          },
-  { en: '"I come ___ school."',                                    tr: 'from',         wrong: 'out of'      },
-  { en: '"___ the room" — otaqdan çıxmaq?',                       tr: 'out of',       wrong: 'from'        },
-  { en: '"go ___ home" — "to" işlənirmi?',                        tr: 'Xeyr',         wrong: 'Bəli'        },
-  { en: '"___ the river" — boyunca?',                              tr: 'along',        wrong: 'towards'     },
-  { en: '"to get ___" — yataqdan qalxmaq?',                       tr: 'up',           wrong: 'down'        },
-  { en: '"to sit ___" — əyləşmək?',                               tr: 'down',         wrong: 'up'          },
-  // Mücərrəd əlaqə
-  { en: '"___ my father" — atamla?',                              tr: 'with',         wrong: 'by'          },
-  { en: '"___ bus" — avtobusla (artikl yox)?',                    tr: 'by',           wrong: 'on'          },
-  { en: '"written ___ our teacher" — məchul?',                    tr: 'by',           wrong: 'with'        },
-  { en: '"___ heart" — əzbərdən?',                                tr: 'by',           wrong: 'in'          },
-  { en: '"a cup ___ coffee"',                                      tr: 'of',           wrong: 'for'         },
-  { en: '"___ you" — sənin üçün?',                                tr: 'for',          wrong: 'of'          },
-  { en: '"___ five years" — müddət (bitmiş zaman)?',              tr: 'for',          wrong: 'since'       },
-  { en: '"___ your help" — köməyin olmadan?',                     tr: 'without',      wrong: 'off'         },
-  // Sabit ifadələr
-  { en: '"to be interested ___"',                                  tr: 'in',           wrong: 'at'          },
+    { en: '"___ five years" — müddət (bitmiş zaman)?',              tr: 'for',          wrong: 'since'       },
+  { en: '"___ the morning"',                                       tr: 'in',           wrong: 'at'          },
   { en: '"to depend ___"',                                         tr: 'on',           wrong: 'of'          },
-  { en: '"to be afraid ___"',                                      tr: 'of',           wrong: 'from'        },
-  { en: '"to arrive ___ the city"',                               tr: 'in',           wrong: 'at'          },
-  { en: '"to arrive ___ the station"',                            tr: 'at',           wrong: 'in'          },
-  { en: '"to look ___ " — axtarmaq?',                              tr: 'for',          wrong: 'at'          },
-  { en: '"to look ___" — qayğısına qalmaq?',                      tr: 'after',        wrong: 'for'         },
-  { en: '"to laugh ___"',                                          tr: 'at',           wrong: 'about'       },
-  { en: '"to listen ___"',                                         tr: 'to',           wrong: 'at'          },
-  { en: '"to agree ___"',                                          tr: 'with',         wrong: 'to'          },
-  { en: '"to take part ___"',                                      tr: 'in',           wrong: 'at'          },
-  { en: '"to spend money ___"',                                    tr: 'on',           wrong: 'for'         },
-  { en: '"to be full ___"',                                        tr: 'of',           wrong: 'with'        },
-  { en: '"to be made ___"',                                        tr: 'of',           wrong: 'from'        },
-  // Sözönsüz fellər
-  { en: '"to enter" — sözönsüz?',                                  tr: 'Bəli',         wrong: 'Xeyr'        },
-  { en: '"to visit" — sözönsüz?',                                  tr: 'Bəli',         wrong: 'Xeyr'        },
-  { en: '"to approach to" — düzdür?',                              tr: 'Xeyr',         wrong: 'Bəli'        },
-  { en: '"to watch at" — düzdür?',                                 tr: 'Xeyr',         wrong: 'Bəli'        },
-  // Fel+sözön
-  { en: '"put on" nə deməkdir?',                                   tr: 'geyinmək',     wrong: 'söndürmək'   },
-  { en: '"put off" nə deməkdir?',                                  tr: 'söndürmək',    wrong: 'geyinmək'    },
-  { en: '"switch on" nə deməkdir?',                                tr: 'yandırmaq',    wrong: 'söndürmək'   },
-  { en: '"go on" nə deməkdir?',                                    tr: 'davam etmək',  wrong: 'getmək'      },
-  { en: '"take off" nə deməkdir?',                                 tr: 'soyunmaq',     wrong: 'geyinmək'    },
-  // a/the number of
+  { en: '"___ the table" — stolun altında?',                       tr: 'under',        wrong: 'below'       },
+  { en: '"___ Monday"',                                            tr: 'on',           wrong: 'in'          },
   { en: '"a number of books" — fel?',                              tr: 'cəm',          wrong: 'tək'         },
-  { en: '"the number of books" — fel?',                            tr: 'tək',          wrong: 'cəm'         },
-  // during / while / after / before
+  { en: '"___ home"',                                              tr: 'at',           wrong: 'in'          },
+  { en: '"put books ___ your bag" — içinə?',                       tr: 'into',         wrong: 'in'          },
+  { en: '"go ___ home" — "to" işlənirmi?',                        tr: 'Xeyr',         wrong: 'Bəli'        },
+  { en: '"___ the river" — çayın üzərindən?',                     tr: 'over',         wrong: 'above'       },
+  { en: '"___ Azerbaijan"',                                        tr: 'in',           wrong: 'at'          },
+  { en: '"to visit" — sözönsüz?',                                  tr: 'Bəli',         wrong: 'Xeyr'        },
   { en: '"___ the lesson" — dərs ərzində (isim)?',                 tr: 'during',       wrong: 'while'       },
+  { en: '"___ night"',                                             tr: 'at',           wrong: 'in'          },
+  { en: '"to be made ___"',                                        tr: 'of',           wrong: 'from'        },
+  { en: '"___ the wall"',                                          tr: 'on',           wrong: 'at'          },
+  { en: '"go on" nə deməkdir?',                                    tr: 'davam etmək',  wrong: 'getmək'      },
+  { en: '"___ school"',                                            tr: 'at',           wrong: 'in'          },
+  { en: '"___ bed"',                                               tr: 'in',           wrong: 'on'          },
+  { en: '"the number of books" — fel?',                            tr: 'tək',          wrong: 'cəm'         },
+  { en: '"___ students" — çox şagird arasında?',                   tr: 'among',        wrong: 'between'     },
+  { en: '"___ noon"',                                              tr: 'at',           wrong: 'in'          },
+  { en: '"to arrive ___ the station"',                             tr: 'at',           wrong: 'in'          },
+  { en: '"___ the sky"',                                           tr: 'in',           wrong: 'on'          },
+  { en: '"switch on" nə deməkdir?',                                tr: 'yandırmaq',    wrong: 'söndürmək'   },
+  { en: '"___ the concert"',                                       tr: 'at',           wrong: 'in'          },
+  { en: '"___ a car" (artikl ilə, fərdi)',                         tr: 'in',           wrong: 'on'          },
+  { en: '"___ bus" — avtobusla (artikl yox)?',                     tr: 'by',           wrong: 'on'          },
+  { en: '"___ the room" — otaqdan çıxmaq?',                        tr: 'out of',       wrong: 'from'        },
+  { en: '"to watch at" — düzdür?',                                 tr: 'Xeyr',         wrong: 'Bəli'        },
+  { en: '"___ spring"',                                            tr: 'in',           wrong: 'at'          },
+  { en: '"to look ___ " — axtarmaq?',                              tr: 'for',          wrong: 'at'          },
+  { en: '"___ the station"',                                       tr: 'at',           wrong: 'in'          },
+  { en: '"I go ___ London."',                                      tr: 'to',           wrong: 'into'        },
+  { en: '"put on" nə deməkdir?',                                   tr: 'geyinmək',     wrong: 'söndürmək'   },
+  { en: '"___ Friday morning"',                                    tr: 'on',           wrong: 'in'          },
+  { en: '"___ heart" — əzbərdən?',                                 tr: 'by',           wrong: 'in'          },
+  { en: '"to agree ___"',                                          tr: 'with',         wrong: 'to'          },
+  { en: '"___ your help" — köməyin olmadan?',                      tr: 'without',      wrong: 'off'         },
+  { en: '"to laugh ___"',                                          tr: 'at',           wrong: 'about'       },
+  { en: '"___ May"',                                               tr: 'in',           wrong: 'on'          },
+  { en: '"to be afraid ___"',                                      tr: 'of',           wrong: 'from'        },
+  { en: '"___ the river" — boyunca?',                              tr: 'along',        wrong: 'towards'     },
+  { en: '"___ the 4th of March"',                                  tr: 'on',           wrong: 'in'          },
+  { en: '"written ___ our teacher" — məchul?',                     tr: 'by',           wrong: 'with'        },
+  { en: '"___ the table"',                                         tr: 'on',           wrong: 'in'          },
+  { en: '"___ hospital"',                                          tr: 'in',           wrong: 'at'          },
+  { en: '"to spend money ___"',                                    tr: 'on',           wrong: 'for'         },
+  { en: '"___ the weekend"',                                       tr: 'at',           wrong: 'on'          },
+  { en: '"___ the window" — pəncərənin yuxarısında?',              tr: 'above',        wrong: 'over'        },
   { en: '"___ I was reading" — oxuyarkən (cümlə)?',               tr: 'while',        wrong: 'during'      },
+  { en: '"___ the map"',                                           tr: 'on',           wrong: 'at'          },
+  { en: '"to be interested ___"',                                  tr: 'in',           wrong: 'at'          },
+  { en: '"to get ___" — yataqdan qalxmaq?',                        tr: 'up',           wrong: 'down'        },
+  { en: '"___ zero" — sıfırdan aşağı?',                            tr: 'below',        wrong: 'under'       },
+  { en: '"___ the house" — arxasında?',                            tr: 'behind',       wrong: 'under'       },
+  { en: '"a cup ___ coffee"',                                      tr: 'of',           wrong: 'for'         },
+  { en: '"___ the sofa and bookcase" — 2 əşyanın arasında?',       tr: 'between',      wrong: 'among'       },
+  { en: '"___ you" — sənin üçün?',                                 tr: 'for',          wrong: 'of'          },
+  { en: '"to listen ___"',                                         tr: 'to',           wrong: 'at'          },
+  { en: '"___ sale"',                                              tr: 'on',           wrong: 'at'          },
+  { en: '"___ my father" — atamla?',                               tr: 'with',         wrong: 'by'          },
+  { en: '"___ our school" — qarşısında?',                          tr: 'in front of',  wrong: 'opposite'    },
+  { en: '"___ 1994"',                                              tr: 'in',           wrong: 'on'          },
+  { en: '"___ Christmas Day"',                                     tr: 'on',           wrong: 'at'          },
+  { en: '"I come ___ school."',                                    tr: 'from',         wrong: 'out of'      },
   { en: '"the day ___ tomorrow" — birisigün?',                     tr: 'after',        wrong: 'before'      },
-  { en: '"the day ___ yesterday" — sırağagün?',                   tr: 'before',       wrong: 'after'       },
+  { en: '"to enter" — sözönsüz?',                                  tr: 'Bəli',         wrong: 'Xeyr'        },
+  { en: '"to take part ___"',                                      tr: 'in',           wrong: 'at'          },
+  { en: '"___ TV"',                                                tr: 'on',           wrong: 'in'          },
+  { en: '"sitting ___ us" — üzbəüz?',                              tr: 'opposite',     wrong: 'across'      },
+  { en: '"___ a bus"',                                             tr: 'on',           wrong: 'in'          },
+  { en: '"___ the corner of the street"',                          tr: 'at',           wrong: 'in'          },
+  { en: '"to be full ___"',                                        tr: 'of',           wrong: 'with'        },
+  { en: '"to approach to" — düzdür?',                              tr: 'Xeyr',         wrong: 'Bəli'        },
+  { en: '"___ two days"',                                          tr: 'in',           wrong: 'for'         },
+  { en: '"put off" nə deməkdir?',                                  tr: 'söndürmək',    wrong: 'geyinmək'    },
+  { en: '"___ the street" — o biri tərəfdə?',                      tr: 'across',       wrong: 'opposite'    },
+  { en: '"to sit ___" — əyləşmək?',                               tr: 'down',         wrong: 'up'          },
+  { en: '"___ the room"',                                          tr: 'in',           wrong: 'at'          },
+  { en: '"the day ___ yesterday" — sırağagün?',                    tr: 'before',       wrong: 'after'       },
+  { en: '"to arrive ___ the city"',                                tr: 'in',           wrong: 'at'          },
+  { en: '"to look ___" — qayğısına qalmaq?',                       tr: 'after',        wrong: 'for'         },
+  { en: '"take off" nə deməkdir?',                                 tr: 'soyunmaq',     wrong: 'geyinmək'    },
 ],
   ],
 };
