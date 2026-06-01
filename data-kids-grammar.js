@@ -15188,7 +15188,7 @@ const PREPOSITIONS_LEVEL = {
 
       {
       type: 'section_divider',
-      title: 'in / on / at (yer + zaman)',
+      title: 'İn / On / At (yer + zaman)',
 },
 
 // ╔══════════════════════════════════════════════════════╗
@@ -16499,6 +16499,11 @@ const ADVERB_LEVEL = {
 // ║  ADVERB — Tam bölüm                                   ║
 // ══════════════════════════════════════════════════════════
 
+      {
+      type: 'section_divider',
+      title: 'Zərfin əsasları',
+},
+
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 1 — Zərfin əsasları  (What is an adverb?)    │
 // └─────────────────────────────────────────────────────────┘
@@ -16666,7 +16671,10 @@ const ADVERB_LEVEL = {
   { en: '"hardly" nə mənasını verir?',                                 tr: 'Güclə, çətinliklə',    wrong: 'Çox çətin'          },
   { en: '"nearly" nə mənasını verir?',                                 tr: 'Demək olar ki',         wrong: 'Yaxında'            },
 ],
-
+{
+      type: 'section_divider',
+      title: 'Zərfin dərəcələri',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 2 — Zərfin dərəcələri  (Degrees of adverbs)  │
@@ -16930,6 +16938,10 @@ const ADVERB_LEVEL = {
 ],
 
 
+{
+      type: 'section_divider',
+      title: 'Tərzi-hərəkət zərfləri',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 3 — Zərfin cümlədə yeri  (Position)          │
 // └─────────────────────────────────────────────────────────┘
@@ -17071,6 +17083,10 @@ const ADVERB_LEVEL = {
 ],
 
 
+{
+      type: 'section_divider',
+      title: 'Sifətlə işlənən fellər + Xüsusi zərflər',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 4 — Sifətlə işlənən fellər + Xüsusi zərflər  │
 // └─────────────────────────────────────────────────────────┘
@@ -17236,6 +17252,10 @@ const ADVERB_LEVEL = {
 ],
 
 
+{
+      type: 'section_divider',
+      title: 'Make və Do',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  MƏRHƏLƏ 5 — Make və Do                                │
 // └─────────────────────────────────────────────────────────┘
@@ -17379,6 +17399,10 @@ const ADVERB_LEVEL = {
 ],
 
 
+{
+      type: 'section_divider',
+      title: 'ADVERB - ÜMUMİ İMTAHAN',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL TEST — Zərf (Adverb) — 30+ sual                 │
 // └─────────────────────────────────────────────────────────┘
@@ -17438,6 +17462,12 @@ const COMPLEX_OBJECT_LEVEL = {
 // ══════════════════════════════════════════════════════════
 // ║  COMPLEX OBJECT — Tam bölüm                           ║
 // ══════════════════════════════════════════════════════════
+
+      
+{
+      type: 'section_divider',
+      title: 'Mürəkkəb tamamlığın quruluşu',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  QRUP 1 — Quruluş + to ilə işlənən fellər             │
@@ -17593,6 +17623,10 @@ const COMPLEX_OBJECT_LEVEL = {
 ],
 
 
+{
+      type: 'section_divider',
+      title: 'To ilə işlənən fellər',
+},
 // ── Bölmə 2 — to ilə işlənən fellər ──────────────────────
 
 // ── Dərs 2.1 — to + məsdər tələb edən fellər ─────────────
@@ -17747,6 +17781,10 @@ const COMPLEX_OBJECT_LEVEL = {
 ],
 
 
+{
+      type: 'section_divider',
+      title: 'To-suz məsdər + P I ilə işlənmə + ümumi fərq',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  QRUP 2 — to-suz işlənən fellər + P I ilə işlənmə     │
 // └─────────────────────────────────────────────────────────┘
@@ -17992,6 +18030,10 @@ const COMPLEX_OBJECT_LEVEL = {
   { en: '"to notice" — II hissə forması?',                          tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'          },
 ],
 
+{
+      type: 'section_divider',
+      title: 'COMPLEX OBJECT - ÜMUMİ İMTAHAN',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL TEST — Complex Object tam test · 20 sual        │
@@ -18035,6 +18077,10 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
   color: '#86EFAC',
   quizzes: [
 
+{
+      type: 'section_divider',
+      title: 'And · Either/Or · Neither/Nor · With',
+},
 // ══════════════════════════════════════════════════════════
 // ║  SUBJECT-VERB AGREEMENT — Tam bölüm                   ║
 // ══════════════════════════════════════════════════════════
@@ -18208,6 +18254,10 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
   ],
 },
 
+{
+      type: 'section_divider',
+      title: 'With / Together with · Qeyri-müəyyən əvəzliklər',
+},
 
 // ── Bölmə 2 — With / Together with · Qeyri-müəyyən əvəzliklər ──
 
@@ -18363,6 +18413,10 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
 ],
 
 
+{
+      type: 'section_divider',
+      title: 'Ölçü/vaxt/məbləğ · Riyazi hesab · There is/are',
+},
 // ┌─────────────────────────────────────────────────────────┐
 // │  QRUP 2 — Ölçü · Riyazi hesab · There is/are          │
 // └─────────────────────────────────────────────────────────┘
@@ -18562,6 +18616,10 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
   { en: '"There ___ three books and a pen." — boşluq?',             tr: 'are',                   wrong: 'is'                  },
 ],
 
+{
+      type: 'section_divider',
+      title: 'SUBJECT-VERB AGREEMENT - ÜMUMİ İMTAHAN',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  FINAL TEST — Subject-Verb Agreement tam test · 20 sual│
@@ -18606,6 +18664,12 @@ const IMPERATIVE_LEVEL = {
 // ══════════════════════════════════════════════════════════
 // ║  THE IMPERATIVE — Tam bölüm                           ║
 // ══════════════════════════════════════════════════════════
+
+      
+{
+      type: 'section_divider',
+      title: 'Əmr cümləsi',
+},
 
 // ┌─────────────────────────────────────────────────────────┐
 // │  MÖVZU 1 — The Imperative (Əmr Cümləsi)               │
@@ -18753,6 +18817,10 @@ const IMPERATIVE_LEVEL = {
 
 // ── Qrup 2 — Let ilə I və III şəxs əmri ──────────────────
 
+{
+      type: 'section_divider',
+      title: 'Let ilə I və III şəxs əmri',
+},
 // ── Dərs 2.1 — Let ilə əmr ───────────────────────────────
 {
   type: 'grammar_lesson',
@@ -18881,6 +18949,12 @@ const IMPERATIVE_LEVEL = {
   { en: '"Let\'s not go." — mənası?',                               tr: 'Getməyək.',             wrong: 'Getməsinlər.'        },
 ],
 
+      
+{
+      type: 'section_divider',
+      title: 'THE İMPERATİVE - ÜMUMİ İMTAHAN',
+},
+
 // ── Final Test 1 — The Imperative · 15 sual ──────────────
 [
   // Əsas qayda
@@ -18919,6 +18993,12 @@ const EXCLAMATORY_LEVEL = {
 // ║  EXCLAMATORY SENTENCES — Tam bölüm                    ║
 // ══════════════════════════════════════════════════════════
 
+
+{
+      type: 'section_divider',
+      title: 'What ilə nida cümləsi',
+},
+      
 // ┌─────────────────────────────────────────────────────────┐
 // │  MÖVZU 2 — Exclamatory Sentences (Nida Cümləsi)       │
 // └─────────────────────────────────────────────────────────┘
@@ -19062,6 +19142,12 @@ const EXCLAMATORY_LEVEL = {
 
 
 // ── Qrup 2 — How ilə nida cümləsi + What vs How fərqi ────
+
+      
+{
+      type: 'section_divider',
+      title: 'How ilə nida cümləsi',
+},
 
 // ── Dərs 4.1 — How ilə quruluş ───────────────────────────
 {
@@ -19257,6 +19343,12 @@ const EXCLAMATORY_LEVEL = {
   { en: '"What a nice day ___!" — boşluğa nə gəlir? (mübtəda+xəbər)', tr: 'it is',               wrong: 'is it'               },
 ],
 
+
+{
+      type: 'section_divider',
+      title: 'EXCLAMATORY SENTENCES - ÜMUMİ İMTAHAN',
+},
+      
 // ── Final Test 2 — Exclamatory Sentences · 15 sual ───────
 [
   // What ilə
