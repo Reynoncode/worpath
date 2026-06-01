@@ -54,26 +54,11 @@ function renderGrammarCard() {
   const card  = item.cards[idx];
   const total = grammarState.totalCards;
 
-// Quiz qruplarını nəzərə alaraq real addım sayını hesabla
-let realIdx = 0;
-let realTotal = 0;
-let i = 0;
-while (i < item.cards.length) {
-  if (!item.cards[i].type) {
-    while (i < item.cards.length && !item.cards[i].type) i++;
-    if (idx >= i - 1 && realIdx === 0) realIdx = realTotal;
-    realTotal++;
-  } else {
-    if (i === idx) realIdx = realTotal;
-    realTotal++;
-    i++;
-  }
-}
-elProgressFill.style.width = `${(realIdx / realTotal) * 100}%`;
-elQCounter.textContent = `${realIdx + 1}/${realTotal}`;
+  elProgressFill.style.width = `${(idx / total) * 100}%`;
+  elQCounter.textContent     = `${idx + 1}/${total}`;
 
-const quizBody = document.querySelector('.quiz-body');
-quizBody.className = 'quiz-body grammar-mode';
+  const quizBody = document.querySelector('.quiz-body');
+  quizBody.className = 'quiz-body grammar-mode';
 
   if (card.type === 'lesson') {
     renderGrammarLesson(card, quizBody);
@@ -87,21 +72,23 @@ quizBody.className = 'quiz-body grammar-mode';
     const prevCard = idx > 0 ? item.cards[idx - 1] : null;
     const prevIsQuiz = prevCard && !prevCard.type;
 
-   if (!prevIsQuiz) {
-  const groupCards = [];
-  let i = idx;
-  while (i < item.cards.length && !item.cards[i].type) {
-    groupCards.push({ ...item.cards[i], _origIdx: i });
-    i++;
-  }
-  grammarState.quizGroupCards    = groupCards;
-  grammarState.quizGroupStartIdx = idx;
-  grammarState.quizGroupAnswers  = {};
-  grammarState.quizGroupOptions  = {};
-  renderGrammarQuizGroup(quizBody);
-} else {
-  renderGrammarQuizGroup(quizBody);
-}
+    if (!prevIsQuiz) {
+      // Qrupun başı — bütün ardıcıl quiz kartlarını topla
+      const groupCards = [];
+      let i = idx;
+      while (i < item.cards.length && !item.cards[i].type) {
+        groupCards.push({ ...item.cards[i], _origIdx: i });
+        i++;
+      }
+      grammarState.quizGroupCards   = groupCards;
+      grammarState.quizGroupStartIdx = idx;
+      grammarState.quizGroupAnswers  = {};
+
+      renderGrammarQuizGroup(quizBody);
+    } else {
+      // Qrupun ortasındayıq — eyni render-i saxla
+      renderGrammarQuizGroup(quizBody);
+    }
   }
 }
 
@@ -162,7 +149,7 @@ function renderGrammarQuizGroup(container) {
       <div class="gmc-questions-list">
         ${questionsHTML}
       </div>
-      ${buildNavButtons('Davam et')}
+      ${allDone ? buildNavButtons('Davam et') : ''}
     </div>
   `;
 
@@ -207,12 +194,23 @@ function handleGrammarGroupAnswer(btn) {
 
   const answered = Object.keys(grammarState.quizGroupAnswers)
     .filter(k => !k.includes('_chosen')).length;
+
+  if (answered >= grammarState.quizGroupCards.length) {
+    const wrap = document.querySelector('.grammar-minicheck-wrap');
+    if (wrap && !document.getElementById('grammar-next-btn')) {
+      const navDiv = document.createElement('div');
+      navDiv.innerHTML = buildNavButtons('Davam et');
+      wrap.appendChild(navDiv.firstElementChild);
+      attachNavListeners();
+    }
+  }
 }
 function grammarNextCard() {
+  // Əgər quiz qrupu varsa — qrupun sonuna atla
   if (grammarState.quizGroupCards && grammarState.quizGroupStartIdx !== undefined) {
     const groupEnd = grammarState.quizGroupStartIdx + grammarState.quizGroupCards.length;
-    grammarState.cardIdx         = groupEnd;
-    grammarState.quizGroupCards  = null;
+    grammarState.cardIdx      = groupEnd;
+    grammarState.quizGroupCards   = null;
     grammarState.quizGroupStartIdx = undefined;
     grammarState.quizGroupAnswers  = {};
     grammarState.quizGroupOptions  = {};
@@ -230,13 +228,11 @@ function grammarNextCard() {
 //  GERİ/İRƏLİ DÜYMƏLƏRI — köməkçi funksiyalar
 // ============================================================
 
-function buildNavButtons(nextLabel, isFinish, nextDisabled) {
-  isFinish     = isFinish     || false;
-  nextDisabled = nextDisabled || false;
-  const hasPrev   = grammarState.cardIdx > 0;
-  const nextFlex  = hasPrev ? '2' : '1';
-  const finishCls = isFinish ? ' grammar-finish-btn' : '';
-  const disabledAttr = nextDisabled ? 'disabled style="opacity:0.4;pointer-events:none;"' : '';
+function buildNavButtons(nextLabel, isFinish) {
+  isFinish = isFinish || false;
+  const hasPrev    = grammarState.cardIdx > 0;
+  const nextFlex   = hasPrev ? '2' : '1';
+  const finishCls  = isFinish ? ' grammar-finish-btn' : '';
 
   const backHTML = hasPrev ? `
     <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
@@ -252,7 +248,7 @@ function buildNavButtons(nextLabel, isFinish, nextDisabled) {
     <div class="grammar-nav-row">
       ${backHTML}
       <button class="grammar-next-btn${finishCls}" id="grammar-next-btn"
-              style="flex:${nextFlex};" ${disabledAttr}>
+              style="flex:${nextFlex};">
         ${nextLabel}
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
              stroke-linecap="round" stroke-linejoin="round">
@@ -265,18 +261,10 @@ function buildNavButtons(nextLabel, isFinish, nextDisabled) {
 
 function attachNavListeners() {
   const nextBtn = document.getElementById('grammar-next-btn');
-  if (nextBtn) {
-    const newBtn = nextBtn.cloneNode(true);
-    nextBtn.parentNode.replaceChild(newBtn, nextBtn);
-    newBtn.addEventListener('click', grammarNextCard);
-  }
+  if (nextBtn) nextBtn.addEventListener('click', grammarNextCard);
 
   const backBtn = document.getElementById('grammar-back-btn');
-  if (backBtn) {
-    const newBack = backBtn.cloneNode(true);
-    backBtn.parentNode.replaceChild(newBack, backBtn);
-    newBack.addEventListener('click', grammarPrevCard);
-  }
+  if (backBtn) backBtn.addEventListener('click', grammarPrevCard);
 }
 
 // ============================================================
@@ -416,11 +404,14 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
   `;
 
   if (!allDone) {
-  container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
-    btn.addEventListener('click', () => handleGrammarGroupAnswer(btn));
-  });
-}
-attachNavListeners();
+    container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
+      btn.addEventListener('click', () => {
+        handleGrammarMiniAnswer(btn, card, cardIdx);
+      });
+    });
+  } else {
+    attachNavListeners();
+  }
 }
 
 function handleGrammarMiniAnswer(btn, card, cardIdx) {
@@ -560,6 +551,15 @@ function renderGrammarQuizCard(card, container, idx) {
 //  NAVİGASİYA
 // ============================================================
 
+function grammarNextCard() {
+  grammarState.cardIdx++;
+  if (grammarState.cardIdx >= grammarState.totalCards) {
+    finishGrammarLesson();
+    return;
+  }
+  renderGrammarCard();
+}
+
 function grammarPrevCard() {
   if (grammarState.cardIdx <= 0) return;
   grammarState.cardIdx--;
@@ -666,10 +666,10 @@ function renderGrammarPath(lvl, li) {
     let typeClass = '';
 
     if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
-      typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-book-2"></i>');
+      typeIcon  = isDone ? '' : (isLocked ? '' : '📖');
       typeClass = 'grammar-lesson-node';
     } else if (Array.isArray(item)) {
-      typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-pencil"></i>');
+      typeIcon  = isDone ? '' : (isLocked ? '' : quizCounter);
       typeClass = 'grammar-quiz-node';
     }
 
