@@ -170,6 +170,7 @@ function renderGrammarQuizGroup(container) {
     container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
       btn.addEventListener('click', () => handleGrammarGroupAnswer(btn));
     });
+    attachNavListeners();
   } else {
     attachNavListeners();
   }
