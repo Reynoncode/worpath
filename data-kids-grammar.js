@@ -17889,24 +17889,566 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
   id: 'subject_verb_agreement',
   name: 'SUBJECT-VERB AGREEMENT',
   icon: '<i class="ti ti-scale"></i>',
-  color: '#34D399',
-
+  color: '#86EFAC',
   quizzes: [
+
+// ══════════════════════════════════════════════════════════
+// ║  SUBJECT-VERB AGREEMENT — Tam bölüm                   ║
+// ══════════════════════════════════════════════════════════
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 1 — And · Either/Or · Neither/Nor · With        │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 1 — And ilə bağlanan mübtədalar + Either/Or · Neither/Nor ──
+
+// ── Dərs 1.1 — And ilə cəm xəbər ────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.1 — And ilə cəm xəbər',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 1 — And / Either...or / Neither...nor ilə',
-      cards: [],
+      type: 'lesson',
+      title: 'Ümumi qayda və "and" bağlayıcısı',
+      content:
+        'İngilis dilində xəbər şəxsə və kəmiyyətə görə mübtəda ilə uzlaşır:\n' +
+        '• Mübtəda təkdə → xəbər təkdə\n' +
+        '• Mübtəda cəmdə → xəbər cəmdə\n\n' +
+        'Qayda 1: "and" bağlayıcısı ilə bağlanan iki və daha çox\n' +
+        'həmcins mübtədadan sonra xəbər CƏMdə olur.',
+      table: [
+        ['Nümunə',                        'Azərbaycanca'],
+        ['John and I were talking.',       'John və mən danışırdıq.'],
+        ['Tea and coffee are useful.',     'Çay və qəhvə faydalıdır.'],
+      ],
+      tip: 'İstisna: "Bread and butter is tasty." — bir bütöv kimi qəbul edilən şeylər\n' +
+           'Birlikdə həmişə istifadə edilən iki söz bir anlayış kimi tək xəbər alır.',
     },
+
+    { en: '"and" ilə bağlanan iki mübtədadan sonra xəbər necə olur?',  tr: 'Cəmdə',                wrong: 'Təkdə'               },
+    { en: '"John and I ___ talking." — boşluq?',                       tr: 'were',                  wrong: 'was'                 },
+    { en: '"Tea and coffee ___ useful." — boşluq?',                    tr: 'are',                   wrong: 'is'                  },
+    { en: '"Bread and butter is tasty." — niyə tək?',                  tr: 'Bir bütöv kimi qəbul edilir', wrong: 'İki mübtəda var' },
+    { en: 'Ümumi qayda: mübtəda cəmdə olduqda xəbər necə olur?',      tr: 'Cəmdə',                 wrong: 'Təkdə'               },
+    { en: '"and" bağlayıcısı ilə bağlanan mübtədalar xəbəri neçə alır?', tr: 'Cəm',                wrong: 'Tək'                 },
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 2 — With / Together with & Qeyri-müəyyən əvəzliklər',
-      cards: [],
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Tom and Mary ___ friends." — boşluq?',
+          options: ['is', 'was', 'are', 'has'],
+          answer: 'are',
+        },
+        {
+          q: '"Tea and coffee ___ useful." — boşluq?',
+          options: ['is', 'was', 'are', 'were'],
+          answer: 'are',
+        },
+        {
+          q: '"Bread and butter ___ tasty." — (bir bütöv) boşluq?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+      ],
     },
+  ],
+},
+
+// ── Dərs 1.2 — Either/or · Neither/nor ───────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.2 — Either/or · Neither/nor',
+  cards: [
+
     {
-      type: 'grammar_lesson',
-      title: 'Dərs 3 — Ölçü, vaxt & There is/are',
-      cards: [],
+      type: 'lesson',
+      title: '"either...or" / "neither...nor" — axırıncı mübtəda ilə uzlaşma',
+      content:
+        'Qayda 2: İki mübtəda "either...or", "neither...nor"\n' +
+        'bağlayıcıları ilə bağlanarkən xəbər\n' +
+        'AXIRINCİ mübtəda ilə uzlaşır.\n\n' +
+        '• Axırıncı mübtəda tək → xəbər tək\n' +
+        '• Axırıncı mübtəda cəm → xəbər cəm',
+      table: [
+        ['Nümunə',                                    'Axırıncı mübtəda', 'Xəbər'],
+        ['Either you or I am to go.',                  'I (tək)',          'am'],
+        ['Neither Brown nor you were at home.',        'you (cəm kimi)',   'were'],
+        ['Neither you nor Brown was at home.',         'Brown (tək)',      'was'],
+      ],
+      tip: '"not only...but also" bağlayıcısında da eyni qayda tətbiq olunur:\n' +
+           'axırıncı mübtəda ilə uzlaşır.',
     },
+
+    { en: '"either...or" ilə xəbər hansı mübtəda ilə uzlaşır?',       tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
+    { en: '"neither...nor" ilə xəbər hansı mübtəda ilə uzlaşır?',     tr: 'Axırıncı mübtəda',      wrong: 'Hər ikisi'           },
+    { en: '"Either you or I ___ to go." — boşluq?',                   tr: 'am',                    wrong: 'are'                 },
+    { en: '"Neither Brown nor you ___ at home." — boşluq?',           tr: 'were',                  wrong: 'was'                 },
+    { en: '"Neither you nor Brown ___ at home." — boşluq?',           tr: 'was',                   wrong: 'were'                },
+    { en: '"not only...but also" — xəbər hansı mübtəda ilə uzlaşır?', tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Either she or they ___ right." — boşluq?',
+          options: ['is', 'am', 'was', 'are'],
+          answer: 'are',
+        },
+        {
+          q: '"Neither he nor she ___ home." — boşluq?',
+          options: ['are', 'were', 'is', 'am'],
+          answer: 'is',
+        },
+        {
+          q: '"Either you or I ___ to go." — boşluq?',
+          options: ['are', 'is', 'were', 'am'],
+          answer: 'am',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 1.3 — Not only...but also ───────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 1.3 — Not only...but also',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"not only...but also" — axırıncı mübtəda ilə uzlaşma',
+      content:
+        '"Not only...but also" bağlayıcısı ilə bağlanan mübtədalardan\n' +
+        'sonra xəbər axırıncı mübtəda ilə uzlaşır.\n\n' +
+        'Bu qayda "either...or" və "neither...nor" ilə eynidir.',
+      table: [
+        ['Nümunə',                                        'Axırıncı mübtəda', 'Xəbər'],
+        ['Not only she but also they are here.',           'they (cəm)',       'are'],
+        ['Not only he but also I am right.',               'I (tək)',          'am'],
+        ['Not only you but also she is correct.',          'she (tək)',        'is'],
+      ],
+      tip: 'Xülasə — axırıncı mübtəda ilə uzlaşan bağlayıcılar:\n' +
+           '• either...or\n' +
+           '• neither...nor\n' +
+           '• not only...but also',
+    },
+
+    { en: '"Not only she but also they ___ here." — boşluq?',         tr: 'are',                   wrong: 'is'                  },
+    { en: '"not only...but also" — xəbər hansı mübtəda ilə uzlaşır?', tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
+    { en: '"Not only he but also I ___ right." — boşluq?',            tr: 'am',                    wrong: 'is'                  },
+    { en: '"Not only you but also she ___ correct." — boşluq?',       tr: 'is',                    wrong: 'are'                 },
+    { en: 'Hansı 3 bağlayıcıda axırıncı mübtəda ilə uzlaşma var?',   tr: 'either/or · neither/nor · not only/but also', wrong: 'and · or · but' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Not only she but also they ___ here." — boşluq?',
+          options: ['is', 'was', 'are', 'am'],
+          answer: 'are',
+        },
+        {
+          q: '"Not only he but also I ___ right." — boşluq?',
+          options: ['is', 'are', 'was', 'am'],
+          answer: 'am',
+        },
+        {
+          q: 'Hansı bağlayıcıda axırıncı mübtəda ilə uzlaşma VAR?',
+          options: ['and', 'but', 'neither...nor', 'or (sadə)'],
+          answer: 'neither...nor',
+        },
+      ],
+    },
+  ],
+},
+
+
+// ── Bölmə 2 — With / Together with · Qeyri-müəyyən əvəzliklər ──
+
+// ── Dərs 2.1 — With / Together with ─────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.1 — With / Together with',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"with" / "together with" — birinci mübtəda ilə uzlaşma',
+      content:
+        'Qayda 3: "with" yaxud "together with" bağlayıcısı ilə\n' +
+        'bağlanmış iki isim mübtəda funksiyasında işlənərkən\n' +
+        'xəbər BİRİNCİ mübtəda ilə uzlaşır.',
+      table: [
+        ['Nümunə',                                           'Birinci mübtəda', 'Xəbər'],
+        ['The teacher with the students was present.',        'The teacher (tək)', 'was'],
+        ['My brother with his friends is coming.',            'My brother (tək)', 'is'],
+        ['The students with the teacher were present.',       'The students (cəm)', 'were'],
+      ],
+      tip: '"with" ilə bağlanan ikinci hissə əslində "əlavə məlumat" verir.\n' +
+           'Əsas mübtəda birinci isimdir — xəbər ona görə uzlaşır.\n\n' +
+           '"and" → xəbər cəm\n' +
+           '"with" → xəbər BİRİNCİ mübtəda ilə',
+    },
+
+    { en: '"with" / "together with" ilə xəbər hansı mübtəda ilə uzlaşır?', tr: 'Birinci mübtəda', wrong: 'Axırıncı mübtəda'   },
+    { en: '"The teacher with the students ___ present." — boşluq?',    tr: 'was',                   wrong: 'were'                },
+    { en: '"The students with the teacher ___ present." — boşluq?',    tr: 'were',                  wrong: 'was'                 },
+    { en: '"and" vs "with" — xəbər fərqi nədir?',                      tr: 'and → cəm, with → birinci mübtəda', wrong: 'Heç fərq yoxdur' },
+    { en: '"My brother with his friends ___ coming." — boşluq?',       tr: 'is',                    wrong: 'are'                 },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"The teacher with the students ___ present." — boşluq?',
+          options: ['were', 'are', 'have', 'was'],
+          answer: 'was',
+        },
+        {
+          q: '"The students with the teacher ___ present." — boşluq?',
+          options: ['was', 'is', 'were', 'has'],
+          answer: 'were',
+        },
+        {
+          q: '"and" ilə "with" arasındakı fərq nədir?',
+          options: [
+            'and → cəm, with → birinci mübtəda',
+            'Hər ikisi cəm xəbər alır',
+            'Hər ikisi tək xəbər alır',
+            'and → birinci, with → axırıncı',
+          ],
+          answer: 'and → cəm, with → birinci mübtəda',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 2.2 — Qeyri-müəyyən əvəzliklər ─────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 2.2 — Qeyri-müəyyən əvəzliklər',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Qeyri-müəyyən əvəzliklərdən sonra tək xəbər',
+      content:
+        'Qayda 4: Qeyri-müəyyən əvəzliklər mübtəda funksiyasında\n' +
+        'işlənərkən xəbər həmişə TƏKdə olur.\n\n' +
+        'Bu əvəzliklər:\n' +
+        'each, one, everybody, everyone, anyone, anybody,\n' +
+        'somebody, something, anything, nobody, none, nothing',
+      table: [
+        ['Əvəzlik',     'Mənası',              'Nümunə'],
+        ['each',        'hər biri',            'Each of them is ready.'],
+        ['everyone',    'hər kəs',             'Everyone is here.'],
+        ['somebody',    'kimsə',               'Somebody is knocking.'],
+        ['nobody',      'heç kəs',             'Nobody knows it.'],
+        ['nothing',     'heç nə',              'Nothing is wrong.'],
+        ['anyone',      'hər hansı biri',      'Anyone can do it.'],
+        ['none',        'heç biri',            'None of them is right.'],
+      ],
+      tip: 'Bu əvəzliklərin hamısı TƏK xəbər alır — istisna yoxdur!\n' +
+           '"Everyone ARE here" ❌\n' +
+           '"Everyone IS here" ✅',
+    },
+
+    { en: '"each, one, everybody, everyone" — xəbər necə olur?',      tr: 'Tək',                   wrong: 'Cəm'                 },
+    { en: '"nobody, none, nothing" — xəbər necə olur?',               tr: 'Tək',                   wrong: 'Cəm'                 },
+    { en: '"Everyone ___ here." — boşluq?',                           tr: 'is',                    wrong: 'are'                 },
+    { en: '"Nobody ___ it." — boşluq?',                               tr: 'knows',                 wrong: 'know'                },
+    { en: '"Each of them ___ ready." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
+    { en: '"Something ___ wrong." — boşluq?',                         tr: 'is',                    wrong: 'are'                 },
+    { en: '"None of them ___ right." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
+    { en: '"Somebody ___ knocking." — boşluq?',                       tr: 'is',                    wrong: 'are'                 },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Everyone ___ happy." — boşluq?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"Nobody ___ the answer." — boşluq?',
+          options: ['know', 'are', 'were', 'knows'],
+          answer: 'knows',
+        },
+        {
+          q: '"Each of the students ___ a book." — boşluq?',
+          options: ['have', 'are', 'has', 'were'],
+          answer: 'has',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 1 ───────────────────────────────────────────
+[
+  { en: '"and" ilə bağlanan iki mübtədadan sonra xəbər necə olur?',  tr: 'Cəmdə',                 wrong: 'Təkdə'               },
+  { en: '"either...or" — xəbər hansı mübtəda ilə uzlaşır?',         tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
+  { en: '"neither...nor" — xəbər hansı mübtəda ilə uzlaşır?',       tr: 'Axırıncı mübtəda',      wrong: 'Hər ikisi'           },
+  { en: '"with" / "together with" — xəbər hansı mübtəda ilə?',      tr: 'Birinci mübtəda',       wrong: 'Axırıncı mübtəda'    },
+  { en: 'Qeyri-müəyyən əvəzliklərdən sonra xəbər necə olur?',       tr: 'Tək',                   wrong: 'Cəm'                 },
+  { en: '"Either you or I ___ to go." — boşluq?',                   tr: 'am',                    wrong: 'are'                 },
+  { en: '"Neither you nor Brown ___ at home." — boşluq?',           tr: 'was',                   wrong: 'were'                },
+  { en: '"The teacher with the students ___ present." — boşluq?',   tr: 'was',                   wrong: 'were'                },
+  { en: '"Everyone ___ here." — boşluq?',                           tr: 'is',                    wrong: 'are'                 },
+  { en: '"Nobody ___ it." — boşluq?',                               tr: 'knows',                 wrong: 'know'                },
+],
+
+// ── Test 1 — And / Either / With / Qeyri-müəyyən (Bölmə 1–2) — 12 sual ──
+[
+  { en: '"and" ilə bağlanan mübtədalardan sonra xəbər necə?',        tr: 'Cəm',                   wrong: 'Tək'                 },
+  { en: '"John and I ___ talking." — boşluq?',                       tr: 'were',                  wrong: 'was'                 },
+  { en: '"Tea and coffee ___ useful." — boşluq?',                    tr: 'are',                   wrong: 'is'                  },
+  { en: '"either...or" — xəbər hansı mübtəda ilə uzlaşır?',         tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
+  { en: '"Either you or I ___ to go." — boşluq?',                   tr: 'am',                    wrong: 'are'                 },
+  { en: '"Neither Brown nor you ___ at home." — boşluq?',           tr: 'were',                  wrong: 'was'                 },
+  { en: '"not only...but also" — xəbər hansı mübtəda ilə?',         tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
+  { en: '"Not only she but also they ___ here." — boşluq?',         tr: 'are',                   wrong: 'is'                  },
+  { en: '"with" / "together with" — xəbər hansı mübtəda ilə?',      tr: 'Birinci mübtəda',       wrong: 'Axırıncı mübtəda'    },
+  { en: '"The teacher with the students ___ present." — boşluq?',   tr: 'was',                   wrong: 'were'                },
+  { en: 'Qeyri-müəyyən əvəzliklərdən sonra xəbər necə olur?',       tr: 'Tək',                   wrong: 'Cəm'                 },
+  { en: '"Everyone ___ here." — boşluq?',                           tr: 'is',                    wrong: 'are'                 },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  QRUP 2 — Ölçü · Riyazi hesab · There is/are          │
+// └─────────────────────────────────────────────────────────┘
+
+// ── Bölmə 3 — Ölçü/vaxt/məbləğ · Riyazi hesab · There is/are ──
+
+// ── Dərs 3.1 — Ölçü / vaxt / məbləğ / məsafə ────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.1 — Ölçü / vaxt / məbləğ / məsafə',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Ölçü, vaxt, məbləğ, məsafə — tək xəbər',
+      content:
+        'Qayda 5: Ölçü, vaxt, məbləğ və məsafə bildirən\n' +
+        'isimlərlə ifadə olunan mübtədadan sonra\n' +
+        'xəbər TƏKdə işlənir.',
+      table: [
+        ['Nümunə',                          'İzah'],
+        ['Ten miles is a long distance.',    'Məsafə → tək xəbər'],
+        ['Two hours is enough time.',        'Vaxt → tək xəbər'],
+        ['Five dollars is too much.',        'Məbləğ → tək xəbər'],
+        ['Three kilos is a lot.',            'Ölçü → tək xəbər'],
+      ],
+      tip: 'Bu cümlələrdə rəqəm cəm görünür, amma xəbər TƏKdə olur,\n' +
+           'çünki ölçü/vaxt/məbləğ/məsafə bir bütöv anlayış kimi qəbul edilir.',
+    },
+
+    { en: 'Ölçü, vaxt, məbləğ bildirən mübtədadan sonra xəbər necə?', tr: 'Tək',                  wrong: 'Cəm'                 },
+    { en: '"Ten miles ___ a long distance." — boşluq?',               tr: 'is',                    wrong: 'are'                 },
+    { en: '"Two hours ___ enough time." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
+    { en: '"Five dollars ___ too much." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
+    { en: 'Niyə "Ten miles is" — tək xəbər?',                        tr: 'Bir bütöv ölçü anlayışı kimi', wrong: 'Tək ism olduğu üçün' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Two hours ___ enough." — boşluq?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"Five dollars ___ too much." — boşluq?',
+          options: ['are', 'were', 'have', 'is'],
+          answer: 'is',
+        },
+        {
+          q: '"Ten miles ___ a long way." — boşluq?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.2 — Riyazi hesab ──────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.2 — Riyazi hesab',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: 'Riyazi hesablama — xəbər qaydaları',
+      content:
+        'Qayda 6: Mübtəda riyazi hesablama bildirən söz qrupu\n' +
+        'ilə ifadə olunduqda xəbər TƏKdə işlənir.\n\n' +
+        'Toplama və çıxma → xəbər TƏK\n' +
+        'Vurma → xəbər HƏM TƏK, HƏM CƏM ola bilər',
+      table: [
+        ['Əməliyyat',  'Nümunə',                   'Xəbər'],
+        ['Toplama',    'Five and five is ten.',      'is (tək)'],
+        ['Çıxma',      'Four minus two is two.',     'is (tək)'],
+        ['Vurma',      'Two times three is/are six.', 'is və ya are'],
+        ['Bölmə',      'Ten divided by two is five.', 'is (tək)'],
+      ],
+      tip: 'Toplama: "Five and five IS ten." ✅\n' +
+           'Çıxma: "Four minus two IS two." ✅\n' +
+           'Vurma: "Two times three IS/ARE six." — hər ikisi düzgün!',
+    },
+
+    { en: 'Toplama cümləsində xəbər necə olur?',                      tr: 'Tək',                   wrong: 'Cəm'                 },
+    { en: 'Çıxma cümləsində xəbər necə olur?',                        tr: 'Tək',                   wrong: 'Cəm'                 },
+    { en: 'Vurma cümləsində xəbər necə ola bilər?',                   tr: 'Həm tək, həm cəm',      wrong: 'Yalnız tək'          },
+    { en: '"Five and five ___ ten." — boşluq?',                       tr: 'is',                    wrong: 'are'                 },
+    { en: '"Four minus two ___ two." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
+    { en: '"Two times three ___ six." — hansı forma düzgündür?',      tr: 'is və ya are (hər ikisi)', wrong: 'Yalnız are'       },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Five and five ___ ten." — boşluq?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"Four minus two ___ two." — boşluq?',
+          options: ['are', 'were', 'have', 'is'],
+          answer: 'is',
+        },
+        {
+          q: 'Vurma cümləsində xəbər necə ola bilər?',
+          options: ['Yalnız tək', 'Yalnız cəm', 'Həm tək, həm cəm', 'Heç biri'],
+          answer: 'Həm tək, həm cəm',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Dərs 3.3 — There is / There are ─────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Dərs 3.3 — There is / There are',
+  cards: [
+
+    {
+      type: 'lesson',
+      title: '"There is/are" — birinci mübtəda ilə uzlaşma',
+      content:
+        'Qayda 7: "There" formal sözü ilə başlanan cümlələrdə\n' +
+        'bir neçə mübtəda olduqda xəbər adətən\n' +
+        'BİRİNCİ mübtəda ilə uzlaşır.',
+      table: [
+        ['Nümunə',                                        'Birinci mübtəda', 'Xəbər'],
+        ['There is a table and six chairs in the room.',  'a table (tək)',   'is'],
+        ['There are six chairs and a table in the room.', 'six chairs (cəm)', 'are'],
+        ['There is a book and two pens on the desk.',     'a book (tək)',    'is'],
+        ['There are two pens and a book on the desk.',    'two pens (cəm)',  'are'],
+      ],
+      tip: '"There is" → birinci isim tək\n' +
+           '"There are" → birinci isim cəm\n\n' +
+           'Cümlədəki digər isimlərin sayı xəbərə təsir etmir,\n' +
+           'yalnız birinci isim vacibdir.',
+    },
+
+    { en: '"There is/are" cümlədə xəbər hansı mübtəda ilə uzlaşır?',  tr: 'Birinci mübtəda',       wrong: 'Axırıncı mübtəda'   },
+    { en: '"There ___ a table and six chairs." — boşluq?',            tr: 'is',                    wrong: 'are'                 },
+    { en: '"There ___ six chairs and a table." — boşluq?',            tr: 'are',                   wrong: 'is'                  },
+    { en: '"There ___ a book and two pens." — boşluq?',               tr: 'is',                    wrong: 'are'                 },
+    { en: '"There ___ two pens and a book." — boşluq?',               tr: 'are',                   wrong: 'is'                  },
+    { en: '"There is/are"-da yalnız nə vacibdir?',                    tr: 'Birinci ismin sayı',    wrong: 'Bütün isimlərin sayı' },
+
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"There ___ a table and six chairs in the room." — boşluq?',
+          options: ['are', 'were', 'is', 'have'],
+          answer: 'is',
+        },
+        {
+          q: '"There ___ three books and a pen on the desk." — boşluq?',
+          options: ['is', 'was', 'are', 'has'],
+          answer: 'are',
+        },
+        {
+          q: '"There is/are"-da xəbər hansı mübtəda ilə uzlaşır?',
+          options: ['Axırıncı', 'Ən çox olan', 'Birinci', 'Hamısı ilə'],
+          answer: 'Birinci',
+        },
+      ],
+    },
+  ],
+},
+
+// ── Mini-quiz 2 ───────────────────────────────────────────
+[
+  { en: 'Ölçü, vaxt, məbləğ bildirən mübtədadan sonra xəbər necə?', tr: 'Tək',                   wrong: 'Cəm'                 },
+  { en: '"Ten miles ___ a long distance." — boşluq?',               tr: 'is',                    wrong: 'are'                 },
+  { en: '"Two hours ___ enough time." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
+  { en: 'Riyazi toplama cümləsində xəbər necə?',                    tr: 'Tək',                   wrong: 'Cəm'                 },
+  { en: '"Five and five ___ ten." — boşluq?',                       tr: 'is',                    wrong: 'are'                 },
+  { en: 'Vurma cümləsində xəbər necə ola bilər?',                   tr: 'Həm tək, həm cəm',      wrong: 'Yalnız tək'          },
+  { en: '"There is/are"-da xəbər hansı mübtəda ilə uzlaşır?',       tr: 'Birinci mübtəda',       wrong: 'Axırıncı mübtəda'    },
+  { en: '"There ___ a table and six chairs." — boşluq?',            tr: 'is',                    wrong: 'are'                 },
+  { en: '"There ___ six chairs and a table." — boşluq?',            tr: 'are',                   wrong: 'is'                  },
+  { en: '"Five dollars ___ too much." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
+],
+
+// ── Test 2 — Ölçü + Riyazi + There is/are (Bölmə 3) — 10 sual ──
+[
+  { en: 'Ölçü, vaxt, məbləğ bildirən mübtədadan sonra xəbər necə?', tr: 'Tək',                   wrong: 'Cəm'                 },
+  { en: '"Ten miles ___ a long distance." — boşluq?',               tr: 'is',                    wrong: 'are'                 },
+  { en: '"Two hours ___ enough time." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
+  { en: '"Five dollars ___ too much." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
+  { en: '"Five and five ___ ten." — boşluq?',                       tr: 'is',                    wrong: 'are'                 },
+  { en: '"Four minus two ___ two." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
+  { en: 'Vurma cümləsində xəbər necə ola bilər?',                   tr: 'Həm tək, həm cəm',      wrong: 'Yalnız tək'          },
+  { en: '"There is/are"-da xəbər hansı mübtəda ilə uzlaşır?',       tr: 'Birinci mübtəda',       wrong: 'Axırıncı mübtəda'    },
+  { en: '"There ___ a table and six chairs." — boşluq?',            tr: 'is',                    wrong: 'are'                 },
+  { en: '"There ___ three books and a pen." — boşluq?',             tr: 'are',                   wrong: 'is'                  },
+],
+
+
+// ┌─────────────────────────────────────────────────────────┐
+// │  FINAL TEST — Subject-Verb Agreement tam test · 20 sual│
+// └─────────────────────────────────────────────────────────┘
+[
+  // And / Or / Nor / With
+  { en: '"and" ilə bağlanan iki mübtədadan sonra xəbər necə?',       tr: 'Cəm',                   wrong: 'Tək'                 },
+  { en: '"John and I ___ talking." — boşluq?',                       tr: 'were',                  wrong: 'was'                 },
+  { en: '"Tea and coffee ___ useful." — boşluq?',                    tr: 'are',                   wrong: 'is'                  },
+  { en: '"Bread and butter ___ tasty." — (bir bütöv) boşluq?',      tr: 'is',                    wrong: 'are'                 },
+  { en: '"either...or" — xəbər hansı mübtəda ilə uzlaşır?',         tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
+  { en: '"Either you or I ___ to go." — boşluq?',                   tr: 'am',                    wrong: 'are'                 },
+  { en: '"Neither you nor Brown ___ at home." — boşluq?',           tr: 'was',                   wrong: 'were'                },
+  { en: '"Not only she but also they ___ here." — boşluq?',         tr: 'are',                   wrong: 'is'                  },
+  { en: '"with" / "together with" — xəbər hansı mübtəda ilə?',      tr: 'Birinci mübtəda',       wrong: 'Axırıncı mübtəda'    },
+  { en: '"The teacher with the students ___ present." — boşluq?',   tr: 'was',                   wrong: 'were'                },
+  // Qeyri-müəyyən əvəzliklər
+  { en: 'Qeyri-müəyyən əvəzliklərdən sonra xəbər necə olur?',       tr: 'Tək',                   wrong: 'Cəm'                 },
+  { en: '"Everyone ___ here." — boşluq?',                           tr: 'is',                    wrong: 'are'                 },
+  { en: '"Nobody ___ it." — boşluq?',                               tr: 'knows',                 wrong: 'know'                },
+  { en: '"Each of them ___ ready." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
+  // Ölçü / Riyazi / There is/are
+  { en: '"Ten miles ___ a long distance." — boşluq?',               tr: 'is',                    wrong: 'are'                 },
+  { en: '"Two hours ___ enough time." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
+  { en: '"Five and five ___ ten." — boşluq?',                       tr: 'is',                    wrong: 'are'                 },
+  { en: 'Vurma cümləsində xəbər necə ola bilər?',                   tr: 'Həm tək, həm cəm',      wrong: 'Yalnız tək'          },
+  { en: '"There ___ a table and six chairs." — boşluq?',            tr: 'is',                    wrong: 'are'                 },
+  { en: '"There ___ three books and a pen." — boşluq?',             tr: 'are',                   wrong: 'is'                  },
+],
+
   ],
 };
 
