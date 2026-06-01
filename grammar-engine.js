@@ -87,23 +87,21 @@ quizBody.className = 'quiz-body grammar-mode';
     const prevCard = idx > 0 ? item.cards[idx - 1] : null;
     const prevIsQuiz = prevCard && !prevCard.type;
 
-    if (!prevIsQuiz) {
-      // Qrupun başı — bütün ardıcıl quiz kartlarını topla
-      const groupCards = [];
-      let i = idx;
-      while (i < item.cards.length && !item.cards[i].type) {
-        groupCards.push({ ...item.cards[i], _origIdx: i });
-        i++;
-      }
-      grammarState.quizGroupCards   = groupCards;
-      grammarState.quizGroupStartIdx = idx;
-      grammarState.quizGroupAnswers  = {};
-
-      renderGrammarQuizGroup(quizBody);
-    } else {
-      // Qrupun ortasındayıq — eyni render-i saxla
-      renderGrammarQuizGroup(quizBody);
-    }
+   if (!prevIsQuiz) {
+  const groupCards = [];
+  let i = idx;
+  while (i < item.cards.length && !item.cards[i].type) {
+    groupCards.push({ ...item.cards[i], _origIdx: i });
+    i++;
+  }
+  grammarState.quizGroupCards    = groupCards;
+  grammarState.quizGroupStartIdx = idx;
+  grammarState.quizGroupAnswers  = {};
+  grammarState.quizGroupOptions  = {};
+  renderGrammarQuizGroup(quizBody);
+} else {
+  renderGrammarQuizGroup(quizBody);
+}
   }
 }
 
