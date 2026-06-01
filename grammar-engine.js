@@ -108,7 +108,6 @@ quizBody.className = 'quiz-body grammar-mode';
 function renderGrammarQuizGroup(container) {
   const group   = grammarState.quizGroupCards;
   const answers = grammarState.quizGroupAnswers;
-  const allDone = group.every((_, i) => answers[i] !== undefined);
 
   const questionsHTML = group.map((card, i) => {
     const answered = answers[i] !== undefined;
@@ -162,17 +161,14 @@ function renderGrammarQuizGroup(container) {
       <div class="gmc-questions-list">
         ${questionsHTML}
       </div>
-      ${buildNavButtons('Davam et', false, !allDone)}
+ ${buildNavButtons('Davam et')}
     </div>
   `;
 
-  if (!allDone) {
-    container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
-      btn.addEventListener('click', () => handleGrammarGroupAnswer(btn));
-    });
-  } else {
-    attachNavListeners();
-  }
+  container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
+    btn.addEventListener('click', () => handleGrammarGroupAnswer(btn));
+  });
+  attachNavListeners();
 }
 
 function handleGrammarGroupAnswer(btn) {
@@ -204,19 +200,6 @@ function handleGrammarGroupAnswer(btn) {
 
   grammarState.quizGroupAnswers[gi]             = correct;
   grammarState.quizGroupAnswers[gi + '_chosen'] = chosen;
-
-  const answered = Object.keys(grammarState.quizGroupAnswers)
-    .filter(k => !k.includes('_chosen')).length;
-
-  if (answered >= grammarState.quizGroupCards.length) {
-    const wrap = document.querySelector('.grammar-minicheck-wrap');
-    if (wrap && !document.getElementById('grammar-next-btn')) {
-      const navDiv = document.createElement('div');
-      navDiv.innerHTML = buildNavButtons('Davam et');
-      wrap.appendChild(navDiv.firstElementChild);
-      attachNavListeners();
-    }
-  }
 }
 function grammarNextCard() {
   if (grammarState.quizGroupCards && grammarState.quizGroupStartIdx !== undefined) {
