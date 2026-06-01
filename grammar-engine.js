@@ -679,10 +679,10 @@ function renderGrammarPath(lvl, li) {
     let typeClass = '';
 
     if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
-      typeIcon  = isDone ? '' : (isLocked ? '' : '📖');
+      typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-book-2"></i>');
       typeClass = 'grammar-lesson-node';
     } else if (Array.isArray(item)) {
-      typeIcon  = isDone ? '' : (isLocked ? '' : quizCounter);
+      typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-pencil"></i>');
       typeClass = 'grammar-quiz-node';
     }
 
