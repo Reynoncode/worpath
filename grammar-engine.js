@@ -162,7 +162,7 @@ function renderGrammarQuizGroup(container) {
       <div class="gmc-questions-list">
         ${questionsHTML}
       </div>
-      ${buildNavButtons('Davam et', false, !allDone)}
+      ${buildNavButtons('Davam et')}
     </div>
   `;
 
@@ -207,16 +207,6 @@ function handleGrammarGroupAnswer(btn) {
 
   const answered = Object.keys(grammarState.quizGroupAnswers)
     .filter(k => !k.includes('_chosen')).length;
-
-  if (answered >= grammarState.quizGroupCards.length) {
-    const wrap = document.querySelector('.grammar-minicheck-wrap');
-    if (wrap && !document.getElementById('grammar-next-btn')) {
-      const navDiv = document.createElement('div');
-      navDiv.innerHTML = buildNavButtons('Davam et');
-      wrap.appendChild(navDiv.firstElementChild);
-      attachNavListeners();
-    }
-  }
 }
 function grammarNextCard() {
   if (grammarState.quizGroupCards && grammarState.quizGroupStartIdx !== undefined) {
@@ -426,14 +416,11 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
   `;
 
   if (!allDone) {
-    container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
-      btn.addEventListener('click', () => {
-        handleGrammarMiniAnswer(btn, card, cardIdx);
-      });
-    });
-  } else {
-    attachNavListeners();
-  }
+  container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
+    btn.addEventListener('click', () => handleGrammarGroupAnswer(btn));
+  });
+}
+attachNavListeners();
 }
 
 function handleGrammarMiniAnswer(btn, card, cardIdx) {
