@@ -319,23 +319,37 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
     qEl.appendChild(fb);
   }
 
-  if (!grammarState.miniAnswers[cardIdx]) grammarState.miniAnswers[cardIdx] = {};
-  grammarState.miniAnswers[cardIdx][qi]             = correct;
-  grammarState.miniAnswers[cardIdx][qi + '_chosen'] = parseInt(btn.dataset.oi);
-
-  const totalQ   = card.questions.length;
-  const answered = Object.keys(grammarState.miniAnswers[cardIdx])
-    .filter(k => !k.includes('_chosen')).length;
-
   if (answered >= totalQ) {
-    const wrap = document.querySelector('.grammar-minicheck-wrap');
-    if (wrap && !document.getElementById('grammar-next-btn')) {
+  const wrap = document.querySelector('.grammar-minicheck-wrap');
+  if (wrap && !document.getElementById('grammar-next-btn')) {
+    const hasPrev = grammarState.cardIdx > 0;
+    const backHTML = hasPrev ? `
+      <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Geri
+      </button>
+    ` : '';
+
+    // Əgər artıq nav-row varsa, yalnız next düyməsini əlavə et
+    const existingNav = wrap.querySelector('.grammar-nav-row');
+    if (existingNav) {
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'grammar-next-btn';
+      nextBtn.id = 'grammar-next-btn';
+      nextBtn.style.flex = hasPrev ? '2' : '1';
+      nextBtn.innerHTML = `Davam et <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
+      existingNav.appendChild(nextBtn);
+    } else {
       const navDiv = document.createElement('div');
-      navDiv.innerHTML = buildNavButtons('Davam et');
+      navDiv.innerHTML = `<div class="grammar-nav-row">${backHTML}<button class="grammar-next-btn" id="grammar-next-btn" style="flex:${hasPrev ? '2' : '1'};">Davam et <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button></div>`;
       wrap.appendChild(navDiv.firstElementChild);
-      attachNavListeners();
     }
+    attachNavListeners();
   }
+}
 }
 
 // ============================================================
