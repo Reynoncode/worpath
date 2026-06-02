@@ -859,31 +859,28 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 // index: 3 — Bölmə 1 ümumi quiz
-{
-  type: 'mini_check',
-  questions: [
-    { q: '"teacher" hansı növ isimdir?',      options: ['Düzəltmə', 'Sadə'],       answer: 'Düzəltmə'   },
-    { q: '"book" hansı növ isimdir?',          options: ['Sadə', 'Mürəkkəb'],       answer: 'Sadə'       },
-    { q: '"sunrise" hansı növ isimdir?',       options: ['Mürəkkəb', 'Düzəltmə'],   answer: 'Mürəkkəb'   },
-    { q: '"rain" hansı növ isimdir?',          options: ['Sadə', 'Düzəltmə'],       answer: 'Sadə'       },
-    { q: '"happiness" hansı növ isimdir?',     options: ['Düzəltmə', 'Mürəkkəb'],   answer: 'Düzəltmə'   },
-    { q: '"toothbrush" hansı növ isimdir?',    options: ['Mürəkkəb', 'Sadə'],       answer: 'Mürəkkəb'   },
-    { q: '"hero____m" — boşluğa nə gəlir?',   options: ['-is', '-er'],             answer: '-is'        },
-    { q: '"teach → ____"',                     options: ['teacher', 'teachness'],   answer: 'teacher'    },
-    { q: '"waterfall" hansı növ isimdir?',     options: ['Mürəkkəb', 'Düzəltmə'],  answer: 'Mürəkkəb'   },
-    { q: '"stone" hansı növ isimdir?',         options: ['Sadə', 'Düzəltmə'],      answer: 'Sadə'       },
-    { q: '"free → ____"',                      options: ['freedom', 'freeship'],    answer: 'freedom'    },
-    { q: '"kind → ____"',                      options: ['kindness', 'kindment'],   answer: 'kindness'   },
-    { q: '"friendship" hansı növ isimdir?',    options: ['Düzəltmə', 'Mürəkkəb'],  answer: 'Düzəltmə'   },
-    { q: '"bedroom" hansı növ isimdir?',       options: ['Mürəkkəb', 'Düzəltmə'],  answer: 'Mürəkkəb'   },
-    { q: '"develop → ____"',                   options: ['development', 'developness'], answer: 'development' },
-    { q: '"kingdom" hansı növ isimdir?',       options: ['Düzəltmə', 'Sadə'],      answer: 'Düzəltmə'   },
-    { q: '"hand" hansı növ isimdir?',          options: ['Sadə', 'Mürəkkəb'],      answer: 'Sadə'       },
-    { q: '"lead → ____ship"',                  options: ['leadership', 'leaderhood'], answer: 'leadership' },
-    { q: '"earthquake" hansı növ isimdir?',    options: ['Mürəkkəb', 'Düzəltmə'],  answer: 'Mürəkkəb'   },
-    { q: '"strong → ____"',                    options: ['strength', 'strongness'], answer: 'strength'   },
-  ],
-},
+[
+  { en: '"teacher" hansı növ isimdir?',      tr: 'Düzəltmə',    wrong: 'Sadə'        },
+  { en: '"book" hansı növ isimdir?',         tr: 'Sadə',        wrong: 'Mürəkkəb'    },
+  { en: '"sunrise" hansı növ isimdir?',      tr: 'Mürəkkəb',    wrong: 'Düzəltmə'    },
+  { en: '"rain" hansı növ isimdir?',         tr: 'Sadə',        wrong: 'Düzəltmə'    },
+  { en: '"happiness" hansı növ isimdir?',    tr: 'Düzəltmə',    wrong: 'Mürəkkəb'    },
+  { en: '"toothbrush" hansı növ isimdir?',   tr: 'Mürəkkəb',    wrong: 'Sadə'        },
+  { en: '"hero____m" — boşluğa nə gəlir?',  tr: '-is',         wrong: '-er'         },
+  { en: '"teach → ____"',                    tr: 'teacher',     wrong: 'teachness'   },
+  { en: '"waterfall" hansı növ isimdir?',    tr: 'Mürəkkəb',    wrong: 'Düzəltmə'   },
+  { en: '"stone" hansı növ isimdir?',        tr: 'Sadə',        wrong: 'Düzəltmə'   },
+  { en: '"free → ____"',                     tr: 'freedom',     wrong: 'freeship'    },
+  { en: '"kind → ____"',                     tr: 'kindness',    wrong: 'kindment'    },
+  { en: '"friendship" hansı növ isimdir?',   tr: 'Düzəltmə',    wrong: 'Mürəkkəb'   },
+  { en: '"bedroom" hansı növ isimdir?',      tr: 'Mürəkkəb',    wrong: 'Düzəltmə'   },
+  { en: '"develop → ____"',                  tr: 'development', wrong: 'developness' },
+  { en: '"kingdom" hansı növ isimdir?',      tr: 'Düzəltmə',    wrong: 'Sadə'        },
+  { en: '"hand" hansı növ isimdir?',         tr: 'Sadə',        wrong: 'Mürəkkəb'    },
+  { en: '"lead → ____ship"',                 tr: 'leadership',  wrong: 'leaderhood'  },
+  { en: '"earthquake" hansı növ isimdir?',   tr: 'Mürəkkəb',    wrong: 'Düzəltmə'   },
+  { en: '"strong → ____"',                   tr: 'strength',    wrong: 'strongness'  },
+],
 
      // ── Bölmə 2 ──────────────────────────────────────
 {
@@ -1214,141 +1211,34 @@ const KIDS_GRAMMAR_LEVELS = [
   ],
 },
 
-{
-  type: 'mini_check',
-  questions: [
-    {
-      q: '"Baku" hansı növ isimdir?',
-      options: ['Proper noun', 'Common noun'],
-      answer: 'Proper noun',
-    },
-    {
-      q: '"a city" hansı növ isimdir?',
-      options: ['Common noun', 'Proper noun'],
-      answer: 'Common noun',
-    },
-    {
-      q: '"January" hansı növ isimdir?',
-      options: ['Proper noun', 'Common noun'],
-      answer: 'Proper noun',
-    },
-    {
-      q: '"a lake" hansı növ isimdir?',
-      options: ['Common noun', 'Proper noun'],
-      answer: 'Common noun',
-    },
-    {
-      q: '"Tuesday" hansı növ isimdir?',
-      options: ['Proper noun', 'Common noun'],
-      answer: 'Proper noun',
-    },
-    {
-      q: '"weather" hansı növ isimdir?',
-      options: ['Common noun', 'Proper noun'],
-      answer: 'Common noun',
-    },
-    {
-      q: '"happiness" hansı növ isimdir?',
-      options: ['Abstract', 'Concrete'],
-      answer: 'Abstract',
-    },
-    {
-      q: '"a pen" hansı növ isimdir?',
-      options: ['Concrete', 'Abstract'],
-      answer: 'Concrete',
-    },
-    {
-      q: '"freedom" hansı növ isimdir?',
-      options: ['Abstract', 'Concrete'],
-      answer: 'Abstract',
-    },
-    {
-      q: '"a table" hansı növ isimdir?',
-      options: ['Concrete', 'Abstract'],
-      answer: 'Concrete',
-    },
-    {
-      q: '"knowledge" hansı növ isimdir?',
-      options: ['Abstract', 'Concrete'],
-      answer: 'Abstract',
-    },
-    {
-      q: '"bread" hansı növ isimdir?',
-      options: ['Concrete', 'Abstract'],
-      answer: 'Concrete',
-    },
-    {
-      q: '"milk" hansı növ isimdir?',
-      options: ['Uncountable', 'Countable'],
-      answer: 'Uncountable',
-    },
-    {
-      q: '"a book" hansı növ isimdir?',
-      options: ['Countable', 'Uncountable'],
-      answer: 'Countable',
-    },
-    {
-      q: '"water" hansı növ isimdir?',
-      options: ['Uncountable', 'Countable'],
-      answer: 'Uncountable',
-    },
-    {
-      q: '"a chair" hansı növ isimdir?',
-      options: ['Countable', 'Uncountable'],
-      answer: 'Countable',
-    },
-    {
-      q: 'Çox kitab → ____',
-      options: ['many books', 'much books'],
-      answer: 'many books',
-    },
-    {
-      q: 'Çox süd → ____',
-      options: ['much milk', 'many milk'],
-      answer: 'much milk',
-    },
-    {
-      q: 'Az pul → ____',
-      options: ['little money', 'few money'],
-      answer: 'little money',
-    },
-    {
-      q: 'Az uşaq → ____',
-      options: ['few children', 'little children'],
-      answer: 'few children',
-    },
-    {
-      q: '"a good ____" — boşluğa nə gəlir?',
-      options: ['knowledge', 'knowledges'],
-      answer: 'knowledge',
-    },
-    {
-      q: '"a hard ____" — boşluğa nə gəlir?',
-      options: ['life', 'lives'],
-      answer: 'life',
-    },
-    {
-      q: '"actor" sözünün qadın forması nədir?',
-      options: ['actress', 'actoress'],
-      answer: 'actress',
-    },
-    {
-      q: 'Ölkə → hansı əvəzlik?',
-      options: ['she', 'it'],
-      answer: 'she',
-    },
-    {
-      q: 'Həşərat → hansı əvəzlik?',
-      options: ['it', 'she'],
-      answer: 'it',
-    },
-    {
-      q: '"lion" sözünün qadın forması nədir?',
-      options: ['lioness', 'lionness'],
-      answer: 'lioness',
-    },
-  ],
-},
+[
+  { en: '"Baku" hansı növ isimdir?',                  tr: 'Proper noun',  wrong: 'Common noun'  },
+  { en: '"a city" hansı növ isimdir?',                tr: 'Common noun',  wrong: 'Proper noun'  },
+  { en: '"January" hansı növ isimdir?',               tr: 'Proper noun',  wrong: 'Common noun'  },
+  { en: '"a lake" hansı növ isimdir?',                tr: 'Common noun',  wrong: 'Proper noun'  },
+  { en: '"Tuesday" hansı növ isimdir?',               tr: 'Proper noun',  wrong: 'Common noun'  },
+  { en: '"weather" hansı növ isimdir?',               tr: 'Common noun',  wrong: 'Proper noun'  },
+  { en: '"happiness" hansı növ isimdir?',             tr: 'Abstract',     wrong: 'Concrete'     },
+  { en: '"a pen" hansı növ isimdir?',                 tr: 'Concrete',     wrong: 'Abstract'     },
+  { en: '"freedom" hansı növ isimdir?',               tr: 'Abstract',     wrong: 'Concrete'     },
+  { en: '"a table" hansı növ isimdir?',               tr: 'Concrete',     wrong: 'Abstract'     },
+  { en: '"knowledge" hansı növ isimdir?',             tr: 'Abstract',     wrong: 'Concrete'     },
+  { en: '"bread" hansı növ isimdir?',                 tr: 'Concrete',     wrong: 'Abstract'     },
+  { en: '"milk" hansı növ isimdir?',                  tr: 'Uncountable',  wrong: 'Countable'    },
+  { en: '"a book" hansı növ isimdir?',                tr: 'Countable',    wrong: 'Uncountable'  },
+  { en: '"water" hansı növ isimdir?',                 tr: 'Uncountable',  wrong: 'Countable'    },
+  { en: '"a chair" hansı növ isimdir?',               tr: 'Countable',    wrong: 'Uncountable'  },
+  { en: 'Çox kitab → ____',                          tr: 'many books',   wrong: 'much books'   },
+  { en: 'Çox süd → ____',                            tr: 'much milk',    wrong: 'many milk'    },
+  { en: 'Az pul → ____',                             tr: 'little money', wrong: 'few money'    },
+  { en: 'Az uşaq → ____',                            tr: 'few children', wrong: 'little children' },
+  { en: '"a good ____" — boşluğa nə gəlir?',         tr: 'knowledge',    wrong: 'knowledges'   },
+  { en: '"a hard ____" — boşluğa nə gəlir?',         tr: 'life',         wrong: 'lives'        },
+  { en: '"actor" sözünün qadın forması nədir?',       tr: 'actress',      wrong: 'actoress'     },
+  { en: 'Ölkə → hansı əvəzlik?',                     tr: 'she',          wrong: 'it'           },
+  { en: 'Həşərat → hansı əvəzlik?',                  tr: 'it',           wrong: 'she'          },
+  { en: '"lion" sözünün qadın forması nədir?',        tr: 'lioness',      wrong: 'lionness'     },
+],
      // ── Bölmə 3 ──────────────────────────────────────
       {
         type: 'section_divider',
@@ -1626,118 +1516,29 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 
-      // ── Bölmə 3 — Ümumi Quiz ────────────────────────────
-     {
-  type: 'mini_check',
-  questions: [
-    {
-      q: '"student" hansı növ isimdir?',
-      options: ['Countable', 'Uncountable'],
-      answer: 'Countable',
-    },
-    {
-      q: '"milk" hansı növ isimdir?',
-      options: ['Uncountable', 'Countable'],
-      answer: 'Uncountable',
-    },
-    {
-      q: '"furniture" hansı növ isimdir?',
-      options: ['Uncountable', 'Countable'],
-      answer: 'Uncountable',
-    },
-    {
-      q: '"book" hansı növ isimdir?',
-      options: ['Countable', 'Uncountable'],
-      answer: 'Countable',
-    },
-    {
-      q: '"advice" hansı növ isimdir?',
-      options: ['Uncountable', 'Countable'],
-      answer: 'Uncountable',
-    },
-    {
-      q: '"teacher" hansı növ isimdir?',
-      options: ['Countable', 'Uncountable'],
-      answer: 'Countable',
-    },
-    {
-      q: '"knowledge" hansı növ isimdir?',
-      options: ['Uncountable', 'Countable'],
-      answer: 'Uncountable',
-    },
-    {
-      q: '"rice" hansı növ isimdir?',
-      options: ['Uncountable', 'Countable'],
-      answer: 'Uncountable',
-    },
-    {
-      q: 'Çox kitab → ____',
-      options: ['many books', 'much books'],
-      answer: 'many books',
-    },
-    {
-      q: 'Çox su → ____',
-      options: ['much water', 'many water'],
-      answer: 'much water',
-    },
-    {
-      q: 'Az tələbə → ____',
-      options: ['few students', 'little students'],
-      answer: 'few students',
-    },
-    {
-      q: 'Az vaxt → ____',
-      options: ['little time', 'few time'],
-      answer: 'little time',
-    },
-    {
-      q: 'Bir neçə kitabım var → ____',
-      options: ['a few books', 'few books'],
-      answer: 'a few books',
-    },
-    {
-      q: 'Bir az pulum var → ____',
-      options: ['a little money', 'little money'],
-      answer: 'a little money',
-    },
-    {
-      q: 'Təsdiq cümlədə: Çox maşın var → ____',
-      options: ['a lot of cars', 'many cars'],
-      answer: 'a lot of cars',
-    },
-    {
-      q: 'Sual cümlədə: Çox maşın var? → ____',
-      options: ['many cars?', 'a lot of cars?'],
-      answer: 'many cars?',
-    },
-    {
-      q: 'A lot of water ___ wasted.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'A lot of students ___ in yard.',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'Much time ___ wasted.',
-      options: ['was', 'were'],
-      answer: 'was',
-    },
-    {
-      q: 'The news ___ good.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'O çox oxuyur → He reads ____',
-      options: ['a lot', 'a lot of'],
-      answer: 'a lot',
-    },
-  ],
-},
-
+  [
+  { en: '"student" hansı növ isimdir?',               tr: 'Countable',     wrong: 'Uncountable'  },
+  { en: '"milk" hansı növ isimdir?',                  tr: 'Uncountable',   wrong: 'Countable'    },
+  { en: '"furniture" hansı növ isimdir?',             tr: 'Uncountable',   wrong: 'Countable'    },
+  { en: '"book" hansı növ isimdir?',                  tr: 'Countable',     wrong: 'Uncountable'  },
+  { en: '"advice" hansı növ isimdir?',                tr: 'Uncountable',   wrong: 'Countable'    },
+  { en: '"teacher" hansı növ isimdir?',               tr: 'Countable',     wrong: 'Uncountable'  },
+  { en: '"knowledge" hansı növ isimdir?',             tr: 'Uncountable',   wrong: 'Countable'    },
+  { en: '"rice" hansı növ isimdir?',                  tr: 'Uncountable',   wrong: 'Countable'    },
+  { en: 'Çox kitab → ____',                          tr: 'many books',    wrong: 'much books'   },
+  { en: 'Çox su → ____',                             tr: 'much water',    wrong: 'many water'   },
+  { en: 'Az tələbə → ____',                          tr: 'few students',  wrong: 'little students' },
+  { en: 'Az vaxt → ____',                            tr: 'little time',   wrong: 'few time'     },
+  { en: 'Bir neçə kitabım var → ____',               tr: 'a few books',   wrong: 'few books'    },
+  { en: 'Bir az pulum var → ____',                   tr: 'a little money',wrong: 'little money' },
+  { en: 'Təsdiq cümlədə: Çox maşın var → ____',     tr: 'a lot of cars', wrong: 'many cars'    },
+  { en: 'Sual cümlədə: Çox maşın var? → ____',      tr: 'many cars?',    wrong: 'a lot of cars?' },
+  { en: 'A lot of water ___ wasted.',                tr: 'is',            wrong: 'are'          },
+  { en: 'A lot of students ___ in yard.',            tr: 'are',           wrong: 'is'           },
+  { en: 'Much time ___ wasted.',                     tr: 'was',           wrong: 'were'         },
+  { en: 'The news ___ good.',                        tr: 'is',            wrong: 'are'          },
+  { en: 'O çox oxuyur → He reads ____',              tr: 'a lot',         wrong: 'a lot of'     },
+],
      // ── Test 1 — Bölmə 1, 2, 3 yekun testi ─────────────
       [
         // Bölmə 1 — Quruluş
@@ -2009,111 +1810,28 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 
-     {
-  type: 'mini_check',
-  questions: [
-    {
-      q: '"crowd" hansı növ isimdir?',
-      options: ['Kollektiv isim', 'Mücərrəd isim'],
-      answer: 'Kollektiv isim',
-    },
-    {
-      q: '"family" hansı növ isimdir?',
-      options: ['Kollektiv isim', 'Sayılmayan'],
-      answer: 'Kollektiv isim',
-    },
-    {
-      q: '"crew" hansı növ isimdir?',
-      options: ['Kollektiv isim', 'Xüsusi isim'],
-      answer: 'Kollektiv isim',
-    },
-    {
-      q: 'The crowds ___ enormous.',
-      options: ['were', 'was'],
-      answer: 'were',
-    },
-    {
-      q: 'My family ___ large. (bir bütün kimi)',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'My family ___ early risers. (üzvlər kimi)',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'The police ___ there.',
-      options: ['were', 'was'],
-      answer: 'were',
-    },
-    {
-      q: 'The cattle ___ grazing.',
-      options: ['were', 'was'],
-      answer: 'were',
-    },
-    {
-      q: 'People ___ strange sometimes.',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'Money ___ money.',
-      options: ['makes', 'make'],
-      answer: 'makes',
-    },
-    {
-      q: '"a cattle" ifadəsi düzgündürmü?',
-      options: ['Xeyr', 'Bəli'],
-      answer: 'Xeyr',
-    },
-    {
-      q: '"polices" forması düzgündürmü?',
-      options: ['Xeyr', 'Bəli'],
-      answer: 'Xeyr',
-    },
-    {
-      q: '"The peoples of the world" — nə mənada işlənir?',
-      options: ['Bir neçə xalq', 'İnsanlar'],
-      answer: 'Bir neçə xalq',
-    },
-    {
-      q: '"The people of Azerbaijan" — nə mənada işlənir?',
-      options: ['Azərbaycan xalqı', 'İnsanlar'],
-      answer: 'Azərbaycan xalqı',
-    },
-    {
-      q: '"money" — "çox" mənasında ____',
-      options: ['much money', 'many money'],
-      answer: 'much money',
-    },
-    {
-      q: '"money" — "az" mənasında ____',
-      options: ['little money', 'few money'],
-      answer: 'little money',
-    },
-    {
-      q: '"youth" ismi necə işlənir?',
-      options: ['həmişə tək', 'həmişə cəm'],
-      answer: 'həmişə tək',
-    },
-    {
-      q: '"linen" ismi necə işlənir?',
-      options: ['həmişə tək', 'həmişə cəm'],
-      answer: 'həmişə tək',
-    },
-    {
-      q: '"police" ismi necə işlənir?',
-      options: ['həmişə cəm', 'həmişə tək'],
-      answer: 'həmişə cəm',
-    },
-    {
-      q: '"cattle" ismi necə işlənir?',
-      options: ['həmişə cəm', 'həmişə tək'],
-      answer: 'həmişə cəm',
-    },
-  ],
-},
+[
+  { en: '"crowd" hansı növ isimdir?',                          tr: 'Kollektiv isim',      wrong: 'Mücərrəd isim' },
+  { en: '"family" hansı növ isimdir?',                         tr: 'Kollektiv isim',      wrong: 'Sayılmayan'    },
+  { en: '"crew" hansı növ isimdir?',                           tr: 'Kollektiv isim',      wrong: 'Xüsusi isim'   },
+  { en: 'The crowds ___ enormous.',                            tr: 'were',                wrong: 'was'           },
+  { en: 'My family ___ large. (bir bütün kimi)',               tr: 'is',                  wrong: 'are'           },
+  { en: 'My family ___ early risers. (üzvlər kimi)',           tr: 'are',                 wrong: 'is'            },
+  { en: 'The police ___ there.',                               tr: 'were',                wrong: 'was'           },
+  { en: 'The cattle ___ grazing.',                             tr: 'were',                wrong: 'was'           },
+  { en: 'People ___ strange sometimes.',                       tr: 'are',                 wrong: 'is'            },
+  { en: 'Money ___ money.',                                    tr: 'makes',               wrong: 'make'          },
+  { en: '"a cattle" ifadəsi düzgündürmü?',                     tr: 'Xeyr',                wrong: 'Bəli'          },
+  { en: '"polices" forması düzgündürmü?',                      tr: 'Xeyr',                wrong: 'Bəli'          },
+  { en: '"The peoples of the world" — nə mənada işlənir?',     tr: 'Bir neçə xalq',       wrong: 'İnsanlar'      },
+  { en: '"The people of Azerbaijan" — nə mənada işlənir?',     tr: 'Azərbaycan xalqı',    wrong: 'İnsanlar'      },
+  { en: '"money" — "çox" mənasında ____',                      tr: 'much money',          wrong: 'many money'    },
+  { en: '"money" — "az" mənasında ____',                       tr: 'little money',        wrong: 'few money'     },
+  { en: '"youth" ismi necə işlənir?',                          tr: 'həmişə tək',          wrong: 'həmişə cəm'    },
+  { en: '"linen" ismi necə işlənir?',                          tr: 'həmişə tək',          wrong: 'həmişə cəm'    },
+  { en: '"police" ismi necə işlənir?',                         tr: 'həmişə cəm',          wrong: 'həmişə tək'    },
+  { en: '"cattle" ismi necə işlənir?',                         tr: 'həmişə cəm',          wrong: 'həmişə tək'    },
+],
 
    // ── Bölmə 5 ──────────────────────────────────────
       {
@@ -2519,157 +2237,37 @@ const KIDS_GRAMMAR_LEVELS = [
           },
         ],
       },
-
-    {
-  type: 'mini_check',
-  questions: [
-    {
-      q: 'box → ____',
-      options: ['boxes', 'boxs'],
-      answer: 'boxes',
-    },
-    {
-      q: 'pen → ____',
-      options: ['pens', 'penes'],
-      answer: 'pens',
-    },
-    {
-      q: 'watch → ____',
-      options: ['watches', 'watchs'],
-      answer: 'watches',
-    },
-    {
-      q: 'bus → ____',
-      options: ['buses', 'buss'],
-      answer: 'buses',
-    },
-    {
-      q: 'bench → ____',
-      options: ['benches', 'benchs'],
-      answer: 'benches',
-    },
-    {
-      q: 'man → ____',
-      options: ['men', 'mans'],
-      answer: 'men',
-    },
-    {
-      q: 'tooth → ____',
-      options: ['teeth', 'tooths'],
-      answer: 'teeth',
-    },
-    {
-      q: 'child → ____',
-      options: ['children', 'childs'],
-      answer: 'children',
-    },
-    {
-      q: 'mouse → ____',
-      options: ['mice', 'mouses'],
-      answer: 'mice',
-    },
-    {
-      q: 'foot → ____',
-      options: ['feet', 'foots'],
-      answer: 'feet',
-    },
-    {
-      q: 'goose → ____',
-      options: ['geese', 'gooses'],
-      answer: 'geese',
-    },
-    {
-      q: 'postman → ____',
-      options: ['postmen', 'postmans'],
-      answer: 'postmen',
-    },
-    {
-      q: 'policeman → ____',
-      options: ['policemen', 'policemans'],
-      answer: 'policemen',
-    },
-    {
-      q: 'woman doctor → ____',
-      options: ['women doctors', 'woman doctors'],
-      answer: 'women doctors',
-    },
-    {
-      q: 'German → ____',
-      options: ['Germans', 'Germens'],
-      answer: 'Germans',
-    },
-    {
-      q: 'wife → ____',
-      options: ['wives', 'wifes'],
-      answer: 'wives',
-    },
-    {
-      q: 'leaf → ____',
-      options: ['leaves', 'leafs'],
-      answer: 'leaves',
-    },
-    {
-      q: 'roof → ____',
-      options: ['roofs', 'rooves'],
-      answer: 'roofs',
-    },
-    {
-      q: 'shelf → ____',
-      options: ['shelves', 'shelfs'],
-      answer: 'shelves',
-    },
-    {
-      q: 'chief → ____',
-      options: ['chiefs', 'chieves'],
-      answer: 'chiefs',
-    },
-    {
-      q: 'potato → ____',
-      options: ['potatoes', 'potatos'],
-      answer: 'potatoes',
-    },
-    {
-      q: 'radio → ____',
-      options: ['radios', 'radioes'],
-      answer: 'radios',
-    },
-    {
-      q: 'hero → ____',
-      options: ['heroes', 'heros'],
-      answer: 'heroes',
-    },
-    {
-      q: 'piano → ____',
-      options: ['pianos', 'pianoes'],
-      answer: 'pianos',
-    },
-    {
-      q: 'city → ____',
-      options: ['cities', 'citys'],
-      answer: 'cities',
-    },
-    {
-      q: 'day → ____',
-      options: ['days', 'daies'],
-      answer: 'days',
-    },
-    {
-      q: 'baby → ____',
-      options: ['babies', 'babys'],
-      answer: 'babies',
-    },
-    {
-      q: 'monkey → ____',
-      options: ['monkeys', 'monkies'],
-      answer: 'monkeys',
-    },
-    {
-      q: 'factory → ____',
-      options: ['factories', 'factorys'],
-      answer: 'factories',
-    },
-  ],
-},
+[
+  { en: 'box → ____',          tr: 'boxes',         wrong: 'boxs'        },
+  { en: 'pen → ____',          tr: 'pens',          wrong: 'penes'       },
+  { en: 'watch → ____',        tr: 'watches',       wrong: 'watchs'      },
+  { en: 'bus → ____',          tr: 'buses',         wrong: 'buss'        },
+  { en: 'bench → ____',        tr: 'benches',       wrong: 'benchs'      },
+  { en: 'man → ____',          tr: 'men',           wrong: 'mans'        },
+  { en: 'tooth → ____',        tr: 'teeth',         wrong: 'tooths'      },
+  { en: 'child → ____',        tr: 'children',      wrong: 'childs'      },
+  { en: 'mouse → ____',        tr: 'mice',          wrong: 'mouses'      },
+  { en: 'foot → ____',         tr: 'feet',          wrong: 'foots'       },
+  { en: 'goose → ____',        tr: 'geese',         wrong: 'gooses'      },
+  { en: 'postman → ____',      tr: 'postmen',       wrong: 'postmans'    },
+  { en: 'policeman → ____',    tr: 'policemen',     wrong: 'policemans'  },
+  { en: 'woman doctor → ____', tr: 'women doctors', wrong: 'woman doctors' },
+  { en: 'German → ____',       tr: 'Germans',       wrong: 'Germens'     },
+  { en: 'wife → ____',         tr: 'wives',         wrong: 'wifes'       },
+  { en: 'leaf → ____',         tr: 'leaves',        wrong: 'leafs'       },
+  { en: 'roof → ____',         tr: 'roofs',         wrong: 'rooves'      },
+  { en: 'shelf → ____',        tr: 'shelves',       wrong: 'shelfs'      },
+  { en: 'chief → ____',        tr: 'chiefs',        wrong: 'chieves'     },
+  { en: 'potato → ____',       tr: 'potatoes',      wrong: 'potatos'     },
+  { en: 'radio → ____',        tr: 'radios',        wrong: 'radioes'     },
+  { en: 'hero → ____',         tr: 'heroes',        wrong: 'heros'       },
+  { en: 'piano → ____',        tr: 'pianos',        wrong: 'pianoes'     },
+  { en: 'city → ____',         tr: 'cities',        wrong: 'citys'       },
+  { en: 'day → ____',          tr: 'days',          wrong: 'daies'       },
+  { en: 'baby → ____',         tr: 'babies',        wrong: 'babys'       },
+  { en: 'monkey → ____',       tr: 'monkeys',       wrong: 'monkies'     },
+  { en: 'factory → ____',      tr: 'factories',     wrong: 'factorys'    },
+],
       // ── Bölmə 6 ──────────────────────────────────────
       {
         type: 'section_divider',
@@ -3081,121 +2679,30 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 
-      {
-  type: 'mini_check',
-  questions: [
-    {
-      q: '"advice" sözünün cəmi varmı?',
-      options: ['Xeyr', 'Bəli'],
-      answer: 'Xeyr',
-    },
-    {
-      q: '"furniture" sözünün cəmi varmı?',
-      options: ['Xeyr', 'Bəli'],
-      answer: 'Xeyr',
-    },
-    {
-      q: 'Much progress ___ made.',
-      options: ['was', 'were'],
-      answer: 'was',
-    },
-    {
-      q: 'Much information ___ needed.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'Her hair ___ beautiful.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'Fruit ___ useful.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: '"fruits" forması nə vaxt işlənir?',
-      options: ['Müxtəlif növ meyvə', 'Həmişə'],
-      answer: 'Müxtəlif növ meyvə',
-    },
-    {
-      q: 'Where ___ my scissors?',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'My jeans ___ blue.',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'The clothes ___ clean.',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'Bir qayçı → ____',
-      options: ['a pair of scissors', 'a scissors'],
-      answer: 'a pair of scissors',
-    },
-    {
-      q: 'İki şalvar → ____',
-      options: ['two pairs of trousers', 'two trousers'],
-      answer: 'two pairs of trousers',
-    },
-    {
-      q: 'Today ___ a holiday. (bayram mənasında)',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'The holidays ___ over. (tətil mənasında)',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'The news ___ good.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'Physics ___ difficult.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: 'Phonetics ___ interesting.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: '"a news" ifadəsi düzgündürmü?',
-      options: ['Xeyr', 'Bəli'],
-      answer: 'Xeyr',
-    },
-    {
-      q: 'Five sheep ___ grazing.',
-      options: ['are', 'is'],
-      answer: 'are',
-    },
-    {
-      q: 'A deer ___ in the forest.',
-      options: ['is', 'are'],
-      answer: 'is',
-    },
-    {
-      q: '"fish" sözünün cəmi necədir?',
-      options: ['fish', 'fishes'],
-      answer: 'fish',
-    },
-    {
-      q: '"various fishes" — nə mənada işlənir?',
-      options: ['Müxtəlif növ balıq', 'Səhvdir'],
-      answer: 'Müxtəlif növ balıq',
-    },
-  ],
-},
+[
+  { en: '"advice" sözünün cəmi varmı?',                  tr: 'Xeyr',                   wrong: 'Bəli'          },
+  { en: '"furniture" sözünün cəmi varmı?',               tr: 'Xeyr',                   wrong: 'Bəli'          },
+  { en: 'Much progress ___ made.',                       tr: 'was',                    wrong: 'were'          },
+  { en: 'Much information ___ needed.',                  tr: 'is',                     wrong: 'are'           },
+  { en: 'Her hair ___ beautiful.',                       tr: 'is',                     wrong: 'are'           },
+  { en: 'Fruit ___ useful.',                             tr: 'is',                     wrong: 'are'           },
+  { en: '"fruits" forması nə vaxt işlənir?',             tr: 'Müxtəlif növ meyvə',     wrong: 'Həmişə'        },
+  { en: 'Where ___ my scissors?',                        tr: 'are',                    wrong: 'is'            },
+  { en: 'My jeans ___ blue.',                            tr: 'are',                    wrong: 'is'            },
+  { en: 'The clothes ___ clean.',                        tr: 'are',                    wrong: 'is'            },
+  { en: 'Bir qayçı → ____',                             tr: 'a pair of scissors',     wrong: 'a scissors'    },
+  { en: 'İki şalvar → ____',                            tr: 'two pairs of trousers',  wrong: 'two trousers'  },
+  { en: 'Today ___ a holiday. (bayram mənasında)',       tr: 'is',                     wrong: 'are'           },
+  { en: 'The holidays ___ over. (tətil mənasında)',      tr: 'are',                    wrong: 'is'            },
+  { en: 'The news ___ good.',                            tr: 'is',                     wrong: 'are'           },
+  { en: 'Physics ___ difficult.',                        tr: 'is',                     wrong: 'are'           },
+  { en: 'Phonetics ___ interesting.',                    tr: 'is',                     wrong: 'are'           },
+  { en: '"a news" ifadəsi düzgündürmü?',                 tr: 'Xeyr',                   wrong: 'Bəli'          },
+  { en: 'Five sheep ___ grazing.',                       tr: 'are',                    wrong: 'is'            },
+  { en: 'A deer ___ in the forest.',                     tr: 'is',                     wrong: 'are'           },
+  { en: '"fish" sözünün cəmi necədir?',                  tr: 'fish',                   wrong: 'fishes'        },
+  { en: '"various fishes" — nə mənada işlənir?',         tr: 'Müxtəlif növ balıq',     wrong: 'Səhvdir'       },
+],
     // ── Bölmə 7 ──────────────────────────────────────
       {
         type: 'section_divider',
@@ -5284,11 +4791,36 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: Qrup 1 ─────────────────────────────────────
-    { en: 'write → Past Simple?',  tr: 'wrote',  wrong: 'writed'  },
-    { en: 'speak → Past Simple?',  tr: 'spoke',  wrong: 'speaked' },
-    { en: 'break → Past Simple?',  tr: 'broke',  wrong: 'breaked' },
-    { en: 'drive → Past Simple?',  tr: 'drove',  wrong: 'drived'  },
-    { en: 'give → Past Simple?',   tr: 'gave',   wrong: 'gived'   },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'write → Past Simple?',
+      options: ['wrote', 'writed'],
+      answer: 'wrote',
+    },
+    {
+      q: 'speak → Past Simple?',
+      options: ['spoke', 'speaked'],
+      answer: 'spoke',
+    },
+    {
+      q: 'break → Past Simple?',
+      options: ['broke', 'breaked'],
+      answer: 'broke',
+    },
+    {
+      q: 'drive → Past Simple?',
+      options: ['drove', 'drived'],
+      answer: 'drove',
+    },
+    {
+      q: 'give → Past Simple?',
+      options: ['gave', 'gived'],
+      answer: 'gave',
+    },
+  ],
+},
 
     // ── Ekran 3: Qrup 2 — kök dəyişir + -d/-t ───────────
     {
@@ -5365,14 +4897,46 @@ const VERBS_LEVEL = {
       note: 'Modal fellərin keçmiş formaları:\ncan → could | will → would | may → might | shall → should\n\n"must" felinin keçmiş forması yoxdur — əvəzinə "had to" işlədilir.',
     },
 
-    // ── Quiz: Qaydasız + Naqis ───────────────────────────
-    { en: 'sell → Past Simple?',   tr: 'sold',    wrong: 'selled'  },
-    { en: 'feel → Past Simple?',   tr: 'felt',    wrong: 'feeled'  },
-    { en: 'go → Past Simple?',     tr: 'went',    wrong: 'goed'    },
-    { en: 'cut → Past Simple?',    tr: 'cut',     wrong: 'cutted'  },
-    { en: 'buy → Past Simple?',    tr: 'bought',  wrong: 'buyed'   },
-    { en: '"can" → keçmiş forması?', tr: 'could', wrong: 'canned'  },
-    { en: '"will" → keçmiş forması?', tr: 'would', wrong: 'willed' },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'sell → Past Simple?',
+      options: ['sold', 'selled'],
+      answer: 'sold',
+    },
+    {
+      q: 'feel → Past Simple?',
+      options: ['felt', 'feeled'],
+      answer: 'felt',
+    },
+    {
+      q: 'go → Past Simple?',
+      options: ['went', 'goed'],
+      answer: 'went',
+    },
+    {
+      q: 'cut → Past Simple?',
+      options: ['cut', 'cutted'],
+      answer: 'cut',
+    },
+    {
+      q: 'buy → Past Simple?',
+      options: ['bought', 'buyed'],
+      answer: 'bought',
+    },
+    {
+      q: '"can" → keçmiş forması?',
+      options: ['could', 'canned'],
+      answer: 'could',
+    },
+    {
+      q: '"will" → keçmiş forması?',
+      options: ['would', 'willed'],
+      answer: 'would',
+    },
+  ],
+},
 
     // ── Mini-check: Qaydasız fellər ──────────────────────
     {
@@ -5750,12 +5314,41 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: shall/will ─────────────────────────────────
-    { en: '"I ___ go to school." — düzgün forma?',       tr: 'shall',   wrong: 'will'    },
-    { en: '"She ___ come tomorrow." — düzgün forma?',     tr: 'will',    wrong: 'shall'   },
-    { en: '"We ___ work next week." — düzgün forma?',     tr: 'shall',   wrong: 'will'    },
-    { en: '"They ___ not come." — qısa inkar?',           tr: 'won\'t',  wrong: 'shan\'t' },
-    { en: '"I ___ not go." — qısa inkar?',                tr: 'shan\'t', wrong: 'won\'t'  },
-    { en: '"___ he come tomorrow?" — sual?',              tr: 'Will',    wrong: 'Shall'   },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ go to school." — düzgün forma?',
+      options: ['shall', 'will'],
+      answer: 'shall',
+    },
+    {
+      q: '"She ___ come tomorrow." — düzgün forma?',
+      options: ['will', 'shall'],
+      answer: 'will',
+    },
+    {
+      q: '"We ___ work next week." — düzgün forma?',
+      options: ['shall', 'will'],
+      answer: 'shall',
+    },
+    {
+      q: '"They ___ not come." — qısa inkar?',
+      options: ["won't", "shan't"],
+      answer: "won't",
+    },
+    {
+      q: '"I ___ not go." — qısa inkar?',
+      options: ["shan't", "won't"],
+      answer: "shan't",
+    },
+    {
+      q: '"___ he come tomorrow?" — sual?',
+      options: ['Will', 'Shall'],
+      answer: 'Will',
+    },
+  ],
+},
 
     // ── Mini-check: shall/will ───────────────────────────
     {
@@ -5840,10 +5433,31 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: going to ───────────────────────────────────
-    { en: '"I ___ going to study." — boşluq?',      tr: 'am',  wrong: 'is'    },
-    { en: '"She ___ going to leave." — boşluq?',    tr: 'is',  wrong: 'are'   },
-    { en: '"They ___ going to work." — boşluq?',    tr: 'are', wrong: 'is'    },
-    { en: '"going to" nə bildirir?',                 tr: 'Hazırlaşmaq', wrong: 'Etmək üzrə olmaq' },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ going to study." — boşluq?',
+      options: ['am', 'is'],
+      answer: 'am',
+    },
+    {
+      q: '"She ___ going to leave." — boşluq?',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"They ___ going to work." — boşluq?',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: '"going to" nə bildirir?',
+      options: ['Hazırlaşmaq', 'Etmək üzrə olmaq'],
+      answer: 'Hazırlaşmaq',
+    },
+  ],
+},
 
     // ── Ekran 3: to be about to ──────────────────────────
     {
@@ -6080,12 +5694,41 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: should / would seçimi ──────────────────────
-    { en: '"I ___ come to the meeting."',       tr: 'should',    wrong: 'would'    },
-    { en: '"She ___ return in time."',           tr: 'would',     wrong: 'should'   },
-    { en: '"We ___ not go there."',              tr: 'should',    wrong: 'would'    },
-    { en: '"They ___ not come." — qısa?',        tr: 'wouldn\'t', wrong: 'shouldn\'t' },
-    { en: '"I ___ not go." — qısa?',             tr: 'shouldn\'t', wrong: 'wouldn\'t' },
-    { en: '"I\'d come." — tam forması?',          tr: 'I would come', wrong: 'I should come' },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ come to the meeting."',
+      options: ['should', 'would'],
+      answer: 'should',
+    },
+    {
+      q: '"She ___ return in time."',
+      options: ['would', 'should'],
+      answer: 'would',
+    },
+    {
+      q: '"We ___ not go there."',
+      options: ['should', 'would'],
+      answer: 'should',
+    },
+    {
+      q: '"They ___ not come." — qısa?',
+      options: ["wouldn't", "shouldn't"],
+      answer: "wouldn't",
+    },
+    {
+      q: '"I ___ not go." — qısa?',
+      options: ["shouldn't", "wouldn't"],
+      answer: "shouldn't",
+    },
+    {
+      q: '"I\'d come." — tam forması?',
+      options: ['I would come', 'I should come'],
+      answer: 'I would come',
+    },
+  ],
+},
 
     // ── Mini-check: should/would ─────────────────────────
     {
@@ -6167,11 +5810,36 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: çevrilmə ───────────────────────────────────
-    { en: '"will" → vasitəli nitqdə?',               tr: 'would',        wrong: 'should'      },
-    { en: '"shall" → vasitəli nitqdə?',              tr: 'should',       wrong: 'would'       },
-    { en: '"tomorrow" → vasitəli nitqdə?',           tr: 'the next day', wrong: 'yesterday'   },
-    { en: '"He said he ___ come." — boşluq?',        tr: 'would',        wrong: 'will'        },
-    { en: '"She said we ___ go." — boşluq?',         tr: 'should',       wrong: 'shall'       },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"will" → vasitəli nitqdə?',
+      options: ['would', 'should'],
+      answer: 'would',
+    },
+    {
+      q: '"shall" → vasitəli nitqdə?',
+      options: ['should', 'would'],
+      answer: 'should',
+    },
+    {
+      q: '"tomorrow" → vasitəli nitqdə?',
+      options: ['the next day', 'yesterday'],
+      answer: 'the next day',
+    },
+    {
+      q: '"He said he ___ come." — boşluq?',
+      options: ['would', 'will'],
+      answer: 'would',
+    },
+    {
+      q: '"She said we ___ go." — boşluq?',
+      options: ['should', 'shall'],
+      answer: 'should',
+    },
+  ],
+},
 
     // ── Ekran 3: Zaman zərfləri + Az. dilinə tərcümə ─────
     {
@@ -6410,15 +6078,51 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: am/is/are seçimi ───────────────────────────
-    { en: '"I ___ writing." — boşluq?',          tr: 'am',  wrong: 'is'  },
-    { en: '"She ___ writing." — boşluq?',         tr: 'is',  wrong: 'are' },
-    { en: '"They ___ writing." — boşluq?',        tr: 'are', wrong: 'is'  },
-    { en: '"We ___ writing." — boşluq?',          tr: 'are', wrong: 'am'  },
-    { en: '"He ___ writing." — boşluq?',          tr: 'is',  wrong: 'are' },
-    { en: '"You ___ writing." — boşluq?',         tr: 'are', wrong: 'is'  },
-    { en: '"I\'m writing." — tam forması?',        tr: 'I am writing',   wrong: 'I is writing'  },
-    { en: '"He isn\'t writing." — tam forması?',   tr: 'He is not writing', wrong: 'He are not writing' },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ writing." — boşluq?',
+      options: ['am', 'is'],
+      answer: 'am',
+    },
+    {
+      q: '"She ___ writing." — boşluq?',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"They ___ writing." — boşluq?',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: '"We ___ writing." — boşluq?',
+      options: ['are', 'am'],
+      answer: 'are',
+    },
+    {
+      q: '"He ___ writing." — boşluq?',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"You ___ writing." — boşluq?',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: '"I\'m writing." — tam forması?',
+      options: ['I am writing', 'I is writing'],
+      answer: 'I am writing',
+    },
+    {
+      q: '"He isn\'t writing." — tam forması?',
+      options: ['He is not writing', 'He are not writing'],
+      answer: 'He is not writing',
+    },
+  ],
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -6499,12 +6203,41 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: zaman zərfləri ─────────────────────────────
-    { en: 'Present Continuous zaman zərfi?',            tr: 'now',            wrong: 'yesterday'     },
-    { en: '"at the ___" — Present Continuous zərfi?',   tr: 'moment',         wrong: 'time'          },
-    { en: '"Look! She ___ coming." — boşluq?',          tr: 'is',             wrong: 'was'           },
-    { en: '"Listen! They ___ singing." — boşluq?',      tr: 'are',            wrong: 'were'          },
-    { en: '"I am reading ___ moment." — boşluq?',       tr: 'at the present', wrong: 'at that'       },
-    { en: '"___ the moment, he is working." — boşluq?', tr: 'At',             wrong: 'In'            },
+  {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Present Continuous zaman zərfi?',
+      options: ['now', 'yesterday'],
+      answer: 'now',
+    },
+    {
+      q: '"at the ___" — Present Continuous zərfi?',
+      options: ['moment', 'time'],
+      answer: 'moment',
+    },
+    {
+      q: '"Look! She ___ coming." — boşluq?',
+      options: ['is', 'was'],
+      answer: 'is',
+    },
+    {
+      q: '"Listen! They ___ singing." — boşluq?',
+      options: ['are', 'were'],
+      answer: 'are',
+    },
+    {
+      q: '"I am reading ___ moment." — boşluq?',
+      options: ['at the present', 'at that'],
+      answer: 'at the present',
+    },
+    {
+      q: '"___ the moment, he is working." — boşluq?',
+      options: ['At', 'In'],
+      answer: 'At',
+    },
+  ],
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -6593,14 +6326,51 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: stativ fellər ───────────────────────────────
-    { en: '"to know" — stativ feldir?',           tr: 'Bəli',  wrong: 'Xeyr' },
-    { en: '"to run" — stativ feldir?',             tr: 'Xeyr', wrong: 'Bəli' },
-    { en: '"to love" — davamedici formada işlənir?', tr: 'Xeyr', wrong: 'Bəli' },
-    { en: '"to belong to" — mənası?',              tr: 'məxsus olmaq', wrong: 'asılı olmaq' },
-    { en: '"to depend on" — mənası?',              tr: 'asılı olmaq',  wrong: 'məxsus olmaq' },
-    { en: '"I am thinking of you." — "think" burada?', tr: 'fikirləşmək', wrong: 'məncə' },
-    { en: '"I think you are right." — "think" burada?', tr: 'məncə', wrong: 'fikirləşmək' },
-    { en: '"I am knowing." — bu cümlə düzdür?',   tr: 'Xeyr', wrong: 'Bəli' },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"to know" — stativ feldir?',
+      options: ['Bəli', 'Xeyr'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"to run" — stativ feldir?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"to love" — davamedici formada işlənir?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"to belong to" — mənası?',
+      options: ['məxsus olmaq', 'asılı olmaq'],
+      answer: 'məxsus olmaq',
+    },
+    {
+      q: '"to depend on" — mənası?',
+      options: ['asılı olmaq', 'məxsus olmaq'],
+      answer: 'asılı olmaq',
+    },
+    {
+      q: '"I am thinking of you." — "think" burada?',
+      options: ['fikirləşmək', 'məncə'],
+      answer: 'fikirləşmək',
+    },
+    {
+      q: '"I think you are right." — "think" burada?',
+      options: ['məncə', 'fikirləşmək'],
+      answer: 'məncə',
+    },
+    {
+      q: '"I am knowing." — bu cümlə düzdür?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+  ],
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -6761,15 +6531,51 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: was / were seçimi ──────────────────────────
-    { en: '"I ___ writing."',           tr: 'was',  wrong: 'were' },
-    { en: '"She ___ writing."',         tr: 'was',  wrong: 'were' },
-    { en: '"They ___ writing."',        tr: 'were', wrong: 'was'  },
-    { en: '"We ___ writing."',          tr: 'were', wrong: 'was'  },
-    { en: '"He ___ writing."',          tr: 'was',  wrong: 'were' },
-    { en: '"You ___ writing."',         tr: 'were', wrong: 'was'  },
-    { en: '"I wasn\'t writing." — tam?', tr: 'I was not writing',  wrong: 'I were not writing' },
-    { en: '"Weren\'t they?" — tam?',    tr: 'Were they not?',     wrong: 'Was they not?'      },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ writing."',
+      options: ['was', 'were'],
+      answer: 'was',
+    },
+    {
+      q: '"She ___ writing."',
+      options: ['was', 'were'],
+      answer: 'was',
+    },
+    {
+      q: '"They ___ writing."',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: '"We ___ writing."',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: '"He ___ writing."',
+      options: ['was', 'were'],
+      answer: 'was',
+    },
+    {
+      q: '"You ___ writing."',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: '"I wasn\'t writing." — tam forması?',
+      options: ['I was not writing', 'I were not writing'],
+      answer: 'I was not writing',
+    },
+    {
+      q: '"Weren\'t they?" — tam forması?',
+      options: ['Were they not?', 'Was they not?'],
+      answer: 'Were they not?',
+    },
+  ],
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -6878,11 +6684,36 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: işlənmə ────────────────────────────────────
-    { en: '"When I came, she ___ writing." — boşluq?',      tr: 'was',              wrong: 'is'              },
-    { en: '"___ that time yesterday" — zərf?',              tr: 'at',               wrong: 'in'              },
-    { en: '"all day ___" — tam ifadə?',                     tr: 'long',             wrong: 'time'            },
-    { en: '"when" ilə hansı zaman işlənir?',                tr: 'Past Continuous',  wrong: 'Simple Future'   },
-    { en: '"She was writing" → Az. dilində?',               tr: 'yazırdı',          wrong: 'yazacaq'         },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"When I came, she ___ writing." — boşluq?',
+      options: ['was', 'is'],
+      answer: 'was',
+    },
+    {
+      q: '"___ that time yesterday" — zərf?',
+      options: ['at', 'in'],
+      answer: 'at',
+    },
+    {
+      q: '"all day ___" — tam ifadə?',
+      options: ['long', 'time'],
+      answer: 'long',
+    },
+    {
+      q: '"when" ilə hansı zaman işlənir?',
+      options: ['Past Continuous', 'Simple Future'],
+      answer: 'Past Continuous',
+    },
+    {
+      q: '"She was writing" → Az. dilində?',
+      options: ['yazırdı', 'yazacaq'],
+      answer: 'yazırdı',
+    },
+  ],
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -7059,15 +6890,51 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: have / has seçimi ──────────────────────────
-    { en: '"I ___ answered."',                          tr: 'have',  wrong: 'has'  },
-    { en: '"She ___ answered."',                        tr: 'has',   wrong: 'have' },
-    { en: '"They ___ answered."',                       tr: 'have',  wrong: 'has'  },
-    { en: '"He ___ answered."',                         tr: 'has',   wrong: 'have' },
-    { en: '"We ___ answered."',                         tr: 'have',  wrong: 'has'  },
-    { en: '"You ___ answered."',                        tr: 'have',  wrong: 'has'  },
-    { en: '"I haven\'t answered." — tam forması?',      tr: 'I have not answered',  wrong: 'I has not answered'  },
-    { en: '"He hasn\'t answered." — tam forması?',      tr: 'He has not answered',  wrong: 'He have not answered' },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"She ___ answered."',
+      options: ['has', 'have'],
+      answer: 'has',
+    },
+    {
+      q: '"They ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"He ___ answered."',
+      options: ['has', 'have'],
+      answer: 'has',
+    },
+    {
+      q: '"We ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"You ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"I haven\'t answered." — tam forması?',
+      options: ['I have not answered', 'I has not answered'],
+      answer: 'I have not answered',
+    },
+    {
+      q: '"He hasn\'t answered." — tam forması?',
+      options: ['He has not answered', 'He have not answered'],
+      answer: 'He has not answered',
+    },
+  ],
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -7181,19 +7048,51 @@ const VERBS_LEVEL = {
       ],
     },
 
-    // ── Quiz: since / for seçimi ──────────────────────────
-    { en: '"I have lived here ___ 2010."',              tr: 'since',  wrong: 'for'   },
-    { en: '"She has been ill ___ three days."',         tr: 'for',    wrong: 'since' },
-    { en: '"He has worked here ___ Monday."',           tr: 'since',  wrong: 'for'   },
-    { en: '"We have known each other ___ ten years."',  tr: 'for',    wrong: 'since' },
-    { en: '"I haven\'t seen her ___ last week."',       tr: 'since',  wrong: 'for'   },
-    { en: '"They have been friends ___ a long time."',  tr: 'for',    wrong: 'since' },
-
-    // ── Quiz: zaman zərfləri ──────────────────────────────
-    { en: '"I have ___ done it." — artıq?',             tr: 'already', wrong: 'yet'   },
-    { en: '"I haven\'t done it ___." — hələ?',          tr: 'yet',     wrong: 'already' },
-    { en: '"Have you ___ been to London?" — heç?',      tr: 'ever',    wrong: 'never' },
-    { en: '"I have ___ seen snow." — heç vaxt?',        tr: 'never',   wrong: 'ever'  },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"She ___ answered."',
+      options: ['has', 'have'],
+      answer: 'has',
+    },
+    {
+      q: '"They ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"He ___ answered."',
+      options: ['has', 'have'],
+      answer: 'has',
+    },
+    {
+      q: '"We ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"You ___ answered."',
+      options: ['have', 'has'],
+      answer: 'have',
+    },
+    {
+      q: '"I haven\'t answered." — tam forması?',
+      options: ['I have not answered', 'I has not answered'],
+      answer: 'I have not answered',
+    },
+    {
+      q: '"He hasn\'t answered." — tam forması?',
+      options: ['He has not answered', 'He have not answered'],
+      answer: 'He has not answered',
+    },
+  ],
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -7361,14 +7260,46 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: had seçimi ──────────────────────────────────
-    { en: '"I ___ written the letter."',                   tr: 'had',  wrong: 'have' },
-    { en: '"She ___ already left."',                       tr: 'had',  wrong: 'has'  },
-    { en: '"They ___ finished before we came."',           tr: 'had',  wrong: 'have' },
-    { en: '"He ___ never seen snow before."',              tr: 'had',  wrong: 'has'  },
-    { en: '"We ___ eaten before she arrived."',            tr: 'had',  wrong: 'have' },
-    { en: '"I hadn\'t written." — tam forması?',           tr: 'I had not written',   wrong: 'I have not written'  },
-    { en: '"Hadn\'t she finished?" — tam forması?',        tr: 'Had she not finished?', wrong: 'Has she not finished?' },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ written the letter."',
+      options: ['had', 'have'],
+      answer: 'had',
+    },
+    {
+      q: '"She ___ already left."',
+      options: ['had', 'has'],
+      answer: 'had',
+    },
+    {
+      q: '"They ___ finished before we came."',
+      options: ['had', 'have'],
+      answer: 'had',
+    },
+    {
+      q: '"He ___ never seen snow before."',
+      options: ['had', 'has'],
+      answer: 'had',
+    },
+    {
+      q: '"We ___ eaten before she arrived."',
+      options: ['had', 'have'],
+      answer: 'had',
+    },
+    {
+      q: '"I hadn\'t written." — tam forması?',
+      options: ['I had not written', 'I have not written'],
+      answer: 'I had not written',
+    },
+    {
+      q: '"Hadn\'t she finished?" — tam forması?',
+      options: ['Had she not finished?', 'Has she not finished?'],
+      answer: 'Had she not finished?',
+    },
+  ],
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -7512,14 +7443,51 @@ const VERBS_LEVEL = {
     },
 
     // ── Quiz: when / before / after ───────────────────────
-    { en: '"When I came, she ___ already left."',              tr: 'had',         wrong: 'has'   },
-    { en: '"After he ___ written, he went to sleep."',         tr: 'had',         wrong: 'has'   },
-    { en: '"She had left ___ I came."',                        tr: 'before',      wrong: 'after' },
-    { en: '"___ he had written, he went to sleep."',           tr: 'After',       wrong: 'Before' },
-    { en: '"By that time she ___ finished."',                  tr: 'had',         wrong: 'has'   },
-    { en: '"Hardly had I arrived ___ it rained."',             tr: 'when',        wrong: 'than'  },
-    { en: '"No sooner had I arrived ___ it rained."',          tr: 'than',        wrong: 'when'  },
-    { en: '"I had written." — Azərbaycanca?',                  tr: 'Mən yazmışdım.',  wrong: 'Mən yazmışam.' },
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"When I came, she ___ already left."',
+      options: ['had', 'has'],
+      answer: 'had',
+    },
+    {
+      q: '"After he ___ written, he went to sleep."',
+      options: ['had', 'has'],
+      answer: 'had',
+    },
+    {
+      q: '"She had left ___ I came."',
+      options: ['before', 'after'],
+      answer: 'before',
+    },
+    {
+      q: '"___ he had written, he went to sleep."',
+      options: ['After', 'Before'],
+      answer: 'After',
+    },
+    {
+      q: '"By that time she ___ finished."',
+      options: ['had', 'has'],
+      answer: 'had',
+    },
+    {
+      q: '"Hardly had I arrived ___ it rained."',
+      options: ['when', 'than'],
+      answer: 'when',
+    },
+    {
+      q: '"No sooner had I arrived ___ it rained."',
+      options: ['than', 'when'],
+      answer: 'than',
+    },
+    {
+      q: '"I had written." — Azərbaycanca?',
+      options: ['Mən yazmışdım.', 'Mən yazmışam.'],
+      answer: 'Mən yazmışdım.',
+    },
+  ],
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -7782,15 +7750,51 @@ const PASSIVE_LEVEL = {
           tip: 'İcraçını bildirmək üçün "by" sözönü işlənir:\nThe letter is written by him.',
         },
 
-        // Quiz
-        { en: '"I ___ invited."',                    tr: 'am',   wrong: 'is'   },
-        { en: '"She ___ invited."',                  tr: 'is',   wrong: 'are'  },
-        { en: '"They ___ invited."',                 tr: 'are',  wrong: 'is'   },
-        { en: '"English ___ spoken here."',          tr: 'is',   wrong: 'are'  },
-        { en: '"The books ___ sold."',               tr: 'are',  wrong: 'is'   },
-        { en: '"___ I invited?" — sual',             tr: 'Am',   wrong: 'Is'   },
-        { en: '"___ he called?" — sual',             tr: 'Is',   wrong: 'Are'  },
-        { en: '"I am not invited." — qısa?',         tr: 'I\'m not invited', wrong: 'I isn\'t invited' },
+       {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ invited."',
+      options: ['am', 'is'],
+      answer: 'am',
+    },
+    {
+      q: '"She ___ invited."',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"They ___ invited."',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: '"English ___ spoken here."',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"The books ___ sold."',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: '"___ I invited?" — sual',
+      options: ['Am', 'Is'],
+      answer: 'Am',
+    },
+    {
+      q: '"___ he called?" — sual',
+      options: ['Is', 'Are'],
+      answer: 'Is',
+    },
+    {
+      q: '"I am not invited." — qısa forması?',
+      options: ["I'm not invited", "I isn't invited"],
+      answer: "I'm not invited",
+    },
+  ],
+},
 
         // Mini-check
         {
@@ -7877,17 +7881,51 @@ const PASSIVE_LEVEL = {
           ],
           tip: 'İcraçı: by + isim\nThe letter was written by her.',
         },
-
-        // Quiz
-        { en: '"I ___ invited yesterday."',              tr: 'was',  wrong: 'were'  },
-        { en: '"They ___ invited last week."',           tr: 'were', wrong: 'was'   },
-        { en: '"She ___ called last night."',            tr: 'was',  wrong: 'were'  },
-        { en: '"We ___ told about it."',                 tr: 'were', wrong: 'was'   },
-        { en: '"___ he invited?" — sual',                tr: 'Was',  wrong: 'Were'  },
-        { en: '"___ they told?" — sual',                 tr: 'Were', wrong: 'Was'   },
-        { en: '"was invited" — Azərbaycanca?',           tr: 'dəvət edildi',    wrong: 'dəvət edilir'   },
-        { en: '"were broken" — Azərbaycanca?',           tr: 'sındırıldılar',   wrong: 'sındırılırlar'  },
-
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ invited yesterday."',
+      options: ['was', 'were'],
+      answer: 'was',
+    },
+    {
+      q: '"They ___ invited last week."',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: '"She ___ called last night."',
+      options: ['was', 'were'],
+      answer: 'was',
+    },
+    {
+      q: '"We ___ told about it."',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: '"___ he invited?" — sual',
+      options: ['Was', 'Were'],
+      answer: 'Was',
+    },
+    {
+      q: '"___ they told?" — sual',
+      options: ['Were', 'Was'],
+      answer: 'Were',
+    },
+    {
+      q: '"was invited" — Azərbaycanca?',
+      options: ['dəvət edildi', 'dəvət edilir'],
+      answer: 'dəvət edildi',
+    },
+    {
+      q: '"were broken" — Azərbaycanca?',
+      options: ['sındırıldılar', 'sındırılırlar'],
+      answer: 'sındırıldılar',
+    },
+  ],
+},
         // Mini-check
         {
           type: 'mini_check',
@@ -7973,14 +8011,51 @@ const PASSIVE_LEVEL = {
         },
 
         // Quiz
-        { en: '"I ___ invited." — Future Passive',       tr: 'shall be', wrong: 'will be'  },
-        { en: '"She ___ invited." — Future Passive',     tr: 'will be',  wrong: 'shall be' },
-        { en: '"They ___ told." — Future Passive',       tr: 'will be',  wrong: 'shall be' },
-        { en: '"We ___ invited." — Future Passive',      tr: 'shall be', wrong: 'will be'  },
-        { en: '"___ I be invited?" — sual',              tr: 'Shall',    wrong: 'Will'     },
-        { en: '"___ he be called?" — sual',              tr: 'Will',     wrong: 'Shall'    },
-        { en: '"will be sent" — Azərbaycanca?',          tr: 'göndəriləcək',   wrong: 'göndərildi'      },
-        { en: '"shall not be invited" — qısa?',          tr: 'shan\'t be invited', wrong: 'won\'t be invited' },
+     {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ invited." — Future Passive',
+      options: ['shall be', 'will be'],
+      answer: 'shall be',
+    },
+    {
+      q: '"She ___ invited." — Future Passive',
+      options: ['will be', 'shall be'],
+      answer: 'will be',
+    },
+    {
+      q: '"They ___ told." — Future Passive',
+      options: ['will be', 'shall be'],
+      answer: 'will be',
+    },
+    {
+      q: '"We ___ invited." — Future Passive',
+      options: ['shall be', 'will be'],
+      answer: 'shall be',
+    },
+    {
+      q: '"___ I be invited?" — sual',
+      options: ['Shall', 'Will'],
+      answer: 'Shall',
+    },
+    {
+      q: '"___ he be called?" — sual',
+      options: ['Will', 'Shall'],
+      answer: 'Will',
+    },
+    {
+      q: '"will be sent" — Azərbaycanca?',
+      options: ['göndəriləcək', 'göndərildi'],
+      answer: 'göndəriləcək',
+    },
+    {
+      q: '"shall not be invited" — qısa forması?',
+      options: ["shan't be invited", "won't be invited"],
+      answer: "shan't be invited",
+    },
+  ],
+},
 
         // Mini-check
         {
@@ -8092,14 +8167,46 @@ const PASSIVE_LEVEL = {
         },
 
         // Quiz
-        { en: '"I ___ invited." — Present Perfect Passive',     tr: 'have been', wrong: 'has been'  },
-        { en: '"She ___ invited." — Present Perfect Passive',   tr: 'has been',  wrong: 'have been' },
-        { en: '"They ___ told." — Present Perfect Passive',     tr: 'have been', wrong: 'has been'  },
-        { en: '"___ he invited?" — Present Perfect Passive',    tr: 'Has',       wrong: 'Have'      },
-        { en: '"___ they told?" — Present Perfect Passive',     tr: 'Have',      wrong: 'Has'       },
-        { en: '"has been written" — Azərbaycanca?',             tr: 'yazılmışdır',  wrong: 'yazılmışdı'   },
-        { en: '"have been sold" — Azərbaycanca?',               tr: 'satılmışlar',  wrong: 'satılırdılar' },
-
+      {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ invited." — Present Perfect Passive',
+      options: ['have been', 'has been'],
+      answer: 'have been',
+    },
+    {
+      q: '"She ___ invited." — Present Perfect Passive',
+      options: ['has been', 'have been'],
+      answer: 'has been',
+    },
+    {
+      q: '"They ___ told." — Present Perfect Passive',
+      options: ['have been', 'has been'],
+      answer: 'have been',
+    },
+    {
+      q: '"___ he invited?" — Present Perfect Passive',
+      options: ['Has', 'Have'],
+      answer: 'Has',
+    },
+    {
+      q: '"___ they told?" — Present Perfect Passive',
+      options: ['Have', 'Has'],
+      answer: 'Have',
+    },
+    {
+      q: '"has been written" — Azərbaycanca?',
+      options: ['yazılmışdır', 'yazılmışdı'],
+      answer: 'yazılmışdır',
+    },
+    {
+      q: '"have been sold" — Azərbaycanca?',
+      options: ['satılmışlar', 'satılırdılar'],
+      answer: 'satılmışlar',
+    },
+  ],
+},
         // Mini-check
         {
           type: 'mini_check',
@@ -8184,13 +8291,36 @@ const PASSIVE_LEVEL = {
           ],
         },
 
-        // Quiz
-        { en: '"I ___ invited." — Past Perfect Passive',     tr: 'had been', wrong: 'have been'  },
-        { en: '"She ___ told." — Past Perfect Passive',      tr: 'had been', wrong: 'has been'   },
-        { en: '"___ he invited?" — Past Perfect Passive',    tr: 'Had',      wrong: 'Have'       },
-        { en: '"had been written" — Azərbaycanca?',          tr: 'yazılmışdı',    wrong: 'yazılmışdır'  },
-        { en: '"had been invited" — Azərbaycanca?',          tr: 'dəvət edilmişdi', wrong: 'dəvət edilmişdir' },
-
+       {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I ___ invited." — Past Perfect Passive',
+      options: ['had been', 'have been'],
+      answer: 'had been',
+    },
+    {
+      q: '"She ___ told." — Past Perfect Passive',
+      options: ['had been', 'has been'],
+      answer: 'had been',
+    },
+    {
+      q: '"___ he invited?" — Past Perfect Passive',
+      options: ['Had', 'Have'],
+      answer: 'Had',
+    },
+    {
+      q: '"had been written" — Azərbaycanca?',
+      options: ['yazılmışdı', 'yazılmışdır'],
+      answer: 'yazılmışdı',
+    },
+    {
+      q: '"had been invited" — Azərbaycanca?',
+      options: ['dəvət edilmişdi', 'dəvət edilmişdir'],
+      answer: 'dəvət edilmişdi',
+    },
+  ],
+},
         // Mini-check
         {
           type: 'mini_check',
@@ -8283,14 +8413,46 @@ const PASSIVE_LEVEL = {
           note: 'İnkar: Modal + not + be + P II\nThe work must not be done.\nThe letter cannot be written.',
         },
 
-        // Quiz
-        { en: '"The work ___ be done."',              tr: 'must',   wrong: 'should be' },
-        { en: '"The letter ___ be written."',         tr: 'can',    wrong: 'could be'  },
-        { en: 'Modal Passive düzəlmə?',               tr: 'modal + be + P II',   wrong: 'modal + been + P II' },
-        { en: '"must be done" — Azərbaycanca?',       tr: 'görülməlidir',  wrong: 'görüldü'          },
-        { en: '"can be written" — Azərbaycanca?',     tr: 'yazıla bilər',  wrong: 'yazıldı'          },
-        { en: '"should be finished" — Azərbaycanca?', tr: 'bitirilməlidir', wrong: 'bitirildi'       },
-        { en: '"The door ___ not be opened."',        tr: 'must',   wrong: 'is'        },
+        {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"The work ___ be done."',
+      options: ['must', 'should be'],
+      answer: 'must',
+    },
+    {
+      q: '"The letter ___ be written."',
+      options: ['can', 'could be'],
+      answer: 'can',
+    },
+    {
+      q: 'Modal Passive necə düzəlir?',
+      options: ['modal + be + P II', 'modal + been + P II'],
+      answer: 'modal + be + P II',
+    },
+    {
+      q: '"must be done" — Azərbaycanca?',
+      options: ['görülməlidir', 'görüldü'],
+      answer: 'görülməlidir',
+    },
+    {
+      q: '"can be written" — Azərbaycanca?',
+      options: ['yazıla bilər', 'yazıldı'],
+      answer: 'yazıla bilər',
+    },
+    {
+      q: '"should be finished" — Azərbaycanca?',
+      options: ['bitirilməlidir', 'bitirildi'],
+      answer: 'bitirilməlidir',
+    },
+    {
+      q: '"The door ___ not be opened."',
+      options: ['must', 'is'],
+      answer: 'must',
+    },
+  ],
+},
 
         // Mini-check
         {
@@ -8424,13 +8586,46 @@ const PASSIVE_LEVEL = {
         },
 
         // Quiz
-        { en: '"I write a letter." → məchul mübtəda?',      tr: 'A letter',  wrong: 'I'          },
-        { en: '"She sent the book." → məchul mübtəda?',     tr: 'The book',  wrong: 'She'        },
-        { en: 'İcraçını bildirən sözönü?',                  tr: 'by',        wrong: 'with'       },
-        { en: '"by her" — Azərbaycanca?',                   tr: 'onun tərəfindən', wrong: 'onunla' },
-        { en: '"I write" → Passive Present?',               tr: 'is written',  wrong: 'was written' },
-        { en: '"She wrote" → Passive Past?',                tr: 'was written', wrong: 'is written'  },
-        { en: '"He will send" → Passive Future?',           tr: 'will be sent', wrong: 'is sent'    },
+       {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I write a letter." → məchul mübtəda?',
+      options: ['A letter', 'I'],
+      answer: 'A letter',
+    },
+    {
+      q: '"She sent the book." → məchul mübtəda?',
+      options: ['The book', 'She'],
+      answer: 'The book',
+    },
+    {
+      q: 'İcraçını bildirən sözönü?',
+      options: ['by', 'with'],
+      answer: 'by',
+    },
+    {
+      q: '"by her" — Azərbaycanca?',
+      options: ['onun tərəfindən', 'onunla'],
+      answer: 'onun tərəfindən',
+    },
+    {
+      q: '"I write" → Passive Present?',
+      options: ['is written', 'was written'],
+      answer: 'is written',
+    },
+    {
+      q: '"She wrote" → Passive Past?',
+      options: ['was written', 'is written'],
+      answer: 'was written',
+    },
+    {
+      q: '"He will send" → Passive Future?',
+      options: ['will be sent', 'is sent'],
+      answer: 'will be sent',
+    },
+  ],
+},
 
         // Mini-check
         {
@@ -8505,14 +8700,51 @@ const PASSIVE_LEVEL = {
         },
 
         // Quiz
-        { en: 'Məchul mübtəda: "him" → ?',        tr: 'he',   wrong: 'him'  },
-        { en: 'Məchul mübtəda: "her" → ?',        tr: 'she',  wrong: 'her'  },
-        { en: 'Məchul mübtəda: "them" → ?',       tr: 'they', wrong: 'them' },
-        { en: 'Məchul mübtəda: "us" → ?',         tr: 'we',   wrong: 'us'   },
-        { en: 'Məchul mübtəda: "me" → ?',         tr: 'I',    wrong: 'me'   },
-        { en: '"by" ilə: "I" → ?',                tr: 'by me',   wrong: 'by I'   },
-        { en: '"by" ilə: "she" → ?',              tr: 'by her',  wrong: 'by she' },
-        { en: '"by" ilə: "they" → ?',             tr: 'by them', wrong: 'by they'},
+      {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Məchul mübtəda: "him" → ?',
+      options: ['he', 'him'],
+      answer: 'he',
+    },
+    {
+      q: 'Məchul mübtəda: "her" → ?',
+      options: ['she', 'her'],
+      answer: 'she',
+    },
+    {
+      q: 'Məchul mübtəda: "them" → ?',
+      options: ['they', 'them'],
+      answer: 'they',
+    },
+    {
+      q: 'Məchul mübtəda: "us" → ?',
+      options: ['we', 'us'],
+      answer: 'we',
+    },
+    {
+      q: 'Məchul mübtəda: "me" → ?',
+      options: ['I', 'me'],
+      answer: 'I',
+    },
+    {
+      q: '"by" ilə: "I" → ?',
+      options: ['by me', 'by I'],
+      answer: 'by me',
+    },
+    {
+      q: '"by" ilə: "she" → ?',
+      options: ['by her', 'by she'],
+      answer: 'by her',
+    },
+    {
+      q: '"by" ilə: "they" → ?',
+      options: ['by them', 'by they'],
+      answer: 'by them',
+    },
+  ],
+},
 
         // Mini-check
         {
@@ -8603,11 +8835,36 @@ const PASSIVE_LEVEL = {
         },
 
         // Quiz
-        { en: '"I give him a book." → canlı tamamlıq?',        tr: 'him',      wrong: 'a book'    },
-        { en: '"I give him a book." → məchul mübtəda?',        tr: 'He',       wrong: 'A book'    },
-        { en: '"She sent me a letter." → məchul mübtəda?',     tr: 'I',        wrong: 'A letter'  },
-        { en: '"He gave her the money." → məchul mübtəda?',    tr: 'She',      wrong: 'The money' },
-        { en: 'Canlı tamamlıq məchul cümlədə nə olur?',       tr: 'mübtəda',  wrong: 'tamamlıq'  },
+        {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I give him a book." → canlı tamamlıq?',
+      options: ['him', 'a book'],
+      answer: 'him',
+    },
+    {
+      q: '"I give him a book." → məchul mübtəda?',
+      options: ['He', 'A book'],
+      answer: 'He',
+    },
+    {
+      q: '"She sent me a letter." → məchul mübtəda?',
+      options: ['I', 'A letter'],
+      answer: 'I',
+    },
+    {
+      q: '"He gave her the money." → məchul mübtəda?',
+      options: ['She', 'The money'],
+      answer: 'She',
+    },
+    {
+      q: 'Canlı tamamlıq məchul cümlədə nə olur?',
+      options: ['mübtəda', 'tamamlıq'],
+      answer: 'mübtəda',
+    },
+  ],
+},
 
         // Mini-check
         {
@@ -8670,13 +8927,36 @@ const PASSIVE_LEVEL = {
           tip: 'Mübtəda həmişə canlı tamamlıqdır.\nZaman forması dəyişir, qayda eyni qalır.',
         },
 
-        // Quiz
-        { en: '"I gave him a book." → Passive (Past)?',        tr: 'He was given a book.',       wrong: 'He is given a book.'        },
-        { en: '"I give him a book." → Passive (Present)?',     tr: 'He is given a book.',        wrong: 'He was given a book.'       },
-        { en: '"I will give him a book." → Passive (Future)?', tr: 'He will be given a book.',   wrong: 'He is given a book.'        },
-        { en: '"I have given him a book." → Passive?',         tr: 'He has been given a book.',  wrong: 'He had been given a book.'  },
-        { en: '"I had given him a book." → Passive?',          tr: 'He had been given a book.',  wrong: 'He has been given a book.'  },
-
+      {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I gave him a book." → Passive (Past)?',
+      options: ['He was given a book.', 'He is given a book.'],
+      answer: 'He was given a book.',
+    },
+    {
+      q: '"I give him a book." → Passive (Present)?',
+      options: ['He is given a book.', 'He was given a book.'],
+      answer: 'He is given a book.',
+    },
+    {
+      q: '"I will give him a book." → Passive (Future)?',
+      options: ['He will be given a book.', 'He is given a book.'],
+      answer: 'He will be given a book.',
+    },
+    {
+      q: '"I have given him a book." → Passive?',
+      options: ['He has been given a book.', 'He had been given a book.'],
+      answer: 'He has been given a book.',
+    },
+    {
+      q: '"I had given him a book." → Passive?',
+      options: ['He had been given a book.', 'He has been given a book.'],
+      answer: 'He had been given a book.',
+    },
+  ],
+},
         // Mini-check
         {
           type: 'mini_check',
@@ -8757,14 +9037,41 @@ const PASSIVE_LEVEL = {
           ],
         },
 
-        // Quiz
-        { en: '"They write letters." → Passive Present?',      tr: 'Letters are written.',         wrong: 'Letters were written.'         },
-        { en: '"They wrote letters." → Passive Past?',         tr: 'Letters were written.',        wrong: 'Letters are written.'          },
-        { en: '"They will write." → Passive Future?',          tr: 'It will be written.',          wrong: 'It is written.'                },
-        { en: '"They have written." → Passive Present Perf?',  tr: 'It has been written.',         wrong: 'It had been written.'          },
-        { en: '"They had written." → Passive Past Perf?',      tr: 'It had been written.',         wrong: 'It has been written.'          },
-        { en: '"They must write." → Passive Modal?',           tr: 'It must be written.',          wrong: 'It must been written.'         },
-
+       {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"They write letters." → Passive Present?',
+      options: ['Letters are written.', 'Letters were written.'],
+      answer: 'Letters are written.',
+    },
+    {
+      q: '"They wrote letters." → Passive Past?',
+      options: ['Letters were written.', 'Letters are written.'],
+      answer: 'Letters were written.',
+    },
+    {
+      q: '"They will write." → Passive Future?',
+      options: ['It will be written.', 'It is written.'],
+      answer: 'It will be written.',
+    },
+    {
+      q: '"They have written." → Passive Present Perfect?',
+      options: ['It has been written.', 'It had been written.'],
+      answer: 'It has been written.',
+    },
+    {
+      q: '"They had written." → Passive Past Perfect?',
+      options: ['It had been written.', 'It has been written.'],
+      answer: 'It had been written.',
+    },
+    {
+      q: '"They must write." → Passive Modal?',
+      options: ['It must be written.', 'It must been written.'],
+      answer: 'It must be written.',
+    },
+  ],
+},
         // Mini-check
         {
           type: 'mini_check',
@@ -8838,15 +9145,46 @@ const PASSIVE_LEVEL = {
           ],
         },
 
-        // Quiz
-        { en: '"is written" — Azərbaycanca?',          tr: 'yazılır',       wrong: 'yazıldı'       },
-        { en: '"was written" — Azərbaycanca?',         tr: 'yazıldı',       wrong: 'yazılır'       },
-        { en: '"will be written" — Azərbaycanca?',     tr: 'yazılacaq',     wrong: 'yazıldı'       },
-        { en: '"has been written" — Azərbaycanca?',    tr: 'yazılmışdır',   wrong: 'yazılmışdı'    },
-        { en: '"had been written" — Azərbaycanca?',    tr: 'yazılmışdı',    wrong: 'yazılmışdır'   },
-        { en: '"must be written" — Azərbaycanca?',     tr: 'yazılmalıdır',  wrong: 'yazıla bilər'  },
-        { en: '"can be written" — Azərbaycanca?',      tr: 'yazıla bilər',  wrong: 'yazılmalıdır'  },
-
+        {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"is written" — Azərbaycanca?',
+      options: ['yazılır', 'yazıldı'],
+      answer: 'yazılır',
+    },
+    {
+      q: '"was written" — Azərbaycanca?',
+      options: ['yazıldı', 'yazılır'],
+      answer: 'yazıldı',
+    },
+    {
+      q: '"will be written" — Azərbaycanca?',
+      options: ['yazılacaq', 'yazıldı'],
+      answer: 'yazılacaq',
+    },
+    {
+      q: '"has been written" — Azərbaycanca?',
+      options: ['yazılmışdır', 'yazılmışdı'],
+      answer: 'yazılmışdır',
+    },
+    {
+      q: '"had been written" — Azərbaycanca?',
+      options: ['yazılmışdı', 'yazılmışdır'],
+      answer: 'yazılmışdı',
+    },
+    {
+      q: '"must be written" — Azərbaycanca?',
+      options: ['yazılmalıdır', 'yazıla bilər'],
+      answer: 'yazılmalıdır',
+    },
+    {
+      q: '"can be written" — Azərbaycanca?',
+      options: ['yazıla bilər', 'yazılmalıdır'],
+      answer: 'yazıla bilər',
+    },
+  ],
+},
         // Mini-check
         {
           type: 'mini_check',
