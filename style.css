@@ -3557,6 +3557,11 @@ button { font-family: var(--font); }
   color: #DC2626;
 }
 
+.grammar-lesson-node .ti,
+.grammar-quiz-node .ti {
+  font-size: 20px;
+}
+
 .grammar-section-divider {
   margin-bottom: 28px;
 }
