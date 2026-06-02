@@ -506,13 +506,46 @@ const KIDS_GRAMMAR_LEVELS = [
             tip: 'Sadə isimlər ən qısa və ən çox işlənən isim növüdür.',
           },
 
-          // ── Quiz: Sadə isimi seç ─────────────────────────
-          { en: 'Sadə isimi seç', tr: 'book',  wrong: 'teacher'     },
-          { en: 'Sadə isimi seç', tr: 'sun',   wrong: 'darkness'    },
-          { en: 'Sadə isimi seç', tr: 'chair', wrong: 'freedom'     },
-          { en: 'Sadə isimi seç', tr: 'road',  wrong: 'railway'     },
-          { en: 'Sadə isimi seç', tr: 'rain',  wrong: 'self-control'},
-
+        {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"book" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"sun" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"chair" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Sadə',
+    },
+    {
+      q: '"darkness" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Düzəltmə',
+    },
+    {
+      q: '"freedom" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Düzəltmə',
+    },
+    {
+      q: '"railway" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Mürəkkəb',
+    },
+    {
+      q: '"self-control" hansı növ isimdir?',
+      options: ['Sadə', 'Düzəltmə', 'Mürəkkəb'],
+      answer: 'Mürəkkəb',
+    },
+  ],
+},
           // ── Ekran 3: Düzəltmə isimlər ───────────────────
           {
             type: 'lesson',
@@ -691,13 +724,31 @@ const KIDS_GRAMMAR_LEVELS = [
             note: '-er / -or şəkilçisi "iş görən şəxs" mənası verir: teach → teacher (müəllim).',
           },
 
-          // ── Mini-check: Feldən düzələn ───────────────────
-          { type: 'mini_check', questions: [{ q: '"teacher" sözündə hansı şəkilçi isim düzəldir?', options: ['-er', '-ness', '-dom', '-hood'], answer: '-er' }] },
-          { type: 'mini_check', questions: [{ q: 'Hansı söz feldən düzəlmiş isimdir?', options: ['wisdom', 'meeting', 'village', 'kingdom'], answer: 'meeting' }] },
-          { type: 'mini_check', questions: [{ q: '"develop" felindən isim düzəltmək üçün hansı şəkilçi lazımdır?', options: ['-ness', '-ity', '-ment', '-hood'], answer: '-ment' }] },
-          { type: 'mini_check', questions: [{ q: 'Hansı söz "-tion / -sion" şəkilçisi ilə düzəlmişdir?', options: ['darkness', 'friendship', 'revision', 'strength'], answer: 'revision' }] },
-
-          // ── Ekran 3: Sifətdən düzələn isimlər ───────────
+          {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"teacher" sözündə hansı şəkilçi isim düzəldir?',
+      options: ['-er', '-ness', '-dom', '-hood'],
+      answer: '-er',
+    },
+    {
+      q: 'Hansı söz feldən düzəlmiş isimdir?',
+      options: ['wisdom', 'meeting', 'village', 'kingdom'],
+      answer: 'meeting',
+    },
+    {
+      q: '"develop" felindən isim düzəltmək üçün hansı şəkilçi lazımdır?',
+      options: ['-ness', '-ity', '-ment', '-hood'],
+      answer: '-ment',
+    },
+    {
+      q: 'Hansı söz "-tion / -sion" şəkilçisi ilə düzəlmişdir?',
+      options: ['darkness', 'friendship', 'revision', 'strength'],
+      answer: 'revision',
+    },
+  ],
+},          // ── Ekran 3: Sifətdən düzələn isimlər ───────────
           {
             type: 'lesson',
             title: 'Sifətdən düzələn isimlər',
@@ -1163,46 +1214,141 @@ const KIDS_GRAMMAR_LEVELS = [
   ],
 },
 
-// ── Bölmə 2 — Ümumi Quiz ─────────────────────────────────
-[
-  // Common vs Proper
-  { en: 'Baku',          tr: 'Proper noun',    wrong: 'Common noun'  },
-  { en: 'a city',        tr: 'Common noun',    wrong: 'Proper noun'  },
-  { en: 'January',       tr: 'Proper noun',    wrong: 'Common noun'  },
-  { en: 'a lake',        tr: 'Common noun',    wrong: 'Proper noun'  },
-  { en: 'Tuesday',       tr: 'Proper noun',    wrong: 'Common noun'  },
-  { en: 'weather',       tr: 'Common noun',    wrong: 'Proper noun'  },
-
-  // Concrete vs Abstract
-  { en: 'happiness',     tr: 'Abstract',       wrong: 'Concrete'     },
-  { en: 'a pen',         tr: 'Concrete',       wrong: 'Abstract'     },
-  { en: 'freedom',       tr: 'Abstract',       wrong: 'Concrete'     },
-  { en: 'a table',       tr: 'Concrete',       wrong: 'Abstract'     },
-  { en: 'knowledge',     tr: 'Abstract',       wrong: 'Concrete'     },
-  { en: 'bread',         tr: 'Concrete',       wrong: 'Abstract'     },
-
-  // Countable vs Uncountable
-  { en: 'milk',          tr: 'Uncountable',    wrong: 'Countable'    },
-  { en: 'a book',        tr: 'Countable',      wrong: 'Uncountable'  },
-  { en: 'water',         tr: 'Uncountable',    wrong: 'Countable'    },
-  { en: 'a chair',       tr: 'Countable',      wrong: 'Uncountable'  },
-
-  // many / much / few / little
-  { en: 'Çox kitab → ____', tr: 'many books',  wrong: 'much books'   },
-  { en: 'Çox süd → ____',   tr: 'much milk',   wrong: 'many milk'    },
-  { en: 'Az pul → ____',    tr: 'little money',wrong: 'few money'    },
-  { en: 'Az uşaq → ____',   tr: 'few children',wrong: 'little children' },
-
-  // Abstract noun + sifət
-  { en: 'a good ____',   tr: 'knowledge',      wrong: 'knowledges'   },
-  { en: 'a hard ____',   tr: 'life',           wrong: 'lives'        },
-
-  // Gender
-  { en: 'actor → ____',  tr: 'actress',        wrong: 'actoress'     },
-  { en: 'Ölkə → hansı əvəzlik?', tr: 'she',   wrong: 'it'           },
-  { en: 'Həşərat → hansı əvəzlik?', tr: 'it', wrong: 'she'          },
-  { en: 'lion → ____',   tr: 'lioness',        wrong: 'lionness'     },
-],
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Baku" hansı növ isimdir?',
+      options: ['Proper noun', 'Common noun'],
+      answer: 'Proper noun',
+    },
+    {
+      q: '"a city" hansı növ isimdir?',
+      options: ['Common noun', 'Proper noun'],
+      answer: 'Common noun',
+    },
+    {
+      q: '"January" hansı növ isimdir?',
+      options: ['Proper noun', 'Common noun'],
+      answer: 'Proper noun',
+    },
+    {
+      q: '"a lake" hansı növ isimdir?',
+      options: ['Common noun', 'Proper noun'],
+      answer: 'Common noun',
+    },
+    {
+      q: '"Tuesday" hansı növ isimdir?',
+      options: ['Proper noun', 'Common noun'],
+      answer: 'Proper noun',
+    },
+    {
+      q: '"weather" hansı növ isimdir?',
+      options: ['Common noun', 'Proper noun'],
+      answer: 'Common noun',
+    },
+    {
+      q: '"happiness" hansı növ isimdir?',
+      options: ['Abstract', 'Concrete'],
+      answer: 'Abstract',
+    },
+    {
+      q: '"a pen" hansı növ isimdir?',
+      options: ['Concrete', 'Abstract'],
+      answer: 'Concrete',
+    },
+    {
+      q: '"freedom" hansı növ isimdir?',
+      options: ['Abstract', 'Concrete'],
+      answer: 'Abstract',
+    },
+    {
+      q: '"a table" hansı növ isimdir?',
+      options: ['Concrete', 'Abstract'],
+      answer: 'Concrete',
+    },
+    {
+      q: '"knowledge" hansı növ isimdir?',
+      options: ['Abstract', 'Concrete'],
+      answer: 'Abstract',
+    },
+    {
+      q: '"bread" hansı növ isimdir?',
+      options: ['Concrete', 'Abstract'],
+      answer: 'Concrete',
+    },
+    {
+      q: '"milk" hansı növ isimdir?',
+      options: ['Uncountable', 'Countable'],
+      answer: 'Uncountable',
+    },
+    {
+      q: '"a book" hansı növ isimdir?',
+      options: ['Countable', 'Uncountable'],
+      answer: 'Countable',
+    },
+    {
+      q: '"water" hansı növ isimdir?',
+      options: ['Uncountable', 'Countable'],
+      answer: 'Uncountable',
+    },
+    {
+      q: '"a chair" hansı növ isimdir?',
+      options: ['Countable', 'Uncountable'],
+      answer: 'Countable',
+    },
+    {
+      q: 'Çox kitab → ____',
+      options: ['many books', 'much books'],
+      answer: 'many books',
+    },
+    {
+      q: 'Çox süd → ____',
+      options: ['much milk', 'many milk'],
+      answer: 'much milk',
+    },
+    {
+      q: 'Az pul → ____',
+      options: ['little money', 'few money'],
+      answer: 'little money',
+    },
+    {
+      q: 'Az uşaq → ____',
+      options: ['few children', 'little children'],
+      answer: 'few children',
+    },
+    {
+      q: '"a good ____" — boşluğa nə gəlir?',
+      options: ['knowledge', 'knowledges'],
+      answer: 'knowledge',
+    },
+    {
+      q: '"a hard ____" — boşluğa nə gəlir?',
+      options: ['life', 'lives'],
+      answer: 'life',
+    },
+    {
+      q: '"actor" sözünün qadın forması nədir?',
+      options: ['actress', 'actoress'],
+      answer: 'actress',
+    },
+    {
+      q: 'Ölkə → hansı əvəzlik?',
+      options: ['she', 'it'],
+      answer: 'she',
+    },
+    {
+      q: 'Həşərat → hansı əvəzlik?',
+      options: ['it', 'she'],
+      answer: 'it',
+    },
+    {
+      q: '"lion" sözünün qadın forması nədir?',
+      options: ['lioness', 'lionness'],
+      answer: 'lioness',
+    },
+  ],
+},
      // ── Bölmə 3 ──────────────────────────────────────
       {
         type: 'section_divider',
@@ -1481,40 +1627,116 @@ const KIDS_GRAMMAR_LEVELS = [
       },
 
       // ── Bölmə 3 — Ümumi Quiz ────────────────────────────
-      [
-        // Countable vs Uncountable
-        { en: 'student',     tr: 'Countable',   wrong: 'Uncountable' },
-        { en: 'milk',        tr: 'Uncountable',  wrong: 'Countable'  },
-        { en: 'furniture',   tr: 'Uncountable',  wrong: 'Countable'  },
-        { en: 'book',        tr: 'Countable',    wrong: 'Uncountable' },
-        { en: 'advice',      tr: 'Uncountable',  wrong: 'Countable'  },
-        { en: 'teacher',     tr: 'Countable',    wrong: 'Uncountable' },
-        { en: 'knowledge',   tr: 'Uncountable',  wrong: 'Countable'  },
-        { en: 'rice',        tr: 'Uncountable',  wrong: 'Countable'  },
-
-        // many / much / few / little
-        { en: 'Çox kitab → ____',   tr: 'many books',   wrong: 'much books'   },
-        { en: 'Çox su → ____',      tr: 'much water',   wrong: 'many water'   },
-        { en: 'Az tələbə → ____',   tr: 'few students', wrong: 'little students' },
-        { en: 'Az vaxt → ____',     tr: 'little time',  wrong: 'few time'     },
-
-        // a few / a little
-        { en: 'Bir neçə kitabım var → ____', tr: 'a few books',   wrong: 'few books'   },
-        { en: 'Bir az pulum var → ____',     tr: 'a little money',wrong: 'little money' },
-
-        // a lot of
-        { en: 'Təsdiq: Çox maşın var → ____', tr: 'a lot of cars',  wrong: 'many cars'   },
-        { en: 'Sual: Çox maşın var? → ____',  tr: 'many cars?',     wrong: 'a lot of cars?' },
-
-        // fel uyğunluğu
-        { en: 'A lot of water ___ wasted.',      tr: 'is',  wrong: 'are' },
-        { en: 'A lot of students ___ in yard.',  tr: 'are', wrong: 'is'  },
-        { en: 'Much time ___ wasted.',           tr: 'was', wrong: 'were'},
-        { en: 'The news ___ good.',              tr: 'is',  wrong: 'are' },
-
-        // zərf
-        { en: 'O çox oxuyur → He reads ____',   tr: 'a lot',        wrong: 'a lot of'   },
-      ],
+     {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"student" hansı növ isimdir?',
+      options: ['Countable', 'Uncountable'],
+      answer: 'Countable',
+    },
+    {
+      q: '"milk" hansı növ isimdir?',
+      options: ['Uncountable', 'Countable'],
+      answer: 'Uncountable',
+    },
+    {
+      q: '"furniture" hansı növ isimdir?',
+      options: ['Uncountable', 'Countable'],
+      answer: 'Uncountable',
+    },
+    {
+      q: '"book" hansı növ isimdir?',
+      options: ['Countable', 'Uncountable'],
+      answer: 'Countable',
+    },
+    {
+      q: '"advice" hansı növ isimdir?',
+      options: ['Uncountable', 'Countable'],
+      answer: 'Uncountable',
+    },
+    {
+      q: '"teacher" hansı növ isimdir?',
+      options: ['Countable', 'Uncountable'],
+      answer: 'Countable',
+    },
+    {
+      q: '"knowledge" hansı növ isimdir?',
+      options: ['Uncountable', 'Countable'],
+      answer: 'Uncountable',
+    },
+    {
+      q: '"rice" hansı növ isimdir?',
+      options: ['Uncountable', 'Countable'],
+      answer: 'Uncountable',
+    },
+    {
+      q: 'Çox kitab → ____',
+      options: ['many books', 'much books'],
+      answer: 'many books',
+    },
+    {
+      q: 'Çox su → ____',
+      options: ['much water', 'many water'],
+      answer: 'much water',
+    },
+    {
+      q: 'Az tələbə → ____',
+      options: ['few students', 'little students'],
+      answer: 'few students',
+    },
+    {
+      q: 'Az vaxt → ____',
+      options: ['little time', 'few time'],
+      answer: 'little time',
+    },
+    {
+      q: 'Bir neçə kitabım var → ____',
+      options: ['a few books', 'few books'],
+      answer: 'a few books',
+    },
+    {
+      q: 'Bir az pulum var → ____',
+      options: ['a little money', 'little money'],
+      answer: 'a little money',
+    },
+    {
+      q: 'Təsdiq cümlədə: Çox maşın var → ____',
+      options: ['a lot of cars', 'many cars'],
+      answer: 'a lot of cars',
+    },
+    {
+      q: 'Sual cümlədə: Çox maşın var? → ____',
+      options: ['many cars?', 'a lot of cars?'],
+      answer: 'many cars?',
+    },
+    {
+      q: 'A lot of water ___ wasted.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'A lot of students ___ in yard.',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'Much time ___ wasted.',
+      options: ['was', 'were'],
+      answer: 'was',
+    },
+    {
+      q: 'The news ___ good.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'O çox oxuyur → He reads ____',
+      options: ['a lot', 'a lot of'],
+      answer: 'a lot',
+    },
+  ],
+},
 
      // ── Test 1 — Bölmə 1, 2, 3 yekun testi ─────────────
       [
@@ -1787,33 +2009,111 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 
-      // ── Bölmə 4 — Ümumi Quiz ─────────────────────────────
-      [
-        { en: 'crowd',   tr: 'Kollektiv isim', wrong: 'Mücərrəd isim' },
-        { en: 'family',  tr: 'Kollektiv isim', wrong: 'Sayılmayan'    },
-        { en: 'crew',    tr: 'Kollektiv isim', wrong: 'Xüsusi isim'   },
-
-        { en: 'The crowds ___ enormous.',              tr: 'were',  wrong: 'was'  },
-        { en: 'My family ___ large. (bir bütün)',      tr: 'is',    wrong: 'are'  },
-        { en: 'My family ___ early risers. (üzvlər)', tr: 'are',   wrong: 'is'   },
-        { en: 'The police ___ there.',                 tr: 'were',  wrong: 'was'  },
-        { en: 'The cattle ___ grazing.',               tr: 'were',  wrong: 'was'  },
-        { en: 'People ___ strange sometimes.',         tr: 'are',   wrong: 'is'   },
-        { en: 'Money ___ money.',                      tr: 'makes', wrong: 'make' },
-
-        { en: '"a cattle" düzgündürmü?',        tr: 'Xeyr', wrong: 'Bəli' },
-        { en: '"polices" forması düzgündürmü?', tr: 'Xeyr', wrong: 'Bəli' },
-
-        { en: 'The peoples of the world — nə mənada?', tr: 'Bir neçə xalq',    wrong: 'İnsanlar' },
-        { en: 'The people of Azerbaijan — nə mənada?', tr: 'Azərbaycan xalqı', wrong: 'İnsanlar' },
-
-        { en: 'money — "çox" mənasında ____', tr: 'much money',   wrong: 'many money' },
-        { en: 'money — "az" mənasında ____',  tr: 'little money', wrong: 'few money'  },
-        { en: 'youth',  tr: 'həmişə tək', wrong: 'həmişə cəm' },
-        { en: 'linen',  tr: 'həmişə tək', wrong: 'həmişə cəm' },
-        { en: 'police', tr: 'həmişə cəm', wrong: 'həmişə tək' },
-        { en: 'cattle', tr: 'həmişə cəm', wrong: 'həmişə tək' },
-      ],
+     {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"crowd" hansı növ isimdir?',
+      options: ['Kollektiv isim', 'Mücərrəd isim'],
+      answer: 'Kollektiv isim',
+    },
+    {
+      q: '"family" hansı növ isimdir?',
+      options: ['Kollektiv isim', 'Sayılmayan'],
+      answer: 'Kollektiv isim',
+    },
+    {
+      q: '"crew" hansı növ isimdir?',
+      options: ['Kollektiv isim', 'Xüsusi isim'],
+      answer: 'Kollektiv isim',
+    },
+    {
+      q: 'The crowds ___ enormous.',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: 'My family ___ large. (bir bütün kimi)',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'My family ___ early risers. (üzvlər kimi)',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'The police ___ there.',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: 'The cattle ___ grazing.',
+      options: ['were', 'was'],
+      answer: 'were',
+    },
+    {
+      q: 'People ___ strange sometimes.',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'Money ___ money.',
+      options: ['makes', 'make'],
+      answer: 'makes',
+    },
+    {
+      q: '"a cattle" ifadəsi düzgündürmü?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"polices" forması düzgündürmü?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"The peoples of the world" — nə mənada işlənir?',
+      options: ['Bir neçə xalq', 'İnsanlar'],
+      answer: 'Bir neçə xalq',
+    },
+    {
+      q: '"The people of Azerbaijan" — nə mənada işlənir?',
+      options: ['Azərbaycan xalqı', 'İnsanlar'],
+      answer: 'Azərbaycan xalqı',
+    },
+    {
+      q: '"money" — "çox" mənasında ____',
+      options: ['much money', 'many money'],
+      answer: 'much money',
+    },
+    {
+      q: '"money" — "az" mənasında ____',
+      options: ['little money', 'few money'],
+      answer: 'little money',
+    },
+    {
+      q: '"youth" ismi necə işlənir?',
+      options: ['həmişə tək', 'həmişə cəm'],
+      answer: 'həmişə tək',
+    },
+    {
+      q: '"linen" ismi necə işlənir?',
+      options: ['həmişə tək', 'həmişə cəm'],
+      answer: 'həmişə tək',
+    },
+    {
+      q: '"police" ismi necə işlənir?',
+      options: ['həmişə cəm', 'həmişə tək'],
+      answer: 'həmişə cəm',
+    },
+    {
+      q: '"cattle" ismi necə işlənir?',
+      options: ['həmişə cəm', 'həmişə tək'],
+      answer: 'həmişə cəm',
+    },
+  ],
+},
 
    // ── Bölmə 5 ──────────────────────────────────────
       {
@@ -2220,50 +2520,156 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 
-      // ── Bölmə 5 — Ümumi Quiz ─────────────────────────────
-      [
-        // -s / -es
-        { en: 'box → ____',   tr: 'boxes',   wrong: 'boxs'    },
-        { en: 'pen → ____',   tr: 'pens',    wrong: 'penes'   },
-        { en: 'watch → ____', tr: 'watches', wrong: 'watchs'  },
-        { en: 'bus → ____',   tr: 'buses',   wrong: 'buss'    },
-        { en: 'bench → ____', tr: 'benches', wrong: 'benchs'  },
-
-        // Qaydasız cəm
-        { en: 'man → ____',   tr: 'men',      wrong: 'mans'    },
-        { en: 'tooth → ____', tr: 'teeth',    wrong: 'tooths'  },
-        { en: 'child → ____', tr: 'children', wrong: 'childs'  },
-        { en: 'mouse → ____', tr: 'mice',     wrong: 'mouses'  },
-        { en: 'foot → ____',  tr: 'feet',     wrong: 'foots'   },
-        { en: 'goose → ____', tr: 'geese',    wrong: 'gooses'  },
-
-        // Man/Woman mürəkkəb
-        { en: 'postman → ____',      tr: 'postmen',      wrong: 'postmans'     },
-        { en: 'policeman → ____',    tr: 'policemen',    wrong: 'policemans'   },
-        { en: 'woman doctor → ____', tr: 'women doctors',wrong: 'woman doctors'},
-        { en: 'German → ____',       tr: 'Germans',      wrong: 'Germens'      },
-
-        // -f / -fe
-        { en: 'wife → ____',  tr: 'wives',  wrong: 'wifes'  },
-        { en: 'leaf → ____',  tr: 'leaves', wrong: 'leafs'  },
-        { en: 'roof → ____',  tr: 'roofs',  wrong: 'rooves' },
-        { en: 'shelf → ____', tr: 'shelves',wrong: 'shelfs' },
-        { en: 'chief → ____', tr: 'chiefs', wrong: 'chieves'},
-
-        // -o
-        { en: 'potato → ____', tr: 'potatoes', wrong: 'potatos' },
-        { en: 'radio → ____',  tr: 'radios',   wrong: 'radioes' },
-        { en: 'hero → ____',   tr: 'heroes',   wrong: 'heros'   },
-        { en: 'piano → ____',  tr: 'pianos',   wrong: 'pianoes' },
-
-        // -y
-        { en: 'city → ____',    tr: 'cities',   wrong: 'citys'    },
-        { en: 'day → ____',     tr: 'days',     wrong: 'daies'    },
-        { en: 'baby → ____',    tr: 'babies',   wrong: 'babys'    },
-        { en: 'monkey → ____',  tr: 'monkeys',  wrong: 'monkies'  },
-        { en: 'factory → ____', tr: 'factories',wrong: 'factorys' },
-      ],
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'box → ____',
+      options: ['boxes', 'boxs'],
+      answer: 'boxes',
+    },
+    {
+      q: 'pen → ____',
+      options: ['pens', 'penes'],
+      answer: 'pens',
+    },
+    {
+      q: 'watch → ____',
+      options: ['watches', 'watchs'],
+      answer: 'watches',
+    },
+    {
+      q: 'bus → ____',
+      options: ['buses', 'buss'],
+      answer: 'buses',
+    },
+    {
+      q: 'bench → ____',
+      options: ['benches', 'benchs'],
+      answer: 'benches',
+    },
+    {
+      q: 'man → ____',
+      options: ['men', 'mans'],
+      answer: 'men',
+    },
+    {
+      q: 'tooth → ____',
+      options: ['teeth', 'tooths'],
+      answer: 'teeth',
+    },
+    {
+      q: 'child → ____',
+      options: ['children', 'childs'],
+      answer: 'children',
+    },
+    {
+      q: 'mouse → ____',
+      options: ['mice', 'mouses'],
+      answer: 'mice',
+    },
+    {
+      q: 'foot → ____',
+      options: ['feet', 'foots'],
+      answer: 'feet',
+    },
+    {
+      q: 'goose → ____',
+      options: ['geese', 'gooses'],
+      answer: 'geese',
+    },
+    {
+      q: 'postman → ____',
+      options: ['postmen', 'postmans'],
+      answer: 'postmen',
+    },
+    {
+      q: 'policeman → ____',
+      options: ['policemen', 'policemans'],
+      answer: 'policemen',
+    },
+    {
+      q: 'woman doctor → ____',
+      options: ['women doctors', 'woman doctors'],
+      answer: 'women doctors',
+    },
+    {
+      q: 'German → ____',
+      options: ['Germans', 'Germens'],
+      answer: 'Germans',
+    },
+    {
+      q: 'wife → ____',
+      options: ['wives', 'wifes'],
+      answer: 'wives',
+    },
+    {
+      q: 'leaf → ____',
+      options: ['leaves', 'leafs'],
+      answer: 'leaves',
+    },
+    {
+      q: 'roof → ____',
+      options: ['roofs', 'rooves'],
+      answer: 'roofs',
+    },
+    {
+      q: 'shelf → ____',
+      options: ['shelves', 'shelfs'],
+      answer: 'shelves',
+    },
+    {
+      q: 'chief → ____',
+      options: ['chiefs', 'chieves'],
+      answer: 'chiefs',
+    },
+    {
+      q: 'potato → ____',
+      options: ['potatoes', 'potatos'],
+      answer: 'potatoes',
+    },
+    {
+      q: 'radio → ____',
+      options: ['radios', 'radioes'],
+      answer: 'radios',
+    },
+    {
+      q: 'hero → ____',
+      options: ['heroes', 'heros'],
+      answer: 'heroes',
+    },
+    {
+      q: 'piano → ____',
+      options: ['pianos', 'pianoes'],
+      answer: 'pianos',
+    },
+    {
+      q: 'city → ____',
+      options: ['cities', 'citys'],
+      answer: 'cities',
+    },
+    {
+      q: 'day → ____',
+      options: ['days', 'daies'],
+      answer: 'days',
+    },
+    {
+      q: 'baby → ____',
+      options: ['babies', 'babys'],
+      answer: 'babies',
+    },
+    {
+      q: 'monkey → ____',
+      options: ['monkeys', 'monkies'],
+      answer: 'monkeys',
+    },
+    {
+      q: 'factory → ____',
+      options: ['factories', 'factorys'],
+      answer: 'factories',
+    },
+  ],
+},
       // ── Bölmə 6 ──────────────────────────────────────
       {
         type: 'section_divider',
@@ -2675,43 +3081,121 @@ const KIDS_GRAMMAR_LEVELS = [
         ],
       },
 
-      // ── Bölmə 6 — Ümumi Quiz ─────────────────────────────
-      [
-        // Həmişə tək
-        { en: 'advice — cəmi varmı?',        tr: 'Xeyr',  wrong: 'Bəli'  },
-        { en: 'furniture — cəmi varmı?',     tr: 'Xeyr',  wrong: 'Bəli'  },
-        { en: 'Much progress ___ made.',     tr: 'was',   wrong: 'were'  },
-        { en: 'Much information ___ needed.',tr: 'is',    wrong: 'are'   },
-
-        // Hair / Fruit
-        { en: 'Her hair ___ beautiful.',     tr: 'is',    wrong: 'are'   },
-        { en: 'Fruit ___ useful.',           tr: 'is',    wrong: 'are'   },
-        { en: 'fruits — nə vaxt işlənir?',   tr: 'Müxtəlif növ meyvə', wrong: 'Həmişə' },
-
-        // Həmişə cəm
-        { en: 'Where ___ my scissors?',      tr: 'are',   wrong: 'is'    },
-        { en: 'My jeans ___ blue.',          tr: 'are',   wrong: 'is'    },
-        { en: 'The clothes ___ clean.',      tr: 'are',   wrong: 'is'    },
-        { en: 'Bir qayçı → ____',            tr: 'a pair of scissors', wrong: 'a scissors' },
-        { en: 'İki şalvar → ____',           tr: 'two pairs of trousers', wrong: 'two trousers' },
-
-        // Holiday
-        { en: 'Today ___ a holiday. (bayram)', tr: 'is',  wrong: 'are'  },
-        { en: 'The holidays ___ over. (tətil)',tr: 'are', wrong: 'is'   },
-
-        // News / Elm adları
-        { en: 'The news ___ good.',          tr: 'is',    wrong: 'are'  },
-        { en: 'Physics ___ difficult.',      tr: 'is',    wrong: 'are'  },
-        { en: 'Phonetics ___ interesting.',  tr: 'is',    wrong: 'are'  },
-        { en: '"a news" düzgündürmü?',       tr: 'Xeyr',  wrong: 'Bəli' },
-
-        // Sheep / Fish / Deer
-        { en: 'Five sheep ___ grazing.',     tr: 'are',   wrong: 'is'   },
-        { en: 'A deer ___ in the forest.',   tr: 'is',    wrong: 'are'  },
-        { en: 'fish — adı cəmi necədir?',    tr: 'fish',  wrong: 'fishes' },
-        { en: '"various fishes" — nə mənada?', tr: 'Müxtəlif növ balıq', wrong: 'Səhvdir' },
-      ],
-
+      {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"advice" sözünün cəmi varmı?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"furniture" sözünün cəmi varmı?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: 'Much progress ___ made.',
+      options: ['was', 'were'],
+      answer: 'was',
+    },
+    {
+      q: 'Much information ___ needed.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'Her hair ___ beautiful.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'Fruit ___ useful.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"fruits" forması nə vaxt işlənir?',
+      options: ['Müxtəlif növ meyvə', 'Həmişə'],
+      answer: 'Müxtəlif növ meyvə',
+    },
+    {
+      q: 'Where ___ my scissors?',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'My jeans ___ blue.',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'The clothes ___ clean.',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'Bir qayçı → ____',
+      options: ['a pair of scissors', 'a scissors'],
+      answer: 'a pair of scissors',
+    },
+    {
+      q: 'İki şalvar → ____',
+      options: ['two pairs of trousers', 'two trousers'],
+      answer: 'two pairs of trousers',
+    },
+    {
+      q: 'Today ___ a holiday. (bayram mənasında)',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'The holidays ___ over. (tətil mənasında)',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'The news ___ good.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'Physics ___ difficult.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: 'Phonetics ___ interesting.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"a news" ifadəsi düzgündürmü?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: 'Five sheep ___ grazing.',
+      options: ['are', 'is'],
+      answer: 'are',
+    },
+    {
+      q: 'A deer ___ in the forest.',
+      options: ['is', 'are'],
+      answer: 'is',
+    },
+    {
+      q: '"fish" sözünün cəmi necədir?',
+      options: ['fish', 'fishes'],
+      answer: 'fish',
+    },
+    {
+      q: '"various fishes" — nə mənada işlənir?',
+      options: ['Müxtəlif növ balıq', 'Səhvdir'],
+      answer: 'Müxtəlif növ balıq',
+    },
+  ],
+},
     // ── Bölmə 7 ──────────────────────────────────────
       {
         type: 'section_divider',
@@ -4652,12 +5136,36 @@ const VERBS_LEVEL = {
       note: 'Yalnız "d" və "t" ilə bitən fellərdə "-ed" [ɪd] kimi tam bir heca əmələ gətirir.',
     },
 
-    // ── Quiz: -ed tələffüzü ──────────────────────────────
-    { en: '"played" — "-ed" necə oxunur?',  tr: '[d]',  wrong: '[t]'  },
-    { en: '"asked" — "-ed" necə oxunur?',   tr: '[t]',  wrong: '[ɪd]' },
-    { en: '"wanted" — "-ed" necə oxunur?',  tr: '[ɪd]', wrong: '[d]'  },
-    { en: '"lived" — "-ed" necə oxunur?',   tr: '[d]',  wrong: '[ɪd]' },
-    { en: '"stopped" — "-ed" necə oxunur?', tr: '[t]',  wrong: '[d]'  },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"played" — "-ed" necə oxunur?',
+      options: ['[d]', '[t]'],
+      answer: '[d]',
+    },
+    {
+      q: '"asked" — "-ed" necə oxunur?',
+      options: ['[t]', '[ɪd]'],
+      answer: '[t]',
+    },
+    {
+      q: '"wanted" — "-ed" necə oxunur?',
+      options: ['[ɪd]', '[d]'],
+      answer: '[ɪd]',
+    },
+    {
+      q: '"lived" — "-ed" necə oxunur?',
+      options: ['[d]', '[ɪd]'],
+      answer: '[d]',
+    },
+    {
+      q: '"stopped" — "-ed" necə oxunur?',
+      options: ['[t]', '[d]'],
+      answer: '[t]',
+    },
+  ],
+},
 
     // ── Ekran 3: Sual forması ────────────────────────────
     {
