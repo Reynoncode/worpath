@@ -231,6 +231,35 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
     `;
   }).join('');
 
+  // ── DEĞİŞİKLİK: Geri düyməsi həmişə, Davam et yalnız allDone-da ──
+  const hasPrev   = grammarState.cardIdx > 0;
+  const backHTML  = hasPrev ? `
+    <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Geri
+    </button>
+  ` : '';
+
+  const nextHTML  = allDone ? `
+    <button class="grammar-next-btn" id="grammar-next-btn" style="flex:${hasPrev ? '2' : '1'};">
+      Davam et
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  ` : '';
+
+  const navHTML = (hasPrev || allDone) ? `
+    <div class="grammar-nav-row">
+      ${backHTML}
+      ${nextHTML}
+    </div>
+  ` : '';
+
   container.innerHTML = `
     <div class="grammar-minicheck-wrap">
       <div class="gmc-header">
@@ -246,7 +275,7 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
       <div class="gmc-questions-list" id="gmc-list">
         ${questionsHTML}
       </div>
-      ${allDone ? buildNavButtons('Davam et') : ''}
+      ${navHTML}
     </div>
   `;
 
@@ -256,9 +285,9 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
         handleGrammarMiniAnswer(btn, card, cardIdx);
       });
     });
-  } else {
-    attachNavListeners();
   }
+
+  attachNavListeners();
 }
 
 function handleGrammarMiniAnswer(btn, card, cardIdx) {
