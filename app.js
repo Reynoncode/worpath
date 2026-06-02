@@ -1158,6 +1158,7 @@ function renderExamQuestion() {
 
 // ── Fill in the blank ─────────────────────────────────────
 function renderExamFill(q, container) {
+  container.className = 'quiz-body';
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
 
   container.innerHTML = `
@@ -1211,6 +1212,7 @@ function handleExamFill(btnIdx, q) {
 
 // ── Word Match ────────────────────────────────────────────
 function renderExamWordMatch(q, container) {
+  container.className = 'quiz-body';
   examState.wm_pairs      = q.pairs;
   examState.wm_matched    = [];
   examState.wm_selected   = null;
@@ -1349,6 +1351,7 @@ function clearWmState(side, index) {
 
 // ── Definition ────────────────────────────────────────────
 function renderExamDefinition(q, container) {
+  container.className = 'quiz-body';
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
 
   container.innerHTML = `
@@ -1601,6 +1604,7 @@ function lt_renderQuestion(entry, phaseLabel) {
 
   // Normal quiz body strukturunu bərpa et (exam render onu dəyişmiş ola bilər)
   const quizBody = document.querySelector('.quiz-body');
+  quizBody.className = 'quiz-body';
   quizBody.innerHTML = `
     <div class="question-card">
       <div class="question-hint" id="question-hint"></div>
@@ -2156,27 +2160,6 @@ const elReviewModal      = $('review-modal');
 const elReviewLevelGrid  = $('review-level-grid');
 const elReviewClose      = $('review-close');
 
-// ── Quiz body-ni normal struktura bərpa et ────────────────
-// Exam word-match render quiz body-ni tamamilə dəyişir,
-// normal quiz üçün əvvəlki strukturu bərpa etmək lazım olur
-function restoreNormalQuizBody() {
-  const quizBody = document.querySelector('.quiz-body');
-  if (!quizBody) return;
-  quizBody.classList.remove('reading-mode');
-  quizBody.innerHTML = `
-    <div class="question-card">
-      <div class="question-hint" id="question-hint"></div>
-      <div class="question-word" id="question-word"></div>
-    </div>
-    <div class="options-grid">
-      <button class="option-btn" id="opt-0"></button>
-      <button class="option-btn" id="opt-1"></button>
-    </div>
-  `;
-  // Event listenerları yenidən qoş
-  document.getElementById('opt-0').addEventListener('click', () => handleAnswer(0));
-  document.getElementById('opt-1').addEventListener('click', () => handleAnswer(1));
-}
 
 const iconStyles = {
   'a1':              { background: '#f9e5e3', borderColor: '#e8b3ae', color: '#8B1A11' },
@@ -2188,7 +2171,7 @@ const iconStyles = {
   'reading':         { background: '#e0f2fe', borderColor: '#7dd3fc', color: '#0369a1' },
   'listening':       { background: '#ede9fe', borderColor: '#c4b5fd', color: '#6d28d9' },
   'kids':            { background: '#fce4f0', borderColor: '#f48cbf', color: '#9C1260' },
-  'grammar': { background: '#FDF8F0', borderColor: '#D4A96A', color: '#78350F' },
+  'grammar':         { background: '#FDF8F0', borderColor: '#D4A96A', color: '#78350F' },
   'verbs':           { background: '#FEF3E2', borderColor: '#FBBD3E', color: '#92400E' },
   'passive':         { background: '#EFF6FF', borderColor: '#93C5FD', color: '#1E3A5F' },
   'indirect_speech': { background: '#ECFDF5', borderColor: '#6EE7B7', color: '#065F46' },
