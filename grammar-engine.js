@@ -243,23 +243,23 @@ function renderGrammarMiniCheck(card, container, cardIdx) {
     </button>
   ` : '';
 
-  const nextHTML  = allDone ? `
-    <button class="grammar-next-btn" id="grammar-next-btn" style="flex:${hasPrev ? '2' : '1'};">
-      Davam et
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-           stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"/>
-      </svg>
-    </button>
-  ` : '';
+const nextHTML = `
+  <button class="grammar-next-btn" id="grammar-next-btn" 
+          style="flex:${hasPrev ? '2' : '1'};">
+    Davam et
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"/>
+    </svg>
+  </button>
+`;
 
-  const navHTML = (hasPrev || allDone) ? `
-    <div class="grammar-nav-row">
-      ${backHTML}
-      ${nextHTML}
-    </div>
-  ` : '';
-
+const navHTML = `
+  <div class="grammar-nav-row">
+    ${backHTML}
+    ${nextHTML}
+  </div>
+`;
   container.innerHTML = `
     <div class="grammar-minicheck-wrap">
       <div class="gmc-header">
@@ -298,6 +298,11 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
   const q       = card.questions[qi];
   const correct = chosen === q.answer;
 
+  // State-ə yaz
+  if (!grammarState.miniAnswers[cardIdx]) grammarState.miniAnswers[cardIdx] = {};
+  grammarState.miniAnswers[cardIdx][qi]             = correct;
+  grammarState.miniAnswers[cardIdx][qi + '_chosen'] = parseInt(btn.dataset.oi);
+
   const optsWrap = document.getElementById(`gmc-opts-${qi}`);
   if (!optsWrap) return;
 
@@ -318,39 +323,9 @@ function handleGrammarMiniAnswer(btn, card, cardIdx) {
       : `✗ Düzgün cavab: <strong>${q.answer}</strong>`;
     qEl.appendChild(fb);
   }
-
-  if (answered >= totalQ) {
-  const wrap = document.querySelector('.grammar-minicheck-wrap');
-  if (wrap && !document.getElementById('grammar-next-btn')) {
-    const hasPrev = grammarState.cardIdx > 0;
-    const backHTML = hasPrev ? `
-      <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-             stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-        Geri
-      </button>
-    ` : '';
-
-    // Əgər artıq nav-row varsa, yalnız next düyməsini əlavə et
-    const existingNav = wrap.querySelector('.grammar-nav-row');
-    if (existingNav) {
-      const nextBtn = document.createElement('button');
-      nextBtn.className = 'grammar-next-btn';
-      nextBtn.id = 'grammar-next-btn';
-      nextBtn.style.flex = hasPrev ? '2' : '1';
-      nextBtn.innerHTML = `Davam et <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`;
-      existingNav.appendChild(nextBtn);
-    } else {
-      const navDiv = document.createElement('div');
-      navDiv.innerHTML = `<div class="grammar-nav-row">${backHTML}<button class="grammar-next-btn" id="grammar-next-btn" style="flex:${hasPrev ? '2' : '1'};">Davam et <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button></div>`;
-      wrap.appendChild(navDiv.firstElementChild);
-    }
-    attachNavListeners();
-  }
+  // Nav rebuild etmirik — düymə artıq hazırdır
 }
-}
+
 
 // ============================================================
 //  BADGE KARTI (bölüm sonu)
