@@ -1,7 +1,7 @@
 /**
  * WordPath — Statistika Səhifəsi (UI)
  * Dark və Light mode dəstəyi daxildir.
- * stats.js faylından sonra yüklənməlidir.
+ * stats.js və grammar-stats.js fayllarından sonra yüklənməlidir.
  *
  * İSTİFADƏ:
  *   StatsPage.render("stats-container-id")
@@ -57,7 +57,6 @@ const StatsPage = (() => {
     return document.documentElement.getAttribute('data-theme') === 'dark';
   }
 
-  // ─── Rəng dəstləri ────────────────────────────────────────────────────────
   function getTheme() {
     const dark = isDark();
     return {
@@ -80,7 +79,7 @@ const StatsPage = (() => {
     };
   }
 
-  // ─── Səhv qrupu konfiqurasiyası ───────────────────────────────────────────
+  // ─── Söz səhv qrupu konfiqurasiyası ──────────────────────────────────────
   const SEV_CFG = {
     critical: {
       label: "Kritik zəiflik", icon: "⚠️",
@@ -99,10 +98,13 @@ const StatsPage = (() => {
     },
   };
 
-  // ─── Açıq/bağlı vəziyyəti ─────────────────────────────────────────────────
+  // ─── Söz səhv açıq/bağlı vəziyyəti ──────────────────────────────────────
   const openState = { critical: false, medium: false, light: false };
 
-  // ─── Səhv qrupu render ────────────────────────────────────────────────────
+  // ─── Grammar qayda açıq/bağlı vəziyyəti ──────────────────────────────────
+  const openGrammarRules = new Set();
+
+  // ─── Söz səhv qrupu render ────────────────────────────────────────────────
   function renderGroup(sev, words) {
     const cfg = SEV_CFG[sev];
     const t = getTheme();
@@ -142,15 +144,14 @@ const StatsPage = (() => {
           <span style="margin-left:auto;font-size:12px;" id="sp-chevron-${sev}">${isOpen ? "▲" : "▼"}</span>
         </button>
         <div id="sp-body-${sev}"
-// SONRA (düzgün)
-style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? '' : 'display:none;'}">
-${rows}
+          style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? '' : 'display:none;'}">
+          ${rows}
         </div>
       </div>
     `;
   }
 
-  // ─── Toggle ───────────────────────────────────────────────────────────────
+  // ─── Söz səhv toggle ─────────────────────────────────────────────────────
   function _toggle(sev) {
     openState[sev] = !openState[sev];
     const body    = document.getElementById(`sp-body-${sev}`);
@@ -170,15 +171,136 @@ ${rows}
     head.setAttribute("aria-expanded", openState[sev]);
   }
 
-// ─── ANA RENDER FUNKSİYASI ────────────────────────────────────────────────
+  // ─── Grammar: qayda irəliləmə sətri ──────────────────────────────────────
+  function renderGrammarProgressRow(rule, t) {
+    const ACCENT = '#085041';
+    const color = rule.completed
+      ? ACCENT
+      : (rule.pct > 0 ? ACCENT : t.faintText);
+
+    const badge = rule.completed
+      ? `<span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px;background:#E1F5EE;color:#085041;flex-shrink:0;">✓ Tamamlandı</span>`
+      : '';
+
+    return `
+      <div style="margin-bottom:12px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:5px;flex-wrap:wrap;">
+          <span style="font-size:13px;font-weight:600;color:${t.labelColor};line-height:1.3;flex:1;min-width:0;">${rule.name}</span>
+          ${badge}
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="flex:1;height:6px;background:${t.progressBg};border-radius:99px;overflow:hidden;">
+            <div style="width:${rule.pct}%;height:100%;background:${ACCENT};border-radius:99px;transition:width 0.6s ease;"></div>
+          </div>
+          <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${color};flex-shrink:0;">${rule.pct}%</span>
+          <span style="font-size:11px;color:${t.faintText};width:52px;text-align:right;flex-shrink:0;">${rule.correctQ}/${rule.totalQuestions}</span>
+        </div>
+      </div>
+    `;
+  }
+
+  // ─── Grammar: qayda səhv dropdown ────────────────────────────────────────
+  function renderGrammarErrorGroup(rule, t) {
+    const safeId = rule.ruleId.replace(/[^a-zA-Z0-9_]/g, '_');
+    const isOpen = openGrammarRules.has(rule.ruleId);
+
+    let bg, border, textColor;
+    if (rule.totalErrors >= 3) {
+      bg = t.dark ? '#2a0c0c' : '#FFF1F0';
+      border = t.dark ? '#7a2020' : '#FCA5A5';
+      textColor = '#991B1B';
+    } else if (rule.totalErrors === 2) {
+      bg = t.dark ? '#2a1e08' : '#FFFBEB';
+      border = t.dark ? '#7a5a10' : '#FCD34D';
+      textColor = '#92400E';
+    } else {
+      bg = t.dark ? '#0a2418' : '#F0FDF4';
+      border = t.dark ? '#1a6a3a' : '#86EFAC';
+      textColor = '#14532D';
+    }
+
+    const icon = rule.totalErrors >= 3 ? '⚠️' : rule.totalErrors === 2 ? '⚡' : 'ℹ️';
+
+    const rows = rule.errorQuestions.map(q => `
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-bottom:1px solid ${t.rowBorder};">
+        <div style="flex:1;min-width:0;">
+          <div style="font-size:13px;font-weight:500;color:${t.wordColor};line-height:1.4;">${q.text}</div>
+          <div style="font-size:11px;color:${t.faintText};margin-top:2px;">${q.attempts} cəhd · ${q.correct} düzgün</div>
+        </div>
+        <div style="text-align:center;flex-shrink:0;">
+          <div style="font-size:15px;font-weight:700;color:${textColor};">${q.errors}</div>
+          <div style="font-size:10px;color:${t.faintText};">səhv</div>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <div style="margin-bottom:8px;">
+        <button
+          onclick="StatsPage._toggleGrammarRule('${safeId}','${rule.ruleId}')"
+          id="sp-ghead-${safeId}"
+          aria-expanded="${isOpen}"
+          style="width:100%;display:flex;align-items:center;gap:8px;background:${bg};border:1px solid ${border};
+                 border-radius:${isOpen ? '10px 10px 0 0' : '10px'};padding:9px 14px;cursor:pointer;
+                 font-size:13px;font-weight:600;color:${t.labelColor};transition:border-radius 0.15s;text-align:left;">
+          <span>${icon}</span>
+          <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${rule.name}</span>
+          <span style="font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;background:${border};color:${textColor};flex-shrink:0;">${rule.errorQuestions.length} sual</span>
+          <span style="font-size:12px;flex-shrink:0;" id="sp-gchev-${safeId}">${isOpen ? '▲' : '▼'}</span>
+        </button>
+        <div id="sp-gbody-${safeId}"
+          style="background:${t.whiteBg};border:1px solid ${border};border-top:none;border-radius:0 0 10px 10px;overflow:hidden;${isOpen ? '' : 'display:none;'}">
+          ${rows}
+        </div>
+      </div>
+    `;
+  }
+
+  // ─── Grammar qayda toggle ─────────────────────────────────────────────────
+  function _toggleGrammarRule(safeId, ruleId) {
+    const body    = document.getElementById(`sp-gbody-${safeId}`);
+    const chevron = document.getElementById(`sp-gchev-${safeId}`);
+    const head    = document.getElementById(`sp-ghead-${safeId}`);
+    if (!body) return;
+
+    if (openGrammarRules.has(ruleId)) {
+      openGrammarRules.delete(ruleId);
+      body.style.display = 'none';
+      if (chevron) chevron.textContent = '▼';
+      if (head) { head.style.borderRadius = '10px'; head.setAttribute('aria-expanded', 'false'); }
+    } else {
+      openGrammarRules.add(ruleId);
+      body.style.display = '';
+      if (chevron) chevron.textContent = '▲';
+      if (head) { head.style.borderRadius = '10px 10px 0 0'; head.setAttribute('aria-expanded', 'true'); }
+    }
+  }
+
+  // ─── Grammar stats hesabla (localStorage-dan) ─────────────────────────────
+  function getGrammarStats() {
+    if (!window.GrammarStats) return null;
+    const gs = GrammarStats.getStats();
+    // ruleStats-a pct və correctQ əlavə et
+    gs.ruleStats = gs.ruleStats.map(rule => {
+      const totalQ   = rule.totalQuestions || 0;
+      const errorsQ  = rule.totalErrors || 0;
+      const correctQ = Math.max(0, totalQ - errorsQ);
+      const pct = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
+      return { ...rule, correctQ, pct };
+    });
+    return gs;
+  }
+
+  // ─── ANA RENDER FUNKSİYASI ────────────────────────────────────────────────
   function render(containerId) {
     const el = document.getElementById(containerId);
     if (!el) return;
 
-    // Hər render-də state sıfırla
+    // State sıfırla
     openState.critical = false;
     openState.medium   = false;
     openState.light    = false;
+    openGrammarRules.clear();
 
     const t = getTheme();
     const s = Stats.getStats();
@@ -186,11 +308,10 @@ ${rows}
     const grouped = { critical: [], medium: [], light: [] };
     s.errorWords.forEach(w => grouped[w.severity].push(w));
 
-    // Səviyyə irəliləmə sətirləri
+    // ── Söz səviyyə irəliləmə sətirləri ─────────────────────────────────
     const levelRows = LEVELS.map(lv => {
       const done = phasesByLevel[lv.label] || 0;
       const pct  = lv.total > 0 ? Math.min(100, Math.round((done / lv.total) * 100)) : 0;
-
       return `
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
           <div style="width:30px;height:30px;border-radius:5px;background:${lv.color};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
@@ -205,7 +326,7 @@ ${rows}
       `;
     }).join("");
 
-    // Səhv qrupları
+    // ── Söz səhv qrupları ────────────────────────────────────────────────
     const errGroups = ["critical", "medium", "light"]
       .filter(sev => grouped[sev].length > 0)
       .map(sev => renderGroup(sev, grouped[sev]))
@@ -218,6 +339,64 @@ ${rows}
       </div>
     ` : "";
 
+    // ── Grammar statistikası ─────────────────────────────────────────────
+    const gs = getGrammarStats();
+    let grammarSection = '';
+
+    if (gs) {
+      // Qayda irəliləmə sətirləri
+      let grammarProgressRows = '';
+      if (gs.ruleStats.length > 0) {
+        grammarProgressRows = gs.ruleStats
+          .map(r => renderGrammarProgressRow(r, t))
+          .join('');
+      } else {
+        grammarProgressRows = `
+          <div style="text-align:center;padding:14px 0;color:${t.faintText};font-size:13px;">
+            Hələ heç bir qayda başlanılmayıb
+          </div>
+        `;
+      }
+
+      // Qayda səhv analizi
+      const grammarErrGroups = gs.errorRules.length > 0
+        ? gs.errorRules.map(r => renderGrammarErrorGroup(r, t)).join('')
+        : `
+          <div style="background:${t.dark ? '#0a2418' : '#F0FDF4'};border:1px solid ${t.dark ? '#1a6a3a' : '#86EFAC'};border-radius:12px;padding:20px;text-align:center;">
+            <div style="font-size:28px;margin-bottom:6px;">🎉</div>
+            <div style="font-size:13px;font-weight:600;color:${t.dark ? '#3aaa6a' : '#14532D'};">Heç bir grammar səhvi yoxdur!</div>
+          </div>
+        `;
+
+      grammarSection = `
+        <!-- Bölücü xətt -->
+        <div style="height:1px;background:${t.cardBorder};margin:4px 0 16px;"></div>
+
+        <!-- Grammar başlığı -->
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <span style="font-size:18px;font-weight:700;color:${t.titleColor};">📖 Grammar</span>
+          ${gs.totalRules > 0
+            ? `<span style="font-size:12px;color:${t.faintText};">${gs.completedCount}/${gs.totalRules} tamamlandı</span>`
+            : ''}
+        </div>
+
+        <!-- Qayda irəliləmə cədvəli -->
+        <div style="background:${t.whiteBg};border:1px solid ${t.cardBorder};border-radius:14px;padding:14px 16px;margin-bottom:12px;">
+          <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:14px;">
+            Qayda üzrə irəliləmə
+          </div>
+          ${grammarProgressRows}
+        </div>
+
+        <!-- Qayda üzrə səhv analizi başlığı -->
+        <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">
+          Qayda üzrə səhv analizi
+        </div>
+        ${grammarErrGroups}
+      `;
+    }
+
+    // ── HTML ─────────────────────────────────────────────────────────────
     el.innerHTML = `
       <div style="background:${t.pageBg};min-height:100vh;padding:20px 20px 40px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
 
@@ -253,15 +432,15 @@ ${rows}
           `).join("")}
         </div>
 
-        <!-- Səviyyə irəliləməsi -->
+        <!-- Söz: Səviyyə irəliləməsi -->
         <div style="background:${t.whiteBg};border:1px solid ${t.cardBorder};border-radius:14px;padding:14px 16px;margin-bottom:12px;">
-          <div style="font-size:12px;font-weight:600;color:${t.labelColor};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Səviyyə üzrə irəliləmə</div>
+          <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;margin-bottom:12px;">Səviyyə üzrə irəliləmə</div>
           ${levelRows}
         </div>
 
-        <!-- Səhv analizi -->
+        <!-- Söz: Səhv analizi -->
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <div style="font-size:12px;font-weight:600;color:${t.labelColor};text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
+          <div style="font-size:12px;font-weight:600;color:${t.subText};text-transform:uppercase;letter-spacing:0.06em;">Səhv analizi</div>
           ${s.errorWords.length > 0 ? `
             <button onclick="StatsPage._retryWrongs()"
               style="display:flex;align-items:center;gap:5px;background:#085041;color:#fff;border:none;border-radius:99px;padding:6px 14px;font-size:12px;font-weight:600;cursor:pointer;">
@@ -271,6 +450,9 @@ ${rows}
         </div>
         ${errGroups}
         ${noErrors}
+
+        <!-- Grammar bölümü -->
+        ${grammarSection}
 
       </div>
     `;
@@ -290,8 +472,8 @@ ${rows}
     if (headerProfileAvatar && window.AuthManager) {
       const user = AuthManager.getCurrentUser();
       if (user && user.photoURL) {
-// SONRA
-headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:100%;height:100%;border-radius:10px;object-fit:cover;display:block;" />`;      } else if (user) {
+        headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:100%;height:100%;border-radius:10px;object-fit:cover;display:block;" />`;
+      } else if (user) {
         const name = user.displayName ? user.displayName.split(' ')[0] : user.email;
         headerProfileAvatar.textContent = name.charAt(0).toUpperCase();
       }
@@ -364,6 +546,6 @@ headerProfileAvatar.innerHTML = `<img src="${user.photoURL}" style="width:100%;h
 
   window.startWrongWordsRetake = startWrongWordsRetake;
 
-  return { render, _toggle, _retryWrongs: startWrongWordsRetake };
+  return { render, _toggle, _toggleGrammarRule, _retryWrongs: startWrongWordsRetake };
 
 })();
