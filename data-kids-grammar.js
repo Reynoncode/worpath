@@ -10251,7 +10251,7 @@ const SEQUENCE_TENSES_LEVEL = {
       answer: 'Bəli',
     },
   ],
-}
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -10389,7 +10389,7 @@ const SEQUENCE_TENSES_LEVEL = {
       answer: 'Bəli',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -10511,7 +10511,7 @@ const SEQUENCE_TENSES_LEVEL = {
       answer: 'Keçmiş bitmiş',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -10644,7 +10644,7 @@ const SEQUENCE_TENSES_LEVEL = {
       answer: 'İndiki bitmiş',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -10761,7 +10761,7 @@ const SEQUENCE_TENSES_LEVEL = {
       answer: 'had',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -10941,7 +10941,7 @@ const SEQUENCE_TENSES_LEVEL = {
       answer: 'Bəli',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -11174,7 +11174,7 @@ const ADJECTIVES_LEVEL = {
       answer: 'wool',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -11321,7 +11321,7 @@ const ADJECTIVES_LEVEL = {
       answer: '-some',
     },
   ],
-}
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -11457,7 +11457,7 @@ const ADJECTIVES_LEVEL = {
       answer: 'Adi dərəcə',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -11591,7 +11591,7 @@ const ADJECTIVES_LEVEL = {
       answer: 'thinner',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -11737,7 +11737,7 @@ const ADJECTIVES_LEVEL = {
       answer: 'Üstünlük dərəcəsi',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -11883,7 +11883,7 @@ const ADJECTIVES_LEVEL = {
       answer: 'most',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -12049,7 +12049,7 @@ const ADJECTIVES_LEVEL = {
       answer: 'Keçən/axırıncı',
     },
   ],
-}
+},
     // ── Mini-check ───────────────────────────────────────
     {
       type: 'mini_check',
@@ -12223,7 +12223,7 @@ const ADJECTIVES_LEVEL = {
       answer: 'Üstünlük dərəcəsi',
     },
   ],
-}
+},
 
     // ── Mini-check ───────────────────────────────────────
     {
@@ -12430,7 +12430,7 @@ const PRONOUN_LEVEL = {
       answer: 'Əvvəlində',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -12565,7 +12565,7 @@ const PRONOUN_LEVEL = {
       answer: 'Çıxışlıq hal (-dan/-dən)',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -12716,7 +12716,7 @@ const PRONOUN_LEVEL = {
       answer: 'Xeyr, işlənmir',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -12837,7 +12837,7 @@ const PRONOUN_LEVEL = {
       answer: 'ours',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -12989,7 +12989,7 @@ const PRONOUN_LEVEL = {
       answer: 'she',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -13110,7 +13110,7 @@ const PRONOUN_LEVEL = {
       answer: 'Sayılan tək isim',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -13275,7 +13275,7 @@ const PRONOUN_LEVEL = {
       answer: 'Yiyəlik hal',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -13397,7 +13397,7 @@ const PRONOUN_LEVEL = {
       answer: 'Bəli, hər ikisinə',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -13554,7 +13554,7 @@ const PRONOUN_LEVEL = {
       answer: 'Tək',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -13699,7 +13699,7 @@ const PRONOUN_LEVEL = {
       answer: 'neither + köməkçi fel + şəxs',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -13840,7 +13840,7 @@ const PRONOUN_LEVEL = {
       answer: 'Bir ... da/də (əlavə)',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -14048,7 +14048,7 @@ const PRONOUN_LEVEL = {
       answer: 'Əşyalara',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -14173,7 +14173,7 @@ const PRONOUN_LEVEL = {
       answer: 'Xeyr',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -14309,7 +14309,7 @@ const PRONOUN_LEVEL = {
       answer: 'Canlı varlıqlara',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -14445,7 +14445,7 @@ const PRONOUN_LEVEL = {
       answer: 'a lot',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -14704,7 +14704,7 @@ const ARTICLE_LEVEL = {
       answer: 'bir (one)',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -14886,7 +14886,7 @@ const ARTICLE_LEVEL = {
       answer: 'hər (per)',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -14985,7 +14985,7 @@ const ARTICLE_LEVEL = {
       answer: 'a / an (tələffüzə görə)',
     },
   ],
-}
+},
     {
       type: 'mini_check',
       questions: [
@@ -15121,15 +15121,51 @@ const ARTICLE_LEVEL = {
       ],
     },
 
-    { en: '"the" artiklı samitdən əvvəl necə tələffüz olunur?',        tr: '[ðə]',                 wrong: '[ði:]'              },
-    { en: '"the" artiklı saitdən əvvəl necə tələffüz olunur?',         tr: '[ði:]',                wrong: '[ðə]'               },
-    { en: '"the" artiklı hansı isimlə işlənə bilməz?',                 tr: 'Hamısı ilə işlənə bilir', wrong: 'Cəm isimlər'    },
-    { en: '"the old" — bu ifadə nə mənasındadır?',                     tr: 'Qocalar (isimləşmiş)', wrong: 'Qoca (sifət)'      },
-    { en: '"The Browns" nə mənasındadır?',                             tr: 'Braunlar ailəsi',       wrong: 'Braun adlı bir nəfər'},
-    { en: '"play the piano" — niyə "the" işlənir?',                    tr: 'Musiqi aləti',          wrong: 'İkinci dəfə çəkilir'},
-    { en: '"the first month" — "the" niyə işlənir?',                   tr: 'Sıra sayısı',           wrong: 'İkinci dəfə çəkilir'},
-    { en: '"the English" — nə mənasındadır?',                          tr: 'İngilislər (millət)',   wrong: 'İngilis (tək)'      },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"the" artiklı samitdən əvvəl necə tələffüz olunur?',
+      options: ['[ði:]', '[ðæ]', '[ðɪ]', '[ðə]'],
+      answer: '[ðə]',
+    },
+    {
+      q: '"the" artiklı saitdən əvvəl necə tələffüz olunur?',
+      options: ['[ðə]', '[ðæ]', '[ðɪ]', '[ði:]'],
+      answer: '[ði:]',
+    },
+    {
+      q: '"the" artiklı hansı isimlərlə işlənə bilməz?',
+      options: ['Cəm isimlər', 'Sayılmayan isimlər', 'Xüsusi isimlər', 'Hamısı ilə işlənə bilir'],
+      answer: 'Hamısı ilə işlənə bilir',
+    },
+    {
+      q: '"the old" — bu ifadə nə mənasındadır?',
+      options: ['Qoca (sifət)', 'Ən qoca', 'Qoca bir nəfər', 'Qocalar (isimləşmiş)'],
+      answer: 'Qocalar (isimləşmiş)',
+    },
+    {
+      q: '"The Browns" nə mənasındadır?',
+      options: ['Braun adlı bir nəfər', 'Braun soyadlı şəxs', 'Braun şirkəti', 'Braunlar ailəsi'],
+      answer: 'Braunlar ailəsi',
+    },
+    {
+      q: '"play the piano" — niyə "the" işlənir?',
+      options: ['İkinci dəfə çəkilir', 'Xüsusi isimdir', 'Tək isimdir', 'Musiqi aləti'],
+      answer: 'Musiqi aləti',
+    },
+    {
+      q: '"the first month" — "the" niyə işlənir?',
+      options: ['İkinci dəfə çəkilir', 'Xüsusi isimdir', 'Sayılmayan isimdir', 'Sıra sayısı'],
+      answer: 'Sıra sayısı',
+    },
+    {
+      q: '"the English" — nə mənasındadır?',
+      options: ['İngilis (tək)', 'İngilis dili', 'İngilis ölkəsi', 'İngilislər (millət)'],
+      answer: 'İngilislər (millət)',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15206,15 +15242,51 @@ const ARTICLE_LEVEL = {
       tip: 'Qeyd: "an only child" — ailənin tək övladı mənasında işlənər.',
     },
 
-    { en: '"the sun" — niyə "the" işlənir?',                           tr: 'Dünyada tək olan',    wrong: 'İkinci dəfə çəkilir' },
-    { en: '"the Times" — niyə "the" işlənir?',                         tr: 'Qəzet adı',           wrong: 'Coğrafi ad'          },
-    { en: '"the best" — niyə "the" işlənir?',                          tr: 'Superlative dərəcəsi', wrong: 'İkinci dəfə çəkilir'},
-    { en: '"the Eiffel Tower" — niyə "the"?',                          tr: 'Dünyada tək yer',     wrong: 'Millət adı'          },
-    { en: '"Mount Kenya" — "the" alırmı?',                             tr: 'Xeyr',                wrong: 'Bəli'               },
-    { en: '"the Nile" — niyə "the"?',                                  tr: 'Çay adı',             wrong: 'Ölkə adı'           },
-    { en: '"the same book" — "the" hansı sözlə işlənir?',              tr: 'same',                wrong: 'book'               },
-    { en: '"the Caspian Sea" — niyə "the"?',                           tr: 'Dəniz adı',           wrong: 'Ölkə adı'           },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"the sun" — niyə "the" işlənir?',
+      options: ['İkinci dəfə çəkilir', 'Xüsusi isimdir', 'Cəm isimdir', 'Dünyada tək olan'],
+      answer: 'Dünyada tək olan',
+    },
+    {
+      q: '"the Times" — niyə "the" işlənir?',
+      options: ['Coğrafi ad', 'Millət adı', 'Tək obyektdir', 'Qəzet adı'],
+      answer: 'Qəzet adı',
+    },
+    {
+      q: '"the best" — niyə "the" işlənir?',
+      options: ['İkinci dəfə çəkilir', 'Xüsusi isimdir', 'Tək obyektdir', 'Superlative dərəcəsi'],
+      answer: 'Superlative dərəcəsi',
+    },
+    {
+      q: '"the Eiffel Tower" — niyə "the" işlənir?',
+      options: ['Millət adı', 'Qəzet adı', 'Coğrafi ölkə adı', 'Dünyada tək yer'],
+      answer: 'Dünyada tək yer',
+    },
+    {
+      q: '"Mount Kenya" — "the" artiklı alırmı?',
+      options: ['Bəli', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"the Nile" — niyə "the" işlənir?',
+      options: ['Ölkə adı', 'Millət adı', 'Şəhər adı', 'Çay adı'],
+      answer: 'Çay adı',
+    },
+    {
+      q: '"the same book" — "the" hansı sözlə birlikdə işlənir?',
+      options: ['book', 'the ilə deyil', 'hər iki söz', 'same'],
+      answer: 'same',
+    },
+    {
+      q: '"the Caspian Sea" — niyə "the" işlənir?',
+      options: ['Ölkə adı', 'Millət adı', 'Şəhər adı', 'Dəniz adı'],
+      answer: 'Dəniz adı',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15332,17 +15404,61 @@ const ARTICLE_LEVEL = {
       tip: 'Qeyd: go to THE cinema (bina), listen to THE beautiful music (konkret musiqi) — burada artikl işlənir.',
     },
 
-    { en: '"my bag" — niyə artiklsız?',                                tr: 'Yiyəlik əvəzliyindən sonra', wrong: 'Sayılmayan isimdir'},
-    { en: '"this table" — niyə artiklsız?',                            tr: 'İşarə əvəzliyindən sonra', wrong: 'Cəm isimdir'       },
-    { en: '"no child" — niyə artiklsız?',                              tr: '"no" inkar əvəzliyindən sonra', wrong: 'Xüsusi isimdir'},
-    { en: '"Europe" — artikl alırmı?',                                 tr: 'Xeyr (qitə adı)',         wrong: 'Bəli, "the"'        },
-    { en: '"play basketball" — artikl işlənirmi?',                     tr: 'Xeyr (idman adı)',        wrong: 'Bəli, "the"'        },
-    { en: '"go to school" (dərs üçün) — artikl işlənirmi?',           tr: 'Xeyr (əsas məna)',        wrong: 'Bəli, "the"'        },
-    { en: '"go to the cinema" — niyə "the" işlənir?',                  tr: 'Binadan söhbət gedir',    wrong: 'İkinci dəfə çəkilir' },
-    { en: '"by car" — artikl işlənirmi?',                              tr: 'Xeyr',                    wrong: 'Bəli, "a"'          },
-    { en: '"have breakfast" — artikl işlənirmi?',                      tr: 'Xeyr',                    wrong: 'Bəli, "a"'          },
-    { en: '"Samsung" — artikl alırmı?',                                tr: 'Xeyr (şirkət adı)',       wrong: 'Bəli, "the"'        },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"my bag" — niyə artiklsız işlənir?',
+      options: ['Sayılmayan isimdir', 'Cəm isimdir', 'Xüsusi isimdir', 'Yiyəlik əvəzliyindən sonra'],
+      answer: 'Yiyəlik əvəzliyindən sonra',
+    },
+    {
+      q: '"this table" — niyə artiklsız işlənir?',
+      options: ['Cəm isimdir', 'Sayılmayan isimdir', 'Xüsusi isimdir', 'İşarə əvəzliyindən sonra'],
+      answer: 'İşarə əvəzliyindən sonra',
+    },
+    {
+      q: '"no child" — niyə artiklsız işlənir?',
+      options: ['Xüsusi isimdir', 'Cəm isimdir', 'Sayılmayan isimdir', '"no" inkar əvəzliyindən sonra'],
+      answer: '"no" inkar əvəzliyindən sonra',
+    },
+    {
+      q: '"Europe" — artikl alırmı?',
+      options: ['Bəli, "the"', 'Bəli, "a"', 'Bəzən', 'Xeyr (qitə adı)'],
+      answer: 'Xeyr (qitə adı)',
+    },
+    {
+      q: '"play basketball" — artikl işlənirmi?',
+      options: ['Bəli, "the"', 'Bəli, "a"', 'Bəzən', 'Xeyr (idman adı)'],
+      answer: 'Xeyr (idman adı)',
+    },
+    {
+      q: '"go to school" (dərs üçün) — artikl işlənirmi?',
+      options: ['Bəli, "the"', 'Bəli, "a"', 'Bəzən', 'Xeyr (əsas məna)'],
+      answer: 'Xeyr (əsas məna)',
+    },
+    {
+      q: '"go to the cinema" — niyə "the" işlənir?',
+      options: ['İkinci dəfə çəkilir', 'Tək obyektdir', 'Xüsusi isimdir', 'Binadan söhbət gedir'],
+      answer: 'Binadan söhbət gedir',
+    },
+    {
+      q: '"by car" — artikl işlənirmi?',
+      options: ['Bəli, "the"', 'Bəli, "a"', 'Bəzən', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"have breakfast" — artikl işlənirmi?',
+      options: ['Bəli, "the"', 'Bəli, "a"', 'Bəzən', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Samsung" — artikl alırmı?',
+      options: ['Bəli, "the"', 'Bəli, "a"', 'Bəzən', 'Xeyr (şirkət adı)'],
+      answer: 'Xeyr (şirkət adı)',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15482,14 +15598,46 @@ const QUESTIONS_LEVEL = {
       tip: 'Qısa cavab: Yes, you are. / No, you are not.\nYes, I do. / No, I don\'t.\nYes, he does. / No, he doesn\'t.',
     },
 
-    { en: 'Ümumi sual hansı cavab tələb edir?',                        tr: 'Yes / No',             wrong: 'Tam cümlə'           },
-    { en: '"I am a teacher." → ümumi sual?',                           tr: 'Am I a teacher?',      wrong: 'Do I am a teacher?'  },
-    { en: '"I go to school." → ümumi sual?',                           tr: 'Do I go to school?',   wrong: 'Am I go to school?'  },
-    { en: '"He speaks English." → ümumi sual?',                        tr: 'Does he speak English?', wrong: 'Do he speak English?' },
-    { en: '"She went home." → ümumi sual?',                            tr: 'Did she go home?',     wrong: 'Does she go home?'   },
-    { en: 'İki köməkçi fel olduqda hansı əvvələ keçir?',               tr: 'Birinci köməkçi fel',  wrong: 'İkinci köməkçi fel'  },
-    { en: '"Yes, he does." — bu qısa cavabın mənfi forması?',          tr: 'No, he doesn\'t.',     wrong: 'No, he don\'t.'      },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Ümumi sual hansı cavab tələb edir?',
+      options: ['Tam cümlə', 'Sual cümlə', 'Zərflik', 'Yes / No'],
+      answer: 'Yes / No',
+    },
+    {
+      q: '"I am a teacher." → ümumi sual necə düzəlir?',
+      options: ['Do I am a teacher?', 'Am I being a teacher?', 'Is I a teacher?', 'Am I a teacher?'],
+      answer: 'Am I a teacher?',
+    },
+    {
+      q: '"I go to school." → ümumi sual necə düzəlir?',
+      options: ['Am I go to school?', 'Goes I to school?', 'Did I go to school?', 'Do I go to school?'],
+      answer: 'Do I go to school?',
+    },
+    {
+      q: '"He speaks English." → ümumi sual necə düzəlir?',
+      options: ['Do he speak English?', 'Is he speak English?', 'Did he speak English?', 'Does he speak English?'],
+      answer: 'Does he speak English?',
+    },
+    {
+      q: '"She went home." → ümumi sual necə düzəlir?',
+      options: ['Does she go home?', 'Is she gone home?', 'Has she gone home?', 'Did she go home?'],
+      answer: 'Did she go home?',
+    },
+    {
+      q: 'İki köməkçi fel olduqda hansı əvvələ keçir?',
+      options: ['İkinci köməkçi fel', 'Hər ikisi', 'Əsas fel', 'Birinci köməkçi fel'],
+      answer: 'Birinci köməkçi fel',
+    },
+    {
+      q: '"Yes, he does." — bu qısa cavabın mənfi forması nədir?',
+      options: ["No, he don't.", "No, he isn't.", "No, he hasn't.", "No, he doesn't."],
+      answer: "No, he doesn't.",
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15582,13 +15730,41 @@ const QUESTIONS_LEVEL = {
       ],
     },
 
-    { en: 'Mübtədaya sual verərkən söz sırası dəyişirmi?',             tr: 'Xeyr, dəyişmir',       wrong: 'Bəli, dəyişir'       },
-    { en: '"Who goes to school?" — bu hansı üzvə sualıdır?',           tr: 'Mübtəda',              wrong: 'Tamamlıq'            },
-    { en: 'Mübtədaya sual verərkən do/does/did işlənirmi?',            tr: 'Xeyr',                 wrong: 'Bəli'                },
-    { en: '"To whom do I give a pen?" — sözönü haradadır?',            tr: 'whom-dan əvvəl',        wrong: 'Cümlənin sonunda'    },
-    { en: '"Who do I give a pen to?" — sözönü haradadır?',             tr: 'Cümlənin sonunda',      wrong: 'whom-dan əvvəl'      },
-    { en: 'Xüsusi sual söz sırası (digər üzvlər)?',                    tr: 'Wh + köməkçi + mübtəda + fel', wrong: 'Köməkçi + mübtəda + Wh + fel' },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Mübtədaya sual verərkən söz sırası dəyişirmi?',
+      options: ['Bəli, dəyişir', 'Bəzən dəyişir', 'Kontekstdən asılı', 'Xeyr, dəyişmir'],
+      answer: 'Xeyr, dəyişmir',
+    },
+    {
+      q: '"Who goes to school?" — bu hansı cümlə üzvünə sualıdır?',
+      options: ['Tamamlıq', 'Xəbər', 'Zərflik', 'Mübtəda'],
+      answer: 'Mübtəda',
+    },
+    {
+      q: 'Mübtədaya sual verərkən do/does/did işlənirmi?',
+      options: ['Bəli, həmişə', 'Bəli, bəzən', 'Yalnız keçmişdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"To whom do I give a pen?" — sözönü cümlənin harasındadır?',
+      options: ['Cümlənin sonunda', 'Felin yanında', 'İsmin yanında', 'whom-dan əvvəl'],
+      answer: 'whom-dan əvvəl',
+    },
+    {
+      q: '"Who do I give a pen to?" — sözönü cümlənin harasındadır?',
+      options: ['whom-dan əvvəl', 'Felin yanında', 'Mübtədadan əvvəl', 'Cümlənin sonunda'],
+      answer: 'Cümlənin sonunda',
+    },
+    {
+      q: 'Xüsusi sualda (digər üzvlər üçün) söz sırası necədir?',
+      options: ['Köməkçi + mübtəda + Wh + fel', 'Mübtəda + Wh + köməkçi + fel', 'Fel + Wh + mübtəda + köməkçi', 'Wh + köməkçi + mübtəda + fel'],
+      answer: 'Wh + köməkçi + mübtəda + fel',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15640,13 +15816,41 @@ const QUESTIONS_LEVEL = {
       ],
     },
 
-    { en: '"Who" hansı üzvə sual verir?',                              tr: 'Canlı mübtəda',        wrong: 'Canlı tamamlıq'      },
-    { en: '"Whom" hansı üzvə sual verir?',                             tr: 'Canlı tamamlıq',       wrong: 'Mübtəda'             },
-    { en: '"Whose" nəyə sual verir?',                                  tr: 'Yiyəlik — kimin',      wrong: 'Yer zərfi'           },
-    { en: '"Whose sister is a doctor?" — söz sırası dəyişibmi?',       tr: 'Xeyr (mübtədanın təyini)', wrong: 'Bəli'           },
-    { en: '"To whom do I give a pen?" — sözönü haradadır?',            tr: 'whom-dan əvvəl',        wrong: 'Cümlənin sonunda'   },
-    { en: '"Who do I give a pen to?" — "who" hansı funksiyadır?',      tr: 'Tamamlıq',             wrong: 'Mübtəda'             },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Who" hansı cümlə üzvünə sual verir?',
+      options: ['Canlı tamamlıq', 'Zərflik', 'Xəbər', 'Canlı mübtəda'],
+      answer: 'Canlı mübtəda',
+    },
+    {
+      q: '"Whom" hansı cümlə üzvünə sual verir?',
+      options: ['Mübtəda', 'Zərflik', 'Xəbər', 'Canlı tamamlıq'],
+      answer: 'Canlı tamamlıq',
+    },
+    {
+      q: '"Whose" nəyə sual verir?',
+      options: ['Yer zərfi', 'Zaman zərfi', 'Tərzi-hərəkət', 'Yiyəlik — kimin'],
+      answer: 'Yiyəlik — kimin',
+    },
+    {
+      q: '"Whose sister is a doctor?" — söz sırası dəyişibmi?',
+      options: ['Bəli, dəyişib', 'Bəzən dəyişir', 'Kontekstdən asılı', 'Xeyr (mübtədanın təyini)'],
+      answer: 'Xeyr (mübtədanın təyini)',
+    },
+    {
+      q: '"To whom do I give a pen?" — sözönü cümlənin harasındadır?',
+      options: ['Cümlənin sonunda', 'Felin yanında', 'Mübtədadan əvvəl', 'whom-dan əvvəl'],
+      answer: 'whom-dan əvvəl',
+    },
+    {
+      q: '"Who do I give a pen to?" — "who" burada hansı funksiyadır?',
+      options: ['Mübtəda', 'Zərflik', 'Xəbər', 'Tamamlıq'],
+      answer: 'Tamamlıq',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15693,12 +15897,36 @@ const QUESTIONS_LEVEL = {
       tip: '"What" ilə "hansı" mənasında sual verərkən seçim qoyulmur. "Which" ilə seçim "or" ilə qoyulur.',
     },
 
-    { en: '"What" ilə sual verərkən seçim qoyulurmu?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"Which" ilə sual verərkən seçim qoyulurmu?',              tr: 'Bəli',                  wrong: 'Xeyr'                },
-    { en: '"Which" ilə seçim hansı bağlayıcı ilə qoyulur?',          tr: 'or',                    wrong: 'and'                 },
-    { en: '"Which" ilə hansı növ təyinə sual veririk?',              tr: 'Səciyyələndirici təyin', wrong: 'Təsviri təyin'       },
-    { en: '"What" ilə hansı növ təyinə sual veririk?',               tr: 'Prenozativ (növ) təyin', wrong: 'Səciyyələndirici'   },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"What" ilə sual verərkən seçim qoyulurmu?',
+      options: ['Bəli', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Which" ilə sual verərkən seçim qoyulurmu?',
+      options: ['Xeyr', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"Which" ilə seçim hansı bağlayıcı ilə qoyulur?',
+      options: ['and', 'but', 'nor', 'or'],
+      answer: 'or',
+    },
+    {
+      q: '"Which" ilə hansı növ təyinə sual veririk?',
+      options: ['Təsviri təyin', 'Prenozativ təyin', 'Zərflik', 'Səciyyələndirici təyin'],
+      answer: 'Səciyyələndirici təyin',
+    },
+    {
+      q: '"What" ilə hansı növ təyinə sual veririk?',
+      options: ['Səciyyələndirici', 'Zərflik', 'Tamamlıq', 'Prenozativ (növ) təyin'],
+      answer: 'Prenozativ (növ) təyin',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15747,13 +15975,41 @@ const QUESTIONS_LEVEL = {
       tip: '"What are you?" — peşəni soruşur.\n"Who are you?" — adı / kimliyini soruşur.',
     },
 
-    { en: '"What was I doing?" — bu hansı üzvə sualıdır?',            tr: 'Xəbər',                wrong: 'Mübtəda'             },
-    { en: '"What are you?" — bu nəyi soruşur?',                       tr: 'Peşəni',               wrong: 'Adı'                 },
-    { en: '"Who are you?" — bu nəyi soruşur?',                        tr: 'Adı / kimliyini',      wrong: 'Peşəni'              },
-    { en: '"What day is it?" — bu nəyi soruşur?',                     tr: 'Günü',                 wrong: 'Tarixi'              },
-    { en: '"What colour is your skirt?" — bu nəyi soruşur?',          tr: 'Rəngi',                wrong: 'Ölçünü'             },
-    { en: '"I was reading a book." → what ilə xəbərə sual?',          tr: 'What was I doing?',    wrong: 'What was I read?'   },
-
+  {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"What was I doing?" — bu hansı cümlə üzvünə sualıdır?',
+      options: ['Mübtəda', 'Tamamlıq', 'Zərflik', 'Xəbər'],
+      answer: 'Xəbər',
+    },
+    {
+      q: '"What are you?" — bu nəyi soruşur?',
+      options: ['Adı', 'Yaşı', 'Yerini', 'Peşəni'],
+      answer: 'Peşəni',
+    },
+    {
+      q: '"Who are you?" — bu nəyi soruşur?',
+      options: ['Peşəni', 'Yaşı', 'Yerini', 'Adı / kimliyini'],
+      answer: 'Adı / kimliyini',
+    },
+    {
+      q: '"What day is it?" — bu nəyi soruşur?',
+      options: ['Tarixi', 'Saatı', 'Ayı', 'Günü'],
+      answer: 'Günü',
+    },
+    {
+      q: '"What colour is your skirt?" — bu nəyi soruşur?',
+      options: ['Ölçünü', 'Formanı', 'Materialı', 'Rəngi'],
+      answer: 'Rəngi',
+    },
+    {
+      q: '"I was reading a book." → "what" ilə xəbərə sual necə düzəlir?',
+      options: ['What was I read?', 'What I was doing?', 'What did I do?', 'What was I doing?'],
+      answer: 'What was I doing?',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15846,14 +16102,46 @@ const QUESTIONS_LEVEL = {
       tip: '"When" ilə indiki bitmiş və keçmiş bitmiş zamanlara sual verilmir. Bu hallarda sual keçmiş qeyri-müəyyən zamanda olur.',
     },
 
-    { en: '"How many" hansı isimlərlə işlənir?',                      tr: 'Sayılan isim',          wrong: 'Sayılmayan isim'     },
-    { en: '"How much" hansı isimlərlə işlənir?',                      tr: 'Sayılmayan isim',       wrong: 'Sayılan isim'        },
-    { en: '"How often" nəyə sual verir?',                             tr: 'Tezliyə — neçə dəfə',  wrong: 'Müddətə — nə qədər'  },
-    { en: '"How long" nəyə sual verir?',                              tr: 'Davam müddətinə',       wrong: 'Tezliyə'             },
-    { en: '"Our lesson lasts 45 minutes." → sual?',                   tr: 'How long does our lesson last?', wrong: 'How often does our lesson last?' },
-    { en: '"When" ilə indiki bitmiş zamana sual verilirmi?',          tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: 'Davam müddəti zərfinin əvvəlində hansı söz gəlir?',       tr: 'for / another',         wrong: 'since / still'       },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"How many" hansı isimlərlə işlənir?',
+      options: ['Sayılmayan isim', 'Xüsusi isim', 'Cəm olmayan isim', 'Sayılan isim'],
+      answer: 'Sayılan isim',
+    },
+    {
+      q: '"How much" hansı isimlərlə işlənir?',
+      options: ['Sayılan isim', 'Xüsusi isim', 'Cəm isim', 'Sayılmayan isim'],
+      answer: 'Sayılmayan isim',
+    },
+    {
+      q: '"How often" nəyə sual verir?',
+      options: ['Müddətə — nə qədər', 'Miqdar — nə qədər', 'Uzunluğa', 'Tezliyə — neçə dəfə'],
+      answer: 'Tezliyə — neçə dəfə',
+    },
+    {
+      q: '"How long" nəyə sual verir?',
+      options: ['Tezliyə', 'Miqtara', 'Məsafəyə', 'Davam müddətinə'],
+      answer: 'Davam müddətinə',
+    },
+    {
+      q: '"Our lesson lasts 45 minutes." → sual necə düzəlir?',
+      options: ['How often does our lesson last?', 'How much does our lesson last?', 'How many does our lesson last?', 'How long does our lesson last?'],
+      answer: 'How long does our lesson last?',
+    },
+    {
+      q: '"When" ilə indiki bitmiş zamana sual verilirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: 'Davam müddəti zərfinin əvvəlində hansı söz gəlir?',
+      options: ['since / still', 'ago / before', 'already / yet', 'for / another'],
+      answer: 'for / another',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15901,15 +16189,51 @@ const QUESTIONS_LEVEL = {
       tip: '"Why" ilə "for" işlənmir. Əvəzində "What ... for?" ilə səbəb soruşmaq olar. Söz sırası dəyişir.',
     },
 
-    { en: '"How old" nəyi soruşur?',                                  tr: 'Yaşı',                 wrong: 'Hündürlüyü'          },
-    { en: '"How far" nəyi soruşur?',                                  tr: 'Məsafəni',             wrong: 'Böyüklüyü'           },
-    { en: '"How tall" nəyi soruşur?',                                 tr: 'Boy / hündürlüyü',     wrong: 'Yaşı'                },
-    { en: '"How big" nəyi soruşur?',                                  tr: 'Böyüklüyü / sahəsi',   wrong: 'Məsafəni'            },
-    { en: '"What kind of" nəyi soruşur?',                             tr: 'Növünü — nə cür',      wrong: 'Vaxtı'               },
-    { en: '"What time" nəyi soruşur?',                                tr: 'Vaxtı',                wrong: 'Növünü'              },
-    { en: '"Why" ilə "for" işlənirmi?',                               tr: 'Xeyr',                 wrong: 'Bəli'                },
-    { en: '"Why" əvəzinə nə ilə sual vermək olar?',                   tr: 'What ... for?',        wrong: 'How come?'           },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"How old" nəyi soruşur?',
+      options: ['Hündürlüyü', 'Çəkini', 'Məsafəni', 'Yaşı'],
+      answer: 'Yaşı',
+    },
+    {
+      q: '"How far" nəyi soruşur?',
+      options: ['Böyüklüyü', 'Yaşı', 'Hündürlüyü', 'Məsafəni'],
+      answer: 'Məsafəni',
+    },
+    {
+      q: '"How tall" nəyi soruşur?',
+      options: ['Yaşı', 'Çəkini', 'Məsafəni', 'Boy / hündürlüyü'],
+      answer: 'Boy / hündürlüyü',
+    },
+    {
+      q: '"How big" nəyi soruşur?',
+      options: ['Məsafəni', 'Yaşı', 'Hündürlüyü', 'Böyüklüyü / sahəni'],
+      answer: 'Böyüklüyü / sahəni',
+    },
+    {
+      q: '"What kind of" nəyi soruşur?',
+      options: ['Vaxtı', 'Yaşı', 'Məsafəni', 'Növünü — nə cür'],
+      answer: 'Növünü — nə cür',
+    },
+    {
+      q: '"What time" nəyi soruşur?',
+      options: ['Növünü', 'Yaşı', 'Məsafəni', 'Vaxtı'],
+      answer: 'Vaxtı',
+    },
+    {
+      q: '"Why" ilə "for" işlənirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Why" əvəzinə başqa hansı ifadə ilə sual vermək olar?',
+      options: ['How come?', 'What for not?', 'Which reason?', 'What ... for?'],
+      answer: 'What ... for?',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -15958,13 +16282,41 @@ const QUESTIONS_LEVEL = {
       tip: '"Which" ilə sıra sayına da sual veririk:\nThe first boy is my brother. → Which boy is your brother?',
     },
 
-    { en: 'Təsviri təyinə sual sözü?',                                tr: 'what kind of?',        wrong: 'which?'              },
-    { en: 'Səciyyələndirici təyinə sual sözü?',                       tr: 'which?',               wrong: 'what kind of?'       },
-    { en: 'Prenozativ (növ) təyinə sual sözü?',                       tr: 'what...?',             wrong: 'which?'              },
-    { en: 'Səciyyələndirici təyin olan ismin artiklı?',               tr: 'the (həmişə)',          wrong: 'a/an'               },
-    { en: 'Təsviri təyin olan sayılan tək ismin artiklı?',            tr: 'a/an',                 wrong: 'the'                 },
-    { en: 'Prenozativ (növ) təyin olan ismin artiklı?',               tr: 'Heç bir artikl',        wrong: 'the'                },
-
+  {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Təsviri təyinə hansı sual sözü ilə sual verilir?',
+      options: ['which?', 'what?', 'whose?', 'what kind of?'],
+      answer: 'what kind of?',
+    },
+    {
+      q: 'Səciyyələndirici təyinə hansı sual sözü ilə sual verilir?',
+      options: ['what kind of?', 'what?', 'whose?', 'which?'],
+      answer: 'which?',
+    },
+    {
+      q: 'Prenozativ (növ) təyinə hansı sual sözü ilə sual verilir?',
+      options: ['which?', 'whose?', 'what kind of?', 'what?'],
+      answer: 'what?',
+    },
+    {
+      q: 'Səciyyələndirici təyin olan ismin artiklı necə olur?',
+      options: ['a/an', 'artikl işlənmir', 'Kontekstdən asılı', 'the (həmişə)'],
+      answer: 'the (həmişə)',
+    },
+    {
+      q: 'Təsviri təyin olan sayılan tək ismin artiklı necə olur?',
+      options: ['the', 'artikl işlənmir', 'Kontekstdən asılı', 'a/an'],
+      answer: 'a/an',
+    },
+    {
+      q: 'Prenozativ (növ) təyin olan ismin artiklı necə olur?',
+      options: ['the', 'a/an', 'Kontekstdən asılı', 'Heç bir artikl'],
+      answer: 'Heç bir artikl',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16041,12 +16393,36 @@ const QUESTIONS_LEVEL = {
       tip: '"Or" bağlayıcısı birinci hissənin sonunda deyil, əvəzlənən sözün yanında gəlir.',
     },
 
-    { en: 'Seçmə sualın ikinci hissəsi hansı bağlayıcı ilə başlayır?',tr: 'or',                   wrong: 'and'                 },
-    { en: 'Seçmə suala yes/no cavabı verilirmi?',                     tr: 'Xeyr',                 wrong: 'Bəli'                },
-    { en: '"or" bağlayıcısının sabit yeri varmı?',                    tr: 'Xeyr',                 wrong: 'Bəli'                },
-    { en: '"Do you go to school or home?" — cavab?',                  tr: 'I go home.',           wrong: 'Yes, I do.'          },
-    { en: 'Seçmə sualın birinci hissəsi hansı sual formasındadır?',   tr: 'Ümumi sual forması',   wrong: 'Xüsusi sual forması' },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Seçmə sualın ikinci hissəsi hansı bağlayıcı ilə başlayır?',
+      options: ['and', 'but', 'nor', 'or'],
+      answer: 'or',
+    },
+    {
+      q: 'Seçmə suala yes/no cavabı verilirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"or" bağlayıcısının cümlədə sabit yeri varmı?',
+      options: ['Bəli', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Do you go to school or home?" — düzgün cavab hansıdır?',
+      options: ['Yes, I do.', 'No, I don\'t.', 'Yes, I go.', 'I go home.'],
+      answer: 'I go home.',
+    },
+    {
+      q: 'Seçmə sualın birinci hissəsi hansı sual formasındadır?',
+      options: ['Xüsusi sual forması', 'Mübtədaya sual forması', 'Ayrılıqlı sual forması', 'Ümumi sual forması'],
+      answer: 'Ümumi sual forması',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16097,15 +16473,51 @@ const QUESTIONS_LEVEL = {
       tip: 'Cavab: Yes, I am. / No, I\'m not. (tam cavab da ola bilər)',
     },
 
-    { en: 'Tag sualının birinci hissəsi təsdiqdirsə, ikinci hissə?', tr: 'İnkar',                 wrong: 'Təsdiq'              },
-    { en: 'Tag sualının birinci hissəsi inkardırsa, ikinci hissə?',  tr: 'Təsdiq',                wrong: 'İnkar'               },
-    { en: '"I am a teacher, ___ I?" — boşluq?',                     tr: 'aren\'t',               wrong: 'isn\'t'              },
-    { en: '"He is a teacher, ___ he?" — boşluq?',                   tr: 'isn\'t',                wrong: 'aren\'t'             },
-    { en: '"She can swim, ___ she?" — boşluq?',                     tr: 'can\'t',                wrong: 'isn\'t'              },
-    { en: '"They went home, ___ they?" — boşluq?',                  tr: 'didn\'t',               wrong: 'weren\'t'            },
-    { en: '"You don\'t like it, ___ you?" — boşluq?',               tr: 'do',                    wrong: 'don\'t'              },
-    { en: 'Tag sualında mübtəda nə ilə əvəzlənir?',                 tr: 'Şəxs əvəzliyi',         wrong: 'İsim'                },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Tag sualının birinci hissəsi təsdiqdirsə, ikinci hissə necə olur?',
+      options: ['Təsdiq', 'Sual', 'Əmr', 'İnkar'],
+      answer: 'İnkar',
+    },
+    {
+      q: 'Tag sualının birinci hissəsi inkardırsa, ikinci hissə necə olur?',
+      options: ['İnkar', 'Sual', 'Əmr', 'Təsdiq'],
+      answer: 'Təsdiq',
+    },
+    {
+      q: '"I am a teacher, ___ I?" — boşluğa nə gəlir?',
+      options: ["isn't", "am not", "wasn't", "aren't"],
+      answer: "aren't",
+    },
+    {
+      q: '"He is a teacher, ___ he?" — boşluğa nə gəlir?',
+      options: ["aren't", "wasn't", "doesn't", "isn't"],
+      answer: "isn't",
+    },
+    {
+      q: '"She can swim, ___ she?" — boşluğa nə gəlir?',
+      options: ["isn't", "doesn't", "won't", "can't"],
+      answer: "can't",
+    },
+    {
+      q: '"They went home, ___ they?" — boşluğa nə gəlir?',
+      options: ["weren't", "haven't", "don't", "didn't"],
+      answer: "didn't",
+    },
+    {
+      q: '"You don\'t like it, ___ you?" — boşluğa nə gəlir?',
+      options: ["don't", "didn't", "aren't", "do"],
+      answer: "do",
+    },
+    {
+      q: 'Tag sualında mübtəda nə ilə əvəzlənir?',
+      options: ['İsim', 'Sifət', 'Zərf', 'Şəxs əvəzliyi'],
+      answer: 'Şəxs əvəzliyi',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16152,17 +16564,61 @@ const QUESTIONS_LEVEL = {
       tip: 'Qısa cavab: Yes, I am. / No, I\'m not.\nYes, he is. / No, he isn\'t.',
     },
 
-    { en: '"This is a book, ___ it?" — boşluq?',                    tr: 'isn\'t',                wrong: 'aren\'t'             },
-    { en: '"These are books, ___ they?" — boşluq?',                 tr: 'aren\'t',               wrong: 'isn\'t'              },
-    { en: '"Everybody took the test, ___ they?" — boşluq?',         tr: 'didn\'t',               wrong: 'didn\'t he'          },
-    { en: '"Everything is OK, ___ it?" — boşluq?',                  tr: 'isn\'t',                wrong: 'aren\'t'             },
-    { en: '"Nobody came, ___ they?" — boşluq?',                     tr: 'did',                   wrong: 'didn\'t'             },
-    { en: '"this/that" tag sualında hansı əvəzliklə əvəzlənir?',    tr: 'it',                    wrong: 'they'                },
-    { en: '"these/those" tag sualında hansı əvəzliklə əvəzlənir?',  tr: 'they',                  wrong: 'it'                  },
-    { en: '"everybody" tag sualında hansı əvəzliklə əvəzlənir?',    tr: 'they',                  wrong: 'it'                  },
-    { en: '"everything" tag sualında hansı əvəzliklə əvəzlənir?',   tr: 'it',                    wrong: 'they'                },
-    { en: '"nothing" tag sualında hansı əvəzliklə əvəzlənir?',      tr: 'it',                    wrong: 'they'                },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"This is a book, ___ it?" — boşluğa nə gəlir?',
+      options: ["aren't", "wasn't", "doesn't", "isn't"],
+      answer: "isn't",
+    },
+    {
+      q: '"These are books, ___ they?" — boşluğa nə gəlir?',
+      options: ["isn't", "weren't", "don't", "aren't"],
+      answer: "aren't",
+    },
+    {
+      q: '"Everybody took the test, ___ they?" — boşluğa nə gəlir?',
+      options: ["didn't he", "weren't", "haven't", "didn't"],
+      answer: "didn't",
+    },
+    {
+      q: '"Everything is OK, ___ it?" — boşluğa nə gəlir?',
+      options: ["aren't", "wasn't", "doesn't", "isn't"],
+      answer: "isn't",
+    },
+    {
+      q: '"Nobody came, ___ they?" — boşluğa nə gəlir?',
+      options: ["didn't", "weren't", "haven't", "did"],
+      answer: "did",
+    },
+    {
+      q: '"this/that" tag sualında hansı əvəzliklə əvəzlənir?',
+      options: ['they', 'he', 'she', 'it'],
+      answer: 'it',
+    },
+    {
+      q: '"these/those" tag sualında hansı əvəzliklə əvəzlənir?',
+      options: ['it', 'he', 'she', 'they'],
+      answer: 'they',
+    },
+    {
+      q: '"everybody" tag sualında hansı əvəzliklə əvəzlənir?',
+      options: ['it', 'he', 'she', 'they'],
+      answer: 'they',
+    },
+    {
+      q: '"everything" tag sualında hansı əvəzliklə əvəzlənir?',
+      options: ['they', 'he', 'she', 'it'],
+      answer: 'it',
+    },
+    {
+      q: '"nothing" tag sualında hansı əvəzliklə əvəzlənir?',
+      options: ['they', 'he', 'she', 'it'],
+      answer: 'it',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16357,15 +16813,51 @@ const MODAL_VERBS_LEVEL = {
       tip: 'Qısa cavab: Yes, I can. / No, I can\'t.\nYes, he could. / No, he couldn\'t.',
     },
 
-    { en: '"Can" nə mənasını verir?',                                  tr: 'Bacarmaq, bilmək',     wrong: 'Vaciblik'            },
-    { en: '"Can" neçə zaman forması var?',                             tr: '2 (can / could)',       wrong: '3'                  },
-    { en: '"Can"ın keçmiş forması nədir?',                             tr: 'could',                wrong: 'caned'              },
-    { en: '"Can" III şəxs təkdə "-s" alırmı?',                        tr: 'Xeyr',                 wrong: 'Bəli'               },
-    { en: '"Can"ın inkar forması?',                                    tr: 'cannot / can\'t',      wrong: 'don\'t can'         },
-    { en: '"She cannot swim." — düzgün inkar formasımı?',              tr: 'Bəli',                 wrong: 'Xeyr'               },
-    { en: 'Modal feldən sonra hansı məsdər işlənir?',                  tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'      },
-    { en: 'Modal fellərin şəxssiz formaları varmı?',                   tr: 'Xeyr',                 wrong: 'Bəli'               },
-
+  {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Can" modal feli nə mənasını verir?',
+      options: ['Vaciblik', 'İcazə vermək', 'Zərurət', 'Bacarmaq, bilmək'],
+      answer: 'Bacarmaq, bilmək',
+    },
+    {
+      q: '"Can" felinin neçə zaman forması var?',
+      options: ['1', '3', '4', '2 (can / could)'],
+      answer: '2 (can / could)',
+    },
+    {
+      q: '"Can"ın keçmiş zaman forması nədir?',
+      options: ['caned', 'was can', 'has canned', 'could'],
+      answer: 'could',
+    },
+    {
+      q: '"Can" III şəxs təkdə "-s" şəkilçisi alırmı?',
+      options: ['Bəli', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Can"ın inkar forması nədir?',
+      options: ["don't can", "not can", "no can", "cannot / can't"],
+      answer: "cannot / can't",
+    },
+    {
+      q: '"She cannot swim." — bu düzgün inkar formasımı?',
+      options: ['Xeyr', 'Bəzən düzdür', 'Yalnız rəsmi nitqdə', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: 'Modal feldən sonra hansı məsdər forması işlənir?',
+      options: ['to ilə məsdər', 'Felin -ing forması', 'Felin keçmiş forması', 'to-suz məsdər'],
+      answer: 'to-suz məsdər',
+    },
+    {
+      q: 'Modal fellərin şəxssiz formaları (infinitiv, gerund, participle) varmı?',
+      options: ['Bəli', 'Bəzən', 'Yalnız "can"da', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16438,15 +16930,51 @@ const MODAL_VERBS_LEVEL = {
       ],
     },
 
-    { en: '"To be able to" neyin əvəzedicisidir?',                     tr: 'can',                  wrong: 'must'               },
-    { en: '"To be able to" şəxslər üzrə dəyişirmi?',                  tr: 'Bəli',                 wrong: 'Xeyr'               },
-    { en: '"To be able to"nun bütün zamanları varmı?',                 tr: 'Bəli',                 wrong: 'Xeyr'               },
-    { en: '"He ___ able to work." (indiki) — boşluq?',                tr: 'is',                   wrong: 'are'                },
-    { en: '"Keçmiş q/m-də to be able to" forması?',                   tr: 'was/were able to',     wrong: 'had been able to'   },
-    { en: '"Gələcək q/m-də to be able to" forması?',                  tr: 'shall/will be able to', wrong: 'have been able to' },
-    { en: '"İndiki bitmiş zamanda to be able to" forması?',           tr: 'have/has been able to', wrong: 'was/were able to'  },
-    { en: '"I am not able to work." — inkar düzgündürmü?',            tr: 'Bəli',                 wrong: 'Xeyr'               },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"To be able to" hansı modal felin əvəzedicisidir?',
+      options: ['must', 'may', 'should', 'can'],
+      answer: 'can',
+    },
+    {
+      q: '"To be able to" şəxslər üzrə dəyişirmi?',
+      options: ['Xeyr', 'Yalnız III şəxsdə', 'Yalnız cəmdə', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"To be able to"nun bütün zamanları varmı?',
+      options: ['Xeyr', 'Yalnız keçmiş', 'Yalnız indiki', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"He ___ able to work." (indiki zaman) — boşluğa nə gəlir?',
+      options: ['are', 'am', 'were', 'is'],
+      answer: 'is',
+    },
+    {
+      q: 'Keçmiş qeyri-müəyyən zamanda "to be able to" forması nədir?',
+      options: ['had been able to', 'have been able to', 'will be able to', 'was/were able to'],
+      answer: 'was/were able to',
+    },
+    {
+      q: 'Gələcək qeyri-müəyyən zamanda "to be able to" forması nədir?',
+      options: ['have been able to', 'was/were able to', 'had been able to', 'shall/will be able to'],
+      answer: 'shall/will be able to',
+    },
+    {
+      q: 'İndiki bitmiş zamanda "to be able to" forması nədir?',
+      options: ['was/were able to', 'had been able to', 'will be able to', 'have/has been able to'],
+      answer: 'have/has been able to',
+    },
+    {
+      q: '"I am not able to work." — bu inkar forması düzgündürmü?',
+      options: ['Xeyr', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Bəli'],
+      answer: 'Bəli',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16518,14 +17046,46 @@ const MODAL_VERBS_LEVEL = {
       tip: '"May" indiki q/m-da ancaq icazə mənasında işlənir.\n"Might" yalnız vasitəli nitqdə işlənir:\nThey said that I might take her book.',
     },
 
-    { en: '"May" nə mənasını verir?',                                  tr: 'İcazə, mümkünlük, güman', wrong: 'Vaciblik'       },
-    { en: '"May"ın keçmiş forması nədir?',                             tr: 'might',                wrong: 'mayed'              },
-    { en: '"May" şəxslər üzrə dəyişirmi?',                            tr: 'Xeyr',                 wrong: 'Bəli'               },
-    { en: '"May I smoke?" — qısa inkar cavab?',                        tr: 'No, you mayn\'t.',     wrong: 'No, you mustn\'t.'  },
-    { en: '"Qətilik bildirərkən may suala hansı fel ilə cavab vermək olar?',tr: 'must',             wrong: 'can'               },
-    { en: '"Might" hansı nitqdə işlənir?',                             tr: 'Vasitəli nitq',        wrong: 'Vasitəsiz nitq'     },
-    { en: '"May" indiki q/m-da hansı mənada işlənir?',                 tr: 'Yalnız icazə',         wrong: 'Vaciblik'           },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"May" modal feli nə mənasını verir?',
+      options: ['Vaciblik', 'Bacarıq', 'Zərurət', 'İcazə, mümkünlük, güman'],
+      answer: 'İcazə, mümkünlük, güman',
+    },
+    {
+      q: '"May"ın keçmiş zaman forması nədir?',
+      options: ['mayed', 'was may', 'has mayed', 'might'],
+      answer: 'might',
+    },
+    {
+      q: '"May" şəxslər üzrə dəyişirmi?',
+      options: ['Bəli', 'Yalnız III şəxsdə', 'Yalnız cəmdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"May I smoke?" — qısa inkar cavab necədir?',
+      options: ["No, you mustn't.", "No, you can't.", "No, you don't.", "No, you mayn't."],
+      answer: "No, you mayn't.",
+    },
+    {
+      q: 'Qətilik bildirərkən "may" suala hansı modal fel ilə cavab vermək olar?',
+      options: ['can', 'will', 'should', 'must'],
+      answer: 'must',
+    },
+    {
+      q: '"Might" əsasən hansı nitqdə işlənir?',
+      options: ['Vasitəsiz nitq', 'Əmr cümləsində', 'Sual cümləsində', 'Vasitəli nitq'],
+      answer: 'Vasitəli nitq',
+    },
+    {
+      q: '"May" indiki qeyri-müəyyən zamanda hansı mənada işlənir?',
+      options: ['Vaciblik', 'Bacarıq', 'Zərurət', 'Yalnız icazə'],
+      answer: 'Yalnız icazə',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16590,15 +17150,51 @@ const MODAL_VERBS_LEVEL = {
       tip: 'Qısa cavab: Yes, I do. / No, I don\'t.\nYes, he does. / No, he doesn\'t.',
     },
 
-    { en: '"Must" nə mənasını verir?',                                 tr: 'Vaciblik, zərurət, güman', wrong: 'İcazə'          },
-    { en: '"Must" neçə zaman forması var?',                            tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'     },
-    { en: '"Must" şəxslər üzrə dəyişirmi?',                           tr: 'Xeyr',                 wrong: 'Bəli'               },
-    { en: '"Must not" nə mənasındadır?',                               tr: 'Qadağa — etmə',        wrong: 'Lazım deyil'        },
-    { en: '"Have to" ilə sual/inkar hansı fellərlə düzəlir?',          tr: 'do / does / did',      wrong: 'have / has'         },
-    { en: '"He ___ to come." (indiki) — boşluq?',                     tr: 'has',                  wrong: 'have'               },
-    { en: '"Must" vs "have to" — fərq nədir?',                        tr: 'must = daxili, have to = xarici vaciblik', wrong: 'Heç bir fərq yoxdur' },
-    { en: '"Have to"nun qısa cavabı hansı fellərlə verilir?',          tr: 'do / does',            wrong: 'have / has'         },
-
+  {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Must" modal feli nə mənasını verir?',
+      options: ['İcazə', 'Bacarıq', 'Mümkünlük', 'Vaciblik, zərurət, güman'],
+      answer: 'Vaciblik, zərurət, güman',
+    },
+    {
+      q: '"Must" felinin neçə zaman forması var?',
+      options: ['Bütün zamanlar', '2 (indiki/keçmiş)', '3', 'Yalnız indiki'],
+      answer: 'Yalnız indiki',
+    },
+    {
+      q: '"Must" şəxslər üzrə dəyişirmi?',
+      options: ['Bəli', 'Yalnız III şəxsdə', 'Yalnız cəmdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Must not" nə mənasındadır?',
+      options: ['Lazım deyil', 'Bacarmır', 'Mümkün deyil', 'Qadağa — etmə'],
+      answer: 'Qadağa — etmə',
+    },
+    {
+      q: '"Have to" ilə sual və inkar hansı fellərlə düzəlir?',
+      options: ['have / has', 'be / was', 'will / would', 'do / does / did'],
+      answer: 'do / does / did',
+    },
+    {
+      q: '"He ___ to come." (indiki zaman) — boşluğa nə gəlir?',
+      options: ['have', 'had', 'will have', 'has'],
+      answer: 'has',
+    },
+    {
+      q: '"Must" ilə "have to" arasındakı əsas fərq nədir?',
+      options: ['Heç bir fərq yoxdur', 'Yalnız zaman fərqi var', 'must = xarici, have to = daxili vaciblik', 'must = daxili, have to = xarici vaciblik'],
+      answer: 'must = daxili, have to = xarici vaciblik',
+    },
+    {
+      q: '"Have to"nun qısa cavabı hansı fellərlə verilir?',
+      options: ['have / has', 'be / was', 'will / would', 'do / does'],
+      answer: 'do / does',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16650,13 +17246,41 @@ const MODAL_VERBS_LEVEL = {
       tip: 'Keçmiş q/m-də "had to" işlənir, sual/inkarı "did" ilə düzəlir. Keçmişlik "did"-də göstərilir, "have to" dəyişmir.',
     },
 
-    { en: '"Have to"nun keçmiş forması nədir?',                        tr: 'had to',               wrong: 'have had to'        },
-    { en: '"Had to"nun sualı hansı fellərlə düzəlir?',                 tr: 'did',                  wrong: 'had'                },
-    { en: '"Have to"nun gələcək forması?',                             tr: 'shall/will have to',   wrong: 'going to have to'   },
-    { en: '"Have to"nun indiki bitmiş forması?',                       tr: 'have/has had to',      wrong: 'had had to'         },
-    { en: '"Did I have to come?" — inkar forması?',                    tr: 'I didn\'t have to come.', wrong: 'I hadn\'t have to come.' },
-    { en: '"Shall I have to come?" — bu hansı zaman?',                 tr: 'Gələcək q/m sual',     wrong: 'İndiki q/m sual'    },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Have to"nun keçmiş zaman forması nədir?',
+      options: ['have had to', 'was having to', 'did have to', 'had to'],
+      answer: 'had to',
+    },
+    {
+      q: '"Had to"nun sual forması hansı köməkçi fel ilə düzəlir?',
+      options: ['had', 'was', 'have', 'did'],
+      answer: 'did',
+    },
+    {
+      q: '"Have to"nun gələcək zaman forması nədir?',
+      options: ['going to have to', 'had to', 'have had to', 'shall/will have to'],
+      answer: 'shall/will have to',
+    },
+    {
+      q: '"Have to"nun indiki bitmiş zaman forması nədir?',
+      options: ['had had to', 'was having to', 'will have to', 'have/has had to'],
+      answer: 'have/has had to',
+    },
+    {
+      q: '"Did I have to come?" — inkar forması nədir?',
+      options: ["I hadn't have to come.", "I haven't had to come.", "I wasn't have to come.", "I didn't have to come."],
+      answer: "I didn't have to come.",
+    },
+    {
+      q: '"Shall I have to come?" — bu hansı zamanın sual formasıdır?',
+      options: ['İndiki q/m sual', 'Keçmiş q/m sual', 'İndiki bitmiş sual', 'Gələcək q/m sual'],
+      answer: 'Gələcək q/m sual',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16764,14 +17388,46 @@ const MODAL_VERBS_LEVEL = {
       tip: 'Bütün modal fellərdən sonra to-suz məsdər işlənir — "ought to" YEGANƏ istisnandır.',
     },
 
-    { en: '"Should" nə mənasını verir?',                               tr: 'Məsləhət / gərəklik',  wrong: 'İcazə'              },
-    { en: '"Should" bütün şəxslərdə dəyişirmi?',                      tr: 'Xeyr, dəyişmir',       wrong: 'Bəli, dəyişir'      },
-    { en: '"Should"dan sonra hansı məsdər işlənir?',                   tr: 'to-suz məsdər',        wrong: 'to ilə məsdər'      },
-    { en: '"Ought to"dan sonra hansı məsdər işlənir?',                 tr: 'to ilə məsdər',        wrong: 'to-suz məsdər'      },
-    { en: 'Hansı modal feldən sonra "to" işlənir?',                    tr: 'ought to',             wrong: 'should'             },
-    { en: '"I shouldn\'t go." — düzgün inkar formasımı?',             tr: 'Bəli',                 wrong: 'Xeyr'               },
-    { en: '"Should" ilə "ought to" mənaca bənzərmi?',                  tr: 'Bəli',                 wrong: 'Xeyr'               },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Should" modal feli nə mənasını verir?',
+      options: ['İcazə', 'Vaciblik', 'Bacarıq', 'Məsləhət / gərəklik'],
+      answer: 'Məsləhət / gərəklik',
+    },
+    {
+      q: '"Should" bütün şəxslərdə dəyişirmi?',
+      options: ['Bəli, dəyişir', 'Yalnız III şəxsdə', 'Yalnız cəmdə', 'Xeyr, dəyişmir'],
+      answer: 'Xeyr, dəyişmir',
+    },
+    {
+      q: '"Should"dan sonra hansı məsdər forması işlənir?',
+      options: ['to ilə məsdər', 'Felin -ing forması', 'Felin keçmiş forması', 'to-suz məsdər'],
+      answer: 'to-suz məsdər',
+    },
+    {
+      q: '"Ought to"dan sonra hansı məsdər forması işlənir?',
+      options: ['to-suz məsdər', 'Felin -ing forması', 'Felin keçmiş forması', 'to ilə məsdər'],
+      answer: 'to ilə məsdər',
+    },
+    {
+      q: 'Hansı modal feldən sonra "to" işlənir?',
+      options: ['should', 'can', 'must', 'ought to'],
+      answer: 'ought to',
+    },
+    {
+      q: '"I shouldn\'t go." — bu düzgün inkar formasımı?',
+      options: ['Xeyr', 'Bəzən', 'Yalnız rəsmi nitqdə', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"Should" ilə "ought to" mənaca bənzərmi?',
+      options: ['Xeyr', 'Yalnız keçmişdə', 'Yalnız gələcəkdə', 'Bəli'],
+      answer: 'Bəli',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16843,14 +17499,46 @@ const MODAL_VERBS_LEVEL = {
       ],
     },
 
-    { en: '"Need" modal fel kimi nə mənasını verir?',                  tr: 'Lazım deyil',          wrong: 'Ehtiyacı olmaq'     },
-    { en: '"Need" əsas fel kimi nə mənasını verir?',                   tr: 'Ehtiyacı olmaq',       wrong: 'Lazım deyil'        },
-    { en: '"Need" modal fel kimi yalnız hansı zamanda işlənir?',       tr: 'İndiki q/m',           wrong: 'Bütün zamanlar'     },
-    { en: '"Need" modal fel kimi III şəxs təkdə "-s" alırmı?',        tr: 'Xeyr',                 wrong: 'Bəli'               },
-    { en: '"Need" əsas fel kimi III şəxs təkdə "-s" alırmı?',         tr: 'Bəli (needs)',         wrong: 'Xeyr'               },
-    { en: '"Need" modal fel kimi inkar forması?',                      tr: 'need not / needn\'t',  wrong: 'don\'t need'        },
-    { en: '"Need" əsas fel kimi sual/inkarı hansı fellərlə düzəlir?',  tr: 'do/does/did',          wrong: 'need/needn\'t'      },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Need" modal fel kimi nə mənasını verir?',
+      options: ['Ehtiyacı olmaq', 'Vaciblik', 'İcazə', 'Lazım deyil'],
+      answer: 'Lazım deyil',
+    },
+    {
+      q: '"Need" əsas fel kimi nə mənasını verir?',
+      options: ['Lazım deyil', 'Vaciblik', 'İcazə', 'Ehtiyacı olmaq'],
+      answer: 'Ehtiyacı olmaq',
+    },
+    {
+      q: '"Need" modal fel kimi yalnız hansı zamanda işlənir?',
+      options: ['Bütün zamanlar', 'Yalnız keçmiş', 'Yalnız gələcək', 'İndiki qeyri-müəyyən'],
+      answer: 'İndiki qeyri-müəyyən',
+    },
+    {
+      q: '"Need" modal fel kimi III şəxs təkdə "-s" şəkilçisi alırmı?',
+      options: ['Bəli', 'Bəzən', 'Yalnız sualda', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Need" əsas fel kimi III şəxs təkdə "-s" şəkilçisi alırmı?',
+      options: ['Xeyr', 'Bəzən', 'Yalnız sualda', 'Bəli (needs)'],
+      answer: 'Bəli (needs)',
+    },
+    {
+      q: '"Need" modal fel kimi inkar forması nədir?',
+      options: ["don't need", "hasn't need", "isn't need", "need not / needn't"],
+      answer: "need not / needn't",
+    },
+    {
+      q: '"Need" əsas fel kimi sual və inkar hansı fellərlə düzəlir?',
+      options: ['need/needn\'t', 'have/has', 'be/was', 'do/does/did'],
+      answer: 'do/does/did',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16895,14 +17583,41 @@ const MODAL_VERBS_LEVEL = {
       ],
       tip: 'Əsas fel inkarı: don\'t/doesn\'t need to go.\nModal fel inkarı: needn\'t go.\nHər ikisi "lazım deyil" mənasını verir, amma əsas fel daha rəsmi deyildir.',
     },
-
-    { en: '"need" əsas fel kimi sonrakı fel?',                         tr: 'to + məsdər',          wrong: 'to-suz məsdər'      },
-    { en: '"need" modal fel kimi sonrakı fel?',                        tr: 'to-suz məsdər',        wrong: 'to + məsdər'        },
-    { en: '"She needs to go." — "need" hansı formada işlənib?',        tr: 'Əsas fel',             wrong: 'Modal fel'          },
-    { en: '"She needn\'t go." — "need" hansı formada işlənib?',       tr: 'Modal fel',            wrong: 'Əsas fel'           },
-    { en: '"Does she need to go?" — "need" hansı formada işlənib?',   tr: 'Əsas fel',             wrong: 'Modal fel'          },
-    { en: '"needn\'t" = "don\'t need to" — mənaca bərabərmi?',        tr: 'Bəli',                 wrong: 'Xeyr'               },
-
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"need" əsas fel kimi sonrasında hansı məsdər forması işlənir?',
+      options: ['to-suz məsdər', 'Felin -ing forması', 'Felin keçmiş forması', 'to + məsdər'],
+      answer: 'to + məsdər',
+    },
+    {
+      q: '"need" modal fel kimi sonrasında hansı məsdər forması işlənir?',
+      options: ['to + məsdər', 'Felin -ing forması', 'Felin keçmiş forması', 'to-suz məsdər'],
+      answer: 'to-suz məsdər',
+    },
+    {
+      q: '"She needs to go." — "need" burada hansı formada işlənib?',
+      options: ['Modal fel', 'Köməkçi fel', 'Zərf', 'Əsas fel'],
+      answer: 'Əsas fel',
+    },
+    {
+      q: '"She needn\'t go." — "need" burada hansı formada işlənib?',
+      options: ['Əsas fel', 'Köməkçi fel', 'Zərf', 'Modal fel'],
+      answer: 'Modal fel',
+    },
+    {
+      q: '"Does she need to go?" — "need" burada hansı formada işlənib?',
+      options: ['Modal fel', 'Köməkçi fel', 'Zərf', 'Əsas fel'],
+      answer: 'Əsas fel',
+    },
+    {
+      q: '"needn\'t" ilə "don\'t need to" mənaca bərabərmi?',
+      options: ['Xeyr', 'Yalnız keçmişdə', 'Yalnız gələcəkdə', 'Bəli'],
+      answer: 'Bəli',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -16984,15 +17699,51 @@ const MODAL_VERBS_LEVEL = {
       tip: '"will → would", "shall → should", "can → could", "may → might" — keçmiş formaları vasitəli nitqdə və şərt cümlələrində işlənir.',
     },
 
-    { en: 'Modal fellərin şəxssiz formaları varmı?',                   tr: 'Xeyr',                 wrong: 'Bəli'               },
-    { en: 'Hansı modal feldən sonra "to" işlənir?',                    tr: 'ought to',             wrong: 'should'             },
-    { en: '"can"ın keçmiş / alternativ forması?',                      tr: 'could',                wrong: 'caned'              },
-    { en: '"will"in keçmiş / alternativ forması?',                     tr: 'would',                wrong: 'willed'             },
-    { en: '"shall"ın keçmiş / alternativ forması?',                    tr: 'should',               wrong: 'shalled'            },
-    { en: '"may"ın keçmiş / alternativ forması?',                      tr: 'might',                wrong: 'mayed'              },
-    { en: '"must" neçə zaman forması var?',                            tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'     },
-    { en: '"need" modal fel kimi neçə zaman forması var?',             tr: 'Yalnız indiki',        wrong: 'Bütün zamanlar'     },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Modal fellərin şəxssiz formaları (infinitiv, gerund, participle) varmı?',
+      options: ['Bəli', 'Yalnız "can"da', 'Yalnız "must"da', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: 'Hansı modal feldən sonra "to" işlənir?',
+      options: ['should', 'can', 'must', 'ought to'],
+      answer: 'ought to',
+    },
+    {
+      q: '"can"ın keçmiş / alternativ forması nədir?',
+      options: ['caned', 'was can', 'has canned', 'could'],
+      answer: 'could',
+    },
+    {
+      q: '"will"in keçmiş / alternativ forması nədir?',
+      options: ['willed', 'was will', 'has willed', 'would'],
+      answer: 'would',
+    },
+    {
+      q: '"shall"ın keçmiş / alternativ forması nədir?',
+      options: ['shalled', 'was shall', 'has shalled', 'should'],
+      answer: 'should',
+    },
+    {
+      q: '"may"ın keçmiş / alternativ forması nədir?',
+      options: ['mayed', 'was may', 'has mayed', 'might'],
+      answer: 'might',
+    },
+    {
+      q: '"must" felinin neçə zaman forması var?',
+      options: ['Bütün zamanlar', '2 (indiki/keçmiş)', '3', 'Yalnız indiki'],
+      answer: 'Yalnız indiki',
+    },
+    {
+      q: '"need" modal fel kimi neçə zaman forması var?',
+      options: ['Bütün zamanlar', '2 (indiki/keçmiş)', '3', 'Yalnız indiki'],
+      answer: 'Yalnız indiki',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -17039,14 +17790,46 @@ const MODAL_VERBS_LEVEL = {
       tip: '"must not" — qadağa (etmə)\n"needn\'t / don\'t have to" — lazım deyil (etməyə məcbur deyilsən)',
     },
 
-    { en: '"Bacarmaq" mənasını hansı modal fellər bildirir?',          tr: 'can / could / to be able to', wrong: 'must / have to' },
-    { en: '"Vaciblik" mənasını hansı modal fellər bildirir?',          tr: 'must / have to',       wrong: 'should / ought to'  },
-    { en: '"Məsləhət" mənasını hansı modal fellər bildirir?',          tr: 'should / ought to',    wrong: 'must / have to'     },
-    { en: '"Qadağa" mənasını hansı modal fel bildirir?',               tr: 'must not',             wrong: 'needn\'t'           },
-    { en: '"Lazım deyil" mənasını hansı modal fel bildirir?',          tr: 'needn\'t / don\'t need to', wrong: 'must not'      },
-    { en: '"must not" vs "needn\'t" — fərq nədir?',                   tr: 'mustn\'t = qadağa, needn\'t = lazım deyil', wrong: 'Heç bir fərq yoxdur' },
-    { en: '"İcazə" mənasını hansı modal fellər bildirir?',             tr: 'may / can',            wrong: 'must / should'      },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Bacarmaq" mənasını hansı modal fellər bildirir?',
+      options: ['must / have to', 'should / ought to', 'may / might', 'can / could / to be able to'],
+      answer: 'can / could / to be able to',
+    },
+    {
+      q: '"Vaciblik" mənasını hansı modal fellər bildirir?',
+      options: ['should / ought to', 'can / could', 'may / might', 'must / have to'],
+      answer: 'must / have to',
+    },
+    {
+      q: '"Məsləhət" mənasını hansı modal fellər bildirir?',
+      options: ['must / have to', 'can / could', 'may / might', 'should / ought to'],
+      answer: 'should / ought to',
+    },
+    {
+      q: '"Qadağa" mənasını hansı modal fel bildirir?',
+      options: ["needn't", 'should not', 'cannot', 'must not'],
+      answer: 'must not',
+    },
+    {
+      q: '"Lazım deyil" mənasını hansı modal fel bildirir?',
+      options: ['must not', 'should not', 'cannot', "needn't / don't need to"],
+      answer: "needn't / don't need to",
+    },
+    {
+      q: '"mustn\'t" ilə "needn\'t" arasındakı fərq nədir?',
+      options: ['Heç bir fərq yoxdur', 'Yalnız zaman fərqi var', 'mustn\'t = lazım deyil, needn\'t = qadağa', "mustn't = qadağa, needn't = lazım deyil"],
+      answer: "mustn't = qadağa, needn't = lazım deyil",
+    },
+    {
+      q: '"İcazə" mənasını hansı modal fellər bildirir?',
+      options: ['must / should', 'need / ought to', 'will / would', 'may / can'],
+      answer: 'may / can',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -17224,16 +18007,51 @@ const PREPOSITIONS_LEVEL = {
         'Artikl olarsa nəqliyyat vasitələri "by" ilə işlənməz: in a car (✓) · by car (✓) · by a car (✗)',
     },
 
-    // ── Dərs-içi quiz: "in" yer ──────────────────────────
-    { en: '"___ the room" — boşluğa nə gəlir?',                  tr: 'in',    wrong: 'on'   },
-    { en: '"___ Azerbaijan" — ölkə adının qarşısında?',           tr: 'in',    wrong: 'at'   },
-    { en: '"___ the sky" — hansı sözön?',                        tr: 'in',    wrong: 'on'   },
-    { en: '"___ hospital" — xəstəxanada mənası?',                tr: 'in',    wrong: 'at'   },
-    { en: '"___ the north" — coğrafi cəhətin önündə?',           tr: 'in',    wrong: 'on'   },
-    { en: '"___ a car" — maşınla (artikl ilə)?',                 tr: 'in',    wrong: 'by'   },
-    { en: '"___ the open air" — açıq havada?',                   tr: 'in',    wrong: 'at'   },
-    { en: '"___ the street" — küçədə?',                          tr: 'in',    wrong: 'on'   },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ the room" — boşluğa nə gəlir?',
+      options: ['on', 'at', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ Azerbaijan" — ölkə adının qarşısında hansı sözönü işlənir?',
+      options: ['at', 'on', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ the sky" — hansı sözönü işlənir?',
+      options: ['on', 'at', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ hospital" — xəstəxanada mənasında hansı sözönü işlənir?',
+      options: ['at', 'on', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ the north" — coğrafi cəhətin önündə hansı sözönü işlənir?',
+      options: ['on', 'at', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ a car" — maşınla (artikl ilə) hansı sözönü işlənir?',
+      options: ['by', 'on', 'at', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ the open air" — açıq havada hansı sözönü işlənir?',
+      options: ['at', 'on', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ the street" — küçədə hansı sözönü işlənir?',
+      options: ['on', 'at', 'by', 'in'],
+      answer: 'in',
+    },
+  ],
+},
     {
       type: 'lesson',
       title: '"in" — zaman mənası',
@@ -17250,13 +18068,41 @@ const PREPOSITIONS_LEVEL = {
       ],
     },
 
-    // ── Dərs-içi quiz: "in" zaman ─────────────────────────
-    { en: '"___ the morning" — hansı sözön?',                    tr: 'in',    wrong: 'at'   },
-    { en: '"___ May" — ay adının önündə (tarixsiz)?',            tr: 'in',    wrong: 'on'   },
-    { en: '"___ 1994" — il göstərərkən?',                        tr: 'in',    wrong: 'on'   },
-    { en: '"___ spring" — fəsil adının önündə?',                 tr: 'in',    wrong: 'at'   },
-    { en: '"___ two days" — gələcək zaman zərfi?',               tr: 'in',    wrong: 'for'  },
-    { en: '"___ the XX century" — əsr ifadəsinin önündə?',       tr: 'in',    wrong: 'at'   },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ the morning" — hansı sözönü işlənir?',
+      options: ['at', 'on', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ May" — ay adının önündə (tarixsiz) hansı sözönü işlənir?',
+      options: ['on', 'at', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ 1994" — il göstərərkən hansı sözönü işlənir?',
+      options: ['on', 'at', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ spring" — fəsil adının önündə hansı sözönü işlənir?',
+      options: ['at', 'on', 'by', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ two days" — gələcək zaman zərfi kimi hansı sözönü işlənir?',
+      options: ['for', 'at', 'on', 'in'],
+      answer: 'in',
+    },
+    {
+      q: '"___ the XX century" — əsr ifadəsinin önündə hansı sözönü işlənir?',
+      options: ['at', 'on', 'by', 'in'],
+      answer: 'in',
+    },
+  ],
+},
   ],
 },
 
@@ -17299,15 +18145,51 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz: "on" yer ───────────────────────────
-    { en: '"___ the table" — stolun üstündə?',                   tr: 'on',    wrong: 'in'   },
-    { en: '"___ the wall" — divarda?',                           tr: 'on',    wrong: 'at'   },
-    { en: '"___ TV" — televizorda?',                             tr: 'on',    wrong: 'in'   },
-    { en: '"___ the right" — sağda?',                            tr: 'on',    wrong: 'at'   },
-    { en: '"___ the floor" — döşəmədə?',                         tr: 'on',    wrong: 'in'   },
-    { en: '"___ a bus" — avtobusla?',                            tr: 'on',    wrong: 'by'   },
-    { en: '"___ the map" — xəritədə?',                           tr: 'on',    wrong: 'in'   },
-    { en: '"___ sale" — satışda?',                               tr: 'on',    wrong: 'at'   },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ the table" — stolun üstündə hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ the wall" — divarda hansı sözönü işlənir?',
+      options: ['on', 'at', 'in', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ TV" — televizorda hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ the right" — sağda hansı sözönü işlənir?',
+      options: ['on', 'at', 'in', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ the floor" — döşəmədə hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ a bus" — avtobusla hansı sözönü işlənir?',
+      options: ['on', 'by', 'in', 'at'],
+      answer: 'on',
+    },
+    {
+      q: '"___ the map" — xəritədə hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ sale" — satışda hansı sözönü işlənir?',
+      options: ['on', 'at', 'in', 'by'],
+      answer: 'on',
+    },
+  ],
+},
     {
       type: 'lesson',
       title: '"on" — zaman mənası',
@@ -17327,11 +18209,36 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz: "on" zaman ─────────────────────────
-    { en: '"___ Monday" — həftənin gününün önündə?',             tr: 'on',    wrong: 'in'   },
-    { en: '"___ Friday morning" — gün + günün hissəsi?',         tr: 'on',    wrong: 'in'   },
-    { en: '"___ the 4th of March" — tarix?',                     tr: 'on',    wrong: 'in'   },
-    { en: '"___ New Year\'s Eve" — xüsusi gün?',                 tr: 'on',    wrong: 'at'   },
-    { en: '"___ Christmas Day" — "day" sözü varsa?',             tr: 'on',    wrong: 'at'   },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ Monday" — həftənin gününün önündə hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ Friday morning" — gün + günün hissəsi birləşməsində hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ the 4th of March" — tarix ifadəsinin önündə hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ New Year\'s Eve" — xüsusi günün önündə hansı sözönü işlənir?',
+      options: ['on', 'at', 'in', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ Christmas Day" — "day" sözü olan xüsusi günün önündə hansı sözönü işlənir?',
+      options: ['on', 'at', 'in', 'by'],
+      answer: 'on',
+    },
+  ],
+},
   ],
 },
 
@@ -17377,14 +18284,51 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz: "at" yer ───────────────────────────
-    { en: '"___ home" — evdə?',                                  tr: 'at',    wrong: 'in'   },
-    { en: '"___ school" — məktəbdə?',                            tr: 'at',    wrong: 'in'   },
-    { en: '"___ the station" — vağzalda?',                       tr: 'at',    wrong: 'in'   },
-    { en: '"___ the corner" — küçənin tinində?',                 tr: 'at',    wrong: 'on'   },
-    { en: '"___ the window" — pəncərənin yanında?',              tr: 'at',    wrong: 'in'   },
-    { en: '"___ the bus stop" — avtobus dayanacağında?',         tr: 'at',    wrong: 'on'   },
-    { en: '"___ the concert" — konsertdə?',                      tr: 'at',    wrong: 'in'   },
-    { en: '"in Nizami street" vs "___ 65 Nizami street" — nömrə ilə?', tr: 'at', wrong: 'in' },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ home" — evdə hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ school" — məktəbdə hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ the station" — vağzalda hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ the corner" — küçənin tinində hansı sözönü işlənir?',
+      options: ['at', 'on', 'in', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ the window" — pəncərənin yanında hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ the bus stop" — avtobus dayanacağında hansı sözönü işlənir?',
+      options: ['at', 'on', 'in', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ the concert" — konsertdə hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"in Nizami street" vs "___ 65 Nizami street" — ünvanda nömrə olduqda hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+  ],
+},
 
     {
       type: 'lesson',
@@ -17406,12 +18350,41 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz: "at" zaman ─────────────────────────
-    { en: '"___ 8 o\'clock" — saat ifadəsi?',                   tr: 'at',    wrong: 'on'   },
-    { en: '"___ night" — gecə vaxtı?',                           tr: 'at',    wrong: 'in'   },
-    { en: '"___ noon" — saat 12?',                               tr: 'at',    wrong: 'in'   },
-    { en: '"___ the weekend" — həftə sonu?',                     tr: 'at',    wrong: 'on'   },
-    { en: '"___ once" — dərhal mənasında?',                      tr: 'at',    wrong: 'in'   },
-    { en: '"___ present" — hal-hazırda?',                        tr: 'at',    wrong: 'in'   },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ 8 o\'clock" — saat ifadəsinin önündə hansı sözönü işlənir?',
+      options: ['at', 'on', 'in', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ night" — gecə vaxtı hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ noon" — saat 12 ifadəsinin önündə hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ the weekend" — həftə sonunun önündə hansı sözönü işlənir?',
+      options: ['at', 'on', 'in', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ once" — dərhal mənasında hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ present" — hal-hazırda mənasında hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+  ],
+},
   ],
 },
 
@@ -17440,17 +18413,61 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz: müqayisə ──────────────────────────
-    { en: '"___ the morning" — günün hissəsi?',                  tr: 'in',    wrong: 'at'   },
-    { en: '"___ Monday morning" — gün + hissə birlikdə?',        tr: 'on',    wrong: 'in'   },
-    { en: '"___ May" — ay adı (tarixsiz)?',                      tr: 'in',    wrong: 'on'   },
-    { en: '"___ the 4th of May" — tarix?',                       tr: 'on',    wrong: 'in'   },
-    { en: '"___ noon" — saat 12?',                               tr: 'at',    wrong: 'in'   },
-    { en: '"___ a bus" — ictimai nəqliyyat?',                    tr: 'on',    wrong: 'in'   },
-    { en: '"___ a car" — fərdi nəqliyyat (artikl ilə)?',         tr: 'in',    wrong: 'on'   },
-    { en: '"___ school" — məktəbdə (ümumi məkan)?',              tr: 'at',    wrong: 'in'   },
-    { en: '"___ Christmas" — "day" sözü yoxdur?',                tr: 'at',    wrong: 'on'   },
-    { en: '"___ Christmas Day" — "day" sözü var?',               tr: 'on',    wrong: 'at'   },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ the morning" — günün hissəsinin önündə hansı sözönü işlənir?',
+      options: ['in', 'at', 'on', 'by'],
+      answer: 'in',
+    },
+    {
+      q: '"___ Monday morning" — gün + hissə birlikdə olduqda hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ May" — ay adının önündə (tarixsiz) hansı sözönü işlənir?',
+      options: ['in', 'on', 'at', 'by'],
+      answer: 'in',
+    },
+    {
+      q: '"___ the 4th of May" — tarix ifadəsinin önündə hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ noon" — saat 12 ifadəsinin önündə hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ a bus" — ictimai nəqliyyatın önündə hansı sözönü işlənir?',
+      options: ['on', 'in', 'at', 'by'],
+      answer: 'on',
+    },
+    {
+      q: '"___ a car" — fərdi nəqliyyatın önündə (artikl ilə) hansı sözönü işlənir?',
+      options: ['in', 'on', 'at', 'by'],
+      answer: 'in',
+    },
+    {
+      q: '"___ school" — ümumi məkan kimi məktəbdə hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ Christmas" — "day" sözü olmadıqda hansı sözönü işlənir?',
+      options: ['at', 'on', 'in', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ Christmas Day" — "day" sözü olduqda hansı sözönü işlənir?',
+      options: ['on', 'at', 'in', 'by'],
+      answer: 'on',
+    },
+  ],
+},
     // ── Mini-check 1 ──────────────────────────────────────
     {
       type: 'mini_check',
@@ -17566,12 +18583,41 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"___ the table" — stolun altında?',                   tr: 'under',   wrong: 'below'  },
-    { en: '"The flag is ___ the window." — yuxarısında?',        tr: 'above',   wrong: 'over'   },
-    { en: '"___ the river" — çayın üzərində (körpü kimi)?',      tr: 'over',    wrong: 'above'  },
-    { en: '"in the sun" — günəşin altında? ("under" işlənirmi?)', tr: 'Xeyr, "in"', wrong: 'Bəli, "under"' },
-    { en: '"___ the house" — evin arxasında?',                   tr: 'behind',  wrong: 'under'  },
-    { en: '"all ___ the world" — bütün dünyada?',                tr: 'over',    wrong: 'above'  },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ the table" — stolun altında hansı sözönü işlənir?',
+      options: ['under', 'below', 'over', 'above'],
+      answer: 'under',
+    },
+    {
+      q: '"The flag is ___ the window." — yuxarısında hansı sözönü işlənir?',
+      options: ['above', 'over', 'under', 'below'],
+      answer: 'above',
+    },
+    {
+      q: '"___ the river" — çayın üzərində (körpü kimi) hansı sözönü işlənir?',
+      options: ['over', 'above', 'under', 'below'],
+      answer: 'over',
+    },
+    {
+      q: '"in the sun" — günəşin altında mənasında "under" işlənirmi?',
+      options: ['Xeyr, "in"', 'Bəli, "under"'],
+      answer: 'Xeyr, "in"',
+    },
+    {
+      q: '"___ the house" — evin arxasında hansı sözönü işlənir?',
+      options: ['behind', 'under', 'over', 'below'],
+      answer: 'behind',
+    },
+    {
+      q: '"all ___ the world" — bütün dünyada mənasında hansı sözönü işlənir?',
+      options: ['over', 'above', 'under', 'below'],
+      answer: 'over',
+    },
+  ],
+},
   ],
 },
 
@@ -17602,12 +18648,41 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"___ the sofa and the bookcase" — ikisinin arasında?', tr: 'between', wrong: 'among' },
-    { en: '"___ students" — çox şagird arasında?',               tr: 'among',   wrong: 'between'},
-    { en: '"___ school" — məktəbin yanında (böyük obj.)?',       tr: 'near',    wrong: 'at'    },
-    { en: '"___ the window" — pəncərənin yanında (kiçik obj.)?', tr: 'at',      wrong: 'near'  },
-    { en: '"___ the room" — otağın ortasında?',                  tr: 'in the middle of', wrong: 'between' },
-    { en: '"Sadiq was sitting ___ Arzu." — yanaşı?',             tr: 'beside',  wrong: 'between'},
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ the sofa and the bookcase" — iki obyektin arasında hansı sözönü işlənir?',
+      options: ['between', 'among', 'beside', 'near'],
+      answer: 'between',
+    },
+    {
+      q: '"___ students" — çox şagird arasında hansı sözönü işlənir?',
+      options: ['among', 'between', 'beside', 'near'],
+      answer: 'among',
+    },
+    {
+      q: '"___ school" — böyük obyektin yanında hansı sözönü işlənir?',
+      options: ['near', 'at', 'beside', 'between'],
+      answer: 'near',
+    },
+    {
+      q: '"___ the window" — kiçik obyektin yanında hansı sözönü işlənir?',
+      options: ['at', 'near', 'beside', 'between'],
+      answer: 'at',
+    },
+    {
+      q: '"___ the room" — otağın ortasında hansı ifadə işlənir?',
+      options: ['in the middle of', 'between', 'among', 'near'],
+      answer: 'in the middle of',
+    },
+    {
+      q: '"Sadiq was sitting ___ Arzu." — yanaşı oturanda hansı sözönü işlənir?',
+      options: ['beside', 'between', 'among', 'near'],
+      answer: 'beside',
+    },
+  ],
+},
   ],
 },
 
@@ -17633,12 +18708,41 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"___ our school" — məktəbin qarşısında?',             tr: 'in front of', wrong: 'opposite' },
-    { en: '"sitting ___ us" — üzbəüz oturmaq?',                  tr: 'opposite',    wrong: 'across'   },
-    { en: '"My home is ___ the street." — yolun o biri tərəfi?', tr: 'across',      wrong: 'opposite' },
-    { en: '"walking ___ the town" — şəhər ətrafında dolaşmaq?',  tr: 'round',       wrong: 'across'   },
-    { en: '"20° ___ zero" — sıfırdan aşağı?',                    tr: 'below',       wrong: 'under'    },
-    { en: '"driving ___ the shore" — sahilə tərəf?',             tr: 'towards',     wrong: 'across'   },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ our school" — məktəbin qarşısında hansı ifadə işlənir?',
+      options: ['in front of', 'opposite', 'across', 'towards'],
+      answer: 'in front of',
+    },
+    {
+      q: '"sitting ___ us" — üzbəüz oturmaq üçün hansı sözönü işlənir?',
+      options: ['opposite', 'across', 'in front of', 'round'],
+      answer: 'opposite',
+    },
+    {
+      q: '"My home is ___ the street." — yolun o biri tərəfində hansı sözönü işlənir?',
+      options: ['across', 'opposite', 'towards', 'round'],
+      answer: 'across',
+    },
+    {
+      q: '"walking ___ the town" — şəhər ətrafında dolaşmaq üçün hansı sözönü işlənir?',
+      options: ['round', 'across', 'towards', 'opposite'],
+      answer: 'round',
+    },
+    {
+      q: '"20° ___ zero" — sıfırdan aşağı mənasında hansı sözönü işlənir?',
+      options: ['below', 'under', 'across', 'round'],
+      answer: 'below',
+    },
+    {
+      q: '"driving ___ the shore" — sahilə tərəf hərəkət edərkən hansı sözönü işlənir?',
+      options: ['towards', 'across', 'round', 'opposite'],
+      answer: 'towards',
+    },
+  ],
+},
 
     // ── Mini-check 2 ──────────────────────────────────────
     {
@@ -17792,12 +18896,41 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"I go ___ London." — istiqamət?',                     tr: 'to',      wrong: 'into'  },
-    { en: '"___ go home" — "home"dan əvvəl "to" işlənirmi?',    tr: 'Xeyr',    wrong: 'Bəli'  },
-    { en: '"Put books ___ your bag." — çantanın içinə?',         tr: 'into',    wrong: 'in'    },
-    { en: '"I come ___ school." — məktəbdən?',                   tr: 'from',    wrong: 'out of'},
-    { en: '"___ the room" — otaqdan çıxmaq (hərəkət)?',         tr: 'out of',  wrong: 'from'  },
-    { en: '"get ___ a car" — maşına minmək?',                    tr: 'into',    wrong: 'to'    },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I go ___ London." — istiqamət bildirəndə hansı sözönü işlənir?',
+      options: ['to', 'into', 'from', 'out of'],
+      answer: 'to',
+    },
+    {
+      q: '"___ go home" — "home"dan əvvəl "to" işlənirmi?',
+      options: ['Xeyr', 'Bəli'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"Put books ___ your bag." — çantanın içinə qoymaq üçün hansı sözönü işlənir?',
+      options: ['into', 'in', 'to', 'out of'],
+      answer: 'into',
+    },
+    {
+      q: '"I come ___ school." — məktəbdən gəlmək üçün hansı sözönü işlənir?',
+      options: ['from', 'out of', 'to', 'into'],
+      answer: 'from',
+    },
+    {
+      q: '"___ the room" — otaqdan çıxmaq (hərəkət) üçün hansı sözönü işlənir?',
+      options: ['out of', 'from', 'into', 'to'],
+      answer: 'out of',
+    },
+    {
+      q: '"get ___ a car" — maşına minmək üçün hansı sözönü işlənir?',
+      options: ['into', 'to', 'in', 'out of'],
+      answer: 'into',
+    },
+  ],
+},
   ],
 },
 
@@ -17830,12 +18963,41 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"___ the river" — çay boyunca?',                      tr: 'along',    wrong: 'towards' },
-    { en: '"driving ___ the shore" — sahilə sarı?',              tr: 'towards',  wrong: 'along'   },
-    { en: '"___ the stairs" — pillə ilə yuxarı?',                tr: 'up',       wrong: 'down'    },
-    { en: '"to sit ___" — əyləşmək?',                            tr: 'down',     wrong: 'up'      },
-    { en: '"to get ___" — yataqdan qalxmaq?',                    tr: 'up',       wrong: 'down'    },
-    { en: '"to write ___" — köçürmək?',                          tr: 'down',     wrong: 'up'      },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ the river" — çay boyunca hərəkət üçün hansı sözönü işlənir?',
+      options: ['along', 'towards', 'up', 'down'],
+      answer: 'along',
+    },
+    {
+      q: '"driving ___ the shore" — sahilə sarı hərəkət üçün hansı sözönü işlənir?',
+      options: ['towards', 'along', 'up', 'down'],
+      answer: 'towards',
+    },
+    {
+      q: '"___ the stairs" — pillə ilə yuxarı hərəkət üçün hansı sözönü işlənir?',
+      options: ['up', 'down', 'along', 'towards'],
+      answer: 'up',
+    },
+    {
+      q: '"to sit ___" — əyləşmək mənasında hansı zərfcil işlənir?',
+      options: ['down', 'up', 'along', 'towards'],
+      answer: 'down',
+    },
+    {
+      q: '"to get ___" — yataqdan qalxmaq mənasında hansı zərfcil işlənir?',
+      options: ['up', 'down', 'along', 'towards'],
+      answer: 'up',
+    },
+    {
+      q: '"to write ___" — köçürmək mənasında hansı zərfcil işlənir?',
+      options: ['down', 'up', 'along', 'towards'],
+      answer: 'down',
+    },
+  ],
+},
 
     // ── Mini-quiz 3 ───────────────────────────────────────
     {
@@ -17908,14 +19070,51 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"___ my father" — atamla?',                           tr: 'with',    wrong: 'by'    },
-    { en: '"___ bus" — avtobusla (artikl yox)?',                 tr: 'by',      wrong: 'on'    },
-    { en: '"written ___ our teacher" — məchul?',                 tr: 'by',      wrong: 'with'  },
-    { en: '"___ your friend" — dostun haqqında?',                tr: 'about',   wrong: 'of'    },
-    { en: '"___ heart" — əzbərdən?',                             tr: 'by',      wrong: 'with'  },
-    { en: '"___ eight million" — təxminən?',                     tr: 'about',   wrong: 'by'    },
-    { en: '"to cut ___ a knife" — bıçaqla kəsmək?',             tr: 'with',    wrong: 'by'    },
-    { en: '"___ five o\'clock yesterday" — keçmiş bitmiş + vaxt?', tr: 'by',   wrong: 'at'    },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ my father" — atamla mənasında hansı sözönü işlənir?',
+      options: ['with', 'by', 'about', 'of'],
+      answer: 'with',
+    },
+    {
+      q: '"___ bus" — artikl olmadan nəqliyyat vasitəsi ilə hansı sözönü işlənir?',
+      options: ['by', 'on', 'with', 'about'],
+      answer: 'by',
+    },
+    {
+      q: '"written ___ our teacher" — məchul cümlədə icraçını bildirmək üçün hansı sözönü işlənir?',
+      options: ['by', 'with', 'of', 'about'],
+      answer: 'by',
+    },
+    {
+      q: '"___ your friend" — dostun haqqında mənasında hansı sözönü işlənir?',
+      options: ['about', 'of', 'by', 'with'],
+      answer: 'about',
+    },
+    {
+      q: '"___ heart" — əzbərdən mənasında hansı sözönü işlənir?',
+      options: ['by', 'with', 'about', 'of'],
+      answer: 'by',
+    },
+    {
+      q: '"___ eight million" — təxminən mənasında hansı sözönü işlənir?',
+      options: ['about', 'by', 'with', 'of'],
+      answer: 'about',
+    },
+    {
+      q: '"to cut ___ a knife" — bıçaqla kəsmək üçün hansı sözönü işlənir?',
+      options: ['with', 'by', 'about', 'of'],
+      answer: 'with',
+    },
+    {
+      q: '"___ five o\'clock yesterday" — keçmiş bitmiş zamanda vaxt həddi üçün hansı sözönü işlənir?',
+      options: ['by', 'at', 'with', 'about'],
+      answer: 'by',
+    },
+  ],
+},
   ],
 },
 
@@ -17947,14 +19146,51 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"the title ___ the film" — filmin adı?',              tr: 'of',       wrong: 'for'   },
-    { en: '"a cup ___ coffee" — miqdar ifadəsi?',                tr: 'of',       wrong: 'for'   },
-    { en: '"___ you" — sənin üçün?',                             tr: 'for',      wrong: 'of'    },
-    { en: '"for five years" — hansı zaman işlənir?',             tr: 'Bitmiş',   wrong: 'Keçmiş'},
-    { en: '"___ your help" — köməyin olmadan?',                  tr: 'without',  wrong: 'off'   },
-    { en: '"to put ___" — söndürmək?',                           tr: 'off',      wrong: 'out'   },
-    { en: '"to take ___" — soyunmaq?',                           tr: 'off',      wrong: 'out'   },
-    { en: '"I\'m waiting ___ you." — şəxsə gözləmək (isim)?',   tr: 'for',      wrong: 'to'    },
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"the title ___ the film" — filmin adı mənasında hansı sözönü işlənir?',
+      options: ['of', 'for', 'without', 'off'],
+      answer: 'of',
+    },
+    {
+      q: '"a cup ___ coffee" — miqdar ifadəsində hansı sözönü işlənir?',
+      options: ['of', 'for', 'without', 'off'],
+      answer: 'of',
+    },
+    {
+      q: '"___ you" — sənin üçün mənasında hansı sözönü işlənir?',
+      options: ['for', 'of', 'without', 'off'],
+      answer: 'for',
+    },
+    {
+      q: '"for five years" — "for" hansı zamanda işlənir?',
+      options: ['Bitmiş', 'Keçmiş', 'Gələcək', 'İndiki'],
+      answer: 'Bitmiş',
+    },
+    {
+      q: '"___ your help" — köməyin olmadan mənasında hansı sözönü işlənir?',
+      options: ['without', 'off', 'of', 'for'],
+      answer: 'without',
+    },
+    {
+      q: '"to put ___" — söndürmək mənasında hansı zərfcil işlənir?',
+      options: ['off', 'out', 'of', 'for'],
+      answer: 'off',
+    },
+    {
+      q: '"to take ___" — soyunmaq mənasında hansı zərfcil işlənir?',
+      options: ['off', 'out', 'of', 'for'],
+      answer: 'off',
+    },
+    {
+      q: '"I\'m waiting ___ you." — şəxsə gözləmək üçün hansı sözönü işlənir?',
+      options: ['for', 'to', 'of', 'without'],
+      answer: 'for',
+    },
+  ],
+},
   ],
 },
 
@@ -17986,14 +19222,51 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"___ school" — məktəbdən sonra?',                     tr: 'after',    wrong: 'before' },
-    { en: '"___ lesson" — dərsdən əvvəl?',                       tr: 'before',   wrong: 'after'  },
-    { en: '"___ the lesson" — dərs ərzində (isim ilə)?',         tr: 'during',   wrong: 'while'  },
-    { en: '"___ I was reading" — oxuyarkən (cümlə ilə)?',        tr: 'while',    wrong: 'during' },
-    { en: '"___ evening" — axşamadək?',                          tr: 'till',     wrong: 'during' },
-    { en: '"the day ___ tomorrow" — birisigün?',                 tr: 'after',    wrong: 'before' },
-    { en: '"the day ___ yesterday" — sırağagün?',               tr: 'before',   wrong: 'after'  },
-    { en: '"look ___" — qayğısına qalmaq?',                      tr: 'after',    wrong: 'before' },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"___ school" — məktəbdən sonra mənasında hansı sözönü işlənir?',
+      options: ['after', 'before', 'during', 'while'],
+      answer: 'after',
+    },
+    {
+      q: '"___ lesson" — dərsdən əvvəl mənasında hansı sözönü işlənir?',
+      options: ['before', 'after', 'during', 'till'],
+      answer: 'before',
+    },
+    {
+      q: '"___ the lesson" — dərs ərzində mənasında isim ilə hansı sözönü işlənir?',
+      options: ['during', 'while', 'after', 'before'],
+      answer: 'during',
+    },
+    {
+      q: '"___ I was reading" — oxuyarkən mənasında cümlə ilə hansı sözönü işlənir?',
+      options: ['while', 'during', 'after', 'before'],
+      answer: 'while',
+    },
+    {
+      q: '"___ evening" — axşamadək mənasında hansı sözönü işlənir?',
+      options: ['till', 'during', 'after', 'before'],
+      answer: 'till',
+    },
+    {
+      q: '"the day ___ tomorrow" — birisigün mənasında hansı sözönü işlənir?',
+      options: ['after', 'before', 'during', 'till'],
+      answer: 'after',
+    },
+    {
+      q: '"the day ___ yesterday" — sırağagün mənasında hansı sözönü işlənir?',
+      options: ['before', 'after', 'during', 'till'],
+      answer: 'before',
+    },
+    {
+      q: '"look ___" — qayğısına qalmaq mənasında hansı zərfcil işlənir?',
+      options: ['after', 'before', 'during', 'till'],
+      answer: 'after',
+    },
+  ],
+},
 
     // ── Mini-quiz 4 ───────────────────────────────────────
     {
@@ -18096,16 +19369,61 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz: sabit ifadələr I ──────────────────
-    { en: '"to be interested ___" — maraqlanmaq?',               tr: 'in',      wrong: 'at'   },
-    { en: '"to depend ___" — asılı olmaq?',                      tr: 'on',      wrong: 'of'   },
-    { en: '"to be afraid ___" — qorxmaq?',                       tr: 'of',      wrong: 'from' },
-    { en: '"to be good ___ smth" — bacarıqlı olmaq?',            tr: 'at',      wrong: 'in'   },
-    { en: '"to arrive ___ the city" — şəhərə çatmaq?',          tr: 'in',      wrong: 'at'   },
-    { en: '"to arrive ___ the station" — stansiyaya çatmaq?',   tr: 'at',      wrong: 'in'   },
-    { en: '"___ heart" — əzbərdən?',                             tr: 'by',      wrong: 'in'   },
-    { en: '"___ time" — vaxtında?',                              tr: 'in',      wrong: 'at'   },
-    { en: '"___ last" — nəhayət?',                               tr: 'at',      wrong: 'in'   },
-    { en: '"___ once" — dərhal?',                                tr: 'at',      wrong: 'in'   },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"to be interested ___" — maraqlanmaq üçün hansı sözönü işlənir?',
+      options: ['in', 'at', 'on', 'of'],
+      answer: 'in',
+    },
+    {
+      q: '"to depend ___" — asılı olmaq üçün hansı sözönü işlənir?',
+      options: ['on', 'of', 'in', 'at'],
+      answer: 'on',
+    },
+    {
+      q: '"to be afraid ___" — qorxmaq üçün hansı sözönü işlənir?',
+      options: ['of', 'from', 'in', 'at'],
+      answer: 'of',
+    },
+    {
+      q: '"to be good ___ smth" — bir şeydə bacarıqlı olmaq üçün hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'of'],
+      answer: 'at',
+    },
+    {
+      q: '"to arrive ___ the city" — böyük məkana (şəhərə) çatmaq üçün hansı sözönü işlənir?',
+      options: ['in', 'at', 'on', 'to'],
+      answer: 'in',
+    },
+    {
+      q: '"to arrive ___ the station" — kiçik məkana (stansiyaya) çatmaq üçün hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'to'],
+      answer: 'at',
+    },
+    {
+      q: '"___ heart" — əzbərdən mənasında hansı sözönü işlənir?',
+      options: ['by', 'in', 'at', 'on'],
+      answer: 'by',
+    },
+    {
+      q: '"___ time" — vaxtında mənasında hansı sözönü işlənir?',
+      options: ['in', 'at', 'on', 'by'],
+      answer: 'in',
+    },
+    {
+      q: '"___ last" — nəhayət mənasında hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+    {
+      q: '"___ once" — dərhal mənasında hansı sözönü işlənir?',
+      options: ['at', 'in', 'on', 'by'],
+      answer: 'at',
+    },
+  ],
+},
 
     {
       type: 'lesson',
@@ -18157,16 +19475,61 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz: sabit ifadələr II ─────────────────
-    { en: '"to look ___" — axtarmaq?',                           tr: 'for',     wrong: 'at'   },
-    { en: '"to look ___" — baxmaq?',                             tr: 'at',      wrong: 'for'  },
-    { en: '"to look ___" — bənzəmək (zahirən)?',                 tr: 'like',    wrong: 'after'},
-    { en: '"to take ___" — bənzəmək (xarakter)?',               tr: 'after',   wrong: 'like' },
-    { en: '"to laugh ___" — gülmək?',                            tr: 'at',      wrong: 'about'},
-    { en: '"to listen ___" — qulaq asmaq?',                      tr: 'to',      wrong: 'at'   },
-    { en: '"to wait ___ you" — sənə gözləmək (isim)?',           tr: 'for',     wrong: 'to'   },
-    { en: '"to agree ___" — razılaşmaq?',                        tr: 'with',    wrong: 'to'   },
-    { en: '"to take part ___" — iştirak etmək?',                 tr: 'in',      wrong: 'at'   },
-    { en: '"to think ___" — fikirləşmək?',                       tr: 'of',      wrong: 'about'},
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"to look ___" — axtarmaq mənasında hansı sözönü işlənir?',
+      options: ['for', 'at', 'like', 'after'],
+      answer: 'for',
+    },
+    {
+      q: '"to look ___" — baxmaq mənasında hansı sözönü işlənir?',
+      options: ['at', 'for', 'like', 'after'],
+      answer: 'at',
+    },
+    {
+      q: '"to look ___" — zahirən bənzəmək mənasında hansı sözönü işlənir?',
+      options: ['like', 'after', 'at', 'for'],
+      answer: 'like',
+    },
+    {
+      q: '"to take ___" — xarakter baxımından bənzəmək mənasında hansı sözönü işlənir?',
+      options: ['after', 'like', 'at', 'for'],
+      answer: 'after',
+    },
+    {
+      q: '"to laugh ___" — gülmək mənasında hansı sözönü işlənir?',
+      options: ['at', 'about', 'for', 'with'],
+      answer: 'at',
+    },
+    {
+      q: '"to listen ___" — qulaq asmaq mənasında hansı sözönü işlənir?',
+      options: ['to', 'at', 'for', 'about'],
+      answer: 'to',
+    },
+    {
+      q: '"to wait ___ you" — şəxsə gözləmək üçün hansı sözönü işlənir?',
+      options: ['for', 'to', 'at', 'with'],
+      answer: 'for',
+    },
+    {
+      q: '"to agree ___" — razılaşmaq üçün hansı sözönü işlənir?',
+      options: ['with', 'to', 'at', 'for'],
+      answer: 'with',
+    },
+    {
+      q: '"to take part ___" — iştirak etmək üçün hansı sözönü işlənir?',
+      options: ['in', 'at', 'for', 'with'],
+      answer: 'in',
+    },
+    {
+      q: '"to think ___" — fikirləşmək mənasında hansı sözönü işlənir?',
+      options: ['of', 'about', 'at', 'for'],
+      answer: 'of',
+    },
+  ],
+},
   ],
 },
 
@@ -18202,12 +19565,41 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"He ___ the room." — içəri girdi (sözönü işlənirmi?)', tr: 'entered (sözönü yox)', wrong: 'entered into' },
-    { en: '"She ___ London." — ziyarət etdi?',                   tr: 'visited (sözön yox)',  wrong: 'visited to'   },
-    { en: '"He ___ him." — yaxınlaşdı?',                         tr: 'approached (sözön yox)', wrong: 'approached to' },
-    { en: '"to watch" felindən sonra sözön işlənirmi?',          tr: 'Xeyr',                 wrong: 'Bəli ("at")' },
-    { en: '"to meet" felindən sonra "with" işlənirmi?',          tr: 'Xeyr',                 wrong: 'Bəli'         },
-    { en: '"to reach" felindən sonra "to" işlənirmi?',           tr: 'Xeyr',                 wrong: 'Bəli'         },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"He ___ the room." — içəri girdi mənasında sözönü işlənirmi?',
+      options: ['entered (sözönü yox)', 'entered into', 'entered in', 'entered to'],
+      answer: 'entered (sözönü yox)',
+    },
+    {
+      q: '"She ___ London." — ziyarət etdi mənasında sözönü işlənirmi?',
+      options: ['visited (sözönü yox)', 'visited to', 'visited in', 'visited at'],
+      answer: 'visited (sözönü yox)',
+    },
+    {
+      q: '"He ___ him." — yaxınlaşdı mənasında sözönü işlənirmi?',
+      options: ['approached (sözönü yox)', 'approached to', 'approached at', 'approached for'],
+      answer: 'approached (sözönü yox)',
+    },
+    {
+      q: '"to watch" felindən sonra sözönü işlənirmi?',
+      options: ['Xeyr', 'Bəli ("at")', 'Bəli ("to")', 'Bəli ("on")'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"to meet" felindən sonra "with" işlənirmi?',
+      options: ['Xeyr', 'Bəli', 'Bəzən', 'Həmişə'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"to reach" felindən sonra "to" işlənirmi?',
+      options: ['Xeyr', 'Bəli', 'Bəzən', 'Həmişə'],
+      answer: 'Xeyr',
+    },
+  ],
+},
   ],
 },
 
@@ -18249,14 +19641,51 @@ const PREPOSITIONS_LEVEL = {
     },
 
     // ── Dərs-içi quiz ─────────────────────────────────────
-    { en: '"look at/for/after" — hansı mənası axtarmaqdır?',     tr: 'look for',   wrong: 'look at'   },
-    { en: '"put on" nə deməkdir?',                               tr: 'geyinmək',   wrong: 'söndürmək' },
-    { en: '"put off" nə deməkdir?',                              tr: 'söndürmək / təxirə salmaq', wrong: 'geyinmək' },
-    { en: '"get up" nə deməkdir?',                               tr: 'yataqdan qalxmaq', wrong: 'minmək' },
-    { en: '"go on" nə deməkdir?',                                tr: 'davam etmək', wrong: 'getmək'   },
-    { en: '"switch on" nə deməkdir?',                            tr: 'yandırmaq',  wrong: 'söndürmək' },
-    { en: '"switch off" nə deməkdir?',                           tr: 'söndürmək',  wrong: 'yandırmaq' },
-    { en: '"take off" nə deməkdir?',                             tr: 'soyunmaq / qalxmaq', wrong: 'geyinmək' },
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"look at/for/after" — hansı mənası axtarmaqdır?',
+      options: ['look for', 'look at', 'look after', 'look up'],
+      answer: 'look for',
+    },
+    {
+      q: '"put on" nə deməkdir?',
+      options: ['geyinmək', 'söndürmək', 'təxirə salmaq', 'qalxmaq'],
+      answer: 'geyinmək',
+    },
+    {
+      q: '"put off" nə deməkdir?',
+      options: ['söndürmək / təxirə salmaq', 'geyinmək', 'qalxmaq', 'davam etmək'],
+      answer: 'söndürmək / təxirə salmaq',
+    },
+    {
+      q: '"get up" nə deməkdir?',
+      options: ['yataqdan qalxmaq', 'minmək', 'geyinmək', 'davam etmək'],
+      answer: 'yataqdan qalxmaq',
+    },
+    {
+      q: '"go on" nə deməkdir?',
+      options: ['davam etmək', 'getmək', 'qalxmaq', 'söndürmək'],
+      answer: 'davam etmək',
+    },
+    {
+      q: '"switch on" nə deməkdir?',
+      options: ['yandırmaq', 'söndürmək', 'davam etmək', 'geyinmək'],
+      answer: 'yandırmaq',
+    },
+    {
+      q: '"switch off" nə deməkdir?',
+      options: ['söndürmək', 'yandırmaq', 'geyinmək', 'qalxmaq'],
+      answer: 'söndürmək',
+    },
+    {
+      q: '"take off" nə deməkdir?',
+      options: ['soyunmaq / qalxmaq', 'geyinmək', 'söndürmək', 'davam etmək'],
+      answer: 'soyunmaq / qalxmaq',
+    },
+  ],
+},
 
     // ── Mini-quiz 5 ───────────────────────────────────────
     {
@@ -18534,15 +19963,51 @@ const ADVERB_LEVEL = {
       tip: '"therefore" — ona görə, onun üçün\n"consequently" — nəticə olaraq\n"accordingly" — ona görə, əsasən\n"scarcely" — güclə, çətinliklə',
     },
 
-    { en: 'Zərf cümlədə əsasən nəyə aid olur?',                       tr: 'Felə',                  wrong: 'İsmə'               },
-    { en: '"today, tomorrow, before, after" — hansı növ zərflərdir?',  tr: 'Zaman zərfləri',        wrong: 'Yer zərfləri'       },
-    { en: '"here, there, inside, outside" — hansı növ zərflərdir?',   tr: 'Yer zərfləri',          wrong: 'Zaman zərfləri'     },
-    { en: '"therefore, consequently" — hansı növ zərflərdir?',        tr: 'Səbəb-nəticə zərfləri', wrong: 'Dərəcə zərfləri'   },
-    { en: '"often, seldom, sometimes" — hansı növ zərflərdir?',       tr: 'Təkrar zərfləri',       wrong: 'Tərzi-hərəkət'      },
-    { en: '"very, almost, enough, too" — hansı növ zərflərdir?',      tr: 'Dərəcə-ölçü zərfləri', wrong: 'Təkrar zərfləri'    },
-    { en: '"quickly, fast, hard, well" — hansı növ zərflərdir?',      tr: 'Tərzi-hərəkət zərfləri', wrong: 'Zaman zərfləri'  },
-    { en: '"scarcely" nə mənasını verir?',                             tr: 'Güclə, çətinliklə',     wrong: 'Tez-tez'            },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Zərf cümlədə əsasən nəyə aid olur?',
+      options: ['Felə', 'İsmə', 'Sifətə', 'Zərfə'],
+      answer: 'Felə',
+    },
+    {
+      q: '"today, tomorrow, before, after" — hansı növ zərflərdir?',
+      options: ['Zaman zərfləri', 'Yer zərfləri', 'Dərəcə zərfləri', 'Təkrar zərfləri'],
+      answer: 'Zaman zərfləri',
+    },
+    {
+      q: '"here, there, inside, outside" — hansı növ zərflərdir?',
+      options: ['Yer zərfləri', 'Zaman zərfləri', 'Dərəcə zərfləri', 'Tərzi-hərəkət zərfləri'],
+      answer: 'Yer zərfləri',
+    },
+    {
+      q: '"therefore, consequently" — hansı növ zərflərdir?',
+      options: ['Səbəb-nəticə zərfləri', 'Dərəcə zərfləri', 'Zaman zərfləri', 'Təkrar zərfləri'],
+      answer: 'Səbəb-nəticə zərfləri',
+    },
+    {
+      q: '"often, seldom, sometimes" — hansı növ zərflərdir?',
+      options: ['Təkrar zərfləri', 'Tərzi-hərəkət zərfləri', 'Zaman zərfləri', 'Dərəcə zərfləri'],
+      answer: 'Təkrar zərfləri',
+    },
+    {
+      q: '"very, almost, enough, too" — hansı növ zərflərdir?',
+      options: ['Dərəcə-ölçü zərfləri', 'Təkrar zərfləri', 'Yer zərfləri', 'Zaman zərfləri'],
+      answer: 'Dərəcə-ölçü zərfləri',
+    },
+    {
+      q: '"quickly, fast, hard, well" — hansı növ zərflərdir?',
+      options: ['Tərzi-hərəkət zərfləri', 'Zaman zərfləri', 'Dərəcə zərfləri', 'Yer zərfləri'],
+      answer: 'Tərzi-hərəkət zərfləri',
+    },
+    {
+      q: '"scarcely" nə mənasını verir?',
+      options: ['Güclə, çətinliklə', 'Tez-tez', 'Həmişə', 'Heç vaxt'],
+      answer: 'Güclə, çətinliklə',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -18604,15 +20069,51 @@ const ADVERB_LEVEL = {
       tip: 'Diqqət: "hardly, nearly, lately" — yalnız zərfdir, sifət deyil!\n• hardly — güclə, çətinliklə\n• nearly — demək olar ki\n• lately — son zamanlar',
     },
 
-    { en: '"here, there, fast, hard" — quruluşca hansı növ zərflərdir?', tr: 'Sadə zərflər',       wrong: 'Düzəltmə zərflər'   },
-    { en: '"quickly, homeward, slowly" — quruluşca hansı növ?',          tr: 'Düzəltmə zərflər',  wrong: 'Mürəkkəb zərflər'   },
-    { en: '"sometimes, somewhere, anywhere" — quruluşca hansı növ?',     tr: 'Mürəkkəb zərflər',  wrong: 'Sadə zərflər'        },
-    { en: 'Zərflər əsasən hansı şəkilçi ilə düzəlir?',                  tr: '-ly',               wrong: '-er'                 },
-    { en: '"hard work" — "hard" hansı nitq hissəsidir?',                 tr: 'Sifət',             wrong: 'Zərf'                },
-    { en: '"He works hard." — "hard" hansı nitq hissəsidir?',            tr: 'Zərf',              wrong: 'Sifət'               },
-    { en: '"hardly" nə mənasını verir?',                                  tr: 'Güclə, çətinliklə', wrong: 'Çox çətin'           },
-    { en: '"lately" nə mənasını verir?',                                  tr: 'Son zamanlar',      wrong: 'Gec-gec'             },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"here, there, fast, hard" — quruluşca hansı növ zərflərdir?',
+      options: ['Sadə zərflər', 'Düzəltmə zərflər', 'Mürəkkəb zərflər', 'Zaman zərfləri'],
+      answer: 'Sadə zərflər',
+    },
+    {
+      q: '"quickly, homeward, slowly" — quruluşca hansı növ zərflərdir?',
+      options: ['Düzəltmə zərflər', 'Mürəkkəb zərflər', 'Sadə zərflər', 'Yer zərfləri'],
+      answer: 'Düzəltmə zərflər',
+    },
+    {
+      q: '"sometimes, somewhere, anywhere" — quruluşca hansı növ zərflərdir?',
+      options: ['Mürəkkəb zərflər', 'Sadə zərflər', 'Düzəltmə zərflər', 'Təkrar zərfləri'],
+      answer: 'Mürəkkəb zərflər',
+    },
+    {
+      q: 'Zərflər əsasən hansı şəkilçi ilə düzəlir?',
+      options: ['-ly', '-er', '-ing', '-ed'],
+      answer: '-ly',
+    },
+    {
+      q: '"hard work" — "hard" hansı nitq hissəsidir?',
+      options: ['Sifət', 'Zərf', 'İsim', 'Fel'],
+      answer: 'Sifət',
+    },
+    {
+      q: '"He works hard." — "hard" hansı nitq hissəsidir?',
+      options: ['Zərf', 'Sifət', 'İsim', 'Fel'],
+      answer: 'Zərf',
+    },
+    {
+      q: '"hardly" nə mənasını verir?',
+      options: ['Güclə, çətinliklə', 'Çox çətin', 'Tez-tez', 'Heç vaxt'],
+      answer: 'Güclə, çətinliklə',
+    },
+    {
+      q: '"lately" nə mənasını verir?',
+      options: ['Son zamanlar', 'Gec-gec', 'Tez-tez', 'Həmişə'],
+      answer: 'Son zamanlar',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -18688,15 +20189,51 @@ const ADVERB_LEVEL = {
       tip: '"early" zərfinin müqayisə və üstünlük dərəcəsi "-er / -est" ilə düzəlir,\nçünki "-ly" burada zərf düzəldən şəkilçi deyil, kökün özündədir.',
     },
 
-    { en: 'Sintetik üsul nə deməkdir?',                               tr: 'Zərfin sonuna şəkilçi əlavə etmək', wrong: 'Əvvələ söz əlavə etmək' },
-    { en: '"fast"ın müqayisə dərəcəsi?',                              tr: 'faster',                wrong: 'more fast'          },
-    { en: '"fast"ın üstünlük dərəcəsi?',                              tr: 'fastest',               wrong: 'most fast'          },
-    { en: '"hard"ın müqayisə dərəcəsi?',                              tr: 'harder',                wrong: 'more hard'          },
-    { en: '"hard"ın üstünlük dərəcəsi?',                              tr: 'hardest',               wrong: 'most hard'          },
-    { en: '"early"ın müqayisə dərəcəsi?',                             tr: 'earlier',               wrong: 'more early'         },
-    { en: '"early"ın üstünlük dərəcəsi?',                             tr: 'earliest',              wrong: 'most early'         },
-    { en: 'Hansı dərəcə növlərinin dərəcəsi var?',                    tr: 'Yalnız keyfiyyət zərflərinin', wrong: 'Bütün zərflərin' },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Sintetik üsul nə deməkdir?',
+      options: ['Zərfin sonuna şəkilçi əlavə etmək', 'Əvvələ söz əlavə etmək', 'Sözü dəyişmək', 'Heç nə əlavə etməmək'],
+      answer: 'Zərfin sonuna şəkilçi əlavə etmək',
+    },
+    {
+      q: '"fast"ın müqayisə dərəcəsi hansıdır?',
+      options: ['faster', 'more fast', 'fastest', 'most fast'],
+      answer: 'faster',
+    },
+    {
+      q: '"fast"ın üstünlük dərəcəsi hansıdır?',
+      options: ['fastest', 'most fast', 'faster', 'more fast'],
+      answer: 'fastest',
+    },
+    {
+      q: '"hard"ın müqayisə dərəcəsi hansıdır?',
+      options: ['harder', 'more hard', 'hardest', 'most hard'],
+      answer: 'harder',
+    },
+    {
+      q: '"hard"ın üstünlük dərəcəsi hansıdır?',
+      options: ['hardest', 'most hard', 'harder', 'more hard'],
+      answer: 'hardest',
+    },
+    {
+      q: '"early"ın müqayisə dərəcəsi hansıdır?',
+      options: ['earlier', 'more early', 'earliest', 'most early'],
+      answer: 'earlier',
+    },
+    {
+      q: '"early"ın üstünlük dərəcəsi hansıdır?',
+      options: ['earliest', 'most early', 'earlier', 'more early'],
+      answer: 'earliest',
+    },
+    {
+      q: 'Hansı zərflərin müqayisə dərəcəsi var?',
+      options: ['Yalnız keyfiyyət zərflərinin', 'Bütün zərflərin', 'Yalnız zaman zərflərinin', 'Yalnız yer zərflərinin'],
+      answer: 'Yalnız keyfiyyət zərflərinin',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -18746,14 +20283,46 @@ const ADVERB_LEVEL = {
       tip: 'Müqayisə dərəcəsini qüvvətləndirmək üçün "much" işlənir:\n"She works much more carefully than him."',
     },
 
-    { en: 'Analitik üsul nə deməkdir?',                              tr: 'Əvvələ köməkçi söz əlavə etmək', wrong: 'Sonuna şəkilçi əlavə etmək' },
-    { en: '"-ly" ilə düzələn zərflərin müqayisə dərəcəsi?',          tr: 'more + zərf',           wrong: 'zərf + -er'         },
-    { en: '"-ly" ilə düzələn zərflərin üstünlük dərəcəsi?',          tr: 'most + zərf',           wrong: 'zərf + -est'        },
-    { en: '"nicely"nin müqayisə dərəcəsi?',                           tr: 'more nicely',           wrong: 'nicer'              },
-    { en: '"quickly"nin üstünlük dərəcəsi?',                          tr: 'most quickly',          wrong: 'quickliest'         },
-    { en: 'Müqayisə dərəcəsi hansı sözlə qüvvətləndirilir?',         tr: 'much',                  wrong: 'very'               },
-    { en: '"She works ___ more carefully." — boşluq?',                tr: 'much',                  wrong: 'very'               },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Analitik üsul nə deməkdir?',
+      options: ['Əvvələ köməkçi söz əlavə etmək', 'Sonuna şəkilçi əlavə etmək', 'Sözü dəyişmək', 'Heç nə əlavə etməmək'],
+      answer: 'Əvvələ köməkçi söz əlavə etmək',
+    },
+    {
+      q: '"-ly" ilə düzələn zərflərin müqayisə dərəcəsi necə düzəlir?',
+      options: ['more + zərf', 'zərf + -er', 'most + zərf', 'zərf + -est'],
+      answer: 'more + zərf',
+    },
+    {
+      q: '"-ly" ilə düzələn zərflərin üstünlük dərəcəsi necə düzəlir?',
+      options: ['most + zərf', 'zərf + -est', 'more + zərf', 'zərf + -er'],
+      answer: 'most + zərf',
+    },
+    {
+      q: '"nicely"nin müqayisə dərəcəsi hansıdır?',
+      options: ['more nicely', 'nicer', 'most nicely', 'nicelier'],
+      answer: 'more nicely',
+    },
+    {
+      q: '"quickly"nin üstünlük dərəcəsi hansıdır?',
+      options: ['most quickly', 'quickliest', 'more quickly', 'quickest'],
+      answer: 'most quickly',
+    },
+    {
+      q: 'Müqayisə dərəcəsi hansı sözlə qüvvətləndirilir?',
+      options: ['much', 'very', 'so', 'too'],
+      answer: 'much',
+    },
+    {
+      q: '"She works ___ more carefully." — boşluğa hansı söz gəlir?',
+      options: ['much', 'very', 'so', 'too'],
+      answer: 'much',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -18809,17 +20378,61 @@ const ADVERB_LEVEL = {
       tip: '"further/furthest" — həm uzaqlıq, həm də məcazi mənada (əlavə) işlənir:\n"further information" — əlavə məlumat',
     },
 
-    { en: '"well"in müqayisə dərəcəsi?',                             tr: 'better',                wrong: 'weller'              },
-    { en: '"well"in üstünlük dərəcəsi?',                             tr: 'best',                  wrong: 'wellest'             },
-    { en: '"badly"nin müqayisə dərəcəsi?',                           tr: 'worse',                 wrong: 'badlier'             },
-    { en: '"badly"nin üstünlük dərəcəsi?',                           tr: 'worst',                 wrong: 'badliest'            },
-    { en: '"much"un müqayisə dərəcəsi?',                             tr: 'more',                  wrong: 'mucher'              },
-    { en: '"little"in müqayisə dərəcəsi?',                           tr: 'less',                  wrong: 'littler'             },
-    { en: '"little"in üstünlük dərəcəsi?',                           tr: 'least',                 wrong: 'littlest'            },
-    { en: '"far"ın 2-ci müqayisə dərəcəsi?',                         tr: 'further',               wrong: 'farer'               },
-    { en: '"late"nin 2-ci üstünlük dərəcəsi?',                       tr: 'last',                  wrong: 'later'               },
-    { en: '"near"in üstünlük dərəcəsinin 2-ci forması?',             tr: 'next',                  wrong: 'nearest'             },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"well"in müqayisə dərəcəsi hansıdır?',
+      options: ['better', 'weller', 'best', 'wellest'],
+      answer: 'better',
+    },
+    {
+      q: '"well"in üstünlük dərəcəsi hansıdır?',
+      options: ['best', 'wellest', 'better', 'weller'],
+      answer: 'best',
+    },
+    {
+      q: '"badly"nin müqayisə dərəcəsi hansıdır?',
+      options: ['worse', 'badlier', 'worst', 'badliest'],
+      answer: 'worse',
+    },
+    {
+      q: '"badly"nin üstünlük dərəcəsi hansıdır?',
+      options: ['worst', 'badliest', 'worse', 'badlier'],
+      answer: 'worst',
+    },
+    {
+      q: '"much"un müqayisə dərəcəsi hansıdır?',
+      options: ['more', 'mucher', 'most', 'much more'],
+      answer: 'more',
+    },
+    {
+      q: '"little"in müqayisə dərəcəsi hansıdır?',
+      options: ['less', 'littler', 'least', 'littlest'],
+      answer: 'less',
+    },
+    {
+      q: '"little"in üstünlük dərəcəsi hansıdır?',
+      options: ['least', 'littlest', 'less', 'littler'],
+      answer: 'least',
+    },
+    {
+      q: '"far"ın 2-ci müqayisə dərəcəsi hansıdır?',
+      options: ['further', 'farer', 'farther', 'farthest'],
+      answer: 'further',
+    },
+    {
+      q: '"late"nin 2-ci üstünlük dərəcəsi hansıdır?',
+      options: ['last', 'later', 'latest', 'latter'],
+      answer: 'last',
+    },
+    {
+      q: '"near"in üstünlük dərəcəsinin 2-ci forması hansıdır?',
+      options: ['next', 'nearest', 'nearer', 'nighest'],
+      answer: 'next',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -18862,17 +20475,61 @@ const ADVERB_LEVEL = {
       tip: 'Üstünlük dərəcəsindəki zərfin qarşısında "the" artiklı heç vaxt işlənmir!\n(Sifətdən fərqlidir: "the best student" — burada "the" işlənir, amma "she runs fastest" — işlənmir)',
     },
 
-    { en: '"as...as" cümlədə hansı dərəcəni göstərir?',              tr: 'Adi dərəcə',            wrong: 'Müqayisə dərəcəsi'  },
-    { en: '"not so...as" cümlədə hansı dərəcəni göstərir?',          tr: 'Adi dərəcə',            wrong: 'Üstünlük dərəcəsi'  },
-    { en: '"a little, a bit" cümlədə hansı dərəcəni göstərir?',      tr: 'Müqayisə dərəcəsi',     wrong: 'Adi dərəcə'         },
-    { en: '"much" cümlədə hansı dərəcəni qüvvətləndirir?',           tr: 'Müqayisə dərəcəsi',     wrong: 'Üstünlük dərəcəsi'  },
-    { en: '"of all" cümlədə hansı dərəcəni göstərir?',               tr: 'Üstünlük dərəcəsi',     wrong: 'Müqayisə dərəcəsi'  },
-    { en: '"ever, in the world" cümlədə hansı dərəcəni göstərir?',   tr: 'Üstünlük dərəcəsi',     wrong: 'Adi dərəcə'         },
-    { en: 'Üstünlük dərəcəsindəki zərfin qarşısında "the" işlənirmi?', tr: 'Xeyr',               wrong: 'Bəli'               },
-    { en: '"very, too, quite, rather" — hansı dərəcəni göstərir?',   tr: 'Adi dərəcə',            wrong: 'Müqayisə dərəcəsi'  },
-    { en: '"that" sözü cümlədə hansı dərəcəni göstərir?',            tr: 'Müqayisə dərəcəsi',     wrong: 'Üstünlük dərəcəsi'  },
-    { en: '"which of, at school" cümlədə hansı dərəcəni göstərir?',  tr: 'Üstünlük dərəcəsi',     wrong: 'Adi dərəcə'         },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"as...as" cümlədə hansı dərəcəni göstərir?',
+      options: ['Adi dərəcə', 'Müqayisə dərəcəsi', 'Üstünlük dərəcəsi', 'Heç birini'],
+      answer: 'Adi dərəcə',
+    },
+    {
+      q: '"not so...as" cümlədə hansı dərəcəni göstərir?',
+      options: ['Adi dərəcə', 'Üstünlük dərəcəsi', 'Müqayisə dərəcəsi', 'Heç birini'],
+      answer: 'Adi dərəcə',
+    },
+    {
+      q: '"a little, a bit" cümlədə hansı dərəcəni göstərir?',
+      options: ['Müqayisə dərəcəsi', 'Adi dərəcə', 'Üstünlük dərəcəsi', 'Heç birini'],
+      answer: 'Müqayisə dərəcəsi',
+    },
+    {
+      q: '"much" cümlədə hansı dərəcəni qüvvətləndirir?',
+      options: ['Müqayisə dərəcəsi', 'Üstünlük dərəcəsi', 'Adi dərəcə', 'Heç birini'],
+      answer: 'Müqayisə dərəcəsi',
+    },
+    {
+      q: '"of all" cümlədə hansı dərəcəni göstərir?',
+      options: ['Üstünlük dərəcəsi', 'Müqayisə dərəcəsi', 'Adi dərəcə', 'Heç birini'],
+      answer: 'Üstünlük dərəcəsi',
+    },
+    {
+      q: '"ever, in the world" cümlədə hansı dərəcəni göstərir?',
+      options: ['Üstünlük dərəcəsi', 'Adi dərəcə', 'Müqayisə dərəcəsi', 'Heç birini'],
+      answer: 'Üstünlük dərəcəsi',
+    },
+    {
+      q: 'Üstünlük dərəcəsindəki zərfin qarşısında "the" işlənirmi?',
+      options: ['Xeyr', 'Bəli', 'Bəzən', 'Həmişə'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"very, too, quite, rather" — hansı dərəcəni göstərir?',
+      options: ['Adi dərəcə', 'Müqayisə dərəcəsi', 'Üstünlük dərəcəsi', 'Heç birini'],
+      answer: 'Adi dərəcə',
+    },
+    {
+      q: '"that" sözü cümlədə hansı dərəcəni göstərir?',
+      options: ['Müqayisə dərəcəsi', 'Üstünlük dərəcəsi', 'Adi dərəcə', 'Heç birini'],
+      answer: 'Müqayisə dərəcəsi',
+    },
+    {
+      q: '"which of, at school" cümlədə hansı dərəcəni göstərir?',
+      options: ['Üstünlük dərəcəsi', 'Adi dərəcə', 'Müqayisə dərəcəsi', 'Heç birini'],
+      answer: 'Üstünlük dərəcəsi',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -18952,15 +20609,51 @@ const ADVERB_LEVEL = {
       tip: '❌ Səhv: He recited loudly the poem.\n✅ Düzgün: He recited the poem loudly.\n\nZərf heç vaxt fel ilə tamamlıq arasına girə bilməz!',
     },
 
-    { en: 'Tərzi-hərəkət zərfinin yeri əsasən haradadır?',            tr: 'Feldən sonra',          wrong: 'Feldən əvvəl'        },
-    { en: 'Cümlədə tamamlıq varsa zərf haraya gəlir?',                tr: 'Tamamlıqdan sonra',     wrong: 'Feldən əvvəl'        },
-    { en: 'Zərf fel ilə tamamlıq arasında dura bilərmi?',             tr: 'Xeyr',                  wrong: 'Bəli'               },
-    { en: 'Feldən sonra məsdər olduqda zərf haraya gəlir?',           tr: 'Feldən əvvəl',          wrong: 'Tamamlıqdan sonra'  },
-    { en: '"She was walking slowly." — "slowly" düzgün yerdədir?',    tr: 'Bəli',                  wrong: 'Xeyr'               },
-    { en: '"He seriously began to study." — "seriously" düzgün?',     tr: 'Bəli',                  wrong: 'Xeyr'               },
-    { en: '"He recited loudly the poem." — düzgündürmü?',             tr: 'Xeyr',                  wrong: 'Bəli'               },
-    { en: '"He recited the poem loudly." — düzgündürmü?',             tr: 'Bəli',                  wrong: 'Xeyr'               },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Tərzi-hərəkət zərfinin yeri əsasən haradadır?',
+      options: ['Feldən sonra', 'Feldən əvvəl', 'Cümlənin əvvəlində', 'Cümlənin sonunda'],
+      answer: 'Feldən sonra',
+    },
+    {
+      q: 'Cümlədə tamamlıq varsa zərf haraya gəlir?',
+      options: ['Tamamlıqdan sonra', 'Feldən əvvəl', 'Feldən sonra', 'Cümlənin əvvəlində'],
+      answer: 'Tamamlıqdan sonra',
+    },
+    {
+      q: 'Zərf fel ilə tamamlıq arasında dura bilərmi?',
+      options: ['Xeyr', 'Bəli', 'Bəzən', 'Həmişə'],
+      answer: 'Xeyr',
+    },
+    {
+      q: 'Feldən sonra məsdər olduqda zərf haraya gəlir?',
+      options: ['Feldən əvvəl', 'Tamamlıqdan sonra', 'Məsdərdən sonra', 'Cümlənin sonunda'],
+      answer: 'Feldən əvvəl',
+    },
+    {
+      q: '"She was walking slowly." — "slowly" düzgün yerdədirmi?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"He seriously began to study." — "seriously" düzgün yerdədirmi?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"He recited loudly the poem." — bu cümlə düzgündürmü?',
+      options: ['Xeyr', 'Bəli', 'Bəzən', 'Fərq etməz'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"He recited the poem loudly." — bu cümlə düzgündürmü?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19009,17 +20702,61 @@ const ADVERB_LEVEL = {
       ],
     },
 
-    { en: '"always, often, never, just, already" — hansı zərf növüdür?', tr: 'Qeyri-müəyyən zaman zərfləri', wrong: 'Yer zərfləri' },
-    { en: '"Sometimes" əsasən cümlənin harasında gəlir?',             tr: 'Əvvəlində',             wrong: 'Sonunda'             },
-    { en: '"Yet" inkar cümlədə harada gəlir?',                        tr: 'Sonunda',               wrong: 'Əvvəlində'           },
-    { en: '"He often goes to the library." — "often" düzgün yerdədir?', tr: 'Bəli',               wrong: 'Xeyr'               },
-    { en: '1 köməkçi + 1 əsas fel olduqda zərf haraya gəlir?',        tr: 'Köməkçi ilə əsas fel arasına', wrong: 'Əsas feldən sonra' },
-    { en: '"I shall never forget you." — "never" düzgün yerdədir?',   tr: 'Bəli',                  wrong: 'Xeyr'               },
-    { en: '"have to" vasitəsilə ifadə olunduqda zərf haraya gəlir?',  tr: '"have to"-dan əvvəl',   wrong: '"have to"-dan sonra' },
-    { en: '"used to" ilə zərf haraya gəlir?',                         tr: '"used to"-dan əvvəl',   wrong: '"used to"-dan sonra' },
-    { en: 'Modal fellərdən sonra qeyri-müəyyən zaman zərfləri gəlirmi?', tr: 'Bəli',              wrong: 'Xeyr'               },
-    { en: '"The letter has already been sent." — zərf neçənci köməkçidən sonra?', tr: 'Birincisindn sonra', wrong: 'Hər ikisindən sonra' },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"always, often, never, just, already" — hansı zərf növüdür?',
+      options: ['Qeyri-müəyyən zaman zərfləri', 'Yer zərfləri', 'Tərzi-hərəkət zərfləri', 'Dərəcə zərfləri'],
+      answer: 'Qeyri-müəyyən zaman zərfləri',
+    },
+    {
+      q: '"Sometimes" əsasən cümlənin harasında gəlir?',
+      options: ['Əvvəlində', 'Sonunda', 'Ortasında', 'Feldən sonra'],
+      answer: 'Əvvəlində',
+    },
+    {
+      q: '"Yet" inkar cümlədə harada gəlir?',
+      options: ['Sonunda', 'Əvvəlində', 'Ortasında', 'Feldən əvvəl'],
+      answer: 'Sonunda',
+    },
+    {
+      q: '"He often goes to the library." — "often" düzgün yerdədirmi?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+    {
+      q: '1 köməkçi + 1 əsas fel olduqda zərf haraya gəlir?',
+      options: ['Köməkçi ilə əsas fel arasına', 'Əsas feldən sonra', 'Köməkçidən əvvəl', 'Cümlənin sonuna'],
+      answer: 'Köməkçi ilə əsas fel arasına',
+    },
+    {
+      q: '"I shall never forget you." — "never" düzgün yerdədirmi?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"have to" vasitəsilə ifadə olunduqda zərf haraya gəlir?',
+      options: ['"have to"-dan əvvəl', '"have to"-dan sonra', 'Cümlənin sonuna', 'Cümlənin əvvəlinə'],
+      answer: '"have to"-dan əvvəl',
+    },
+    {
+      q: '"used to" ilə zərf haraya gəlir?',
+      options: ['"used to"-dan əvvəl', '"used to"-dan sonra', 'Cümlənin sonuna', 'Cümlənin əvvəlinə'],
+      answer: '"used to"-dan əvvəl',
+    },
+    {
+      q: 'Modal fellərdən sonra qeyri-müəyyən zaman zərfləri gəlirmi?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Həmişə yox'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"The letter has already been sent." — zərf neçənci köməkçidən sonra gəlir?',
+      options: ['Birincisindn sonra', 'Hər ikisindən sonra', 'Əsas feldən sonra', 'Cümlənin sonunda'],
+      answer: 'Birincisindn sonra',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19106,17 +20843,61 @@ const ADVERB_LEVEL = {
       tip: '"to be well" və "to feel well" — insanın əhval-ruhiyyəsinə aiddir.\n"I feel well." ✅ (yaxşı hiss etmək)\n"The film is good." ✅ (good — sifət, filmin özü haqqında)\n\n"lonely, lovely" — sifətdir\n"alone" — zərfdir: to stay alone, to be alone',
     },
 
-    { en: '"to be, to become" — hansı nitq hissəsi ilə işlənir?',    tr: 'Sifət',                 wrong: 'Zərf'               },
-    { en: '"to grow" — hansı mənada sifətlə işlənir?',               tr: 'Olmaq mənasında',       wrong: 'Becərmək mənasında' },
-    { en: '"to taste, to sound, to smell" — sonrasında nə gəlir?',   tr: 'Sifət',                 wrong: 'Zərf'               },
-    { en: '"to look" — hansı mənada sifətlə işlənir?',               tr: 'Görünmək mənasında (söz önsüz)', wrong: 'Baxmaq mənasında' },
-    { en: '"to feel" — hansı nitq hissəsi ilə işlənir?',             tr: 'Sifət',                 wrong: 'Zərf'               },
-    { en: '"I feel well." — düzgündürmü?',                            tr: 'Bəli',                  wrong: 'Xeyr'               },
-    { en: '"to get" — yalnız hansı mənada sifətlə işlənir?',         tr: 'Olmaq mənasında',       wrong: 'Almaq mənasında'    },
-    { en: '"lonely, lovely" — hansı nitq hissəsidir?',               tr: 'Sifət',                 wrong: 'Zərf'               },
-    { en: '"alone" — hansı nitq hissəsidir?',                        tr: 'Zərf',                  wrong: 'Sifət'              },
-    { en: '"to look nice" — "nice" hansı nitq hissəsidir?',          tr: 'Sifət',                 wrong: 'Zərf'               },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"to be, to become" — hansı nitq hissəsi ilə işlənir?',
+      options: ['Sifət', 'Zərf', 'İsim', 'Fel'],
+      answer: 'Sifət',
+    },
+    {
+      q: '"to grow" — hansı mənada sifətlə işlənir?',
+      options: ['Olmaq mənasında', 'Becərmək mənasında', 'Böyümək mənasında', 'Artmaq mənasında'],
+      answer: 'Olmaq mənasında',
+    },
+    {
+      q: '"to taste, to sound, to smell" — sonrasında nə gəlir?',
+      options: ['Sifət', 'Zərf', 'İsim', 'Fel'],
+      answer: 'Sifət',
+    },
+    {
+      q: '"to look" — hansı mənada sifətlə işlənir?',
+      options: ['Görünmək mənasında (sözönsüz)', 'Baxmaq mənasında', 'Axtarmaq mənasında', 'Oxşamaq mənasında'],
+      answer: 'Görünmək mənasında (sözönsüz)',
+    },
+    {
+      q: '"to feel" — hansı nitq hissəsi ilə işlənir?',
+      options: ['Sifət', 'Zərf', 'İsim', 'Fel'],
+      answer: 'Sifət',
+    },
+    {
+      q: '"I feel well." — bu cümlə düzgündürmü?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"to get" — yalnız hansı mənada sifətlə işlənir?',
+      options: ['Olmaq mənasında', 'Almaq mənasında', 'Getmək mənasında', 'Başlamaq mənasında'],
+      answer: 'Olmaq mənasında',
+    },
+    {
+      q: '"lonely, lovely" — hansı nitq hissəsidir?',
+      options: ['Sifət', 'Zərf', 'İsim', 'Fel'],
+      answer: 'Sifət',
+    },
+    {
+      q: '"alone" — hansı nitq hissəsidir?',
+      options: ['Zərf', 'Sifət', 'İsim', 'Fel'],
+      answer: 'Zərf',
+    },
+    {
+      q: '"to look nice" — "nice" hansı nitq hissəsidir?',
+      options: ['Sifət', 'Zərf', 'İsim', 'Fel'],
+      answer: 'Sifət',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19180,17 +20961,61 @@ const ADVERB_LEVEL = {
       tip: '"enough" isimdən əvvəl, sifətdən sonra gəlir:\n✅ enough time (isim)\n✅ hot enough (sifət)\n❌ enough hot / time enough',
     },
 
-    { en: '"too" hansı cümlədə işlənir?',                             tr: 'Təsdiq / sual',         wrong: 'İnkar'              },
-    { en: '"too" cümlənin harasında gəlir?',                          tr: 'Sonunda',               wrong: 'Ortasında'          },
-    { en: '"also" cümlənin harasında gəlir?',                         tr: 'Ortasında',             wrong: 'Sonunda'            },
-    { en: '"either" hansı cümlədə işlənir?',                          tr: 'İnkar cümləsini dəstəkləyir', wrong: 'Təsdiq cümlə' },
-    { en: '"either" cümlənin harasında gəlir?',                       tr: 'Sonunda',               wrong: 'Ortasında'          },
-    { en: '"enough" isimdən əvvəl gəlirmi?',                          tr: 'Bəli',                  wrong: 'Xeyr'               },
-    { en: '"enough" sifətdən sonra gəlirmi?',                         tr: 'Bəli',                  wrong: 'Xeyr'               },
-    { en: '"hot enough" — düzgündürmü?',                              tr: 'Bəli',                  wrong: 'Xeyr'               },
-    { en: '"enough hot" — düzgündürmü?',                              tr: 'Xeyr',                  wrong: 'Bəli'               },
-    { en: '"even" nə mənasını verir?',                                tr: 'Hətta',                 wrong: 'Yalnız'             },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"too" hansı cümlədə işlənir?',
+      options: ['Təsdiq / sual', 'İnkar', 'Yalnız sual', 'Yalnız təsdiq'],
+      answer: 'Təsdiq / sual',
+    },
+    {
+      q: '"too" cümlənin harasında gəlir?',
+      options: ['Sonunda', 'Ortasında', 'Əvvəlində', 'Feldən əvvəl'],
+      answer: 'Sonunda',
+    },
+    {
+      q: '"also" cümlənin harasında gəlir?',
+      options: ['Ortasında', 'Sonunda', 'Əvvəlində', 'Feldən sonra'],
+      answer: 'Ortasında',
+    },
+    {
+      q: '"either" hansı cümlədə işlənir?',
+      options: ['İnkar cümləsini dəstəkləyir', 'Təsdiq cümlə', 'Sual cümlə', 'Əmr cümlə'],
+      answer: 'İnkar cümləsini dəstəkləyir',
+    },
+    {
+      q: '"either" cümlənin harasında gəlir?',
+      options: ['Sonunda', 'Ortasında', 'Əvvəlində', 'Feldən əvvəl'],
+      answer: 'Sonunda',
+    },
+    {
+      q: '"enough" isimdən əvvəl gəlirmi?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Həmişə yox'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"enough" sifətdən sonra gəlirmi?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Həmişə yox'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"hot enough" — düzgündürmü?',
+      options: ['Bəli', 'Xeyr', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"enough hot" — düzgündürmü?',
+      options: ['Xeyr', 'Bəli', 'Bəzən', 'Fərq etməz'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"even" nə mənasını verir?',
+      options: ['Hətta', 'Yalnız', 'Belə', 'Əslində'],
+      answer: 'Hətta',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19269,17 +21094,61 @@ const ADVERB_LEVEL = {
       ],
     },
 
-    { en: '"make money" nə mənasını verir?',                          tr: 'Pul qazanmaq',          wrong: 'Pul xərcləmək'      },
-    { en: '"make progress" nə mənasını verir?',                       tr: 'Nailiyyət əldə etmək',  wrong: 'İrəli getmək'        },
-    { en: '"make a bed" nə mənasını verir?',                          tr: 'Çarpayını yığışdırmaq', wrong: 'Çarpayı almaq'       },
-    { en: '"make up one\'s mind" nə mənasını verir?',                 tr: 'Qərara almaq',          wrong: 'Fikrini dəyişmək'   },
-    { en: '"make a note" nə mənasını verir?',                         tr: 'Qeyd götürmək',         wrong: 'Nota yazmaq'         },
-    { en: '"make a film" nə mənasını verir?',                         tr: 'Film çəkmək',           wrong: 'Film izləmək'        },
-    { en: '"make a fire" nə mənasını verir?',                         tr: 'Tonqal yandırmaq',      wrong: 'Yanğın söndürmək'   },
-    { en: '"make tea" nə mənasını verir?',                            tr: 'Çay dəmləmək',          wrong: 'Çay içmək'          },
-    { en: '"make dinner" nə mənasını verir?',                         tr: 'Nahar hazırlamaq',      wrong: 'Nahar etmək'         },
-    { en: '"make a dress" nə mənasını verir?',                        tr: 'Paltar tikmək',         wrong: 'Paltar almaq'        },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"make money" nə mənasını verir?',
+      options: ['Pul xərcləmək', 'Pul qazanmaq', 'Pul saymaq', 'Pul vermək'],
+      answer: 'Pul qazanmaq',
+    },
+    {
+      q: '"make progress" nə mənasını verir?',
+      options: ['İrəli getmək', 'Sürətlənmək', 'Nailiyyət əldə etmək', 'Davam etmək'],
+      answer: 'Nailiyyət əldə etmək',
+    },
+    {
+      q: '"make a bed" nə mənasını verir?',
+      options: ['Çarpayı almaq', 'Çarpayıda yatmaq', 'Çarpayı düzəltmək', 'Çarpayını yığışdırmaq'],
+      answer: 'Çarpayını yığışdırmaq',
+    },
+    {
+      q: '"make up one\'s mind" nə mənasını verir?',
+      options: ['Fikrini dəyişmək', 'Qərara almaq', 'Unutmaq', 'Düşünmək'],
+      answer: 'Qərara almaq',
+    },
+    {
+      q: '"make a note" nə mənasını verir?',
+      options: ['Nota yazmaq', 'Xəbər vermək', 'Mesaj göndərmək', 'Qeyd götürmək'],
+      answer: 'Qeyd götürmək',
+    },
+    {
+      q: '"make a film" nə mənasını verir?',
+      options: ['Film izləmək', 'Film çəkmək', 'Film almaq', 'Film redaktə etmək'],
+      answer: 'Film çəkmək',
+    },
+    {
+      q: '"make a fire" nə mənasını verir?',
+      options: ['Yanğın söndürmək', 'Od almaq', 'Tonqal yandırmaq', 'İstilik vermək'],
+      answer: 'Tonqal yandırmaq',
+    },
+    {
+      q: '"make tea" nə mənasını verir?',
+      options: ['Çay içmək', 'Çay tökmək', 'Çay almaq', 'Çay dəmləmək'],
+      answer: 'Çay dəmləmək',
+    },
+    {
+      q: '"make dinner" nə mənasını verir?',
+      options: ['Nahar etmək', 'Nahar hazırlamaq', 'Nahar almaq', 'Nahar sifariş etmək'],
+      answer: 'Nahar hazırlamaq',
+    },
+    {
+      q: '"make a dress" nə mənasını verir?',
+      options: ['Paltar almaq', 'Paltar geymək', 'Paltar tikmək', 'Paltar yumaq'],
+      answer: 'Paltar tikmək',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19331,17 +21200,61 @@ const ADVERB_LEVEL = {
       ],
     },
 
-    { en: '"do shopping" nə mənasını verir?',                         tr: 'Bazarlıq etmək',        wrong: 'Alış-veriş planlamaq' },
-    { en: '"do one\'s best" nə mənasını verir?',                      tr: 'Əlindən gələni etmək',  wrong: 'Ən yaxşısını almaq'  },
-    { en: '"do homework" nə mənasını verir?',                         tr: 'Ev tapşırığını etmək',  wrong: 'Ev işlərini etmək'   },
-    { en: '"do housework" nə mənasını verir?',                        tr: 'Ev işlərini etmək',     wrong: 'Ev tapşırığını etmək' },
-    { en: '"do research" nə mənasını verir?',                         tr: 'Araşdırma aparmaq',     wrong: 'Axtarış etmək'       },
-    { en: '"do damage" nə mənasını verir?',                           tr: 'Xətər yetirmək, zərər vermək', wrong: 'Zərər almaq' },
-    { en: '"do good" nə mənasını verir?',                             tr: 'Yaxşılıq etmək',        wrong: 'Yaxşı olmaq'         },
-    { en: '"do sums" nə mənasını verir?',                             tr: 'Misallar etmək',        wrong: 'Cəmləmək'            },
-    { en: '"do business" nə mənasını verir?',                         tr: 'Kommersiya ilə məşğul olmaq', wrong: 'İş görmək'    },
-    { en: '"do morning exercise" nə mənasını verir?',                 tr: 'Səhər idmanı etmək',    wrong: 'Səhər tapşırıqları'  },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"do shopping" nə mənasını verir?',
+      options: ['Alış-veriş planlamaq', 'Bazarlıq etmək', 'Mağazaya getmək', 'Sifariş vermək'],
+      answer: 'Bazarlıq etmək',
+    },
+    {
+      q: '"do one\'s best" nə mənasını verir?',
+      options: ['Ən yaxşısını almaq', 'Ən yaxşı olmaq', 'Əlindən gələni etmək', 'Çalışmaq'],
+      answer: 'Əlindən gələni etmək',
+    },
+    {
+      q: '"do homework" nə mənasını verir?',
+      options: ['Ev işlərini etmək', 'Ev tapşırığını etmək', 'Dərs oxumaq', 'Öyrənmək'],
+      answer: 'Ev tapşırığını etmək',
+    },
+    {
+      q: '"do housework" nə mənasını verir?',
+      options: ['Ev tapşırığını etmək', 'Ev işlərini etmək', 'Evə baxmaq', 'Ev düzəltmək'],
+      answer: 'Ev işlərini etmək',
+    },
+    {
+      q: '"do research" nə mənasını verir?',
+      options: ['Axtarış etmək', 'Oxumaq', 'Araşdırma aparmaq', 'Öyrənmək'],
+      answer: 'Araşdırma aparmaq',
+    },
+    {
+      q: '"do damage" nə mənasını verir?',
+      options: ['Zərər almaq', 'Xətər yetirmək, zərər vermək', 'Sındırmaq', 'Pozmaq'],
+      answer: 'Xətər yetirmək, zərər vermək',
+    },
+    {
+      q: '"do good" nə mənasını verir?',
+      options: ['Yaxşı olmaq', 'Yaxşılıq etmək', 'Kömək etmək', 'Düzəltmək'],
+      answer: 'Yaxşılıq etmək',
+    },
+    {
+      q: '"do sums" nə mənasını verir?',
+      options: ['Cəmləmək', 'Hesablamaq', 'Misallar etmək', 'Riyaziyyat oxumaq'],
+      answer: 'Misallar etmək',
+    },
+    {
+      q: '"do business" nə mənasını verir?',
+      options: ['İş görmək', 'Kommersiya ilə məşğul olmaq', 'Çalışmaq', 'Müqavilə bağlamaq'],
+      answer: 'Kommersiya ilə məşğul olmaq',
+    },
+    {
+      q: '"do morning exercise" nə mənasını verir?',
+      options: ['Səhər tapşırıqları', 'İdman etmək', 'Səhər idmanı etmək', 'Gəzmək'],
+      answer: 'Səhər idmanı etmək',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19503,15 +21416,51 @@ const COMPLEX_OBJECT_LEVEL = {
       ],
     },
 
-    { en: 'Mürəkkəb tamamlıq neçə hissədən ibarətdir?',               tr: '2 hissə',               wrong: '3 hissə'             },
-    { en: 'I hissə nədən ibarət olur?',                               tr: 'Adlıq halda isim / obyekt əvəzliyi', wrong: 'Yiyəlik halda isim' },
-    { en: 'II hissə nə ola bilər?',                                   tr: 'Məsdər (to/to-suz) və ya P I', wrong: 'Yalnız məsdər'  },
-    { en: '"me, you, him, her, us, them" — hansı halda əvəzliklərdir?', tr: 'Obyekt halı',          wrong: 'Adlıq halı'          },
-    { en: '"I" əvəzliyinin obyekt forması?',                          tr: 'me',                    wrong: 'my'                  },
-    { en: '"he" əvəzliyinin obyekt forması?',                         tr: 'him',                   wrong: 'his'                 },
-    { en: '"they" əvəzliyinin obyekt forması?',                       tr: 'them',                  wrong: 'their'               },
-    { en: '"we" əvəzliyinin obyekt forması?',                         tr: 'us',                    wrong: 'our'                 },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Mürəkkəb tamamlıq neçə hissədən ibarətdir?',
+      options: ['3 hissə', '2 hissə', '4 hissə', '1 hissə'],
+      answer: '2 hissə',
+    },
+    {
+      q: 'I hissə nədən ibarət olur?',
+      options: ['Yiyəlik halda isim', 'Adlıq halda isim / obyekt əvəzliyi', 'Fel', 'Sifət'],
+      answer: 'Adlıq halda isim / obyekt əvəzliyi',
+    },
+    {
+      q: 'II hissə nə ola bilər?',
+      options: ['Yalnız məsdər', 'Məsdər (to/to-suz) və ya P I', 'Yalnız P I', 'Sifət'],
+      answer: 'Məsdər (to/to-suz) və ya P I',
+    },
+    {
+      q: '"me, you, him, her, us, them" — hansı halda əvəzliklərdir?',
+      options: ['Adlıq halı', 'Yiyəlik halı', 'Obyekt halı', 'Vasitəli hal'],
+      answer: 'Obyekt halı',
+    },
+    {
+      q: '"I" əvəzliyinin obyekt forması hansıdır?',
+      options: ['my', 'mine', 'me', 'myself'],
+      answer: 'me',
+    },
+    {
+      q: '"he" əvəzliyinin obyekt forması hansıdır?',
+      options: ['his', 'himself', 'him', 'he'],
+      answer: 'him',
+    },
+    {
+      q: '"they" əvəzliyinin obyekt forması hansıdır?',
+      options: ['their', 'themselves', 'theirs', 'them'],
+      answer: 'them',
+    },
+    {
+      q: '"we" əvəzliyinin obyekt forması hansıdır?',
+      options: ['our', 'ourselves', 'us', 'ours'],
+      answer: 'us',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19560,14 +21509,46 @@ const COMPLEX_OBJECT_LEVEL = {
            'to see, to hear, to feel, to watch → to-suz məsdər və ya P I',
     },
 
-    { en: '"I want you to understand." — I hissə nədir?',             tr: 'you',                   wrong: 'understand'          },
-    { en: '"I want you to understand." — II hissə nədir?',            tr: 'to understand',         wrong: 'you'                 },
-    { en: '"I saw him go out." — I hissə nədir?',                     tr: 'him',                   wrong: 'go'                  },
-    { en: '"I saw him go out." — II hissə nədir?',                    tr: 'go out',                wrong: 'him'                 },
-    { en: '"I felt someone watching." — II hissə nədir?',             tr: 'watching (P I)',        wrong: 'to watch'            },
-    { en: '"I heard them singing." — I hissə nədir?',                 tr: 'them',                  wrong: 'singing'             },
-    { en: '"He ordered them to leave." — II hissə nədir?',            tr: 'to leave',              wrong: 'leave'               },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I want you to understand." — I hissə nədir?',
+      options: ['understand', 'to understand', 'you', 'want'],
+      answer: 'you',
+    },
+    {
+      q: '"I want you to understand." — II hissə nədir?',
+      options: ['you', 'understand', 'want', 'to understand'],
+      answer: 'to understand',
+    },
+    {
+      q: '"I saw him go out." — I hissə nədir?',
+      options: ['go', 'out', 'him', 'saw'],
+      answer: 'him',
+    },
+    {
+      q: '"I saw him go out." — II hissə nədir?',
+      options: ['him', 'saw', 'out', 'go out'],
+      answer: 'go out',
+    },
+    {
+      q: '"I felt someone watching." — II hissə nədir?',
+      options: ['to watch', 'someone', 'felt', 'watching (P I)'],
+      answer: 'watching (P I)',
+    },
+    {
+      q: '"I heard them singing." — I hissə nədir?',
+      options: ['singing', 'heard', 'them', 'song'],
+      answer: 'them',
+    },
+    {
+      q: '"He ordered them to leave." — II hissə nədir?',
+      options: ['leave', 'them', 'ordered', 'to leave'],
+      answer: 'to leave',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19647,15 +21628,51 @@ const COMPLEX_OBJECT_LEVEL = {
            'Qayda: fel + obyekt + to + V (məsdər)',
     },
 
-    { en: '"to want" — sonrasında hansı forma işlənir?',              tr: 'obyekt + to + məsdər',  wrong: 'obyekt + məsdər'     },
-    { en: '"to expect" nə mənasını verir?',                           tr: 'Gözləmək',              wrong: 'Əmr etmək'           },
-    { en: '"to ask" — complex object-də nə mənasını verir?',          tr: 'Xahiş etmək',           wrong: 'Sual vermək'         },
-    { en: '"to order" nə mənasını verir?',                            tr: 'Əmr etmək',             wrong: 'Sifariş etmək'       },
-    { en: '"would like" nə mənasını verir?',                          tr: 'İstəmək (nəzakətli)',   wrong: 'Xoşlamaq'            },
-    { en: '"I want you ___ understand me." — boşluq?',                tr: 'to',                    wrong: 'heç nə'              },
-    { en: '"She asked him ___ help her." — boşluq?',                  tr: 'to',                    wrong: 'heç nə'              },
-    { en: '"He ordered them ___ leave." — boşluq?',                   tr: 'to',                    wrong: 'heç nə'              },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"to want" — sonrasında hansı forma işlənir?',
+      options: ['obyekt + məsdər', 'obyekt + to + məsdər', 'yalnız məsdər', 'obyekt + P I'],
+      answer: 'obyekt + to + məsdər',
+    },
+    {
+      q: '"to expect" nə mənasını verir?',
+      options: ['Əmr etmək', 'Xahiş etmək', 'Gözləmək', 'İstəmək'],
+      answer: 'Gözləmək',
+    },
+    {
+      q: '"to ask" — complex object-də nə mənasını verir?',
+      options: ['Sual vermək', 'Əmr etmək', 'Gözləmək', 'Xahiş etmək'],
+      answer: 'Xahiş etmək',
+    },
+    {
+      q: '"to order" nə mənasını verir?',
+      options: ['Sifariş etmək', 'Xahiş etmək', 'Əmr etmək', 'Gözləmək'],
+      answer: 'Əmr etmək',
+    },
+    {
+      q: '"would like" nə mənasını verir?',
+      options: ['Xoşlamaq', 'Sevmək', 'Arzulamaq', 'İstəmək (nəzakətli)'],
+      answer: 'İstəmək (nəzakətli)',
+    },
+    {
+      q: '"I want you ___ understand me." — boşluğa nə gəlir?',
+      options: ['heç nə', 'for', 'of', 'to'],
+      answer: 'to',
+    },
+    {
+      q: '"She asked him ___ help her." — boşluğa nə gəlir?',
+      options: ['heç nə', 'for', 'to', 'of'],
+      answer: 'to',
+    },
+    {
+      q: '"He ordered them ___ leave." — boşluğa nə gəlir?',
+      options: ['heç nə', 'of', 'to', 'for'],
+      answer: 'to',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19703,13 +21720,41 @@ const COMPLEX_OBJECT_LEVEL = {
            'Yəni: fel + ki + mübtəda + xəbər',
     },
 
-    { en: '"I want you to understand me." — düzgün quruluşdurmu?',   tr: 'Bəli',                  wrong: 'Xeyr'                },
-    { en: '"I expect you to write to me." — II hissə nədir?',        tr: 'to write',              wrong: 'write'               },
-    { en: '"She asked him to help her." — I hissə nədir?',           tr: 'him',                   wrong: 'to help'             },
-    { en: '"He ordered them to leave." — II hissə nədir?',           tr: 'to leave',              wrong: 'them'                },
-    { en: '"I would like you to stay." — I hissə nədir?',            tr: 'you',                   wrong: 'to stay'             },
-    { en: '"I want you understand me." — düzgündürmü?',              tr: 'Xeyr, "to" çatışmır',   wrong: 'Bəli'                },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"I want you to understand me." — düzgün quruluşdurmu?',
+      options: ['Xeyr', 'Bəli', 'Bəzən', 'Fərq etməz'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"I expect you to write to me." — II hissə nədir?',
+      options: ['write', 'you', 'to me', 'to write'],
+      answer: 'to write',
+    },
+    {
+      q: '"She asked him to help her." — I hissə nədir?',
+      options: ['to help', 'her', 'him', 'asked'],
+      answer: 'him',
+    },
+    {
+      q: '"He ordered them to leave." — II hissə nədir?',
+      options: ['them', 'ordered', 'to leave', 'leave'],
+      answer: 'to leave',
+    },
+    {
+      q: '"I would like you to stay." — I hissə nədir?',
+      options: ['to stay', 'like', 'you', 'would'],
+      answer: 'you',
+    },
+    {
+      q: '"I want you understand me." — düzgündürmü?',
+      options: ['Bəli', 'Bəzən', 'Xeyr, "to" çatışmır', 'Fərq etməz'],
+      answer: 'Xeyr, "to" çatışmır',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19810,16 +21855,51 @@ const COMPLEX_OBJECT_LEVEL = {
            '"I saw him go out." — "go" to-suzdur!\n' +
            'Passive-də: He was made TO go. (to geri qayıdır)',
     },
-
-    { en: '"to see" + complex object — II hissə hansı formada?',     tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
-    { en: '"to hear" + complex object — II hissə hansı formada?',    tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
-    { en: '"to make" complex object-də nə mənasını verir?',          tr: 'Məcbur etmək',          wrong: 'Düzəltmək'           },
-    { en: '"to let" complex object-də nə mənasını verir?',           tr: 'İcazə vermək',          wrong: 'Buraxmaq'            },
-    { en: '"I saw him ___ out." — boşluq?',                          tr: 'go',                    wrong: 'to go'               },
-    { en: '"She made him ___ it." — boşluq?',                        tr: 'do',                    wrong: 'to do'               },
-    { en: '"She let him ___ ." — boşluq?',                           tr: 'go',                    wrong: 'to go'               },
-    { en: '"I heard her ___ ." — boşluq?',                           tr: 'sing',                  wrong: 'to sing'             },
-
+{
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"to see" + complex object — II hissə hansı formada olur?',
+      options: ['to + məsdər', 'to-suz məsdər / P I', 'yalnız P I', 'yalnız məsdər'],
+      answer: 'to-suz məsdər / P I',
+    },
+    {
+      q: '"to hear" + complex object — II hissə hansı formada olur?',
+      options: ['to + məsdər', 'yalnız P I', 'to-suz məsdər / P I', 'yalnız məsdər'],
+      answer: 'to-suz məsdər / P I',
+    },
+    {
+      q: '"to make" complex object-də nə mənasını verir?',
+      options: ['Düzəltmək', 'İcazə vermək', 'Məcbur etmək', 'Qoymaq'],
+      answer: 'Məcbur etmək',
+    },
+    {
+      q: '"to let" complex object-də nə mənasını verir?',
+      options: ['Buraxmaq', 'Məcbur etmək', 'Göndərmək', 'İcazə vermək'],
+      answer: 'İcazə vermək',
+    },
+    {
+      q: '"I saw him ___ out." — boşluğa nə gəlir?',
+      options: ['to go', 'going', 'gone', 'go'],
+      answer: 'go',
+    },
+    {
+      q: '"She made him ___ it." — boşluğa nə gəlir?',
+      options: ['to do', 'doing', 'done', 'do'],
+      answer: 'do',
+    },
+    {
+      q: '"She let him ___ ." — boşluğa nə gəlir?',
+      options: ['to go', 'going', 'go', 'gone'],
+      answer: 'go',
+    },
+    {
+      q: '"I heard her ___ ." — boşluğa nə gəlir?',
+      options: ['to sing', 'sung', 'sing', 'singing'],
+      answer: 'sing',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19874,14 +21954,46 @@ const COMPLEX_OBJECT_LEVEL = {
            'to-suz məsdər = hərəkəti əvvəldən axıra qədər gördük.',
     },
 
-    { en: 'P I hansı fellərdən sonra işlənə bilər?',                 tr: 'to see, to watch, to hear, to smell, to feel', wrong: 'to want, to expect' },
-    { en: 'P I nəyi bildirir?',                                       tr: 'Hərəkətin davam etdiyini', wrong: 'Hərəkətin bitdiyini' },
-    { en: 'to-suz məsdər nəyi bildirir?',                            tr: 'Hərəkəti tam gördük',   wrong: 'Hərəkətin davam etdiyini' },
-    { en: '"I felt someone watching me." — II hissə hansı formadadır?', tr: 'P I (watching)',     wrong: 'to-suz məsdər'       },
-    { en: '"I saw him writing something." — II hissə hansı forma?',  tr: 'P I (writing)',         wrong: 'to-suz məsdər'       },
-    { en: '"I saw him go out." vs "I saw him going out." — fərq nədir?', tr: 'Tam vs davam eden', wrong: 'Heç bir fərq yoxdur' },
-    { en: '"I heard her ___ ." (davam) — boşluq?',                   tr: 'singing',               wrong: 'sing'                },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'P I hansı fellərdən sonra işlənə bilər?',
+      options: ['to want, to expect', 'to see, to watch, to hear, to smell, to feel', 'to order, to ask', 'to let, to make'],
+      answer: 'to see, to watch, to hear, to smell, to feel',
+    },
+    {
+      q: 'P I nəyi bildirir?',
+      options: ['Hərəkətin bitdiyini', 'Hərəkətin başlandığını', 'Hərəkətin davam etdiyini', 'Hərəkətin tamamlandığını'],
+      answer: 'Hərəkətin davam etdiyini',
+    },
+    {
+      q: 'To-suz məsdər nəyi bildirir?',
+      options: ['Hərəkətin davam etdiyini', 'Hərəkətin başlandığını', 'Hərəkəti tam gördük', 'Hərəkətin bitdiyini'],
+      answer: 'Hərəkəti tam gördük',
+    },
+    {
+      q: '"I felt someone watching me." — II hissə hansı formadadır?',
+      options: ['to-suz məsdər', 'to + məsdər', 'P I (watching)', 'P II'],
+      answer: 'P I (watching)',
+    },
+    {
+      q: '"I saw him writing something." — II hissə hansı formadadır?',
+      options: ['to-suz məsdər', 'to + məsdər', 'P II', 'P I (writing)'],
+      answer: 'P I (writing)',
+    },
+    {
+      q: '"I saw him go out." vs "I saw him going out." — fərq nədir?',
+      options: ['Heç bir fərq yoxdur', 'Zaman fərqi var', 'Tam vs davam edən', 'Mənaca eynidir'],
+      answer: 'Tam vs davam edən',
+    },
+    {
+      q: '"I heard her ___ ." (davam edən hərəkət) — boşluğa nə gəlir?',
+      options: ['sing', 'to sing', 'sung', 'singing'],
+      answer: 'singing',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -19951,15 +22063,51 @@ const COMPLEX_OBJECT_LEVEL = {
       ],
     },
 
-    { en: '"to want" — II hissə forması?',                           tr: 'to + məsdər',           wrong: 'to-suz məsdər'       },
-    { en: '"to see" — II hissə forması?',                            tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
-    { en: '"to make" — II hissə forması?',                           tr: 'to-suz məsdər',         wrong: 'to + məsdər'         },
-    { en: '"to let" — II hissə forması?',                            tr: 'to-suz məsdər',         wrong: 'to + məsdər'         },
-    { en: '"to hear" — II hissə forması?',                           tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
-    { en: '"to expect" — II hissə forması?',                         tr: 'to + məsdər',           wrong: 'to-suz məsdər'       },
-    { en: '"I saw him go." vs "I saw him going." — fərq?',           tr: 'go = tam, going = davam', wrong: 'Heç fərq yoxdur'  },
-    { en: '"to notice" — II hissə forması?',                         tr: 'to-suz məsdər / P I',   wrong: 'to + məsdər'         },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"to want" — complex object-də II hissə forması hansıdır?',
+      options: ['to-suz məsdər', 'P I', 'to + məsdər', 'P II'],
+      answer: 'to + məsdər',
+    },
+    {
+      q: '"to see" — complex object-də II hissə forması hansıdır?',
+      options: ['to + məsdər', 'to-suz məsdər / P I', 'yalnız P II', 'yalnız to + məsdər'],
+      answer: 'to-suz məsdər / P I',
+    },
+    {
+      q: '"to make" — complex object-də II hissə forması hansıdır?',
+      options: ['to + məsdər', 'P I', 'to-suz məsdər', 'P II'],
+      answer: 'to-suz məsdər',
+    },
+    {
+      q: '"to let" — complex object-də II hissə forması hansıdır?',
+      options: ['to + məsdər', 'to-suz məsdər', 'P I', 'P II'],
+      answer: 'to-suz məsdər',
+    },
+    {
+      q: '"to hear" — complex object-də II hissə forması hansıdır?',
+      options: ['to + məsdər', 'yalnız P I', 'to-suz məsdər / P I', 'P II'],
+      answer: 'to-suz məsdər / P I',
+    },
+    {
+      q: '"to expect" — complex object-də II hissə forması hansıdır?',
+      options: ['to-suz məsdər', 'P I', 'P II', 'to + məsdər'],
+      answer: 'to + məsdər',
+    },
+    {
+      q: '"I saw him go." vs "I saw him going." — fərq nədir?',
+      options: ['Heç fərq yoxdur', 'Zaman fərqi var', 'Mənaca eynidir', 'go = tam, going = davam'],
+      answer: 'go = tam, going = davam',
+    },
+    {
+      q: '"to notice" — complex object-də II hissə forması hansıdır?',
+      options: ['to + məsdər', 'P II', 'to-suz məsdər / P I', 'yalnız P I'],
+      answer: 'to-suz məsdər / P I',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20098,13 +22246,41 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            'Birlikdə həmişə istifadə edilən iki söz bir anlayış kimi tək xəbər alır.',
     },
 
-    { en: '"and" ilə bağlanan iki mübtədadan sonra xəbər necə olur?',  tr: 'Cəmdə',                wrong: 'Təkdə'               },
-    { en: '"John and I ___ talking." — boşluq?',                       tr: 'were',                  wrong: 'was'                 },
-    { en: '"Tea and coffee ___ useful." — boşluq?',                    tr: 'are',                   wrong: 'is'                  },
-    { en: '"Bread and butter is tasty." — niyə tək?',                  tr: 'Bir bütöv kimi qəbul edilir', wrong: 'İki mübtəda var' },
-    { en: 'Ümumi qayda: mübtəda cəmdə olduqda xəbər necə olur?',      tr: 'Cəmdə',                 wrong: 'Təkdə'               },
-    { en: '"and" bağlayıcısı ilə bağlanan mübtədalar xəbəri neçə alır?', tr: 'Cəm',                wrong: 'Tək'                 },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"and" ilə bağlanan iki mübtədadan sonra xəbər necə olur?',
+      options: ['Təkdə', 'Cəmdə', 'Fərq etməz', 'Birinci mübtədaya uyğun'],
+      answer: 'Cəmdə',
+    },
+    {
+      q: '"John and I ___ talking." — boşluğa nə gəlir?',
+      options: ['was', 'is', 'were', 'are'],
+      answer: 'were',
+    },
+    {
+      q: '"Tea and coffee ___ useful." — boşluğa nə gəlir?',
+      options: ['is', 'was', 'are', 'were'],
+      answer: 'are',
+    },
+    {
+      q: '"Bread and butter is tasty." — niyə tək xəbər işlənir?',
+      options: ['İki mübtəda var', 'Qrammatik səhvdir', 'Bir bütöv kimi qəbul edilir', 'Butter tək olduğundan'],
+      answer: 'Bir bütöv kimi qəbul edilir',
+    },
+    {
+      q: 'Ümumi qayda: mübtəda cəmdə olduqda xəbər necə olur?',
+      options: ['Təkdə', 'Fərq etməz', 'Birinci mübtədaya uyğun', 'Cəmdə'],
+      answer: 'Cəmdə',
+    },
+    {
+      q: '"and" bağlayıcısı ilə bağlanan mübtədalar xəbəri neçə alır?',
+      options: ['Tək', 'Fərq etməz', 'Cəm', 'Birinci mübtədaya uyğun'],
+      answer: 'Cəm',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20153,13 +22329,41 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            'axırıncı mübtəda ilə uzlaşır.',
     },
 
-    { en: '"either...or" ilə xəbər hansı mübtəda ilə uzlaşır?',       tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
-    { en: '"neither...nor" ilə xəbər hansı mübtəda ilə uzlaşır?',     tr: 'Axırıncı mübtəda',      wrong: 'Hər ikisi'           },
-    { en: '"Either you or I ___ to go." — boşluq?',                   tr: 'am',                    wrong: 'are'                 },
-    { en: '"Neither Brown nor you ___ at home." — boşluq?',           tr: 'were',                  wrong: 'was'                 },
-    { en: '"Neither you nor Brown ___ at home." — boşluq?',           tr: 'was',                   wrong: 'were'                },
-    { en: '"not only...but also" — xəbər hansı mübtəda ilə uzlaşır?', tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"either...or" ilə xəbər hansı mübtəda ilə uzlaşır?',
+      options: ['Birinci mübtəda', 'Hər ikisi', 'Axırıncı mübtəda', 'Fərq etməz'],
+      answer: 'Axırıncı mübtəda',
+    },
+    {
+      q: '"neither...nor" ilə xəbər hansı mübtəda ilə uzlaşır?',
+      options: ['Hər ikisi', 'Birinci mübtəda', 'Fərq etməz', 'Axırıncı mübtəda'],
+      answer: 'Axırıncı mübtəda',
+    },
+    {
+      q: '"Either you or I ___ to go." — boşluğa nə gəlir?',
+      options: ['are', 'is', 'am', 'were'],
+      answer: 'am',
+    },
+    {
+      q: '"Neither Brown nor you ___ at home." — boşluğa nə gəlir?',
+      options: ['was', 'is', 'are', 'were'],
+      answer: 'were',
+    },
+    {
+      q: '"Neither you nor Brown ___ at home." — boşluğa nə gəlir?',
+      options: ['were', 'are', 'was', 'is'],
+      answer: 'was',
+    },
+    {
+      q: '"not only...but also" — xəbər hansı mübtəda ilə uzlaşır?',
+      options: ['Birinci mübtəda', 'Hər ikisi', 'Fərq etməz', 'Axırıncı mübtəda'],
+      answer: 'Axırıncı mübtəda',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20208,12 +22412,36 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            '• not only...but also',
     },
 
-    { en: '"Not only she but also they ___ here." — boşluq?',         tr: 'are',                   wrong: 'is'                  },
-    { en: '"not only...but also" — xəbər hansı mübtəda ilə uzlaşır?', tr: 'Axırıncı mübtəda',      wrong: 'Birinci mübtəda'     },
-    { en: '"Not only he but also I ___ right." — boşluq?',            tr: 'am',                    wrong: 'is'                  },
-    { en: '"Not only you but also she ___ correct." — boşluq?',       tr: 'is',                    wrong: 'are'                 },
-    { en: 'Hansı 3 bağlayıcıda axırıncı mübtəda ilə uzlaşma var?',   tr: 'either/or · neither/nor · not only/but also', wrong: 'and · or · but' },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Not only she but also they ___ here." — boşluğa nə gəlir?',
+      options: ['is', 'was', 'are', 'were'],
+      answer: 'are',
+    },
+    {
+      q: '"not only...but also" — xəbər hansı mübtəda ilə uzlaşır?',
+      options: ['Birinci mübtəda', 'Hər ikisi', 'not only-dan sonrakı', 'Axırıncı mübtəda'],
+      answer: 'Axırıncı mübtəda',
+    },
+    {
+      q: '"Not only he but also I ___ right." — boşluğa nə gəlir?',
+      options: ['is', 'are', 'was', 'am'],
+      answer: 'am',
+    },
+    {
+      q: '"Not only you but also she ___ correct." — boşluğa nə gəlir?',
+      options: ['are', 'am', 'is', 'were'],
+      answer: 'is',
+    },
+    {
+      q: 'Hansı 3 bağlayıcıda axırıncı mübtəda ilə uzlaşma var?',
+      options: ['and · or · but', 'or · but · as well as', 'and · nor · as well as', 'either/or · neither/nor · not only/but also'],
+      answer: 'either/or · neither/nor · not only/but also',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20269,12 +22497,36 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            '"with" → xəbər BİRİNCİ mübtəda ilə',
     },
 
-    { en: '"with" / "together with" ilə xəbər hansı mübtəda ilə uzlaşır?', tr: 'Birinci mübtəda', wrong: 'Axırıncı mübtəda'   },
-    { en: '"The teacher with the students ___ present." — boşluq?',    tr: 'was',                   wrong: 'were'                },
-    { en: '"The students with the teacher ___ present." — boşluq?',    tr: 'were',                  wrong: 'was'                 },
-    { en: '"and" vs "with" — xəbər fərqi nədir?',                      tr: 'and → cəm, with → birinci mübtəda', wrong: 'Heç fərq yoxdur' },
-    { en: '"My brother with his friends ___ coming." — boşluq?',       tr: 'is',                    wrong: 'are'                 },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"with" / "together with" ilə xəbər hansı mübtəda ilə uzlaşır?',
+      options: ['Axırıncı mübtəda', 'Hər ikisi', 'Birinci mübtəda', 'Fərq etməz'],
+      answer: 'Birinci mübtəda',
+    },
+    {
+      q: '"The teacher with the students ___ present." — boşluğa nə gəlir?',
+      options: ['were', 'are', 'was', 'is'],
+      answer: 'was',
+    },
+    {
+      q: '"The students with the teacher ___ present." — boşluğa nə gəlir?',
+      options: ['was', 'is', 'were', 'are'],
+      answer: 'were',
+    },
+    {
+      q: '"and" vs "with" — xəbər fərqi nədir?',
+      options: ['Heç fərq yoxdur', 'with → cəm, and → birinci mübtəda', 'and → tək, with → cəm', 'and → cəm, with → birinci mübtəda'],
+      answer: 'and → cəm, with → birinci mübtəda',
+    },
+    {
+      q: '"My brother with his friends ___ coming." — boşluğa nə gəlir?',
+      options: ['are', 'were', 'is', 'am'],
+      answer: 'is',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20333,15 +22585,51 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            '"Everyone IS here" ✅',
     },
 
-    { en: '"each, one, everybody, everyone" — xəbər necə olur?',      tr: 'Tək',                   wrong: 'Cəm'                 },
-    { en: '"nobody, none, nothing" — xəbər necə olur?',               tr: 'Tək',                   wrong: 'Cəm'                 },
-    { en: '"Everyone ___ here." — boşluq?',                           tr: 'is',                    wrong: 'are'                 },
-    { en: '"Nobody ___ it." — boşluq?',                               tr: 'knows',                 wrong: 'know'                },
-    { en: '"Each of them ___ ready." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
-    { en: '"Something ___ wrong." — boşluq?',                         tr: 'is',                    wrong: 'are'                 },
-    { en: '"None of them ___ right." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
-    { en: '"Somebody ___ knocking." — boşluq?',                       tr: 'is',                    wrong: 'are'                 },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"each, one, everybody, everyone" — xəbər necə olur?',
+      options: ['Cəm', 'Tək', 'Hər ikisi ola bilər', 'Mövzuya görə dəyişir'],
+      answer: 'Tək',
+    },
+    {
+      q: '"nobody, none, nothing" — xəbər necə olur?',
+      options: ['Hər ikisi ola bilər', 'Cəm', 'Tək', 'Mövzuya görə dəyişir'],
+      answer: 'Tək',
+    },
+    {
+      q: '"Everyone ___ here." — boşluq?',
+      options: ['are', 'is', 'were', 'have'],
+      answer: 'is',
+    },
+    {
+      q: '"Nobody ___ it." — boşluq?',
+      options: ['known', 'knowing', 'know', 'knows'],
+      answer: 'knows',
+    },
+    {
+      q: '"Each of them ___ ready." — boşluq?',
+      options: ['were', 'are', 'is', 'have'],
+      answer: 'is',
+    },
+    {
+      q: '"Something ___ wrong." — boşluq?',
+      options: ['are', 'have', 'is', 'were'],
+      answer: 'is',
+    },
+    {
+      q: '"None of them ___ right." — boşluq?',
+      options: ['have', 'is', 'are', 'were'],
+      answer: 'is',
+    },
+    {
+      q: '"Somebody ___ knocking." — boşluq?',
+      options: ['were', 'have', 'are', 'is'],
+      answer: 'is',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20430,12 +22718,36 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            'çünki ölçü/vaxt/məbləğ/məsafə bir bütöv anlayış kimi qəbul edilir.',
     },
 
-    { en: 'Ölçü, vaxt, məbləğ bildirən mübtədadan sonra xəbər necə?', tr: 'Tək',                  wrong: 'Cəm'                 },
-    { en: '"Ten miles ___ a long distance." — boşluq?',               tr: 'is',                    wrong: 'are'                 },
-    { en: '"Two hours ___ enough time." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
-    { en: '"Five dollars ___ too much." — boşluq?',                   tr: 'is',                    wrong: 'are'                 },
-    { en: 'Niyə "Ten miles is" — tək xəbər?',                        tr: 'Bir bütöv ölçü anlayışı kimi', wrong: 'Tək ism olduğu üçün' },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Ölçü, vaxt, məbləğ bildirən mübtədadan sonra xəbər necə?',
+      options: ['Cəm', 'Tək', 'Hər ikisi ola bilər', 'Mövzuya görə dəyişir'],
+      answer: 'Tək',
+    },
+    {
+      q: '"Ten miles ___ a long distance." — boşluq?',
+      options: ['are', 'were', 'is', 'have'],
+      answer: 'is',
+    },
+    {
+      q: '"Two hours ___ enough time." — boşluq?',
+      options: ['are', 'is', 'were', 'have'],
+      answer: 'is',
+    },
+    {
+      q: '"Five dollars ___ too much." — boşluq?',
+      options: ['are', 'have', 'were', 'is'],
+      answer: 'is',
+    },
+    {
+      q: 'Niyə "Ten miles is" — tək xəbər?',
+      options: ['Tək ism olduğu üçün', 'Cəm sayıldığı üçün', 'Bir bütöv ölçü anlayışı kimi', 'Xəbər həmişə tək olur'],
+      answer: 'Bir bütöv ölçü anlayışı kimi',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20485,13 +22797,41 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            'Vurma: "Two times three IS/ARE six." — hər ikisi düzgün!',
     },
 
-    { en: 'Toplama cümləsində xəbər necə olur?',                      tr: 'Tək',                   wrong: 'Cəm'                 },
-    { en: 'Çıxma cümləsində xəbər necə olur?',                        tr: 'Tək',                   wrong: 'Cəm'                 },
-    { en: 'Vurma cümləsində xəbər necə ola bilər?',                   tr: 'Həm tək, həm cəm',      wrong: 'Yalnız tək'          },
-    { en: '"Five and five ___ ten." — boşluq?',                       tr: 'is',                    wrong: 'are'                 },
-    { en: '"Four minus two ___ two." — boşluq?',                      tr: 'is',                    wrong: 'are'                 },
-    { en: '"Two times three ___ six." — hansı forma düzgündür?',      tr: 'is və ya are (hər ikisi)', wrong: 'Yalnız are'       },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Toplama cümləsində xəbər necə olur?',
+      options: ['Cəm', 'Həm tək, həm cəm', 'Tək', 'Mövzuya görə dəyişir'],
+      answer: 'Tək',
+    },
+    {
+      q: 'Çıxma cümləsində xəbər necə olur?',
+      options: ['Cəm', 'Tək', 'Həm tək, həm cəm', 'Mövzuya görə dəyişir'],
+      answer: 'Tək',
+    },
+    {
+      q: 'Vurma cümləsində xəbər necə ola bilər?',
+      options: ['Yalnız tək', 'Yalnız cəm', 'Həm tək, həm cəm', 'Heç biri'],
+      answer: 'Həm tək, həm cəm',
+    },
+    {
+      q: '"Five and five ___ ten." — boşluq?',
+      options: ['are', 'were', 'is', 'have'],
+      answer: 'is',
+    },
+    {
+      q: '"Four minus two ___ two." — boşluq?',
+      options: ['are', 'is', 'were', 'have'],
+      answer: 'is',
+    },
+    {
+      q: '"Two times three ___ six." — hansı forma düzgündür?',
+      options: ['Yalnız are', 'Yalnız is', 'Heç biri', 'is və ya are (hər ikisi)'],
+      answer: 'is və ya are (hər ikisi)',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20541,13 +22881,41 @@ const SUBJECT_VERB_AGREEMENT_LEVEL = {
            'yalnız birinci isim vacibdir.',
     },
 
-    { en: '"There is/are" cümlədə xəbər hansı mübtəda ilə uzlaşır?',  tr: 'Birinci mübtəda',       wrong: 'Axırıncı mübtəda'   },
-    { en: '"There ___ a table and six chairs." — boşluq?',            tr: 'is',                    wrong: 'are'                 },
-    { en: '"There ___ six chairs and a table." — boşluq?',            tr: 'are',                   wrong: 'is'                  },
-    { en: '"There ___ a book and two pens." — boşluq?',               tr: 'is',                    wrong: 'are'                 },
-    { en: '"There ___ two pens and a book." — boşluq?',               tr: 'are',                   wrong: 'is'                  },
-    { en: '"There is/are"-da yalnız nə vacibdir?',                    tr: 'Birinci ismin sayı',    wrong: 'Bütün isimlərin sayı' },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"There is/are" cümlədə xəbər hansı mübtəda ilə uzlaşır?',
+      options: ['Axırıncı mübtəda', 'Bütün mübtədalar', 'Birinci mübtəda', 'Ən çox olan mübtəda'],
+      answer: 'Birinci mübtəda',
+    },
+    {
+      q: '"There ___ a table and six chairs." — boşluq?',
+      options: ['are', 'were', 'is', 'have'],
+      answer: 'is',
+    },
+    {
+      q: '"There ___ six chairs and a table." — boşluq?',
+      options: ['is', 'was', 'are', 'have'],
+      answer: 'are',
+    },
+    {
+      q: '"There ___ a book and two pens." — boşluq?',
+      options: ['are', 'have', 'is', 'were'],
+      answer: 'is',
+    },
+    {
+      q: '"There ___ two pens and a book." — boşluq?',
+      options: ['is', 'are', 'was', 'have'],
+      answer: 'are',
+    },
+    {
+      q: '"There is/are"-da yalnız nə vacibdir?',
+      options: ['Bütün isimlərin sayı', 'Axırıncı ismin sayı', 'Ən çox olan ismin sayı', 'Birinci ismin sayı'],
+      answer: 'Birinci ismin sayı',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20688,14 +23056,46 @@ const IMPERATIVE_LEVEL = {
            'Do read! — Mütləq oxu!',
     },
 
-    { en: 'Əmr cümləsi hansı şəxsə aiddir?',                         tr: 'II şəxs',               wrong: 'I şəxs'              },
-    { en: 'Əmr cümləsində "to" nə olur?',                            tr: 'Atılır',                wrong: 'Qalır'               },
-    { en: 'Əmr cümləsi nə ilə başlayır?',                            tr: 'Fellə',                 wrong: 'İsimlə'              },
-    { en: '"Do" əmr cümləsinin önündə nə mənası verir?',             tr: 'Mütləq',                wrong: 'Etmə'                },
-    { en: '"Do go to school." — "Do" nə üçün işlənir?',              tr: 'Mütləqlik bildirmək',   wrong: 'İnkar bildirmək'     },
-    { en: '"to go" → əmr forması?',                                  tr: 'Go',                    wrong: 'To go'               },
-    { en: '"to read" → əmr forması?',                                tr: 'Read',                  wrong: 'To read'             },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Əmr cümləsi hansı şəxsə aiddir?',
+      options: ['I şəxs', 'III şəxs', 'II şəxs', 'Bütün şəxslər'],
+      answer: 'II şəxs',
+    },
+    {
+      q: 'Əmr cümləsində "to" nə olur?',
+      options: ['Qalır', 'Dəyişir', 'Atılır', 'İkiələnir'],
+      answer: 'Atılır',
+    },
+    {
+      q: 'Əmr cümləsi nə ilə başlayır?',
+      options: ['İsimlə', 'Sifətlə', 'Zərflə', 'Fellə'],
+      answer: 'Fellə',
+    },
+    {
+      q: '"Do" əmr cümləsinin önündə nə mənası verir?',
+      options: ['Etmə', 'Sual', 'Şərt', 'Mütləq'],
+      answer: 'Mütləq',
+    },
+    {
+      q: '"Do go to school." — "Do" nə üçün işlənir?',
+      options: ['İnkar bildirmək', 'Sual bildirmək', 'Şərt bildirmək', 'Mütləqlik bildirmək'],
+      answer: 'Mütləqlik bildirmək',
+    },
+    {
+      q: '"to go" → əmr forması?',
+      options: ['To go', 'Going', 'Gone', 'Go'],
+      answer: 'Go',
+    },
+    {
+      q: '"to read" → əmr forması?',
+      options: ['To read', 'Reading', 'Read', 'Reads'],
+      answer: 'Read',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20751,15 +23151,51 @@ const IMPERATIVE_LEVEL = {
            'Don\'t be angry. ✅',
     },
 
-    { en: 'Əmr cümləsinin inkarı necə düzəlir?',                     tr: 'Don\'t + fel',          wrong: 'Not + fel'           },
-    { en: '"to be" felinin əmr forması?',                            tr: 'Be',                    wrong: 'Is'                  },
-    { en: '"to be" felinin inkar əmr forması?',                      tr: 'Don\'t be',             wrong: 'Be not'              },
-    { en: '"Be ready!" — Azərbaycancası?',                           tr: 'Hazır ol!',             wrong: 'Hazır deyilsən!'     },
-    { en: '"Don\'t be angry!" — Azərbaycancası?',                    tr: 'Əsəbləşmə!',           wrong: 'Əsəbi olma!'         },
-    { en: '"Don\'t be late!" — Azərbaycancası?',                     tr: 'Gecikmə!',              wrong: 'Gec olma!'           },
-    { en: '"Don\'t go." — düzgün inkar əmrdirmi?',                   tr: 'Bəli',                  wrong: 'Xeyr'                },
-    { en: '"Be not angry!" — düzgündürmü?',                          tr: 'Xeyr, "Don\'t be" olmalıdır', wrong: 'Bəli'         },
-
+    {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Əmr cümləsinin inkarı necə düzəlir?',
+      options: ['Not + fel', 'Never + fel', 'No + fel', 'Don\'t + fel'],
+      answer: 'Don\'t + fel',
+    },
+    {
+      q: '"to be" felinin əmr forması?',
+      options: ['Is', 'Are', 'Was', 'Be'],
+      answer: 'Be',
+    },
+    {
+      q: '"to be" felinin inkar əmr forması?',
+      options: ['Be not', 'Not be', 'Never be', 'Don\'t be'],
+      answer: 'Don\'t be',
+    },
+    {
+      q: '"Be ready!" — Azərbaycancası?',
+      options: ['Hazır deyilsən!', 'Hazır ol deyə!', 'Hazır deyil!', 'Hazır ol!'],
+      answer: 'Hazır ol!',
+    },
+    {
+      q: '"Don\'t be angry!" — Azərbaycancası?',
+      options: ['Əsəbi olma!', 'Əsəbləşdin!', 'Əsəbi deyilsən!', 'Əsəbləşmə!'],
+      answer: 'Əsəbləşmə!',
+    },
+    {
+      q: '"Don\'t be late!" — Azərbaycancası?',
+      options: ['Gec olma!', 'Gec qaldın!', 'Gecikdin!', 'Gecikmə!'],
+      answer: 'Gecikmə!',
+    },
+    {
+      q: '"Don\'t go." — düzgün inkar əmrdirmi?',
+      options: ['Xeyr', 'Bəlkə', 'Qismən', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"Be not angry!" — düzgündürmü?',
+      options: ['Bəli', 'Qismən düzgündür', 'Yalnız formal üslubda', 'Xeyr, "Don\'t be" olmalıdır'],
+      answer: 'Xeyr, "Don\'t be" olmalıdır',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20831,14 +23267,46 @@ const IMPERATIVE_LEVEL = {
            '"Don\'t let" → inkar / icazə vermə',
     },
 
-    { en: '"Let" əmr cümləsi hansı şəxslər üçündür?',               tr: 'I və III şəxs',         wrong: 'II şəxs'             },
-    { en: '"Let" felindən sonra məsdər hansı formada işlənir?',      tr: 'to-suz məsdər',         wrong: 'to ilə məsdər'       },
-    { en: '"Let" nə mənasını verir?',                                tr: 'Gəlin, icazə verin, qoy', wrong: 'Etmə'              },
-    { en: '"Let him go home." — "him" nədir?',                       tr: 'Obyekt əvəzliyi (III şəxs tək)', wrong: 'Mübtəda'  },
-    { en: '"Don\'t let Fuad go out." — mənası?',                     tr: 'Fuada çölə çıxmağa icazə vermə.', wrong: 'Fuad çölə çıxmasın.' },
-    { en: '"Let her ___ ." — boşluğa nə gəlir?',                    tr: 'to-suz məsdər',         wrong: 'to ilə məsdər'       },
-    { en: '"Let them stay." — düzgündürmü?',                         tr: 'Bəli',                  wrong: 'Xeyr'                },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Let" əmr cümləsi hansı şəxslər üçündür?',
+      options: ['II şəxs', 'Yalnız I şəxs', 'Yalnız III şəxs', 'I və III şəxs'],
+      answer: 'I və III şəxs',
+    },
+    {
+      q: '"Let" felindən sonra məsdər hansı formada işlənir?',
+      options: ['to ilə məsdər', 'Felin keçmiş forması', 'İng forması', 'to-suz məsdər'],
+      answer: 'to-suz məsdər',
+    },
+    {
+      q: '"Let" nə mənasını verir?',
+      options: ['Etmə', 'Lazımdır', 'Qadağandır', 'Gəlin, icazə verin, qoy'],
+      answer: 'Gəlin, icazə verin, qoy',
+    },
+    {
+      q: '"Let him go home." — "him" nədir?',
+      options: ['Mübtəda', 'Xəbər', 'Zərf', 'Obyekt əvəzliyi (III şəxs tək)'],
+      answer: 'Obyekt əvəzliyi (III şəxs tək)',
+    },
+    {
+      q: '"Don\'t let Fuad go out." — mənası?',
+      options: ['Fuad çölə çıxmasın.', 'Fuad çölə çıxdı.', 'Fuad çölə çıxa bilər.', 'Fuada çölə çıxmağa icazə vermə.'],
+      answer: 'Fuada çölə çıxmağa icazə vermə.',
+    },
+    {
+      q: '"Let her ___ ." — boşluğa nə gəlir?',
+      options: ['to ilə məsdər', 'Felin keçmiş forması', 'İng forması', 'to-suz məsdər'],
+      answer: 'to-suz məsdər',
+    },
+    {
+      q: '"Let them stay." — düzgündürmü?',
+      options: ['Xeyr', 'Yalnız formal üslubda', 'Qismən', 'Bəli'],
+      answer: 'Bəli',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -20890,13 +23358,41 @@ const IMPERATIVE_LEVEL = {
            'Let\'s not go. = Getməyək.',
     },
 
-    { en: '"Let\'s" = nəyin qısa formasıdır?',                       tr: 'Let us',                wrong: 'Let them'            },
-    { en: '"Let\'s go home." — Azərbaycancası?',                     tr: 'Gəlin evə gedək.',      wrong: 'Evə getsin.'         },
-    { en: '"Let us go home." = "Let\'s go home." — bərabərmi?',      tr: 'Bəli',                  wrong: 'Xeyr'                },
-    { en: '"Let\'s" hansı şəxs üçündür?',                            tr: 'I şəxs cəm (biz)',      wrong: 'III şəxs tək'        },
-    { en: '"Don\'t let them leave." — mənası?',                      tr: 'Onların getməsinə icazə vermə.', wrong: 'Onlar getməsin.' },
-    { en: '"Let\'s not go." — mənası?',                              tr: 'Getməyək.',             wrong: 'Getməsinlər.'        },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"Let\'s" = nəyin qısa formasıdır?',
+      options: ['Let them', 'Let him', 'Let us all', 'Let us'],
+      answer: 'Let us',
+    },
+    {
+      q: '"Let\'s go home." — Azərbaycancası?',
+      options: ['Evə getsin.', 'Evə get.', 'Evə gedəcəyik.', 'Gəlin evə gedək.'],
+      answer: 'Gəlin evə gedək.',
+    },
+    {
+      q: '"Let us go home." = "Let\'s go home." — bərabərmi?',
+      options: ['Xeyr', 'Yalnız formal üslubda', 'Qismən', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"Let\'s" hansı şəxs üçündür?',
+      options: ['III şəxs tək', 'II şəxs cəm', 'I şəxs tək', 'I şəxs cəm (biz)'],
+      answer: 'I şəxs cəm (biz)',
+    },
+    {
+      q: '"Don\'t let them leave." — mənası?',
+      options: ['Onlar getməsin.', 'Onlar gedə bilər.', 'Onlar getdi.', 'Onların getməsinə icazə vermə.'],
+      answer: 'Onların getməsinə icazə vermə.',
+    },
+    {
+      q: '"Let\'s not go." — mənası?',
+      options: ['Getməsinlər.', 'Getmə.', 'Getməyəcəyik.', 'Getməyək.'],
+      answer: 'Getməyək.',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -21017,15 +23513,51 @@ const EXCLAMATORY_LEVEL = {
            'Mübtəda/xəbər olmaya da bilər: "What a beautiful name!"',
     },
 
-    { en: 'Nida cümləsi nə bildirir?',                               tr: 'Hiss və həyacan',       wrong: 'Əmr və xahiş'        },
-    { en: '"What" ilə nida cümləsi mütləq nə tələb edir?',           tr: 'İsim',                  wrong: 'Fel'                 },
-    { en: '"What" ilə heç vaxt hansı artıkl işlənmir?',              tr: '"the" artiklı',         wrong: '"a/an" artiklı'      },
-    { en: 'Sayılan tək isimdə "What" ilə hansı artıkl işlənir?',    tr: 'a / an',                wrong: 'the'                 },
-    { en: 'Sayılmayan/cəm isimdə "What" ilə artıkl işlənirmi?',     tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"What a beautiful name!" — isim sayılanlırmı?',           tr: 'Bəli, sayılan tək isim', wrong: 'Xeyr'              },
-    { en: '"What beautiful flowers!" — artıkl işlənibmi?',           tr: 'Xeyr (cəm isim)',       wrong: 'Bəli'                },
-    { en: '"What" nida cümləsi hərəkət ifadə edirmi?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: 'Nida cümləsi nə bildirir?',
+      options: ['Əmr və xahiş', 'Sual və şübhə', 'Fakt və məlumat', 'Hiss və həyacan'],
+      answer: 'Hiss və həyacan',
+    },
+    {
+      q: '"What" ilə nida cümləsi mütləq nə tələb edir?',
+      options: ['Fel', 'Zərf', 'Sifət', 'İsim'],
+      answer: 'İsim',
+    },
+    {
+      q: '"What" ilə heç vaxt hansı artıkl işlənmir?',
+      options: ['"a/an" artiklı', 'Artıkl həmişə işlənir', 'Heç bir artıkl', '"the" artiklı'],
+      answer: '"the" artiklı',
+    },
+    {
+      q: 'Sayılan tək isimdə "What" ilə hansı artıkl işlənir?',
+      options: ['the', 'Artıkl işlənmir', 'Hər ikisi', 'a / an'],
+      answer: 'a / an',
+    },
+    {
+      q: 'Sayılmayan/cəm isimdə "What" ilə artıkl işlənirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız cəmdə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"What a beautiful name!" — isim sayılanlırmı?',
+      options: ['Xeyr', 'Sayılmayan isimdir', 'Cəm isimdir', 'Bəli, sayılan tək isim'],
+      answer: 'Bəli, sayılan tək isim',
+    },
+    {
+      q: '"What beautiful flowers!" — artıkl işlənibmi?',
+      options: ['Bəli', 'Yalnız "a" işlənib', 'Yalnız "the" işlənib', 'Xeyr (cəm isim)'],
+      answer: 'Xeyr (cəm isim)',
+    },
+    {
+      q: '"What" nida cümləsi hərəkət ifadə edirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız fel ilə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -21079,13 +23611,41 @@ const EXCLAMATORY_LEVEL = {
            '"an" → saitlə başlayan sifət/isim: an interesting, an old',
     },
 
-    { en: '"What a nice day it is!" — "it is" nədir?',               tr: 'Mübtəda + xəbər',       wrong: 'Artıkl'              },
-    { en: '"What a nice day!" — mübtəda/xəbər varmı?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"What an interesting book it was!" — "an" niyə?',         tr: 'Sait hərflə başlayır (i)', wrong: 'Cəm isimdir'     },
-    { en: '"What a beautiful name!" — "a" niyə?',                    tr: 'Samit hərflə başlayır (b)', wrong: 'Cəm isimdir'    },
-    { en: '"What" nida cümləsi hərəkət ifadə edirmi?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"What beautiful flowers!" — niyə artıkl yoxdur?',         tr: 'Cəm isim',              wrong: 'Sayılmayan isim'     },
-
+  {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"What a nice day it is!" — "it is" nədir?',
+      options: ['Artıkl', 'Zərf', 'Sifət', 'Mübtəda + xəbər'],
+      answer: 'Mübtəda + xəbər',
+    },
+    {
+      q: '"What a nice day!" — mübtəda/xəbər varmı?',
+      options: ['Bəli', 'Yalnız mübtəda', 'Yalnız xəbər', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"What an interesting book it was!" — "an" niyə?',
+      options: ['Cəm isimdir', 'Samit hərflə başlayır', 'Sayılmayan isimdir', 'Sait hərflə başlayır (i)'],
+      answer: 'Sait hərflə başlayır (i)',
+    },
+    {
+      q: '"What a beautiful name!" — "a" niyə?',
+      options: ['Cəm isimdir', 'Sait hərflə başlayır', 'Sayılmayan isimdir', 'Samit hərflə başlayır (b)'],
+      answer: 'Samit hərflə başlayır (b)',
+    },
+    {
+      q: '"What" nida cümləsi hərəkət ifadə edirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız fel ilə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"What beautiful flowers!" — niyə artıkl yoxdur?',
+      options: ['Sayılmayan isim', 'Tək isimdir', '"the" işlənib', 'Cəm isim'],
+      answer: 'Cəm isim',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -21158,14 +23718,46 @@ const EXCLAMATORY_LEVEL = {
            '• Mübtəda/xəbər olmaya bilər: "How interesting!"',
     },
 
-    { en: '"How" nida cümləsindən sonra hansı artıkl işlənmir?',     tr: 'a / an',                wrong: 'the'                 },
-    { en: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',           tr: 'Bəli',                  wrong: 'Xeyr'                },
-    { en: '"How" ilə "the" artiklı işlənə bilirmi?',                 tr: 'Bəli (isim varsa)',     wrong: 'Xeyr, heç vaxt'      },
-    { en: '"How interesting the book was!" — "the" niyə işlənir?',  tr: 'İsim (book) var',       wrong: 'Həmişə işlənir'      },
-    { en: '"How well she sings!" — "well" hansı nitq hissəsidir?',   tr: 'Zərf',                  wrong: 'Sifət'               },
-    { en: '"How interesting!" — mübtəda/xəbər varmı?',              tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"How nice the rose is!" — quruluş düzgündürmü?',          tr: 'Bəli',                  wrong: 'Xeyr'                },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"How" nida cümləsindən sonra hansı artıkl işlənmir?',
+      options: ['the', 'Hər ikisi işlənmir', 'Heç biri', 'a / an'],
+      answer: 'a / an',
+    },
+    {
+      q: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',
+      options: ['Xeyr', 'Yalnız "What" ilə', 'Bəzən', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"How" ilə "the" artiklı işlənə bilirmi?',
+      options: ['Xeyr, heç vaxt', 'Yalnız cəmdə', 'Yalnız sayılmayanda', 'Bəli (isim varsa)'],
+      answer: 'Bəli (isim varsa)',
+    },
+    {
+      q: '"How interesting the book was!" — "the" niyə işlənir?',
+      options: ['Həmişə işlənir', 'Sifət var', 'Cəm isimdir', 'İsim (book) var'],
+      answer: 'İsim (book) var',
+    },
+    {
+      q: '"How well she sings!" — "well" hansı nitq hissəsidir?',
+      options: ['Sifət', 'İsim', 'Fel', 'Zərf'],
+      answer: 'Zərf',
+    },
+    {
+      q: '"How interesting!" — mübtəda/xəbər varmı?',
+      options: ['Bəli', 'Yalnız mübtəda', 'Yalnız xəbər', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"How nice the rose is!" — quruluş düzgündürmü?',
+      options: ['Xeyr', 'Yalnız formal üslubda', 'Qismən', 'Bəli'],
+      answer: 'Bəli',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -21220,16 +23812,56 @@ const EXCLAMATORY_LEVEL = {
            '"How beautifully it smells!" ✅ (zərf + hərəkət)',
     },
 
-    { en: '"What" nida cümləsi mütləq nə tələb edir?',               tr: 'İsim',                  wrong: 'Sifət / zərf'        },
-    { en: '"How" nida cümləsi mütləq nə tələb edir?',                tr: 'Sifət / zərf',          wrong: 'İsim'                },
-    { en: '"What" ilə a/an artiklı işlənirmi?',                      tr: 'Bəli (sayılan tək isim)', wrong: 'Xeyr, heç vaxt'   },
-    { en: '"How" ilə a/an artiklı işlənirmi?',                       tr: 'Xeyr, heç vaxt',        wrong: 'Bəli'                },
-    { en: '"What" ilə "the" artiklı işlənirmi?',                     tr: 'Xeyr, heç vaxt',        wrong: 'Bəli'                },
-    { en: '"How" ilə "the" artiklı işlənə bilirmi?',                 tr: 'Bəli (isim varsa)',     wrong: 'Xeyr, heç vaxt'      },
-    { en: '"What" nida cümləsi hərəkət ifadə edirmi?',               tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',           tr: 'Bəli',                  wrong: 'Xeyr'                },
-    { en: '"What a nice rose!" vs "How nice the rose is!" — fərq?',  tr: 'What → isim, How → sifət', wrong: 'Heç fərq yoxdur' },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"What" nida cümləsi mütləq nə tələb edir?',
+      options: ['Sifət / zərf', 'Fel', 'Zərf', 'İsim'],
+      answer: 'İsim',
+    },
+    {
+      q: '"How" nida cümləsi mütləq nə tələb edir?',
+      options: ['İsim', 'Fel', 'Artıkl', 'Sifət / zərf'],
+      answer: 'Sifət / zərf',
+    },
+    {
+      q: '"What" ilə a/an artiklı işlənirmi?',
+      options: ['Xeyr, heç vaxt', 'Yalnız cəmdə', 'Həmişə', 'Bəli (sayılan tək isim)'],
+      answer: 'Bəli (sayılan tək isim)',
+    },
+    {
+      q: '"How" ilə a/an artiklı işlənirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız tək isimdə', 'Xeyr, heç vaxt'],
+      answer: 'Xeyr, heç vaxt',
+    },
+    {
+      q: '"What" ilə "the" artiklı işlənirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız cəmdə', 'Xeyr, heç vaxt'],
+      answer: 'Xeyr, heç vaxt',
+    },
+    {
+      q: '"How" ilə "the" artiklı işlənə bilirmi?',
+      options: ['Xeyr, heç vaxt', 'Yalnız cəmdə', 'Həmişə', 'Bəli (isim varsa)'],
+      answer: 'Bəli (isim varsa)',
+    },
+    {
+      q: '"What" nida cümləsi hərəkət ifadə edirmi?',
+      options: ['Bəli', 'Bəzən', 'Yalnız fel ilə', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"How" nida cümləsi hərəkət ifadə edə bilirmi?',
+      options: ['Xeyr', 'Yalnız "What" ilə', 'Bəzən', 'Bəli'],
+      answer: 'Bəli',
+    },
+    {
+      q: '"What a nice rose!" vs "How nice the rose is!" — fərq?',
+      options: ['Heç fərq yoxdur', 'What → sifət, How → isim', 'Hər ikisi eyni quruluşdur', 'What → isim, How → sifət'],
+      answer: 'What → isim, How → sifət',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
@@ -21280,13 +23912,41 @@ const EXCLAMATORY_LEVEL = {
            'İngilis dilindəki fərq (What/How) Azərbaycancada çox hiss olunmur.',
     },
 
-    { en: '"What a beautiful name!" — mübtəda/xəbər varmı?',         tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"How interesting!" — mübtəda/xəbər varmı?',              tr: 'Xeyr',                  wrong: 'Bəli'                },
-    { en: '"What a nice day it is!" — "it is" nədir?',               tr: 'Mübtəda + xəbər',       wrong: 'Artıkl'              },
-    { en: '"How well she sings!" — "she sings" nədir?',              tr: 'Mübtəda + xəbər',       wrong: 'Sifət + zərf'        },
-    { en: '"What" → Azərbaycancada necə tərcümə olunur?',            tr: 'Nə (gözəl)...',         wrong: 'Necə yaxşı...'       },
-    { en: '"How" → Azərbaycancada necə tərcümə olunur?',             tr: 'Necə... / Nə qədər...', wrong: 'Nə cür...'           },
-
+   {
+  type: 'mini_check',
+  questions: [
+    {
+      q: '"What a beautiful name!" — mübtəda/xəbər varmı?',
+      options: ['Bəli', 'Yalnız mübtəda', 'Yalnız xəbər', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"How interesting!" — mübtəda/xəbər varmı?',
+      options: ['Bəli', 'Yalnız mübtəda', 'Yalnız xəbər', 'Xeyr'],
+      answer: 'Xeyr',
+    },
+    {
+      q: '"What a nice day it is!" — "it is" nədir?',
+      options: ['Artıkl', 'Zərf', 'Sifət', 'Mübtəda + xəbər'],
+      answer: 'Mübtəda + xəbər',
+    },
+    {
+      q: '"How well she sings!" — "she sings" nədir?',
+      options: ['Sifət + zərf', 'Artıkl + isim', 'Zərf + fel', 'Mübtəda + xəbər'],
+      answer: 'Mübtəda + xəbər',
+    },
+    {
+      q: '"What" → Azərbaycancada necə tərcümə olunur?',
+      options: ['Necə yaxşı...', 'Nə qədər...', 'Nə cür...', 'Nə (gözəl)...'],
+      answer: 'Nə (gözəl)...',
+    },
+    {
+      q: '"How" → Azərbaycancada necə tərcümə olunur?',
+      options: ['Nə cür...', 'Nə (gözəl)...', 'Hansı...', 'Necə... / Nə qədər...'],
+      answer: 'Necə... / Nə qədər...',
+    },
+  ],
+},
     {
       type: 'mini_check',
       questions: [
