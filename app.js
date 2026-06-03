@@ -3701,23 +3701,28 @@ function capitalize(str) {
 // ── Event listeners ───────────────────────────────────────
 // opt-0 və opt-1 üçün event listenerlar showQuestion/restoreNormalQuizBody içindədir
 // Burada yalnız sabit elementlər üçün
-
 const elQuitModal   = $('quit-modal');
 const elQuitConfirm = $('quit-confirm');
 const elQuitCancel  = $('quit-cancel');
-
+const elQuitRestart = $('quit-restart');
 function showQuitModal() {
   elQuitModal.classList.remove('hidden');
   setTimeout(() => elQuitModal.classList.add('show'), 10);
 }
-
 function hideQuitModal() {
   elQuitModal.classList.remove('show');
   setTimeout(() => elQuitModal.classList.add('hidden'), 220);
 }
-
+function restartCurrentQuiz() {
+  hideQuitModal();
+  hideChanceModal();
+  if (quiz.mode === 'exam')           startExam(examState.levelIdx);
+  else if (quiz.mode === 'listening') startListeningQuiz(listeningState.levelIdx);
+  else if (quiz.mode === 'reading')   startReadingQuiz(quiz.levelIdx);
+  else if (quiz.mode === 'mini_check') startMiniCheck(quiz.levelIdx);
+  else                                startQuiz(quiz.levelIdx);
+}
 elQuitBtn.addEventListener('click', showQuitModal);
-
 elQuitConfirm.addEventListener('click', () => {
   const li = quiz.mode === 'exam' ? examState.levelIdx :
              quiz.mode === 'listening' ? listeningState.levelIdx : quiz.levelIdx;
@@ -3728,25 +3733,20 @@ elQuitConfirm.addEventListener('click', () => {
   renderLevels();
   if (li !== null) scrollToCurrentNode(li);
 });
-
 elQuitCancel.addEventListener('click', hideQuitModal);
-
+elQuitRestart.addEventListener('click', restartCurrentQuiz);
 elQuitModal.addEventListener('click', (e) => {
   if (e.target === elQuitModal) hideQuitModal();
 });
-
 elReviewClose.addEventListener('click', hideReviewModal);
-
 elReviewModal.addEventListener('click', (e) => {
   if (e.target === elReviewModal) hideReviewModal();
 });
-
 window.restoreNormalQuizBody = restoreNormalQuizBody;
 window.showQuizScreen        = showQuizScreen;
 window.showQuestion          = showQuestion;
 window.quiz                  = quiz;
 window.elQuestionHint        = elQuestionHint;
-
 // ══════════════════════════════════════════
 //  5-PAGE SWIPE SYSTEM
 // ══════════════════════════════════════════
