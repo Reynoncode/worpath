@@ -1,37 +1,51 @@
 /**
  * WordPath — Grammar Engine Stats Hook
- * Bu fayl grammar-engine.js-ə toxunmadan onun funksiyalarını
- * GrammarStats ilə əlaqələndirir.
+ * grammar-engine.js-dən SONRA, grammar-stats.js-dən SONRA yüklənməlidir.
  *
- * grammar-engine.js-dən SONRA yüklənməlidir.
- * grammar-stats.js-dən SONRA yüklənməlidir.
- *
- * ruleId  = LEVELS[levelIdx].id   (məs: "grammar", "verbs", "passive_voice")
- * ruleName = LEVELS[levelIdx].name (məs: "NOUNS - İSİMLƏR", "VERBS")
- *
- * Beləliklə bütün "Dərs 1.1", "Dərs 1.2"... eyni "grammar" qaydası altında toplanır.
+ * ruleId   = LEVELS[levelIdx].id
+ * ruleName = LEVELS[levelIdx].name
+ * total    = həmin level-dəki section_divider-siz node sayı
  */
 
 (function patchGrammarStats() {
+
+  // ─── Köməkçi: cari qayda məlumatı ──────────────────────────────────────
+  function _getRule() {
+    const state = window.grammarState;
+    if (!state || state.levelIdx === null) return null;
+
+    try {
+      const lvl = window.LEVELS?.[state.levelIdx];
+      if (!lvl) return null;
+
+      // section_divider-ləri xaric edib node sayını hesabla
+      const total = (lvl.quizzes || []).filter(q =>
+        !q || Array.isArray(q) || q.type !== 'section_divider'
+      ).length;
+
+      return {
+        ruleId:   lvl.id   || `rule_${state.levelIdx}`,
+        ruleName: lvl.name || lvl.id || `rule_${state.levelIdx}`,
+        total,
+      };
+    } catch(_) { return null; }
+  }
 
   // ─── handleGrammarMiniAnswer hook ──────────────────────────────────────
   const _origMiniAnswer = window.handleGrammarMiniAnswer;
 
   window.handleGrammarMiniAnswer = function(btn, card, cardIdx) {
-    // Orijinal davranışı saxla
     if (_origMiniAnswer) _origMiniAnswer.call(this, btn, card, cardIdx);
 
-    // Stats qeydiyyatı
     try {
       const qi      = parseInt(btn.dataset.qi);
       const chosen  = btn.dataset.opt;
       const q       = card.questions[qi];
       const correct = chosen === q.answer;
+      const rule    = _getRule();
 
-      const { ruleId, ruleName } = _getRule();
-
-      if (window.GrammarStats && ruleId) {
-        GrammarStats.recordAnswer(ruleId, ruleName, q.q, correct);
+      if (window.GrammarStats && rule) {
+        GrammarStats.recordAnswer(rule.ruleId, rule.ruleName, rule.total, q.q, correct);
       }
     } catch(e) {
       console.warn('GrammarStats hook (miniAnswer):', e);
@@ -39,35 +53,20 @@
   };
 
   // ─── finishGrammarLesson hook ───────────────────────────────────────────
-  // Bir dərs bitəndə qaydanı "tamamlandı" kimi işarələmirik —
-  // çünki bir qayda altında çoxlu dərs var (Dərs 1.1, 1.2...).
-  // Qayda tamamlanması ayrıca məntiqlə (məs: bütün dərslər bitəndə) edilə bilər.
-  // Hələlik bu hook yalnız stats qeydiyyatı üçün istifadə olunur.
+  // Hər dərs/quiz tamamlananda node sayacını +1 artır
   const _origFinish = window.finishGrammarLesson;
 
   window.finishGrammarLesson = function() {
-    // Orijinal davranışı saxla
+    try {
+      const rule = _getRule();
+      if (window.GrammarStats && rule) {
+        GrammarStats.incrementCompleted(rule.ruleId, rule.ruleName, rule.total);
+      }
+    } catch(e) {
+      console.warn('GrammarStats hook (finish):', e);
+    }
+
     if (_origFinish) _origFinish.call(this);
   };
-
-  // ─── Qayda məlumatı köməkçisi ───────────────────────────────────────────
-  // Level obyektinin özündən oxuyur:
-  //   LEVELS[levelIdx].id   → ruleId  (məs: "grammar", "verbs")
-  //   LEVELS[levelIdx].name → ruleName (məs: "NOUNS - İSİMLƏR")
-  function _getRule() {
-    const state = window.grammarState;
-    if (!state || state.levelIdx === null) return { ruleId: null, ruleName: null };
-
-    try {
-      const lvl = window.LEVELS?.[state.levelIdx];
-      if (!lvl) return { ruleId: null, ruleName: null };
-
-      const ruleId   = lvl.id   || `rule_${state.levelIdx}`;
-      const ruleName = lvl.name || ruleId;
-      return { ruleId, ruleName };
-    } catch(_) {
-      return { ruleId: null, ruleName: null };
-    }
-  }
 
 })();
