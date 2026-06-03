@@ -1350,7 +1350,7 @@ function clearWmState(side, index) {
 // ── Definition ────────────────────────────────────────────
 function renderExamDefinition(q, container) {
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
-
+  container.className = 'quiz-body';
   container.innerHTML = `
     <div class="question-card">
       <div class="exam-type-badge">Definition</div>
