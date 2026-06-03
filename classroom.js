@@ -65,6 +65,190 @@ function calcProgress(userData) {
   return { levelData, totalLearned, correctRate, totalErrors, errorWords };
 }
 
+// ─── Tələbənin grammar datasından hesabla ───────────────────────────────────
+function calcGrammarProgress(userData) {
+  const grammarStats = userData.grammarStats || { rules: {} };
+  const allRules = Object.entries(grammarStats.rules || {});
+
+  const ruleStats = allRules.map(([ruleId, rule]) => {
+    const questions = Object.entries(rule.questions || {});
+    const totalErrors = questions.reduce((s, [, q]) => s + q.errors, 0);
+
+    const errorQuestions = questions
+      .filter(([, q]) => q.errors > 0)
+      .sort(([, a], [, b]) => b.errors - a.errors)
+      .map(([text, q]) => ({ text, ...q }));
+
+    const totalQ = questions.length;
+    const correctQ = totalQ > 0
+      ? questions.reduce((s, [, q]) => s + q.correct, 0)
+      : 0;
+    const pct = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
+
+    return {
+      ruleId,
+      name: rule.name || ruleId,
+      completed: rule.completed || false,
+      totalQuestions: totalQ,
+      correctQ,
+      totalErrors,
+      pct,
+      errorQuestions,
+    };
+  });
+
+  const completedCount = ruleStats.filter(r => r.completed).length;
+  const totalRules = ruleStats.length;
+  const errorRules = ruleStats
+    .filter(r => r.totalErrors > 0)
+    .sort((a, b) => b.totalErrors - a.totalErrors);
+
+  return { ruleStats, completedCount, totalRules, errorRules };
+}
+
+// ─── Grammar bölümünün HTML-i (classroom tələbə dropdown üçün) ──────────────
+function renderGrammarStatsForStudent(userData, studentKey) {
+  const g = calcGrammarProgress(userData);
+  const ACCENT = '#085041';
+
+  // ── Qayda irəliləmə sətirləri ───────────────────────────────────────────
+  let progressRows = '';
+  if (g.ruleStats.length > 0) {
+    progressRows = g.ruleStats.map(rule => {
+      const color = rule.completed
+        ? ACCENT
+        : (rule.pct > 0 ? ACCENT : '#C4B8A8');
+
+      const badge = rule.completed
+        ? `<span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:#E1F5EE;color:#085041;">✓</span>`
+        : '';
+
+      return `
+        <div style="margin-bottom:11px;">
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;flex-wrap:wrap;">
+            <span style="font-size:12px;font-weight:600;color:#1A1A1A;flex:1;min-width:0;line-height:1.3;">${rule.name}</span>
+            ${badge}
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;">
+            <div style="flex:1;height:5px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
+              <div style="width:${rule.pct}%;height:100%;background:${ACCENT};border-radius:99px;"></div>
+            </div>
+            <span style="font-size:11px;font-weight:600;width:30px;text-align:right;color:${color};">${rule.pct}%</span>
+            <span style="font-size:10px;color:#9CA3AF;width:44px;text-align:right;">${rule.correctQ}/${rule.totalQuestions}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+  } else {
+    progressRows = `<div style="text-align:center;color:#9CA3AF;font-size:12px;padding:10px 0;">Hələ başlanılmayıb</div>`;
+  }
+
+  // ── Qayda üzrə səhv analizi ─────────────────────────────────────────────
+  let errGroups = '';
+
+  if (g.errorRules.length > 0) {
+    errGroups = g.errorRules.map(rule => {
+      const safeId = `${studentKey}_${rule.ruleId.replace(/[^a-zA-Z0-9_]/g, '_')}`;
+
+      let bg, border, textColor;
+      if (rule.totalErrors >= 3) {
+        bg = '#FFF1F0'; border = '#FCA5A5'; textColor = '#991B1B';
+      } else if (rule.totalErrors === 2) {
+        bg = '#FFFBEB'; border = '#FCD34D'; textColor = '#92400E';
+      } else {
+        bg = '#F0FDF4'; border = '#86EFAC'; textColor = '#14532D';
+      }
+
+      const icon = rule.totalErrors >= 3 ? '⚠️' : rule.totalErrors === 2 ? '⚡' : 'ℹ️';
+
+      const rows = rule.errorQuestions.map(q => `
+        <div style="display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #F3F4F6;">
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:12px;font-weight:500;color:#1A1A1A;line-height:1.4;">${q.text}</div>
+            <div style="font-size:10px;color:#9CA3AF;margin-top:1px;">${q.attempts} cəhd · ${q.correct} düzgün</div>
+          </div>
+          <div style="text-align:center;flex-shrink:0;">
+            <div style="font-size:14px;font-weight:700;color:${textColor};">${q.errors}</div>
+            <div style="font-size:9px;color:#9CA3AF;">səhv</div>
+          </div>
+        </div>
+      `).join('');
+
+      return `
+        <div style="margin-bottom:6px;">
+          <button
+            onclick="ClassroomManager._toggleGrammarRule('${safeId}')"
+            id="cr-ghead-${safeId}"
+            style="width:100%;display:flex;align-items:center;gap:6px;background:${bg};border:1px solid ${border};
+                   border-radius:8px;padding:7px 12px;cursor:pointer;font-size:12px;font-weight:600;
+                   color:#1A1A1A;text-align:left;transition:border-radius 0.15s;"
+            aria-expanded="false">
+            <span style="font-size:11px;">${icon}</span>
+            <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${rule.name}</span>
+            <span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:${border};color:${textColor};flex-shrink:0;">${rule.errorQuestions.length} sual</span>
+            <span style="font-size:11px;color:#9CA3AF;flex-shrink:0;" id="cr-gchev-${safeId}">▼</span>
+          </button>
+          <div id="cr-gbody-${safeId}"
+            style="background:#fff;border:1px solid ${border};border-top:none;border-radius:0 0 8px 8px;overflow:hidden;display:none;">
+            ${rows}
+          </div>
+        </div>
+      `;
+    }).join('');
+  } else {
+    errGroups = `<div style="text-align:center;color:#14532D;font-size:12px;padding:12px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;">🎉 Heç bir grammar səhvi yoxdur!</div>`;
+  }
+
+  return `
+    <!-- Bölücü -->
+    <div style="height:1px;background:#E8E2D9;margin:10px 0 14px;"></div>
+
+    <!-- Grammar başlığı -->
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+      <span style="font-size:13px;font-weight:700;color:#1A1A1A;">📖 Grammar</span>
+      ${g.totalRules > 0
+        ? `<span style="font-size:11px;color:#9CA3AF;">${g.completedCount}/${g.totalRules} tamamlandı</span>`
+        : ''}
+    </div>
+
+    <!-- Qayda irəliləmə cədvəli -->
+    <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
+      <div style="font-size:10px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">
+        Qayda üzrə irəliləmə
+      </div>
+      ${progressRows}
+    </div>
+
+    <!-- Qayda üzrə səhv analizi -->
+    <div style="font-size:10px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">
+      Qayda üzrə səhv analizi
+    </div>
+    ${errGroups}
+  `;
+}
+
+// ─── Toggle (classroom-da qayda dropdown) ───────────────────────────────────
+const _openGrammarRules = new Set();
+
+function _toggleGrammarRule(safeId) {
+  const body    = document.getElementById(`cr-gbody-${safeId}`);
+  const chevron = document.getElementById(`cr-gchev-${safeId}`);
+  const head    = document.getElementById(`cr-ghead-${safeId}`);
+  if (!body) return;
+
+  if (_openGrammarRules.has(safeId)) {
+    _openGrammarRules.delete(safeId);
+    body.style.display = 'none';
+    if (chevron) chevron.textContent = '▼';
+    if (head) { head.style.borderRadius = '8px'; head.setAttribute('aria-expanded', 'false'); }
+  } else {
+    _openGrammarRules.add(safeId);
+    body.style.display = '';
+    if (chevron) chevron.textContent = '▲';
+    if (head) { head.style.borderRadius = '8px 8px 0 0'; head.setAttribute('aria-expanded', 'true'); }
+  }
+}
+
 // ─── Tələbə dropdown HTML ────────────────────────────────────────────────────
 function renderStudentDropdown(userData, displayName) {
   const p = calcProgress(userData);
@@ -120,6 +304,9 @@ function renderStudentDropdown(userData, displayName) {
     `;
   }).join("") || `<div style="text-align:center;color:#14532D;font-size:13px;padding:16px;">🎉 Heç bir səhv yoxdur!</div>`;
 
+  // Grammar bölümü üçün safeKey (displayName-dən)
+  const safeStudentKey = displayName.replace(/[^a-zA-Z0-9_]/g, '_');
+
   return `
     <div style="padding:14px;background:#F5F0E8;border-radius:0 0 12px 12px;">
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;">
@@ -144,9 +331,13 @@ function renderStudentDropdown(userData, displayName) {
 
       <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Səhv analizi</div>
       ${errHTML}
+
+      ${renderGrammarStatsForStudent(userData, safeStudentKey)}
     </div>
   `;
 }
+
+
 
 // ─── Tələbə datasını email ilə tap ──────────────────────────────────────────
 async function fetchStudentData(email) {
@@ -644,5 +835,6 @@ window.ClassroomManager = {
   _backToList,
   _openClass,
   _addStudentToClass,
-  _removeStudentFromClass
+  _removeStudentFromClass,
+  _toggleGrammarRule,
 };
