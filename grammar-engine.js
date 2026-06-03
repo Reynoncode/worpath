@@ -534,8 +534,17 @@ function renderGrammarPath(lvl, li) {
   typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-book-2"></i>');
   typeClass = 'grammar-lesson-node';
 } else if (Array.isArray(item)) {
-  typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-pencil"></i>');
-  typeClass = 'grammar-quiz-node';
+  const prevItm = lvl.quizzes[qi - 1];
+  const afterFinalDivider = prevItm && !Array.isArray(prevItm) && 
+    prevItm.type === 'section_divider' && 
+    prevItm.title && prevItm.title.includes('ÜMUMİ');
+  if (afterFinalDivider) {
+    typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-library"></i>');
+    typeClass = 'grammar-quiz-node';
+  } else {
+    typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-pencil"></i>');
+    typeClass = 'grammar-quiz-node';
+  }
 }
     const prevItem      = lvl.quizzes[qi - 1];
     const prevIsDivider = prevItem && !Array.isArray(prevItem) && prevItem.type === 'section_divider';
