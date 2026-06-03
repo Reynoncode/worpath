@@ -1601,6 +1601,7 @@ function lt_renderQuestion(entry, phaseLabel) {
 
   // Normal quiz body strukturunu bərpa et (exam render onu dəyişmiş ola bilər)
   const quizBody = document.querySelector('.quiz-body');
+  quizBody.className = 'quiz-body';
   quizBody.innerHTML = `
     <div class="question-card">
       <div class="question-hint" id="question-hint"></div>
