@@ -128,7 +128,7 @@ const GrammarStats = (() => {
       };
     });
 
-    const completedFully = ruleStats.filter(r => r.completed >= r.total && r.total > 0).length;
+    const completedCount = ruleStats.filter(r => r.completed >= r.total && r.total > 0).length;
     const totalRules     = ruleStats.length;
     const errorRules     = ruleStats
       .filter(r => r.totalErrors > 0)
