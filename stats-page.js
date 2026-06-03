@@ -174,11 +174,9 @@ const StatsPage = (() => {
   // ─── Grammar: qayda irəliləmə sətri ──────────────────────────────────────
   function renderGrammarProgressRow(rule, t) {
     const ACCENT = '#085041';
-    const color = rule.completed
-      ? ACCENT
-      : (rule.pct > 0 ? ACCENT : t.faintText);
-
-    const badge = rule.completed
+    const isDone  = rule.total > 0 && rule.completed >= rule.total;
+    const color   = rule.pct > 0 ? ACCENT : t.faintText;
+    const badge   = isDone
       ? `<span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px;background:#E1F5EE;color:#085041;flex-shrink:0;">✓ Tamamlandı</span>`
       : '';
 
@@ -193,7 +191,7 @@ const StatsPage = (() => {
             <div style="width:${rule.pct}%;height:100%;background:${ACCENT};border-radius:99px;transition:width 0.6s ease;"></div>
           </div>
           <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${color};flex-shrink:0;">${rule.pct}%</span>
-          <span style="font-size:11px;color:${t.faintText};width:52px;text-align:right;flex-shrink:0;">${rule.correctQ}/${rule.totalQuestions}</span>
+          <span style="font-size:11px;color:${t.faintText};width:52px;text-align:right;flex-shrink:0;">${rule.completed}/${rule.total}</span>
         </div>
       </div>
     `;
@@ -276,45 +274,29 @@ const StatsPage = (() => {
     }
   }
 
+  // ─── Köhnə yanlış ruleId-ləri sil ───────────────────────────────────────
+  function _cleanStaleGrammarRules() {
+    try {
+      const validIds = new Set(
+        (window.LEVELS || []).map(lv => lv.id).filter(Boolean)
+      );
+      if (validIds.size === 0) return;
+      const raw = GrammarStats.load();
+      let changed = false;
+      for (const ruleId of Object.keys(raw.rules || {})) {
+        if (!validIds.has(ruleId)) { delete raw.rules[ruleId]; changed = true; }
+      }
+      if (changed) localStorage.setItem('wordpath_grammar_stats', JSON.stringify(raw));
+    } catch(_) {}
+  }
+
   // ─── Grammar stats hesabla (localStorage-dan) ─────────────────────────────
   function getGrammarStats() {
     if (!window.GrammarStats) return null;
-    const raw = GrammarStats.load();
-    const allRules = Object.entries(raw.rules || {});
-
-    const ruleStats = allRules.map(([ruleId, rule]) => {
-      const questions   = Object.entries(rule.questions || {});
-      const totalQ      = questions.length;
-      // Hər sualda ən azı 1 düzgün cavab verilib-verilmədiyinə bax
-      const correctQ    = questions.filter(([, q]) => q.correct > 0).length;
-      const totalErrors = questions.reduce((s, [, q]) => s + q.errors, 0);
-      const pct         = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
-
-      const errorQuestions = questions
-        .filter(([, q]) => q.errors > 0)
-        .sort(([, a], [, b]) => b.errors - a.errors)
-        .map(([text, q]) => ({ text, ...q }));
-
-      return {
-        ruleId,
-        name:           rule.name || ruleId,
-        completed:      rule.completed || false,
-        totalQuestions: totalQ,
-        correctQ,
-        totalErrors,
-        pct,
-        errorQuestions,
-      };
-    });
-
-    const completedCount = ruleStats.filter(r => r.completed).length;
-    const totalRules     = ruleStats.length;
-    const errorRules     = ruleStats
-      .filter(r => r.totalErrors > 0)
-      .sort((a, b) => b.totalErrors - a.totalErrors);
-
-    return { ruleStats, completedCount, totalRules, errorRules };
+    _cleanStaleGrammarRules();
+    return GrammarStats.getStats();
   }
+
 
   // ─── ANA RENDER FUNKSİYASI ────────────────────────────────────────────────
   function render(containerId) {
