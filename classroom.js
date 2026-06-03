@@ -140,8 +140,10 @@ function renderStudentDropdown(userData, displayName) {
   const grouped = { critical: [], medium: [], light: [] };
   p.errorWords.forEach(w => grouped[w.severity].push(w));
 
-  const errHTML = ["critical", "medium", "light"].filter(s => grouped[s].length > 0).map(sev => {
+const errHTML = ["critical", "medium", "light"].filter(s => grouped[s].length > 0).map(sev => {
     const cfg  = SEV_CFG[sev];
+    const safeStudentKey = (displayName || 'st').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
+    const dropId = `cr-word-${safeStudentKey}-${sev}`;
     const rows = grouped[sev].map(w => `
       <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #F3F4F6;">
         <div style="flex:1;">
@@ -157,11 +159,19 @@ function renderStudentDropdown(userData, displayName) {
     `).join("");
     return `
       <div style="margin-bottom:6px;">
-        <div style="display:flex;align-items:center;gap:6px;background:${cfg.bg};border:1px solid ${cfg.border};border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;color:${cfg.textColor};">
+        <button onclick="
+          var b=document.getElementById('${dropId}');
+          var c=document.getElementById('${dropId}-chev');
+          var open=b.style.display!=='none';
+          b.style.display=open?'none':'block';
+          this.style.borderRadius=open?'8px':'8px 8px 0 0';
+          c.textContent=open?'▼':'▲';
+        " style="width:100%;display:flex;align-items:center;gap:6px;background:${cfg.bg};border:1px solid ${cfg.border};border-radius:8px;padding:7px 12px;cursor:pointer;font-size:12px;font-weight:600;color:${cfg.textColor};text-align:left;">
           ${cfg.icon} ${cfg.label}
           <span style="font-size:10px;padding:1px 6px;border-radius:99px;background:${cfg.border};color:${cfg.textColor};margin-left:2px;">${grouped[sev].length} söz</span>
-        </div>
-        <div style="background:#fff;border:1px solid ${cfg.border};border-top:none;border-radius:0 0 8px 8px;">${rows}</div>
+          <span style="margin-left:auto;font-size:11px;" id="${dropId}-chev">▼</span>
+        </button>
+        <div id="${dropId}" style="display:none;background:#fff;border:1px solid ${cfg.border};border-top:none;border-radius:0 0 8px 8px;">${rows}</div>
       </div>
     `;
   }).join("") || `<div style="text-align:center;color:#14532D;font-size:13px;padding:16px;">🎉 Heç bir söz səhvi yoxdur!</div>`;
