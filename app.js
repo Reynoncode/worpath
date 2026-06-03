@@ -2802,6 +2802,8 @@ function closeOverlayPanel(instant = false) {
     if (overlay) overlay.remove();
     const subtitleEl = document.getElementById('page-subtitle');
     if (subtitleEl) subtitleEl.style.display = '';
+    const navDots = document.querySelector('.page-nav-dots');
+    if (navDots) navDots.style.display = '';
     document.querySelectorAll('.level-card.open').forEach(c => {
       c.classList.remove('open');
       c.querySelector('.level-header').setAttribute('aria-expanded', 'false');
@@ -2836,6 +2838,8 @@ function closeOverlayPanel(instant = false) {
 
   const subtitleEl = document.getElementById('page-subtitle');
   if (subtitleEl) subtitleEl.style.display = '';
+  const navDots = document.querySelector('.page-nav-dots');
+  if (navDots) navDots.style.display = '';
 }
 
 function toggleLevel(card) {
@@ -2853,6 +2857,8 @@ document.querySelectorAll('.level-card.open').forEach(c => {
 // Subtitle-i göstər
 const subtitleEl = document.getElementById('page-subtitle');
 if (subtitleEl) subtitleEl.style.display = '';
+const navDots = document.querySelector('.page-nav-dots');
+if (navDots) navDots.style.display = '';
 
 // Overlay-i animasiya ilə bağla
 const existingOverlay = document.getElementById('level-fullscreen-overlay');
@@ -2877,9 +2883,9 @@ if (existingOverlay) {
   if (!isOpen) {
     card.classList.add('open');
     card.querySelector('.level-header').setAttribute('aria-expanded', 'true');
-
     if (subtitleEl) subtitleEl.style.display = 'none';
-
+    const navDots = document.querySelector('.page-nav-dots');
+    if (navDots) navDots.style.display = 'none';
     const appHeader = document.querySelector('.app-header');
     const headerH = appHeader ? appHeader.offsetHeight : 56;
 
