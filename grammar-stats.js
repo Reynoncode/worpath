@@ -134,7 +134,7 @@ const GrammarStats = (() => {
       .filter(r => r.totalErrors > 0)
       .sort((a, b) => b.totalErrors - a.totalErrors);
 
-    return { ruleStats, completedFully, totalRules, errorRules };
+    return { ruleStats, completedCount, totalRules, errorRules };
   }
 
   function reset() { localStorage.removeItem(KEY); }
