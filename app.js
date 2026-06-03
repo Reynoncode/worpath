@@ -1159,7 +1159,7 @@ function renderExamQuestion() {
 // ── Fill in the blank ─────────────────────────────────────
 function renderExamFill(q, container) {
   quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
-
+  container.className = 'quiz-body';
   container.innerHTML = `
     <div class="question-card">
       <div class="exam-type-badge">Boşluq doldur</div>
