@@ -2162,7 +2162,7 @@ const elReviewClose      = $('review-close');
 function restoreNormalQuizBody() {
   const quizBody = document.querySelector('.quiz-body');
   if (!quizBody) return;
-  quizBody.classList.remove('reading-mode');
+  quizBody.className = 'quiz-body';
   quizBody.innerHTML = `
     <div class="question-card">
       <div class="question-hint" id="question-hint"></div>
