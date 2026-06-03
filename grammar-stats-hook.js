@@ -6,27 +6,28 @@
 
   // ─── Köməkçi: cari qayda məlumatı ──────────────────────────────────────
   function _getRule() {
-    const state = window.grammarState;
-    if (!state || state.levelIdx === null) return null;
-    try {
-      const lvl = window.LEVELS?.[state.levelIdx];
-      if (!lvl) return null;
+  const state = window.grammarState;
+  if (!state || state.levelIdx === null) return null;
+  try {
+    const lvl = window.LEVELS?.[state.levelIdx];
+    if (!lvl) return null;
 
-      // Yalnız real node-ları say: section_divider-ləri XARİC et
-      const total = (lvl.quizzes || []).filter(q => {
-        if (!q) return false;                        // null/undefined → xaric
-        if (Array.isArray(q)) return true;           // söz quiz massivi → daxil
-        if (q.type === 'section_divider') return false; // bölücü → xaric
-        return true;                                 // lesson, quiz → daxil
-      }).length;
+    // section_divider-ləri XARİC et, qalan hər şeyi say
+    // (grammar_lesson, mini_check, badge, quiz kartları və s.)
+    const total = (lvl.quizzes || []).filter(q => {
+      if (!q) return false;
+      if (Array.isArray(q)) return false;              // söz quiz massivi → bu grammar deyil
+      if (q.type === 'section_divider') return false;  // bölücü → xaric
+      return true;                                     // grammar_lesson, mini_check, badge → daxil
+    }).length;
 
-      return {
-        ruleId:   lvl.id   || `rule_${state.levelIdx}`,
-        ruleName: lvl.name || lvl.id || `rule_${state.levelIdx}`,
-        total,
-      };
-    } catch(_) { return null; }
-  }
+    return {
+      ruleId:   lvl.id   || `rule_${state.levelIdx}`,
+      ruleName: lvl.name || lvl.id || `rule_${state.levelIdx}`,
+      total,
+    };
+  } catch(_) { return null; }
+}
 
   // ─── handleGrammarMiniAnswer hook ──────────────────────────────────────
   const _origMiniAnswer = window.handleGrammarMiniAnswer;
