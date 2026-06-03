@@ -5,20 +5,19 @@
 (function patchGrammarStats() {
 
   // ─── Köməkçi: cari qayda məlumatı ──────────────────────────────────────
-  function _getRule() {
+ function _getRule() {
   const state = window.grammarState;
   if (!state || state.levelIdx === null) return null;
   try {
     const lvl = window.LEVELS?.[state.levelIdx];
     if (!lvl) return null;
 
-    // section_divider-ləri XARİC et, qalan hər şeyi say
-    // (grammar_lesson, mini_check, badge, quiz kartları və s.)
     const total = (lvl.quizzes || []).filter(q => {
       if (!q) return false;
-      if (Array.isArray(q)) return false;              // söz quiz massivi → bu grammar deyil
+      if (Array.isArray(q)) return true;               // söz quiz → bir node, say
       if (q.type === 'section_divider') return false;  // bölücü → xaric
-      return true;                                     // grammar_lesson, mini_check, badge → daxil
+      if (q.type === 'grammar_lesson') return true;    // dərs → say
+      return false;
     }).length;
 
     return {
