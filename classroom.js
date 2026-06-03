@@ -21,7 +21,7 @@ const STATUS_PHASE_MAP = {
   "phase2_completed": 2, "phase3_unlocked": 2, "level_done": 3,
 };
 
-// ─── Tələbə datasından irəliləmə hesabla ────────────────────────────────────
+// ─── 1. Tələbə datasından söz irəliləməsi hesabla ───────────────────────────
 function calcProgress(userData) {
   const progress = userData.progress || {};
   const stats    = userData.stats    || {};
@@ -65,25 +65,23 @@ function calcProgress(userData) {
   return { levelData, totalLearned, correctRate, totalErrors, errorWords };
 }
 
-// ─── Tələbənin grammar datasından hesabla ───────────────────────────────────
-function calcGrammarProgress(userData) {
+// ─── 2. Tələbə datasından grammar irəliləməsi hesabla ───────────────────────
+function calcGrammarProgressForStudent(userData) {
   const grammarStats = userData.grammarStats || { rules: {} };
   const allRules = Object.entries(grammarStats.rules || {});
 
   const ruleStats = allRules.map(([ruleId, rule]) => {
-    const questions = Object.entries(rule.questions || {});
+    const questions   = Object.entries(rule.questions || {});
+    const totalQ      = questions.length;
     const totalErrors = questions.reduce((s, [, q]) => s + q.errors, 0);
+    // Ən azı 1 dəfə düzgün cavablandırılmış sualların sayı
+    const correctQ    = questions.filter(([, q]) => q.correct > 0).length;
+    const pct         = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
 
     const errorQuestions = questions
       .filter(([, q]) => q.errors > 0)
       .sort(([, a], [, b]) => b.errors - a.errors)
       .map(([text, q]) => ({ text, ...q }));
-
-    const totalQ = questions.length;
-    const correctQ = totalQ > 0
-      ? questions.reduce((s, [, q]) => s + q.correct, 0)
-      : 0;
-    const pct = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
 
     return {
       ruleId,
@@ -98,31 +96,84 @@ function calcGrammarProgress(userData) {
   });
 
   const completedCount = ruleStats.filter(r => r.completed).length;
-  const totalRules = ruleStats.length;
-  const errorRules = ruleStats
+  const totalRules     = ruleStats.length;
+  const errorRules     = ruleStats
     .filter(r => r.totalErrors > 0)
     .sort((a, b) => b.totalErrors - a.totalErrors);
 
   return { ruleStats, completedCount, totalRules, errorRules };
 }
 
-// ─── Grammar bölümünün HTML-i (classroom tələbə dropdown üçün) ──────────────
-function renderGrammarStatsForStudent(userData, studentKey) {
-  const g = calcGrammarProgress(userData);
-  const ACCENT = '#085041';
+// ─── 3. Tələbə dropdown HTML (grammar bölümü daxil) ─────────────────────────
+function renderStudentDropdown(userData, displayName) {
+  const p  = calcProgress(userData);
+  const gp = calcGrammarProgressForStudent(userData);
 
-  // ── Qayda irəliləmə sətirləri ───────────────────────────────────────────
-  let progressRows = '';
-  if (g.ruleStats.length > 0) {
-    progressRows = g.ruleStats.map(rule => {
+  const GRAMMAR_ACCENT = '#085041';
+
+  const SEV_CFG = {
+    critical: { label: "Kritik zəiflik", icon: "⚠️", bg: "#FFF1F0", border: "#FCA5A5", textColor: "#991B1B" },
+    medium:   { label: "Orta səviyyə",   icon: "⚡", bg: "#FFFBEB", border: "#FCD34D", textColor: "#92400E" },
+    light:    { label: "Yüngül səhv",    icon: "ℹ️", bg: "#F0FDF4", border: "#86EFAC", textColor: "#14532D" },
+  };
+
+  // ── Söz: Səviyyə irəliləmə sətirləri ──────────────────────────────────
+  const levelRows = LEVELS.map(lv => {
+    const d = p.levelData[lv.label];
+    return `
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
+        <div style="width:30px;height:30px;border-radius:5px;background:${lv.color};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <span style="font-size:10px;font-weight:800;color:#fff;">${lv.label}</span>
+        </div>
+        <div style="flex:1;height:6px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
+          <div style="width:${d.pct}%;height:100%;background:${lv.color};border-radius:99px;"></div>
+        </div>
+        <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${d.pct > 0 ? lv.color : "#C4B8A8"};">${d.pct}%</span>
+        <span style="font-size:11px;color:#9CA3AF;width:52px;text-align:right;">${d.done}/${d.total}</span>
+      </div>
+    `;
+  }).join("");
+
+  // ── Söz: Səhv qrupları ─────────────────────────────────────────────────
+  const grouped = { critical: [], medium: [], light: [] };
+  p.errorWords.forEach(w => grouped[w.severity].push(w));
+
+  const errHTML = ["critical", "medium", "light"].filter(s => grouped[s].length > 0).map(sev => {
+    const cfg  = SEV_CFG[sev];
+    const rows = grouped[sev].map(w => `
+      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #F3F4F6;">
+        <div style="flex:1;">
+          <span style="font-size:13px;font-weight:600;color:#1a1a1a;">${w.word}</span>
+          <span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:#E1F5EE;color:#085041;margin-left:5px;">${w.level}</span>
+          <div style="font-size:11px;color:#6B7280;">${w.translation}</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:15px;font-weight:700;color:${cfg.textColor};">${w.errors}</div>
+          <div style="font-size:10px;color:#9CA3AF;">səhv</div>
+        </div>
+      </div>
+    `).join("");
+    return `
+      <div style="margin-bottom:6px;">
+        <div style="display:flex;align-items:center;gap:6px;background:${cfg.bg};border:1px solid ${cfg.border};border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;color:${cfg.textColor};">
+          ${cfg.icon} ${cfg.label}
+          <span style="font-size:10px;padding:1px 6px;border-radius:99px;background:${cfg.border};color:${cfg.textColor};margin-left:2px;">${grouped[sev].length} söz</span>
+        </div>
+        <div style="background:#fff;border:1px solid ${cfg.border};border-top:none;border-radius:0 0 8px 8px;">${rows}</div>
+      </div>
+    `;
+  }).join("") || `<div style="text-align:center;color:#14532D;font-size:13px;padding:16px;">🎉 Heç bir söz səhvi yoxdur!</div>`;
+
+  // ── Grammar: Qayda irəliləmə sətirləri ────────────────────────────────
+  let grammarProgressRows = '';
+  if (gp.ruleStats.length > 0) {
+    grammarProgressRows = gp.ruleStats.map(rule => {
       const color = rule.completed
-        ? ACCENT
-        : (rule.pct > 0 ? ACCENT : '#C4B8A8');
-
+        ? GRAMMAR_ACCENT
+        : (rule.pct > 0 ? GRAMMAR_ACCENT : '#C4B8A8');
       const badge = rule.completed
         ? `<span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:#E1F5EE;color:#085041;">✓</span>`
         : '';
-
       return `
         <div style="margin-bottom:11px;">
           <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;flex-wrap:wrap;">
@@ -131,7 +182,7 @@ function renderGrammarStatsForStudent(userData, studentKey) {
           </div>
           <div style="display:flex;align-items:center;gap:7px;">
             <div style="flex:1;height:5px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
-              <div style="width:${rule.pct}%;height:100%;background:${ACCENT};border-radius:99px;"></div>
+              <div style="width:${rule.pct}%;height:100%;background:${GRAMMAR_ACCENT};border-radius:99px;"></div>
             </div>
             <span style="font-size:11px;font-weight:600;width:30px;text-align:right;color:${color};">${rule.pct}%</span>
             <span style="font-size:10px;color:#9CA3AF;width:44px;text-align:right;">${rule.correctQ}/${rule.totalQuestions}</span>
@@ -140,14 +191,15 @@ function renderGrammarStatsForStudent(userData, studentKey) {
       `;
     }).join('');
   } else {
-    progressRows = `<div style="text-align:center;color:#9CA3AF;font-size:12px;padding:10px 0;">Hələ başlanılmayıb</div>`;
+    grammarProgressRows = `<div style="text-align:center;color:#9CA3AF;font-size:12px;padding:10px 0;">Hələ başlanılmayıb</div>`;
   }
 
-  // ── Qayda üzrə səhv analizi ─────────────────────────────────────────────
-  let errGroups = '';
+  // ── Grammar: Qayda səhv analizi dropdown-ları ─────────────────────────
+  const studentKey = (displayName || 'st').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
 
-  if (g.errorRules.length > 0) {
-    errGroups = g.errorRules.map(rule => {
+  let grammarErrHTML = '';
+  if (gp.errorRules.length > 0) {
+    grammarErrHTML = gp.errorRules.map(rule => {
       const safeId = `${studentKey}_${rule.ruleId.replace(/[^a-zA-Z0-9_]/g, '_')}`;
 
       let bg, border, textColor;
@@ -179,10 +231,10 @@ function renderGrammarStatsForStudent(userData, studentKey) {
           <button
             onclick="ClassroomManager._toggleGrammarRule('${safeId}')"
             id="cr-ghead-${safeId}"
+            aria-expanded="false"
             style="width:100%;display:flex;align-items:center;gap:6px;background:${bg};border:1px solid ${border};
                    border-radius:8px;padding:7px 12px;cursor:pointer;font-size:12px;font-weight:600;
-                   color:#1A1A1A;text-align:left;transition:border-radius 0.15s;"
-            aria-expanded="false">
+                   color:#1A1A1A;text-align:left;transition:border-radius 0.15s;">
             <span style="font-size:11px;">${icon}</span>
             <span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${rule.name}</span>
             <span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:${border};color:${textColor};flex-shrink:0;">${rule.errorQuestions.length} sual</span>
@@ -196,119 +248,19 @@ function renderGrammarStatsForStudent(userData, studentKey) {
       `;
     }).join('');
   } else {
-    errGroups = `<div style="text-align:center;color:#14532D;font-size:12px;padding:12px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;">🎉 Heç bir grammar səhvi yoxdur!</div>`;
-  }
-
-  return `
-    <!-- Bölücü -->
-    <div style="height:1px;background:#E8E2D9;margin:10px 0 14px;"></div>
-
-    <!-- Grammar başlığı -->
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-      <span style="font-size:13px;font-weight:700;color:#1A1A1A;">📖 Grammar</span>
-      ${g.totalRules > 0
-        ? `<span style="font-size:11px;color:#9CA3AF;">${g.completedCount}/${g.totalRules} tamamlandı</span>`
-        : ''}
-    </div>
-
-    <!-- Qayda irəliləmə cədvəli -->
-    <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
-      <div style="font-size:10px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">
-        Qayda üzrə irəliləmə
-      </div>
-      ${progressRows}
-    </div>
-
-    <!-- Qayda üzrə səhv analizi -->
-    <div style="font-size:10px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">
-      Qayda üzrə səhv analizi
-    </div>
-    ${errGroups}
-  `;
-}
-
-// ─── Toggle (classroom-da qayda dropdown) ───────────────────────────────────
-const _openGrammarRules = new Set();
-
-function _toggleGrammarRule(safeId) {
-  const body    = document.getElementById(`cr-gbody-${safeId}`);
-  const chevron = document.getElementById(`cr-gchev-${safeId}`);
-  const head    = document.getElementById(`cr-ghead-${safeId}`);
-  if (!body) return;
-
-  if (_openGrammarRules.has(safeId)) {
-    _openGrammarRules.delete(safeId);
-    body.style.display = 'none';
-    if (chevron) chevron.textContent = '▼';
-    if (head) { head.style.borderRadius = '8px'; head.setAttribute('aria-expanded', 'false'); }
-  } else {
-    _openGrammarRules.add(safeId);
-    body.style.display = '';
-    if (chevron) chevron.textContent = '▲';
-    if (head) { head.style.borderRadius = '8px 8px 0 0'; head.setAttribute('aria-expanded', 'true'); }
-  }
-}
-
-// ─── Tələbə dropdown HTML ────────────────────────────────────────────────────
-function renderStudentDropdown(userData, displayName) {
-  const p = calcProgress(userData);
-
-  const SEV_CFG = {
-    critical: { label: "Kritik zəiflik", icon: "⚠️", bg: "#FFF1F0", border: "#FCA5A5", textColor: "#991B1B" },
-    medium:   { label: "Orta səviyyə",   icon: "⚡", bg: "#FFFBEB", border: "#FCD34D", textColor: "#92400E" },
-    light:    { label: "Yüngül səhv",    icon: "ℹ️", bg: "#F0FDF4", border: "#86EFAC", textColor: "#14532D" },
-  };
-
-  const levelRows = LEVELS.map(lv => {
-    const d = p.levelData[lv.label];
-    return `
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px;">
-        <div style="width:30px;height:30px;border-radius:5px;background:${lv.color};display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <span style="font-size:10px;font-weight:800;color:#fff;">${lv.label}</span>
-        </div>
-        <div style="flex:1;height:6px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
-          <div style="width:${d.pct}%;height:100%;background:${lv.color};border-radius:99px;"></div>
-        </div>
-        <span style="font-size:12px;font-weight:600;width:32px;text-align:right;color:${d.pct > 0 ? lv.color : "#C4B8A8"};">${d.pct}%</span>
-        <span style="font-size:11px;color:#9CA3AF;width:52px;text-align:right;">${d.done}/${d.total}</span>
+    grammarErrHTML = `
+      <div style="text-align:center;color:#14532D;font-size:12px;padding:12px;
+                  background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;">
+        🎉 Heç bir grammar səhvi yoxdur!
       </div>
     `;
-  }).join("");
+  }
 
-  const grouped = { critical: [], medium: [], light: [] };
-  p.errorWords.forEach(w => grouped[w.severity].push(w));
-
-  const errHTML = ["critical", "medium", "light"].filter(s => grouped[s].length > 0).map(sev => {
-    const cfg = SEV_CFG[sev];
-    const rows = grouped[sev].map(w => `
-      <div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #F3F4F6;">
-        <div style="flex:1;">
-          <span style="font-size:13px;font-weight:600;color:#1a1a1a;">${w.word}</span>
-          <span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:#E1F5EE;color:#085041;margin-left:5px;">${w.level}</span>
-          <div style="font-size:11px;color:#6B7280;">${w.translation}</div>
-        </div>
-        <div style="text-align:center;">
-          <div style="font-size:15px;font-weight:700;color:${cfg.textColor};">${w.errors}</div>
-          <div style="font-size:10px;color:#9CA3AF;">səhv</div>
-        </div>
-      </div>
-    `).join("");
-    return `
-      <div style="margin-bottom:6px;">
-        <div style="display:flex;align-items:center;gap:6px;background:${cfg.bg};border:1px solid ${cfg.border};border-radius:8px;padding:7px 12px;font-size:12px;font-weight:600;color:${cfg.textColor};">
-          ${cfg.icon} ${cfg.label}
-          <span style="font-size:10px;padding:1px 6px;border-radius:99px;background:${cfg.border};color:${cfg.textColor};margin-left:2px;">${grouped[sev].length} söz</span>
-        </div>
-        <div style="background:#fff;border:1px solid ${cfg.border};border-top:none;border-radius:0 0 8px 8px;">${rows}</div>
-      </div>
-    `;
-  }).join("") || `<div style="text-align:center;color:#14532D;font-size:13px;padding:16px;">🎉 Heç bir səhv yoxdur!</div>`;
-
-  // Grammar bölümü üçün safeKey (displayName-dən)
-  const safeStudentKey = displayName.replace(/[^a-zA-Z0-9_]/g, '_');
-
+  // ── Tam dropdown HTML ─────────────────────────────────────────────────
   return `
     <div style="padding:14px;background:#F5F0E8;border-radius:0 0 12px 12px;">
+
+      <!-- Söz statistikası kartları -->
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;">
         <div style="background:#EDEAE2;border-radius:10px;padding:10px 12px;">
           <div style="font-size:20px;font-weight:700;color:#1A1A1A;">${p.totalLearned}</div>
@@ -324,20 +276,62 @@ function renderStudentDropdown(userData, displayName) {
         </div>
       </div>
 
+      <!-- Söz: Səviyyə üzrə irəliləmə -->
       <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
         <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Səviyyə üzrə irəliləmə</div>
         ${levelRows}
       </div>
 
-      <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Səhv analizi</div>
+      <!-- Söz: Səhv analizi -->
+      <div style="font-size:11px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Söz səhv analizi</div>
       ${errHTML}
 
-      ${renderGrammarStatsForStudent(userData, safeStudentKey)}
+      <!-- Bölücü -->
+      <div style="height:1px;background:#E8E2D9;margin:14px 0;"></div>
+
+      <!-- Grammar başlığı -->
+      <div style="display:flex;align-items:center;gap:7px;margin-bottom:12px;">
+        <span style="font-size:13px;font-weight:700;color:#1A1A1A;">📖 Grammar</span>
+        ${gp.totalRules > 0
+          ? `<span style="font-size:11px;color:#9CA3AF;">${gp.completedCount}/${gp.totalRules} tamamlandı</span>`
+          : ''}
+      </div>
+
+      <!-- Grammar: Qayda üzrə irəliləmə -->
+      <div style="background:#fff;border:1px solid #E8E2D9;border-radius:12px;padding:12px 14px;margin-bottom:10px;">
+        <div style="font-size:10px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">Qayda üzrə irəliləmə</div>
+        ${grammarProgressRows}
+      </div>
+
+      <!-- Grammar: Qayda üzrə səhv analizi -->
+      <div style="font-size:10px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px;">Qayda üzrə səhv analizi</div>
+      ${grammarErrHTML}
+
     </div>
   `;
 }
 
+// ─── Grammar toggle (classroom dropdown) ────────────────────────────────────
+const _openGrammarRulesClassroom = new Set();
 
+function _toggleGrammarRule(safeId) {
+  const body    = document.getElementById(`cr-gbody-${safeId}`);
+  const chevron = document.getElementById(`cr-gchev-${safeId}`);
+  const head    = document.getElementById(`cr-ghead-${safeId}`);
+  if (!body) return;
+
+  if (_openGrammarRulesClassroom.has(safeId)) {
+    _openGrammarRulesClassroom.delete(safeId);
+    body.style.display  = 'none';
+    if (chevron) chevron.textContent = '▼';
+    if (head) { head.style.borderRadius = '8px'; head.setAttribute('aria-expanded', 'false'); }
+  } else {
+    _openGrammarRulesClassroom.add(safeId);
+    body.style.display  = '';
+    if (chevron) chevron.textContent = '▲';
+    if (head) { head.style.borderRadius = '8px 8px 0 0'; head.setAttribute('aria-expanded', 'true'); }
+  }
+}
 
 // ─── Tələbə datasını email ilə tap ──────────────────────────────────────────
 async function fetchStudentData(email) {
@@ -354,7 +348,6 @@ async function revokeStudentRole(email, classId) {
   const snap = await getDocsFromServer(q);
 
   if (snap.empty) {
-    // pendingStudents-dən sil
     const { deleteDoc } = await import(
       "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js"
     );
@@ -372,7 +365,6 @@ async function revokeStudentRole(email, classId) {
   const updatedClasses = (userData.enrolledClasses || []).filter(c => c !== classId);
 
   if (updatedClasses.length === 0) {
-    // Başqa sinifdə deyilsə rolu sil
     await updateDoc(doc(db, "users", userDoc.id), {
       role:            "guest",
       enrolledClasses: [],
@@ -401,7 +393,6 @@ async function createClass(name, studentEmails, teacherUid, teacherEmail) {
     createdAt: serverTimestamp()
   });
 
-  // Hər tələbəyə student rolu ver
   await Promise.all(studentEmails.map(email => grantStudentRole(email, ref.id)));
 
   return ref.id;
@@ -425,7 +416,6 @@ async function _addStudentToClass(classId) {
   );
   await updateDoc(ref, { students: arrayUnion(email) });
 
-  // Tələbəyə student rolu ver
   await grantStudentRole(email, classId);
 
   input.value = "";
@@ -443,7 +433,6 @@ async function _removeStudentFromClass(classId, email) {
   );
   await updateDoc(ref, { students: arrayRemove(email) });
 
-  // Tələbənin rolunu ləğv et
   await revokeStudentRole(email, classId);
 
   const updatedSnap = await getDoc(ref);
