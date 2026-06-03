@@ -2204,6 +2204,34 @@ button { font-family: var(--font); }
   opacity: 0.88;
 }
 
+.btn-quit-restart {
+  width: 100%;
+  padding: 15px;
+  background: transparent;
+  color: #5B21B6;
+  border: 2px solid #C4B5FD;
+  border-radius: var(--rs);
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn-quit-restart:active {
+  transform: scale(0.97);
+  background: #EDE9FE;
+}
+
+[data-theme="dark"] .btn-quit-restart {
+  color: #9d7aff;
+  border-color: #362a68;
+}
+
+[data-theme="dark"] .btn-quit-restart:active {
+  background: #1c1538;
+}
+
 .btn-quit-cancel {
   width: 100%;
   padding: 13px;
