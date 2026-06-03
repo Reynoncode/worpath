@@ -6,15 +6,15 @@
  * grammar-engine.js-dən SONRA yüklənməlidir.
  * grammar-stats.js-dən SONRA yüklənməlidir.
  *
- * Etdiyi iş:
- *   1. handleGrammarMiniAnswer — hər cavabı GrammarStats.recordAnswer()-a göndərir
- *   2. finishGrammarLesson     — dərsi GrammarStats.markRuleCompleted()-ə bildirir
+ * ruleId  = LEVELS[levelIdx].id   (məs: "grammar", "verbs", "passive_voice")
+ * ruleName = LEVELS[levelIdx].name (məs: "NOUNS - İSİMLƏR", "VERBS")
+ *
+ * Beləliklə bütün "Dərs 1.1", "Dərs 1.2"... eyni "grammar" qaydası altında toplanır.
  */
 
 (function patchGrammarStats() {
 
-  // ─── handleGrammarMiniAnswer hook ───────────────────────────────────────
-  // Orijinal funksiya grammar-engine.js-dədir; biz onu wrap edirik
+  // ─── handleGrammarMiniAnswer hook ──────────────────────────────────────
   const _origMiniAnswer = window.handleGrammarMiniAnswer;
 
   window.handleGrammarMiniAnswer = function(btn, card, cardIdx) {
@@ -28,9 +28,7 @@
       const q       = card.questions[qi];
       const correct = chosen === q.answer;
 
-      const item    = grammarState?.item;
-      const ruleId  = _getRuleId();
-      const ruleName = item?.title || ruleId;
+      const { ruleId, ruleName } = _getRule();
 
       if (window.GrammarStats && ruleId) {
         GrammarStats.recordAnswer(ruleId, ruleName, q.q, correct);
@@ -40,46 +38,36 @@
     }
   };
 
-  // ─── finishGrammarLesson hook ────────────────────────────────────────────
+  // ─── finishGrammarLesson hook ───────────────────────────────────────────
+  // Bir dərs bitəndə qaydanı "tamamlandı" kimi işarələmirik —
+  // çünki bir qayda altında çoxlu dərs var (Dərs 1.1, 1.2...).
+  // Qayda tamamlanması ayrıca məntiqlə (məs: bütün dərslər bitəndə) edilə bilər.
+  // Hələlik bu hook yalnız stats qeydiyyatı üçün istifadə olunur.
   const _origFinish = window.finishGrammarLesson;
 
   window.finishGrammarLesson = function() {
-    // Stats qeydiyyatı (finish-dən əvvəl)
-    try {
-      const item     = grammarState?.item;
-      const ruleId   = _getRuleId();
-      const ruleName = item?.title || ruleId;
-      if (window.GrammarStats && ruleId) {
-        GrammarStats.markRuleCompleted(ruleId, ruleName);
-      }
-    } catch(e) {
-      console.warn('GrammarStats hook (finish):', e);
-    }
-
     // Orijinal davranışı saxla
     if (_origFinish) _origFinish.call(this);
   };
 
-  // ─── ruleId köməkçisi ────────────────────────────────────────────────────
-  // Qayda ID-si: levelId + "_" + quizIdx (məs: "a1_3")
-  // Əgər item-in özündə id varsa onu istifadə edir
-  function _getRuleId() {
+  // ─── Qayda məlumatı köməkçisi ───────────────────────────────────────────
+  // Level obyektinin özündən oxuyur:
+  //   LEVELS[levelIdx].id   → ruleId  (məs: "grammar", "verbs")
+  //   LEVELS[levelIdx].name → ruleName (məs: "NOUNS - İSİMLƏR")
+  function _getRule() {
     const state = window.grammarState;
-    if (!state || state.levelIdx === null) return null;
+    if (!state || state.levelIdx === null) return { ruleId: null, ruleName: null };
 
-    const item = state.item;
-    if (item?.id) return item.id;
-
-    // Fallback: level key + quiz index
     try {
-      const LEVELS = window.LEVELS;
-      if (LEVELS && LEVELS[state.levelIdx]) {
-        const lvlId = LEVELS[state.levelIdx].id || `level${state.levelIdx}`;
-        return `${lvlId}_${state.quizIdx}`;
-      }
-    } catch(_) {}
+      const lvl = window.LEVELS?.[state.levelIdx];
+      if (!lvl) return { ruleId: null, ruleName: null };
 
-    return `rule_${state.levelIdx}_${state.quizIdx}`;
+      const ruleId   = lvl.id   || `rule_${state.levelIdx}`;
+      const ruleName = lvl.name || ruleId;
+      return { ruleId, ruleName };
+    } catch(_) {
+      return { ruleId: null, ruleName: null };
+    }
   }
 
 })();
