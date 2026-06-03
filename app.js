@@ -3658,12 +3658,11 @@ function closeOverlays() {
 
 // ── Scroll to current node ────────────────────────────────
 function scrollToCurrentNode(levelIdx) {
-  const cards      = document.querySelectorAll('.level-card');
-  const targetCard = cards[levelIdx];
+  const lvl = LEVELS[levelIdx];
+  if (!lvl) return;
+  const targetCard = document.querySelector(`.level-card[data-level="${lvl.id}"]`);
   if (!targetCard) return;
-
   if (!targetCard.classList.contains('open')) toggleLevel(targetCard);
-
   const body = targetCard.querySelector('.level-body');
   const doScroll = () => {
     const node = targetCard.querySelector('.path-node.pulse')
@@ -3671,7 +3670,6 @@ function scrollToCurrentNode(levelIdx) {
               || targetCard.querySelector('.path-node.unlocked');
     if (node) node.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
-
   if (targetCard.classList.contains('open') && body.style.maxHeight === 'none') {
     setTimeout(doScroll, 80);
   } else {
