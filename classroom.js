@@ -65,44 +65,6 @@ function calcProgress(userData) {
   return { levelData, totalLearned, correctRate, totalErrors, errorWords };
 }
 
-function calcGrammarProgressForStudent(userData) {
-  const grammarStats = userData.grammarStats || { rules: {} };
-  const allRules = Object.entries(grammarStats.rules || {});
- 
-  const ruleStats = allRules.map(([ruleId, rule]) => {
-    const questions     = Object.entries(rule.questions || {});
-    const totalErrors   = questions.reduce((s, [, q]) => s + q.errors, 0);
-    const nodeTotal     = rule.total     || 0;
-    const nodeCompleted = rule.completed || 0;
-    const pct           = nodeTotal > 0
-      ? Math.min(100, Math.round((nodeCompleted / nodeTotal) * 100))
-      : 0;
- 
-    const errorQuestions = questions
-      .filter(([, q]) => q.errors > 0)
-      .sort(([, a], [, b]) => b.errors - a.errors)
-      .map(([text, q]) => ({ text, ...q }));
- 
-    return {
-      ruleId,
-      name:      rule.name || ruleId,
-      total:     nodeTotal,
-      completed: nodeCompleted,
-      totalErrors,
-      pct,
-      errorQuestions,
-    };
-  });
- 
-  const completedCount = ruleStats.filter(r => r.completed).length;
-  const totalRules     = ruleStats.length;
-  const errorRules     = ruleStats
-    .filter(r => r.totalErrors > 0)
-    .sort((a, b) => b.totalErrors - a.totalErrors);
- 
-  return { ruleStats, completedCount, totalRules, errorRules };
-}
- 
 
 // ─── 2. Tələbə datasından grammar irəliləməsi hesabla ───────────────────────
 function calcGrammarProgressForStudent(userData) {
