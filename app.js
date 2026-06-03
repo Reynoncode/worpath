@@ -1211,6 +1211,7 @@ function handleExamFill(btnIdx, q) {
 
 // ── Word Match ────────────────────────────────────────────
 function renderExamWordMatch(q, container) {
+  container.className = 'quiz-body';
   examState.wm_pairs      = q.pairs;
   examState.wm_matched    = [];
   examState.wm_selected   = null;
