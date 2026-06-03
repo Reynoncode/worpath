@@ -813,26 +813,6 @@ async function _openClass(classId) {
   await renderClassDetail(classData, "class-detail-container");
 }
 
-const _openGrammarRulesClassroom = new Set();
-
-function _toggleGrammarRule(safeId) {
-  const body    = document.getElementById(`cr-gbody-${safeId}`);
-  const chevron = document.getElementById(`cr-gchev-${safeId}`);
-  const head    = document.getElementById(`cr-ghead-${safeId}`);
-  if (!body) return;
-
-  if (_openGrammarRulesClassroom.has(safeId)) {
-    _openGrammarRulesClassroom.delete(safeId);
-    body.style.display  = 'none';
-    if (chevron) chevron.textContent = '▼';
-    if (head) { head.style.borderRadius = '8px'; head.setAttribute('aria-expanded', 'false'); }
-  } else {
-    _openGrammarRulesClassroom.add(safeId);
-    body.style.display  = '';
-    if (chevron) chevron.textContent = '▲';
-    if (head) { head.style.borderRadius = '8px 8px 0 0'; head.setAttribute('aria-expanded', 'true'); }
-  }
-}
 
 // ─── Public API ─────────────────────────────────────────────────────────────
 window.ClassroomManager = {
