@@ -14265,7 +14265,7 @@ const PRONOUN_LEVEL = {
       tip: '"whose" heç vaxt "that" ilə əvəz edilə bilmir — bunu xatırla!',
     },
 
-    {{
+    {
   type: 'mini_check',
   questions: [
     {
