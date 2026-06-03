@@ -65,6 +65,45 @@ function calcProgress(userData) {
   return { levelData, totalLearned, correctRate, totalErrors, errorWords };
 }
 
+function calcGrammarProgressForStudent(userData) {
+  const grammarStats = userData.grammarStats || { rules: {} };
+  const allRules = Object.entries(grammarStats.rules || {});
+ 
+  const ruleStats = allRules.map(([ruleId, rule]) => {
+    const questions     = Object.entries(rule.questions || {});
+    const totalErrors   = questions.reduce((s, [, q]) => s + q.errors, 0);
+    const nodeTotal     = rule.total     || 0;
+    const nodeCompleted = rule.completed || 0;
+    const pct           = nodeTotal > 0
+      ? Math.min(100, Math.round((nodeCompleted / nodeTotal) * 100))
+      : 0;
+ 
+    const errorQuestions = questions
+      .filter(([, q]) => q.errors > 0)
+      .sort(([, a], [, b]) => b.errors - a.errors)
+      .map(([text, q]) => ({ text, ...q }));
+ 
+    return {
+      ruleId,
+      name:      rule.name || ruleId,
+      total:     nodeTotal,
+      completed: nodeCompleted,
+      totalErrors,
+      pct,
+      errorQuestions,
+    };
+  });
+ 
+  const completedCount = ruleStats.filter(r => r.completed).length;
+  const totalRules     = ruleStats.length;
+  const errorRules     = ruleStats
+    .filter(r => r.totalErrors > 0)
+    .sort((a, b) => b.totalErrors - a.totalErrors);
+ 
+  return { ruleStats, completedCount, totalRules, errorRules };
+}
+ 
+
 // ─── 2. Tələbə datasından grammar irəliləməsi hesabla ───────────────────────
 function calcGrammarProgressForStudent(userData) {
   const grammarStats = userData.grammarStats || { rules: {} };
@@ -108,14 +147,15 @@ function calcGrammarProgressForStudent(userData) {
 function renderStudentDropdown(userData, displayName) {
   const p  = calcProgress(userData);
   const gp = calcGrammarProgressForStudent(userData);
-
+ 
   const GRAMMAR_ACCENT = '#085041';
-
+ 
   const SEV_CFG = {
     critical: { label: "Kritik zəiflik", icon: "⚠️", bg: "#FFF1F0", border: "#FCA5A5", textColor: "#991B1B" },
     medium:   { label: "Orta səviyyə",   icon: "⚡", bg: "#FFFBEB", border: "#FCD34D", textColor: "#92400E" },
     light:    { label: "Yüngül səhv",    icon: "ℹ️", bg: "#F0FDF4", border: "#86EFAC", textColor: "#14532D" },
   };
+ 
 
   // ── Söz: Səviyyə irəliləmə sətirləri ──────────────────────────────────
   const levelRows = LEVELS.map(lv => {
@@ -811,9 +851,31 @@ async function _openClass(classId) {
   await renderClassDetail(classData, "class-detail-container");
 }
 
+const _openGrammarRulesClassroom = new Set();
+
+function _toggleGrammarRule(safeId) {
+  const body    = document.getElementById(`cr-gbody-${safeId}`);
+  const chevron = document.getElementById(`cr-gchev-${safeId}`);
+  const head    = document.getElementById(`cr-ghead-${safeId}`);
+  if (!body) return;
+
+  if (_openGrammarRulesClassroom.has(safeId)) {
+    _openGrammarRulesClassroom.delete(safeId);
+    body.style.display  = 'none';
+    if (chevron) chevron.textContent = '▼';
+    if (head) { head.style.borderRadius = '8px'; head.setAttribute('aria-expanded', 'false'); }
+  } else {
+    _openGrammarRulesClassroom.add(safeId);
+    body.style.display  = '';
+    if (chevron) chevron.textContent = '▲';
+    if (head) { head.style.borderRadius = '8px 8px 0 0'; head.setAttribute('aria-expanded', 'true'); }
+  }
+}
+
 // ─── Public API ─────────────────────────────────────────────────────────────
 window.ClassroomManager = {
   open: openClassroomModal,
+  _toggleGrammarRule, 
   _toggleStudent,
   _toggleAddStudent,
   _openHomeworkPanel,
