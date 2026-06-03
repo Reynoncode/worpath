@@ -279,16 +279,41 @@ const StatsPage = (() => {
   // ─── Grammar stats hesabla (localStorage-dan) ─────────────────────────────
   function getGrammarStats() {
     if (!window.GrammarStats) return null;
-    const gs = GrammarStats.getStats();
-    // ruleStats-a pct və correctQ əlavə et
-    gs.ruleStats = gs.ruleStats.map(rule => {
-      const totalQ   = rule.totalQuestions || 0;
-      const errorsQ  = rule.totalErrors || 0;
-      const correctQ = Math.max(0, totalQ - errorsQ);
-      const pct = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
-      return { ...rule, correctQ, pct };
+    const raw = GrammarStats.load();
+    const allRules = Object.entries(raw.rules || {});
+
+    const ruleStats = allRules.map(([ruleId, rule]) => {
+      const questions   = Object.entries(rule.questions || {});
+      const totalQ      = questions.length;
+      // Hər sualda ən azı 1 düzgün cavab verilib-verilmədiyinə bax
+      const correctQ    = questions.filter(([, q]) => q.correct > 0).length;
+      const totalErrors = questions.reduce((s, [, q]) => s + q.errors, 0);
+      const pct         = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
+
+      const errorQuestions = questions
+        .filter(([, q]) => q.errors > 0)
+        .sort(([, a], [, b]) => b.errors - a.errors)
+        .map(([text, q]) => ({ text, ...q }));
+
+      return {
+        ruleId,
+        name:           rule.name || ruleId,
+        completed:      rule.completed || false,
+        totalQuestions: totalQ,
+        correctQ,
+        totalErrors,
+        pct,
+        errorQuestions,
+      };
     });
-    return gs;
+
+    const completedCount = ruleStats.filter(r => r.completed).length;
+    const totalRules     = ruleStats.length;
+    const errorRules     = ruleStats
+      .filter(r => r.totalErrors > 0)
+      .sort((a, b) => b.totalErrors - a.totalErrors);
+
+    return { ruleStats, completedCount, totalRules, errorRules };
   }
 
   // ─── ANA RENDER FUNKSİYASI ────────────────────────────────────────────────
