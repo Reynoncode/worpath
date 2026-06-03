@@ -382,9 +382,6 @@ const StatsPage = (() => {
         <!-- Grammar başlığı -->
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
           <span style="font-size:18px;font-weight:700;color:${t.titleColor};">📖 Grammar</span>
-          ${gs.totalRules > 0
-            ? `<span style="font-size:12px;color:${t.faintText};">${gs.completedCount}/${gs.totalRules} tamamlandı</span>`
-            : ''}
         </div>
 
         <!-- Qayda irəliləmə cədvəli -->
