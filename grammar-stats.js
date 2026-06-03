@@ -128,13 +128,15 @@ const GrammarStats = (() => {
       };
     });
 
-    const completedCount = ruleStats.filter(r => r.completed >= r.total && r.total > 0).length;
+// grammar-stats.js → getStats() funksiyasında:
+
+    const grammarCompletedCount = ruleStats.filter(r => r.completed >= r.total && r.total > 0).length;
     const totalRules     = ruleStats.length;
     const errorRules     = ruleStats
       .filter(r => r.totalErrors > 0)
       .sort((a, b) => b.totalErrors - a.totalErrors);
-
-    return { ruleStats, completedCount, totalRules, errorRules };
+    
+    return { ruleStats, completedCount: grammarCompletedCount, totalRules, errorRules };
   }
 
   function reset() { localStorage.removeItem(KEY); }
