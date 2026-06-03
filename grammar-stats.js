@@ -1,38 +1,28 @@
 /**
  * WordPath — Grammar Statistika Mühərriki
- * Grammar suallarının cavablarını, irəliləməsini və səhvlərini izləyir.
- * localStorage-da "wordpath_grammar_stats" açarında saxlanılır.
+ * localStorage["wordpath_grammar_stats"] açarında saxlanılır.
  *
- * İSTİFADƏ:
- *   grammar-engine.js-də mini_check cavabı veriləndə:
- *     GrammarStats.recordAnswer(ruleId, ruleName, questionText, isCorrect)
- *
- *   Qayda tamamlananda (finishGrammarLesson içərisindən):
- *     GrammarStats.markRuleCompleted(ruleId, ruleName)
- *
- *   Statistika almaq üçün:
- *     GrammarStats.getStats()
+ * ruleId  = LEVELS[levelIdx].id   (məs: "grammar", "verbs")
+ * ruleName = LEVELS[levelIdx].name (məs: "NOUNS - İSİMLƏR")
+ * total   = həmin level-dəki section_divider-siz node sayı (path dairələri)
  */
 
 const GrammarStats = (() => {
 
   const KEY = "wordpath_grammar_stats";
 
-  // ─── Boş data strukturu ─────────────────────────────────────────────────
   function emptyData() {
-    return {
-      rules: {}
-      // rules["ruleId"] = {
-      //   name: "Qayda adı",
-      //   completed: false,
-      //   questions: {
-      //     "sual mətni": { attempts, correct, errors }
-      //   }
-      // }
-    };
+    return { rules: {} };
+    // rules["ruleId"] = {
+    //   name:      "NOUNS - İSİMLƏR",
+    //   total:     36,      ← path-dakı node sayı (section_divider xaric)
+    //   completed: 0,       ← neçə node tamamlandı
+    //   questions: {
+    //     "sual mətni": { attempts, correct, errors }
+    //   }
+    // }
   }
 
-  // ─── localStorage oxu / yaz ─────────────────────────────────────────────
   function load() {
     try {
       const raw = localStorage.getItem(KEY);
@@ -42,23 +32,34 @@ const GrammarStats = (() => {
 
   function save(data) {
     localStorage.setItem(KEY, JSON.stringify(data));
+
+    // Firestore sync (əgər auth varsa)
+    try {
+      if (window.auth?.currentUser && window.db) {
+        import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js")
+          .then(({ doc, setDoc }) => {
+            setDoc(
+              doc(window.db, "users", window.auth.currentUser.uid),
+              { grammarStats: data },
+              { merge: true }
+            );
+          });
+      }
+    } catch(_) {}
   }
 
   // ─── Cavab qeydiyyatı ───────────────────────────────────────────────────
-  // ruleId       — qaydanın unikal ID-si (məs: "a1_present_simple")
-  // ruleName     — qaydanın adı (məs: "Present Simple")
-  // questionText — sualın mətni (dropdown-da göstəriləcək)
-  // isCorrect    — true / false
-  function recordAnswer(ruleId, ruleName, questionText, isCorrect) {
+  function recordAnswer(ruleId, ruleName, total, questionText, isCorrect) {
     if (!ruleId || !questionText) return;
     const data = load();
 
     if (!data.rules[ruleId]) {
-      data.rules[ruleId] = { name: ruleName || ruleId, completed: false, questions: {} };
+      data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, questions: {} };
     }
 
     const rule = data.rules[ruleId];
-    rule.name = ruleName || rule.name; // adı yenilə
+    if (ruleName) rule.name  = ruleName;
+    if (total)    rule.total = total;
 
     if (!rule.questions[questionText]) {
       rule.questions[questionText] = { attempts: 0, correct: 0, errors: 0 };
@@ -66,24 +67,29 @@ const GrammarStats = (() => {
 
     const q = rule.questions[questionText];
     q.attempts++;
-    if (isCorrect) {
-      q.correct++;
-    } else {
-      q.errors++;
-    }
+    if (isCorrect) q.correct++;
+    else           q.errors++;
 
     save(data);
   }
 
-  // ─── Qayda tamamlandı işarəsi ───────────────────────────────────────────
-  function markRuleCompleted(ruleId, ruleName) {
+  // ─── Bir node (dərs/quiz) tamamlandı ────────────────────────────────────
+  // finishGrammarLesson hər dəfə çağırılanda +1 artır
+  function incrementCompleted(ruleId, ruleName, total) {
     if (!ruleId) return;
     const data = load();
+
     if (!data.rules[ruleId]) {
-      data.rules[ruleId] = { name: ruleName || ruleId, completed: false, questions: {} };
+      data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, questions: {} };
     }
-    data.rules[ruleId].completed = true;
-    if (ruleName) data.rules[ruleId].name = ruleName;
+
+    const rule = data.rules[ruleId];
+    if (ruleName) rule.name  = ruleName;
+    if (total)    rule.total = total;
+
+    // total-dan çox ola bilməz
+    rule.completed = Math.min(rule.total, (rule.completed || 0) + 1);
+
     save(data);
   }
 
@@ -92,12 +98,18 @@ const GrammarStats = (() => {
     const data = load();
     const allRules = Object.entries(data.rules);
 
-    // Hər qayda üçün summary
     const ruleStats = allRules.map(([ruleId, rule]) => {
-      const questions = Object.entries(rule.questions || {});
+      const questions   = Object.entries(rule.questions || {});
+      const totalQ      = questions.length;
+      const correctQ    = questions.filter(([, q]) => q.correct > 0).length;
       const totalErrors = questions.reduce((s, [, q]) => s + q.errors, 0);
 
-      // Səhv olan sualları topla
+      const nodeTotal     = rule.total     || 0;
+      const nodeCompleted = rule.completed || 0;
+      const pct = nodeTotal > 0
+        ? Math.min(100, Math.round((nodeCompleted / nodeTotal) * 100))
+        : 0;
+
       const errorQuestions = questions
         .filter(([, q]) => q.errors > 0)
         .sort(([, a], [, b]) => b.errors - a.errors)
@@ -105,38 +117,29 @@ const GrammarStats = (() => {
 
       return {
         ruleId,
-        name: rule.name,
-        completed: rule.completed || false,
-        totalQuestions: questions.length,
+        name:           rule.name || ruleId,
+        total:          nodeTotal,
+        completed:      nodeCompleted,
+        totalQuestions: totalQ,
+        correctQ,
         totalErrors,
+        pct,
         errorQuestions,
       };
     });
 
-    // İrəliləmə: tamamlanmış qaydalar
-    const completedCount = ruleStats.filter(r => r.completed).length;
-    const totalRules = ruleStats.length;
-
-    // Səhvli qaydalar (dropdown üçün)
-    const errorRules = ruleStats
+    const completedFully = ruleStats.filter(r => r.completed >= r.total && r.total > 0).length;
+    const totalRules     = ruleStats.length;
+    const errorRules     = ruleStats
       .filter(r => r.totalErrors > 0)
       .sort((a, b) => b.totalErrors - a.totalErrors);
 
-    return {
-      ruleStats,
-      completedCount,
-      totalRules,
-      errorRules,
-    };
+    return { ruleStats, completedFully, totalRules, errorRules };
   }
 
-  // ─── Sıfırla ────────────────────────────────────────────────────────────
-  function reset() {
-    localStorage.removeItem(KEY);
-  }
+  function reset() { localStorage.removeItem(KEY); }
 
-  // ─── Public API ─────────────────────────────────────────────────────────
-  return { recordAnswer, markRuleCompleted, getStats, load, reset };
+  return { recordAnswer, incrementCompleted, getStats, load, reset };
 
 })();
 
