@@ -3716,11 +3716,11 @@ function hideQuitModal() {
 function restartCurrentQuiz() {
   hideQuitModal();
   hideChanceModal();
-  if (quiz.mode === 'exam')           startExam(examState.levelIdx);
-  else if (quiz.mode === 'listening') startListeningQuiz(listeningState.levelIdx);
-  else if (quiz.mode === 'reading')   startReadingQuiz(quiz.levelIdx);
-  else if (quiz.mode === 'mini_check') startMiniCheck(quiz.levelIdx);
-  else                                startQuiz(quiz.levelIdx);
+  if (quiz.mode === 'exam')           startExam(examState.levelIdx, examState.quizIdx);
+  else if (quiz.mode === 'listening') startListeningQuiz(listeningState.levelIdx, listeningState.quizIdx);
+  else if (quiz.mode === 'reading')   startReadingQuiz(quiz.levelIdx, quiz.quizIdx);
+  else if (quiz.mode === 'kids')      startKidsQuiz(quiz.levelIdx, quiz.quizIdx);
+  else                                startQuiz(quiz.levelIdx, quiz.quizIdx);
 }
 elQuitBtn.addEventListener('click', showQuitModal);
 elQuitConfirm.addEventListener('click', () => {
