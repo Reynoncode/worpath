@@ -33,13 +33,11 @@
   window.handleGrammarMiniAnswer = function(btn, card, cardIdx) {
   if (_origMiniAnswer) _origMiniAnswer.call(this, btn, card, cardIdx);
   try {
-    const qi      = parseInt(btn.dataset.qi);
-    const chosen  = btn.dataset.opt;
-    const q       = card.questions[qi];
-    const correct = chosen === q.answer;
-    const rule    = _getRule();
-
-    // Card-ın title-ını tap (lesson card-ının title-ı)
+    const qi       = parseInt(btn.dataset.qi);
+    const chosen   = btn.dataset.opt;
+    const q        = card.questions[qi];
+    const correct  = chosen === q.answer;
+    const rule     = _getRule();
     const nodeTitle = card.title || '';
 
     if (window.GrammarStats && rule) {
