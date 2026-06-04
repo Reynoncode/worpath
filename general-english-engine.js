@@ -438,14 +438,13 @@ function renderGeneralEnglishPath(lvl, levelId) {
 // ============================================================
 
 function renderGeneralEnglishCards() {
-  const skillsPage = document.getElementById('skills-page-content');
-  if (!skillsPage) {
-    console.warn('GE: skills-page-content tapılmadı');
+  const container = document.getElementById('level-list');
+  if (!container) {
+    console.warn('GE: level-list tapılmadı');
     return;
   }
 
-  // Köhnə GE kartlarını sil (duplicate olmasın)
-  skillsPage.querySelectorAll('.level-card[data-ge]').forEach(c => c.remove());
+  container.querySelectorAll('.level-card[data-ge]').forEach(c => c.remove());
 
   GENERAL_ENGLISH_LEVELS.forEach(lvl => {
     const prog  = geLoadProgress();
@@ -484,7 +483,7 @@ function renderGeneralEnglishCards() {
       </div>`;
 
     card.querySelector('.level-header').addEventListener('click', () => toggleLevel(card));
-    skillsPage.appendChild(card);
+    container.appendChild(card);
   });
 
   _attachGeNodeListeners();
