@@ -1975,10 +1975,13 @@ function isExamItem(item, levelId, quizIdx) {
 }
 
 // ── Növbəti keçilə bilən quiz indeksini tap ───────────────
+// SONRA:
 function findNextPlayableQuiz(levelIdx, afterQuizIdx) {
   const lvl = LEVELS[levelIdx];
   for (let i = afterQuizIdx + 1; i < lvl.quizzes.length; i++) {
     const item = lvl.quizzes[i];
+    if (item && !Array.isArray(item) && item.type === 'section_divider') continue;
+    if (item && !Array.isArray(item) && item.type === 'grammar_lesson') return i;
     if (Array.isArray(item) && item.length >= 2) return i;
     if (isExamItem(item, lvl.id, i)) return i;
   }
