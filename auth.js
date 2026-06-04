@@ -703,8 +703,8 @@ async function _handlePhotoChange(event) {
   const ref = doc(db, "users", user.uid);
   await setDoc(ref, { photoURL: base64 }, { merge: true });
 
-  renderAuthButton({ ...user, photoURL: base64 });
-  _updateHeaderAvatar({ ...user, photoURL: base64 });
+  await renderAuthButton(user);
+  await _updateHeaderAvatar(user);
 }
 
 // ─── Adı saxla ───────────────────────────────────────────────────────────────
@@ -722,8 +722,8 @@ async function _saveName() {
   const msg = document.getElementById("profile-save-msg");
   if (msg) { msg.style.display = "block"; setTimeout(() => msg.style.display = "none", 2000); }
 
-  renderAuthButton({ ...user, displayName: name });
-  _updateHeaderAvatar({ ...user, displayName: name });
+  await renderAuthButton(user);
+  await _updateHeaderAvatar(user);
 }
 
 // ─── Çıxış təsdiqi ──────────────────────────────────────────────────────────
