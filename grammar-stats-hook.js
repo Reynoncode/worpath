@@ -31,20 +31,24 @@
   // ─── handleGrammarMiniAnswer hook ──────────────────────────────────────
   const _origMiniAnswer = window.handleGrammarMiniAnswer;
   window.handleGrammarMiniAnswer = function(btn, card, cardIdx) {
-    if (_origMiniAnswer) _origMiniAnswer.call(this, btn, card, cardIdx);
-    try {
-      const qi      = parseInt(btn.dataset.qi);
-      const chosen  = btn.dataset.opt;
-      const q       = card.questions[qi];
-      const correct = chosen === q.answer;
-      const rule    = _getRule();
-      if (window.GrammarStats && rule) {
-        GrammarStats.recordAnswer(rule.ruleId, rule.ruleName, rule.total, q.q, correct);
-      }
-    } catch(e) {
-      console.warn('GrammarStats hook (miniAnswer):', e);
+  if (_origMiniAnswer) _origMiniAnswer.call(this, btn, card, cardIdx);
+  try {
+    const qi      = parseInt(btn.dataset.qi);
+    const chosen  = btn.dataset.opt;
+    const q       = card.questions[qi];
+    const correct = chosen === q.answer;
+    const rule    = _getRule();
+
+    // Card-ın title-ını tap (lesson card-ının title-ı)
+    const nodeTitle = card.title || '';
+
+    if (window.GrammarStats && rule) {
+      GrammarStats.recordAnswer(rule.ruleId, rule.ruleName, rule.total, q.q, correct, nodeTitle);
     }
-  };
+  } catch(e) {
+    console.warn('GrammarStats hook (miniAnswer):', e);
+  }
+};
 
   // ─── finishGrammarLesson hook ───────────────────────────────────────────
   const _origFinish = window.finishGrammarLesson;
