@@ -2363,6 +2363,9 @@ LEVELS.forEach((lvl, li) => {
 } else if (lvl.id === 'exclamatory') {
   const grammarList = document.getElementById('grammar-list');
   if (grammarList) grammarList.appendChild(card);
+} else if (GENERAL_ENGLISH_LEVELS.some(l => l.id === lvl.id)) {
+  const geList = document.getElementById('ge-list');
+  if (geList) geList.appendChild(card);
 } else {
   elLevelList.appendChild(card);
 }
@@ -2715,6 +2718,10 @@ html += `
 }
 
 function renderQuizPath(lvl, li) {
+
+  if (GENERAL_ENGLISH_LEVELS.some(l => l.id === lvl.id)) {
+  return renderGeneralEnglishPath(lvl, lvl.id);
+  }
   if (lvl.id === 'reading') {
     return renderReadingPath(lvl, li);
   }
