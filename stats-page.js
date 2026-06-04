@@ -201,30 +201,21 @@ const StatsPage = (() => {
     const safeId = rule.ruleId.replace(/[^a-zA-Z0-9_]/g, '_');
     const isOpen = openGrammarRules.has(rule.ruleId);
 
-    let bg, border, textColor;
-    if (rule.totalErrors >= 3) {
-      bg = t.dark ? '#2a0c0c' : '#FFF1F0';
-      border = t.dark ? '#7a2020' : '#FCA5A5';
-      textColor = '#991B1B';
-    } else if (rule.totalErrors === 2) {
-      bg = t.dark ? '#2a1e08' : '#FFFBEB';
-      border = t.dark ? '#7a5a10' : '#FCD34D';
-      textColor = '#92400E';
-    } else {
-      bg = t.dark ? '#0a2418' : '#F0FDF4';
-      border = t.dark ? '#1a6a3a' : '#86EFAC';
-      textColor = '#14532D';
-    }
-
+    // Problem 1 & 2: sabit rənglər əvəzinə rule.color istifadə et
+    const ACCENT    = rule.color || '#085041';
+    const bg        = t.dark ? ACCENT + '28' : ACCENT + '12';
+    const border    = t.dark ? ACCENT + 'aa' : ACCENT + '88';
+    const textColor = ACCENT;
     const icon = rule.totalErrors >= 3 ? '⚠️' : rule.totalErrors === 2 ? '⚡' : 'ℹ️';
 
+    // Problem 3: nodeTitle varsa dərs adını göstər, yoxdursa attempts/correct
     const rows = rule.errorQuestions.map(q => `
       <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-bottom:1px solid ${t.rowBorder};">
         <div style="flex:1;min-width:0;">
           <div style="font-size:13px;font-weight:500;color:${t.wordColor};line-height:1.4;">${q.text}</div>
           <div style="font-size:11px;color:${t.faintText};margin-top:2px;">
-  ${q.nodeTitle ? `📖 ${q.nodeTitle}` : `${q.attempts} cəhd · ${q.correct} düzgün`}
-</div>
+            ${q.nodeTitle ? `📖 ${q.nodeTitle}` : `${q.attempts} cəhd · ${q.correct} düzgün`}
+          </div>
         </div>
         <div style="text-align:center;flex-shrink:0;">
           <div style="font-size:15px;font-weight:700;color:${textColor};">${q.errors}</div>
