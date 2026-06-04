@@ -62,7 +62,7 @@ function recordAnswer(ruleId, ruleName, total, questionText, isCorrect, nodeTitl
   if (total)    rule.total = total;
 
   if (!rule.questions[questionText]) {
-    rule.questions[questionText] = { attempts: 0, correct: 0, errors: 0, nodeTitle: nodeTitle || '' };
+    rule.questions[questionText] = { attempts: 0, correct: 0, errors: 0, nodeTitle: '' };
   }
 
   const q = rule.questions[questionText];
@@ -115,6 +115,7 @@ function recordAnswer(ruleId, ruleName, total, questionText, isCorrect, nodeTitl
         .filter(([, q]) => q.errors > 0)
         .sort(([, a], [, b]) => b.errors - a.errors)
         .map(([text, q]) => ({ text, nodeTitle: q.nodeTitle || '', ...q }));
+
 
       return {
         ruleId,
