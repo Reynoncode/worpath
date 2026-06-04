@@ -805,7 +805,543 @@ function finishKidsQuiz() {
     };
   }, 300);
 }
+// ============================================================
+//  WORDPATH — GENERAL ENGLISH ENGINE
+//  Bu hissəni engine.js-in sonuna əlavə et
+// ============================================================
 
+// ── State ─────────────────────────────────────────────────
+const geState = {
+  levelIdx:    null,
+  quizIdx:     null,
+  item:        null,
+  cardIdx:     0,
+  miniAnswers: {},
+  totalCards:  0,
+  locked:      false,
+};
+
+// ── Progress storage key ───────────────────────────────────
+const GE_PROGRESS_KEY = 'wordpath_ge_progress';
+
+function geLoadProgress() {
+  try {
+    return JSON.parse(localStorage.getItem(GE_PROGRESS_KEY) || '{}');
+  } catch (_) { return {}; }
+}
+
+function geSaveProgress(data) {
+  localStorage.setItem(GE_PROGRESS_KEY, JSON.stringify(data));
+}
+
+function geGetStatus(levelId, quizIdx) {
+  const prog = geLoadProgress();
+  return (prog[levelId] && prog[levelId][quizIdx]) || 'unlocked';
+}
+
+function geMarkCompleted(levelId, quizIdx) {
+  const prog = geLoadProgress();
+  if (!prog[levelId]) prog[levelId] = {};
+  prog[levelId][quizIdx] = 'completed';
+  geSaveProgress(prog);
+}
+
+function geFindNextPlayable(levelId, afterIdx) {
+  const lvl = GENERAL_ENGLISH_LEVELS.find(l => l.id === levelId);
+  if (!lvl) return null;
+  for (let i = afterIdx + 1; i < lvl.quizzes.length; i++) {
+    const item = lvl.quizzes[i];
+    if (item && item.type === 'grammar_lesson') return i;
+  }
+  return null;
+}
+
+// ============================================================
+//  START
+// ============================================================
+
+function startGeneralEnglishLesson(levelId, quizIdx) {
+  const lvl  = GENERAL_ENGLISH_LEVELS.find(l => l.id === levelId);
+  if (!lvl) return;
+  const item = lvl.quizzes[quizIdx];
+
+  if (!item || !item.cards || item.cards.length === 0) {
+    console.warn('GE lesson: cards yoxdur', quizIdx);
+    return;
+  }
+
+  geState.levelIdx    = levelId;
+  geState.quizIdx     = quizIdx;
+  geState.item        = item;
+  geState.cardIdx     = 0;
+  geState.miniAnswers = {};
+  geState.totalCards  = item.cards.length;
+  geState.locked      = false;
+
+  quiz.mode   = 'grammar';
+  quiz.locked = false;
+
+  showQuizScreen();
+  renderGeCard();
+}
+
+// ============================================================
+//  RENDER
+// ============================================================
+
+function renderGeCard() {
+  const item  = geState.item;
+  const idx   = geState.cardIdx;
+  const card  = item.cards[idx];
+  const total = geState.totalCards;
+
+  elProgressFill.style.width = `${(idx / total) * 100}%`;
+  elQCounter.textContent     = `${idx + 1}/${total}`;
+
+  const quizBody = document.querySelector('.quiz-body');
+  quizBody.className = 'quiz-body grammar-mode';
+
+  if (card.type === 'lesson') {
+    renderGeLesson(card, quizBody);
+  } else if (card.type === 'mini_check') {
+    renderGeMiniCheck(card, quizBody, idx);
+  } else if (card.type === 'badge') {
+    renderGeBadge(card, quizBody);
+  }
+}
+
+// ── Lesson kart ────────────────────────────────────────────
+function renderGeLesson(card, container) {
+  // Grammar engine-dəki eyni render funksiyasından istifadə edirik,
+  // sadəcə state fərqlidir — grammarState.cardIdx əvəzinə geState.cardIdx
+  const savedIdx = grammarState.cardIdx;
+  grammarState.cardIdx = geState.cardIdx;
+
+  renderGrammarLesson(card, container);
+
+  // listener-ləri GE navigasiyasına yönləndir
+  const nextBtn = document.getElementById('grammar-next-btn');
+  const backBtn = document.getElementById('grammar-back-btn');
+  if (nextBtn) { nextBtn.replaceWith(nextBtn.cloneNode(true)); }
+  if (backBtn) { backBtn.replaceWith(backBtn.cloneNode(true)); }
+
+  const nb = document.getElementById('grammar-next-btn');
+  const bb = document.getElementById('grammar-back-btn');
+  if (nb) nb.addEventListener('click', geNextCard);
+  if (bb) bb.addEventListener('click', gePrevCard);
+
+  grammarState.cardIdx = savedIdx;
+}
+
+// ── Mini check ─────────────────────────────────────────────
+function renderGeMiniCheck(card, container, cardIdx) {
+  const prevAnswers = geState.miniAnswers[cardIdx] || {};
+
+  let questionsHTML = card.questions.map((q, qi) => {
+    const answered = prevAnswers[qi] !== undefined;
+    const wasRight = prevAnswers[qi] === true;
+    return `
+      <div class="gmc-question ${answered ? (wasRight ? 'gmc-q-correct' : 'gmc-q-wrong') : ''}"
+           data-qi="${qi}">
+        <div class="gmc-q-text">${q.q}</div>
+        <div class="gmc-options" id="ge-opts-${qi}">
+          ${q.options.map((opt, oi) => {
+            let cls = 'gmc-opt-btn';
+            if (answered) {
+              if (opt === q.answer) cls += ' gmc-opt-correct';
+              else if (oi === prevAnswers[qi + '_chosen'] && opt !== q.answer) cls += ' gmc-opt-wrong';
+              cls += ' disabled';
+            }
+            return `<button class="${cls}" data-qi="${qi}" data-oi="${oi}" data-opt="${opt}"
+              ${answered ? 'disabled' : ''}>${opt}</button>`;
+          }).join('')}
+        </div>
+        ${answered ? `<div class="gmc-feedback ${wasRight ? 'gmc-fb-correct' : 'gmc-fb-wrong'}">
+          ${wasRight ? '✓ Düzgün!' : `✗ Düzgün cavab: <strong>${q.answer}</strong>`}
+        </div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  const hasPrev = geState.cardIdx > 0;
+  const backHTML = hasPrev ? `
+    <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+      Geri
+    </button>` : '';
+
+  container.innerHTML = `
+    <div class="grammar-minicheck-wrap">
+      <div class="gmc-header">
+        <div class="gmc-badge">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+          </svg>
+          Bilikləri yoxla
+        </div>
+        <div class="gmc-count">${card.questions.length} sual</div>
+      </div>
+      <div class="gmc-questions-list">${questionsHTML}</div>
+      <div class="grammar-nav-row">
+        ${backHTML}
+        <button class="grammar-next-btn" id="grammar-next-btn"
+                style="flex:${hasPrev ? '2' : '1'};">
+          Davam et
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  `;
+
+  container.querySelectorAll('.gmc-opt-btn:not(.disabled)').forEach(btn => {
+    btn.addEventListener('click', () => handleGeMiniAnswer(btn, card, cardIdx));
+  });
+
+  const nb = document.getElementById('grammar-next-btn');
+  const bb = document.getElementById('grammar-back-btn');
+  if (nb) nb.addEventListener('click', geNextCard);
+  if (bb) bb.addEventListener('click', gePrevCard);
+}
+
+function handleGeMiniAnswer(btn, card, cardIdx) {
+  if (geState.locked) return;
+
+  const qi     = parseInt(btn.dataset.qi);
+  const chosen = btn.dataset.opt;
+  const q      = card.questions[qi];
+  const correct = chosen === q.answer;
+
+  if (!geState.miniAnswers[cardIdx]) geState.miniAnswers[cardIdx] = {};
+  geState.miniAnswers[cardIdx][qi]             = correct;
+  geState.miniAnswers[cardIdx][qi + '_chosen'] = parseInt(btn.dataset.oi);
+
+  const optsWrap = document.getElementById(`ge-opts-${qi}`);
+  if (!optsWrap) return;
+
+  optsWrap.querySelectorAll('.gmc-opt-btn').forEach(b => {
+    b.disabled = true;
+    b.classList.add('disabled');
+    if (b.dataset.opt === q.answer) b.classList.add('gmc-opt-correct');
+    else if (b === btn && !correct) b.classList.add('gmc-opt-wrong');
+  });
+
+  const qEl = btn.closest('.gmc-question');
+  if (qEl) {
+    qEl.classList.add(correct ? 'gmc-q-correct' : 'gmc-q-wrong');
+    const fb = document.createElement('div');
+    fb.className = `gmc-feedback ${correct ? 'gmc-fb-correct' : 'gmc-fb-wrong'}`;
+    fb.innerHTML = correct ? '✓ Düzgün!' : `✗ Düzgün cavab: <strong>${q.answer}</strong>`;
+    qEl.appendChild(fb);
+  }
+}
+
+// ── Badge kart ─────────────────────────────────────────────
+function renderGeBadge(card, container) {
+  elProgressFill.style.width = '100%';
+
+  const isLast   = geState.cardIdx + 1 >= geState.totalCards;
+  const btnLabel = isLast ? 'Tamamla 🎉' : 'Növbəti bölüm →';
+  const hasPrev  = geState.cardIdx > 0;
+
+  container.innerHTML = `
+    <div class="grammar-badge-wrap">
+      <div class="grammar-badge-card">
+        <div class="gb-glow"></div>
+        <div class="gb-icon">${card.icon || '🏅'}</div>
+        <div class="gb-title">${card.title}</div>
+        <div class="gb-desc">${card.desc || ''}</div>
+        ${card.stats ? `
+          <div class="gb-stats">
+            ${card.stats.map(s => `
+              <div class="gb-stat-item">
+                <span class="gb-stat-num">${s.num}</span>
+                <span class="gb-stat-label">${s.label}</span>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+      </div>
+      <div class="grammar-nav-row">
+        ${hasPrev ? `
+          <button class="grammar-next-btn grammar-back-btn" id="grammar-back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            Geri
+          </button>` : ''}
+        <button class="grammar-next-btn${isLast ? ' grammar-finish-btn' : ''}"
+                id="grammar-next-btn" style="flex:${hasPrev ? '2' : '1'};">
+          ${btnLabel}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  `;
+
+  setTimeout(() => {
+    const badgeEl = container.querySelector('.grammar-badge-card');
+    if (badgeEl) badgeEl.classList.add('gb-animate');
+  }, 100);
+
+  const nb = document.getElementById('grammar-next-btn');
+  const bb = document.getElementById('grammar-back-btn');
+  if (nb) nb.addEventListener('click', geNextCard);
+  if (bb) bb.addEventListener('click', gePrevCard);
+}
+
+// ============================================================
+//  NAVİGASİYA
+// ============================================================
+
+function geNextCard() {
+  geState.cardIdx++;
+  if (geState.cardIdx >= geState.totalCards) {
+    finishGeLesson();
+    return;
+  }
+  renderGeCard();
+}
+
+function gePrevCard() {
+  if (geState.cardIdx <= 0) return;
+  geState.cardIdx--;
+  renderGeCard();
+}
+
+// ============================================================
+//  BİTİŞ
+// ============================================================
+
+function finishGeLesson() {
+  elProgressFill.style.width = '100%';
+
+  let totalQ = 0, correctQ = 0;
+  Object.values(geState.miniAnswers).forEach(obj => {
+    Object.entries(obj).forEach(([k, v]) => {
+      if (!k.includes('_chosen')) { totalQ++; if (v) correctQ++; }
+    });
+  });
+
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+    elResultStats.classList.remove('hidden');
+    elLevelResultCard.classList.add('hidden');
+
+    const pct = totalQ > 0 ? Math.round((correctQ / totalQ) * 100) : 100;
+
+    let emoji, title;
+    if (pct === 100)    { emoji = '🏆'; title = 'Əla!'; }
+    else if (pct >= 80) { emoji = '🎉'; title = 'Çox yaxşı!'; }
+    else if (pct >= 60) { emoji = '👍'; title = 'Pis deyil!'; }
+    else                { emoji = '📚'; title = 'Davam et!'; }
+
+    elResultEmoji.textContent = emoji;
+    elResultTitle.textContent = title;
+    elResultDesc.textContent  = geState.item.title;
+    elStatCorrect.textContent = correctQ;
+    elStatWrong.textContent   = totalQ - correctQ;
+    elStatPct.textContent     = `${pct}%`;
+
+    geMarkCompleted(geState.levelIdx, geState.quizIdx);
+
+    const nextIdx = geFindNextPlayable(geState.levelIdx, geState.quizIdx);
+
+    if (nextIdx !== null) {
+      elResultMainBtn.textContent = 'Növbəti →';
+      elResultMainBtn.onclick = () => {
+        startGeneralEnglishLesson(geState.levelIdx, nextIdx);
+        elResultScreen.classList.add('hidden');
+      };
+    } else {
+      elResultMainBtn.textContent = 'Ana səhifəyə qayıt';
+      elResultMainBtn.onclick = () => {
+        closeOverlays();
+        renderLevels();
+      };
+    }
+
+    elResultBackBtn.classList.remove('hidden');
+    elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+    elResultBackBtn.onclick = () => {
+      closeOverlays();
+      renderLevels();
+    };
+  }, 300);
+}
+
+// ============================================================
+//  PATH RENDER
+// ============================================================
+
+function renderGeneralEnglishPath(lvl, levelId) {
+  let html = '<div class="quiz-path grammar-path">';
+
+  lvl.quizzes.forEach((item, qi) => {
+    const status = geGetStatus(levelId, qi);
+    const isDone = status === 'completed';
+
+    if (qi > 0) html += '<div class="path-line"></div>';
+
+    html += `<div class="path-node-wrap">`;
+
+    const nodeClass = `path-node grammar-lesson-node`;
+
+    if (isDone) {
+      html += `
+        <div class="${nodeClass} level-done"
+             data-quiz-idx="${qi}" data-level-id="${levelId}" data-status="completed"
+             style="--lvl-color:${lvl.color}">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+               stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>`;
+    } else {
+      html += `
+        <div class="${nodeClass} unlocked pulse"
+             data-quiz-idx="${qi}" data-level-id="${levelId}" data-status="unlocked"
+             style="color:${lvl.color}; border-color:${lvl.color}; background:${lvl.color}18;">
+          <i class="ti ti-book-2"></i>
+        </div>`;
+    }
+
+    html += `<div class="node-label">${item.title || `Dərs ${qi + 1}`}</div>`;
+    html += `</div>`;
+  });
+
+  html += '</div>';
+  return html;
+}
+
+// ============================================================
+//  NODE CLICK INTERCEPT — renderLevels-ə hook
+// ============================================================
+
+// renderLevels çağırıldıqdan sonra GE kartlarına click listener əlavə edir
+const _origRenderLevels = window.renderLevels || null;
+
+function _attachGeNodeListeners() {
+  document.querySelectorAll('.path-node[data-level-id]').forEach(node => {
+    // artıq listener varsa keç
+    if (node.dataset.geListened) return;
+    node.dataset.geListened = '1';
+
+    node.addEventListener('click', () => {
+      const levelId = node.dataset.levelId;
+      const qi      = parseInt(node.dataset.quizIdx, 10);
+      const status  = node.dataset.status;
+
+      if (status === 'locked') {
+        showToast('Əvvəlki dərsi tamamla 🔒');
+        return;
+      }
+
+      startGeneralEnglishLesson(levelId, qi);
+    });
+  });
+}
+
+// MutationObserver ilə skills-page-content-ə yeni kartlar əlavə olunanda listener qoşuq
+(function () {
+  const target = document.getElementById('skills-page-content');
+  if (!target) {
+    // DOM hələ hazır deyilsə, load-da cəhd et
+    window.addEventListener('load', () => {
+      const t = document.getElementById('skills-page-content');
+      if (t) _observeSkillsPage(t);
+    });
+    return;
+  }
+  _observeSkillsPage(target);
+})();
+
+function _observeSkillsPage(target) {
+  const observer = new MutationObserver(() => _attachGeNodeListeners());
+  observer.observe(target, { childList: true, subtree: true });
+  // İlk render üçün
+  _attachGeNodeListeners();
+}
+
+// ============================================================
+//  renderLevels-ə GE kartlarını əlavə et
+// ============================================================
+
+// app.js-dəki renderLevels funksiyası LEVELS array-ini gəzir.
+// GE kartları GENERAL_ENGLISH_LEVELS-dədir, ona görə renderLevels-dən sonra
+// ayrıca render edirik.
+
+function renderGeneralEnglishCards() {
+  const skillsPage = document.getElementById('skills-page-content');
+  if (!skillsPage) return;
+
+  // Köhnə GE kartlarını sil
+  skillsPage.querySelectorAll('.level-card[data-ge]').forEach(c => c.remove());
+
+  GENERAL_ENGLISH_LEVELS.forEach(lvl => {
+    const prog   = geLoadProgress();
+    const done   = prog[lvl.id] ? Object.values(prog[lvl.id]).filter(s => s === 'completed').length : 0;
+    const total  = lvl.quizzes.length;
+
+    const card = document.createElement('div');
+    card.className = 'level-card';
+    card.dataset.ge    = '1';
+    card.dataset.level = lvl.id;
+
+    card.innerHTML = `
+      <div class="level-header" role="button" aria-expanded="false">
+        <div class="level-bar" style="background:${lvl.color}"></div>
+        <span class="level-icon" style="
+          background:${lvl.color}18;
+          border:1.5px solid ${lvl.color}44;
+          color:${lvl.color};
+          width:42px; height:42px; border-radius:10px;
+          display:flex; align-items:center; justify-content:center;
+          flex-shrink:0; font-size:20px;">
+          ${lvl.icon}
+        </span>
+        <div class="level-info">
+          <div class="level-name">${lvl.name}</div>
+          <div class="level-meta">${done} / ${total} tamamlandı</div>
+        </div>
+        <svg class="level-chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+      <div class="level-body">
+        ${renderGeneralEnglishPath(lvl, lvl.id)}
+      </div>
+    `;
+
+    card.querySelector('.level-header').addEventListener('click', () => toggleLevel(card));
+    skillsPage.appendChild(card);
+  });
+
+  _attachGeNodeListeners();
+}
+
+// renderLevels-i override et — orijinalı çağırıb GE kartlarını da əlavə edirik
+const __origRenderLevels = window.renderLevels;
+window.renderLevels = function () {
+  __origRenderLevels();
+  renderGeneralEnglishCards();
+};
+
+// ── Global export ─────────────────────────────────────────
+window.startGeneralEnglishLesson  = startGeneralEnglishLesson;
+window.renderGeneralEnglishCards  = renderGeneralEnglishCards;
+window.geState                    = geState;
 window.startKidsQuiz    = startKidsQuiz;
 window.kidsHandleAnswer = kidsHandleAnswer;
 window.kidsPlayAudio    = kidsPlayAudio;
