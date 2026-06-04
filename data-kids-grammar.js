@@ -10155,21 +10155,11 @@ const SEQUENCE_TENSES_LEVEL = {
       ],
     },
 
-    // ── Quiz: əsas anlayış ───────────────────────────────
-  {
-  type: 'mini_check',
-  questions: [
+    
+    // ── Mini-check ───────────────────────────────────────
     {
-      q: '"I heard that he ___ ill." — düzgün forma hansıdır?',
-      options: ['is', 'will be', 'was', 'has been'],
-      answer: 'was',
-    },
-    {
-      q: 'Zamanların uzlaşması hansı cümlə növünə aiddir?',
-      options: ['Sadə cümlə', 'Tabeli mürəkkəb cümlə', 'Tabesiz mürəkkəb cümlə', 'Sual cümləsi'],
-      answer: 'Tabeli mürəkkəb cümlə',
-    },
-  ],
+      type: 'mini_check',
+      questions: [
         {
           q: 'Zamanların uzlaşması qaydası nə vaxt tətbiq olunur?',
           options: [
