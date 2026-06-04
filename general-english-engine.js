@@ -436,9 +436,8 @@ function renderGeneralEnglishPath(lvl, levelId) {
 // ============================================================
 //  CARDS RENDER + renderLevels HOOK
 // ============================================================
-
 function renderGeneralEnglishCards() {
-  const container = document.getElementById('ge-list');  // ← ge-list
+  const container = document.getElementById('ge-list');
   if (!container) {
     console.warn('GE: ge-list tapılmadı');
     return;
@@ -454,9 +453,9 @@ function renderGeneralEnglishCards() {
     const total = lvl.quizzes.length;
 
     const card = document.createElement('div');
-    card.className      = 'level-card';
-    card.dataset.ge     = '1';
-    card.dataset.level  = lvl.id;
+    card.className     = 'level-card';
+    card.dataset.ge    = '1';
+    card.dataset.level = lvl.id;
 
     card.innerHTML = `
       <div class="level-header" role="button" aria-expanded="false">
@@ -478,11 +477,29 @@ function renderGeneralEnglishCards() {
           <polyline points="6 9 12 15 18 9"/>
         </svg>
       </div>
-      <div class="level-body">
+      <div class="level-body" style="display:none;">
         ${renderGeneralEnglishPath(lvl, lvl.id)}
       </div>`;
 
-    card.querySelector('.level-header').addEventListener('click', () => toggleLevel(card));
+    card.querySelector('.level-header').addEventListener('click', () => {
+      const body    = card.querySelector('.level-body');
+      const chevron = card.querySelector('.level-chevron');
+      const isOpen  = card.classList.contains('open');
+
+      document.querySelectorAll('#ge-list .level-card.open').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.level-body').style.display = 'none';
+        const ch = c.querySelector('.level-chevron');
+        if (ch) ch.style.transform = '';
+      });
+
+      if (!isOpen) {
+        card.classList.add('open');
+        body.style.display = 'block';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      }
+    });
+
     container.appendChild(card);
   });
 
