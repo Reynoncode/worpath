@@ -529,7 +529,9 @@ function _attachGeNodeListeners() {
 })();
 
 window.addEventListener('renderLevelsDone', function() {
-  renderGeneralEnglishCards();
+  requestAnimationFrame(function() {
+    renderGeneralEnglishCards();
+  });
 });
 // ── Global exports ──────────────────────────────────────────
 window.startGeneralEnglishLesson = startGeneralEnglishLesson;
