@@ -173,13 +173,12 @@ const StatsPage = (() => {
 
   // ─── Grammar: qayda irəliləmə sətri ──────────────────────────────────────
   function renderGrammarProgressRow(rule, t) {
-    const ACCENT = '#085041';
+    const ACCENT = rule.color || '#085041';
     const isDone  = rule.total > 0 && rule.completed >= rule.total;
     const color   = rule.pct > 0 ? ACCENT : t.faintText;
     const badge   = isDone
-      ? `<span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px;background:#E1F5EE;color:#085041;flex-shrink:0;">✓ Tamamlandı</span>`
+      ? `<span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px;background:#E1F5EE;color:${ACCENT};flex-shrink:0;">✓ Tamamlandı</span>`
       : '';
-
     return `
       <div style="margin-bottom:12px;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:5px;flex-wrap:wrap;">
