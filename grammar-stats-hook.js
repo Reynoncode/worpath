@@ -3,7 +3,6 @@
  * grammar-engine.js-dən SONRA, grammar-stats.js-dən SONRA yüklənməlidir.
  */
 (function patchGrammarStats() {
-
   // ─── Köməkçi: cari qayda məlumatı ──────────────────────────────────────
   function _getRule() {
     const state = window.grammarState;
@@ -27,6 +26,22 @@
     } catch(_) { return null; }
   }
 
+  // ─── Köməkçi: mini_check-dən əvvəlki lesson-un title-ı ────────────────
+  function _getNodeTitle(card) {
+    let nodeTitle = card.title || '';
+    if (!nodeTitle) {
+      const state = window.grammarState;
+      const cards = state?.item?.cards || [];
+      for (let i = state.cardIdx - 1; i >= 0; i--) {
+        if (cards[i]?.type === 'lesson' && cards[i]?.title) {
+          nodeTitle = cards[i].title;
+          break;
+        }
+      }
+    }
+    return nodeTitle;
+  }
+
   // ─── handleGrammarMiniAnswer hook ──────────────────────────────────────
   const _origMiniAnswer = window.handleGrammarMiniAnswer;
   window.handleGrammarMiniAnswer = function(btn, card, cardIdx) {
@@ -37,7 +52,7 @@
       const q         = card.questions[qi];
       const correct   = chosen === q.answer;
       const rule      = _getRule();
-      const nodeTitle = card.title || '';
+      const nodeTitle = _getNodeTitle(card);
       if (window.GrammarStats && rule) {
         GrammarStats.recordAnswer(
           rule.ruleId,
@@ -72,5 +87,4 @@
     }
     if (_origFinish) _origFinish.call(this);
   };
-
 })();
