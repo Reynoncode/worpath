@@ -477,7 +477,12 @@ function finishGrammarLesson() {
     if (nextPlayable !== null) {
       elResultMainBtn.textContent = 'Növbəti →';
       elResultMainBtn.onclick = () => {
-        startQuiz(grammarState.levelIdx, nextPlayable);
+        const nextItem = LEVELS[grammarState.levelIdx].quizzes[nextPlayable];
+        if (nextItem && !Array.isArray(nextItem) && nextItem.type === 'grammar_lesson') {
+          startGrammarLesson(grammarState.levelIdx, nextPlayable);
+        } else {
+          startQuiz(grammarState.levelIdx, nextPlayable);
+        }
         elResultScreen.classList.add('hidden');
       };
     } else {
