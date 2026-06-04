@@ -235,11 +235,14 @@ if (gp.ruleStats.length > 0) {
 
       const icon = rule.totalErrors >= 3 ? '⚠️' : rule.totalErrors === 2 ? '⚡' : 'ℹ️';
 
+      
       const rows = rule.errorQuestions.map(q => `
         <div style="display:flex;align-items:flex-start;gap:8px;padding:8px 12px;border-bottom:1px solid #F3F4F6;">
           <div style="flex:1;min-width:0;">
             <div style="font-size:12px;font-weight:500;color:#1A1A1A;line-height:1.4;">${q.text}</div>
-            <div style="font-size:10px;color:#9CA3AF;margin-top:1px;">${q.attempts} cəhd · ${q.correct} düzgün</div>
+            <div style="font-size:10px;color:#9CA3AF;margin-top:1px;">
+              ${q.nodeTitle ? `📖 ${q.nodeTitle}` : `${q.attempts} cəhd · ${q.correct} düzgün`}
+            </div>
           </div>
           <div style="text-align:center;flex-shrink:0;">
             <div style="font-size:14px;font-weight:700;color:${textColor};">${q.errors}</div>
@@ -247,7 +250,7 @@ if (gp.ruleStats.length > 0) {
           </div>
         </div>
       `).join('');
-
+      
       return `
         <div style="margin-bottom:6px;">
           <button
