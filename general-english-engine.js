@@ -549,8 +549,6 @@ function _renderGePage() {
   const container = document.getElementById('ge-list');
   if (!container) return;
 
-  // Listening və Reading kartları artıq ge-list-dədirsə (app.js tərəfindən),
-  // GE kartlarını onların ARDINA əlavə et
   container.querySelectorAll('.level-card[data-ge]').forEach(c => c.remove());
 
   GENERAL_ENGLISH_LEVELS.forEach(lvl => {
@@ -585,17 +583,34 @@ function _renderGePage() {
           <polyline points="6 9 12 15 18 9"/>
         </svg>
       </div>
-      <div class="level-body">
+      <div class="level-body" style="display:none;">
         ${renderGeneralEnglishPath(lvl, lvl.id)}
       </div>`;
 
-    card.querySelector('.level-header').addEventListener('click', () => toggleLevel(card));
-    container.appendChild(card);  // append — Listening/Reading'in ARDINA
+    card.querySelector('.level-header').addEventListener('click', () => {
+      const body    = card.querySelector('.level-body');
+      const chevron = card.querySelector('.level-chevron');
+      const isOpen  = card.classList.contains('open');
+
+      document.querySelectorAll('#ge-list .level-card.open').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.level-body').style.display = 'none';
+        const ch = c.querySelector('.level-chevron');
+        if (ch) ch.style.transform = '';
+      });
+
+      if (!isOpen) {
+        card.classList.add('open');
+        body.style.display = 'block';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      }
+    });
+
+    container.appendChild(card);
   });
 
   _attachGeNodeListeners();
 }
-
 // app.js renderLevels() bitince tetiklenir
 window.addEventListener('renderLevelsDone', function() {
   requestAnimationFrame(_renderGePage);
