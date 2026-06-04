@@ -531,17 +531,21 @@ function _attachGeNodeListeners() {
 // ── renderLevels override ───────────────────────────────────
 // app.js-dəki orijinal renderLevels-i saxla, sonra GE kartlarını əlavə et
 (function _patchRenderLevels() {
-  const _orig = window.renderLevels;
-  if (typeof _orig !== 'function') {
-    console.warn('GE: window.renderLevels tapılmadı — patch edilmədi');
-    return;
-  }
-  window.renderLevels = function () {
-    _orig();
+  function tryPatch() {
+    const _orig = window.renderLevels;
+    if (typeof _orig !== 'function') {
+      setTimeout(tryPatch, 50); // hər 50ms-də yenidən yoxla
+      return;
+    }
+    window.renderLevels = function () {
+      _orig();
+      renderGeneralEnglishCards();
+    };
+    // Artıq hazırdırsa, bir dəfə çağır
     renderGeneralEnglishCards();
-  };
+  }
+  tryPatch();
 })();
-
 // ── Global exports ──────────────────────────────────────────
 window.startGeneralEnglishLesson = startGeneralEnglishLesson;
 window.renderGeneralEnglishCards = renderGeneralEnglishCards;
