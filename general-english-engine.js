@@ -438,9 +438,9 @@ function renderGeneralEnglishPath(lvl, levelId) {
 // ============================================================
 
 function renderGeneralEnglishCards() {
-  const container = document.getElementById('level-list');
+  const container = document.getElementById('ge-list');  // ← ge-list
   if (!container) {
-    console.warn('GE: level-list tapılmadı');
+    console.warn('GE: ge-list tapılmadı');
     return;
   }
 
