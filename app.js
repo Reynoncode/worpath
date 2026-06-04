@@ -2363,6 +2363,7 @@ LEVELS.forEach((lvl, li) => {
   elLevelList.appendChild(card);
 }
   });
+  window.dispatchEvent(new CustomEvent('renderLevelsDone'));
 }
 
 // ============================================================
