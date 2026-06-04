@@ -591,6 +591,6 @@ if (document.readyState === 'complete') {
   window.addEventListener('load', () => requestAnimationFrame(_renderGePage));
 }
 // ── Global exports ──────────────────────────────────────────
+// ── Global exports ──────────────────────────────────────────
 window.startGeneralEnglishLesson = startGeneralEnglishLesson;
-window.renderGeneralEnglishCards = renderGeneralEnglishCards;
 window.geState                   = geState;
