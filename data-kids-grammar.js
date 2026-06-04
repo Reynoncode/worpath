@@ -10156,15 +10156,20 @@ const SEQUENCE_TENSES_LEVEL = {
     },
 
     // ── Quiz: əsas anlayış ───────────────────────────────
-    { en: 'Baş cümlə keçmişdədirsə budaq cümlə hansı zamanda olur?',  tr: 'Keçmiş',         wrong: 'İndiki'       },
-    { en: '"I heard that he was ill." — uzlaşma varmı?',              tr: 'Bəli',            wrong: 'Xeyr'         },
-    { en: 'Bu hadisənin adı nədir?',                                   tr: 'Zamanların uzlaşması', wrong: 'Zamanların növləri' },
-    { en: '"I heard that he is ill." — uzlaşma düzdürmü?',            tr: 'Xeyr',            wrong: 'Bəli'         },
-
-    // ── Mini-check ───────────────────────────────────────
+  {
+  type: 'mini_check',
+  questions: [
     {
-      type: 'mini_check',
-      questions: [
+      q: '"I heard that he ___ ill." — düzgün forma hansıdır?',
+      options: ['is', 'will be', 'was', 'has been'],
+      answer: 'was',
+    },
+    {
+      q: 'Zamanların uzlaşması hansı cümlə növünə aiddir?',
+      options: ['Sadə cümlə', 'Tabeli mürəkkəb cümlə', 'Tabesiz mürəkkəb cümlə', 'Sual cümləsi'],
+      answer: 'Tabeli mürəkkəb cümlə',
+    },
+  ],
         {
           q: 'Zamanların uzlaşması qaydası nə vaxt tətbiq olunur?',
           options: [
