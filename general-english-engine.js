@@ -528,11 +528,68 @@ function _attachGeNodeListeners() {
   }
 })();
 
-window.addEventListener('renderLevelsDone', function() {
-  requestAnimationFrame(function() {
-    renderGeneralEnglishCards();
+function _renderGePage() {
+  const container = document.getElementById('ge-list');
+  if (!container) return;
+
+  // Listening və Reading kartları artıq ge-list-dədirsə (app.js tərəfindən),
+  // GE kartlarını onların ARDINA əlavə et
+  container.querySelectorAll('.level-card[data-ge]').forEach(c => c.remove());
+
+  GENERAL_ENGLISH_LEVELS.forEach(lvl => {
+    const prog  = geLoadProgress();
+    const done  = prog[lvl.id]
+      ? Object.values(prog[lvl.id]).filter(s => s === 'completed').length
+      : 0;
+    const total = lvl.quizzes.length;
+
+    const card = document.createElement('div');
+    card.className     = 'level-card';
+    card.dataset.ge    = '1';
+    card.dataset.level = lvl.id;
+
+    card.innerHTML = `
+      <div class="level-header" role="button" aria-expanded="false">
+        <div class="level-bar" style="background:${lvl.color}"></div>
+        <span class="level-icon" style="
+          background:${lvl.color}18;
+          border:1.5px solid ${lvl.color}44;
+          color:${lvl.color};
+          width:42px; height:42px; border-radius:10px;
+          display:flex; align-items:center; justify-content:center;
+          flex-shrink:0; font-size:20px;">
+          ${lvl.icon}
+        </span>
+        <div class="level-info">
+          <div class="level-name">${lvl.name}</div>
+          <div class="level-meta">${done} / ${total} tamamlandı</div>
+        </div>
+        <svg class="level-chevron" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </div>
+      <div class="level-body">
+        ${renderGeneralEnglishPath(lvl, lvl.id)}
+      </div>`;
+
+    card.querySelector('.level-header').addEventListener('click', () => toggleLevel(card));
+    container.appendChild(card);  // append — Listening/Reading'in ARDINA
   });
+
+  _attachGeNodeListeners();
+}
+
+// app.js renderLevels() bitince tetiklenir
+window.addEventListener('renderLevelsDone', function() {
+  requestAnimationFrame(_renderGePage);
 });
+
+// Səhifə yükləndikdə də bir dəfə çalışdır (ehtiyat)
+if (document.readyState === 'complete') {
+  requestAnimationFrame(_renderGePage);
+} else {
+  window.addEventListener('load', () => requestAnimationFrame(_renderGePage));
+}
 // ── Global exports ──────────────────────────────────────────
 window.startGeneralEnglishLesson = startGeneralEnglishLesson;
 window.renderGeneralEnglishCards = renderGeneralEnglishCards;
