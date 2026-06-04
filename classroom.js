@@ -67,6 +67,7 @@ function calcProgress(userData) {
 
 
 // ─── 2. Tələbə datasından grammar irəliləməsi hesabla ───────────────────────
+// YENİ:
 function calcGrammarProgressForStudent(userData) {
   const grammarStats = userData.grammarStats || { rules: {} };
   const allRules = Object.entries(grammarStats.rules || {});
@@ -75,9 +76,16 @@ function calcGrammarProgressForStudent(userData) {
     const questions   = Object.entries(rule.questions || {});
     const totalQ      = questions.length;
     const totalErrors = questions.reduce((s, [, q]) => s + q.errors, 0);
-    // Ən azı 1 dəfə düzgün cavablandırılmış sualların sayı
     const correctQ    = questions.filter(([, q]) => q.correct > 0).length;
-    const pct         = totalQ > 0 ? Math.min(100, Math.round((correctQ / totalQ) * 100)) : 0;
+
+    // completed və total node sayından pct hesabla (grammar-stats.js ilə eyni məntiqdə)
+    const nodeTotal     = rule.total     || 0;
+    const nodeCompleted = rule.completed || 0;
+    const pct = nodeTotal > 0
+      ? Math.min(100, Math.round((nodeCompleted / nodeTotal) * 100))
+      : 0;
+
+    const isDone = nodeTotal > 0 && nodeCompleted >= nodeTotal;
 
     const errorQuestions = questions
       .filter(([, q]) => q.errors > 0)
@@ -86,17 +94,20 @@ function calcGrammarProgressForStudent(userData) {
 
     return {
       ruleId,
-      name: rule.name || ruleId,
-      completed: rule.completed || false,
+      name:           rule.name  || ruleId,
+      color:          rule.color || '#085041',
+      total:          nodeTotal,
+      completed:      nodeCompleted,
       totalQuestions: totalQ,
       correctQ,
       totalErrors,
       pct,
+      isDone,
       errorQuestions,
     };
   });
 
-  const completedCount = ruleStats.filter(r => r.completed).length;
+  const completedCount = ruleStats.filter(r => r.isDone).length;
   const totalRules     = ruleStats.length;
   const errorRules     = ruleStats
     .filter(r => r.totalErrors > 0)
@@ -177,35 +188,34 @@ const errHTML = ["critical", "medium", "light"].filter(s => grouped[s].length > 
   }).join("") || `<div style="text-align:center;color:#14532D;font-size:13px;padding:16px;">🎉 Heç bir söz səhvi yoxdur!</div>`;
 
   // ── Grammar: Qayda irəliləmə sətirləri ────────────────────────────────
-  let grammarProgressRows = '';
-  if (gp.ruleStats.length > 0) {
-    grammarProgressRows = gp.ruleStats.map(rule => {
-      const color = rule.completed
-        ? GRAMMAR_ACCENT
-        : (rule.pct > 0 ? GRAMMAR_ACCENT : '#C4B8A8');
-      const badge = rule.completed
-        ? `<span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:#E1F5EE;color:#085041;">✓</span>`
-        : '';
-      return `
-        <div style="margin-bottom:11px;">
-          <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;flex-wrap:wrap;">
-            <span style="font-size:12px;font-weight:600;color:#1A1A1A;flex:1;min-width:0;line-height:1.3;">${rule.name}</span>
-            ${badge}
-          </div>
-          <div style="display:flex;align-items:center;gap:7px;">
-            <div style="flex:1;height:5px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
-              <div style="width:${rule.pct}%;height:100%;background:${GRAMMAR_ACCENT};border-radius:99px;"></div>
-            </div>
-            <span style="font-size:11px;font-weight:600;width:30px;text-align:right;color:${color};">${rule.pct}%</span>
-            <span style="font-size:10px;color:#9CA3AF;width:44px;text-align:right;">${rule.correctQ}/${rule.totalQuestions}</span>
-          </div>
+let grammarProgressRows = '';
+if (gp.ruleStats.length > 0) {
+  grammarProgressRows = gp.ruleStats.map(rule => {
+    const ACCENT = rule.color || '#085041';
+    const color  = rule.pct > 0 ? ACCENT : '#C4B8A8';
+    const badge  = rule.isDone
+      ? `<span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:99px;background:#E1F5EE;color:${ACCENT};">✓</span>`
+      : '';
+    return `
+      <div style="margin-bottom:11px;">
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:4px;flex-wrap:wrap;">
+          <span style="font-size:12px;font-weight:600;color:#1A1A1A;flex:1;min-width:0;line-height:1.3;">${rule.name}</span>
+          ${badge}
         </div>
-      `;
-    }).join('');
-  } else {
-    grammarProgressRows = `<div style="text-align:center;color:#9CA3AF;font-size:12px;padding:10px 0;">Hələ başlanılmayıb</div>`;
-  }
-
+        <div style="display:flex;align-items:center;gap:7px;">
+          <div style="flex:1;height:5px;background:#F0ECE4;border-radius:99px;overflow:hidden;">
+            <div style="width:${rule.pct}%;height:100%;background:${ACCENT};border-radius:99px;"></div>
+          </div>
+          <span style="font-size:11px;font-weight:600;width:30px;text-align:right;color:${color};">${rule.pct}%</span>
+          <span style="font-size:10px;color:#9CA3AF;width:44px;text-align:right;">${rule.completed}/${rule.total}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+} else {
+  grammarProgressRows = `<div style="text-align:center;color:#9CA3AF;font-size:12px;padding:10px 0;">Hələ başlanılmayıb</div>`;
+}
+  
   // ── Grammar: Qayda səhv analizi dropdown-ları ─────────────────────────
   const studentKey = (displayName || 'st').replace(/[^a-zA-Z0-9]/g, '_').toLowerCase();
 
