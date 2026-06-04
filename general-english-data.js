@@ -1021,6 +1021,5 @@ const GENERAL_ENGLISH_LEVELS = [
   },
 
 ];
-
-// ── Global export ─────────────────────────────────────────
+GENERAL_ENGLISH_LEVELS.forEach(lvl => LEVELS.push(lvl));
 window.GENERAL_ENGLISH_LEVELS = GENERAL_ENGLISH_LEVELS;
