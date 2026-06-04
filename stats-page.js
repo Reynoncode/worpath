@@ -223,7 +223,9 @@ const StatsPage = (() => {
       <div style="display:flex;align-items:flex-start;gap:10px;padding:10px 14px;border-bottom:1px solid ${t.rowBorder};">
         <div style="flex:1;min-width:0;">
           <div style="font-size:13px;font-weight:500;color:${t.wordColor};line-height:1.4;">${q.text}</div>
-          <div style="font-size:11px;color:${t.faintText};margin-top:2px;">${q.attempts} cəhd · ${q.correct} düzgün</div>
+          <div style="font-size:11px;color:${t.faintText};margin-top:2px;">
+  ${q.nodeTitle ? `📖 ${q.nodeTitle}` : `${q.attempts} cəhd · ${q.correct} düzgün`}
+</div>
         </div>
         <div style="text-align:center;flex-shrink:0;">
           <div style="font-size:15px;font-weight:700;color:${textColor};">${q.errors}</div>
