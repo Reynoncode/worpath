@@ -1,10 +1,5 @@
 /**
  * WordPath — Grammar Statistika Mühərriki
- * localStorage["wordpath_grammar_stats"] açarında saxlanılır.
- *
- * ruleId  = LEVELS[levelIdx].id   (məs: "grammar", "verbs")
- * ruleName = LEVELS[levelIdx].name (məs: "NOUNS - İSİMLƏR")
- * total   = həmin level-dəki section_divider-siz node sayı (path dairələri)
  */
 
 const GrammarStats = (() => {
@@ -13,14 +8,6 @@ const GrammarStats = (() => {
 
   function emptyData() {
     return { rules: {} };
-    // rules["ruleId"] = {
-    //   name:      "NOUNS - İSİMLƏR",
-    //   total:     36,      ← path-dakı node sayı (section_divider xaric)
-    //   completed: 0,       ← neçə node tamamlandı
-    //   questions: {
-    //     "sual mətni": { attempts, correct, errors }
-    //   }
-    // }
   }
 
   function load() {
@@ -32,8 +19,6 @@ const GrammarStats = (() => {
 
   function save(data) {
     localStorage.setItem(KEY, JSON.stringify(data));
-
-    // Firestore sync (əgər auth varsa)
     try {
       if (window.auth?.currentUser && window.db) {
         import("https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js")
@@ -49,46 +34,46 @@ const GrammarStats = (() => {
   }
 
   // ─── Cavab qeydiyyatı ───────────────────────────────────────────────────
-function recordAnswer(ruleId, ruleName, total, questionText, isCorrect, nodeTitle) {
-  if (!ruleId || !questionText) return;
-  const data = load();
+  function recordAnswer(ruleId, ruleName, total, questionText, isCorrect, nodeTitle, ruleColor) {
+    if (!ruleId || !questionText) return;
+    const data = load();
 
-  if (!data.rules[ruleId]) {
-    data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, questions: {} };
+    if (!data.rules[ruleId]) {
+      data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, color: '', questions: {} };
+    }
+
+    const rule = data.rules[ruleId];
+    if (ruleName)   rule.name  = ruleName;
+    if (total)      rule.total = total;
+    if (ruleColor)  rule.color = ruleColor;
+
+    if (!rule.questions[questionText]) {
+      rule.questions[questionText] = { attempts: 0, correct: 0, errors: 0, nodeTitle: '' };
+    }
+
+    const q = rule.questions[questionText];
+    q.attempts++;
+    if (isCorrect) q.correct++;
+    else           q.errors++;
+    if (nodeTitle && !q.nodeTitle) q.nodeTitle = nodeTitle;
+
+    save(data);
   }
 
-  const rule = data.rules[ruleId];
-  if (ruleName) rule.name  = ruleName;
-  if (total)    rule.total = total;
-
-  if (!rule.questions[questionText]) {
-    rule.questions[questionText] = { attempts: 0, correct: 0, errors: 0, nodeTitle: '' };
-  }
-
-  const q = rule.questions[questionText];
-  q.attempts++;
-  if (isCorrect) q.correct++;
-  else           q.errors++;
-  if (nodeTitle && !q.nodeTitle) q.nodeTitle = nodeTitle;
-
-  save(data);
-}
-
-  // ─── Bir node (dərs/quiz) tamamlandı ────────────────────────────────────
-  // finishGrammarLesson hər dəfə çağırılanda +1 artır
-  function incrementCompleted(ruleId, ruleName, total) {
+  // ─── Bir node tamamlandı ────────────────────────────────────────────────
+  function incrementCompleted(ruleId, ruleName, total, ruleColor) {
     if (!ruleId) return;
     const data = load();
 
     if (!data.rules[ruleId]) {
-      data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, questions: {} };
+      data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, color: '', questions: {} };
     }
 
     const rule = data.rules[ruleId];
-    if (ruleName) rule.name  = ruleName;
-    if (total)    rule.total = total;
+    if (ruleName)  rule.name  = ruleName;
+    if (total)     rule.total = total;
+    if (ruleColor) rule.color = ruleColor;
 
-    // total-dan çox ola bilməz
     rule.completed = Math.min(rule.total, (rule.completed || 0) + 1);
 
     save(data);
@@ -116,10 +101,10 @@ function recordAnswer(ruleId, ruleName, total, questionText, isCorrect, nodeTitl
         .sort(([, a], [, b]) => b.errors - a.errors)
         .map(([text, q]) => ({ text, nodeTitle: q.nodeTitle || '', ...q }));
 
-
       return {
         ruleId,
-        name:           rule.name || ruleId,
+        name:           rule.name  || ruleId,
+        color:          rule.color || '#085041',
         total:          nodeTotal,
         completed:      nodeCompleted,
         totalQuestions: totalQ,
@@ -130,14 +115,12 @@ function recordAnswer(ruleId, ruleName, total, questionText, isCorrect, nodeTitl
       };
     });
 
-// grammar-stats.js → getStats() funksiyasında:
-
     const grammarCompletedCount = ruleStats.filter(r => r.completed >= r.total && r.total > 0).length;
-    const totalRules     = ruleStats.length;
-    const errorRules     = ruleStats
+    const totalRules  = ruleStats.length;
+    const errorRules  = ruleStats
       .filter(r => r.totalErrors > 0)
       .sort((a, b) => b.totalErrors - a.totalErrors);
-    
+
     return { ruleStats, completedCount: grammarCompletedCount, totalRules, errorRules };
   }
 
