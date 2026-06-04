@@ -2221,7 +2221,11 @@ function renderLevels() {
   const skillsPage = document.getElementById('skills-page-content');
   if (kidsList) kidsList.innerHTML = '';
   if (grammarList) grammarList.innerHTML = '';
-  if (skillsPage) skillsPage.innerHTML = '';
+  if (skillsPage) {
+  const geList = skillsPage.querySelector('#ge-list');
+  skillsPage.innerHTML = '';
+  if (geList) skillsPage.appendChild(geList);
+}
   
   const subtitle = document.getElementById('page-subtitle');
   if (subtitle) {
