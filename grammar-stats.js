@@ -49,29 +49,30 @@ const GrammarStats = (() => {
   }
 
   // ─── Cavab qeydiyyatı ───────────────────────────────────────────────────
-  function recordAnswer(ruleId, ruleName, total, questionText, isCorrect) {
-    if (!ruleId || !questionText) return;
-    const data = load();
+function recordAnswer(ruleId, ruleName, total, questionText, isCorrect, nodeTitle) {
+  if (!ruleId || !questionText) return;
+  const data = load();
 
-    if (!data.rules[ruleId]) {
-      data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, questions: {} };
-    }
-
-    const rule = data.rules[ruleId];
-    if (ruleName) rule.name  = ruleName;
-    if (total)    rule.total = total;
-
-    if (!rule.questions[questionText]) {
-      rule.questions[questionText] = { attempts: 0, correct: 0, errors: 0 };
-    }
-
-    const q = rule.questions[questionText];
-    q.attempts++;
-    if (isCorrect) q.correct++;
-    else           q.errors++;
-
-    save(data);
+  if (!data.rules[ruleId]) {
+    data.rules[ruleId] = { name: ruleName || ruleId, total: total || 0, completed: 0, questions: {} };
   }
+
+  const rule = data.rules[ruleId];
+  if (ruleName) rule.name  = ruleName;
+  if (total)    rule.total = total;
+
+  if (!rule.questions[questionText]) {
+    rule.questions[questionText] = { attempts: 0, correct: 0, errors: 0, nodeTitle: nodeTitle || '' };
+  }
+
+  const q = rule.questions[questionText];
+  q.attempts++;
+  if (isCorrect) q.correct++;
+  else           q.errors++;
+  if (nodeTitle && !q.nodeTitle) q.nodeTitle = nodeTitle;
+
+  save(data);
+}
 
   // ─── Bir node (dərs/quiz) tamamlandı ────────────────────────────────────
   // finishGrammarLesson hər dəfə çağırılanda +1 artır
@@ -113,7 +114,7 @@ const GrammarStats = (() => {
       const errorQuestions = questions
         .filter(([, q]) => q.errors > 0)
         .sort(([, a], [, b]) => b.errors - a.errors)
-        .map(([text, q]) => ({ text, ...q }));
+        .map(([text, q]) => ({ text, nodeTitle: q.nodeTitle || '', ...q }));
 
       return {
         ruleId,
