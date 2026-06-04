@@ -55,8 +55,7 @@ const GrammarStats = (() => {
     q.attempts++;
     if (isCorrect) q.correct++;
     else           q.errors++;
-    if (nodeTitle && !q.nodeTitle) q.nodeTitle = nodeTitle;
-
+    if (nodeTitle) q.nodeTitle = nodeTitle;
     save(data);
   }
 
