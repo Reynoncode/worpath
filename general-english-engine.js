@@ -563,6 +563,7 @@ function _renderGePage() {
     card.className     = 'level-card';
     card.dataset.ge    = '1';
     card.dataset.level = lvl.id;
+    card.dataset.levelIdx = 'ge_' + lvl.id; 
 
     card.innerHTML = `
       <div class="level-header" role="button" aria-expanded="false">
