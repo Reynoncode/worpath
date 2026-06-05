@@ -2183,6 +2183,14 @@ function restoreNormalQuizBody() {
   // Event listenerları yenidən qoş
   document.getElementById('opt-0').addEventListener('click', () => handleAnswer(0));
   document.getElementById('opt-1').addEventListener('click', () => handleAnswer(1));
+
+  // Sentence builder qalıqlarını təmizlə
+  const oldBuilder = document.getElementById('sentence-builder-ui');
+  if (oldBuilder) oldBuilder.remove();
+  const elO0 = document.getElementById('opt-0');
+  const elO1 = document.getElementById('opt-1');
+  if (elO0) elO0.style.display = '';
+  if (elO1) elO1.style.display = '';
 }
 
 const iconStyles = {
@@ -3295,28 +3303,112 @@ quiz.words = shuffle(words.length >= 2 ? words : (Array.isArray(item) ? [...item
   showQuestion();
 }
 
+function checkSbComplete(q) {
+  const chips    = [...document.querySelectorAll('#sb-answer-row .sb-chip')];
+  const selected = chips.map(c => c.textContent);
+  if (selected.length !== q.answer.length) return;
+  quiz.locked = true;
+  const isCorrect = q.answer.every((w, i) => w === selected[i]);
+  if (isCorrect) {
+    document.getElementById('sb-answer-row').classList.add('sb-correct');
+    playSound('correct');
+    setTimeout(() => handleCorrectAnswer(), 800);
+  } else {
+    document.getElementById('sb-answer-row').classList.add('sb-wrong');
+    playSound('wrong');
+    quiz.mistakes++;
+    setTimeout(() => {
+      const row = document.getElementById('sb-answer-row');
+      row.classList.remove('sb-wrong');
+      chips.forEach(chip => {
+        const word = chip.textContent;
+        const btn  = [...document.querySelectorAll('#sb-words-row .sb-word-btn')]
+          .find(b => b.dataset.word === word && b.disabled);
+        if (btn) {
+          btn.disabled = false;
+          btn.classList.remove('sb-used');
+        }
+        chip.remove();
+      });
+      quiz.locked = false;
+    }, 800);
+  }
+}
+
 function showQuizScreen() {
   elQuizScreen.classList.remove('hidden');
   elResultScreen.classList.add('hidden');
 }
 
 function showQuestion() {
-  // elQuestionWord və elQuestionHint DOM-dan yenidən oxu (bərpa edilmiş ola bilər)
   const elQW = document.getElementById('question-word');
   const elQH = document.getElementById('question-hint');
   const elO0 = document.getElementById('opt-0');
   const elO1 = document.getElementById('opt-1');
-
   if (!elQW || !elO0) return;
 
   const word       = quiz.words[quiz.index];
   const totalWords = quiz.words.length;
-
   elProgressFill.style.width = `${(quiz.index / totalWords) * 100}%`;
   elQCounter.textContent = `${quiz.index + 1}/${totalWords}`;
 
-  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
+  // ── Sentence builder ──────────────────────────
+  if (quiz.mode === 'sentence_builder') {
+    elQW.textContent   = word.sentence;
+    elQW.style.fontSize = '20px';
+    if (elQH) elQH.textContent = 'Cümləni düzgün ardıcıllıqla yığ';
 
+    elO0.style.display = 'none';
+    elO1.style.display = 'none';
+
+    // əvvəlki builder UI-ı təmizlə
+    const old = document.getElementById('sentence-builder-ui');
+    if (old) old.remove();
+
+    // builder UI yarat
+    const shuffledWords = shuffle([...word.words]);
+    const builderEl = document.createElement('div');
+    builderEl.id = 'sentence-builder-ui';
+    builderEl.innerHTML = `
+      <div id="sb-answer-row"></div>
+      <div id="sb-words-row">
+        ${shuffledWords.map(w =>
+          `<button class="sb-word-btn" data-word="${w}">${w}</button>`
+        ).join('')}
+      </div>
+    `;
+    elO0.parentNode.appendChild(builderEl);
+
+    builderEl.querySelectorAll('.sb-word-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (quiz.locked) return;
+        btn.disabled = true;
+        btn.classList.add('sb-used');
+        const answerRow = document.getElementById('sb-answer-row');
+        const chip = document.createElement('button');
+        chip.className = 'sb-chip';
+        chip.textContent = btn.dataset.word;
+        chip.addEventListener('click', () => {
+          if (quiz.locked) return;
+          btn.disabled = false;
+          btn.classList.remove('sb-used');
+          chip.remove();
+          checkSbComplete(word);
+        });
+        answerRow.appendChild(chip);
+        checkSbComplete(word);
+      });
+    });
+
+    quiz.locked = false;
+    return;
+  }
+
+  // ── Normal modlar ─────────────────────────────
+  elO0.style.display = '';
+  elO1.style.display = '';
+
+  quiz.correctPos = Math.random() < 0.5 ? 0 : 1;
   const effectiveMode = quiz.mode === 'retake'
     ? (word._retakeMode || 'normal')
     : quiz.mode;
@@ -3327,14 +3419,12 @@ function showQuestion() {
     const opts = quiz.correctPos === 0 ? [word.en, word.wen] : [word.wen, word.en];
     elO0.textContent = capitalize(opts[0]);
     elO1.textContent = capitalize(opts[1]);
-
   } else if (effectiveMode === 'phase3') {
     elQW.textContent = word.def;
     elQW.style.fontSize = '20px';
     const opts = quiz.correctPos === 0 ? [word.en, word.wen] : [word.wen, word.en];
     elO0.textContent = capitalize(opts[0]);
     elO1.textContent = capitalize(opts[1]);
-
   } else {
     if (word.en && word.en.includes('____')) {
       elQW.textContent = word.en;
