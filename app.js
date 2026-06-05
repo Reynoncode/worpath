@@ -3327,7 +3327,6 @@ function confirmSbAnswer(q) {
   const chips    = [...document.querySelectorAll('#sb-answer-row .sb-chip')];
   const selected = chips.map(c => c.textContent);
 
-  // Artikl tolerantlığı — hər iki tərəfdən artikl çıxarıb müqayisə et
   const stripArticles = arr => arr.filter(w => !ARTICLES.includes(w.toLowerCase()));
   const selectedCore  = stripArticles(selected);
   const answerCore    = stripArticles(q.answer);
@@ -3338,30 +3337,34 @@ function confirmSbAnswer(q) {
   const isCorrect = answerCore.length === selectedCore.length &&
     answerCore.every((w, i) => w === selectedCore[i]);
 
-  const row     = document.getElementById('sb-answer-row');
-  const corrEl  = document.getElementById('sb-correct-answer');
+  const row    = document.getElementById('sb-answer-row');
+  const corrEl = document.getElementById('sb-correct-answer');
   const ConfBtn = document.getElementById('sb-confirm-btn');
-if (ConfBtn) ConfBtn.style.display = 'none';
-if (isCorrect) {
-  row.classList.add('sb-correct');
-  if (missingArticles.length > 0) {
-    corrEl.innerHTML = `<span class="sb-tip">💡 Unutdun: <b>${missingArticles.join(', ')}</b></span>`;
+  if (ConfBtn) ConfBtn.style.display = 'none';
+
+  if (isCorrect) {
+    row.classList.add('sb-correct');
+    if (missingArticles.length > 0) {
+      corrEl.innerHTML = `<span class="sb-tip">💡 Unutdun: <b>${missingArticles.join(', ')}</b></span>`;
+    }
+    setTimeout(() => {
+      quiz.locked = false;
+      quiz.index++;
+      if (quiz.index >= quiz.words.length) finishQuiz();
+      else showQuestion();
+    }, 1200);
+  } else {
+    row.classList.add('sb-wrong');
+    quiz.mistakes++;
+    corrEl.innerHTML = `<span class="sb-wrong-label">Düzgün cavab:</span>
+      <span class="sb-wrong-answer">${q.answer.join(' ')}</span>`;
+    setTimeout(() => {
+      quiz.locked = false;
+      quiz.index++;
+      if (quiz.index >= quiz.words.length) finishQuiz();
+      else showQuestion();
+    }, 2000);
   }
-  setTimeout(() => {
-    quiz.index++;
-    if (quiz.index >= quiz.words.length) finishQuiz();
-    else showQuestion();
-  }, 1200);
-} else {
-  row.classList.add('sb-wrong');
-  quiz.mistakes++;
-  corrEl.innerHTML = `<span class="sb-wrong-label">Düzgün cavab:</span>
-    <span class="sb-wrong-answer">${q.answer.join(' ')}</span>`;
-  setTimeout(() => {
-    quiz.index++;
-    if (quiz.index >= quiz.words.length) finishQuiz();
-    else showQuestion();
-  }, 2000);
 }
 
 function showQuizScreen() {
