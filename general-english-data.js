@@ -1070,7 +1070,382 @@ const GENERAL_ENGLISH_LEVELS = [
       
 { type: 'section_divider', title: 'Present Simple — müsbət cümlə' },
 
+// ── UNIT 5 — Present Simple (Müsbət Cümlə) ───────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Simple — Müsbət Cümlə (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Giriş — Quruluş ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Simple — Quruluş',
+      content: 'Present Simple — hər zaman doğru olan, tez-tez və ya həmişə baş verən hadisələr üçün işlədilir.\n\nQuruluş:\nSubject + Verb (sadə forma)\n\nI / we / you / they ilə fel dəyişmir.\nHe / she / it ilə felə -s və ya -es əlavə olunur.',
+      table: [
+        ['Subject',              'Verb'],
+        ['I / we / you / they',  'work / like / eat / have'],
+        ['he / she / it',        'works / likes / eats / has'],
+      ],
+      tip: 'He/she/it ilə feli unutma — həmişə -s/-es alır!',
+    },
+
+    // ── Ekran 2: 3-cü şəxs -s qaydası ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '3-cü şəxs -s qaydası',
+      content: 'He / She / It ilə işlənən fellərin sonuna -s və ya -es əlavə edilir:',
+      table: [
+        ['Əsas fel', 'He / She / It'],
+        ['work',    'works'],
+        ['like',    'likes'],
+        ['live',    'lives'],
+        ['rain',    'rains'],
+        ['watch',   'watches'],
+        ['finish',  'finishes'],
+        ['pass',    'passes'],
+        ['study',   'studies'],
+        ['try',     'tries'],
+        ['do',      'does'],
+        ['go',      'goes'],
+        ['have',    'has'],
+      ],
+      tip: 'Yadda saxla: I work / She works ✅ — She work ❌',
+    },
+
+    // ── Ekran 3: Yazılış qaydaları (Spelling) ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Yazılış qaydaları (-s/-es/-ies)',
+      content: 'Felə -s əlavə edərkən yazılışa diqqət et:',
+      table: [
+        ['Qayda',                              'Nümunə'],
+        ['-s / -sh / -ch / -x sonunda → -es',  'pass→passes, finish→finishes, watch→watches'],
+        ['samit + -y sonunda → -ies',           'study→studies, try→tries'],
+        ['İstisnalar',                          'do→does, go→goes, have→has'],
+      ],
+      tip: 'Sait + -y olduqda sadəcə -s əlavə olunur: play→plays, say→says',
+    },
+
+    // ── Ekran 4: Nümunə cümlələri ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Nümunə cümlələri',
+      content: 'I/we/you/they ilə fel dəyişmir, he/she/it ilə -s/-es alır:',
+      examples: [
+        { word: 'I work in a shop.',                    az: '✅ I — fel dəyişmir'    },
+        { word: 'My brother works in a bank.',          az: '✅ he — works'          },
+        { word: 'Linda lives in London.',               az: '✅ she — lives'         },
+        { word: 'Her parents live in Scotland.',        az: '✅ they — live'         },
+        { word: 'She watches TV every evening.',        az: '✅ she — watches'       },
+        { word: 'He does his homework after school.',   az: '✅ he — does'           },
+        { word: 'John has a shower every day.',         az: '✅ he — has (istisnа)'  },
+        { word: 'It rains a lot in winter.',            az: '✅ it — rains'          },
+      ],
+      tip: 'Linda lives — Her parents live. Eyni fel, fərqli subject → fərqli forma!',
+    },
+
+    // ── Mini-check 1 ─────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün formanı seç: "She ___ in London."',
+          options: ['live', 'lives', 'livees'],
+          answer: 'lives',
+        },
+        {
+          q: '"watch" felinin he/she/it forması nədir?',
+          options: ['watchs', 'watchies', 'watches'],
+          answer: 'watches',
+        },
+        {
+          q: '"study" felinin he/she/it forması nədir?',
+          options: ['studys', 'studies', 'studyes'],
+          answer: 'studies',
+        },
+        {
+          q: '"have" felinin he/she/it forması nədir?',
+          options: ['haves', 'havs', 'has'],
+          answer: 'has',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'He work in a bank.',
+            'He works in a bank.',
+            'He working in a bank.',
+          ],
+          answer: 'He works in a bank.',
+        },
+        {
+          q: '"go" felinin he/she/it forması nədir?',
+          options: ['gos', 'goes', 'goies'],
+          answer: 'goes',
+        },
+        {
+          q: '"finish" → he/she/it forması:',
+          options: ['finishs', 'finishes', 'finishies'],
+          answer: 'finishes',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'They works very hard.',
+            'She work every day.',
+            'He tries his best.',
+          ],
+          answer: 'He tries his best.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Simple — Müsbət Cümlə (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Nə zaman işlədilir ──────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Simple — nə zaman işlədilir?',
+      content: 'Present Simple iki əsas halda işlədilir:\n\n1. Ümumi həqiqətlər — həmişə doğru olan faktlar\n2. Təkrarlanan hərəkətlər — hər gün, həmişə, tez-tez baş verən işlər',
+      examples: [
+        { word: 'The Earth goes round the Sun.',              az: '🌍 Ümumi həqiqət'           },
+        { word: 'Water boils at 100 degrees Celsius.',        az: '🌡️ Ümumi həqiqət'           },
+        { word: 'I get up at 7 o\'clock every morning.',      az: '🔁 Təkrarlanan hərəkət'     },
+        { word: 'The shops open at 9 and close at 5.30.',     az: '🔁 Təkrarlanan hərəkət'     },
+        { word: 'Tim starts at 7.30 and finishes at 8.',      az: '🔁 Təkrarlanan hərəkət'     },
+        { word: 'It costs a lot to stay at luxury hotels.',   az: '🌍 Ümumi həqiqət'           },
+      ],
+      tip: 'Present Simple "indi nə edirsən" deyil — "ümumiyyətlə nə edirsən" deməkdir.',
+    },
+
+    // ── Ekran 2: Tezlik zərfləri ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tezlik zərfləri (Frequency adverbs)',
+      content: 'Present Simple tez-tez tezlik zərfləri ilə işlədilir. Bu zərflər fellə birlikdə söz sırasına görə yerləşir:\n\nSubject + zərf + Verb',
+      table: [
+        ['Zərf',      'Mənası',         'Nümunə'],
+        ['always',    'həmişə',         'She always arrives early.'],
+        ['usually',   'adətən',         'I usually have tea in the morning.'],
+        ['often',     'tez-tez',        'He often goes to the gym.'],
+        ['sometimes', 'bəzən',          'We sometimes eat out.'],
+        ['rarely',    'nadir hallarda', 'She rarely watches TV.'],
+        ['never',     'heç vaxt',       'Tim never watches television.'],
+      ],
+      tip: 'Zərf həmişə felin ÖNündə dayanır: I always work hard ✅ — I work always hard ❌',
+    },
+
+    // ── Ekran 3: Tezlik zərfi ilə söz sırası ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tezlik zərfi — söz sırası',
+      content: 'Tezlik zərfinin cümlədə yeri sabitdir — felin ÖNündə gəlir:',
+      examples: [
+        { word: 'Sue always arrives early.',          az: '✅ always + arrives'                    },
+        { word: 'I often play basketball.',           az: '✅ often + play'                        },
+        { word: 'Margaret usually works hard.',       az: '✅ usually + works'                     },
+        { word: 'Jenny always wears nice clothes.',   az: '✅ always + wears'                      },
+        { word: 'Tim never watches television.',      az: '✅ never + watches'                     },
+        { word: 'Julia always enjoys parties.',       az: '✅ always + enjoys'                     },
+        { word: 'I work always hard.',                az: '❌ Yanlış — zərf felin arxasına keçməz' },
+        { word: 'She arrives always early.',          az: '❌ Yanlış — always felin önündə olmalı' },
+      ],
+      tip: '"always/usually/often/never" — həmişə felin önündə, subjectin arxasında.',
+    },
+
+    // ── Ekran 4: Xülasə ──────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Xülasə — Present Simple Müsbət',
+      content: 'Bütün qaydaları bir yerdə:',
+      table: [
+        ['Qayda',                     'Nümunə'],
+        ['I/we/you/they + fel',        'I work / They live'],
+        ['he/she/it + fel-s',          'She works / He lives'],
+        ['-ch/-sh/-s/-x → -es',        'watches / finishes / passes'],
+        ['samit + y → -ies',           'studies / tries'],
+        ['İstisnalar',                 'does / goes / has'],
+        ['Zərf + Verb sırası',         'always works / never goes'],
+      ],
+      tip: 'Present Simple = ümumi həqiqət + təkrarlanan hərəkət.',
+    },
+
+    // ── Mini-check 2 ─────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Hansı cümlə Present Simple-ın işlənmə yerinə uyğundur?',
+          options: [
+            'Mən indi kitab oxuyuram.',
+            'Günəş şərqdən doğur.',
+            'O sabah işə gedəcək.',
+          ],
+          answer: 'Günəş şərqdən doğur.',
+        },
+        {
+          q: 'Tezlik zərfi cümlədə harda dayanır?',
+          options: [
+            'Felin arxasında',
+            'Felin önündə',
+            'Cümlənin sonunda',
+          ],
+          answer: 'Felin önündə',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I work always late.',
+            'I always work late.',
+            'Always I work late.',
+          ],
+          answer: 'I always work late.',
+        },
+        {
+          q: '"She ___ rarely ___ to parties." — düzgün variant:',
+          options: [
+            'She goes rarely to parties.',
+            'She rarely goes to parties.',
+            'Rarely she goes to parties.',
+          ],
+          answer: 'She rarely goes to parties.',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'Tim never watches television.',
+            'Tim watches never television.',
+            'Tim watches television never.',
+          ],
+          answer: 'Tim never watches television.',
+        },
+        {
+          q: 'Present Simple hansı hal üçün işlədilmir?',
+          options: [
+            'Ümumi həqiqətlər',
+            'Təkrarlanan hərəkətlər',
+            'Hal-hazırda davam edən iş',
+          ],
+          answer: 'Hal-hazırda davam edən iş',
+        },
+        {
+          q: '"We ___ have dinner at 7.30." — boşluğa hansı zərf gəlir (həmişə mənasında)?',
+          options: ['often', 'always', 'rarely'],
+          answer: 'always',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Children usually likes chocolate.',
+            'Children usually like chocolate.',
+            'Children like usually chocolate.',
+          ],
+          answer: 'Children usually like chocolate.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"work" — he/she/it forması:',                              tr: 'works',            wrong: 'workies'               },
+  { en: '"watch" — he/she/it forması:',                             tr: 'watches',          wrong: 'watchs'                },
+  { en: '"study" — he/she/it forması:',                             tr: 'studies',          wrong: 'studys'                },
+  { en: '"go" — he/she/it forması:',                                tr: 'goes',             wrong: 'gos'                   },
+  { en: '"have" — he/she/it forması:',                              tr: 'has',              wrong: 'haves'                 },
+  { en: '"try" — he/she/it forması:',                               tr: 'tries',            wrong: 'trys'                  },
+  { en: '"finish" — he/she/it forması:',                            tr: 'finishes',         wrong: 'finishs'               },
+  { en: '"do" — he/she/it forması:',                                tr: 'does',             wrong: 'dos'                   },
+  { en: 'Düzgün: She ___ in London.',                               tr: 'lives',            wrong: 'live'                  },
+  { en: 'Düzgün: Her parents ___ in Scotland.',                     tr: 'live',             wrong: 'lives'                 },
+  { en: 'Düzgün: He ___ to the cinema a lot.',                      tr: 'goes',             wrong: 'go'                    },
+  { en: 'Düzgün: I always ___ hard.',                               tr: 'work',             wrong: 'works'                 },
+  { en: 'Tezlik zərfi — "həmişə":',                                 tr: 'always',           wrong: 'usually'               },
+  { en: 'Tezlik zərfi — "heç vaxt":',                               tr: 'never',            wrong: 'rarely'                },
+  { en: 'Tezlik zərfi — "adətən":',                                 tr: 'usually',          wrong: 'often'                 },
+  { en: 'Düzgün: Tim ___ watches television.',                      tr: 'never',            wrong: 'not'                   },
+  { en: 'Düzgün: Sue always ___ early.',                            tr: 'arrives',          wrong: 'arrive'                },
+  { en: 'Düzgün: The Earth ___ round the Sun.',                     tr: 'goes',             wrong: 'go'                    },
+  { en: 'Düzgün: Water ___ at 100 degrees.',                        tr: 'boils',            wrong: 'boil'                  },
+  { en: 'Düzgün: She ___ eight hours a night.',                     tr: 'sleeps',           wrong: 'sleep'                 },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O Londonda yaşayır.',
+      words: ['She', 'lives', 'in', 'London', 'live', 'in London'],
+      answer: ['She', 'lives', 'in', 'London'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O hər gün duş alır.',
+      words: ['He', 'has', 'a', 'shower', 'every', 'day', 'every day', 'have'],
+      answer: ['He', 'has', 'a', 'shower', 'every', 'day'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sue həmişə tez gəlir.',
+      words: ['Sue', 'always', 'arrives', 'early', 'arrive', 'always arrives'],
+      answer: ['Sue', 'always', 'arrives', 'early'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tim heç vaxt televizora baxmır.',
+      words: ['Tim', 'never', 'watches', 'television', 'watch', 'never watches'],
+      answer: ['Tim', 'never', 'watches', 'television'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz həmişə axşam yeməyini 7.30-da yeyirik.',
+      words: ['We', 'always', 'have', 'dinner', 'at', '7.30', 'at 7.30', 'always have'],
+      answer: ['We', 'always', 'have', 'dinner', 'at', '7.30'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O tez-tez basketbol oynayıram. (I)',
+      words: ['I', 'often', 'play', 'basketball', 'plays', 'often play'],
+      answer: ['I', 'often', 'play', 'basketball'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Margaret adətən çox çalışır.',
+      words: ['Margaret', 'usually', 'works', 'hard', 'work', 'usually works'],
+      answer: ['Margaret', 'usually', 'works', 'hard'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uşaqlar adətən şokolad sevir.',
+      words: ['Children', 'usually', 'like', 'chocolate', 'likes', 'usually like'],
+      answer: ['Children', 'usually', 'like', 'chocolate'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O çox dil danışır.',
+      words: ['She', 'speaks', 'four', 'languages', 'speak', 'four languages'],
+      answer: ['She', 'speaks', 'four', 'languages'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Günəş şərqdən doğur.',
+      words: ['The', 'Sun', 'rises', 'in', 'the', 'east', 'rise', 'the east'],
+      answer: ['The', 'Sun', 'rises', 'in', 'the', 'east'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Present Simple — inkar və sual' },
 
