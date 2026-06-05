@@ -3342,22 +3342,26 @@ function confirmSbAnswer(q) {
   const corrEl  = document.getElementById('sb-correct-answer');
   const ConfBtn = document.getElementById('sb-confirm-btn');
 if (ConfBtn) ConfBtn.style.display = 'none';
-
-  if (isCorrect) {
-    row.classList.add('sb-correct');
-    if (missingArticles.length > 0) {
-      corrEl.innerHTML = `<span class="sb-tip">💡 Unutdun: <b>${missingArticles.join(', ')}</b></span>`;
-    }
- //    playSound('correct');
- //    setTimeout(() => handleCorrectAnswer(), 1200);
-  } else {
-    row.classList.add('sb-wrong');
-    quiz.mistakes++;
-    corrEl.innerHTML = `<span class="sb-wrong-label">Düzgün cavab:</span>
-      <span class="sb-wrong-answer">${q.answer.join(' ')}</span>`;
-    playSound('wrong');
-    setTimeout(() => handleCorrectAnswer(), 2000);
+if (isCorrect) {
+  row.classList.add('sb-correct');
+  if (missingArticles.length > 0) {
+    corrEl.innerHTML = `<span class="sb-tip">💡 Unutdun: <b>${missingArticles.join(', ')}</b></span>`;
   }
+  setTimeout(() => {
+    quiz.index++;
+    if (quiz.index >= quiz.words.length) finishQuiz();
+    else showQuestion();
+  }, 1200);
+} else {
+  row.classList.add('sb-wrong');
+  quiz.mistakes++;
+  corrEl.innerHTML = `<span class="sb-wrong-label">Düzgün cavab:</span>
+    <span class="sb-wrong-answer">${q.answer.join(' ')}</span>`;
+  setTimeout(() => {
+    quiz.index++;
+    if (quiz.index >= quiz.words.length) finishQuiz();
+    else showQuestion();
+  }, 2000);
 }
 
 function showQuizScreen() {
