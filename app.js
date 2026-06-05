@@ -2030,7 +2030,9 @@ if (!progress[lvl.id][i]) {
     || lvl.id === 'modal_verbs' || lvl.id === 'prepositions'
     || lvl.id === 'adverb' || lvl.id === 'complex_object'
     || lvl.id === 'subject_verb_agreement' || lvl.id === 'imperative'
-    || lvl.id === 'exclamatory';
+    || lvl.id === 'exclamatory'
+    || lvl.id === 'cumle_temeli' || lvl.id === 'zamanlar_modal'
+    || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar';
 
   if (isOpenSection) {
     progress[lvl.id][i] = 'unlocked';
@@ -2363,9 +2365,10 @@ LEVELS.forEach((lvl, li) => {
 } else if (lvl.id === 'exclamatory') {
   const grammarList = document.getElementById('grammar-list');
   if (grammarList) grammarList.appendChild(card);
-} else if (GENERAL_ENGLISH_LEVELS.some(l => l.id === lvl.id)) {
-  const geList = document.getElementById('ge-list');
-  if (geList) geList.appendChild(card);
+} else if (lvl.id === 'cumle_temeli' || lvl.id === 'zamanlar_modal'
+        || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar') {
+  const skillsPage = document.getElementById('skills-page-content');
+  if (skillsPage) skillsPage.appendChild(card);
 } else {
   elLevelList.appendChild(card);
 }
@@ -2734,7 +2737,9 @@ if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive'
   || lvl.id === 'questions' || lvl.id === 'modal_verbs'
   || lvl.id === 'prepositions' || lvl.id === 'adverb'
   || lvl.id === 'complex_object' || lvl.id === 'subject_verb_agreement'
-  || lvl.id === 'imperative' || lvl.id === 'exclamatory') {
+  || lvl.id === 'imperative' || lvl.id === 'exclamatory'
+  || lvl.id === 'cumle_temeli' || lvl.id === 'zamanlar_modal'
+  || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar') {
   return renderGrammarPath(lvl, li);
 }
 
