@@ -692,210 +692,403 @@ const GENERAL_ENGLISH_LEVELS = [
     },
   ],
 },
-      // ── Node 2 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Söz sırası (Word Order)',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'İngilis dilində söz sırası',
-            content: 'İngilis dilinin əsas söz sırası: **Subject → Verb → Object** (SVO).\n\nBu sıra demək olar ki, həmişə sabitdir. Azərbaycan dilindən fərqli olaraq, ingilis dilində söz sırasını dəyişmək cümləni yanlış edə bilər.',
-            table: [
-              ['Subject', 'Verb',  'Object'],
-              ['I',       'eat',   'apples'],
-              ['She',     'loves', 'music'],
-              ['They',    'watch', 'films'],
-            ],
-            note: 'İngilis dilində söz sırasını dəyişmək olmaz: "Apples eat I" — yanlışdır!',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       'Düzgün söz sırası hansıdır?',
-                options: ['Books she reads.', 'She reads books.', 'Reads she books.', 'Books reads she.'],
-                answer:  'She reads books.',
-              },
-              {
-                q:       'SVO nəyi bildirir?',
-                options: [
-                  'Sound, Voice, Object',
-                  'Subject, Verb, Object',
-                  'Subject, Voice, Order',
-                  'Simple, Verb, Output',
-                ],
-                answer:  'Subject, Verb, Object',
-              },
-              {
-                q:       '"___ play football every day." — boşluğa nə gəlir?',
-                options: ['Football', 'Every day', 'The boys', 'Play'],
-                answer:  'The boys',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '📐',
-            title: 'Söz sırası mənimsəndi!',
-            desc:  'SVO strukturunu öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 3 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Müsbət cümlə qurmaq',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Müsbət (affirmative) cümlə',
-            content: 'Müsbət cümlə bir faktı, vərdişi və ya hərəkəti bildirir. Quruluşu sadədir:\n\n**Subject + Verb (+ Object/Complement)**',
-            examples: [
-              { word: 'I work here.',          az: 'Mən burada işləyirəm.' },
-              { word: 'He plays the guitar.',  az: 'O gitara çalır.' },
-              { word: 'We love this city.',    az: 'Biz bu şəhəri sevirik.' },
-            ],
-            tip: '3-cü şəxs təkdə (he/she/it) fellərə **-s** və ya **-es** əlavə olunur: works, plays, goes.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"She ___ to school every day."',
-                options: ['go', 'goes', 'going', 'gone'],
-                answer:  'goes',
-              },
-              {
-                q:       'Hansı cümlə müsbət cümlədir?',
-                options: [
-                  'He does not play.',
-                  'Does she sing?',
-                  'They watch TV.',
-                  'We are not here.',
-                ],
-                answer:  'They watch TV.',
-              },
-              {
-                q:       '"I ___ English every morning."',
-                options: ['studies', 'study', 'studied', 'studying'],
-                answer:  'study',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '✅',
-            title: 'Müsbət cümlə!',
-            desc:  'Affirmative cümlə qurmağı öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 4 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'İnkar cümlə qurmaq',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'İnkar (negative) cümlə',
-            content: 'İnkar cümlə qurmaq üçün **do not (don\'t)** və ya **does not (doesn\'t)** istifadə olunur.\n\n**I/You/We/They** → don\'t + fel\n**He/She/It** → doesn\'t + fel',
-            table: [
-              ['Müsbət',           'İnkar'],
-              ['I play.',          'I don\'t play.'],
-              ['She works.',       'She doesn\'t work.'],
-              ['They watch TV.',   'They don\'t watch TV.'],
-            ],
-            note: 'doesn\'t istifadə edəndə feldən -s/-es götürülür: "She doesn\'t works" — yanlışdır!',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"He ___ like coffee."',
-                options: ['don\'t', 'doesn\'t', 'not', 'isn\'t'],
-                answer:  'doesn\'t',
-              },
-              {
-                q:       '"They ___ speak French."',
-                options: ['doesn\'t', 'not', 'don\'t', 'isn\'t'],
-                answer:  'don\'t',
-              },
-              {
-                q:       'Hansı inkar cümlə düzgündür?',
-                options: [
-                  'She doesn\'t works here.',
-                  'She don\'t work here.',
-                  'She doesn\'t work here.',
-                  'She not works here.',
-                ],
-                answer:  'She doesn\'t work here.',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '❌',
-            title: 'İnkar cümlə!',
-            desc:  'Negative cümlə qurmağı öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 5 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Sual cümləsi qurmaq',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Sual (interrogative) cümlə',
-            content: 'Sual cümləsi qurmaq üçün **do/does** cümlənin əvvəlinə gəlir.\n\n**Do** + I/you/we/they + fel?\n**Does** + he/she/it + fel?',
-            examples: [
-              { word: 'Do you like tea?',     az: 'Sən çay sevirirsən?' },
-              { word: 'Does he work here?',   az: 'O burada işləyir?' },
-              { word: 'Do they play chess?',  az: 'Onlar şahmat oynayır?' },
-            ],
-            tip: 'Yes/No suallarına qısa cavab veririk: "Yes, I do." / "No, she doesn\'t."',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"___ she speak English?"',
-                options: ['Do', 'Does', 'Is', 'Are'],
-                answer:  'Does',
-              },
-              {
-                q:       '"Do you like pizza?" — düzgün qısa cavab hansıdır?',
-                options: ['Yes, I like.', 'Yes, I does.', 'Yes, I do.', 'Yes, do I.'],
-                answer:  'Yes, I do.',
-              },
-              {
-                q:       '"___ they study at night?"',
-                options: ['Does', 'Is', 'Do', 'Are'],
-                answer:  'Do',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '❓',
-            title: 'Sual ustası!',
-            desc:  'Interrogative cümlə qurmağı öyrəndin.',
-          },
-        ],
-      },
-
-{ type: 'section_divider', title: 'To be — keçmiş zaman' },
+     
 { type: 'section_divider', title: 'Söz sırası' },
+
+// ── UNIT — Söz Sırası (Word Order) ───────────────────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Söz Sırası — Word Order (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Giriş — SVO ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İngilis dilində söz sırası',
+      content: 'İngilis dilində cümlənin əsas quruluşu sabitdir:\n\nSubject → Verb → Object\n\nBu sıra pozulduqda cümlə yanlış olur. Azərbaycan dilindən fərqli olaraq ingilis dilində söz sırasını dəyişmək olmaz.',
+      table: [
+        ['Subject', 'Verb',    'Object'],
+        ['I',       'like',    'big cities.'],
+        ['She',     'watches', 'television.'],
+        ['Tim',     'works',   'very hard.'],
+      ],
+      tip: 'Fel həmişə subject-dən dərhal sonra gəlir. Object isə felin arxasında olur.',
+    },
+
+    // ── Ekran 2: Düzgün və yanlış nümunələr ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Düzgün və yanlış sıra',
+      content: 'Object felin önünə keçə bilməz. Aşağıdakı nümunələrə diqqət et:',
+      examples: [
+        { word: 'She speaks English very well.',    az: '✅ Düzgün',  note: 'Verb + Object + Adverb' },
+        { word: 'She speaks very well English.',    az: '❌ Yanlış',  note: 'Object felin arxasına gəlir' },
+        { word: 'Tim works in a bank.',             az: '✅ Düzgün',  note: 'Subject + Verb + Place' },
+        { word: 'Tim in a bank works.',             az: '❌ Yanlış',  note: 'Verb həmişə subject-dən sonra' },
+        { word: 'I like big cities.',               az: '✅ Düzgün',  note: 'SVO qaydası' },
+        { word: 'I big cities like.',               az: '❌ Yanlış',  note: 'Object ortaya gəlməz' },
+      ],
+      tip: 'Yadda saxla: Verb + Object sırası pozulmamalıdır.',
+    },
+
+    // ── Ekran 3: Yer və Zaman sırası ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Yer və Zaman sırası',
+      content: 'Cümlədə həm yer, həm zaman varsa — yer (Place) zamandan (Time) əvvəl gəlir:\n\nSubject + Verb + Place + Time',
+      table: [
+        ['Subject', 'Verb',    'Place',         'Time'],
+        ['She',     'works',   'in a shop',     'every day.'],
+        ['We',      'arrived', 'at the hotel',  'at 5 o\'clock.'],
+        ['I',       'was',     'in Paris',      'last year.'],
+      ],
+      tip: 'Zaman ifadəsi (yesterday, last week, every day) adətən cümlənin sonuna gəlir.',
+    },
+
+    // ── Ekran 4: Zaman ifadəsinin yeri ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Zaman ifadəsi harda dayanır?',
+      content: 'Zaman ifadəsi adətən cümlənin sonundadır. Vurğu üçün əvvələ də gələ bilər — amma ortaya gəlməz:',
+      examples: [
+        { word: 'I cleaned my teeth this morning.',    az: '✅ Düzgün — sonda'   },
+        { word: 'This morning I cleaned my teeth.',    az: '✅ Düzgün — əvvəldə (vurğu üçün)' },
+        { word: 'I this morning cleaned my teeth.',    az: '❌ Yanlış — ortada olmaz' },
+        { word: 'She goes to work every morning.',     az: '✅ Düzgün'           },
+        { word: 'She goes every morning to work.',     az: '❌ Yanlış — yer ilə zaman arasına girməz' },
+        { word: 'I was in Paris last year.',           az: '✅ Düzgün — Place + Time' },
+        { word: 'I was last year in Paris.',           az: '❌ Yanlış — zaman yerin önünə keçməz' },
+      ],
+    },
+
+    // ── Mini-check 1 ─────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün söz sırası hansıdır?',
+          options: [
+            'She very well speaks English.',
+            'She speaks English very well.',
+            'She speaks very well English.',
+          ],
+          answer: 'She speaks English very well.',
+        },
+        {
+          q: 'Düzgün söz sırası hansıdır?',
+          options: [
+            'I big cities like.',
+            'I like big cities.',
+            'Like I big cities.',
+          ],
+          answer: 'I like big cities.',
+        },
+        {
+          q: 'Yer və zaman sırası düzgün olan hansıdır?',
+          options: [
+            'I was last year in Paris.',
+            'I was in Paris last year.',
+            'Last year in Paris I was.',
+          ],
+          answer: 'I was in Paris last year.',
+        },
+        {
+          q: '"She goes ___ every morning." — boşluğa nə gəlir?',
+          options: ['every morning to work', 'to work every morning', 'to every morning work'],
+          answer: 'to work every morning',
+        },
+        {
+          q: 'Zaman ifadəsi cümlədə harda daya bilməz?',
+          options: ['Cümlənin sonunda', 'Cümlənin əvvəlində (vurğu)', 'Cümlənin ortasında'],
+          answer: 'Cümlənin ortasında',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'We arrived at 5 o\'clock at the hotel.',
+            'We arrived at the hotel at 5 o\'clock.',
+            'We at the hotel arrived at 5 o\'clock.',
+          ],
+          answer: 'We arrived at the hotel at 5 o\'clock.',
+        },
+        {
+          q: 'SVO nədir?',
+          options: [
+            'Sound – Verb – Object',
+            'Subject – Verb – Object',
+            'Subject – Voice – Order',
+          ],
+          answer: 'Subject – Verb – Object',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Söz Sırası — Word Order (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual cümləsində söz sırası ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual cümləsində söz sırası',
+      content: 'Sual cümlələrində köməkçi fel (is/are/do/does/did) subject-dən əvvəl gəlir:\n\nKöməkçi fel + Subject + Verb',
+      table: [
+        ['Köməkçi', 'Subject',       'Verb'],
+        ['Is',      'Paul',          'working today?'],
+        ['Where',   'are',           'they going?'],
+        ['Do',      'you',           'live here?'],
+        ['Does',    'she',           'speak French?'],
+      ],
+      tip: 'Wh- sözü (where/what/why/how) ən əvvələ gəlir, sonra köməkçi fel, sonra subject.',
+    },
+
+    // ── Ekran 2: Sualda yanlış sıra ──────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sualda yanlış sıra — diqqət et!',
+      content: 'Subject köməkçi felin arxasına keçir — subject ilə köməkçi arasına heç nə girməz:',
+      examples: [
+        { word: 'Is Paul working today?',           az: '✅ Düzgün'  },
+        { word: 'Is working Paul today?',           az: '❌ Yanlış — subject köməkçi feldən sonra gəlir'   },
+        { word: 'Where are those people going?',    az: '✅ Düzgün'  },
+        { word: 'Where are going those people?',    az: '❌ Yanlış — verb ilə subject arasına girməz'      },
+        { word: 'Do you live here?',                az: '✅ Düzgün'  },
+        { word: 'You do live here?',                az: '❌ Yanlış — köməkçi əvvələ gəlir'                },
+      ],
+      tip: 'Qayda: Wh- → Köməkçi → Subject → Verb → Object/Place/Time',
+    },
+
+    // ── Ekran 3: Give / Send / Show ilə söz sırası ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Give / Send / Show — iki variant',
+      content: 'Bu fellər iki cür işlənə bilər:\n\nVariant 1: Fel + şəxs + əşya\nVariant 2: Fel + əşya + to + şəxs',
+      table: [
+        ['Variant 1',            'Variant 2'],
+        ['Give me that book.',   'Give that book to me.'],
+        ['Send him a letter.',   'Send a letter to him.'],
+        ['Show us the photos.',  'Show the photos to us.'],
+        ['Buy her a gift.',      'Buy a gift for her.'],
+      ],
+      note: 'Əgər object əvəzlik (it / them) dirsə — mütləq Variant 2 işlənir!\n✅ Give it to me.\n❌ Give me it. — YANLIŞ',
+    },
+
+    // ── Ekran 4: Əvəzlik qaydası ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Əvəzlik (it / them) olduqda',
+      content: 'Object it / them / him / her kimi əvəzlik olduqda mütləq "to" ilə Variant 2 işlənir:',
+      examples: [
+        { word: 'Give it to me.',     az: '✅ Düzgün',  note: '"Give me it" olmaz' },
+        { word: 'Send it to him.',    az: '✅ Düzgün',  note: '"Send him it" olmaz' },
+        { word: 'Show them to us.',   az: '✅ Düzgün',  note: '"Show us them" olmaz' },
+        { word: 'Give her it.',       az: '❌ Yanlış',  note: 'Give it to her.' },
+        { word: 'Send me them.',      az: '❌ Yanlış',  note: 'Send them to me.' },
+      ],
+      tip: 'İsim olduqda hər iki variant mümkündür. Əvəzlik olduqda yalnız "to" ilə variant işlənir.',
+    },
+
+    // ── Mini-check 2 ─────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Sual cümləsini düzgün seç:',
+          options: [
+            'Is working Paul today?',
+            'Is Paul working today?',
+            'Paul is working today?',
+          ],
+          answer: 'Is Paul working today?',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Where are going your friends?',
+            'Where your friends are going?',
+            'Where are your friends going?',
+          ],
+          answer: 'Where are your friends going?',
+        },
+        {
+          q: '"Give me it." — bu cümləni düzəlt:',
+          options: [
+            'Give it me.',
+            'Give it to me.',
+            'Give to me it.',
+          ],
+          answer: 'Give it to me.',
+        },
+        {
+          q: '"Send him a letter." — Variant 2:',
+          options: [
+            'Send to him a letter.',
+            'Send a letter to him.',
+            'Send him to a letter.',
+          ],
+          answer: 'Send a letter to him.',
+        },
+        {
+          q: 'Əvəzlik (it/them) object olduqda hansı variant işlənir?',
+          options: [
+            'Variant 1: Give me it.',
+            'Variant 2: Give it to me.',
+            'Hər ikisi eyni dərəcədə düzgündür.',
+          ],
+          answer: 'Variant 2: Give it to me.',
+        },
+        {
+          q: 'Düzgün sual sırasını seç:',
+          options: [
+            'Do you live here?',
+            'You do live here?',
+            'Live do you here?',
+          ],
+          answer: 'Do you live here?',
+        },
+        {
+          q: '"Show us the photos." — Variant 2:',
+          options: [
+            'Show the photos us.',
+            'Show the photos to us.',
+            'Show to us the photos.',
+          ],
+          answer: 'Show the photos to us.',
+        },
+        {
+          q: 'Wh- sualında düzgün sıra hansıdır?',
+          options: [
+            'Wh- → Subject → Köməkçi → Verb',
+            'Wh- → Köməkçi → Subject → Verb',
+            'Köməkçi → Wh- → Subject → Verb',
+          ],
+          answer: 'Wh- → Köməkçi → Subject → Verb',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ───────────────────────────────────────────────────────────
+[
+  { en: 'Düzgün: She speaks ___ very well.',                         tr: 'English',            wrong: 'very well English'  },
+  { en: 'Düzgün: Tim works ___.',                                    tr: 'in a bank',          wrong: 'a bank in'          },
+  { en: 'Yer + Zaman sırası: We arrived ___ at 5 o\'clock.',        tr: 'at the hotel',       wrong: 'at 5 o\'clock'      },
+  { en: 'Düzgün: I was ___ last year.',                              tr: 'in Paris',           wrong: 'last year in Paris' },
+  { en: 'Zaman ifadəsi harda dayana bilər?',                         tr: 'Sonda və ya əvvəldə', wrong: 'Cümlənin ortasında' },
+  { en: 'Düzgün sual: ___ Paul working today?',                      tr: 'Is',                 wrong: 'Is working'         },
+  { en: 'Düzgün sual: Where are ___ going?',                        tr: 'those people',       wrong: 'going those people' },
+  { en: '"Give me that book." → Variant 2:',                        tr: 'Give that book to me.', wrong: 'Give to me that book.' },
+  { en: '"Send him a letter." → Variant 2:',                        tr: 'Send a letter to him.', wrong: 'Send to him a letter.' },
+  { en: 'Object əvəzlik (it) olduqda düzgün variant:',              tr: 'Give it to me.',     wrong: 'Give me it.'        },
+  { en: '"Show us the photos." → Variant 2:',                       tr: 'Show the photos to us.', wrong: 'Show us to the photos.' },
+  { en: 'Düzgün: I like ___ very much.',                            tr: 'your jacket',        wrong: 'very much your jacket' },
+  { en: 'Düzgün sual sırası: Wh- → ___ → Subject → Verb',          tr: 'Köməkçi fel',        wrong: 'Subject'            },
+  { en: 'Düzgün: She goes to the gym ___.',                         tr: 'every morning',      wrong: 'every morning to the gym' },
+  { en: '"Give her it." — düzəldilmiş forma:',                      tr: 'Give it to her.',    wrong: 'Give her to it.'    },
+  { en: 'Düzgün: They were ___ yesterday.',                         tr: 'at home',            wrong: 'yesterday at home'  },
+  { en: 'Düzgün sual: Does she ___?',                               tr: 'speak French',       wrong: 'speaks French'      },
+  { en: 'SVO — hərflər nəyi bildirir?',                             tr: 'Subject–Verb–Object', wrong: 'Sound–Voice–Order'  },
+  { en: '"Send them to me." — bu cümləni Variant 1 ilə yaz:',       tr: 'Olmaz — əvəzlikdə yalnız Variant 2', wrong: 'Send me them.' },
+  { en: 'Düzgün: He arrived ___ at noon.',                          tr: 'at work',            wrong: 'at noon at work'    },
+],
+
+// ── Sentence Builder Quiz ────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O ingilis dilini çox yaxşı danışır.',
+      words: ['She', 'speaks', 'English', 'very', 'well', 'very well', 'English speaks'],
+      answer: ['She', 'speaks', 'English', 'very', 'well'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən hər gün işə avtobusla gedirəm.',
+      words: ['I', 'go', 'to', 'work', 'by', 'bus', 'every', 'day', 'every day', 'by bus'],
+      answer: ['I', 'go', 'to', 'work', 'by', 'bus', 'every', 'day'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən keçən il Parisdə idim.',
+      words: ['I', 'was', 'in', 'Paris', 'last', 'year', 'last year', 'in Paris'],
+      answer: ['I', 'was', 'in', 'Paris', 'last', 'year'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O hər gün dükan da işləyir.',
+      words: ['She', 'works', 'in', 'a', 'shop', 'every', 'day', 'every day', 'in a shop'],
+      answer: ['She', 'works', 'in', 'a', 'shop', 'every', 'day'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Paul bu gün işləyirmi?',
+      words: ['Is', 'Paul', 'working', 'today', 'Is working', 'Paul working'],
+      answer: ['Is', 'Paul', 'working', 'today'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Dostların hara gedir?',
+      words: ['Where', 'are', 'your', 'friends', 'going', 'are going', 'going your'],
+      answer: ['Where', 'are', 'your', 'friends', 'going'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O kitabı mənə ver. (Variant 2)',
+      words: ['Give', 'that', 'book', 'to', 'me', 'me that', 'to that'],
+      answer: ['Give', 'that', 'book', 'to', 'me'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onu mənə ver.',
+      words: ['Give', 'it', 'to', 'me', 'me it', 'to it'],
+      answer: ['Give', 'it', 'to', 'me'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Şəkilləri bizə göstər.',
+      words: ['Show', 'the', 'photos', 'to', 'us', 'us the', 'to the'],
+      answer: ['Show', 'the', 'photos', 'to', 'us'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Ona məktub göndər. (Variant 2)',
+      words: ['Send', 'a', 'letter', 'to', 'him', 'him a', 'to a'],
+      answer: ['Send', 'a', 'letter', 'to', 'him'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'Present Simple — müsbət cümlə' },
+
+
+      
 { type: 'section_divider', title: 'Present Simple — inkar və sual' },
+
+      
+      
 { type: 'section_divider', title: 'Tezlik zərfləri' },
+
+
+      
 { type: 'section_divider', title: 'Present Continuous — indiki proses' },
+
+
+      
 { type: 'section_divider', title: 'Present Simple vs Present Continuous' },
+
+
+
+      
     ],
   },
 
