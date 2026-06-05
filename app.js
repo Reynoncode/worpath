@@ -2723,7 +2723,7 @@ html += `
 function renderQuizPath(lvl, li) {
 
   if (GENERAL_ENGLISH_LEVELS.some(l => l.id === lvl.id)) {
-  return renderGeneralEnglishPath(lvl, lvl.id);
+  return window.renderGeneralEnglishPath(lvl, li);
   }
   if (lvl.id === 'reading') {
     return renderReadingPath(lvl, li);
