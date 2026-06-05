@@ -2858,6 +2858,9 @@ function closeOverlayPanel(instant = false) {
 }
 
 function toggleLevel(card) {
+  if (card.dataset.ge && !document.getElementById('level-fullscreen-overlay')) {
+    card.classList.remove('open');
+  }
   const overlay = document.getElementById('level-fullscreen-overlay');
   const isOpen = card.classList.contains('open') || !!overlay;
 
