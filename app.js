@@ -2904,8 +2904,14 @@ if (existingOverlay) {
     const appHeader = document.querySelector('.app-header');
     const headerH = appHeader ? appHeader.offsetHeight : 56;
 
-    const li = parseInt(card.dataset.levelIdx, 10);
-const lvl = LEVELS[li];
+    const rawIdx = card.dataset.levelIdx;
+    const isGE   = typeof rawIdx === 'string' && rawIdx.startsWith('ge_');
+    const li     = isGE ? null : parseInt(rawIdx, 10);
+    const lvl    = isGE
+      ? GENERAL_ENGLISH_LEVELS.find(l => l.id === rawIdx.replace('ge_', ''))
+      : LEVELS[li];
+
+if (!lvl) return;
 
     // Kartın pozisyasını tap
     const cardRect = card.getBoundingClientRect();
@@ -3061,7 +3067,11 @@ stickyHeader.addEventListener('click', (e) => {
         const item = lvl.quizzes[qi];
         if (!item) { showToast('Bu test hələ hazır deyil ✏️'); return; }
         if (Array.isArray(item) && item.length < 2) { showToast('Bu test hələ hazır deyil ✏️'); return; }
+        if (isGE) {
+        startGeneralEnglishLesson(lvl.id, qi);
+      } else {
         startQuiz(li, qi);
+      }
       });
     });
 
