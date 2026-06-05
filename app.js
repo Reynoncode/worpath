@@ -3340,8 +3340,8 @@ function confirmSbAnswer(q) {
 
   const row     = document.getElementById('sb-answer-row');
   const corrEl  = document.getElementById('sb-correct-answer');
-  constConfBtn = document.getElementById('sb-confirm-btn');
-  if (ConfBtn) ConfBtn.style.display = 'none';
+  const ConfBtn = document.getElementById('sb-confirm-btn');
+if (ConfBtn) ConfBtn.style.display = 'none';
 
   if (isCorrect) {
     row.classList.add('sb-correct');
