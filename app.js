@@ -3386,7 +3386,7 @@ function showQuestion() {
         ).join('')}
       </div>
     `;
-    elO0.parentNode.appendChild(builderEl);
+    document.querySelector('.quiz-body').appendChild(builderEl);
 
     builderEl.querySelectorAll('.sb-word-btn').forEach(btn => {
       btn.addEventListener('click', () => {
