@@ -377,6 +377,321 @@ const GENERAL_ENGLISH_LEVELS = [
   ],
 },
 
+
+      { type: 'section_divider', title: 'To be — keçmiş zaman' },
+
+      // ── UNIT 10 — To be: Keçmiş Zaman (was / were) ──────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Was / Were — Keçmiş Zaman (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Giriş ───────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Was / Were nədir?',
+      content: '"To be" felinin keçmiş zamanıdır.\n\nİndiki zamandakı am / is → was olur\nİndiki zamandakı are → were olur',
+      examples: [
+        { word: 'I am tired now.',          az: 'I was tired last night.',         note: 'am → was' },
+        { word: 'She is at home now.',      az: 'She was at home yesterday.',      note: 'is → was'  },
+        { word: 'They are busy now.',       az: 'They were busy last week.',       note: 'are → were' },
+        { word: 'The weather is cold now.', az: 'The weather was warm last month.', note: 'is → was' },
+      ],
+      tip: 'was = I / he / she / it ilə\nwere = we / you / they ilə işlənir.',
+    },
+
+    // ── Ekran 2: Müsbət forma ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Müsbət forma',
+      content: 'Keçmiş zamanda to be-nin iki forması var:\n\nwas → tək şəxslər üçün\nwere → cəm və you üçün',
+      examples: [
+        { word: 'I was',      az: 'Mən ... idim'        },
+        { word: 'He was',     az: 'O (kişi) ... idi'    },
+        { word: 'She was',    az: 'O (qadın) ... idi'   },
+        { word: 'It was',     az: 'O (əşya) ... idi'    },
+        { word: 'We were',    az: 'Biz ... idik'        },
+        { word: 'You were',   az: 'Sən/Siz ... idin'    },
+        { word: 'They were',  az: 'Onlar ... idilər'    },
+      ],
+      tip: 'Keçmiş zamanda qısa forma yoxdur: "I\'s" və ya "they\'re" yazılmır.',
+    },
+
+    // ── Ekran 3: Mənfi forma ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Mənfi forma',
+      content: 'Mənfi cümlə üçün was / were-dən sonra "not" əlavə olunur.\n\nDanışıqda qısa formalar işlənir:',
+      examples: [
+        { word: 'I was not → I wasn\'t',         az: 'Mən deyildim'        },
+        { word: 'He was not → He wasn\'t',        az: 'O deyildi (kişi)'   },
+        { word: 'She was not → She wasn\'t',      az: 'O deyildi (qadın)'  },
+        { word: 'It was not → It wasn\'t',        az: 'O deyildi (əşya)'   },
+        { word: 'We were not → We weren\'t',      az: 'Biz deyildik'       },
+        { word: 'You were not → You weren\'t',    az: 'Sən deyildin'       },
+        { word: 'They were not → They weren\'t',  az: 'Onlar deyildilər'   },
+      ],
+      tip: 'wasn\'t = was not · weren\'t = were not',
+    },
+
+    // ── Ekran 4: Nümunə cümlələr ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Nümunə cümlələr',
+      content: 'was / were-in real kontekstdə işlənməsinə bax:',
+      examples: [
+        { word: 'She was 20 last year, so she is 21 now.',      az: 'O keçən il 20 yaşında idi, indi 21-dir.' },
+        { word: 'The exam was long but it wasn\'t difficult.',   az: 'İmtahan uzun idi amma çətin deyildi.'    },
+        { word: 'We were hungry after the trip.',               az: 'Səfərdən sonra ac idik.'                 },
+        { word: 'The hotel wasn\'t expensive.',                 az: 'Otel baha deyildi.'                      },
+        { word: 'They weren\'t at the meeting yesterday.',      az: 'Onlar dünən görüşdə deyildilər.'         },
+      ],
+      tip: 'last night / yesterday / last week / last year — keçmiş zamana işarə edən sözlərdir.',
+    },
+
+    // ── Mini-check 1 ─────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'I ___ at school yesterday.',
+          options: ['was', 'were', 'am'],
+          answer: 'was',
+        },
+        {
+          q: 'They ___ very tired after the game.',
+          options: ['was', 'were', 'are'],
+          answer: 'were',
+        },
+        {
+          q: 'She ___ a student five years ago.',
+          options: ['was', 'were', 'is'],
+          answer: 'was',
+        },
+        {
+          q: 'We ___ at home last Sunday.',
+          options: ['was', 'were', 'are'],
+          answer: 'were',
+        },
+        {
+          q: 'The film ___ really interesting.',
+          options: ['was', 'were', 'is'],
+          answer: 'was',
+        },
+        {
+          q: 'He ___ happy with the result.',
+          options: ['wasn\'t', 'weren\'t', 'isn\'t'],
+          answer: 'wasn\'t',
+        },
+        {
+          q: 'The shops ___ open on Monday.',
+          options: ['wasn\'t', 'weren\'t', 'aren\'t'],
+          answer: 'weren\'t',
+        },
+        {
+          q: 'It ___ cold last winter.',
+          options: ['was', 'were', 'are'],
+          answer: 'was',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Was / Were — Keçmiş Zaman (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual forması ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual forması',
+      content: 'Sual qurmaq üçün was / were mübtədanın önünə keçir.\n\nDüz sıra: Subject + was/were\nSual sırası: Was/Were + Subject',
+      examples: [
+        { word: 'You were late. → Were you late?',          az: 'Sən gecikdin?'              },
+        { word: 'She was at work. → Was she at work?',      az: 'O işdə idi?'                },
+        { word: 'They were tired. → Were they tired?',      az: 'Onlar yorğun idilər?'       },
+        { word: 'It was expensive. → Was it expensive?',    az: 'O baha idi?'                },
+      ],
+      note: '"Was at home your brother?" — yanlış. "Was your brother at home?" — düzgün.',
+    },
+
+    // ── Ekran 2: Wh- sualları ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Wh- sualları',
+      content: 'What / Where / Who / How / Why sualları was / were-dən əvvəl gəlir:',
+      examples: [
+        { word: 'Where were you last night?',      az: 'Dünən gecə harada idin?',       note: 'I was at home.' },
+        { word: 'Why was she angry?',              az: 'O niyə əsəbi idi?',             note: '—'             },
+        { word: 'How much was the ticket?',        az: 'Bilet neçəyə idi?',             note: 'It was £15.'   },
+        { word: 'Who was that man?',               az: 'O kişi kim idi?',               note: '—'             },
+        { word: 'What was the weather like?',      az: 'Hava necə idi?',               note: 'It was sunny.' },
+        { word: 'How old were you in 2010?',       az: '2010-cu ildə neçə yaşın var idi?', note: 'I was 15.' },
+      ],
+      tip: 'was / were sual cümləsinin əsasını təşkil edir — do/does işlənmir!',
+    },
+
+    // ── Ekran 3: Qısa cavablar ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar',
+      content: 'Bəli/Xeyr cavablarında was / were mütləq təkrarlanır.\n\nMüsbət qısa cavabda qısa forma işlənmir!',
+      examples: [
+        { word: 'Were you late? — Yes, I was.',             az: '"Yes, I were" deyilmir!'     },
+        { word: 'Were you late? — No, I wasn\'t.',          az: 'Mənfidə qısa forma olur.'   },
+        { word: 'Was he at school? — Yes, he was.',         az: '"Yes, he were" deyilmir!'   },
+        { word: 'Were they tired? — No, they weren\'t.',    az: 'Mənfidə qısa forma olur.'   },
+        { word: 'Was it cheap? — Yes, it was.',             az: '"Yes, it were" deyilmir!'   },
+      ],
+      tip: 'Müsbət qısa cavabda həmişə tam forma: Yes, I was. / Yes, she was. / Yes, they were.',
+    },
+
+    // ── Mini-check 2 ─────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '___ you at home last night?',
+          options: ['Were', 'Was', 'Are'],
+          answer: 'Were',
+        },
+        {
+          q: '___ the film good?',
+          options: ['Were', 'Was', 'Is'],
+          answer: 'Was',
+        },
+        {
+          q: 'Where ___ they last weekend?',
+          options: ['was', 'were', 'are'],
+          answer: 'were',
+        },
+        {
+          q: 'Why ___ she upset?',
+          options: ['was', 'were', 'is'],
+          answer: 'was',
+        },
+        {
+          q: 'How much ___ the shoes?',
+          options: ['was', 'were', 'are'],
+          answer: 'were',
+        },
+        {
+          q: '"Were you tired?" — Düzgün qısa cavab hansıdır?',
+          options: ['Yes, I was.', 'Yes, I were.', 'Yes, was.'],
+          answer: 'Yes, I was.',
+        },
+        {
+          q: '"Was she at the party?" — Düzgün mənfi qısa cavab hansıdır?',
+          options: ['No, she wasn\'t.', 'No, she weren\'t.', 'No, she not.'],
+          answer: 'No, she wasn\'t.',
+        },
+        {
+          q: 'How old ___ your father in 1995?',
+          options: ['was', 'were', 'is'],
+          answer: 'was',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ───────────────────────────────────────────────────────────
+[
+  { en: 'I ___ at work yesterday.',                        tr: 'was',       wrong: 'were'     },
+  { en: 'We ___ very busy last week.',                     tr: 'were',      wrong: 'was'      },
+  { en: 'She ___ happy with the news.',                    tr: 'was',       wrong: 'were'     },
+  { en: 'They ___ at the stadium last night.',             tr: 'were',      wrong: 'was'      },
+  { en: 'The coffee ___ too hot.',                         tr: 'was',       wrong: 'were'     },
+  { en: 'You ___ right about that.',                       tr: 'were',      wrong: 'was'      },
+  { en: 'He ___ late for the meeting.',                    tr: 'was',       wrong: 'were'     },
+  { en: 'The tickets ___ very cheap.',                     tr: 'were',      wrong: 'was'      },
+  { en: 'It ___ cold last winter.',                        tr: 'was',       wrong: 'were'     },
+  { en: 'My parents ___ born in Baku.',                    tr: 'were',      wrong: 'was'      },
+  { en: 'The hotel ___ not expensive. (qısa forma)',       tr: 'wasn\'t',   wrong: 'weren\'t' },
+  { en: 'They ___ not ready on time. (qısa forma)',        tr: 'weren\'t',  wrong: 'wasn\'t'  },
+  { en: '___ you tired after work?',                       tr: 'Were',      wrong: 'Was'      },
+  { en: '___ the exam difficult?',                         tr: 'Was',       wrong: 'Were'     },
+  { en: 'Where ___ you last Sunday?',                      tr: 'were',      wrong: 'was'      },
+  { en: 'Why ___ she angry yesterday?',                    tr: 'was',       wrong: 'were'     },
+  { en: '"Were you late?" → Düzgün müsbət qısa cavab?',   tr: 'Yes, I was.',     wrong: 'Yes, I were.'    },
+  { en: '"Was he at school?" → Düzgün mənfi qısa cavab?', tr: 'No, he wasn\'t.', wrong: 'No, he weren\'t.' },
+  { en: 'am / is → keçmiş zamanda',                       tr: 'was',       wrong: 'were'     },
+  { en: 'are → keçmiş zamanda',                           tr: 'were',      wrong: 'was'      },
+],
+
+// ── Sentence Builder Quiz ────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən dünən evdə idim.',
+      words: ['I', 'was', 'at', 'home', 'yesterday', 'were', 'am'],
+      answer: ['I', 'was', 'at', 'home', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar keçən həftə çox məşğul idilər.',
+      words: ['They', 'were', 'very', 'busy', 'last', 'week', 'was', 'are'],
+      answer: ['They', 'were', 'very', 'busy', 'last', 'week'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O baha deyildi.',
+      words: ['It', 'wasn\'t', 'expensive', 'weren\'t', 'isn\'t'],
+      answer: ['It', 'wasn\'t', 'expensive'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar görüşdə deyildilər.',
+      words: ['They', 'weren\'t', 'at', 'the', 'meeting', 'wasn\'t', 'aren\'t'],
+      answer: ['They', 'weren\'t', 'at', 'the', 'meeting'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən dünən gecikdinmi?',
+      words: ['Were', 'you', 'late', 'yesterday', 'Was', 'Are'],
+      answer: ['Were', 'you', 'late', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İmtahan çətin idi?',
+      words: ['Was', 'the', 'exam', 'difficult', 'Were', 'Is'],
+      answer: ['Was', 'the', 'exam', 'difficult'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Dünən gecə harada idin?',
+      words: ['Where', 'were', 'you', 'last', 'night', 'was', 'are'],
+      answer: ['Where', 'were', 'you', 'last', 'night'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Otel rahat idi amma baha deyildi.',
+      words: ['The', 'hotel', 'was', 'comfortable', 'but', 'it', 'wasn\'t', 'expensive', 'weren\'t', 'were'],
+      answer: ['The', 'hotel', 'was', 'comfortable', 'but', 'it', 'wasn\'t', 'expensive'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uşaq ikən çox aktiv idim.',
+      words: ['When', 'I', 'was', 'a', 'child', 'I', 'were', 'very', 'active', 'am'],
+      answer: ['When', 'I', 'was', 'a', 'child', 'I', 'was', 'very', 'active'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O niyə əsəbi idi?',
+      words: ['Why', 'was', 'she', 'angry', 'were', 'is'],
+      answer: ['Why', 'was', 'she', 'angry'],
+    },
+  ],
+},
       // ── Node 2 ───────────────────────────────────────────
       {
         type:  'grammar_lesson',
