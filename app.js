@@ -3203,54 +3203,52 @@ function startQuiz(levelIdx, quizIdx) {
   closeOverlayPanel(true);
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
-
   // Section divider — tıklanmır
   if (item && !Array.isArray(item) && item.type === 'section_divider') return;
-
   // Grammar lesson
   if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
     startGrammarLesson(levelIdx, quizIdx);
     return;
   }
+  // Sentence builder quiz
+  if (item && !Array.isArray(item) && item.type === 'quiz_sentence_builder') {
+    startSentenceBuilder(levelIdx, quizIdx);
+    return;
+  }
   // Kids quiz
-if (lvl.id === 'kids') {
-  startKidsQuiz(levelIdx, quizIdx);
-  return;
-}
+  if (lvl.id === 'kids') {
+    startKidsQuiz(levelIdx, quizIdx);
+    return;
+  }
   // Grammar bölmə quiz-ləri (array formatında)
-if (lvl.id === 'grammar' && Array.isArray(item)) {
-  quiz.mode     = 'normal';
-  quiz.levelIdx = levelIdx;
-  quiz.quizIdx  = quizIdx;
-  quiz.mistakes = 0;
-  quiz.index    = 0;
-  quiz.locked   = false;
-  quiz.chanceUsed   = false;
-  quiz.chanceActive = false;
-  quiz.words = shuffle(item.filter(w => w && w.en && w.tr && w.wrong));
-  restoreNormalQuizBody();
-  elQuestionHint.textContent = 'Düzgün cavabı tap';
-  showQuizScreen();
-  showQuestion();
-  return;
-}
-
+  if (lvl.id === 'grammar' && Array.isArray(item)) {
+    quiz.mode     = 'normal';
+    quiz.levelIdx = levelIdx;
+    quiz.quizIdx  = quizIdx;
+    quiz.mistakes = 0;
+    quiz.index    = 0;
+    quiz.locked   = false;
+    quiz.chanceUsed   = false;
+    quiz.chanceActive = false;
+    quiz.words = shuffle(item.filter(w => w && w.en && w.tr && w.wrong));
+    restoreNormalQuizBody();
+    elQuestionHint.textContent = 'Düzgün cavabı tap';
+    showQuizScreen();
+    showQuestion();
+    return;
+  }
   // Reading quiz yoxlaması
   if (item && !Array.isArray(item) && item.type === 'reading') {
     startReadingQuiz(levelIdx, quizIdx);
     return;
   }
-
   if (item && !Array.isArray(item) && item.type === 'listening') {
-  startListeningQuiz(levelIdx, quizIdx);
-  return;
-}
-
+    startListeningQuiz(levelIdx, quizIdx);
+    return;
+  }
   const status = progress[lvl.id][quizIdx];
-  
   // level_done → retake
   if (status === 'level_done') {
-    // Exam üçün retake yoxdur, yenidən exam başlat
     if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
       startExam(levelIdx, quizIdx);
       return;
@@ -3258,18 +3256,15 @@ if (lvl.id === 'grammar' && Array.isArray(item)) {
     startRetakeMode(levelIdx, quizIdx);
     return;
   }
-
   // Exam ise exam sistemini başlat
   if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
     startExam(levelIdx, quizIdx);
     return;
   }
-
   let mode = 'normal';
   if (status === 'completed')        mode = 'phase2';
   if (status === 'phase2_completed') mode = 'phase3';
   if (status === 'phase3_unlocked')  mode = 'phase3';
-
   quiz.mode         = mode;
   quiz.levelIdx     = levelIdx;
   quiz.quizIdx      = quizIdx;
@@ -3278,8 +3273,6 @@ if (lvl.id === 'grammar' && Array.isArray(item)) {
   quiz.locked       = false;
   quiz.chanceUsed   = false;
   quiz.chanceActive = false;
-
-
   let words;
   if (mode === 'phase2') {
     words = item.filter(w => w && w.en && w.tr && w.wen);
@@ -3288,15 +3281,12 @@ if (lvl.id === 'grammar' && Array.isArray(item)) {
   } else {
     words = [...item];
   }
-
-quiz.words = shuffle(words.length >= 2 ? words : (Array.isArray(item) ? [...item] : []));
-  
+  quiz.words = shuffle(words.length >= 2 ? words : (Array.isArray(item) ? [...item] : []));
   const hints = {
     normal: 'Düzgün tərcüməni tap',
     phase2: 'Düzgün ingilis sözünü tap',
     phase3: 'Tərifə uyğun sözü tap',
   };
-
   restoreNormalQuizBody();
   elQuestionHint.textContent = hints[mode];
   showQuizScreen();
