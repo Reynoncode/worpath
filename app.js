@@ -3293,6 +3293,27 @@ function startQuiz(levelIdx, quizIdx) {
   showQuestion();
 }
 
+// ══════════════════════════════════════════════
+//  SENTENCE BUILDER QUIZ
+// ══════════════════════════════════════════════
+function startSentenceBuilder(levelIdx, quizIdx) {
+  const lvl  = LEVELS[levelIdx];
+  const item = lvl.quizzes[quizIdx];
+  quiz.mode     = 'sentence_builder';
+  quiz.levelIdx = levelIdx;
+  quiz.quizIdx  = quizIdx;
+  quiz.mistakes = 0;
+  quiz.index    = 0;
+  quiz.locked   = false;
+  quiz.chanceUsed   = false;
+  quiz.chanceActive = false;
+  quiz.words = shuffle([...item.questions]);
+  restoreNormalQuizBody();
+  elQuestionHint.textContent = 'Cümləni düzgün ardıcıllıqla yığ';
+  showQuizScreen();
+  showQuestion();
+}
+
 function checkSbComplete(q) {
   const chips    = [...document.querySelectorAll('#sb-answer-row .sb-chip')];
   const selected = chips.map(c => c.textContent);
@@ -3344,18 +3365,16 @@ function showQuestion() {
 
   // ── Sentence builder ──────────────────────────
   if (quiz.mode === 'sentence_builder') {
-    elQW.textContent   = word.sentence;
+    elQW.textContent    = word.sentence;
     elQW.style.fontSize = '20px';
     if (elQH) elQH.textContent = 'Cümləni düzgün ardıcıllıqla yığ';
 
     elO0.style.display = 'none';
     elO1.style.display = 'none';
 
-    // əvvəlki builder UI-ı təmizlə
     const old = document.getElementById('sentence-builder-ui');
     if (old) old.remove();
 
-    // builder UI yarat
     const shuffledWords = shuffle([...word.words]);
     const builderEl = document.createElement('div');
     builderEl.id = 'sentence-builder-ui';
@@ -3435,7 +3454,6 @@ function showQuestion() {
   elO1.disabled  = false;
   quiz.locked    = false;
 }
-
 // ── Şans popup ────────────────────────────────────────────
 function showChanceModal() {
   quiz.chanceActive = true;
