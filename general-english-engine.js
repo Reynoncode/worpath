@@ -377,10 +377,26 @@ function renderGeneralEnglishPath(lvl, li) {
   let html = '<div class="quiz-path grammar-path">';
 
   lvl.quizzes.forEach((item, qi) => {
+
+    // ── Section divider ──────────────────────────────────
+    if (item && !Array.isArray(item) && item.type === 'section_divider') {
+      html += `
+        <div class="grammar-section-divider">
+          <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
+          <div class="grammar-section-title" style="color:${lvl.color}; border-color:${lvl.color}33; background:${lvl.color}11;">${item.title}</div>
+          <div class="grammar-section-line" style="background:${lvl.color}; opacity:0.4;"></div>
+        </div>
+      `;
+      return;
+    }
+
     const status = getStatus(li, qi);
     const isDone = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
 
-    if (qi > 0) html += '<div class="path-line"></div>';
+    const prevItem      = lvl.quizzes[qi - 1];
+    const prevIsDivider = prevItem && !Array.isArray(prevItem) && prevItem.type === 'section_divider';
+    if (qi > 0 && !prevIsDivider) html += '<div class="path-line"></div>';
+
     html += '<div class="path-node-wrap">';
 
     if (isDone) {
@@ -415,7 +431,6 @@ function renderGeneralEnglishPath(lvl, li) {
   html += '</div>';
   return html;
 }
-
 // ── Global exports ──────────────────────────────────────────
 window.startGeneralEnglishLesson  = startGeneralEnglishLesson;
 window.renderGeneralEnglishPath   = renderGeneralEnglishPath;
