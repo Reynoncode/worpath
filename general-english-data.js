@@ -14,54 +14,368 @@ const GENERAL_ENGLISH_LEVELS = [
     color: '#6366F1',
     quizzes: [
 
-      // ── Node 1 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Cümlənin əsas hissələri',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Cümlənin əsas hissələri nədir?',
-            content: 'İngilis dilində hər cümlənin iki əsas hissəsi var: **subject** (mübtəda) və **predicate** (xəbər).\n\nMübtəda cümlədə kim və ya nə haqqında danışıldığını bildirir. Xəbər isə mübtəda haqqında nə deyildiyin göstərir.',
-            examples: [
-              { word: 'The cat sleeps.',   az: 'Pişik yatır.',       note: 'subject: The cat' },
-              { word: 'She reads books.',  az: 'O kitab oxuyur.',    note: 'subject: She' },
-              { word: 'They play tennis.', az: 'Onlar tennis oynayır.', note: 'subject: They' },
-            ],
-            tip: 'Cümlədə mübtədanı tapmaq üçün "kim?" və ya "nə?" sualını ver.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"The dog runs fast." — cümlədə subject hansıdır?',
-                options: ['runs fast', 'The dog', 'fast', 'runs'],
-                answer:  'The dog',
-              },
-              {
-                q:       'Hansı cümlə düzgün quruluşdadır?',
-                options: ['Sleeps the cat.', 'The cat sleeps.', 'Cat the sleeps.', 'Sleeps cat the.'],
-                answer:  'The cat sleeps.',
-              },
-              {
-                q:       '"She writes letters." — predicate hansıdır?',
-                options: ['She', 'letters', 'writes letters', 'She writes'],
-                answer:  'writes letters',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '🧱',
-            title: 'Birinci addım!',
-            desc:  'Cümlənin əsas hissələrini öyrəndin.',
-            stats: [
-              { num: '2',  label: 'əsas hissə' },
-              { num: '3',  label: 'nümunə' },
-            ],
-          },
-        ],
-      },
+     // ── To be — indiki zaman ─────────────────────────────────────
+{ type: 'section_divider', title: 'To be — indiki zaman' },
+      
+{
+  type: 'grammar_lesson',
+  title: 'To be — indiki zaman (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Giriş ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'To be nədir?',
+      content: '"To be" ingilis dilinin ən əsas felidir. Azərbaycan dilindəki "olmaq" felinə uyğun gəlir.\n\nİndiki zamanda üç forması var:',
+      examples: [
+        { word: 'am',  az: 'I ilə işlənir',              note: 'I am a student.' },
+        { word: 'is',  az: 'he / she / it ilə işlənir',  note: 'She is a doctor.' },
+        { word: 'are', az: 'we / you / they ilə işlənir', note: 'They are friends.' },
+      ],
+      tip: 'To be feli cümlədə həm "var", həm "dır/dir", həm də "am/is/are" mənasını verir.',
+    },
+
+    // ── Ekran 2: Müsbət forma ────────────────────────
+    {
+      type: 'lesson',
+      title: 'Müsbət forma',
+      content: 'To be-nin tam və qısa formaları var. Danışıqda qısa formalar daha çox işlənir:',
+      examples: [
+        { word: 'I am → I\'m',       az: 'Mən ... -am/-əm'    },
+        { word: 'He is → He\'s',     az: 'O (kişi) ... -dır'  },
+        { word: 'She is → She\'s',   az: 'O (qadın) ... -dır' },
+        { word: 'It is → It\'s',     az: 'O (əşya) ... -dır'  },
+        { word: 'We are → We\'re',   az: 'Biz ... -ıq/-ik'    },
+        { word: 'You are → You\'re', az: 'Sən/Siz ... -san'   },
+        { word: 'They are → They\'re', az: 'Onlar ... -dırlar' },
+      ],
+      tip: 'That\'s = that is · There\'s = there is · Here\'s = here is',
+    },
+
+    // ── Ekran 3: İstifadə sahələri ───────────────────
+    {
+      type: 'lesson',
+      title: 'To be necə işlənir?',
+      content: 'To be aşağıdakı hallarda işlənir:',
+      examples: [
+        { word: 'I\'m a student.',         az: 'Peşə / vəzifə',     note: 'I am + isim' },
+        { word: 'She is American.',        az: 'Milliyyət',          note: 'is + milliyyət' },
+        { word: 'He\'s tall.',             az: 'Sifət / xüsusiyyət', note: 'is + sifət' },
+        { word: 'I\'m 25 years old.',      az: 'Yaş',               note: 'am + rəqəm' },
+        { word: 'They\'re from Baku.',     az: 'Yer / mənşə',       note: 'are + from' },
+        { word: 'My favourite colour is blue.', az: 'Sevimli şey',  note: 'is + isim' },
+      ],
+      tip: '"I\'m interested in art." — to be + interested in → bir şeyə maraq bildirmək üçün.',
+    },
+
+    // ── Mini-check 1 ─────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'I ___ a student.',
+          options: ['am', 'is', 'are'],
+          answer: 'am',
+        },
+        {
+          q: 'She ___ a doctor.',
+          options: ['am', 'is', 'are'],
+          answer: 'is',
+        },
+        {
+          q: 'They ___ from Baku.',
+          options: ['am', 'is', 'are'],
+          answer: 'are',
+        },
+        {
+          q: 'My brother ___ very tall.',
+          options: ['am', 'is', 'are'],
+          answer: 'is',
+        },
+        {
+          q: 'We ___ good friends.',
+          options: ['am', 'is', 'are'],
+          answer: 'are',
+        },
+        {
+          q: 'It ___ ten o\'clock.',
+          options: ['am', 'is', 'are'],
+          answer: 'is',
+        },
+        {
+          q: 'Your keys ___ on the table.',
+          options: ['am', 'is', 'are'],
+          answer: 'are',
+        },
+      ],
+    },
+
+    // ── Ekran 4: Mənfi forma ─────────────────────────
+    {
+      type: 'lesson',
+      title: 'Mənfi forma',
+      content: 'Mənfi cümlə qurmaq üçün to be-dən sonra "not" əlavə olunur.\n\nİki qısa forma var:',
+      examples: [
+        { word: 'I am not → I\'m not',                   az: 'Mən deyiləm'       },
+        { word: 'He is not → He\'s not / He isn\'t',     az: 'O deyil (kişi)'    },
+        { word: 'She is not → She\'s not / She isn\'t',  az: 'O deyil (qadın)'   },
+        { word: 'It is not → It\'s not / It isn\'t',     az: 'O deyil (əşya)'    },
+        { word: 'We are not → We\'re not / We aren\'t',  az: 'Biz deyilik'       },
+        { word: 'You are not → You\'re not / You aren\'t', az: 'Sən/Siz deyilsən' },
+        { word: 'They are not → They\'re not / They aren\'t', az: 'Onlar deyillər' },
+      ],
+      note: 'I\'m not — yeganə formadır. "I amn\'t" deyilmir.',
+    },
+
+    // ── Ekran 5: Mənfi nümunələr ─────────────────────
+    {
+      type: 'lesson',
+      title: 'Mənfi cümlə nümunələri',
+      content: 'Gündəlik danışıqda mənfi formanın işlənməsinə bax:',
+      examples: [
+        { word: 'I\'m tired but I\'m not hungry.',           az: 'Mən yorğunam amma ac deyiləm.'         },
+        { word: 'Tom isn\'t interested in politics.',        az: 'Tom siyasətlə maraqlanmır.'            },
+        { word: 'Jane isn\'t at home. She\'s at work.',      az: 'Jane evdə deyil. O işdədir.'           },
+        { word: 'Those people aren\'t English.',             az: 'O adamlar ingilisli deyil.'            },
+        { word: 'It\'s sunny today but it isn\'t warm.',     az: 'Bu gün günəşlidir amma isti deyil.'    },
+      ],
+      tip: 'He\'s not = He isn\'t — ikisi də düzgündür, mənada fərq yoxdur.',
+    },
+
+    // ── Mini-check 2 ─────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'I ___ hungry. (mənfi)',
+          options: ['\'m not', 'isn\'t', 'aren\'t'],
+          answer: '\'m not',
+        },
+        {
+          q: 'She ___ at home. (mənfi)',
+          options: ['\'m not', 'isn\'t', 'aren\'t'],
+          answer: 'isn\'t',
+        },
+        {
+          q: 'They ___ English. (mənfi)',
+          options: ['\'m not', 'isn\'t', 'aren\'t'],
+          answer: 'aren\'t',
+        },
+        {
+          q: 'It ___ warm today. (mənfi)',
+          options: ['\'m not', 'isn\'t', 'aren\'t'],
+          answer: 'isn\'t',
+        },
+        {
+          q: 'We ___ late. (mənfi)',
+          options: ['\'m not', 'isn\'t', 'aren\'t'],
+          answer: 'aren\'t',
+        },
+        {
+          q: '"I amn\'t" — bu forma doğrudurmu?',
+          options: ['Xeyr, "I\'m not" işlənir', 'Bəli, doğrudur', 'Bəzən işlənir'],
+          answer: 'Xeyr, "I\'m not" işlənir',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── To be — indiki zaman (Dərs 2) ───────────────────────────
+
+{
+  type: 'grammar_lesson',
+  title: 'To be — indiki zaman (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual forması ────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual forması',
+      content: 'Sual qurmaq üçün to be mübtədanın önünə keçir.\n\nDüz sıra: Subject + to be\nSual sırası: To be + Subject',
+      examples: [
+        { word: 'I am late. → Am I late?',             az: 'Mən gecikdimmi?'           },
+        { word: 'She is at home. → Is she at home?',   az: 'O evdədir?'                },
+        { word: 'They are new. → Are they new?',       az: 'Onlar yenidirlər?'         },
+        { word: 'Your shoes are nice. → Are your shoes nice?', az: 'Ayaqqabıların gözəldir?' },
+      ],
+      note: '"Is at home your mother?" — yanlış. "Is your mother at home?" — düzgün.',
+    },
+
+    // ── Ekran 2: Wh- sualları ────────────────────────
+    {
+      type: 'lesson',
+      title: 'Wh- sualları',
+      content: 'What / Where / Who / How / Why sualları to be-dən əvvəl gəlir:',
+      examples: [
+        { word: 'What colour is your car?',     az: 'Maşınınızın rəngi nədir?',    note: 'It\'s red.' },
+        { word: 'Where are you from?',          az: 'Sən haradan gəlirsən?',       note: 'Canada.' },
+        { word: 'How old is Joe?',              az: 'Coenin yaşı neçədir?',        note: 'He\'s 24.' },
+        { word: 'Why are you angry?',           az: 'Niyə əsəbisiniz?',            note: '—' },
+        { word: 'How much are these postcards?', az: 'Bu kartpostallar neçəyədir?', note: 'Fifty pence.' },
+        { word: 'Who\'s that man?',             az: 'O kişi kimdir?',              note: '—' },
+      ],
+      tip: 'What\'s = what is · Who\'s = who is · Where\'s = where is · How\'s = how is',
+    },
+
+    // ── Ekran 3: Qısa cavablar ───────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar',
+      content: 'İngilis dilində "Bəli" və ya "Xeyr" ilə qısa cavab verilərkən to be təkrarlanır:\n\nYes/No ilə cavab verərkən qısa forma işlənmir — "Yes, I\'m" deyilmir!',
+      examples: [
+        { word: 'Are you tired? — Yes, I am.',           az: '"Yes, I\'m" deyilmir!'     },
+        { word: 'Are you hungry? — No, I\'m not.',       az: 'Mənfidə qısa forma olur.'  },
+        { word: 'Is your friend English? — Yes, he is.', az: '"Yes, he\'s" deyilmir!'    },
+        { word: 'Are these your keys? — Yes, they are.', az: '"Yes, they\'re" deyilmir!' },
+        { word: 'Is that your seat? — No, it isn\'t.',   az: 'Mənfidə qısa forma olur.'  },
+      ],
+      tip: 'Müsbət qısa cavabda həmişə tam forma: Yes, I am. / Yes, she is. / Yes, they are.',
+    },
+
+    // ── Mini-check 3 ─────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '___ you married?',
+          options: ['Are', 'Is', 'Am'],
+          answer: 'Are',
+        },
+        {
+          q: '___ your mother at home?',
+          options: ['Are', 'Is', 'Am'],
+          answer: 'Is',
+        },
+        {
+          q: '___ I late?',
+          options: ['Are', 'Is', 'Am'],
+          answer: 'Am',
+        },
+        {
+          q: 'Where ___ you from?',
+          options: ['are', 'is', 'am'],
+          answer: 'are',
+        },
+        {
+          q: 'How old ___ Joe?',
+          options: ['are', 'is', 'am'],
+          answer: 'is',
+        },
+        {
+          q: '"Are you tired?" — Düzgün qısa cavab hansıdır?',
+          options: ['Yes, I am.', 'Yes, I\'m.', 'Yes, am.'],
+          answer: 'Yes, I am.',
+        },
+        {
+          q: '"Is she a doctor?" — Düzgün qısa cavab hansıdır?',
+          options: ['Yes, she is.', 'Yes, she\'s.', 'Yes, is.'],
+          answer: 'Yes, she is.',
+        },
+        {
+          q: 'Why ___ you angry?',
+          options: ['are', 'is', 'am'],
+          answer: 'are',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── To be — indiki zaman: Translate Quiz ────────────────────
+
+[
+  { en: 'I ___ a student.',                     tr: 'am',      wrong: 'is'       },
+  { en: 'She ___ a doctor.',                    tr: 'is',      wrong: 'are'      },
+  { en: 'They ___ from Baku.',                  tr: 'are',     wrong: 'is'       },
+  { en: 'We ___ good friends.',                 tr: 'are',     wrong: 'am'       },
+  { en: 'I ___ not hungry.',                    tr: '\'m',     wrong: 'isn\'t'   },
+  { en: 'He ___ not at home.',                  tr: 'is',      wrong: 'are'      },
+  { en: 'They ___ English. (mənfi)',             tr: 'aren\'t', wrong: 'isn\'t'   },
+  { en: 'It ___ warm today. (mənfi)',            tr: 'isn\'t',  wrong: 'aren\'t'  },
+  { en: '"Are you tired?" → Düzgün cavab?',     tr: 'Yes, I am.',    wrong: 'Yes, I\'m.'   },
+  { en: '"Is she a nurse?" → Düzgün cavab?',    tr: 'Yes, she is.',  wrong: 'Yes, she\'s.' },
+  { en: '___ your mother at home?',             tr: 'Is',      wrong: 'Are'      },
+  { en: '___ I late?',                          tr: 'Am',      wrong: 'Is'       },
+  { en: 'Where ___ you from?',                  tr: 'are',     wrong: 'is'       },
+  { en: 'How old ___ Joe?',                     tr: 'is',      wrong: 'are'      },
+  { en: 'What\'s = ?',                          tr: 'what is', wrong: 'what are' },
+  { en: 'Who\'s = ?',                           tr: 'who is',  wrong: 'who are'  },
+  { en: 'There\'s = ?',                         tr: 'there is', wrong: 'there are' },
+  { en: 'I\'m tired ___ I\'m not hungry.',      tr: 'but',     wrong: 'and'      },
+  { en: 'John ___ afraid of dogs.',             tr: 'is',      wrong: 'are'      },
+  { en: 'Your keys ___ on the table.',          tr: 'are',     wrong: 'is'       },
+],
+
+// ── To be — indiki zaman: Sentence Builder Quiz ─────────────
+
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən tələbəyəm.',
+      words: ['I', 'am', 'a', 'student', 'is', 'are'],
+      answer: ['I', 'am', 'a', 'student'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O həkimdir.',
+      words: ['She', 'is', 'a', 'doctor', 'am', 'are'],
+      answer: ['She', 'is', 'a', 'doctor'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar Bakıdandır.',
+      words: ['They', 'are', 'from', 'Baku', 'is', 'am'],
+      answer: ['They', 'are', 'from', 'Baku'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən ac deyiləm.',
+      words: ['I', '\'m', 'not', 'hungry', 'isn\'t', 'aren\'t'],
+      answer: ['I', '\'m', 'not', 'hungry'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O evdə deyil.',
+      words: ['She', 'isn\'t', 'at', 'home', 'aren\'t', '\'m not'],
+      answer: ['She', 'isn\'t', 'at', 'home'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən gecikdinmi?',
+      words: ['Are', 'you', 'late', 'Is', 'Am'],
+      answer: ['Are', 'you', 'late'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Maşınınızın rəngi nədir?',
+      words: ['What', 'colour', 'is', 'your', 'car', 'are', 'am'],
+      answer: ['What', 'colour', 'is', 'your', 'car'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən haradan gəlirsən?',
+      words: ['Where', 'are', 'you', 'from', 'is', 'am'],
+      answer: ['Where', 'are', 'you', 'from'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu gün günəşlidir amma isti deyil.',
+      words: ['It\'s', 'sunny', 'today', 'but', 'it', 'isn\'t', 'warm', 'aren\'t', 'not'],
+      answer: ['It\'s', 'sunny', 'today', 'but', 'it', 'isn\'t', 'warm'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Açarların masanın üstündədir.',
+      words: ['Your', 'keys', 'are', 'on', 'the', 'table', 'is', 'am'],
+      answer: ['Your', 'keys', 'are', 'on', 'the', 'table'],
+    },
+  ],
+},
 
       // ── Node 2 ───────────────────────────────────────────
       {
@@ -259,7 +573,7 @@ const GENERAL_ENGLISH_LEVELS = [
           },
         ],
       },
-{ type: 'section_divider', title: 'To be — indiki zaman' },
+
 { type: 'section_divider', title: 'To be — keçmiş zaman' },
 { type: 'section_divider', title: 'Söz sırası' },
 { type: 'section_divider', title: 'Present Simple — müsbət cümlə' },
