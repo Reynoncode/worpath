@@ -3348,8 +3348,8 @@ if (ConfBtn) ConfBtn.style.display = 'none';
     if (missingArticles.length > 0) {
       corrEl.innerHTML = `<span class="sb-tip">💡 Unutdun: <b>${missingArticles.join(', ')}</b></span>`;
     }
-    playSound('correct');
-    setTimeout(() => handleCorrectAnswer(), 1200);
+ //    playSound('correct');
+ //    setTimeout(() => handleCorrectAnswer(), 1200);
   } else {
     row.classList.add('sb-wrong');
     quiz.mistakes++;
