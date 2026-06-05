@@ -3314,35 +3314,49 @@ function startSentenceBuilder(levelIdx, quizIdx) {
   showQuestion();
 }
 
-function checkSbComplete(q) {
+function updateConfirmBtn() {
+  const chips = document.querySelectorAll('#sb-answer-row .sb-chip');
+  const btn   = document.getElementById('sb-confirm-btn');
+  if (btn) btn.disabled = chips.length === 0;
+}
+
+const ARTICLES = ['a', 'an', 'the'];
+
+function confirmSbAnswer(q) {
+  quiz.locked = true;
   const chips    = [...document.querySelectorAll('#sb-answer-row .sb-chip')];
   const selected = chips.map(c => c.textContent);
-  if (selected.length !== q.answer.length) return;
-  quiz.locked = true;
-  const isCorrect = q.answer.every((w, i) => w === selected[i]);
+
+  // Artikl tolerantlığı — hər iki tərəfdən artikl çıxarıb müqayisə et
+  const stripArticles = arr => arr.filter(w => !ARTICLES.includes(w.toLowerCase()));
+  const selectedCore  = stripArticles(selected);
+  const answerCore    = stripArticles(q.answer);
+  const missingArticles = q.answer.filter(w =>
+    ARTICLES.includes(w.toLowerCase()) && !selected.includes(w)
+  );
+
+  const isCorrect = answerCore.length === selectedCore.length &&
+    answerCore.every((w, i) => w === selectedCore[i]);
+
+  const row     = document.getElementById('sb-answer-row');
+  const corrEl  = document.getElementById('sb-correct-answer');
+  constConfBtn = document.getElementById('sb-confirm-btn');
+  if (ConfBtn) ConfBtn.style.display = 'none';
+
   if (isCorrect) {
-    document.getElementById('sb-answer-row').classList.add('sb-correct');
+    row.classList.add('sb-correct');
+    if (missingArticles.length > 0) {
+      corrEl.innerHTML = `<span class="sb-tip">💡 Unutdun: <b>${missingArticles.join(', ')}</b></span>`;
+    }
     playSound('correct');
-    setTimeout(() => handleCorrectAnswer(), 800);
+    setTimeout(() => handleCorrectAnswer(), 1200);
   } else {
-    document.getElementById('sb-answer-row').classList.add('sb-wrong');
-    playSound('wrong');
+    row.classList.add('sb-wrong');
     quiz.mistakes++;
-    setTimeout(() => {
-      const row = document.getElementById('sb-answer-row');
-      row.classList.remove('sb-wrong');
-      chips.forEach(chip => {
-        const word = chip.textContent;
-        const btn  = [...document.querySelectorAll('#sb-words-row .sb-word-btn')]
-          .find(b => b.dataset.word === word && b.disabled);
-        if (btn) {
-          btn.disabled = false;
-          btn.classList.remove('sb-used');
-        }
-        chip.remove();
-      });
-      quiz.locked = false;
-    }, 800);
+    corrEl.innerHTML = `<span class="sb-wrong-label">Düzgün cavab:</span>
+      <span class="sb-wrong-answer">${q.answer.join(' ')}</span>`;
+    playSound('wrong');
+    setTimeout(() => handleCorrectAnswer(), 2000);
   }
 }
 
@@ -3375,39 +3389,46 @@ function showQuestion() {
     const old = document.getElementById('sentence-builder-ui');
     if (old) old.remove();
 
-    const shuffledWords = shuffle([...word.words]);
-    const builderEl = document.createElement('div');
-    builderEl.id = 'sentence-builder-ui';
-    builderEl.innerHTML = `
-      <div id="sb-answer-row"></div>
-      <div id="sb-words-row">
-        ${shuffledWords.map(w =>
-          `<button class="sb-word-btn" data-word="${w}">${w}</button>`
-        ).join('')}
-      </div>
-    `;
-    document.querySelector('.quiz-body').appendChild(builderEl);
+const shuffledWords = shuffle([...word.words]);
+const builderEl = document.createElement('div');
+builderEl.id = 'sentence-builder-ui';
+builderEl.innerHTML = `
+  <div id="sb-answer-row"></div>
+  <div id="sb-words-row">
+    ${shuffledWords.map(w =>
+      `<button class="sb-word-btn" data-word="${w}">${w}</button>`
+    ).join('')}
+  </div>
+  <div id="sb-correct-answer"></div>
+  <button id="sb-confirm-btn" disabled>Təsdiqlə</button>
+`;
+document.querySelector('.quiz-body').appendChild(builderEl);
 
-    builderEl.querySelectorAll('.sb-word-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (quiz.locked) return;
-        btn.disabled = true;
-        btn.classList.add('sb-used');
-        const answerRow = document.getElementById('sb-answer-row');
-        const chip = document.createElement('button');
-        chip.className = 'sb-chip';
-        chip.textContent = btn.dataset.word;
-        chip.addEventListener('click', () => {
-          if (quiz.locked) return;
-          btn.disabled = false;
-          btn.classList.remove('sb-used');
-          chip.remove();
-          checkSbComplete(word);
-        });
-        answerRow.appendChild(chip);
-        checkSbComplete(word);
-      });
+builderEl.querySelectorAll('.sb-word-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (quiz.locked) return;
+    btn.disabled = true;
+    btn.classList.add('sb-used');
+    const answerRow = document.getElementById('sb-answer-row');
+    const chip = document.createElement('button');
+    chip.className = 'sb-chip';
+    chip.textContent = btn.dataset.word;
+    chip.addEventListener('click', () => {
+      if (quiz.locked) return;
+      btn.disabled = false;
+      btn.classList.remove('sb-used');
+      chip.remove();
+      updateConfirmBtn();
     });
+    answerRow.appendChild(chip);
+    updateConfirmBtn();
+  });
+});
+
+document.getElementById('sb-confirm-btn').addEventListener('click', () => {
+  if (quiz.locked) return;
+  confirmSbAnswer(word);
+});
 
     quiz.locked = false;
     return;
