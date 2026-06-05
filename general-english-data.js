@@ -1449,7 +1449,363 @@ const GENERAL_ENGLISH_LEVELS = [
       
 { type: 'section_divider', title: 'Present Simple — inkar və sual' },
 
-      
+// ── UNIT 6–7 — Present Simple (İnkar və Sual) ────────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Simple — İnkar (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: İnkar quruluşu ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Simple — İnkar quruluşu',
+      content: 'Present Simple-də inkar üçün do not (don\'t) və does not (doesn\'t) işlədilir:\n\nI / we / you / they → don\'t + fel\nHe / she / it → doesn\'t + fel\n\n❗ Əsas qayda: doesn\'t / don\'t-dan sonra fel sadə formada qalır — -s almır!',
+      table: [
+        ['Subject',              'Köməkçi',   'Fel'],
+        ['I / we / you / they',  'don\'t',    'work / like / eat'],
+        ['he / she / it',        'doesn\'t',  'work / like / eat'],
+      ],
+      tip: 'doesn\'t işlətdikdə felə -s əlavə etmə: She doesn\'t speak ✅ — She doesn\'t speaks ❌',
+    },
+
+    // ── Ekran 2: Düzgün və yanlış nümunələr ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İnkarda yanlış və düzgün forma',
+      content: 'doesn\'t / don\'t-dan sonra fel həmişə sadə formada (infinitive) qalır:',
+      examples: [
+        { word: 'She doesn\'t speak Italian.',      az: '✅ Düzgün — doesn\'t + sadə fel'       },
+        { word: 'She doesn\'t speaks Italian.',     az: '❌ Yanlış — -s artıq doesn\'t-dadır'   },
+        { word: 'He doesn\'t have a car.',          az: '✅ Düzgün — doesn\'t + have'            },
+        { word: 'He doesn\'t has a car.',           az: '❌ Yanlış — doesn\'t + has olmaz'       },
+        { word: 'They don\'t know my address.',     az: '✅ Düzgün — don\'t + know'              },
+        { word: 'I don\'t drink tea.',              az: '✅ Düzgün — don\'t + drink'             },
+        { word: 'We don\'t works on Sunday.',       az: '❌ Yanlış — don\'t + works olmaz'       },
+      ],
+      tip: '-s mənası doesn\'t içindədir. Ayrıca felə -s əlavə etmək lazım deyil.',
+    },
+
+    // ── Ekran 3: İnkar nümunə cümlələri ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İnkar — nümunə cümlələri',
+      content: 'don\'t və doesn\'t ilə düzgün cümlələrə bax:',
+      examples: [
+        { word: 'I drink coffee but I don\'t drink tea.',          az: 'I → don\'t'      },
+        { word: 'Sue drinks tea but she doesn\'t drink coffee.',   az: 'she → doesn\'t'  },
+        { word: 'We don\'t watch television very often.',          az: 'we → don\'t'     },
+        { word: 'It doesn\'t rain very often here.',               az: 'it → doesn\'t'   },
+        { word: 'My car doesn\'t use much petrol.',                az: 'my car → doesn\'t' },
+        { word: 'Paula doesn\'t usually have breakfast.',          az: 'she → doesn\'t'  },
+        { word: 'Gerry and Linda don\'t know many people.',        az: 'they → don\'t'   },
+      ],
+      tip: 'don\'t = do not, doesn\'t = does not. Danışıq dilində qısa forma işlədilir.',
+    },
+
+    // ── Ekran 4: don't / doesn't seçimi ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'don\'t yoxsa doesn\'t?',
+      content: 'Seçim subject-ə görə edilir:',
+      table: [
+        ['Subject',                     'İnkar'],
+        ['I',                           'I don\'t like...'],
+        ['You',                         'You don\'t work...'],
+        ['We',                          'We don\'t eat...'],
+        ['They',                        'They don\'t know...'],
+        ['He',                          'He doesn\'t drive...'],
+        ['She',                         'She doesn\'t go...'],
+        ['It',                          'It doesn\'t rain...'],
+        ['The shop / My friend',        '...doesn\'t open / doesn\'t call'],
+      ],
+      tip: 'He/she/it → doesn\'t. Qalan hamısı → don\'t.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'She doesn\'t speaks French.',
+            'She doesn\'t speak French.',
+            'She don\'t speak French.',
+          ],
+          answer: 'She doesn\'t speak French.',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'They doesn\'t work on weekends.',
+            'They don\'t works on weekends.',
+            'They don\'t work on weekends.',
+          ],
+          answer: 'They don\'t work on weekends.',
+        },
+        {
+          q: '"He ___ a car." — boşluğu doldur (inkarda):',
+          options: ['don\'t have', 'doesn\'t have', 'doesn\'t has'],
+          answer: 'doesn\'t have',
+        },
+        {
+          q: 'Hansı cümlə yanlışdır?',
+          options: [
+            'I don\'t drink coffee.',
+            'She doesn\'t eats meat.',
+            'We don\'t know his address.',
+          ],
+          answer: 'She doesn\'t eats meat.',
+        },
+        {
+          q: '"My car ___ much petrol." — düzgün forma:',
+          options: ['don\'t use', 'doesn\'t uses', 'doesn\'t use'],
+          answer: 'doesn\'t use',
+        },
+        {
+          q: '"Paula ___ usually have breakfast." — boşluğa nə gəlir?',
+          options: ['don\'t', 'doesn\'t', 'isn\'t'],
+          answer: 'doesn\'t',
+        },
+        {
+          q: 'doesn\'t-dan sonra fel necə olur?',
+          options: ['Sadə forma (-s almır)', 'Fel -s alır', 'Fel -ing alır'],
+          answer: 'Sadə forma (-s almır)',
+        },
+        {
+          q: '"Gerry and Linda ___ many people." — düzgün forma:',
+          options: ['doesn\'t know', 'don\'t knows', 'don\'t know'],
+          answer: 'don\'t know',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Simple — Sual (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Simple — Sual quruluşu',
+      content: 'Present Simple-də sual üçün do / does köməkçi feli subject-dən əvvələ keçir:\n\nDo / Does + Subject + Verb\n\n❗ Sualda da fel sadə formada qalır — -s almır!',
+      table: [
+        ['Köməkçi', 'Subject',              'Fel'],
+        ['Do',      'I / we / you / they',  'work / live / eat?'],
+        ['Does',    'he / she / it',        'work / live / eat?'],
+      ],
+      tip: 'Does she work? ✅ — Does she works? ❌ — Sualda da felə -s əlavə etmə!',
+    },
+
+    // ── Ekran 2: Sual nümunələri ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual — nümunə cümlələri',
+      content: 'Do və Does ilə düzgün sual cümlələri:',
+      examples: [
+        { word: 'Do you live near here?',          az: 'you → Do'         },
+        { word: 'Do they know each other?',        az: 'they → Do'        },
+        { word: 'Does she work in a bank?',        az: 'she → Does'       },
+        { word: 'Does it rain a lot here?',        az: 'it → Does'        },
+        { word: 'Do you usually have breakfast?',  az: 'you → Do'         },
+        { word: 'Does your brother play tennis?',  az: 'your brother → Does' },
+        { word: 'Does his sister have a car?',     az: 'his sister → Does'   },
+      ],
+      tip: 'Do you like...? / Does he like...? — subject dəyişir, fel dəyişmir.',
+    },
+
+    // ── Ekran 3: Qısa cavablar ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar (Short Answers)',
+      content: 'Suala qısa cavab verərkən do / does / don\'t / doesn\'t işlədilir — fel təkrarlanmır:',
+      table: [
+        ['Sual',                          'Bəli',          'Xeyr'],
+        ['Do you like football?',         'Yes, I do.',    'No, I don\'t.'],
+        ['Does she work here?',           'Yes, she does.','No, she doesn\'t.'],
+        ['Do they live near you?',        'Yes, they do.', 'No, they don\'t.'],
+        ['Does Paul live near you?',      'Yes, he does.', 'No, he doesn\'t.'],
+        ['Do your parents speak English?','Yes, they do.', 'No, they don\'t.'],
+      ],
+      tip: '"Yes, she does like." demə — sadəcə "Yes, she does." kifayətdir.',
+    },
+
+    // ── Ekran 4: Sual sözləri ilə ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə (Where/What/How often)',
+      content: 'Sual sözü (Where/What/How often/What time) cümlənin əvvəlinə gəlir, sonra Do/Does:',
+      table: [
+        ['Sual sözü',  'Köməkçi', 'Subject',    'Fel'],
+        ['Where',      'do',      'you',         'live?'],
+        ['What',       'does',    'she',         'do?'],
+        ['How often',  'do',      'they',        'come?'],
+        ['What time',  'does',    'the film',    'start?'],
+        ['Where',      'do',      'you',         'come from?'],
+        ['What',       'does',    'this word',   'mean?'],
+      ],
+      tip: 'Sual sözü → Do/Does → Subject → Verb sırası pozulmamalıdır.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Does she works in a bank?',
+            'Does she work in a bank?',
+            'Do she work in a bank?',
+          ],
+          answer: 'Does she work in a bank?',
+        },
+        {
+          q: '"Do you like classical music?" — bəli cavabı:',
+          options: ['Yes, I like.', 'Yes, I do.', 'Yes, do I.'],
+          answer: 'Yes, I do.',
+        },
+        {
+          q: '"Does Paul live near you?" — xeyr cavabı:',
+          options: ['No, he doesn\'t.', 'No, he don\'t.', 'No, Paul doesn\'t lives.'],
+          answer: 'No, he doesn\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Where does you come from?',
+            'Where do you come from?',
+            'Where you do come from?',
+          ],
+          answer: 'Where do you come from?',
+        },
+        {
+          q: '"___ the film start?" — boşluğa nə gəlir?',
+          options: ['What time do', 'What time does', 'What does time'],
+          answer: 'What time does',
+        },
+        {
+          q: '"Do your parents speak English?" — xeyr cavabı:',
+          options: ['No, they don\'t.', 'No, they doesn\'t.', 'No, don\'t they.'],
+          answer: 'No, they don\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'How often do you wash your hair?',
+            'How often you wash your hair?',
+            'How often does you wash your hair?',
+          ],
+          answer: 'How often do you wash your hair?',
+        },
+        {
+          q: '"What ___ this word ___?" — boşluqlara nə gəlir?',
+          options: ['do / means', 'does / mean', 'does / means'],
+          answer: 'does / mean',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'İnkar: I / we / you / they + ___',                          tr: 'don\'t',                    wrong: 'doesn\'t'                    },
+  { en: 'İnkar: he / she / it + ___',                                tr: 'doesn\'t',                  wrong: 'don\'t'                      },
+  { en: 'doesn\'t-dan sonra fel necə olur?',                         tr: 'Sadə forma',                wrong: '-s alır'                     },
+  { en: 'Düzgün: She ___ speak Italian.',                            tr: 'doesn\'t',                  wrong: 'don\'t'                      },
+  { en: 'Düzgün: They ___ know my address.',                         tr: 'don\'t',                    wrong: 'doesn\'t'                    },
+  { en: 'Düzgün: He ___ have a car.',                                tr: 'doesn\'t',                  wrong: 'don\'t'                      },
+  { en: 'Düzgün: It ___ rain very often.',                           tr: 'doesn\'t',                  wrong: 'don\'t'                      },
+  { en: 'Sual: Do / Does + subject + ___',                           tr: 'sadə fel',                  wrong: 'fel + -s'                    },
+  { en: 'Düzgün sual: ___ she work in a bank?',                      tr: 'Does',                      wrong: 'Do'                          },
+  { en: 'Düzgün sual: ___ you live near here?',                      tr: 'Do',                        wrong: 'Does'                        },
+  { en: '"Do you like tea?" — bəli cavabı:',                         tr: 'Yes, I do.',                wrong: 'Yes, I like.'                },
+  { en: '"Does he work here?" — xeyr cavabı:',                       tr: 'No, he doesn\'t.',          wrong: 'No, he don\'t.'              },
+  { en: 'Sual sözü ilə düzgün sıra:',                                tr: 'Wh- + Does/Do + Subject + Verb', wrong: 'Wh- + Subject + Does/Do + Verb' },
+  { en: '"What time ___ the film start?"',                           tr: 'does',                      wrong: 'do'                          },
+  { en: '"Where ___ you come from?"',                                tr: 'do',                        wrong: 'does'                        },
+  { en: '"How often ___ they come?"',                                tr: 'do',                        wrong: 'does'                        },
+  { en: '"What ___ this word mean?"',                                tr: 'does',                      wrong: 'do'                          },
+  { en: 'Düzgün: My car ___ use much petrol.',                       tr: 'doesn\'t',                  wrong: 'don\'t'                      },
+  { en: '"Does your brother play tennis?" — bəli cavabı:',           tr: 'Yes, he does.',             wrong: 'Yes, he plays.'              },
+  { en: 'Düzgün: Paula ___ usually have breakfast.',                 tr: 'doesn\'t',                  wrong: 'don\'t'                      },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O italyan dilini bilmir.',
+      words: ['She', 'doesn\'t', 'speak', 'Italian', 'don\'t', 'speaks'],
+      answer: ['She', 'doesn\'t', 'speak', 'Italian'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz tez-tez televizora baxmırıq.',
+      words: ['We', 'don\'t', 'watch', 'television', 'very', 'often', 'doesn\'t', 'watches'],
+      answer: ['We', 'don\'t', 'watch', 'television', 'very', 'often'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O səhər yeməyi yemirsə.',
+      words: ['She', 'doesn\'t', 'usually', 'have', 'breakfast', 'don\'t', 'has'],
+      answer: ['She', 'doesn\'t', 'usually', 'have', 'breakfast'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən bankda işləyirsənmi?',
+      words: ['Do', 'you', 'work', 'in', 'a', 'bank', 'Does', 'works', 'in a bank'],
+      answer: ['Do', 'you', 'work', 'in', 'a', 'bank'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O burada işləyirmi?',
+      words: ['Does', 'she', 'work', 'here', 'Do', 'works'],
+      answer: ['Does', 'she', 'work', 'here'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən haradan gəlirsən?',
+      words: ['Where', 'do', 'you', 'come', 'from', 'does', 'comes'],
+      answer: ['Where', 'do', 'you', 'come', 'from'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Film saat neçədə başlayır?',
+      words: ['What', 'time', 'does', 'the', 'film', 'start', 'do', 'starts'],
+      answer: ['What', 'time', 'does', 'the', 'film', 'start'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən neçə dəfə saçını yuyursan?',
+      words: ['How', 'often', 'do', 'you', 'wash', 'your', 'hair', 'does', 'washes'],
+      answer: ['How', 'often', 'do', 'you', 'wash', 'your', 'hair'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O mənim evimin yanında yaşamır.',
+      words: ['He', 'doesn\'t', 'live', 'near', 'my', 'house', 'don\'t', 'lives'],
+      answer: ['He', 'doesn\'t', 'live', 'near', 'my', 'house'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar bir-birini tanıyırmı?',
+      words: ['Do', 'they', 'know', 'each', 'other', 'Does', 'knows', 'each other'],
+      answer: ['Do', 'they', 'know', 'each', 'other'],
+    },
+  ],
+},      
       
 { type: 'section_divider', title: 'Tezlik zərfləri' },
 
