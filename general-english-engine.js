@@ -4,7 +4,7 @@
 //
 //  Yüklənmə sırası:
 //    general-english-data.js  →  app.js  →  grammar-engine.js
-//    →  grammar-stats-hook.js  →  general-english-engine.js   ← bu fayl
+//    →  grammar-stats-hook.js  →  general-english-engine.js
 // ============================================================
 
 // ── State ─────────────────────────────────────────────────
@@ -17,42 +17,6 @@ const geState = {
   totalCards:  0,
   locked:      false,
 };
-
-// ── Progress storage ───────────────────────────────────────
-const GE_PROGRESS_KEY = 'wordpath_ge_progress';
-
-function geLoadProgress() {
-  try {
-    return JSON.parse(localStorage.getItem(GE_PROGRESS_KEY) || '{}');
-  } catch (_) { return {}; }
-}
-
-function geSaveProgress(data) {
-  localStorage.setItem(GE_PROGRESS_KEY, JSON.stringify(data));
-}
-
-function geGetStatus(levelId, quizIdx) {
-  const prog = geLoadProgress();
-  return (prog[levelId] && prog[levelId][quizIdx] !== undefined)
-    ? prog[levelId][quizIdx]
-    : 'unlocked';
-}
-
-function geMarkCompleted(levelId, quizIdx) {
-  const prog = geLoadProgress();
-  if (!prog[levelId]) prog[levelId] = {};
-  prog[levelId][quizIdx] = 'completed';
-  geSaveProgress(prog);
-}
-
-function geFindNextPlayable(levelId, afterIdx) {
-  const lvl = GENERAL_ENGLISH_LEVELS.find(l => l.id === levelId);
-  if (!lvl) return null;
-  for (let i = afterIdx + 1; i < lvl.quizzes.length; i++) {
-    if (lvl.quizzes[i] && lvl.quizzes[i].type === 'grammar_lesson') return i;
-  }
-  return null;
-}
 
 // ============================================================
 //  START
@@ -370,9 +334,14 @@ function finishGeLesson() {
     elStatWrong.textContent   = totalQ - correctQ;
     elStatPct.textContent     = `${pct}%`;
 
-    geMarkCompleted(geState.levelIdx, geState.quizIdx);
+    // GE progressini işarələ
+    const lvl = GENERAL_ENGLISH_LEVELS.find(l => l.id === geState.levelIdx);
+    if (lvl) {
+      const li = LEVELS.indexOf(lvl);
+      if (li !== -1) markCompleted(li, geState.quizIdx);
+    }
 
-    const nextIdx = geFindNextPlayable(geState.levelIdx, geState.quizIdx);
+    const nextIdx = _geFindNext(geState.levelIdx, geState.quizIdx);
 
     if (nextIdx !== null) {
       elResultMainBtn.textContent = 'Növbəti →';
@@ -391,25 +360,33 @@ function finishGeLesson() {
   }, 300);
 }
 
+function _geFindNext(levelId, afterIdx) {
+  const lvl = GENERAL_ENGLISH_LEVELS.find(l => l.id === levelId);
+  if (!lvl) return null;
+  for (let i = afterIdx + 1; i < lvl.quizzes.length; i++) {
+    if (lvl.quizzes[i] && lvl.quizzes[i].type === 'grammar_lesson') return i;
+  }
+  return null;
+}
+
 // ============================================================
 //  PATH RENDER
 // ============================================================
 
-function renderGeneralEnglishPath(lvl, levelId) {
+function renderGeneralEnglishPath(lvl, li) {
   let html = '<div class="quiz-path grammar-path">';
 
   lvl.quizzes.forEach((item, qi) => {
-    const status = geGetStatus(levelId, qi);
-    const isDone = status === 'completed';
+    const status = getStatus(li, qi);
+    const isDone = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
 
     if (qi > 0) html += '<div class="path-line"></div>';
-
     html += '<div class="path-node-wrap">';
 
     if (isDone) {
       html += `
         <div class="path-node grammar-lesson-node level-done"
-             data-quiz-idx="${qi}" data-level-id="${levelId}" data-status="completed"
+             data-quiz-idx="${qi}" data-status="completed"
              style="--lvl-color:${lvl.color}">
           <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
                stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -417,9 +394,15 @@ function renderGeneralEnglishPath(lvl, levelId) {
           </svg>
         </div>`;
     } else {
+      const completedSoFar = progress[lvl.id]
+        ? progress[lvl.id].filter(s =>
+            ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
+          ).length
+        : 0;
+      const pulseClass = qi === completedSoFar ? 'pulse' : '';
       html += `
-        <div class="path-node grammar-lesson-node unlocked pulse"
-             data-quiz-idx="${qi}" data-level-id="${levelId}" data-status="unlocked"
+        <div class="path-node grammar-lesson-node unlocked ${pulseClass}"
+             data-quiz-idx="${qi}" data-status="unlocked"
              style="color:${lvl.color}; border-color:${lvl.color}; background:${lvl.color}18;">
           <i class="ti ti-book-2"></i>
         </div>`;
@@ -433,198 +416,7 @@ function renderGeneralEnglishPath(lvl, levelId) {
   return html;
 }
 
-// ============================================================
-//  CARDS RENDER + renderLevels HOOK
-// ============================================================
-function renderGeneralEnglishCards() {
-  const container = document.getElementById('ge-list');
-  if (!container) {
-    console.warn('GE: ge-list tapılmadı');
-    return;
-  }
-
-  container.querySelectorAll('.level-card[data-ge]').forEach(c => c.remove());
-
-  GENERAL_ENGLISH_LEVELS.forEach(lvl => {
-    const prog  = geLoadProgress();
-    const done  = prog[lvl.id]
-      ? Object.values(prog[lvl.id]).filter(s => s === 'completed').length
-      : 0;
-    const total = lvl.quizzes.length;
-
-    const card = document.createElement('div');
-    card.className = 'level-card';
-    card.dataset.ge       = '1';
-    card.dataset.level    = lvl.id;
-    card.dataset.levelIdx = 'ge_' + lvl.id;
-
-    card.innerHTML = `
-      <div class="level-header" role="button" aria-expanded="false">
-        <div class="level-bar" style="background:${lvl.color}"></div>
-        <span class="level-icon" style="
-          background:${lvl.color}18;
-          border:1.5px solid ${lvl.color}44;
-          color:${lvl.color};
-          width:42px; height:42px; border-radius:10px;
-          display:flex; align-items:center; justify-content:center;
-          flex-shrink:0; font-size:20px;">
-          ${lvl.icon}
-        </span>
-        <div class="level-info">
-          <div class="level-name">${lvl.name}</div>
-          <div class="level-meta">${done} / ${total} tamamlandı</div>
-        </div>
-        <svg class="level-chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </div>
-      <div class="level-body" style="display:none;">
-        ${renderGeneralEnglishPath(lvl, lvl.id)}
-      </div>`;
-
-    card.querySelector('.level-header').addEventListener('click', () => {
-      const body    = card.querySelector('.level-body');
-      const chevron = card.querySelector('.level-chevron');
-      const isOpen  = card.classList.contains('open');
-
-      document.querySelectorAll('#ge-list .level-card.open').forEach(c => {
-        c.classList.remove('open');
-        c.querySelector('.level-body').style.display = 'none';
-        const ch = c.querySelector('.level-chevron');
-        if (ch) ch.style.transform = '';
-      });
-
-      if (!isOpen) {
-        card.classList.add('open');
-        body.style.display = 'block';
-        if (chevron) chevron.style.transform = 'rotate(180deg)';
-      }
-    });
-
-    container.appendChild(card);
-  });
-
-  _attachGeNodeListeners();
-}
-
-// ── Node click listeners ────────────────────────────────────
-function _attachGeNodeListeners() {
-  document.querySelectorAll('.path-node[data-level-id]').forEach(node => {
-    if (node.dataset.geListened) return;
-    node.dataset.geListened = '1';
-
-    node.addEventListener('click', () => {
-      const levelId = node.dataset.levelId;
-      const qi      = parseInt(node.dataset.quizIdx, 10);
-      const status  = node.dataset.status;
-
-      if (status === 'locked') {
-        if (typeof showToast === 'function') showToast('Əvvəlki dərsi tamamla 🔒');
-        return;
-      }
-      startGeneralEnglishLesson(levelId, qi);
-    });
-  });
-}
-
-// MutationObserver — dinamik render olunanda da listener qoşulsun
-(function _initGeObserver() {
-  function attach(target) {
-    const observer = new MutationObserver(_attachGeNodeListeners);
-    observer.observe(target, { childList: true, subtree: true });
-    _attachGeNodeListeners();
-  }
-
-  const target = document.getElementById('skills-page-content');
-  if (target) {
-    attach(target);
-  } else {
-    window.addEventListener('load', () => {
-      const t = document.getElementById('skills-page-content');
-      if (t) attach(t);
-    });
-  }
-})();
-
-function _renderGePage() {
-  const container = document.getElementById('ge-list');
-  if (!container) return;
-
-  container.querySelectorAll('.level-card[data-ge]').forEach(c => c.remove());
-
-  GENERAL_ENGLISH_LEVELS.forEach(lvl => {
-    const prog  = geLoadProgress();
-    const done  = prog[lvl.id]
-      ? Object.values(prog[lvl.id]).filter(s => s === 'completed').length
-      : 0;
-    const total = lvl.quizzes.length;
-
-    const card = document.createElement('div');
-    card.className     = 'level-card';
-    card.dataset.ge    = '1';
-    card.dataset.level = lvl.id;
-    card.dataset.levelIdx = 'ge_' + lvl.id; 
-
-    card.innerHTML = `
-      <div class="level-header" role="button" aria-expanded="false">
-        <div class="level-bar" style="background:${lvl.color}"></div>
-        <span class="level-icon" style="
-          background:${lvl.color}18;
-          border:1.5px solid ${lvl.color}44;
-          color:${lvl.color};
-          width:42px; height:42px; border-radius:10px;
-          display:flex; align-items:center; justify-content:center;
-          flex-shrink:0; font-size:20px;">
-          ${lvl.icon}
-        </span>
-        <div class="level-info">
-          <div class="level-name">${lvl.name}</div>
-          <div class="level-meta">${done} / ${total} tamamlandı</div>
-        </div>
-        <svg class="level-chevron" viewBox="0 0 24 24">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </div>
-      <div class="level-body" style="display:none;">
-        ${renderGeneralEnglishPath(lvl, lvl.id)}
-      </div>`;
-
-    card.querySelector('.level-header').addEventListener('click', () => {
-      const body    = card.querySelector('.level-body');
-      const chevron = card.querySelector('.level-chevron');
-      const isOpen  = card.classList.contains('open');
-
-      document.querySelectorAll('#ge-list .level-card.open').forEach(c => {
-        c.classList.remove('open');
-        c.querySelector('.level-body').style.display = 'none';
-        const ch = c.querySelector('.level-chevron');
-        if (ch) ch.style.transform = '';
-      });
-
-      if (!isOpen) {
-        card.classList.add('open');
-        body.style.display = 'block';
-        if (chevron) chevron.style.transform = 'rotate(180deg)';
-      }
-    });
-
-    container.appendChild(card);
-  });
-
-  _attachGeNodeListeners();
-}
-// app.js renderLevels() bitince tetiklenir
-window.addEventListener('renderLevelsDone', function() {
-  requestAnimationFrame(_renderGePage);
-});
-
-// Səhifə yükləndikdə də bir dəfə çalışdır (ehtiyat)
-if (document.readyState === 'complete') {
-  requestAnimationFrame(_renderGePage);
-} else {
-  window.addEventListener('load', () => requestAnimationFrame(_renderGePage));
-}
 // ── Global exports ──────────────────────────────────────────
-// ── Global exports ──────────────────────────────────────────
-window.startGeneralEnglishLesson = startGeneralEnglishLesson;
-window.geState                   = geState;
+window.startGeneralEnglishLesson  = startGeneralEnglishLesson;
+window.renderGeneralEnglishPath   = renderGeneralEnglishPath;
+window.geState                    = geState;
