@@ -3701,3 +3701,61 @@ button { font-family: var(--font); }
     background: rgba(241, 85, 85, 0.1);
   }
 }
+#sb-confirm-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border-radius: 14px;
+  border: none;
+  background: #4A90D9;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+#sb-confirm-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#sb-confirm-btn:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+#sb-correct-answer {
+  min-height: 24px;
+  text-align: center;
+  padding: 4px 0;
+}
+
+.sb-tip {
+  font-size: 13px;
+  color: #2d8a5e;
+}
+
+.sb-wrong-label {
+  font-size: 13px;
+  color: #c0392b;
+  margin-right: 6px;
+}
+
+.sb-wrong-answer {
+  font-size: 15px;
+  font-weight: 600;
+  color: #c0392b;
+}
+
+@media (prefers-color-scheme: dark) {
+  #sb-confirm-btn {
+    background: #3a7bd5;
+  }
+  .sb-tip {
+    color: #48c78e;
+  }
+  .sb-wrong-label,
+  .sb-wrong-answer {
+    color: #f17070;
+  }
+}
