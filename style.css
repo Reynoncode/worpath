@@ -3593,3 +3593,33 @@ button { font-family: var(--font); }
 .grammar-section-divider {
   margin-bottom: 28px;
 }
+#sb-answer-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 48px;
+  padding: 10px;
+  border: 1.5px dashed var(--color-border-secondary);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 12px;
+}
+#sb-words-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.sb-word-btn, .sb-chip {
+  padding: 8px 14px;
+  border-radius: var(--border-radius-md);
+  border: 1.5px solid var(--color-border-secondary);
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  font-size: 15px;
+  cursor: pointer;
+}
+.sb-word-btn.sb-used { opacity: 0.3; }
+.sb-chip { background: var(--color-background-info); border-color: var(--color-border-info); }
+#sb-answer-row.sb-correct { border-color: var(--color-border-success); background: var(--color-background-success); }
+#sb-answer-row.sb-wrong   { border-color: var(--color-border-danger);  background: var(--color-background-danger);  }
+
