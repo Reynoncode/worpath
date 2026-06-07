@@ -10,7 +10,7 @@ const GENERAL_ENGLISH_LEVELS = [
   {
     id:    'cumle_temeli',
     name:  'Cümlə Təməli',
-    icon:  '🧱',
+    icon:  '<i class="ti ti-brand-databricks"></i>',
     color: '#6366F1',
     quizzes: [
 
@@ -2754,7 +2754,7 @@ const GENERAL_ENGLISH_LEVELS = [
   {
     id:    'zamanlar_modal',
     name:  'Zamanlar və Modal',
-    icon:  '⏱️',
+    icon:  '<i class="ti ti-clock-hour-7"></i>',
     color: '#0EA5E9',
     quizzes: [
 
@@ -6411,7 +6411,7 @@ const GENERAL_ENGLISH_LEVELS = [
   {
     id:    'isim_evezlik_artikl',
     name:  'İsimlər, Əvəzliklər, Artikl',
-    icon:  '🔤',
+    icon:  '<i class="ti ti-bookmarks"></i>',
     color: '#10B981',
     quizzes: [
       
@@ -9551,7 +9551,7 @@ const GENERAL_ENGLISH_LEVELS = [
   {
     id:    'cumle_tamamlayanlar',
     name:  'Cümləni Tamamlayanlar',
-    icon:  '🔗',
+    icon:  '<i class="ti ti-unlink"></i>',
     color: '#F59E0B',
     quizzes: [
 
