@@ -3842,31 +3842,2567 @@ const GENERAL_ENGLISH_LEVELS = [
       
 { type: 'section_divider', title: 'going to — plan və niyyət' },
 
+// ── UNIT 26–27 — going to (Plan və Niyyət) ───────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'going to — Müsbət və İnkar (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: going to quruluşu ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'going to — quruluş',
+      content: 'Gələcəkdə əvvəlcədən qərara gəlinmiş plan və niyyət üçün going to işlədilir.\n\nQuruluş: Subject + am/is/are + going to + Verb (sadə forma)\n\n❗ going to-dan sonra fel həmişə sadə formada olur!',
+      table: [
+        ['Subject',              'to be', 'going to', 'Verb'],
+        ['I',                   'am',    'going to',  'work / buy / study'],
+        ['he / she / it',       'is',    'going to',  'work / buy / study'],
+        ['we / you / they',     'are',   'going to',  'work / buy / study'],
+      ],
+      tip: 'am/is/are — subject-ə görə dəyişir. going to isə həmişə eyni qalır.',
+    },
+
+    // ── Ekran 2: İnkar quruluşu ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'going to — İnkar',
+      content: 'İnkarda to be-nin yanına not əlavə olunur:\nI am not / he isn\'t / they aren\'t going to + Verb',
+      examples: [
+        { word: 'I am not going to watch TV tonight.',       az: '✅ am not going to'      },
+        { word: 'I am going to watched TV tonight.',         az: '❌ watched olmaz'         },
+        { word: 'She isn\'t going to come to the party.',    az: '✅ isn\'t going to'       },
+        { word: 'She isn\'t going to came to the party.',    az: '❌ came olmaz'            },
+        { word: 'They aren\'t going to move next year.',     az: '✅ aren\'t going to'      },
+        { word: 'They aren\'t going to moved next year.',    az: '❌ moved olmaz'           },
+        { word: 'He isn\'t going to study medicine.',        az: '✅ isn\'t going to'       },
+        { word: 'He isn\'t going to studied medicine.',      az: '❌ studied olmaz'         },
+      ],
+      tip: 'going to-dan sonra fel sadə formada qalır — inkar da bu qaydanı dəyişmir!',
+    },
+
+    // ── Ekran 3: Müsbət — nümunə cümlələri ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'going to — Müsbət cümlələr',
+      content: 'Əvvəlcədən verilmiş qərar və plan ifadə edən cümlələr:',
+      table: [
+        ['Cümlə',                                         'İzah'],
+        ['I am going to call him tonight.',               'qərar artıq verilib'],
+        ['She is going to visit her parents next week.',  'planlaşdırılıb'],
+        ['We are going to move to a new flat soon.',      'qərar verilib'],
+        ['They are going to get married in June.',        'plan var'],
+        ['He is going to study medicine at university.',  'qərar verilib'],
+        ['I am going to buy new shoes tomorrow.',         'planlaşdırılıb'],
+        ['We are going to have a party on Saturday.',     'plan var'],
+      ],
+      tip: 'I\'m going to = I am going to. Danışıqda qısa forma daha çox işlədilir.',
+    },
+
+    // ── Ekran 4: İnkar — nümunə cümlələri ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'going to — İnkar cümlələri',
+      content: 'am not / isn\'t / aren\'t going to ilə inkar cümlələri:',
+      examples: [
+        { word: 'I am not going to watch TV tonight.',        az: 'I → am not going to'       },
+        { word: 'She isn\'t going to come to the meeting.',   az: 'she → isn\'t going to'     },
+        { word: 'He isn\'t going to sell his car.',           az: 'he → isn\'t going to'      },
+        { word: 'We aren\'t going to stay at home.',          az: 'we → aren\'t going to'     },
+        { word: 'They aren\'t going to come to the party.',   az: 'they → aren\'t going to'   },
+        { word: 'It isn\'t going to be easy.',                az: 'it → isn\'t going to'      },
+      ],
+      tip: 'I\'m not going to / She\'s not going to — hər iki qısa forma düzgündür.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün müsbət cümləni seç:',
+          options: [
+            'She is going to visits her friend.',
+            'She is going to visit her friend.',
+            'She going to visit her friend.',
+          ],
+          answer: 'She is going to visit her friend.',
+        },
+        {
+          q: '"I" ilə going to — hansı to be işlədilir?',
+          options: ['is', 'are', 'am'],
+          answer: 'am',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'He isn\'t going to came.',
+            'He isn\'t going to come.',
+            'He not going to come.',
+          ],
+          answer: 'He isn\'t going to come.',
+        },
+        {
+          q: '"They" ilə going to inkar — hansı forma?',
+          options: ['isn\'t going to', 'aren\'t going to', 'am not going to'],
+          answer: 'aren\'t going to',
+        },
+        {
+          q: 'going to-dan sonra fel necə olur?',
+          options: ['Sadə forma (buy)', 'Keçmiş forma (bought)', '-ing forması (buying)'],
+          answer: 'Sadə forma (buy)',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'We are going to moved next year.',
+            'We are going to move next year.',
+            'We are go to move next year.',
+          ],
+          answer: 'We are going to move next year.',
+        },
+        {
+          q: '"She / he / it" ilə going to — hansı to be işlədilir?',
+          options: ['am', 'is', 'are'],
+          answer: 'is',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'I am not going to watched TV.',
+            'I am not going to watch TV.',
+            'I not going to watch TV.',
+          ],
+          answer: 'I am not going to watch TV.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'going to — Sual və Proqnoz (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'going to — Sual quruluşu',
+      content: 'Sual üçün to be subject-dən əvvələ keçir:\n\nAm/Is/Are + Subject + going to + Verb?\n\n❗ Sualda da fel sadə formada qalır!',
+      table: [
+        ['to be', 'Subject',              'going to', 'Verb'],
+        ['Am',    'I',                    'going to',  'work?'],
+        ['Is',    'he / she / it',        'going to',  'work?'],
+        ['Are',   'we / you / they',      'going to',  'work?'],
+      ],
+      tip: 'Are you going to study? ✅ — Are you going to studied? ❌',
+    },
+
+    // ── Ekran 2: Qısa cavablar ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar',
+      content: 'Qısa cavabda to be-dən istifadə edilir — going to təkrarlanmır:',
+      table: [
+        ['Sual',                          'Bəli',           'Xeyr'],
+        ['Are you going to study?',       'Yes, I am.',     'No, I\'m not.'],
+        ['Is she going to come?',         'Yes, she is.',   'No, she isn\'t.'],
+        ['Is he going to call?',          'Yes, he is.',    'No, he isn\'t.'],
+        ['Are they going to move?',       'Yes, they are.', 'No, they aren\'t.'],
+        ['Is it going to rain?',          'Yes, it is.',    'No, it isn\'t.'],
+      ],
+      tip: '"Yes, I am going to." demə — sadəcə "Yes, I am." kifayətdir.',
+    },
+
+    // ── Ekran 3: Sual sözləri ilə ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə going to sualları',
+      content: 'Sual sözü əvvələ gəlir, sonra to be, sonra subject, sonra going to + fel:',
+      examples: [
+        { word: 'What are you going to do after the course?',   az: 'What + are + you + going to + do'    },
+        { word: 'Where are they going to go on holiday?',       az: 'Where + are + they + going to + go'  },
+        { word: 'When is he going to start his new job?',       az: 'When + is + he + going to + start'   },
+        { word: 'Why is she going to sell her car?',            az: 'Why + is + she + going to + sell'    },
+        { word: 'How long are they going to stay?',             az: 'How long + are + they + going to + stay' },
+        { word: 'Who are you going to invite?',                 az: 'Who + are + you + going to + invite' },
+        { word: 'What is he going to study at university?',     az: 'What + is + he + going to + study'   },
+      ],
+      tip: 'Sual sözü → to be → Subject → going to → Verb (sadə). Bu sıra həmişə eynidir.',
+    },
+
+    // ── Ekran 4: Görünən əlamətə əsasən proqnoz ──────────────────────────────
+    {
+      type: 'lesson',
+      title: 'going to — Proqnoz (görünən əlamət)',
+      content: 'Görünən bir əlamətə əsasən nəyin baş verəcəyini proqnozlaşdırmaq üçün going to işlədilir:',
+      examples: [
+        { word: 'Look at those clouds! It is going to rain.',    az: 'bulud görünür → yağış proqnozu'   },
+        { word: 'Be careful! You are going to fall!',            az: 'vəziyyət görünür → düşmə proqnozu' },
+        { word: 'She looks very tired. She is going to faint.',  az: 'görünüş əsasında proqnoz'         },
+        { word: 'Look at that cat! It is going to jump!',        az: 'hərəkət görünür → proqnoz'        },
+        { word: 'The sky is very dark. It is going to snow.',    az: 'göy üzü → qar proqnozu'           },
+      ],
+      tip: 'will ilə fərq: going to = əvvəlcədən plan ya görünən əlamət. will = indi verilən qərar.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Is she going to sells her car?',
+            'Is she going to sell her car?',
+            'Does she going to sell her car?',
+          ],
+          answer: 'Is she going to sell her car?',
+        },
+        {
+          q: '"Are you going to study tonight?" — bəli cavabı:',
+          options: ['Yes, I am going to.', 'Yes, I am.', 'Yes, I do.'],
+          answer: 'Yes, I am.',
+        },
+        {
+          q: '"Is it going to rain?" — xeyr cavabı:',
+          options: ['No, it isn\'t.', 'No, it don\'t.', 'No, it won\'t.'],
+          answer: 'No, it isn\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Where are they going to go on holiday?',
+            'Where they are going to go on holiday?',
+            'Where are they going to went on holiday?',
+          ],
+          answer: 'Where are they going to go on holiday?',
+        },
+        {
+          q: 'Hansı cümlə görünən əlamətə əsasən proqnozdur?',
+          options: [
+            'I am going to visit my friend tomorrow.',
+            'Look at those clouds! It is going to rain.',
+            'She isn\'t going to come to the party.',
+          ],
+          answer: 'Look at those clouds! It is going to rain.',
+        },
+        {
+          q: '"Are they going to move?" — xeyr cavabı:',
+          options: ['No, they aren\'t.', 'No, they don\'t.', 'No, they didn\'t.'],
+          answer: 'No, they aren\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'What you are going to do?',
+            'What are you going to do?',
+            'What are you going to did?',
+          ],
+          answer: 'What are you going to do?',
+        },
+        {
+          q: 'going to — nə zaman işlədilir?',
+          options: [
+            'Danışıq anında verilmiş qərar',
+            'Əvvəlcədən qərara gəlinmiş plan',
+            'Adət və rutin hərəkətlər',
+          ],
+          answer: 'Əvvəlcədən qərara gəlinmiş plan',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'going to — müsbət quruluş:',                                   tr: 'Subject + am/is/are + going to + Verb',  wrong: 'Subject + going to + Verb'             },
+  { en: '"I" ilə going to müsbət:',                                     tr: 'I am going to work.',                    wrong: 'I is going to work.'                   },
+  { en: '"She" ilə going to müsbət:',                                   tr: 'She is going to study.',                 wrong: 'She are going to study.'               },
+  { en: '"They" ilə going to inkar:',                                   tr: 'They aren\'t going to come.',            wrong: 'They isn\'t going to come.'            },
+  { en: '"He" ilə going to inkar:',                                     tr: 'He isn\'t going to sell his car.',       wrong: 'He aren\'t going to sell his car.'     },
+  { en: '"I" ilə going to inkar:',                                      tr: 'I am not going to watch TV.',            wrong: 'I isn\'t going to watch TV.'           },
+  { en: 'going to-dan sonra fel necə olur?',                            tr: 'Sadə forma',                             wrong: 'Keçmiş forma'                          },
+  { en: 'going to sual — "she" ilə:',                                   tr: 'Is she going to come?',                  wrong: 'Does she going to come?'               },
+  { en: 'going to sual — "they" ilə:',                                  tr: 'Are they going to move?',                wrong: 'Do they going to move?'                },
+  { en: '"Are you going to study?" — bəli cavabı:',                     tr: 'Yes, I am.',                             wrong: 'Yes, I am going to.'                   },
+  { en: '"Is he going to call?" — xeyr cavabı:',                        tr: 'No, he isn\'t.',                         wrong: 'No, he don\'t.'                        },
+  { en: '"Is it going to rain?" — bəli cavabı:',                        tr: 'Yes, it is.',                            wrong: 'Yes, it does.'                         },
+  { en: 'Sual sözü ilə düzgün sıra:',                                   tr: 'Wh- + to be + Subject + going to + Verb', wrong: 'Wh- + Subject + to be + going to + Verb' },
+  { en: '"Where ___ they ___ go?" — boşluqlara nə gəlir?',             tr: 'are / going to',                         wrong: 'do / going to'                         },
+  { en: '"When ___ he ___ start?" — boşluqlara nə gəlir?',             tr: 'is / going to',                          wrong: 'does / going to'                       },
+  { en: 'Görünən əlamətə əsasən proqnoz — hansı quruluş?',              tr: 'going to',                               wrong: 'will'                                  },
+  { en: '"Look at those clouds!" → proqnoz:',                           tr: 'It is going to rain.',                   wrong: 'It will rains.'                        },
+  { en: 'Danışıq anında verilən qərar — hansı quruluş?',                tr: 'will',                                   wrong: 'going to'                              },
+  { en: 'Düzgün: She ___ going to visit her parents.',                  tr: 'is',                                     wrong: 'are'                                   },
+  { en: 'Düzgün: We ___ going to have a party on Saturday.',            tr: 'are',                                    wrong: 'is'                                    },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən sabah yeni ayaqqabı alacağam.',
+      words: ['I', 'am', 'going', 'to', 'buy', 'new', 'shoes', 'tomorrow', 'bought', 'is'],
+      answer: ['I', 'am', 'going', 'to', 'buy', 'new', 'shoes', 'tomorrow'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O gələn həftə valideynlərini ziyarət edəcək.',
+      words: ['She', 'is', 'going', 'to', 'visit', 'her', 'parents', 'next', 'week', 'visited', 'are'],
+      answer: ['She', 'is', 'going', 'to', 'visit', 'her', 'parents', 'next', 'week'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar iyunda evlənəcəklər.',
+      words: ['They', 'are', 'going', 'to', 'get', 'married', 'in', 'June', 'got', 'is'],
+      answer: ['They', 'are', 'going', 'to', 'get', 'married', 'in', 'June'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bu axşam televizora baxmayacağam.',
+      words: ['I', 'am', 'not', 'going', 'to', 'watch', 'TV', 'tonight', 'watched', 'isn\'t'],
+      answer: ['I', 'am', 'not', 'going', 'to', 'watch', 'TV', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O görüşə gəlməyəcək.',
+      words: ['She', 'isn\'t', 'going', 'to', 'come', 'to', 'the', 'meeting', 'came', 'aren\'t'],
+      answer: ['She', 'isn\'t', 'going', 'to', 'come', 'to', 'the', 'meeting'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu axşam matçı izləyəcəksənmi?',
+      words: ['Are', 'you', 'going', 'to', 'watch', 'the', 'match', 'tonight', 'watched', 'Do'],
+      answer: ['Are', 'you', 'going', 'to', 'watch', 'the', 'match', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Kurs bitdikdən sonra nə edəcəksən?',
+      words: ['What', 'are', 'you', 'going', 'to', 'do', 'after', 'the', 'course', 'did', 'is'],
+      answer: ['What', 'are', 'you', 'going', 'to', 'do', 'after', 'the', 'course'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O universiteti tibb üzrə oxuyacaq.',
+      words: ['He', 'is', 'going', 'to', 'study', 'medicine', 'at', 'university', 'studied', 'are'],
+      answer: ['He', 'is', 'going', 'to', 'study', 'medicine', 'at', 'university'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar tezliklə yeni mənzilə köçəcəklər.',
+      words: ['They', 'are', 'going', 'to', 'move', 'to', 'a', 'new', 'flat', 'soon', 'moved', 'is'],
+      answer: ['They', 'are', 'going', 'to', 'move', 'to', 'a', 'new', 'flat', 'soon'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bax o buludlara! Yağış yağacaq.',
+      words: ['Look', 'at', 'those', 'clouds', 'It', 'is', 'going', 'to', 'rain', 'will', 'rains'],
+      answer: ['Look', 'at', 'those', 'clouds', 'It', 'is', 'going', 'to', 'rain'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'will — qərar, təklif, proqnoz' },
 
+// ── UNIT 28–29 — will (Qərar, Təklif, Proqnoz) ───────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'will — Quruluş və İşlənmə (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: will quruluşu ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'will — quruluş',
+      content: 'will gələcək üçün işlədilir. Bütün şəxslər üçün eynidir — dəyişmir.\n\nQuruluş: Subject + will + Verb (sadə forma)\n\n❗ will-dən sonra fel həmişə sadə formada olur — to olmur, -s/-ed olmur!',
+      table: [
+        ['Subject',                              'will (qısa)',  'Verb'],
+        ['I / he / she / it / we / you / they',  'will (\'ll)',  'help / come / be'],
+      ],
+      tip: 'will not = won\'t. Danışıqda \'ll və won\'t qısa formaları daha çox işlədilir.',
+    },
+
+    // ── Ekran 2: will-dən sonra sadə forma ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'will-dən sonra — sadə forma!',
+      content: 'will-dən sonra fel sadə (infinitive) formada qalır — heç bir dəyişiklik olmur:',
+      examples: [
+        { word: 'I\'ll help you.',            az: '✅ Düzgün — will + help'       },
+        { word: 'I\'ll to help you.',         az: '❌ Yanlış — to olmaz'           },
+        { word: 'She will come tomorrow.',    az: '✅ Düzgün — will + come'        },
+        { word: 'She wills come tomorrow.',   az: '❌ Yanlış — wills olmaz'        },
+        { word: 'It will rain.',              az: '✅ Düzgün — will + rain'        },
+        { word: 'It will rains.',             az: '❌ Yanlış — rains olmaz'        },
+        { word: 'He will be late.',           az: '✅ Düzgün — will + be'          },
+        { word: 'He will comes late.',        az: '❌ Yanlış — comes olmaz'        },
+      ],
+      tip: 'will artıq gələcək məna daşıyır — felə ayrıca forma vermə!',
+    },
+
+    // ── Ekran 3: will — nə zaman işlədilir (1) ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'will — Danışıq anında verilmiş qərar',
+      content: 'Danışıq zamanı indi qərar verilir — əvvəlcədən planlaşdırılmayıb:',
+      table: [
+        ['Vəziyyət',                          'will ilə cavab'],
+        ['The phone is ringing!',             'I\'ll answer it.'],
+        ['I\'m hungry.',                      'I\'ll make you a sandwich.'],
+        ['I\'ve left the door open.',         'I\'ll close it.'],
+        ['I need some money.',               'I\'ll lend you some.'],
+        ['Can somebody help me?',            'I\'ll help you.'],
+        ['It\'s hot in here.',               'I\'ll open the window.'],
+      ],
+      tip: 'going to ilə fərq: going to = əvvəlcədən plan. will = indi verilən qərar.',
+    },
+
+    // ── Ekran 4: will — Vəd və Proqnoz ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'will — Vəd və Proqnoz',
+      content: 'will həmçinin vəd vermək və şəxsi fikrə əsaslanan proqnoz üçün işlədilir:',
+      examples: [
+        { word: 'I won\'t tell anyone. I promise.',       az: 'vəd — won\'t = will not'         },
+        { word: 'I\'ll call you tomorrow.',               az: 'vəd — geri zəng vədi'            },
+        { word: 'I think it will rain tomorrow.',         az: 'proqnoz — şəxsi fikir'           },
+        { word: 'She\'ll probably be late.',              az: 'proqnoz — probably ilə'          },
+        { word: 'I don\'t think they\'ll come.',          az: 'mənfi proqnoz — don\'t think'    },
+        { word: 'Don\'t worry. Everything will be OK.',   az: 'proqnoz — əminlik ifadəsi'       },
+        { word: 'You won\'t pass if you don\'t study.',   az: 'proqnoz — şərtlə'               },
+      ],
+      tip: '"I don\'t think they\'ll come." ✅ — "I think they won\'t come." az işlədilir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I will to help you.',
+            'I\'ll help you.',
+            'I will helping you.',
+          ],
+          answer: 'I\'ll help you.',
+        },
+        {
+          q: 'will-dən sonra fel necə olur?',
+          options: ['Sadə forma (come)', 'Keçmiş forma (came)', '-ing forması (coming)'],
+          answer: 'Sadə forma (come)',
+        },
+        {
+          q: 'Hansı cümlə danışıq anında verilmiş qərardır?',
+          options: [
+            'I\'m going to buy a new car next month.',
+            'I\'ll answer the phone.',
+            'She is going to study medicine.',
+          ],
+          answer: 'I\'ll answer the phone.',
+        },
+        {
+          q: 'will not — qısa forması:',
+          options: ['willn\'t', 'won\'t', 'wouldn\'t'],
+          answer: 'won\'t',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She wills come tomorrow.',
+            'She will comes tomorrow.',
+            'She will come tomorrow.',
+          ],
+          answer: 'She will come tomorrow.',
+        },
+        {
+          q: 'Vəd ifadə edən cümləni seç:',
+          options: [
+            'I think it will rain.',
+            'I won\'t tell anyone. I promise.',
+            'The phone is ringing. I\'ll answer it.',
+          ],
+          answer: 'I won\'t tell anyone. I promise.',
+        },
+        {
+          q: 'Düzgün proqnoz cümləsini seç:',
+          options: [
+            'I think she will passes the exam.',
+            'I think she will pass the exam.',
+            'I think she wills pass the exam.',
+          ],
+          answer: 'I think she will pass the exam.',
+        },
+        {
+          q: '"I don\'t think they\'ll come." — bu cümlə nəyi ifadə edir?',
+          options: ['Danışıq anında verilmiş qərar', 'Mənfi proqnoz', 'Əvvəlcədən verilmiş plan'],
+          answer: 'Mənfi proqnoz',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'will — Sual, İnkar və will vs going to (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: will — Sual və İnkar ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'will — Sual və İnkar quruluşu',
+      content: 'Sualda will subject-dən əvvələ keçir.\nİnkarda will not (won\'t) işlədilir:\n\nWill + Subject + Verb?\nSubject + won\'t + Verb',
+      table: [
+        ['Növ',    'Quruluş',                          'Nümunə'],
+        ['Sual',   'Will + Subject + Verb?',            'Will you help me?'],
+        ['İnkar',  'Subject + won\'t + Verb',           'I won\'t be late.'],
+        ['Bəli',   'Yes, + Subject + will.',            'Yes, I will.'],
+        ['Xeyr',   'No, + Subject + won\'t.',           'No, I won\'t.'],
+      ],
+      tip: 'Will you be at home? ✅ — Will you to be at home? ❌ — sualda da to olmaz.',
+    },
+
+    // ── Ekran 2: Sual sözləri ilə will ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə will',
+      content: 'Sual sözü əvvələ gəlir, sonra will, sonra subject, sonra sadə fel:',
+      examples: [
+        { word: 'What will you do tonight?',         az: 'What + will + you + do'          },
+        { word: 'When will she arrive?',             az: 'When + will + she + arrive'      },
+        { word: 'Where will they stay?',             az: 'Where + will + they + stay'      },
+        { word: 'How long will you be away?',        az: 'How long + will + you + be'      },
+        { word: 'Who will help me?',                 az: 'Who + will + help'               },
+        { word: 'Why won\'t he come?',               az: 'Why + won\'t + he + come'        },
+        { word: 'How much will it cost?',            az: 'How much + will + it + cost'     },
+      ],
+      tip: 'Sual sözü → will → Subject → Verb (sadə). Bu sıra həmişə eynidir.',
+    },
+
+    // ── Ekran 3: I think / I don't think + will ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'I think / I don\'t think + will',
+      content: 'Proqnozda I think / I don\'t think + will quruluşu işlədilir:\n\n❗ Mənfi proqnozda "I don\'t think + will" işlədilir — "I think + won\'t" az işlədilir!',
+      table: [
+        ['Müsbət proqnoz',                        'Mənfi proqnoz'],
+        ['I think she will pass.',                'I don\'t think she will pass.'],
+        ['I think it will rain tomorrow.',        'I don\'t think it will rain.'],
+        ['I think they will come.',               'I don\'t think they will come.'],
+        ['I think he will be late.',              'I don\'t think he will be late.'],
+        ['I think we will win.',                  'I don\'t think we will win.'],
+      ],
+      tip: '"I don\'t think he\'ll be here." ✅ — "I think he won\'t be here." ✅ amma az işlədilir.',
+    },
+
+    // ── Ekran 4: will vs going to ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'will vs going to — fərq',
+      content: 'will və going to hər ikisi gələcək üçündür, lakin istifadə fərqlidir:',
+      examples: [
+        { word: '\'I\'m cold.\' — \'I\'ll close the window.\'',          az: 'will — indi verilən qərar'          },
+        { word: 'I\'m going to buy a new coat. I saw it yesterday.',     az: 'going to — əvvəlcədən plan'         },
+        { word: 'I think it will rain tomorrow.',                         az: 'will — şəxsi fikir əsasında'        },
+        { word: 'Look at those clouds! It\'s going to rain!',            az: 'going to — görünən əlamət'          },
+        { word: 'I\'ll help you with that. *(indi qərar)*',              az: 'will — təklif, indi verilir'        },
+        { word: 'She\'s going to study medicine. *(qərar verilib)*',     az: 'going to — əvvəlcədən plan'         },
+      ],
+      tip: 'Sadə qayda: indi qərar verirsən → will. Əvvəl planlamısan → going to.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Will she to come tomorrow?',
+            'Will she come tomorrow?',
+            'Will she comes tomorrow?',
+          ],
+          answer: 'Will she come tomorrow?',
+        },
+        {
+          q: '"Will you help me?" — bəli cavabı:',
+          options: ['Yes, I will help.', 'Yes, I will.', 'Yes, I do.'],
+          answer: 'Yes, I will.',
+        },
+        {
+          q: '"Will it rain?" — xeyr cavabı:',
+          options: ['No, it willn\'t.', 'No, it won\'t.', 'No, it isn\'t.'],
+          answer: 'No, it won\'t.',
+        },
+        {
+          q: 'Mənfi proqnoz üçün düzgün cümləni seç:',
+          options: [
+            'I think they won\'t come.',
+            'I don\'t think they will come.',
+            'I not think they will come.',
+          ],
+          answer: 'I don\'t think they will come.',
+        },
+        {
+          q: 'Hansı cümlədə will düzgün işlədilir?',
+          options: [
+            '\'The phone is ringing!\' — \'I\'m going to answer it.\'',
+            '\'The phone is ringing!\' — \'I\'ll answer it.\'',
+            '\'The phone is ringing!\' — \'I answer it.\'',
+          ],
+          answer: '\'The phone is ringing!\' — \'I\'ll answer it.\'',
+        },
+        {
+          q: 'Hansı cümlədə going to düzgün işlədilir?',
+          options: [
+            'Look at those clouds! It will rain!',
+            'Look at those clouds! It\'s going to rain!',
+            'Look at those clouds! It rains!',
+          ],
+          answer: 'Look at those clouds! It\'s going to rain!',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'What will you do tonight?',
+            'What will you to do tonight?',
+            'What will you did tonight?',
+          ],
+          answer: 'What will you do tonight?',
+        },
+        {
+          q: '"How long ___ you ___ away?" — boşluqlara nə gəlir?',
+          options: ['do / be', 'will / be', 'will / been'],
+          answer: 'will / be',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'will — bütün şəxslər üçün:',                                   tr: 'will (dəyişmir)',                      wrong: 'will / wills'                          },
+  { en: 'will-dən sonra fel necə olur?',                                 tr: 'Sadə forma',                          wrong: 'to + verb'                             },
+  { en: 'will not — qısa forması:',                                      tr: 'won\'t',                              wrong: 'willn\'t'                              },
+  { en: 'Danışıq anında verilmiş qərar — hansı quruluş?',               tr: 'will',                                wrong: 'going to'                              },
+  { en: '"The phone is ringing!" → düzgün cavab:',                       tr: 'I\'ll answer it.',                    wrong: 'I\'m going to answer it.'              },
+  { en: 'Vəd ifadəsi — düzgün cümlə:',                                  tr: 'I won\'t tell anyone. I promise.',    wrong: 'I\'m not going to tell anyone.'        },
+  { en: 'Proqnoz — şəxsi fikir əsasında:',                              tr: 'I think it will rain.',               wrong: 'I think it is going to rain.'          },
+  { en: 'Görünən əlamətə əsasən proqnoz:',                              tr: 'going to',                            wrong: 'will'                                  },
+  { en: 'will — sual quruluşu:',                                         tr: 'Will + Subject + Verb?',              wrong: 'Subject + will + Verb?'                },
+  { en: '"Will you help me?" — bəli cavabı:',                            tr: 'Yes, I will.',                        wrong: 'Yes, I will help.'                     },
+  { en: '"Will it snow?" — xeyr cavabı:',                                tr: 'No, it won\'t.',                      wrong: 'No, it willn\'t.'                      },
+  { en: 'Mənfi proqnoz üçün düzgün forma:',                              tr: 'I don\'t think they will come.',      wrong: 'I think they won\'t come.'             },
+  { en: '"What ___ you do tonight?" — boşluğa nə gəlir?',              tr: 'will',                                wrong: 'are going to'                          },
+  { en: '"How long ___ you ___ away?" — boşluqlara nə gəlir?',         tr: 'will / be',                           wrong: 'will / been'                           },
+  { en: 'Düzgün: She ___probably be late.',                              tr: 'will',                                wrong: 'wills'                                 },
+  { en: 'Düzgün: I ___ tell anyone. I promise.',                         tr: 'won\'t',                              wrong: 'am not going to'                       },
+  { en: 'Əvvəlcədən planlaşdırılmış iş — hansı quruluş?',              tr: 'going to',                            wrong: 'will'                                  },
+  { en: 'Düzgün: Will you ___ at home tonight?',                         tr: 'be',                                  wrong: 'to be'                                 },
+  { en: 'Düzgün: I think Brazil ___ win.',                               tr: 'will',                                wrong: 'is going to'                           },
+  { en: '"I\'m cold." — indi qərar verilir, düzgün cavab:',             tr: 'I\'ll close the window.',             wrong: 'I\'m going to close the window.'       },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən sənə kömək edəcəyəm.',
+      words: ['I\'ll', 'help', 'you', 'to', 'helping', 'won\'t'],
+      answer: ['I\'ll', 'help', 'you'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O sabah gec gələcək.',
+      words: ['She', 'will', 'be', 'late', 'tomorrow', 'comes', 'to'],
+      answer: ['She', 'will', 'be', 'late', 'tomorrow'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən heç kimə deməyəcəyəm. Söz verirəm.',
+      words: ['I', 'won\'t', 'tell', 'anyone', 'I', 'promise', 'told', 'will'],
+      answer: ['I', 'won\'t', 'tell', 'anyone', 'I', 'promise'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Fikirləşirəm ki, yağış yağacaq.',
+      words: ['I', 'think', 'it', 'will', 'rain', 'tomorrow', 'rains', 'going'],
+      answer: ['I', 'think', 'it', 'will', 'rain', 'tomorrow'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu axşam evdə olacaqsanmı?',
+      words: ['Will', 'you', 'be', 'at', 'home', 'tonight', 'to', 'Do'],
+      answer: ['Will', 'you', 'be', 'at', 'home', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Fikirləşmirəm ki, onlar gələcək.',
+      words: ['I', 'don\'t', 'think', 'they', 'will', 'come', 'won\'t', 'think'],
+      answer: ['I', 'don\'t', 'think', 'they', 'will', 'come'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu gecə nə edəcəksən?',
+      words: ['What', 'will', 'you', 'do', 'tonight', 'did', 'to'],
+      answer: ['What', 'will', 'you', 'do', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, çox güman ki, gec qalacaq.',
+      words: ['She\'ll', 'probably', 'be', 'late', 'to', 'goes', 'will'],
+      answer: ['She\'ll', 'probably', 'be', 'late'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Narahat olma. Hər şey yaxşı olacaq.',
+      words: ['Don\'t', 'worry', 'Everything', 'will', 'be', 'OK', 'to', 'won\'t'],
+      answer: ['Don\'t', 'worry', 'Everything', 'will', 'be', 'OK'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Nə qədər vaxt uzaqda olacaqsan?',
+      words: ['How', 'long', 'will', 'you', 'be', 'away', 'been', 'do'],
+      answer: ['How', 'long', 'will', 'you', 'be', 'away'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'can / can\'t — bacarıq' },
 
+// ── UNIT 24 — can / can't (Bacarıq) ──────────────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'can / can\'t — Quruluş və Bacarıq (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: can quruluşu ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'can / can\'t — quruluş',
+      content: 'can bacarıq, imkan və icazə bildirmək üçün işlədilir.\ncan\'t (cannot) isə bacarmazlıq bildirir.\n\nQuruluş: Subject + can/can\'t + Verb (sadə forma)\n\n❗ can heç vaxt -s almır. Arxasında həmişə sadə fel gəlir!',
+      table: [
+        ['Növ',    'Subject',                              'Modal', 'Verb'],
+        ['Müsbət', 'I / he / she / it / we / you / they', 'can',   'swim / drive / speak'],
+        ['İnkar',  'I / he / she / it / we / you / they', 'can\'t','swim / drive / speak'],
+        ['Sual',   'Can + Subject',                        '—',    'swim / drive / speak?'],
+      ],
+      tip: 'can bütün şəxslər üçün eynidir — Present Simple-dən fərqli olaraq he/she üçün -s almır.',
+    },
+
+    // ── Ekran 2: can-dan sonra sadə forma ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'can-dan sonra — sadə forma!',
+      content: 'can / can\'t-dan sonra fel sadə formada qalır — to olmur, -s olmur:',
+      examples: [
+        { word: 'She can swim.',          az: '✅ Düzgün — can + swim'          },
+        { word: 'She cans swim.',         az: '❌ Yanlış — cans olmaz'           },
+        { word: 'She can swims.',         az: '❌ Yanlış — swims olmaz'          },
+        { word: 'I can\'t drive.',        az: '✅ Düzgün — can\'t + drive'      },
+        { word: 'I can\'t to drive.',     az: '❌ Yanlış — to olmaz'             },
+        { word: 'Can you help me?',       az: '✅ Düzgün — Can + you + help'    },
+        { word: 'Can you to help me?',    az: '❌ Yanlış — to olmaz'             },
+        { word: 'He can drives well.',    az: '❌ Yanlış — drives olmaz'         },
+      ],
+      tip: 'can artıq modal feldir — arxasında gələn fel heç bir dəyişiklik almır!',
+    },
+
+    // ── Ekran 3: can — Bacarıq nümunələri ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'can / can\'t — Bacarıq cümlələri',
+      content: 'Bacarıq və bacarmazlıq ifadə edən nümunə cümlələr:',
+      table: [
+        ['Müsbət',                                    'İnkar'],
+        ['I can swim.',                               'I can\'t dive.'],
+        ['She can speak French very well.',           'She can\'t speak German.'],
+        ['He can drive.',                             'He can\'t ride a motorbike.'],
+        ['We can see the mountains from here.',       'We can\'t see the sea.'],
+        ['She can run very fast.',                    'She can\'t run a marathon.'],
+        ['They can play the guitar.',                 'They can\'t play the piano.'],
+      ],
+      tip: 'I can swim but I can\'t dive. — "but" ilə bacarıq və bacarmazlığı birlikdə ifadə etmək olar.',
+    },
+
+    // ── Ekran 4: can — İcazə və Xahiş ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'can — İcazə və Xahiş',
+      content: 'can bacarıqdan başqa icazə və xahiş üçün də işlədilir:',
+      examples: [
+        { word: 'Can I sit here?',               az: 'icazə — otura bilərəmmi?'       },
+        { word: 'Can I use your phone?',          az: 'icazə — telefondan istifadə'    },
+        { word: 'Can I open the window?',         az: 'icazə — pəncərəni açım?'       },
+        { word: 'Can you help me, please?',       az: 'xahiş — köməklik istəmək'      },
+        { word: 'Can you pass the salt?',         az: 'xahiş — bir şey ötürmək'       },
+        { word: 'You can borrow my umbrella.',    az: 'icazə — vermək'                },
+        { word: 'You can\'t park here.',          az: 'icazəsizlik — qadağan'          },
+      ],
+      tip: 'Can I...? — icazə istəmək üçün. Can you...? — xahiş etmək üçün.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She cans speak French.',
+            'She can speaks French.',
+            'She can speak French.',
+          ],
+          answer: 'She can speak French.',
+        },
+        {
+          q: 'can-dan sonra fel necə olur?',
+          options: ['Sadə forma (swim)', 'to + verb (to swim)', '-ing forması (swimming)'],
+          answer: 'Sadə forma (swim)',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'He can\'t to drive.',
+            'He can\'t drives.',
+            'He can\'t drive.',
+          ],
+          answer: 'He can\'t drive.',
+        },
+        {
+          q: 'can — "he / she / it" ilə necə dəyişir?',
+          options: ['cans olur', 'Dəyişmir — can qalır', 'is can olur'],
+          answer: 'Dəyişmir — can qalır',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Can you to help me?',
+            'Can you help me?',
+            'Can you helping me?',
+          ],
+          answer: 'Can you help me?',
+        },
+        {
+          q: 'İcazə istəmək üçün hansı cümlə işlədilir?',
+          options: [
+            'I can sit here.',
+            'Can I sit here?',
+            'Can you sit here?',
+          ],
+          answer: 'Can I sit here?',
+        },
+        {
+          q: 'cannot — qısa forması:',
+          options: ['can\'t', 'won\'t', 'couldn\'t'],
+          answer: 'can\'t',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I can not find my keys. *(iki söz)*',
+            'I can\'t find my keys.',
+            'I cann\'t find my keys.',
+          ],
+          answer: 'I can\'t find my keys.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'can — Sual, Qısa Cavab və Sual Sözləri (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'can — Sual quruluşu',
+      content: 'Sualda can subject-dən əvvələ keçir:\n\nCan + Subject + Verb (sadə forma)?\n\n❗ Sualda da fel sadə formada qalır — to olmur!',
+      table: [
+        ['Köməkçi', 'Subject',                              'Verb'],
+        ['Can',     'I / he / she / it / we / you / they', 'swim / drive / speak?'],
+      ],
+      tip: 'Can she speak English? ✅ — Can she to speak English? ❌ — Can she speaks English? ❌',
+    },
+
+    // ── Ekran 2: Qısa cavablar ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar',
+      content: 'Qısa cavabda can / can\'t işlədilir — fel təkrarlanmır:',
+      table: [
+        ['Sual',               'Bəli',          'Xeyr'],
+        ['Can you swim?',      'Yes, I can.',   'No, I can\'t.'],
+        ['Can she drive?',     'Yes, she can.', 'No, she can\'t.'],
+        ['Can he cook?',       'Yes, he can.',  'No, he can\'t.'],
+        ['Can they come?',     'Yes, they can.','No, they can\'t.'],
+        ['Can we park here?',  'Yes, you can.', 'No, you can\'t.'],
+      ],
+      tip: '"Yes, I can swim." demə — sadəcə "Yes, I can." kifayətdir.',
+    },
+
+    // ── Ekran 3: Sual sözləri ilə can ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə can',
+      content: 'Sual sözü əvvələ gəlir, sonra can, sonra subject, sonra sadə fel:',
+      examples: [
+        { word: 'What can you cook?',              az: 'What + can + you + cook'          },
+        { word: 'Where can I buy tickets?',        az: 'Where + can + I + buy'            },
+        { word: 'When can you meet me?',           az: 'When + can + you + meet'          },
+        { word: 'How well can she speak French?',  az: 'How well + can + she + speak'     },
+        { word: 'Who can help me?',                az: 'Who + can + help'                 },
+        { word: 'Where can we park?',              az: 'Where + can + we + park'          },
+        { word: 'What languages can he speak?',    az: 'What + can + he + speak'          },
+      ],
+      tip: 'Sual sözü → can → Subject → Verb (sadə). Bu sıra həmişə eynidir.',
+    },
+
+    // ── Ekran 4: Səhv cümlələr — düzəliş ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'can ilə bağlı ən çox edilən səhvlər:',
+      examples: [
+        { word: 'She cans swim. → She can swim.',            az: '❌ cans → ✅ can'              },
+        { word: 'Can you to help me? → Can you help me?',   az: '❌ to olmaz → ✅ sadə forma'   },
+        { word: 'I can\'t to swim. → I can\'t swim.',       az: '❌ to olmaz → ✅ sadə forma'   },
+        { word: 'He can drives. → He can drive.',           az: '❌ drives → ✅ drive'          },
+        { word: 'Can she speaks? → Can she speak?',         az: '❌ speaks → ✅ speak'          },
+        { word: 'I can not go. → I can\'t go.',             az: '❌ iki söz → ✅ can\'t'        },
+      ],
+      tip: 'Əsas qayda: can / can\'t-dan sonra həmişə sadə fel, heç vaxt to + verb olmaz.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Can she speaks English?',
+            'Can she to speak English?',
+            'Can she speak English?',
+          ],
+          answer: 'Can she speak English?',
+        },
+        {
+          q: '"Can you swim?" — bəli cavabı:',
+          options: ['Yes, I can swim.', 'Yes, I can.', 'Yes, I do.'],
+          answer: 'Yes, I can.',
+        },
+        {
+          q: '"Can they come?" — xeyr cavabı:',
+          options: ['No, they can\'t.', 'No, they don\'t.', 'No, they won\'t.'],
+          answer: 'No, they can\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'What can you to cook?',
+            'What you can cook?',
+            'What can you cook?',
+          ],
+          answer: 'What can you cook?',
+        },
+        {
+          q: 'Səhv cümləni tap:',
+          options: [
+            'She can speak three languages.',
+            'He can drives very well.',
+            'Can I use your phone?',
+          ],
+          answer: 'He can drives very well.',
+        },
+        {
+          q: '"Can we park here?" — icazə verilir:',
+          options: ['Yes, we can.', 'Yes, you can.', 'Yes, they can.'],
+          answer: 'Yes, you can.',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Where can I to buy tickets?',
+            'Where can I buy tickets?',
+            'Where I can buy tickets?',
+          ],
+          answer: 'Where can I buy tickets?',
+        },
+        {
+          q: '"How well ___ she ___ French?" — boşluqlara nə gəlir?',
+          options: ['does / speak', 'can / speaks', 'can / speak'],
+          answer: 'can / speak',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'can — bütün şəxslər üçün:',                                    tr: 'can (dəyişmir)',                   wrong: 'can / cans'                            },
+  { en: 'can-dan sonra fel necə olur?',                                  tr: 'Sadə forma',                      wrong: 'to + verb'                             },
+  { en: 'cannot — danışıq qısa forması:',                                tr: 'can\'t',                          wrong: 'cann\'t'                               },
+  { en: 'Bacarıq bildirən cümləni seç:',                                 tr: 'She can speak French.',           wrong: 'She cans speak French.'                },
+  { en: 'Düzgün: He ___ drive. He passed his test.',                     tr: 'can',                             wrong: 'cans'                                  },
+  { en: 'Düzgün: I ___ find my keys. Have you seen them?',              tr: 'can\'t',                          wrong: 'can\'t to'                             },
+  { en: 'İcazə istəmək üçün düzgün sual:',                              tr: 'Can I sit here?',                 wrong: 'Can I to sit here?'                    },
+  { en: 'Xahiş etmək üçün düzgün sual:',                                tr: 'Can you help me?',                wrong: 'Can you to help me?'                   },
+  { en: 'can — sual quruluşu:',                                          tr: 'Can + Subject + Verb?',           wrong: 'Subject + can + Verb?'                 },
+  { en: '"Can you swim?" — bəli cavabı:',                                tr: 'Yes, I can.',                     wrong: 'Yes, I can swim.'                      },
+  { en: '"Can she drive?" — xeyr cavabı:',                               tr: 'No, she can\'t.',                 wrong: 'No, she don\'t.'                       },
+  { en: 'Sual sözü ilə düzgün sıra:',                                    tr: 'Wh- + can + Subject + Verb',      wrong: 'Wh- + Subject + can + Verb'            },
+  { en: '"What ___ you ___?" — boşluqlara nə gəlir? (cook)',            tr: 'can / cook',                      wrong: 'can / cooks'                           },
+  { en: '"Where ___ I ___ tickets?" — boşluqlara nə gəlir? (buy)',      tr: 'can / buy',                       wrong: 'can / to buy'                          },
+  { en: 'Düzgün: She ___ run very fast.',                                tr: 'can',                             wrong: 'cans'                                  },
+  { en: 'Düzgün: Can she ___ English?',                                  tr: 'speak',                           wrong: 'speaks'                                },
+  { en: 'Düzgün: They ___ come tonight. They\'re busy.',                 tr: 'can\'t',                          wrong: 'can\'t to'                             },
+  { en: '"How well ___ she ___ French?" — boşluqlara nə gəlir?',        tr: 'can / speak',                     wrong: 'can / speaks'                          },
+  { en: 'Düzgün: We ___ see the mountains from here.',                   tr: 'can',                             wrong: 'can to'                                },
+  { en: 'Düzgün: You ___ park here. *(qadağa)*',                        tr: 'can\'t',                          wrong: 'don\'t'                                },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən üzə bilirəm amma dalğıc edə bilmirəm.',
+      words: ['I', 'can', 'swim', 'but', 'I', 'can\'t', 'dive', 'to', 'dives'],
+      answer: ['I', 'can', 'swim', 'but', 'I', 'can\'t', 'dive'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O fransız dilini çox yaxşı danışa bilir.',
+      words: ['She', 'can', 'speak', 'French', 'very', 'well', 'speaks', 'cans'],
+      answer: ['She', 'can', 'speak', 'French', 'very', 'well'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O bu gecə partiyaya gələ bilməz.',
+      words: ['He', 'can\'t', 'come', 'to', 'the', 'party', 'tonight', 'comes', 'to'],
+      answer: ['He', 'can\'t', 'come', 'to', 'the', 'party', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Telefonundan istifadə edə bilərəmmi?',
+      words: ['Can', 'I', 'use', 'your', 'phone', 'to', 'uses', 'Do'],
+      answer: ['Can', 'I', 'use', 'your', 'phone'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mənə kömək edə bilərsənmi?',
+      words: ['Can', 'you', 'help', 'me', 'to', 'helps', 'Do'],
+      answer: ['Can', 'you', 'help', 'me'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz pəncərəmizdən dağları görə bilirik.',
+      words: ['We', 'can', 'see', 'the', 'mountains', 'from', 'our', 'window', 'sees', 'to'],
+      answer: ['We', 'can', 'see', 'the', 'mountains', 'from', 'our', 'window'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən nə bişirə bilərsən?',
+      words: ['What', 'can', 'you', 'cook', 'to', 'cooks', 'do'],
+      answer: ['What', 'can', 'you', 'cook'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O çox sürətli qaça bilir.',
+      words: ['She', 'can', 'run', 'very', 'fast', 'runs', 'cans', 'to'],
+      answer: ['She', 'can', 'run', 'very', 'fast'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən açarlarımı tapa bilmirəm.',
+      words: ['I', 'can\'t', 'find', 'my', 'keys', 'to', 'found', 'don\'t'],
+      answer: ['I', 'can\'t', 'find', 'my', 'keys'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O fransız dilini nə qədər yaxşı danışa bilir?',
+      words: ['How', 'well', 'can', 'she', 'speak', 'French', 'speaks', 'to'],
+      answer: ['How', 'well', 'can', 'she', 'speak', 'French'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'could — keçmişdə bacarıq və nəzakətli xahiş' },
 
+// ── UNIT 25 — could (Keçmişdə Bacarıq + Nəzakətli Xahiş) ────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'could / couldn\'t — Quruluş və Keçmiş Bacarıq (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: could quruluşu ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'could / couldn\'t — quruluş',
+      content: 'could — can-in keçmiş zamanıdır. Keçmişdə bacarılan şeyləri ifadə edir.\ncouldn\'t (could not) — bacarmazlığı bildirir.\n\nQuruluş: Subject + could/couldn\'t + Verb (sadə forma)\n\n❗ could-dan sonra fel həmişə sadə formada olur — to olmur!',
+      table: [
+        ['Növ',    'Subject',                              'Modal',     'Verb'],
+        ['Müsbət', 'I / he / she / it / we / you / they', 'could',     'swim / run / speak'],
+        ['İnkar',  'I / he / she / it / we / you / they', 'couldn\'t', 'swim / run / speak'],
+        ['Sual',   'Could + Subject',                     '—',         'swim / run / speak?'],
+      ],
+      tip: 'could not = couldn\'t. could bütün şəxslər üçün eynidir — dəyişmir.',
+    },
+
+    // ── Ekran 2: could-dan sonra sadə forma ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'could-dan sonra — sadə forma!',
+      content: 'could / couldn\'t-dan sonra fel sadə formada qalır — to olmur, -s/-ed olmur:',
+      examples: [
+        { word: 'She could speak French.',          az: '✅ Düzgün — could + speak'       },
+        { word: 'She could speaks French.',         az: '❌ Yanlış — speaks olmaz'         },
+        { word: 'I couldn\'t sleep.',               az: '✅ Düzgün — couldn\'t + sleep'   },
+        { word: 'I couldn\'t to sleep.',            az: '❌ Yanlış — to olmaz'             },
+        { word: 'Could you help me?',               az: '✅ Düzgün — Could + you + help'  },
+        { word: 'Could you to help me?',            az: '❌ Yanlış — to olmaz'             },
+        { word: 'He could run very fast.',          az: '✅ Düzgün — could + run'          },
+        { word: 'He could ran very fast.',          az: '❌ Yanlış — ran olmaz'            },
+      ],
+      tip: 'could artıq keçmiş məna daşıyır — felə ayrıca keçmiş forma vermə!',
+    },
+
+    // ── Ekran 3: Keçmişdə bacarıq — nümunələr ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'could / couldn\'t — Keçmiş bacarıq',
+      content: 'Keçmişdə bacarılan və bacarılmayan şeyləri ifadə edən cümlələr:',
+      table: [
+        ['could — bacarırdı',                                  'couldn\'t — bacarmırdı'],
+        ['When I was young, I could run very fast.',           'Now I can\'t run fast.'],
+        ['She could speak French as a child.',                 'She couldn\'t speak German.'],
+        ['I could play chess when I was 8.',                   'I couldn\'t play cards.'],
+        ['My grandmother could speak four languages.',         'She couldn\'t drive.'],
+        ['We could see the mountains from the hotel.',         'We couldn\'t see the sea.'],
+        ['He could eat anything as a child.',                  'He couldn\'t cook at all.'],
+      ],
+      tip: 'When I was young... / As a child... / At school... — could ilə tez-tez işlədilən ifadələr.',
+    },
+
+    // ── Ekran 4: could vs can — fərq ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'can vs could — fərq',
+      content: 'can — indiki bacarıq. could — keçmiş bacarıq:',
+      examples: [
+        { word: 'I can swim now.',                            az: 'can — indi bacarır'              },
+        { word: 'I could swim when I was 7.',                 az: 'could — keçmişdə bacarırdı'     },
+        { word: 'She can speak three languages.',             az: 'can — indi bacarır'              },
+        { word: 'She could speak French as a child.',         az: 'could — uşaqkən bacarırdı'      },
+        { word: 'He couldn\'t walk after the accident.',      az: 'couldn\'t — keçmişdə bacarmırdı'},
+        { word: 'Now he can walk again.',                     az: 'can — indi bacarır'              },
+      ],
+      tip: 'could = keçmişdə. can = indi. İkisi birlikdə: "I could swim then but I can\'t now."',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She could speaks French as a child.',
+            'She could speak French as a child.',
+            'She could to speak French as a child.',
+          ],
+          answer: 'She could speak French as a child.',
+        },
+        {
+          q: 'could-dan sonra fel necə olur?',
+          options: ['Sadə forma (run)', 'Keçmiş forma (ran)', 'to + verb (to run)'],
+          answer: 'Sadə forma (run)',
+        },
+        {
+          q: 'could not — qısa forması:',
+          options: ['coudn\'t', 'couldn\'t', 'can\'t'],
+          answer: 'couldn\'t',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'He couldn\'t to walk after the accident.',
+            'He couldn\'t walked after the accident.',
+            'He couldn\'t walk after the accident.',
+          ],
+          answer: 'He couldn\'t walk after the accident.',
+        },
+        {
+          q: 'Hansı cümlə keçmiş bacarığı ifadə edir?',
+          options: [
+            'I can play the piano.',
+            'I could play the piano when I was at school.',
+            'I am going to play the piano.',
+          ],
+          answer: 'I could play the piano when I was at school.',
+        },
+        {
+          q: 'could — bütün şəxslər üçün necə dəyişir?',
+          options: ['could / coulds', 'could (dəyişmir)', 'could / could not'],
+          answer: 'could (dəyişmir)',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'When I was young, I can run fast.',
+            'When I was young, I could run fast.',
+            'When I was young, I could ran fast.',
+          ],
+          answer: 'When I was young, I could run fast.',
+        },
+        {
+          q: '"She couldn\'t come because she was ill." — bu cümlə nəyi bildirir?',
+          options: ['İndiki bacarıqsızlıq', 'Keçmişdə bacarmazlıq', 'Nəzakətli xahiş'],
+          answer: 'Keçmişdə bacarmazlıq',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'could — Sual, Qısa Cavab və Nəzakətli Xahiş (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual quruluşu və qısa cavablar ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'could — Sual və Qısa Cavablar',
+      content: 'Sualda could subject-dən əvvələ keçir.\nQısa cavabda could / couldn\'t işlədilir:',
+      table: [
+        ['Sual',                            'Bəli',            'Xeyr'],
+        ['Could you swim at 5?',            'Yes, I could.',   'No, I couldn\'t.'],
+        ['Could she speak French?',         'Yes, she could.', 'No, she couldn\'t.'],
+        ['Could he find the hotel?',        'Yes, he could.',  'No, he couldn\'t.'],
+        ['Could they come?',                'Yes, they could.','No, they couldn\'t.'],
+      ],
+      tip: '"Yes, I could swim." demə — sadəcə "Yes, I could." kifayətdir.',
+    },
+
+    // ── Ekran 2: Nəzakətli xahiş ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'could — Nəzakətli Xahiş',
+      content: 'could — can-dən daha nəzakətlidir. Rəsmi vəziyyətlərdə işlədilir:',
+      examples: [
+        { word: 'Could you help me, please?',             az: 'nəzakətli xahiş — could you'      },
+        { word: 'Can you help me?',                       az: 'adi xahiş — can you'               },
+        { word: 'Could you speak more slowly?',           az: 'nəzakətli — anlamıram'             },
+        { word: 'Could I use your phone?',                az: 'nəzakətli icazə — could I'         },
+        { word: 'Could you pass the salt, please?',       az: 'nəzakətli xahiş — stolda'         },
+        { word: 'Could I have a glass of water?',         az: 'nəzakətli — restorand/otaqda'     },
+        { word: 'Could you tell me the way to the station?', az: 'nəzakətli — yol soruşmaq'     },
+      ],
+      tip: 'Could you...? = Can you...?-dən daha nəzakətlidir. Rəsmi yerlərdə could üstün tutulur.',
+    },
+
+    // ── Ekran 3: Sual sözləri ilə could ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə could',
+      content: 'Sual sözü əvvələ gəlir, sonra could, sonra subject, sonra sadə fel:',
+      examples: [
+        { word: 'What could you do when you were young?',   az: 'What + could + you + do'          },
+        { word: 'How well could she speak English?',        az: 'How well + could + she + speak'   },
+        { word: 'Why couldn\'t they come to the party?',    az: 'Why + couldn\'t + they + come'    },
+        { word: 'Where could we find a good restaurant?',   az: 'Where + could + we + find'        },
+        { word: 'When could you play chess?',               az: 'When + could + you + play'        },
+        { word: 'How many languages could she speak?',      az: 'How many + could + she + speak'   },
+      ],
+      tip: 'Sual sözü → could → Subject → Verb (sadə). Bu sıra həmişə eynidir.',
+    },
+
+    // ── Ekran 4: can vs could — xahiş müqayisəsi ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'can vs could — xahiş müqayisəsi',
+      content: 'Eyni xahişi can və could ilə ifadə etmək olar — could daha rəsmi və nəzakətlidir:',
+      table: [
+        ['can — adi xahiş',            'could — nəzakətli xahiş'],
+        ['Can you help me?',           'Could you help me, please?'],
+        ['Can I sit here?',            'Could I sit here?'],
+        ['Can you open the door?',     'Could you open the door?'],
+        ['Can I use your pen?',        'Could I use your pen?'],
+        ['Can you speak slowly?',      'Could you speak more slowly?'],
+        ['Can I have the menu?',       'Could I have the menu, please?'],
+      ],
+      tip: 'could xahiş zamanı keçmiş mənası daşımır — sadəcə daha nəzakətli formadır.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Could she to speak French as a child?',
+            'Could she speaks French as a child?',
+            'Could she speak French as a child?',
+          ],
+          answer: 'Could she speak French as a child?',
+        },
+        {
+          q: '"Could you swim at 5?" — bəli cavabı:',
+          options: ['Yes, I could swim.', 'Yes, I could.', 'Yes, I can.'],
+          answer: 'Yes, I could.',
+        },
+        {
+          q: '"Could they find the hotel?" — xeyr cavabı:',
+          options: ['No, they couldn\'t.', 'No, they can\'t.', 'No, they didn\'t.'],
+          answer: 'No, they couldn\'t.',
+        },
+        {
+          q: 'Nəzakətli xahişi seç:',
+          options: [
+            'Can you help me?',
+            'Could you help me, please?',
+            'Help me, please.',
+          ],
+          answer: 'Could you help me, please?',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Could I to use your phone?',
+            'Could I use your phone?',
+            'Could I using your phone?',
+          ],
+          answer: 'Could I use your phone?',
+        },
+        {
+          q: '"Could you speak more slowly?" — bu cümlə nədir?',
+          options: ['Keçmiş bacarıq', 'Nəzakətli xahiş', 'İcazə vermək'],
+          answer: 'Nəzakətli xahiş',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Why couldn\'t they to come?',
+            'Why couldn\'t they come?',
+            'Why they couldn\'t come?',
+          ],
+          answer: 'Why couldn\'t they come?',
+        },
+        {
+          q: '"How well ___ she ___ English?" — boşluqlara nə gəlir?',
+          options: ['can / speaks', 'could / speak', 'could / spoke'],
+          answer: 'could / speak',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'could — nəyin keçmiş zamanıdır?',                              tr: 'can',                             wrong: 'will'                                  },
+  { en: 'could-dan sonra fel necə olur?',                               tr: 'Sadə forma',                      wrong: 'Keçmiş forma'                          },
+  { en: 'could not — qısa forması:',                                    tr: 'couldn\'t',                       wrong: 'coudn\'t'                              },
+  { en: 'Keçmiş bacarıq — düzgün cümlə:',                              tr: 'She could speak French as a child.', wrong: 'She could speaks French.'           },
+  { en: 'Düzgün: When I was young, I ___ run very fast.',               tr: 'could',                           wrong: 'can'                                   },
+  { en: 'Düzgün: He ___ walk for two months after the accident.',       tr: 'couldn\'t',                       wrong: 'can\'t'                                },
+  { en: 'Düzgün: I ___ sleep last night. I was too worried.',           tr: 'couldn\'t',                       wrong: 'couldn\'t to'                          },
+  { en: 'Nəzakətli xahiş — düzgün cümlə:',                             tr: 'Could you help me, please?',      wrong: 'Could you to help me?'                 },
+  { en: 'could — sual quruluşu:',                                       tr: 'Could + Subject + Verb?',         wrong: 'Subject + could + Verb?'               },
+  { en: '"Could you swim at 5?" — bəli cavabı:',                        tr: 'Yes, I could.',                   wrong: 'Yes, I could swim.'                    },
+  { en: '"Could she come?" — xeyr cavabı:',                             tr: 'No, she couldn\'t.',              wrong: 'No, she can\'t.'                       },
+  { en: 'Sual sözü ilə düzgün sıra:',                                   tr: 'Wh- + could + Subject + Verb',    wrong: 'Wh- + Subject + could + Verb'          },
+  { en: '"What ___ you do when you were young?" — boşluğa nə gəlir?',  tr: 'could',                           wrong: 'can'                                   },
+  { en: '"How well ___ she ___ English?" — boşluqlara nə gəlir?',      tr: 'could / speak',                   wrong: 'could / spoke'                         },
+  { en: 'Düzgün: Could I ___ your phone?',                              tr: 'use',                             wrong: 'to use'                                },
+  { en: 'Düzgün: Could you ___ more slowly?',                           tr: 'speak',                           wrong: 'to speak'                              },
+  { en: 'can vs could — xahiş zamanı hansı daha nəzakətlidir?',         tr: 'could',                           wrong: 'can'                                   },
+  { en: 'Düzgün: My grandmother ___ speak four languages.',             tr: 'could',                           wrong: 'could to'                              },
+  { en: 'Düzgün: They ___ find the hotel. They got lost.',              tr: 'couldn\'t',                       wrong: 'can\'t'                                },
+  { en: 'Düzgün: We ___ see the mountains from the window.',            tr: 'could',                           wrong: 'could to'                              },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uşaq ikən çox sürətli qaça bilirdim.',
+      words: ['When', 'I', 'was', 'young', 'I', 'could', 'run', 'very', 'fast', 'ran', 'can'],
+      answer: ['When', 'I', 'was', 'young', 'I', 'could', 'run', 'very', 'fast'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mənim nənəm dörd dil danışa bilirdi.',
+      words: ['My', 'grandmother', 'could', 'speak', 'four', 'languages', 'spoke', 'can'],
+      answer: ['My', 'grandmother', 'could', 'speak', 'four', 'languages'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O xəstə olduğuna görə partiyaya gələ bilmədi.',
+      words: ['She', 'couldn\'t', 'come', 'to', 'the', 'party', 'because', 'she', 'was', 'ill', 'came', 'to'],
+      answer: ['She', 'couldn\'t', 'come', 'to', 'the', 'party', 'because', 'she', 'was', 'ill'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mənə kömək edə bilərsənmi, xahişən?',
+      words: ['Could', 'you', 'help', 'me', 'please', 'to', 'helps', 'Can'],
+      answer: ['Could', 'you', 'help', 'me', 'please'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Telefonunuzdan istifadə edə bilərəmmi?',
+      words: ['Could', 'I', 'use', 'your', 'phone', 'to', 'uses', 'Can'],
+      answer: ['Could', 'I', 'use', 'your', 'phone'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Daha yavaş danışa bilərsənmi?',
+      words: ['Could', 'you', 'speak', 'more', 'slowly', 'to', 'speaks', 'Can'],
+      answer: ['Could', 'you', 'speak', 'more', 'slowly'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uşaq ikən nə edə bilərdin?',
+      words: ['What', 'could', 'you', 'do', 'when', 'you', 'were', 'young', 'did', 'can'],
+      answer: ['What', 'could', 'you', 'do', 'when', 'you', 'were', 'young'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar oteli tapa bilmədilər. Yollarını itirdilər.',
+      words: ['They', 'couldn\'t', 'find', 'the', 'hotel', 'They', 'got', 'lost', 'found', 'can\'t'],
+      answer: ['They', 'couldn\'t', 'find', 'the', 'hotel', 'They', 'got', 'lost'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, 5 yaşında üzə bilirdimi?',
+      words: ['Could', 'she', 'swim', 'when', 'she', 'was', 'five', 'swam', 'Can'],
+      answer: ['Could', 'she', 'swim', 'when', 'she', 'was', 'five'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O nə qədər yaxşı ingilis dilini danışa bilirdi?',
+      words: ['How', 'well', 'could', 'she', 'speak', 'English', 'spoke', 'can'],
+      answer: ['How', 'well', 'could', 'she', 'speak', 'English'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'must / have to — vaciblik' },
 
+// ── UNIT 32–33 — must / have to (Vaciblik) ───────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'must / have to — Quruluş və Fərq (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: must və have to quruluşu ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'must / have to — quruluş',
+      content: 'must və have to hər ikisi vaciblik bildirir.\n\nQuruluş:\nSubject + must + Verb (sadə forma)\nSubject + have to / has to + Verb (sadə forma)\n\n❗ must-dan sonra fel sadə formada olur — to olmaz, -s olmaz!',
+      table: [
+        ['Subject',              'must',  'have to / has to'],
+        ['I / we / you / they', 'must',  'have to'],
+        ['he / she / it',       'must',  'has to'],
+      ],
+      tip: 'must bütün şəxslər üçün eynidir. has to yalnız he/she/it ilə işlədilir.',
+    },
+
+    // ── Ekran 2: must vs have to — əsas fərq ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'must vs have to — fərq',
+      content: 'must — şəxsi fikir, özün belə düşünürsən.\nhave to — xarici qayda, başqası tərəfindən tələb olunur:',
+      table: [
+        ['must — şəxsi qərar',                          'have to — xarici qayda'],
+        ['I must study more. *(özüm bilirəm)*',         'I have to wear a uniform. *(iş qaydası)*'],
+        ['I must call my mother. *(özüm istəyirəm)*',   'She has to be at school at 8. *(məktəb)*'],
+        ['You must see this film! *(tövsiyə)*',         'In Britain you have to drive on the left. *(qanun)*'],
+        ['We must leave soon. *(özümüz bilirik)*',      'He has to take medicine twice a day. *(həkim)*'],
+      ],
+      tip: 'Sadə qayda: öz qərarın → must. Başqasının qaydası → have to.',
+    },
+
+    // ── Ekran 3: must — nümunə cümlələri ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'must — nümunə cümlələri',
+      content: 'must — şəxsi vaciblik, tövsiyə, güclü ehtimal:',
+      examples: [
+        { word: 'I must go to the bank. I have no money.',    az: 'şəxsi qərar — pulum yoxdur'      },
+        { word: 'You must try this dish — it\'s delicious!',  az: 'tövsiyə — sına, çox dadlıdır'    },
+        { word: 'I must remember to call her.',               az: 'şəxsi vaciblik — unutmamalıyam'  },
+        { word: 'We must leave soon or we\'ll miss the bus.', az: 'şəxsi qərar — gecikirsik'        },
+        { word: 'You must be tired after such a long trip.',  az: 'güclü ehtimal — yorulmuşsunuz'   },
+        { word: 'I must do my homework tonight.',             az: 'şəxsi vaciblik — özüm bilirəm'   },
+      ],
+      tip: 'must-dan sonra fel sadə forma: must go ✅ — must to go ❌ — musts go ❌',
+    },
+
+    // ── Ekran 4: have to / has to — nümunə cümlələri ─────────────────────────
+    {
+      type: 'lesson',
+      title: 'have to / has to — nümunə cümlələri',
+      content: 'have to / has to — xarici tələb, qayda, qanun:',
+      examples: [
+        { word: 'I have to wear a uniform at work.',           az: 'iş qaydası — xarici tələb'         },
+        { word: 'She has to be at school at 8 every morning.', az: 'məktəb qaydası — has to'           },
+        { word: 'In Britain you have to drive on the left.',   az: 'qanun — ölkə qaydası'              },
+        { word: 'He has to take medicine three times a day.',  az: 'həkim göstərişi — has to'          },
+        { word: 'Do you have to work on Saturdays?',           az: 'sual — xarici tələb varmı?'        },
+        { word: 'They have to finish the report by Friday.',   az: 'iş tələbi — xarici qayda'          },
+      ],
+      tip: 'he/she/it ilə has to işlədilir — has to work ✅ — have to works ❌',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I must to go now.',
+            'I must go now.',
+            'I musts go now.',
+          ],
+          answer: 'I must go now.',
+        },
+        {
+          q: '"he / she / it" ilə have to — hansı forma?',
+          options: ['have to', 'has to', 'must to'],
+          answer: 'has to',
+        },
+        {
+          q: 'Şəxsi qərar — hansı forma daha uyğundur?',
+          options: ['have to', 'must', 'has to'],
+          answer: 'must',
+        },
+        {
+          q: 'Xarici qayda — hansı forma daha uyğundur?',
+          options: ['must', 'have to / has to', 'mustn\'t'],
+          answer: 'have to / has to',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She have to wear a uniform.',
+            'She has to wear a uniform.',
+            'She has to wears a uniform.',
+          ],
+          answer: 'She has to wear a uniform.',
+        },
+        {
+          q: 'must-dan sonra fel necə olur?',
+          options: ['to + verb (to go)', 'Sadə forma (go)', '-ing forması (going)'],
+          answer: 'Sadə forma (go)',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'You must see this film! It\'s amazing.',
+            'You must to see this film!',
+            'You musts see this film!',
+          ],
+          answer: 'You must see this film! It\'s amazing.',
+        },
+        {
+          q: '"In Britain you ___ drive on the left." — boşluğa nə gəlir?',
+          options: ['must', 'have to', 'has to'],
+          answer: 'have to',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'mustn\'t / don\'t have to / had to (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: mustn't vs don't have to — fərq ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'mustn\'t vs don\'t have to — fərq',
+      content: 'Bu iki inkar tamamilə fərqli məna daşıyır!\n\nmustn\'t = qadağandır — etmək olmaz\ndon\'t have to = məcburi deyil — istəsən edə bilərsən',
+      table: [
+        ['mustn\'t — qadağan',                          'don\'t have to — məcburi deyil'],
+        ['You mustn\'t smoke here. *(qadağandır)*',     'You don\'t have to come. *(məcburi deyil)*'],
+        ['You mustn\'t tell anyone. *(sirr)*',          'I don\'t have to get up early. *(imtahan yox)*'],
+        ['We mustn\'t be late. *(çox vacibdir)*',       'She doesn\'t have to cook tonight. *(istəsə)*'],
+        ['You mustn\'t park here. *(qadağa)*',          'He doesn\'t have to wear a tie. *(sərbəstdir)*'],
+      ],
+      tip: 'mustn\'t ≠ don\'t have to! mustn\'t = etmə! don\'t have to = etməsən də olar.',
+    },
+
+    // ── Ekran 2: mustn't və don't have to — nümunələr ────────────────────────
+    {
+      type: 'lesson',
+      title: 'mustn\'t / don\'t have to — nümunələr',
+      content: 'Hər iki formanın düzgün işlənmə nümunələri:',
+      examples: [
+        { word: 'You mustn\'t smoke in the hospital.',          az: 'qadağan — tibb müəssisəsi'        },
+        { word: 'You mustn\'t use your phone in the exam.',     az: 'qadağan — imtahan qaydası'        },
+        { word: 'I don\'t have to work tomorrow — it\'s Sunday.', az: 'məcburi deyil — bazar günü'   },
+        { word: 'She doesn\'t have to cook — we\'ll order food.', az: 'məcburi deyil — seçim var'    },
+        { word: 'You mustn\'t park in front of the entrance.',  az: 'qadağan — icazəsiz park'         },
+        { word: 'He doesn\'t have to wear a uniform.',          az: 'məcburi deyil — sərbəst geyim'   },
+      ],
+      tip: 'mustn\'t — "etmə, qadağandır". don\'t have to — "etməsən də olur, məcburi deyil".',
+    },
+
+    // ── Ekran 3: Keçmiş zaman — had to ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Keçmiş zaman — had to',
+      content: 'must-un keçmiş zamanı yoxdur → had to işlədilir.\nSual: Did + subject + have to?\nİnkar: didn\'t have to',
+      table: [
+        ['İndiki',                    'Keçmiş'],
+        ['I must go.',                'I had to go.'],
+        ['She has to work.',          'She had to work.'],
+        ['He must leave early.',      'He had to leave early.'],
+        ['Do you have to pay?',       'Did you have to pay?'],
+        ['I don\'t have to hurry.',   'I didn\'t have to hurry.'],
+      ],
+      tip: 'had to — bütün şəxslər üçün eynidir. didn\'t have to = keçmişdə məcburi deyildi.',
+    },
+
+    // ── Ekran 4: Sual quruluşu ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'must / have to — Sual quruluşu',
+      content: 'have to ilə sual do/does/did köməkçi felləri ilə qurulur:',
+      examples: [
+        { word: 'Do you have to work on Saturdays?',        az: 'do + you + have to'             },
+        { word: 'Does she have to wear a uniform?',         az: 'does + she + have to'           },
+        { word: 'Did you have to wait long?',               az: 'did + you + have to (keçmiş)'  },
+        { word: 'What time does he have to be at work?',    az: 'What time + does + he'         },
+        { word: 'Do they have to take an exam?',            az: 'do + they + have to'            },
+        { word: 'Must I wear a tie? *(rəsmi)*',             az: 'must — rəsmi sual forması'      },
+      ],
+      tip: 'must sualı rəsmi üslubdadır. Gündəlik danışıqda Do/Does + have to daha çox işlədilir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"You ___ smoke here." — qadağa bildirən forma:',
+          options: ['don\'t have to', 'mustn\'t', 'didn\'t have to'],
+          answer: 'mustn\'t',
+        },
+        {
+          q: '"I ___ get up early tomorrow — it\'s Sunday." — məcburi deyil:',
+          options: ['mustn\'t', 'doesn\'t have to', 'don\'t have to'],
+          answer: 'don\'t have to',
+        },
+        {
+          q: 'must-un keçmiş zamanı:',
+          options: ['musted', 'had to', 'must have'],
+          answer: 'had to',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Does she have to wears a uniform?',
+            'Does she has to wear a uniform?',
+            'Does she have to wear a uniform?',
+          ],
+          answer: 'Does she have to wear a uniform?',
+        },
+        {
+          q: '"I ___ wait for an hour." — keçmişdə məcburi idi:',
+          options: ['must', 'have to', 'had to'],
+          answer: 'had to',
+        },
+        {
+          q: 'mustn\'t vs don\'t have to — hansı qadağa bildirir?',
+          options: ['don\'t have to', 'mustn\'t', 'didn\'t have to'],
+          answer: 'mustn\'t',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'I didn\'t must get up early.',
+            'I didn\'t have to get up early.',
+            'I mustn\'t get up early.',
+          ],
+          answer: 'I didn\'t have to get up early.',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She musts wear a uniform.',
+            'She must to wear a uniform.',
+            'She must wear a uniform.',
+          ],
+          answer: 'She must wear a uniform.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'must — nə zaman işlədilir?',                                    tr: 'Şəxsi qərar / tövsiyə',           wrong: 'Xarici qayda'                          },
+  { en: 'have to — nə zaman işlədilir?',                                 tr: 'Xarici qayda / tələb',            wrong: 'Şəxsi qərar'                           },
+  { en: '"he / she / it" ilə have to — forma:',                          tr: 'has to',                          wrong: 'have to'                               },
+  { en: 'must-dan sonra fel necə olur?',                                  tr: 'Sadə forma',                      wrong: 'to + verb'                             },
+  { en: 'mustn\'t — nə bildirir?',                                        tr: 'Qadağan — etmək olmaz',           wrong: 'Məcburi deyil'                         },
+  { en: 'don\'t have to — nə bildirir?',                                  tr: 'Məcburi deyil',                   wrong: 'Qadağan'                               },
+  { en: 'must-un keçmiş zamanı:',                                         tr: 'had to',                          wrong: 'musted'                                },
+  { en: 'Düzgün: I ___ go to the bank. I have no money.',                tr: 'must',                            wrong: 'must to'                               },
+  { en: 'Düzgün: She ___ be at school at 8. *(məktəb qaydası)*',         tr: 'has to',                          wrong: 'have to'                               },
+  { en: 'Düzgün: You ___ smoke in the hospital.',                         tr: 'mustn\'t',                        wrong: 'don\'t have to'                        },
+  { en: 'Düzgün: I ___ get up early — it\'s my day off.',                tr: 'don\'t have to',                  wrong: 'mustn\'t'                              },
+  { en: 'Düzgün: She ___ take medicine twice a day. *(həkim)*',          tr: 'has to',                          wrong: 'must'                                  },
+  { en: 'have to — sual quruluşu (you):',                                 tr: 'Do you have to ...?',             wrong: 'Have you to ...?'                      },
+  { en: 'have to — sual quruluşu (she):',                                 tr: 'Does she have to ...?',           wrong: 'Has she to ...?'                       },
+  { en: 'have to — keçmiş sual:',                                         tr: 'Did you have to ...?',            wrong: 'Had you to ...?'                       },
+  { en: 'Düzgün: He ___ work last Sunday. It was a holiday.',            tr: 'didn\'t have to',                 wrong: 'didn\'t must'                          },
+  { en: 'Düzgün: We ___ leave now or we\'ll miss the train.',            tr: 'must',                            wrong: 'must to'                               },
+  { en: 'Düzgün: He ___ take an exam yesterday.',                         tr: 'had to',                          wrong: 'must'                                  },
+  { en: 'Düzgün: You ___ tell anyone. It\'s a secret.',                  tr: 'mustn\'t',                        wrong: 'don\'t have to'                        },
+  { en: 'Düzgün: In Britain you ___ drive on the left.',                  tr: 'have to',                         wrong: 'must'                                  },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bu gün banka getməliyəm. Pulumuz yoxdur.',
+      words: ['I', 'must', 'go', 'to', 'the', 'bank', 'today', 'to', 'musts', 'went'],
+      answer: ['I', 'must', 'go', 'to', 'the', 'bank', 'today'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O hər gün işdə forma geyinməlidir.',
+      words: ['She', 'has', 'to', 'wear', 'a', 'uniform', 'at', 'work', 'have', 'wears'],
+      answer: ['She', 'has', 'to', 'wear', 'a', 'uniform', 'at', 'work'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Burda siqaret çəkmək qadağandır.',
+      words: ['You', 'mustn\'t', 'smoke', 'here', 'to', 'don\'t', 'smokes'],
+      answer: ['You', 'mustn\'t', 'smoke', 'here'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sabah tez qalxmağa məcbur deyiləm — bazar günüdür.',
+      words: ['I', 'don\'t', 'have', 'to', 'get', 'up', 'early', 'tomorrow', 'mustn\'t', 'got'],
+      answer: ['I', 'don\'t', 'have', 'to', 'get', 'up', 'early', 'tomorrow'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O dünən imtahan verməli oldu.',
+      words: ['She', 'had', 'to', 'take', 'an', 'exam', 'yesterday', 'has', 'took', 'must'],
+      answer: ['She', 'had', 'to', 'take', 'an', 'exam', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Həftə sonları işləməli olurmusunuz?',
+      words: ['Do', 'you', 'have', 'to', 'work', 'at', 'weekends', 'must', 'works', 'Does'],
+      answer: ['Do', 'you', 'have', 'to', 'work', 'at', 'weekends'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bunu heç kimə deməməlisən. Bu sirdir.',
+      words: ['You', 'mustn\'t', 'tell', 'anyone', 'It\'s', 'a', 'secret', 'don\'t', 'to', 'told'],
+      answer: ['You', 'mustn\'t', 'tell', 'anyone', 'It\'s', 'a', 'secret'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Britaniyada sol tərəfdən getmək məcburidir.',
+      words: ['In', 'Britain', 'you', 'have', 'to', 'drive', 'on', 'the', 'left', 'must', 'drives'],
+      answer: ['In', 'Britain', 'you', 'have', 'to', 'drive', 'on', 'the', 'left'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O bu axşam yemək bişirməyə məcbur deyil.',
+      words: ['She', 'doesn\'t', 'have', 'to', 'cook', 'tonight', 'mustn\'t', 'cooks', 'don\'t'],
+      answer: ['She', 'doesn\'t', 'have', 'to', 'cook', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O dərmanı gündə üç dəfə içməlidir.',
+      words: ['He', 'has', 'to', 'take', 'medicine', 'three', 'times', 'a', 'day', 'have', 'takes'],
+      answer: ['He', 'has', 'to', 'take', 'medicine', 'three', 'times', 'a', 'day'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'should — məsləhət' },
 
+// ── UNIT 34 — should (Məsləhət) ──────────────────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'should / shouldn\'t — Quruluş və Məsləhət (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: should quruluşu ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'should / shouldn\'t — quruluş',
+      content: 'should — məsləhət, tövsiyə və fikir bildirmək üçün işlədilir.\nshouldn\'t (should not) — əks məsləhət bildirir.\n\nQuruluş: Subject + should/shouldn\'t + Verb (sadə forma)\n\n❗ should heç vaxt -s almır. Arxasında həmişə sadə fel gəlir!',
+      table: [
+        ['Növ',    'Subject',                              'Modal',       'Verb'],
+        ['Müsbət', 'I / he / she / it / we / you / they', 'should',      'sleep / eat / go'],
+        ['İnkar',  'I / he / she / it / we / you / they', 'shouldn\'t',  'sleep / eat / go'],
+        ['Sual',   'Should + Subject',                    '—',           'sleep / eat / go?'],
+      ],
+      tip: 'should not = shouldn\'t. should bütün şəxslər üçün eynidir — dəyişmir.',
+    },
+
+    // ── Ekran 2: should-dan sonra sadə forma ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'should-dan sonra — sadə forma!',
+      content: 'should / shouldn\'t-dan sonra fel sadə formada qalır — to olmur, -s olmur:',
+      examples: [
+        { word: 'You should sleep more.',          az: '✅ Düzgün — should + sleep'        },
+        { word: 'You should to sleep more.',       az: '❌ Yanlış — to olmaz'               },
+        { word: 'She should rest.',                az: '✅ Düzgün — should + rest'          },
+        { word: 'She shoulds rest.',               az: '❌ Yanlış — shoulds olmaz'           },
+        { word: 'She should rests.',               az: '❌ Yanlış — rests olmaz'             },
+        { word: 'He shouldn\'t drive so fast.',    az: '✅ Düzgün — shouldn\'t + drive'    },
+        { word: 'He shouldn\'t to drive so fast.', az: '❌ Yanlış — to olmaz'               },
+        { word: 'Should I call him?',              az: '✅ Düzgün — Should + I + call'      },
+      ],
+      tip: 'should artıq modal feldir — arxasında gələn fel heç bir dəyişiklik almır!',
+    },
+
+    // ── Ekran 3: should — məsləhət nümunələri ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'should — Məsləhət cümlələri',
+      content: 'should ilə müsbət məsləhət, shouldn\'t ilə əks məsləhət:',
+      table: [
+        ['should — et',                                     'shouldn\'t — etmə'],
+        ['You look tired. You should go to bed.',           'You shouldn\'t watch TV so late.'],
+        ['He should eat less — he\'s gaining weight.',      'He shouldn\'t eat so much sugar.'],
+        ['She has a cold. She should stay at home.',        'She shouldn\'t go out in the rain.'],
+        ['You should always wear a seatbelt.',              'You shouldn\'t drive so fast.'],
+        ['Students should read more outside class.',        'Students shouldn\'t waste time.'],
+      ],
+      tip: 'should = "etmək yaxşı olar". shouldn\'t = "etmək yaxşı olmaz".',
+    },
+
+    // ── Ekran 4: should vs must — fərq ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'should vs must — fərq',
+      content: 'should — tövsiyə (güclü deyil). must — vaciblik (güclüdür):',
+      examples: [
+        { word: 'You should sleep more.',             az: 'should — tövsiyə, məsləhətdir'       },
+        { word: 'You must take this medicine.',       az: 'must — vacibdir, mütləq lazımdır'    },
+        { word: 'He should see a doctor.',            az: 'should — məsləhət görürəm'           },
+        { word: 'He must take his medicine now.',     az: 'must — vacibdir, təcilidir'          },
+        { word: 'You shouldn\'t waste food.',         az: 'shouldn\'t — etmək yaxşı deyil'     },
+        { word: 'You mustn\'t smoke here.',           az: 'mustn\'t — tamamilə qadağandır'      },
+      ],
+      tip: 'should = məsləhət. must = vaciblik. mustn\'t = qadağa. shouldn\'t = əks məsləhət.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'You should to sleep more.',
+            'You should sleep more.',
+            'You shoulds sleep more.',
+          ],
+          answer: 'You should sleep more.',
+        },
+        {
+          q: 'should-dan sonra fel necə olur?',
+          options: ['to + verb (to go)', 'Sadə forma (go)', '-ing forması (going)'],
+          answer: 'Sadə forma (go)',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'He shouldn\'t to drive fast.',
+            'He shouldn\'t drives fast.',
+            'He shouldn\'t drive fast.',
+          ],
+          answer: 'He shouldn\'t drive fast.',
+        },
+        {
+          q: 'should — nə zaman işlədilir?',
+          options: ['Qadağa bildirmək üçün', 'Məsləhət və tövsiyə üçün', 'Vaciblik bildirmək üçün'],
+          answer: 'Məsləhət və tövsiyə üçün',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She should rests more.',
+            'She should rest more.',
+            'She shoulds rest more.',
+          ],
+          answer: 'She should rest more.',
+        },
+        {
+          q: 'should vs must — hansı daha güclüdür?',
+          options: ['should', 'must', 'Hər ikisi eynidir'],
+          answer: 'must',
+        },
+        {
+          q: 'Düzgün məsləhət cümləsini seç:',
+          options: [
+            'You should always tell the truth.',
+            'You should always to tell the truth.',
+            'You shoulds always tell the truth.',
+          ],
+          answer: 'You should always tell the truth.',
+        },
+        {
+          q: '"You ___ eat so much sugar." — əks məsləhət:',
+          options: ['should', 'shouldn\'t', 'mustn\'t'],
+          answer: 'shouldn\'t',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'should — Sual, Qısa Cavab və I think + should (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual quruluşu və qısa cavablar ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'should — Sual və Qısa Cavablar',
+      content: 'Sualda should subject-dən əvvələ keçir.\nQısa cavabda should / shouldn\'t işlədilir:',
+      table: [
+        ['Sual',                        'Bəli',              'Xeyr'],
+        ['Should I call him?',          'Yes, you should.',  'No, you shouldn\'t.'],
+        ['Should she see a doctor?',    'Yes, she should.',  'No, she shouldn\'t.'],
+        ['Should we leave now?',        'Yes, you should.',  'No, you shouldn\'t.'],
+        ['Should they apologise?',      'Yes, they should.', 'No, they shouldn\'t.'],
+      ],
+      tip: '"Yes, you should call." demə — sadəcə "Yes, you should." kifayətdir.',
+    },
+
+    // ── Ekran 2: Sual sözləri ilə should ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə should',
+      content: 'Sual sözü əvvələ gəlir, sonra should, sonra subject, sonra sadə fel:',
+      examples: [
+        { word: 'What should I do?',                   az: 'What + should + I + do'               },
+        { word: 'Where should we eat tonight?',        az: 'Where + should + we + eat'            },
+        { word: 'Should I call him or send an email?', az: 'Should + I + call / send'             },
+        { word: 'What should she study?',              az: 'What + should + she + study'          },
+        { word: 'When should we leave?',               az: 'When + should + we + leave'           },
+        { word: 'How much should I pay?',              az: 'How much + should + I + pay'          },
+        { word: 'Should I wear a jacket?',             az: 'Should + I + wear'                    },
+      ],
+      tip: 'Sual sözü → should → Subject → Verb (sadə). Bu sıra həmişə eynidir.',
+    },
+
+    // ── Ekran 3: I think / I don't think + should ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'I think / I don\'t think + should',
+      content: 'Fikir bildirərkən I think / I don\'t think + should işlədilir:\n\n❗ Mənfi formada "I don\'t think + should" işlədilir — "I think + shouldn\'t" az işlədilir!',
+      table: [
+        ['Müsbət fikir',                               'Mənfi fikir'],
+        ['I think you should take the job.',           'I don\'t think you should take it.'],
+        ['I think he should see a doctor.',            'I don\'t think he should worry.'],
+        ['I think she should apologise.',              'I don\'t think she should go alone.'],
+        ['I think we should leave now.',               'I don\'t think we should be late.'],
+        ['I think they should talk more.',             'I don\'t think they should argue.'],
+      ],
+      tip: '"I don\'t think you should lend him money." ✅ — "I think you shouldn\'t lend him money." az işlədilir.',
+    },
+
+    // ── Ekran 4: should / must / don't have to müqayisəsi ────────────────────
+    {
+      type: 'lesson',
+      title: 'should / must / don\'t have to — müqayisə',
+      content: 'Üç formanın fərqini nümunələrlə tanı:',
+      examples: [
+        { word: 'You should eat more vegetables.',            az: 'should — tövsiyə, yaxşı olar'       },
+        { word: 'You must wear a seatbelt. It\'s the law.',   az: 'must — vacibdir, qanundur'          },
+        { word: 'You don\'t have to come if you\'re busy.',   az: 'don\'t have to — məcburi deyil'    },
+        { word: 'You shouldn\'t drink so much coffee.',       az: 'shouldn\'t — tövsiyə, yaxşı deyil' },
+        { word: 'You mustn\'t smoke here. It\'s forbidden.',  az: 'mustn\'t — tamamilə qadağandır'     },
+        { word: 'She doesn\'t have to work on Sundays.',      az: 'doesn\'t have to — məcburi deyil'  },
+      ],
+      tip: 'should = məsləhət. must = vaciblik. mustn\'t = qadağa. don\'t have to = məcburi deyil.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Should I to call him?',
+            'Should I call him?',
+            'Should I calls him?',
+          ],
+          answer: 'Should I call him?',
+        },
+        {
+          q: '"Should she see a doctor?" — bəli cavabı:',
+          options: ['Yes, she should see.', 'Yes, she should.', 'Yes, she does.'],
+          answer: 'Yes, she should.',
+        },
+        {
+          q: '"Should we leave now?" — xeyr cavabı:',
+          options: ['No, we shouldn\'t.', 'No, we don\'t.', 'No, we mustn\'t.'],
+          answer: 'No, we shouldn\'t.',
+        },
+        {
+          q: 'Mənfi fikir üçün düzgün cümləni seç:',
+          options: [
+            'I think you shouldn\'t worry.',
+            'I don\'t think you should worry.',
+            'I not think you should worry.',
+          ],
+          answer: 'I don\'t think you should worry.',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'What should I to do?',
+            'What should I do?',
+            'What I should do?',
+          ],
+          answer: 'What should I do?',
+        },
+        {
+          q: '"You ___ smoke here. It\'s forbidden." — düzgün forma:',
+          options: ['shouldn\'t', 'mustn\'t', 'don\'t have to'],
+          answer: 'mustn\'t',
+        },
+        {
+          q: '"You ___ come if you don\'t want to." — məcburi deyil:',
+          options: ['shouldn\'t', 'mustn\'t', 'don\'t have to'],
+          answer: 'don\'t have to',
+        },
+        {
+          q: '"Where ___ we eat tonight?" — boşluğa nə gəlir?',
+          options: ['must', 'should', 'have to'],
+          answer: 'should',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'should — nə zaman işlədilir?',                                  tr: 'Məsləhət və tövsiyə',             wrong: 'Vaciblik'                              },
+  { en: 'should-dan sonra fel necə olur?',                               tr: 'Sadə forma',                      wrong: 'to + verb'                             },
+  { en: 'should not — qısa forması:',                                     tr: 'shouldn\'t',                      wrong: 'shouldnt'                              },
+  { en: 'Düzgün: You look tired. You ___ go to bed.',                    tr: 'should',                          wrong: 'should to'                             },
+  { en: 'Düzgün: He ___ drive so fast — it\'s dangerous.',               tr: 'shouldn\'t',                      wrong: 'shouldn\'t to'                         },
+  { en: 'Düzgün: She ___ see a doctor.',                                  tr: 'should',                          wrong: 'shoulds'                               },
+  { en: 'should vs must — hansı daha güclüdür?',                         tr: 'must',                            wrong: 'should'                                },
+  { en: 'should — sual quruluşu:',                                        tr: 'Should + Subject + Verb?',        wrong: 'Subject + should + Verb?'              },
+  { en: '"Should I call him?" — bəli cavabı:',                           tr: 'Yes, you should.',                wrong: 'Yes, you should call.'                 },
+  { en: '"Should they apologise?" — xeyr cavabı:',                       tr: 'No, they shouldn\'t.',            wrong: 'No, they don\'t.'                      },
+  { en: 'Mənfi fikir üçün düzgün forma:',                                tr: 'I don\'t think you should worry.',wrong: 'I think you shouldn\'t worry.'         },
+  { en: 'Sual sözü ilə düzgün sıra:',                                    tr: 'Wh- + should + Subject + Verb',   wrong: 'Wh- + Subject + should + Verb'         },
+  { en: '"What ___ I do?" — boşluğa nə gəlir?',                         tr: 'should',                          wrong: 'should to'                             },
+  { en: '"Where ___ we eat tonight?" — boşluğa nə gəlir?',              tr: 'should',                          wrong: 'must'                                  },
+  { en: 'Düzgün: You ___ always tell the truth.',                         tr: 'should',                          wrong: 'should to'                             },
+  { en: 'Düzgün: I ___ think you should take the job.',                  tr: 'think',                           wrong: 'don\'t think'                          },
+  { en: 'Düzgün: I don\'t think she ___ go alone.',                      tr: 'should',                          wrong: 'shouldn\'t'                            },
+  { en: '"You ___ smoke here. It\'s forbidden." — düzgün forma:',        tr: 'mustn\'t',                        wrong: 'shouldn\'t'                            },
+  { en: '"You ___ come if you\'re busy." — məcburi deyil:',             tr: 'don\'t have to',                  wrong: 'shouldn\'t'                            },
+  { en: 'Düzgün: Students ___ read more outside class.',                 tr: 'should',                          wrong: 'shoulds'                               },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yorğun görünürsən. Erkən yatmağa getməlisən.',
+      words: ['You', 'look', 'tired', 'You', 'should', 'go', 'to', 'bed', 'early', 'to', 'went'],
+      answer: ['You', 'look', 'tired', 'You', 'should', 'go', 'to', 'bed', 'early'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O bu qədər sürətli sürməməlidir — təhlükəlidir.',
+      words: ['He', 'shouldn\'t', 'drive', 'so', 'fast', 'it\'s', 'dangerous', 'to', 'drives'],
+      answer: ['He', 'shouldn\'t', 'drive', 'so', 'fast', 'it\'s', 'dangerous'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Fikirləşirəm ki, həkimə getməlisən.',
+      words: ['I', 'think', 'you', 'should', 'see', 'a', 'doctor', 'to', 'sees', 'must'],
+      answer: ['I', 'think', 'you', 'should', 'see', 'a', 'doctor'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Fikirləşmirəm ki, buna görə narahat olmalısan.',
+      words: ['I', 'don\'t', 'think', 'you', 'should', 'worry', 'about', 'it', 'shouldn\'t', 'to'],
+      answer: ['I', 'don\'t', 'think', 'you', 'should', 'worry', 'about', 'it'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Ona zəng etməliyəmmi?',
+      words: ['Should', 'I', 'call', 'him', 'to', 'calls', 'Must'],
+      answer: ['Should', 'I', 'call', 'him'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu gecə harada yemək yeyəcəyik?',
+      words: ['Where', 'should', 'we', 'eat', 'tonight', 'to', 'eats', 'must'],
+      answer: ['Where', 'should', 'we', 'eat', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən həmişə düzü danışmalısan.',
+      words: ['You', 'should', 'always', 'tell', 'the', 'truth', 'to', 'tells', 'must'],
+      answer: ['You', 'should', 'always', 'tell', 'the', 'truth'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O bu qədər çox kofe içməməlidir. Ona yaxşı deyil.',
+      words: ['She', 'shouldn\'t', 'drink', 'so', 'much', 'coffee', 'It\'s', 'not', 'good', 'for', 'her', 'to', 'drinks'],
+      answer: ['She', 'shouldn\'t', 'drink', 'so', 'much', 'coffee', 'It\'s', 'not', 'good', 'for', 'her'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Fikirləşirəm ki, bu işi qəbul etməlisən.',
+      words: ['I', 'think', 'you', 'should', 'take', 'the', 'job', 'to', 'takes', 'must'],
+      answer: ['I', 'think', 'you', 'should', 'take', 'the', 'job'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Nə etməliyəm? Həqiqətən bilmirəm.',
+      words: ['What', 'should', 'I', 'do', 'I', 'really', 'don\'t', 'know', 'to', 'must'],
+      answer: ['What', 'should', 'I', 'do', 'I', 'really', 'don\'t', 'know'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Present Perfect — giriş' },
 
+// ── UNIT 7–8 — Present Perfect: have/has + V3 ────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Perfect — Quruluş və İstifadə (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Quruluş ──────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Perfect — Quruluş',
+      content: 'Present Perfect — keçmişdə baş vermiş, lakin indiki zamana bağlı olan hadisələr üçün işlədilir. Nə vaxt baş verdiyi deyilmir və ya vacib deyil.\n\nQuruluş:\nSubject + have/has + Past Participle (V3)\n\n❗ have — I/we/you/they ilə\n❗ has — he/she/it ilə',
+      table: [
+        ['Subject',                    'Köməkçi',        'Past Participle'],
+        ['I / we / you / they',        'have (\'ve)',     'worked / seen / visited'],
+        ['he / she / it',             'has (\'s)',       'worked / seen / visited'],
+      ],
+      tip: '\'ve = have, \'s = has — danışıq dilində qısa formalar işlədilir: I\'ve finished. She\'s arrived.',
+    },
+
+    // ── Ekran 2: V3 — düzgün və düzgünsüz fellər ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Participle (V3)',
+      content: 'Düzgün fellər (Regular) sadəcə -ed alır. Düzgünsüz fellər (Irregular) əzbərlənməlidir:',
+      table: [
+        ['Fel',    'V2 (Past Simple)', 'V3 (Past Participle)'],
+        ['work',   'worked',           'worked'],
+        ['finish', 'finished',         'finished'],
+        ['go',     'went',             'gone'],
+        ['see',    'saw',              'seen'],
+        ['eat',    'ate',              'eaten'],
+        ['buy',    'bought',           'bought'],
+        ['write',  'wrote',            'written'],
+        ['speak',  'spoke',            'spoken'],
+        ['lose',   'lost',             'lost'],
+        ['forget', 'forgot',           'forgotten'],
+        ['be',     'was / were',       'been'],
+        ['take',   'took',             'taken'],
+      ],
+      tip: 'V2 ilə V3 bəzən eyni olur (buy→bought→bought), bəzən fərqli (go→went→gone).',
+    },
+
+    // ── Ekran 3: İnkar və Sual ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Perfect — İnkar və Sual',
+      content: 'İnkar: have/has + not + V3\nSual: Have/Has + Subject + V3?',
+      table: [
+        ['Müsbət',                          'İnkar',                              'Sual'],
+        ['I have seen it.',                 'I haven\'t seen it.',                'Have you seen it?'],
+        ['She has finished.',               'She hasn\'t finished.',              'Has she finished?'],
+        ['They have arrived.',              'They haven\'t arrived.',             'Have they arrived?'],
+        ['He has called.',                  'He hasn\'t called.',                 'Has he called?'],
+      ],
+      tip: 'haven\'t = have not, hasn\'t = has not. Qısa cavab: Yes, I have. / No, she hasn\'t.',
+    },
+
+    // ── Ekran 4: Nə vaxt işlədilir? ──────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Perfect — Nə vaxt işlədilir?',
+      content: 'Üç əsas istifadə:',
+      examples: [
+        { word: 'I have visited many countries.',             az: '1. Həyat təcrübəsi — nə vaxt deyilmir'     },
+        { word: 'Have you ever been to Japan?',              az: '1. Həyat təcrübəsi — ever ilə sual'        },
+        { word: 'She has never eaten sushi.',                az: '1. Həyat təcrübəsi — never ilə inkar'      },
+        { word: 'I\'ve just finished my homework.',         az: '2. Yenicə bitmiş iş — just ilə'            },
+        { word: 'They\'ve just arrived at the hotel.',      az: '2. Yenicə bitmiş iş — just ilə'            },
+        { word: 'I\'ve already eaten, thanks.',             az: '3. Artıq edilmiş — already ilə'            },
+        { word: 'Have you packed your bag yet?',            az: '3. Sual — yet ilə'                         },
+        { word: 'I haven\'t called him yet.',               az: '3. İnkar — yet ilə'                        },
+      ],
+      tip: 'just/already/yet/ever/never — bunlar Present Perfect-in "siqnal sözləri"dir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün formanı seç:',
+          options: [
+            'She have finished her work.',
+            'She has finished her work.',
+            'She has finish her work.',
+          ],
+          answer: 'She has finished her work.',
+        },
+        {
+          q: '"go" felinin V3 forması hansıdır?',
+          options: ['went', 'gone', 'going'],
+          answer: 'gone',
+        },
+        {
+          q: 'Düzgün inkar formasını seç:',
+          options: [
+            'I hasn\'t seen him.',
+            'I haven\'t seen him.',
+            'I didn\'t have seen him.',
+          ],
+          answer: 'I haven\'t seen him.',
+        },
+        {
+          q: '"eat" felinin V3 forması hansıdır?',
+          options: ['ate', 'eat', 'eaten'],
+          answer: 'eaten',
+        },
+        {
+          q: 'Düzgün sual formasını seç:',
+          options: [
+            'Has she ever been to France?',
+            'Have she ever been to France?',
+            'Did she ever been to France?',
+          ],
+          answer: 'Has she ever been to France?',
+        },
+        {
+          q: '"write" felinin V3 forması hansıdır?',
+          options: ['wrote', 'written', 'writed'],
+          answer: 'written',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'They have just arrived.',
+            'They has just arrived.',
+            'They have just arrive.',
+          ],
+          answer: 'They have just arrived.',
+        },
+        {
+          q: '"speak" felinin V3 forması hansıdır?',
+          options: ['spoke', 'speaked', 'spoken'],
+          answer: 'spoken',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Perfect — just/already/yet/ever/never + PP vs PS (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: just / already / yet ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'just / already / yet',
+      content: 'Bu sözlər Present Perfect ilə çox işlənir:',
+      table: [
+        ['Söz',      'Mövqe',                   'Mənası',                        'Nümunə'],
+        ['just',     'have/has-dən sonra',       'yenicə, az əvvəl',              'I\'ve just called her.'],
+        ['already',  'have/has-dən sonra',       'artıq (gözləndiyindən tez)',    'He\'s already left.'],
+        ['yet',      'cümlənin sonunda',         'hələ (inkar + sual)',            'Has it started yet?'],
+      ],
+      tip: '"yet" yalnız inkar və sual cümlələrinin sonunda gəlir. "already" müsbət cümlələrdə işlənir.',
+    },
+
+    // ── Ekran 2: ever / never ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'ever / never — həyat təcrübəsi',
+      content: 'ever və never həyat təcrübəsini soruşmaq və danışmaq üçün işlədilir:',
+      examples: [
+        { word: 'Have you ever tried Turkish food?',         az: 'ever — suallarda, subject-dən əvvəl'       },
+        { word: 'Has she ever won a competition?',           az: 'ever — suallarda, subject-dən əvvəl'       },
+        { word: 'I\'ve never been to South America.',       az: 'never — müsbət fel, inkar məna'            },
+        { word: 'He\'s never told a lie.',                  az: 'never — müsbət fel, inkar məna'            },
+        { word: 'She\'s never eaten raw fish.',             az: 'never — müsbət fel, inkar məna'            },
+        { word: 'Have they ever seen snow?',                az: 'ever — suallarda, subject-dən əvvəl'       },
+      ],
+      tip: 'never ilə fel müsbət formada qalır — haven\'t never demə! (ikiqat inkar yanlışdır)',
+    },
+
+    // ── Ekran 3: Present Perfect vs Past Simple ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Perfect vs Past Simple — əsas fərq',
+      content: 'Nə vaxt deyilsə → Past Simple. Nə vaxt deyilməsə → Present Perfect:',
+      table: [
+        ['Present Perfect',                   'Past Simple'],
+        ['I\'ve seen that film.',             'I saw that film last week.'],
+        ['She\'s visited Paris.',             'She visited Paris in 2019.'],
+        ['Have you met him?',                 'Did you meet him yesterday?'],
+        ['We\'ve just eaten.',                'We ate two hours ago.'],
+        ['He\'s never tried it.',             'He didn\'t try it last time.'],
+      ],
+      tip: 'yesterday / last week / in 2010 / ago → həmişə Past Simple! Bu sözlər görünsə PP işlətmə.',
+    },
+
+    // ── Ekran 4: Keçmiş zamana aid siqnal sözlər ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Siqnal sözlər — PP yoxsa PS?',
+      content: 'Cümlədə hansı sözün olduğuna bax:',
+      table: [
+        ['Present Perfect ilə',           'Past Simple ilə'],
+        ['just, already, yet',            'yesterday'],
+        ['ever, never',                   'last week / last year'],
+        ['recently, lately',              '... ago'],
+        ['so far, up to now',             'in 2005, in March'],
+        ['today, this week (hələ bitməyib)', 'this morning (artıq bitib)'],
+      ],
+      tip: '"today" ilə diqqətli ol: "I haven\'t eaten today" (hələ davam edir) ✅ — "I ate this morning" (bitmişdir) ✅',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Do you want to eat?" — "No thanks, I\'ve ___ eaten."',
+          options: ['yet', 'just', 'already'],
+          answer: 'already',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She has visited Rome last summer.',
+            'She visited Rome last summer.',
+            'She has visit Rome last summer.',
+          ],
+          answer: 'She visited Rome last summer.',
+        },
+        {
+          q: '"Have you finished your report ___?" — boşluğa nə gəlir?',
+          options: ['already', 'just', 'yet'],
+          answer: 'yet',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I\'ve never been to Canada.',
+            'I\'ve never go to Canada.',
+            'I haven\'t never been to Canada.',
+          ],
+          answer: 'I\'ve never been to Canada.',
+        },
+        {
+          q: '"I ___ my keys. I can\'t find them!" — boşluğa nə gəlir?',
+          options: ['lost', 'have lost', 'was losing'],
+          answer: 'have lost',
+        },
+        {
+          q: '"___ she ever tried that dish?" — düzgün köməkçi:',
+          options: ['Have', 'Has', 'Did'],
+          answer: 'Has',
+        },
+        {
+          q: '"The train ___ just ___." — düzgün forma:',
+          options: ['has / left', 'have / left', 'has / leave'],
+          answer: 'has / left',
+        },
+        {
+          q: '"I ___ him yesterday." — düzgün forma:',
+          options: ['have seen', 'saw', 'has seen'],
+          answer: 'saw',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Present Perfect quruluşu (I/we/you/they):',                     tr: 'have + V3',                        wrong: 'has + V3'                        },
+  { en: 'Present Perfect quruluşu (he/she/it):',                         tr: 'has + V3',                         wrong: 'have + V3'                       },
+  { en: '"go" felinin V3 forması:',                                       tr: 'gone',                             wrong: 'went'                            },
+  { en: '"see" felinin V3 forması:',                                      tr: 'seen',                             wrong: 'saw'                             },
+  { en: '"write" felinin V3 forması:',                                    tr: 'written',                          wrong: 'wrote'                           },
+  { en: '"buy" felinin V3 forması:',                                      tr: 'bought',                           wrong: 'buyed'                           },
+  { en: '"forget" felinin V3 forması:',                                   tr: 'forgotten',                        wrong: 'forgot'                          },
+  { en: '"speak" felinin V3 forması:',                                    tr: 'spoken',                           wrong: 'spoke'                           },
+  { en: 'Düzgün: She ___ finished her work.',                             tr: 'has',                              wrong: 'have'                            },
+  { en: 'Düzgün: I ___ never been to Asia.',                              tr: '\'ve',                             wrong: '\'m'                             },
+  { en: '"Have you arrived yet?" — bəli cavabı:',                         tr: 'Yes, I have.',                     wrong: 'Yes, I did.'                     },
+  { en: '"Has he called?" — xeyr cavabı:',                                tr: 'No, he hasn\'t.',                  wrong: 'No, he didn\'t.'                 },
+  { en: 'Yenicə bitmiş iş üçün hansı söz işlədilir?',                     tr: 'just',                             wrong: 'yet'                             },
+  { en: '"already" harada işlədilir?',                                    tr: 'Müsbət cümlələrdə',                wrong: 'İnkar cümlələrdə'                },
+  { en: '"yet" harada işlədilir?',                                        tr: 'İnkar və sual cümlələrinin sonunda', wrong: 'Müsbət cümlələrdə'             },
+  { en: '"I last night dinner." — düzgün forma (have/eat):',              tr: 'I had dinner last night.',         wrong: 'I have eaten dinner last night.' },
+  { en: 'Həyat təcrübəsi soruşmaq üçün hansı söz işlədilir?',            tr: 'ever',                             wrong: 'yet'                             },
+  { en: '"never" ilə fel necə olur?',                                     tr: 'Müsbət formada qalır',             wrong: 'İnkar formada olur'              },
+  { en: 'Düzgün: He ___ visited Paris in 2018.',                          tr: 'visited',                          wrong: 'has visited'                     },
+  { en: 'Düzgün: I ___ my glasses. Have you seen them?',                  tr: '\'ve lost',                        wrong: 'lost'                            },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bu filmi üç dəfə görmüşəm.',
+      words: ['I', 'have', 'seen', 'this', 'film', 'three', 'times', 'saw', 'has'],
+      answer: ['I', 'have', 'seen', 'this', 'film', 'three', 'times'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O yenicə evdən çıxıb.',
+      words: ['She', 'has', 'just', 'left', 'the', 'house', 'have', 'leave'],
+      answer: ['She', 'has', 'just', 'left', 'the', 'house'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar hələ gəlməyiblər.',
+      words: ['They', 'haven\'t', 'arrived', 'yet', 'has', 'didn\'t', 'arrive'],
+      answer: ['They', 'haven\'t', 'arrived', 'yet'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən heç vaxt Yaponiyada olmusanmı?',
+      words: ['Have', 'you', 'ever', 'been', 'to', 'Japan', 'Has', 'went'],
+      answer: ['Have', 'you', 'ever', 'been', 'to', 'Japan'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən açarlarımı itirmişəm.',
+      words: ['I', 'have', 'lost', 'my', 'keys', 'has', 'lose', 'lost'],
+      answer: ['I', 'have', 'lost', 'my', 'keys'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O heç vaxt sushi yeməyib.',
+      words: ['She', 'has', 'never', 'eaten', 'sushi', 'have', 'ate', 'hasn\'t'],
+      answer: ['She', 'has', 'never', 'eaten', 'sushi'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz bir-birimizi illərdir tanıyırıq.',
+      words: ['We', 'have', 'known', 'each', 'other', 'for', 'years', 'has', 'knew'],
+      answer: ['We', 'have', 'known', 'each', 'other', 'for', 'years'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O hələ mənə zəng etməyib.',
+      words: ['She', 'hasn\'t', 'called', 'me', 'yet', 'haven\'t', 'didn\'t', 'call'],
+      answer: ['She', 'hasn\'t', 'called', 'me', 'yet'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən artıq nahar etmişəm.',
+      words: ['I', 'have', 'already', 'had', 'lunch', 'has', 'ate', 'yet'],
+      answer: ['I', 'have', 'already', 'had', 'lunch'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O nə vaxt kitabı yazdı?',
+      words: ['When', 'did', 'she', 'write', 'the', 'book', 'has', 'written', 'wrote'],
+      answer: ['When', 'did', 'she', 'write', 'the', 'book'],
+    },
+  ],
+},
       
     ],
   },
