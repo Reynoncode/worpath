@@ -10239,47 +10239,3895 @@ const GENERAL_ENGLISH_LEVELS = [
 
 { type: 'section_divider', title: 'there is / there are' },
 
+// ── UNIT 36 — there is / there are ───────────────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'there is / there are — Əsas Qayda (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Forma cədvəli ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'there is / there are — bütün formalar',
+      content: 'there is / there are — bir şeyin var olduğunu bildirmək üçün işlədilir:',
+      table: [
+        ['',           'Tək',                        'Cəm'],
+        ['Müsbət',     'There is / There\'s',        'There are'],
+        ['İnkar',      'There isn\'t / There\'s not', 'There aren\'t'],
+        ['Sual',       'Is there ...?',              'Are there ...?'],
+        ['Qısa cavab', 'Yes, there is. / No, there isn\'t.', 'Yes, there are. / No, there aren\'t.'],
+      ],
+      tip: 'there is → tək isimlərlə. there are → cəm isimlərlə. "There\'s" = qısaltma — yalnız müsbət cümlədə.',
+    },
+
+    // ── Ekran 2: Müsbət cümlələr ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'there is / there are — müsbət cümlələr',
+      content: 'Bir şeyin mövcudluğunu, yerini bildirmək üçün:',
+      examples: [
+        { word: 'There\'s a pharmacy on the corner.',      az: 'there\'s = there is — tək'         },
+        { word: 'There are some seats at the back.',       az: 'there are — cəm'                   },
+        { word: 'There\'s a lot of noise outside.',        az: 'there\'s — sayılmayan isim'        },
+        { word: 'There are a lot of people in the park.',  az: 'there are — sayılan cəm'           },
+        { word: 'There\'s some milk in the fridge.',       az: 'there\'s — some ilə'               },
+        { word: 'There are twenty-six letters in the English alphabet.', az: 'there are — rəqəmlə' },
+      ],
+      tip: '"There are a lot of noise" ❌ — noise sayılmayandır, tək: "There\'s a lot of noise" ✅',
+    },
+
+    // ── Ekran 3: İnkar + sual cümlələri ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'there isn\'t / aren\'t + is there? / are there?',
+      content: 'İnkar və sual formalarında any tez-tez işlədilir:',
+      examples: [
+        { word: 'There isn\'t a lift in this building.',   az: 'there isn\'t — tək, inkar'         },
+        { word: 'There aren\'t any seats left.',           az: 'there aren\'t any — cəm, inkar'    },
+        { word: 'Is there a bus stop near here?',          az: 'is there? — tək, sual'             },
+        { word: 'Are there any good restaurants nearby?',  az: 'are there any? — cəm, sual'        },
+        { word: 'There isn\'t any signal in this area.',   az: 'there isn\'t any — sayılmayan'     },
+        { word: 'How many floors are there in this block?', az: 'how many + are there?'            },
+      ],
+      tip: '"There aren\'t no seats" ❌ — ikiqat inkar olmaz: "There aren\'t any seats" ✅',
+    },
+
+    // ── Ekran 4: there is vs it is ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'there is vs it is — fərq',
+      content: 'there is — yeni məlumat bildirir. it is — artıq məlum olan şeyə istinad edir:',
+      examples: [
+        { word: 'There\'s a park near our office.',        az: 'there\'s — yeni məlumat'           },
+        { word: 'It\'s very big and beautiful.',           az: 'it = the park — artıq məlum'       },
+        { word: 'There\'s a match tonight.',               az: 'there\'s — məlumat veririk'        },
+        { word: 'It starts at 8 o\'clock.',               az: 'it = the match — artıq məlum'      },
+        { word: 'There\'s a lot of sugar in this cake.',   az: 'there\'s — var olma'               },
+        { word: 'It\'s too sweet for me.',                 az: 'it = the cake — qiymət verirəm'   },
+      ],
+      tip: '"There is interesting." ❌ — there is-dən sonra isim gəlir. "It\'s interesting." ✅ — it isə artıq məlum şeyə işarə edir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ a supermarket near here?" — sual:',
+          options: ['There is', 'Is there', 'Are there'],
+          answer: 'Is there',
+        },
+        {
+          q: '"___ some eggs in the fridge." — müsbət:',
+          options: ['There is', 'It is', 'There are'],
+          answer: 'There are',
+        },
+        {
+          q: '"___ any buses after midnight?" — sual, cəm:',
+          options: ['Is there', 'Are there', 'There are'],
+          answer: 'Are there',
+        },
+        {
+          q: '"___ a great film on tonight. ___ starts at nine." — boşluqlara:',
+          options: ['There\'s / It', 'It\'s / There', 'There\'s / There'],
+          answer: 'There\'s / It',
+        },
+        {
+          q: '"___ any parking here." — inkar:',
+          options: ['There isn\'t', 'It isn\'t', 'There aren\'t'],
+          answer: 'There isn\'t',
+        },
+        {
+          q: '"How many players ___ in a basketball team?" — sual:',
+          options: ['there is', 'is there', 'are there'],
+          answer: 'are there',
+        },
+        {
+          q: '"___ eleven players in a football team." — müsbət:',
+          options: ['It\'s', 'There\'s', 'There are'],
+          answer: 'There are',
+        },
+        {
+          q: '"Is there a hotel nearby?" → "No, ___." — qısa inkar cavab:',
+          options: ['No, there isn\'t.', 'No, it isn\'t.', 'No, there aren\'t.'],
+          answer: 'No, there isn\'t.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'there is / there are — some/any + Səhvlər (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: some / any ilə işlənmə ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'there is/are + some / any',
+      content: 'there is/are çox vaxt some (müsbət) və any (inkar/sual) ilə birlikdə işlədilir:',
+      examples: [
+        { word: 'There\'s some water in the bottle.',      az: 'müsbət — some'                    },
+        { word: 'There are some messages for you.',        az: 'müsbət — some + cəm'              },
+        { word: 'There isn\'t any petrol left.',           az: 'inkar — any + sayılmayan'         },
+        { word: 'There aren\'t any tickets available.',    az: 'inkar — any + cəm'               },
+        { word: 'Is there any news?',                      az: 'sual — any + sayılmayan'          },
+        { word: 'Are there any questions?',                az: 'sual — any + cəm'                },
+      ],
+      tip: 'there is + some/any → isim növünə bax: tək/sayılmayan → there is. cəm → there are.',
+    },
+
+    // ── Ekran 2: a lot of / a few / many ilə ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'there are + a lot of / not many',
+      content: 'Miqdar bildirən ifadələrlə there is/are işlənməsi:',
+      examples: [
+        { word: 'There\'s a lot of traffic this morning.', az: 'there\'s + a lot of — sayılmayan' },
+        { word: 'There are a lot of things to do.',        az: 'there are + a lot of — cəm'      },
+        { word: 'There isn\'t much space in here.',        az: 'there isn\'t + much — sayılmayan' },
+        { word: 'There aren\'t many cafés in this area.',  az: 'there aren\'t + many — cəm'      },
+        { word: 'There are a few seats at the front.',     az: 'there are + a few — cəm'         },
+        { word: 'There\'s a little time before we start.', az: 'there\'s + a little — sayılmayan'},
+      ],
+      tip: '"There are much traffic" ❌ — traffic sayılmayandır: "There\'s a lot of traffic" ✅',
+    },
+
+    // ── Ekran 3: Faktlar üçün there are ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'there are — faktlar və rəqəmlər',
+      content: 'Ümumi faktları, rəqəmləri bildirmək üçün there are işlədilir:',
+      examples: [
+        { word: 'There are seven days in a week.',         az: 'ümumi fakt'                       },
+        { word: 'There are fifty states in the USA.',      az: 'coğrafi fakt'                     },
+        { word: 'There are nine planets in the solar system.', az: 'elmi fakt'                   },
+        { word: 'There are fifteen players in a rugby team.', az: 'idman fakı'                   },
+        { word: 'There are thirty days in September.',     az: 'təqvim fakı'                      },
+        { word: 'There are twenty-six letters in the English alphabet.', az: 'dil fakı'           },
+      ],
+      tip: 'Rəqəmlə başlayan faktlarda həmişə there are işlədilir — rəqəm 1-dən böyükdürsə.',
+    },
+
+    // ── Ekran 4: Tez-tez edilən səhvlər ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'there is / there are + it is ilə bağlı ən çox edilən səhvlər:',
+      table: [
+        ['Yanlış',                                    'Düzgün'],
+        ['There are a hospital in the town.',         'There\'s a hospital in the town.'],
+        ['There is many people here.',                'There are many people here.'],
+        ['It\'s a problem with the lift.',            'There\'s a problem with the lift.'],
+        ['There are no any chairs left.',             'There aren\'t any chairs left.'],
+        ['Is there any chairs?',                      'Are there any chairs?'],
+        ['There aren\'t no buses after 11.',          'There aren\'t any buses after 11.'],
+      ],
+      tip: '"It\'s a park near here." ❌ — yeni məlumat verəndə there işlət: "There\'s a park near here." ✅',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'There are a hospital nearby.',
+            'There\'s a hospital nearby.',
+            'It\'s a hospital nearby.',
+          ],
+          answer: 'There\'s a hospital nearby.',
+        },
+        {
+          q: '"___ many people at the concert?" — sual:',
+          options: ['Is there', 'Are there', 'There are'],
+          answer: 'Are there',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'There are a lot of noise outside.',
+            'There\'s a lot of noise outside.',
+            'It\'s a lot of noise outside.',
+          ],
+          answer: 'There\'s a lot of noise outside.',
+        },
+        {
+          q: '"___ fifty states in the USA." — fakt:',
+          options: ['It\'s', 'There\'s', 'There are'],
+          answer: 'There are',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'There aren\'t no seats left.',
+            'There aren\'t any seats left.',
+            'There are no any seats left.',
+          ],
+          answer: 'There aren\'t any seats left.',
+        },
+        {
+          q: '"There\'s a new café in our street. ___ very good." — boşluğa:',
+          options: ['There\'s', 'It\'s', 'There is'],
+          answer: 'It\'s',
+        },
+        {
+          q: '"___ any signal here?" — sual, sayılmayan:',
+          options: ['Are there', 'Is there', 'There is'],
+          answer: 'Is there',
+        },
+        {
+          q: '"Are there any good films tonight?" → "Yes, ___." — qısa cavab:',
+          options: ['Yes, there is.', 'Yes, it is.', 'Yes, there are.'],
+          answer: 'Yes, there are.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"var" — tək isim üçün:',                                                tr: 'there is',                     wrong: 'there are'                    },
+  { en: '"var" — cəm isim üçün:',                                                tr: 'there are',                    wrong: 'there is'                     },
+  { en: '"yoxdur" — tək isim üçün:',                                             tr: 'there isn\'t',                 wrong: 'there aren\'t'                },
+  { en: '"yoxdur" — cəm isim üçün:',                                             tr: 'there aren\'t',                wrong: 'there isn\'t'                 },
+  { en: '"there is" — qısaltması:',                                              tr: 'there\'s',                     wrong: 'there\'re'                    },
+  { en: '"___ a park near here?" — tək sual:',                                   tr: 'Is there',                     wrong: 'Are there'                    },
+  { en: '"___ any cinemas nearby?" — cəm sual:',                                 tr: 'Are there',                    wrong: 'Is there'                     },
+  { en: 'Yeni məlumat bildirəndə — there is / it is?',                           tr: 'there is',                     wrong: 'it is'                        },
+  { en: 'Artıq məlum şeyə istinad edəndə — there is / it is?',                  tr: 'it is',                        wrong: 'there is'                     },
+  { en: '"There are much traffic." — düzgün forması:',                           tr: 'There\'s a lot of traffic.',   wrong: 'There are a lot of traffics.' },
+  { en: '"Is there any chairs?" — düzgün forması:',                              tr: 'Are there any chairs?',        wrong: 'Is there some chairs?'        },
+  { en: '"There are a hospital." — düzgün forması:',                             tr: 'There\'s a hospital.',         wrong: 'There is hospitals.'          },
+  { en: '"There aren\'t no buses." — düzgün forması:',                           tr: 'There aren\'t any buses.',     wrong: 'There are no any buses.'      },
+  { en: '"It\'s a problem with the signal." — düzgün forması:',                  tr: 'There\'s a problem with the signal.', wrong: 'It is problem.'       },
+  { en: '"Is there a bank nearby?" → müsbət qısa cavab:',                        tr: 'Yes, there is.',               wrong: 'Yes, it is.'                  },
+  { en: '"Are there any students?" → inkar qısa cavab:',                         tr: 'No, there aren\'t.',           wrong: 'No, there isn\'t.'            },
+  { en: '"Həftədə neçə gün var?" — there are + rəqəm:',                         tr: 'There are seven days.',        wrong: 'It\'s seven days.'            },
+  { en: '"There is some" — hansı cümlə növündə?',                               tr: 'müsbət',                       wrong: 'inkar'                        },
+  { en: '"There isn\'t any" — hansı cümlə növündə?',                            tr: 'inkar',                        wrong: 'müsbət'                       },
+  { en: '"Are there any?" — hansı cümlə növündə?',                              tr: 'sual',                         wrong: 'inkar'                        },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu küçədə bir neçə restoran var.',
+      words: ['There', 'are', 'some', 'restaurants', 'on', 'this', 'street', 'is', 'it'],
+      answer: ['There', 'are', 'some', 'restaurants', 'on', 'this', 'street'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu otaqda heç bir pəncərə yoxdur.',
+      words: ['There', 'isn\'t', 'a', 'window', 'in', 'this', 'room', 'aren\'t', 'any'],
+      answer: ['There', 'isn\'t', 'a', 'window', 'in', 'this', 'room'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu yaxınlıqda xəstəxana varmı?',
+      words: ['Is', 'there', 'a', 'hospital', 'near', 'here', 'Are', 'there', 'any'],
+      answer: ['Is', 'there', 'a', 'hospital', 'near', 'here'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu yolda çox qəza olur.',
+      words: ['There', 'are', 'a', 'lot', 'of', 'accidents', 'on', 'this', 'road', 'is', 'it'],
+      answer: ['There', 'are', 'a', 'lot', 'of', 'accidents', 'on', 'this', 'road'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Həftədə yeddi gün var.',
+      words: ['There', 'are', 'seven', 'days', 'in', 'a', 'week', 'is', 'it\'s'],
+      answer: ['There', 'are', 'seven', 'days', 'in', 'a', 'week'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sinifdə neçə nəfər var?',
+      words: ['How', 'many', 'students', 'are', 'there', 'in', 'the', 'class', 'is', 'there'],
+      answer: ['How', 'many', 'students', 'are', 'there', 'in', 'the', 'class'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu axşam televizorda yaxşı film var.',
+      words: ['There\'s', 'a', 'good', 'film', 'on', 'TV', 'tonight', 'It\'s', 'are'],
+      answer: ['There\'s', 'a', 'good', 'film', 'on', 'TV', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Soyuducuda süd yoxdur.',
+      words: ['There', 'isn\'t', 'any', 'milk', 'in', 'the', 'fridge', 'aren\'t', 'some'],
+      answer: ['There', 'isn\'t', 'any', 'milk', 'in', 'the', 'fridge'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Burada pulsuz oturacaq varmı?',
+      words: ['Are', 'there', 'any', 'free', 'seats', 'here', 'Is', 'there', 'a'],
+      answer: ['Are', 'there', 'any', 'free', 'seats', 'here'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Küçədə yeni kafe var. Çox gözəldir.',
+      words: ['There\'s', 'a', 'new', 'café', 'on', 'the', 'street', 'It\'s', 'very', 'nice', 'There\'s', 'There are'],
+      answer: ['There\'s', 'a', 'new', 'café', 'on', 'the', 'street', 'It\'s', 'very', 'nice'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Müqayisə dərəcəsi — comparative' },
 
+// ── UNIT 31 — Müqayisə Dərəcəsi: Comparative ────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Comparative — Yazılış Qaydaları (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Ümumi qayda + -er formalar ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Comparative — yazılış qaydaları',
+      content: 'İki şeyi müqayisə etmək üçün comparative işlədilir. Qısa sözlərə -er, uzun sözlərə more əlavə edilir:',
+      table: [
+        ['Söz növü',                    'Qayda',            'Nümunə'],
+        ['1 hecalı (ümumi hal)',         '+ -er',            'old → older, slow → slower'],
+        ['1 hecalı, sonda samit+sait+samit', 'son samit ikiqatlaşır + -er', 'big → bigger, hot → hotter'],
+        ['-e ilə bitən',                '+ -r',             'nice → nicer, late → later'],
+        ['-y ilə bitən (samitdən sonra)', '-y → -ier',       'easy → easier, heavy → heavier'],
+        ['2+ hecalı',                   'more + söz',       'careful → more careful'],
+        ['Qeyri-nizami formalar',        'əzbərlə',          'good → better, bad → worse, far → further'],
+      ],
+      tip: '-y qaydası: samitdən sonra -ier (happy→happier), saitdən sonra sadəcə -er istisna hallarda görünür.',
+    },
+
+    // ── Ekran 2: more ... ilə uzun sözlər ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'more ... ilə comparative',
+      content: '2 və daha çox hecalı sözlər more ilə işlədilir. -er işlənmir:',
+      examples: [
+        { word: 'careful → more careful',           az: '2 hecalı — more işlədilir'                    },
+        { word: 'expensive → more expensive',       az: '3 hecalı — more işlədilir'                    },
+        { word: 'interesting → more interesting',   az: '4 hecalı — more işlədilir'                    },
+        { word: 'polite → more polite',             az: '2 hecalı — more işlədilir'                    },
+        { word: 'crowded → more crowded',           az: '2 hecalı — more işlədilir'                    },
+        { word: 'comfortable → more comfortable',   az: '4 hecalı — more işlədilir'                    },
+        { word: 'beautiful → more beautiful',       az: '4 hecalı — more işlədilir'                    },
+        { word: 'important → more important',       az: '3 hecalı — more işlədilir'                    },
+      ],
+      tip: '"more old" ❌ → "older" ✅. "more big" ❌ → "bigger" ✅. Qısa sözlərdə "more" işlənmir.',
+    },
+
+    // ── Ekran 3: Qeyri-nizami formalar ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qeyri-nizami comparative formalar — əzbərlə',
+      content: 'Bu sözlərin comparative forması qaydaya uyğun deyil — əzbərlənməlidir:',
+      table: [
+        ['Əsas forma',    'Comparative'],
+        ['good',          'better'],
+        ['well',          'better'],
+        ['bad',           'worse'],
+        ['far',           'further / farther'],
+      ],
+      tip: 'well → better: "I feel better today" (not "more well"). bad → worse: "It\'s getting worse" (not "more bad").',
+    },
+
+    // ── Ekran 4: Nümunə cümlələr ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Comparative — nümunə cümlələr',
+      content: 'Comparative cümlələrə baxaq:',
+      examples: [
+        { word: 'Athens is older than Rome.',                   az: 'old → older (qısa söz)'                    },
+        { word: 'Is it cheaper to go by bus or by taxi?',       az: 'cheap → cheaper (qısa söz)'                },
+        { word: 'Sarah wants a bigger flat.',                   az: 'big → bigger (ikiqatlı samit)'             },
+        { word: 'This jacket is nicer than that one.',          az: 'nice → nicer (-e ilə bitir)'               },
+        { word: 'It\'s easier to call than to write.',          az: 'easy → easier (-y → -ier)'                 },
+        { word: 'You must be more careful next time.',          az: 'careful → more careful (uzun söz)'         },
+        { word: 'I want a more interesting job.',               az: 'interesting → more interesting (uzun söz)' },
+        { word: 'The weather is better today than yesterday.',  az: 'good → better (qeyri-nizami)'              },
+        { word: 'I feel worse than this morning.',              az: 'bad → worse (qeyri-nizami)'                },
+        { word: 'It\'s further than I thought.',                az: 'far → further (qeyri-nizami)'              },
+      ],
+      tip: 'Comparative formadan sonra adətən than gəlir: "older than", "more expensive than", "better than".',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"big" sözünün comparative forması:',
+          options: ['biger', 'more big', 'bigger'],
+          answer: 'bigger',
+        },
+        {
+          q: '"happy" sözünün comparative forması:',
+          options: ['happyer', 'happier', 'more happy'],
+          answer: 'happier',
+        },
+        {
+          q: '"good" sözünün comparative forması:',
+          options: ['gooder', 'more good', 'better'],
+          answer: 'better',
+        },
+        {
+          q: '"expensive" sözünün comparative forması:',
+          options: ['expensiver', 'more expensive', 'expensiveer'],
+          answer: 'more expensive',
+        },
+        {
+          q: '"bad" sözünün comparative forması:',
+          options: ['badder', 'more bad', 'worse'],
+          answer: 'worse',
+        },
+        {
+          q: '"easy" sözünün comparative forması:',
+          options: ['easyer', 'easier', 'more easy'],
+          answer: 'easier',
+        },
+        {
+          q: '"far" sözünün comparative forması:',
+          options: ['farer', 'more far', 'further'],
+          answer: 'further',
+        },
+        {
+          q: '"interesting" sözünün comparative forması:',
+          options: ['interestinger', 'more interesting', 'interestingier'],
+          answer: 'more interesting',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Comparative — than / a bit / much (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: than ilə müqayisə ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"than" ilə müqayisə',
+      content: 'Comparative formadan sonra than işlədilərək iki şey müqayisə edilir:',
+      examples: [
+        { word: 'My bag is heavier than yours.',             az: 'heavy → heavier + than'                  },
+        { word: 'This route is shorter than the other one.', az: 'short → shorter + than'                  },
+        { word: 'Flying is faster than going by train.',     az: 'fast → faster + than'                    },
+        { word: 'The new model is more powerful than before.', az: 'powerful → more powerful + than'       },
+        { word: 'It\'s better to arrive early than to be late.', az: 'good → better + than'               },
+        { word: 'The exam was worse than I expected.',       az: 'bad → worse + than'                      },
+        { word: 'The restaurant is more crowded than usual.', az: 'crowded → more crowded + than usual'    },
+      ],
+      tip: '"than" müqayisə əlaqəcisidir — comparative formadan sonra gəlir. "then" ilə qarışdırma!',
+    },
+
+    // ── Ekran 2: Əvəzliklərlə than ───────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Şəxs əvəzlikləri ilə "than"',
+      content: 'than-dan sonra obyekt əvəzliyi (him/her/me/them) və ya tam cümlə işlədilə bilər:',
+      examples: [
+        { word: 'She runs faster than him.',            az: 'him = obyekt əvəzliyi (danışıq dili)'         },
+        { word: 'She runs faster than he does.',        az: 'he does = tam cümlə (rəsmi dil)'              },
+        { word: 'You are a better cook than me.',       az: 'me = obyekt əvəzliyi (danışıq dili)'          },
+        { word: 'You are a better cook than I am.',     az: 'I am = tam cümlə (rəsmi dil)'                 },
+        { word: 'We got there earlier than them.',      az: 'them = obyekt əvəzliyi (danışıq dili)'        },
+        { word: 'We got there earlier than they did.',  az: 'they did = tam cümlə (rəsmi dil)'             },
+      ],
+      tip: 'Hər iki forma düzgündür. "faster than him" danışıqda, "faster than he does" rəsmi yazıda üstünlük verilir.',
+    },
+
+    // ── Ekran 3: a bit / much + comparative ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"a bit" / "much" + comparative',
+      content: 'Fərqin az və ya çox olduğunu bildirmək üçün comparative-dən əvvəl a bit və ya much işlədilir:',
+      table: [
+        ['Dərəcə',   'Söz',     'Nümunə'],
+        ['az fərq',  'a bit',   'Today is a bit warmer than yesterday.'],
+        ['çox fərq', 'much',    'Canada is much bigger than Portugal.'],
+        ['az fərq',  'a bit',   'This bag is a bit heavier than that one.'],
+        ['çox fərq', 'much',    'The new phone is much more expensive than the old one.'],
+      ],
+      tip: '"very bigger" ❌ — "much bigger" ✅. Comparative ilə "very" işlənmir, "much" işlənir.',
+    },
+
+    // ── Ekran 4: more / less than ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"more than" / "less than" — say və miqdarla',
+      content: 'Rəqəm və miqdar ifadələrindən əvvəl more than və less than işlədilir:',
+      examples: [
+        { word: 'The concert lasted more than three hours.',    az: 'more than = artıq, üstəgəl'             },
+        { word: 'It costs less than I thought.',                az: 'less than = az, aşağı'                  },
+        { word: 'She\'s been waiting for more than an hour.',   az: 'more than + müddət'                     },
+        { word: 'The flight is less than two hours.',           az: 'less than + müddət'                     },
+        { word: 'They have more experience than we do.',        az: 'more than müqayisə ilə'                 },
+        { word: 'You go out more than me.',                     az: 'more than — tezlik müqayisəsi'           },
+      ],
+      tip: '"less than" — az miqdar üçün. "fewer than" — sayılan isimlər üçün: "fewer than ten people".',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Rome is more old than this city.',
+            'Rome is older than this city.',
+            'Rome is oldest than this city.',
+          ],
+          answer: 'Rome is older than this city.',
+        },
+        {
+          q: '"The hotel was ___ expensive ___ I expected." — boşluqlara nə gəlir?',
+          options: ['more ... than', 'much ... that', 'more ... that'],
+          answer: 'more ... than',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She is very taller than her sister.',
+            'She is much taller than her sister.',
+            'She is more tall than her sister.',
+          ],
+          answer: 'She is much taller than her sister.',
+        },
+        {
+          q: '"Today it\'s ___ warmer than yesterday." — az fərq üçün:',
+          options: ['much', 'very', 'a bit'],
+          answer: 'a bit',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I can swim faster than him.',
+            'I can swim faster than he.',
+            'I can swim more fast than him.',
+          ],
+          answer: 'I can swim faster than him.',
+        },
+        {
+          q: '"The film lasted ___ than two hours." — az miqdar üçün:',
+          options: ['more', 'less', 'fewer'],
+          answer: 'less',
+        },
+        {
+          q: '"feel" ilə "bad" comparative: "Today I feel ___."',
+          options: ['badder', 'more bad', 'worse'],
+          answer: 'worse',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'This job is more interesting that my old one.',
+            'This job is more interesting than my old one.',
+            'This job is interestinger than my old one.',
+          ],
+          answer: 'This job is more interesting than my old one.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"old" → comparative:',                                            tr: 'older',                          wrong: 'more old'                     },
+  { en: '"good" → comparative:',                                           tr: 'better',                         wrong: 'gooder'                       },
+  { en: '"bad" → comparative:',                                            tr: 'worse',                          wrong: 'badder'                       },
+  { en: '"far" → comparative:',                                            tr: 'further',                        wrong: 'more far'                     },
+  { en: '"big" → comparative:',                                            tr: 'bigger',                         wrong: 'biger'                        },
+  { en: '"happy" → comparative:',                                          tr: 'happier',                        wrong: 'happyer'                      },
+  { en: '"expensive" → comparative:',                                      tr: 'more expensive',                 wrong: 'expensiver'                   },
+  { en: '"easy" → comparative:',                                           tr: 'easier',                         wrong: 'more easy'                    },
+  { en: '"careful" → comparative:',                                        tr: 'more careful',                   wrong: 'carefullier'                  },
+  { en: '"hot" → comparative:',                                            tr: 'hotter',                         wrong: 'hoter'                        },
+  { en: '"interesting" → comparative:',                                    tr: 'more interesting',               wrong: 'interestinger'                },
+  { en: '"heavy" → comparative:',                                          tr: 'heavier',                        wrong: 'heavyer'                      },
+  { en: '"comfortable" → comparative:',                                    tr: 'more comfortable',               wrong: 'comfortabler'                 },
+  { en: '"Fərq çoxdur" mənasını gücləndirir:',                            tr: 'much',                           wrong: 'very'                         },
+  { en: '"Fərq azdır" mənasını gücləndirir:',                             tr: 'a bit',                          wrong: 'a lot'                        },
+  { en: '"Athens is ___ than Rome." — old ilə:',                          tr: 'older',                          wrong: 'more old'                     },
+  { en: '"The bag is ___ than I thought." — heavy ilə:',                  tr: 'heavier',                        wrong: 'more heavy'                   },
+  { en: '"Canada is much ___ than Portugal." — big ilə:',                 tr: 'bigger',                         wrong: 'more big'                     },
+  { en: '"She arrived ___ than us." — early ilə:',                        tr: 'earlier',                        wrong: 'more early'                   },
+  { en: '"The new phone is ___ the old one." — expensive, müqayisə:',     tr: 'more expensive than',            wrong: 'more expensive that'          },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Afina Romadan daha qədimdir.',
+      words: ['Athens', 'is', 'older', 'than', 'Rome', 'more old', 'then'],
+      answer: ['Athens', 'is', 'older', 'than', 'Rome'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Kanada Fransadan çox daha böyükdür.',
+      words: ['Canada', 'is', 'much', 'bigger', 'than', 'France', 'very', 'more big'],
+      answer: ['Canada', 'is', 'much', 'bigger', 'than', 'France'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu iş mənim köhnə işimdən daha maraqlıdır.',
+      words: ['This', 'job', 'is', 'more', 'interesting', 'than', 'my', 'old', 'one', 'interestinger', 'that'],
+      answer: ['This', 'job', 'is', 'more', 'interesting', 'than', 'my', 'old', 'one'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu gün özümü dünəndən çox daha yaxşı hiss edirəm.',
+      words: ['I', 'feel', 'much', 'better', 'today', 'than', 'yesterday', 'very', 'gooder'],
+      answer: ['I', 'feel', 'much', 'better', 'today', 'than', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Daha diqqətli olmağa çalışmalısan.',
+      words: ['You', 'need', 'to', 'be', 'more', 'careful', 'carefullier', 'than'],
+      answer: ['You', 'need', 'to', 'be', 'more', 'careful'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu uçuş düşündüyümdən bir az uzundur.',
+      words: ['This', 'flight', 'is', 'a', 'bit', 'longer', 'than', 'I', 'thought', 'much', 'more long'],
+      answer: ['This', 'flight', 'is', 'a', 'bit', 'longer', 'than', 'I', 'thought'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O məndən daha sürətli üzür.',
+      words: ['She', 'swims', 'faster', 'than', 'me', 'more fast', 'than', 'I'],
+      answer: ['She', 'swims', 'faster', 'than', 'me'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Konsert iki saatdan çox sürdü.',
+      words: ['The', 'concert', 'lasted', 'more', 'than', 'two', 'hours', 'less', 'then'],
+      answer: ['The', 'concert', 'lasted', 'more', 'than', 'two', 'hours'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Avtobus getmək taksi ilə getməkdən ucuzdur.',
+      words: ['Going', 'by', 'bus', 'is', 'cheaper', 'than', 'taking', 'a', 'taxi', 'more cheap', 'then'],
+      answer: ['Going', 'by', 'bus', 'is', 'cheaper', 'than', 'taking', 'a', 'taxi'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İşlər gündən-günə daha da pisləşir.',
+      words: ['Things', 'are', 'getting', 'worse', 'every', 'day', 'more bad', 'badder'],
+      answer: ['Things', 'are', 'getting', 'worse', 'every', 'day'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Müqayisə dərəcəsi — superlative' },
 
+// ── UNIT 32 — Müqayisə Dərəcəsi: Superlative ────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Superlative — Yazılış Qaydaları (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Ümumi qayda + -est formalar ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Superlative — yazılış qaydaları',
+      content: 'Bir şeyin hamısından üstün/aşağı olduğunu bildirmək üçün superlative işlədilir. Həmişə "the" ilə işlədilir:',
+      table: [
+        ['Söz növü',                           'Qayda',                    'Nümunə'],
+        ['1 hecalı (ümumi hal)',                'the + -est',               'old → the oldest, cheap → the cheapest'],
+        ['1 hecalı, sonda samit+sait+samit',    'son samit ikiqatlaşır + -est', 'big → the biggest, hot → the hottest'],
+        ['-e ilə bitən',                        'the + -st',                'nice → the nicest, late → the latest'],
+        ['-y ilə bitən (samitdən sonra)',        '-y → -iest',               'easy → the easiest, heavy → the heaviest'],
+        ['2+ hecalı',                           'the most + söz',           'careful → the most careful'],
+        ['Qeyri-nizami formalar',               'əzbərlə',                  'good → the best, bad → the worst'],
+      ],
+      tip: 'Superlative həmişə "the" ilə işlənir: "the oldest", "the most expensive". "the" unudulmaması çox vacibdir!',
+    },
+
+    // ── Ekran 2: the most ... ilə uzun sözlər ────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"the most ..." ilə superlative',
+      content: '2 və daha çox hecalı sözlər "the most" ilə işlədilir:',
+      examples: [
+        { word: 'careful → the most careful',           az: '2 hecalı — the most işlədilir'                },
+        { word: 'expensive → the most expensive',       az: '3 hecalı — the most işlədilir'                },
+        { word: 'interesting → the most interesting',   az: '4 hecalı — the most işlədilir'                },
+        { word: 'popular → the most popular',           az: '3 hecalı — the most işlədilir'                },
+        { word: 'important → the most important',       az: '4 hecalı — the most işlədilir'                },
+        { word: 'boring → the most boring',             az: '2 hecalı — the most işlədilir'                },
+        { word: 'unusual → the most unusual',           az: '3 hecalı — the most işlədilir'                },
+        { word: 'comfortable → the most comfortable',   az: '4 hecalı — the most işlədilir'                },
+      ],
+      tip: '"the most old" ❌ → "the oldest" ✅. "the most big" ❌ → "the biggest" ✅. Qısa sözlərdə "the most" işlənmir.',
+    },
+
+    // ── Ekran 3: Qeyri-nizami formalar ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qeyri-nizami superlative formalar — əzbərlə',
+      content: 'Bu sözlərin superlative forması qaydaya uyğun deyil:',
+      table: [
+        ['Əsas forma',  'Comparative',  'Superlative'],
+        ['good',        'better',       'the best'],
+        ['well',        'better',       'the best'],
+        ['bad',         'worse',        'the worst'],
+      ],
+      tip: '"the most good" ❌ → "the best" ✅. "the most bad" ❌ → "the worst" ✅. Comparative ilə superlative birlikdə əzbərlə.',
+    },
+
+    // ── Ekran 4: Comparative vs Superlative fərqi ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Comparative vs Superlative — fərq',
+      content: 'Comparative iki şeyi müqayisə edir, superlative isə hamısından üstününü göstərir:',
+      examples: [
+        { word: 'Box A is bigger than Box B.',                   az: 'comparative — iki şey müqayisəsi'              },
+        { word: 'Box A is the biggest of all.',                  az: 'superlative — hamısından böyük'                },
+        { word: 'The Europa is more expensive than the Grand.',  az: 'comparative — iki otel müqayisəsi'             },
+        { word: 'The Europa is the most expensive in town.',     az: 'superlative — şəhərdəki ən bahalı'             },
+        { word: 'Today is colder than yesterday.',               az: 'comparative — iki gün müqayisəsi'              },
+        { word: 'Today is the coldest day of the year.',         az: 'superlative — ilin ən soyuq günü'              },
+        { word: 'She is a better player than me.',               az: 'comparative — iki oyunçu müqayisəsi'           },
+        { word: 'She is the best player in the team.',           az: 'superlative — komandanın ən yaxşısı'           },
+      ],
+      tip: 'Comparative: "than" ilə işlənir. Superlative: "the" ilə başlayır, adətən "in/of" ilə davam edir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"big" sözünün superlative forması:',
+          options: ['the bigest', 'the most big', 'the biggest'],
+          answer: 'the biggest',
+        },
+        {
+          q: '"happy" sözünün superlative forması:',
+          options: ['the happyest', 'the most happy', 'the happiest'],
+          answer: 'the happiest',
+        },
+        {
+          q: '"good" sözünün superlative forması:',
+          options: ['the goodest', 'the most good', 'the best'],
+          answer: 'the best',
+        },
+        {
+          q: '"expensive" sözünün superlative forması:',
+          options: ['the expensivest', 'the most expensive', 'the expensiveest'],
+          answer: 'the most expensive',
+        },
+        {
+          q: '"bad" sözünün superlative forması:',
+          options: ['the baddest', 'the most bad', 'the worst'],
+          answer: 'the worst',
+        },
+        {
+          q: '"easy" sözünün superlative forması:',
+          options: ['the easyest', 'the most easy', 'the easiest'],
+          answer: 'the easiest',
+        },
+        {
+          q: '"interesting" sözünün superlative forması:',
+          options: ['the interestingest', 'the most interesting', 'the interestingiest'],
+          answer: 'the most interesting',
+        },
+        {
+          q: 'Superlative həmişə ___ ilə işlədilir:',
+          options: ['a', 'an', 'the'],
+          answer: 'the',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Superlative — in/of + ever (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: in / of ilə superlative ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"in" / "of" ilə superlative',
+      content: 'Superlative-dən sonra yer üçün "in", qrup/dövr üçün "of" işlədilir:',
+      examples: [
+        { word: 'It\'s the tallest building in the city.',          az: 'in + yer (şəhər)'                           },
+        { word: 'The Nile is the longest river in the world.',      az: 'in + yer (dünya)'                           },
+        { word: 'She is the youngest student in the class.',        az: 'in + yer (sinif)'                           },
+        { word: 'That was the best day of my life.',                az: 'of + dövr (həyat)'                          },
+        { word: 'It was the coldest night of the year.',            az: 'of + dövr (il)'                             },
+        { word: 'He is the fastest runner of the group.',           az: 'of + qrup'                                  },
+      ],
+      tip: '"in the class / in the world / in the country" — yer üçün "in". "of my life / of the year / of the group" — dövr/qrup üçün "of".',
+    },
+
+    // ── Ekran 2: ever ilə superlative ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"ever" ilə superlative',
+      content: 'Superlative + I\'ve / you\'ve / he\'s ... ever ... — indiyə qədər ən ... olan şeyi bildirir:',
+      examples: [
+        { word: 'It\'s the best film I\'ve ever seen.',             az: 'ever = indiyə qədər'                        },
+        { word: 'That was the worst meal I\'ve ever had.',          az: 'worst + ever — ən pis yemək'                },
+        { word: 'She\'s the most interesting person I\'ve ever met.', az: 'most interesting + ever — ən maraqlı adam' },
+        { word: 'Is this the biggest mistake you\'ve ever made?',   az: 'biggest + ever — ən böyük səhv'             },
+        { word: 'That\'s the strangest thing I\'ve ever heard.',    az: 'strangest + ever — ən qəribə şey'           },
+        { word: 'What\'s the most unusual place you\'ve ever been?', az: 'most unusual + ever — ən qeyri-adi yer'    },
+      ],
+      tip: '"ever" Present Perfect ilə işlənir: "I\'ve ever seen", "you\'ve ever done". Past Simple ilə işlənmir: "I ever saw" ❌.',
+    },
+
+    // ── Ekran 3: İsimsiz superlative işlənməsi ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Superlative — isim olmadan da işlənə bilər',
+      content: 'Kontekstdən aydın olduqda superlative-dən sonra isim buraxıla bilər:',
+      examples: [
+        { word: 'Tom is a good player but not the best.',           az: 'the best = the best player — isim buraxılır' },
+        { word: 'All three hotels are good but this is the cheapest.', az: 'the cheapest = the cheapest hotel'       },
+        { word: 'I\'ve seen many films but that was the worst.',    az: 'the worst = the worst film'                 },
+        { word: 'There were five runners and she was the fastest.', az: 'the fastest = the fastest runner'           },
+      ],
+      tip: 'İsim buraxılsa belə "the" mütləq qalır: "she was fastest" ❌ → "she was the fastest" ✅.',
+    },
+
+    // ── Ekran 4: Nümunə cümlələr — coğrafi faktlar ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Superlative — coğrafi faktlar ilə nümunələr',
+      content: 'Superlative tez-tez coğrafi faktlarda işlədilir:',
+      examples: [
+        { word: 'The Nile is the longest river in the world.',        az: 'long → the longest'                       },
+        { word: 'Everest is the highest mountain in the world.',      az: 'high → the highest'                       },
+        { word: 'Russia is the largest country in the world.',        az: 'large → the largest'                      },
+        { word: 'Brazil is the largest country in South America.',    az: 'large → the largest + in'                 },
+        { word: 'Jupiter is the biggest planet in the solar system.', az: 'big → the biggest (ikiqatlı samit)'       },
+        { word: 'Alaska is the largest state in the USA.',            az: 'large → the largest'                      },
+        { word: 'What is the deepest lake in the world?',             az: 'deep → the deepest'                       },
+      ],
+      tip: 'Coğrafi faktlarda "in + yer adı" çox işlənir: "in the world", "in Europe", "in South America".',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'It\'s oldest building in the town.',
+            'It\'s the oldest building in the town.',
+            'It\'s the most old building in the town.',
+          ],
+          answer: 'It\'s the oldest building in the town.',
+        },
+        {
+          q: '"___ day of my life" — "happy" ilə superlative:',
+          options: ['The most happy', 'The happyest', 'The happiest'],
+          answer: 'The happiest',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'It\'s the best film I\'ve ever seen.',
+            'It\'s the best film I ever saw.',
+            'It\'s the most good film I\'ve ever seen.',
+          ],
+          answer: 'It\'s the best film I\'ve ever seen.',
+        },
+        {
+          q: '"in" yoxsa "of"? → "the tallest student ___ the class"',
+          options: ['of', 'in', 'from'],
+          answer: 'in',
+        },
+        {
+          q: '"in" yoxsa "of"? → "the best day ___ my life"',
+          options: ['in', 'from', 'of'],
+          answer: 'of',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She was fastest in the race.',
+            'She was the fastest in the race.',
+            'She was most fast in the race.',
+          ],
+          answer: 'She was the fastest in the race.',
+        },
+        {
+          q: '"What is ___ river in the world?" — long ilə:',
+          options: ['the longer', 'the most long', 'the longest'],
+          answer: 'the longest',
+        },
+        {
+          q: '"bad" → superlative:',
+          options: ['the baddest', 'the most bad', 'the worst'],
+          answer: 'the worst',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"old" → superlative:',                                            tr: 'the oldest',                     wrong: 'the most old'                 },
+  { en: '"good" → superlative:',                                           tr: 'the best',                       wrong: 'the most good'                },
+  { en: '"bad" → superlative:',                                            tr: 'the worst',                      wrong: 'the most bad'                 },
+  { en: '"big" → superlative:',                                            tr: 'the biggest',                    wrong: 'the bigest'                   },
+  { en: '"happy" → superlative:',                                          tr: 'the happiest',                   wrong: 'the happyest'                 },
+  { en: '"expensive" → superlative:',                                      tr: 'the most expensive',             wrong: 'the expensivest'              },
+  { en: '"easy" → superlative:',                                           tr: 'the easiest',                    wrong: 'the most easy'                },
+  { en: '"interesting" → superlative:',                                    tr: 'the most interesting',           wrong: 'the interestingest'           },
+  { en: '"hot" → superlative:',                                            tr: 'the hottest',                    wrong: 'the hotest'                   },
+  { en: '"pretty" → superlative:',                                         tr: 'the prettiest',                  wrong: 'the prettyest'                },
+  { en: '"comfortable" → superlative:',                                    tr: 'the most comfortable',           wrong: 'the comfortablest'            },
+  { en: '"long" → superlative:',                                           tr: 'the longest',                    wrong: 'the most long'                },
+  { en: 'Superlative həmişə ___ ilə işlədilir:',                          tr: 'the',                            wrong: 'a'                            },
+  { en: '"yer" ifadəsindən əvvəl superlative ilə işlənən sözönü:',        tr: 'in',                             wrong: 'of'                           },
+  { en: '"dövr/qrup" ifadəsindən əvvəl superlative ilə işlənən sözönü:',  tr: 'of',                             wrong: 'in'                           },
+  { en: '"ever" ilə superlative hansı zamanlada işlənir?',                 tr: 'Present Perfect',                wrong: 'Past Simple'                  },
+  { en: '"It\'s the best film I\'ve ever ___."',                           tr: 'seen',                           wrong: 'saw'                          },
+  { en: '"high" → superlative:',                                           tr: 'the highest',                    wrong: 'the most high'                },
+  { en: '"large" → superlative:',                                          tr: 'the largest',                    wrong: 'the most large'               },
+  { en: '"boring" → superlative:',                                         tr: 'the most boring',                wrong: 'the boringest'                },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu şəhərin ən qədim binasıdır.',
+      words: ['It\'s', 'the', 'oldest', 'building', 'in', 'the', 'city', 'most old', 'of'],
+      answer: ['It\'s', 'the', 'oldest', 'building', 'in', 'the', 'city'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Nil dünyanın ən uzun çayıdır.',
+      words: ['The', 'Nile', 'is', 'the', 'longest', 'river', 'in', 'the', 'world', 'most long', 'of'],
+      answer: ['The', 'Nile', 'is', 'the', 'longest', 'river', 'in', 'the', 'world'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu indiyə qədər gördüyüm ən yaxşı filmdır.',
+      words: ['It\'s', 'the', 'best', 'film', 'I\'ve', 'ever', 'seen', 'most good', 'I', 'ever', 'saw'],
+      answer: ['It\'s', 'the', 'best', 'film', 'I\'ve', 'ever', 'seen'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu həyatımın ən xoşbəxt günü idi.',
+      words: ['It', 'was', 'the', 'happiest', 'day', 'of', 'my', 'life', 'most happy', 'in'],
+      answer: ['It', 'was', 'the', 'happiest', 'day', 'of', 'my', 'life'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Pul vacibdir amma ən vacib şey deyil.',
+      words: ['Money', 'is', 'important', 'but', 'it', 'isn\'t', 'the', 'most', 'important', 'thing', 'most importantest', 'a'],
+      answer: ['Money', 'is', 'important', 'but', 'it', 'isn\'t', 'the', 'most', 'important', 'thing'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, komandanın ən yaxşı oyunçusudur.',
+      words: ['She', 'is', 'the', 'best', 'player', 'in', 'the', 'team', 'most good', 'of'],
+      answer: ['She', 'is', 'the', 'best', 'player', 'in', 'the', 'team'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu ildəki ən soyuq gecə idi.',
+      words: ['It', 'was', 'the', 'coldest', 'night', 'of', 'the', 'year', 'most cold', 'in'],
+      answer: ['It', 'was', 'the', 'coldest', 'night', 'of', 'the', 'year'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yupiter günəş sisteminin ən böyük planetidir.',
+      words: ['Jupiter', 'is', 'the', 'biggest', 'planet', 'in', 'the', 'solar', 'system', 'most big', 'of'],
+      answer: ['Jupiter', 'is', 'the', 'biggest', 'planet', 'in', 'the', 'solar', 'system'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İndiyə qədər etdiyin ən qeyri-adi şey nədir?',
+      words: ['What', 'is', 'the', 'most', 'unusual', 'thing', 'you\'ve', 'ever', 'done', 'you', 'ever', 'did', 'unusualest'],
+      answer: ['What', 'is', 'the', 'most', 'unusual', 'thing', 'you\'ve', 'ever', 'done'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bütün otellər yaxşıdır amma bu ən ucuzdur.',
+      words: ['All', 'the', 'hotels', 'are', 'good', 'but', 'this', 'is', 'the', 'cheapest', 'most cheap', 'a'],
+      answer: ['All', 'the', 'hotels', 'are', 'good', 'but', 'this', 'is', 'the', 'cheapest'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Önlüklər — yer' },
 
+// ── UNIT 33 — Önlüklər: Yer (Prepositions of Place) ─────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'in / on / at — Əsas Fərqlər (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: in — içəridə ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"in" — içəridə, daxilində',
+      content: '"in" — bir şeyin içərisində, daxilində olduğunu bildirir:',
+      examples: [
+        { word: 'The keys are in my bag.',               az: 'in + qapalı yer (çanta)'                    },
+        { word: 'She lives in a small village.',         az: 'in + yaşayış yeri'                          },
+        { word: 'Milan is in the north of Italy.',       az: 'in + ölkə, yer adı'                         },
+        { word: 'There are a lot of fish in this river.', az: 'in + su (çay, dəniz)'                      },
+        { word: 'Angela works in a bank.',               az: 'in + bina növü'                             },
+        { word: 'I saw it in a newspaper.',              az: 'in + çap mətbuatı'                          },
+        { word: 'Who is that in the photograph?',        az: 'in + şəkil, foto'                           },
+        { word: 'There\'s a tree in the middle of the garden.', az: 'in the middle of — ortasında'        },
+      ],
+      tip: '"in" — içəridə olmaq hissi verir: in a room, in a city, in a country, in the water, in a car/taxi.',
+    },
+
+    // ── Ekran 2: at — nöqtə kimi yer ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"at" — nöqtə kimi görülən yer',
+      content: '"at" — yeri konkret bir nöqtə, məkan kimi göstərir:',
+      examples: [
+        { word: 'There\'s somebody at the door.',        az: 'at + giriş nöqtəsi'                         },
+        { word: 'The bus stops at the traffic lights.',  az: 'at + konkret nöqtə'                         },
+        { word: 'Will you be at home this evening?',     az: 'at home — evdə (xüsusi ifadə)'              },
+        { word: 'She\'s at work right now.',             az: 'at work — işdə (xüsusi ifadə)'              },
+        { word: 'My daughter is at university.',         az: 'at university/school — xüsusi ifadə'        },
+        { word: 'I\'ll meet you at the station.',        az: 'at + toplantı/görüş nöqtəsi'                },
+        { word: 'There weren\'t many people at the party.', az: 'at + hadisə, toplantı'                   },
+        { word: 'Write your name at the top of the page.', az: 'at the top/bottom/end — ucunda'           },
+      ],
+      tip: '"at home / at work / at school / at university" — bunlar əzbərlənməli xüsusi ifadələrdir. "in home" ❌.',
+    },
+
+    // ── Ekran 3: on — səthdə ──────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"on" — səthdə, üstündə',
+      content: '"on" — bir səthin üzərindəki mövqeyi bildirir:',
+      examples: [
+        { word: 'The books are on the shelf.',           az: 'on + üfüqi səth'                            },
+        { word: 'There are pictures on the wall.',       az: 'on + şaquli səth (divar)'                   },
+        { word: 'Don\'t walk on the grass.',             az: 'on + yer səthi'                             },
+        { word: 'There\'s a spider on the ceiling.',     az: 'on + tavan səthi'                           },
+        { word: 'My office is on the first floor.',      az: 'on the first/second floor — mərtəbə'        },
+        { word: 'I met her on the way to work.',         az: 'on the way — yolda'                         },
+        { word: 'He came here on a bicycle.',            az: 'on + nəqliyyat (velosiped, at)'             },
+        { word: 'I read about it on the internet.',      az: 'on the internet — internetdə'               },
+      ],
+      tip: '"on the first floor" ✅ — mərtəbə üçün "on" işlədilir, "in the first floor" ❌. "on the way" — yolda xüsusi ifadə.',
+    },
+
+    // ── Ekran 4: in / on / at — xüsusi ifadələr cədvəli ──────────────────────
+    {
+      type: 'lesson',
+      title: 'in / on / at — xüsusi ifadələr',
+      content: 'Bu ifadələr əzbərlənməlidir — qayda deyil, istifadə adətidir:',
+      table: [
+        ['in',                    'at',                       'on'],
+        ['in bed',                'at home',                  'on a bus / train / plane'],
+        ['in hospital',           'at work / at school',      'on the first floor'],
+        ['in prison',             'at university',            'on the way (to/home)'],
+        ['in a car / in a taxi',  'at the station/airport',   'on the left / on the right'],
+        ['in a newspaper/book',   'at a party / at a concert','on the ground floor'],
+        ['in a photograph',       'at the doctor\'s',         'on the internet'],
+        ['in the middle (of)',    'at the top/bottom/end',    'on a horse / on a bicycle'],
+      ],
+      tip: '"on a bus/train/plane" ✅ amma "in a car/taxi" ✅ — nəqliyyatda bu fərqə diqqət et!',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She\'s studying law ___ university."',
+          options: ['in', 'on', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"Milan is ___ the north of Italy."',
+          options: ['at', 'on', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"The office is ___ the second floor."',
+          options: ['in', 'at', 'on'],
+          answer: 'on',
+        },
+        {
+          q: '"Will you be ___ home this evening?"',
+          options: ['in', 'on', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"I came here ___ a taxi."',
+          options: ['on', 'at', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"There\'s somebody ___ the door."',
+          options: ['in', 'on', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"Don\'t sit ___ the grass."',
+          options: ['in', 'at', 'on'],
+          answer: 'on',
+        },
+        {
+          q: '"I read about it ___ the newspaper."',
+          options: ['on', 'in', 'at'],
+          answer: 'in',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'next to / between / above / under — Nisbi Mövqe (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: next to / between / opposite ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'next to / between / opposite',
+      content: 'Şeylərin bir-birinə nisbətən mövqeyini bildirən önlüklər:',
+      table: [
+        ['Önlük',           'Azərbaycanca',     'Nümunə'],
+        ['next to / beside','yanında',           'The pharmacy is next to the bank.'],
+        ['between',         'arasında',          'The café is between the shop and the hotel.'],
+        ['opposite',        'qarşısında',        'The school is opposite the park.'],
+        ['in front of',     'önündə',            'There\'s a fountain in front of the building.'],
+        ['behind',          'arxasında',         'The car park is behind the supermarket.'],
+        ['on the left',     'solda',             'The exit is on the left.'],
+        ['on the right',    'sağda',             'The post office is on the right.'],
+        ['in the middle',   'ortada',            'There\'s a table in the middle of the room.'],
+      ],
+      tip: '"next to" = "beside" — ikisi eyni mənadadır. "opposite" = üz-üzə, qarşı-qarşıya olmaq deməkdir.',
+    },
+
+    // ── Ekran 2: under / above / below / by ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'under / above / below / by',
+      content: 'Şaquli mövqe və yaxınlıq bildirən önlüklər:',
+      examples: [
+        { word: 'The cat is sleeping under the table.',          az: 'under — altında'                           },
+        { word: 'I wear a shirt under my jacket.',               az: 'under — alt-üst münasibəti'                },
+        { word: 'The pictures are above the shelves.',           az: 'above — yuxarısında'                       },
+        { word: 'The shelves are below the pictures.',           az: 'below — aşağısında'                        },
+        { word: 'Our house is by the sea.',                      az: 'by — yanında, kənarında'                   },
+        { word: 'Who is that man by the window?',                az: 'by — yanında (= next to)'                  },
+        { word: 'There\'s a public phone by the entrance.',      az: 'by — yaxınında'                            },
+        { word: 'The village is below the mountain.',            az: 'below — dağın aşağısında'                  },
+      ],
+      tip: '"above" ↔ "below" — bir-birinin əksidir. "by" = "next to" = "beside" — hamısı yanında deməkdir.',
+    },
+
+    // ── Ekran 3: in front of vs opposite fərqi ───────────────────────────────
+    {
+      type: 'lesson',
+      title: '"in front of" vs "opposite" — fərq',
+      content: '"in front of" və "opposite" hər ikisi qarşıda mənasına gəlir, amma fərqlidir:',
+      examples: [
+        { word: 'The student is sitting in front of the teacher.',  az: 'in front of — eyni istiqamətdə, öndə'   },
+        { word: 'The teacher is behind the student.',               az: 'behind — arxada'                         },
+        { word: 'The café is opposite the bank.',                   az: 'opposite — üz-üzə, qarşı tərəfdə'        },
+        { word: 'I sat opposite her at the table.',                 az: 'opposite — üzbəüz oturmaq'               },
+        { word: 'There\'s a mirror in front of me.',                az: 'in front of — önümdə'                    },
+        { word: 'The house opposite has a red door.',               az: 'opposite — qarşı tərəfdəki'              },
+      ],
+      tip: '"in front of" — arxa ilə ön arasındakı münasibət. "opposite" — bir-birinin üzündə, aralarında boşluq var.',
+    },
+
+    // ── Ekran 4: Nümunə cümlələr — kompleks ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Yer önlükləri — qarışıq nümunələr',
+      content: 'Bir neçə önlüyü birlikdə görək:',
+      examples: [
+        { word: 'The supermarket is between the bank and the café.',  az: 'between + iki şey'                     },
+        { word: 'There\'s a bus stop next to the traffic lights.',    az: 'next to + yaxınlıq'                    },
+        { word: 'My keys are under the newspaper on the table.',      az: 'under + on — iki önlük'                },
+        { word: 'The hotel is on the left, opposite the station.',    az: 'on the left + opposite'                },
+        { word: 'She was standing by the window, above the street.',  az: 'by + above — mövqe'                    },
+        { word: 'The notice is on the wall behind the door.',         az: 'on + behind — iki önlük'               },
+        { word: 'Sit in the middle, between Tom and Anna.',           az: 'in the middle + between'               },
+        { word: 'The car is parked in front of the building.',        az: 'in front of — binanın önü'             },
+      ],
+      tip: 'Cümlədə bir neçə önlük ola bilər. Hər önlüyün öz rolunu başa düşmək vacibdir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"The café is ___ the bank and the post office."',
+          options: ['next to', 'between', 'opposite'],
+          answer: 'between',
+        },
+        {
+          q: '"The cat is ___ the table." — altında:',
+          options: ['above', 'over', 'under'],
+          answer: 'under',
+        },
+        {
+          q: '"The pictures are ___ the shelves." — yuxarısında:',
+          options: ['under', 'below', 'above'],
+          answer: 'above',
+        },
+        {
+          q: '"Our house is ___ the sea." — yanında, kənarında:',
+          options: ['near to', 'by', 'at'],
+          answer: 'by',
+        },
+        {
+          q: '"The school is ___ the park." — üz-üzə:',
+          options: ['in front of', 'behind', 'opposite'],
+          answer: 'opposite',
+        },
+        {
+          q: '"There\'s a fountain ___ the building." — önündə:',
+          options: ['behind', 'in front of', 'next to'],
+          answer: 'in front of',
+        },
+        {
+          q: '"next to" sözünün sinonimi:',
+          options: ['opposite', 'beside', 'behind'],
+          answer: 'beside',
+        },
+        {
+          q: '"The exit is ___ the right."',
+          options: ['in', 'at', 'on'],
+          answer: 'on',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"Kitab çantamın içindədir." — in/on/at?',                         tr: 'in',                             wrong: 'at'                           },
+  { en: '"O, evdədir." — at/in/on?',                                       tr: 'at home',                        wrong: 'in home'                      },
+  { en: '"O, işdədir." — at/in/on?',                                       tr: 'at work',                        wrong: 'in work'                      },
+  { en: '"Ofis ikinci mərtəbədədir." — at/in/on?',                         tr: 'on the second floor',            wrong: 'in the second floor'          },
+  { en: '"Avtobusla gəldim." — on/in/at?',                                 tr: 'on the bus',                     wrong: 'in the bus'                   },
+  { en: '"Taksi ilə gəldim." — on/in/at?',                                 tr: 'in a taxi',                      wrong: 'on a taxi'                    },
+  { en: '"Pişik masanın altındadır." — önlük:',                            tr: 'under',                          wrong: 'below'                        },
+  { en: '"Şəkillər rəflərin yuxarısındadır." — önlük:',                    tr: 'above',                          wrong: 'over'                         },
+  { en: '"Kafe bank ilə mehmanxana arasındadır." — önlük:',                tr: 'between',                        wrong: 'next to'                      },
+  { en: '"Mağaza parkin qarşısındadır (üz-üzə)." — önlük:',               tr: 'opposite',                       wrong: 'in front of'                  },
+  { en: '"Ev dənizin kənarındadır." — by/beside mənasında:',               tr: 'by',                             wrong: 'at'                           },
+  { en: '"next to" sözünün sinonimi:',                                     tr: 'beside',                         wrong: 'opposite'                     },
+  { en: '"Qapının yanında biri var." — in/on/at?',                         tr: 'at',                             wrong: 'in'                           },
+  { en: '"Mən haqqında qəzetdə oxudum." — in/on/at?',                      tr: 'in',                             wrong: 'on'                           },
+  { en: '"Sağda çıxış var." — önlük ifadəsi:',                             tr: 'on the right',                   wrong: 'at the right'                 },
+  { en: '"İşə gedərkən onu gördüm." — "yolda":',                          tr: 'on the way to work',             wrong: 'in the way to work'           },
+  { en: '"Bağın ortasında ağac var." — önlük ifadəsi:',                    tr: 'in the middle of',               wrong: 'at the middle of'             },
+  { en: '"Uşaq universitetdədir." — at/in?',                               tr: 'at',                             wrong: 'in'                           },
+  { en: '"Kitabın arxasında cavab var." — önlük:',                         tr: 'behind',                         wrong: 'under'                        },
+  { en: '"Binanın önündə çeşmə var." — önlük ifadəsi:',                   tr: 'in front of',                    wrong: 'opposite'                     },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çantanda nə var?',
+      words: ['What', 'have', 'you', 'got', 'in', 'your', 'bag', 'at', 'on'],
+      answer: ['What', 'have', 'you', 'got', 'in', 'your', 'bag'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu axşam evdə olacaqsan?',
+      words: ['Will', 'you', 'be', 'at', 'home', 'this', 'evening', 'in', 'on'],
+      answer: ['Will', 'you', 'be', 'at', 'home', 'this', 'evening'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Ofis ikinci mərtəbədədir.',
+      words: ['The', 'office', 'is', 'on', 'the', 'second', 'floor', 'in', 'at'],
+      answer: ['The', 'office', 'is', 'on', 'the', 'second', 'floor'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Pişik masanın altında yatır.',
+      words: ['The', 'cat', 'is', 'sleeping', 'under', 'the', 'table', 'below', 'at'],
+      answer: ['The', 'cat', 'is', 'sleeping', 'under', 'the', 'table'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Kafe bank ilə kitab mağazası arasındadır.',
+      words: ['The', 'cafe', 'is', 'between', 'the', 'bank', 'and', 'the', 'bookshop', 'next to', 'opposite'],
+      answer: ['The', 'cafe', 'is', 'between', 'the', 'bank', 'and', 'the', 'bookshop'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Haqqında qəzetdə oxudum.',
+      words: ['I', 'read', 'about', 'it', 'in', 'the', 'newspaper', 'on', 'at'],
+      answer: ['I', 'read', 'about', 'it', 'in', 'the', 'newspaper'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Binanın önündə çeşmə var.',
+      words: ['There', 'is', 'a', 'fountain', 'in', 'front', 'of', 'the', 'building', 'opposite', 'behind'],
+      answer: ['There', 'is', 'a', 'fountain', 'in', 'front', 'of', 'the', 'building'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Ev dənizin kənarındadır.',
+      words: ['Our', 'house', 'is', 'by', 'the', 'sea', 'at', 'in'],
+      answer: ['Our', 'house', 'is', 'by', 'the', 'sea'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İşə gedərkən onu gördüm.',
+      words: ['I', 'saw', 'her', 'on', 'the', 'way', 'to', 'work', 'in', 'at'],
+      answer: ['I', 'saw', 'her', 'on', 'the', 'way', 'to', 'work'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bağın ortasında böyük ağac var.',
+      words: ['There', 'is', 'a', 'big', 'tree', 'in', 'the', 'middle', 'of', 'the', 'garden', 'at', 'on'],
+      answer: ['There', 'is', 'a', 'big', 'tree', 'in', 'the', 'middle', 'of', 'the', 'garden'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Önlüklər — zaman' },
 
+// ── UNIT 34 — Önlüklər: Zaman (Prepositions of Time) ────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'at / on / in — Zaman Önlükləri (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: at — saat və xüsusi ifadələr ────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"at" — saat və xüsusi zaman ifadələri',
+      content: '"at" dəqiq saat və bəzi xüsusi ifadələrlə işlədilir:',
+      table: [
+        ['at ilə işlədilir',         'Nümunə'],
+        ['at + saat',                'at 7 o\'clock, at 10.30, at midnight'],
+        ['at night',                 'I can\'t sleep at night.'],
+        ['at the weekend',           'Are you free at the weekend?'],
+        ['at Christmas / at Easter', 'Where will you be at Christmas?'],
+        ['at the end of ...',        'I\'m going on holiday at the end of July.'],
+        ['at the moment',            'She\'s busy at the moment.'],
+        ['at the same time',         'We arrived at the same time.'],
+      ],
+      tip: '"at night" ✅ amma "in the morning/afternoon/evening" ✅ — gecə üçün "at", günün digər hissələri üçün "in".',
+    },
+
+    // ── Ekran 2: on — günlər və tarixlər ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"on" — günlər və tarixlər',
+      content: '"on" həftənin günləri, tarixlər və xüsusi günlərlə işlədilir:',
+      table: [
+        ['on ilə işlədilir',              'Nümunə'],
+        ['on + həftənin günü',             'on Monday, on Friday, on Sunday'],
+        ['on + tarix',                     'on 15 March, on 3 October'],
+        ['on + xüsusi gün',                'on New Year\'s Day, on Christmas Day'],
+        ['on + gün + günün hissəsi',       'on Monday morning, on Friday evening'],
+        ['on Saturday night',              'Are you free on Saturday night?'],
+      ],
+      tip: '"on Christmas Day" ✅ amma "at Christmas" ✅ — "Christmas Day" konkret gün olduğu üçün "on", ümumi bayram dövrü üçün "at".',
+    },
+
+    // ── Ekran 3: in — ay, il, fəsil, günün hissəsi ───────────────────────────
+    {
+      type: 'lesson',
+      title: '"in" — ay, il, fəsil, günün hissəsi',
+      content: '"in" daha uzun zaman dövrlərini bildirir:',
+      table: [
+        ['in ilə işlədilir',           'Nümunə'],
+        ['in + ay',                    'in March, in October, in December'],
+        ['in + il',                    'in 1990, in 2005, in the 1980s'],
+        ['in + fəsil',                 'in spring, in summer, in autumn, in winter'],
+        ['in the morning',             'I feel energetic in the morning.'],
+        ['in the afternoon',           'She usually rests in the afternoon.'],
+        ['in the evening',             'Do you go out in the evening?'],
+      ],
+      tip: '"in the morning/afternoon/evening" ✅ amma "at night" ✅ — gecə istisnadır, "in the night" demə!',
+    },
+
+    // ── Ekran 4: Müqayisəli nümunələr ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'at / on / in — müqayisəli nümunələr',
+      content: 'Üç önlüyü eyni mövzu ətrafında müqayisə edək:',
+      examples: [
+        { word: 'I start work at 8 o\'clock.',            az: 'at + dəqiq saat'                            },
+        { word: 'The concert is on 22 November.',         az: 'on + tarix'                                 },
+        { word: 'I\'m going on holiday in October.',      az: 'in + ay'                                    },
+        { word: 'I can\'t sleep at night.',               az: 'at night — xüsusi ifadə'                    },
+        { word: 'I always feel good in the morning.',     az: 'in the morning — günün hissəsi'             },
+        { word: 'See you on Friday morning.',             az: 'on + gün + günün hissəsi'                   },
+        { word: 'She was born in 1995.',                  az: 'in + il'                                    },
+        { word: 'The garden is beautiful in spring.',     az: 'in + fəsil'                                 },
+        { word: 'Are you free at the weekend?',           az: 'at the weekend — xüsusi ifadə'              },
+        { word: 'I\'ll be there at the end of the week.', az: 'at the end of — xüsusi ifadə'              },
+      ],
+      tip: 'Qısa xülasə: at = saat/nöqtə, on = gün/tarix, in = dövr (ay/il/fəsil/günün hissəsi).',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ 7 o\'clock" — at/on/in?',
+          options: ['on', 'in', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"___ Monday" — at/on/in?',
+          options: ['at', 'in', 'on'],
+          answer: 'on',
+        },
+        {
+          q: '"___ October" — at/on/in?',
+          options: ['at', 'on', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"___ 1998" — at/on/in?',
+          options: ['at', 'on', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"___ night" — at/on/in?',
+          options: ['in', 'on', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"___ the morning" — at/on/in?',
+          options: ['at', 'on', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"___ Friday evening" — at/on/in?',
+          options: ['at', 'in', 'on'],
+          answer: 'on',
+        },
+        {
+          q: '"___ Christmas Day" — at/on/in?',
+          options: ['in', 'at', 'on'],
+          answer: 'on',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'this/last/next/every + in ... (müddət sonra) (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: önlük işlənməyən hallar ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'this / last / next / every — önlük işlənmir',
+      content: '"this / last / next / every" ilə başlayan zaman ifadələrinin qarşısında at/on/in işlənmir:',
+      examples: [
+        { word: 'Are you going out this evening?',       az: 'this evening — önlük yoxdur'                },
+        { word: 'I spoke to her last Monday.',           az: 'last Monday — önlük yoxdur'                 },
+        { word: 'I\'m going on holiday next week.',      az: 'next week — önlük yoxdur ("on next week" ❌)' },
+        { word: 'The garden was lovely last summer.',    az: 'last summer — önlük yoxdur'                 },
+        { word: 'I go to the gym every morning.',        az: 'every morning — önlük yoxdur'               },
+        { word: 'She calls me every Sunday.',            az: 'every Sunday — önlük yoxdur'                },
+        { word: 'I\'ll see you next Friday.',            az: 'next Friday — "on next Friday" ❌'           },
+        { word: 'What did you do this weekend?',         az: 'this weekend — önlük yoxdur'                },
+      ],
+      tip: '"on next Monday" ❌ → "next Monday" ✅. "in last summer" ❌ → "last summer" ✅. this/last/next/every ilə önlük işlənmir!',
+    },
+
+    // ── Ekran 2: in + müddət (indi dən ... sonra) ────────────────────────────
+    {
+      type: 'lesson',
+      title: '"in ..." — müddət sonra',
+      content: '"in + vaxt ifadəsi" — indi dən müəyyən müddət sonra demək deməkdir:',
+      examples: [
+        { word: 'The train leaves in ten minutes.',       az: 'in = indi dən 10 dəqiqə sonra'             },
+        { word: 'I\'ll call you back in a moment.',       az: 'in a moment — bir azdan'                   },
+        { word: 'She\'ll be ready in half an hour.',      az: 'in half an hour — yarım saatdan sonra'     },
+        { word: 'See you in a few days.',                 az: 'in a few days — bir neçə gündən sonra'     },
+        { word: 'The project will be done in two weeks.', az: 'in two weeks — iki həftədən sonra'         },
+        { word: 'We\'ll arrive in about three hours.',    az: 'in three hours — üç saatdan sonra'         },
+      ],
+      tip: '"in five minutes" = indi dən 5 dəqiqə sonra. "after five minutes" ilə qarışdırma — "after" başqa mənada işlənir.',
+    },
+
+    // ── Ekran 3: at Christmas vs on Christmas Day + digər fərqlər ────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez qarışdırılan ifadələr',
+      content: 'Bu cütlər tez-tez qarışdırılır — fərqə diqqət et:',
+      table: [
+        ['İfadə',               'Düzgün',                       'Yanlış'],
+        ['at Christmas',        'at Christmas (dövr)',           'in Christmas ❌'],
+        ['on Christmas Day',    'on Christmas Day (konkret gün)','at Christmas Day ❌'],
+        ['at night',            'at night',                      'in the night ❌ (adətən)'],
+        ['in the morning',      'in the morning',                'at the morning ❌'],
+        ['on Monday morning',   'on Monday morning',             'in Monday morning ❌'],
+        ['at the weekend',      'at the weekend',                'in the weekend ❌'],
+        ['at the end of ...',   'at the end of October',         'in the end of October ❌'],
+        ['at the moment',       'at the moment',                 'in the moment ❌'],
+      ],
+      tip: '"in the end" başqa mənaya gəlir (= nəticədə, axırda). "at the end of ..." = bir şeyin sonunda.',
+    },
+
+    // ── Ekran 4: Qarışıq nümunələr ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Zaman önlükləri — qarışıq nümunələr',
+      content: 'Bütün qaydaları bir yerdə görək:',
+      examples: [
+        { word: 'I\'m starting my new job on 3 July.',            az: 'on + tarix'                         },
+        { word: 'The company was founded in 1969.',               az: 'in + il'                            },
+        { word: 'Let\'s meet at 7.30 tomorrow evening.',          az: 'at + saat'                          },
+        { word: 'I often go away at the weekend.',                az: 'at the weekend'                     },
+        { word: 'Do you work on Saturdays?',                      az: 'on + həftənin günü'                 },
+        { word: 'She likes reading in the evening.',              az: 'in the evening'                     },
+        { word: 'I\'ll send you the details at the end of the month.', az: 'at the end of'               },
+        { word: 'I\'m going to the dentist next Thursday.',       az: 'next Thursday — önlük yoxdur'       },
+        { word: 'I didn\'t go out last night.',                   az: 'last night — önlük yoxdur'          },
+        { word: 'Hurry up! The bus leaves in three minutes.',     az: 'in = müddət sonra'                  },
+      ],
+      tip: 'Hər cümləni oxuyanda özünə sor: bu saat, gün, yoxsa dövrdür? Cavaba görə at/on/in seç.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I\'m leaving ___ next Monday." — önlük lazımdırmı?',
+          options: ['on next Monday', 'in next Monday', 'next Monday (önlük yoxdur)'],
+          answer: 'next Monday (önlük yoxdur)',
+        },
+        {
+          q: '"The train leaves ___ five minutes." — indi dən sonra:',
+          options: ['after', 'on', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"___ the weekend" — at/on/in?',
+          options: ['on', 'in', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"___ Saturday night" — at/on/in?',
+          options: ['at', 'in', 'on'],
+          answer: 'on',
+        },
+        {
+          q: '"I like walking ___ the evening." — at/on/in?',
+          options: ['at', 'on', 'in'],
+          answer: 'in',
+        },
+        {
+          q: '"She calls me ___ every Sunday." — önlük lazımdırmı?',
+          options: ['on every Sunday', 'at every Sunday', 'every Sunday (önlük yoxdur)'],
+          answer: 'every Sunday (önlük yoxdur)',
+        },
+        {
+          q: '"Where were you ___ Christmas?" — at/on/in?',
+          options: ['on', 'in', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"___ the end of the month" — at/on/in?',
+          options: ['in', 'on', 'at'],
+          answer: 'at',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"Saat 6-da." — at/on/in?',                                        tr: 'at',                             wrong: 'on'                           },
+  { en: '"Cümə axşamı." — at/on/in?',                                      tr: 'on',                             wrong: 'in'                           },
+  { en: '"Oktyabr ayında." — at/on/in?',                                   tr: 'in',                             wrong: 'on'                           },
+  { en: '"1987-ci ildə." — at/on/in?',                                     tr: 'in',                             wrong: 'at'                           },
+  { en: '"Gecə." — at/on/in?',                                             tr: 'at night',                       wrong: 'in the night'                 },
+  { en: '"Səhər." — at/on/in?',                                            tr: 'in the morning',                 wrong: 'at the morning'               },
+  { en: '"Həftəsonu." — at/on/in?',                                        tr: 'at the weekend',                 wrong: 'in the weekend'               },
+  { en: '"Bazar ertəsi səhər." — at/on/in?',                               tr: 'on Monday morning',              wrong: 'in Monday morning'            },
+  { en: '"Milad bayramında." — at/on/in?',                                 tr: 'at Christmas',                   wrong: 'in Christmas'                 },
+  { en: '"Milad günündə." — at/on/in?',                                    tr: 'on Christmas Day',               wrong: 'at Christmas Day'             },
+  { en: '"Yayda." — at/on/in?',                                            tr: 'in summer',                      wrong: 'at summer'                    },
+  { en: '"24 sentyabrda." — at/on/in?',                                    tr: 'on',                             wrong: 'in'                           },
+  { en: '"Hal-hazırda." — xüsusi ifadə:',                                  tr: 'at the moment',                  wrong: 'in the moment'                },
+  { en: '"Ayın sonunda." — xüsusi ifadə:',                                 tr: 'at the end of the month',        wrong: 'in the end of the month'      },
+  { en: '"5 dəqiqə sonra (indi dən)." — önlük:',                          tr: 'in',                             wrong: 'after'                        },
+  { en: '"Gələn həftə." — önlük lazımdırmı?',                             tr: 'next week (önlük yoxdur)',        wrong: 'on next week'                 },
+  { en: '"Hər gün." — önlük lazımdırmı?',                                 tr: 'every day (önlük yoxdur)',        wrong: 'on every day'                 },
+  { en: '"Keçən yay." — önlük lazımdırmı?',                               tr: 'last summer (önlük yoxdur)',      wrong: 'in last summer'               },
+  { en: '"Bu axşam." — önlük lazımdırmı?',                                tr: 'this evening (önlük yoxdur)',     wrong: 'in this evening'              },
+  { en: '"Cümə axşamı axşamı." — at/on/in?',                              tr: 'on Thursday evening',            wrong: 'in Thursday evening'          },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Saat 8-də işə başlayıram.',
+      words: ['I', 'start', 'work', 'at', '8', 'o\'clock', 'on', 'in'],
+      answer: ['I', 'start', 'work', 'at', '8', 'o\'clock'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Oktyabrın sonunda tətilə gedirəm.',
+      words: ['I\'m', 'going', 'on', 'holiday', 'at', 'the', 'end', 'of', 'October', 'in', 'the', 'end'],
+      answer: ['I\'m', 'going', 'on', 'holiday', 'at', 'the', 'end', 'of', 'October'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bazar ertəsi günü ilə görüşürəm.',
+      words: ['I\'m', 'meeting', 'Jill', 'on', 'Monday', 'morning', 'in', 'at'],
+      answer: ['I\'m', 'meeting', 'Jill', 'on', 'Monday', 'morning'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Gələn Cümə günü tətilə gedirəm.',
+      words: ['I\'m', 'going', 'on', 'holiday', 'next', 'Friday', 'on next', 'in next'],
+      answer: ['I\'m', 'going', 'on', 'holiday', 'next', 'Friday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tələs! Qatar beş dəqiqə sonra yola düşür.',
+      words: ['Hurry!', 'The', 'train', 'leaves', 'in', 'five', 'minutes', 'after', 'at'],
+      answer: ['Hurry!', 'The', 'train', 'leaves', 'in', 'five', 'minutes'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hər bazar günü onu zəng edirəm.',
+      words: ['I', 'call', 'her', 'every', 'Sunday', 'on every', 'at every'],
+      answer: ['I', 'call', 'her', 'every', 'Sunday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Şirkət 1969-cu ildə quruldu.',
+      words: ['The', 'company', 'was', 'founded', 'in', '1969', 'on', 'at'],
+      answer: ['The', 'company', 'was', 'founded', 'in', '1969'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Milad bayramında harada olacaqsan?',
+      words: ['Where', 'will', 'you', 'be', 'at', 'Christmas', 'in', 'on'],
+      answer: ['Where', 'will', 'you', 'be', 'at', 'Christmas'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Axşamları çıxırsan?',
+      words: ['Do', 'you', 'often', 'go', 'out', 'in', 'the', 'evening', 'at', 'on'],
+      answer: ['Do', 'you', 'often', 'go', 'out', 'in', 'the', 'evening'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Keçən yay bağ gözəl idi.',
+      words: ['The', 'garden', 'was', 'lovely', 'last', 'summer', 'in last', 'at last'],
+      answer: ['The', 'garden', 'was', 'lovely', 'last', 'summer'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Önlüklər — digər' },
 
+// ── UNIT 35 — Önlüklər: Digər (Other Prepositions) ──────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'on / at / by / with / about — Xüsusi İfadələr (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: on ilə xüsusi ifadələr ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"on" ilə xüsusi ifadələr',
+      content: '"on" bəzi sabit ifadələrdə işlədilir — bu ifadələr əzbərlənməlidir:',
+      table: [
+        ['İfadə',             'Nümunə'],
+        ['on holiday',        'She isn\'t at work this week. She\'s on holiday.'],
+        ['on television',     'Did you watch the match on television?'],
+        ['on the radio',      'I heard the news on the radio this morning.'],
+        ['on the phone',      'I spoke to him on the phone last night.'],
+        ['on fire',           'Call the fire brigade! The building is on fire!'],
+        ['on time (= vaxtında)', 'The meeting started on time. Nobody was late.'],
+        ['on foot',           'She goes to work on foot every day.'],
+      ],
+      tip: '"on foot" — nəqliyyat ifadələrinin əksəriyyəti "by" ilə olur, amma "on foot" istisnadır: "by foot" ❌.',
+    },
+
+    // ── Ekran 2: by ilə nəqliyyat və müəllif ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"by" — nəqliyyat, müəllif, passiv',
+      content: '"by" nəqliyyat vasitəsi, əsər müəllifi və passiv cümlələrdə işlədilir:',
+      examples: [
+        { word: 'Do you like travelling by train?',          az: 'by + nəqliyyat (önlüksüz isim)'            },
+        { word: 'It\'s faster to go by plane than by car.',  az: 'by plane / by car'                         },
+        { word: 'I usually go to work by bus.',              az: 'by bus — "on the bus" da deyilir'          },
+        { word: 'She prefers to travel by bike.',            az: 'by bike'                                   },
+        { word: 'Romeo and Juliet is a play by Shakespeare.', az: 'by + müəllif/sənətkar'                   },
+        { word: 'Have you read anything by Agatha Christie?', az: 'by + yazıçı'                              },
+        { word: 'I was bitten by a dog yesterday.',          az: 'by — passiv cümlədə icraçı'                },
+      ],
+      tip: '"by car / by bus / by plane" — nəqliyyatdan əvvəl "the" işlənmir: "by the car" ❌ → "by car" ✅. İstisna: "on foot".',
+    },
+
+    // ── Ekran 3: with / without / about ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"with" / "without" / "about"',
+      content: 'Bu üç önlüyün işləndiyi əsas hallar:',
+      examples: [
+        { word: 'I cut the rope with a knife.',              az: 'with + alət (vasitə ilə)'                  },
+        { word: 'Do you take your coffee with or without milk?', az: 'with/without — ilə/siz'               },
+        { word: 'Who is that woman with the red hat?',       az: 'with + xüsusiyyət (saçlı, eynəkli...)'    },
+        { word: 'Don\'t leave without your keys.',           az: 'without — olmadan'                         },
+        { word: 'He left without saying a word.',            az: 'without + -ing'                            },
+        { word: 'I don\'t know much about this topic.',      az: 'about — haqqında'                          },
+        { word: 'They were talking about their plans.',      az: 'talk about — haqqında danışmaq'            },
+        { word: 'Did you read that article about climate change?', az: 'about — mövzu'                       },
+      ],
+      tip: 'Önlükdən sonra fel gəlsə -ing alır: "without saying", "after doing", "before leaving" — heç vaxt infinitiv yox!',
+    },
+
+    // ── Ekran 4: at ilə xüsusi ifadələr ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"at" — yaş, sürət, temperatura',
+      content: '"at" rəqəmsal ölçülərlə (yaş, sürət, temperatur) işlədilir:',
+      examples: [
+        { word: 'She started university at 18.',             az: 'at + yaş'                                  },
+        { word: 'He retired at the age of 65.',              az: 'at the age of + rəqəm'                     },
+        { word: 'The car was going at 120 kilometres an hour.', az: 'at + sürət'                             },
+        { word: 'Water freezes at 0 degrees Celsius.',       az: 'at + temperatur/dərəcə'                    },
+        { word: 'Water boils at 100 degrees.',               az: 'at + temperatur'                           },
+        { word: 'These trains travel at very high speeds.',  az: 'at + sürət'                                },
+      ],
+      tip: '"at the age of 30" = "at 30" — ikisi eyni mənadadır. "in 30 years old" ❌ → "at 30" ✅.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She goes to school ___ foot." — by/on/with?',
+          options: ['by', 'with', 'on'],
+          answer: 'on',
+        },
+        {
+          q: '"The book is ___ Hemingway." — müəllif:',
+          options: ['from', 'of', 'by'],
+          answer: 'by',
+        },
+        {
+          q: '"We watched the match ___ television."',
+          options: ['in', 'by', 'on'],
+          answer: 'on',
+        },
+        {
+          q: '"Water boils ___ 100 degrees."',
+          options: ['in', 'on', 'at'],
+          answer: 'at',
+        },
+        {
+          q: '"He left ___ saying goodbye." — olmadan:',
+          options: ['without', 'with no', 'not with'],
+          answer: 'without',
+        },
+        {
+          q: '"She was talking ___ her new job."',
+          options: ['for', 'of', 'about'],
+          answer: 'about',
+        },
+        {
+          q: '"I usually go to work ___ bus."',
+          options: ['on', 'in', 'by'],
+          answer: 'by',
+        },
+        {
+          q: '"The building is ___ fire!"',
+          options: ['in', 'at', 'on'],
+          answer: 'on',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Sifət + Önlük / Fel + Önlük (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sifət + önlük ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sifət + önlük — əzbərlə',
+      content: 'Bu birləşmələr sabitdir — önlüklər dəyişdirilə bilməz:',
+      table: [
+        ['Sifət + önlük',        'Nümunə'],
+        ['afraid of',            'Are you afraid of the dark?'],
+        ['angry with (şəxs)',    'Why are you angry with me?'],
+        ['angry about (şey)',    'She was angry about what happened.'],
+        ['different from',       'This city is very different from my hometown.'],
+        ['fed up with',          'I\'m fed up with doing the same thing every day.'],
+        ['full of',              'The bag was full of old books.'],
+        ['good at / bad at',     'He\'s good at cooking but bad at baking.'],
+        ['interested in',        'Are you interested in history?'],
+        ['married to',           'She\'s married to a doctor.'],
+        ['sorry about/for',      'I\'m sorry about the noise. / Sorry for keeping you waiting.'],
+        ['kind/nice to',         'He\'s always very kind to his neighbours.'],
+      ],
+      tip: '"different from" ✅ — "different than / different to" bəzi dialektlərdə işlənir, amma "from" ən geniş qəbul edilənidir.',
+    },
+
+    // ── Ekran 2: Fel + önlük ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Fel + önlük — əzbərlə',
+      content: 'Bu fellərin özünəməxsus önlükləri var — başqa önlük işlənmir:',
+      table: [
+        ['Fel + önlük',                  'Nümunə'],
+        ['ask (sb) for',                 'She asked the waiter for the bill.'],
+        ['belong to',                    'Does this bag belong to you?'],
+        ['happen to',                    'What happened to your phone?'],
+        ['listen to',                    'I love listening to music in the morning.'],
+        ['talk/speak to sb about sth',   'I need to talk to you about something.'],
+        ['thank sb for',                 'Thank you for your help.'],
+        ['think about / think of',       'I often think about my childhood.'],
+        ['wait for',                     'I\'ve been waiting for you for an hour!'],
+        ['write to',                     'She wrote to me every week when I was abroad.'],
+        ['depend on',                    'It depends on the weather.'],
+        ['phone sb (önlük yoxdur)',       'I need to phone my sister. (not "phone to")'],
+      ],
+      tip: '"phone to someone" ❌ → "phone someone" ✅. "phone" felindən sonra birbaşa şəxs gəlir, önlük işlənmir.',
+    },
+
+    // ── Ekran 3: look at / look for / look after ──────────────────────────────
+    {
+      type: 'lesson',
+      title: '"look" + önlük — üç fərqli məna',
+      content: '"look" felinin önlüyə görə mənası tamam dəyişir:',
+      table: [
+        ['İfadə',        'Məna',              'Nümunə'],
+        ['look at',      'baxmaq',            'Look at this photo! It\'s amazing.'],
+        ['look for',     'axtarmaq',          'I\'ve lost my glasses. I\'m looking for them.'],
+        ['look after',   'qayğısına qalmaq',  'Can you look after my cat while I\'m away?'],
+      ],
+      tip: '"look for" = axtarmaq (tapılmayıb). "look at" = baxmaq (artıq qarşındadır). "look after" = qayğı göstərmək.',
+    },
+
+    // ── Ekran 4: Önlük + -ing (qarışıq nümunələr) ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Önlük + -ing forması',
+      content: 'Önlükdən sonra gələn fel həmişə -ing formasında olur:',
+      examples: [
+        { word: 'She\'s good at solving problems.',          az: 'good at + -ing'                            },
+        { word: 'I\'m fed up with waiting in queues.',       az: 'fed up with + -ing'                        },
+        { word: 'He left without finishing his meal.',       az: 'without + -ing'                            },
+        { word: 'Thank you for helping me.',                 az: 'thank for + -ing'                          },
+        { word: 'I\'m sorry for arriving late.',             az: 'sorry for + -ing'                          },
+        { word: 'Before going to bed, she reads.',           az: 'before + -ing'                             },
+        { word: 'After finishing work, he went to the gym.', az: 'after + -ing'                              },
+        { word: 'Mark is thinking of moving abroad.',        az: 'think of + -ing'                           },
+      ],
+      tip: 'Önlükdən sonra "to + infinitiv" yox, -ing işlənir: "good at to solve" ❌ → "good at solving" ✅.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Are you ___ sport?" — interested:',
+          options: ['interested about', 'interested in', 'interested of'],
+          answer: 'interested in',
+        },
+        {
+          q: '"She\'s ___ a lawyer." — married:',
+          options: ['married with', 'married for', 'married to'],
+          answer: 'married to',
+        },
+        {
+          q: '"What happened ___ your keys?"',
+          options: ['with', 'for', 'to'],
+          answer: 'to',
+        },
+        {
+          q: '"I need to phone ___ my mum." — önlük lazımdırmı?',
+          options: ['phone to my mum', 'phone for my mum', 'phone my mum (önlük yoxdur)'],
+          answer: 'phone my mum (önlük yoxdur)',
+        },
+        {
+          q: '"He\'s looking ___ his passport." — axtarmaq:',
+          options: ['look at', 'look after', 'look for'],
+          answer: 'look for',
+        },
+        {
+          q: '"She\'s ___ cooking." — good:',
+          options: ['good at', 'good in', 'good for'],
+          answer: 'good at',
+        },
+        {
+          q: '"I\'m sorry ___ not calling you earlier."',
+          options: ['sorry about', 'sorry for', 'sorry of'],
+          answer: 'sorry for',
+        },
+        {
+          q: '"This town is very ___ where I grew up." — different:',
+          options: ['different than', 'different to', 'different from'],
+          answer: 'different from',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"Televiziyada baxmaq." — on/in/by?',                              tr: 'on television',                  wrong: 'in television'                },
+  { en: '"Radioda eşitmək." — on/in/by?',                                  tr: 'on the radio',                   wrong: 'in the radio'                 },
+  { en: '"Telefonda danışmaq." — on/in/by?',                               tr: 'on the phone',                   wrong: 'by the phone'                 },
+  { en: '"Vaxtında (gecikməyərək)." — on/in/at?',                         tr: 'on time',                        wrong: 'in time'                      },
+  { en: '"Piyada getmək." — by/on/with?',                                  tr: 'on foot',                        wrong: 'by foot'                      },
+  { en: '"Təyyarə ilə getmək." — by/on/in?',                              tr: 'by plane',                       wrong: 'on plane'                     },
+  { en: '"Shakespeare-in pyesi." — by/of/from?',                          tr: 'by Shakespeare',                 wrong: 'from Shakespeare'             },
+  { en: '"Passiv: it bitten ___ a dog."',                                  tr: 'by',                             wrong: 'from'                         },
+  { en: '"Futboldan qorxmaq." — afraid:',                                  tr: 'afraid of',                      wrong: 'afraid from'                  },
+  { en: '"Riyaziyyatda yaxşıdır." — good:',                                tr: 'good at',                        wrong: 'good in'                      },
+  { en: '"Tarixlə maraqlanır." — interested:',                             tr: 'interested in',                  wrong: 'interested about'             },
+  { en: '"Həkimlə evlidir." — married:',                                   tr: 'married to',                     wrong: 'married with'                 },
+  { en: '"Eyni iş görməkdən bezdi." — fed up:',                           tr: 'fed up with',                    wrong: 'fed up of'                    },
+  { en: '"Kitab kitablarla dolu idi." — full:',                            tr: 'full of',                        wrong: 'full with'                    },
+  { en: '"Məndən fərqlidir." — different:',                                tr: 'different from',                 wrong: 'different than'               },
+  { en: '"Səni gözlədim." — wait:',                                        tr: 'waited for you',                 wrong: 'waited you'                   },
+  { en: '"Həmin çanta kimə aiddir?" — belong:',                           tr: 'belong to',                      wrong: 'belong for'                   },
+  { en: '"Mənə bax!" — look:',                                             tr: 'look at me',                     wrong: 'look me'                      },
+  { en: '"Açarlarımı axtarıram." — look:',                                 tr: 'looking for',                    wrong: 'looking after'                },
+  { en: '"Önlükdən sonra fel hansı formada gəlir?"',                       tr: '-ing',                           wrong: 'infinitiv (to + fel)'         },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu həftə işdə deyil. Tətildədir.',
+      words: ['She\'s', 'not', 'at', 'work', 'this', 'week.', 'She\'s', 'on', 'holiday', 'in', 'by'],
+      answer: ['She\'s', 'not', 'at', 'work', 'this', 'week.', 'She\'s', 'on', 'holiday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Otaq insanlarla dolu idi.',
+      words: ['The', 'room', 'was', 'full', 'of', 'people', 'with', 'for'],
+      answer: ['The', 'room', 'was', 'full', 'of', 'people'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, dişçiyə evlidir.',
+      words: ['She', 'is', 'married', 'to', 'a', 'dentist', 'with', 'for'],
+      answer: ['She', 'is', 'married', 'to', 'a', 'dentist'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tom xudahafizləşmədən getdi.',
+      words: ['Tom', 'left', 'without', 'saying', 'goodbye', 'without', 'to say', 'not saying'],
+      answer: ['Tom', 'left', 'without', 'saying', 'goodbye'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Köməyin üçün sağ ol.',
+      words: ['Thank', 'you', 'for', 'your', 'help', 'of', 'to', 'about'],
+      answer: ['Thank', 'you', 'for', 'your', 'help'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Açarlarımı itirmişəm. Onları axtarıram.',
+      words: ['I\'ve', 'lost', 'my', 'keys.', 'I\'m', 'looking', 'for', 'them', 'at', 'after'],
+      answer: ['I\'ve', 'lost', 'my', 'keys.', 'I\'m', 'looking', 'for', 'them'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu şəhər doğulduğum yerdən çox fərqlidir.',
+      words: ['This', 'city', 'is', 'very', 'different', 'from', 'where', 'I', 'grew', 'up', 'than', 'to'],
+      answer: ['This', 'city', 'is', 'very', 'different', 'from', 'where', 'I', 'grew', 'up'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Anama zəng etməliyəm.',
+      words: ['I', 'need', 'to', 'phone', 'my', 'mother', 'phone to', 'call to'],
+      answer: ['I', 'need', 'to', 'phone', 'my', 'mother'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mark xaricdə yaşamağı düşünür.',
+      words: ['Mark', 'is', 'thinking', 'of', 'moving', 'abroad', 'to move', 'about move'],
+      answer: ['Mark', 'is', 'thinking', 'of', 'moving', 'abroad'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Nə baş verdi sənin telefonuna?',
+      words: ['What', 'happened', 'to', 'your', 'phone', 'with', 'for', '?'],
+      answer: ['What', 'happened', 'to', 'your', 'phone', '?'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'and / but / or / so' },
 
+// ── UNIT 36 — Bağlayıcılar: and / but / or / so / because ───────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'and / but / or — Əsas Bağlayıcılar (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: and — əlavə, davam ───────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"and" — əlavə, davam',
+      content: '"and" iki fikri, hərəkəti və ya şəxsi birləşdirir:',
+      examples: [
+        { word: 'We stayed at home and watched a film.',         az: 'iki hərəkət birləşir'                      },
+        { word: 'My brother is a teacher and lives in Baku.',    az: 'iki məlumat birləşir'                      },
+        { word: 'She opened the door and walked in.',            az: 'ardıcıl hərəkətlər'                        },
+        { word: 'He doesn\'t like coffee and she doesn\'t either.', az: 'iki mənfi cümlə'                       },
+        { word: 'I got home, had dinner, sat down and fell asleep.', az: 'siyahıda and yalnız sonda işlənir'    },
+        { word: 'Tom is at work, Lisa is at school and Dan is home.', az: 'üç cümlədə and yalnız sonuncudan əvvəl' },
+      ],
+      tip: 'Siyahıda "and" yalnız sonuncu iki element arasında işlədilir: "x, y and z" — hər iki elementdən əvvəl "and" ❌.',
+    },
+
+    // ── Ekran 2: but — ziddiyyət ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"but" — ziddiyyət, gözlənilməz nəticə',
+      content: '"but" iki zidd fikri birləşdirir — ikinci hissə birincinin əksinədir:',
+      examples: [
+        { word: 'I bought the book but I didn\'t read it.',      az: 'gözlənilən ilə olan fərqli'               },
+        { word: 'It\'s a nice flat but it hasn\'t got a balcony.', az: 'müsbət + mənfi'                         },
+        { word: 'I wanted to help but I didn\'t know how.',      az: 'istək + maneə'                            },
+        { word: 'She\'s tired but she won\'t stop working.',     az: 'hal + əks davranış'                       },
+        { word: 'The film was long but very interesting.',       az: 'mənfi + müsbət xüsusiyyət'                },
+        { word: 'I know him but not very well.',                 az: 'qismən ziddiyyət'                         },
+      ],
+      tip: '"but" = amma, lakin. Birinci hissənin əksinə olan bir şey gəlir. "and" ilə qarışdırma!',
+    },
+
+    // ── Ekran 3: or — seçim ───────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"or" — seçim, alternativ',
+      content: '"or" iki seçim arasında işlədilir:',
+      examples: [
+        { word: 'Do you want tea or coffee?',                    az: 'iki seçim arasında'                       },
+        { word: 'Is he coming by train or by bus?',              az: 'nəqliyyat seçimi'                         },
+        { word: 'You can stay here or come with us.',            az: 'iki seçenek'                              },
+        { word: 'Do you want to go out or are you too tired?',   az: 'sual + alternativ sual'                   },
+        { word: 'Shall I call you or send a message?',           az: 'iki alternativ hərəkət'                   },
+        { word: 'Is that Mark or his brother?',                  az: 'kimlik seçimi'                            },
+      ],
+      tip: '"or" inkar cümlələrdə "and" yerinə işlənir: "I don\'t eat meat or fish." (= meat and fish ikisini də yemir)',
+    },
+
+    // ── Ekran 4: and/but/or — müqayisəli nümunələr ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'and / but / or — müqayisəli baxış',
+      content: 'Üç bağlayıcını eyni mövzuda müqayisə edək:',
+      examples: [
+        { word: 'I was tired and I went to bed early.',          az: 'and — nəticə uyğundur'                    },
+        { word: 'I was tired but I didn\'t go to bed.',          az: 'but — nəticə gözlənilməzdir'              },
+        { word: 'Were you tired or did you feel okay?',          az: 'or — seçim soruşulur'                     },
+        { word: 'She studied hard and passed the exam.',         az: 'and — ardıcıl, uyğun'                     },
+        { word: 'She studied hard but failed the exam.',         az: 'but — gözlənilməz nəticə'                 },
+        { word: 'Did she study hard or give up?',                az: 'or — iki alternativ'                      },
+      ],
+      tip: 'Hansı bağlayıcının düzgün olduğunu anlamaq üçün: əlavəmi (and), ziddiyyətmi (but), seçimmi (or)?',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I wanted to call you ___ I didn\'t have your number." — and/but/or?',
+          options: ['and', 'or', 'but'],
+          answer: 'but',
+        },
+        {
+          q: '"She opened the door ___ walked in." — and/but/or?',
+          options: ['but', 'or', 'and'],
+          answer: 'and',
+        },
+        {
+          q: '"Do you want to stay ___ shall we leave?" — and/but/or?',
+          options: ['and', 'but', 'or'],
+          answer: 'or',
+        },
+        {
+          q: '"It\'s a nice hotel ___ it\'s very expensive." — and/but/or?',
+          options: ['and', 'or', 'but'],
+          answer: 'but',
+        },
+        {
+          q: 'Siyahıda "and" harada işlədilir?',
+          options: ['hər elementdən əvvəl', 'yalnız sonuncu iki element arasında', 'yalnız əvvəldə'],
+          answer: 'yalnız sonuncu iki element arasında',
+        },
+        {
+          q: '"I got home, had a shower ___ went to bed." — and/but/or?',
+          options: ['but', 'or', 'and'],
+          answer: 'and',
+        },
+        {
+          q: '"Is he Turkish ___ Iranian?" — and/but/or?',
+          options: ['and', 'but', 'or'],
+          answer: 'or',
+        },
+        {
+          q: '"She\'s very smart ___ very kind." — əlavə mənası:',
+          options: ['but', 'or', 'and'],
+          answer: 'and',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'so / because — Nəticə və Səbəb (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: so — nəticə ──────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"so" — nəticə bildirmək',
+      content: '"so" birinci cümlənin nəticəsini bildirir — buna görə, beləliklə:',
+      examples: [
+        { word: 'It was raining, so we stayed inside.',          az: 'yağış → nəticə: içəridə qaldıq'           },
+        { word: 'I was hungry, so I made a sandwich.',           az: 'ac idim → nəticə: sandwich etdim'         },
+        { word: 'The shop was closed, so we went home.',         az: 'bağlı idi → nəticə: getdik'               },
+        { word: 'She missed the bus, so she was late.',          az: 'avtobusu qaçırdı → nəticə: gecikdi'       },
+        { word: 'They like jazz, so they often go to concerts.', az: 'sevir → nəticə: tez-tez gedirlər'         },
+        { word: 'It was getting dark, so I turned on the light.', az: 'qaranlıq oldu → nəticə: işığı yandırdım' },
+      ],
+      tip: '"so" = buna görə. A baş verdi, SO B baş verdi. Birinci cümlə səbəb, "so" dan sonrakı nəticədir.',
+    },
+
+    // ── Ekran 2: because — səbəb ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"because" — səbəb bildirmək',
+      content: '"because" birinci cümlənin səbəbini izah edir — çünki:',
+      examples: [
+        { word: 'I stayed inside because it was raining.',       az: 'because + səbəb'                          },
+        { word: 'She was late because she missed the bus.',      az: 'gecikdi, çünki avtobusu qaçırdı'          },
+        { word: 'I was tired because I hadn\'t slept well.',     az: 'yorğun idim, çünki yaxşı yatmamışdım'    },
+        { word: 'He didn\'t come because he was ill.',           az: 'gəlmədi, çünki xəstə idi'                 },
+        { word: 'Because it was late, I took a taxi.',           az: 'because cümlənin əvvəlində də işlənə bilər' },
+        { word: 'Because she worked hard, she got promoted.',    az: 'because + vergül — əvvəldə'               },
+      ],
+      tip: '"because" cümlənin əvvəlində işlənəndə vergül qoyulur: "Because it rained, we stayed in." ✅',
+    },
+
+    // ── Ekran 3: so vs because — fərq ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"so" vs "because" — fərq',
+      content: '"so" və "because" eyni məlumatı fərqli istiqamətdən izah edir:',
+      examples: [
+        { word: 'It was hot, so I opened the window.',           az: 'so: isti idi → nəticə: pəncərəni açdım'  },
+        { word: 'I opened the window because it was hot.',       az: 'because: açdım, çünki isti idi'           },
+        { word: 'She was tired, so she went to bed early.',      az: 'so: yorğun idi → nəticə: erkən yatdı'    },
+        { word: 'She went to bed early because she was tired.',  az: 'because: erkən yatdı, çünki yorğun idi'  },
+        { word: 'The exam was hard, so many students failed.',   az: 'so: çətin idi → nəticə: uğursuz oldular' },
+        { word: 'Many students failed because the exam was hard.', az: 'because: çünki çətin idi'              },
+      ],
+      tip: '"so" nəticəni göstərir (A→B). "because" səbəbi izah edir (B, çünki A). İkisi eyni mənalı ola bilər, amma ardıcıllıq dəyişir.',
+    },
+
+    // ── Ekran 4: Birdən çox bağlayıcı ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Birdən çox bağlayıcı ilə uzun cümlələr',
+      content: 'Bir cümlədə bir neçə bağlayıcı işlənə bilər:',
+      examples: [
+        { word: 'It was late and I was tired, so I went to bed.',  az: 'and + so — iki bağlayıcı'              },
+        { word: 'I like London but I wouldn\'t live there because it\'s too crowded.', az: 'but + because'     },
+        { word: 'She studied all night and passed the exam, so she was very happy.', az: 'and + so'            },
+        { word: 'He wanted to come but couldn\'t because he was working.', az: 'but + because'                 },
+        { word: 'I was hungry and tired, so I ordered food and went to sleep.', az: 'and + so + and'           },
+      ],
+      tip: 'Birdən çox bağlayıcı işlənəndə hər birinin mənasına diqqət et: əlavə (and), ziddiyyət (but), nəticə (so), səbəb (because).',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"The traffic was bad, ___ I was late." — so/because?',
+          options: ['because', 'but', 'so'],
+          answer: 'so',
+        },
+        {
+          q: '"I was late ___ the traffic was bad." — so/because?',
+          options: ['so', 'and', 'because'],
+          answer: 'because',
+        },
+        {
+          q: '"It was cold, ___ I put on a coat." — and/so/because?',
+          options: ['because', 'but', 'so'],
+          answer: 'so',
+        },
+        {
+          q: '"I put on a coat ___ it was cold." — and/so/because?',
+          options: ['so', 'but', 'because'],
+          answer: 'because',
+        },
+        {
+          q: '"It was late ___ I was tired, so I went home." — and/but/or?',
+          options: ['or', 'but', 'and'],
+          answer: 'and',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Because it was hot so I opened the window.',
+            'It was hot, so I opened the window.',
+            'It was hot so because I opened the window.',
+          ],
+          answer: 'It was hot, so I opened the window.',
+        },
+        {
+          q: '"because" cümlənin əvvəlində işlənəndə nə qoyulur?',
+          options: ['nöqtə', 'vergül', 'sual işarəsi'],
+          answer: 'vergül',
+        },
+        {
+          q: '"She didn\'t eat anything ___ she wasn\'t hungry." — so/because?',
+          options: ['so', 'and', 'because'],
+          answer: 'because',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"Evdə qaldım ___ televizora baxdım." — əlavə:',                   tr: 'and',                            wrong: 'but'                          },
+  { en: '"Qəzet aldım ___ oxumadım." — ziddiyyət:',                        tr: 'but',                            wrong: 'and'                          },
+  { en: '"Çay istəyirsən ___ qəhvə?" — seçim:',                           tr: 'or',                             wrong: 'and'                          },
+  { en: '"İsti idi, ___ pəncərəni açdım." — nəticə:',                     tr: 'so',                             wrong: 'because'                      },
+  { en: '"Pəncərəni açdım ___ isti idi." — səbəb:',                       tr: 'because',                        wrong: 'so'                           },
+  { en: '"Yorğun idim ___ erkən yatdım." — nəticə:',                      tr: 'so',                             wrong: 'but'                          },
+  { en: '"Erkən yatdım ___ yorğun idim." — səbəb:',                       tr: 'because',                        wrong: 'and'                          },
+  { en: '"Filmi sevdim ___ çox uzun idi." — ziddiyyət:',                  tr: 'but',                            wrong: 'and'                          },
+  { en: 'Siyahıda "and" hansı mövqedə işlənir?',                          tr: 'yalnız sonuncu iki element arasında', wrong: 'hər elementdən əvvəl'    },
+  { en: '"Gəlmək istəyirsən ___ burada gözləyim?" — seçim:',              tr: 'or',                             wrong: 'but'                          },
+  { en: '"Avtobusu qaçırdı, ___ gecikdi." — nəticə:',                     tr: 'so',                             wrong: 'because'                      },
+  { en: '"Gecikdi, ___ avtobusu qaçırmışdı." — səbəb:',                  tr: 'because',                        wrong: 'so'                           },
+  { en: '"because" cümlənin əvvəlində işlənəndə sonra nə gəlir?',         tr: 'vergül',                         wrong: 'nöqtə'                        },
+  { en: '"Gec idi ___ yorğun idim, ona görə erkən yatdım." — əlavə:',     tr: 'and',                            wrong: 'but'                          },
+  { en: '"Mağaza bağlı idi, ___ evə qayıtdıq." — nəticə:',               tr: 'so',                             wrong: 'but'                          },
+  { en: '"so" nəyi bildirir?',                                             tr: 'nəticəni',                       wrong: 'səbəbi'                       },
+  { en: '"because" nəyi bildirir?',                                        tr: 'səbəbi',                         wrong: 'nəticəni'                     },
+  { en: '"Zəng etmək istədim ___ nömrən yox idi." — ziddiyyət:',          tr: 'but',                            wrong: 'so'                           },
+  { en: '"Açı idim, ___ sendviç etdim." — nəticə:',                       tr: 'so',                             wrong: 'because'                      },
+  { en: '"Gözəl şəhərdir ___ çox böyükdür, ___ ora köçmərəm." — iki bağlayıcı:', tr: 'but ... because',        wrong: 'and ... so'                   },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Qəzet aldım amma oxumadım.',
+      words: ['I', 'bought', 'a', 'newspaper', 'but', 'I', 'didn\'t', 'read', 'it', 'and', 'so'],
+      answer: ['I', 'bought', 'a', 'newspaper', 'but', 'I', 'didn\'t', 'read', 'it'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İsti idi, ona görə pəncərəni açdım.',
+      words: ['It', 'was', 'hot,', 'so', 'I', 'opened', 'the', 'window', 'because', 'but'],
+      answer: ['It', 'was', 'hot,', 'so', 'I', 'opened', 'the', 'window'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Pəncərəni açdım çünki isti idi.',
+      words: ['I', 'opened', 'the', 'window', 'because', 'it', 'was', 'hot', 'so', 'but'],
+      answer: ['I', 'opened', 'the', 'window', 'because', 'it', 'was', 'hot'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Evə gəldim, yedim, oturdum və yuxuya getdim.',
+      words: ['I', 'got', 'home,', 'had', 'something', 'to', 'eat,', 'sat', 'down', 'and', 'fell', 'asleep', 'but', 'so'],
+      answer: ['I', 'got', 'home,', 'had', 'something', 'to', 'eat,', 'sat', 'down', 'and', 'fell', 'asleep'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Gec idi və yorğun idim, ona görə yatmağa getdim.',
+      words: ['It', 'was', 'late', 'and', 'I', 'was', 'tired,', 'so', 'I', 'went', 'to', 'bed', 'because', 'but'],
+      answer: ['It', 'was', 'late', 'and', 'I', 'was', 'tired,', 'so', 'I', 'went', 'to', 'bed'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Londonu sevərəm amma ora yaşamaq istəmərəm çünki çox böyükdür.',
+      words: ['I', 'love', 'London', 'but', 'I', 'wouldn\'t', 'live', 'there', 'because', 'it\'s', 'too', 'big', 'so', 'and'],
+      answer: ['I', 'love', 'London', 'but', 'I', 'wouldn\'t', 'live', 'there', 'because', 'it\'s', 'too', 'big'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çıxmaq istəyirsən yoxsa burada qalmağı üstün tutursan?',
+      words: ['Do', 'you', 'want', 'to', 'go', 'out', 'or', 'would', 'you', 'prefer', 'to', 'stay', 'but', 'and'],
+      answer: ['Do', 'you', 'want', 'to', 'go', 'out', 'or', 'would', 'you', 'prefer', 'to', 'stay'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çünki hava pisdi, evdə qaldıq.',
+      words: ['Because', 'the', 'weather', 'was', 'bad,', 'we', 'stayed', 'at', 'home', 'So', 'But'],
+      answer: ['Because', 'the', 'weather', 'was', 'bad,', 'we', 'stayed', 'at', 'home'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, gözəl mənzildir amma bağçası yoxdur.',
+      words: ['It\'s', 'a', 'nice', 'flat', 'but', 'it', 'hasn\'t', 'got', 'a', 'garden', 'and', 'so'],
+      answer: ['It\'s', 'a', 'nice', 'flat', 'but', 'it', 'hasn\'t', 'got', 'a', 'garden'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Maşın bağlı idi, ona görə avtobusu tutdum.',
+      words: ['The', 'car', 'was', 'broken,', 'so', 'I', 'took', 'the', 'bus', 'because', 'but'],
+      answer: ['The', 'car', 'was', 'broken,', 'so', 'I', 'took', 'the', 'bus'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'because / although / however' },
 
+// ── UNIT 37 — because / although / however / despite — Səbəb və Ziddiyyət ────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'because / although / however / despite (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: because — səbəb bildirmək ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'because — səbəb bildirmək',
+      content: 'because = çünki\nİki cümləni birləşdirir, səbəbi izah edir.\n\nSubject + Verb + because + Subject + Verb\n\n❗ because cümlənin əvvəlində də işlədilə bilər — məna dəyişmir!',
+      examples: [
+        { word: 'I was late because the bus didn\'t come.',         az: 'because — niyə gecikmisən?' },
+        { word: 'She stayed home because she felt ill.',            az: 'because — niyə evdə qaldı?' },
+        { word: 'He couldn\'t come because he had to work.',        az: 'because — niyə gəlmədi?'   },
+        { word: 'Because it was cold, we didn\'t go out.',          az: 'cümlənin əvvəlində because' },
+        { word: 'Because she studied hard, she passed.',            az: 'cümlənin əvvəlində because' },
+      ],
+      tip: 'because — səbəb bildirir (niyə?). so — nəticə bildirir (nə oldu?).',
+    },
+
+    // ── Ekran 2: although — ziddiyyət (bağlayıcı) ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'although — ziddiyyət bildirmək',
+      content: 'although = baxmayaraq ki, hərçənd\nİki cümləni birləşdirir — gözlənilməz nəticə bildirir.\n\nalthough cümlənin əvvəlində və ya ortasında işlədilə bilər:',
+      examples: [
+        { word: 'Although it was raining, we went out.',            az: 'yağış yağırdı, amma çıxdıq'      },
+        { word: 'Although she was tired, she kept working.',        az: 'yorğun idi, amma davam etdi'     },
+        { word: 'I liked the book although it was very long.',      az: 'uzun idi, amma bəyəndim'         },
+        { word: 'He passed the test although he didn\'t prepare.',  az: 'hazırlaşmadı, amma keçdi'        },
+        { word: 'Although he was young, he was very responsible.',  az: 'gənc idi, amma məsuliyyətli idi' },
+      ],
+      tip: 'although-dan sonra tam cümlə gəlir. Mənası: gözlənilməz, təəccüblü nəticə.',
+    },
+
+    // ── Ekran 3: however — ziddiyyət (əlaqələndirici) ────────────────────────
+    {
+      type: 'lesson',
+      title: 'however — iki ayrı cümləni əlaqələndirmək',
+      content: 'however = lakin, bununla belə\nİki ayrı cümləni əlaqələndirir.\n\n❗ however cümlənin əvvəlində gəlir və mütləq vergül ilə ayrılır:',
+      examples: [
+        { word: 'The hotel was old. However, it was very clean.',   az: 'however + vergül'             },
+        { word: 'She worked very hard. However, she didn\'t get a promotion.', az: 'however + vergül'  },
+        { word: 'I liked the jacket. However, it was too expensive.',          az: 'however + vergül'  },
+        { word: 'The weather was cold. However, we enjoyed the day.',          az: 'however + vergül'  },
+      ],
+      tip: '❗ however-dən sonra mütləq vergül gəlir: "However, ..." — vergülsüz olmaz!',
+    },
+
+    // ── Ekran 4: despite / in spite of ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'despite / in spite of — önlük ilə ziddiyyət',
+      content: 'despite / in spite of = -a/-ə baxmayaraq\n\n❗ Bunlardan sonra isim və ya -ing forması gəlir — tam cümlə gəlmir!',
+      table: [
+        ['Forma',                    'Nümunə'],
+        ['despite + isim',           'Despite the rain, we went out.'],
+        ['despite + being/doing',    'Despite being tired, she continued.'],
+        ['in spite of + isim',       'In spite of the cold, they played.'],
+        ['in spite of + being/doing','In spite of feeling ill, she smiled.'],
+      ],
+      tip: '❌ Despite she was tired → Yanlış! ✅ Despite being tired → Düzgün! Tam cümlə gəlmir.',
+    },
+
+    // ── Ekran 5: Müqayisə cədvəli ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'although / however / despite — müqayisə',
+      content: 'Eyni mənanı üç cür ifadə etmək mümkündür:',
+      table: [
+        ['Bağlayıcı',          'Forma',              'Nümunə'],
+        ['although',           'although + cümlə',   'Although it was cold, we swam.'],
+        ['however',            'however, + cümlə',   'It was cold. However, we swam.'],
+        ['despite/in spite of','despite + isim/ing',  'Despite the cold, we swam.'],
+      ],
+      tip: 'although → birbaşa birləşdirir | however → nöqtə ilə ayırır | despite → isim/ing alır.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I stayed home because I felt tired.',
+            'I stayed home although I felt tired.',
+            'I stayed home however I felt tired.',
+          ],
+          answer: 'I stayed home because I felt tired.',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Although the film was long, but I enjoyed it.',
+            'Although the film was long, I enjoyed it.',
+            'Although the film was long however I enjoyed it.',
+          ],
+          answer: 'Although the film was long, I enjoyed it.',
+        },
+        {
+          q: '"however" düzgün işlədilmiş cümləni seç:',
+          options: [
+            'The room was small however it was comfortable.',
+            'The room was small. However, it was comfortable.',
+            'However the room was small, it was comfortable.',
+          ],
+          answer: 'The room was small. However, it was comfortable.',
+        },
+        {
+          q: '"despite" düzgün işlədilmiş cümləni seç:',
+          options: [
+            'Despite she was nervous, she spoke well.',
+            'Despite of being nervous, she spoke well.',
+            'Despite being nervous, she spoke well.',
+          ],
+          answer: 'Despite being nervous, she spoke well.',
+        },
+        {
+          q: '"despite"-dan sonra nə gəlir?',
+          options: [
+            'Tam cümlə (subject + verb)',
+            'İsim və ya -ing forması',
+            'although / however',
+          ],
+          answer: 'İsim və ya -ing forması',
+        },
+        {
+          q: 'Boşluğu doldur: She passed the exam ___ she barely studied.',
+          options: ['because', 'although', 'however'],
+          answer: 'although',
+        },
+        {
+          q: '"however" işlədilən cümlədə vergül harada gəlir?',
+          options: [
+            'however-dən əvvəl',
+            'however-dən sonra',
+            'vergül lazım deyil',
+          ],
+          answer: 'however-dən sonra',
+        },
+        {
+          q: 'Eyni məna: "Although it rained, we went hiking." → "Despite ___"',
+          options: [
+            'Despite it rained, we went hiking.',
+            'Despite the rain, we went hiking.',
+            'Despite raining, however we went hiking.',
+          ],
+          answer: 'Despite the rain, we went hiking.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'because / although / however / despite — Təkmilləşdirmə (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: because vs so ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'because — so müqayisəsi',
+      content: 'because → səbəb bildirir (niyə?)\nso → nəticə bildirir (nə oldu?)\n\nHər iki cümlə eyni hadisəni fərqli yöndən izah edir:',
+      table: [
+        ['because (səbəb)',                              'so (nəticə)'],
+        ['I was tired because I didn\'t sleep.',         'I didn\'t sleep, so I was tired.'],
+        ['She was late because the bus broke down.',     'The bus broke down, so she was late.'],
+        ['We stayed in because it was raining.',         'It was raining, so we stayed in.'],
+        ['He failed because he didn\'t prepare.',        'He didn\'t prepare, so he failed.'],
+      ],
+      tip: 'because-dən əvvəl nəticə, sonra səbəb gəlir. so-dan əvvəl səbəb, sonra nəticə gəlir.',
+    },
+
+    // ── Ekran 2: Xəta düzəltmə ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'Bu bağlayıcılarla ən çox edilən səhvlər:',
+      examples: [
+        { word: 'Although it was cold, but we went out.',         az: '❌ although + but olmaz — birini sil'              },
+        { word: 'Although it was cold, we went out.',             az: '✅ Düzgün — yalnız although'                      },
+        { word: 'Despite she was tired, she worked.',             az: '❌ despite-dan sonra tam cümlə olmaz'             },
+        { word: 'Despite being tired, she worked.',               az: '✅ Düzgün — despite + being'                      },
+        { word: 'I was hungry. However I didn\'t eat.',           az: '❌ however-dən sonra vergül lazımdır'             },
+        { word: 'I was hungry. However, I didn\'t eat.',          az: '✅ Düzgün — however + vergül'                    },
+        { word: 'Despite of the noise, she slept.',               az: '❌ "despite of" olmaz — yalnız "despite"'         },
+        { word: 'Despite the noise, she slept.',                  az: '✅ Düzgün — despite + isim (of olmadan)'         },
+      ],
+      tip: '"despite of" — yanlış forma. Yalnız "despite" və ya "in spite of" işlədilir.',
+    },
+
+    // ── Ekran 3: Praktik nümunələr ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Bütün bağlayıcılarla nümunələr',
+      content: 'Eyni vəziyyəti dörd cür ifadə etmək:',
+      examples: [
+        { word: 'She is very busy because she has three jobs.',           az: 'because — səbəb'           },
+        { word: 'Although she is very busy, she finds time for family.',  az: 'although — ziddiyyət'      },
+        { word: 'She is very busy. However, she never complains.',        az: 'however — ziddiyyət'       },
+        { word: 'Despite being very busy, she looks relaxed.',           az: 'despite — ziddiyyət'       },
+        { word: 'We couldn\'t find a seat because the café was full.',   az: 'because — səbəb'           },
+        { word: 'Although the café was full, we managed to get a table.',az: 'although — ziddiyyət'      },
+        { word: 'The café was full. However, the staff found us seats.', az: 'however — ziddiyyət'       },
+        { word: 'Despite the café being full, we found a place to sit.', az: 'despite — ziddiyyət'       },
+      ],
+      tip: 'Eyni məna — fərqli quruluş. Hansını seçmək kontekstdən asılıdır.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I was cold because ___" — bu cümləni tamamla:',
+          options: [
+            'I forgot my jacket.',
+            'I put on my jacket.',
+            'however I put on my coat.',
+          ],
+          answer: 'I forgot my jacket.',
+        },
+        {
+          q: 'Xətanı tap:',
+          options: [
+            'Despite of the traffic, we arrived on time.',
+            'Despite the traffic, we arrived on time.',
+            'In spite of the traffic, we arrived on time.',
+          ],
+          answer: 'Despite the traffic, we arrived on time.',
+        },
+        {
+          q: '"Although she ___ tired, she ___ working." — boşluqları doldur:',
+          options: [
+            'was / continued',
+            'is / continues',
+            'was / had continued',
+          ],
+          answer: 'was / continued',
+        },
+        {
+          q: '"The food was delicious. ___, it was very cheap." — boşluğa nə gəlir?',
+          options: ['Although', 'However', 'Despite'],
+          answer: 'However',
+        },
+        {
+          q: '"___ not studying, he got a high mark." — boşluğa nə gəlir?',
+          options: ['Although', 'However', 'Despite'],
+          answer: 'Despite',
+        },
+        {
+          q: '"She didn\'t eat anything, ___ she was very hungry." — boşluğa nə gəlir?',
+          options: ['because', 'although', 'however'],
+          answer: 'although',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'He was ill. However he went to work.',
+            'He was ill. However, he went to work.',
+            'He was ill, however, he went to work.',
+          ],
+          answer: 'He was ill. However, he went to work.',
+        },
+        {
+          q: '"She didn\'t sleep well, ___ she was exhausted the next day." → so/because?',
+          options: [
+            'so — nəticə bildirir',
+            'because — nəticə bildirir',
+            'although — səbəb bildirir',
+          ],
+          answer: 'so — nəticə bildirir',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'because — nə bildirir?',                                       tr: 'Səbəb (niyə?)',                      wrong: 'Ziddiyyət'                           },
+  { en: 'although — nə bildirir?',                                      tr: 'Ziddiyyət (gözlənilməz nəticə)',     wrong: 'Səbəb'                               },
+  { en: 'however-dən sonra nə işlədilir?',                              tr: 'Vergül (However,)',                  wrong: 'Nöqtəli vergül'                      },
+  { en: 'despite-dan sonra nə gəlir?',                                  tr: 'İsim və ya -ing forması',            wrong: 'Tam cümlə'                           },
+  { en: '"Despite ___ ill, he came." — boşluğa nə gəlir?',             tr: 'being',                              wrong: 'he was'                              },
+  { en: '"I was tired ___ I worked all day." — boşluğa nə gəlir?',     tr: 'because',                            wrong: 'although'                            },
+  { en: '"___ she was nervous, she spoke well." — boşluğa nə gəlir?',  tr: 'Although',                           wrong: 'Despite'                             },
+  { en: '"The room was small. ___, it was cosy." — boşluğa nə gəlir?', tr: 'However,',                           wrong: 'Although'                            },
+  { en: '"despite of" — düzgündürmü?',                                  tr: 'Yanlış — yalnız "despite" işlədilir', wrong: 'Düzgün'                             },
+  { en: '"Although + but" — düzgündürmü?',                              tr: 'Yanlış — birini silmək lazımdır',    wrong: 'Düzgün'                              },
+  { en: '"In spite of ___ tired, she smiled." — boşluğa nə gəlir?',    tr: 'being',                              wrong: 'she was'                             },
+  { en: '"I didn\'t sleep. ___ I was tired all day." — boşluğa nə?',   tr: 'So,',                                wrong: 'However,'                            },
+  { en: '"___ the weather, the picnic was fun." — boşluğa nə gəlir?',  tr: 'Despite',                            wrong: 'Although'                            },
+  { en: '"She passed the exam ___ it was difficult." — boşluğa nə?',   tr: 'although',                           wrong: 'because'                             },
+  { en: 'however — hansı cümlə formasında işlədilir?',                  tr: 'İki ayrı cümlə arasında',            wrong: 'İki cümləni birbaşa birləşdirir'      },
+  { en: '"___ being expensive, the hotel was worth it." → düzgün?',     tr: 'Despite being expensive, ...',       wrong: 'Although being expensive, ...'       },
+  { en: '"We went out ___ it was cold." — ziddiyyət bildirmək üçün:',   tr: 'although',                           wrong: 'because'                             },
+  { en: '"The traffic was heavy. ___, we arrived early." — boşluğa?',   tr: 'However,',                           wrong: 'Although,'                           },
+  { en: '"___ not having a map, they found the place." → boşluğa?',    tr: 'Despite',                            wrong: 'However'                             },
+  { en: '"because vs so" — fərq nədir?',                                tr: 'because=səbəb, so=nəticə',           wrong: 'Fərq yoxdur, eynidir'                },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yağış yağdığı üçün evdə qaldıq.',
+      words: ['We', 'stayed', 'home', 'because', 'it', 'was', 'raining', 'although', 'however'],
+      answer: ['We', 'stayed', 'home', 'because', 'it', 'was', 'raining'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yorğun olmasına baxmayaraq işləməyə davam etdi.',
+      words: ['Although', 'she', 'was', 'tired', 'she', 'continued', 'working', 'but', 'however'],
+      answer: ['Although', 'she', 'was', 'tired', 'she', 'continued', 'working'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Otel köhnə idi. Lakin çox təmiz idi.',
+      words: ['The', 'hotel', 'was', 'old', 'However', 'it', 'was', 'very', 'clean', 'Although', 'Despite'],
+      answer: ['The', 'hotel', 'was', 'old', 'However', 'it', 'was', 'very', 'clean'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yorğunluğuna baxmayaraq gülümsədi.',
+      words: ['Despite', 'being', 'tired', 'she', 'smiled', 'she', 'was', 'Although', 'of'],
+      answer: ['Despite', 'being', 'tired', 'she', 'smiled'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Film çox uzun idi, lakin bəyəndim.',
+      words: ['I', 'liked', 'the', 'film', 'although', 'it', 'was', 'very', 'long', 'but', 'however'],
+      answer: ['I', 'liked', 'the', 'film', 'although', 'it', 'was', 'very', 'long'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yağışa baxmayaraq oynadılar.',
+      words: ['Despite', 'the', 'rain', 'they', 'played', 'football', 'Although', 'of', 'Despite of'],
+      answer: ['Despite', 'the', 'rain', 'they', 'played', 'football'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hazırlaşmadığına baxmayaraq imtahanı keçdi.',
+      words: ['He', 'passed', 'the', 'exam', 'despite', 'not', 'studying', 'studied', 'although', 'he'],
+      answer: ['He', 'passed', 'the', 'exam', 'despite', 'not', 'studying'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Soyuq havaya baxmayaraq üzdük.',
+      words: ['In', 'spite', 'of', 'the', 'cold', 'we', 'went', 'swimming', 'Despite of', 'Although'],
+      answer: ['In', 'spite', 'of', 'the', 'cold', 'we', 'went', 'swimming'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O çox gənc idi. Lakin çox məsuliyyətli idi.',
+      words: ['He', 'was', 'very', 'young', 'However', 'he', 'was', 'very', 'responsible', 'Although', 'but'],
+      answer: ['He', 'was', 'very', 'young', 'However', 'he', 'was', 'very', 'responsible'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İş çox çətin idi. Lakin əksər tələbələr keçdi.',
+      words: ['The', 'exam', 'was', 'difficult', 'However', 'most', 'students', 'passed', 'Although', 'Despite', 'but'],
+      answer: ['The', 'exam', 'was', 'difficult', 'However', 'most', 'students', 'passed'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'when / while / before / after' },
 
+// ── UNIT 38 — when / while / before / after — Zaman Bağlayıcıları ────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'when / while / before / after — Zaman Bağlayıcıları (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: when ─────────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'when — nə zaman, -dığı zaman',
+      content: 'when + cümlə — iki hadisə eyni anda baş verir və ya biri digərini tetikləyir.\n\nwhen cümlənin əvvəlində və ya ortasında işlədilə bilər:',
+      examples: [
+        { word: 'When I arrived home, everyone was asleep.',       az: 'when — əvvəldə, vergül lazımdır'    },
+        { word: 'I was reading a book when the phone rang.',       az: 'when — ortada, vergül yoxdur'       },
+        { word: 'When I was a child, I loved swimming.',           az: 'when — keçmiş vərdiş'               },
+        { word: 'She was cooking dinner when I walked in.',        az: 'when — eyni anda iki hadisə'        },
+      ],
+      tip: '❗ Gələcək mənada when-dən sonra will yox, Present Simple işlədilir:\n"When I get home, I\'ll call you." — (not "when I will get")',
+    },
+
+    // ── Ekran 2: while ────────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'while — -dığı müddətdə, eyni zamanda',
+      content: 'while + cümlə — iki hadisə eyni anda paralel davam edir.\n\nwhile vs during fərqi:',
+      table: [
+        ['while + cümlə (fel var)',               'during + isim (fel yoxdur)'],
+        ['We didn\'t talk while we were eating.',  'We didn\'t talk during the meal.'],
+        ['I fell asleep while I was watching TV.', 'I fell asleep during the film.'],
+        ['She listened to music while she worked.','She listened during the lesson.'],
+      ],
+      tip: 'while → sonra cümlə gəlir (subject + verb). during → sonra isim gəlir.',
+    },
+
+    // ── Ekran 3: before ───────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'before — -dən əvvəl',
+      content: 'before + cümlə — bir hadisə digərindən əvvəl baş verir.\n\nbefore + -ing forması da işlədilə bilər:',
+      examples: [
+        { word: 'Always look both ways before you cross the road.',  az: 'before + cümlə'         },
+        { word: 'Before you leave, please turn off the lights.',     az: 'before — əvvəldə, vergül'},
+        { word: 'I had a shower before I went to bed.',              az: 'before + cümlə'         },
+        { word: 'I always make a list before going shopping.',       az: 'before + -ing'          },
+        { word: 'Before opening the door, she checked who it was.',  az: 'before + -ing — əvvəldə'},
+      ],
+      tip: '❌ before to go → Yanlış! ✅ before going → Düzgün. "-ing" forması işlədilir.',
+    },
+
+    // ── Ekran 4: after ────────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'after — -dən sonra',
+      content: 'after + cümlə — bir hadisə digərindən sonra baş verir.\n\nafter + -ing forması da işlədilə bilər:',
+      examples: [
+        { word: 'After the match ended, everyone went home.',        az: 'after + cümlə'          },
+        { word: 'She felt much better after she had some rest.',     az: 'after + cümlə'          },
+        { word: 'After finishing work, he usually goes for a walk.', az: 'after + -ing'           },
+        { word: 'I started cooking after reading the recipe.',       az: 'after + -ing'           },
+        { word: 'After the concert, we went to a café.',             az: 'after + isim'           },
+      ],
+      tip: '❌ after to eat → Yanlış! ✅ after eating → Düzgün. Gələcəkdə: "after I get" (will yox).',
+    },
+
+    // ── Ekran 5: Gələcək zaman + vergül qaydası ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Gələcək zaman + vergül qaydası',
+      content: 'when / while / before / after ilə gələcək mənada will yox, Present Simple işlədilir:',
+      table: [
+        ['❌ Yanlış',                      '✅ Düzgün'],
+        ['When I will get home...',        'When I get home...'],
+        ['before you will go out...',      'before you go out...'],
+        ['while we will be away...',       'while we are away...'],
+        ['after she will finish...',       'after she finishes...'],
+      ],
+      tip: 'Bağlayıcı cümlənin əvvəlindədirsə vergül lazımdır: "When I got home, I had dinner." Ortadadırsa vergül yoxdur.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'When I will finish work, I\'ll call you.',
+            'When I finish work, I\'ll call you.',
+            'When I finished work, I\'ll call you.',
+          ],
+          answer: 'When I finish work, I\'ll call you.',
+        },
+        {
+          q: '"while vs during" — düzgün cümləni seç:',
+          options: [
+            'I fell asleep while the film.',
+            'I fell asleep during the film.',
+            'I fell asleep during I was watching.',
+          ],
+          answer: 'I fell asleep during the film.',
+        },
+        {
+          q: '"before + -ing" — düzgün formanı seç:',
+          options: [
+            'Before to leave, she locked the door.',
+            'Before leaving, she locked the door.',
+            'Before leave, she locked the door.',
+          ],
+          answer: 'Before leaving, she locked the door.',
+        },
+        {
+          q: '"after + -ing" — düzgün formanı seç:',
+          options: [
+            'After to finish dinner, we watched a film.',
+            'After finish dinner, we watched a film.',
+            'After finishing dinner, we watched a film.',
+          ],
+          answer: 'After finishing dinner, we watched a film.',
+        },
+        {
+          q: 'Vergül qaydası — hansı cümlə düzgündür?',
+          options: [
+            'I had breakfast, when I woke up.',
+            'When I woke up I had breakfast.',
+            'When I woke up, I had breakfast.',
+          ],
+          answer: 'When I woke up, I had breakfast.',
+        },
+        {
+          q: 'Boşluğu doldur: "She was listening to music ___ she cooked dinner."',
+          options: ['when', 'while', 'after'],
+          answer: 'while',
+        },
+        {
+          q: '"We didn\'t talk ___ the journey." — boşluğa nə gəlir?',
+          options: ['while', 'during', 'when'],
+          answer: 'during',
+        },
+        {
+          q: 'Gələcək + before — düzgün cümləni seç:',
+          options: [
+            'Call me before you will leave.',
+            'Call me before you leave.',
+            'Call me before you are leaving.',
+          ],
+          answer: 'Call me before you leave.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'when / while / before / after — Təkmilləşdirmə (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: while vs when fərqi ──────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'when vs while — fərq',
+      content: 'when → ani hadisə. while → davam edən hadisə (background action).\n\nBir cümlədə ikisi birlikdə işlədilə bilər:',
+      examples: [
+        { word: 'I was walking home when it started to rain.',      az: 'while(davam) + when(ani)'     },
+        { word: 'While I was cooking, the smoke alarm went off.',   az: 'while(davam) + ani hadisə'    },
+        { word: 'When the doorbell rang, I was having a shower.',   az: 'when(ani) + while(davam)'     },
+        { word: 'She cut her finger while she was chopping onions.',az: 'while(davam) + ani hadisə'    },
+        { word: 'When he walked into the room, everyone stood up.', az: 'when — ani, nəticə tetikləyir'},
+      ],
+      tip: 'while + was/were doing (davam edən). when + keçmiş sadə forma (ani, tamamlanmış).',
+    },
+
+    // ── Ekran 2: before / after — sıra bildirir ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'before / after — hadisə sırası',
+      content: 'before / after iki hadisənin sırasını bildirir. Eyni məna fərqli quruluşla ifadə oluna bilər:',
+      table: [
+        ['before + cümlə',                                'after + cümlə'],
+        ['Before she left, she said goodbye.',             'After she said goodbye, she left.'],
+        ['He checked his bag before he locked the door.',  'He locked the door after he checked his bag.'],
+        ['Before eating, she always washes her hands.',    'After washing her hands, she eats.'],
+        ['I had a coffee before I started work.',          'After having a coffee, I started work.'],
+      ],
+      tip: 'before → önce olan hadisəni, after → sonra olan hadisəni əsas olaraq vurğulayır.',
+    },
+
+    // ── Ekran 3: Tez-tez edilən səhvlər ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'Bu bağlayıcılarla ən çox edilən səhvlər:',
+      examples: [
+        { word: 'When I will arrive, I\'ll phone you.',             az: '❌ will + when olmaz'              },
+        { word: 'When I arrive, I\'ll phone you.',                  az: '✅ Düzgün — Present Simple'        },
+        { word: 'While the lesson, I was bored.',                   az: '❌ while + isim olmaz'             },
+        { word: 'During the lesson, I was bored.',                  az: '✅ Düzgün — during + isim'         },
+        { word: 'After to finish work, she went home.',             az: '❌ after to + verb olmaz'          },
+        { word: 'After finishing work, she went home.',             az: '✅ Düzgün — after + -ing'          },
+        { word: 'I met her when I was waited for the bus.',         az: '❌ was waited — yanlış forma'      },
+        { word: 'I met her when I was waiting for the bus.',        az: '✅ Düzgün — was waiting'           },
+      ],
+      tip: 'while → cümlə (subject+verb) | during → isim | before/after → cümlə və ya -ing.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I was reading ___ the phone rang." — boşluğa nə gəlir?',
+          options: ['while', 'when', 'after'],
+          answer: 'when',
+        },
+        {
+          q: '"___ the meeting, nobody spoke." — boşluğa nə gəlir?',
+          options: ['While', 'During', 'When'],
+          answer: 'During',
+        },
+        {
+          q: '"She checked her messages ___ waiting for the train." — boşluğa?',
+          options: ['when', 'during', 'while'],
+          answer: 'while',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'After to study, he felt confident.',
+            'After studying, he felt confident.',
+            'After study, he felt confident.',
+          ],
+          answer: 'After studying, he felt confident.',
+        },
+        {
+          q: '"Before you ___ out, close the window." — gələcək, boşluğa nə?',
+          options: ['will go', 'go', 'are going'],
+          answer: 'go',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'While I was asleep, someone knocked on the door.',
+            'While I slept, someone knocked on the door.',
+            'While I sleeping, someone knocked on the door.',
+          ],
+          answer: 'While I was asleep, someone knocked on the door.',
+        },
+        {
+          q: '"He left the office ___ finishing the report." → before/after?',
+          options: [
+            'before — hesabatı bitirmədən getdi',
+            'after — hesabatı bitirib getdi',
+            'when — eyni anda getdi',
+          ],
+          answer: 'after — hesabatı bitirib getdi',
+        },
+        {
+          q: '"___ I get paid, I\'ll pay you back." — boşluğa nə gəlir?',
+          options: ['While', 'When', 'During'],
+          answer: 'When',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'when — nə bildirir?',                                              tr: 'Eyni anda / biri digərini tetikləyir',  wrong: 'Ziddiyyət'                        },
+  { en: 'while — nə bildirir?',                                             tr: 'Paralel davam edən hadisələr',          wrong: 'Bir-birinin ardınca hadisələr'     },
+  { en: 'before — nə bildirir?',                                            tr: 'Bir hadisə digərindən əvvəl',           wrong: 'Bir hadisə digərindən sonra'       },
+  { en: 'after — nə bildirir?',                                             tr: 'Bir hadisə digərindən sonra',           wrong: 'Paralel davam edən hadisələr'      },
+  { en: 'while vs during — fərq nədir?',                                   tr: 'while+cümlə, during+isim',              wrong: 'Fərq yoxdur, eynidir'             },
+  { en: '"When I ___ home, I\'ll have dinner." — boşluğa nə gəlir?',      tr: 'get',                                   wrong: 'will get'                         },
+  { en: '"___ the flight, she read a book." — boşluğa nə gəlir?',         tr: 'During',                                wrong: 'While'                            },
+  { en: '"Before ___ out, she locked the door." — boşluğa nə gəlir?',     tr: 'going',                                 wrong: 'to go'                            },
+  { en: '"After ___ the film, we went home." — boşluğa nə gəlir?',        tr: 'watching',                              wrong: 'to watch'                         },
+  { en: 'Gələcək + when/while/before/after — hansı forma işlədilir?',      tr: 'Present Simple (will yox)',             wrong: 'will + verb'                      },
+  { en: '"I was cooking ___ he arrived." — boşluğa nə gəlir?',            tr: 'when',                                  wrong: 'while'                            },
+  { en: '"She listened to music ___ she was running." — boşluğa nə?',     tr: 'while',                                 wrong: 'during'                           },
+  { en: 'Bağlayıcı cümlənin əvvəlindədirsə vergül:',                      tr: 'Lazımdır',                              wrong: 'Lazım deyil'                      },
+  { en: 'Bağlayıcı cümlənin ortasındadırsa vergül:',                      tr: 'Lazım deyil',                           wrong: 'Lazımdır'                         },
+  { en: '"Before you ___ out, put on your coat." — boşluğa nə gəlir?',    tr: 'go',                                    wrong: 'will go'                          },
+  { en: '"___ I was waiting, it began to rain." — boşluğa nə gəlir?',     tr: 'While',                                 wrong: 'During'                           },
+  { en: '"after to eat" — düzgündürmü?',                                   tr: 'Yanlış — after eating işlədilir',       wrong: 'Düzgün'                           },
+  { en: '"while + isim" — düzgündürmü?',                                   tr: 'Yanlış — during + isim işlədilir',      wrong: 'Düzgün'                           },
+  { en: '"I\'ll call you ___ I arrive." — boşluğa nə gəlir?',             tr: 'when',                                  wrong: 'while'                            },
+  { en: '"___ leaving, he said goodbye to everyone." — boşluğa nə?',      tr: 'Before',                                wrong: 'While'                            },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Evə gəldiyimdə hamı yatmışdı.',
+      words: ['When', 'I', 'got', 'home', 'everyone', 'was', 'asleep', 'while', 'will get'],
+      answer: ['When', 'I', 'got', 'home', 'everyone', 'was', 'asleep'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən oxuyarkən telefon zəng etdi.',
+      words: ['I', 'was', 'reading', 'when', 'the', 'phone', 'rang', 'while', 'during'],
+      answer: ['I', 'was', 'reading', 'when', 'the', 'phone', 'rang'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Dərsdə bütün tələbələr çox diqqətli idi.',
+      words: ['During', 'the', 'lesson', 'all', 'students', 'were', 'very', 'attentive', 'While', 'When'],
+      answer: ['During', 'the', 'lesson', 'all', 'students', 'were', 'very', 'attentive'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çıxmazdan əvvəl işıqları söndür.',
+      words: ['Before', 'going', 'out', 'turn', 'off', 'the', 'lights', 'to go', 'After'],
+      answer: ['Before', 'going', 'out', 'turn', 'off', 'the', 'lights'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Alış-veriş etdikdən sonra evə getdilər.',
+      words: ['After', 'doing', 'the', 'shopping', 'they', 'went', 'home', 'to do', 'Before'],
+      answer: ['After', 'doing', 'the', 'shopping', 'they', 'went', 'home'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O musiqi dinləyirdi, mən isə yeməyi hazırlayırdım.',
+      words: ['She', 'listened', 'to', 'music', 'while', 'I', 'was', 'cooking', 'when', 'during'],
+      answer: ['She', 'listened', 'to', 'music', 'while', 'I', 'was', 'cooking'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Evə gəldikdə sənə zəng edəcəm.',
+      words: ['I\'ll', 'call', 'you', 'when', 'I', 'get', 'home', 'will get', 'while'],
+      answer: ['I\'ll', 'call', 'you', 'when', 'I', 'get', 'home'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çıxmazdan əvvəl pəncərəni bağla.',
+      words: ['Please', 'close', 'the', 'window', 'before', 'you', 'go', 'out', 'will go', 'after'],
+      answer: ['Please', 'close', 'the', 'window', 'before', 'you', 'go', 'out'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O gənc ikən çox sürətli qaça bilirdi.',
+      words: ['When', 'he', 'was', 'young', 'he', 'could', 'run', 'very', 'fast', 'while', 'during'],
+      answer: ['When', 'he', 'was', 'young', 'he', 'could', 'run', 'very', 'fast'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yemək yedikdən sonra televizora baxdılar.',
+      words: ['After', 'eating', 'dinner', 'they', 'watched', 'television', 'to eat', 'Before', 'during'],
+      answer: ['After', 'eating', 'dinner', 'they', 'watched', 'television'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'if — birinci şərt cümləsi' },
 
+// ── UNIT 39 — if — Birinci Şərt Cümləsi (First Conditional) ─────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'if — Birinci Şərt Cümləsi (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Forma və quruluş ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Birinci Şərt Cümləsi — Forma',
+      content: 'Birinci şərt cümləsi real ehtimal bildirir — bu hal baş verə bilər.\n\nIf + Present Simple → will / won\'t + fel\n\n❗ if hissəsindən sonra will işlədilmir — Present Simple işlədilir!',
+      table: [
+        ['if hissəsi (şərt)',      'nəticə hissəsi'],
+        ['If it rains,',           'I\'ll stay at home.'],
+        ['If you don\'t hurry,',   'you\'ll miss the train.'],
+        ['If the phone rings,',    'can you answer it?'],
+        ['If you\'re hungry,',     'have something to eat.'],
+      ],
+      tip: 'if cümlənin əvvəlindədirsə vergül lazımdır. Ortasındadırsa vergül yoxdur:\n"If it rains, I\'ll stay home." ✅  |  "I\'ll stay home if it rains." ✅',
+    },
+
+    // ── Ekran 2: if-dən sonra will yox, Present Simple ───────────────────────
+    {
+      type: 'lesson',
+      title: 'if-dən sonra — will yox!',
+      content: 'if-dən sonra will işlədilmir. Present Simple işlədilir:',
+      examples: [
+        { word: 'If it rains, I\'ll stay home.',             az: '✅ Düzgün — if + rains (Present Simple)'  },
+        { word: 'If it will rain, I\'ll stay home.',         az: '❌ Yanlış — if + will rain olmaz'         },
+        { word: 'If you see Ann, tell her I called.',        az: '✅ Düzgün — if + see (Present Simple)'   },
+        { word: 'If you will see Ann, tell her.',            az: '❌ Yanlış — if + will see olmaz'         },
+        { word: 'If I don\'t feel well, I\'ll rest.',        az: '✅ Düzgün — if + don\'t feel'            },
+        { word: 'If I won\'t feel well, I\'ll rest.',        az: '❌ Yanlış — if + won\'t feel olmaz'      },
+        { word: 'If there is a problem, call me.',           az: '✅ Düzgün — if + is (Present Simple)'   },
+        { word: 'If there will be a problem, call me.',      az: '❌ Yanlış — if + will be olmaz'          },
+      ],
+      tip: 'Keçmiş zaman bağlayıcılarında olduğu kimi — if-dən sonra da will işlənmir.',
+    },
+
+    // ── Ekran 3: Nəticə hissəsinin müxtəlif formaları ────────────────────────
+    {
+      type: 'lesson',
+      title: 'Nəticə hissəsinin müxtəlif formaları',
+      content: 'Nəticə hissəsində yalnız will yox, başqa formalar da işlənə bilər:',
+      table: [
+        ['Nəticə forması', 'Nümunə'],
+        ['will',           'If you study hard, you will pass.'],
+        ['won\'t',         'If you don\'t hurry, you won\'t make it.'],
+        ['can',            'If you need help, I can come.'],
+        ['can\'t',         'If it\'s too expensive, I can\'t buy it.'],
+        ['əmr cümləsi',   'If you\'re cold, put on your jacket.'],
+      ],
+      tip: 'can / can\'t — imkan bildirir. Əmr forması — tövsiyə / göstəriş bildirir.',
+    },
+
+    // ── Ekran 4: if vs when fərqi ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'if vs when — fərq',
+      content: 'if → ehtimal (bəlkə baş verər, bəlkə yox)\nwhen → əminlik (mütləq baş verəcək)\n\nBu fərq cümlənin mənasını tamamilə dəyişir:',
+      examples: [
+        { word: 'If I go out, I\'ll close the window.',      az: 'if — bəlkə çıxaram, bəlkə yox'      },
+        { word: 'When I go out, I\'ll close the window.',    az: 'when — çıxacağam, əminəm'            },
+        { word: 'If I\'m late, don\'t wait for me.',         az: 'if — gec qalmayacağam, bəlkə'        },
+        { word: 'When I get home, I\'ll have dinner.',       az: 'when — evə gedəcəyəm, əmin'          },
+        { word: 'We\'ll play tennis if it doesn\'t rain.',   az: 'if — yağış yağıb-yağmayacaq?'        },
+        { word: 'When she arrives, tell her to call me.',    az: 'when — gələcəyini bilirik'            },
+      ],
+      tip: 'Sadə sual: "Bu hadisə mütləq baş verəcəkmi?" → Bəli = when. Bilmirəm = if.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'If it will snow tomorrow, school will be cancelled.',
+            'If it snows tomorrow, school will be cancelled.',
+            'If it is snowing tomorrow, school will be cancelled.',
+          ],
+          answer: 'If it snows tomorrow, school will be cancelled.',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'If you will need help, call me.',
+            'If you needed help, call me.',
+            'If you need help, call me.',
+          ],
+          answer: 'If you need help, call me.',
+        },
+        {
+          q: '"if vs when" — düzgün variantı seç: "___ I get to the office, I\'ll send the file."',
+          options: [
+            'If — getməyəcəm, bəlkə',
+            'When — gedəcəm, əminəm',
+            'Fərq yoxdur',
+          ],
+          answer: 'When — gedəcəm, əminəm',
+        },
+        {
+          q: 'Nəticə hissəsində nə işlədilə bilər?',
+          options: [
+            'Yalnız will',
+            'will / can / əmr forması',
+            'Yalnız Present Simple',
+          ],
+          answer: 'will / can / əmr forması',
+        },
+        {
+          q: '"If I ___ early, I\'ll call you." — boşluğa nə gəlir?',
+          options: ['will finish', 'finish', 'finished'],
+          answer: 'finish',
+        },
+        {
+          q: 'Vergül qaydası — hansı cümlə düzgündür?',
+          options: [
+            'I\'ll stay home, if it rains.',
+            'If it rains I\'ll stay home.',
+            'If it rains, I\'ll stay home.',
+          ],
+          answer: 'If it rains, I\'ll stay home.',
+        },
+        {
+          q: '"if vs when" — "___ you see Kate, give her this message."',
+          options: [
+            'When — Kate ilə mütləq görüşəcəksən',
+            'If — Kate ilə görüşüb-görüşməyəcəyin bəlli deyil',
+            'Fərq yoxdur',
+          ],
+          answer: 'If — Kate ilə görüşüb-görüşməyəcəyin bəlli deyil',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'If he won\'t apologise, she won\'t forgive him.',
+            'If he doesn\'t apologise, she won\'t forgive him.',
+            'If he isn\'t apologise, she won\'t forgive him.',
+          ],
+          answer: 'If he doesn\'t apologise, she won\'t forgive him.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'if — Birinci Şərt Cümləsi Təkmilləşdirmə (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: if cümlənin əvvəlində / ortasında ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'if — cümlənin əvvəlində və ortasında',
+      content: 'if cümlənin əvvəlində işləndikdə vergül lazımdır.\nOrtasında işləndikdə vergül yoxdur.\n\nHər iki quruluşun mənası eynidir:',
+      table: [
+        ['if — əvvəldə (vergüllü)',             'if — ortada (vergülsüz)'],
+        ['If we take the bus, it\'ll be cheaper.','It\'ll be cheaper if we take the bus.'],
+        ['If she studies, she\'ll pass.',         'She\'ll pass if she studies.'],
+        ['If you\'re tired, go to bed.',          'Go to bed if you\'re tired.'],
+        ['If he calls, tell him I\'m busy.',      'Tell him I\'m busy if he calls.'],
+      ],
+      tip: 'Əvvəldə → vergül var. Ortada → vergül yoxdur. Məna eynidir.',
+    },
+
+    // ── Ekran 2: Tez-tez edilən səhvlər ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'Birinci Şərt Cümləsində ən çox edilən səhvlər:',
+      examples: [
+        { word: 'If it will rain, take an umbrella.',             az: '❌ if + will olmaz'                     },
+        { word: 'If it rains, take an umbrella.',                 az: '✅ Düzgün — if + Present Simple'        },
+        { word: 'If you won\'t be ready, I\'ll go alone.',        az: '❌ if + won\'t olmaz'                   },
+        { word: 'If you\'re not ready, I\'ll go alone.',          az: '✅ Düzgün — if + aren\'t / not'         },
+        { word: 'If he pass the exam, he\'ll celebrate.',         az: '❌ he passes — 3-cü şəxs -s lazımdır'  },
+        { word: 'If he passes the exam, he\'ll celebrate.',       az: '✅ Düzgün — he/she/it + -s'            },
+        { word: 'When I\'m not sure, I\'ll ask for help.',        az: '❌ when yox — bəlkə əmin olmayacam'    },
+        { word: 'If I\'m not sure, I\'ll ask for help.',          az: '✅ Düzgün — ehtimal = if'              },
+      ],
+      tip: '3-cü şəxs tək (he/she/it) ilə Present Simple-də -s/-es yaddan çıxmır!',
+    },
+
+    // ── Ekran 3: Tam cümlə nümunələri ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Birinci Şərt — tam nümunələr',
+      content: 'Müxtəlif nəticə formaları ilə nümunələr:',
+      examples: [
+        { word: 'If you go to bed early, you\'ll feel better tomorrow.',   az: 'will — nəticə'          },
+        { word: 'If you\'re busy, we can meet another day.',               az: 'can — imkan'            },
+        { word: 'If you\'re cold, put on a jumper.',                       az: 'əmr — tövsiyə'          },
+        { word: 'I\'ll be surprised if they win the match.',               az: 'if — ortada'            },
+        { word: 'If I don\'t see you later, I\'ll send you a message.',    az: 'inkar + will'           },
+        { word: 'If the weather is nice, shall we have lunch outside?',    az: 'shall — təklif'         },
+        { word: 'You can borrow the book if you promise to return it.',    az: 'can — şərtli icazə'     },
+        { word: 'If he doesn\'t reply, I\'ll try again tomorrow.',         az: 'inkar + will'           },
+      ],
+      tip: 'Birinci Şərt = real dünyada mümkün olan hadisələr. İkinci Şərt = xəyali hadisələr (Unit 40).',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"If she ___ hard, she\'ll get a good result." — boşluğa nə gəlir?',
+          options: ['will study', 'studies', 'studied'],
+          answer: 'studies',
+        },
+        {
+          q: '"___ I have time, I\'ll help you." — if/when?',
+          options: [
+            'When — vaxtım olacaq, əminəm',
+            'If — vaxtım olub-olmayacaq, bəlli deyil',
+            'Fərq yoxdur',
+          ],
+          answer: 'If — vaxtım olub-olmayacaq, bəlli deyil',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'If you will come early, we can have breakfast together.',
+            'If you come early, we can have breakfast together.',
+            'If you came early, we can have breakfast together.',
+          ],
+          answer: 'If you come early, we can have breakfast together.',
+        },
+        {
+          q: '"It will be faster ___ we go by train." — vergül?',
+          options: [
+            'if, — vergül lazımdır',
+            'if — vergül lazım deyil',
+            'when, — vergül lazımdır',
+          ],
+          answer: 'if — vergül lazım deyil',
+        },
+        {
+          q: 'Xətanı tap:',
+          options: [
+            'If he don\'t call, I\'ll go without him.',
+            'If he doesn\'t call, I\'ll go without him.',
+            'I\'ll go without him if he doesn\'t call.',
+          ],
+          answer: 'If he doesn\'t call, I\'ll go without him.',
+        },
+        {
+          q: '"If you ___ the report by Friday, send it to the manager." → boşluğa?',
+          options: ['will finish', 'finish', 'finished'],
+          answer: 'finish',
+        },
+        {
+          q: '"___ she arrives, I\'ll let you know." — if/when?',
+          options: [
+            'If — gəlib-gəlməyəcəyi bəlli deyil',
+            'When — gələcəyini bilirik',
+            'Fərq yoxdur',
+          ],
+          answer: 'When — gələcəyini bilirik',
+        },
+        {
+          q: 'Hansı cümlə düzgündür?',
+          options: [
+            'If the weather will be good, we\'ll have a picnic.',
+            'If the weather is good, we\'ll have a picnic.',
+            'If the weather is good, we have a picnic.',
+          ],
+          answer: 'If the weather is good, we\'ll have a picnic.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Birinci Şərt Cümləsinin forması:',                                   tr: 'If + Present Simple + will',          wrong: 'If + will + will'                  },
+  { en: 'if-dən sonra hansı forma işlədilir?',                                tr: 'Present Simple (will yox)',           wrong: 'will + fel'                        },
+  { en: '"If it ___, I\'ll take an umbrella." — boşluğa nə gəlir?',          tr: 'rains',                               wrong: 'will rain'                         },
+  { en: '"If you ___ tired, go to bed." — boşluğa nə gəlir?',               tr: 'are',                                 wrong: 'will be'                           },
+  { en: 'if vs when — fərq nədir?',                                           tr: 'if=ehtimal, when=əminlik',            wrong: 'Fərq yoxdur, eynidir'              },
+  { en: '"___ I get home, I\'ll have dinner." — ehtimal deyil, əminlik:',    tr: 'When',                                wrong: 'If'                                },
+  { en: '"___ it rains, we\'ll cancel the trip." — ehtimal:',                tr: 'If',                                  wrong: 'When'                              },
+  { en: 'if əvvəldə işləndikdə vergül:',                                     tr: 'Lazımdır',                            wrong: 'Lazım deyil'                       },
+  { en: 'if ortada işləndikdə vergül:',                                       tr: 'Lazım deyil',                         wrong: 'Lazımdır'                          },
+  { en: 'Nəticə hissəsində yalnız will işlədilirmi?',                        tr: 'Xeyr — can / əmr forması da olar',   wrong: 'Bəli — yalnız will'                },
+  { en: '"If you ___ busy, we can meet tomorrow." — boşluğa nə gəlir?',      tr: 'are',                                 wrong: 'will be'                           },
+  { en: '"If he ___ the exam, he\'ll be happy." — 3-cü şəxs:',              tr: 'passes',                              wrong: 'pass'                              },
+  { en: '"If she ___ call, leave a message." — inkar + will:',               tr: 'doesn\'t',                            wrong: 'won\'t'                            },
+  { en: '"If you need money, I ___ lend you some." — boşluğa nə gəlir?',    tr: 'can',                                 wrong: 'will can'                          },
+  { en: '"If you\'re cold, ___ on your coat." — əmr forması:',              tr: 'put',                                 wrong: 'you will put'                      },
+  { en: 'Birinci Şərt — nə bildirir?',                                       tr: 'Real ehtimal (mümkün)',               wrong: 'Xəyali / qeyri-real hal'           },
+  { en: '"I\'ll call you ___ I arrive." — əminlik:',                         tr: 'when',                                wrong: 'if'                                },
+  { en: '"If I ___ sure, I\'ll ask." — inkar, boşluğa nə gəlir?',           tr: 'am not',                              wrong: 'won\'t be'                         },
+  { en: '"If the weather ___ nice, shall we go out?" — boşluğa nə?',        tr: 'is',                                  wrong: 'will be'                           },
+  { en: '"If you ___ the book, you can borrow it." — boşluğa nə gəlir?',    tr: 'want',                                wrong: 'will want'                         },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tələsməsən, avtobusu qaçıracaqsan.',
+      words: ['If', 'you', 'don\'t', 'hurry', 'you\'ll', 'miss', 'the', 'bus', 'won\'t', 'will'],
+      answer: ['If', 'you', 'don\'t', 'hurry', 'you\'ll', 'miss', 'the', 'bus'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yağış yağarsa evdə qalacağam.',
+      words: ['If', 'it', 'rains', 'I\'ll', 'stay', 'at', 'home', 'will rain', 'when'],
+      answer: ['If', 'it', 'rains', 'I\'ll', 'stay', 'at', 'home'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Acsan bir şey ye.',
+      words: ['If', 'you\'re', 'hungry', 'have', 'something', 'to', 'eat', 'will have', 'when'],
+      answer: ['If', 'you\'re', 'hungry', 'have', 'something', 'to', 'eat'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Pula ehtiyacın olarsa sənə borc verə bilərəm.',
+      words: ['If', 'you', 'need', 'money', 'I', 'can', 'lend', 'you', 'some', 'will need', 'when'],
+      answer: ['If', 'you', 'need', 'money', 'I', 'can', 'lend', 'you', 'some'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O çox çalışarsa imtahanı keçəcək.',
+      words: ['If', 'she', 'studies', 'hard', 'she\'ll', 'pass', 'the', 'exam', 'will study', 'study'],
+      answer: ['If', 'she', 'studies', 'hard', 'she\'ll', 'pass', 'the', 'exam'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Avtobus ilə getsək daha ucuz olacaq.',
+      words: ['It\'ll', 'be', 'cheaper', 'if', 'we', 'go', 'by', 'bus', 'will go', 'when'],
+      answer: ['It\'ll', 'be', 'cheaper', 'if', 'we', 'go', 'by', 'bus'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Əgər özünü yaxşı hiss etməsən evdə qal.',
+      words: ['If', 'you', 'don\'t', 'feel', 'well', 'stay', 'at', 'home', 'won\'t feel', 'will'],
+      answer: ['If', 'you', 'don\'t', 'feel', 'well', 'stay', 'at', 'home'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hava yaxşı olarsa piknikə gedə bilərik.',
+      words: ['If', 'the', 'weather', 'is', 'good', 'we', 'can', 'have', 'a', 'picnic', 'will be', 'when'],
+      answer: ['If', 'the', 'weather', 'is', 'good', 'we', 'can', 'have', 'a', 'picnic'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Telefon zəng edərsə cavab ver.',
+      words: ['If', 'the', 'phone', 'rings', 'please', 'answer', 'it', 'will ring', 'when'],
+      answer: ['If', 'the', 'phone', 'rings', 'please', 'answer', 'it'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Üzr istəməsə onu bağışlamayacaq.',
+      words: ['If', 'he', 'doesn\'t', 'apologise', 'she', 'won\'t', 'forgive', 'him', 'won\'t apologise', 'when'],
+      answer: ['If', 'he', 'doesn\'t', 'apologise', 'she', 'won\'t', 'forgive', 'him'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Passive voice — giriş' },
 
+// ── UNIT 40 — Passive Voice — Məchul Növ ─────────────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Passive Voice — Məchul Növ (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Aktiv vs Məchul ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Aktiv vs Məchul növ',
+      content: 'Məchul növ — hərəkəti kimin etdiyini deyil, nəyin baş verdiyini ön plana çıxarır.\n\nMəchul növ = am / is / are / was / were + past participle',
+      table: [
+        ['Aktiv',                                      'Məchul'],
+        ['Somebody cleans the office every day.',      'The office is cleaned every day.'],
+        ['Somebody cleaned the office yesterday.',     'The office was cleaned yesterday.'],
+        ['Somebody is painting the wall.',             'The wall is being painted.'],
+        ['Somebody has stolen my phone.',              'My phone has been stolen.'],
+      ],
+      tip: 'Məchul növdə hərəkəti edən (agent) vacib deyil və ya bilinmir. Nəticə ön plandadır.',
+    },
+
+    // ── Ekran 2: Present Simple Passive ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Simple Passive — is/are + done',
+      content: 'Hər gün / həmişə baş verən hadisələr üçün:\n\nis/are + past participle',
+      examples: [
+        { word: 'Butter is made from milk.',                  az: 'is made — hər zaman'              },
+        { word: 'Oranges are grown in warm countries.',       az: 'are grown — ümumi həqiqət'         },
+        { word: 'English is spoken in many countries.',       az: 'is spoken — ümumi həqiqət'         },
+        { word: 'These cars are produced in Germany.',        az: 'are produced — ümumi fakt'         },
+        { word: 'How is this word spelled?',                  az: 'is spelled — sual forması'         },
+        { word: 'This machine isn\'t used very often.',       az: 'isn\'t used — inkar forması'       },
+      ],
+      tip: 'Tək subject → is + pp. Cəm subject → are + pp. Sualda: Is/Are + subject + pp?',
+    },
+
+    // ── Ekran 3: Past Simple Passive ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Simple Passive — was/were + done',
+      content: 'Keçmişdə baş vermiş hadisələr üçün:\n\nwas/were + past participle',
+      examples: [
+        { word: 'This bridge was built in 1890.',             az: 'was built — keçmişdə'             },
+        { word: 'Three people were taken to hospital.',       az: 'were taken — cəm'                 },
+        { word: 'When was the telephone invented?',           az: 'was invented — sual forması'       },
+        { word: 'We weren\'t invited to the wedding.',        az: 'weren\'t invited — inkar'         },
+        { word: 'My bike was stolen last week.',              az: 'was stolen — nizamsız pp'          },
+        { word: 'Were you offered the job?',                  az: 'were offered — sual'               },
+      ],
+      tip: 'Tək subject → was + pp. Cəm subject → were + pp. "was born" xüsusi ifadədir — həmişə keçmiş zamandadır.',
+    },
+
+    // ── Ekran 4: was/were born + Passive by ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'was/were born — və — Passive + by',
+      content: '"was/were born" — doğulmaq ifadəsi həmişə keçmiş zamanda işlədilir.\n\nHərəkəti kimin etdiyini bildirmək üçün by işlədilir:',
+      examples: [
+        { word: 'I was born in Baku in 1998.',                az: 'was born — daima keçmiş, "am born" olmaz' },
+        { word: 'Where were you born?',                       az: 'were born — sual forması'                 },
+        { word: 'The telephone was invented by Bell.',        az: 'by — kimin tərəfindən'                    },
+        { word: 'We were woken up by a loud noise.',          az: 'by — səbəb/agent'                         },
+        { word: 'The building was designed by a famous architect.', az: 'by + agent'                         },
+        { word: 'She was bitten by a dog in the park.',       az: 'by + agent'                               },
+      ],
+      tip: '❌ "I am born in Baku." → Yanlış! ✅ "I was born in Baku." → Düzgün.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün məchul cümləni seç:',
+          options: [
+            'This bridge built in 1920.',
+            'This bridge was built in 1920.',
+            'This bridge is built in 1920.',
+          ],
+          answer: 'This bridge was built in 1920.',
+        },
+        {
+          q: '"Glass ___ from sand." — Present Simple Passive:',
+          options: ['made', 'is made', 'was made'],
+          answer: 'is made',
+        },
+        {
+          q: '"Three people ___ to hospital after the accident." — Past Passive:',
+          options: ['was taken', 'is taken', 'were taken'],
+          answer: 'were taken',
+        },
+        {
+          q: '"Where ___ you ___?" — was/were born:',
+          options: ['are / born', 'were / born', 'was / born'],
+          answer: 'were / born',
+        },
+        {
+          q: 'by — nə üçün işlədilir?',
+          options: [
+            'Hərəkətin zamanını bildirmək üçün',
+            'Hərəkəti kimin etdiyini bildirmək üçün',
+            'Məchul növü aktiv növə çevirmək üçün',
+          ],
+          answer: 'Hərəkəti kimin etdiyini bildirmək üçün',
+        },
+        {
+          q: '"How ___ this word ___?" — Present Simple Passive, sual:',
+          options: ['is / pronounced', 'was / pronounced', 'are / pronounced'],
+          answer: 'is / pronounced',
+        },
+        {
+          q: '"We ___ to the party." — keçmişdə dəvət edilmədilər:',
+          options: ['aren\'t invited', 'weren\'t invited', 'wasn\'t invited'],
+          answer: 'weren\'t invited',
+        },
+        {
+          q: 'Məchul növün forması:',
+          options: [
+            'have/has + past participle',
+            'am/is/are/was/were + past participle',
+            'be + -ing forması',
+          ],
+          answer: 'am/is/are/was/were + past participle',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Passive Voice — Present Continuous və Present Perfect (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Present Continuous Passive ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Continuous Passive — is/are being + done',
+      content: 'İndi, bu anda davam edən hadisələr üçün:\n\nis/are being + past participle\n\nPresent Continuous vs Present Simple Passive fərqi:',
+      table: [
+        ['Present Continuous Passive (indi)',       'Present Simple Passive (hər gün)'],
+        ['The road is being repaired at the moment.','The road is repaired every year.'],
+        ['A new school is being built near here.',   'Schools are built by the government.'],
+        ['The car is being washed right now.',       'The car is washed every weekend.'],
+      ],
+      tip: 'is/are being + pp → indi baş verir. is/are + pp → ümumi həqiqət / vərdiş.',
+    },
+
+    // ── Ekran 2: Present Perfect Passive ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Perfect Passive — has/have been + done',
+      content: 'Nəticəsi indi görünən hadisələr üçün:\n\nhas/have been + past participle\n\nPresent Perfect Passive vs Past Simple Passive fərqi:',
+      table: [
+        ['Present Perfect Passive (nəticə indi)',  'Past Simple Passive (nə vaxt?)'],
+        ['My keys have been found.',               'My keys were found yesterday.'],
+        ['The window has been broken.',            'The window was broken last night.'],
+        ['Has the report been sent?',              'Was the report sent on Monday?'],
+        ['I haven\'t been told about the meeting.','I wasn\'t told about it last week.'],
+      ],
+      tip: 'has/have been + pp → nəticə indi önəmlidir. was/were + pp → keçmişdə nə vaxt baş verdi.',
+    },
+
+    // ── Ekran 3: Dörd zamanın müqayisəsi ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Dörd zamanın müqayisəsi',
+      content: '"clean" feli ilə dörd zaman forması:',
+      table: [
+        ['Zaman',               'Forma',                      'Nümunə'],
+        ['Present Simple',      'is/are + cleaned',           'The office is cleaned every day.'],
+        ['Past Simple',         'was/were + cleaned',         'The office was cleaned yesterday.'],
+        ['Pres. Continuous',    'is/are being + cleaned',     'The office is being cleaned now.'],
+        ['Present Perfect',     'has/have been + cleaned',    'The office has been cleaned.'],
+      ],
+      tip: 'Past participle (pp) bütün zamanlar üçün eyni qalır — yalnız köməkçi fel dəyişir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"My car is at the garage. It ___ at the moment." — Present Continuous Passive:',
+          options: ['is repaired', 'is being repaired', 'has been repaired'],
+          answer: 'is being repaired',
+        },
+        {
+          q: '"My wallet ___. I can\'t find it anywhere." — Present Perfect Passive:',
+          options: ['was stolen', 'is stolen', 'has been stolen'],
+          answer: 'has been stolen',
+        },
+        {
+          q: '"I\'m not going to the concert. I ___." — Present Perfect Passive, inkar:',
+          options: ['wasn\'t invited', 'haven\'t been invited', 'am not being invited'],
+          answer: 'haven\'t been invited',
+        },
+        {
+          q: '"Some new flats ___ near the station right now." — Present Continuous Passive:',
+          options: ['are built', 'are being built', 'have been built'],
+          answer: 'are being built',
+        },
+        {
+          q: '"The room is clean. It ___." — nəticə indi görünür:',
+          options: ['was cleaned', 'is being cleaned', 'has been cleaned'],
+          answer: 'has been cleaned',
+        },
+        {
+          q: '"___ the computer ___ at the moment?" — Present Continuous Passive, sual:',
+          options: ['Is / being used', 'Has / been used', 'Was / used'],
+          answer: 'Is / being used',
+        },
+        {
+          q: '"The road is closed. It ___ last week and it ___ yet." — boşluqlara nə gəlir?',
+          options: [
+            'was damaged / hasn\'t been repaired',
+            'has been damaged / wasn\'t repaired',
+            'is damaged / isn\'t repaired',
+          ],
+          answer: 'was damaged / hasn\'t been repaired',
+        },
+        {
+          q: '"Has this shirt ___?" — Present Perfect Passive, sual:',
+          options: ['washed', 'been washed', 'being washed'],
+          answer: 'been washed',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Məchul növün əsas forması:',                                          tr: 'am/is/are/was/were + past participle', wrong: 'have/has + past participle'       },
+  { en: 'Present Simple Passive — tək subject:',                               tr: 'is + past participle',                 wrong: 'are + past participle'            },
+  { en: 'Present Simple Passive — cəm subject:',                               tr: 'are + past participle',                wrong: 'is + past participle'             },
+  { en: 'Past Simple Passive — tək subject:',                                  tr: 'was + past participle',                wrong: 'were + past participle'           },
+  { en: 'Past Simple Passive — cəm subject:',                                  tr: 'were + past participle',               wrong: 'was + past participle'            },
+  { en: '"Butter ___ from milk." — Present Simple Passive:',                   tr: 'is made',                              wrong: 'was made'                         },
+  { en: '"This castle ___ 500 years ago." — Past Simple Passive:',             tr: 'was built',                            wrong: 'is built'                         },
+  { en: '"I was born in Baku." — düzgündürmü?',                                tr: 'Düzgün — was born həmişə keçmiş zamandadır', wrong: 'Yanlış — "I am born" olmalıdır' },
+  { en: 'by — nə bildirir?',                                                   tr: 'Hərəkəti kimin etdiyini (agent)',      wrong: 'Hərəkətin zamanını'               },
+  { en: 'Present Continuous Passive forması:',                                  tr: 'is/are being + past participle',       wrong: 'is/are + past participle'         },
+  { en: '"My car ___ right now." — Present Continuous Passive:',               tr: 'is being washed',                      wrong: 'is washed'                        },
+  { en: 'Present Perfect Passive forması:',                                     tr: 'has/have been + past participle',      wrong: 'was/were + past participle'       },
+  { en: '"My keys ___. I can\'t find them." — Present Perfect Passive:',       tr: 'have been taken',                      wrong: 'were taken'                       },
+  { en: '"___ you ___ to the party?" — keçmişdə, sual forması:',              tr: 'Were / invited',                       wrong: 'Are / invited'                    },
+  { en: '"The window ___." — nəticə indi görünür:',                            tr: 'has been broken',                      wrong: 'was broken'                       },
+  { en: '"The window ___ last night." — nə vaxt baş verdi:',                   tr: 'was broken',                           wrong: 'has been broken'                  },
+  { en: '"English ___ in many countries." — ümumi həqiqət:',                   tr: 'is spoken',                            wrong: 'was spoken'                       },
+  { en: '"The bridge ___ by engineers in 1920." — by + agent:',                tr: 'was designed',                         wrong: 'is designed'                      },
+  { en: '"A new hospital ___ near the city." — indi tikilir:',                 tr: 'is being built',                       wrong: 'has been built'                   },
+  { en: '"I ___ about the change. Nobody told me." — Present Perfect Passive:', tr: 'wasn\'t told / haven\'t been told',    wrong: 'am not told'                      },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu körpü 200 il əvvəl tikilmişdir.',
+      words: ['This', 'bridge', 'was', 'built', '200', 'years', 'ago', 'is', 'were', 'build'],
+      answer: ['This', 'bridge', 'was', 'built', '200', 'years', 'ago'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Kənd yağı südən hazırlanır.',
+      words: ['Butter', 'is', 'made', 'from', 'milk', 'was', 'are', 'make'],
+      answer: ['Butter', 'is', 'made', 'from', 'milk'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Telefon Bell tərəfindən ixtira edilmişdir.',
+      words: ['The', 'telephone', 'was', 'invented', 'by', 'Bell', 'is', 'invent', 'were'],
+      answer: ['The', 'telephone', 'was', 'invented', 'by', 'Bell'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Maşınam hal-hazırda təmir edilir.',
+      words: ['My', 'car', 'is', 'being', 'repaired', 'at', 'the', 'moment', 'was', 'has been'],
+      answer: ['My', 'car', 'is', 'being', 'repaired', 'at', 'the', 'moment'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Açarım oğurlanıb.',
+      words: ['My', 'key', 'has', 'been', 'stolen', 'was', 'is', 'being', 'steal'],
+      answer: ['My', 'key', 'has', 'been', 'stolen'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu otaq hər gün təmizlənir.',
+      words: ['This', 'room', 'is', 'cleaned', 'every', 'day', 'was', 'is being', 'clean'],
+      answer: ['This', 'room', 'is', 'cleaned', 'every', 'day'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən Bakıda anadan olmuşam.',
+      words: ['I', 'was', 'born', 'in', 'Baku', 'am', 'have been', 'bear'],
+      answer: ['I', 'was', 'born', 'in', 'Baku'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Məni toya dəvət etmədilər.',
+      words: ['I', 'wasn\'t', 'invited', 'to', 'the', 'wedding', 'haven\'t been', 'aren\'t', 'invite'],
+      answer: ['I', 'wasn\'t', 'invited', 'to', 'the', 'wedding'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Parkın yanında yeni evlər tikilir.',
+      words: ['Some', 'new', 'houses', 'are', 'being', 'built', 'near', 'the', 'park', 'were', 'have been'],
+      answer: ['Some', 'new', 'houses', 'are', 'being', 'built', 'near', 'the', 'park'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hesabat hələ göndərilməyib.',
+      words: ['The', 'report', 'hasn\'t', 'been', 'sent', 'yet', 'wasn\'t', 'isn\'t being', 'send'],
+      answer: ['The', 'report', 'hasn\'t', 'been', 'sent', 'yet'],
+    },
+  ],
+},
       
     ],
   },
