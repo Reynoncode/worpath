@@ -9558,11 +9558,684 @@ const GENERAL_ENGLISH_LEVELS = [
      
 { type: 'section_divider', title: 'Sual qurmaq — ümumi suallar' },
 
+// ── UNIT 4, 10, 12 — Ümumi Suallar (Yes/No Questions) ────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Yes/No Sualları — do/does + is/are (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Əsas formula ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Yes/No sualları — qurma qaydası',
+      content: 'Yes/No sualları qurmaq üçün köməkçi fel subyektdən əvvələ keçir:',
+      table: [
+        ['Köməkçi fel',  'Subyekt',     'Əsas fel',     'Nümunə'],
+        ['Do',           'you/they/we', '+ fel',        'Do you like jazz?'],
+        ['Does',         'he/she/it',   '+ fel',        'Does she work here?'],
+        ['Is',           'he/she/it',   '+ -ing',       'Is he sleeping?'],
+        ['Are',          'you/they/we', '+ -ing',       'Are they coming?'],
+        ['Was',          'he/she/it',   '+ adj/place',  'Was it cold?'],
+        ['Were',         'you/they/we', '+ adj/place',  'Were you at home?'],
+        ['Did',          'hamısı',      '+ əsas hal',   'Did she call?'],
+      ],
+      tip: 'Qayda sadədir: köməkçi feli öndə gör — sual var. "You like music?" ❌ → "Do you like music?" ✅',
+    },
+
+    // ── Ekran 2: do / does — Present Simple ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'do / does — Present Simple sualları',
+      content: 'Geniş zamanda do (I/you/we/they) və does (he/she/it) işlədilir. Əsas fel sadə formada qalır:',
+      examples: [
+        { word: 'Do you drink coffee?',                  az: 'do — I/you/we/they'               },
+        { word: 'Does he work on weekends?',             az: 'does — he/she/it'                 },
+        { word: 'Do they live nearby?',                  az: 'do — they'                        },
+        { word: 'Does your mother speak any languages?', az: 'does — your mother = she'         },
+        { word: 'Do you always have breakfast?',         az: 'always — do ilə birlikdə'         },
+        { word: 'Does it cost much?',                    az: 'does — it'                        },
+      ],
+      tip: '"Does she works?" ❌ — does ilə əsas fel -s almır: "Does she work?" ✅',
+    },
+
+    // ── Ekran 3: is / are — Present Continuous ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'is / are — Present Continuous sualları',
+      content: 'İndi davam edən zamanda is (he/she/it) və are (you/we/they) işlədilir:',
+      examples: [
+        { word: 'Is he studying right now?',             az: 'is — he/she/it + -ing'            },
+        { word: 'Are you feeling better today?',         az: 'are — you + -ing'                 },
+        { word: 'Is it snowing outside?',                az: 'is — it + -ing'                   },
+        { word: 'Are your parents coming tonight?',      az: 'are — they + -ing'                },
+        { word: 'Why are you wearing a jacket inside?',  az: 'why + are — sual sözü ilə'        },
+        { word: 'Where is she going?',                   az: 'where + is — sual sözü ilə'       },
+      ],
+      tip: '"Are she working?" ❌ — she/he/it ilə is işlədilir: "Is she working?" ✅',
+    },
+
+    // ── Ekran 4: Qısa cavablar ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar — köməkçi feli təkrarla',
+      content: 'Qısa cavabda köməkçi fel suala uyğun olmalıdır — əsas feli təkrarlamaq olmaz:',
+      table: [
+        ['Sual',              'Bəli',            'Xeyr'],
+        ['Do you...?',        'Yes, I do.',       'No, I don\'t.'],
+        ['Does she...?',      'Yes, she does.',   'No, she doesn\'t.'],
+        ['Is he...?',         'Yes, he is.',      'No, he isn\'t.'],
+        ['Are they...?',      'Yes, they are.',   'No, they aren\'t.'],
+      ],
+      tip: '"Do you like it?" → "Yes, I like." ❌ — köməkçi feli təkrar et: "Yes, I do." ✅',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ she work on Saturdays?" — boşluğa nə gəlir?',
+          options: ['Do', 'Does', 'Is'],
+          answer: 'Does',
+        },
+        {
+          q: '"___ they coming to dinner tonight?" — boşluğa nə gəlir?',
+          options: ['Do', 'Does', 'Are'],
+          answer: 'Are',
+        },
+        {
+          q: '"Does he play football?" → "Yes, ___." — qısa cavab:',
+          options: ['Yes, he play.', 'Yes, he does.', 'Yes, he is.'],
+          answer: 'Yes, he does.',
+        },
+        {
+          q: '"___ your friends live near here?" — boşluğa nə gəlir?',
+          options: ['Does', 'Is', 'Do'],
+          answer: 'Do',
+        },
+        {
+          q: '"___ it raining now?" — boşluğa nə gəlir?',
+          options: ['Does', 'Is', 'Do'],
+          answer: 'Is',
+        },
+        {
+          q: '"Are you hungry?" → "No, ___." — qısa cavab:',
+          options: ['No, I\'m not.', 'No, I don\'t.', 'No, I aren\'t.'],
+          answer: 'No, I\'m not.',
+        },
+        {
+          q: 'Düzgün sualı seç:',
+          options: ['Does she works here?', 'Does she work here?', 'Do she work here?'],
+          answer: 'Does she work here?',
+        },
+        {
+          q: '"Why ___ you wearing a hat inside?" — boşluğa nə gəlir?',
+          options: ['do', 'does', 'are'],
+          answer: 'are',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Yes/No Sualları — was/were + did (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: was / were — keçmişdə to be ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'was / were — Past Simple (to be)',
+      content: 'Keçmişdə olmaq, vəziyyət, yer bildirən suallar üçün was/were işlədilir:',
+      examples: [
+        { word: 'Was the film interesting?',             az: 'was — he/she/it + adj'            },
+        { word: 'Were you tired after the journey?',     az: 'were — you/we/they + adj'         },
+        { word: 'Was she at the office yesterday?',      az: 'was — she + yer'                  },
+        { word: 'Were your parents at home last night?', az: 'were — they + yer'                },
+        { word: 'Why were you late this morning?',       az: 'why + were — sual sözü ilə'       },
+        { word: 'How much was the train ticket?',        az: 'how much + was — qiymət sualı'    },
+      ],
+      tip: '"Were he there?" ❌ — he/she/it ilə was işlədilir: "Was he there?" ✅',
+    },
+
+    // ── Ekran 2: did — Past Simple (digər fellər) ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'did — Past Simple sualları',
+      content: 'Keçmişdə digər fellərlə did işlədilir. Əsas fel mütləq sadə (infinitive) formada qalır:',
+      examples: [
+        { word: 'Did you enjoy the concert?',            az: 'did + əsas hal — enjoy ✅'        },
+        { word: 'Did she call you back?',                az: 'did + əsas hal — call ✅'         },
+        { word: 'Did they arrive on time?',              az: 'did + əsas hal — arrive ✅'       },
+        { word: 'What did you do last weekend?',         az: 'what + did — sual sözü ilə'       },
+        { word: 'Where did your family go on holiday?',  az: 'where + did — sual sözü ilə'      },
+        { word: 'How did you hear about this?',          az: 'how + did — sual sözü ilə'        },
+      ],
+      tip: '"Did they went?" ❌ — did-dən sonra həmişə əsas hal (infinitive): "Did they go?" ✅',
+    },
+
+    // ── Ekran 3: was/were + did üçün qısa cavablar ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'was/were + did — qısa cavablar',
+      content: 'Keçmiş zaman suallarında köməkçi fel eyni formada qalır:',
+      table: [
+        ['Sual',              'Bəli',            'Xeyr'],
+        ['Was it...?',        'Yes, it was.',     'No, it wasn\'t.'],
+        ['Were they...?',     'Yes, they were.',  'No, they weren\'t.'],
+        ['Did you...?',       'Yes, I did.',      'No, I didn\'t.'],
+        ['Did she...?',       'Yes, she did.',    'No, she didn\'t.'],
+      ],
+      tip: '"Did you go?" → "Yes, I went." ❌ — köməkçi feli geri qaytar: "Yes, I did." ✅',
+    },
+
+    // ── Ekran 4: Tez-tez edilən səhvlər ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'Yes/No sualları ilə bağlı ən çox edilən səhvlər:',
+      table: [
+        ['Yanlış',                               'Düzgün'],
+        ['Does you like coffee?',                'Do you like coffee?'],
+        ['Did they went to the cinema?',         'Did they go to the cinema?'],
+        ['Are she working today?',               'Is she working today?'],
+        ['Were you late? Yes, I were.',          'Were you late? Yes, I was.'],
+        ['Did you enjoyed the match?',           'Did you enjoy the match?'],
+        ['Does he works hard?',                  'Does he work hard?'],
+        ['Is they coming to the party?',         'Are they coming to the party?'],
+      ],
+      tip: 'Ən çox edilən səhv: did + -ed forması. "Did she called?" ❌ → "Did she call?" ✅ — did artıq keçmişi bildirir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ the weather nice last week?" — boşluğa nə gəlir?',
+          options: ['Were', 'Did', 'Was'],
+          answer: 'Was',
+        },
+        {
+          q: '"___ you enjoy the holiday?" — boşluğa nə gəlir?',
+          options: ['Were', 'Did', 'Was'],
+          answer: 'Did',
+        },
+        {
+          q: 'Düzgün sualı seç:',
+          options: ['Did they went?', 'Did they go?', 'Did they gone?'],
+          answer: 'Did they go?',
+        },
+        {
+          q: '"Was he at work yesterday?" → "Yes, ___." — qısa cavab:',
+          options: ['Yes, he did.', 'Yes, he were.', 'Yes, he was.'],
+          answer: 'Yes, he was.',
+        },
+        {
+          q: '"___ they at the concert last night?" — boşluğa nə gəlir?',
+          options: ['Did', 'Was', 'Were'],
+          answer: 'Were',
+        },
+        {
+          q: '"Did she call?" → "No, ___." — qısa cavab:',
+          options: ['No, she didn\'t.', 'No, she wasn\'t.', 'No, she didn\'t called.'],
+          answer: 'No, she didn\'t.',
+        },
+        {
+          q: 'Düzgün sualı seç:',
+          options: ['Did you enjoyed it?', 'Did you enjoy it?', 'Did you enjoying it?'],
+          answer: 'Did you enjoy it?',
+        },
+        {
+          q: '"Were you late?" → "No, ___." — qısa cavab:',
+          options: ['No, I weren\'t.', 'No, I wasn\'t.', 'No, I didn\'t.'],
+          answer: 'No, I wasn\'t.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'I/you/we/they ilə Present Simple sual:',                                tr: 'Do',                           wrong: 'Does'                         },
+  { en: 'he/she/it ilə Present Simple sual:',                                    tr: 'Does',                         wrong: 'Do'                           },
+  { en: 'he/she/it ilə Present Continuous sual:',                                tr: 'Is',                           wrong: 'Are'                          },
+  { en: 'you/we/they ilə Present Continuous sual:',                              tr: 'Are',                          wrong: 'Is'                           },
+  { en: 'he/she/it ilə Past Simple (to be) sual:',                               tr: 'Was',                          wrong: 'Were'                         },
+  { en: 'you/we/they ilə Past Simple (to be) sual:',                             tr: 'Were',                         wrong: 'Was'                          },
+  { en: 'Keçmişdə digər fellər üçün sual:',                                      tr: 'Did',                          wrong: 'Does'                         },
+  { en: '"Did + ?" — əsas fel hansı formada olur?',                              tr: 'əsas hal (infinitive)',         wrong: '-ed forması'                  },
+  { en: '"Does she work?" — qısa müsbət cavab:',                                 tr: 'Yes, she does.',               wrong: 'Yes, she works.'              },
+  { en: '"Did you go?" — qısa inkar cavab:',                                     tr: 'No, I didn\'t.',               wrong: 'No, I didn\'t go.'            },
+  { en: '"Was it cold?" — qısa müsbət cavab:',                                   tr: 'Yes, it was.',                 wrong: 'Yes, it did.'                 },
+  { en: '"Are they coming?" — qısa inkar cavab:',                                tr: 'No, they aren\'t.',            wrong: 'No, they don\'t.'             },
+  { en: '"Does he works?" — düzgün forması:',                                    tr: 'Does he work?',                wrong: 'Do he work?'                  },
+  { en: '"Did they went?" — düzgün forması:',                                    tr: 'Did they go?',                 wrong: 'Did they goes?'               },
+  { en: '"Are she sleeping?" — düzgün forması:',                                 tr: 'Is she sleeping?',             wrong: 'Does she sleeping?'           },
+  { en: 'Yes/No suallarında intonasiya:',                                         tr: 'yuxarı qalxır (↗)',            wrong: 'aşağı düşür (↘)'              },
+  { en: '"Do you always get up early?" — always-in yeri:',                       tr: 'do ilə əsas fel arasında',     wrong: 'cümlənin əvvəlində'           },
+  { en: '"Were you late? Yes, I ___." — boşluğa nə gəlir?',                      tr: 'was',                          wrong: 'were'                         },
+  { en: '"Did you enjoyed it?" — düzgün forması:',                               tr: 'Did you enjoy it?',            wrong: 'Did you enjoying it?'         },
+  { en: '"Is they coming?" — düzgün forması:',                                   tr: 'Are they coming?',             wrong: 'Does they coming?'            },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən tez-tez tennis oynayırsan?',
+      words: ['Do', 'you', 'often', 'play', 'tennis', 'Does', 'plays'],
+      answer: ['Do', 'you', 'often', 'play', 'tennis'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, bu yaxınlarda yaşayır?',
+      words: ['Does', 'she', 'live', 'near', 'here', 'Do', 'lives'],
+      answer: ['Does', 'she', 'live', 'near', 'here'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar indi görüşməyə gəlirlər?',
+      words: ['Are', 'they', 'coming', 'to', 'the', 'meeting', 'now', 'Is', 'come'],
+      answer: ['Are', 'they', 'coming', 'to', 'the', 'meeting', 'now'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O dünən işdə idi?',
+      words: ['Was', 'she', 'at', 'work', 'yesterday', 'Were', 'Did'],
+      answer: ['Was', 'she', 'at', 'work', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar konsertdən həzz aldılar?',
+      words: ['Did', 'they', 'enjoy', 'the', 'concert', 'enjoyed', 'Were'],
+      answer: ['Did', 'they', 'enjoy', 'the', 'concert'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Niyə bu səhər gecikdin?',
+      words: ['Why', 'were', 'you', 'late', 'this', 'morning', 'was', 'did'],
+      answer: ['Why', 'were', 'you', 'late', 'this', 'morning'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu söz nə mənaya gəlir?',
+      words: ['What', 'does', 'this', 'word', 'mean', 'do', 'means'],
+      answer: ['What', 'does', 'this', 'word', 'mean'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Valideynlərin keçən həftə hara getdilər?',
+      words: ['Where', 'did', 'your', 'parents', 'go', 'last', 'week', 'went', 'were'],
+      answer: ['Where', 'did', 'your', 'parents', 'go', 'last', 'week'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İmtahan çətin idi?',
+      words: ['Was', 'your', 'exam', 'difficult', 'Were', 'Did', 'difficulty'],
+      answer: ['Was', 'your', 'exam', 'difficult'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Həmişə erkən durursunmu?',
+      words: ['Do', 'you', 'always', 'get', 'up', 'early', 'Does', 'got', 'did'],
+      answer: ['Do', 'you', 'always', 'get', 'up', 'early'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Sual qurmaq — xüsusi suallar (Wh-)' },
 
+// ── UNIT 43–46 — Xüsusi Suallar (Wh- Questions) ──────────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Wh- Sualları — Sual Sözləri + Formula (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Sual sözləri cədvəli ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Wh- sual sözləri — tam siyahı',
+      content: 'Wh- sualları müəyyən məlumat soruşur. Hər sual sözünün öz mənası var:',
+      table: [
+        ['Sual sözü',    'Mənası',                    'Nümunə'],
+        ['What',         'Nə',                        'What do you do?'],
+        ['Where',        'Hara / Harada',              'Where did she go?'],
+        ['When',         'Nə vaxt',                   'When does he arrive?'],
+        ['Who',          'Kim',                       'Who called you?'],
+        ['Why',          'Niyə',                      'Why are you tired?'],
+        ['How',          'Necə',                      'How do you go to work?'],
+        ['Which',        'Hansı',                     'Which bag is yours?'],
+        ['How long',     'Nə qədər müddət',           'How long have you lived here?'],
+        ['How often',    'Nə qədər tez-tez',          'How often do you exercise?'],
+        ['How much',     'Nə qədər (sayılmayan)',      'How much was the ticket?'],
+        ['How many',     'Nə qədər (sayılan)',         'How many people came?'],
+        ['How far',      'Nə qədər uzaqda',           'How far is the station?'],
+        ['How old',      'Neçə yaşında',              'How old is she?'],
+      ],
+      tip: 'Wh- suallarında intonasiya aşağı düşür (↘) — Yes/No suallarından fərqli olaraq yuxarı qalxmır.',
+    },
+
+    // ── Ekran 2: Qurma formulu ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Wh- sualları — qurma formulu',
+      content: 'Sual sözü cümlənin əvvəlinə gəlir, sonra köməkçi fel + subyekt + əsas fel:',
+      examples: [
+        { word: 'Where do your friends live?',          az: 'Where + do + subyekt + əsas hal'   },
+        { word: 'What does this sign mean?',            az: 'What + does + subyekt + əsas hal'  },
+        { word: 'Why is she crying?',                   az: 'Why + is + subyekt + -ing'         },
+        { word: 'When did they arrive?',                az: 'When + did + subyekt + əsas hal'   },
+        { word: 'How are you feeling today?',           az: 'How + are + subyekt + -ing'        },
+        { word: 'What time does the match start?',      az: 'What time + does + subyekt + fel'  },
+      ],
+      tip: '"Where you live?" ❌ — köməkçi fel mütləq lazımdır: "Where do you live?" ✅',
+    },
+
+    // ── Ekran 3: Subyekt sualı — who/what köməkçi felsiz ─────────────────────
+    {
+      type: 'lesson',
+      title: 'Subyekt sualları — who / what + birbaşa fel',
+      content: 'Who və ya what özü subyekt olduqda köməkçi fel işlədilmir:',
+      examples: [
+        { word: 'Who took my phone?',                   az: 'who = subyekt — köməkçi fel yox'   },
+        { word: 'What happened at the meeting?',        az: 'what = subyekt — köməkçi fel yox'  },
+        { word: 'Who lives next door?',                 az: 'who = subyekt — fel birbaşa'       },
+        { word: 'What made you change your mind?',      az: 'what = subyekt — köməkçi fel yox'  },
+        { word: 'Who is coming to the party?',          az: 'who = subyekt — is ilə (davam)' },
+        { word: 'Who has got the tickets?',             az: 'who = subyekt — has ilə'           },
+      ],
+      tip: '"Who did broke the window?" ❌ — who subyektdirsə did işlətmə: "Who broke the window?" ✅',
+    },
+
+    // ── Ekran 4: Obyekt sualı — who/what köməkçi felli ───────────────────────
+    {
+      type: 'lesson',
+      title: 'Obyekt sualları — who / what + köməkçi fel',
+      content: 'Who və ya what obyekt olduqda köməkçi fel lazımdır:',
+      examples: [
+        { word: 'Who did you invite to the party?',     az: 'who = obyekt — did lazımdır'       },
+        { word: 'What did she say to you?',             az: 'what = obyekt — did lazımdır'      },
+        { word: 'Who are you waiting for?',             az: 'who = obyekt — are lazımdır'       },
+        { word: 'What was he reading?',                 az: 'what = obyekt — was lazımdır'      },
+        { word: 'Who did they meet at the conference?', az: 'who = obyekt — did lazımdır'       },
+        { word: 'What does she want?',                  az: 'what = obyekt — does lazımdır'     },
+      ],
+      tip: 'Sadə yoxlama: "Somebody did it" → who subyektdir → köməkçi felsiz. "I met somebody" → who obyektdir → köməkçi felli.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ do you usually go to work?" — boşluğa nə gəlir?',
+          options: ['What', 'Who', 'How'],
+          answer: 'How',
+        },
+        {
+          q: '"___ broke the window?" — subyekt sualı:',
+          options: ['Who did', 'Who does', 'Who'],
+          answer: 'Who',
+        },
+        {
+          q: '"___ did you meet at the airport?" — obyekt sualı:',
+          options: ['Who', 'What', 'Which'],
+          answer: 'Who',
+        },
+        {
+          q: '"___ does this word mean?" — boşluğa nə gəlir?',
+          options: ['Who', 'What', 'Which'],
+          answer: 'What',
+        },
+        {
+          q: '"What ___ last night?" — subyekt sualı, keçmiş:',
+          options: ['did happen', 'happened', 'does happen'],
+          answer: 'happened',
+        },
+        {
+          q: '"___ didn\'t you come yesterday?" — boşluğa nə gəlir?',
+          options: ['What', 'How', 'Why'],
+          answer: 'Why',
+        },
+        {
+          q: '"___ train shall we take — the 8.15 or the 9.00?" — məhdud seçim:',
+          options: ['What', 'Who', 'Which'],
+          answer: 'Which',
+        },
+        {
+          q: '"___ did you buy?" — obyekt sualı:',
+          options: ['Who', 'What', 'Which did'],
+          answer: 'What',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Wh- Sualları — What/Which/How + Xüsusi Hallar (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: what vs which ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'what vs which — fərq',
+      content: 'what — ümumi suallar üçün. which — məhdud sayda variant arasında seçim üçün:',
+      table: [
+        ['what — ümumi',                              'which — məhdud seçim'],
+        ['What sport do you like?',                   'Which sport do you prefer — tennis or football?'],
+        ['What is the capital of France?',            'Which city is bigger — Paris or Lyon?'],
+        ['What colour is your car?',                  'Which colour suits me better — blue or green?'],
+        ['What sort of films do you like?',           'Which film shall we watch — this one or that one?'],
+      ],
+      tip: 'İnsanlar arasında seçimdə who işlədilir: "Who is taller — Tim or Sam?" ✅  "Which is taller?" ❌',
+    },
+
+    // ── Ekran 2: What is it like? ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'What is/are ... like? — ümumi təəssürat',
+      content: 'What is/are ... like? — bir şey, yer və ya adam haqqında ümumi fikir soruşmaq üçün:',
+      examples: [
+        { word: 'What\'s your new apartment like?',   az: 'ümumi təəssürat — necədir?'         },
+        { word: 'What are your classmates like?',     az: 'insanlar haqqında — necədirlər?'    },
+        { word: 'What was the traffic like?',         az: 'keçmiş — necə idi?'                },
+        { word: 'What\'s the food like there?',       az: 'yer haqqında — necədir?'            },
+        { word: 'What was the journey like?',         az: 'təcrübə haqqında — necə idi?'      },
+        { word: 'What is he like as a manager?',      az: 'xüsusi kontekstdə — necədir?'      },
+      ],
+      tip: '"Do you like it?" ≠ "What is it like?" — like burada prepoziyadır: "What\'s it like?" = "Necədir?" ✅',
+    },
+
+    // ── Ekran 3: Prepoziysiya sualın sonunda ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Prepoziysiya — sualın sonunda',
+      content: 'Wh- suallarında prepoziysiya adətən cümlənin sonunda işlədilir:',
+      examples: [
+        { word: 'Where are you from?',               az: 'from — sonda'                       },
+        { word: 'Who is she going with?',            az: 'with — sonda'                       },
+        { word: 'What are you talking about?',       az: 'about — sonda'                      },
+        { word: 'Which hotel are they staying in?',  az: 'in — sonda'                         },
+        { word: 'Who does this laptop belong to?',   az: 'to — sonda'                         },
+        { word: 'What was he afraid of?',            az: 'of — sonda'                         },
+      ],
+      tip: '"From where are you?" ❌ — ingilis dilində prepoziysiya cümlənin əvvəlinə keçmir: "Where are you from?" ✅',
+    },
+
+    // ── Ekran 4: why + inkar + tez-tez edilən səhvlər ────────────────────────
+    {
+      type: 'lesson',
+      title: 'why + inkar + ümumi səhvlər',
+      content: 'why inkar köməkçi felli suallar qura bilər. Ən çox edilən Wh- səhvləri:',
+      table: [
+        ['Yanlış',                               'Düzgün'],
+        ['Why you didn\'t call?',                'Why didn\'t you call?'],
+        ['What does she likes?',                 'What does she like?'],
+        ['Who did broke the lock?',              'Who broke the lock?'],
+        ['Where are from you?',                  'Where are you from?'],
+        ['What did happen?',                     'What happened?'],
+        ['How old has she?',                     'How old is she?'],
+        ['Which is taller — Ben or Sam?',        'Who is taller — Ben or Sam?'],
+      ],
+      tip: 'why + inkar: "Why isn\'t he here?" ✅ "Why he isn\'t here?" ❌ — köməkçi fel subyektdən əvvəl gəlir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"What ___ the new office like?" — boşluğa nə gəlir?',
+          options: ['do', 'is', 'are'],
+          answer: 'is',
+        },
+        {
+          q: '"___ is bigger — the kitchen or the living room?" — iki variant arasında:',
+          options: ['What', 'Who', 'Which'],
+          answer: 'Which',
+        },
+        {
+          q: '"Where are you ___?" — prepoziysiya sonda:',
+          options: ['from?', 'of?', 'at?'],
+          answer: 'from?',
+        },
+        {
+          q: '"Why ___ she come to class yesterday?" — inkar sual:',
+          options: ['didn\'t', 'don\'t', 'wasn\'t'],
+          answer: 'didn\'t',
+        },
+        {
+          q: '"___ is taller — your brother or your sister?" — insanlar arasında seçim:',
+          options: ['Which', 'What', 'Who'],
+          answer: 'Who',
+        },
+        {
+          q: 'Düzgün sualı seç:',
+          options: ['What did happen?', 'What happened?', 'What does happened?'],
+          answer: 'What happened?',
+        },
+        {
+          q: '"___ is it to the city centre?" — məsafə:',
+          options: ['How long', 'How often', 'How far'],
+          answer: 'How far',
+        },
+        {
+          q: '"What are your new colleagues ___?" — ümumi təəssürat:',
+          options: ['like?', 'as?', 'similar?'],
+          answer: 'like?',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"Hara?" — sual sözü:',                                                  tr: 'Where',                        wrong: 'When'                         },
+  { en: '"Nə vaxt?" — sual sözü:',                                               tr: 'When',                         wrong: 'Where'                        },
+  { en: '"Niyə?" — sual sözü:',                                                  tr: 'Why',                          wrong: 'How'                          },
+  { en: '"Necə?" — sual sözü:',                                                  tr: 'How',                          wrong: 'What'                         },
+  { en: '"Nə qədər tez-tez?" — sual sözü:',                                      tr: 'How often',                    wrong: 'How long'                     },
+  { en: '"Nə qədər uzaqda?" — sual sözü:',                                       tr: 'How far',                      wrong: 'How much'                     },
+  { en: '"Neçə yaşında?" — sual sözü:',                                          tr: 'How old',                      wrong: 'How tall'                     },
+  { en: 'Subyekt sualında — who/what ilə köməkçi fel:',                          tr: 'işlədilmir',                   wrong: 'işlədilir'                    },
+  { en: 'Obyekt sualında — who/what ilə köməkçi fel:',                           tr: 'işlədilir',                    wrong: 'işlədilmir'                   },
+  { en: '"Who broke the window?" — who burada:',                                  tr: 'subyektdir',                   wrong: 'obyektdir'                    },
+  { en: '"Who did you meet?" — who burada:',                                      tr: 'obyektdir',                    wrong: 'subyektdir'                   },
+  { en: 'Məhdud seçim üçün what / which?',                                        tr: 'which',                        wrong: 'what'                         },
+  { en: 'İnsanlar arasında seçim üçün which / who?',                              tr: 'who',                          wrong: 'which'                        },
+  { en: '"What is it like?" — like burada:',                                      tr: 'prepoziyadır',                 wrong: 'feldir'                       },
+  { en: '"Where are you from?" — from-un yeri:',                                  tr: 'sonda',                        wrong: 'əvvəldə'                      },
+  { en: 'Wh- suallarında intonasiya:',                                            tr: 'aşağı düşür (↘)',              wrong: 'yuxarı qalxır (↗)'            },
+  { en: '"What did happen?" — düzgün forması:',                                   tr: 'What happened?',               wrong: 'What did happened?'           },
+  { en: '"How old has she?" — düzgün forması:',                                   tr: 'How old is she?',              wrong: 'How old does she?'            },
+  { en: '"Why you didn\'t come?" — düzgün forması:',                              tr: 'Why didn\'t you come?',        wrong: 'Why you didn\'t come?'        },
+  { en: '"Which is taller — Ann or Kate?" — düzgün forması:',                     tr: 'Who is taller — Ann or Kate?', wrong: 'What is taller — Ann or Kate?' },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Valideynlərin harda yaşayır?',
+      words: ['Where', 'do', 'your', 'parents', 'live', 'does', 'lives'],
+      answer: ['Where', 'do', 'your', 'parents', 'live'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Kim pəncərəni qırdı?',
+      words: ['Who', 'broke', 'the', 'window', 'did', 'break', 'Who did'],
+      answer: ['Who', 'broke', 'the', 'window'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Dünən axşam sən kimi gördün?',
+      words: ['Who', 'did', 'you', 'see', 'last', 'night', 'saw', 'who'],
+      answer: ['Who', 'did', 'you', 'see', 'last', 'night'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Niyə dünən mənə zəng etmədin?',
+      words: ['Why', 'didn\'t', 'you', 'call', 'me', 'yesterday', 'don\'t', 'called'],
+      answer: ['Why', 'didn\'t', 'you', 'call', 'me', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yeni müəllim necədir?',
+      words: ['What', 'is', 'the', 'new', 'teacher', 'like', 'does', 'look'],
+      answer: ['What', 'is', 'the', 'new', 'teacher', 'like'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən haradan gəlirsən?',
+      words: ['Where', 'are', 'you', 'from', 'from', 'where', 'do', 'come'],
+      answer: ['Where', 'are', 'you', 'from'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hava necə idi?',
+      words: ['What', 'was', 'the', 'weather', 'like', 'did', 'is', 'were'],
+      answer: ['What', 'was', 'the', 'weather', 'like'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Nə vaxt qatarın yola düşür?',
+      words: ['What', 'time', 'does', 'the', 'train', 'leave', 'did', 'left', 'do'],
+      answer: ['What', 'time', 'does', 'the', 'train', 'leave'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hava limanına nə qədər uzaqdır?',
+      words: ['How', 'far', 'is', 'it', 'to', 'the', 'airport', 'long', 'does'],
+      answer: ['How', 'far', 'is', 'it', 'to', 'the', 'airport'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hansını seçirsən — çay, yoxsa qəhvə?',
+      words: ['Which', 'do', 'you', 'prefer', 'tea', 'or', 'coffee', 'What', 'does'],
+      answer: ['Which', 'do', 'you', 'prefer', 'tea', 'or', 'coffee'],
+    },
+  ],
+},
 
 { type: 'section_divider', title: 'there is / there are' },
 
