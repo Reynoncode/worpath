@@ -6414,253 +6414,3136 @@ const GENERAL_ENGLISH_LEVELS = [
     icon:  '🔤',
     color: '#10B981',
     quizzes: [
-
-      // ── Node 1 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'İsimlər: sayılan və sayılmayan',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Countable və Uncountable Nouns',
-            content: 'İngiliscədə isimlər iki qrupa bölünür:\n\n**Sayılan (Countable):** saya bilənlər — a book, two books\n**Sayılmayan (Uncountable):** saya bilməyənlər — water, music, information',
-            table: [
-              ['Sayılan',   'Sayılmayan'],
-              ['a chair',   'water'],
-              ['two cats',  'music'],
-              ['an apple',  'information'],
-            ],
-            note: 'Sayılmayan isimlərlə "a/an" işlədilmir, cəm forması olmur: "informations" — yanlışdır!',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"Music" hansı növ isimdir?',
-                options: ['Sayılan', 'Sayılmayan', 'Xüsusi isim', 'Cəm isim'],
-                answer:  'Sayılmayan',
-              },
-              {
-                q:       'Hansı söz sayılan isimdir?',
-                options: ['water', 'advice', 'chair', 'sugar'],
-                answer:  'chair',
-              },
-              {
-                q:       '"___ good advice." — boşluğa nə gəlir?',
-                options: ['A', 'An', 'Some', 'Two'],
-                answer:  'Some',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '📦',
-            title: 'İsimlər mənimsəndi!',
-            desc:  'Countable və uncountable nouns-u öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 2 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Şəxs əvəzlikləri',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Personal Pronouns — Şəxs Əvəzlikləri',
-            content: 'Şəxs əvəzlikləri isimlər yerinə işlədilir. Cümlədəki mövqeyinə görə iki forması var: **subject** (mübtəda) və **object** (tamamlıq).',
-            table: [
-              ['Subject', 'Object', 'Məna'],
-              ['I',       'me',     'mən/məni'],
-              ['you',     'you',    'sən/səni'],
-              ['he',      'him',    'o/onu (kişi)'],
-              ['she',     'her',    'o/onu (qadın)'],
-              ['it',      'it',     'o/onu (şey)'],
-              ['we',      'us',     'biz/bizi'],
-              ['they',    'them',   'onlar/onları'],
-            ],
-            tip: 'Subject əvəzliyi felin əvvəlində, object əvəzliyi felin ardından gəlir.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"___ is my brother." — (o, kişi)',
-                options: ['Him', 'His', 'He', 'It'],
-                answer:  'He',
-              },
-              {
-                q:       '"I saw ___ at the park." — (onu, qadın)',
-                options: ['she', 'her', 'hers', 'him'],
-                answer:  'her',
-              },
-              {
-                q:       '"___ are students." — (biz)',
-                options: ['Us', 'Our', 'We', 'Them'],
-                answer:  'We',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '👤',
-            title: 'Əvəzliklər!',
-            desc:  'Personal pronouns-u öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 3 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Mülkiyyət əvəzlikləri',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Possessive Pronouns & Adjectives',
-            content: 'Mülkiyyət bildirən iki forma var:\n\n**Possessive Adjective** (isimdən əvvəl): my, your, his, her, its, our, their\n**Possessive Pronoun** (müstəqil): mine, yours, his, hers, ours, theirs',
-            table: [
-              ['Adjective', 'Pronoun', 'Nümunə'],
-              ['my',        'mine',    'This is my book. / It\'s mine.'],
-              ['your',      'yours',   'Is this your pen? / Is it yours?'],
-              ['his',       'his',     'That\'s his car. / It\'s his.'],
-              ['her',       'hers',    'Her bag is red. / The red one is hers.'],
-            ],
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"This is ___ phone." — (mənim)',
-                options: ['mine', 'me', 'my', 'I'],
-                answer:  'my',
-              },
-              {
-                q:       '"The blue bag is ___." — (onun, qadın)',
-                options: ['her', 'she', 'hers', 'his'],
-                answer:  'hers',
-              },
-              {
-                q:       '"Is that ___ car?" — (sizin)',
-                options: ['you', 'yours', 'your', 'ours'],
-                answer:  'your',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '🏷️',
-            title: 'Mülkiyyət əvəzlikləri!',
-            desc:  'Possessive forms-u öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 4 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'A, An, The — Artikllar',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Müəyyən və qeyri-müəyyən artikl',
-            content: '**A / An** — qeyri-müəyyən artikl: ilk dəfə xatırlananda, ümumi bir şey haqqında danışanda.\n\n**The** — müəyyən artikl: artıq bilinən, müəyyən bir şey haqqında danışanda.\n\n**A** samit səslə başlayan sözlər üçün, **An** sait səslə başlayan sözlər üçün.',
-            table: [
-              ['Artikl', 'İstifadə',         'Nümunə'],
-              ['a',      'samit + ilk dəfə', 'a book, a car'],
-              ['an',     'sait + ilk dəfə',  'an apple, an hour'],
-              ['the',    'müəyyən/bilinən',  'the sun, the book I told you'],
-            ],
-            note: '"an hour" — h səssizdən başlasa da, tələffüzdə sait kimi başlayır, ona görə "an" istifadə olunur.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"She is ___ engineer."',
-                options: ['a', 'an', 'the', '-'],
-                answer:  'an',
-              },
-              {
-                q:       '"___ sun rises in the east."',
-                options: ['A', 'An', 'The', '-'],
-                answer:  'The',
-              },
-              {
-                q:       '"I saw ___ dog in the park. ___ dog was brown."',
-                options: ['a / A', 'a / The', 'the / A', 'an / The'],
-                answer:  'a / The',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '📰',
-            title: 'Artikllar!',
-            desc:  'A, an, the-ni öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 5 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'This, That, These, Those',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Demonstrative Pronouns — İşarə əvəzlikləri',
-            content: 'İşarə əvəzlikləri yaxın və uzaq şeyləri göstərmək üçün işlədilir.\n\n**Tək:** this (yaxın) / that (uzaq)\n**Cəm:** these (yaxın) / those (uzaq)',
-            table: [
-              ['',       'Tək',    'Cəm'],
-              ['Yaxın',  'this',   'these'],
-              ['Uzaq',   'that',   'those'],
-            ],
-            examples: [
-              { word: 'This is my pen.',      az: 'Bu mənim qələmimdir.' },
-              { word: 'That house is big.',   az: 'O ev böyükdür.' },
-              { word: 'These are my keys.',   az: 'Bunlar mənim açarlarımdır.' },
-              { word: 'Those birds fly fast.',az: 'O quşlar sürətli uçur.' },
-            ],
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"___ books on the table are mine." — (yaxın, cəm)',
-                options: ['That', 'This', 'Those', 'These'],
-                answer:  'These',
-              },
-              {
-                q:       '"___ mountain over there is very high." — (uzaq, tək)',
-                options: ['This', 'These', 'Those', 'That'],
-                answer:  'That',
-              },
-              {
-                q:       '"Is ___ your phone?" — (əlindəki, yaxın)',
-                options: ['that', 'those', 'this', 'these'],
-                answer:  'this',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '👆',
-            title: 'İşarə əvəzlikləri!',
-            desc:  'This, that, these, those-u öyrəndin.',
-          },
-        ],
-      },
+      
 { type: 'section_divider', title: 'a / an — qeyri-müəyyən artikl' },
+
+// ── UNIT 69–70 — a / an (Qeyri-Müəyyən Artikl) ──────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'a / an — Qeyri-Müəyyən Artikl (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: a vs an qayda ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'a / an — əsas qayda',
+      content: 'a/an — qeyri-müəyyən artikldır. Mənası "bir" və ya "hər hansı bir" deməkdir.\n\nQuruluş:\na + samit səslə başlayan söz\nan + sait səslə başlayan söz\n\n❗ Yazıya deyil, SƏSƏ baxılır!',
+      table: [
+        ['a',                          'an'],
+        ['a cat',                      'an apple'],
+        ['a book',                     'an egg'],
+        ['a dog',                      'an orange'],
+        ['a car',                      'an umbrella'],
+        ['a university (yoo...)',      'an hour (h səssiz)'],
+        ['a European (yoo...)',        'an honest man (h səssiz)'],
+        ['a one-way street (wan...)',  'an MP (em...)'],
+      ],
+      tip: '"a university" — u hərfi ilə yazılır, amma "yoo" səsi ilə tələffüz edilir → a. "an hour" — h hərfi var, amma səssizdir → an.',
+    },
+
+    // ── Ekran 2: Nə vaxt işlədilir? ──────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'a / an — nə vaxt işlədilir?',
+      content: 'Dörd əsas istifadə:',
+      examples: [
+        { word: 'I saw a cat in the garden.',          az: '1. İlk dəfə bəhs edilən şey'           },
+        { word: 'She bought an old lamp.',             az: '1. İlk dəfə bəhs edilən şey'           },
+        { word: 'He is a teacher.',                    az: '2. Peşə və vəzifə'                     },
+        { word: 'She is an architect.',                az: '2. Peşə və vəzifə'                     },
+        { word: 'a hundred / a thousand / a dozen',    az: '3. Saylarla (= one)'                   },
+        { word: '80 kilometres an hour',               az: '4. Ölçü və nisbətlər'                  },
+        { word: 'three times a week',                  az: '4. Ölçü və nisbətlər'                  },
+        { word: '£3 a kilo',                           az: '4. Ölçü və nisbətlər'                  },
+      ],
+      tip: 'Peşə bildirəndə mütləq a/an işlədilir: "He is doctor." yanlışdır — "He is a doctor." düzgündür.',
+    },
+
+    // ── Ekran 3: İlk dəfə → ikinci dəfə ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'a/an → the (ilk dəfə → ikinci dəfə)',
+      content: 'Bir şeydən ilk dəfə danışanda a/an, sonradan həmin şeydən danışanda the işlədilir:',
+      table: [
+        ['İlk bəhs (a/an)',                         'Sonrakı bəhs (the)'],
+        ['I saw a dog in the park.',                'The dog was very friendly.'],
+        ['She bought a jacket.',                    'The jacket was on sale.'],
+        ['There is a lamp in the corner.',          'The lamp gives nice light.'],
+        ['He found a wallet on the street.',        'The wallet had no ID inside.'],
+      ],
+      tip: 'a/an = "bilmirsən hansı" | the = "ikimiz də bilirik hansı"',
+    },
+
+    // ── Ekran 4: Nümunə cümlələri ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Nümunə cümlələri',
+      content: 'a / an ilə düzgün cümlələr:',
+      examples: [
+        { word: 'I need a pen and an envelope.',      az: 'pen → samit (p) → a | envelope → sait (e) → an' },
+        { word: 'Is there a bank near here?',         az: 'bank → samit (b) → a'                           },
+        { word: 'What an interesting story!',         az: 'interesting → sait (i) → an'                    },
+        { word: 'She earns £40,000 a year.',          az: 'nisbət — a year'                                },
+        { word: 'He is an honest person.',            az: 'honest → h səssiz, sait kimi → an'              },
+        { word: 'It was a useful lesson.',            az: 'useful → "yoo" səsi → samit → a'                },
+        { word: 'I go jogging twice a week.',         az: 'nisbət — a week'                                },
+        { word: 'She is a very good engineer.',       az: 'peşə — engineer, amma a very ilə başlayır'      },
+      ],
+      tip: '"useful" — u hərfi ilə yazılır, amma "yoo" səsi ilə başlayır → a useful (a university kimi).',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ apple" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the'],
+          answer: 'an',
+        },
+        {
+          q: '"___ university" — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'a',
+        },
+        {
+          q: '"She is ___ engineer." — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'an',
+        },
+        {
+          q: '"___ hour" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the'],
+          answer: 'an',
+        },
+        {
+          q: '"He drives ___ European car." — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'a',
+        },
+        {
+          q: '"I visit my family twice ___ month." — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the'],
+          answer: 'a',
+        },
+        {
+          q: '"___ honest answer" — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'an',
+        },
+        {
+          q: '"___ one-way street" — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'a',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'a / an — Tələffüz Qaydası və Xüsusi Hallar (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Səs qaydası — detallı ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Səs qaydası — tələffüzə diqqət!',
+      content: 'Bəzi sözlər gözlənilməz tələffüzə malikdir. Yazıya yox, səsə bax:',
+      table: [
+        ['Söz',           'Tələffüz',      'Artikl', 'Səbəb'],
+        ['university',    '/juːnɪˈvɜːsɪti/', 'a',   'y-səsi ilə başlayır'],
+        ['European',      '/ˌjʊərəˈpiːən/', 'a',    'y-səsi ilə başlayır'],
+        ['one-way',       '/wʌn/',          'a',    'w-səsi ilə başlayır'],
+        ['useful',        '/ˈjuːsfəl/',     'a',    'y-səsi ilə başlayır'],
+        ['hour',          '/ˈaʊər/',        'an',   'h səssiz, a-səsi ilə başlayır'],
+        ['honest',        '/ˈɒnɪst/',       'an',   'h səssiz, o-səsi ilə başlayır'],
+        ['MP',            '/ˌem ˈpiː/',     'an',   'em-səsi ilə başlayır'],
+        ['FBI',           '/ˌef biː ˈaɪ/', 'an',   'ef-səsi ilə başlayır'],
+      ],
+      tip: 'İxtisarları oxuyarkən birinci hərfin tələffüzünə bax: MP → em → an MP; FBI → ef → an FBI.',
+    },
+
+    // ── Ekran 2: a/an ilə xüsusi strukturlar ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'a / an ilə xüsusi strukturlar',
+      content: 'a / an bəzi sabit birləşmələrdə işlənir:',
+      examples: [
+        { word: 'What a wonderful idea!',             az: 'What a/an + sifət + isim — nida'              },
+        { word: 'What an amazing view!',              az: 'What a/an + sifət + isim — nida'              },
+        { word: 'Such a long journey!',               az: 'such a/an + sifət + isim'                     },
+        { word: 'It was such an easy task.',          az: 'such a/an + sifət + isim'                     },
+        { word: 'half an hour',                       az: 'half an hour — sabit ifadə'                   },
+        { word: 'quite a surprise',                   az: 'quite a/an + isim'                            },
+        { word: 'rather a difficult problem',         az: 'rather a/an + sifət + isim'                   },
+        { word: 'a hundred / a thousand / a million', az: 'böyük ədədlərdə a = one'                     },
+      ],
+      tip: '"What a/an" strukturunda artikl sifətin deyil, ismin əvvəlinə gəlir: What a beautiful day! (a + day)',
+    },
+
+    // ── Ekran 3: Ümumi səhvlər ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Ümumi səhvlər',
+      content: 'Tez-tez edilən səhvlər:',
+      table: [
+        ['Yanlış',                          'Düzgün',                       'Səbəb'],
+        ['She is doctor.',                  'She is a doctor.',             'Peşədə a/an lazımdır'],
+        ['I need a umbrella.',              'I need an umbrella.',          'umbrella → sait (u)'],
+        ['He is a honest man.',             'He is an honest man.',         'h səssizdir'],
+        ['It was a easy test.',             'It was an easy test.',         'easy → sait (e)'],
+        ['I saw an dog.',                   'I saw a dog.',                 'dog → samit (d)'],
+        ['She is an very good teacher.',    'She is a very good teacher.',  'very → samit (v)'],
+      ],
+      tip: '"She is an very good teacher" — yanlışdır, çünki artikl birbaşa sifətin (very good) deyil, ismin (teacher) qabağında gəlir.',
+    },
+
+    // ── Ekran 4: Nisbət və tezlik ifadələri ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Nisbət və tezlik ifadələri',
+      content: 'Sürət, qiymət, tezlik bildirən ifadələrdə a / an işlədilir:',
+      examples: [
+        { word: '120 kilometres an hour',          az: 'sürət'                 },
+        { word: 'four times a day',                az: 'tezlik — gün ərzində'  },
+        { word: 'twice a week',                    az: 'tezlik — həftədə'      },
+        { word: 'once a month',                    az: 'tezlik — ayda'         },
+        { word: '£5 a kilo',                       az: 'qiymət — kiloya görə'  },
+        { word: '$15 an hour',                     az: 'qiymət — saata görə'   },
+        { word: 'three meals a day',               az: 'miqdar — gündə'        },
+        { word: '£30,000 a year',                  az: 'maaş — ildə'           },
+      ],
+      tip: 'Bu ifadələrdə a/an = "hər bir" mənasındadır: "£5 a kilo" = "hər kilo üçün £5".',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"What ___ amazing concert!" — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'an',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She is an very kind person.',
+            'She is a very kind person.',
+            'She is very kind person.',
+          ],
+          answer: 'She is a very kind person.',
+        },
+        {
+          q: '"I go to the pool three times ___ week." — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the'],
+          answer: 'a',
+        },
+        {
+          q: '"It takes ___ hour to get there." — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'an',
+        },
+        {
+          q: '"___ MP" — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'an',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'He is an useful assistant.',
+            'He is a useful assistant.',
+            'He is useful assistant.',
+          ],
+          answer: 'He is a useful assistant.',
+        },
+        {
+          q: '"What ___ long trip it was!" — boşluğa nə gəlir?',
+          options: ['a', 'an', '-'],
+          answer: 'a',
+        },
+        {
+          q: '"She earns £500 ___ week." — boşluğa nə gəlir?',
+          options: ['a', 'an', 'the'],
+          answer: 'a',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Sait səslə başlayan sözdən əvvəl:',                          tr: 'an',                           wrong: 'a'                            },
+  { en: 'Samit səslə başlayan sözdən əvvəl:',                         tr: 'a',                            wrong: 'an'                           },
+  { en: '"___ apple" — düzgün artikl:',                                tr: 'an',                           wrong: 'a'                            },
+  { en: '"___ car" — düzgün artikl:',                                  tr: 'a',                            wrong: 'an'                           },
+  { en: '"___ hour" — düzgün artikl (h səssizdir):',                   tr: 'an',                           wrong: 'a'                            },
+  { en: '"___ university" — düzgün artikl (y-səsi):',                  tr: 'a',                            wrong: 'an'                           },
+  { en: '"___ honest answer" — düzgün artikl:',                        tr: 'an',                           wrong: 'a'                            },
+  { en: '"___ European country" — düzgün artikl:',                     tr: 'a',                            wrong: 'an'                           },
+  { en: '"He is ___ architect." — boşluğa nə gəlir?',                 tr: 'an',                           wrong: 'a'                            },
+  { en: '"She is ___ nurse." — boşluğa nə gəlir?',                    tr: 'a',                            wrong: 'an'                           },
+  { en: '"twice ___ week" — boşluğa nə gəlir?',                       tr: 'a',                            wrong: 'an'                           },
+  { en: '"£10 ___ hour" — boşluğa nə gəlir?',                         tr: 'an',                           wrong: 'a'                            },
+  { en: '"What ___ exciting match!" — boşluğa nə gəlir?',             tr: 'an',                           wrong: 'a'                            },
+  { en: '"What ___ great day!" — boşluğa nə gəlir?',                  tr: 'a',                            wrong: 'an'                           },
+  { en: '"___ MP" — düzgün artikl (em-səsi):',                         tr: 'an',                           wrong: 'a'                            },
+  { en: '"___ one-way street" — düzgün artikl (w-səsi):',              tr: 'a',                            wrong: 'an'                           },
+  { en: '"___ useful tip" — düzgün artikl (y-səsi):',                  tr: 'a',                            wrong: 'an'                           },
+  { en: 'Peşə bildirən cümlələrdə a/an:',                              tr: 'Mütləq işlədilir',             wrong: 'İşlədilmir'                   },
+  { en: 'İlk dəfə bəhs edilən şeydən sonra:',                         tr: 'the işlədilir',                wrong: 'a/an işlədilir'               },
+  { en: '"I need ___ envelope." — boşluğa nə gəlir?',                 tr: 'an',                           wrong: 'a'                            },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O mühasibdir.',
+      words: ['She', 'is', 'an', 'accountant', 'a', 'the'],
+      answer: ['She', 'is', 'an', 'accountant'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O maraqlı kitab aldı.',
+      words: ['He', 'bought', 'an', 'interesting', 'book', 'a', 'the'],
+      answer: ['He', 'bought', 'an', 'interesting', 'book'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Buraya çatmaq bir saat çəkir.',
+      words: ['It', 'takes', 'an', 'hour', 'to', 'get', 'here', 'a', 'the'],
+      answer: ['It', 'takes', 'an', 'hour', 'to', 'get', 'here'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Nə gözəl bir gündür!',
+      words: ['What', 'a', 'beautiful', 'day', 'an', 'the', '!'],
+      answer: ['What', 'a', 'beautiful', 'day', '!'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Həftədə iki dəfə idmana gedirəm.',
+      words: ['I', 'go', 'to', 'the', 'gym', 'twice', 'a', 'week', 'an', 'day'],
+      answer: ['I', 'go', 'to', 'the', 'gym', 'twice', 'a', 'week'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O dürüst insandır.',
+      words: ['She', 'is', 'an', 'honest', 'person', 'a', 'the'],
+      answer: ['She', 'is', 'an', 'honest', 'person'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bura yaxın bank varmı?',
+      words: ['Is', 'there', 'a', 'bank', 'near', 'here', 'an', 'the', '?'],
+      answer: ['Is', 'there', 'a', 'bank', 'near', 'here', '?'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O Avropa avtomobili sürür.',
+      words: ['He', 'drives', 'a', 'European', 'car', 'an', 'the'],
+      answer: ['He', 'drives', 'a', 'European', 'car'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mənə qələm və zərf lazımdır.',
+      words: ['I', 'need', 'a', 'pen', 'and', 'an', 'envelope', 'the', 'a'],
+      answer: ['I', 'need', 'a', 'pen', 'and', 'an', 'envelope'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O saatda 90 kilometr sürətlə gedirdi.',
+      words: ['She', 'was', 'driving', 'at', '90', 'kilometres', 'an', 'hour', 'a', 'the'],
+      answer: ['She', 'was', 'driving', 'at', '90', 'kilometres', 'an', 'hour'],
+    },
+  ],
+},
+  
 { type: 'section_divider', title: 'the — müəyyən artikl' },
+
+// ── UNIT 71–74 — the (Müəyyən Artikl) ───────────────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'the — Müəyyən Artikl (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: the nədir? ───────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'the — nədir və nə vaxt işlədilir?',
+      content: 'the — müəyyən artikldır. Həm danışan, həm dinləyən hansı şeydən bəhs edildiyini bilir.\n\n❗ Azərbaycan dilində the-nin birbaşa qarşılığı yoxdur — bu səbəbdən ən çətin mövzulardan biridir!\n\nƏsas istifadə halları:',
+      table: [
+        ['Hal',                           'Nümunə'],
+        ['İkinci dəfə bəhs edilən şey',   'I saw a dog. The dog was huge.'],
+        ['Yeganə olan şeylər',            'the sun / the moon / the world'],
+        ['Hər iki tərəfin bildiyi şey',   'Can you close the door?'],
+        ['Musiqi alətləri',               'She plays the piano.'],
+        ['Superlativ ilə',                'He is the best student.'],
+      ],
+      tip: 'the = "biz ikimiz də bilirik hansı şeydən danışırıq" mənasındadır.',
+    },
+
+    // ── Ekran 2: İkinci bəhs + yeganə şeylər ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İkinci dəfə bəhs + yeganə şeylər',
+      content: 'İlk dəfə a/an, sonra the. Dünyada tək olan şeylər həmişə the ilə:',
+      examples: [
+        { word: 'I bought a jacket. The jacket was on sale.',   az: 'ilk → a | sonra → the'              },
+        { word: 'She has a dog. The dog loves to run.',         az: 'ilk → a | sonra → the'              },
+        { word: 'The sun rises in the east.',                   az: 'yeganə — dünyada bir günəş var'      },
+        { word: 'The moon was very bright last night.',         az: 'yeganə — dünyada bir ay var'         },
+        { word: 'She travels around the world.',                az: 'yeganə — bir dünya var'              },
+        { word: 'I read it on the internet.',                   az: 'yeganə — bir internet var'           },
+        { word: 'We need to protect the environment.',          az: 'yeganə — bir ətraf mühit var'        },
+        { word: 'The sky was clear all day.',                   az: 'yeganə — bir səma var'               },
+      ],
+      tip: 'the sun, the moon, the world, the sky, the earth, the sea, the internet — bunlar həmişə the ilə işlədilir.',
+    },
+
+    // ── Ekran 3: Hər iki tərəfin bildiyi şey + musiqi alətləri ───────────────
+    {
+      type: 'lesson',
+      title: 'Kontekstdən məlum olan şey + musiqi alətləri',
+      content: 'Kontekstdən aydın olanda the işlədilir. Musiqi alətlərindən əvvəl həmişə the gəlir:',
+      examples: [
+        { word: 'Can you pass the salt, please?',       az: 'süfrədəki duz — kontekstdən məlumdur'       },
+        { word: 'Where is the bathroom?',               az: 'bu binadakı hamam — kontekstdən məlumdur'    },
+        { word: 'The children are in the garden.',      az: 'bu ailənin uşaqları — kontekstdən məlumdur' },
+        { word: 'I\'m going to the bank.',              az: 'hər ikimiz hansı bank olduğunu bilirik'     },
+        { word: 'She plays the violin.',                az: 'musiqi aləti — həmişə the'                  },
+        { word: 'He is learning the guitar.',           az: 'musiqi aləti — həmişə the'                  },
+        { word: 'I used to play the flute.',            az: 'musiqi aləti — həmişə the'                  },
+        { word: 'She performs the piano beautifully.',  az: 'musiqi aləti — həmişə the'                  },
+      ],
+      tip: 'Musiqi alətlərindən fərqli olaraq, idman növlərindən əvvəl the işlədilmir: She plays tennis. (the yox!)',
+    },
+
+    // ── Ekran 4: Superlativ + coğrafi istiqamətlər ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Superlativ + coğrafi istiqamətlər',
+      content: '"Ən ..." ifadəsi həmişə the ilə işlənir. İstiqamətlər (the north/south...) the ilə:',
+      examples: [
+        { word: 'She is the best player on the team.',          az: 'superlativ — the best'              },
+        { word: 'It was the most interesting lecture.',         az: 'superlativ — the most'              },
+        { word: 'That is the tallest building in the city.',    az: 'superlativ — the tallest'           },
+        { word: 'It was the worst experience of my life.',      az: 'superlativ — the worst'             },
+        { word: 'They live in the north of the country.',       az: 'istiqamət — the north'              },
+        { word: 'She moved to the south of France.',            az: 'istiqamət — the south'              },
+        { word: 'The sun rises in the east.',                   az: 'istiqamət — the east'               },
+        { word: 'Winds come from the west in winter.',          az: 'istiqamət — the west'               },
+      ],
+      tip: 'the + superlativ həmişə birlikdə gəlir: the best, the most expensive, the tallest — heç vaxt "a best" demə.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She plays ___ piano." — boşluğa nə gəlir?',
+          options: ['a', 'the', '-'],
+          answer: 'the',
+        },
+        {
+          q: '"___ sun is very bright today." — boşluğa nə gəlir?',
+          options: ['A', 'The', '-'],
+          answer: 'The',
+        },
+        {
+          q: '"He is ___ best student in the class." — boşluğa nə gəlir?',
+          options: ['a', 'the', '-'],
+          answer: 'the',
+        },
+        {
+          q: '"I saw a cat. ___ cat was black." — boşluğa nə gəlir?',
+          options: ['A', 'The', '-'],
+          answer: 'The',
+        },
+        {
+          q: '"She plays ___ tennis." — boşluğa nə gəlir?',
+          options: ['a', 'the', '-'],
+          answer: '-',
+        },
+        {
+          q: '"Can you close ___ window?" — boşluğa nə gəlir?',
+          options: ['a', 'the', '-'],
+          answer: 'the',
+        },
+        {
+          q: '"They live in ___ north of the country." — boşluğa nə gəlir?',
+          options: ['a', 'the', '-'],
+          answer: 'the',
+        },
+        {
+          q: '"I read it on ___ internet." — boşluğa nə gəlir?',
+          options: ['a', 'the', '-'],
+          answer: 'the',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'the — Coğrafi Adlar + the İşlənməyən Hallar (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Coğrafi adlar — the işlədilən ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Coğrafi adlar — the işlədilən',
+      content: 'Bəzi coğrafi adlar həmişə the ilə işlənir:',
+      table: [
+        ['Kateqoriya',           'Nümunələr'],
+        ['Çaylar',               'the Nile, the Thames, the Amazon, the Kura'],
+        ['Okeanlar / Dənizlər',  'the Pacific, the Atlantic, the Caspian Sea'],
+        ['Dağ silsiləsi',        'the Alps, the Himalayas, the Caucasus'],
+        ['Arxipelaq',            'the Canary Islands, the Maldives'],
+        ['Ölkə (çoxluq/republic)', 'the USA, the UK, the Netherlands'],
+        ['Səhralar',             'the Sahara, the Gobi'],
+      ],
+      tip: 'Qayda: çoxluq formasında olan coğrafi adlar (the Alps, the USA) və çaylar/okeanlar — həmişə the ilə.',
+    },
+
+    // ── Ekran 2: Coğrafi adlar — the işlədilməyən ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Coğrafi adlar — the işlədilməyən',
+      content: 'Bəzi coğrafi adlardan əvvəl the işlədilmir:',
+      table: [
+        ['Kateqoriya',       'Nümunələr'],
+        ['Şəhərlər',         'London, Paris, Baku, Tokyo'],
+        ['Tək ölkələr',      'France, Germany, Azerbaijan, Japan'],
+        ['Qitələr',          'Europe, Asia, Africa, America'],
+        ['Tək dağlar',       'Mount Everest, Mount Fuji, Mount Elbrus'],
+        ['Göllər',           'Lake Victoria, Lake Ganja, Lake Baikal'],
+        ['Küçə adları',      'Oxford Street, Fifth Avenue'],
+      ],
+      tip: 'Lake Ganja ✅ (the yox!) — çünki "Lake" artıq kateqoriyanı göstərir. The Lake Ganja ❌.',
+    },
+
+    // ── Ekran 3: the işlədilməyən digər hallar ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'the işlədilməyən digər hallar',
+      content: 'Bəzi ümumi anlayışlardan əvvəl the işlədilmir:',
+      examples: [
+        { word: 'She speaks French and Spanish.',          az: 'dillər — the yox'                            },
+        { word: 'I study mathematics and history.',        az: 'fənlər — the yox'                            },
+        { word: 'He loves football.',                      az: 'idman — the yox'                             },
+        { word: 'I had breakfast at eight.',               az: 'yeməklər (ümumi) — the yox'                  },
+        { word: 'She goes to school every day.',           az: 'at school/work/home — məqsəd bildirir, the yox' },
+        { word: 'He is at work right now.',                az: 'at work — the yox'                           },
+        { word: 'I go to bed at eleven.',                  az: 'to bed — the yox'                            },
+        { word: 'She is in hospital.',                     az: 'in hospital (xəstədir) — the yox (BrE)'      },
+      ],
+      tip: '"go to school" (şagirddir) vs "go to the school" (binaya gedir) — the-nin olub-olmaması mənası dəyişdirir!',
+    },
+
+    // ── Ekran 4: a/an vs the — müqayisə ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'a/an vs the — müqayisə',
+      content: 'İki artiklin fərqi:',
+      table: [
+        ['a / an',                              'the'],
+        ['İlk dəfə bəhs edilir',                'İkinci dəfə / artıq məlumdur'],
+        ['Hər hansı biri',                      'Konkret, müəyyən biri'],
+        ['I need a doctor.',                    'The doctor is in room 3.'],
+        ['She has a cat.',                      'The cat is sleeping now.'],
+        ['I watched a film.',                   'Did you enjoy the film?'],
+        ['He is a teacher.',                    'He is the best teacher here.'],
+      ],
+      tip: '"I need a doctor" = istənilən həkim | "The doctor called" = biliyimiz olan həmin həkim.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ Alps are in Europe." — boşluğa nə gəlir?',
+          options: ['The', '-', 'A'],
+          answer: 'The',
+        },
+        {
+          q: '"She speaks ___ French." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"___ Amazon is in South America." — boşluğa nə gəlir?',
+          options: ['The', '-', 'A'],
+          answer: 'The',
+        },
+        {
+          q: '"She goes to ___ school every day." (şagiddir) — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"___ Netherlands is a small country." — boşluğa nə gəlir?',
+          options: ['The', '-', 'A'],
+          answer: 'The',
+        },
+        {
+          q: '"___ Lake Ganja is beautiful." — boşluğa nə gəlir?',
+          options: ['The', 'A', '-'],
+          answer: '-',
+        },
+        {
+          q: '"___ Baku is the capital of Azerbaijan." — boşluğa nə gəlir?',
+          options: ['The', 'A', '-'],
+          answer: '-',
+        },
+        {
+          q: '"He loves ___ football." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Musiqi alətlərindən əvvəl:',                                    tr: 'the işlədilir',              wrong: 'the işlədilmir'               },
+  { en: 'İdman növlərindən əvvəl:',                                       tr: 'the işlədilmir',             wrong: 'the işlədilir'                },
+  { en: '"___ sun" — düzgün artikl:',                                     tr: 'the',                        wrong: 'a'                            },
+  { en: '"___ moon" — düzgün artikl:',                                    tr: 'the',                        wrong: 'a'                            },
+  { en: '"___ Nile" — düzgün artikl:',                                    tr: 'the',                        wrong: '-'                            },
+  { en: '"___ France" — düzgün artikl:',                                  tr: '-',                          wrong: 'the'                          },
+  { en: '"___ Alps" — düzgün artikl:',                                    tr: 'the',                        wrong: '-'                            },
+  { en: '"___ Mount Everest" — düzgün artikl:',                           tr: '-',                          wrong: 'the'                          },
+  { en: '"___ USA" — düzgün artikl:',                                     tr: 'the',                        wrong: '-'                            },
+  { en: '"___ Lake Baikal" — düzgün artikl:',                             tr: '-',                          wrong: 'the'                          },
+  { en: '"She is ___ best doctor here." — boşluğa nə gəlir?',            tr: 'the',                        wrong: 'a'                            },
+  { en: '"They live in ___ south of the country." — boşluğa nə gəlir?',  tr: 'the',                        wrong: '-'                            },
+  { en: '"He plays ___ guitar." — boşluğa nə gəlir?',                    tr: 'the',                        wrong: '-'                            },
+  { en: '"She speaks ___ English." — boşluğa nə gəlir?',                 tr: '-',                          wrong: 'the'                          },
+  { en: '"I go to ___ work by bus." — boşluğa nə gəlir?',                tr: '-',                          wrong: 'the'                          },
+  { en: '"I read it on ___ internet." — boşluğa nə gəlir?',              tr: 'the',                        wrong: '-'                            },
+  { en: '"I saw a bird. ___ bird flew away." — boşluğa nə gəlir?',       tr: 'The',                        wrong: 'A'                            },
+  { en: '"___ Sahara is in Africa." — boşluğa nə gəlir?',                tr: 'the',                        wrong: '-'                            },
+  { en: '"Can you pass ___ salt?" — boşluğa nə gəlir?',                  tr: 'the',                        wrong: 'a'                            },
+  { en: '"She goes to ___ school." (şagirddir) — boşluğa nə gəlir?',    tr: '-',                          wrong: 'the'                          },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O ən yaxşı tələbədir.',
+      words: ['She', 'is', 'the', 'best', 'student', 'a', 'an', 'most'],
+      answer: ['She', 'is', 'the', 'best', 'student'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Günəş şərqdə doğur.',
+      words: ['The', 'sun', 'rises', 'in', 'the', 'east', 'a', 'west'],
+      answer: ['The', 'sun', 'rises', 'in', 'the', 'east'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O skripka çalır.',
+      words: ['She', 'plays', 'the', 'violin', 'a', '-', 'tennis'],
+      answer: ['She', 'plays', 'the', 'violin'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Amazon Cənubi Amerikadadır.',
+      words: ['The', 'Amazon', 'is', 'in', 'South', 'America', 'A', 'the'],
+      answer: ['The', 'Amazon', 'is', 'in', 'South', 'America'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bu axşam kinoya gedirəm.',
+      words: ['I\'m', 'going', 'to', 'the', 'cinema', 'tonight', 'a', 'school'],
+      answer: ['I\'m', 'going', 'to', 'the', 'cinema', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Niderlandiya kiçik bir ölkədir.',
+      words: ['The', 'Netherlands', 'is', 'a', 'small', 'country', 'the', 'an'],
+      answer: ['The', 'Netherlands', 'is', 'a', 'small', 'country'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Pəncərəni bağlaya bilərsənmi? Soyuqdur.',
+      words: ['Can', 'you', 'close', 'the', 'window', 'It\'s', 'cold', 'a', 'an'],
+      answer: ['Can', 'you', 'close', 'the', 'window', 'It\'s', 'cold'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O ölkənin şimalında yaşayırlar.',
+      words: ['They', 'live', 'in', 'the', 'north', 'of', 'the', 'country', 'a', 'south'],
+      answer: ['They', 'live', 'in', 'the', 'north', 'of', 'the', 'country'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Alp dağları Avropadadır.',
+      words: ['The', 'Alps', 'are', 'in', 'Europe', 'A', 'the', 'Asia'],
+      answer: ['The', 'Alps', 'are', 'in', 'Europe'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İnternetdə oxudum.',
+      words: ['I', 'read', 'it', 'on', 'the', 'internet', 'a', 'an', 'in'],
+      answer: ['I', 'read', 'it', 'on', 'the', 'internet'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'Artikl işlənməyən hallar' },
+
+// ── UNIT 70–72 — Artikl İşlənməyən Hallar (No Article) ──────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Artikl İşlənməyən Hallar — İdman, Dillər, Fənlər, Ümumi Anlayışlar (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: İdman + Dillər ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İdman, oyunlar və dillər — artikl yoxdur',
+      content: 'İdman növləri və dil adlarından əvvəl heç bir artikl işlədilmir:\n\nİdman: football, tennis, chess, basketball, skiing...\nDillər: English, French, German, Arabic...',
+      examples: [
+        { word: 'I play football every weekend.',           az: 'idman — artikl yox'                   },
+        { word: 'She is learning basketball.',             az: 'idman — artikl yox'                   },
+        { word: 'Do you play chess?',                      az: 'oyun — artikl yox'                    },
+        { word: 'Do you think English is difficult?',      az: 'dil — artikl yox'                     },
+        { word: 'She speaks French fluently.',             az: 'dil — artikl yox'                     },
+        { word: 'He studies Arabic at university.',        az: 'dil — artikl yox'                     },
+      ],
+      tip: 'İdman: artikl yox. Musiqi aləti: the var! → She plays tennis. ✅ She plays the violin. ✅',
+    },
+
+    // ── Ekran 2: Fənlər + Ümumi anlayışlar ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Fənn adları + ümumi anlayışlar',
+      content: 'Fənn adları və ümumi mənada işlədilən isimlərdən əvvəl artikl işlədilmir:',
+      examples: [
+        { word: 'Tom is studying physics and chemistry.',  az: 'fənlər — artikl yox'                  },
+        { word: 'She teaches history and geography.',      az: 'fənlər — artikl yox'                  },
+        { word: 'I\'m not good at mathematics.',          az: 'fənn — artikl yox'                    },
+        { word: 'I like music, especially jazz.',         az: 'ümumi anlayış — artikl yox'            },
+        { word: 'We don\'t eat meat very often.',         az: 'ümumi anlayış — artikl yox'            },
+        { word: 'Life is not possible without water.',    az: 'ümumi anlayış — artikl yox'            },
+      ],
+      tip: '"I like music" (ümumi) ≠ "The music at the party was loud" (konkret). Ümumidə artikl yox, konkretdə the var.',
+    },
+
+    // ── Ekran 3: Ümumi vs Konkret ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Ümumi anlayış vs konkret — fərq',
+      content: 'Eyni söz ümumi mənada artikl olmadan, konkret mənada the ilə işlədilir:',
+      table: [
+        ['Artikl yox — ümumi',                       'the var — konkret'],
+        ['Flowers are beautiful.',                   'The flowers in this garden are lovely.'],
+        ['I don\'t like cold weather.',              'The weather today is terrible.'],
+        ['We don\'t eat fish often.',                'The fish we ordered was delicious.'],
+        ['Are you interested in history?',           'Are you interested in the history of Baku?'],
+        ['I like music.',                            'The music at the concert was amazing.'],
+        ['Water is essential for life.',             'The water in this river is clean.'],
+      ],
+      tip: 'Ümumi qayda: konkret bir şeydən danışırsan → the. Bütün növ / bütün miqdar → artikl yox.',
+    },
+
+    // ── Ekran 4: İdman vs Musiqi aləti — tələ ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İdman vs musiqi aləti — vacib fərq',
+      content: 'Bu fərq çox tez-tez sınaqda çıxır — diqqətlə öyrən:',
+      table: [
+        ['İdman (artikl yox)',          'Musiqi aləti (the var)'],
+        ['She plays tennis.',           'She plays the piano.'],
+        ['He loves football.',          'He is learning the guitar.'],
+        ['Do you play chess?',          'Can you play the violin?'],
+        ['I go skiing in winter.',      'She performed the flute at the concert.'],
+        ['They play basketball.',       'He practises the drums every day.'],
+      ],
+      tip: 'Oyun + idman = artikl yox. Musiqi aləti = the. Bu istisna əzbərlənməlidir!',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She plays ___ tennis." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"He plays ___ guitar." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: 'the',
+        },
+        {
+          q: '"Do you think ___ French is hard?" — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"She is studying ___ biology." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"I like ___ music." (ümumi) — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"___ music at the party was loud." — boşluğa nə gəlir?',
+          options: ['The', 'A', '-'],
+          answer: 'The',
+        },
+        {
+          q: '"We don\'t eat ___ meat." (ümumi) — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"I hate ___ exams." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Artikl İşlənməyən Hallar — Xüsusi İfadələr və Coğrafi Adlar (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Funksional ifadələr — go to work/school/bed ─────────────────
+    {
+      type: 'lesson',
+      title: 'Funksional ifadələr — artikl yoxdur',
+      content: 'Bu ifadələrdə konkret yer deyil, funksiya nəzərdə tutulur — artikl işlədilmir:',
+      table: [
+        ['İfadə',                 'Nümunə'],
+        ['go to work / at work',  'I\'m going to work now.'],
+        ['go to school / at school', 'What did you learn at school?'],
+        ['go to university',      'She wants to go to university.'],
+        ['go to hospital / in hospital', 'He had to go to hospital.'],
+        ['go to prison / in prison', 'Why is he in prison?'],
+        ['go to church / at church', 'She goes to church on Sundays.'],
+        ['go to bed / in bed',    'I\'m going to bed. Goodnight!'],
+        ['go home / at home',     'I\'m going home. (not "to home")'],
+      ],
+      tip: '"go to the hospital" (ziyarətçi, konkret bina) vs "go to hospital" (xəstədir, funksional məna) — the-nin olub-olmaması mənası dəyişir!',
+    },
+
+    // ── Ekran 2: Funksional ifadələr — the ilə fərq ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Funksional ifadələr — the ilə fərq',
+      content: 'Eyni yerlər funksional mənada artikl olmadan, konkret mənada the ilə işlənir:',
+      table: [
+        ['Artikl yox — funksional məna',            'the var — konkret bina/yer'],
+        ['go to school (şagirddir)',                'go to the school (binaya gedir)'],
+        ['in hospital (xəstədir)',                  'visit the hospital (ziyarət edir)'],
+        ['go to prison (cəza alıb)',                'go to the prison (işinə görə gedir)'],
+        ['go to church (ibadət edir)',              'go to the church (binaya gedir)'],
+        ['go to university (tələbədir)',            'go to the university (campusa gedir)'],
+      ],
+      tip: '"She went to the school to speak with the teacher." — burada the var, çünki konkret binaya gedir, şagird kimi deyil.',
+    },
+
+    // ── Ekran 3: Coğrafi adlar — artikl yox ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Coğrafi adlar — artikl işlədilmir',
+      content: 'Bu kateqoriyalarda artikl işlədilmir:',
+      examples: [
+        { word: 'France is a very large country.',         az: 'tək ölkə — artikl yox'                },
+        { word: 'Cairo is the capital of Egypt.',          az: 'şəhər — artikl yox'                   },
+        { word: 'Corsica is an island.',                   az: 'tək ada — artikl yox'                 },
+        { word: 'Mount Everest is the highest mountain.',  az: 'tək dağ — artikl yox'                 },
+        { word: 'Lake Victoria is in Africa.',             az: 'göl — artikl yox'                     },
+        { word: 'Kevin lives in Newton Street.',           az: 'küçə adı — artikl yox'                },
+        { word: 'She studies at Cambridge University.',    az: 'ad + university — artikl yox'         },
+        { word: 'The flight lands at Kennedy Airport.',    az: 'ad + airport — artikl yox'            },
+      ],
+      tip: 'Lake Victoria, Mount Everest — bu adlarda kateqoriya sözü (Lake/Mount) artıq mənanı verir, the lazım deyil.',
+    },
+
+    // ── Ekran 4: Xülasə — the var vs yox ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Xülasə — the var vs artikl yox',
+      content: 'Bütün qaydaları bir yerdə:',
+      table: [
+        ['Artikl yox',                           'the var'],
+        ['tennis, football (idman)',             'the piano, the violin (musiqi)'],
+        ['English, French (dillər)',             'the north, the south (istiqamət)'],
+        ['physics, history (fənlər)',            'the best, the most (superlativ)'],
+        ['go to work / bed / school',            'go to the cinema / the bank'],
+        ['France, Cairo, Mount Everest',         'the Alps, the Amazon, the UK'],
+        ['music, water, life (ümumi)',           'the music at the party (konkret)'],
+      ],
+      tip: 'Əgər şübhəlisinisə, özündən soruş: "Bu ümumi mənadadır, yoxsa konkret bir şeydən danışıram?" Ümumi → artikl yox. Konkret → the.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I\'m going to ___ work now." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"She goes to ___ church on Sundays." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"___ France is a large country." — boşluğa nə gəlir?',
+          options: ['The', 'A', '-'],
+          answer: '-',
+        },
+        {
+          q: '"I\'m going to ___ bed. Goodnight!" — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"He had to go to ___ hospital." (xəstədir) — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"She studies at ___ Cambridge University." — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"What did you learn at ___ school?" — boşluğa nə gəlir?',
+          options: ['the', 'a', '-'],
+          answer: '-',
+        },
+        {
+          q: '"I\'m going ___  home." — boşluğa nə gəlir?',
+          options: ['to the', 'to a', '-'],
+          answer: '-',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'İdman növlərindən əvvəl artikl:',                               tr: 'işlədilmir',                   wrong: 'the işlədilir'                },
+  { en: 'Musiqi alətlərindən əvvəl artikl:',                             tr: 'the işlədilir',                wrong: 'işlədilmir'                   },
+  { en: '"She plays ___ violin." — boşluğa nə gəlir?',                  tr: 'the',                          wrong: '-'                            },
+  { en: '"He plays ___ football." — boşluğa nə gəlir?',                 tr: '-',                            wrong: 'the'                          },
+  { en: '"Do you speak ___ German?" — boşluğa nə gəlir?',               tr: '-',                            wrong: 'the'                          },
+  { en: '"She studies ___ chemistry." — boşluğa nə gəlir?',             tr: '-',                            wrong: 'the'                          },
+  { en: '"I\'m going to ___ work." — boşluğa nə gəlir?',                tr: '-',                            wrong: 'the'                          },
+  { en: '"I\'m going to ___ cinema." — boşluğa nə gəlir?',              tr: 'the',                          wrong: '-'                            },
+  { en: '"He had to go to ___ hospital." (xəstədir) — boşluğa nə gəlir?', tr: '-',                         wrong: 'the'                          },
+  { en: '"___ life is not possible without ___ water." — boşluqlar:',   tr: '- / -',                        wrong: 'The / the'                    },
+  { en: '"I like ___ music." (ümumi) — boşluğa nə gəlir?',              tr: '-',                            wrong: 'the'                          },
+  { en: '"___ music at the party was great." — boşluğa nə gəlir?',      tr: 'The',                          wrong: '-'                            },
+  { en: '"___ France is a beautiful country." — boşluğa nə gəlir?',     tr: '-',                            wrong: 'The'                          },
+  { en: '"___ Netherlands is small." — boşluğa nə gəlir?',              tr: 'The',                          wrong: '-'                            },
+  { en: '"She goes to ___ school." (şagirddir) — boşluğa nə gəlir?',   tr: '-',                            wrong: 'the'                          },
+  { en: '"___ Lake Victoria is in Africa." — boşluğa nə gəlir?',        tr: '-',                            wrong: 'The'                          },
+  { en: '"I\'m going ___ home." — boşluğa nə gəlir?',                   tr: '-',                            wrong: 'to the'                       },
+  { en: '"She wants to go to ___ university." — boşluğa nə gəlir?',     tr: '-',                            wrong: 'the'                          },
+  { en: '"Are you interested in ___ history?" (ümumi) — boşluğa nə gəlir?', tr: '-',                       wrong: 'the'                          },
+  { en: '"Are you interested in ___ history of this city?" — boşluğa nə gəlir?', tr: 'the',                wrong: '-'                            },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən işə gedirəm. Sağ ol!',
+      words: ['I\'m', 'going', 'to', 'work', 'Goodbye', 'the', 'a', '!'],
+      answer: ['I\'m', 'going', 'to', 'work', 'Goodbye', '!'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O tennis oynayır, amma mən piano çalıram.',
+      words: ['She', 'plays', 'tennis', 'but', 'I', 'play', 'the', 'piano', 'a', 'football'],
+      answer: ['She', 'plays', 'tennis', 'but', 'I', 'play', 'the', 'piano'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tom fizika və kimya oxuyur.',
+      words: ['Tom', 'is', 'studying', 'physics', 'and', 'chemistry', 'the', 'a'],
+      answer: ['Tom', 'is', 'studying', 'physics', 'and', 'chemistry'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Yorulmuşam. Yatmağa gedirəm.',
+      words: ['I\'m', 'tired', 'I\'m', 'going', 'to', 'bed', 'the', 'a', '.'],
+      answer: ['I\'m', 'tired', '.', 'I\'m', 'going', 'to', 'bed', '.'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O anadilli kimi fransızca danışır.',
+      words: ['She', 'speaks', 'French', 'like', 'a', 'native', 'the', 'speaker'],
+      answer: ['She', 'speaks', 'French', 'like', 'a', 'native', 'speaker'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O xəstəxanaya getməli oldu.',
+      words: ['He', 'had', 'to', 'go', 'to', 'hospital', 'the', 'a', 'work'],
+      answer: ['He', 'had', 'to', 'go', 'to', 'hospital'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Fransız dili maraqlıdır.',
+      words: ['French', 'is', 'an', 'interesting', 'language', 'The', 'a', 'the'],
+      answer: ['French', 'is', 'an', 'interesting', 'language'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Keçən bazar günü kilsəyə getdi.',
+      words: ['She', 'went', 'to', 'church', 'last', 'Sunday', 'the', 'a', 'school'],
+      answer: ['She', 'went', 'to', 'church', 'last', 'Sunday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu axşam evdə qalıram.',
+      words: ['I\'m', 'staying', 'at', 'home', 'tonight', 'the', 'a', 'work'],
+      answer: ['I\'m', 'staying', 'at', 'home', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu şəhərin tarixiylə maraqlanırsanmı?',
+      words: ['Are', 'you', 'interested', 'in', 'the', 'history', 'of', 'this', 'city', 'a', '-', '?'],
+      answer: ['Are', 'you', 'interested', 'in', 'the', 'history', 'of', 'this', 'city', '?'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'Sayılan isimlər — çoxluq' },
+
+// ── UNIT 65 — Sayılan İsimlər: Çoxluq (Plural Nouns) ────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Çoxluq — Yazılış Qaydaları (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Ümumi qayda + xüsusi sonluqlar ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Çoxluq — yazılış qaydaları',
+      content: 'Əksər isimlərin çoxluğu -s əlavə etməklə düzəlir. Bəzi son hərflər xüsusi qayda tələb edir:',
+      table: [
+        ['Son hərflər',            'Qayda',       'Nümunə'],
+        ['ümumi hal',              '+ -s',         'flower → flowers, week → weeks'],
+        ['-s / -sh / -ch / -x',   '+ -es',        'bus → buses, dish → dishes, box → boxes'],
+        ['-o',                     '+ -es',        'potato → potatoes, tomato → tomatoes'],
+        ['-y (samitdən sonra)',    '-y → -ies',    'baby → babies, party → parties'],
+        ['-ay / -ey / -oy',       '+ -s',          'day → days, monkey → monkeys, boy → boys'],
+        ['-f / -fe',               '-f → -ves',    'shelf → shelves, knife → knives, wife → wives'],
+      ],
+      tip: '-y qaydası: samitdən sonra -ies (baby→babies), saitdən sonra sadəcə -s (day→days).',
+    },
+
+    // ── Ekran 2: Yazılış nümunələri ───────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Yazılış qaydaları — nümunələr',
+      content: 'Hər qayda üçün əlavə nümunələr:',
+      examples: [
+        { word: 'church → churches',          az: '-ch → -es'                              },
+        { word: 'address → addresses',        az: '-s → -es'                               },
+        { word: 'sandwich → sandwiches',      az: '-ch → -es'                              },
+        { word: 'dictionary → dictionaries',  az: '-y (samitdən sonra) → -ies'             },
+        { word: 'city → cities',              az: '-y (samitdən sonra) → -ies'             },
+        { word: 'family → families',          az: '-y (samitdən sonra) → -ies'             },
+        { word: 'leaf → leaves',              az: '-f → -ves'                              },
+        { word: 'half → halves',              az: '-f → -ves'                              },
+      ],
+      tip: 'holiday → holidays ✅ (ay+y → sadəcə -s). city → cities ✅ (samit t+y → -ies). Fərqi gör!',
+    },
+
+    // ── Ekran 3: Düzgünsüz çoxluqlar ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Düzgünsüz çoxluqlar — əzbərlə',
+      content: 'Bu isimlərin çoxluğu qaydaya uyğun deyil — əzbərlənməlidir:',
+      table: [
+        ['Tək',     'Çox'],
+        ['man',     'men'],
+        ['woman',   'women'],
+        ['child',   'children'],
+        ['foot',    'feet'],
+        ['tooth',   'teeth'],
+        ['mouse',   'mice'],
+        ['sheep',   'sheep (dəyişmir)'],
+        ['fish',    'fish (dəyişmir)'],
+        ['person',  'people'],
+      ],
+      tip: 'sheep və fish dəyişmir: one sheep → two sheep ✅. "two sheeps" ❌.',
+    },
+
+    // ── Ekran 4: person/people + police ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'person → people / police',
+      content: 'person-un çoxluğu people-dır. police həmişə cəm kimi işlədilir:',
+      examples: [
+        { word: 'She is a nice person.',              az: 'tək — person'                              },
+        { word: 'They are nice people.',              az: 'çox — people (persons yox!)'               },
+        { word: 'A lot of people speak English.',     az: 'people → cəm fel (speaks yox!)'            },
+        { word: 'I like the people here.',            az: 'people = they'                             },
+        { word: 'The police are looking for him.',    az: 'police → həmişə cəm (is yox!)'             },
+        { word: 'Why are the police here?',           az: 'police → cəm sual'                         },
+      ],
+      tip: '"people" artıq cəm mənalıdır — "peoples" demə. "A lot of people speak" — speak (speaks yox).',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"baby" sözünün çoxluğu:',
+          options: ['babys', 'babies', 'babes'],
+          answer: 'babies',
+        },
+        {
+          q: '"knife" sözünün çoxluğu:',
+          options: ['knifes', 'knifes', 'knives'],
+          answer: 'knives',
+        },
+        {
+          q: '"child" sözünün çoxluğu:',
+          options: ['childs', 'childen', 'children'],
+          answer: 'children',
+        },
+        {
+          q: '"dish" sözünün çoxluğu:',
+          options: ['dishs', 'dishes', 'dishies'],
+          answer: 'dishes',
+        },
+        {
+          q: '"sheep" sözünün çoxluğu:',
+          options: ['sheeps', 'sheep', 'sheepes'],
+          answer: 'sheep',
+        },
+        {
+          q: '"A lot of people ___ English." — düzgün fel:',
+          options: ['speaks', 'speak', 'is speaking'],
+          answer: 'speak',
+        },
+        {
+          q: '"tooth" sözünün çoxluğu:',
+          options: ['tooths', 'teeth', 'toothes'],
+          answer: 'teeth',
+        },
+        {
+          q: '"city" sözünün çoxluğu:',
+          options: ['citys', 'cities', 'cites'],
+          answer: 'cities',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Çoxluq — Həmişə Cəm İsimlər + Ümumi Səhvlər (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Həmişə cəm işlənən isimlər ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Həmişə cəm işlənən isimlər',
+      content: 'Bu isimlərin tək forması yoxdur — həmişə cəm kimi işlədilir və cəm fel alır:',
+      table: [
+        ['İsim',        'Düzgün',                              'Yanlış'],
+        ['scissors',    'Where are the scissors?',             'Where is the scissor?'],
+        ['glasses',     'My glasses are on the table.',        'My glass is on the table.'],
+        ['trousers',    'These trousers are too long.',        'This trouser is too long.'],
+        ['jeans',       'Your jeans look great.',              'Your jean looks great.'],
+        ['pyjamas',     'He put on his pyjamas.',              'He put on his pyjama.'],
+      ],
+      tip: 'Bu isimlər həmişə cəm — həmişə "they/them" əvəzliyi ilə işlədilir: "I like your trousers. They\'re nice."',
+    },
+
+    // ── Ekran 2: pair of ilə ──────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"a pair of" ilə tək danışmaq',
+      content: 'Həmişə cəm olan isimlərdən tək danışmaq üçün "a pair of" işlədilir:',
+      examples: [
+        { word: 'I need a new pair of jeans.',          az: 'a pair of jeans — tək məna'            },
+        { word: 'She bought two pairs of trousers.',    az: 'two pairs of — iki ədəd'               },
+        { word: 'Do you have a pair of scissors?',      az: 'a pair of scissors — tək məna'         },
+        { word: 'I need some new jeans.',               az: 'some new jeans — da qəbul edilir'       },
+        { word: 'He broke his glasses.',                az: 'glasses — cəm kimi qalır'              },
+        { word: 'She needs a new pair of glasses.',     az: 'a pair of glasses — tək məna'          },
+      ],
+      tip: '"a new jeans" ❌ — ya "a new pair of jeans" ✅ ya da "some new jeans" ✅.',
+    },
+
+    // ── Ekran 3: Tez-tez edilən səhvlər ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'Azərbaycanlı öyrənənlərin ən çox etdiyi çoxluq səhvləri:',
+      table: [
+        ['Yanlış',                                    'Düzgün'],
+        ['two mens',                                  'two men'],
+        ['three childs',                              'three children'],
+        ['many persons',                              'many people'],
+        ['a lot of sheeps',                           'a lot of sheep'],
+        ['I need a new jeans.',                       'I need a new pair of jeans.'],
+        ['This scissor is sharp.',                    'These scissors are sharp.'],
+        ['He put on his pyjama.',                     'He put on his pyjamas.'],
+        ['The police is here.',                       'The police are here.'],
+      ],
+      tip: 'persons istifadəsi çox nadir hallarda rəsmi dildə görünür — danışıq dilindəki doğrusu people-dır.',
+    },
+
+    // ── Ekran 4: Sayılabilən isimlərlə ümumi qayda ────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Çoxluq — ümumi xatırlatma',
+      content: 'Sayılan isimlərdə ədəd + çoxluq forması işlədilir:',
+      examples: [
+        { word: 'There was a woman with two men.',           az: 'woman → tək, men → çox'            },
+        { word: 'I have three children.',                    az: 'children — düzgünsüz çoxluq'        },
+        { word: 'Most of my friends are students.',          az: 'friends, students — cəm'            },
+        { word: 'The town was full of tourists.',            az: 'tourists — -s ilə adi cəm'          },
+        { word: 'We caught a lot of fish.',                  az: 'fish — dəyişmir'                    },
+        { word: 'I don\'t like mice.',                       az: 'mice — mouse-un çoxluğu'            },
+        { word: 'These scissors aren\'t sharp enough.',      az: 'scissors — həmişə cəm'              },
+        { word: 'My feet hurt after the long walk.',         az: 'feet — foot-un çoxluğu'             },
+      ],
+      tip: 'Bir ismin çoxluğunu bilmirsənsə, əvvəlcə adi -s qaydasını sına, sonra düzgünsüz formalar siyahısına bax.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I need a new jeans.',
+            'I need a new pair of jeans.',
+            'I need a new jean.',
+          ],
+          answer: 'I need a new pair of jeans.',
+        },
+        {
+          q: '"Where ___ my glasses?" — düzgün fel:',
+          options: ['is', 'are', 'was'],
+          answer: 'are',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'The police is outside.',
+            'The police are outside.',
+            'The polices are outside.',
+          ],
+          answer: 'The police are outside.',
+        },
+        {
+          q: '"He put on his ___ and went to bed." — boşluğa nə gəlir?',
+          options: ['pyjama', 'pyjamas', 'pyjamases'],
+          answer: 'pyjamas',
+        },
+        {
+          q: '"person" sözünün çoxluğu:',
+          options: ['persons', 'peoples', 'people'],
+          answer: 'people',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'These scissor aren\'t sharp.',
+            'This scissors isn\'t sharp.',
+            'These scissors aren\'t sharp.',
+          ],
+          answer: 'These scissors aren\'t sharp.',
+        },
+        {
+          q: '"I can\'t find my glasses. Have you seen ___?" — boşluğa nə gəlir?',
+          options: ['it', 'them', 'him'],
+          answer: 'them',
+        },
+        {
+          q: '"foot" sözünün çoxluğu:',
+          options: ['foots', 'feets', 'feet'],
+          answer: 'feet',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"baby" → çoxluq:',                                              tr: 'babies',                       wrong: 'babys'                        },
+  { en: '"knife" → çoxluq:',                                             tr: 'knives',                       wrong: 'knifes'                       },
+  { en: '"child" → çoxluq:',                                             tr: 'children',                     wrong: 'childs'                       },
+  { en: '"woman" → çoxluq:',                                             tr: 'women',                        wrong: 'womans'                       },
+  { en: '"tooth" → çoxluq:',                                             tr: 'teeth',                        wrong: 'tooths'                       },
+  { en: '"mouse" → çoxluq:',                                             tr: 'mice',                         wrong: 'mouses'                       },
+  { en: '"sheep" → çoxluq:',                                             tr: 'sheep',                        wrong: 'sheeps'                       },
+  { en: '"city" → çoxluq:',                                              tr: 'cities',                       wrong: 'citys'                        },
+  { en: '"leaf" → çoxluq:',                                              tr: 'leaves',                       wrong: 'leafs'                        },
+  { en: '"potato" → çoxluq:',                                            tr: 'potatoes',                     wrong: 'potatos'                      },
+  { en: '"address" → çoxluq:',                                           tr: 'addresses',                    wrong: 'addresss'                     },
+  { en: '"family" → çoxluq:',                                            tr: 'families',                     wrong: 'familys'                      },
+  { en: '"person" → çoxluq:',                                            tr: 'people',                       wrong: 'persons'                      },
+  { en: '"fish" → çoxluq:',                                              tr: 'fish',                         wrong: 'fishes'                       },
+  { en: '"scissors" → fel:',                                             tr: 'are (həmişə cəm)',              wrong: 'is'                           },
+  { en: '"The police ___ here." — düzgün fel:',                          tr: 'are',                          wrong: 'is'                           },
+  { en: '"jeans" üçün tək danışmaq üçün:',                              tr: 'a pair of jeans',              wrong: 'a jeans'                      },
+  { en: '"A lot of people ___ English." — düzgün fel:',                  tr: 'speak',                        wrong: 'speaks'                       },
+  { en: '"sandwich" → çoxluq:',                                          tr: 'sandwiches',                   wrong: 'sandwichs'                    },
+  { en: '"half" → çoxluq:',                                              tr: 'halves',                       wrong: 'halfs'                        },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, paltarını geyinib yatmağa getdi.',
+      words: ['He', 'put', 'on', 'his', 'pyjamas', 'and', 'went', 'to', 'bed', 'pyjama', 'the'],
+      answer: ['He', 'put', 'on', 'his', 'pyjamas', 'and', 'went', 'to', 'bed'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mənə yeni bir cins şalvar lazımdır.',
+      words: ['I', 'need', 'a', 'new', 'pair', 'of', 'jeans', 'jean', 'the'],
+      answer: ['I', 'need', 'a', 'new', 'pair', 'of', 'jeans'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu qayçı kifayət qədər iti deyil.',
+      words: ['These', 'scissors', 'aren\'t', 'sharp', 'enough', 'This', 'scissor', 'isn\'t'],
+      answer: ['These', 'scissors', 'aren\'t', 'sharp', 'enough'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çox adam ingilis dilini öyrənir.',
+      words: ['A', 'lot', 'of', 'people', 'are', 'learning', 'English', 'person', 'is'],
+      answer: ['A', 'lot', 'of', 'people', 'are', 'learning', 'English'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O üç uşağı olan bir qadındır.',
+      words: ['She', 'is', 'a', 'woman', 'with', 'three', 'children', 'childs', 'womans'],
+      answer: ['She', 'is', 'a', 'woman', 'with', 'three', 'children'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Polis bu hadisəni araşdırır.',
+      words: ['The', 'police', 'are', 'investigating', 'the', 'incident', 'is', 'polices'],
+      answer: ['The', 'police', 'are', 'investigating', 'the', 'incident'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bütün dişlərimi fırçaladım.',
+      words: ['I', 'brushed', 'all', 'my', 'teeth', 'tooths', 'toothes', 'the'],
+      answer: ['I', 'brushed', 'all', 'my', 'teeth'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çayda çoxlu balıq var.',
+      words: ['There', 'are', 'a', 'lot', 'of', 'fish', 'in', 'the', 'river', 'fishes'],
+      answer: ['There', 'are', 'a', 'lot', 'of', 'fish', 'in', 'the', 'river'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Rəfdəki bıçaqlar haradadır?',
+      words: ['Where', 'are', 'the', 'knives', 'on', 'the', 'shelf', 'knife', 'is'],
+      answer: ['Where', 'are', 'the', 'knives', 'on', 'the', 'shelf'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uzun gəzintidən sonra ayaqlarım ağrıdı.',
+      words: ['My', 'feet', 'hurt', 'after', 'the', 'long', 'walk', 'foot', 'foots'],
+      answer: ['My', 'feet', 'hurt', 'after', 'the', 'long', 'walk'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'Sayılmayan isimlər' },
+
+// ── UNIT 66–67, 82 — Sayılmayan İsimlər & How much / How many ────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Sayılan vs Sayılmayan İsimlər (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Sayılan vs Sayılmayan ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sayılan (Countable) vs Sayılmayan (Uncountable)',
+      content: 'Sayılan isimlər: tək və cəm forması var, a/an ilə işlədilir.\nSayılmayan isimlər: yalnız bir forması var, -s qoyulmur, a/an ilə işlədilmir.',
+      table: [
+        ['Sayılan (Countable)',          'Sayılmayan (Uncountable)'],
+        ['a car / two cars',             'water (a water ❌)'],
+        ['an idea / many ideas',         'music (a music ❌)'],
+        ['a key / some keys',            'rice (two rices ❌)'],
+        ['a flower / some flowers',      'money (a money ❌)'],
+        ['a job / three jobs',           'work (a work ❌)'],
+      ],
+      tip: 'Sayılmayan isimlərlə a/an heç vaxt işlədilmir. "a water", "a music", "a money" — hamısı yanlışdır.',
+    },
+
+    // ── Ekran 2: Həmişə sayılmayan isimlər ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Həmişə sayılmayan isimlər — diqqət!',
+      content: 'Bu isimlər ingilis dilində həmişə sayılmayandır — çoxluq forması yoxdur:',
+      table: [
+        ['İsim',          'Düzgün',                  'Yanlış'],
+        ['information',   'some information',        'informations / an information'],
+        ['advice',        'some advice',             'advices / an advice'],
+        ['weather',       'nice weather',            'a nice weather'],
+        ['news',          'some good news',          'a good news / news are'],
+        ['bread',         'some bread',              'a bread / breads'],
+        ['hair',          'long hair',               'long hairs'],
+        ['furniture',     'some furniture',          'furnitures'],
+        ['luggage',       'some luggage',            'luggages / a luggage'],
+      ],
+      tip: 'news görünüşcə cəm kimi görünür, amma sayılmayandır: "The news is good." (is — are yox!)',
+    },
+
+    // ── Ekran 3: work vs job ──────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'work vs job — vacib fərq',
+      content: 'work sayılmayandır, job sayılayandır:',
+      examples: [
+        { word: 'I\'ve got a new job.',          az: 'job — sayılan: a new job ✅'          },
+        { word: 'It\'s hard work.',              az: 'work — sayılmayan: a hard work ❌'    },
+        { word: 'She found a good job.',         az: 'job — sayılan: a good job ✅'         },
+        { word: 'We did a lot of work.',         az: 'work — sayılmayan: a lot of work ✅'  },
+        { word: 'He has two jobs.',              az: 'job — sayılan: two jobs ✅'           },
+        { word: 'This work is difficult.',       az: 'work — sayılmayan: this work ✅'      },
+      ],
+      tip: '"a new work" ❌ — doğrusu ya "a new job" ya da "some new work" olmalıdır.',
+    },
+
+    // ── Ekran 4: a piece of / a glass of ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sayılmayan isimləri ölçmək — a piece of / a cup of...',
+      content: 'Sayılmayan isimlərin miqdarını ifadə etmək üçün xüsusi ifadələr işlədilir:',
+      table: [
+        ['İfadə',              'Nümunə'],
+        ['a glass of',         'a glass of water / juice'],
+        ['a cup of',           'a cup of coffee / tea'],
+        ['a bottle of',        'a bottle of milk / water'],
+        ['a bowl of',          'a bowl of rice / soup'],
+        ['a piece of',         'a piece of cheese / bread / music'],
+        ['a bar of',           'a bar of chocolate / soap'],
+        ['a loaf of',          'a loaf of bread'],
+        ['a can of',           'a can of oil / soup'],
+      ],
+      tip: '"two pieces of bread" ✅ — "two breads" ❌. Ölçü ifadəsi sayıla bilir, ismin özü dəyişmir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"information" sayılan (C) yoxsa sayılmayan (U)?',
+          options: ['Sayılan (C)', 'Sayılmayan (U)'],
+          answer: 'Sayılmayan (U)',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She gave me a good advice.',
+            'She gave me some good advice.',
+            'She gave me good advices.',
+          ],
+          answer: 'She gave me some good advice.',
+        },
+        {
+          q: '"furniture" sayılan (C) yoxsa sayılmayan (U)?',
+          options: ['Sayılan (C)', 'Sayılmayan (U)'],
+          answer: 'Sayılmayan (U)',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I\'ve got a new work.',
+            'I\'ve got a new job.',
+            'I\'ve got new works.',
+          ],
+          answer: 'I\'ve got a new job.',
+        },
+        {
+          q: '"news" ilə düzgün fel:',
+          options: ['The news are good.', 'The news is good.', 'The news were good.'],
+          answer: 'The news is good.',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Sue has got long hairs.',
+            'Sue has got a long hair.',
+            'Sue has got long hair.',
+          ],
+          answer: 'Sue has got long hair.',
+        },
+        {
+          q: '"bread" üçün düzgün ifadə:',
+          options: ['a bread', 'two breads', 'a loaf of bread'],
+          answer: 'a loaf of bread',
+        },
+        {
+          q: '"idea" sayılan (C) yoxsa sayılmayan (U)?',
+          options: ['Sayılan (C)', 'Sayılmayan (U)'],
+          answer: 'Sayılan (C)',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'much / many / a lot of + How much / How many (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: much / many / a lot of ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'much / many / a lot of — fərq',
+      content: 'much — sayılmayan isimlər ilə\nmany — sayılan isimlər ilə\na lot of — hər ikisi ilə:',
+      table: [
+        ['',           'Sayılmayan',              'Sayılan (cəm)'],
+        ['much',       'much money / food',       '❌ much books'],
+        ['many',       '❌ many water',           'many books / people'],
+        ['a lot of',   'a lot of money',          'a lot of books'],
+      ],
+      tip: 'much adətən sual və inkarda işlənir. Müsbət cümlədə a lot of daha təbiidir: "I drink a lot of coffee." ✅',
+    },
+
+    // ── Ekran 2: much / many — sual və inkar ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'much / many — sual və inkar nümunələri',
+      content: 'much/many adətən sual (?) və inkar (not) cümlələrində işlədilir:',
+      examples: [
+        { word: 'Did you buy much food?',           az: 'much — sayılmayan, sual'              },
+        { word: 'Did you buy many books?',          az: 'many — sayılan, sual'                 },
+        { word: 'We haven\'t got much petrol.',     az: 'much — sayılmayan, inkar'             },
+        { word: 'We don\'t know many people.',      az: 'many — sayılan, inkar'                },
+        { word: 'I drink a lot of coffee.',         az: 'a lot of — müsbət cümlə'              },
+        { word: 'She has been to a lot of countries.', az: 'a lot of — müsbət cümlə'          },
+      ],
+      tip: '"I drink much coffee." — qrammatik cəhətdən yanlış deyil, lakin danışıqda qəribə səslənir. a lot of de.',
+    },
+
+    // ── Ekran 3: How much / How many ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'How much / How many',
+      content: 'How much — sayılmayan isimlər üçün\nHow many — sayılan isimlər üçün:',
+      table: [
+        ['How many (sayılan)',                    'How much (sayılmayan)'],
+        ['How many books did you buy?',           'How much money do you want?'],
+        ['How many players are in a team?',       'How much milk do you need?'],
+        ['How many languages do you speak?',      'How much information do you have?'],
+        ['How many people came?',                 'How much bread is left?'],
+        ['How many times did you call?',          'How much time do we have?'],
+      ],
+      tip: 'Şübhəli olsanda, özündən soruş: bu ismi sayabilərəmmi? Saya bilirsən → How many. Sayamırsan → How much.',
+    },
+
+    // ── Ekran 4: some + sayılan/sayılmayan ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'some — sayılan və sayılmayan ilə',
+      content: 'some həm sayılan (cəm), həm də sayılmayan isimlərlə işlənir:',
+      examples: [
+        { word: 'I need a new car.',              az: 'a/an + tək sayılan isim'               },
+        { word: 'I need some new shoes.',         az: 'some + cəm sayılan isim'               },
+        { word: 'I need some money.',             az: 'some + sayılmayan isim'                },
+        { word: 'Would you like some cheese?',    az: 'some + sayılmayan isim (təklif)'       },
+        { word: 'She bought a hat and some shoes.', az: 'a (tək) + some (cəm)'               },
+        { word: 'I have some information for you.', az: 'some + sayılmayan isim'             },
+      ],
+      tip: '"some information", "some advice", "some news" — sayılmayan isimlərlə some işlədilir, a/an yox.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"How ___ money do you need?" — boşluğa nə gəlir?',
+          options: ['many', 'much', 'lot of'],
+          answer: 'much',
+        },
+        {
+          q: '"How ___ people came to the party?" — boşluğa nə gəlir?',
+          options: ['many', 'much', 'lot of'],
+          answer: 'many',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I drink much coffee every day.',
+            'I drink a lot of coffee every day.',
+            'I drink many coffee every day.',
+          ],
+          answer: 'I drink a lot of coffee every day.',
+        },
+        {
+          q: '"We haven\'t got ___ petrol." — boşluğa nə gəlir?',
+          options: ['many', 'much', 'a lot'],
+          answer: 'much',
+        },
+        {
+          q: '"How ___ languages do you speak?" — boşluğa nə gəlir?',
+          options: ['much', 'many', 'lot'],
+          answer: 'many',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'There aren\'t much hotels here.',
+            'There aren\'t many hotels here.',
+            'There aren\'t a lot hotels here.',
+          ],
+          answer: 'There aren\'t many hotels here.',
+        },
+        {
+          q: '"Would you like ___ cheese?" — boşluğa nə gəlir?',
+          options: ['a', 'an', 'some'],
+          answer: 'some',
+        },
+        {
+          q: '"A lot of people ___ English." — düzgün fel:',
+          options: ['speaks', 'speak', 'is speaking'],
+          answer: 'speak',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"information" → düzgün işlədilmə:',                             tr: 'some information',             wrong: 'an information'               },
+  { en: '"advice" → düzgün işlədilmə:',                                  tr: 'some advice',                  wrong: 'an advice'                    },
+  { en: '"news" ilə düzgün fel:',                                         tr: 'The news is good.',            wrong: 'The news are good.'           },
+  { en: '"hair" → düzgün işlədilmə:',                                    tr: 'long hair',                    wrong: 'long hairs'                   },
+  { en: '"furniture" → düzgün işlədilmə:',                               tr: 'some furniture',               wrong: 'some furnitures'              },
+  { en: '"work" vs "job" — sayılan hansıdır?',                           tr: 'job',                          wrong: 'work'                         },
+  { en: '"a new ___" — düzgün söz:',                                     tr: 'job',                          wrong: 'work'                         },
+  { en: '"bread" üçün ölçü ifadəsi:',                                    tr: 'a loaf of bread',              wrong: 'a bread'                      },
+  { en: '"cheese" üçün ölçü ifadəsi:',                                   tr: 'a piece of cheese',            wrong: 'a cheese'                     },
+  { en: 'Sayılmayan isimlərlə miqdar sorusu:',                           tr: 'How much',                     wrong: 'How many'                     },
+  { en: 'Sayılan isimlərlə miqdar sorusu:',                              tr: 'How many',                     wrong: 'How much'                     },
+  { en: '"How ___ milk do you need?" — boşluğa nə gəlir?',              tr: 'much',                         wrong: 'many'                         },
+  { en: '"How ___ students are in the class?" — boşluğa nə gəlir?',     tr: 'many',                         wrong: 'much'                         },
+  { en: 'Müsbət cümlədə "çox" miqdar üçün ən təbii seçim:',             tr: 'a lot of',                     wrong: 'much'                         },
+  { en: '"much" adətən hansı cümlələrdə işlədilir?',                    tr: 'Sual və inkar',                 wrong: 'Müsbət cümlələr'              },
+  { en: '"___ luggage do you have?" — boşluğa nə gəlir?',               tr: 'How much',                     wrong: 'How many'                     },
+  { en: '"some" + sayılmayan isim — nümunə:',                            tr: 'some money',                   wrong: 'a money'                      },
+  { en: '"We haven\'t got ___ time." — boşluğa nə gəlir?',              tr: 'much',                         wrong: 'many'                         },
+  { en: '"There aren\'t ___ hotels here." — boşluğa nə gəlir?',         tr: 'many',                         wrong: 'much'                         },
+  { en: '"A lot of people ___ here." — düzgün fel:',                     tr: 'live',                         wrong: 'lives'                        },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Oteldən biraz məlumat lazımdır.',
+      words: ['I', 'need', 'some', 'information', 'about', 'the', 'hotel', 'informations', 'an'],
+      answer: ['I', 'need', 'some', 'information', 'about', 'the', 'hotel'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O mənə yaxşı bir tövsiyə verdi.',
+      words: ['She', 'gave', 'me', 'some', 'good', 'advice', 'an', 'advices'],
+      answer: ['She', 'gave', 'me', 'some', 'good', 'advice'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Partiyaya neçə nəfər gəldi?',
+      words: ['How', 'many', 'people', 'came', 'to', 'the', 'party', 'much', '?'],
+      answer: ['How', 'many', 'people', 'came', 'to', 'the', 'party', '?'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Hər gün çox qəhvə içirəm.',
+      words: ['I', 'drink', 'a', 'lot', 'of', 'coffee', 'every', 'day', 'much', 'many'],
+      answer: ['I', 'drink', 'a', 'lot', 'of', 'coffee', 'every', 'day'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bizdə çox yanacaq yoxdur.',
+      words: ['We', 'haven\'t', 'got', 'much', 'petrol', 'many', 'a', 'lot'],
+      answer: ['We', 'haven\'t', 'got', 'much', 'petrol'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O yeni bir iş tapdı.',
+      words: ['She', 'found', 'a', 'new', 'job', 'work', 'an', 'some'],
+      answer: ['She', 'found', 'a', 'new', 'job'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bir parça pendir istəyirsinizmi?',
+      words: ['Would', 'you', 'like', 'a', 'piece', 'of', 'cheese', 'some', 'cheeses', '?'],
+      answer: ['Would', 'you', 'like', 'a', 'piece', 'of', 'cheese', '?'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu gün hava gözəldir.',
+      words: ['It\'s', 'nice', 'weather', 'today', 'a', 'the', 'weathers'],
+      answer: ['It\'s', 'nice', 'weather', 'today'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Neçə kitab aldın?',
+      words: ['How', 'many', 'books', 'did', 'you', 'buy', 'much', 'book', '?'],
+      answer: ['How', 'many', 'books', 'did', 'you', 'buy', '?'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Burada çox adam yaşayır.',
+      words: ['A', 'lot', 'of', 'people', 'live', 'here', 'lives', 'much', 'person'],
+      answer: ['A', 'lot', 'of', 'people', 'live', 'here'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'some / any' },
+
+// ── UNIT 75 — some / any ─────────────────────────────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'some / any — Əsas Qayda (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Əsas qayda ───────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'some / any — nə vaxt işlədilir?',
+      content: 'some və any həm sayılan isimlər (cəmdə), həm də sayılmayan isimlərlə işlənir. Fərq cümlənin növündən asılıdır:',
+      table: [
+        ['Cümlə növü',       'İşlədilən söz',  'Nümunə'],
+        ['Müsbət',           'some',            'I bought some bread.'],
+        ['İnkar',            'any',             'I didn\'t buy any bread.'],
+        ['Sual',             'any',             'Did you buy any bread?'],
+        ['Təklif (sual)',    'some',            'Would you like some tea?'],
+        ['Xahiş (sual)',     'some',            'Can I have some water, please?'],
+      ],
+      tip: 'Ümumi qayda: müsbətdə → some, inkar/sualda → any. Lakin təklif və xahiş suallarında some işlədilir.',
+    },
+
+    // ── Ekran 2: Müsbət cümlələr ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Müsbət cümlələrdə — some',
+      content: 'Müsbət cümlələrdə həmişə some işlədilir, sayılan və sayılmayan isimlərlə:',
+      examples: [
+        { word: 'There\'s some milk in the fridge.',        az: 'sayılmayan isim — some'             },
+        { word: 'I need some stamps.',                      az: 'sayılan isim (cəm) — some'          },
+        { word: 'We visited some interesting places.',      az: 'sayılan isim (cəm) — some'          },
+        { word: 'There are some flowers on the table.',     az: 'sayılan isim (cəm) — some'          },
+        { word: 'She gave me some useful advice.',          az: 'sayılmayan isim — some'             },
+        { word: 'I\'ve got some time this afternoon.',      az: 'sayılmayan isim — some'             },
+      ],
+      tip: 'some = müəyyən miqdarda / bir qədər. Konkret rəqəm yoxdursa, some işlədilir.',
+    },
+
+    // ── Ekran 3: İnkar cümlələr ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İnkar cümlələrdə — any',
+      content: 'not ilə birlikdə any işlədilir — sayılan və sayılmayan isimlərlə:',
+      examples: [
+        { word: 'There isn\'t any sugar left.',              az: 'sayılmayan — any'                  },
+        { word: 'We didn\'t make any mistakes.',             az: 'sayılan (cəm) — any'               },
+        { word: 'She doesn\'t have any free time.',          az: 'sayılmayan — any'                  },
+        { word: 'I haven\'t got any cash with me.',          az: 'sayılmayan — any'                  },
+        { word: 'They didn\'t ask any questions.',           az: 'sayılan (cəm) — any'               },
+        { word: 'He didn\'t bring any food to the party.',   az: 'sayılmayan — any'                  },
+      ],
+      tip: '"not ... any" = "heç bir / heç nə". I don\'t have any money = Məndə heç pul yoxdur.',
+    },
+
+    // ── Ekran 4: Sual cümlələri + istisnalar ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual cümlələri — any və some',
+      content: 'Sualların əksəriyyətində any işlədilir. Lakin təklif və xahiş suallarında some olur:',
+      examples: [
+        { word: 'Have you got any questions?',              az: 'adi sual — any'                     },
+        { word: 'Is there any news?',                       az: 'adi sual — any'                     },
+        { word: 'Did they find any evidence?',              az: 'adi sual — any'                     },
+        { word: 'Would you like some coffee?',              az: 'təklif sualı — some ✅'              },
+        { word: 'Can I have some more bread?',              az: 'xahiş sualı — some ✅'              },
+        { word: 'Could you lend me some money?',            az: 'xahiş sualı — some ✅'              },
+      ],
+      tip: 'Would you like any coffee? ❌ — Təklif edərkən some işlədilir, çünki cavabın "hə" olacağı güzülür.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I need ___ help." — boşluğa nə gəlir?',
+          options: ['some', 'any', 'no'],
+          answer: 'some',
+        },
+        {
+          q: '"We didn\'t have ___ problems." — boşluğa nə gəlir?',
+          options: ['some', 'any', 'no'],
+          answer: 'any',
+        },
+        {
+          q: '"Would you like ___ juice?" — boşluğa nə gəlir?',
+          options: ['any', 'some', 'no'],
+          answer: 'some',
+        },
+        {
+          q: '"Is there ___ water in the bottle?" — boşluğa nə gəlir?',
+          options: ['some', 'any', 'no'],
+          answer: 'any',
+        },
+        {
+          q: '"There are ___ nice cafés near here." — boşluğa nə gəlir?',
+          options: ['any', 'some', 'no'],
+          answer: 'some',
+        },
+        {
+          q: '"Can I have ___ more time, please?" — boşluğa nə gəlir?',
+          options: ['any', 'some', 'no'],
+          answer: 'some',
+        },
+        {
+          q: '"She didn\'t say ___ to me." — boşluğa nə gəlir?',
+          options: ['something', 'anything', 'somebody'],
+          answer: 'anything',
+        },
+        {
+          q: '"Have you bought ___ food?" — boşluğa nə gəlir?',
+          options: ['some', 'any', 'no'],
+          answer: 'any',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'some / any — İsimsiz İşlənmə + something/anybody (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: İsimsiz işlənmə ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'some / any — isim olmadan',
+      content: 'Artıq məlum olan isim təkrarlanmır, some/any tək işlədilir:',
+      examples: [
+        { word: 'I didn\'t take photos but Lena took some.',   az: 'some = some photos'              },
+        { word: '\'Are there any biscuits?\' \'Yes, some.\'',   az: 'some = some biscuits'            },
+        { word: 'I made tea. Would you like some?',            az: 'some = some tea'                 },
+        { word: '\'Any luggage?\' \'No, I haven\'t got any.\'' , az: 'any = any luggage'             },
+        { word: 'You can take some fruit. I don\'t want any.', az: 'any = any fruit'                 },
+        { word: '\'Need a hand?\' \'No thanks, I don\'t need any.\'', az: 'any = any help'           },
+      ],
+      tip: 'Söhbətin kontekstindən artıq nəyin söhbət getdiyi məlumdursa, isimi təkrar etmə — sadəcə some/any işlət.',
+    },
+
+    // ── Ekran 2: something / somebody / anything / anybody ───────────────────
+    {
+      type: 'lesson',
+      title: 'something / somebody — anything / anybody',
+      content: 'some/any qaydası mürəkkəb formalarına da aiddir:',
+      table: [
+        ['Müsbət',         'İnkar / Sual'],
+        ['something',      'anything'],
+        ['somebody',       'anybody'],
+        ['someone',        'anyone'],
+      ],
+      tip: 'somebody = someone (eyni məna). anybody = anyone (eyni məna). İkisi də istifadə edilə bilər.',
+    },
+
+    // ── Ekran 3: something/anything nümunələri ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'something / anything — nümunələr',
+      content: 'Müsbətdə something, inkar/sualda anything:',
+      examples: [
+        { word: 'There\'s something in my bag.',              az: 'müsbət — something'               },
+        { word: 'I heard something outside.',                  az: 'müsbət — something'               },
+        { word: 'I didn\'t hear anything.',                    az: 'inkar — anything'                 },
+        { word: 'Did you hear anything last night?',           az: 'sual — anything'                  },
+        { word: 'Would you like something to eat?',            az: 'təklif — something ✅'            },
+        { word: 'Are you doing anything this weekend?',        az: 'adi sual — anything'              },
+      ],
+      tip: 'Təklif sualında something işlədilir: "Would you like something to drink?" ✅  "anything" ❌',
+    },
+
+    // ── Ekran 4: somebody/anybody nümunələri + tez-tez edilən səhvlər ────────
+    {
+      type: 'lesson',
+      title: 'somebody / anybody — səhvlər',
+      content: 'somebody/anybody ilə bağlı ümumi səhvlər:',
+      table: [
+        ['Yanlış',                                    'Düzgün'],
+        ['Somebody didn\'t call.',                    'Nobody called. / Somebody called.'],
+        ['Would you like any tea?',                   'Would you like some tea?'],
+        ['Can I have any sugar, please?',             'Can I have some sugar, please?'],
+        ['I bought any new books.',                   'I bought some new books.'],
+        ['She didn\'t say something.',                'She didn\'t say anything.'],
+        ['There aren\'t some chairs left.',           'There aren\'t any chairs left.'],
+      ],
+      tip: '"Somebody didn\'t come" ❌ — məntiqi problem var. Gəlməyəni vurğulamaq üçün "Nobody came" ✅ işlət.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"She said ___ but I didn\'t understand." — boşluğa nə gəlir?',
+          options: ['anything', 'something', 'somebody'],
+          answer: 'something',
+        },
+        {
+          q: '"Has ___ seen my keys?" — boşluğa nə gəlir?',
+          options: ['somebody', 'anybody', 'nobody'],
+          answer: 'anybody',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Would you like any help?',
+            'Would you like some help?',
+            'Would you like no help?',
+          ],
+          answer: 'Would you like some help?',
+        },
+        {
+          q: '"I didn\'t buy ___. The shop was closed." — boşluğa nə gəlir?',
+          options: ['something', 'anybody', 'anything'],
+          answer: 'anything',
+        },
+        {
+          q: '"There were ___ of mine at the event." — boşluğa nə gəlir?',
+          options: ['any friends', 'some friends', 'no friend'],
+          answer: 'some friends',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She didn\'t say something.',
+            'She didn\'t say anything.',
+            'She said anything.',
+          ],
+          answer: 'She didn\'t say anything.',
+        },
+        {
+          q: '"___ is at the door. Can you check?" — boşluğa nə gəlir?',
+          options: ['Anybody', 'Nobody', 'Somebody'],
+          answer: 'Somebody',
+        },
+        {
+          q: '"I made coffee. Would you like ___?" — boşluğa nə gəlir?',
+          options: ['any', 'some', 'no'],
+          answer: 'some',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Müsbət cümlədə — some / any?',                                        tr: 'some',                         wrong: 'any'                          },
+  { en: 'İnkar cümlədə — some / any?',                                          tr: 'any',                          wrong: 'some'                         },
+  { en: '"Would you like ___ tea?" — some / any?',                              tr: 'some',                         wrong: 'any'                           },
+  { en: '"Is there ___ milk?" — some / any?',                                   tr: 'any',                          wrong: 'some'                          },
+  { en: '"something" — inkar/sual forması:',                                    tr: 'anything',                     wrong: 'something'                    },
+  { en: '"somebody" — inkar/sual forması:',                                     tr: 'anybody',                      wrong: 'somebody'                     },
+  { en: '"Can I have ___ water?" — some / any?',                                tr: 'some',                         wrong: 'any'                           },
+  { en: '"We didn\'t find ___ clues." — some / any?',                           tr: 'any',                          wrong: 'some'                          },
+  { en: '"There are ___ nice parks nearby." — some / any?',                     tr: 'some',                         wrong: 'any'                           },
+  { en: '"She didn\'t say ___." — something / anything?',                       tr: 'anything',                     wrong: 'something'                    },
+  { en: '"___ called while you were out." — somebody / anybody?',               tr: 'somebody',                     wrong: 'anybody'                      },
+  { en: '"Has ___ taken my pen?" — somebody / anybody?',                        tr: 'anybody',                      wrong: 'somebody'                     },
+  { en: '"Would you like ___ to eat?" — something / anything?',                 tr: 'something',                    wrong: 'anything'                     },
+  { en: '"I bought ___ new shoes." — some / any?',                              tr: 'some',                         wrong: 'any'                           },
+  { en: '"I don\'t need ___ help." — some / any?',                              tr: 'any',                          wrong: 'some'                          },
+  { en: '"I took some photos but Paul didn\'t take ___." — some / any?',        tr: 'any',                          wrong: 'some'                          },
+  { en: '"Are you doing ___ tonight?" — something / anything?',                 tr: 'anything',                     wrong: 'something'                    },
+  { en: '"I heard ___ outside." — something / anything?',                       tr: 'something',                    wrong: 'anything'                     },
+  { en: '"Could you lend me ___ money?" — some / any?',                         tr: 'some',                         wrong: 'any'                           },
+  { en: '"There aren\'t ___ seats left." — some / any?',                        tr: 'any',                          wrong: 'some'                          },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mənə bir az su lazımdır.',
+      words: ['I', 'need', 'some', 'water', 'any', 'the'],
+      answer: ['I', 'need', 'some', 'water'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onun heç vaxtı yox idi.',
+      words: ['She', 'didn\'t', 'have', 'any', 'time', 'some', 'the'],
+      answer: ['She', 'didn\'t', 'have', 'any', 'time'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bir az çay istərdinizmi?',
+      words: ['Would', 'you', 'like', 'some', 'tea', 'any', 'the'],
+      answer: ['Would', 'you', 'like', 'some', 'tea'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, mənə nəsə dedi amma mən başa düşmədim.',
+      words: ['She', 'said', 'something', 'to', 'me', 'but', 'I', 'didn\'t', 'understand', 'anything', 'nobody'],
+      answer: ['She', 'said', 'something', 'to', 'me', 'but', 'I', 'didn\'t', 'understand'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Kim isə pəncərəni qırmışdı.',
+      words: ['Somebody', 'had', 'broken', 'the', 'window', 'Anybody', 'Nobody'],
+      answer: ['Somebody', 'had', 'broken', 'the', 'window'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bağda bir neçə gözəl çiçək var.',
+      words: ['There', 'are', 'some', 'beautiful', 'flowers', 'in', 'the', 'garden', 'any', 'a'],
+      answer: ['There', 'are', 'some', 'beautiful', 'flowers', 'in', 'the', 'garden'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu axşam bir şey edirsənmi?',
+      words: ['Are', 'you', 'doing', 'anything', 'this', 'evening', 'something', 'nobody'],
+      answer: ['Are', 'you', 'doing', 'anything', 'this', 'evening'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən foto çəkmədim amma o çəkdi.',
+      words: ['I', 'didn\'t', 'take', 'any', 'photos', 'but', 'she', 'took', 'some', 'any', 'the'],
+      answer: ['I', 'didn\'t', 'take', 'any', 'photos', 'but', 'she', 'took', 'some'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bir az çörək ala bilərəmmi?',
+      words: ['Can', 'I', 'have', 'some', 'bread', 'please', 'any', 'the'],
+      answer: ['Can', 'I', 'have', 'some', 'bread', 'please'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onu heç kim görməmişdi.',
+      words: ['Nobody', 'had', 'seen', 'her', 'Anybody', 'Somebody', 'any'],
+      answer: ['Nobody', 'had', 'seen', 'her'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'much / many / a lot of' },
+
+// ── UNIT 82 — much / many / a lot of ─────────────────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'much / many / a lot of — Əsas Qayda (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Əsas fərq ───────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'much / many / a lot of — fərq nədir?',
+      content: 'Üçü də "çox" mənasını verir. Fərq isim növündən asılıdır:',
+      table: [
+        ['Söz',        'İsim növü',              'Nümunə'],
+        ['much',       'sayılmayan (uncountable)', 'much water / much time'],
+        ['many',       'sayılan cəm (countable)',  'many cars / many people'],
+        ['a lot of',   'hər ikisi',               'a lot of water / a lot of cars'],
+      ],
+      tip: 'Çaşırsan? a lot of — həmişə işlədə bilərsən. Lakin much/many-nin işləndiyi yeri bilmək vacibdir.',
+    },
+
+    // ── Ekran 2: much — sayılmayan isimlərlə ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'much — sayılmayan isimlərlə',
+      content: 'much yalnız sayılmayan isimlərlə işlənir — adətən sual və inkar cümlələrdə:',
+      examples: [
+        { word: 'We haven\'t got much fuel.',          az: 'inkar — sayılmayan'                },
+        { word: 'Did you spend much money?',           az: 'sual — sayılmayan'                 },
+        { word: 'How much time do we have?',           az: 'How much — sayılmayan'             },
+        { word: 'I wasn\'t hungry. I didn\'t eat much.', az: 'isim olmadan — much tək'         },
+        { word: 'There isn\'t much space in here.',    az: 'inkar — sayılmayan'                },
+        { word: 'She doesn\'t get much sleep.',        az: 'inkar — sayılmayan'                },
+      ],
+      tip: 'much müsbət cümlədə qeyri-təbii səslənir: "I have much work" ❌ → "I have a lot of work" ✅',
+    },
+
+    // ── Ekran 3: many — sayılan isimlərlə ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'many — sayılan isimlərlə (cəmdə)',
+      content: 'many yalnız sayılan cəm isimlərlə işlənir — sual, inkar və müsbət cümlələrdə:',
+      examples: [
+        { word: 'How many tickets do you need?',       az: 'How many — sayılan cəm'            },
+        { word: 'We don\'t know many people here.',    az: 'inkar — sayılan cəm'               },
+        { word: 'Were there many cars on the road?',   az: 'sual — sayılan cəm'               },
+        { word: 'Many students passed the exam.',      az: 'müsbət — sayılan cəm'             },
+        { word: 'She didn\'t take many photos.',       az: 'inkar — sayılan cəm'               },
+        { word: 'I took some, but not many.',          az: 'isim olmadan — many tək'           },
+      ],
+      tip: 'many → həmişə cəm isim. "many water" ❌ — water sayılmayandır, much işlət.',
+    },
+
+    // ── Ekran 4: a lot of — hər iki isim növüylə ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'a lot of — universal forma',
+      content: 'a lot of həm sayılan, həm də sayılmayan isimlərlə işlənir. Fel ismin növünə görə dəyişir:',
+      examples: [
+        { word: 'There is a lot of noise outside.',         az: 'sayılmayan → tək fel (is)'      },
+        { word: 'There are a lot of tourists today.',       az: 'sayılan → cəm fel (are)'        },
+        { word: 'A lot of people use public transport.',    az: 'sayılan → cəm fel (use)'        },
+        { word: 'She earns a lot of money.',                az: 'sayılmayan — müsbət cümlə'      },
+        { word: 'We asked a lot of questions.',             az: 'sayılan — müsbət cümlə'         },
+        { word: 'I don\'t have a lot of free time.',        az: 'sayılmayan — inkar'             },
+      ],
+      tip: '"A lot of people speaks" ❌ — people sayılan cəmdir, fel də cəm olur: "speak" ✅.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"We haven\'t got ___ petrol." — boşluğa nə gəlir?',
+          options: ['many', 'much', 'a lot'],
+          answer: 'much',
+        },
+        {
+          q: '"How ___ players are in a team?" — boşluğa nə gəlir?',
+          options: ['much', 'many', 'a lot of'],
+          answer: 'many',
+        },
+        {
+          q: '"I drink ___ coffee every morning." — ən təbii seçim:',
+          options: ['much', 'many', 'a lot of'],
+          answer: 'a lot of',
+        },
+        {
+          q: '"There ___ a lot of traffic today." — düzgün fel:',
+          options: ['are', 'is', 'were'],
+          answer: 'is',
+        },
+        {
+          q: '"Did you spend ___ time there?" — boşluğa nə gəlir?',
+          options: ['many', 'much', 'a lot'],
+          answer: 'much',
+        },
+        {
+          q: '"There aren\'t ___ hotels in this village." — boşluğa nə gəlir?',
+          options: ['much', 'a lot', 'many'],
+          answer: 'many',
+        },
+        {
+          q: '"A lot of people ___ English." — düzgün fel:',
+          options: ['speaks', 'speak', 'is speaking'],
+          answer: 'speak',
+        },
+        {
+          q: '"How ___ money do you need?" — boşluğa nə gəlir?',
+          options: ['many', 'much', 'a lot of'],
+          answer: 'much',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'much / many / a lot of — İşlənmə Fərqləri + Səhvlər (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: much — müsbət cümlədə qeyri-təbii ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'much — müsbət cümlədə istifadə edilmir',
+      content: 'much adətən sual və inkar cümlələrə aiddir. Müsbət cümlədə a lot of daha təbiidir:',
+      table: [
+        ['Cümlə növü',  'Nümunə',                              'Qeyd'],
+        ['Sual',        'Do you eat much sugar?',              '✅ təbii'],
+        ['İnkar',       'I don\'t eat much sugar.',            '✅ təbii'],
+        ['Müsbət',      'I eat a lot of sugar.',               '✅ — much yox'],
+        ['Müsbət',      'I eat much sugar.',                   '❌ qeyri-təbii'],
+        ['Cavab',       '\'Yes, a lot.\' (not \'Yes, much.\')', '✅ a lot — isim olmadan'],
+      ],
+      tip: 'much müsbət cavabda da işlənmir: "Do you read much?" → "Yes, a lot." ✅  "Yes, much." ❌',
+    },
+
+    // ── Ekran 2: much / a lot — isim olmadan ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'much / a lot — isim olmadan işlənmə',
+      content: 'İsim olmadan much (əsasən inkar/sualda) və a lot (müsbətdə) işlədilir:',
+      examples: [
+        { word: 'She talked a lot but didn\'t say much.',      az: 'a lot (müsbət) / much (inkar)'   },
+        { word: 'Do you watch TV much?',                       az: 'much = tez-tez (zərflik)'        },
+        { word: 'No, not much.',                               az: 'not much — inkar cavab'          },
+        { word: 'We enjoy hiking, so we go a lot.',            az: 'a lot — müsbət, isim olmadan'    },
+        { word: 'I don\'t like this film very much.',          az: 'very much — inkar'               },
+        { word: 'He reads a lot.',                             az: 'a lot — tez-tez mənasında'       },
+      ],
+      tip: '"We go much" ❌ — müsbətdə isim olmadan a lot işlədilir: "We go a lot" ✅.',
+    },
+
+    // ── Ekran 3: How much / How many ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'How much / How many',
+      content: 'Sual cümlələrindəki How much/How many seçimi isim növünə görə dəyişir:',
+      examples: [
+        { word: 'How much water should I drink daily?',        az: 'sayılmayan — How much'           },
+        { word: 'How much does this coat cost?',               az: 'qiymət sualı — How much'         },
+        { word: 'How many stops until the city centre?',       az: 'sayılan — How many'              },
+        { word: 'How many times have you been there?',         az: 'sayılan — How many'              },
+        { word: 'How much sugar do you take?',                 az: 'sayılmayan — How much'           },
+        { word: 'How many languages do you speak?',            az: 'sayılan — How many'              },
+      ],
+      tip: 'How much = qiymət sualında da işlədilir: "How much is it?" ✅ — bu vaxt isim gəlmir.',
+    },
+
+    // ── Ekran 4: Tez-tez edilən səhvlər ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'much / many / a lot of ilə bağlı ən çox edilən səhvlər:',
+      table: [
+        ['Yanlış',                               'Düzgün'],
+        ['I have much homework.',                'I have a lot of homework.'],
+        ['How many money do you have?',          'How much money do you have?'],
+        ['There are a lot of traffic.',          'There is a lot of traffic.'],
+        ['A lot of people speaks French.',       'A lot of people speak French.'],
+        ['We haven\'t got many luggage.',        'We haven\'t got much luggage.'],
+        ['How much students are there?',         'How many students are there?'],
+      ],
+      tip: 'luggage, traffic, money, homework — sayılmayan isimlərdir. much + tək fel işlədilir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I drink much tea every day.',
+            'I drink a lot of tea every day.',
+            'I drink many tea every day.',
+          ],
+          answer: 'I drink a lot of tea every day.',
+        },
+        {
+          q: '"How ___ luggage have you got?" — boşluğa nə gəlir?',
+          options: ['many', 'much', 'a lot of'],
+          answer: 'much',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'There are a lot of snow today.',
+            'There is a lot of snow today.',
+            'There is many snow today.',
+          ],
+          answer: 'There is a lot of snow today.',
+        },
+        {
+          q: '"Do you go to concerts ___?" — boşluğa nə gəlir?',
+          options: ['much', 'many', 'a lot of'],
+          answer: 'much',
+        },
+        {
+          q: '"Yes, ___." — (müsbət cavab, isim olmadan)',
+          options: ['much', 'a lot', 'many'],
+          answer: 'a lot',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'A lot of information are missing.',
+            'A lot of information is missing.',
+            'Many information is missing.',
+          ],
+          answer: 'A lot of information is missing.',
+        },
+        {
+          q: '"We didn\'t see ___ animals in the park." — boşluğa nə gəlir?',
+          options: ['much', 'many', 'a lot'],
+          answer: 'many',
+        },
+        {
+          q: '"How ___ does it cost?" — boşluğa nə gəlir?',
+          options: ['many', 'much', 'a lot'],
+          answer: 'much',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"water" ilə işlədilən forma:',                                          tr: 'much water',                   wrong: 'many water'                   },
+  { en: '"cars" ilə işlədilən forma:',                                           tr: 'many cars',                    wrong: 'much cars'                    },
+  { en: 'Müsbət cümlədə "çox" üçün:',                                           tr: 'a lot of',                     wrong: 'much'                         },
+  { en: '"How ___ money?" — much / many?',                                       tr: 'much',                         wrong: 'many'                         },
+  { en: '"How ___ people?" — much / many?',                                      tr: 'many',                         wrong: 'much'                         },
+  { en: '"There is a lot of traffic." — traffic sayılan/sayılmayan?',            tr: 'sayılmayan',                   wrong: 'sayılan'                      },
+  { en: '"A lot of people ___ French." — düzgün fel:',                           tr: 'speak',                        wrong: 'speaks'                       },
+  { en: '"I don\'t have ___ time." — much / many?',                              tr: 'much',                         wrong: 'many'                         },
+  { en: '"Were there ___ tourists?" — much / many?',                             tr: 'many',                         wrong: 'much'                         },
+  { en: '"She reads ___." — müsbət, isim olmadan:',                              tr: 'a lot',                        wrong: 'much'                         },
+  { en: '"I don\'t like it very ___." — boşluğa nə gəlir?',                     tr: 'much',                         wrong: 'many'                         },
+  { en: '"There ___ a lot of cars." — düzgün fel:',                              tr: 'are',                          wrong: 'is'                           },
+  { en: '"There ___ a lot of traffic." — düzgün fel:',                           tr: 'is',                           wrong: 'are'                          },
+  { en: '"We haven\'t got ___ luggage." — much / many?',                         tr: 'much',                         wrong: 'many'                         },
+  { en: '"I drink much coffee." — düzgün forması:',                              tr: 'I drink a lot of coffee.',     wrong: 'I drink many coffee.'         },
+  { en: '"How much does it cost?" — bu sualda isim:',                            tr: 'yoxdur (qiymət sualı)',        wrong: 'cost'                         },
+  { en: '"Did you eat ___?" — sual cümləsində:',                                 tr: 'much',                         wrong: 'a lot of'                     },
+  { en: '"I haven\'t read ___ books lately." — boşluğa:',                        tr: 'many',                         wrong: 'much'                         },
+  { en: '"\'Do you travel much?\' \'Yes, ___.\'" — cavab:',                      tr: 'a lot',                        wrong: 'much'                         },
+  { en: '"How ___ students are in your class?" — much / many?',                  tr: 'many',                         wrong: 'much'                         },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bizim çox vaxtımız yoxdur.',
+      words: ['We', 'haven\'t', 'got', 'much', 'time', 'many', 'a lot'],
+      answer: ['We', 'haven\'t', 'got', 'much', 'time'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu yolda çox qəza olur.',
+      words: ['There', 'are', 'a', 'lot', 'of', 'accidents', 'on', 'this', 'road', 'is', 'much'],
+      answer: ['There', 'are', 'a', 'lot', 'of', 'accidents', 'on', 'this', 'road'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Neçə bilet lazımdır?',
+      words: ['How', 'many', 'tickets', 'do', 'you', 'need', 'much', 'is'],
+      answer: ['How', 'many', 'tickets', 'do', 'you', 'need'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu il o, çox kitab oxuyub.',
+      words: ['She', 'has', 'read', 'a', 'lot', 'of', 'books', 'this', 'year', 'much', 'many'],
+      answer: ['She', 'has', 'read', 'a', 'lot', 'of', 'books', 'this', 'year'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Partiyaya çox adam gəlmişdi.',
+      words: ['A', 'lot', 'of', 'people', 'came', 'to', 'the', 'party', 'much', 'is'],
+      answer: ['A', 'lot', 'of', 'people', 'came', 'to', 'the', 'party'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu yaxınlarda çox yağış yağmayıb.',
+      words: ['There', 'hasn\'t', 'been', 'much', 'rain', 'lately', 'many', 'are'],
+      answer: ['There', 'hasn\'t', 'been', 'much', 'rain', 'lately'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən neçə dil bilirsən?',
+      words: ['How', 'many', 'languages', 'do', 'you', 'speak', 'much', 'is'],
+      answer: ['How', 'many', 'languages', 'do', 'you', 'speak'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, çox danışdı amma az şey dedi.',
+      words: ['She', 'talked', 'a', 'lot', 'but', 'didn\'t', 'say', 'much', 'many', 'some'],
+      answer: ['She', 'talked', 'a', 'lot', 'but', 'didn\'t', 'say', 'much'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu gün yolda çox trafik var.',
+      words: ['There', 'is', 'a', 'lot', 'of', 'traffic', 'today', 'are', 'many'],
+      answer: ['There', 'is', 'a', 'lot', 'of', 'traffic', 'today'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Çox adam ingilis dili öyrənir.',
+      words: ['A', 'lot', 'of', 'people', 'learn', 'English', 'learns', 'much', 'many'],
+      answer: ['A', 'lot', 'of', 'people', 'learn', 'English'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'Şəxs əvəzlikləri tam sistem' },
+
+// ── UNIT 58–62 — Şəxs Əvəzlikləri: Tam Sistem ────────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Şəxs Əvəzlikləri — Subject / Object (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Tam cədvəl ───────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Şəxs əvəzlikləri — 5 forma',
+      content: 'İngilis dilində şəxs əvəzliklərinin 5 forması var. Cümlədəki rola görə dəyişir:',
+      table: [
+        ['Şəxs',      'Subject', 'Object', 'Poss. Adj.', 'Poss. Pron.', 'Reflexive'],
+        ['Mən',       'I',       'me',     'my',         'mine',        'myself'],
+        ['Sən',       'you',     'you',    'your',       'yours',       'yourself'],
+        ['O (kişi)',  'he',      'him',    'his',        'his',         'himself'],
+        ['O (qadın)', 'she',     'her',    'her',        'hers',        'herself'],
+        ['O (şey)',   'it',      'it',     'its',        '—',           'itself'],
+        ['Biz',       'we',      'us',     'our',        'ours',        'ourselves'],
+        ['Onlar',     'they',    'them',   'their',      'theirs',      'themselves'],
+      ],
+      tip: 'Hər forma üçün sual: Kim edir? (subject) / Kimə edilir? (object) / Kimin? (possessive) / Özü? (reflexive)',
+    },
+
+    // ── Ekran 2: Subject əvəzlikləri ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Subject əvəzlikləri — I / you / he / she...',
+      content: 'Subject əvəzliyi cümlənin əvvəlində, felin subyekti kimi işlədilir:',
+      examples: [
+        { word: 'I called him yesterday.',               az: 'I — felin subyekti'               },
+        { word: 'She was very happy with the result.',   az: 'she — felin subyekti'             },
+        { word: 'They are waiting outside.',             az: 'they — felin subyekti'            },
+        { word: 'We arrived late to the meeting.',       az: 'we — felin subyekti'              },
+        { word: 'He works in a bank.',                   az: 'he — felin subyekti'              },
+        { word: 'It was a difficult decision.',          az: 'it — şey/hal üçün'                },
+      ],
+      tip: 'Subject əvəzliyi həmişə felin qarşısında gəlir. "Me called him" ❌ → "I called him" ✅',
+    },
+
+    // ── Ekran 3: Object əvəzlikləri ──────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Object əvəzlikləri — me / him / her / them...',
+      content: 'Object əvəzliyi felin və ya prepoziyanın arxasında işlədilir:',
+      examples: [
+        { word: 'Can you call me later?',                az: 'me — felin obyekti'               },
+        { word: 'I saw him at the station.',             az: 'him — felin obyekti'              },
+        { word: 'We invited her to dinner.',             az: 'her — felin obyekti'              },
+        { word: 'Give it to them, please.',              az: 'them — prepoziyanın arxasında'    },
+        { word: 'Come with us to the park.',             az: 'us — prepoziyanın arxasında'      },
+        { word: 'She didn\'t talk to him.',              az: 'him — prepoziyanın arxasında'     },
+      ],
+      tip: '"Give it to I" ❌ — prepoziyanın arxasında həmişə object forma işlədilir: "Give it to me" ✅',
+    },
+
+    // ── Ekran 4: Subject vs Object — müqayisə ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Subject vs Object — fərqi gör',
+      content: 'Eyni şəxs üçün subject və object forması fərqlidir:',
+      table: [
+        ['Şəxs',      'Subject',  'Object',  'Nümunə'],
+        ['1-ci tək',  'I',        'me',      'I know him. He knows me.'],
+        ['3-cü kişi', 'he',       'him',     'He called her. She called him.'],
+        ['3-cü qadın','she',      'her',     'She saw us. We saw her.'],
+        ['3-cü cəm',  'they',     'them',    'They invited us. We invited them.'],
+        ['1-ci cəm',  'we',       'us',      'We helped them. They helped us.'],
+      ],
+      tip: '"Do you know that woman?" "Yes, I know her." — her = object, çünki "know" felinin arxasındadır.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ works in a hospital." — boşluğa nə gəlir?',
+          options: ['Her', 'She', 'Hers'],
+          answer: 'She',
+        },
+        {
+          q: '"Can you help ___?" — boşluğa nə gəlir (mən mənasında):',
+          options: ['I', 'my', 'me'],
+          answer: 'me',
+        },
+        {
+          q: '"We invited ___ to the party." — boşluğa nə gəlir (onlar mənasında):',
+          options: ['they', 'their', 'them'],
+          answer: 'them',
+        },
+        {
+          q: '"___ called us this morning." — boşluğa nə gəlir (o — qadın):',
+          options: ['Her', 'She', 'Hers'],
+          answer: 'She',
+        },
+        {
+          q: '"Why don\'t you come with ___?" — boşluğa nə gəlir (biz):',
+          options: ['we', 'our', 'us'],
+          answer: 'us',
+        },
+        {
+          q: '"I saw ___ at the market." — boşluğa nə gəlir (o — kişi):',
+          options: ['he', 'his', 'him'],
+          answer: 'him',
+        },
+        {
+          q: '"___ are playing in the garden." — boşluğa nə gəlir (onlar):',
+          options: ['Them', 'Their', 'They'],
+          answer: 'They',
+        },
+        {
+          q: '"She didn\'t talk to ___." — boşluğa nə gəlir (mən):',
+          options: ['I', 'me', 'my'],
+          answer: 'me',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Şəxs Əvəzlikləri — Possessive + Reflexive (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Possessive Adjective ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Possessive Adjective — my / your / his / her...',
+      content: 'Possessive adjective həmişə isimli işlədilir — ismin əvvəlində gəlir:',
+      examples: [
+        { word: 'My phone is out of battery.',           az: 'my + isim — possessive adj.'      },
+        { word: 'Is this your jacket?',                  az: 'your + isim — possessive adj.'    },
+        { word: 'I don\'t know his surname.',            az: 'his + isim — possessive adj.'     },
+        { word: 'She forgot her umbrella.',              az: 'her + isim — possessive adj.'     },
+        { word: 'The dog hurt its paw.',                 az: 'its + isim — şey üçün'            },
+        { word: 'We cleaned our room.',                  az: 'our + isim — possessive adj.'     },
+        { word: 'They sold their old car.',              az: 'their + isim — possessive adj.'   },
+      ],
+      tip: '"It\'s" = it is / it has. "Its" = onun (şeyin). Bunları qarışdırma: "its paw" ✅  "it\'s paw" ❌',
+    },
+
+    // ── Ekran 2: Possessive Pronoun ───────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Possessive Pronoun — mine / yours / his / hers...',
+      content: 'Possessive pronoun isim olmadan işlədilir — isim artıq məlumdur:',
+      examples: [
+        { word: 'Is this bag yours or mine?',            az: 'yours = your bag / mine = my bag' },
+        { word: 'I didn\'t have a pen, so she gave me hers.', az: 'hers = her pen'             },
+        { word: 'We took our car and they took theirs.', az: 'theirs = their car'              },
+        { word: 'It\'s not our problem, it\'s ours.',    az: 'ours = our problem'               },
+        { word: 'His camera is newer than mine.',        az: 'mine = my camera'                 },
+        { word: 'Her marks were better than his.',       az: 'his = his marks'                  },
+      ],
+      tip: '"his" həm possessive adjective, həm possessive pronoun kimi eyni formadadır: "his book" / "it\'s his" — ikisi də düzgündür.',
+    },
+
+    // ── Ekran 3: Reflexive ────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Reflexive — myself / yourself / himself...',
+      content: 'Subyekt və obyekt eyni şəxsdirsə reflexive əvəzliyi işlədilir:',
+      examples: [
+        { word: 'I burned myself on the oven.',           az: 'I = myself — eyni şəxs'          },
+        { word: 'He taught himself to play guitar.',      az: 'he = himself — eyni şəxs'        },
+        { word: 'She looked at herself in the window.',   az: 'she = herself — eyni şəxs'       },
+        { word: 'We organized everything ourselves.',     az: 'we = ourselves — eyni şəxs'      },
+        { word: 'Please help yourself to the food.',      az: 'yourself — bir nəfərə'            },
+        { word: 'Please help yourselves.',                az: 'yourselves — bir neçə nəfərə'     },
+      ],
+      tip: '"He cut him" ❌ (başqa biri) vs "He cut himself" ✅ (özünü). Subyekt = obyektdirsə → reflexive.',
+    },
+
+    // ── Ekran 4: by myself / each other / a friend of mine ───────────────────
+    {
+      type: 'lesson',
+      title: 'by myself / each other / a friend of mine',
+      content: 'Əvəzliklərlə bağlı xüsusi ifadələr:',
+      table: [
+        ['İfadə',              'Məna',           'Nümunə'],
+        ['by myself/herself…', 'tək, yalnız',    'She went by herself.'],
+        ['each other',         'bir-birini',      'They know each other well.'],
+        ['a friend of mine',   'mənim dostum',   'I met a friend of mine.'],
+        ['a friend of his',    'onun dostu',     'He came with a friend of his.'],
+        ['friends of yours',   'sənin dostların', 'Are they friends of yours?'],
+      ],
+      tip: '"a friend of me" ❌ — of-dan sonra possessive pronoun gəlir: "a friend of mine" ✅  "a friend of hers" ✅',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Is this ___ phone?" — boşluğa nə gəlir (sənin mənasında, isimli):',
+          options: ['yours', 'your', 'you'],
+          answer: 'your',
+        },
+        {
+          q: '"The bag is ___." — boşluğa nə gəlir (onunkudur — qadın, isimsizdə):',
+          options: ['her', 'hers', 'herself'],
+          answer: 'hers',
+        },
+        {
+          q: '"He hurt ___ during training." — boşluğa nə gəlir:',
+          options: ['him', 'his', 'himself'],
+          answer: 'himself',
+        },
+        {
+          q: '"We enjoyed ___ at the festival." — boşluğa nə gəlir:',
+          options: ['us', 'our', 'ourselves'],
+          answer: 'ourselves',
+        },
+        {
+          q: '"She went on the trip by ___." — boşluğa nə gəlir:',
+          options: ['her', 'hers', 'herself'],
+          answer: 'herself',
+        },
+        {
+          q: '"Jill and Tom called ___." — (o — ona, o — ona):',
+          options: ['themselves', 'each other', 'theirs'],
+          answer: 'each other',
+        },
+        {
+          q: '"I had dinner with a friend of ___." — boşluğa nə gəlir (mən):',
+          options: ['me', 'my', 'mine'],
+          answer: 'mine',
+        },
+        {
+          q: '"The dog wagged ___ tail." — boşluğa nə gəlir:',
+          options: ['it\'s', 'its', 'it'],
+          answer: 'its',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"mən" — subject forma:',                                                tr: 'I',                            wrong: 'me'                           },
+  { en: '"mən" — object forma:',                                                 tr: 'me',                           wrong: 'I'                            },
+  { en: '"o (qadın)" — possessive adjective:',                                   tr: 'her',                          wrong: 'hers'                         },
+  { en: '"o (qadın)" — possessive pronoun:',                                     tr: 'hers',                         wrong: 'her'                          },
+  { en: '"o (kişi)" — reflexive:',                                               tr: 'himself',                      wrong: 'hisself'                      },
+  { en: '"biz" — object forma:',                                                  tr: 'us',                           wrong: 'we'                           },
+  { en: '"onlar" — possessive adjective:',                                        tr: 'their',                        wrong: 'theirs'                       },
+  { en: '"onlar" — possessive pronoun:',                                          tr: 'theirs',                       wrong: 'their'                        },
+  { en: '"o (şey)" — possessive adjective:',                                      tr: 'its',                          wrong: 'it\'s'                        },
+  { en: '"biz" — reflexive:',                                                    tr: 'ourselves',                    wrong: 'ourself'                      },
+  { en: '"siz/sən" — reflexive (bir neçə nəfər):',                               tr: 'yourselves',                   wrong: 'yourself'                     },
+  { en: '"tək, yalnız" mənasında — by ___:',                                     tr: 'by myself',                    wrong: 'by me'                        },
+  { en: '"bir-birini" mənasında:',                                               tr: 'each other',                   wrong: 'themselves'                   },
+  { en: '"mənim dostum" — of ilə:',                                              tr: 'a friend of mine',             wrong: 'a friend of me'               },
+  { en: '"She gave the ticket to ___." (mən):',                                  tr: 'me',                           wrong: 'I'                            },
+  { en: '"___ room is bigger than hers." (mən):',                                tr: 'My',                           wrong: 'Mine'                         },
+  { en: '"It\'s not their car, it\'s ___." (biz):',                              tr: 'ours',                         wrong: 'our'                          },
+  { en: '"He cut ___ with a knife." (özünü):',                                   tr: 'himself',                      wrong: 'him'                          },
+  { en: '"Is this bag ___ or mine?" (sən, isimsizdə):',                          tr: 'yours',                        wrong: 'your'                         },
+  { en: '"They enjoyed ___ at the concert." (onlar — özləri):',                  tr: 'themselves',                   wrong: 'each other'                   },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, güzgüyə baxdı.',
+      words: ['She', 'looked', 'at', 'herself', 'in', 'the', 'mirror', 'her', 'hers'],
+      answer: ['She', 'looked', 'at', 'herself', 'in', 'the', 'mirror'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu onların problemi deyil, bizimkidir.',
+      words: ['It\'s', 'not', 'their', 'problem', 'it\'s', 'ours', 'theirs', 'our'],
+      answer: ['It\'s', 'not', 'their', 'problem', 'it\'s', 'ours'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz tatildə əyləndik.',
+      words: ['We', 'enjoyed', 'ourselves', 'on', 'holiday', 'us', 'ourself'],
+      answer: ['We', 'enjoyed', 'ourselves', 'on', 'holiday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Cill və Pol bir-birini çox yaxşı tanıyır.',
+      words: ['Jill', 'and', 'Paul', 'know', 'each', 'other', 'very', 'well', 'themselves', 'them'],
+      answer: ['Jill', 'and', 'Paul', 'know', 'each', 'other', 'very', 'well'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, bu axşam mənim dostumla görüşür.',
+      words: ['She\'s', 'meeting', 'a', 'friend', 'of', 'mine', 'this', 'evening', 'me', 'my'],
+      answer: ['She\'s', 'meeting', 'a', 'friend', 'of', 'mine', 'this', 'evening'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, bıçaqla özünü kəsdi.',
+      words: ['He', 'cut', 'himself', 'with', 'a', 'knife', 'him', 'his'],
+      answer: ['He', 'cut', 'himself', 'with', 'a', 'knife'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mənim otağım onunkindən böyükdür.',
+      words: ['My', 'room', 'is', 'bigger', 'than', 'hers', 'her', 'Mine', 'she'],
+      answer: ['My', 'room', 'is', 'bigger', 'than', 'hers'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Şəmsiyəm yox idi, ona görə o, mənə öz şəmsiyəsini verdi.',
+      words: ['I', 'didn\'t', 'have', 'an', 'umbrella', 'so', 'she', 'gave', 'me', 'hers', 'her', 'herself'],
+      answer: ['I', 'didn\'t', 'have', 'an', 'umbrella', 'so', 'she', 'gave', 'me', 'hers'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O, tək səyahətə getdi.',
+      words: ['She', 'went', 'on', 'the', 'trip', 'by', 'herself', 'her', 'hers', 'alone'],
+      answer: ['She', 'went', 'on', 'the', 'trip', 'by', 'herself'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən mənə niyə heç vaxt danışmırsan?',
+      words: ['Why', 'do', 'you', 'never', 'talk', 'to', 'me', 'I', 'my', 'myself'],
+      answer: ['Why', 'do', 'you', 'never', 'talk', 'to', 'me'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'this / that / these / those' },
+
+      // ── UNIT 73 — this / that / these / those ────────────────────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'this / that / these / those — Əsas Qayda (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Əsas cədvəl ─────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'this / that / these / those — yaxın vs uzaq',
+      content: 'Bu dörd söz yaxınlıq və uzaqlığı bildirir — tək və cəm formalarda:',
+      table: [
+        ['',       'Yaxın (here)',  'Uzaq (there)'],
+        ['Tək',    'this',          'that'],
+        ['Cəm',    'these',         'those'],
+      ],
+      tip: 'Sadə yoxlama: əlimdə/yanımda → this/these. Uzaqda/orada → that/those.',
+    },
+
+    // ── Ekran 2: İsimlə işlənmə ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İsimlə işlənmə',
+      content: 'this / that / these / those birbaşa ismin qarşısında işlədilə bilər:',
+      examples: [
+        { word: 'This café is very cosy.',               az: 'this + tək isim — yaxın'           },
+        { word: 'That building is very old.',            az: 'that + tək isim — uzaq'            },
+        { word: 'These apples look fresh.',              az: 'these + cəm isim — yaxın'          },
+        { word: 'Who are those people over there?',      az: 'those + cəm isim — uzaq'           },
+        { word: 'Do you like this colour?',              az: 'this + tək isim — yaxın'           },
+        { word: 'Can I try that jacket in the window?',  az: 'that + tək isim — uzaq'            },
+      ],
+      tip: 'this/that → tək isimlərlə. these/those → cəm isimlərlə. "These book" ❌ → "This book" ✅',
+    },
+
+    // ── Ekran 3: İsimsiz işlənmə ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İsimsiz işlənmə',
+      content: 'İsim məlum olduqda this / that / these / those tək işlədilir:',
+      examples: [
+        { word: 'Excuse me, is this yours?',             az: 'this — isim olmadan'               },
+        { word: 'Who\'s that over there?',               az: 'that — isim olmadan'               },
+        { word: 'Which do you prefer — these or those?', az: 'these/those — isim olmadan'        },
+        { word: 'This is my stop. I have to get off.',   az: 'this — vəziyyətə istinad'          },
+        { word: 'That looks delicious!',                 az: 'that — uzaqdakı şeyə istinad'      },
+        { word: 'Are these yours or mine?',              az: 'these — isim olmadan'              },
+      ],
+      tip: 'Söhbətin kontekstindən nəyin nəzərdə tutulduğu aydındırsa, isim olmadan işlədilir.',
+    },
+
+    // ── Ekran 4: that — keçmiş hala istinad ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'that — baş vermiş şeyə istinad',
+      content: 'that artıq deyilmiş sözə və ya baş vermiş hadisəyə istinad edir:',
+      examples: [
+        { word: 'That was a wonderful concert, thank you.', az: 'that = konsert (bitib)'         },
+        { word: '\'I\'m sorry I\'m late.\' \'That\'s fine.\'', az: 'that = üzr istəmə'          },
+        { word: '\'You\'re right.\' \'Yes, that\'s true.\'',   az: 'that = deyilən fikir'       },
+        { word: '\'Lily got a promotion.\' \'I didn\'t know that.\'', az: 'that = xəbər'        },
+        { word: '\'I\'m moving abroad.\' \'Oh, that\'s exciting!\'',  az: 'that = məlumat'      },
+        { word: '\'You\'re a student, right?\' \'Yes, that\'s right.\'', az: 'that = sual'      },
+      ],
+      tip: 'that — həmişə geri baxır: artıq söylənmiş, baş vermiş, eşidilmiş şeyə istinad edir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"___ shoes are very comfortable." — ayağımdakı, cəm:',
+          options: ['That', 'Those', 'These'],
+          answer: 'These',
+        },
+        {
+          q: '"Look at ___ mountains over there!" — uzaqda, cəm:',
+          options: ['this', 'these', 'those'],
+          answer: 'those',
+        },
+        {
+          q: '"___ is my favourite café." — yanımdakı, tək:',
+          options: ['That', 'These', 'This'],
+          answer: 'This',
+        },
+        {
+          q: '"Who is ___ girl over there?" — uzaqda, tək:',
+          options: ['this', 'that', 'those'],
+          answer: 'that',
+        },
+        {
+          q: '"___ was a great idea, thank you!" — keçmiş hala istinad:',
+          options: ['This', 'These', 'That'],
+          answer: 'That',
+        },
+        {
+          q: '"Which bag do you prefer — ___ or that one?" — yaxındakı, tək:',
+          options: ['those', 'this', 'these'],
+          answer: 'this',
+        },
+        {
+          q: '"___ apples here look really fresh." — yaxında, cəm:',
+          options: ['Those', 'That', 'These'],
+          answer: 'These',
+        },
+        {
+          q: '"Can I try ___ coat in the window?" — uzaqda, tək:',
+          options: ['this', 'these', 'that'],
+          answer: 'that',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'this / that / these / those — Xüsusi Hallar + Səhvlər (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Telefonda işlənmə ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Telefonda — this is / is that?',
+      content: 'Telefon danışığında this = danışan şəxs, that = digər şəxs:',
+      examples: [
+        { word: 'Hello, this is Kamran.',                az: 'this = danışan (mən)'              },
+        { word: 'Is that Leyla?',                        az: 'that = digər şəxs (sən)'           },
+        { word: 'Hi, this is reception. How can I help?', az: 'this is = tanıtma'               },
+        { word: 'Hello, is that the doctor\'s office?',  az: 'that = zəng edilən yer'            },
+        { word: 'This is Anna speaking.',                az: 'this is = rəsmi tanıtma'           },
+        { word: 'Is that you, David?',                   az: 'that = digər şəxs'                },
+      ],
+      tip: '"Hello, that is Kamran." ❌ — danışan özünü tanıtdıranda this işlədilir: "this is Kamran" ✅',
+    },
+
+    // ── Ekran 2: Tanıtma — this is... ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tanıtma — this is...',
+      content: 'Birini başqasına tanıtdırarkən this is işlədilir:',
+      examples: [
+        { word: 'Sara, this is my colleague, Farid.',    az: 'this is = tanıtma'                 },
+        { word: 'Pleased to meet you, Farid.',           az: 'standart cavab'                   },
+        { word: 'Mum, this is my friend Rena.',          az: 'this is = tanıtma'                 },
+        { word: 'Nice to meet you, Rena.',               az: 'standart cavab'                   },
+        { word: 'Everyone, this is our new manager.',    az: 'this is = qrupa tanıtma'           },
+        { word: 'Hi everyone!',                          az: 'cavab'                            },
+      ],
+      tip: '"That is my friend" ❌ — tanıtma zamanı həmişə this is işlədilir, şəxs yaxında olduğu üçün.',
+    },
+
+    // ── Ekran 3: Tez-tez edilən səhvlər ─────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tez-tez edilən səhvlər',
+      content: 'this / that / these / those ilə bağlı ən çox edilən səhvlər:',
+      table: [
+        ['Yanlış',                                    'Düzgün'],
+        ['These is my favourite place.',              'This is my favourite place.'],
+        ['Who is those people?',                      'Who are those people?'],
+        ['That shoes are expensive.',                 'Those shoes are expensive.'],
+        ['Hello, that is Emma.',                      'Hello, this is Emma.'],
+        ['Look at this birds up there!',              'Look at those birds up there!'],
+        ['Those was a brilliant match!',              'That was a brilliant match!'],
+      ],
+      tip: 'this/that → tək fel (is/was). these/those → cəm fel (are/were). "These is" ❌ → "These are" ✅',
+    },
+
+    // ── Ekran 4: Ümumi xatırlatma — dörd sözün müqayisəsi ────────────────────
+    {
+      type: 'lesson',
+      title: 'Dörd sözün tam müqayisəsi',
+      content: 'Hər sözün hansı hallarda işləndiyini bir arada gör:',
+      examples: [
+        { word: 'This is delicious! What is it?',        az: 'this — yaxın, tək, isimsizdə'      },
+        { word: 'That was a long journey.',              az: 'that — keçmiş hala istinad'        },
+        { word: 'These are on sale. Let\'s buy some.',   az: 'these — yaxın, cəm, isimsizdə'    },
+        { word: 'Those look amazing from here.',         az: 'those — uzaq, cəm, isimsizdə'     },
+        { word: 'This bag is mine, that one is yours.',  az: 'this — yaxın / that — uzaq'       },
+        { word: 'These seats are taken, take those.',    az: 'these — yaxın / those — uzaq'     },
+      ],
+      tip: 'Hər zaman iki şeyi düşün: 1) Yaxın mı, uzaq mı? → this/that vs these/those. 2) Tək mi, cəm mi? → this/that vs these/those.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Telefonda özünü tanıtdırarkən: "Hello, ___ is Omar."',
+          options: ['that', 'those', 'this'],
+          answer: 'this',
+        },
+        {
+          q: '"___ was a fantastic meal! Thank you." — keçmiş hala istinad:',
+          options: ['This', 'These', 'That'],
+          answer: 'That',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'These is my favourite song.',
+            'This is my favourite song.',
+            'Those is my favourite song.',
+          ],
+          answer: 'This is my favourite song.',
+        },
+        {
+          q: '"Who are ___ children playing over there?" — uzaqda, cəm:',
+          options: ['this', 'these', 'those'],
+          answer: 'those',
+        },
+        {
+          q: '"Tom, ___ is my sister, Nina." — tanıtma:',
+          options: ['that', 'those', 'this'],
+          answer: 'this',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'That shoes are too small.',
+            'Those shoes are too small.',
+            'Those shoes is too small.',
+          ],
+          answer: 'Those shoes are too small.',
+        },
+        {
+          q: '"\'I\'m sorry I forgot.\' \'___ OK, don\'t worry.\'" — keçmiş hala:',
+          options: ['This\'s', 'These\'s', 'That\'s'],
+          answer: 'That\'s',
+        },
+        {
+          q: '"Is ___ Sarah? It\'s me, Kim." — telefonda, digər şəxs:',
+          options: ['this', 'these', 'that'],
+          answer: 'that',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'yaxın + tək:',                                                          tr: 'this',                         wrong: 'that'                         },
+  { en: 'uzaq + tək:',                                                           tr: 'that',                         wrong: 'this'                         },
+  { en: 'yaxın + cəm:',                                                          tr: 'these',                        wrong: 'those'                        },
+  { en: 'uzaq + cəm:',                                                           tr: 'those',                        wrong: 'these'                        },
+  { en: '"___ is my bag." — yaxında, tək:',                                      tr: 'This',                         wrong: 'That'                         },
+  { en: '"Look at ___ stars up there!" — uzaqda, cəm:',                          tr: 'those',                        wrong: 'these'                        },
+  { en: '"___ shoes here are comfortable." — yaxında, cəm:',                     tr: 'These',                        wrong: 'Those'                        },
+  { en: '"___ building over there is the library." — uzaqda, tək:',              tr: 'That',                         wrong: 'This'                         },
+  { en: '"___ was a great idea!" — keçmiş hala istinad:',                        tr: 'That',                         wrong: 'This'                         },
+  { en: 'Telefonda özünü tanıtdıranda:',                                          tr: 'this is',                      wrong: 'that is'                      },
+  { en: 'Telefonda digər şəxsə müraciətdə:',                                     tr: 'is that',                      wrong: 'is this'                      },
+  { en: 'Birini tanıtdırarkən: "Ana, ___ mənim dostum Elvin."',                  tr: 'this is',                      wrong: 'that is'                      },
+  { en: '"\'Gecikdim.\' \'___ problem deyil.\'" — keçmiş hala:',                 tr: 'That\'s',                      wrong: 'This\'s'                      },
+  { en: '"These is wrong." — düzgün forması:',                                   tr: 'These are wrong.',             wrong: 'Those is wrong.'              },
+  { en: '"That shoes are nice." — düzgün forması:',                              tr: 'Those shoes are nice.',        wrong: 'That shoe are nice.'          },
+  { en: '"___ or those? Hansını seçirsən?" — yaxındakı, cəm:',                   tr: 'These',                        wrong: 'This'                         },
+  { en: '"Which is better — ___ one here or that one?" — yaxın, tək:',           tr: 'this',                         wrong: 'these'                        },
+  { en: '"___ are on sale over there." — uzaqda, cəm:',                          tr: 'Those',                        wrong: 'These'                        },
+  { en: '"\'Maraqlı xəbərdir.\' \'Bunu bilmirdim.\'" — that / this?',            tr: 'that',                         wrong: 'this'                         },
+  { en: '"Hello, ___ is the front desk." — telefonda, danışan:',                 tr: 'this',                         wrong: 'that'                         },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu ayağımdakı ayaqqabılar çox rahatdır.',
+      words: ['These', 'shoes', 'are', 'very', 'comfortable', 'Those', 'This', 'is'],
+      answer: ['These', 'shoes', 'are', 'very', 'comfortable'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uzaqdakı o bina çox köhnədir.',
+      words: ['That', 'building', 'over', 'there', 'is', 'very', 'old', 'This', 'are'],
+      answer: ['That', 'building', 'over', 'there', 'is', 'very', 'old'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu mənim sevimli kitabımdır.',
+      words: ['This', 'is', 'my', 'favourite', 'book', 'That', 'These', 'are'],
+      answer: ['This', 'is', 'my', 'favourite', 'book'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Oradakı o alma ağaclarına bax!',
+      words: ['Look', 'at', 'those', 'apple', 'trees', 'over', 'there', 'these', 'this'],
+      answer: ['Look', 'at', 'those', 'apple', 'trees', 'over', 'there'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu, əla bir axşam yeməyi idi. Çox sağ ol.',
+      words: ['That', 'was', 'a', 'wonderful', 'dinner', 'thank', 'you', 'This', 'were'],
+      answer: ['That', 'was', 'a', 'wonderful', 'dinner', 'thank', 'you'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Salam, mən Nigarəm. Rəna sənsənmi?',
+      words: ['Hello', 'this', 'is', 'Nigara', 'is', 'that', 'Rena', 'that', 'this'],
+      answer: ['Hello', 'this', 'is', 'Nigara', 'is', 'that', 'Rena'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Kənan, bu mənim bacım Aytəndır.',
+      words: ['Kenan', 'this', 'is', 'my', 'sister', 'Ayten', 'that', 'those'],
+      answer: ['Kenan', 'this', 'is', 'my', 'sister', 'Ayten'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bunları sevirsən, yoxsa onları?',
+      words: ['Do', 'you', 'prefer', 'these', 'or', 'those', 'this', 'that'],
+      answer: ['Do', 'you', 'prefer', 'these', 'or', 'those'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: '\'Gecikdim, bağışla.\' \'Problem deyil.\'',
+      words: ['\'I\'m', 'late,', 'sorry.\'', '\'That\'s', 'OK.\'', 'This\'s', 'These\'s'],
+      answer: ['\'I\'m', 'late,', 'sorry.\'', '\'That\'s', 'OK.\''],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uzaqdakı o oturacaqlar boşdur.',
+      words: ['Those', 'seats', 'over', 'there', 'are', 'free', 'These', 'is', 'This'],
+      answer: ['Those', 'seats', 'over', 'there', 'are', 'free'],
+    },
+  ],
+},
+      
     ],
   },
 
@@ -6672,262 +9555,59 @@ const GENERAL_ENGLISH_LEVELS = [
     color: '#F59E0B',
     quizzes: [
 
-      // ── Node 1 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Sifətlər (Adjectives)',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Sifətlər — Adjectives',
-            content: 'Sifətlər isimləri təsvir edir. İngilis dilində sifət həmişə isimden **əvvəl** gəlir (Azərbaycan dili ilə eyni).',
-            examples: [
-              { word: 'a tall building',    az: 'hündür bina' },
-              { word: 'cold weather',       az: 'soyuq hava' },
-              { word: 'an interesting book',az: 'maraqlı kitab' },
-            ],
-            table: [
-              ['Növ',          'Nümunə'],
-              ['Ölçü',         'big, small, tall, short'],
-              ['Rəng',         'red, blue, green, white'],
-              ['Keyfiyyət',    'good, bad, old, new'],
-              ['Hiss',         'happy, sad, tired, excited'],
-            ],
-            tip: 'Sifət cümlədə "be" felindən sonra da gələ bilər: "She is happy." — burada "happy" sifətdir.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"She has ___ hair." — sifət hansıdır?',
-                options: ['has', 'she', 'long', 'hair'],
-                answer:  'long',
-              },
-              {
-                q:       'Hansı söz sifətdir?',
-                options: ['quickly', 'beauty', 'beautiful', 'beautify'],
-                answer:  'beautiful',
-              },
-              {
-                q:       '"The ___ dog barked loudly."',
-                options: ['run', 'quickly', 'big', 'barked'],
-                answer:  'big',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '🎨',
-            title: 'Sifətlər!',
-            desc:  'Adjectives-i öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 2 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Zərflər (Adverbs)',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Zərflər — Adverbs',
-            content: 'Zərflər fel, sifət və ya digər zərfləri təsvir edir. Çox vaxt sifətə **-ly** əlavə edilir.\n\nQuick → quickly\nSlow → slowly\nHappy → happily',
-            table: [
-              ['Növ',       'Nümunə'],
-              ['Tərz',      'quickly, slowly, well, badly'],
-              ['Zaman',     'now, then, soon, already, yet'],
-              ['Yer',       'here, there, everywhere, nowhere'],
-              ['Tezlik',    'always, often, sometimes, never'],
-            ],
-            note: 'Bəzi zərflər sifətlə eyni formadadır: fast, hard, late — "She runs fast." / "a fast car"',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"She sings ___." — (gözəl şəkildə)',
-                options: ['beautiful', 'beauty', 'beautifully', 'more beautiful'],
-                answer:  'beautifully',
-              },
-              {
-                q:       '"He ___ forgets his keys." — (həmişə)',
-                options: ['often', 'never', 'always', 'sometimes'],
-                answer:  'always',
-              },
-              {
-                q:       '"They arrived ___." — (gec)',
-                options: ['lately', 'late', 'later', 'latest'],
-                answer:  'late',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '⚡',
-            title: 'Zərflər!',
-            desc:  'Adverbs-i öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 3 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Önlüklər (Prepositions)',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Prepositions — Önlüklər',
-            content: 'Önlüklər zaman, yer və istiqaməti bildirir. Ən çox istifadə olunanlar: **in, on, at**.',
-            table: [
-              ['Önlük', 'İstifadə',               'Nümunə'],
-              ['in',    'ölkə, şəhər, ay, il',    'in London, in June, in 2024'],
-              ['on',    'gün, tarix, səth',        'on Monday, on the table'],
-              ['at',    'dəqiq vaxt, yer nöqtəsi', 'at 5 o\'clock, at school'],
-            ],
-            examples: [
-              { word: 'She was born in 1995.',  az: 'O 1995-ci ildə anadan olub.' },
-              { word: 'The book is on the desk.',az: 'Kitab masanın üstündədir.' },
-              { word: 'Meet me at the station.',az: 'Stansiyada görüşək.' },
-            ],
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"I wake up ___ 7 o\'clock."',
-                options: ['in', 'on', 'at', 'by'],
-                answer:  'at',
-              },
-              {
-                q:       '"My birthday is ___ March."',
-                options: ['at', 'on', 'in', 'by'],
-                answer:  'in',
-              },
-              {
-                q:       '"The meeting is ___ Monday."',
-                options: ['in', 'at', 'by', 'on'],
-                answer:  'on',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '📍',
-            title: 'Önlüklər!',
-            desc:  'in, on, at önlüklərini öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 4 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Bağlayıcılar (Conjunctions)',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Conjunctions — Bağlayıcılar',
-            content: 'Bağlayıcılar sözləri, ifadələri və cümlələri birləşdirir.\n\n**Əsas bağlayıcılar:** and, but, or, so, because, although',
-            table: [
-              ['Bağlayıcı',  'Məna',         'Nümunə'],
-              ['and',        'və',           'I like tea and coffee.'],
-              ['but',        'amma',         'She is smart but lazy.'],
-              ['or',         'və ya',        'Tea or coffee?'],
-              ['because',    'çünki',        'I\'m tired because I worked all day.'],
-              ['so',         'ona görə',     'It was cold, so I wore a coat.'],
-              ['although',   'baxmayaraq',   'Although it rained, we went out.'],
-            ],
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"I wanted to go, ___ I was tired."',
-                options: ['and', 'because', 'but', 'so'],
-                answer:  'but',
-              },
-              {
-                q:       '"She stayed home ___ she was sick."',
-                options: ['but', 'although', 'because', 'or'],
-                answer:  'because',
-              },
-              {
-                q:       '"Do you want tea ___ coffee?"',
-                options: ['and', 'but', 'so', 'or'],
-                answer:  'or',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '🔗',
-            title: 'Bağlayıcılar!',
-            desc:  'Conjunctions-u öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 5 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'There is / There are',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'There is / There are',
-            content: 'Bir şeyin mövcudluğunu bildirmək üçün **there is** (tək) və **there are** (cəm) istifadə olunur.',
-            table: [
-              ['Forma',      'Nümunə',                        'Məna'],
-              ['There is',   'There is a cat in the garden.', 'Bağda bir pişik var.'],
-              ['There are',  'There are books on the shelf.', 'Rəfdə kitablar var.'],
-              ['There isn\'t','There isn\'t any milk.',        'Süd yoxdur.'],
-              ['There aren\'t','There aren\'t any students.',  'Heç bir tələbə yoxdur.'],
-            ],
-            tip: 'Sual forması: "Is there a bank near here?" / "Are there any seats?"',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"___ a supermarket near my house."',
-                options: ['There are', 'There is', 'It is', 'They are'],
-                answer:  'There is',
-              },
-              {
-                q:       '"___ many students in the classroom."',
-                options: ['There is', 'It are', 'There are', 'They are'],
-                answer:  'There are',
-              },
-              {
-                q:       '"___ any water in the bottle?" — sual',
-                options: ['Are there', 'Is there', 'There is', 'Have there'],
-                answer:  'Is there',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '🌍',
-            title: 'There is/are!',
-            desc:  'Mövcudluq ifadəsini öyrəndin.',
-          },
-        ],
-      },
+     
 { type: 'section_divider', title: 'Sual qurmaq — ümumi suallar' },
+
+
+      
 { type: 'section_divider', title: 'Sual qurmaq — xüsusi suallar (Wh-)' },
+
+
+
 { type: 'section_divider', title: 'there is / there are' },
+
+
+      
 { type: 'section_divider', title: 'Müqayisə dərəcəsi — comparative' },
+
+
+      
 { type: 'section_divider', title: 'Müqayisə dərəcəsi — superlative' },
+
+
+      
 { type: 'section_divider', title: 'Önlüklər — yer' },
+
+
+      
 { type: 'section_divider', title: 'Önlüklər — zaman' },
+
+
+      
 { type: 'section_divider', title: 'Önlüklər — digər' },
+
+
+      
 { type: 'section_divider', title: 'and / but / or / so' },
+
+
+      
 { type: 'section_divider', title: 'because / although / however' },
+
+
+      
 { type: 'section_divider', title: 'when / while / before / after' },
+
+
+      
 { type: 'section_divider', title: 'if — birinci şərt cümləsi' },
+
+
+      
 { type: 'section_divider', title: 'Passive voice — giriş' },
+
+
+      
     ],
   },
 
