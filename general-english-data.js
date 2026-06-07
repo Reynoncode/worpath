@@ -1809,15 +1809,942 @@ const GENERAL_ENGLISH_LEVELS = [
       
 { type: 'section_divider', title: 'Tezlik zərfləri' },
 
+// ── UNIT 93 — Tezlik Zərfləri (always / usually / often / sometimes / never) ──
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Tezlik Zərfləri — Frequency Adverbs (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Tezlik sırası ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tezlik zərfləri — sıra və məna',
+      content: 'Tezlik zərfləri bir işin nə qədər tez-tez baş verdiyini bildirir. Ən çoxdan ən aza doğru sıra:',
+      table: [
+        ['Zərf',       'Mənası',           'Faiz'],
+        ['always',     'həmişə',           '100%'],
+        ['usually',    'adətən',           '~90%'],
+        ['often',      'tez-tez',          '~70%'],
+        ['sometimes',  'bəzən',            '~50%'],
+        ['never',      'heç vaxt',         '0%'],
+      ],
+      tip: 'always → usually → often → sometimes → never. Bu sıranı yadda saxla!',
+    },
+
+    // ── Ekran 2: Adi felin əvvəlində ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qayda 1 — Adi felin əvvəlində',
+      content: 'Tezlik zərfi adi felin (work/go/eat...) əvvəlinə gəlir — arxasına yox:\n\nSubject + Zərf + Verb',
+      examples: [
+        { word: 'Sue always arrives at work early.',    az: '✅ always + arrives'                     },
+        { word: 'I usually go to work by car.',         az: '✅ usually + go'                         },
+        { word: 'Julia never eats breakfast.',          az: '✅ never + eats'                         },
+        { word: 'Tom often sees him.',                  az: '✅ often + sees'                         },
+        { word: 'I sometimes watch TV in the evening.', az: '✅ sometimes + watch'                   },
+        { word: 'Sue arrives always early.',            az: '❌ Yanlış — zərf felin arxasına keçməz' },
+        { word: 'I go usually to work by car.',         az: '❌ Yanlış — usually felin önündə olmalı'},
+      ],
+      tip: 'Zərf felin ÖNündə, subjectin arxasında dayanır.',
+    },
+
+    // ── Ekran 3: "to be" felinin arxasında ───────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qayda 2 — "to be" felinin arxasında',
+      content: 'Fel "to be" (is/are/was/were) olduqda zərf onun ARXASINA gəlir — önünə yox:\n\nSubject + to be + Zərf',
+      examples: [
+        { word: 'He is always tired.',               az: '✅ is + always'                          },
+        { word: 'They are usually at home.',         az: '✅ are + usually'                        },
+        { word: 'She was never late.',               az: '✅ was + never'                          },
+        { word: 'I am sometimes hungry.',            az: '✅ am + sometimes'                       },
+        { word: 'He always is tired.',               az: '❌ Yanlış — zərf "is"-dən sonra gəlir'  },
+        { word: 'We usually are at home.',           az: '❌ Yanlış — always "are"-dən sonra olur'},
+      ],
+      tip: 'Adi fel → zərf önə gəlir. "to be" → zərf arxaya gəlir. İki qayda, iki istiqamət!',
+    },
+
+    // ── Ekran 4: Əlavə zaman ifadələri ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Əlavə zaman ifadələri',
+      content: 'Bu ifadələr tezlik bildirmir — amma Present Simple ilə tez-tez işlədilir. Cümlənin SONUNA gəlirlər:',
+      table: [
+        ['İfadə',           'Nümunə'],
+        ['every day',       'I go to the gym every day.'],
+        ['every morning',   'She checks her phone every morning.'],
+        ['once a week',     'He calls his mother once a week.'],
+        ['twice a month',   'We visit them twice a month.'],
+        ['on Mondays',      'I have a meeting on Mondays.'],
+        ['at weekends',     'They are usually at home at weekends.'],
+      ],
+      tip: '"every/once/twice" ifadələri cümlənin sonunda dayanır — tezlik zərfləri kimi ortaya girmir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Tezliyi ən yüksək olan zərf hansıdır?',
+          options: ['usually', 'often', 'always'],
+          answer: 'always',
+        },
+        {
+          q: '"never" neçə faiz tezlik bildirir?',
+          options: ['50%', '0%', '100%'],
+          answer: '0%',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'Julia eats never breakfast.',
+            'Julia never eats breakfast.',
+            'Never Julia eats breakfast.',
+          ],
+          answer: 'Julia never eats breakfast.',
+        },
+        {
+          q: '"to be" ilə düzgün sıra hansıdır?',
+          options: [
+            'He always is tired.',
+            'He is always tired.',
+            'Always he is tired.',
+          ],
+          answer: 'He is always tired.',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'They usually are at home.',
+            'They are usually at home.',
+            'Usually they are at home.',
+          ],
+          answer: 'They are usually at home.',
+        },
+        {
+          q: 'Əlavə zaman ifadəsi (every day) cümlədə harda dayanır?',
+          options: ['Felin önündə', 'Cümlənin sonunda', 'Subjectin önündə'],
+          answer: 'Cümlənin sonunda',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'I go usually to work by car.',
+            'I usually go to work by car.',
+            'Usually I go to work by car.',
+          ],
+          answer: 'I usually go to work by car.',
+        },
+        {
+          q: '"sometimes" təxminən neçə faiz tezlik bildirir?',
+          options: ['~90%', '~50%', '~70%'],
+          answer: '~50%',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"həmişə" ingilis dilində:',                                  tr: 'always',              wrong: 'usually'              },
+  { en: '"adətən" ingilis dilində:',                                  tr: 'usually',             wrong: 'often'                },
+  { en: '"heç vaxt" ingilis dilində:',                                tr: 'never',               wrong: 'sometimes'            },
+  { en: '"bəzən" ingilis dilində:',                                   tr: 'sometimes',           wrong: 'rarely'               },
+  { en: '"tez-tez" ingilis dilində:',                                 tr: 'often',               wrong: 'always'               },
+  { en: 'Adi felin önündə yoxsa arxasında?',                          tr: 'Önündə',              wrong: 'Arxasında'            },
+  { en: '"to be" feldən sonra yoxsa əvvəl?',                          tr: 'Sonra',               wrong: 'Əvvəl'               },
+  { en: 'Düzgün: She ___ arrives late.',                              tr: 'always',              wrong: 'is always'            },
+  { en: 'Düzgün: He is ___ tired after work.',                        tr: 'always',              wrong: 'always is'            },
+  { en: 'Düzgün: I ___ go to the gym in the morning.',               tr: 'usually',             wrong: 'am usually'           },
+  { en: 'Düzgün: They are ___ happy to see us.',                      tr: 'always',              wrong: 'always are'           },
+  { en: 'Düzgün: Tim ___ watches television.',                        tr: 'never',               wrong: 'not'                  },
+  { en: 'Düzgün: I go to the gym ___.',                               tr: 'every morning',       wrong: 'every morning go'     },
+  { en: 'Düzgün: She washes her hair ___.',                           tr: 'twice a week',        wrong: 'a twice week'         },
+  { en: 'Düzgün: We visit them ___.',                                 tr: 'once a month',        wrong: 'once month a'         },
+  { en: '"always" neçə faiz tezlik bildirir?',                        tr: '100%',                wrong: '90%'                  },
+  { en: '"usually" neçə faiz tezlik bildirir?',                       tr: '~90%',                wrong: '~70%'                 },
+  { en: 'Düzgün: Margaret ___ works hard.',                           tr: 'usually',             wrong: 'is usually'           },
+  { en: 'Düzgün: She was ___ rude to anyone.',                        tr: 'never',               wrong: 'not never'            },
+  { en: 'Düzgün: I am ___ hungry before lunch.',                      tr: 'sometimes',           wrong: 'sometimes am'         },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sue həmişə işə tez gəlir.',
+      words: ['Sue', 'always', 'arrives', 'at', 'work', 'early', 'arrive', 'always arrives'],
+      answer: ['Sue', 'always', 'arrives', 'at', 'work', 'early'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən adətən işə maşınla gedirəm.',
+      words: ['I', 'usually', 'go', 'to', 'work', 'by', 'car', 'goes', 'usually go'],
+      answer: ['I', 'usually', 'go', 'to', 'work', 'by', 'car'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Julia heç vaxt səhər yeməyi yemirsə.',
+      words: ['Julia', 'never', 'eats', 'breakfast', 'eat', 'never eats'],
+      answer: ['Julia', 'never', 'eats', 'breakfast'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O həmişə işdən sonra yorğun olur.',
+      words: ['He', 'is', 'always', 'tired', 'after', 'work', 'always is', 'are'],
+      answer: ['He', 'is', 'always', 'tired', 'after', 'work'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar bazar günləri adətən evdə olurlar.',
+      words: ['They', 'are', 'usually', 'at', 'home', 'on', 'Sundays', 'usually are', 'is'],
+      answer: ['They', 'are', 'usually', 'at', 'home', 'on', 'Sundays'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bəzən axşam televizora baxıram.',
+      words: ['I', 'sometimes', 'watch', 'television', 'in', 'the', 'evening', 'watches', 'in the evening'],
+      answer: ['I', 'sometimes', 'watch', 'television', 'in', 'the', 'evening'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tim heç vaxt televizora baxmır.',
+      words: ['Tim', 'never', 'watches', 'television', 'watch', 'doesn\'t never'],
+      answer: ['Tim', 'never', 'watches', 'television'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uşaqlar adətən şokolad sevir.',
+      words: ['Children', 'usually', 'like', 'chocolate', 'likes', 'usually like'],
+      answer: ['Children', 'usually', 'like', 'chocolate'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən hər səhər idmana gedirəm.',
+      words: ['I', 'go', 'to', 'the', 'gym', 'every', 'morning', 'goes', 'every morning'],
+      answer: ['I', 'go', 'to', 'the', 'gym', 'every', 'morning'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O həftədə iki dəfə saçını yuyur.',
+      words: ['She', 'washes', 'her', 'hair', 'twice', 'a', 'week', 'wash', 'twice a week'],
+      answer: ['She', 'washes', 'her', 'hair', 'twice', 'a', 'week'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Present Continuous — indiki proses' },
 
+// ── UNIT 3–4 — Present Continuous (İndiki Proses) ───────────────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Continuous — Quruluş və Spelling (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Müsbət quruluş ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Present Continuous — Müsbət quruluş',
+      content: 'Present Continuous — hal-hazırda, danışıq anında baş verən hərəkəti bildirir.\n\nQuruluş:\nSubject + am/is/are + verb(-ing)',
+      table: [
+        ['Subject',           'to be', 'Verb + ing'],
+        ['I',                 'am',    'working'],
+        ['he / she / it',     'is',    'working'],
+        ['we / you / they',   'are',   'working'],
+      ],
+      tip: 'am/is/are unutma — "I working" yox, "I am working" ✅',
+    },
+
+    // ── Ekran 2: İnkar və Sual ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İnkar və Sual quruluşu',
+      content: 'İnkarda "not" am/is/are-dən sonra gəlir. Sualda am/is/are subject-dən əvvələ keçir:',
+      table: [
+        ['',        'I',          'he/she/it',    'we/you/they'],
+        ['Müsbət',  'I am working','he is working','they are working'],
+        ['İnkar',   'I\'m not working','he isn\'t working','they aren\'t working'],
+        ['Sual',    'Am I working?','Is he working?','Are they working?'],
+      ],
+      tip: 'am not qısaldılmır — "I amn\'t" olmaz! Yalnız "I\'m not" ✅',
+    },
+
+    // ── Ekran 3: -ing yazılış qaydaları ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '-ing yazılış qaydaları (Spelling)',
+      content: 'Felə -ing əlavə edərkən 4 qayda var:',
+      table: [
+        ['Qayda',                                      'Nümunə'],
+        ['Əksər fellər + -ing',                        'work→working, eat→eating, go→going'],
+        ['-e ilə bitən → e düşür + -ing',              'come→coming, write→writing, dance→dancing'],
+        ['Qısa vurğulu samit ilə bitən → samit ×2',   'sit→sitting, run→running, swim→swimming, stop→stopping'],
+        ['-ie ilə bitən → -ying',                      'lie→lying, die→dying'],
+      ],
+      tip: 'make→making (e düşür) ✅ — make→makeing ❌. Həmişə e-ni sil!',
+    },
+
+    // ── Ekran 4: Danışıq anında işlədilir ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Nə zaman işlədilir? — Danışıq anı',
+      content: 'Present Continuous indi, tam bu anda baş verən işlər üçün işlədilir:',
+      examples: [
+        { word: 'Please be quiet. I am trying to work.',       az: '🔴 İndi baş verir'   },
+        { word: 'Look! Somebody is coming.',                   az: '🔴 İndi baş verir'   },
+        { word: 'It isn\'t raining now. Let\'s go out.',       az: '🔴 İndi baş verir'   },
+        { word: 'Why are you looking at me like that?',        az: '🔴 İndi baş verir'   },
+        { word: 'The children are playing in the garden.',     az: '🔴 İndi baş verir'   },
+        { word: 'Please don\'t make noise — the baby is sleeping.', az: '🔴 İndi baş verir' },
+        { word: 'He is having lunch at the moment.',           az: '🔴 İndi baş verir'   },
+      ],
+      tip: '"now / at the moment / look! / right now" — bu sözlər Present Continuous işarəsidir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün müsbət cümləni seç:',
+          options: [
+            'She working in the garden.',
+            'She is working in the garden.',
+            'She are working in the garden.',
+          ],
+          answer: 'She is working in the garden.',
+        },
+        {
+          q: '"come" felinin -ing forması:',
+          options: ['comeing', 'coming', 'comming'],
+          answer: 'coming',
+        },
+        {
+          q: '"sit" felinin -ing forması:',
+          options: ['siting', 'sitting', 'sitiing'],
+          answer: 'sitting',
+        },
+        {
+          q: '"lie" felinin -ing forması:',
+          options: ['lieing', 'lying', 'liing'],
+          answer: 'lying',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'It amn\'t raining.',
+            'It isn\'t raining.',
+            'It aren\'t raining.',
+          ],
+          answer: 'It isn\'t raining.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'She is sleeping?',
+            'Is she sleeping?',
+            'Does she sleeping?',
+          ],
+          answer: 'Is she sleeping?',
+        },
+        {
+          q: '"run" felinin -ing forması:',
+          options: ['runing', 'running', 'runeing'],
+          answer: 'running',
+        },
+        {
+          q: '"write" felinin -ing forması:',
+          options: ['writeing', 'writting', 'writing'],
+          answer: 'writing',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Continuous — İstifadə və Qısa Cavablar (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Bu günlər davam edən işlər ──────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Nə zaman işlədilir? — Bu günlər / Bu dövrdə',
+      content: 'Present Continuous tam bu anda olmasa belə — bu günlər, bu dövrdə davam edən işlər üçün də işlədilir:',
+      examples: [
+        { word: 'I am learning to drive.',                        az: '📅 Bu günlər davam edir'  },
+        { word: 'She is working very hard these days.',           az: '📅 Bu günlər davam edir'  },
+        { word: 'The company is losing a lot of money.',          az: '📅 Bu dövrdə davam edir'  },
+        { word: 'Some friends of mine are building their own house.', az: '📅 Bu dövrdə davam edir' },
+        { word: 'She is working in London this week.',            az: '📅 Bu həftə davam edir'   },
+        { word: 'We aren\'t going out tonight.',                  az: '📅 Bu gecə planı'          },
+      ],
+      tip: '"these days / this week / this month / nowadays" — bu sözlər "bu dövrdə" mənasını verir.',
+    },
+
+    // ── Ekran 2: Danışıq anı vs Bu günlər ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İki istifadə halını müqayisə et',
+      content: 'Present Continuous hər iki halda da işlənir — fərq vaxt genişliyindədir:',
+      table: [
+        ['Danışıq anı (indi)',                      'Bu dövrdə (bu günlər)'],
+        ['"Look! It is raining."',                  '"It has been raining all week."'],
+        ['"Be quiet — he is sleeping."',            '"He is sleeping badly these days."'],
+        ['"What are you doing right now?"',         '"What are you doing this month?"'],
+        ['"She is talking on the phone."',          '"She is learning Spanish this year."'],
+      ],
+      tip: 'Hər iki halda eyni quruluş — am/is/are + -ing. Mənası kontekstdən aydın olur.',
+    },
+
+    // ── Ekran 3: Qısa cavablar ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar (Short Answers)',
+      content: 'Suala qısa cavab verərkən am/is/are işlədilir — fel təkrarlanmır:',
+      table: [
+        ['Sual',                      'Bəli',           'Xeyr'],
+        ['Are you working?',          'Yes, I am.',     'No, I\'m not.'],
+        ['Is she sleeping?',          'Yes, she is.',   'No, she isn\'t.'],
+        ['Are they coming?',          'Yes, they are.', 'No, they aren\'t.'],
+        ['Is it raining?',            'Yes, it is.',    'No, it isn\'t.'],
+        ['Are your friends waiting?', 'Yes, they are.', 'No, they aren\'t.'],
+      ],
+      tip: '"Yes, I am working." demə — sadəcə "Yes, I am." kifayətdir.',
+    },
+
+    // ── Ekran 4: Sual sözləri ilə ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə Present Continuous',
+      content: 'Wh- sual sözü əvvələ gəlir, sonra am/is/are, sonra subject, sonra -ing:',
+      examples: [
+        { word: 'What are you doing?',         az: 'What + are + you + doing'      },
+        { word: 'Where is she going?',         az: 'Where + is + she + going'      },
+        { word: 'Why are they laughing?',      az: 'Why + are + they + laughing'   },
+        { word: 'What is Ann cooking?',        az: 'What + is + Ann + cooking'     },
+        { word: 'Who are you talking to?',     az: 'Who + are + you + talking'     },
+        { word: 'What is he reading?',         az: 'What + is + he + reading'      },
+      ],
+      tip: 'Wh- → am/is/are → Subject → Verb(-ing). Present Simple-dakı sual sırası ilə eynidir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I am learning to drive." — bu cümlə hansı hal üçündür?',
+          options: [
+            'Tam bu anda baş verir.',
+            'Bu günlər davam edən iş.',
+            'Həmişə baş verən iş.',
+          ],
+          answer: 'Bu günlər davam edən iş.',
+        },
+        {
+          q: '"Are you working?" — bəli cavabı:',
+          options: ['Yes, I working.', 'Yes, I am.', 'Yes, I do.'],
+          answer: 'Yes, I am.',
+        },
+        {
+          q: '"Is she sleeping?" — xeyr cavabı:',
+          options: ['No, she isn\'t.', 'No, she doesn\'t.', 'No, she aren\'t.'],
+          answer: 'No, she isn\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'What you are doing?',
+            'What are you doing?',
+            'What do you doing?',
+          ],
+          answer: 'What are you doing?',
+        },
+        {
+          q: 'Düzgün cümləni seç:',
+          options: [
+            'She is work hard these days.',
+            'She working hard these days.',
+            'She is working hard these days.',
+          ],
+          answer: 'She is working hard these days.',
+        },
+        {
+          q: '"Are they coming?" — xeyr cavabı:',
+          options: ['No, they aren\'t.', 'No, they isn\'t.', 'No, they don\'t.'],
+          answer: 'No, they aren\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Where she is going?',
+            'Where is she going?',
+            'Where does she going?',
+          ],
+          answer: 'Where is she going?',
+        },
+        {
+          q: 'Hansı cümlə "bu günlər" mənasında işlədilir?',
+          options: [
+            'Look! It is raining.',
+            'The company is losing money these days.',
+            'Be quiet — he is sleeping.',
+          ],
+          answer: 'The company is losing money these days.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Present Continuous quruluşu:',                               tr: 'am/is/are + verb-ing',      wrong: 'do/does + verb-ing'         },
+  { en: '"I" ilə hansı "to be" işlədilir?',                          tr: 'am',                        wrong: 'is'                         },
+  { en: '"he/she/it" ilə hansı "to be" işlədilir?',                  tr: 'is',                        wrong: 'are'                        },
+  { en: '"we/you/they" ilə hansı "to be" işlədilir?',                tr: 'are',                       wrong: 'is'                         },
+  { en: '"come" → -ing forması:',                                     tr: 'coming',                    wrong: 'comeing'                    },
+  { en: '"sit" → -ing forması:',                                      tr: 'sitting',                   wrong: 'siting'                     },
+  { en: '"write" → -ing forması:',                                    tr: 'writing',                   wrong: 'writeing'                   },
+  { en: '"swim" → -ing forması:',                                     tr: 'swimming',                  wrong: 'swiming'                    },
+  { en: '"lie" → -ing forması:',                                      tr: 'lying',                     wrong: 'lieing'                     },
+  { en: '"stop" → -ing forması:',                                     tr: 'stopping',                  wrong: 'stoping'                    },
+  { en: '"dance" → -ing forması:',                                    tr: 'dancing',                   wrong: 'danceing'                   },
+  { en: 'I-nin inkar forması:',                                       tr: 'I\'m not',                  wrong: 'I amn\'t'                   },
+  { en: 'he/she/it-in inkar forması:',                                tr: 'isn\'t',                    wrong: 'aren\'t'                    },
+  { en: 'we/you/they-in inkar forması:',                              tr: 'aren\'t',                   wrong: 'isn\'t'                     },
+  { en: '"Are you reading?" — bəli cavabı:',                          tr: 'Yes, I am.',                wrong: 'Yes, I do.'                 },
+  { en: '"Is it raining?" — xeyr cavabı:',                           tr: 'No, it isn\'t.',            wrong: 'No, it doesn\'t.'           },
+  { en: 'Sual sözü ilə düzgün sıra:',                                 tr: 'Wh- + is/are + subject + -ing', wrong: 'Wh- + subject + is/are + -ing' },
+  { en: '"these days / this week" — hansı zaman üçün işarə?',        tr: 'Bu dövrdə davam edən iş',   wrong: 'Tam bu anda baş verən iş'   },
+  { en: '"now / at the moment / look!" — hansı zaman üçün işarə?',   tr: 'Danışıq anı',               wrong: 'Bu dövrdə davam edən iş'    },
+  { en: 'Düzgün: She ___ working hard these days.',                   tr: 'is',                        wrong: 'are'                        },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən kitab oxuyuram.',
+      words: ['I', 'am', 'reading', 'a', 'book', 'is', 'read'],
+      answer: ['I', 'am', 'reading', 'a', 'book'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O hal-hazırda duş alır.',
+      words: ['He', 'is', 'having', 'a', 'shower', 'are', 'have'],
+      answer: ['He', 'is', 'having', 'a', 'shower'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'İndi yağış yağmır.',
+      words: ['It', 'isn\'t', 'raining', 'now', 'aren\'t', 'rain'],
+      answer: ['It', 'isn\'t', 'raining', 'now'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uşaqlar bağçada oynayırlar.',
+      words: ['The', 'children', 'are', 'playing', 'in', 'the', 'garden', 'is', 'play'],
+      answer: ['The', 'children', 'are', 'playing', 'in', 'the', 'garden'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən nə edirsən?',
+      words: ['What', 'are', 'you', 'doing', 'do', 'is', 'done'],
+      answer: ['What', 'are', 'you', 'doing'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O hara gedir?',
+      words: ['Where', 'is', 'she', 'going', 'are', 'goes', 'go'],
+      answer: ['Where', 'is', 'she', 'going'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bu günlər sürücülük öyrənirəm.',
+      words: ['I', 'am', 'learning', 'to', 'drive', 'is', 'learn'],
+      answer: ['I', 'am', 'learning', 'to', 'drive'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar bu gecə çıxmırlar.',
+      words: ['They', 'aren\'t', 'going', 'out', 'tonight', 'isn\'t', 'go'],
+      answer: ['They', 'aren\'t', 'going', 'out', 'tonight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Şirkət bu günlər çox pul itirir.',
+      words: ['The', 'company', 'is', 'losing', 'a', 'lot', 'of', 'money', 'are', 'lose'],
+      answer: ['The', 'company', 'is', 'losing', 'a', 'lot', 'of', 'money'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Niyə onlar gülürlər?',
+      words: ['Why', 'are', 'they', 'laughing', 'is', 'laugh', 'do'],
+      answer: ['Why', 'are', 'they', 'laughing'],
+    },
+  ],
+},
       
 { type: 'section_divider', title: 'Present Simple vs Present Continuous' },
 
+// ── UNIT 8 — Present Simple vs Present Continuous (Müqayisə) ────────────────
 
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Simple vs Continuous — Əsas Fərq (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Əsas fərq ────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Əsas fərq — hansını seçim?',
+      content: 'Bu iki zamanı seçərkən əsas sual:\n\n❓ Həmişə / adətən baş verir? → Present Simple\n❓ İndi, bu anda baş verir? → Present Continuous',
+      table: [
+        ['',                  'Present Simple',             'Present Continuous'],
+        ['Sual',              'Həmişə belə olur?',          'İndi baş verir?'],
+        ['Quruluş',           'I work / She works',         'I am working / She is working'],
+        ['Zaman ifadələri',   'always, every day, never',   'now, at the moment, today'],
+      ],
+      tip: '"now / at the moment" görürsənsə → Continuous. "always / every day" görürsənsə → Simple.',
+    },
+
+    // ── Ekran 2: Müqayisəli nümunələr ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Müqayisəli nümunələr',
+      content: 'Eyni fel — fərqli zaman. Fərqi kontekstdən anla:',
+      table: [
+        ['Present Simple',                        'Present Continuous'],
+        ['I work in a shop. (həmişə)',             'I am working this week. (bu həftə)'],
+        ['She lives in London. (daimi)',           'She is living in Paris now. (müvəqqəti)'],
+        ['It rains a lot in winter. (ümumi)',      'It is raining now. (indi)'],
+        ['He plays tennis on Sundays. (adət)',     'He is playing tennis now. (indi)'],
+        ['I read books every night. (adət)',       'I am reading a good book. (indi)'],
+        ['Tom has a shower every morning. (adət)', 'Tom is having a shower now. (indi)'],
+      ],
+      tip: 'Eyni fel iki cür işlənə bilər — kontekst hər şeyi dəyişir.',
+    },
+
+    // ── Ekran 3: Zaman ifadələri ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Zaman ifadələri — hansı zamanla?',
+      content: 'Zaman ifadəsi çox vaxt doğru zamanı seçməyə kömək edir:',
+      table: [
+        ['Present Simple ilə',        'Present Continuous ilə'],
+        ['always',                    'now / right now'],
+        ['usually',                   'at the moment'],
+        ['often / sometimes / never', 'today / this week / this month'],
+        ['every day / every morning', 'Look! / Listen!'],
+        ['on Mondays / at weekends',  'currently / these days'],
+        ['once a week / twice a month','this year'],
+      ],
+      tip: '"Look! / Listen!" gördükdə həmişə Continuous — gözlə görünən, qulaqla eşidilən şey.',
+    },
+
+    // ── Ekran 4: Müqayisəli cümlə cütləri ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Eyni mövzu — fərqli zaman',
+      content: 'Bu cümlə cütlərini diqqətlə müqayisə et:',
+      examples: [
+        { word: 'I usually go to work by car.',         az: '✅ PS — adət (usually)'          },
+        { word: 'I am going to work by bus today.',     az: '✅ PC — bu gün, müvəqqəti'       },
+        { word: 'Do you work every Saturday?',          az: '✅ PS — adət (every Saturday)'   },
+        { word: 'Are you working today?',               az: '✅ PC — bu gün (today)'           },
+        { word: 'It snows a lot here in winter.',       az: '✅ PS — ümumi həqiqət'            },
+        { word: 'Look! It is snowing!',                 az: '✅ PC — indi baş verir (Look!)'  },
+        { word: 'She usually wears light clothes.',     az: '✅ PS — adət (usually)'          },
+        { word: 'Why is she wearing a coat today?',     az: '✅ PC — bu gün (today)'           },
+      ],
+      tip: 'Adət → Simple. Müvəqqəti / indi baş verən → Continuous.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"Please be quiet. I ___ to concentrate." — düzgün forma:',
+          options: ['try', 'am trying', 'tries'],
+          answer: 'am trying',
+        },
+        {
+          q: '"She ___ coffee every morning." — düzgün forma:',
+          options: ['is drinking', 'drinks', 'drink'],
+          answer: 'drinks',
+        },
+        {
+          q: '"Look! It ___!" — düzgün forma:',
+          options: ['snows', 'is snowing', 'snow'],
+          answer: 'is snowing',
+        },
+        {
+          q: '"He ___ tennis every Sunday." — düzgün forma:',
+          options: ['is playing', 'plays', 'playing'],
+          answer: 'plays',
+        },
+        {
+          q: '"They ___ TV at the moment." — düzgün forma:',
+          options: ['watch', 'are watching', 'watches'],
+          answer: 'are watching',
+        },
+        {
+          q: '"What ___ you ___ right now?" — düzgün forma:',
+          options: ['do / do', 'are / doing', 'do / doing'],
+          answer: 'are / doing',
+        },
+        {
+          q: '"What ___ you ___ every weekend?" — düzgün forma:',
+          options: ['are / doing', 'do / do', 'do / doing'],
+          answer: 'do / doing',
+        },
+        {
+          q: 'Hansı zaman ifadəsi Present Continuous ilə işlədilir?',
+          options: ['every morning', 'at the moment', 'on Mondays'],
+          answer: 'at the moment',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Present Simple vs Continuous — Stative Verbs (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Stative verbs nədir? ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Stative Verbs — həmişə Simple ilə',
+      content: 'Bəzi fellər hərəkət deyil, hal və ya vəziyyət bildirir. Bu fellər adətən Present Continuous ilə işlədilmir — hətta indi baş versə belə:\n\nBu fellərə "stative verbs" deyilir.',
+      table: [
+        ['Kateqoriya',    'Fellər'],
+        ['Hisslər',       'like, love, hate, want, need, prefer'],
+        ['Düşüncə',       'know, think, believe, understand, remember, forget'],
+        ['Sahib olmaq',   'have, own, belong'],
+        ['Hiss etmək',    'see, hear, smell, taste'],
+      ],
+      tip: 'Bu fellər "proses" deyil, "vəziyyət" bildirir — ona görə -ing almır.',
+    },
+
+    // ── Ekran 2: Stative verbs — düzgün/yanlış ───────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Stative verbs — düzgün və yanlış',
+      content: 'Bu fellər həmişə Present Simple ilə işlədilir:',
+      examples: [
+        { word: 'I know him very well.',            az: '✅ Düzgün — know Simple ilə'          },
+        { word: 'I am knowing him very well.',      az: '❌ Yanlış — know -ing almır'          },
+        { word: 'She likes chocolate.',             az: '✅ Düzgün — like Simple ilə'          },
+        { word: 'She is liking chocolate.',         az: '❌ Yanlış — like -ing almır'          },
+        { word: 'I understand you.',                az: '✅ Düzgün — understand Simple ilə'    },
+        { word: 'I am understanding you.',          az: '❌ Yanlış — understand -ing almır'    },
+        { word: 'Do you want some coffee?',         az: '✅ Düzgün — want Simple ilə'          },
+        { word: 'Are you wanting some coffee?',     az: '❌ Yanlış — want -ing almır'          },
+      ],
+      tip: 'like/love/hate/know/want/need/understand/believe → həmişə Simple!',
+    },
+
+    // ── Ekran 3: "have" — xüsusi hal ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '"have" — iki fərqli məna',
+      content: '"have" feli mənasına görə iki cür işlənə bilər:\n\n"Sahib olmaq" mənasında → həmişə Simple\n"Yemək/içmək/etmək" mənasında → Continuous ola bilər',
+      examples: [
+        { word: 'I have a car.',                    az: '✅ PS — sahib olmaq mənası'            },
+        { word: 'I am having a car.',               az: '❌ Yanlış — sahib olmaq -ing almır'   },
+        { word: 'Tom is having a shower.',          az: '✅ PC — hərəkət mənası (duş almaq)'   },
+        { word: 'He has a shower every morning.',   az: '✅ PS — adət'                         },
+        { word: 'We are having dinner now.',        az: '✅ PC — hərəkət mənası (yemək yemək)' },
+        { word: 'She has breakfast at 7.',          az: '✅ PS — adət'                         },
+      ],
+      tip: '"have a car/house/money" → Simple. "have a shower/dinner/coffee" → Continuous ola bilər.',
+    },
+
+    // ── Ekran 4: Qarışıq məşq — xülasə ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Xülasə — seçim qaydası',
+      content: 'Düzgün zamanı seçmək üçün bu sualları özünə ver:',
+      examples: [
+        { word: 'Həmişə / adətən baş verir?',       az: '→ Present Simple'                              },
+        { word: 'İndi, bu anda baş verir?',          az: '→ Present Continuous'                          },
+        { word: 'Bu günlər / bu dövrdə davam edir?', az: '→ Present Continuous'                          },
+        { word: 'Hiss, düşüncə, sahib olmaq?',       az: '→ Present Simple (stative verb)'              },
+        { word: '"always/every day/usually" var?',   az: '→ Present Simple'                              },
+        { word: '"now/at the moment/Look!" var?',    az: '→ Present Continuous'                          },
+        { word: '"know/like/want/understand" var?',  az: '→ Present Simple (stative — -ing almır)'      },
+        { word: '"have" = sahib olmaq?',             az: '→ Present Simple. "have" = hərəkət → hər ikisi' },
+      ],
+      tip: 'Zaman ifadəsinə bax → stative verb yoxla → konteksti oxu. Bu üç addım kifayət edir!',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"I ___ him very well." — düzgün forma (know):',
+          options: ['am knowing', 'know', 'knows'],
+          answer: 'know',
+        },
+        {
+          q: '"She ___ chocolate." — düzgün forma (like):',
+          options: ['is liking', 'likes', 'like'],
+          answer: 'likes',
+        },
+        {
+          q: '"Tom ___ a shower at the moment." — düzgün forma (have):',
+          options: ['has', 'is having', 'have'],
+          answer: 'is having',
+        },
+        {
+          q: '"He ___ a shower every morning." — düzgün forma (have):',
+          options: ['is having', 'has', 'have'],
+          answer: 'has',
+        },
+        {
+          q: 'Hansı fel stative verbdir?',
+          options: ['run', 'believe', 'go'],
+          answer: 'believe',
+        },
+        {
+          q: '"Do you ___ some coffee?" — düzgün forma (want):',
+          options: ['wanting', 'are wanting', 'want'],
+          answer: 'want',
+        },
+        {
+          q: '"I ___ to work by bus today." — düzgün forma (go):',
+          options: ['go', 'am going', 'goes'],
+          answer: 'am going',
+        },
+        {
+          q: 'Hansı cümlə yanlışdır?',
+          options: [
+            'I know the answer.',
+            'She is liking ice cream.',
+            'They are watching TV now.',
+          ],
+          answer: 'She is liking ice cream.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Adət → hansı zaman?',                                        tr: 'Present Simple',            wrong: 'Present Continuous'          },
+  { en: 'İndi baş verir → hansı zaman?',                             tr: 'Present Continuous',        wrong: 'Present Simple'              },
+  { en: '"always" hansı zamanla işlədilir?',                          tr: 'Present Simple',            wrong: 'Present Continuous'          },
+  { en: '"at the moment" hansı zamanla işlədilir?',                   tr: 'Present Continuous',        wrong: 'Present Simple'              },
+  { en: '"every day" hansı zamanla işlədilir?',                       tr: 'Present Simple',            wrong: 'Present Continuous'          },
+  { en: '"now" hansı zamanla işlədilir?',                             tr: 'Present Continuous',        wrong: 'Present Simple'              },
+  { en: '"Look!" hansı zamanla işlədilir?',                           tr: 'Present Continuous',        wrong: 'Present Simple'              },
+  { en: 'Stative verb nədir?',                                        tr: 'Hərəkət deyil, hal bildirən fel', wrong: 'Hərəkət bildirən fel' },
+  { en: '"know" — Continuous ilə işlənirmi?',                         tr: 'Xeyr, həmişə Simple',       wrong: 'Bəli, işlənə bilər'          },
+  { en: '"like" — Continuous ilə işlənirmi?',                         tr: 'Xeyr, həmişə Simple',       wrong: 'Bəli, işlənə bilər'          },
+  { en: '"want" — Continuous ilə işlənirmi?',                         tr: 'Xeyr, həmişə Simple',       wrong: 'Bəli, işlənə bilər'          },
+  { en: '"have a shower" — hansı zaman ola bilər?',                   tr: 'Present Continuous',        wrong: 'Yalnız Present Simple'       },
+  { en: '"have a car" — hansı zaman işlədilir?',                      tr: 'Present Simple',            wrong: 'Present Continuous'          },
+  { en: 'Düzgün: She ___ in London. (daimi)',                         tr: 'lives',                     wrong: 'is living'                   },
+  { en: 'Düzgün: She ___ in Paris this month. (müvəqqəti)',           tr: 'is living',                 wrong: 'lives'                       },
+  { en: 'Düzgün: It ___ a lot in winter. (ümumi həqiqət)',            tr: 'rains',                     wrong: 'is raining'                  },
+  { en: 'Düzgün: It ___ now. (indi)',                                  tr: 'is raining',                wrong: 'rains'                       },
+  { en: '"these days" hansı zamanla işlədilir?',                      tr: 'Present Continuous',        wrong: 'Present Simple'              },
+  { en: '"on Mondays" hansı zamanla işlədilir?',                      tr: 'Present Simple',            wrong: 'Present Continuous'          },
+  { en: 'Düzgün: I ___ the answer. (know)',                           tr: 'know',                      wrong: 'am knowing'                  },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən adətən işə maşınla gedirəm.',
+      words: ['I', 'usually', 'go', 'to', 'work', 'by', 'car', 'am going', 'goes'],
+      answer: ['I', 'usually', 'go', 'to', 'work', 'by', 'car'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bu gün işə avtobus ilə gedirəm.',
+      words: ['I', 'am', 'going', 'to', 'work', 'by', 'bus', 'today', 'go', 'usually'],
+      answer: ['I', 'am', 'going', 'to', 'work', 'by', 'bus', 'today'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bax! Qar yağır!',
+      words: ['Look', 'it', 'is', 'snowing', 'snows', 'are'],
+      answer: ['Look', 'it', 'is', 'snowing'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Qış aylarında burada çox qar yağır.',
+      words: ['It', 'snows', 'a', 'lot', 'here', 'in', 'winter', 'is snowing', 'snow'],
+      answer: ['It', 'snows', 'a', 'lot', 'here', 'in', 'winter'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tom hər səhər duş alır.',
+      words: ['Tom', 'has', 'a', 'shower', 'every', 'morning', 'is having', 'have'],
+      answer: ['Tom', 'has', 'a', 'shower', 'every', 'morning'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Tom hal-hazırda duş alır.',
+      words: ['Tom', 'is', 'having', 'a', 'shower', 'at', 'the', 'moment', 'has', 'have'],
+      answer: ['Tom', 'is', 'having', 'a', 'shower', 'at', 'the', 'moment'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən onu çox yaxşı tanıyıram.',
+      words: ['I', 'know', 'him', 'very', 'well', 'am knowing', 'knows'],
+      answer: ['I', 'know', 'him', 'very', 'well'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O bu günlər çox çalışır.',
+      words: ['She', 'is', 'working', 'very', 'hard', 'these', 'days', 'works', 'are'],
+      answer: ['She', 'is', 'working', 'very', 'hard', 'these', 'days'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən şokolad sevməni?',
+      words: ['Do', 'you', 'like', 'chocolate', 'Are', 'liking', 'does'],
+      answer: ['Do', 'you', 'like', 'chocolate'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O indi nə edir?',
+      words: ['What', 'is', 'she', 'doing', 'does', 'do', 'are'],
+      answer: ['What', 'is', 'she', 'doing'],
+    },
+  ],
+},
 
       
     ],
@@ -1831,257 +2758,1116 @@ const GENERAL_ENGLISH_LEVELS = [
     color: '#0EA5E9',
     quizzes: [
 
-      // ── Node 1 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Present Simple',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Present Simple — İndiki Sadə Zaman',
-            content: 'Present Simple vərdiş, ümumi həqiqət və daimi hərəkətlər üçün işlədilir.\n\n**Quruluş:** Subject + V1 (he/she/it → V1+s)',
-            table: [
-              ['Şəxs',  'Müsbət',        'İnkar',              'Sual'],
-              ['I',     'work',          'don\'t work',        'Do I work?'],
-              ['He',    'works',         'doesn\'t work',      'Does he work?'],
-              ['They',  'work',          'don\'t work',        'Do they work?'],
-            ],
-            examples: [
-              { word: 'She teaches math.',   az: 'O riyaziyyat tədris edir.' },
-              { word: 'The sun rises east.', az: 'Günəş şərqdən doğur.' },
-            ],
-            tip: 'Zaman zərfləri: always, usually, often, sometimes, never, every day.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"He ___ football on Saturdays."',
-                options: ['play', 'plays', 'played', 'playing'],
-                answer:  'plays',
-              },
-              {
-                q:       'Present Simple hansı hal üçün istifadə olunmur?',
-                options: ['Vərdişlər', 'Ümumi həqiqətlər', 'İndi baş verən hadisə', 'Daimi hərəkətlər'],
-                answer:  'İndi baş verən hadisə',
-              },
-              {
-                q:       '"___ you drink coffee every morning?"',
-                options: ['Does', 'Is', 'Do', 'Are'],
-                answer:  'Do',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '🔄',
-            title: 'Present Simple!',
-            desc:  'İndiki sadə zamanı öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 2 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Present Continuous',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Present Continuous — İndiki Davamlı Zaman',
-            content: 'Present Continuous indi, danışıq anında baş verən hərəkətlər üçün istifadə olunur.\n\n**Quruluş:** Subject + am/is/are + V-ing',
-            table: [
-              ['Şəxs',  'Nümunə'],
-              ['I',     'am working'],
-              ['He/She','is working'],
-              ['We/They','are working'],
-            ],
-            examples: [
-              { word: 'I am reading now.',      az: 'Mən indi oxuyuram.' },
-              { word: 'She is cooking dinner.', az: 'O nahar bişirir.' },
-            ],
-            tip: 'Zaman zərfləri: now, at the moment, currently, right now, today.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"They ___ TV right now."',
-                options: ['watch', 'watches', 'are watching', 'watched'],
-                answer:  'are watching',
-              },
-              {
-                q:       '"She ___ her homework at the moment."',
-                options: ['do', 'does', 'is doing', 'did'],
-                answer:  'is doing',
-              },
-              {
-                q:       'Hansı cümlə Present Continuous-dadır?',
-                options: [
-                  'I work every day.',
-                  'I am working now.',
-                  'I worked yesterday.',
-                  'I will work tomorrow.',
-                ],
-                answer:  'I am working now.',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '▶️',
-            title: 'Present Continuous!',
-            desc:  'İndiki davamlı zamanı öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 3 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Past Simple',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Past Simple — Keçmiş Sadə Zaman',
-            content: 'Past Simple keçmişdə başa çatmış hərəkətlər üçün istifadə olunur.\n\n**Müntəzəm fellər:** V + -ed\n**Qeyri-müntəzəm fellər:** xüsusi forma (go→went, see→saw)',
-            examples: [
-              { word: 'I visited London.',    az: 'Mən Londona getdim.' },
-              { word: 'She saw that film.',   az: 'O o filmi gördü.' },
-              { word: 'They didn\'t come.',   az: 'Onlar gəlmədi.' },
-            ],
-            tip: 'Zaman zərfləri: yesterday, last week, ago, in 2020, in the morning.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"She ___ the book yesterday."',
-                options: ['read', 'reads', 'reading', 'is reading'],
-                answer:  'read',
-              },
-              {
-                q:       '"They ___ to the party last night." (go)',
-                options: ['go', 'goes', 'went', 'gone'],
-                answer:  'went',
-              },
-              {
-                q:       '"___ you finish your homework?" (Past Simple sual)',
-                options: ['Do', 'Does', 'Did', 'Have'],
-                answer:  'Did',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '⏮️',
-            title: 'Past Simple!',
-            desc:  'Keçmiş sadə zamanı öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 4 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Future Simple',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Future Simple — Gələcək Sadə Zaman',
-            content: 'Future Simple gələcəkdəki hərəkətlər, qərarlar və proqnozlar üçün istifadə olunur.\n\n**Quruluş:** Subject + will + V1',
-            table: [
-              ['Növ',       'Nümunə'],
-              ['Müsbət',    'I will call you.'],
-              ['İnkar',     'I won\'t call you.'],
-              ['Sual',      'Will you call me?'],
-            ],
-            tip: 'will not = won\'t. "I\'ll" = "I will" — danışıq dilindəki qısaldılmış forma.',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"I think it ___ rain tomorrow."',
-                options: ['is', 'rains', 'will', 'going'],
-                answer:  'will',
-              },
-              {
-                q:       '"She ___ come to the party." (inkar)',
-                options: ['will not', 'does not', 'is not', 'has not'],
-                answer:  'will not',
-              },
-              {
-                q:       '"___ you help me?" (sual)',
-                options: ['Do', 'Are', 'Will', 'Did'],
-                answer:  'Will',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '⏭️',
-            title: 'Future Simple!',
-            desc:  'Gələcək sadə zamanı öyrəndin.',
-          },
-        ],
-      },
-
-      // ── Node 5 ───────────────────────────────────────────
-      {
-        type:  'grammar_lesson',
-        title: 'Modal Fellər: can, must, should',
-        cards: [
-          {
-            type:    'lesson',
-            title:   'Modal fellər nədir?',
-            content: 'Modal fellər bacarıq, məcburiyyət və məsləhəti bildirmək üçün istifadə olunur. Modal fellərdən sonra həmişə **V1** (əsas fel) gəlir.',
-            table: [
-              ['Modal', 'Məna',         'Nümunə'],
-              ['can',   'bacarıq',      'She can swim.'],
-              ['must',  'məcburiyyət',  'You must study.'],
-              ['should','məsləhət',     'You should sleep early.'],
-            ],
-            note: 'Modal fellərdən sonra "to" gəlmir: "She can to swim" — yanlışdır!',
-          },
-          {
-            type:  'mini_check',
-            questions: [
-              {
-                q:       '"You ___ see a doctor. (məsləhət)"',
-                options: ['can', 'must', 'should', 'will'],
-                answer:  'should',
-              },
-              {
-                q:       '"She ___ speak three languages. (bacarıq)"',
-                options: ['must', 'should', 'can', 'will'],
-                answer:  'can',
-              },
-              {
-                q:       '"You ___ wear a seatbelt. (məcburiyyət)"',
-                options: ['should', 'can', 'might', 'must'],
-                answer:  'must',
-              },
-            ],
-          },
-          {
-            type:  'badge',
-            icon:  '⚙️',
-            title: 'Modal fellər!',
-            desc:  'can, must və should-u öyrəndin.',
-          },
-        ],
-      },
+     
 { type: 'section_divider', title: 'Past Simple — düzgün fellər' },
-{ type: 'section_divider', title: 'Past Simple — düzgünsüz fellər' },
+
+// ── UNIT 11 — Past Simple: Düzgün Fellər (Regular Verbs) ────────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Past Simple — Düzgün Fellər, Quruluş və Spelling (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Quruluş ──────────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Simple — Quruluş',
+      content: 'Past Simple — keçmişdə baş vermiş və bitmiş hərəkətlər üçün işlədilir.\n\nDüzgün fellərdə quruluş:\nSubject + Verb + -ed\n\n❗ Bütün şəxslər üçün eyni forma — dəyişmir!',
+      table: [
+        ['Subject',                    'Verb + ed'],
+        ['I',                          'worked / lived / visited'],
+        ['he / she / it',              'worked / lived / visited'],
+        ['we / you / they',            'worked / lived / visited'],
+      ],
+      tip: 'Present Simple-dən fərqli olaraq he/she/it üçün ayrıca forma yoxdur — hamı üçün eynidir!',
+    },
+
+    // ── Ekran 2: -ed yazılış qaydaları ───────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '-ed yazılış qaydaları (Spelling)',
+      content: 'Felə -ed əlavə edərkən 4 qayda var:',
+      table: [
+        ['Qayda',                                    'Nümunə'],
+        ['Əksər fellər + -ed',                       'work→worked, clean→cleaned, start→started'],
+        ['-e ilə bitən → + -d',                      'live→lived, arrive→arrived, dance→danced'],
+        ['samit + -y ilə bitən → -ied',              'try→tried, study→studied, copy→copied'],
+        ['qısa vurğulu samit ilə bitən → samit ×2',  'stop→stopped, plan→planned'],
+      ],
+      tip: 'sait + -y olduqda sadəcə -ed əlavə olunur: stay→stayed, play→played ✅',
+    },
+
+    // ── Ekran 3: Spelling məşq nümunələri ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Spelling — düzgün və yanlış',
+      content: 'Ən çox səhv edilən formalar:',
+      examples: [
+        { word: 'stop → stopped',     az: '✅ Düzgün — samit ikiqat'               },
+        { word: 'stop → stoped',      az: '❌ Yanlış — samit ikiqat yazılmalı'     },
+        { word: 'study → studied',    az: '✅ Düzgün — samit+y → ied'             },
+        { word: 'study → studyed',    az: '❌ Yanlış — y düşür, ied gəlir'        },
+        { word: 'live → lived',       az: '✅ Düzgün — e ilə bitən → +d'          },
+        { word: 'live → liveed',      az: '❌ Yanlış — -e olduqda yalnız -d'      },
+        { word: 'plan → planned',     az: '✅ Düzgün — samit ikiqat'              },
+        { word: 'enjoy → enjoyed',    az: '✅ Düzgün — sait+y → sadəcə -ed'      },
+      ],
+      tip: 'play→played, stay→stayed — sait + y olduqda ikiqat yox, sadəcə -ed!',
+    },
+
+    // ── Ekran 4: Nümunə cümlələri ────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Simple — nümunə cümlələri',
+      content: 'Keçmişdə baş vermiş və bitmiş hərəkətlər:',
+      examples: [
+        { word: 'I cleaned my teeth this morning.',              az: 'clean → cleaned'   },
+        { word: 'Terry worked in a bank for many years.',        az: 'work → worked'     },
+        { word: 'Yesterday it rained all morning.',              az: 'rain → rained'     },
+        { word: 'We danced a lot and talked to many people.',    az: 'dance → danced'    },
+        { word: 'She lived in Paris for two years.',             az: 'live → lived'      },
+        { word: 'They arrived at the hotel at 9 o\'clock.',     az: 'arrive → arrived'  },
+        { word: 'He wanted to be a doctor when he was young.',   az: 'want → wanted'     },
+        { word: 'I studied English at school.',                  az: 'study → studied'  },
+      ],
+      tip: 'Bütün cümlələrdə eyni qayda — subject kim olursa olsun, fel dəyişmir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"stop" felinin Past Simple forması:',
+          options: ['stoped', 'stopped', 'stopeed'],
+          answer: 'stopped',
+        },
+        {
+          q: '"study" felinin Past Simple forması:',
+          options: ['studyed', 'studieed', 'studied'],
+          answer: 'studied',
+        },
+        {
+          q: '"live" felinin Past Simple forması:',
+          options: ['liveed', 'lived', 'livd'],
+          answer: 'lived',
+        },
+        {
+          q: '"plan" felinin Past Simple forması:',
+          options: ['planed', 'planied', 'planned'],
+          answer: 'planned',
+        },
+        {
+          q: '"enjoy" felinin Past Simple forması:',
+          options: ['enjoied', 'enjoyed', 'enjoed'],
+          answer: 'enjoyed',
+        },
+        {
+          q: 'Past Simple-də he/she/it üçün forma necədir?',
+          options: [
+            'Ayrıca forma var — -s alır.',
+            'Bütün şəxslər üçün eynidir.',
+            'Yalnız -ed alır, digərləri fərqlidir.',
+          ],
+          answer: 'Bütün şəxslər üçün eynidir.',
+        },
+        {
+          q: '"copy" felinin Past Simple forması:',
+          options: ['copyed', 'copied', 'copid'],
+          answer: 'copied',
+        },
+        {
+          q: '"arrive" felinin Past Simple forması:',
+          options: ['arriveed', 'arrivd', 'arrived'],
+          answer: 'arrived',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Past Simple — Tələffüz və Zaman İfadələri (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Tələffüz qaydaları ───────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: '-ed sonu — 3 cür tələffüz',
+      content: '-ed sonu felin bitdiyi səsə görə 3 cür tələffüz edilir:',
+      table: [
+        ['Tələffüz', 'Nə vaxt',                                    'Nümunə'],
+        ['/t/',      'Kar samitdən sonra (p,k,f,s,sh,ch)',         'worked, stopped, finished, watched'],
+        ['/d/',      'Saitdən və cingiltili samitdən sonra',        'lived, cleaned, arrived, stayed'],
+        ['/ɪd/',     '-t və -d ilə bitən fellərdən sonra',          'wanted, started, visited, waited'],
+      ],
+      tip: 'Ən asan yol: -t və -d ilə bitən fel → /ɪd/. Qalan ikisini qulaqla ayırd etmək olar.',
+    },
+
+    // ── Ekran 2: Tələffüz nümunələri ─────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Tələffüz — nümunələr',
+      content: 'Hər tələffüz növündən nümunələr:',
+      examples: [
+        { word: 'worked  → /wɜːkt/',       az: '/t/ — kar samit k'          },
+        { word: 'stopped → /stɒpt/',       az: '/t/ — kar samit p'          },
+        { word: 'watched → /wɒtʃt/',       az: '/t/ — kar samit ch'         },
+        { word: 'finished → /ˈfɪnɪʃt/',   az: '/t/ — kar samit sh'         },
+        { word: 'lived   → /lɪvd/',        az: '/d/ — cingiltili v'         },
+        { word: 'cleaned → /kliːnd/',      az: '/d/ — cingiltili n'         },
+        { word: 'arrived → /əˈraɪvd/',    az: '/d/ — cingiltili v'         },
+        { word: 'visited → /ˈvɪzɪtɪd/',   az: '/ɪd/ — -t ilə bitir'       },
+        { word: 'started → /stɑːtɪd/',    az: '/ɪd/ — -t ilə bitir'       },
+        { word: 'waited  → /weɪtɪd/',     az: '/ɪd/ — -t ilə bitir'       },
+        { word: 'needed  → /ˈniːdɪd/',    az: '/ɪd/ — -d ilə bitir'       },
+      ],
+      tip: '/ɪd/ tələffüzündə əlavə heca yaranır: visit → vis-it-id (3 heca).',
+    },
+
+    // ── Ekran 3: Zaman ifadələri ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Simple ilə zaman ifadələri',
+      content: 'Bu ifadələr Past Simple ilə işlədilir — keçmişə işarə edir:',
+      table: [
+        ['İfadə',                           'Mənası',                    'Nümunə'],
+        ['yesterday',                       'dünən',                     'I cleaned the house yesterday.'],
+        ['last night / last week / last year','dünən gecə / keçən həftə / keçən il', 'She called last night.'],
+        ['ago',                             '... əvvəl',                 'He arrived two days ago.'],
+        ['in 1999 / in 2010',               'ildə',                      'They got married in 2010.'],
+        ['this morning',                    'bu səhər',                  'I worked hard this morning.'],
+        ['for + müddət',                    'müddət ərzində',            'She lived there for two years.'],
+      ],
+      tip: '"ago" həmişə müddətin ARXASINA gəlir: two days ago ✅ — ago two days ❌',
+    },
+
+    // ── Ekran 4: Tam cümlə nümunələri ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Zaman ifadəli tam cümlələr',
+      content: 'Zaman ifadəsi ilə Past Simple cümlələri:',
+      examples: [
+        { word: 'I cleaned my teeth this morning.',              az: 'this morning → PS'         },
+        { word: 'She started her job last Monday.',              az: 'last Monday → PS'          },
+        { word: 'Terry worked in a bank from 1986 to 1993.',     az: 'from...to → PS'            },
+        { word: 'They arrived at the hotel at 9 o\'clock.',     az: 'keçmişdə bitmiş → PS'     },
+        { word: 'He called me two hours ago.',                   az: 'ago → PS'                  },
+        { word: 'We stayed at a very nice hotel last year.',     az: 'last year → PS'            },
+        { word: 'She lived in Paris for two years.',             az: 'for + müddət → PS'         },
+        { word: 'The party finished at midnight.',               az: 'keçmişdə bitmiş → PS'     },
+      ],
+      tip: 'Zaman ifadəsi çox vaxt cümlənin sonunda dayanır — amma əvvəldə də gələ bilər.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"worked" necə tələffüz edilir?',
+          options: ['/wɜːkd/', '/wɜːkt/', '/wɜːkɪd/'],
+          answer: '/wɜːkt/',
+        },
+        {
+          q: '"visited" necə tələffüz edilir?',
+          options: ['/ˈvɪzɪtd/', '/ˈvɪzɪt/', '/ˈvɪzɪtɪd/'],
+          answer: '/ˈvɪzɪtɪd/',
+        },
+        {
+          q: '"lived" necə tələffüz edilir?',
+          options: ['/lɪvt/', '/lɪvd/', '/lɪvɪd/'],
+          answer: '/lɪvd/',
+        },
+        {
+          q: '/ɪd/ tələffüzü nə vaxt işlədilir?',
+          options: [
+            'Kar samitdən sonra',
+            '-t və -d ilə bitən fellərdən sonra',
+            'Saitdən sonra',
+          ],
+          answer: '-t və -d ilə bitən fellərdən sonra',
+        },
+        {
+          q: '"ago" cümlədə harda dayanır?',
+          options: [
+            'Müddətin əvvəlində: ago two days',
+            'Müddətin arxasında: two days ago',
+            'Cümlənin əvvəlində həmişə',
+          ],
+          answer: 'Müddətin arxasında: two days ago',
+        },
+        {
+          q: 'Hansı zaman ifadəsi Past Simple ilə işlədilir?',
+          options: ['at the moment', 'every day', 'last week'],
+          answer: 'last week',
+        },
+        {
+          q: '"wanted" necə tələffüz edilir?',
+          options: ['/wɒntd/', '/wɒntt/', '/ˈwɒntɪd/'],
+          answer: '/ˈwɒntɪd/',
+        },
+        {
+          q: '"finished" necə tələffüz edilir?',
+          options: ['/ˈfɪnɪʃt/', '/ˈfɪnɪʃd/', '/ˈfɪnɪʃɪd/'],
+          answer: '/ˈfɪnɪʃt/',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Past Simple — düzgün fel quruluşu:',                        tr: 'Verb + -ed',                wrong: 'Verb + -s'                   },
+  { en: 'He/she/it üçün Past Simple forması:',                       tr: 'Eyni — dəyişmir',           wrong: '-s əlavə olunur'             },
+  { en: '"work" → Past Simple:',                                     tr: 'worked',                    wrong: 'workt'                       },
+  { en: '"stop" → Past Simple:',                                     tr: 'stopped',                   wrong: 'stoped'                      },
+  { en: '"study" → Past Simple:',                                    tr: 'studied',                   wrong: 'studyed'                     },
+  { en: '"live" → Past Simple:',                                     tr: 'lived',                     wrong: 'liveed'                      },
+  { en: '"plan" → Past Simple:',                                     tr: 'planned',                   wrong: 'planed'                      },
+  { en: '"try" → Past Simple:',                                      tr: 'tried',                     wrong: 'tryed'                       },
+  { en: '"dance" → Past Simple:',                                    tr: 'danced',                    wrong: 'danceed'                     },
+  { en: '"copy" → Past Simple:',                                     tr: 'copied',                    wrong: 'copyed'                      },
+  { en: '"worked" tələffüzü:',                                       tr: '/t/',                       wrong: '/d/'                         },
+  { en: '"lived" tələffüzü:',                                        tr: '/d/',                       wrong: '/t/'                         },
+  { en: '"visited" tələffüzü:',                                      tr: '/ɪd/',                      wrong: '/t/'                         },
+  { en: '"started" tələffüzü:',                                      tr: '/ɪd/',                      wrong: '/d/'                         },
+  { en: '"watched" tələffüzü:',                                      tr: '/t/',                       wrong: '/ɪd/'                        },
+  { en: '"dünən" ingilis dilində:',                                  tr: 'yesterday',                 wrong: 'last day'                    },
+  { en: '"keçən həftə" ingilis dilində:',                            tr: 'last week',                 wrong: 'ago week'                    },
+  { en: '"iki gün əvvəl" ingilis dilində:',                          tr: 'two days ago',              wrong: 'ago two days'                },
+  { en: '"stay" → Past Simple:',                                     tr: 'stayed',                    wrong: 'staied'                      },
+  { en: '"arrive" → Past Simple:',                                   tr: 'arrived',                   wrong: 'arriveed'                    },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən bu səhər dişlərimi təmizlədim.',
+      words: ['I', 'cleaned', 'my', 'teeth', 'this', 'morning', 'clean', 'this morning'],
+      answer: ['I', 'cleaned', 'my', 'teeth', 'this', 'morning'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Dünən bütün gün yağış yağdı.',
+      words: ['Yesterday', 'it', 'rained', 'all', 'morning', 'rain', 'all morning'],
+      answer: ['Yesterday', 'it', 'rained', 'all', 'morning'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O iki il Parisdə yaşadı.',
+      words: ['She', 'lived', 'in', 'Paris', 'for', 'two', 'years', 'live', 'for two years'],
+      answer: ['She', 'lived', 'in', 'Paris', 'for', 'two', 'years'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar otela saat 9-da çatdılar.',
+      words: ['They', 'arrived', 'at', 'the', 'hotel', 'at', '9', 'o\'clock', 'arrive', 'at the hotel'],
+      answer: ['They', 'arrived', 'at', 'the', 'hotel', 'at', '9', 'o\'clock'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən məktəbdə ingilis dili öyrəndim.',
+      words: ['I', 'studied', 'English', 'at', 'school', 'study', 'at school'],
+      answer: ['I', 'studied', 'English', 'at', 'school'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Party gecəyarı bitdi.',
+      words: ['The', 'party', 'finished', 'at', 'midnight', 'finish', 'at midnight'],
+      answer: ['The', 'party', 'finished', 'at', 'midnight'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O keçən bazar ertəsi işə başladı.',
+      words: ['She', 'started', 'her', 'job', 'last', 'Monday', 'start', 'last Monday'],
+      answer: ['She', 'started', 'her', 'job', 'last', 'Monday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O iki gün əvvəl zəng etdi.',
+      words: ['He', 'called', 'two', 'days', 'ago', 'call', 'ago two days'],
+      answer: ['He', 'called', 'two', 'days', 'ago'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz çox gözəl bir oteldə qaldıq.',
+      words: ['We', 'stayed', 'at', 'a', 'very', 'nice', 'hotel', 'stay', 'at a very nice hotel'],
+      answer: ['We', 'stayed', 'at', 'a', 'very', 'nice', 'hotel'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Uşaq ikən o həkim olmaq istəyirdi.',
+      words: ['He', 'wanted', 'to', 'be', 'a', 'doctor', 'when', 'he', 'was', 'a', 'child', 'want', 'to be'],
+      answer: ['He', 'wanted', 'to', 'be', 'a', 'doctor', 'when', 'he', 'was', 'a', 'child'],
+    },
+  ],
+},
+      
+{ type: 'section_divider', title: 'Past Simple — dəyişən fellər' },
+
+// ── UNIT 11 — Past Simple: Düzgünsüz Fellər (Irregular Verbs) ───────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Past Simple — Düzgünsüz Fellər, Qrup 1–3 (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: Giriş — düzgünsüz fellər nədir? ─────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Düzgünsüz fellər — nədir?',
+      content: 'Düzgünsüz fellər -ed almır. Bunların keçmiş formaları tamamilə fərqlidir — əzbərlənməlidir.\n\nDüzgün fel: work → worked ✅\nDüzgünsüz fel: go → went ✅ (go → goed ❌)',
+      examples: [
+        { word: 'go → went',       az: '❌ "goed" olmaz'    },
+        { word: 'buy → bought',    az: '❌ "buyed" olmaz'   },
+        { word: 'take → took',     az: '❌ "taked" olmaz'   },
+        { word: 'think → thought', az: '❌ "thinked" olmaz' },
+        { word: 'write → wrote',   az: '❌ "writed" olmaz'  },
+        { word: 'see → saw',       az: '❌ "seed" olmaz'    },
+        { word: 'come → came',     az: '❌ "comed" olmaz'   },
+        { word: 'have → had',      az: '❌ "haved" olmaz'   },
+      ],
+      tip: 'Düzgünsüz felləri qruplara bölüb əzbərləmək daha asandır.',
+    },
+
+    // ── Ekran 2: Qrup 1 — Eyni qalır + Qrup 2 — Sait dəyişir ────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 1 — Eyni qalır | Qrup 2 — Sait dəyişir',
+      content: 'Qrup 1: Keçmiş zaman forması infinitivlə eynidir.\nQrup 2: Sait hərfi dəyişir (a→e→u modeli):',
+      table: [
+        ['Qrup 1 — Eyni',  '',          'Qrup 2 — Sait dəyişir', ''],
+        ['put',            'put',       'begin',                  'began'],
+        ['cut',            'cut',       'drink',                  'drank'],
+        ['',               '',          'run',                    'ran'],
+        ['',               '',          'swim',                   'swam'],
+        ['',               '',          'sing',                   'sang'],
+        ['',               '',          'come',                   'came'],
+        ['',               '',          'give',                   'gave'],
+        ['',               '',          'take',                   'took'],
+      ],
+      tip: 'Qrup 2-də sait hərfi dəyişir: drink→drank, swim→swam, run→ran, sing→sang.',
+    },
+
+    // ── Ekran 3: Qrup 3 — -ought / -aught ────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 3 — -ought / -aught forması',
+      content: 'Bu fellər keçmiş zamanda -ought və ya -aught alır — tələffüzü eynidir: /ɔːt/',
+      table: [
+        ['İnfinitive', 'Past Simple', 'Mənası'],
+        ['bring',      'brought',    'gətirmək'],
+        ['buy',        'bought',     'almaq'],
+        ['think',      'thought',    'düşünmək'],
+        ['catch',      'caught',     'tutmaq'],
+        ['teach',      'taught',     'öyrətmək'],
+        ['fight',      'fought',     'döyüşmək'],
+      ],
+      tip: 'Hamısının tələffüzü /ɔːt/ — brought/bought/thought/caught/taught — eyni səslənir!',
+    },
+
+    // ── Ekran 4: Nümunə cümlələri — Qrup 1–3 ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 1–3 ilə nümunə cümlələr',
+      content: 'Bu qrupların felləri cümlələrdə:',
+      examples: [
+        { word: 'She bought a new dress yesterday.',        az: 'buy → bought (Qrup 3)'   },
+        { word: 'I thought about it all day.',             az: 'think → thought (Qrup 3)' },
+        { word: 'He ran to catch the bus.',                az: 'run → ran (Qrup 2)'       },
+        { word: 'We swam in the sea last summer.',         az: 'swim → swam (Qrup 2)'     },
+        { word: 'She put the keys on the table.',          az: 'put → put (Qrup 1)'       },
+        { word: 'He brought me a gift from London.',       az: 'bring → brought (Qrup 3)' },
+        { word: 'The team began the match at 3 o\'clock.', az: 'begin → began (Qrup 2)'  },
+        { word: 'He cut the bread and gave it to us.',     az: 'cut → cut, give → gave'   },
+      ],
+      tip: 'Hər cümləni oxuyarkən keçmiş formanı yüksək səslə de — əzbərləmə sürətlənir.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"go" felinin Past Simple forması:',
+          options: ['goed', 'went', 'gone'],
+          answer: 'went',
+        },
+        {
+          q: '"buy" felinin Past Simple forması:',
+          options: ['buyed', 'boughted', 'bought'],
+          answer: 'bought',
+        },
+        {
+          q: '"swim" felinin Past Simple forması:',
+          options: ['swimmed', 'swum', 'swam'],
+          answer: 'swam',
+        },
+        {
+          q: '"put" felinin Past Simple forması:',
+          options: ['putted', 'put', 'puted'],
+          answer: 'put',
+        },
+        {
+          q: '"think" felinin Past Simple forması:',
+          options: ['thinked', 'thought', 'thunk'],
+          answer: 'thought',
+        },
+        {
+          q: '"bring" felinin Past Simple forması:',
+          options: ['bringed', 'brung', 'brought'],
+          answer: 'brought',
+        },
+        {
+          q: '"run" felinin Past Simple forması:',
+          options: ['runned', 'ran', 'run'],
+          answer: 'ran',
+        },
+        {
+          q: '"catch" felinin Past Simple forması:',
+          options: ['catched', 'caught', 'cought'],
+          answer: 'caught',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Past Simple — Düzgünsüz Fellər, Qrup 4–6 (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Qrup 4 — -ew forması ────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 4 — -ew forması',
+      content: 'Bu fellər keçmiş zamanda -ew alır:',
+      table: [
+        ['İnfinitive', 'Past Simple', 'Mənası'],
+        ['know',       'knew',        'bilmək'],
+        ['fly',        'flew',        'uçmaq'],
+        ['grow',       'grew',        'böyümək'],
+        ['blow',       'blew',        'əsmək (külək)'],
+        ['draw',       'drew',        'çəkmək (şəkil)'],
+        ['throw',      'threw',       'atmaq'],
+      ],
+      tip: 'know→knew, fly→flew, grow→grew — hamısı -ew ilə bitir.',
+    },
+
+    // ── Ekran 2: Qrup 5 — -oke/-ose forması + Qrup 6 — -eft/-ent/-ept ────────
+    {
+      type: 'lesson',
+      title: 'Qrup 5 — -oke/-ose | Qrup 6 — -eft/-ent/-ept',
+      content: 'Qrup 5: sonu -oke və ya -ose ilə bitir.\nQrup 6: sonu -eft, -ent, -ept ilə bitir:',
+      table: [
+        ['Qrup 5',   '',       'Qrup 6',  ''],
+        ['speak',    'spoke',  'leave',   'left'],
+        ['break',    'broke',  'send',    'sent'],
+        ['wake',     'woke',   'sleep',   'slept'],
+        ['choose',   'chose',  'feel',    'felt'],
+        ['write',    'wrote',  'keep',    'kept'],
+        ['drive',    'drove',  'spend',   'spent'],
+        ['ride',     'rode',   'build',   'built'],
+      ],
+      tip: 'speak→spoke, break→broke — model eynidir. leave→left, send→sent — sonu dəyişir.',
+    },
+
+    // ── Ekran 3: Ən çox işlənən fellər — tam siyahı ───────────────────────────
+    {
+      type: 'lesson',
+      title: 'Ən çox işlənən düzgünsüz fellər',
+      content: 'Bu felləri mütləq bil:',
+      table: [
+        ['İnfinitive', 'Past',    'İnfinitive', 'Past'],
+        ['be',         'was/were','make',        'made'],
+        ['come',       'came',    'meet',        'met'],
+        ['do',         'did',     'pay',         'paid'],
+        ['eat',        'ate',     'read',        'read'],
+        ['fall',       'fell',    'say',         'said'],
+        ['find',       'found',   'see',         'saw'],
+        ['forget',     'forgot',  'sell',        'sold'],
+        ['get',        'got',     'sit',         'sat'],
+        ['give',       'gave',    'stand',       'stood'],
+        ['have',       'had',     'tell',        'told'],
+        ['hear',       'heard',   'win',         'won'],
+        ['leave',      'left',    'lose',        'lost'],
+      ],
+      tip: '"read" felinin Past Simple forması da "read" — amma tələffüzü /red/ kimi oxunur!',
+    },
+
+    // ── Ekran 4: Nümunə cümlələri — Qrup 4–6 + qarışıq ──────────────────────
+    {
+      type: 'lesson',
+      title: 'Qrup 4–6 ilə nümunə cümlələr',
+      content: 'Bu qrupların felləri cümlələrdə:',
+      examples: [
+        { word: 'I knew the answer immediately.',             az: 'know → knew (Qrup 4)'   },
+        { word: 'She spoke to me but I didn\'t hear her.',   az: 'speak → spoke (Qrup 5)' },
+        { word: 'He left the house at 8 o\'clock.',          az: 'leave → left (Qrup 6)'  },
+        { word: 'She sent me a long message.',               az: 'send → sent (Qrup 6)'   },
+        { word: 'The wind blew strongly last night.',        az: 'blow → blew (Qrup 4)'   },
+        { word: 'He broke the window by accident.',          az: 'break → broke (Qrup 5)' },
+        { word: 'We spent a week in the mountains.',         az: 'spend → spent (Qrup 6)' },
+        { word: 'She wrote a long letter to her friend.',    az: 'write → wrote (Qrup 5)' },
+      ],
+      tip: 'Hər gün 5 yeni düzgünsüz fel öyrən — bir ayda hamısını biləcəksən.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: '"know" felinin Past Simple forması:',
+          options: ['knowed', 'knew', 'known'],
+          answer: 'knew',
+        },
+        {
+          q: '"speak" felinin Past Simple forması:',
+          options: ['speaked', 'spoken', 'spoke'],
+          answer: 'spoke',
+        },
+        {
+          q: '"leave" felinin Past Simple forması:',
+          options: ['leaved', 'left', 'left'],
+          answer: 'left',
+        },
+        {
+          q: '"send" felinin Past Simple forması:',
+          options: ['sended', 'sent', 'send'],
+          answer: 'sent',
+        },
+        {
+          q: '"write" felinin Past Simple forması:',
+          options: ['writed', 'written', 'wrote'],
+          answer: 'wrote',
+        },
+        {
+          q: '"have" felinin Past Simple forması:',
+          options: ['haved', 'had', 'has'],
+          answer: 'had',
+        },
+        {
+          q: '"see" felinin Past Simple forması:',
+          options: ['seed', 'seen', 'saw'],
+          answer: 'saw',
+        },
+        {
+          q: '"fly" felinin Past Simple forması:',
+          options: ['flyed', 'flown', 'flew'],
+          answer: 'flew',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: '"go" → Past Simple:',           tr: 'went',    wrong: 'goed'     },
+  { en: '"come" → Past Simple:',         tr: 'came',    wrong: 'comed'    },
+  { en: '"have" → Past Simple:',         tr: 'had',     wrong: 'haved'    },
+  { en: '"buy" → Past Simple:',          tr: 'bought',  wrong: 'buyed'    },
+  { en: '"think" → Past Simple:',        tr: 'thought', wrong: 'thinked'  },
+  { en: '"take" → Past Simple:',         tr: 'took',    wrong: 'taked'    },
+  { en: '"see" → Past Simple:',          tr: 'saw',     wrong: 'seed'     },
+  { en: '"write" → Past Simple:',        tr: 'wrote',   wrong: 'writed'   },
+  { en: '"know" → Past Simple:',         tr: 'knew',    wrong: 'knowed'   },
+  { en: '"speak" → Past Simple:',        tr: 'spoke',   wrong: 'speaked'  },
+  { en: '"leave" → Past Simple:',        tr: 'left',    wrong: 'leaved'   },
+  { en: '"send" → Past Simple:',         tr: 'sent',    wrong: 'sended'   },
+  { en: '"run" → Past Simple:',          tr: 'ran',     wrong: 'runned'   },
+  { en: '"swim" → Past Simple:',         tr: 'swam',    wrong: 'swimmed'  },
+  { en: '"put" → Past Simple:',          tr: 'put',     wrong: 'putted'   },
+  { en: '"catch" → Past Simple:',        tr: 'caught',  wrong: 'catched'  },
+  { en: '"bring" → Past Simple:',        tr: 'brought', wrong: 'bringed'  },
+  { en: '"find" → Past Simple:',         tr: 'found',   wrong: 'finded'   },
+  { en: '"tell" → Past Simple:',         tr: 'told',    wrong: 'telled'   },
+  { en: '"fly" → Past Simple:',          tr: 'flew',    wrong: 'flyed'    },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O dünən yeni paltar aldı.',
+      words: ['She', 'bought', 'a', 'new', 'dress', 'yesterday', 'buyed', 'buy'],
+      answer: ['She', 'bought', 'a', 'new', 'dress', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz keçən il Londona getdik.',
+      words: ['We', 'went', 'to', 'London', 'last', 'year', 'goed', 'go'],
+      answer: ['We', 'went', 'to', 'London', 'last', 'year'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Jim otağa girdi, paltosunu çıxardı və oturdu.',
+      words: ['Jim', 'came', 'into', 'the', 'room', 'took', 'off', 'his', 'coat', 'and', 'sat', 'down', 'come', 'take'],
+      answer: ['Jim', 'came', 'into', 'the', 'room', 'took', 'off', 'his', 'coat', 'and', 'sat', 'down'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən onun adını unutdum.',
+      words: ['I', 'forgot', 'her', 'name', 'forget', 'forgeted', 'his'],
+      answer: ['I', 'forgot', 'her', 'name'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O mənə maraqlı bir şey söylədi.',
+      words: ['He', 'told', 'me', 'something', 'interesting', 'telled', 'tell'],
+      answer: ['He', 'told', 'me', 'something', 'interesting'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən cavabı dərhal bildim.',
+      words: ['I', 'knew', 'the', 'answer', 'immediately', 'knowed', 'know'],
+      answer: ['I', 'knew', 'the', 'answer', 'immediately'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O evdən saat 8-də çıxdı.',
+      words: ['She', 'left', 'the', 'house', 'at', '8', 'o\'clock', 'leaved', 'leave'],
+      answer: ['She', 'left', 'the', 'house', 'at', '8', 'o\'clock'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Biz partydə əla vaxt keçirdik.',
+      words: ['We', 'had', 'a', 'great', 'time', 'at', 'the', 'party', 'haved', 'have'],
+      answer: ['We', 'had', 'a', 'great', 'time', 'at', 'the', 'party'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O mənə London\'dan hədiyyə gətirdi.',
+      words: ['He', 'brought', 'me', 'a', 'gift', 'from', 'London', 'bringed', 'bring'],
+      answer: ['He', 'brought', 'me', 'a', 'gift', 'from', 'London'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O dünən ofisə tez gəldi.',
+      words: ['She', 'came', 'to', 'the', 'office', 'early', 'yesterday', 'comed', 'come'],
+      answer: ['She', 'came', 'to', 'the', 'office', 'early', 'yesterday'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'Past Simple — inkar və sual' },
+
+// ── UNIT 12 — Past Simple: İnkar və Sual (didn't / Did you?) ─────────────────
+
+// ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Past Simple — İnkar (didn\'t) (Dərs 1)',
+  cards: [
+
+    // ── Ekran 1: İnkar quruluşu ───────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Simple — İnkar quruluşu',
+      content: 'Past Simple-də inkar üçün didn\'t (did not) işlədilir.\n\nBütün şəxslər üçün eynidir — dəyişmir:\nSubject + didn\'t + Verb (sadə forma)\n\n❗ didn\'t-dan sonra fel sadə formada qalır — keçmiş forma işlədilmir!',
+      table: [
+        ['Subject',                          'Köməkçi', 'Fel'],
+        ['I / he / she / it / we / you / they', 'didn\'t', 'go / work / see / buy'],
+      ],
+      tip: 'didn\'t = did not. Danışıq dilində həmişə qısa forma işlədilir.',
+    },
+
+    // ── Ekran 2: didn't-dan sonra sadə forma ─────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'didn\'t-dan sonra — sadə forma!',
+      content: 'didn\'t-dan sonra fel keçmiş forma almır — sadə (infinitive) formada qalır:',
+      examples: [
+        { word: 'She didn\'t go to work.',       az: '✅ Düzgün — didn\'t + go'           },
+        { word: 'She didn\'t went to work.',     az: '❌ Yanlış — went olmaz'             },
+        { word: 'I didn\'t see him.',            az: '✅ Düzgün — didn\'t + see'           },
+        { word: 'I didn\'t saw him.',            az: '❌ Yanlış — saw olmaz'              },
+        { word: 'They didn\'t come.',            az: '✅ Düzgün — didn\'t + come'         },
+        { word: 'They didn\'t came.',            az: '❌ Yanlış — came olmaz'             },
+        { word: 'He didn\'t tell me.',           az: '✅ Düzgün — didn\'t + tell'         },
+        { word: 'He didn\'t told me.',           az: '❌ Yanlış — told olmaz'             },
+      ],
+      tip: 'Keçmiş məna artıq didn\'t-dadır. Felə ayrıca keçmiş forma vermə!',
+    },
+
+    // ── Ekran 3: Müsbəti inkara çevirmə ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Müsbəti inkara çevir',
+      content: 'Müsbət cümləni inkara çevirərkən fel sadə formaya qayıdır:',
+      table: [
+        ['Müsbət',                          'İnkar'],
+        ['I went to work.',                 'I didn\'t go to work.'],
+        ['She bought a dress.',             'She didn\'t buy a dress.'],
+        ['They came to the party.',         'They didn\'t come to the party.'],
+        ['He told me.',                     'He didn\'t tell me.'],
+        ['It rained yesterday.',            'It didn\'t rain yesterday.'],
+        ['We had dinner at home.',          'We didn\'t have dinner at home.'],
+        ['I saw him at the meeting.',       'I didn\'t see him at the meeting.'],
+      ],
+      tip: 'went→go, bought→buy, came→come — inkarda fel sadə formaya qayıdır.',
+    },
+
+    // ── Ekran 4: İnkar nümunə cümlələri ──────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'İnkar — nümunə cümlələri',
+      content: 'didn\'t ilə düzgün cümlələr:',
+      examples: [
+        { word: 'I didn\'t go to work yesterday. I stayed at home.',  az: 'I → didn\'t go'    },
+        { word: 'She didn\'t watch television last night.',           az: 'she → didn\'t watch' },
+        { word: 'We didn\'t have dinner at home.',                    az: 'we → didn\'t have'  },
+        { word: 'They didn\'t come to the party.',                    az: 'they → didn\'t come' },
+        { word: 'It didn\'t rain yesterday.',                         az: 'it → didn\'t rain'  },
+        { word: 'She didn\'t buy anything at the shops.',             az: 'she → didn\'t buy'  },
+      ],
+      tip: 'didn\'t bütün şəxslər üçün eynidir — Present Simple-dən fərqli olaraq don\'t/doesn\'t yoxdur.',
+    },
+
+    // ── Mini-check 1 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'She didn\'t went to school.',
+            'She didn\'t go to school.',
+            'She don\'t go to school.',
+          ],
+          answer: 'She didn\'t go to school.',
+        },
+        {
+          q: 'Düzgün inkar cümləsini seç:',
+          options: [
+            'They didn\'t came to the party.',
+            'They didn\'t come to the party.',
+            'They doesn\'t come to the party.',
+          ],
+          answer: 'They didn\'t come to the party.',
+        },
+        {
+          q: '"I went to the cinema." → inkara çevir:',
+          options: [
+            'I didn\'t went to the cinema.',
+            'I didn\'t go to the cinema.',
+            'I don\'t go to the cinema.',
+          ],
+          answer: 'I didn\'t go to the cinema.',
+        },
+        {
+          q: '"He told me." → inkara çevir:',
+          options: [
+            'He didn\'t told me.',
+            'He didn\'t tell me.',
+            'He doesn\'t tell me.',
+          ],
+          answer: 'He didn\'t tell me.',
+        },
+        {
+          q: 'didn\'t-dan sonra fel necə olur?',
+          options: [
+            'Keçmiş forma (went/bought)',
+            'Sadə forma (go/buy)',
+            '-ing forması',
+          ],
+          answer: 'Sadə forma (go/buy)',
+        },
+        {
+          q: '"She bought a dress." → inkara çevir:',
+          options: [
+            'She didn\'t bought a dress.',
+            'She didn\'t buy a dress.',
+            'She wasn\'t buy a dress.',
+          ],
+          answer: 'She didn\'t buy a dress.',
+        },
+        {
+          q: 'Past Simple inkarda bütün şəxslər üçün hansı forma işlədilir?',
+          options: ['don\'t / doesn\'t', 'didn\'t', 'wasn\'t / weren\'t'],
+          answer: 'didn\'t',
+        },
+        {
+          q: '"It rained." → inkara çevir:',
+          options: [
+            'It didn\'t rained.',
+            'It didn\'t rain.',
+            'It wasn\'t rain.',
+          ],
+          answer: 'It didn\'t rain.',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
+{
+  type: 'grammar_lesson',
+  title: 'Past Simple — Sual (Did?) (Dərs 2)',
+  cards: [
+
+    // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Past Simple — Sual quruluşu',
+      content: 'Past Simple-də sual üçün Did köməkçi feli subject-dən əvvələ keçir:\n\nDid + Subject + Verb (sadə forma)?\n\n❗ Did-dən sonra da fel sadə formada qalır!',
+      table: [
+        ['Köməkçi', 'Subject',                          'Fel'],
+        ['Did',     'I / he / she / it / we / you / they', 'go / work / see / buy?'],
+      ],
+      tip: 'Did you go? ✅ — Did you went? ❌ — Sualda da fel sadə formada olur!',
+    },
+
+    // ── Ekran 2: Sual nümunələri ──────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual — nümunə cümlələri',
+      content: 'Did ilə düzgün sual cümlələri:',
+      examples: [
+        { word: 'Did you go out last night?',        az: 'you → Did you go'      },
+        { word: 'Did she pass the exam?',            az: 'she → Did she pass'    },
+        { word: 'Did they enjoy the party?',         az: 'they → Did they enjoy' },
+        { word: 'Did it rain yesterday?',            az: 'it → Did it rain'      },
+        { word: 'Did he tell you about it?',         az: 'he → Did he tell'      },
+        { word: 'Did you wake up early?',            az: 'you → Did you wake'    },
+        { word: 'Did she buy anything?',             az: 'she → Did she buy'     },
+      ],
+      tip: 'Present Simple-də do/does işlədilirdi — Past Simple-də ikisi birləşib Did olur.',
+    },
+
+    // ── Ekran 3: Qısa cavablar + Sual sözləri ────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Qısa cavablar və sual sözləri',
+      content: 'Qısa cavabda did / didn\'t işlədilir. Sual sözü əvvələ gəlir:',
+      table: [
+        ['Sual',                    'Bəli',          'Xeyr'],
+        ['Did you go out?',         'Yes, I did.',   'No, I didn\'t.'],
+        ['Did she pass?',           'Yes, she did.', 'No, she didn\'t.'],
+        ['Did they enjoy it?',      'Yes, they did.','No, they didn\'t.'],
+        ['Did it rain?',            'Yes, it did.',  'No, it didn\'t.'],
+      ],
+      tip: '"Yes, I did go." demə — sadəcə "Yes, I did." kifayətdir.',
+    },
+
+    // ── Ekran 4: Sual sözləri ilə ─────────────────────────────────────────────
+    {
+      type: 'lesson',
+      title: 'Sual sözləri ilə Past Simple sualları',
+      content: 'Sual sözü əvvələ gəlir, sonra Did, sonra subject, sonra sadə fel:',
+      examples: [
+        { word: 'What did you do last weekend?',      az: 'What + did + you + do'       },
+        { word: 'Where did she go on holiday?',       az: 'Where + did + she + go'      },
+        { word: 'Why did he leave early?',            az: 'Why + did + he + leave'      },
+        { word: 'How much did it cost?',              az: 'How much + did + it + cost'  },
+        { word: 'What time did the film start?',      az: 'What time + did + film + start' },
+        { word: 'Who did you meet at the party?',     az: 'Who + did + you + meet'      },
+        { word: 'How long did they stay?',            az: 'How long + did + they + stay' },
+      ],
+      tip: 'Sual sözü → Did → Subject → Verb (sadə). Bu sıra həmişə eynidir.',
+    },
+
+    // ── Mini-check 2 ──────────────────────────────────────────────────────────
+    {
+      type: 'mini_check',
+      questions: [
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Did she went to school?',
+            'Did she go to school?',
+            'Does she go to school?',
+          ],
+          answer: 'Did she go to school?',
+        },
+        {
+          q: '"Did you enjoy the party?" — bəli cavabı:',
+          options: ['Yes, I enjoyed.', 'Yes, I did.', 'Yes, I do.'],
+          answer: 'Yes, I did.',
+        },
+        {
+          q: '"Did it rain yesterday?" — xeyr cavabı:',
+          options: ['No, it didn\'t.', 'No, it don\'t.', 'No, it wasn\'t.'],
+          answer: 'No, it didn\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'Where did you went last night?',
+            'Where did you go last night?',
+            'Where you did go last night?',
+          ],
+          answer: 'Where did you go last night?',
+        },
+        {
+          q: '"How much ___ it ___?" — boşluqlara nə gəlir?',
+          options: ['do / cost', 'did / cost', 'did / costed'],
+          answer: 'did / cost',
+        },
+        {
+          q: '"Did they come to the meeting?" — xeyr cavabı:',
+          options: ['No, they didn\'t.', 'No, they don\'t.', 'No, they weren\'t.'],
+          answer: 'No, they didn\'t.',
+        },
+        {
+          q: 'Düzgün sual cümləsini seç:',
+          options: [
+            'What did you do at the weekend?',
+            'What you did do at the weekend?',
+            'What did you did at the weekend?',
+          ],
+          answer: 'What did you do at the weekend?',
+        },
+        {
+          q: '"Why did she leave early?" — bu cümlədə fel hansı formadadır?',
+          options: ['Keçmiş forma (left)', 'Sadə forma (leave)', '-ing forması'],
+          answer: 'Sadə forma (leave)',
+        },
+      ],
+    },
+
+  ],
+},
+
+// ── Translate Quiz ────────────────────────────────────────────────────────────
+[
+  { en: 'Past Simple inkar — bütün şəxslər üçün:',                   tr: 'didn\'t',                   wrong: 'don\'t / doesn\'t'           },
+  { en: 'didn\'t-dan sonra fel necə olur?',                          tr: 'Sadə forma',                wrong: 'Keçmiş forma'                },
+  { en: 'Düzgün: She ___ go to school yesterday.',                   tr: 'didn\'t',                   wrong: 'doesn\'t'                    },
+  { en: '"I went." → inkara çevir:',                                 tr: 'I didn\'t go.',             wrong: 'I didn\'t went.'             },
+  { en: '"She bought." → inkara çevir:',                             tr: 'She didn\'t buy.',          wrong: 'She didn\'t bought.'         },
+  { en: '"They came." → inkara çevir:',                              tr: 'They didn\'t come.',        wrong: 'They didn\'t came.'          },
+  { en: '"He told me." → inkara çevir:',                             tr: 'He didn\'t tell me.',       wrong: 'He didn\'t told me.'         },
+  { en: 'Past Simple sual — köməkçi fel:',                           tr: 'Did',                       wrong: 'Do / Does'                   },
+  { en: 'Düzgün sual: ___ you go out last night?',                   tr: 'Did',                       wrong: 'Do'                          },
+  { en: '"Did you see the film?" — bəli cavabı:',                    tr: 'Yes, I did.',               wrong: 'Yes, I saw.'                 },
+  { en: '"Did it rain?" — xeyr cavabı:',                             tr: 'No, it didn\'t.',           wrong: 'No, it don\'t.'              },
+  { en: 'Sual sözü ilə düzgün sıra:',                                tr: 'Wh- + Did + Subject + Verb', wrong: 'Wh- + Subject + Did + Verb' },
+  { en: '"Where ___ she ___?" — boşluqlara nə gəlir? (go)',         tr: 'did / go',                  wrong: 'did / went'                  },
+  { en: '"What ___ you ___?" — boşluqlara nə gəlir? (do)',          tr: 'did / do',                  wrong: 'did / did'                   },
+  { en: '"How much ___ it ___?" — boşluqlara nə gəlir? (cost)',     tr: 'did / cost',                wrong: 'did / costed'                },
+  { en: '"Why did he leave?" — feldən sonra nə gəlir?',              tr: 'Sadə forma (leave)',        wrong: 'Keçmiş forma (left)'         },
+  { en: 'Düzgün: Did she ___ the exam?',                             tr: 'pass',                      wrong: 'passed'                      },
+  { en: 'Düzgün: I didn\'t ___ television last night.',              tr: 'watch',                     wrong: 'watched'                     },
+  { en: '"Did they enjoy it?" — xeyr cavabı:',                       tr: 'No, they didn\'t.',         wrong: 'No, they enjoyed not.'       },
+  { en: 'Düzgün: We didn\'t ___ dinner at home.',                    tr: 'have',                      wrong: 'had'                         },
+],
+
+// ── Sentence Builder Quiz ─────────────────────────────────────────────────────
+{
+  type: 'quiz_sentence_builder',
+  questions: [
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Mən dünən işə getmədim.',
+      words: ['I', 'didn\'t', 'go', 'to', 'work', 'yesterday', 'went', 'don\'t'],
+      answer: ['I', 'didn\'t', 'go', 'to', 'work', 'yesterday'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O axşam televizora baxmadı.',
+      words: ['She', 'didn\'t', 'watch', 'television', 'last', 'night', 'watched', 'doesn\'t'],
+      answer: ['She', 'didn\'t', 'watch', 'television', 'last', 'night'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Onlar partiyə gəlmədilər.',
+      words: ['They', 'didn\'t', 'come', 'to', 'the', 'party', 'came', 'doesn\'t'],
+      answer: ['They', 'didn\'t', 'come', 'to', 'the', 'party'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Dünən gecə çıxdınmı?',
+      words: ['Did', 'you', 'go', 'out', 'last', 'night', 'went', 'Do'],
+      answer: ['Did', 'you', 'go', 'out', 'last', 'night'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O imtahanı keçdimi?',
+      words: ['Did', 'she', 'pass', 'the', 'exam', 'passed', 'Does'],
+      answer: ['Did', 'she', 'pass', 'the', 'exam'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Sən həftəsonu nə etdin?',
+      words: ['What', 'did', 'you', 'do', 'at', 'the', 'weekend', 'did', 'done'],
+      answer: ['What', 'did', 'you', 'do', 'at', 'the', 'weekend'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O niyə tez getdi?',
+      words: ['Why', 'did', 'she', 'leave', 'early', 'left', 'does'],
+      answer: ['Why', 'did', 'she', 'leave', 'early'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Bu nə qədər başa gəldi?',
+      words: ['How', 'much', 'did', 'it', 'cost', 'costed', 'do'],
+      answer: ['How', 'much', 'did', 'it', 'cost'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'O mənə bunu demədi.',
+      words: ['He', 'didn\'t', 'tell', 'me', 'about', 'it', 'told', 'doesn\'t'],
+      answer: ['He', 'didn\'t', 'tell', 'me', 'about', 'it'],
+    },
+    {
+      q: 'Cümləni düzün:',
+      sentence: 'Film saat neçədə başladı?',
+      words: ['What', 'time', 'did', 'the', 'film', 'start', 'started', 'do'],
+      answer: ['What', 'time', 'did', 'the', 'film', 'start'],
+    },
+  ],
+},
+      
 { type: 'section_divider', title: 'going to — plan və niyyət' },
+
+
+      
 { type: 'section_divider', title: 'will — qərar, təklif, proqnoz' },
+
+
+      
 { type: 'section_divider', title: 'can / can\'t — bacarıq' },
+
+
+      
 { type: 'section_divider', title: 'could — keçmişdə bacarıq və nəzakətli xahiş' },
+
+
+      
 { type: 'section_divider', title: 'must / have to — vaciblik' },
+
+
+      
 { type: 'section_divider', title: 'should — məsləhət' },
+
+
+      
 { type: 'section_divider', title: 'Present Perfect — giriş' },
+
+
+      
     ],
   },
 
