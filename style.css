@@ -3763,6 +3763,6 @@ button { font-family: var(--font); }
 }
 
 .path-node .ti-puzzle {
-  margin-right: 4px;
+  margin-right: -2px;
   margin-bottom: 4px;
 }
