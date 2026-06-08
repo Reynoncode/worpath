@@ -3033,6 +3033,10 @@ if (innerIcon && iconStyles[lvl.id]) {
     'subject_verb_agreement': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
     'imperative':      { background: '#1a0814', borderColor: '#5a1040', color: '#e870b0' },
     'exclamatory':     { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+    'cumle_temeli':        { background: '#0e0e20', borderColor: '#2a2a5a', color: '#a5b4fc' },
+    'zamanlar_modal':      { background: '#091418', borderColor: '#0e3848', color: '#22b8d4' },
+    'isim_evezlik_artikl': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
+    'cumle_tamamlayanlar': { background: '#161408', borderColor: '#504208', color: '#d4b840' },
   };
 
   const activeStyle = isDark ? (darkIconStyles[lvl.id] || s) : s;
