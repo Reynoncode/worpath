@@ -417,11 +417,11 @@ const status = getStatus(li, qi);
         : 0;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
 
-      let nodeIcon;
+     let nodeIcon;
       if (Array.isArray(item)) {
-        nodeIcon = '<i class="ti ti-check"></i>';
+        nodeIcon = '<i class="ti ti-list-check"></i>';
       } else if (item.type === 'quiz_sentence_builder') {
-        nodeIcon = '<i class="ti ti-layout-rows"></i>';
+        nodeIcon = '<i class="ti ti-puzzle"></i>';
       } else {
         nodeIcon = '<i class="ti ti-book-2"></i>';
       }
