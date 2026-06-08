@@ -416,11 +416,19 @@ function renderGeneralEnglishPath(lvl, li) {
           ).length
         : 0;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
+     // Tipə görə ikon seç
+      let nodeIcon = '<i class="ti ti-book-2"></i>';  // default: dərs
+      if (item.type === 'mini_check') {
+        nodeIcon = '<i class="ti ti-clipboard-check"></i>';  // 2 seçimli quiz
+      } else if (item.type === 'word_order' || item.type === 'sentence_build') {
+        nodeIcon = '<i class="ti ti-puzzle"></i>';  // söz sırala
+      }
+
       html += `
         <div class="path-node grammar-lesson-node unlocked ${pulseClass}"
              data-quiz-idx="${qi}" data-status="unlocked"
              style="color:${lvl.color}; border-color:${lvl.color}; background:${lvl.color}18;">
-          <i class="ti ti-book-2"></i>
+          ${nodeIcon}
         </div>`;
     }
 
