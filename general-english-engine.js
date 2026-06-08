@@ -390,7 +390,7 @@ function renderGeneralEnglishPath(lvl, li) {
       return;
     }
 
-    const status = getStatus(li, qi);
+const status = getStatus(li, qi);
     const isDone = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
 
     const prevItem      = lvl.quizzes[qi - 1];
@@ -416,12 +416,14 @@ function renderGeneralEnglishPath(lvl, li) {
           ).length
         : 0;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
-     // Tipə görə ikon seç
-      let nodeIcon = '<i class="ti ti-book-2"></i>';  // default: dərs
-      if (item.type === 'mini_check') {
-        nodeIcon = '<i class="ti ti-clipboard-check"></i>';  // 2 seçimli quiz
-      } else if (item.type === 'word_order' || item.type === 'sentence_build') {
-        nodeIcon = '<i class="ti ti-puzzle"></i>';  // söz sırala
+
+      let nodeIcon;
+      if (Array.isArray(item)) {
+        nodeIcon = '<i class="ti ti-check"></i>';
+      } else if (item.type === 'quiz_sentence_builder') {
+        nodeIcon = '<i class="ti ti-layout-rows"></i>';
+      } else {
+        nodeIcon = '<i class="ti ti-book-2"></i>';
       }
 
       html += `
@@ -439,6 +441,7 @@ function renderGeneralEnglishPath(lvl, li) {
   html += '</div>';
   return html;
 }
+
 // ── Global exports ──────────────────────────────────────────
 window.startGeneralEnglishLesson  = startGeneralEnglishLesson;
 window.renderGeneralEnglishPath   = renderGeneralEnglishPath;
