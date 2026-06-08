@@ -3423,6 +3423,10 @@ button { font-family: var(--font); }
 [data-theme="dark"] .level-card[data-level="subject_verb_agreement"] .level-icon { background: #0a1810 !important; border-color: #1a4828 !important; color: #4aaa70 !important; }
 [data-theme="dark"] .level-card[data-level="imperative"] .level-icon         { background: #1a0814 !important; border-color: #5a1040 !important; color: #e870b0 !important; }
 [data-theme="dark"] .level-card[data-level="exclamatory"] .level-icon        { background: #161408 !important; border-color: #504208 !important; color: #d4b840 !important; }
+[data-theme="dark"] .level-card[data-level="cumle_temeli"] .level-icon        { background: #0e0e20 !important; border-color: #2a2a5a !important; color: #a5b4fc !important; }
+[data-theme="dark"] .level-card[data-level="zamanlar_modal"] .level-icon      { background: #091418 !important; border-color: #0e3848 !important; color: #22b8d4 !important; }
+[data-theme="dark"] .level-card[data-level="isim_evezlik_artikl"] .level-icon { background: #0a1810 !important; border-color: #1a4828 !important; color: #4aaa70 !important; }
+[data-theme="dark"] .level-card[data-level="cumle_tamamlayanlar"] .level-icon { background: #161408 !important; border-color: #504208 !important; color: #d4b840 !important; }
 
 /* ── UTILITY ────────────────────────────────── */
 .hidden { display: none !important; }
