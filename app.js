@@ -2217,9 +2217,13 @@ const iconStyles = {
   'adverb':          { background: '#FDF4FF', borderColor: '#E879F9', color: '#701A75' },
   'complex_object':  { background: '#EFF6FF', borderColor: '#60A5FA', color: '#1E3A5F' },
   'subject_verb_agreement': { background: '#ECFDF5', borderColor: '#34D399', color: '#064E3B' },
-  'imperative':      { background: '#FFF1F2', borderColor: '#FDA4AF', color: '#881337' },
-  'exclamatory':     { background: '#FFFBEB', borderColor: '#FDE68A', color: '#92400E' },
-};
+  'imperative':          { background: '#FFF1F2', borderColor: '#FDA4AF', color: '#881337' },
+  'exclamatory':         { background: '#FFFBEB', borderColor: '#FDE68A', color: '#92400E' },
+  'cumle_temeli':        { background: '#EEF2FF', borderColor: '#A5B4FC', color: '#4338CA' },
+  'zamanlar_modal':      { background: '#E0F2FE', borderColor: '#7DD3FC', color: '#0369A1' },
+  'isim_evezlik_artikl': { background: '#ECFDF5', borderColor: '#6EE7B7', color: '#065F46' },
+  'cumle_tamamlayanlar': { background: '#FFFBEB', borderColor: '#FCD34D', color: '#92400E' },
+  };
 
 
 // ── Render level list ─────────────────────────────────────
