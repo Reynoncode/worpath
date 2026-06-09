@@ -3432,7 +3432,7 @@ stickyHeader.addEventListener('click', (e) => {
     scrollBody.appendChild(pathWrap);
 
     // Path node click-ləri
-    pathWrap.querySelectorAll('.path-node, .game-node').forEach((node) => {
+    pathWrap.querySelectorAll('.path-node, .game-node-wrap').forEach((node) => {
       node.addEventListener('click', () => {
  
         // ── Game node ──────────────────────────────────
