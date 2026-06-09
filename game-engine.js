@@ -200,12 +200,20 @@ window.WordGame = (function () {
     return { grid: newGrid, minR, minC, rows, cols };
   }
 
+// ══════════════════════════════════════════════════════════
+//  2. LETTER WHEEL
+// ══════════════════════════════════════════════════════════
 
-  // ══════════════════════════════════════════════════════════
-  //  2. LETTER WHEEL
-  // ══════════════════════════════════════════════════════════
+function _shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
-  function _getWheelLetters(placedWords) {
+function _getWheelLetters(placedWords) {
   const countMap = {};
   placedWords.forEach(pw => {
     const wordCount = {};
