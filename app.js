@@ -2808,8 +2808,7 @@ function renderCefrPath(lvl, li) {
     // Yalnız iki quiz arasına — exam-dan əvvəl qoymuruq
     if (nodeA.isExam || nodeB.isExam) continue;
 
-    // Ən birinci node (i=0) mərkəzdə başlayır — ondan sonrakı game node kobud görünür, atlayırıq
-    if (i === 0) continue;
+
 
     const gi = nodeA.blockIdx;
     if (blockGameCounters[gi] === undefined) blockGameCounters[gi] = 0;
