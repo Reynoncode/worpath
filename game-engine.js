@@ -819,19 +819,22 @@ _attachWheelEvents(wrap);
     let isMouseDown = false;
 
 btns.forEach(btn => {
-  btn.addEventListener('mousedown', () => {
+  btn.addEventListener('mousedown', (e) => {
+    e.stopPropagation();
     isMouseDown = true;
     if (!btn.classList.contains('sel'))
       _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
   });
 
-  btn.addEventListener('mouseover', () => {
+  btn.addEventListener('mouseover', (e) => {
+    e.stopPropagation();
     if (isMouseDown && !btn.classList.contains('sel'))
       _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
   });
 });
 
-wrap.addEventListener('mouseup', () => {
+wrap.addEventListener('mouseup', (e) => {
+  e.stopPropagation();
   if (!isMouseDown) return;
   isMouseDown = false;
   if (state.currentWord.length >= 2) {
