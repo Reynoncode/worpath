@@ -679,7 +679,7 @@ const usedH = (hdr?.offsetHeight        || 60)
             + 16;
   
   const availW = wrap.clientWidth - 20;
-  const availH = Math.max(totalH - usedH - 20, 180);
+  const availH = Math.max(wrap.clientHeight - 20, 100);
   
   const cols = Math.min(state.cols, MAX_COLS);
   const rows = Math.min(state.rows, MAX_ROWS);
