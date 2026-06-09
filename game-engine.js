@@ -206,20 +206,22 @@ window.WordGame = (function () {
   // ══════════════════════════════════════════════════════════
 
   function _getWheelLetters(placedWords) {
-    const set = new Set();
-    placedWords.forEach(pw => pw.word.split('').forEach(l => set.add(l)));
-    return _shuffle([...set]);
-  }
-
-  function _shuffle(arr) {
-    const a = [...arr];
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-    }
-    return a;
-  }
-
+  const countMap = {};
+  placedWords.forEach(pw => {
+    const wordCount = {};
+    pw.word.split('').forEach(l => {
+      wordCount[l] = (wordCount[l] || 0) + 1;
+    });
+    Object.entries(wordCount).forEach(([l, cnt]) => {
+      countMap[l] = Math.max(countMap[l] || 0, cnt);
+    });
+  });
+  const letters = [];
+  Object.entries(countMap).forEach(([l, cnt]) => {
+    for (let i = 0; i < cnt; i++) letters.push(l);
+  });
+  return _shuffle(letters);
+}
 
   // ══════════════════════════════════════════════════════════
   //  3. GAME STATE
