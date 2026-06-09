@@ -2916,77 +2916,148 @@ function renderCefrPath(lvl, li) {
       </div>`;
   });
 
-  // ── Game nodelarının HTML-i (ABSOLUTE) ─────────────────
-  let gameNodesHTML = '';
+// ── Game nodelarının HTML-i (ABSOLUTE) ─────────────────
+let gameNodesHTML = '';
 
-  gameNodes.forEach((gn) => {
-    const gameData = (typeof GAME_DATA !== 'undefined')
-      ? GAME_DATA[lvl.id]?.[gn.gameKey]
-      : null;
+gameNodes.forEach((gn) => {
+  const gameData = (typeof GAME_DATA !== 'undefined')
+    ? GAME_DATA[lvl.id]?.[gn.gameKey]
+    : null;
 
-    const progressKey = `${gn.levelId}_game_${gn.gameKey}`;
-    const gameDone    = localStorage.getItem(progressKey) === 'done';
-    const gameLabel   = gameData?.title || 'Game';
-    const isDark      = document.documentElement.getAttribute('data-theme') === 'dark';
+  const progressKey = `${gn.levelId}_game_${gn.gameKey}`;
+  const savedPhase  = parseInt(localStorage.getItem(progressKey) || '0', 10);
+  // savedPhase: 0=başlamamış, 1=phase1 bitib, 2=phase2 bitib, 3=hamısı bitib
 
-    // Node top: game nodun mərkəzi midY-dədir
-    // Nodun özü GAME_SIZE px hündürlüyündədir
-    const nodeTop  = gn.midY - GAME_SIZE / 2;
-    const labelTop = gn.midY + GAME_SIZE / 2 + 4;
+  const totalPhases = gameData?.phases?.length || 3;
+  const gameDone    = savedPhase >= totalPhases;
+  const gameLabel   = gameData?.title || 'Game';
+  const isDark      = document.documentElement.getAttribute('data-theme') === 'dark';
 
-    let gameClass = 'game-node';
-    let gameInner;
+  const nodeTop  = gn.midY - GAME_SIZE / 2;
 
-    if (gameDone) {
-      gameClass += ' game-node-done';
-      gameInner = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-        stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="20 6 9 17 4 12"/>
-      </svg>`;
-    } else {
-      gameClass += ' game-node-unlocked';
-      gameInner = `<svg width="19" height="19" viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-        <line x1="12" y1="22.08" x2="12" y2="12"/>
-      </svg>`;
-    }
+  // ── Circular progress bar parametrləri ───────────────
+  const R        = GAME_SIZE / 2;       // 22px — nodun yarıçapı
+  const STROKE   = 3.5;                 // bar qalınlığı
+  const CR       = R + STROKE + 2;      // SVG circle yarıçapı (noddan kənarda)
+  const CIRC     = 2 * Math.PI * CR;    // tam çevrə uzunluğu
+  const svgSize  = (CR + STROKE + 1) * 2;  // SVG ölçüsü
 
-    const nodeStyle = gameDone
-      ? `width:${GAME_SIZE}px; height:${GAME_SIZE}px; background:${lvl.color}; border-color:${lvl.color};`
-      : `width:${GAME_SIZE}px; height:${GAME_SIZE}px; color:${lvl.color}; border-color:${lvl.color}; background:${isDark ? '#142233' : 'white'};`;
+  // Faiz: neçə phase tamamlanıb / total
+  const fillPct  = gameDone ? 1 : (savedPhase / totalPhases);
+  const dashFill = fillPct * CIRC;
+  const dashGap  = CIRC - dashFill;
 
-    gameNodesHTML += `
-      <div class="game-node-wrap" style="
-        position: absolute;
-        top: ${nodeTop}px;
-        left: 50%;
-        transform: translateX(calc(-50% + ${gn.gameTranslateX}px));
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        z-index: 2;
-        cursor: pointer;
-      "
-        data-game-key="${gn.gameKey}"
-        data-level-id="${gn.levelId}"
-        data-is-game="true">
+  // Rənglər — lvl.color əsasında
+  const barColor    = lvl.color;
+  const trackColor  = isDark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.10)';
+
+  // ── Node inner ───────────────────────────────────────
+  let gameClass = 'game-node';
+  let gameInner;
+
+  if (gameDone) {
+    gameClass += ' game-node-done';
+    gameInner = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>`;
+  } else if (savedPhase === 0) {
+    gameClass += ' game-node-unlocked';
+    gameInner = `<svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+      <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+      <line x1="12" y1="22.08" x2="12" y2="12"/>
+    </svg>`;
+  } else {
+    // Bir və ya daha çox phase tamamlanıb amma hamısı yox
+    gameClass += ' game-node-inprogress';
+    gameInner = `<span class="game-node-phase-num">${savedPhase}/${totalPhases}</span>`;
+  }
+
+  const nodeStyle = gameDone
+    ? `width:${GAME_SIZE}px;height:${GAME_SIZE}px;background:${lvl.color};border-color:${lvl.color};`
+    : savedPhase > 0
+    ? `width:${GAME_SIZE}px;height:${GAME_SIZE}px;color:${lvl.color};border-color:${lvl.color};background:${isDark ? '#142233' : 'white'};`
+    : `width:${GAME_SIZE}px;height:${GAME_SIZE}px;color:${lvl.color};border-color:${lvl.color};background:${isDark ? '#142233' : 'white'};`;
+
+  // ── Circular progress bar SVG ────────────────────────
+  // circle: cx/cy = svgSize/2, r = CR
+  // stroke-dashoffset: CIRC/4 — 12-dan başlasın (top)
+  const progressSvg = `
+    <svg class="game-progress-ring ${gameDone ? 'game-progress-ring--done' : ''}"
+      width="${svgSize}" height="${svgSize}"
+      viewBox="0 0 ${svgSize} ${svgSize}"
+      style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;">
+      <circle
+        cx="${svgSize/2}" cy="${svgSize/2}" r="${CR}"
+        fill="none"
+        stroke="${trackColor}"
+        stroke-width="${STROKE}"
+      />
+      <circle
+        class="game-progress-fill"
+        cx="${svgSize/2}" cy="${svgSize/2}" r="${CR}"
+        fill="none"
+        stroke="${barColor}"
+        stroke-width="${STROKE}"
+        stroke-linecap="round"
+        stroke-dasharray="${dashFill} ${dashGap}"
+        stroke-dashoffset="${CIRC / 4}"
+        style="transition: stroke-dasharray 0.5s ease;"
+      />
+    </svg>`;
+
+  // ── Metal pulse (yalnız gameDone olduqda) ────────────
+  const pulseSvg = gameDone ? `
+    <div class="game-done-pulse" style="
+      position:absolute;
+      top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      width:${GAME_SIZE + 16}px;
+      height:${GAME_SIZE + 16}px;
+      border-radius:50%;
+      background:${lvl.color};
+      opacity:0;
+      animation:gameNodePulse 2.4s ease-out infinite;
+      pointer-events:none;
+    "></div>` : '';
+
+  gameNodesHTML += `
+    <div class="game-node-wrap" style="
+      position:absolute;
+      top:${nodeTop}px;
+      left:50%;
+      transform:translateX(calc(-50% + ${gn.gameTranslateX}px));
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      z-index:2;
+      cursor:pointer;
+    "
+      data-game-key="${gn.gameKey}"
+      data-level-id="${gn.levelId}"
+      data-is-game="true">
+      <div style="position:relative;display:flex;align-items:center;justify-content:center;
+        width:${svgSize}px;height:${svgSize}px;">
+        ${pulseSvg}
+        ${progressSvg}
         <div class="${gameClass}" style="${nodeStyle}">
           ${gameInner}
         </div>
-        <div class="node-label game-node-label" style="
-          font-size: 10px;
-          max-width: 72px;
-          text-align: center;
-          line-height: 1.3;
-          margin-top: 3px;
-          color: ${lvl.color};
-          font-weight: 600;
-        ">${gameLabel}</div>
-      </div>`;
-  });
-
+      </div>
+      <div class="node-label game-node-label" style="
+        font-size:10px;
+        max-width:72px;
+        text-align:center;
+        line-height:1.3;
+        margin-top:3px;
+        color:${lvl.color};
+        font-weight:600;
+      ">${gameLabel}</div>
+    </div>`;
+});
+  
   // ── Ümumi konteyner hündürlüyü ─────────────────────────
   const totalH = allNodes.length * BLOCK_H + PADDING_TOP * 2;
 
@@ -3491,6 +3562,38 @@ function startRetakeMode(levelIdx, quizIdx) {
   elQuestionHint.textContent = 'Qarışıq təkrar';
   showQuizScreen();
   showQuestion();
+}
+
+// ── Word Game başlat ──────────────────────────────────────
+function startWordGame(levelId, gameKey) {
+  const gameData = (typeof GAME_DATA !== 'undefined')
+    ? GAME_DATA[levelId]?.[gameKey]
+    : null;
+
+  const progressKey = `${levelId}_game_${gameKey}`;
+  const savedPhase  = parseInt(localStorage.getItem(progressKey) || '0', 10);
+  const totalPhases = gameData?.phases?.length || 3;
+  const gameDone    = savedPhase >= totalPhases;
+
+  if (gameDone) {
+    showToast('Bu oyunu artıq tamamlamısınız 🏆');
+    return;
+  }
+
+  if (!gameData || !gameData.phases || gameData.phases.length === 0) {
+    showToast('Bu oyun tezliklə əlavə olunacaq 🎮');
+    return;
+  }
+
+  const currentPhase = gameData.phases[savedPhase];
+  if (!currentPhase || !currentPhase.words || currentPhase.words.length === 0) {
+    showToast('Bu oyun tezliklə əlavə olunacaq 🎮');
+    return;
+  }
+
+  // TODO: game-engine.js-ə ötür
+  // Hələlik stub — oyun hazır olandan sonra bu hissə doldurulacaq
+  showToast(`Phase ${savedPhase + 1} başlayır... 🎮`);
 }
 
 // ══════════════════════════════════════════════
