@@ -371,13 +371,15 @@ window.WordGame = (function () {
       .wg-dot.done   { background:${C.accent}88; }
 
       /* Hint button */
-#wg-hint-wrap {
-  position:relative;
-  padding:6px 14px;
+#wg-typed {
   background:${C.card};
-  border-bottom:1px solid ${C.border};
-  flex-shrink:0;
+  border-top:1px solid ${C.border};
+  padding:6px 16px;
+  display:flex; align-items:center;
+  gap:8px; min-height:46px; flex-shrink:0;
+  position:relative;
 }
+
 #wg-hint-btn {
   width:34px; height:34px;
   border-radius:50%; border:none;
@@ -386,6 +388,7 @@ window.WordGame = (function () {
   display:flex; align-items:center; justify-content:center;
   transition:background .15s;
 }
+
 #wg-hint-btn:active { background:${C.cellBd}; }
 #wg-hint-popup {
   display:none;
@@ -569,19 +572,7 @@ window.WordGame = (function () {
         opacity:.55;
       }
 
-      /* Actions */
-      #wg-acts {
-  display:flex; justify-content:center;
-  width:100%; max-width:360px;
-}
-#wg-shuffle {
-  width:48px; height:48px; border-radius:50%;
-  font-size:20px; border:none; cursor:pointer;
-  background:${C.inputBg}; color:${C.textMain};
-  display:flex; align-items:center; justify-content:center;
-  transition:transform .1s, background .15s;
-}
-#wg-shuffle:active { transform:scale(.93); }
+
 
       /* Phase complete screen */
       #wg-pc {
@@ -631,27 +622,22 @@ window.WordGame = (function () {
       </div>
     </div>
 
-    <div id="wg-hint-wrap">
-  <button id="wg-hint-btn">💡</button>
-  <div id="wg-hint-popup">
-    <div id="wg-hint-list">${cluesHTML}</div>
-  </div>
-</div>
-
+  
     <div id="wg-cw-wrap">
   <div id="wg-cw"></div>
 </div>
 <div style="flex:1; min-height:8px;"></div>
 
     <div id="wg-typed">
-      <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
-    </div>
+  <button id="wg-hint-btn">💡</button>
+  <div id="wg-hint-popup">
+    <div id="wg-hint-list">${cluesHTML}</div>
+  </div>
+  <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
+</div>
 
     <div id="wg-wheel-area">
       <div id="wg-wheel"></div>
-      <div id="wg-acts">
-  <button class="wg-abtn" id="wg-shuffle">🔀</button>
-</div>
     </div>`;
   }
 
@@ -785,8 +771,12 @@ function _renderCells() {
 
    
 
-    wrap.innerHTML = html;
-    _attachWheelEvents(wrap);
+ html += `<button id="wg-wcenter"
+  style="width:${centerSz}px; height:${centerSz}px; font-size:${Math.max(13, centerSz - 14)}px; background:${C.inputBg}; color:${C.textMain}; border:none; border-radius:50%; cursor:pointer; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);">
+  🔀</button>`;
+
+wrap.innerHTML = html;
+_attachWheelEvents(wrap);
   }
 
   function _attachWheelEvents(wrap) {
@@ -1044,12 +1034,7 @@ ov.addEventListener('click', () => {
   hintPopup?.classList.remove('open');
 });
     
-    ov.querySelector('#wg-shuffle')?.addEventListener('click', () => {
-      state.letters = _shuffle(state.letters);
-      _clearSel();
-      _renderWheel();
-    });
-
+   
     // Responsive — resize-da yenidən hesabla
     if (window._wgResizeObs) window._wgResizeObs.disconnect();
     window._wgResizeObs = new ResizeObserver(() => {
