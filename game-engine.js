@@ -303,10 +303,10 @@ window.WordGame = (function () {
       display:flex; flex-direction:column;
       overflow:hidden; font-family:inherit;
     `;
-    ov.innerHTML = _buildHTML();
-    _attachEvents(ov);
-    _renderCells();
-    _renderWheel();
+  ov.innerHTML = _buildHTML();
+  _attachEvents(ov);
+  _renderWheel();
+  setTimeout(() => _renderCells(), 0);
   }
 
   function _closeOverlay() {
@@ -1029,8 +1029,8 @@ function _updateTyped() {
         _initState(levelId, gameKey, gameData, nextPhase);
         ov.innerHTML = _buildHTML();
         _attachEvents(ov);
-        _renderCells();
         _renderWheel();
+        setTimeout(() => _renderCells(), 0);
       }
     });
 
