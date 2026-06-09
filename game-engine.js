@@ -1062,11 +1062,15 @@ const hintPopup = ov.querySelector('#wg-hint-popup');
 
 hintBtn?.addEventListener('click', (e) => {
   e.stopPropagation();
-  hintPopup?.classList.toggle('open');
+  if (hintPopup) {
+    hintPopup.style.display = hintPopup.style.display === 'none' ? 'block' : 'none';
+  }
 });
-
-ov.addEventListener('click', () => {
-  hintPopup?.classList.remove('open');
+    
+ov.addEventListener('click', (e) => {
+  if (!e.target.closest('#wg-hint-btn') && !e.target.closest('#wg-hint-popup')) {
+    if (hintPopup) hintPopup.style.display = 'none';
+  }
 });
     
    
