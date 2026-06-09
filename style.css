@@ -3766,3 +3766,77 @@ button { font-family: var(--font); }
   margin-right: -2px;
   margin-bottom: 4px;
 }
+/* ============================================================
+   GAME NODE CSS
+   Mövcud CSS faylının sonuna əlavə et
+   ============================================================ */
+
+/* ── Game node — əsas stil ─────────────────────────────── */
+.game-node {
+  border-radius: 50%;
+  border: 2px dashed currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.game-node:active {
+  transform: scale(0.92);
+}
+
+/* ── Tamamlanmamış game node ─────────────────────────────── */
+.game-node-unlocked {
+  opacity: 0.85;
+}
+
+.game-node-unlocked:hover {
+  opacity: 1;
+  transform: scale(1.08);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Tamamlanmış game node ──────────────────────────────── */
+.game-node-done {
+  border-style: solid;
+  opacity: 1;
+}
+
+.game-node-done:hover {
+  transform: scale(1.06);
+}
+
+/* ── Game node wrapper ──────────────────────────────────── */
+.game-node-wrap {
+  transition: opacity 0.2s ease;
+}
+
+/* ── Game placeholder (oyun hələ hazır deyil) ───────────── */
+.game-placeholder-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 12px;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+.game-placeholder-icon {
+  font-size: 56px;
+  line-height: 1;
+}
+
+.game-placeholder-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.game-placeholder-desc {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
