@@ -2740,8 +2740,8 @@ html += `
 }
 
 // ============================================================
-//  CEFR PATH — GAME NODE ƏLAVƏ EDİLMİŞ VERSİYA
-//  app.js-dəki renderCefrPath funksiyasını bu ilə əvəz et
+//  renderCefrPath — GAME NODE ƏLAVƏ EDİLMİŞ VERSİYA
+//  app.js-dəki köhnə renderCefrPath funksiyasını bu ilə əvəz et
 // ============================================================
 
 function renderCefrPath(lvl, li) {
@@ -2752,10 +2752,11 @@ function renderCefrPath(lvl, li) {
   const LINE_H      = 50;
   const NODE_H      = 60;
   const LABEL_H     = 24;
-  const BLOCK_H     = NODE_H + LABEL_H + LINE_H;
+  const BLOCK_H     = NODE_H + LABEL_H + LINE_H;  // 134px
   const PADDING_TOP = 16;
+  const GAME_SIZE   = 44;  // game node diametri
 
-  // ── Blokları qur (hər exam bir blokun sonudur) ──────────
+  // ── Blokları qur (köhnə kod — dəyişdirilmir) ───────────
   const groups = [];
   let currentGroup = [];
   lvl.quizzes.forEach((item, qi) => {
@@ -2765,10 +2766,7 @@ function renderCefrPath(lvl, li) {
   });
   if (currentGroup.length > 0) groups.push(currentGroup);
 
-  // ── Hər bloka game nodeları əlavə et ───────────────────
-  // Qayda: blokda N quiz varsa, N-1 game əlavə olunur
-  // Game nodeları quiz-lərin arasına bərabər yerləşdirilir
-  // məs: 4 quiz → 3 game → q,g,q,g,q,g,q,EXAM
+  // ── allNodes qur (köhnə kod — dəyişdirilmir) ───────────
   let allNodes = [];
   let isVeryFirst = true;
 
@@ -2778,11 +2776,6 @@ function renderCefrPath(lvl, li) {
     const dir      = gi % 2 === 0 ? 1 : -1;
     const count    = normals.length;
 
-    // Hər blok üçün game sayı: quiz sayından 1 az
-    const gameCount = Math.max(0, count - 1);
-
-    // Game nodelarını quiz-lərin arasına yerləşdir
-    // Pattern: quiz[0], game[0], quiz[1], game[1], ..., quiz[n-1]
     normals.forEach((n, i) => {
       let xOffset = 0;
       if (isVeryFirst) {
@@ -2794,108 +2787,65 @@ function renderCefrPath(lvl, li) {
         const t = (i + 1) / (count + 1);
         xOffset = Math.round(Math.sin(t * Math.PI) * MAX_OFFSET) * dir;
       }
-      allNodes.push({ ...n, xOffset, isExam: false, isGame: false });
-
-      // Bu quiz-dən sonra game node əlavə et (sonuncu quiz-dən sonra yox)
-      if (i < gameCount) {
-        // Game node üçün xOffset — aradakı orta nöqtə
-        let gameX = 0;
-        const nextI = i + 1;
-        if (count <= 1) {
-          gameX = Math.round(MAX_OFFSET * 0.4) * dir;
-        } else {
-          const tCur  = (i + 1) / (count + 1);
-          const tNext = (nextI + 1) / (count + 1);
-          const tMid  = (tCur + tNext) / 2;
-          gameX = Math.round(Math.sin(tMid * Math.PI) * MAX_OFFSET * 0.6) * dir;
-        }
-
-        allNodes.push({
-          isGame:    true,
-          isExam:    false,
-          blockIdx:  gi,
-          gameIdx:   i,   // blok içindəki game indeksi
-          gameKey:   `b${gi}_g${i}`,
-          xOffset:   gameX,
-          qi:        null,   // quiz indeksi yoxdur, ayrı sistem
-        });
-      }
+      allNodes.push({ ...n, xOffset, isExam: false, blockIdx: gi });
     });
 
     if (examNode) {
-      allNodes.push({ ...examNode, xOffset: 0, isExam: true, isGame: false });
+      allNodes.push({ ...examNode, xOffset: 0, isExam: true, blockIdx: gi });
     }
   });
 
-  // ── HTML render ─────────────────────────────────────────
+  // ── Game nodelarını hesabla (ABSOLUTE, sıraya toxunmur) ─
+  // Hər iki ardıcıl QUIZ-QUIZ cütü arasına bir game node
+  // (quiz-exam arasına qoymuruq)
+  const gameNodes = [];
+  const blockGameCounters = {}; // hər blok üçün game sayğacı
+
+  for (let i = 0; i < allNodes.length - 1; i++) {
+    const nodeA = allNodes[i];
+    const nodeB = allNodes[i + 1];
+
+    // Yalnız iki quiz arasına — exam-dan əvvəl qoymuruq
+    if (nodeA.isExam || nodeB.isExam) continue;
+
+    const gi = nodeA.blockIdx;
+    if (blockGameCounters[gi] === undefined) blockGameCounters[gi] = 0;
+    const gameIdx = blockGameCounters[gi]++;
+    const gameKey = `b${gi}_g${gameIdx}`;
+
+    // Y mərkəzi: iki nodun tam ortası
+    // Node[i] mərkəzi = PADDING_TOP + i * BLOCK_H + NODE_H/2
+    const yCenterA = PADDING_TOP + i * BLOCK_H + NODE_H / 2;
+    const yCenterB = PADDING_TOP + (i + 1) * BLOCK_H + NODE_H / 2;
+    const midY     = (yCenterA + yCenterB) / 2;
+
+    // X mövqeyi: quiz nodelarının ƏKSI tərəfə
+    // avgOffset müsbətdirsə nodelar sağda → boşluq solda → game sol tərəf
+    // avgOffset mənfidirsə nodelar solda → boşluq sağda → game sağ tərəf
+    const avgOffset = (nodeA.xOffset + nodeB.xOffset) / 2;
+
+    // left = 50% + (-avgOffset)*factor — əks tərəfə, mərkəzə yaxın
+    // Konteyner 50% = mərkəz. Game node left CSS ilə yerləşir.
+    // transform: translateX(-50%) ilə mərkəzini düzəldirik
+    const GAME_X_FACTOR = 0.85;
+    const gameTranslateX = -avgOffset * GAME_X_FACTOR;
+
+    gameNodes.push({
+      gameKey,
+      levelId: lvl.id,
+      midY,
+      gameTranslateX,  // px, mərkəzdən sapma
+      gi,
+      gameIdx,
+    });
+  }
+
+  // ── Quiz/Exam nodelarının HTML-i (köhnə kod — dəyişdirilmir) ─
   let quizCounter = 0;
   let nodesHTML   = '';
 
-  allNodes.forEach((node) => {
-    const { xOffset, isExam, isGame } = node;
-
-    // ── GAME NODE ────────────────────────────────────────
-    if (isGame) {
-      const gameKey  = node.gameKey;
-      const gameData = (typeof GAME_DATA !== 'undefined')
-        ? GAME_DATA[lvl.id]?.[gameKey]
-        : null;
-
-      // Progress: game-data-dan oxuyuruq
-      const gameProgressKey = `${lvl.id}_game_${gameKey}`;
-      const gameDone = localStorage.getItem(gameProgressKey) === 'done';
-
-      const gameLabel = gameData?.title || 'Game';
-
-      let gameNodeClass = 'path-node game-node';
-      let gameInner;
-
-      if (gameDone) {
-        gameNodeClass += ' game-node-done';
-        gameInner = `<svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-          stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>`;
-      } else {
-        gameNodeClass += ' game-node-unlocked';
-        gameInner = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="7" width="20" height="15" rx="2"/>
-          <path d="M16 7V5a2 2 0 0 0-4 0v2"/>
-          <line x1="12" y1="12" x2="12" y2="16"/>
-          <line x1="10" y1="14" x2="14" y2="14"/>
-        </svg>`;
-      }
-
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      const gameStyle = gameDone
-        ? `--lvl-color:${lvl.color}; background:${lvl.color};`
-        : `color:${lvl.color}; border-color:${lvl.color}; background:${isDark ? '#142233' : 'white'};`;
-
-      nodesHTML += `
-        <div style="
-          position:relative; z-index:1;
-          display:flex; flex-direction:column; align-items:center;
-          transform:translateX(${xOffset}px);
-          margin-bottom:${LINE_H}px;
-        ">
-          <div class="${gameNodeClass}"
-            data-game-key="${gameKey}"
-            data-level-id="${lvl.id}"
-            data-is-game="true"
-            style="${gameStyle}">
-            ${gameInner}
-          </div>
-          <div class="node-label" style="
-            font-size:11.5px; max-width:110px;
-            text-align:center; line-height:1.3; margin-top:4px;
-          ">${gameLabel}</div>
-        </div>`;
-      return;
-    }
-
-    // ── QUIZ / EXAM NODE (əvvəlki kod) ───────────────────
-    const { qi } = node;
+  allNodes.forEach((node, i) => {
+    const { qi, xOffset, isExam } = node;
     const status = getStatus(li, qi);
     const isDone = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
     const completedSoFar = progress[lvl.id]
@@ -2960,15 +2910,93 @@ function renderCefrPath(lvl, li) {
       </div>`;
   });
 
+  // ── Game nodelarının HTML-i (ABSOLUTE) ─────────────────
+  let gameNodesHTML = '';
+
+  gameNodes.forEach((gn) => {
+    const gameData = (typeof GAME_DATA !== 'undefined')
+      ? GAME_DATA[lvl.id]?.[gn.gameKey]
+      : null;
+
+    const progressKey = `${gn.levelId}_game_${gn.gameKey}`;
+    const gameDone    = localStorage.getItem(progressKey) === 'done';
+    const gameLabel   = gameData?.title || 'Game';
+    const isDark      = document.documentElement.getAttribute('data-theme') === 'dark';
+
+    // Node top: game nodun mərkəzi midY-dədir
+    // Nodun özü GAME_SIZE px hündürlüyündədir
+    const nodeTop  = gn.midY - GAME_SIZE / 2;
+    const labelTop = gn.midY + GAME_SIZE / 2 + 4;
+
+    let gameClass = 'game-node';
+    let gameInner;
+
+    if (gameDone) {
+      gameClass += ' game-node-done';
+      gameInner = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>`;
+    } else {
+      gameClass += ' game-node-unlocked';
+      gameInner = `<svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+        <line x1="12" y1="22.08" x2="12" y2="12"/>
+      </svg>`;
+    }
+
+    const nodeStyle = gameDone
+      ? `width:${GAME_SIZE}px; height:${GAME_SIZE}px; background:${lvl.color}; border-color:${lvl.color};`
+      : `width:${GAME_SIZE}px; height:${GAME_SIZE}px; color:${lvl.color}; border-color:${lvl.color}; background:${isDark ? '#142233' : 'white'};`;
+
+    gameNodesHTML += `
+      <div class="game-node-wrap" style="
+        position: absolute;
+        top: ${nodeTop}px;
+        left: 50%;
+        transform: translateX(calc(-50% + ${gn.gameTranslateX}px));
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 2;
+        cursor: pointer;
+      "
+        data-game-key="${gn.gameKey}"
+        data-level-id="${gn.levelId}"
+        data-is-game="true">
+        <div class="${gameClass}" style="${nodeStyle}">
+          ${gameInner}
+        </div>
+        <div class="node-label game-node-label" style="
+          font-size: 10px;
+          max-width: 72px;
+          text-align: center;
+          line-height: 1.3;
+          margin-top: 3px;
+          color: ${lvl.color};
+          font-weight: 600;
+        ">${gameLabel}</div>
+      </div>`;
+  });
+
+  // ── Ümumi konteyner hündürlüyü ─────────────────────────
   const totalH = allNodes.length * BLOCK_H + PADDING_TOP * 2;
 
-  return `<div style="
-    position:relative; width:100%; height:${totalH}px;
-    display:flex; flex-direction:column; align-items:center;
-    padding-top:${PADDING_TOP}px;
-  ">
-    ${nodesHTML}
-  </div>`;
+  return `
+    <div style="
+      position: relative;
+      width: 100%;
+      height: ${totalH}px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: ${PADDING_TOP}px;
+    ">
+      ${nodesHTML}
+      ${gameNodesHTML}
+    </div>`;
 }
 
 function _cefrConnectorHTML() {}
