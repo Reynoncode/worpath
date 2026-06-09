@@ -2743,7 +2743,6 @@ function renderCefrPath(lvl, li) {
   const BLOCK_H     = NODE_H + LABEL_H + LINE_H;
   const PADDING_TOP = 16;
 
-  // Qrupları topla
   const groups = [];
   let currentGroup = [];
   lvl.quizzes.forEach((item, qi) => {
@@ -2753,9 +2752,8 @@ function renderCefrPath(lvl, li) {
   });
   if (currentGroup.length > 0) groups.push(currentGroup);
 
-  // Bütün node offset-lərini hesabla
   let allNodes = [];
-  let isVeryFirst = true; // levelin ən birinci quizi
+  let isVeryFirst = true;
 
   groups.forEach((group, gi) => {
     const normals  = group.filter(n => !n.isExam);
@@ -2765,22 +2763,15 @@ function renderCefrPath(lvl, li) {
 
     normals.forEach((n, i) => {
       let xOffset = 0;
-
       if (isVeryFirst) {
-        // Yalnız levelin ən birinci quizi mərkəzdə
         xOffset = 0;
         isVeryFirst = false;
       } else if (count <= 1) {
-        // Qrupda tək node — sin(PI) = 0 olur, offset vermək lazım
         xOffset = Math.round(MAX_OFFSET * 0.7) * dir;
       } else {
-        // i=0 artıq mərkəz deyil — offset ilə başlayır
-        // t: 0→1, sin(t*PI) parabola verir amma başlanğıcda 0 olmayacaq
-        // Bunun üçün: t = (i+1)/(count+1) — hər iki ucu "açıq" parabola
         const t = (i + 1) / (count + 1);
         xOffset = Math.round(Math.sin(t * Math.PI) * MAX_OFFSET) * dir;
       }
-
       allNodes.push({ ...n, xOffset, isExam: false });
     });
 
@@ -2789,51 +2780,6 @@ function renderCefrPath(lvl, li) {
     }
   });
 
-  // SVG xətləri — node mərkəzindən mərkəzinə, cubic bezier
-  const halfW = 160;
-
-  let svgLines = `<svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible;" xmlns="http://www.w3.org/2000/svg">`;
-
-  allNodes.forEach((node, idx) => {
-    if (idx === 0) return;
-    const prev = allNodes[idx - 1];
-
-    // Node mərkəzləri (tam ortası)
-    const prevCX = halfW + prev.xOffset;
-    const prevCY = (idx - 1) * BLOCK_H + NODE_H / 2 + PADDING_TOP;
-    const currCX = halfW + node.xOffset;
-    const currCY = idx * BLOCK_H + NODE_H / 2 + PADDING_TOP;
-
-    // Node-ların alt və üst nöqtəsi
-    const y1 = prevCY + NODE_H / 2;
-    const y2 = currCY - NODE_H / 2;
-
-    // Cubic bezier — xəttin ortasında yay effekti
-    // cp1: əvvəlki nodun altından, cp2: cari nodun üstündən
-    // Horizontal offset: hər iki nodu birləşdirən yayın genişliyi
-    const dx = currCX - prevCX;
-    const dy = y2 - y1;
-
-    // Control pointlər: əyri natural görünsün
-    const cp1x = prevCX + dx * 0.1;
-    const cp1y = y1 + dy * 0.4;
-    const cp2x = currCX - dx * 0.1;
-    const cp2y = y2 - dy * 0.4;
-
-    svgLines += `<path
-      d="M ${prevCX} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${currCX} ${y2}"
-      fill="none"
-      stroke="${lvl.color}"
-      stroke-width="2.5"
-      stroke-dasharray="6,5"
-      stroke-linecap="round"
-      opacity="0.6"
-    />`;
-  });
-
-  svgLines += `</svg>`;
-
-  // Node-lar
   let quizCounter = 0;
   let nodesHTML = '';
 
@@ -2920,7 +2866,6 @@ function renderCefrPath(lvl, li) {
     align-items:center;
     padding-top:${PADDING_TOP}px;
   ">
-    ${svgLines}
     ${nodesHTML}
   </div>`;
 }
