@@ -654,9 +654,21 @@ function _renderCells() {
   const MAX_COLS = 15;
   const MAX_ROWS = 25;
 
-  const availW = wrap.clientWidth  - 20;
-  const availH = wrap.clientHeight - 20;
-
+  const ov = document.getElementById(OID);
+  const totalH = ov ? ov.clientHeight : window.innerHeight;
+  
+  const hdr      = document.getElementById('wg-hdr');
+  const typed    = document.getElementById('wg-typed');
+  const wheelArea = document.getElementById('wg-wheel-area');
+  
+  const usedH = (hdr?.offsetHeight       || 60)
+              + (typed?.offsetHeight      || 46)
+              + (wheelArea?.offsetHeight  || 0)
+              + 16;
+  
+  const availW = wrap.clientWidth - 20;
+  const availH = totalH - usedH - 20;
+  
   // Hüceyrə ölçüsünü həm mövcud sahəyə həm də max limit-ə görə hesabla
   const cols = Math.min(state.cols, MAX_COLS);
   const rows = Math.min(state.rows, MAX_ROWS);
