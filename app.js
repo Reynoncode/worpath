@@ -2736,11 +2736,12 @@ function renderCefrPath(lvl, li) {
   const CEFR_IDS = new Set(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']);
   if (!CEFR_IDS.has(lvl.id)) return null;
 
-  const MAX_OFFSET = 72; // telefon üçün maksimum px
-  const LINE_H     = 50;
-  const NODE_H     = 60;
-  const LABEL_H    = 24;
-  const BLOCK_H    = NODE_H + LABEL_H + LINE_H;
+  const MAX_OFFSET  = 72;
+  const LINE_H      = 50;
+  const NODE_H      = 60;
+  const LABEL_H     = 24;
+  const BLOCK_H     = NODE_H + LABEL_H + LINE_H;
+  const PADDING_TOP = 16;
 
   // Qrupları topla
   const groups = [];
@@ -2752,30 +2753,31 @@ function renderCefrPath(lvl, li) {
   });
   if (currentGroup.length > 0) groups.push(currentGroup);
 
-  // Bütün node-ların offset-lərini hesabla
-  // Hər qrup: [ilk=0, ...arc..., exam=0]
-  // Arc: ortada MAX_OFFSET-ə çatan parabola
+  // Bütün node offset-lərini hesabla
   let allNodes = [];
+  let isVeryFirst = true; // levelin ən birinci quizi
+
   groups.forEach((group, gi) => {
     const normals  = group.filter(n => !n.isExam);
     const examNode = group.find(n => n.isExam);
-    const dir      = gi % 2 === 0 ? 1 : -1; // tək qruplar sağa, cütlər sola
+    const dir      = gi % 2 === 0 ? 1 : -1;
+    const count    = normals.length;
 
-    // normals[0] = mərkəz (offset=0)
-    // normals[son] = mərkəzə qayıdır (offset=0)
-    // ortalar = parabola ilə MAX_OFFSET-ə çatır
     normals.forEach((n, i) => {
       let xOffset = 0;
-      const count = normals.length;
 
-      if (count <= 1) {
-        // Tək node — mərkəzdə qalır
+      if (isVeryFirst) {
+        // Yalnız levelin ən birinci quizi mərkəzdə
         xOffset = 0;
+        isVeryFirst = false;
+      } else if (count <= 1) {
+        // Qrupda tək node — sin(PI) = 0 olur, offset vermək lazım
+        xOffset = Math.round(MAX_OFFSET * 0.7) * dir;
       } else {
-        // Parabola: t = i / (count-1), 0→1
-        // offset = sin(t * PI) * MAX_OFFSET
-        // Bu formul: başda 0, ortada MAX, sonda 0
-        const t = i / (count - 1);
+        // i=0 artıq mərkəz deyil — offset ilə başlayır
+        // t: 0→1, sin(t*PI) parabola verir amma başlanğıcda 0 olmayacaq
+        // Bunun üçün: t = (i+1)/(count+1) — hər iki ucu "açıq" parabola
+        const t = (i + 1) / (count + 1);
         xOffset = Math.round(Math.sin(t * Math.PI) * MAX_OFFSET) * dir;
       }
 
@@ -2787,41 +2789,55 @@ function renderCefrPath(lvl, li) {
     }
   });
 
-  let quizCounter = 0;
-
-  // SVG xətləri + node-lar
-  const PADDING_TOP = 16;
+  // SVG xətləri — node mərkəzindən mərkəzinə, cubic bezier
+  const halfW = 160;
 
   let svgLines = `<svg style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible;" xmlns="http://www.w3.org/2000/svg">`;
 
   allNodes.forEach((node, idx) => {
     if (idx === 0) return;
     const prev = allNodes[idx - 1];
-    const prevCY = (idx - 1) * BLOCK_H + NODE_H / 2 + PADDING_TOP;
-    const currCY = idx       * BLOCK_H + NODE_H / 2 + PADDING_TOP;
-    const halfW  = 160; // containerın yarısı (~320/2)
+
+    // Node mərkəzləri (tam ortası)
     const prevCX = halfW + prev.xOffset;
+    const prevCY = (idx - 1) * BLOCK_H + NODE_H / 2 + PADDING_TOP;
     const currCX = halfW + node.xOffset;
+    const currCY = idx * BLOCK_H + NODE_H / 2 + PADDING_TOP;
+
+    // Node-ların alt və üst nöqtəsi
     const y1 = prevCY + NODE_H / 2;
     const y2 = currCY - NODE_H / 2;
-    const mx = (prevCX + currCX) / 2;
-    const my = (y1 + y2) / 2;
+
+    // Cubic bezier — xəttin ortasında yay effekti
+    // cp1: əvvəlki nodun altından, cp2: cari nodun üstündən
+    // Horizontal offset: hər iki nodu birləşdirən yayın genişliyi
+    const dx = currCX - prevCX;
+    const dy = y2 - y1;
+
+    // Control pointlər: əyri natural görünsün
+    const cp1x = prevCX + dx * 0.1;
+    const cp1y = y1 + dy * 0.4;
+    const cp2x = currCX - dx * 0.1;
+    const cp2y = y2 - dy * 0.4;
 
     svgLines += `<path
-      d="M ${prevCX} ${y1} Q ${mx} ${my} ${currCX} ${y2}"
+      d="M ${prevCX} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${currCX} ${y2}"
       fill="none"
       stroke="${lvl.color}"
       stroke-width="2.5"
       stroke-dasharray="6,5"
       stroke-linecap="round"
-      opacity="0.55"
+      opacity="0.6"
     />`;
   });
 
   svgLines += `</svg>`;
 
+  // Node-lar
+  let quizCounter = 0;
   let nodesHTML = '';
-  allNodes.forEach((node, idx) => {
+
+  allNodes.forEach((node) => {
     const { qi, xOffset, isExam } = node;
     const status = getStatus(li, qi);
     const isDone = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
@@ -2911,7 +2927,6 @@ function renderCefrPath(lvl, li) {
 
 function _cefrConnectorHTML() {}
 function _cefrConnector() {}
-
 function renderQuizPath(lvl, li) {
   // CEFR levelləri üçün zigzag path
   const cefrResult = renderCefrPath(lvl, li);
