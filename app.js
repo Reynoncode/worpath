@@ -2296,16 +2296,24 @@ LEVELS.forEach((lvl, li) => {
 
     card.querySelector('.level-header').addEventListener('click', () => toggleLevel(card));
 
-    card.querySelectorAll('.path-node').forEach((node) => {
+    card.querySelectorAll('.path-node, .game-node').forEach((node) => {
       node.addEventListener('click', () => {
+ 
+        // ── Game node ──────────────────────────────────
+        if (node.dataset.isGame === 'true') {
+          const gameKey = node.dataset.gameKey;
+          const levelId = node.dataset.levelId;
+          startWordGame(levelId, gameKey);
+          return;
+        }
+ 
+        // ── Normal quiz node ───────────────────────────
         const qi     = parseInt(node.dataset.quizIdx, 10);
         const status = node.dataset.status;
-
         if (status === 'locked') {
           showToast('Əvvəlki testi tam bitir 🔒');
           return;
         }
-
         const item = lvl.quizzes[qi];
         if (!item) {
           showToast('Bu test hələ hazır deyil ✏️');
@@ -2315,7 +2323,6 @@ LEVELS.forEach((lvl, li) => {
           showToast('Bu test hələ hazır deyil ✏️');
           return;
         }
-
         startQuiz(li, qi);
       });
     });
@@ -3321,8 +3328,18 @@ stickyHeader.addEventListener('click', (e) => {
     scrollBody.appendChild(pathWrap);
 
     // Path node click-ləri
-    pathWrap.querySelectorAll('.path-node').forEach((node) => {
+    pathWrap.querySelectorAll('.path-node, .game-node').forEach((node) => {
       node.addEventListener('click', () => {
+ 
+        // ── Game node ──────────────────────────────────
+        if (node.dataset.isGame === 'true') {
+          const gameKey = node.dataset.gameKey;
+          const levelId = node.dataset.levelId;
+          startWordGame(levelId, gameKey);
+          return;
+        }
+ 
+        // ── Normal quiz node ───────────────────────────
         const qi     = parseInt(node.dataset.quizIdx, 10);
         const status = node.dataset.status;
         if (status === 'locked') { showToast('Əvvəlki testi tam bitir 🔒'); return; }
@@ -3330,10 +3347,10 @@ stickyHeader.addEventListener('click', (e) => {
         if (!item) { showToast('Bu test hələ hazır deyil ✏️'); return; }
         if (Array.isArray(item) && item.length < 2) { showToast('Bu test hələ hazır deyil ✏️'); return; }
         if (isGE) {
-        startGeneralEnglishLesson(lvl.id, qi);
-      } else {
-        startQuiz(li, qi);
-      }
+          startGeneralEnglishLesson(lvl.id, qi);
+        } else {
+          startQuiz(li, qi);
+        }
       });
     });
 
@@ -3449,6 +3466,10 @@ function startQuiz(levelIdx, quizIdx) {
   closeOverlayPanel(true);
   const lvl  = LEVELS[levelIdx];
   const item = lvl.quizzes[quizIdx];
+  if (item && !Array.isArray(item) && item.type === 'game') {
+    startWordGame(lvl.id, item.gameKey);
+    return;
+  }
   // Section divider — tıklanmır
   if (item && !Array.isArray(item) && item.type === 'section_divider') return;
   // Grammar lesson
