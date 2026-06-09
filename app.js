@@ -2808,6 +2808,9 @@ function renderCefrPath(lvl, li) {
     // Yalnız iki quiz arasına — exam-dan əvvəl qoymuruq
     if (nodeA.isExam || nodeB.isExam) continue;
 
+    // Ən birinci node (i=0) mərkəzdə başlayır — ondan sonrakı game node kobud görünür, atlayırıq
+    if (i === 0) continue;
+
     const gi = nodeA.blockIdx;
     if (blockGameCounters[gi] === undefined) blockGameCounters[gi] = 0;
     const gameIdx = blockGameCounters[gi]++;
@@ -2827,8 +2830,11 @@ function renderCefrPath(lvl, li) {
     // left = 50% + (-avgOffset)*factor — əks tərəfə, mərkəzə yaxın
     // Konteyner 50% = mərkəz. Game node left CSS ilə yerləşir.
     // transform: translateX(-50%) ilə mərkəzini düzəldirik
-    const GAME_X_FACTOR = 0.85;
-    const gameTranslateX = -avgOffset * GAME_X_FACTOR;
+    // Kart genişliyinin ~10%-ni əlavə edirik (≈28px, 280px kart üçün)
+    const GAME_X_FACTOR  = 0.85;
+    const EXTRA_OFFSET   = 28;
+    const direction      = avgOffset >= 0 ? -1 : 1;
+    const gameTranslateX = -avgOffset * GAME_X_FACTOR + direction * EXTRA_OFFSET;
 
     gameNodes.push({
       gameKey,
