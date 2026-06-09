@@ -308,11 +308,15 @@ function _getWheelLetters(placedWords) {
       ov.id = OID;
       document.body.appendChild(ov);
     }
-    ov.style.cssText = `
-      position:fixed; inset:0; z-index:9999;
-      display:flex; flex-direction:column;
-      overflow:hidden; font-family:inherit;
-    `;
+   ov.style.cssText = `
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  height:100dvh;
+  z-index:9999;
+  display:flex; flex-direction:column;
+  overflow:hidden; font-family:inherit;
+`;
   ov.innerHTML = _buildHTML();
   _attachEvents(ov);
   _renderWheel();
@@ -663,56 +667,41 @@ function _renderCells() {
   const board = document.getElementById('wg-cw');
   if (!board || !wrap) return;
 
-  const MAX_COLS = 15;
-  const MAX_ROWS = 25;
+  const availW = wrap.clientWidth  - 4;
+  const availH = wrap.clientHeight - 4;
 
-  const ov = document.getElementById(OID);
-  const totalH = ov ? ov.clientHeight : window.innerHeight;
-  
-  const hdr      = document.getElementById('wg-hdr');
-  const typed    = document.getElementById('wg-typed');
-  const wheelArea = document.getElementById('wg-wheel-area');
-  
-const usedH = (hdr?.offsetHeight        || 60)
-            + (typed?.offsetHeight       || 46)
-            + (wheelArea?.offsetHeight   || 160)
-            + 16;
-  
-  const availW = wrap.clientWidth - 20;
-  const availH = Math.max(wrap.clientHeight - 20, 100);
-  
-  const cols = Math.min(state.cols, MAX_COLS);
-  const rows = Math.min(state.rows, MAX_ROWS);
+  const cols = state.cols;
+  const rows = state.rows;
+  if (!cols || !rows) return;
 
-  const byW = cols > 0 ? Math.floor(availW / cols) : 30;
-  const byH = rows > 0 ? Math.floor(availH / rows) : 30;
-  const cs  = Math.max(14, Math.min(byW, byH, 36));
-
-  // Krossvordun faktiki ölçüsü
-  const boardW = cols * cs + (cols - 1) * 2;
-  const boardH = rows * cs + (rows - 1) * 2;
+  const byW = Math.floor((availW - (cols - 1) * 2) / cols);
+  const byH = Math.floor((availH - (rows - 1) * 2) / rows);
+  const cs  = Math.max(12, Math.min(byW, byH, 42));
 
   board.style.cssText = `
     display:grid;
-    grid-template-columns:repeat(${state.cols}, ${cs}px);
-    grid-template-rows:repeat(${state.rows}, ${cs}px);
+    grid-template-columns:repeat(${cols}, ${cs}px);
+    grid-template-rows:repeat(${rows}, ${cs}px);
     gap:2px;
-    margin:auto;
   `;
 
-  // Scroll yox, mərkəzdə saxla
-  wrap.style.overflow   = 'hidden';
-  wrap.style.display    = 'flex';
-  wrap.style.alignItems = 'center';
-  wrap.style.justifyContent = 'center';
+  wrap.style.cssText = `
+    flex:1;
+    min-height:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    padding:2px;
+  `;
 
   board.innerHTML = '';
-  for (let r = 0; r < state.rows; r++) {
-    for (let c = 0; c < state.cols; c++) {
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
       const cell = state.grid[r]?.[c];
       const div  = document.createElement('div');
       div.className = cell ? 'wg-cell' : 'wg-cell empty';
-      div.style.cssText = `width:${cs}px; height:${cs}px; font-size:${Math.max(8, cs - 16)}px;`;
+      div.style.cssText = `width:${cs}px;height:${cs}px;font-size:${Math.max(8, cs-14)}px;`;
       if (cell) {
         div.dataset.r      = r;
         div.dataset.c      = c;
