@@ -43,18 +43,65 @@ const GAME_DATA = {
     'b0_g0': {
   id: 'a1_b0_g0',
   title: 'Game 1',
-  phases: [{
-    words: [
-      { word: 'APPLE',  az: 'alma' },
-      { word: 'BOOK',   az: 'kitab' },
-      { word: 'CAT',    az: 'pişik' },
-      { word: 'DOG',    az: 'it' },
-      { word: 'EGG',    az: 'yumurta' },
-      { word: 'FISH',   az: 'balıq' },
-      { word: 'GIRL',   az: 'qız' },
-      { word: 'HAND',   az: 'əl' },
-    ]
-  }]
+  phases: [
+    {
+      // Phase 1 — Peşələr (ortaq hərflər: A, R, T, E, S)
+      words: [
+        { word: 'ACTOR',     az: 'aktyor' },
+        { word: 'ARTIST',    az: 'rəssam' },
+        { word: 'DANCER',    az: 'rəqqas' },
+        { word: 'DOCTOR',    az: 'həkim' },
+        { word: 'DRIVER',    az: 'sürücü' },
+        { word: 'FARMER',    az: 'əkinçi' },
+        { word: 'NURSE',     az: 'tibb bacısı' },
+        { word: 'WRITER',    az: 'yazıçı' },
+        { word: 'WAITER',    az: 'ofisiant' },
+        { word: 'WORKER',    az: 'işçi' },
+      ]
+    },
+    {
+      // Phase 2 — Peşələr (ortaq hərflər: S, E, R, I, N)
+      words: [
+        { word: 'SINGER',    az: 'müğənni' },
+        { word: 'STUDENT',   az: 'şagird' },
+        { word: 'TEACHER',   az: 'müəllim' },
+        { word: 'TOURIST',   az: 'turist' },
+        { word: 'VISITOR',   az: 'ziyarətçi' },
+        { word: 'PLAYER',    az: 'oyunçu' },
+        { word: 'ACTRESS',   az: 'aktrisa' },
+        { word: 'SCIENTIST', az: 'alim' },
+        { word: 'POLICEMAN', az: 'polis' },
+      ]
+    },
+    {
+      // Phase 3 — Ümumi insanlar (ortaq hərflər: O, N, E, R, A)
+      words: [
+        { word: 'WOMAN',     az: 'qadın' },
+        { word: 'MAN',       az: 'kişi' },
+        { word: 'PERSON',    az: 'insan' },
+        { word: 'MEMBER',    az: 'üzv' },
+        { word: 'PARTNER',   az: 'ortaq' },
+        { word: 'CUSTOMER',  az: 'müştəri' },
+        { word: 'NEIGHBOUR', az: 'qonşu' },
+        { word: 'TEENAGER',  az: 'yeniyetmə' },
+        { word: 'FRIEND',    az: 'dost' },
+      ]
+    },
+    {
+      // Phase 4 — Ümumi insanlar (ortaq hərflər: O, Y, B, N, E)
+      words: [
+        { word: 'BOY',       az: 'oğlan' },
+        { word: 'GIRL',      az: 'qız' },
+        { word: 'BABY',      az: 'körpə' },
+        { word: 'CHILD',     az: 'uşaq' },
+        { word: 'ADULT',     az: 'yetkin' },
+        { word: 'NOBODY',    az: 'heç kim' },
+        { word: 'SOMEONE',   az: 'biri' },
+        { word: 'ANYBODY',   az: 'hər hansı biri' },
+        { word: 'PEOPLE',    az: 'insanlar' },
+      ]
+    },
+  ]
 },
     'b0_g1': { id: 'a1_b0_g1', title: 'Game 2', words: [] },
     'b0_g2': { id: 'a1_b0_g2', title: 'Game 3', words: [] },
