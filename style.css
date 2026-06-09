@@ -3840,3 +3840,61 @@ button { font-family: var(--font); }
   font-size: 15px;
   color: var(--text-secondary);
 }
+/* ── Game Node — Circular Progress ──────────────────────── */
+
+.game-node-inprogress {
+  border: 1.5px dashed currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.game-node-phase-num {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  color: currentColor;
+}
+
+.game-progress-ring {
+  overflow: visible;
+}
+
+/* Tamamlandı — checkmark pulse animasiyası */
+@keyframes gameNodePulse {
+  0%   { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  60%  { opacity: 0;   transform: translate(-50%, -50%) scale(1.8); }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(1.8); }
+}
+
+/* Metal shimmer — tamamlanmış node üçün */
+.game-node-done {
+  position: relative;
+  overflow: hidden;
+}
+
+.game-node-done::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255,255,255,0.35) 50%,
+    transparent 60%
+  );
+  transform: skewX(-10deg);
+  animation: gameNodeShimmer 3s ease-in-out infinite;
+}
+
+@keyframes gameNodeShimmer {
+  0%   { left: -60%; opacity: 0; }
+  20%  { opacity: 1; }
+  40%  { left: 130%; opacity: 0; }
+  100% { left: 130%; opacity: 0; }
+}
