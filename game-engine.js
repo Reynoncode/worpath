@@ -627,14 +627,16 @@ window.WordGame = (function () {
   <div id="wg-cw"></div>
 </div>
 <div style="flex:1; min-height:8px;"></div>
-
-    <div id="wg-typed">
-  <button id="wg-hint-btn">💡</button>
-  <div id="wg-hint-popup">
+<div id="wg-hint-row" style="display:flex;align-items:center;gap:8px;padding:4px 16px;min-height:46px;background:${C.card};border-top:1px solid ${C.border};flex-shrink:0;position:relative;">
+  <button id="wg-hint-btn" style="width:34px;height:34px;border-radius:50%;border:none;background:${C.inputBg};font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">💡</button>
+  <div id="wg-hint-popup" style="display:none;position:absolute;top:46px;left:14px;z-index:200;background:${C.card};border:1.5px solid ${C.border};border-radius:14px;padding:10px 12px;width:230px;box-shadow:0 8px 24px rgba(0,0,0,.22);">
     <div id="wg-hint-list">${cluesHTML}</div>
   </div>
-  <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
+  <div id="wg-typed-word" style="display:flex;align-items:center;gap:4px;flex:1;justify-content:center;">
+    <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
+  </div>
 </div>
+<div id="wg-typed" style="display:none;"></div>
 
     <div id="wg-wheel-area">
       <div id="wg-wheel"></div>
@@ -661,10 +663,13 @@ function _renderCells() {
   const typed    = document.getElementById('wg-typed');
   const wheelArea = document.getElementById('wg-wheel-area');
   
-  const usedH = (hdr?.offsetHeight       || 60)
-              + (typed?.offsetHeight      || 46)
-              + (wheelArea?.offsetHeight  || 0)
-              + 16;
+  const usedH = (hdr?.offsetHeight        || 60)
+            + (typed?.offsetHeight       || 46)
+            + (wheelArea?.offsetHeight   || 0)
+            + 16;
+
+// wheelArea hələ render olmayıbsa minimum saxla
+const safeH = Math.max(availH, 180);
   
   const availW = wrap.clientWidth - 20;
   const availH = totalH - usedH - 20;
@@ -674,7 +679,8 @@ function _renderCells() {
   const rows = Math.min(state.rows, MAX_ROWS);
 
   const byW = cols > 0 ? Math.floor(availW / cols) : 30;
-  const byH = rows > 0 ? Math.floor(availH / rows) : 30;
+  const safeH = Math.max(availH, 180);
+  const byH = rows > 0 ? Math.floor(safeH / rows) : 30;
   const cs  = Math.max(14, Math.min(byW, byH, 36));
 
   // Krossvordun faktiki ölçüsü
@@ -788,6 +794,17 @@ function _renderCells() {
   🔀</button>`;
 
 wrap.innerHTML = html;
+// Shuffle button
+const centerBtn = wrap.querySelector('#wg-wcenter');
+if (centerBtn) {
+  centerBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.letters = _shuffle(state.letters);
+    _clearSel();
+    _renderWheel();
+  });
+}
+    
 _attachWheelEvents(wrap);
   }
 
@@ -922,19 +939,17 @@ document.addEventListener('mouseup', (e) => {
       svg.appendChild(line);
     }
   }
-
-  function _updateTyped() {
-    const el = document.getElementById('wg-typed');
-    if (!el) return;
-    const C = _colors();
-    if (!state.currentWord) {
-      el.innerHTML = `<span class="wg-tplaceholder">Hərfləri birləşdir...</span>`;
-    } else {
-      el.innerHTML = state.currentWord.split('').map(l =>
-        `<div class="wg-tletter">${l}</div>`
-      ).join('');
-    }
+function _updateTyped() {
+  const el = document.getElementById('wg-typed-word');
+  if (!el) return;
+  if (!state.currentWord) {
+    el.innerHTML = `<span class="wg-tplaceholder">Hərfləri birləşdir...</span>`;
+  } else {
+    el.innerHTML = state.currentWord.split('').map(l =>
+      `<div class="wg-tletter">${l}</div>`
+    ).join('');
   }
+}
 
 
   // ══════════════════════════════════════════════════════════
@@ -950,7 +965,7 @@ document.addEventListener('mouseup', (e) => {
       state.foundWords.add(word);
 
       // Typed area flash
-      const typed = document.getElementById('wg-typed');
+      const typed = document.getElementById('wg-hint-row');
       if (typed) {
         typed.classList.add('wg-correct-flash');
         setTimeout(() => typed.classList.remove('wg-correct-flash'), 320);
@@ -964,7 +979,7 @@ document.addEventListener('mouseup', (e) => {
       }
     } else {
       // Shake
-      const typed = document.getElementById('wg-typed');
+      const typed = document.getElementById('wg-hint-row');
       if (typed) {
         typed.classList.remove('wg-shake');
         void typed.offsetWidth;
