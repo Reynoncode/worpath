@@ -680,7 +680,7 @@ const safeH = Math.max(availH, 180);
 
   const byW = cols > 0 ? Math.floor(availW / cols) : 30;
   const safeH = Math.max(availH, 180);
-  const byH = rows > 0 ? Math.floor(safeH / rows) : 30;
+  const byH = rows > 0 ? Math.floor(Math.max(availH, 180) / rows) : 30;
   const cs  = Math.max(14, Math.min(byW, byH, 36));
 
   // Krossvordun faktiki ölçüsü
