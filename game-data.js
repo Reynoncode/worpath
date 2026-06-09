@@ -40,7 +40,22 @@ const GAME_DATA = {
   // Blok 11 → quizlər: [49,50,51] → 3 quiz → 2 game
   'a1': {
     // Blok 0 gameləri
-    'b0_g0': { id: 'a1_b0_g0', title: 'Game 1', words: [] },
+    'b0_g0': {
+  id: 'a1_b0_g0',
+  title: 'Game 1',
+  phases: [{
+    words: [
+      { word: 'APPLE',  az: 'alma' },
+      { word: 'BOOK',   az: 'kitab' },
+      { word: 'CAT',    az: 'pişik' },
+      { word: 'DOG',    az: 'it' },
+      { word: 'EGG',    az: 'yumurta' },
+      { word: 'FISH',   az: 'balıq' },
+      { word: 'GIRL',   az: 'qız' },
+      { word: 'HAND',   az: 'əl' },
+    ]
+  }]
+},
     'b0_g1': { id: 'a1_b0_g1', title: 'Game 2', words: [] },
     'b0_g2': { id: 'a1_b0_g2', title: 'Game 3', words: [] },
     // Blok 1 gameləri
