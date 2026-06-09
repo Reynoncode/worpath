@@ -1,117 +1,95 @@
 // ============================================================
-//  WORDPATH — GAME ENGINE
+//  WORDPATH — GAME ENGINE  v2
 //  game-engine.js
 //
 //  Yüklənmə sırası:
 //    game-data.js  →  game-engine.js  →  app.js
-//
-//  Xarici asılılıqlar (app.js-dən):
-//    - showToast(msg)
-//    - LEVELS  (level array)
-//    - localStorage (progress saxlamaq üçün)
 // ============================================================
 
-// ── Namespace ────────────────────────────────────────────────
 window.WordGame = (function () {
 
   // ══════════════════════════════════════════════════════════
   //  1. CROSSWORD GENERATOR
   // ══════════════════════════════════════════════════════════
 
-  /**
-   * Sözlər siyahısını götürüb grid-ə yerləşdirir.
-   * Qaytarır: { grid, placedWords, rows, cols }
-   *   grid[r][c] = { letter, wordIds[] }
-   *   placedWords = [{ word, clue, az, row, col, dir, cells[] }]
-   */
   function generateCrossword(words) {
-    // Sözləri uzunluğa görə sırala (uzun → qısa)
     const sorted = [...words]
       .map((w, i) => ({ ...w, word: w.word.toUpperCase(), idx: i }))
       .sort((a, b) => b.word.length - a.word.length);
 
-    // Grid dinamik ölçü — ən uzun söz əsasında
-    const maxLen   = sorted[0]?.word.length || 5;
-    const gridSize = Math.max(maxLen + 4, Math.min(sorted.length * 2 + 4, 22));
+    if (!sorted.length) return { grid: [], placedWords: [], rows: 0, cols: 0 };
 
-    // Boş grid
+    const maxLen   = sorted[0].word.length;
+    const gridSize = Math.max(maxLen + 6, Math.min(sorted.length * 2 + 6, 26));
+
     let grid = Array.from({ length: gridSize }, () =>
       Array.from({ length: gridSize }, () => null)
     );
 
     const placed = [];
 
-    // İlk sözü mərkəzə yatay yerləşdir
-    const first = sorted[0];
-    if (!first) return { grid, placedWords: [], rows: gridSize, cols: gridSize };
-
+    // İlk sözü mərkəzə yatay
+    const first  = sorted[0];
     const startR = Math.floor(gridSize / 2);
     const startC = Math.floor((gridSize - first.word.length) / 2);
-    placeWord(grid, first, startR, startC, 'H');
-    placed.push(makeEntry(first, startR, startC, 'H'));
+    _placeWord(grid, first, startR, startC, 'H');
+    placed.push(_makeEntry(first, startR, startC, 'H'));
 
-    // Qalan sözləri yerləşdir
     for (let wi = 1; wi < sorted.length; wi++) {
       const w = sorted[wi];
-      let bestPlacement = null;
-      let bestScore     = -1;
+      let best = null, bestScore = -1;
 
-      // Yerləşdirilmiş hər sözdəki hər hərfi yoxla
       for (const p of placed) {
+        const pDir = p.dir;
+        const newDir = pDir === 'H' ? 'V' : 'H';
+
         for (let pi = 0; pi < p.word.length; pi++) {
           const pLetter = p.word[pi];
+          const pCellR = pDir === 'H' ? p.row : p.row + pi;
+          const pCellC = pDir === 'H' ? p.col + pi : p.col;
 
-          // Yeni sözdəki hər hərfi yoxla
           for (let wi2 = 0; wi2 < w.word.length; wi2++) {
             if (w.word[wi2] !== pLetter) continue;
 
-            // Əks istiqamətdə yerləşdir
-            const dir = p.dir === 'H' ? 'V' : 'H';
             let r, c;
-            if (dir === 'H') {
-              r = p.row + (p.dir === 'V' ? pi : 0);
-              c = p.col + (p.dir === 'H' ? pi : 0) - wi2;
-              if (p.dir === 'V') r = p.row + pi;
-              else               r = p.row;
-              c = p.col + (p.dir === 'H' ? pi : 0) - wi2;
+            if (newDir === 'H') {
+              r = pCellR;
+              c = pCellC - wi2;
             } else {
-              c = p.col + (p.dir === 'H' ? pi : 0);
-              r = p.row + (p.dir === 'V' ? pi : 0) - wi2;
-              if (p.dir === 'H') c = p.col + pi;
-              else               c = p.col;
-              r = p.row + (p.dir === 'V' ? pi : 0) - wi2;
+              r = pCellR - wi2;
+              c = pCellC;
             }
 
-            const score = canPlace(grid, w.word, r, c, dir, gridSize);
+            const score = _canPlace(grid, w.word, r, c, newDir, gridSize);
             if (score > bestScore) {
-              bestScore     = score;
-              bestPlacement = { r, c, dir };
+              bestScore = score;
+              best = { r, c, dir: newDir };
             }
           }
         }
       }
 
-      if (bestPlacement && bestScore > 0) {
-        placeWord(grid, w, bestPlacement.r, bestPlacement.c, bestPlacement.dir);
-        placed.push(makeEntry(w, bestPlacement.r, bestPlacement.c, bestPlacement.dir));
+      if (best && bestScore >= 0) {
+        _placeWord(grid, w, best.r, best.c, best.dir);
+        placed.push(_makeEntry(w, best.r, best.c, best.dir));
       } else {
-        // Sığmayan sözü ayrıca yatay yerləşdir (boş sahədə)
-        const fallback = findFreeRow(grid, w.word.length, gridSize, placed);
-        if (fallback) {
-          placeWord(grid, w, fallback.r, fallback.c, 'H');
-          placed.push(makeEntry(w, fallback.r, fallback.c, 'H'));
+        // Fallback: boş sətirdə yatay
+        const fb = _findFreeRow(grid, w.word.length, gridSize, placed);
+        if (fb) {
+          _placeWord(grid, w, fb.r, fb.c, 'H');
+          placed.push(_makeEntry(w, fb.r, fb.c, 'H'));
         }
+        // yerləşdirə bilmədikdə skip (söz atılmır tamam, sadəcə ayrı)
       }
     }
 
-    // Grid-i kəs — boş sətir/sütunları sil + 1px padding
-    const trimmed = trimGrid(grid, gridSize);
+    const trimmed = _trimGrid(grid, gridSize);
     return {
-      grid:        trimmed.grid,
+      grid: trimmed.grid,
       placedWords: placed.map(p => ({
         ...p,
-        row: p.row - trimmed.minR,
-        col: p.col - trimmed.minC,
+        row:   p.row   - trimmed.minR,
+        col:   p.col   - trimmed.minC,
         cells: p.cells.map(cell => ({
           r: cell.r - trimmed.minR,
           c: cell.c - trimmed.minC,
@@ -122,38 +100,42 @@ window.WordGame = (function () {
     };
   }
 
-  function canPlace(grid, word, r, c, dir, size) {
+  function _canPlace(grid, word, r, c, dir, size) {
+    // Sərhəd yoxlama
+    const endR = dir === 'H' ? r             : r + word.length - 1;
+    const endC = dir === 'H' ? c + word.length - 1 : c;
+    if (r < 0 || c < 0 || endR >= size || endC >= size) return -1;
+
+    // Başlanğıc/son boşluq
+    const bR = dir === 'H' ? r     : r - 1;
+    const bC = dir === 'H' ? c - 1 : c;
+    const aR = dir === 'H' ? r     : r + word.length;
+    const aC = dir === 'H' ? c + word.length : c;
+    if (grid[bR]?.[bC]) return -1;
+    if (grid[aR]?.[aC]) return -1;
+
     let intersections = 0;
     for (let i = 0; i < word.length; i++) {
-      const cr = dir === 'H' ? r      : r + i;
-      const cc = dir === 'H' ? c + i  : c;
-      if (cr < 0 || cr >= size || cc < 0 || cc >= size) return -1;
+      const cr = dir === 'H' ? r     : r + i;
+      const cc = dir === 'H' ? c + i : c;
       const cell = grid[cr][cc];
-      if (cell && cell.letter !== word[i]) return -1; // konflikt
-      if (cell && cell.letter === word[i]) intersections++;
-      // Yan yoxlama — paralel sözlər toxunmasın
-      if (!cell) {
+
+      if (cell) {
+        if (cell.letter !== word[i]) return -1;
+        intersections++;
+      } else {
+        // Paralel hərf var mı?
         if (dir === 'H') {
-          if (grid[cr - 1]?.[cc] && !(r === cr)) return -1;
-          if (grid[cr + 1]?.[cc] && !(r === cr)) return -1;
+          if (grid[cr - 1]?.[cc] || grid[cr + 1]?.[cc]) return -1;
         } else {
-          if (grid[cr]?.[cc - 1] && !(c === cc)) return -1;
-          if (grid[cr]?.[cc + 1] && !(c === cc)) return -1;
+          if (grid[cr]?.[cc - 1] || grid[cr]?.[cc + 1]) return -1;
         }
       }
     }
-    // Başlanğıc/son yoxlama
-    const beforeR = dir === 'H' ? r      : r - 1;
-    const beforeC = dir === 'H' ? c - 1  : c;
-    const afterR  = dir === 'H' ? r      : r + word.length;
-    const afterC  = dir === 'H' ? c + word.length : c;
-    if (grid[beforeR]?.[beforeC]) return -1;
-    if (grid[afterR]?.[afterC])   return -1;
-
-    return intersections > 0 ? intersections : 0; // 0 = yerləşə bilər amma qoşulmur
+    return intersections; // 0 = yerləşə bilər (qoşulmur), >0 = kəsişir
   }
 
-  function placeWord(grid, wordObj, r, c, dir) {
+  function _placeWord(grid, wordObj, r, c, dir) {
     for (let i = 0; i < wordObj.word.length; i++) {
       const cr = dir === 'H' ? r     : r + i;
       const cc = dir === 'H' ? c + i : c;
@@ -161,7 +143,7 @@ window.WordGame = (function () {
     }
   }
 
-  function makeEntry(wordObj, r, c, dir) {
+  function _makeEntry(wordObj, r, c, dir) {
     const cells = [];
     for (let i = 0; i < wordObj.word.length; i++) {
       cells.push({
@@ -172,18 +154,25 @@ window.WordGame = (function () {
     return { ...wordObj, row: r, col: c, dir, cells, found: false };
   }
 
-  function findFreeRow(grid, wordLen, size, placed) {
-    // Yerləşdirilmiş sözlərin əhatə etdiyi sətir aralığını tap
-    let usedRows = new Set(placed.flatMap(p => p.cells.map(c => c.r)));
-    for (let r = 1; r < size - 1; r++) {
+  function _findFreeRow(grid, wordLen, size, placed) {
+    const usedRows = new Set(placed.flatMap(p => p.cells.map(cell => cell.r)));
+    for (let r = 2; r < size - 2; r++) {
       if (usedRows.has(r)) continue;
       const c = Math.floor((size - wordLen) / 2);
-      if (c >= 0 && c + wordLen < size) return { r, c };
+      if (c >= 0 && c + wordLen < size) {
+        // O sütunlarda boşluq var mı?
+        let ok = true;
+        for (let ci = c - 1; ci <= c + wordLen; ci++) {
+          if (grid[r]?.[ci]) { ok = false; break; }
+          if (grid[r-1]?.[ci] || grid[r+1]?.[ci]) { ok = false; break; }
+        }
+        if (ok) return { r, c };
+      }
     }
     return null;
   }
 
-  function trimGrid(grid, size) {
+  function _trimGrid(grid, size) {
     let minR = size, maxR = 0, minC = size, maxC = 0;
     for (let r = 0; r < size; r++) {
       for (let c = 0; c < size; c++) {
@@ -195,7 +184,9 @@ window.WordGame = (function () {
         }
       }
     }
-    // 1px padding
+    if (minR > maxR) return { grid: [[]], minR: 0, minC: 0, rows: 1, cols: 1 };
+
+    // 1 hüceyrə padding
     minR = Math.max(0, minR - 1);
     minC = Math.max(0, minC - 1);
     maxR = Math.min(size - 1, maxR + 1);
@@ -214,19 +205,13 @@ window.WordGame = (function () {
   //  2. LETTER WHEEL
   // ══════════════════════════════════════════════════════════
 
-  /**
-   * Krossvordda istifadə olunan bütün unikal hərfləri qaytarır.
-   * Shuffle edilmiş formada.
-   */
-  function getWheelLetters(placedWords) {
-    const letterSet = new Set();
-    placedWords.forEach(pw => {
-      pw.word.split('').forEach(l => letterSet.add(l));
-    });
-    return shuffleArr([...letterSet]);
+  function _getWheelLetters(placedWords) {
+    const set = new Set();
+    placedWords.forEach(pw => pw.word.split('').forEach(l => set.add(l)));
+    return _shuffle([...set]);
   }
 
-  function shuffleArr(arr) {
+  function _shuffle(arr) {
     const a = [...arr];
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -242,728 +227,779 @@ window.WordGame = (function () {
 
   let state = null;
 
-  function initState(levelId, gameKey, gameData, phaseIdx) {
-    const phase    = gameData.phases[phaseIdx];
-    const result   = generateCrossword(phase.words);
-    const letters  = getWheelLetters(result.placedWords);
+  function _initState(levelId, gameKey, gameData, phaseIdx) {
+    const phase   = gameData.phases[phaseIdx];
+    const result  = generateCrossword(phase.words);
+    const letters = _getWheelLetters(result.placedWords);
 
     state = {
       levelId,
       gameKey,
       gameData,
       phaseIdx,
-      totalPhases: gameData.phases.length,
-
-      // Crossword
-      grid:        result.grid,
-      placedWords: result.placedWords,
-      rows:        result.rows,
-      cols:        result.cols,
-
-      // Letter wheel
+      totalPhases:  gameData.phases.length,
+      grid:         result.grid,
+      placedWords:  result.placedWords,
+      rows:         result.rows,
+      cols:         result.cols,
       letters,
-      selected:    [],       // seçilmiş hərf indexləri
-      currentWord: '',
-
-      // Progress
-      foundWords:  new Set(),
+      selected:     [],      // seçilmiş btn indexləri
+      selectedPos:  [],      // {x,y} koordinatları xətt üçün
+      currentWord:  '',
+      foundWords:   new Set(),
+      // Touch sürüşdürmə
+      isDragging:   false,
     };
   }
 
 
   // ══════════════════════════════════════════════════════════
-  //  4. UI — ANA SCREEN
+  //  4. HELPERS
   // ══════════════════════════════════════════════════════════
 
-  const OVERLAY_ID = 'wg-overlay';
-
-  function getLvlColor() {
-    if (!state) return '#e74c3c';
-    const lvl = (typeof LEVELS !== 'undefined')
-      ? LEVELS.find(l => l.id === state.levelId)
-      : null;
-    return lvl?.color || '#e74c3c';
+  function _getLvlColor() {
+    if (!state) return '#6C63FF';
+    if (typeof LEVELS === 'undefined') return '#6C63FF';
+    const lvl = LEVELS.find(l => l.id === state.levelId);
+    return lvl?.color || '#6C63FF';
   }
 
-  function isDark() {
+  function _isDark() {
     return document.documentElement.getAttribute('data-theme') === 'dark';
   }
 
-  // ── Overlay aç ───────────────────────────────────────────
-  function openOverlay() {
-    let overlay = document.getElementById(OVERLAY_ID);
-    if (!overlay) {
-      overlay = document.createElement('div');
-      overlay.id = OVERLAY_ID;
-      overlay.style.cssText = `
-        position:fixed; inset:0; z-index:9999;
-        display:flex; flex-direction:column;
-        background:${isDark() ? '#0f1923' : '#f5f6fa'};
-        font-family:inherit;
-        overflow:hidden;
-      `;
-      document.body.appendChild(overlay);
-    }
-    overlay.innerHTML = buildGameHTML();
-    overlay.style.display = 'flex';
-    attachGameEvents(overlay);
-    renderCrosswordCells();
+  function _colors() {
+    const dark = _isDark();
+    const accent = _getLvlColor();
+    return {
+      accent,
+      bg:        dark ? '#0f1923' : '#f0f2f8',
+      card:      dark ? '#142233' : '#ffffff',
+      cellBg:    dark ? '#1a2d42' : '#e8edf8',
+      cellBd:    dark ? '#243d57' : '#cdd5e8',
+      textMain:  dark ? '#e8edf3' : '#1a2233',
+      textSub:   dark ? '#7a8fa8' : '#6b7a90',
+      border:    dark ? '#1e3048' : '#e0e5f0',
+      inputBg:   dark ? '#1e3048' : '#eef1f8',
+    };
   }
 
-  function closeOverlay() {
-    const overlay = document.getElementById(OVERLAY_ID);
-    if (overlay) {
-      overlay.style.display = 'none';
-      overlay.innerHTML = '';
+
+  // ══════════════════════════════════════════════════════════
+  //  5. OVERLAY & HTML
+  // ══════════════════════════════════════════════════════════
+
+  const OID = 'wg-overlay';
+
+  function _openOverlay() {
+    let ov = document.getElementById(OID);
+    if (!ov) {
+      ov = document.createElement('div');
+      ov.id = OID;
+      document.body.appendChild(ov);
     }
+    ov.style.cssText = `
+      position:fixed; inset:0; z-index:9999;
+      display:flex; flex-direction:column;
+      overflow:hidden; font-family:inherit;
+    `;
+    ov.innerHTML = _buildHTML();
+    _attachEvents(ov);
+    _renderCells();
+    _renderWheel();
+  }
+
+  function _closeOverlay() {
+    const ov = document.getElementById(OID);
+    if (ov) { ov.style.display = 'none'; ov.innerHTML = ''; }
     state = null;
+    // Path-ı yenilə ki node statusu dəyişsin
+    if (typeof renderCefrPath === 'function') {
+      try { renderCefrPath(); } catch(e) {}
+    }
   }
 
-  // ── Ana HTML strukturu ────────────────────────────────────
-  function buildGameHTML() {
-    const color    = getLvlColor();
-    const dark     = isDark();
-    const bg       = dark ? '#0f1923'  : '#f5f6fa';
-    const cardBg   = dark ? '#142233'  : '#ffffff';
-    const textMain = dark ? '#e8edf3'  : '#1a2233';
-    const textSub  = dark ? '#8a9bb0'  : '#6b7a90';
-    const border   = dark ? '#1e3048'  : '#e4e9f0';
-
-    const phaseLabel = `Phase ${state.phaseIdx + 1} / ${state.totalPhases}`;
+  function _buildHTML() {
+    const C = _colors();
+    const phaseLabel = `${state.phaseIdx + 1} / ${state.totalPhases}`;
     const title      = state.gameData.title || 'Word Game';
 
-    // Clue list
-    const clues = state.placedWords.map(pw =>
-      `<span class="wg-clue-chip" data-word="${pw.word}"
-        style="
-          display:inline-flex; align-items:center; gap:5px;
-          padding:4px 10px; border-radius:20px; font-size:13px;
-          background:${dark ? '#1e3048' : '#eef1f7'};
-          color:${textSub};
-          border:1.5px solid ${border};
-          transition:all .25s;
-          cursor:default;
-        ">
-        <span class="wg-clue-dot" style="
-          width:7px; height:7px; border-radius:50%;
-          background:${textSub}; flex-shrink:0;
-          transition:background .25s;
-        "></span>
-        ${pw.az}
-      </span>`
-    ).join('');
+    const cluesHTML = state.placedWords.map(pw => `
+      <span class="wg-chip" data-word="${pw.word}">
+        <span class="wg-chip-dot"></span>${pw.az}
+      </span>`).join('');
 
     return `
     <style>
-      #wg-overlay * { box-sizing:border-box; }
+      #${OID} { background:${C.bg}; }
+      #${OID} * { box-sizing:border-box; margin:0; padding:0; }
 
-      /* ── Header ── */
-      #wg-header {
-        display:flex; align-items:center; justify-content:space-between;
-        padding:14px 18px 10px;
-        background:${cardBg};
-        border-bottom:1.5px solid ${border};
+      /* Header */
+      #wg-hdr {
+        display:flex; align-items:center; gap:12px;
+        padding:12px 16px;
+        background:${C.card};
+        border-bottom:1px solid ${C.border};
         flex-shrink:0;
       }
-      #wg-back-btn {
-        width:36px; height:36px; border-radius:50%;
-        border:none; background:${dark ? '#1e3048' : '#eef1f7'};
-        color:${textMain}; cursor:pointer;
-        display:flex; align-items:center; justify-content:center;
-        font-size:18px; transition:background .2s;
+      #wg-back {
+        width:38px; height:38px; border-radius:12px; border:none;
+        background:${C.inputBg}; color:${C.textMain};
+        font-size:18px; cursor:pointer; display:flex;
+        align-items:center; justify-content:center;
+        flex-shrink:0; transition:background .15s;
       }
-      #wg-back-btn:hover { background:${dark ? '#263d58' : '#dde3ee'}; }
-      #wg-title-wrap { text-align:center; flex:1; }
-      #wg-title { font-size:15px; font-weight:700; color:${textMain}; margin:0; }
-      #wg-phase-label {
-        font-size:11px; color:${color}; font-weight:600;
-        letter-spacing:.5px; margin-top:1px;
+      #wg-back:active { background:${C.cellBd}; }
+      #wg-hdr-mid { flex:1; text-align:center; }
+      #wg-hdr-title {
+        font-size:15px; font-weight:700; color:${C.textMain};
+        line-height:1.2;
       }
+      #wg-hdr-phase {
+        font-size:11px; font-weight:600;
+        color:${C.accent}; letter-spacing:.4px; margin-top:2px;
+      }
+      /* Phase dots */
+      #wg-phase-dots {
+        display:flex; gap:5px; align-items:center; flex-shrink:0;
+      }
+      .wg-dot {
+        width:8px; height:8px; border-radius:50%;
+        background:${C.border}; transition:background .3s;
+      }
+      .wg-dot.active { background:${C.accent}; }
+      .wg-dot.done   { background:${C.accent}88; }
 
-      /* ── Clues ── */
-      #wg-clues-wrap {
-        padding:10px 16px 8px;
-        background:${cardBg};
-        border-bottom:1.5px solid ${border};
+      /* Clues */
+      #wg-clues-bar {
+        padding:8px 14px;
+        background:${C.card};
+        border-bottom:1px solid ${C.border};
         flex-shrink:0;
       }
-      #wg-clues {
+      #wg-clues-inner {
         display:flex; flex-wrap:wrap; gap:6px;
       }
-      .wg-clue-chip.wg-clue-found {
-        background:${color}22 !important;
-        border-color:${color} !important;
-        color:${color} !important;
+      .wg-chip {
+        display:inline-flex; align-items:center; gap:5px;
+        padding:4px 10px 4px 8px; border-radius:20px;
+        font-size:12.5px; font-weight:500;
+        background:${C.inputBg}; color:${C.textSub};
+        border:1.5px solid ${C.border};
+        transition:all .3s; white-space:nowrap;
+      }
+      .wg-chip-dot {
+        width:6px; height:6px; border-radius:50%;
+        background:${C.textSub}; flex-shrink:0;
+        transition:background .3s;
+      }
+      .wg-chip.found {
+        background:${C.accent}18;
+        color:${C.accent};
+        border-color:${C.accent}66;
         text-decoration:line-through;
+        opacity:.7;
       }
-      .wg-clue-chip.wg-clue-found .wg-clue-dot {
-        background:${color} !important;
-      }
+      .wg-chip.found .wg-chip-dot { background:${C.accent}; }
 
-      /* ── Crossword ── */
-      #wg-crossword-wrap {
-        flex:1; overflow:auto;
+      /* Crossword */
+      #wg-cw-wrap {
+        flex:1; overflow:auto; min-height:0;
         display:flex; align-items:center; justify-content:center;
-        padding:12px;
+        padding:10px;
       }
-      #wg-crossword {
+      #wg-cw {
         display:grid;
-        gap:3px;
+        gap:2px;
       }
       .wg-cell {
-        border-radius:6px;
+        border-radius:7px;
         display:flex; align-items:center; justify-content:center;
-        font-weight:700;
-        font-size:15px;
-        color:${textMain};
-        background:${dark ? '#1e3048' : '#e8ecf4'};
-        border:1.5px solid ${dark ? '#263d58' : '#d0d7e8'};
-        transition:background .3s, color .3s, transform .2s;
+        font-size:14px; font-weight:800; letter-spacing:0;
+        color:${C.textMain};
+        background:${C.cellBg};
+        border:1.5px solid ${C.cellBd};
+        transition:background .25s, color .2s, border-color .25s;
         user-select:none;
+        position:relative;
       }
-      .wg-cell.wg-empty {
+      .wg-cell.empty {
         background:transparent !important;
         border-color:transparent !important;
       }
-      .wg-cell.wg-found {
-        background:${color} !important;
+      .wg-cell.found {
+        background:${C.accent} !important;
         color:#fff !important;
-        border-color:${color} !important;
+        border-color:${C.accent} !important;
       }
-      .wg-cell.wg-found-anim {
-        animation: wgCellPop .35s cubic-bezier(.34,1.56,.64,1) both;
+      .wg-cell.pop {
+        animation:wgPop .38s cubic-bezier(.34,1.56,.64,1) both;
       }
-
-      /* ── Bottom bar — word input display ── */
-      #wg-word-display {
-        background:${cardBg};
-        border-top:1.5px solid ${border};
-        padding:10px 16px 6px;
-        display:flex; align-items:center; justify-content:center;
-        min-height:52px; flex-shrink:0;
-        gap:5px;
-      }
-      .wg-typed-letter {
-        width:36px; height:36px; border-radius:8px;
-        display:flex; align-items:center; justify-content:center;
-        font-size:17px; font-weight:700;
-        background:${color}22;
-        color:${color};
-        border:2px solid ${color};
-        transition:all .15s;
-      }
-      .wg-typed-placeholder {
-        color:${textSub}; font-size:14px; font-style:italic;
-      }
-
-      /* ── Letter wheel ── */
-      #wg-wheel-wrap {
-        background:${cardBg};
-        border-top:1.5px solid ${border};
-        padding:12px 16px 20px;
-        display:flex; flex-direction:column; align-items:center;
-        gap:14px; flex-shrink:0;
-      }
-      #wg-wheel {
-        position:relative;
-      }
-      .wg-letter-btn {
-        position:absolute;
-        width:46px; height:46px; border-radius:50%;
-        display:flex; align-items:center; justify-content:center;
-        font-size:17px; font-weight:800;
-        background:${color};
-        color:#fff;
-        border:none; cursor:pointer;
-        transform:translate(-50%, -50%);
-        transition:transform .12s, background .15s, box-shadow .15s;
-        box-shadow:0 3px 10px ${color}55;
-        user-select:none;
-        -webkit-tap-highlight-color:transparent;
-      }
-      .wg-letter-btn.selected {
-        background:${dark ? '#fff' : '#1a2233'};
-        color:${color};
-        transform:translate(-50%, -50%) scale(1.15);
-        box-shadow:0 4px 14px rgba(0,0,0,.35);
-      }
-      .wg-letter-btn:disabled {
-        opacity:.35; cursor:default;
-      }
-      #wg-wheel-center {
-        position:absolute;
-        width:38px; height:38px; border-radius:50%;
-        top:50%; left:50%;
-        transform:translate(-50%,-50%);
-        background:${dark ? '#1e3048' : '#eef1f7'};
-        border:2px solid ${border};
-        display:flex; align-items:center; justify-content:center;
-        font-size:18px; cursor:pointer;
-      }
-
-      /* ── SVG xətlər (wheel connections) ── */
-      #wg-wheel-svg {
-        position:absolute; top:0; left:0;
-        pointer-events:none;
-      }
-      .wg-conn-line {
-        stroke:${color};
-        stroke-width:3;
-        stroke-linecap:round;
-        opacity:.6;
-      }
-
-      /* ── Action buttons ── */
-      #wg-actions {
-        display:flex; gap:10px;
-      }
-      .wg-action-btn {
-        flex:1; padding:11px 0; border-radius:12px;
-        font-size:14px; font-weight:700;
-        cursor:pointer; border:none;
-        transition:opacity .2s, transform .1s;
-      }
-      .wg-action-btn:active { transform:scale(.97); }
-      #wg-submit-btn {
-        background:${color};
-        color:#fff;
-        box-shadow:0 3px 12px ${color}44;
-      }
-      #wg-shuffle-btn {
-        background:${dark ? '#1e3048' : '#eef1f7'};
-        color:${textMain};
-      }
-
-      /* ── Animasiyalar ── */
-      @keyframes wgCellPop {
-        0%   { transform:scale(.7); opacity:.5; }
-        60%  { transform:scale(1.12); }
+      @keyframes wgPop {
+        0%   { transform:scale(.65); opacity:.4; }
+        65%  { transform:scale(1.1); }
         100% { transform:scale(1);  opacity:1; }
       }
+
+      /* Word display */
+      #wg-typed {
+        background:${C.card};
+        border-top:1px solid ${C.border};
+        padding:8px 16px;
+        display:flex; align-items:center; justify-content:center;
+        gap:4px; min-height:54px; flex-shrink:0;
+      }
+      .wg-tletter {
+        width:36px; height:36px; border-radius:9px;
+        display:flex; align-items:center; justify-content:center;
+        font-size:17px; font-weight:800;
+        background:${C.accent}20;
+        color:${C.accent};
+        border:2px solid ${C.accent};
+        animation:wgLetterIn .12s ease both;
+      }
+      @keyframes wgLetterIn {
+        from { transform:scale(.7) translateY(4px); opacity:0; }
+        to   { transform:scale(1) translateY(0);   opacity:1; }
+      }
+      .wg-tplaceholder {
+        font-size:14px; color:${C.textSub}; font-style:italic;
+      }
+      .wg-shake { animation:wgShake .35s ease both; }
       @keyframes wgShake {
         0%,100% { transform:translateX(0); }
-        20%     { transform:translateX(-6px); }
-        40%     { transform:translateX(6px); }
+        20%     { transform:translateX(-7px); }
+        40%     { transform:translateX(7px); }
         60%     { transform:translateX(-4px); }
         80%     { transform:translateX(4px); }
       }
-      .wg-shake { animation:wgShake .35s ease both; }
+      .wg-correct-flash { animation:wgFlash .3s ease; }
+      @keyframes wgFlash {
+        0%   { background:${C.accent}40; }
+        100% { background:${C.card}; }
+      }
 
-      /* ── Phase Complete Screen ── */
-      #wg-phase-complete {
-        position:fixed; inset:0; z-index:10000;
+      /* Wheel wrap */
+      #wg-wheel-area {
+        background:${C.card};
+        border-top:1px solid ${C.border};
+        padding:10px 16px 16px;
+        display:flex; flex-direction:column;
+        align-items:center; gap:10px;
+        flex-shrink:0;
+      }
+
+      /* Wheel container */
+      #wg-wheel {
+        position:relative;
+        touch-action:none;
+        user-select:none;
+      }
+
+      /* Letter buttons */
+      .wg-lb {
+        position:absolute;
+        border-radius:50%; border:none;
+        display:flex; align-items:center; justify-content:center;
+        font-size:16px; font-weight:800;
+        background:${C.accent};
+        color:#fff;
+        cursor:pointer;
+        transform:translate(-50%, -50%);
+        transition:transform .1s, background .1s, box-shadow .1s;
+        box-shadow:0 3px 10px ${C.accent}55;
+        -webkit-tap-highlight-color:transparent;
+        touch-action:none;
+      }
+      .wg-lb.sel {
+        background:#fff;
+        color:${C.accent};
+        transform:translate(-50%, -50%) scale(1.18);
+        box-shadow:0 4px 14px rgba(0,0,0,.3);
+      }
+      .wg-lb:active { transform:translate(-50%,-50%) scale(.92); }
+
+      /* Center clear btn */
+      #wg-wcenter {
+        position:absolute;
+        border-radius:50%; border:none; cursor:pointer;
+        background:${C.inputBg};
+        display:flex; align-items:center; justify-content:center;
+        font-size:16px; color:${C.textMain};
+        transform:translate(-50%,-50%);
+        transition:background .15s;
+        top:50%; left:50%;
+        -webkit-tap-highlight-color:transparent;
+      }
+      #wg-wcenter:active { background:${C.cellBd}; }
+
+      /* SVG lines */
+      #wg-wsvg {
+        position:absolute; top:0; left:0;
+        pointer-events:none;
+        overflow:visible;
+      }
+      .wg-wline {
+        stroke:${C.accent};
+        stroke-width:3.5;
+        stroke-linecap:round;
+        opacity:.55;
+      }
+
+      /* Actions */
+      #wg-acts {
+        display:flex; gap:8px; width:100%; max-width:360px;
+      }
+      .wg-abtn {
+        flex:1; padding:12px 0; border-radius:13px;
+        font-size:14px; font-weight:700; border:none; cursor:pointer;
+        transition:transform .1s, opacity .15s;
+      }
+      .wg-abtn:active { transform:scale(.96); }
+      #wg-submit {
+        background:${C.accent}; color:#fff;
+        box-shadow:0 3px 12px ${C.accent}44;
+      }
+      #wg-shuffle {
+        background:${C.inputBg}; color:${C.textMain};
+      }
+
+      /* Phase complete screen */
+      #wg-pc {
+        position:absolute; inset:0; z-index:10001;
         display:flex; flex-direction:column;
         align-items:center; justify-content:center;
-        background:${dark ? 'rgba(15,25,35,.92)' : 'rgba(245,246,250,.94)'};
-        backdrop-filter:blur(6px);
-        gap:18px; padding:24px;
+        background:${_isDark() ? 'rgba(10,18,28,.93)' : 'rgba(240,242,248,.95)'};
+        backdrop-filter:blur(8px);
+        gap:16px; padding:24px;
       }
-      #wg-phase-complete h2 {
-        font-size:26px; font-weight:800;
-        color:${textMain}; margin:0; text-align:center;
+      #wg-pc .wg-pc-icon {
+        font-size:64px;
+        animation:wgBounceIn .5s cubic-bezier(.34,1.56,.64,1);
       }
-      #wg-phase-complete p {
-        font-size:15px; color:${textSub};
-        margin:0; text-align:center;
+      @keyframes wgBounceIn {
+        from { transform:scale(0) rotate(-15deg); opacity:0; }
+        to   { transform:scale(1) rotate(0);      opacity:1; }
       }
-      .wg-pc-emoji {
-        font-size:60px; animation:wgPopIn .4s cubic-bezier(.34,1.56,.64,1);
-      }
+      #wg-pc h2 { font-size:24px; font-weight:800; color:${C.textMain}; text-align:center; }
+      #wg-pc p  { font-size:14px; color:${C.textSub}; text-align:center; line-height:1.5; }
       .wg-pc-btn {
-        width:100%; max-width:300px;
-        padding:14px; border-radius:14px;
-        font-size:16px; font-weight:700;
+        width:100%; max-width:280px; padding:14px;
+        border-radius:14px; font-size:15px; font-weight:700;
         cursor:pointer; border:none;
-        transition:opacity .2s, transform .1s;
+        transition:transform .1s;
       }
       .wg-pc-btn:active { transform:scale(.97); }
-      .wg-pc-btn-primary {
-        background:${color}; color:#fff;
-        box-shadow:0 4px 16px ${color}44;
+      .wg-pc-primary {
+        background:${C.accent}; color:#fff;
+        box-shadow:0 4px 16px ${C.accent}44;
       }
-      .wg-pc-btn-secondary {
-        background:${dark ? '#1e3048' : '#eef1f7'};
-        color:${textMain};
-      }
-      @keyframes wgPopIn {
-        from { transform:scale(0); opacity:0; }
-        to   { transform:scale(1); opacity:1; }
+      .wg-pc-secondary {
+        background:${C.inputBg}; color:${C.textMain};
       }
     </style>
 
-    <!-- Header -->
-    <div id="wg-header">
-      <button id="wg-back-btn">&#8592;</button>
-      <div id="wg-title-wrap">
-        <div id="wg-title">${title}</div>
-        <div id="wg-phase-label">${phaseLabel}</div>
+    <div id="wg-hdr">
+      <button id="wg-back">&#8592;</button>
+      <div id="wg-hdr-mid">
+        <div id="wg-hdr-title">${title}</div>
+        <div id="wg-hdr-phase">Phase ${phaseLabel}</div>
       </div>
-      <div style="width:36px"></div>
-    </div>
-
-    <!-- Clues -->
-    <div id="wg-clues-wrap">
-      <div id="wg-clues">${clues}</div>
-    </div>
-
-    <!-- Crossword -->
-    <div id="wg-crossword-wrap">
-      <div id="wg-crossword"
-        style="grid-template-columns: repeat(${state.cols}, var(--wg-cell-size, 32px));
-               grid-template-rows:    repeat(${state.rows}, var(--wg-cell-size, 32px));">
+      <div id="wg-phase-dots">
+        ${Array.from({ length: state.totalPhases }, (_, i) => `
+          <div class="wg-dot ${i < state.phaseIdx ? 'done' : i === state.phaseIdx ? 'active' : ''}"></div>
+        `).join('')}
       </div>
     </div>
 
-    <!-- Word display -->
-    <div id="wg-word-display">
-      <span class="wg-typed-placeholder">Hərfləri birləşdir...</span>
+    <div id="wg-clues-bar">
+      <div id="wg-clues-inner">${cluesHTML}</div>
     </div>
 
-    <!-- Wheel + actions -->
-    <div id="wg-wheel-wrap">
-      <div id="wg-wheel" style="position:relative;">
-        <!-- SVG lines drawn by JS -->
-      </div>
-      <div id="wg-actions">
-        <button class="wg-action-btn" id="wg-shuffle-btn">🔀 Qarışdır</button>
-        <button class="wg-action-btn" id="wg-submit-btn">✓ Yoxla</button>
-      </div>
+    <div id="wg-cw-wrap">
+      <div id="wg-cw"></div>
     </div>
-    `;
+
+    <div id="wg-typed">
+      <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
+    </div>
+
+    <div id="wg-wheel-area">
+      <div id="wg-wheel"></div>
+      <div id="wg-acts">
+        <button class="wg-abtn" id="wg-shuffle">🔀 Qarışdır</button>
+        <button class="wg-abtn" id="wg-submit">✓ Yoxla</button>
+      </div>
+    </div>`;
   }
 
 
   // ══════════════════════════════════════════════════════════
-  //  5. CROSSWORD RENDER
+  //  6. CROSSWORD RENDER
   // ══════════════════════════════════════════════════════════
 
-  function renderCrosswordCells() {
-    const wrap  = document.getElementById('wg-crossword-wrap');
-    const board = document.getElementById('wg-crossword');
-    if (!board) return;
+  function _renderCells() {
+    const wrap  = document.getElementById('wg-cw-wrap');
+    const board = document.getElementById('wg-cw');
+    if (!board || !wrap) return;
 
-    // Responsive cell ölçüsü
-    const availW    = wrap.clientWidth  - 24;
-    const availH    = wrap.clientHeight - 24;
-    const cellByW   = Math.floor(availW  / state.cols);
-    const cellByH   = Math.floor(availH  / state.rows);
-    const cellSize  = Math.max(24, Math.min(cellByW, cellByH, 38));
+    const availW = wrap.clientWidth  - 20;
+    const availH = wrap.clientHeight - 20;
+    const byW    = state.cols > 0 ? Math.floor(availW / state.cols) : 30;
+    const byH    = state.rows > 0 ? Math.floor(availH / state.rows) : 30;
+    const cs     = Math.max(22, Math.min(byW, byH, 40));
 
-    board.style.gridTemplateColumns = `repeat(${state.cols}, ${cellSize}px)`;
-    board.style.gridTemplateRows    = `repeat(${state.rows}, ${cellSize}px)`;
+    board.style.cssText = `
+      display:grid;
+      grid-template-columns:repeat(${state.cols}, ${cs}px);
+      grid-template-rows:repeat(${state.rows}, ${cs}px);
+      gap:2px;
+    `;
 
     board.innerHTML = '';
     for (let r = 0; r < state.rows; r++) {
       for (let c = 0; c < state.cols; c++) {
-        const cell = state.grid[r][c];
+        const cell = state.grid[r]?.[c];
         const div  = document.createElement('div');
-        div.className  = cell ? 'wg-cell' : 'wg-cell wg-empty';
-        div.dataset.r  = r;
-        div.dataset.c  = c;
-        div.textContent = '';   // Hərflər gizli — yalnız tapılanda görünür
+        div.className = cell ? 'wg-cell' : 'wg-cell empty';
+        div.style.cssText = `width:${cs}px; height:${cs}px; font-size:${Math.max(10, cs - 18)}px;`;
         if (cell) {
+          div.dataset.r      = r;
+          div.dataset.c      = c;
           div.dataset.letter = cell.letter;
+          div.textContent    = '';  // gizli — tapılanda görünər
         }
         board.appendChild(div);
       }
     }
-    refreshFoundCells();
+    _refreshFound();
   }
 
-  function refreshFoundCells() {
+  function _refreshFound() {
     state.foundWords.forEach(word => {
       const pw = state.placedWords.find(p => p.word === word);
       if (!pw) return;
       pw.cells.forEach(({ r, c }) => {
-        const el = document.querySelector(`#wg-crossword .wg-cell[data-r="${r}"][data-c="${c}"]`);
+        const el = document.querySelector(`#wg-cw [data-r="${r}"][data-c="${c}"]`);
         if (el) {
           el.textContent = state.grid[r]?.[c]?.letter || '';
-          el.classList.add('wg-found');
+          el.classList.add('found');
         }
       });
     });
   }
 
-  // ── Söz tapılanda animasiya ───────────────────────────────
-  function animateWordFound(word) {
+  function _animateWord(word) {
     const pw = state.placedWords.find(p => p.word === word);
     if (!pw) return;
-
     pw.cells.forEach(({ r, c }, i) => {
       setTimeout(() => {
-        const el = document.querySelector(`#wg-crossword .wg-cell[data-r="${r}"][data-c="${c}"]`);
-        if (el) {
-          el.textContent = state.grid[r]?.[c]?.letter || '';
-          el.classList.add('wg-found', 'wg-found-anim');
-          setTimeout(() => el.classList.remove('wg-found-anim'), 400);
-        }
-      }, i * 60);
+        const el = document.querySelector(`#wg-cw [data-r="${r}"][data-c="${c}"]`);
+        if (!el) return;
+        el.textContent = state.grid[r]?.[c]?.letter || '';
+        el.classList.add('found', 'pop');
+        setTimeout(() => el.classList.remove('pop'), 400);
+      }, i * 55);
     });
-
-    // Clue chip-i işarələ
-    const chip = document.querySelector(`.wg-clue-chip[data-word="${word}"]`);
-    if (chip) chip.classList.add('wg-clue-found');
+    // Chip işarələ
+    const chip = document.querySelector(`.wg-chip[data-word="${word}"]`);
+    if (chip) setTimeout(() => chip.classList.add('found'), pw.cells.length * 55 + 100);
   }
 
 
   // ══════════════════════════════════════════════════════════
-  //  6. LETTER WHEEL RENDER
+  //  7. LETTER WHEEL RENDER + TOUCH
   // ══════════════════════════════════════════════════════════
 
-  function renderWheel() {
+  function _renderWheel() {
     const wrap = document.getElementById('wg-wheel');
     if (!wrap) return;
 
     const letters = state.letters;
     const count   = letters.length;
+    const C       = _colors();
 
-    // Wheel ölçüsü ekrana görə
-    const maxWheel = Math.min(window.innerWidth - 48, 280);
-    const radius   = Math.max(60, Math.min(maxWheel / 2 - 26, 110));
-    const size     = radius * 2 + 60;
-    const cx       = size / 2;
-    const cy       = size / 2;
+    // Ekrana görə radius
+    const maxW   = Math.min(window.innerWidth - 48, 300);
+    const radius = Math.max(55, Math.min((maxW / 2) - 28, 115));
+    const size   = radius * 2 + 64;
+    const cx     = size / 2;
+    const cy     = size / 2;
+    const btnSz  = Math.max(38, Math.min(50, radius * 0.45));
+    const centerSz = Math.max(32, btnSz * 0.76);
 
     wrap.style.width  = `${size}px`;
     wrap.style.height = `${size}px`;
 
-    // SVG xətlər üçün
-    let svgHTML = `<svg id="wg-wheel-svg" width="${size}" height="${size}"></svg>`;
+    let html = `<svg id="wg-wsvg" width="${size}" height="${size}"></svg>`;
 
-    // Hərflər
-    let btnsHTML = '';
     letters.forEach((letter, i) => {
       const angle = (2 * Math.PI * i / count) - Math.PI / 2;
       const x     = cx + radius * Math.cos(angle);
       const y     = cy + radius * Math.sin(angle);
-      btnsHTML += `
-        <button class="wg-letter-btn" data-idx="${i}" data-letter="${letter}"
-          style="left:${x}px; top:${y}px;">
-          ${letter}
-        </button>`;
+      html += `<button class="wg-lb" data-idx="${i}" data-letter="${letter}"
+        style="left:${x}px; top:${y}px; width:${btnSz}px; height:${btnSz}px; font-size:${Math.max(13, btnSz - 22)}px;">
+        ${letter}</button>`;
     });
 
-    // Mərkəz — sil düyməsi
-    btnsHTML += `
-      <div id="wg-wheel-center" title="Sil">⌫</div>`;
+    html += `<button id="wg-wcenter"
+      style="width:${centerSz}px; height:${centerSz}px; font-size:${Math.max(13, centerSz - 14)}px;">
+      ⌫</button>`;
 
-    wrap.innerHTML = svgHTML + btnsHTML;
-
-    attachWheelEvents(wrap);
+    wrap.innerHTML = html;
+    _attachWheelEvents(wrap);
   }
 
-  function attachWheelEvents(wrap) {
-    wrap.querySelectorAll('.wg-letter-btn').forEach(btn => {
+  function _attachWheelEvents(wrap) {
+    const btns = wrap.querySelectorAll('.wg-lb');
+
+    // Click (desktop)
+    btns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const idx    = parseInt(btn.dataset.idx);
-        const letter = btn.dataset.letter;
-        if (btn.classList.contains('selected')) return;
-        btn.classList.add('selected');
-        state.selected.push(idx);
-        state.currentWord += letter;
-        updateWordDisplay();
-        drawWheelLines();
+        if (btn.classList.contains('sel')) return;
+        _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
       });
     });
 
-    const centerBtn = wrap.querySelector('#wg-wheel-center');
-    if (centerBtn) {
-      centerBtn.addEventListener('click', clearSelection);
+    // Touch sürüşdürmə (WoW stili)
+    wrap.addEventListener('touchstart', _touchStart, { passive: false });
+    wrap.addEventListener('touchmove',  _touchMove,  { passive: false });
+    wrap.addEventListener('touchend',   _touchEnd,   { passive: false });
+
+    wrap.querySelector('#wg-wcenter')?.addEventListener('click', _clearSel);
+    wrap.querySelector('#wg-wcenter')?.addEventListener('touchend', (e) => {
+      e.preventDefault(); _clearSel();
+    });
+  }
+
+  function _selectLetter(idx, letter, btnEl) {
+    // Artıq seçilibsə skip
+    if (state.selected.includes(idx)) return;
+    btnEl.classList.add('sel');
+    state.selected.push(idx);
+    state.currentWord += letter;
+
+    // Btn mərkəz koordinatı
+    const x = parseFloat(btnEl.style.left);
+    const y = parseFloat(btnEl.style.top);
+    state.selectedPos.push({ x, y });
+
+    _updateTyped();
+    _drawLines();
+  }
+
+  function _touchStart(e) {
+    e.preventDefault();
+    state.isDragging = true;
+    state.selected   = [];
+    state.selectedPos = [];
+    state.currentWord = '';
+    document.querySelectorAll('.wg-lb').forEach(b => b.classList.remove('sel'));
+    _updateTyped();
+    _processTouch(e.touches[0]);
+  }
+
+  function _touchMove(e) {
+    e.preventDefault();
+    if (!state.isDragging) return;
+    _processTouch(e.touches[0]);
+  }
+
+  function _touchEnd(e) {
+    e.preventDefault();
+    state.isDragging = false;
+    if (state.currentWord.length >= 2) {
+      _submitWord();
+    } else {
+      _clearSel();
     }
   }
 
-  function clearSelection() {
-    state.selected   = [];
-    state.currentWord = '';
-    document.querySelectorAll('.wg-letter-btn').forEach(b => b.classList.remove('selected'));
-    updateWordDisplay();
-    drawWheelLines();
+  function _processTouch(touch) {
+    const wrap = document.getElementById('wg-wheel');
+    if (!wrap) return;
+
+    const btns = wrap.querySelectorAll('.wg-lb');
+    btns.forEach(btn => {
+      const rect = btn.getBoundingClientRect();
+      const cx   = rect.left + rect.width  / 2;
+      const cy   = rect.top  + rect.height / 2;
+      const dist = Math.hypot(touch.clientX - cx, touch.clientY - cy);
+
+      if (dist < rect.width * 0.65) {
+        const idx = parseInt(btn.dataset.idx);
+        if (!state.selected.includes(idx)) {
+          _selectLetter(idx, btn.dataset.letter, btn);
+        }
+      }
+    });
   }
 
-  function drawWheelLines() {
-    const svg = document.getElementById('wg-wheel-svg');
+  function _clearSel() {
+    state.selected    = [];
+    state.selectedPos = [];
+    state.currentWord = '';
+    document.querySelectorAll('.wg-lb').forEach(b => b.classList.remove('sel'));
+    _updateTyped();
+    _drawLines();
+  }
+
+  function _drawLines() {
+    const svg = document.getElementById('wg-wsvg');
     if (!svg) return;
     svg.innerHTML = '';
-
-    const btns = document.querySelectorAll('.wg-letter-btn');
-    const color = getLvlColor();
-
-    for (let i = 0; i < state.selected.length - 1; i++) {
-      const a = btns[state.selected[i]];
-      const b = btns[state.selected[i + 1]];
-      if (!a || !b) continue;
-
-      const ax = parseFloat(a.style.left);
-      const ay = parseFloat(a.style.top);
-      const bx = parseFloat(b.style.left);
-      const by = parseFloat(b.style.top);
-
+    const C = _colors();
+    const pos = state.selectedPos;
+    for (let i = 0; i < pos.length - 1; i++) {
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-      line.setAttribute('x1', ax);
-      line.setAttribute('y1', ay);
-      line.setAttribute('x2', bx);
-      line.setAttribute('y2', by);
-      line.setAttribute('class', 'wg-conn-line');
-      line.setAttribute('stroke', color);
+      line.setAttribute('x1', pos[i].x);
+      line.setAttribute('y1', pos[i].y);
+      line.setAttribute('x2', pos[i+1].x);
+      line.setAttribute('y2', pos[i+1].y);
+      line.setAttribute('class', 'wg-wline');
       svg.appendChild(line);
     }
   }
 
-  function updateWordDisplay() {
-    const display = document.getElementById('wg-word-display');
-    if (!display) return;
-
+  function _updateTyped() {
+    const el = document.getElementById('wg-typed');
+    if (!el) return;
+    const C = _colors();
     if (!state.currentWord) {
-      display.innerHTML = `<span class="wg-typed-placeholder">Hərfləri birləşdir...</span>`;
-      return;
+      el.innerHTML = `<span class="wg-tplaceholder">Hərfləri birləşdir...</span>`;
+    } else {
+      el.innerHTML = state.currentWord.split('').map(l =>
+        `<div class="wg-tletter">${l}</div>`
+      ).join('');
     }
-
-    const color = getLvlColor();
-    const dark  = isDark();
-    display.innerHTML = state.currentWord.split('').map(l => `
-      <div class="wg-typed-letter" style="
-        background:${color}22; color:${color};
-        border:2px solid ${color};
-      ">${l}</div>`).join('');
   }
 
 
   // ══════════════════════════════════════════════════════════
-  //  7. OYUN MƏNTİQİ
+  //  8. OYUN MƏNTİQİ
   // ══════════════════════════════════════════════════════════
 
-  function submitWord() {
+  function _submitWord() {
     const word = state.currentWord;
-    if (!word) return;
+    if (!word || word.length < 2) { _clearSel(); return; }
 
     const pw = state.placedWords.find(p => p.word === word && !state.foundWords.has(word));
     if (pw) {
       state.foundWords.add(word);
-      animateWordFound(word);
-      clearSelection();
 
-      // Hamısı tapılıbsa phase tamamlandı
+      // Typed area flash
+      const typed = document.getElementById('wg-typed');
+      if (typed) {
+        typed.classList.add('wg-correct-flash');
+        setTimeout(() => typed.classList.remove('wg-correct-flash'), 320);
+      }
+
+      _animateWord(word);
+      _clearSel();
+
       if (state.foundWords.size === state.placedWords.length) {
-        setTimeout(onPhaseComplete, 700);
+        setTimeout(_onPhaseComplete, 800);
       }
     } else {
-      // Səhv söz — shake
-      const display = document.getElementById('wg-word-display');
-      if (display) {
-        display.classList.remove('wg-shake');
-        void display.offsetWidth;
-        display.classList.add('wg-shake');
-        setTimeout(() => display.classList.remove('wg-shake'), 400);
+      // Shake
+      const typed = document.getElementById('wg-typed');
+      if (typed) {
+        typed.classList.remove('wg-shake');
+        void typed.offsetWidth;
+        typed.classList.add('wg-shake');
+        setTimeout(() => { typed.classList.remove('wg-shake'); _clearSel(); }, 380);
+      } else {
+        _clearSel();
       }
-      clearSelection();
     }
   }
 
-  function shuffleLetters() {
-    state.letters = shuffleArr(state.letters);
-    renderWheel();
-  }
+  function _onPhaseComplete() {
+    const nextPhase = state.phaseIdx + 1;
+    const isLast    = nextPhase >= state.totalPhases;
 
-  // ── Phase tamamlandı ─────────────────────────────────────
-  function onPhaseComplete() {
-    const newPhaseIdx = state.phaseIdx + 1;
-    const isLastPhase = newPhaseIdx >= state.totalPhases;
-
-    // Progress saxla
     const progressKey = `${state.levelId}_game_${state.gameKey}`;
-    localStorage.setItem(progressKey, String(newPhaseIdx));
+    localStorage.setItem(progressKey, String(nextPhase));
 
-    showPhaseCompleteScreen(isLastPhase, newPhaseIdx);
+    _showPhaseComplete(isLast, nextPhase);
   }
 
-  function showPhaseCompleteScreen(isLast, nextPhaseIdx) {
-    const overlay = document.getElementById(OVERLAY_ID);
-    if (!overlay) return;
+  function _showPhaseComplete(isLast, nextPhase) {
+    const ov = document.getElementById(OID);
+    if (!ov) return;
+    const C = _colors();
 
-    const color    = getLvlColor();
-    const dark     = isDark();
-    const textMain = dark ? '#e8edf3' : '#1a2233';
-    const textSub  = dark ? '#8a9bb0' : '#6b7a90';
-
-    const emoji   = isLast ? '🏆' : '⭐';
+    const icon    = isLast ? '🏆' : '⭐';
     const heading = isLast ? 'Oyun tamamlandı!' : `Phase ${state.phaseIdx + 1} tamamlandı!`;
-    const subtext = isLast
-      ? 'Bütün phaseləri uğurla bitirdiniz!'
-      : `Növbəti phase: ${nextPhaseIdx + 1} / ${state.totalPhases}`;
+    const sub     = isLast
+      ? 'Bütün mərhələləri uğurla bitirdiniz!'
+      : `Növbəti mərhələ: ${nextPhase + 1} / ${state.totalPhases}`;
 
-    const primaryLabel   = isLast ? 'Ana səhifəyə qayıt' : 'Növbəti phase';
-    const secondaryLabel = 'Çıx';
-
-    const screen = document.createElement('div');
-    screen.id = 'wg-phase-complete';
-    screen.innerHTML = `
-      <div class="wg-pc-emoji">${emoji}</div>
+    const pc = document.createElement('div');
+    pc.id = 'wg-pc';
+    pc.innerHTML = `
+      <div class="wg-pc-icon">${icon}</div>
       <h2>${heading}</h2>
-      <p>${subtext}</p>
-      <button class="wg-pc-btn wg-pc-btn-primary" id="wg-pc-primary"
-        style="background:${color}; box-shadow:0 4px 16px ${color}44; color:#fff;">
-        ${primaryLabel}
+      <p>${sub}</p>
+      <button class="wg-pc-btn wg-pc-primary" id="wg-pc-next">
+        ${isLast ? '🏠 Ana səhifəyə qayıt' : '▶ Növbəti phase'}
       </button>
-      <button class="wg-pc-btn wg-pc-btn-secondary" id="wg-pc-secondary"
-        style="background:${dark ? '#1e3048' : '#eef1f7'}; color:${textMain};">
-        ${secondaryLabel}
-      </button>
+      <button class="wg-pc-btn wg-pc-secondary" id="wg-pc-exit">Çıx</button>
     `;
-    overlay.appendChild(screen);
+    ov.appendChild(pc);
 
-    screen.querySelector('#wg-pc-primary').addEventListener('click', () => {
+    pc.querySelector('#wg-pc-next').addEventListener('click', () => {
       if (isLast) {
-        closeOverlay();
-        // Ana səhifəni yenilə ki progress görünsün
-        if (typeof renderPath === 'function') renderPath();
+        _closeOverlay();
       } else {
-        screen.remove();
-        const savedState = { levelId: state.levelId, gameKey: state.gameKey, gameData: state.gameData };
-        initState(savedState.levelId, savedState.gameKey, savedState.gameData, nextPhaseIdx);
-        overlay.innerHTML = buildGameHTML();
-        attachGameEvents(overlay);
-        renderCrosswordCells();
+        pc.remove();
+        const { levelId, gameKey, gameData } = state;
+        _initState(levelId, gameKey, gameData, nextPhase);
+        ov.innerHTML = _buildHTML();
+        _attachEvents(ov);
+        _renderCells();
+        _renderWheel();
       }
     });
 
-    screen.querySelector('#wg-pc-secondary').addEventListener('click', () => {
-      closeOverlay();
-    });
+    pc.querySelector('#wg-pc-exit').addEventListener('click', _closeOverlay);
   }
 
 
   // ══════════════════════════════════════════════════════════
-  //  8. EVENT LISTENERS
+  //  9. EVENT LISTENERS
   // ══════════════════════════════════════════════════════════
 
-  function attachGameEvents(overlay) {
-    overlay.querySelector('#wg-back-btn')?.addEventListener('click', closeOverlay);
-    overlay.querySelector('#wg-submit-btn')?.addEventListener('click', submitWord);
-    overlay.querySelector('#wg-shuffle-btn')?.addEventListener('click', shuffleLetters);
-
-    // Responsive: resize-da crossword yenidən hesabla
-    const resizeObs = new ResizeObserver(() => {
-      renderCrosswordCells();
-      renderWheel();
+  function _attachEvents(ov) {
+    ov.querySelector('#wg-back')?.addEventListener('click', _closeOverlay);
+    ov.querySelector('#wg-submit')?.addEventListener('click', _submitWord);
+    ov.querySelector('#wg-shuffle')?.addEventListener('click', () => {
+      state.letters = _shuffle(state.letters);
+      _clearSel();
+      _renderWheel();
     });
-    resizeObs.observe(overlay);
 
-    // Wheel-i ilk render
-    renderWheel();
+    // Responsive — resize-da yenidən hesabla
+    if (window._wgResizeObs) window._wgResizeObs.disconnect();
+    window._wgResizeObs = new ResizeObserver(() => {
+      _renderCells();
+      _renderWheel();
+    });
+    window._wgResizeObs.observe(ov);
   }
 
 
   // ══════════════════════════════════════════════════════════
-  //  9. PUBLIC API
+  //  10. PUBLIC API
   // ══════════════════════════════════════════════════════════
 
   /**
-   * app.js-dəki startWordGame() bu funksiyanı çağırır:
+   * app.js-dən çağırılır:
    *   WordGame.start(levelId, gameKey, gameData, savedPhase)
    */
   function start(levelId, gameKey, gameData, savedPhase) {
-    initState(levelId, gameKey, gameData, savedPhase);
-    openOverlay();
+    _initState(levelId, gameKey, gameData, savedPhase);
+    _openOverlay();
   }
 
   return { start };
