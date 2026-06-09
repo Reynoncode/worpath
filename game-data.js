@@ -47,16 +47,11 @@ const GAME_DATA = {
     {
       // Phase 1 — Peşələr (ortaq hərflər: A, R, T, E, S)
       words: [
-        { word: 'ACTOR',     az: 'aktyor' },
-        { word: 'ARTIST',    az: 'rəssam' },
-        { word: 'DANCER',    az: 'rəqqas' },
-        { word: 'DOCTOR',    az: 'həkim' },
-        { word: 'DRIVER',    az: 'sürücü' },
-        { word: 'FARMER',    az: 'əkinçi' },
-        { word: 'NURSE',     az: 'tibb bacısı' },
-        { word: 'WRITER',    az: 'yazıçı' },
-        { word: 'WAITER',    az: 'ofisiant' },
-        { word: 'WORKER',    az: 'işçi' },
+        { word: 'MAN',      az: 'kişi' },
+        { word: 'BOY',      az: 'oğlan' },
+        { word: 'BABY',     az: 'körpə' },
+        { word: 'NOBODY',   az: 'heç kim' },
+        { word: 'ANYBODY',  az: 'hər hansı biri' },
       ]
     },
     {
