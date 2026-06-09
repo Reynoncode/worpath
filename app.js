@@ -2733,52 +2733,41 @@ html += `
 }
 
 
-// ── CEFR Path Render (zigzag) ─────────────────────────────
 function renderCefrPath(lvl, li) {
   const CEFR_IDS = new Set(['a1', 'a2', 'b1', 'b2', 'c1', 'c2']);
   if (!CEFR_IDS.has(lvl.id)) return null;
 
-  // Exam-dan exama qədəki nodeları qruplara böl
-  // Hər qrup: [normallar..., exam]
+  const OFFSET_STEP = 28; // hər node bir o qədər sağa sürüşür
+  const MAX_OFFSET  = 80; // maksimum sürüşmə
+  const NODE_SIZE   = 56;
+  const LINE_H      = 44;
+
   const groups = [];
   let currentGroup = [];
-
   lvl.quizzes.forEach((item, qi) => {
     const isExam = isExamItem(item, lvl.id, qi);
     currentGroup.push({ item, qi, isExam });
-    if (isExam) {
-      groups.push(currentGroup);
-      currentGroup = [];
-    }
+    if (isExam) { groups.push(currentGroup); currentGroup = []; }
   });
   if (currentGroup.length > 0) groups.push(currentGroup);
 
-  // Zigzag parametrləri (telefon ekranı üçün)
-  const OFFSET = 72; // px — sağa/sola sürüşmə məsafəsi
-  const NODE_SIZE = 56; // px
-  const LINE_H = 40; // px — nodelar arası boşluq
+  let quizCounter = 0;
 
-  let html = `<div class="quiz-path cefr-path" style="position:relative; padding: 12px 0 24px;">`;
+  let html = `<div class="quiz-path cefr-path" style="position:relative; padding:12px 0 24px;">`;
 
-  groups.forEach((group) => {
-    const normals = group.filter(n => !n.isExam);
+  groups.forEach((group, gi) => {
+    const normals  = group.filter(n => !n.isExam);
     const examNode = group.find(n => n.isExam);
 
-    // Normal nodeların zigzag pozisyaları
-    // Mərkəzdən başlayıb sağa-sola növbələşir
-    const positions = [];
-    const count = normals.length;
-    
-    // Duolingo kimi: mərkəzdən başla, hər node üçün offset hesabla
-    // sin funksiyası ilə smooth zigzag
-    normals.forEach((_, i) => {
-      // 0-dan count-a qədər sin dalğası
-      const t = count <= 1 ? 0 : (i / (count - 1)) * Math.PI * 1.5;
-      const xOffset = Math.round(Math.sin(t) * OFFSET);
-      positions.push(xOffset);
+    // Hər qrupda alternativ: tək qruplar sağa, cüt qruplar sola
+    const direction = gi % 2 === 0 ? 1 : -1;
+
+    // Normal nodeların offsetləri: 0-dan MAX_OFFSET-ə doğru artan, sonra exam üçün 0-a qayıdır
+    const positions = normals.map((_, i) => {
+      const rawOffset = Math.min(OFFSET_STEP * (i + 1), MAX_OFFSET);
+      return direction * rawOffset;
     });
 
-    // Normal nodeları render et
     normals.forEach(({ item, qi }, i) => {
       const status = getStatus(li, qi);
       const isDone = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(status);
@@ -2787,95 +2776,52 @@ function renderCefrPath(lvl, li) {
             ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
           ).length
         : 0;
-      const pulseClass = (!isDone && qi === completedSoFar) ? 'pulse' : '';
+      const pulseClass = (!isDone && status !== 'locked' && qi === completedSoFar) ? 'pulse' : '';
       const xOffset = positions[i];
-      // Sola yoxsa sağa
-      const direction = xOffset >= 0 ? 'right' : 'left';
 
-      // Əvvəlki node ilə connector xətti
+      // Connector xətti (əvvəlki noddan bu node-a)
       if (i > 0) {
         const prevX = positions[i - 1];
-        const dX = xOffset - prevX;
-        // Diagonal xətt üçün SVG
-        const lineW = Math.abs(dX) + NODE_SIZE;
-        const lineLeft = dX >= 0
-          ? `calc(50% + ${prevX}px - ${NODE_SIZE/2}px)`
-          : `calc(50% + ${xOffset}px - ${NODE_SIZE/2}px)`;
-        html += `
-          <div style="
-            position: relative;
-            height: ${LINE_H}px;
-            margin: 0;
-          ">
-            <svg style="
-              position:absolute;
-              left:50%;
-              transform: translateX(calc(${Math.min(prevX, xOffset)}px - 50% + ${NODE_SIZE/2}px));
-              overflow:visible;
-            " width="${Math.abs(dX) + 2}" height="${LINE_H}" viewBox="0 0 ${Math.abs(dX) + 2} ${LINE_H}">
-              <line
-                x1="${dX >= 0 ? 1 : Math.abs(dX) + 1}"
-                y1="0"
-                x2="${dX >= 0 ? Math.abs(dX) + 1 : 1}"
-                y2="${LINE_H}"
-                stroke="${lvl.color}"
-                stroke-width="2.5"
-                stroke-dasharray="5,4"
-                opacity="0.5"
-              />
-            </svg>
-          </div>`;
+        _cefrConnector(html, prevX, xOffset, LINE_H, NODE_SIZE, lvl.color);
+        // html-ə birbaşa yaza bilmirik, aşağıda helper ilə həll edirik
+      } else if (i === 0 && gi > 0) {
+        // Əvvəlki examdan (mərkəz=0) bu node-a
+        _cefrConnector(html, 0, xOffset, LINE_H, NODE_SIZE, lvl.color);
       }
 
-      // Node özü
-      let nodeInner, nodeClass;
+      if (!isDone) quizCounter++;
+      const label = QUIZ_NAMES[lvl.id]?.[qi] || `Test ${quizCounter}`;
+
+      let nodeClass, nodeInner;
       if (isDone) {
         nodeClass = 'path-node level-done';
         nodeInner = `<svg width="26" height="26" viewBox="0 0 24 24" fill="none"
           stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="20 6 9 17 4 12"/>
-        </svg>`;
+          <polyline points="20 6 9 17 4 12"/></svg>`;
       } else if (status === 'locked') {
         nodeClass = 'path-node locked';
         nodeInner = `<svg viewBox="0 0 24 24">
           <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>`;
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`;
       } else {
         nodeClass = `path-node unlocked ${pulseClass}`;
-        nodeInner = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-        </svg>`;
+        nodeInner = `${quizCounter}`;
       }
 
-      const label = QUIZ_NAMES[lvl.id]?.[qi] || `Test ${qi + 1}`;
-
       html += `
-        <div style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          transform: translateX(${xOffset}px);
-          margin-bottom: 2px;
-        ">
-          <div class="${nodeClass}"
-            data-quiz-idx="${qi}"
+        <div style="display:flex;flex-direction:column;align-items:center;transform:translateX(${xOffset}px);margin-bottom:2px;">
+          <div class="${nodeClass}" data-quiz-idx="${qi}"
             data-status="${status === 'locked' ? 'locked' : (isDone ? 'completed' : 'unlocked')}"
-            style="
-              ${isDone ? `--lvl-color:${lvl.color};` : ''}
-              ${!isDone && status !== 'locked' ? `color:${lvl.color}; border-color:${lvl.color}; background:white;` : ''}
-            ">
+            style="${isDone ? `--lvl-color:${lvl.color};` : ''}${status !== 'locked' && !isDone ? `color:${lvl.color};border-color:${lvl.color};background:white;` : ''}">
             ${nodeInner}
           </div>
-          <div class="node-label" style="font-size:11px; max-width:100px; text-align:center;">${label}</div>
+          <div class="node-label" style="font-size:11px;max-width:100px;text-align:center;">${label}</div>
         </div>`;
     });
 
     // Exam node — həmişə mərkəzdə
     if (examNode) {
-      const { item, qi } = examNode;
+      const { qi } = examNode;
       const status = getStatus(li, qi);
       const isDone = status === 'level_done';
       const completedSoFar = progress[lvl.id]
@@ -2883,56 +2829,30 @@ function renderCefrPath(lvl, li) {
             ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
           ).length
         : 0;
-      const pulseClass = (!isDone && qi === completedSoFar) ? 'pulse' : '';
+      const pulseClass = (!isDone && status !== 'locked' && qi === completedSoFar) ? 'pulse' : '';
 
-      // Son normal noddan exam-a connector
-      if (normals.length > 0) {
-        const lastX = positions[positions.length - 1];
-        const dX = 0 - lastX; // mərkəzə qayıt
-        html += `
-          <div style="position:relative; height:${LINE_H}px;">
-            <svg style="
-              position:absolute;
-              left:50%;
-              transform: translateX(calc(${Math.min(0, lastX)}px - 50% + ${NODE_SIZE/2}px));
-              overflow:visible;
-            " width="${Math.abs(dX) + 2}" height="${LINE_H}" viewBox="0 0 ${Math.abs(dX) + 2} ${LINE_H}">
-              <line
-                x1="${dX >= 0 ? 1 : Math.abs(dX) + 1}"
-                y1="0"
-                x2="${dX >= 0 ? Math.abs(dX) + 1 : 1}"
-                y2="${LINE_H}"
-                stroke="${lvl.color}"
-                stroke-width="2.5"
-                stroke-dasharray="5,4"
-                opacity="0.5"
-              />
-            </svg>
-          </div>`;
-      }
+      // Son normal noddan mərkəzə connector
+      const lastX = positions.length > 0 ? positions[positions.length - 1] : 0;
+      html += _cefrConnectorHTML(lastX, 0, LINE_H, NODE_SIZE, lvl.color);
 
       let examClass = 'path-node exam-node';
-      if (isDone) examClass += ' level-done';
+      if (isDone)              examClass += ' level-done';
       else if (status === 'locked') examClass += ' locked';
-      else examClass += ` unlocked ${pulseClass}`;
+      else                     examClass += ` unlocked ${pulseClass}`;
 
       html += `
-        <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:2px;">
-          <div class="${examClass}"
-            data-quiz-idx="${qi}"
+        <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:2px;">
+          <div class="${examClass}" data-quiz-idx="${qi}"
             data-status="${status === 'locked' ? 'locked' : (isDone ? 'completed' : 'unlocked')}"
-            style="
-              ${isDone ? `--lvl-color:${lvl.color};` : ''}
-              ${status !== 'locked' && !isDone ? `color:${lvl.color}; border-color:${lvl.color}; background:white;` : ''}
-            ">
+            style="${isDone ? `--lvl-color:${lvl.color};` : ''}${status !== 'locked' && !isDone ? `color:${lvl.color};border-color:${lvl.color};background:white;` : ''}">
             🏆
           </div>
-          <div class="node-label" style="font-size:11px; text-align:center;">Exam</div>
+          <div class="node-label" style="font-size:11px;text-align:center;">Exam</div>
         </div>`;
 
-      // Exam-dan sonra connector (növbəti qrupa)
-      html += `<div style="height:${LINE_H}px; display:flex; justify-content:center; align-items:center;">
-        <div style="width:2.5px; height:100%; background:${lvl.color}; opacity:0.3; border-radius:2px;"></div>
+      // Exam-dan növbəti qrupa düz xətt
+      html += `<div style="height:${LINE_H}px;display:flex;justify-content:center;align-items:center;">
+        <div style="width:2.5px;height:100%;background:${lvl.color};opacity:0.3;border-radius:2px;"></div>
       </div>`;
     }
   });
@@ -2940,6 +2860,45 @@ function renderCefrPath(lvl, li) {
   html += `</div>`;
   return html;
 }
+
+// Connector HTML-i qaytaran helper
+function _cefrConnectorHTML(fromX, toX, lineH, nodeSize, color) {
+  const dX   = toX - fromX;
+  const absX = Math.abs(dX);
+
+  if (absX < 2) {
+    // Düz xətt
+    return `<div style="height:${lineH}px;display:flex;justify-content:center;align-items:center;transform:translateX(${fromX}px);">
+      <div style="width:2.5px;height:100%;background:${color};opacity:0.4;border-radius:2px;"></div>
+    </div>`;
+  }
+
+  const svgW = absX + nodeSize;
+  const leftShift = Math.min(fromX, toX) - nodeSize / 2;
+
+  // Curved path (quadratic bezier)
+  const x1 = dX >= 0 ? nodeSize / 2 : svgW - nodeSize / 2;
+  const x2 = dX >= 0 ? svgW - nodeSize / 2 : nodeSize / 2;
+  const cx  = (x1 + x2) / 2;
+  const cy  = lineH / 2;
+
+  return `<div style="position:relative;height:${lineH}px;">
+    <svg style="position:absolute;left:50%;transform:translateX(calc(${leftShift}px));"
+      width="${svgW}" height="${lineH}" viewBox="0 0 ${svgW} ${lineH}" overflow="visible">
+      <path
+        d="M ${x1} 0 Q ${cx} ${cy} ${x2} ${lineH}"
+        fill="none"
+        stroke="${color}"
+        stroke-width="2.5"
+        stroke-dasharray="5,4"
+        opacity="0.5"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>`;
+}
+
+function _cefrConnector() {} // unused, helper üçün saxlanılır
 
 function renderQuizPath(lvl, li) {
   // CEFR levelləri üçün zigzag path
