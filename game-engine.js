@@ -370,37 +370,60 @@ window.WordGame = (function () {
       .wg-dot.active { background:${C.accent}; }
       .wg-dot.done   { background:${C.accent}88; }
 
-      /* Clues */
-      #wg-clues-bar {
-        padding:8px 14px;
-        background:${C.card};
-        border-bottom:1px solid ${C.border};
-        flex-shrink:0;
-      }
-      #wg-clues-inner {
-        display:flex; flex-wrap:wrap; gap:6px;
-      }
-      .wg-chip {
-        display:inline-flex; align-items:center; gap:5px;
-        padding:4px 10px 4px 8px; border-radius:20px;
-        font-size:12.5px; font-weight:500;
-        background:${C.inputBg}; color:${C.textSub};
-        border:1.5px solid ${C.border};
-        transition:all .3s; white-space:nowrap;
-      }
-      .wg-chip-dot {
-        width:6px; height:6px; border-radius:50%;
-        background:${C.textSub}; flex-shrink:0;
-        transition:background .3s;
-      }
-      .wg-chip.found {
-        background:${C.accent}18;
-        color:${C.accent};
-        border-color:${C.accent}66;
-        text-decoration:line-through;
-        opacity:.7;
-      }
-      .wg-chip.found .wg-chip-dot { background:${C.accent}; }
+      /* Hint button */
+#wg-hint-wrap {
+  position:relative;
+  padding:6px 14px;
+  background:${C.card};
+  border-bottom:1px solid ${C.border};
+  flex-shrink:0;
+}
+#wg-hint-btn {
+  width:34px; height:34px;
+  border-radius:50%; border:none;
+  background:${C.inputBg};
+  font-size:18px; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background .15s;
+}
+#wg-hint-btn:active { background:${C.cellBd}; }
+#wg-hint-popup {
+  display:none;
+  position:absolute;
+  top:48px; left:14px;
+  z-index:200;
+  background:${C.card};
+  border:1.5px solid ${C.border};
+  border-radius:14px;
+  padding:10px 12px;
+  width:230px;
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+#wg-hint-popup.open { display:block; }
+#wg-hint-list {
+  display:flex; flex-wrap:wrap; gap:6px;
+}
+.wg-chip {
+  display:inline-flex; align-items:center; gap:5px;
+  padding:4px 10px 4px 8px; border-radius:20px;
+  font-size:12px; font-weight:500;
+  background:${C.inputBg}; color:${C.textSub};
+  border:1.5px solid ${C.border};
+  transition:all .3s; white-space:nowrap;
+}
+.wg-chip-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:${C.textSub}; flex-shrink:0;
+  transition:background .3s;
+}
+.wg-chip.found {
+  background:${C.accent}18;
+  color:${C.accent};
+  border-color:${C.accent}66;
+  text-decoration:line-through;
+  opacity:.7;
+}
+.wg-chip.found .wg-chip-dot { background:${C.accent}; }
 
       /* Crossword */
       #wg-cw-wrap {
@@ -442,13 +465,13 @@ window.WordGame = (function () {
       }
 
       /* Word display */
-      #wg-typed {
-        background:${C.card};
-        border-top:1px solid ${C.border};
-        padding:8px 16px;
-        display:flex; align-items:center; justify-content:center;
-        gap:4px; min-height:54px; flex-shrink:0;
-      }
+#wg-typed {
+  background:${C.card};
+  border-top:1px solid ${C.border};
+  padding:6px 16px;
+  display:flex; align-items:center; justify-content:center;
+  gap:4px; min-height:46px; flex-shrink:0;
+}
       .wg-tletter {
         width:36px; height:36px; border-radius:9px;
         display:flex; align-items:center; justify-content:center;
@@ -480,14 +503,14 @@ window.WordGame = (function () {
       }
 
       /* Wheel wrap */
-      #wg-wheel-area {
-        background:${C.card};
-        border-top:1px solid ${C.border};
-        padding:10px 16px 16px;
-        display:flex; flex-direction:column;
-        align-items:center; gap:10px;
-        flex-shrink:0;
-      }
+#wg-wheel-area {
+  background:${C.card};
+  border-top:1px solid ${C.border};
+  padding:6px 16px 12px;
+  display:flex; flex-direction:column;
+  align-items:center; gap:6px;
+  flex-shrink:0;
+}
 
       /* Wheel container */
       #wg-wheel {
@@ -548,21 +571,17 @@ window.WordGame = (function () {
 
       /* Actions */
       #wg-acts {
-        display:flex; gap:8px; width:100%; max-width:360px;
-      }
-      .wg-abtn {
-        flex:1; padding:12px 0; border-radius:13px;
-        font-size:14px; font-weight:700; border:none; cursor:pointer;
-        transition:transform .1s, opacity .15s;
-      }
-      .wg-abtn:active { transform:scale(.96); }
-      #wg-submit {
-        background:${C.accent}; color:#fff;
-        box-shadow:0 3px 12px ${C.accent}44;
-      }
-      #wg-shuffle {
-        background:${C.inputBg}; color:${C.textMain};
-      }
+  display:flex; justify-content:center;
+  width:100%; max-width:360px;
+}
+#wg-shuffle {
+  width:48px; height:48px; border-radius:50%;
+  font-size:20px; border:none; cursor:pointer;
+  background:${C.inputBg}; color:${C.textMain};
+  display:flex; align-items:center; justify-content:center;
+  transition:transform .1s, background .15s;
+}
+#wg-shuffle:active { transform:scale(.93); }
 
       /* Phase complete screen */
       #wg-pc {
@@ -612,13 +631,17 @@ window.WordGame = (function () {
       </div>
     </div>
 
-    <div id="wg-clues-bar">
-      <div id="wg-clues-inner">${cluesHTML}</div>
-    </div>
+    <div id="wg-hint-wrap">
+  <button id="wg-hint-btn">💡</button>
+  <div id="wg-hint-popup">
+    <div id="wg-hint-list">${cluesHTML}</div>
+  </div>
+</div>
 
     <div id="wg-cw-wrap">
-      <div id="wg-cw"></div>
-    </div>
+  <div id="wg-cw"></div>
+</div>
+<div style="flex:1; min-height:8px;"></div>
 
     <div id="wg-typed">
       <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
@@ -627,9 +650,8 @@ window.WordGame = (function () {
     <div id="wg-wheel-area">
       <div id="wg-wheel"></div>
       <div id="wg-acts">
-        <button class="wg-abtn" id="wg-shuffle">🔀 Qarışdır</button>
-        <button class="wg-abtn" id="wg-submit">✓ Yoxla</button>
-      </div>
+  <button class="wg-abtn" id="wg-shuffle">🔀</button>
+</div>
     </div>`;
   }
 
@@ -638,42 +660,61 @@ window.WordGame = (function () {
   //  6. CROSSWORD RENDER
   // ══════════════════════════════════════════════════════════
 
-  function _renderCells() {
-    const wrap  = document.getElementById('wg-cw-wrap');
-    const board = document.getElementById('wg-cw');
-    if (!board || !wrap) return;
+function _renderCells() {
+  const wrap  = document.getElementById('wg-cw-wrap');
+  const board = document.getElementById('wg-cw');
+  if (!board || !wrap) return;
 
-    const availW = wrap.clientWidth  - 20;
-    const availH = wrap.clientHeight - 20;
-    const byW    = state.cols > 0 ? Math.floor(availW / state.cols) : 30;
-    const byH    = state.rows > 0 ? Math.floor(availH / state.rows) : 30;
-    const cs     = Math.max(22, Math.min(byW, byH, 40));
+  const MAX_COLS = 15;
+  const MAX_ROWS = 25;
 
-    board.style.cssText = `
-      display:grid;
-      grid-template-columns:repeat(${state.cols}, ${cs}px);
-      grid-template-rows:repeat(${state.rows}, ${cs}px);
-      gap:2px;
-    `;
+  const availW = wrap.clientWidth  - 20;
+  const availH = wrap.clientHeight - 20;
 
-    board.innerHTML = '';
-    for (let r = 0; r < state.rows; r++) {
-      for (let c = 0; c < state.cols; c++) {
-        const cell = state.grid[r]?.[c];
-        const div  = document.createElement('div');
-        div.className = cell ? 'wg-cell' : 'wg-cell empty';
-        div.style.cssText = `width:${cs}px; height:${cs}px; font-size:${Math.max(10, cs - 18)}px;`;
-        if (cell) {
-          div.dataset.r      = r;
-          div.dataset.c      = c;
-          div.dataset.letter = cell.letter;
-          div.textContent    = '';  // gizli — tapılanda görünər
-        }
-        board.appendChild(div);
+  // Hüceyrə ölçüsünü həm mövcud sahəyə həm də max limit-ə görə hesabla
+  const cols = Math.min(state.cols, MAX_COLS);
+  const rows = Math.min(state.rows, MAX_ROWS);
+
+  const byW = cols > 0 ? Math.floor(availW / cols) : 30;
+  const byH = rows > 0 ? Math.floor(availH / rows) : 30;
+  const cs  = Math.max(14, Math.min(byW, byH, 36));
+
+  // Krossvordun faktiki ölçüsü
+  const boardW = cols * cs + (cols - 1) * 2;
+  const boardH = rows * cs + (rows - 1) * 2;
+
+  board.style.cssText = `
+    display:grid;
+    grid-template-columns:repeat(${state.cols}, ${cs}px);
+    grid-template-rows:repeat(${state.rows}, ${cs}px);
+    gap:2px;
+    margin:auto;
+  `;
+
+  // Scroll yox, mərkəzdə saxla
+  wrap.style.overflow   = 'hidden';
+  wrap.style.display    = 'flex';
+  wrap.style.alignItems = 'center';
+  wrap.style.justifyContent = 'center';
+
+  board.innerHTML = '';
+  for (let r = 0; r < state.rows; r++) {
+    for (let c = 0; c < state.cols; c++) {
+      const cell = state.grid[r]?.[c];
+      const div  = document.createElement('div');
+      div.className = cell ? 'wg-cell' : 'wg-cell empty';
+      div.style.cssText = `width:${cs}px; height:${cs}px; font-size:${Math.max(8, cs - 16)}px;`;
+      if (cell) {
+        div.dataset.r      = r;
+        div.dataset.c      = c;
+        div.dataset.letter = cell.letter;
+        div.textContent    = '';
       }
+      board.appendChild(div);
     }
-    _refreshFound();
   }
+  _refreshFound();
+}
 
   function _refreshFound() {
     state.foundWords.forEach(word => {
@@ -742,9 +783,7 @@ window.WordGame = (function () {
         ${letter}</button>`;
     });
 
-    html += `<button id="wg-wcenter"
-      style="width:${centerSz}px; height:${centerSz}px; font-size:${Math.max(13, centerSz - 14)}px;">
-      ⌫</button>`;
+   
 
     wrap.innerHTML = html;
     _attachWheelEvents(wrap);
@@ -753,23 +792,44 @@ window.WordGame = (function () {
   function _attachWheelEvents(wrap) {
     const btns = wrap.querySelectorAll('.wg-lb');
 
-    // Click (desktop)
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (btn.classList.contains('sel')) return;
-        _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
-      });
-    });
+    let isMouseDown = false;
 
+btns.forEach(btn => {
+  btn.addEventListener('mousedown', () => {
+    isMouseDown = true;
+    if (!btn.classList.contains('sel'))
+      _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
+  });
+
+  btn.addEventListener('mouseover', () => {
+    if (isMouseDown && !btn.classList.contains('sel'))
+      _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
+  });
+});
+
+wrap.addEventListener('mouseup', () => {
+  if (!isMouseDown) return;
+  isMouseDown = false;
+  if (state.currentWord.length >= 2) {
+    _submitWord();
+  } else {
+    _clearSel();
+  }
+});
+
+document.addEventListener('mouseup', (e) => {
+  if (!isMouseDown) return;
+  isMouseDown = false;
+  if (!wrap.contains(e.target)) {
+    _clearSel();
+  }
+});
     // Touch sürüşdürmə (WoW stili)
     wrap.addEventListener('touchstart', _touchStart, { passive: false });
     wrap.addEventListener('touchmove',  _touchMove,  { passive: false });
     wrap.addEventListener('touchend',   _touchEnd,   { passive: false });
 
-    wrap.querySelector('#wg-wcenter')?.addEventListener('click', _clearSel);
-    wrap.querySelector('#wg-wcenter')?.addEventListener('touchend', (e) => {
-      e.preventDefault(); _clearSel();
-    });
+   
   }
 
   function _selectLetter(idx, letter, btnEl) {
@@ -806,14 +866,14 @@ window.WordGame = (function () {
   }
 
   function _touchEnd(e) {
-    e.preventDefault();
-    state.isDragging = false;
-    if (state.currentWord.length >= 2) {
-      _submitWord();
-    } else {
-      _clearSel();
-    }
+  e.preventDefault();
+  state.isDragging = false;
+  if (state.currentWord.length >= 2) {
+    _submitWord();
+  } else {
+    _clearSel();
   }
+}
 
   function _processTouch(touch) {
     const wrap = document.getElementById('wg-wheel');
@@ -972,7 +1032,18 @@ window.WordGame = (function () {
 
   function _attachEvents(ov) {
     ov.querySelector('#wg-back')?.addEventListener('click', _closeOverlay);
-    ov.querySelector('#wg-submit')?.addEventListener('click', _submitWord);
+    const hintBtn   = ov.querySelector('#wg-hint-btn');
+const hintPopup = ov.querySelector('#wg-hint-popup');
+
+hintBtn?.addEventListener('click', (e) => {
+  e.stopPropagation();
+  hintPopup?.classList.toggle('open');
+});
+
+ov.addEventListener('click', () => {
+  hintPopup?.classList.remove('open');
+});
+    
     ov.querySelector('#wg-shuffle')?.addEventListener('click', () => {
       state.letters = _shuffle(state.letters);
       _clearSel();
