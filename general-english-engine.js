@@ -442,7 +442,122 @@ const status = getStatus(li, qi);
   return html;
 }
 
-// ── Global exports ──────────────────────────────────────────
+// ============================================================
+//  WORDPATH — GAME ENGINE (CROSSWORD)
+//  general-english-engine.js-in sonuna əlavə et
+//
+//  Bu funksiyalar krossvord oyununu idarə edir.
+//  Data ayrı game-data.js faylında saxlanılır.
+// ============================================================
+
+// ── Game State ────────────────────────────────────────────
+const gameState = {
+  levelId:  null,
+  gameKey:  null,
+  gameData: null,
+};
+
+// ============================================================
+//  GAME BAŞLAT
+// ============================================================
+
+function startWordGame(levelId, gameKey) {
+  const data = (typeof GAME_DATA !== 'undefined')
+    ? GAME_DATA[levelId]?.[gameKey]
+    : null;
+
+  if (!data) {
+    if (typeof showToast === 'function') showToast('Bu oyun hələ hazır deyil ✏️');
+    return;
+  }
+
+  if (!data.words || data.words.length === 0) {
+    if (typeof showToast === 'function') showToast('Bu oyun hələ hazır deyil ✏️');
+    return;
+  }
+
+  gameState.levelId  = levelId;
+  gameState.gameKey  = gameKey;
+  gameState.gameData = data;
+
+  quiz.mode   = 'game';
+  quiz.locked = false;
+
+  showQuizScreen();
+  renderWordGame();
+}
+
+// ============================================================
+//  GAME RENDER — placeholder (dizayn növbəti mərhələdə)
+// ============================================================
+
+function renderWordGame() {
+  const data     = gameState.gameData;
+  const quizBody = document.querySelector('.quiz-body');
+  if (!quizBody) return;
+
+  elProgressFill.style.width = '0%';
+  elQCounter.textContent     = data.title || 'Game';
+
+  quizBody.className = 'quiz-body game-mode';
+  quizBody.innerHTML = `
+    <div class="game-placeholder-wrap">
+      <div class="game-placeholder-icon">🎮</div>
+      <div class="game-placeholder-title">${data.title}</div>
+      <div class="game-placeholder-desc">Oyun tezliklə hazır olacaq!</div>
+      <button class="grammar-next-btn" id="game-close-btn" style="margin-top:24px;">
+        Geri qayıt
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+  `;
+
+  document.getElementById('game-close-btn').addEventListener('click', () => {
+    if (typeof closeOverlays === 'function') closeOverlays();
+    if (typeof renderLevels === 'function')  renderLevels();
+  });
+}
+
+// ============================================================
+//  GAME BİTİŞ
+// ============================================================
+
+function finishWordGame(won = true) {
+  // Progress qeyd et
+  const key = `${gameState.levelId}_game_${gameState.gameKey}`;
+  if (won) localStorage.setItem(key, 'done');
+
+  elProgressFill.style.width = '100%';
+
+  setTimeout(() => {
+    elQuizScreen.classList.add('hidden');
+    elResultScreen.classList.remove('hidden');
+    elResultStats.classList.add('hidden');
+    elLevelResultCard.classList.add('hidden');
+
+    elResultEmoji.textContent = won ? '🎮' : '😅';
+    elResultTitle.textContent = won ? 'Oyun tamamlandı!' : 'Olmadı...';
+    elResultDesc.textContent  = gameState.gameData?.title || '';
+
+    elResultMainBtn.textContent = won ? 'Ana səhifəyə qayıt' : 'Yenidən cəhd et';
+    elResultMainBtn.onclick = won
+      ? () => { closeOverlays(); renderLevels(); }
+      : () => startWordGame(gameState.levelId, gameState.gameKey);
+
+    elResultBackBtn.classList.remove('hidden');
+    elResultBackBtn.textContent = 'Ana səhifəyə qayıt';
+    elResultBackBtn.onclick = () => { closeOverlays(); renderLevels(); };
+  }, 300);
+}
+
+// ── Global exports ─────────────────────────────────────────
+window.startWordGame  = startWordGame;
+window.renderWordGame = renderWordGame;
+window.finishWordGame = finishWordGame;
+window.gameState      = gameState;
 window.startGeneralEnglishLesson  = startGeneralEnglishLesson;
 window.renderGeneralEnglishPath   = renderGeneralEnglishPath;
 window.geState                    = geState;
