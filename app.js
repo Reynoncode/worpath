@@ -3593,9 +3593,8 @@ function startWordGame(levelId, gameKey) {
 
   // TODO: game-engine.js-ə ötür
   // Hələlik stub — oyun hazır olandan sonra bu hissə doldurulacaq
-  showToast(`Phase ${savedPhase + 1} başlayır... 🎮`);
+WordGame.start(levelId, gameKey, gameData, savedPhase);
 }
-
 // ══════════════════════════════════════════════
 //  NORMAL QUIZ
 // ══════════════════════════════════════════════
