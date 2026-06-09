@@ -47,16 +47,6 @@ const GAME_DATA = {
     {
       // Phase 1 — Peşələr (ortaq hərflər: A, R, T, E, S)
       words: [
-        { word: 'MAN',      az: 'kişi' },
-        { word: 'BOY',      az: 'oğlan' },
-        { word: 'BABY',     az: 'körpə' },
-        { word: 'NOBODY',   az: 'heç kim' },
-        { word: 'ANYBODY',  az: 'hər hansı biri' },
-      ]
-    },
-    {
-      // Phase 2 — Peşələr (ortaq hərflər: S, E, R, I, N)
-      words: [
         { word: 'ACTOR',    az: 'aktyor' },
         { word: 'COACH',   az: 'məşqçi' },
         { word: 'TEACHER',   az: 'müəllim' },
@@ -64,31 +54,34 @@ const GAME_DATA = {
       ]
     },
     {
+      // Phase 2 — Peşələr (ortaq hərflər: S, E, R, I, N)
+      words: [
+        
+        { word: 'BOY',      az: 'oğlan' },
+        { word: 'BABY',     az: 'körpə' },
+        { word: 'NOBODY',   az: 'heç kim' },
+        { word: 'ANYBODY',  az: 'hər hansı biri' },
+      ]
+    },
+    {
       // Phase 3 — Ümumi insanlar (ortaq hərflər: O, N, E, R, A)
       words: [
-        { word: 'WOMAN',     az: 'qadın' },
+        { word: 'MUM',     az: 'ana' },
         { word: 'MAN',       az: 'kişi' },
-        { word: 'PERSON',    az: 'insan' },
-        { word: 'MEMBER',    az: 'üzv' },
-        { word: 'PARTNER',   az: 'ortaq' },
-        { word: 'CUSTOMER',  az: 'müştəri' },
-        { word: 'NEIGHBOUR', az: 'qonşu' },
-        { word: 'TEENAGER',  az: 'yeniyetmə' },
-        { word: 'FRIEND',    az: 'dost' },
+        { word: 'AUNT',    az: 'xala' },
+        { word: 'DAD',    az: 'ata' },
+        { word: 'ADULT',   az: 'yetkin' },
+        
       ]
     },
     {
       // Phase 4 — Ümumi insanlar (ortaq hərflər: O, Y, B, N, E)
       words: [
-        { word: 'BOY',       az: 'oğlan' },
-        { word: 'GIRL',      az: 'qız' },
-        { word: 'BABY',      az: 'körpə' },
-        { word: 'CHILD',     az: 'uşaq' },
-        { word: 'ADULT',     az: 'yetkin' },
-        { word: 'NOBODY',    az: 'heç kim' },
-        { word: 'SOMEONE',   az: 'biri' },
-        { word: 'ANYBODY',   az: 'hər hansı biri' },
-        { word: 'PEOPLE',    az: 'insanlar' },
+        { word: 'ARM',       az: 'qol' },
+        { word: 'EAR',      az: 'qulaq' },
+        { word: 'HEAD',      az: 'baş' },
+        { word: 'HAİR',     az: 'saç' },
+        { word: 'DEAD',     az: 'ölü' },
       ]
     },
   ]
