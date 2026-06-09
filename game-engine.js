@@ -663,24 +663,19 @@ function _renderCells() {
   const typed    = document.getElementById('wg-typed');
   const wheelArea = document.getElementById('wg-wheel-area');
   
-  const usedH = (hdr?.offsetHeight        || 60)
+const usedH = (hdr?.offsetHeight        || 60)
             + (typed?.offsetHeight       || 46)
-            + (wheelArea?.offsetHeight   || 0)
+            + (wheelArea?.offsetHeight   || 160)
             + 16;
-
-// wheelArea hələ render olmayıbsa minimum saxla
-const safeH = Math.max(availH, 180);
   
   const availW = wrap.clientWidth - 20;
-  const availH = totalH - usedH - 20;
+  const availH = Math.max(totalH - usedH - 20, 180);
   
-  // Hüceyrə ölçüsünü həm mövcud sahəyə həm də max limit-ə görə hesabla
   const cols = Math.min(state.cols, MAX_COLS);
   const rows = Math.min(state.rows, MAX_ROWS);
 
   const byW = cols > 0 ? Math.floor(availW / cols) : 30;
-  const safeH = Math.max(availH, 180);
-  const byH = rows > 0 ? Math.floor(Math.max(availH, 180) / rows) : 30;
+  const byH = rows > 0 ? Math.floor(availH / rows) : 30;
   const cs  = Math.max(14, Math.min(byW, byH, 36));
 
   // Krossvordun faktiki ölçüsü
