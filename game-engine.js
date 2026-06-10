@@ -638,18 +638,14 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       /* FIX 3 & color: Chips — tapılmamış mavi, tapılmış yaşıl */
       .wg-chip {
         display:inline-flex; align-items:center; gap:5px;
-        padding:5px 16px 5px 13px; border-radius:20px;
+        padding:5px 12px 5px 9px; border-radius:20px;
         font-size:13px; font-weight:600;
         background:rgba(59,130,246,0.12);
         color:#3b82f6;
         border:1.5px solid rgba(59,130,246,0.35);
         transition:all .3s; white-space:nowrap;
       }
-      .wg-chip-dot {
-        width:6px; height:6px; border-radius:50%;
-        background:#3b82f6;
-        flex-shrink:0; transition:background .3s;
-      }
+
       /* Tapılmış: yaşıl ton, üstündən xətt */
       .wg-chip.found {
         background:rgba(34,197,94,0.12);
