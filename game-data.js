@@ -131,17 +131,247 @@ const GAME_DATA = {
     },
   ]
 },
+
+
+    
     // Blok 1 gameləri
-    'b1_g0': { id: 'a1_b1_g0', title: 'Game 4', words: [] },
-    'b1_g1': { id: 'a1_b1_g1', title: 'Game 5', words: [] },
-    'b1_g2': { id: 'a1_b1_g2', title: 'Game 6', words: [] },
-    'b1_g3': { id: 'a1_b1_g3', title: 'Game 7', words: [] },
+    'b1_g0': { id: 'a1_b1_g0', title: 'Game 4',      phases: [
+    {
+      words: [
+        { word: 'TALL',         az: 'hündür' },
+        { word: 'FAT',          az: 'kök' },
+        { word: 'LEFT',         az: 'sol' },
+        { word: 'LATE',         az: 'gec' },
+      ]
+    },
+    {
+      words: [
+            { word: 'COOL',         az: 'əla' },
+        { word: 'GOOD',         az: 'yaxşı' },
+        { word: 'COLD',         az: 'soyuq' },
+        { word: 'OLD',          az: 'köhnə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DEAR',         az: 'əziz' },
+        { word: 'DRY',          az: 'quru' },
+        { word: 'EARLY',        az: 'erkən' },
+        { word: 'READY',        az: 'hazır' },
+        { word: 'REAL',         az: 'həqiqi' },
+
+      ]
+    },
+  ]
+},
+
+    
+    'b1_g1': { id: 'a1_b1_g1', title: 'Game 5',phases: [
+    {
+      words: [
+        { word: 'SHORT',        az: 'qısa' },
+        { word: 'TOP',          az: 'üst' },
+        { word: 'HOT',          az: 'isti' },
+        { word: 'POOR',         az: 'kasıb' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BACK',         az: 'arxa' },
+        { word: 'BAD',          az: 'pis' },
+        { word: 'DARK',         az: 'qaranlıq' },    
+      ]
+    },
+    {
+      words: [
+
+        { word: 'SAD',          az: 'kədərli' },
+        { word: 'SMALL',        az: 'kiçik' },
+        { word: 'MIDDLE',       az: 'orta' },
+        { word: 'SIDE',         az: 'yan' },
+        { word: 'SAME',         az: 'eyni' },
+      ]
+    },
+  ]
+},
+
+    
+    'b1_g2': { id: 'a1_b1_g2', title: 'Game 6',phases: [
+    {
+      words: [
+        { word: 'FULL',         az: 'dolu' },
+        { word: 'FALSE',        az: 'yalan' },
+        { word: 'FREE',         az: 'azad' },
+        { word: 'SURE',         az: 'əmin' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BIG',          az: 'böyük' },
+        { word: 'HIGH',         az: 'yüksək' },
+        { word: 'RIGHT',        az: 'sağ' },
+        { word: 'RICH',         az: 'varlı' },    
+      ]
+    },
+    {
+      words: [
+
+        { word: 'TIRED',        az: 'yorğun' },
+        { word: 'NICE',         az: 'xoş' },
+        { word: 'CENTRE',       az: 'mərkəz' },
+        { word: 'DIFFERENT',    az: 'fərqli' },
+        { word: 'FINE',         az: 'normal' },
+      ]
+    },
+  ]
+},
+
+    'b1_g3': { id: 'a1_b1_g3', title: 'Game 7', phases: [
+    {
+      words: [
+        { word: 'GREAT',        az: 'əla' },
+        { word: 'LARGE',        az: 'iri' },
+        { word: 'LITTLE',       az: 'balaca' },
+        { word: 'TERRIBLE',     az: 'dəhşətli' },
+      ]
+    },
+    {
+      words: [
+        { word: 'TO FEEL',      az: 'hiss etmək' },
+        { word: 'TO HATE',      az: 'nifrət etmək' },
+        { word: 'HALF',         az: 'yarım' },
+        { word: 'FAST',         az: 'sürətli' },    
+      ]
+    },
+    {
+      words: [
+        { word: 'PERFECT',      az: 'mükəmməl' },
+        { word: 'FRONT',        az: 'ön' },
+        { word: 'CORRECT',      az: 'düzgün' },
+        { word: 'OPEN',         az: 'açıq' },
+      ]
+    },
+  ]
+},
+
     // Blok 2 gameləri
-    'b2_g0': { id: 'a1_b2_g0', title: 'Game 8',  words: [] },
-    'b2_g1': { id: 'a1_b2_g1', title: 'Game 9',  words: [] },
+    'b2_g0': { id: 'a1_b2_g0', title: 'Game 8', phases: [
+    {
+      words: [
+        { word: 'TOMATO',       az: 'pomidor' },
+        { word: 'MEAT',         az: 'ət' },
+        { word: 'TEA',          az: 'çay' },
+        { word: 'TO EAT',       az: 'yemək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PEPPER',       az: 'bibər' },
+        { word: 'RICE',         az: 'düyü' },
+        { word: 'RECIPE',       az: 'resept' },
+        { word: 'BEER',         az: 'pivə' },    
+      ]
+    },
+    {
+      words: [
+        { word: 'BANANA',       az: 'banan' },
+        { word: 'PLANT',        az: 'bitki' },
+        { word: 'SALT',         az: 'duz' },
+        { word: 'PASTA',        az: 'makaron' },
+      ]
+    },
+  ]
+},
+
+    'b2_g1': { id: 'a1_b2_g1', title: 'Game 9', phases: [
+    {
+      words: [
+        { word: 'ONION',        az: 'soğan' },
+        { word: 'DIET',         az: 'pəhriz' },
+        { word: 'DINNER',       az: 'axşam yeməyi' },
+        { word: 'TO ORDER',     az: 'sifariş etmək' },
+      ]
+    },
+    {
+      words: [
+            { word: 'APPLE',        az: 'alma' },
+        { word: 'EGG',          az: 'yumurta' },
+        { word: 'MEAL',         az: 'yemək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CHEESE',       az: 'pendir' },
+        { word: 'FISH',         az: 'balıq' },
+        { word: 'DISH',         az: 'təam' },
+        { word: 'FOOD',         az: 'qida' },
+        { word: 'COFFEE',       az: 'qəhvə' },
+
+      ]
+    },
+  ]
+},
+
+    
     // Blok 3 gameləri
-    'b3_g0': { id: 'a1_b3_g0', title: 'Game 10', words: [] },
-    'b3_g1': { id: 'a1_b3_g1', title: 'Game 11', words: [] },
+    'b3_g0': { id: 'a1_b3_g0', title: 'Game 10', phases: [
+    {
+      words: [
+        { word: 'ONE',          az: 'bir' },
+        { word: 'NINE',         az: 'doqquz' },
+        { word: 'ONCE',         az: 'bir dəfə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'TEN',          az: 'on' },
+        { word: 'FIFTEEN',      az: 'on beş' },
+        { word: 'FIFTY',        az: 'əlli' },
+        { word: 'NINETY',       az: 'doxsan' },    
+      ]
+    },
+    {
+      words: [
+        { word: 'GREEN',        az: 'yaşıl' },
+        { word: 'THREE',        az: 'üç' },
+        { word: 'EIGHT',        az: 'səkkiz' },
+        { word: 'THIRTEEN',     az: 'on üç' },
+        { word: 'EIGHTEEN',     az: 'on səkkiz' },
+
+      ]
+    },
+  ]
+},
+    'b3_g1': { id: 'a1_b3_g1', title: 'Game 11', phases: [
+    {
+      words: [
+        { word: 'RED',          az: 'qırmızı' },
+        { word: 'DARK',         az: 'qaranlıq' },
+        { word: 'PALE',         az: 'solğun' },
+        { word: 'DEEP',         az: 'dərin' },
+      ]
+    },
+    {
+      words: [
+            { word: 'SIX',          az: 'altı' },
+        { word: 'SEVEN',        az: 'yeddi' },
+        { word: 'SIXTEEN',      az: 'on altı' },
+        { word: 'SIXTY',        az: 'altmış' },
+        { word: 'SEVENTY',      az: 'yetmiş' },
+      ]
+    },
+    {
+      words: [
+        { word: 'FOUR',         az: 'dörd' },
+        { word: 'THIRTY',       az: 'otuz' },
+        { word: 'FORTY',        az: 'qırx' },
+        { word: 'FOURTH',       az: 'dördüncü' },
+        { word: 'FIFTH',        az: 'beşinci' },
+
+      ]
+    },
+  ]
+},
     // Blok 4 gameləri
     'b4_g0': { id: 'a1_b4_g0', title: 'Game 12', words: [] },
     'b4_g1': { id: 'a1_b4_g1', title: 'Game 13', words: [] },
