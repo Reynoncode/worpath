@@ -902,19 +902,358 @@ const GAME_DATA = {
   // Blok 8 → [34,35] → 2 quiz → 1 game
   // Blok 9 → [37,38] → 2 quiz → 1 game
   'a2': {
-    'b0_g0': { id: 'a2_b0_g0', title: 'Game 1', words: [] },
-    'b0_g1': { id: 'a2_b0_g1', title: 'Game 2', words: [] },
-    'b0_g2': { id: 'a2_b0_g2', title: 'Game 3', words: [] },
-    'b1_g0': { id: 'a2_b1_g0', title: 'Game 4', words: [] },
-    'b1_g1': { id: 'a2_b1_g1', title: 'Game 5', words: [] },
-    'b1_g2': { id: 'a2_b1_g2', title: 'Game 6', words: [] },
-    'b2_g0': { id: 'a2_b2_g0', title: 'Game 7', words: [] },
-    'b2_g1': { id: 'a2_b2_g1', title: 'Game 8', words: [] },
-    'b2_g2': { id: 'a2_b2_g2', title: 'Game 9', words: [] },
-    'b3_g0': { id: 'a2_b3_g0', title: 'Game 10', words: [] },
-    'b4_g0': { id: 'a2_b4_g0', title: 'Game 11', words: [] },
-    'b4_g1': { id: 'a2_b4_g1', title: 'Game 12', words: [] },
-    'b4_g2': { id: 'a2_b4_g2', title: 'Game 13', words: [] },
+    'b0_g0': { id: 'a2_b0_g0', title: 'Game 1',phases: [
+    {
+      words: [
+        { word: 'PAIN',         az: 'ağrı' },
+        { word: 'ILL',          az: 'xəstə' },
+        { word: 'PILL',         az: 'həb' },
+      ]
+    },
+    {
+      words: [
+        { word: 'COOK',         az: 'aşpaz' },
+        { word: 'BONE',         az: 'sümük' },
+        { word: 'KNEE',         az: 'diz' },
+        { word: 'NECK',         az: 'boyun' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DOCTOR',       az: 'həkim' },
+        { word: 'TOE',          az: 'ayaq barmağı' },
+        { word: 'EAR',          az: 'qulaq' },
+        { word: 'DOCTOR',       az: 'həkim' },
+      ]
+    },
+  ]
+},
+    'b0_g1': { id: 'a2_b0_g1', title: 'Game 2', phases: [
+    {
+      words: [
+        { word: 'CHEF',         az: 'aşpaz' },
+        { word: 'FACE',         az: 'üz' },
+        { word: 'HAND',         az: 'əl' },
+        { word: 'HEAD',         az: 'baş' },
+      ]
+    },
+    {
+      words: [
+        { word: 'TEACHER',      az: 'müəllim' },
+        { word: 'ATHLETE',      az: 'atlet' },
+        { word: 'HEART',        az: 'ürək' },
+        { word: 'HEALTH',       az: 'sağlamlıq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BRAIN',        az: 'beyin' },
+        { word: 'SKIN',         az: 'dəri' },
+        { word: 'BACK',         az: 'arxa' },
+        { word: 'SICK',         az: 'xəstə' },     
+      ]
+    },
+  ]
+},
+    'b0_g2': { id: 'a2_b0_g2', title: 'Game 3', phases: [
+    {
+      words: [
+        { word: 'ARCHITECT',    az: 'memar' },
+        { word: 'ARTIST',       az: 'sənətkar' },
+        { word: 'ACTRESS',      az: 'aktrisa' },
+        { word: 'CHEST',        az: 'sinə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'LAWYER',       az: 'hüquqşünas' },
+        { word: 'WRITER',       az: 'yazıçı' },
+        { word: 'WAITER',       az: 'ofisiant' },
+        { word: 'EYE',          az: 'göz' },
+      ]
+    },
+    {
+      words: [
+             { word: 'DESIGNER',     az: 'dizayner' },
+        { word: 'DRIVER',       az: 'sürücü' },
+        { word: 'NURSE',        az: 'tibb bacısı' },
+        { word: 'DISEASE',      az: 'xəstəlik' },
+        { word: 'DRUG',         az: 'dərman' },
+        { word: 'VIRUS',        az: 'virus' },
+      ]
+    },
+  ]
+},
+    'b1_g0': { id: 'a2_b1_g0', title: 'Game 4', phases: [
+    {
+      words: [
+        { word: 'BEAR',         az: 'ayı' },
+        { word: 'RAT',          az: 'siçovul' },
+        { word: 'BEE',          az: 'arı' },
+        { word: 'TREE',         az: 'ağac' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PAN',          az: 'tava' },
+        { word: 'CAN',          az: 'konserv qutusu' },
+        { word: 'ANT',          az: 'qarışqa' },
+        { word: 'CAT',          az: 'pişik' },
+      ]
+    },
+    {
+      words: [
+             { word: 'GRAPE',        az: 'üzüm' },
+        { word: 'PEAR',         az: 'armud' },
+        { word: 'EGG',          az: 'yumurta' },
+        { word: 'JAR',          az: 'banka' },
+      ]
+    },
+  ]
+},
+    'b1_g1': { id: 'a2_b1_g1', title: 'Game 5', phases: [
+    {
+      words: [
+        { word: 'TASTE',        az: 'dad' },
+        { word: 'BREAD',        az: 'çörək' },
+        { word: 'DESERT',       az: 'səhra' },
+        { word: 'STAR',         az: 'ulduz' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PLATE',        az: 'boşqab' },
+        { word: 'BOTTLE',       az: 'şüşə' },
+        { word: 'POT',          az: 'qazan' },
+        { word: 'TABLE',        az: 'masa' },
+      ]
+    },
+    {
+      words: [
+             { word: 'BEEF',         az: 'mal əti' },
+        { word: 'BOWL',         az: 'dərin boşqab' },
+        { word: 'WOLF',         az: 'canavar' },
+        { word: 'WOOD',         az: 'meşə' },
+      ]
+    },
+  ]
+},
+    'b1_g2': { id: 'a2_b1_g2', title: 'Game 6', phases: [
+    {
+      words: [
+        { word: 'MEAT',         az: 'ət' },
+        { word: 'MOON',         az: 'ay' },
+        { word: 'OCEAN',        az: 'okean' },
+        { word: 'COAST',        az: 'sahil' },
+        { word: 'STONE',        az: 'daş' },
+      ]
+    },
+    {
+      words: [
+        { word: 'GLASS',        az: 'stəkan' },
+        { word: 'LID',          az: 'qapaq' },
+        { word: 'DOG',          az: 'it' },
+        { word: 'LION',         az: 'aslan' },
+        { word: 'ISLAND',       az: 'ada' },
+      ]
+    },
+    {
+      words: [
+        { word: 'FROG',         az: 'qurbağa' },
+        { word: 'GOAT',         az: 'keçi' },
+        { word: 'HORSE',        az: 'at' },
+        { word: 'FOREST',       az: 'meşə' },
+        { word: 'GRASS',        az: 'ot' },
+        { word: 'EARTH',        az: 'yer kürəsi' },
+      ]
+    },
+  ]
+},
+
+    
+    'b2_g0': { id: 'a2_b2_g0', title: 'Game 7',phases: [
+    {
+      words: [
+        { word: 'APP',          az: 'tətbiq' },
+        { word: 'POSTER',       az: 'afişa' },
+        { word: 'REPORT',       az: 'hesabat' },
+        { word: 'PRESS',        az: 'mətbuat' },
+        { word: 'TEST',         az: 'test' },
+      ]
+    },
+    {
+      words: [
+        { word: 'TABLET',       az: 'planşet' },
+        { word: 'WEB',          az: 'veb' },
+        { word: 'LAB',          az: 'laboratoriya' },
+        { word: 'DATA',         az: 'məlumat' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CODE',         az: 'kod' },
+        { word: 'DEVICE',       az: 'cihaz' },
+        { word: 'USER',         az: 'istifadəçi' },
+        { word: 'RECORD',       az: 'yazmaq / lövhə' },
+        { word: 'SERIES',       az: 'serial' },
+        { word: 'COURSE',       az: 'kurs' },
+        { word: 'DISCOVER',     az: 'kəşf etmək' },     
+      ]
+    },
+  ]
+},
+    'b2_g1': { id: 'a2_b2_g1', title: 'Game 8', phases: [
+    {
+      words: [
+        { word: 'SCREEN',       az: 'ekran' },
+        { word: 'CHANNEL',      az: 'kanal' },
+        { word: 'SCHOOL',       az: 'məktəb' },
+        { word: 'LESSON',       az: 'dərs' },
+        { word: 'CLASS',        az: 'sinif' },
+        { word: 'RESEARCH',     az: 'tədqiqat' },
+        { word: 'RESEARCHER',   az: 'tədqiqatçı' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DIGITAL',      az: 'rəqəmsal' },
+        { word: 'EMAIL',        az: 'elektron poçt' },
+        { word: 'INTERNET',     az: 'internet' },
+        { word: 'MEDIA',        az: 'media' },
+        { word: 'DRAMA',        az: 'dram' },
+        { word: 'LEARNING',     az: 'öyrənmə' },
+        { word: 'DEGREE',       az: 'diplom' },
+      ]
+    },
+    {
+      words: [
+         { word: 'LAPTOP',       az: 'noutbuk' },
+        { word: 'ONLINE',       az: 'onlayn' },
+        { word: 'NOVEL',        az: 'roman' },
+        { word: 'EXPLANATION',  az: 'izahat' },
+        { word: 'INVENTION',    az: 'ixtira' },
+        { word: 'INVENT',       az: 'ixtira etmək' },    
+      ]
+    },
+  ]
+},
+    'b2_g2': { id: 'a2_b2_g2', title: 'Game 9', phases: [
+    {
+      words: [
+        { word: 'ESSAY',        az: 'inşa' },
+        { word: 'MATHS',        az: 'riyaziyyat' },
+        { word: 'EXAM',         az: 'imtahan' },
+        { word: 'FACT',         az: 'fakt' },
+        { word: 'SYSTEM',       az: 'sistem' },
+      ]
+    },
+    {
+      words: [
+        { word: 'LECTURE',      az: 'mühazirə' },
+        { word: 'RESULT',       az: 'nəticə' },
+        { word: 'PROCESS',      az: 'proses' },
+        { word: 'EXPERT',       az: 'mütəxəssis' },
+      ]
+    },
+    {
+      words: [
+         { word: 'NETWORK',      az: 'şəbəkə' },
+        { word: 'NEWS',         az: 'xəbər' },
+        { word: 'SHOW',         az: 'şou' },
+        { word: 'HOMEWORK',     az: 'ev tapşırığı' },    
+      ]
+    },
+  ]
+},
+
+    
+    'b3_g0': { id: 'a2_b3_g0', title: 'Game 10', phases: [
+    {
+      words: [
+        { word: 'RACE',         az: 'yarış' },
+        { word: 'ART',          az: 'sənət' },
+        { word: 'CRAFT',        az: 'əl işi' },
+      ]
+    },
+    {
+      words: [
+        { word: 'TEAM',         az: 'komanda' },
+        { word: 'MATCH',        az: 'oyun' },
+        { word: 'ATHLETE',      az: 'atlet' },
+        { word: 'CAMP',         az: 'düşərgə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'RUN',          az: 'qaçmaq' },
+        { word: 'RUNNING',      az: 'qaçış' },
+        { word: 'WINNER',       az: 'qalib' },
+        { word: 'TRAINING',     az: 'məşq' },
+        { word: 'DRAWING',      az: 'çəkmə' },
+        { word: 'READING',      az: 'oxumaq' },
+        { word: 'WRITING',      az: 'yazmaq' },
+        { word: 'GARDEN',       az: 'bağ' },     
+      ]
+    },
+  ]
+},
+
+
+    
+    'b4_g0': { id: 'a2_b4_g0', title: 'Game 11', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+     
+      ]
+    },
+  ]
+},
+    'b4_g1': { id: 'a2_b4_g1', title: 'Game 12', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+     
+      ]
+    },
+  ]
+},
+    'b4_g2': { id: 'a2_b4_g2', title: 'Game 13', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+     
+      ]
+    },
+  ]
+},
     'b5_g0': { id: 'a2_b5_g0', title: 'Game 14', words: [] },
     'b5_g1': { id: 'a2_b5_g1', title: 'Game 15', words: [] },
     'b5_g2': { id: 'a2_b5_g2', title: 'Game 16', words: [] },
