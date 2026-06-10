@@ -517,15 +517,23 @@ const hideDelay = 3000;
     setTimeout(() => _renderCells(), 0);
   }
 
-  function _closeOverlay() {
-    const ov = document.getElementById(OID);
-    if (ov) { ov.style.display = 'none'; ov.innerHTML = ''; }
-    state = null;
-    if (typeof renderCefrPath === 'function') {
-      try { renderCefrPath(); } catch(e) {}
-    }
-  }
+ function _closeOverlay() {
+  const ov = document.getElementById(OID);
+  
+  // Oyun tam bitibsə ulduz əlavə et
+  const wasLastPhase = state && state._pendingStarReward;
+  const savedLevelId = state?.levelId;
+  const savedGameKey = state?.gameKey;
 
+  if (ov) { ov.style.display = 'none'; ov.innerHTML = ''; }
+  state = null;
+
+  if (wasLastPhase) {
+    setTimeout(() => {
+      _addStarToGameNode(savedLevelId, savedGameKey);
+    }, 300);
+  }
+}
   function _buildHTML() {
     const C          = _colors();
     const dark       = _isDark();
@@ -1137,18 +1145,15 @@ function _onPhaseComplete() {
   const progressKey = `${state.levelId}_game_${state.gameKey}`;
   localStorage.setItem(progressKey, String(nextPhase));
 
+  if (isLast) {
+    state._pendingStarReward = true;
+  }
+
   if (typeof markCompleted === 'function' && typeof LEVELS !== 'undefined') {
     const lvlIdx = LEVELS.findIndex(l => l.id === state.levelId);
     if (lvlIdx !== -1 && typeof _refreshOpenCard === 'function') {
       _refreshOpenCard(lvlIdx);
     }
-  }
-
-  if (isLast) {
-    // Kart yenilənsin, sonra ulduz ikonunu node üstünə əlavə et
-    setTimeout(() => {
-      _addStarToGameNode(state.levelId, state.gameKey);
-    }, 400);
   }
 
   _showPhaseComplete(isLast, nextPhase);
