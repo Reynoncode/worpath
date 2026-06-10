@@ -2061,31 +2061,29 @@ function getStatus(levelIdx, quizIdx) {
 function markCompleted(levelIdx, quizIdx) {
   const lvl = LEVELS[levelIdx];
   const cur = progress[lvl.id][quizIdx];
+
   if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
     progress[lvl.id][quizIdx] = 'level_done';
     saveProgress();
     if (window.AuthManager) AuthManager.syncStats();
+    _refreshOpenCard(levelIdx);
     return;
   }
   if (cur === 'phase2_completed') {
     progress[lvl.id][quizIdx] = 'phase3_unlocked';
     saveProgress();
     if (window.AuthManager) AuthManager.syncStats();
+    _refreshOpenCard(levelIdx);
     return;
   }
   if (cur === 'phase3_unlocked') {
     progress[lvl.id][quizIdx] = 'level_done';
     saveProgress();
     if (window.AuthManager) AuthManager.syncStats();
+    _refreshOpenCard(levelIdx);
     return;
   }
-  
-  if (isExamItem(lvl.quizzes[quizIdx], lvl.id, quizIdx)) {
-  progress[lvl.id][quizIdx] = 'level_done';
-  saveProgress();
-  if (window.AuthManager) AuthManager.syncStats();
-  return;
-}
+
   const wasCompleted = ['completed','phase2_completed','phase3_unlocked','level_done'].includes(cur);
   progress[lvl.id][quizIdx] = 'completed';
 
@@ -2117,16 +2115,71 @@ function markCompleted(levelIdx, quizIdx) {
 
   saveProgress();
   if (window.AuthManager) AuthManager.syncStats();
+  _refreshOpenCard(levelIdx);
 }
 
-function completedCount() {
-  let n = 0;
-  LEVELS.forEach((lvl) => {
-    (progress[lvl.id] || []).forEach((s) => { if (s === 'completed') n++; });
-  });
-  return n;
-}
+// Açıq kartın path hissəsini yenilə
+function _refreshOpenCard(levelIdx) {
+  const lvl = LEVELS[levelIdx];
+  if (!lvl) return;
 
+  // Overlay açıqdırsa onu yenilə
+  const overlay = document.getElementById('level-fullscreen-overlay');
+  if (overlay) {
+    const scrollBody = overlay.querySelector('div[style*="overflow-y"]');
+    if (scrollBody) {
+      const pathWrap = scrollBody.querySelector('div');
+      if (pathWrap) {
+        pathWrap.innerHTML = renderQuizPath(lvl, levelIdx);
+        // Yeni node-lara click əlavə et
+        pathWrap.querySelectorAll('.path-node').forEach((node) => {
+          node.addEventListener('click', () => {
+            const qi     = parseInt(node.dataset.quizIdx, 10);
+            const status = node.dataset.status;
+            if (status === 'locked') { showToast('Əvvəlki testi tam bitir 🔒'); return; }
+            const item = lvl.quizzes[qi];
+            if (!item) { showToast('Bu test hələ hazır deyil ✏️'); return; }
+            if (Array.isArray(item) && item.length < 2) { showToast('Bu test hələ hazır deyil ✏️'); return; }
+            startQuiz(levelIdx, qi);
+          });
+        });
+      }
+    }
+    // Header-dəki tamamlanma sayını yenilə
+    const meta = overlay.querySelector('.level-meta');
+    if (meta) {
+      const done  = progress[lvl.id].filter(s => s === 'completed').length;
+      const total = lvl.quizzes.length;
+      meta.textContent = `${done} / ${total} tamamlandı`;
+    }
+    return;
+  }
+
+  // Overlay yoxdursa normal card-ı yenilə
+  const card = document.querySelector(`.level-card[data-level="${lvl.id}"]`);
+  if (!card || !card.classList.contains('open')) return;
+  const body = card.querySelector('.level-body');
+  if (body) {
+    body.innerHTML = renderQuizPath(lvl, levelIdx);
+    body.querySelectorAll('.path-node').forEach((node) => {
+      node.addEventListener('click', () => {
+        const qi     = parseInt(node.dataset.quizIdx, 10);
+        const status = node.dataset.status;
+        if (status === 'locked') { showToast('Əvvəlki testi tam bitir 🔒'); return; }
+        const item = lvl.quizzes[qi];
+        if (!item) { showToast('Bu test hələ hazır deyil ✏️'); return; }
+        startQuiz(levelIdx, qi);
+      });
+    });
+  }
+  // Meta yenilə
+  const meta = card.querySelector('.level-meta');
+  if (meta) {
+    const done  = progress[lvl.id].filter(s => s === 'completed').length;
+    const total = lvl.quizzes.length;
+    meta.textContent = `${done} / ${total} tamamlandı`;
+  }
+}
 // ── DOM refs ──────────────────────────────────────────────
 const $ = (id) => document.getElementById(id);
 
