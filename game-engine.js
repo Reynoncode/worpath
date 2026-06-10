@@ -474,8 +474,8 @@ window.WordGame = (function () {
       toast.style.transform = 'translateX(-50%) translateY(0)';
     });
 
-    // FIX 5: Hərfləri tək-tək doldur (0.1s aralıqla)
-    const letters = word.split('');
+     // FIX 5: Hərfləri tək-tək doldur (0.1s aralıqla)
+    const letters = text.split('');
     letters.forEach((letter, i) => {
       setTimeout(() => {
         const lSpan = document.createElement('span');
@@ -660,7 +660,7 @@ window.WordGame = (function () {
       /* FIX 3 & color: Chips — tapılmamış mavi, tapılmış yaşıl */
       .wg-chip {
         display:inline-flex; align-items:center; gap:5px;
-        padding:5px 12px 5px 9px; border-radius:20px;
+        padding:5px 16px 5px 13px; border-radius:20px;
         font-size:13px; font-weight:600;
         background:rgba(59,130,246,0.12);
         color:#3b82f6;
@@ -702,12 +702,12 @@ window.WordGame = (function () {
       .wg-tplaceholder { font-size:14px; color:${C.textSub}; font-style:italic; }
 
       .wg-shake { animation:wgShake .35s ease both; }
-      @keyframes wgShake {
-        0%,100% { transform:translateX(0); }
-        20%     { transform:translateX(-7px); }
-        40%     { transform:translateX(7px); }
-        60%     { transform:translateX(-4px); }
-        80%     { transform:translateX(4px); }
+     @keyframes wgShake {
+        0%,100% { transform:translateX(0) translateY(0); }
+        20%     { transform:translateX(-5px) translateY(0); }
+        40%     { transform:translateX(5px) translateY(0); }
+        60%     { transform:translateX(-3px) translateY(0); }
+        80%     { transform:translateX(3px) translateY(0); }
       }
       .wg-correct-flash { animation:wgFlash .3s ease; }
       @keyframes wgFlash {
@@ -790,7 +790,8 @@ window.WordGame = (function () {
       /* FIX 7: Phase complete düymə hündürlüyü 2x (əvvəl padding:16px, indi padding:32px 16px) */
       .wg-pc-btn {
         width:100%; max-width:280px;
-        padding:32px 16px;
+        padding:20px 16px;
+        min-height:64px;
         border-radius:16px; font-size:15px; font-weight:700;
         cursor:pointer; border:none;
         transition:transform .1s, box-shadow .1s;
