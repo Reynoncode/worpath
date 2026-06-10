@@ -70,15 +70,18 @@ window.WordGame = (function () {
     }
 
     const trimmed = _trimGrid(grid, gridSize);
+
+    // FIX: _trimGrid indi rowMap/colMap qaytarır — placed koordinatları
+    // compression-dan sonra düzgün translate edilir
     return {
       grid: trimmed.grid,
       placedWords: placed.map(p => ({
         ...p,
-        row:   p.row - trimmed.minR,
-        col:   p.col - trimmed.minC,
+        row:   trimmed.rowMap[p.row] ?? p.row - trimmed.minR,
+        col:   trimmed.colMap[p.col] ?? p.col - trimmed.minC,
         cells: p.cells.map(cell => ({
-          r: cell.r - trimmed.minR,
-          c: cell.c - trimmed.minC,
+          r: trimmed.rowMap[cell.r] ?? cell.r - trimmed.minR,
+          c: trimmed.colMap[cell.c] ?? cell.c - trimmed.minC,
         })),
       })),
       rows: trimmed.rows,
@@ -154,9 +157,8 @@ window.WordGame = (function () {
     return null;
   }
 
-  // FIX 1: _trimGrid — ayrı qruplar arasında məsafəni 1 bloğa endirmək
-  // Artıq padding yalnız 1 hücrə (əvvəlki 1 idi, amma boş sıraları da saxlayırdı)
-  // İndi bütün tamamilə boş sıra/sütunları sıxışdırırıq, yalnız 1 hücrəlik kənar buraxırıq
+  // FIX: _trimGrid indi rowMap və colMap da qaytarır.
+  // Köhnə orijinal koordinat → yeni compressed koordinat mapping-i.
   function _trimGrid(grid, size) {
     let minR = size, maxR = 0, minC = size, maxC = 0;
     for (let r = 0; r < size; r++) {
@@ -167,56 +169,61 @@ window.WordGame = (function () {
         }
       }
     }
-    if (minR > maxR) return { grid: [[]], minR: 0, minC: 0, rows: 1, cols: 1 };
+    if (minR > maxR) return { grid: [[]], minR: 0, minC: 0, rows: 1, cols: 1, rowMap: {}, colMap: {} };
 
-    // Yalnız 1 hücrəlik kənar (əvvəl 1 idi amma boş sıralar arasında gap çox olurdu)
     minR = Math.max(0, minR - 1); minC = Math.max(0, minC - 1);
     maxR = Math.min(size - 1, maxR + 1); maxC = Math.min(size - 1, maxC + 1);
 
-    // Ayrı qruplar arasındaki boş sıraları tap və sıxışdır (max 1 boş sıra burax)
     const rawRows = maxR - minR + 1;
     const rawCols = maxC - minC + 1;
 
-    // Müvəqqəti grid yarat
     let tempGrid = Array.from({ length: rawRows }, (_, r) =>
       Array.from({ length: rawCols }, (_, c) => grid[minR + r]?.[minC + c] || null)
     );
 
-    // Boş sıraları sıxışdır: ardıcıl 2+ boş sıradan yalnız 1-ni saxla
-    const compressedRows = [];
+    // Boş sıraları sıxışdır; hər orijinal sıranın yeni indeksini yadda saxla
+    const keptRowsOrig = [];
     let emptyCount = 0;
     for (let r = 0; r < rawRows; r++) {
       const isEmpty = tempGrid[r].every(cell => cell === null);
       if (isEmpty) {
         emptyCount++;
-        if (emptyCount <= 1) compressedRows.push(tempGrid[r]);
+        if (emptyCount <= 1) keptRowsOrig.push(minR + r);
       } else {
         emptyCount = 0;
-        compressedRows.push(tempGrid[r]);
+        keptRowsOrig.push(minR + r);
       }
     }
 
-    // Boş sütunları sıxışdır: ardıcıl 2+ boş sütundan yalnız 1-ni saxla
-    const newRows = compressedRows.length;
-    const newCols = newRows > 0 ? compressedRows[0].length : 0;
-    const compressedCols = [];
+    // Boş sütunları sıxışdır; hər orijinal sütunun yeni indeksini yadda saxla
+    const keptColsOrig = [];
     let emptyColCount = 0;
-    for (let c = 0; c < newCols; c++) {
-      const isEmpty = compressedRows.every(row => row[c] === null);
+    for (let c = 0; c < rawCols; c++) {
+      const isEmpty = keptRowsOrig.every(origR => !grid[origR]?.[minC + c]);
       if (isEmpty) {
         emptyColCount++;
-        if (emptyColCount <= 1) compressedCols.push(c);
+        if (emptyColCount <= 1) keptColsOrig.push(minC + c);
       } else {
         emptyColCount = 0;
-        compressedCols.push(c);
+        keptColsOrig.push(minC + c);
       }
     }
 
-    const finalGrid = compressedRows.map(row => compressedCols.map(c => row[c]));
+    const finalGrid = keptRowsOrig.map(origR =>
+      keptColsOrig.map(origC => grid[origR]?.[origC] || null)
+    );
     const finalRows = finalGrid.length;
     const finalCols = finalGrid[0]?.length || 0;
 
-    return { grid: finalGrid, minR, minC, rows: finalRows, cols: finalCols };
+    // rowMap: orijinal grid r → yeni compressed r
+    const rowMap = {};
+    keptRowsOrig.forEach((origR, newIdx) => { rowMap[origR] = newIdx; });
+
+    // colMap: orijinal grid c → yeni compressed c
+    const colMap = {};
+    keptColsOrig.forEach((origC, newIdx) => { colMap[origC] = newIdx; });
+
+    return { grid: finalGrid, minR, minC, rows: finalRows, cols: finalCols, rowMap, colMap };
   }
 
   // ══════════════════════════════════════════════════════════
@@ -847,7 +854,7 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
           div.dataset.r      = r;
           div.dataset.c      = c;
           div.dataset.letter = cell.letter;
-          div.textContent    = '';
+          // Orijinal davranış: xanalar boş qalır, söz tapıldıqda _animateWord açır
         }
         board.appendChild(div);
       }
