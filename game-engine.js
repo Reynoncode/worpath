@@ -1,9 +1,6 @@
 // ============================================================
 //  WORDPATH — GAME ENGINE  v3
 //  game-engine.js
-//
-//  Yüklənmə sırası:
-//    game-data.js  →  game-engine.js  →  app.js
 // ============================================================
 
 window.WordGame = (function () {
@@ -157,6 +154,9 @@ window.WordGame = (function () {
     return null;
   }
 
+  // FIX 1: _trimGrid — ayrı qruplar arasında məsafəni 1 bloğa endirmək
+  // Artıq padding yalnız 1 hücrə (əvvəlki 1 idi, amma boş sıraları da saxlayırdı)
+  // İndi bütün tamamilə boş sıra/sütunları sıxışdırırıq, yalnız 1 hücrəlik kənar buraxırıq
   function _trimGrid(grid, size) {
     let minR = size, maxR = 0, minC = size, maxC = 0;
     for (let r = 0; r < size; r++) {
@@ -169,15 +169,54 @@ window.WordGame = (function () {
     }
     if (minR > maxR) return { grid: [[]], minR: 0, minC: 0, rows: 1, cols: 1 };
 
+    // Yalnız 1 hücrəlik kənar (əvvəl 1 idi amma boş sıralar arasında gap çox olurdu)
     minR = Math.max(0, minR - 1); minC = Math.max(0, minC - 1);
     maxR = Math.min(size - 1, maxR + 1); maxC = Math.min(size - 1, maxC + 1);
 
-    const rows = maxR - minR + 1;
-    const cols = maxC - minC + 1;
-    const newGrid = Array.from({ length: rows }, (_, r) =>
-      Array.from({ length: cols }, (_, c) => grid[minR + r]?.[minC + c] || null)
+    // Ayrı qruplar arasındaki boş sıraları tap və sıxışdır (max 1 boş sıra burax)
+    const rawRows = maxR - minR + 1;
+    const rawCols = maxC - minC + 1;
+
+    // Müvəqqəti grid yarat
+    let tempGrid = Array.from({ length: rawRows }, (_, r) =>
+      Array.from({ length: rawCols }, (_, c) => grid[minR + r]?.[minC + c] || null)
     );
-    return { grid: newGrid, minR, minC, rows, cols };
+
+    // Boş sıraları sıxışdır: ardıcıl 2+ boş sıradan yalnız 1-ni saxla
+    const compressedRows = [];
+    let emptyCount = 0;
+    for (let r = 0; r < rawRows; r++) {
+      const isEmpty = tempGrid[r].every(cell => cell === null);
+      if (isEmpty) {
+        emptyCount++;
+        if (emptyCount <= 1) compressedRows.push(tempGrid[r]);
+      } else {
+        emptyCount = 0;
+        compressedRows.push(tempGrid[r]);
+      }
+    }
+
+    // Boş sütunları sıxışdır: ardıcıl 2+ boş sütundan yalnız 1-ni saxla
+    const newRows = compressedRows.length;
+    const newCols = newRows > 0 ? compressedRows[0].length : 0;
+    const compressedCols = [];
+    let emptyColCount = 0;
+    for (let c = 0; c < newCols; c++) {
+      const isEmpty = compressedRows.every(row => row[c] === null);
+      if (isEmpty) {
+        emptyColCount++;
+        if (emptyColCount <= 1) compressedCols.push(c);
+      } else {
+        emptyColCount = 0;
+        compressedCols.push(c);
+      }
+    }
+
+    const finalGrid = compressedRows.map(row => compressedCols.map(c => row[c]));
+    const finalRows = finalGrid.length;
+    const finalCols = finalGrid[0]?.length || 0;
+
+    return { grid: finalGrid, minR, minC, rows: finalRows, cols: finalCols };
   }
 
   // ══════════════════════════════════════════════════════════
@@ -254,19 +293,25 @@ window.WordGame = (function () {
     return document.documentElement.getAttribute('data-theme') === 'dark';
   }
 
-  // Accent rənginə görə tünd arxa plan rəngi hesabla
   function _darkenAccent(hex, dark) {
-    // hex → rgb
     const r = parseInt(hex.slice(1,3),16);
     const g = parseInt(hex.slice(3,5),16);
     const b = parseInt(hex.slice(5,7),16);
     if (dark) {
-      // dark mode: tünd mavi fonun açıq tonu + accent əsasında qarışıq
-      return `rgba(${Math.round(r*0.18)},${Math.round(g*0.18)},${Math.round(b*0.22)},1)`;
+      // FIX 8: dark modeda level rənginin daha tünd versiyası (crossword fon tonu ilə uyumlu)
+      return `rgba(${Math.round(r*0.22)},${Math.round(g*0.22)},${Math.round(b*0.26)},1)`;
     } else {
-      // light mode: accent-in çox solğun tonu
       return `rgba(${Math.round(r*0.82 + 255*0.18)},${Math.round(g*0.82 + 255*0.18)},${Math.round(b*0.82 + 255*0.18)},1)`;
     }
+  }
+
+  // FIX 8: Dark modeda çevrə border/glow rəngi üçün level rənginin tünd tonu
+  function _darkenAccentBorder(hex) {
+    const r = parseInt(hex.slice(1,3),16);
+    const g = parseInt(hex.slice(3,5),16);
+    const b = parseInt(hex.slice(5,7),16);
+    // ~60% qaralıq
+    return `rgba(${Math.round(r*0.6)},${Math.round(g*0.6)},${Math.round(b*0.6)},1)`;
   }
 
   function _colors() {
@@ -284,12 +329,12 @@ window.WordGame = (function () {
       textSub:  dark ? '#7a8fa8' : '#6b7a90',
       border:   dark ? '#1e3048' : '#e0e5f0',
       inputBg:  dark ? '#1e3048' : '#eef1f8',
-      selBg:    dark ? '#c8d4e8' : '#ffffff',   // seçiləndə düymə arxa planı
+      selBg:    dark ? '#c8d4e8' : '#ffffff',
     };
   }
 
   // ══════════════════════════════════════════════════════════
-  //  5. WEB AUDIO — SƏS EFFEKTLƏRİ
+  //  5. WEB AUDIO
   // ══════════════════════════════════════════════════════════
 
   let _audioCtx = null;
@@ -346,13 +391,14 @@ window.WordGame = (function () {
   }
 
   // ══════════════════════════════════════════════════════════
-  //  6. SÖZ TAPMAQ BİLDİRİŞİ (TOAST)
+  //  6. TOAST — FIX: 2x böyük, parlama, 3s göstər, hərflər tək-tək dolar, 0.3s yox olur
   // ══════════════════════════════════════════════════════════
 
-  function _showWordToast(wordLen) {
+  function _showWordToast(word) {
+    const wordLen = word.length;
     // Mövcud toast varsa sil
     const old = document.getElementById('wg-toast');
-    if (old) old.remove();
+    if (old) { clearTimeout(old._hideTimer); old.remove(); }
 
     let emoji, text, color;
     if (wordLen <= 4) {
@@ -372,39 +418,89 @@ window.WordGame = (function () {
 
     const toast = document.createElement('div');
     toast.id = 'wg-toast';
+    // FIX 6: 10px aşağı (top:68px əvvəlki 58px idi)
+    // FIX 4: 2x böyük (padding, font-size artırıldı)
     toast.style.cssText = `
       position:absolute;
-      top:58px; left:50%; transform:translateX(-50%) translateY(-8px);
+      top:68px; left:50%; transform:translateX(-50%) translateY(-12px);
       z-index:10050;
       background:${toastBg};
-      border:1.5px solid ${toastBd};
-      border-left:4px solid ${color};
-      border-radius:14px;
-      padding:10px 18px;
-      display:flex; align-items:center; gap:10px;
-      box-shadow:0 6px 24px rgba(0,0,0,0.22);
-      font-weight:700; font-size:15px;
+      border:2px solid ${toastBd};
+      border-left:5px solid ${color};
+      border-radius:18px;
+      padding:16px 28px;
+      display:flex; align-items:center; gap:14px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.28);
+      font-weight:800; font-size:22px;
       color:${toastText};
       white-space:nowrap;
       pointer-events:none;
       opacity:0;
-      transition:opacity .18s ease, transform .18s ease;
+      transition:opacity .2s ease, transform .2s ease;
+      min-width:160px; justify-content:center;
     `;
-    toast.innerHTML = `<span style="font-size:22px">${emoji}</span><span>${text}</span>`;
+
+    // FIX 5: Hərflər tək-tək dolar — əvvəlcə emoji+text span qoyuruq, sonra hərfləri animasiya ilə doldururuq
+    const emojiSpan = document.createElement('span');
+    emojiSpan.style.cssText = 'font-size:32px; line-height:1;';
+    emojiSpan.textContent = emoji;
+
+    const wordSpan = document.createElement('span');
+    wordSpan.style.cssText = `
+      display:inline-flex; gap:4px; align-items:center;
+    `;
+
+    // Söz hərflərini tək-tək əlavə edəcək konteyner
+    const lettersContainer = document.createElement('span');
+    lettersContainer.style.cssText = 'display:inline-flex; gap:3px; align-items:center;';
+
+    // Boşluq + text
+    const textSpan = document.createElement('span');
+    textSpan.style.cssText = 'margin-left:6px; font-size:22px; font-weight:800;';
+    textSpan.textContent = text;
+
+    wordSpan.appendChild(lettersContainer);
+    wordSpan.appendChild(textSpan);
+
+    toast.appendChild(emojiSpan);
+    toast.appendChild(wordSpan);
 
     const ov = document.getElementById('wg-overlay');
     if (ov) ov.appendChild(toast);
 
-    // Animasiya: gəl → gözlə → get
+    // Animasiya: gəl
     requestAnimationFrame(() => {
       toast.style.opacity = '1';
       toast.style.transform = 'translateX(-50%) translateY(0)';
     });
-    setTimeout(() => {
+
+    // FIX 5: Hərfləri tək-tək doldur (0.1s aralıqla)
+    const letters = word.split('');
+    letters.forEach((letter, i) => {
+      setTimeout(() => {
+        const lSpan = document.createElement('span');
+        lSpan.style.cssText = `
+          display:inline-flex; align-items:center; justify-content:center;
+          width:28px; height:28px; border-radius:7px;
+          background:${color}22; border:1.5px solid ${color}88;
+          color:${color}; font-size:15px; font-weight:900;
+          animation:wgLetterPop .15s cubic-bezier(.34,1.56,.64,1) both;
+        `;
+        lSpan.textContent = letter;
+        lettersContainer.appendChild(lSpan);
+      }, i * 100);
+    });
+
+    // FIX 5: 3 saniyə gözlə sonra 0.3s-də yox ol
+    const totalLetterTime = letters.length * 100 + 200;
+    const hideDelay = Math.max(3000, totalLetterTime);
+
+    toast._hideTimer = setTimeout(() => {
       toast.style.opacity = '0';
-      toast.style.transform = 'translateX(-50%) translateY(-8px)';
-      setTimeout(() => toast.remove(), 200);
-    }, 1200);
+      toast.style.transform = 'translateX(-50%) translateY(-12px)';
+      toast.style.transition = 'opacity .3s ease, transform .3s ease';
+      setTimeout(() => toast.remove(), 320);
+    }, hideDelay);
   }
 
   // ══════════════════════════════════════════════════════════
@@ -447,27 +543,38 @@ window.WordGame = (function () {
   function _buildHTML() {
     const C          = _colors();
     const dark       = _isDark();
+    const accent     = _getLvlColor();
     const phaseLabel = `${state.phaseIdx + 1} / ${state.totalPhases}`;
     const title      = state.gameData.title || 'Word Game';
 
+    // FIX 3 & FIX new color: Hint chip rəngi — tapılmamış: mavi, tapılmış: yaşıl
     const cluesHTML = state.placedWords.map(pw => `
       <span class="wg-chip" data-word="${pw.word}">
         <span class="wg-chip-dot"></span>${pw.az}
       </span>`).join('');
 
-    // Tabler Icons CDN-dən SVG ikonlar
     const iconBack = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>`;
 
-    // Hint: ampul — sarı tonlarda
     const iconHint = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.3 6l-.7 2H9l-.7-2A7 7 0 0 1 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/><path d="M9.5 17.5h5"/></svg>`;
 
-    // Shuffle: mavi-ağ tonlar
-    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
+    // FIX 2: Shuffle SVG — hər iki ox tam görünür (viewBox genişləndirildi, stroke-width azaldıldı)
+    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
+
+    // FIX 8: dark modeda wheel düymə rəngləri — level accent-in tünd versiyası
+    const wheelBtnBg     = dark ? _darkenAccent(accent, true)       : _darkenAccent(accent, false);
+    const wheelBtnBorder = dark ? _darkenAccentBorder(accent)        : accent;
+    const wheelGlow      = dark ? `${accent}33`                      : `${accent}44`;
 
     return `
     <style>
       #${OID} { background:${C.bg}; position:relative; }
       #${OID} * { box-sizing:border-box; margin:0; padding:0; }
+
+      /* Toast hərfi animasiyası */
+      @keyframes wgLetterPop {
+        from { transform:scale(.5) translateY(6px); opacity:0; }
+        to   { transform:scale(1) translateY(0);    opacity:1; }
+      }
 
       /* ── Header ── */
       #wg-hdr {
@@ -489,7 +596,6 @@ window.WordGame = (function () {
       #wg-hdr-title { font-size:15px; font-weight:700; color:${C.textMain}; line-height:1.2; }
       #wg-hdr-phase { font-size:11px; font-weight:600; color:${C.accent}; letter-spacing:.4px; margin-top:2px; }
 
-      /* Phase dots */
       #wg-phase-dots { display:flex; gap:5px; align-items:center; flex-shrink:0; }
       .wg-dot { width:8px; height:8px; border-radius:50%; background:${C.border}; transition:background .3s; }
       .wg-dot.active { background:${C.accent}; }
@@ -522,7 +628,7 @@ window.WordGame = (function () {
         100% { transform:scale(1);  opacity:1; }
       }
 
-      /* ── Hint row (typed word + hint btn) ── */
+      /* ── Hint row ── */
       #wg-hint-row {
         display:flex; align-items:center; gap:8px;
         padding:4px 16px; min-height:46px;
@@ -538,6 +644,7 @@ window.WordGame = (function () {
       }
       #wg-hint-btn:active { background:${dark ? 'rgba(245,200,66,0.22)' : 'rgba(245,200,66,0.28)'}; }
 
+      /* FIX 3: Hint popup daha geniş, sözlər tam sığır */
       #wg-hint-popup {
         display:none;
         position:absolute; bottom:50px; left:14px;
@@ -545,22 +652,35 @@ window.WordGame = (function () {
         background:${C.card};
         border:1.5px solid ${C.border};
         border-radius:14px;
-        padding:10px 12px; width:230px;
+        padding:12px 14px; width:280px;
         box-shadow:0 8px 24px rgba(0,0,0,.22);
       }
-      #wg-hint-list { display:flex; flex-wrap:wrap; gap:6px; }
+      #wg-hint-list { display:flex; flex-wrap:wrap; gap:7px; }
 
+      /* FIX 3 & color: Chips — tapılmamış mavi, tapılmış yaşıl */
       .wg-chip {
         display:inline-flex; align-items:center; gap:5px;
-        padding:4px 10px 4px 8px; border-radius:20px;
-        font-size:12px; font-weight:500;
-        background:${C.inputBg}; color:${C.textSub};
-        border:1.5px solid ${C.border};
+        padding:5px 12px 5px 9px; border-radius:20px;
+        font-size:13px; font-weight:600;
+        background:rgba(59,130,246,0.12);
+        color:#3b82f6;
+        border:1.5px solid rgba(59,130,246,0.35);
         transition:all .3s; white-space:nowrap;
       }
-      .wg-chip-dot { width:6px; height:6px; border-radius:50%; background:${C.textSub}; flex-shrink:0; transition:background .3s; }
-      .wg-chip.found { background:${C.accent}18; color:${C.accent}; border-color:${C.accent}66; text-decoration:line-through; opacity:.7; }
-      .wg-chip.found .wg-chip-dot { background:${C.accent}; }
+      .wg-chip-dot {
+        width:6px; height:6px; border-radius:50%;
+        background:#3b82f6;
+        flex-shrink:0; transition:background .3s;
+      }
+      /* Tapılmış: yaşıl ton, üstündən xətt */
+      .wg-chip.found {
+        background:rgba(34,197,94,0.12);
+        color:#22c55e;
+        border-color:rgba(34,197,94,0.4);
+        text-decoration:line-through;
+        opacity:.75;
+      }
+      .wg-chip.found .wg-chip-dot { background:#22c55e; }
 
       /* Typed word display */
       #wg-typed-word {
@@ -606,18 +726,19 @@ window.WordGame = (function () {
       }
       #wg-wheel { position:relative; touch-action:none; user-select:none; }
 
-      /* Letter buttons */
+      /* FIX 8: Letter buttons — dark modeda level rənginin tünd tonu */
       .wg-lb {
         position:absolute;
-        border-radius:50%; border:2px solid ${C.accent};
+        border-radius:50%;
+        border:2px solid ${wheelBtnBorder};
         display:flex; align-items:center; justify-content:center;
         font-weight:800;
-        background:${C.btnBg};
-        color:#fff;
+        background:${wheelBtnBg};
+        color:${dark ? '#e8edf3' : '#fff'};
         cursor:pointer;
         transform:translate(-50%, -50%);
         transition:transform .15s cubic-bezier(.34,1.56,.64,1), background .12s, box-shadow .12s, border-color .12s;
-        box-shadow:0 3px 12px ${C.accent}44;
+        box-shadow:0 3px 12px ${wheelGlow};
         -webkit-tap-highlight-color:transparent;
         touch-action:none;
       }
@@ -630,7 +751,6 @@ window.WordGame = (function () {
       }
       .wg-lb:active { transform:translate(-50%,-50%) scale(.9); }
 
-      /* Shuffle center btn */
       #wg-wcenter {
         position:absolute; border-radius:50%; border:none; cursor:pointer;
         background:${dark ? 'rgba(91,138,245,0.15)' : 'rgba(91,138,245,0.12)'};
@@ -643,7 +763,6 @@ window.WordGame = (function () {
       }
       #wg-wcenter:active { background:${dark ? 'rgba(91,138,245,0.28)' : 'rgba(91,138,245,0.22)'}; transform:translate(-50%,-50%) scale(.93); }
 
-      /* SVG lines */
       #wg-wsvg { position:absolute; top:0; left:0; pointer-events:none; overflow:visible; }
       .wg-wline { stroke:${C.accent}; stroke-width:3.5; stroke-linecap:round; opacity:.5; }
 
@@ -657,7 +776,7 @@ window.WordGame = (function () {
         gap:14px; padding:32px 24px;
       }
       #wg-pc .wg-pc-icon {
-        font-size:0; /* SVG icon kullanalım */
+        font-size:0;
         animation:wgBounceIn .5s cubic-bezier(.34,1.56,.64,1);
         display:flex; align-items:center; justify-content:center;
       }
@@ -667,8 +786,11 @@ window.WordGame = (function () {
       }
       #wg-pc h2 { font-size:22px; font-weight:800; color:${C.textMain}; text-align:center; }
       #wg-pc p  { font-size:14px; color:${C.textSub}; text-align:center; line-height:1.5; }
+
+      /* FIX 7: Phase complete düymə hündürlüyü 2x (əvvəl padding:16px, indi padding:32px 16px) */
       .wg-pc-btn {
-        width:100%; max-width:280px; padding:16px;
+        width:100%; max-width:280px;
+        padding:32px 16px;
         border-radius:16px; font-size:15px; font-weight:700;
         cursor:pointer; border:none;
         transition:transform .1s, box-shadow .1s;
@@ -730,7 +852,6 @@ window.WordGame = (function () {
 
     const csW = Math.floor((availW - (cols - 1) * gap) / cols);
     const csH = Math.floor((availH - (rows - 1) * gap) / rows);
-    // Üstünlük enə: csW istifadə et, hündürlüyə sığmırsa csH-ya keç
     const cs  = Math.max(12, csW <= csH ? csW : csH);
 
     board.style.cssText = `
@@ -773,6 +894,7 @@ window.WordGame = (function () {
     });
   }
 
+  // FIX 5: _animateWord — hərflər tək-tək sürətlə yazılır (0.1s aralıq), sonra toast çıxır
   function _animateWord(word) {
     const pw = state.placedWords.find(p => p.word === word);
     if (!pw) return;
@@ -783,10 +905,10 @@ window.WordGame = (function () {
         el.textContent = state.grid[r]?.[c]?.letter || '';
         el.classList.add('found', 'pop');
         setTimeout(() => el.classList.remove('pop'), 400);
-      }, i * 55);
+      }, i * 100);
     });
     const chip = document.querySelector(`.wg-chip[data-word="${word}"]`);
-    if (chip) setTimeout(() => chip.classList.add('found'), pw.cells.length * 55 + 100);
+    if (chip) setTimeout(() => chip.classList.add('found'), pw.cells.length * 100 + 100);
   }
 
   // ══════════════════════════════════════════════════════════
@@ -800,6 +922,8 @@ window.WordGame = (function () {
     const letters = state.letters;
     const count   = letters.length;
     const C       = _colors();
+    const dark    = _isDark();
+    const accent  = _getLvlColor();
 
     const maxW     = Math.min(window.innerWidth - 48, 300);
     const radius   = Math.max(55, Math.min((maxW / 2) - 28, 115));
@@ -812,8 +936,13 @@ window.WordGame = (function () {
     wrap.style.width  = `${size}px`;
     wrap.style.height = `${size}px`;
 
-    // Shuffle ikonu (mavi)
-    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round(centerSz*0.52)}" height="${Math.round(centerSz*0.52)}" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
+    // FIX 2: Shuffle SVG — hər iki ox tam görünür
+    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round(centerSz*0.52)}" height="${Math.round(centerSz*0.52)}" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
+
+    // FIX 8: dark modeda çevrə rəngləri — level accent tünd tonu
+    const wheelBtnBg     = dark ? _darkenAccent(accent, true)  : _darkenAccent(accent, false);
+    const wheelBtnBorder = dark ? _darkenAccentBorder(accent)   : accent;
+    const wheelGlow      = dark ? `${accent}33`                 : `${accent}44`;
 
     let html = `<svg id="wg-wsvg" width="${size}" height="${size}"></svg>`;
 
@@ -822,7 +951,9 @@ window.WordGame = (function () {
       const x     = cx + radius * Math.cos(angle);
       const y     = cy + radius * Math.sin(angle);
       html += `<button class="wg-lb" data-idx="${i}" data-letter="${letter}"
-        style="left:${x}px;top:${y}px;width:${btnSz}px;height:${btnSz}px;font-size:${Math.max(13, btnSz - 22)}px;">
+        style="left:${x}px;top:${y}px;width:${btnSz}px;height:${btnSz}px;font-size:${Math.max(13, btnSz - 22)}px;
+               background:${wheelBtnBg}; border-color:${wheelBtnBorder}; box-shadow:0 3px 12px ${wheelGlow};
+               color:${dark ? '#e8edf3' : '#fff'};">
         ${letter}</button>`;
     });
 
@@ -951,7 +1082,6 @@ window.WordGame = (function () {
     if (!svg) return;
     svg.innerHTML = '';
     const pos = state.selectedPos;
-    const C   = _colors();
     for (let i = 0; i < pos.length - 1; i++) {
       const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
       line.setAttribute('x1', pos[i].x);
@@ -988,7 +1118,8 @@ window.WordGame = (function () {
       state.foundWords.add(word);
 
       _playSuccess();
-      _showWordToast(word.length);
+      // FIX 5: toast-a sözün özünü ötürürük ki hərfləri göstərsin
+      _showWordToast(word);
 
       const hintRow = document.getElementById('wg-hint-row');
       if (hintRow) {
@@ -1009,7 +1140,6 @@ window.WordGame = (function () {
         hintRow.classList.remove('wg-shake');
         void hintRow.offsetWidth;
         hintRow.classList.add('wg-shake');
-        // Wheel düymələrini də titra
         document.querySelectorAll('.wg-lb.sel').forEach(btn => {
           btn.classList.add('wg-shake');
         });
@@ -1038,7 +1168,6 @@ window.WordGame = (function () {
     const C    = _colors();
     const dark = _isDark();
 
-    // Tabler icon: trophy ya da star
     const iconPC = isLast
       ? `<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="${C.accent}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7a6 6 0 0 1-12 0V4z"/><path d="M4 4h2"/><path d="M18 4h2"/><path d="M4 7c-1 0-2 .5-2 2s1 2 2 2"/><path d="M20 7c1 0 2 .5 2 2s-1 2-2 2"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>`
       : `<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="${C.accent}" stroke="${C.accent}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
