@@ -3774,7 +3774,6 @@ button { font-family: var(--font); }
 /* ── Game node — əsas stil ─────────────────────────────── */
 .game-node {
   border-radius: 50%;
-  border: 2px dashed currentColor;
   display: flex;
   align-items: center;
   justify-content: center;
