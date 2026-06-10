@@ -537,8 +537,7 @@ const hideDelay = 3000;
     const iconHint = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.3 6l-.7 2H9l-.7-2A7 7 0 0 1 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/><path d="M9.5 17.5h5"/></svg>`;
 
     // FIX 2: Shuffle SVG — hər iki ox tam görünür (viewBox genişləndirildi, stroke-width azaldıldı)
-    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
-
+const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3"/><path d="M18 20l3 -3l-3 -3"/><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h4"/><path d="M21 7h-4a5 5 0 0 0 -5 5a5 5 0 0 1 -5 5h-4"/></svg>`;
     // FIX 8: dark modeda wheel düymə rəngləri — level accent-in tünd versiyası
     const wheelBtnBg     = dark ? _darkenAccent(accent, true)       : _darkenAccent(accent, false);
     const wheelBtnBorder = dark ? _darkenAccentBorder(accent)        : accent;
@@ -917,8 +916,7 @@ const hideDelay = 3000;
     wrap.style.height = `${size}px`;
 
     // FIX 2: Shuffle SVG — hər iki ox tam görünür
-    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round(centerSz*0.58)}" height="${Math.round(centerSz*0.58)}" viewBox="0 0 26 26" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
-
+const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3"/><path d="M18 20l3 -3l-3 -3"/><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h4"/><path d="M21 7h-4a5 5 0 0 0 -5 5a5 5 0 0 1 -5 5h-4"/></svg>`;
     // FIX 8: dark modeda çevrə rəngləri — level accent tünd tonu
     const wheelBtnBg     = dark ? _darkenAccent(accent, true)  : _darkenAccent(accent, false);
     const wheelBtnBorder = dark ? _darkenAccentBorder(accent)   : accent;
