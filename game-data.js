@@ -47,47 +47,90 @@ const GAME_DATA = {
     {
       // Phase 1 — Peşələr (ortaq hərflər: A, R, T, E, S)
       words: [
-        { word: 'ACTOR',    az: 'aktyor' },
-        { word: 'COACH',   az: 'məşqçi' },
-        { word: 'TEACHER',   az: 'müəllim' },
-        { word: 'CHEF',   az: 'aşbaz' },
+        { word: 'BABY',         az: 'körpə' },
+        { word: 'BOY',          az: 'oğlan' },
+        { word: 'ANYBODY',      az: 'hər hansı biri' },
+        { word: 'NOBODY',       az: 'heç kim' },
       ]
     },
     {
       // Phase 2 — Peşələr (ortaq hərflər: S, E, R, I, N)
       words: [
         
-        { word: 'BOY',      az: 'oğlan' },
-        { word: 'BABY',     az: 'körpə' },
-        { word: 'NOBODY',   az: 'heç kim' },
-        { word: 'ANYBODY',  az: 'hər hansı biri' },
+        { word: 'ACTRESS',      az: 'aktrisa' },
+        { word: 'ARTIST',       az: 'rəssam' },
+        { word: 'WAITER',       az: 'ofisiant' },
+        { word: 'WRITER',       az: 'yazıçı' },
       ]
     },
     {
       // Phase 3 — Ümumi insanlar (ortaq hərflər: O, N, E, R, A)
       words: [
-        { word: 'MUM',     az: 'ana' },
-        { word: 'MAN',       az: 'kişi' },
-        { word: 'AUNT',    az: 'xala' },
-        { word: 'DAD',    az: 'ata' },
-        { word: 'ADULT',   az: 'yetkin' },
+        { word: 'DANCER',       az: 'rəqqas' },
+        { word: 'MAN',          az: 'kişi' },
+        { word: 'MEMBER',       az: 'üzv' },
         
-      ]
-    },
-    {
-      // Phase 4 — Ümumi insanlar (ortaq hərflər: O, Y, B, N, E)
-      words: [
-        { word: 'ARM',       az: 'qol' },
-        { word: 'EAR',      az: 'qulaq' },
-        { word: 'HEAD',      az: 'baş' },
-        { word: 'HAİR',     az: 'saç' },
-        { word: 'DEAD',     az: 'ölü' },
       ]
     },
   ]
 },
-    'b0_g1': { id: 'a1_b0_g1', title: 'Game 2', words: [] },
-    'b0_g2': { id: 'a1_b0_g2', title: 'Game 3', words: [] },
+    'b0_g1': { 
+      id: 'a1_b0_g1', 
+      title: 'Game 2',   
+      phases: [
+    {
+      words: [
+         { word: 'MAN',          az: 'kişi' },
+        { word: 'AUNT',         az: 'xala' },
+        { word: 'DAD',          az: 'papa' },
+        { word: 'MUM',          az: 'mama' },
+      ]
+    },
+    {
+      words: [
+        
+        { word: 'WOMAN',        az: 'qadın' },
+        { word: 'SOMEONE',      az: 'biri' },
+        { word: 'SON',          az: 'oğul' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PARTNER',      az: 'ortaq' },
+        { word: 'PERSON',       az: 'insan' },
+        { word: 'PARENT',       az: 'valideyn' },
+        { word: 'SON',          az: 'oğul' },
+      ]
+    },
+  ]
+},
+    'b0_g2': { id: 'a1_b0_g2', title: 'Game 3',      phases: [
+    {
+      words: [
+        { word: 'ARM',          az: 'qol' },
+        { word: 'EAR',          az: 'qulaq' },
+        { word: 'FACE',         az: 'üz' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BODY',         az: 'bədən' },
+        { word: 'EYE',          az: 'göz' },
+        { word: 'HAND',         az: 'əl' },
+        { word: 'HEAD',         az: 'baş' },        
+      ]
+    },
+    {
+      words: [
+
+        { word: 'BROTHER',      az: 'qardaş' },
+        { word: 'MOTHER',       az: 'ana' },
+        { word: 'TOOTH',        az: 'diş' },
+        { word: 'BOTTOM',       az: 'oturacaq' },
+      ]
+    },
+  ]
+},
     // Blok 1 gameləri
     'b1_g0': { id: 'a1_b1_g0', title: 'Game 4', words: [] },
     'b1_g1': { id: 'a1_b1_g1', title: 'Game 5', words: [] },
