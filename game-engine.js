@@ -473,10 +473,7 @@ setTimeout(() => {
   textSpan.style.opacity = '1';
 }, 80);
 
-    // FIX 5: 3 saniyə gözlə sonra 0.3s-də yox ol
-    const totalLetterTime = letters.length * 100 + 200;
-    const hideDelay = Math.max(3000, totalLetterTime);
-
+const hideDelay = 3000;
     toast._hideTimer = setTimeout(() => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateX(-50%) translateY(-12px)';
@@ -1123,11 +1120,10 @@ setTimeout(() => {
         hintRow.classList.remove('wg-shake');
         void hintRow.offsetWidth;
         hintRow.classList.add('wg-shake');
-        setTimeout(() => {
-          hintRow.classList.remove('wg-shake');
-          document.querySelectorAll('.wg-lb').forEach(b => b.classList.remove('wg-shake'));
-          _clearSel();
-        }, 380);
+       setTimeout(() => {
+  hintRow.classList.remove('wg-shake');
+  _clearSel();
+}, 380);
       } else {
         _clearSel();
       }
