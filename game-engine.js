@@ -1131,11 +1131,20 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
     }
   }
 
-  function _onPhaseComplete() {
+function _onPhaseComplete() {
     const nextPhase = state.phaseIdx + 1;
     const isLast    = nextPhase >= state.totalPhases;
     const progressKey = `${state.levelId}_game_${state.gameKey}`;
     localStorage.setItem(progressKey, String(nextPhase));
+
+    // CEFR kartını yenilə
+    if (typeof markCompleted === 'function' && typeof LEVELS !== 'undefined') {
+      const lvlIdx = LEVELS.findIndex(l => l.id === state.levelId);
+      if (lvlIdx !== -1 && typeof _refreshOpenCard === 'function') {
+        _refreshOpenCard(lvlIdx);
+      }
+    }
+
     _showPhaseComplete(isLast, nextPhase);
   }
 
