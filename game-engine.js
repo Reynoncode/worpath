@@ -445,26 +445,17 @@ window.WordGame = (function () {
     emojiSpan.style.cssText = 'font-size:32px; line-height:1;';
     emojiSpan.textContent = emoji;
 
-    const wordSpan = document.createElement('span');
-    wordSpan.style.cssText = `
-      display:inline-flex; gap:4px; align-items:center;
-    `;
-
-    // Söz hərflərini tək-tək əlavə edəcək konteyner
-    const lettersContainer = document.createElement('span');
-    lettersContainer.style.cssText = 'display:inline-flex; gap:3px; align-items:center;';
-
-    // Boşluq + text
     const textSpan = document.createElement('span');
-    textSpan.style.cssText = 'margin-left:6px; font-size:22px; font-weight:800;';
+    textSpan.style.cssText = `
+      font-size:22px; font-weight:800; letter-spacing:2px;
+      overflow:hidden; white-space:nowrap;
+      max-width:0; opacity:0;
+    `;
     textSpan.textContent = text;
-
-    wordSpan.appendChild(lettersContainer);
-    wordSpan.appendChild(textSpan);
-
+    
     toast.appendChild(emojiSpan);
-    toast.appendChild(wordSpan);
-
+    toast.appendChild(textSpan);
+        
     const ov = document.getElementById('wg-overlay');
     if (ov) ov.appendChild(toast);
 
@@ -474,22 +465,13 @@ window.WordGame = (function () {
       toast.style.transform = 'translateX(-50%) translateY(0)';
     });
 
-     // FIX 5: Hərfləri tək-tək doldur (0.1s aralıqla)
-    const letters = text.split('');
-    letters.forEach((letter, i) => {
-      setTimeout(() => {
-        const lSpan = document.createElement('span');
-        lSpan.style.cssText = `
-          display:inline-flex; align-items:center; justify-content:center;
-          width:28px; height:28px; border-radius:7px;
-          background:${color}22; border:1.5px solid ${color}88;
-          color:${color}; font-size:15px; font-weight:900;
-          animation:wgLetterPop .15s cubic-bezier(.34,1.56,.64,1) both;
-        `;
-        lSpan.textContent = letter;
-        lettersContainer.appendChild(lSpan);
-      }, i * 100);
-    });
+// text hərflərini tək-tək aç (max-width genişlənməsi ilə)
+const totalChars = text.length;
+setTimeout(() => {
+  textSpan.style.transition = `max-width ${totalChars * 0.1 + 0.2}s steps(${totalChars}, end), opacity .15s`;
+  textSpan.style.maxWidth = '200px';
+  textSpan.style.opacity = '1';
+}, 80);
 
     // FIX 5: 3 saniyə gözlə sonra 0.3s-də yox ol
     const totalLetterTime = letters.length * 100 + 200;
@@ -938,7 +920,7 @@ window.WordGame = (function () {
     wrap.style.height = `${size}px`;
 
     // FIX 2: Shuffle SVG — hər iki ox tam görünür
-    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round(centerSz*0.52)}" height="${Math.round(centerSz*0.52)}" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
+    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="${Math.round(centerSz*0.58)}" height="${Math.round(centerSz*0.58)}" viewBox="0 0 26 26" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/></svg>`;
 
     // FIX 8: dark modeda çevrə rəngləri — level accent tünd tonu
     const wheelBtnBg     = dark ? _darkenAccent(accent, true)  : _darkenAccent(accent, false);
@@ -1141,9 +1123,6 @@ window.WordGame = (function () {
         hintRow.classList.remove('wg-shake');
         void hintRow.offsetWidth;
         hintRow.classList.add('wg-shake');
-        document.querySelectorAll('.wg-lb.sel').forEach(btn => {
-          btn.classList.add('wg-shake');
-        });
         setTimeout(() => {
           hintRow.classList.remove('wg-shake');
           document.querySelectorAll('.wg-lb').forEach(b => b.classList.remove('wg-shake'));
