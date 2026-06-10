@@ -1132,21 +1132,107 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
   }
 
 function _onPhaseComplete() {
-    const nextPhase = state.phaseIdx + 1;
-    const isLast    = nextPhase >= state.totalPhases;
-    const progressKey = `${state.levelId}_game_${state.gameKey}`;
-    localStorage.setItem(progressKey, String(nextPhase));
+  const nextPhase = state.phaseIdx + 1;
+  const isLast    = nextPhase >= state.totalPhases;
+  const progressKey = `${state.levelId}_game_${state.gameKey}`;
+  localStorage.setItem(progressKey, String(nextPhase));
 
-    // CEFR kartını yenilə
-    if (typeof markCompleted === 'function' && typeof LEVELS !== 'undefined') {
-      const lvlIdx = LEVELS.findIndex(l => l.id === state.levelId);
+  if (typeof markCompleted === 'function' && typeof LEVELS !== 'undefined') {
+    const lvlIdx = LEVELS.findIndex(l => l.id === state.levelId);
+    if (lvlIdx !== -1 && typeof _refreshOpenCard === 'function') {
+      _refreshOpenCard(lvlIdx);
+    }
+  }
+
+  if (isLast) {
+    // Kart yenilənsin, sonra ulduz ikonunu node üstünə əlavə et
+    setTimeout(() => {
+      _addStarToGameNode(state.levelId, state.gameKey);
+    }, 400);
+  }
+
+  _showPhaseComplete(isLast, nextPhase);
+}
+
+function _addStarToGameNode(levelId, gameKey) {
+  const wrap = document.querySelector(
+    `[data-game-key="${gameKey}"][data-level-id="${levelId}"]`
+  );
+  if (!wrap) return;
+
+  // Əgər artıq ulduz varsa əlavə etmə
+  if (wrap.querySelector('.game-star-reward')) return;
+
+  const star = document.createElement('div');
+  star.className = 'game-star-reward';
+  star.innerHTML = '⭐';
+  star.style.cssText = `
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10;
+    animation: starPulse 1.5s ease-in-out infinite;
+    filter: drop-shadow(0 2px 6px rgba(255,200,0,0.7));
+  `;
+
+  // Pulse animasiyası CSS-ə əlavə et (bir dəfə)
+  if (!document.getElementById('star-reward-style')) {
+    const style = document.createElement('style');
+    style.id = 'star-reward-style';
+    style.textContent = `
+      @keyframes starPulse {
+        0%, 100% { transform: translateX(-50%) scale(1);   opacity: 1; }
+        50%       { transform: translateX(-50%) scale(1.3); opacity: 0.8; }
+      }
+      @keyframes starFly {
+        0%   { transform: translate(-50%, 0)   scale(1);   opacity: 1; }
+        40%  { transform: translate(-50%, -20px) scale(3); opacity: 1; }
+        100% { transform: translate(calc(var(--tx) - 50%), var(--ty)) scale(0.2); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  // Tıklayanda uç
+  star.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    // Ulduz sayğacının pozisyasunu tap
+    const starCounter = document.getElementById('star-count');
+    const counterRect = starCounter
+      ? starCounter.getBoundingClientRect()
+      : { left: window.innerWidth - 60, top: 20 };
+    const starRect = star.getBoundingClientRect();
+
+    const tx = counterRect.left - starRect.left;
+    const ty = counterRect.top  - starRect.top - 20;
+
+    star.style.setProperty('--tx', `${tx}px`);
+    star.style.setProperty('--ty', `${ty}px`);
+    star.style.animation = `starFly 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
+
+    setTimeout(() => {
+      // 3 ulduz əlavə et
+      if (typeof addStar === 'function') {
+        addStar(); addStar(); addStar();
+      }
+      if (typeof Stats !== 'undefined') Stats.addStar(3);
+      star.remove();
+
+      // Node-u tık görünüşünə keçir
+      const lvlIdx = LEVELS.findIndex(l => l.id === levelId);
       if (lvlIdx !== -1 && typeof _refreshOpenCard === 'function') {
         _refreshOpenCard(lvlIdx);
       }
-    }
+    }, 700);
+  });
 
-    _showPhaseComplete(isLast, nextPhase);
-  }
+  wrap.style.position = 'relative';
+  wrap.appendChild(star);
+}
 
   function _showPhaseComplete(isLast, nextPhase) {
     const ov = document.getElementById(OID);
