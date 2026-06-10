@@ -372,32 +372,522 @@ const GAME_DATA = {
     },
   ]
 },
+
+
+    
     // Blok 4 gameləri
-    'b4_g0': { id: 'a1_b4_g0', title: 'Game 12', words: [] },
-    'b4_g1': { id: 'a1_b4_g1', title: 'Game 13', words: [] },
-    'b4_g2': { id: 'a1_b4_g2', title: 'Game 14', words: [] },
+    'b4_g0': { id: 'a1_b4_g0', title: 'Game 12', phases: [
+    {
+      words: [
+        { word: 'BED',          az: 'çarpayı' },
+        { word: 'AREA',         az: 'ərazi' },
+        { word: 'BAR',          az: 'bar' },
+      ]
+    },
+    {
+      words: [
+        { word: 'POOL',         az: 'hovuz' },
+        { word: 'POST',         az: 'poçt' },
+        { word: 'TOP',          az: 'zirvə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PAPER',        az: 'kağız' },
+        { word: 'PEN',          az: 'qələm' },
+        { word: 'PARK',         az: 'park' },
+      ]
+    },
+  ]
+},
+    'b4_g1': { id: 'a1_b4_g1', title: 'Game 13', phases: [
+    {
+      words: [
+        { word: 'HOME',         az: 'ev' },
+        { word: 'HOUSE',        az: 'ev' },
+        { word: 'MUSEUM',       az: 'muzey' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BATH',         az: 'vanna' },
+        { word: 'TABLE',        az: 'masa' },
+        { word: 'BOTTLE',       az: 'şüşə' },
+        { word: 'HOTEL',        az: 'otel' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CUP',          az: 'fincan' },
+        { word: 'CLUB',         az: 'klub' },
+        { word: 'PLACE',        az: 'məkan' },
+      ]
+    },
+  ]
+},
+    'b4_g2': { id: 'a1_b4_g2', title: 'Game 14', phases: [
+    {
+      words: [
+        { word: 'BAG',          az: 'çanta' },
+        { word: 'KEY',          az: 'açar' },
+        { word: 'BANK',         az: 'bank' },
+        { word: 'GYM',          az: 'idman zalı' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BATHROOM',     az: 'vanna otağı' },
+        { word: 'ROOM',         az: 'otaq' },
+        { word: 'THEATRE',      az: 'teatr' },
+        { word: 'BOTTOM',       az: 'dib' },
+      ]
+    },
+    {
+      words: [
+        { word: 'FLAT',         az: 'mənzil' },
+        { word: 'TOILET',       az: 'tualet' },
+        { word: 'CAFE',         az: 'kafe' },
+        { word: 'OFFICE',       az: 'ofis' },
+      ]
+    },
+  ]
+},
+
+
+
+
+    
     // Blok 5 gameləri
-    'b5_g0': { id: 'a1_b5_g0', title: 'Game 15', words: [] },
-    'b5_g1': { id: 'a1_b5_g1', title: 'Game 16', words: [] },
-    'b5_g2': { id: 'a1_b5_g2', title: 'Game 17', words: [] },
+    'b5_g0': { id: 'a1_b5_g0', title: 'Game 15', phases: [
+    {
+      words: [
+        { word: 'CAT',          az: 'pişik' },
+        { word: 'BOAT',         az: 'qayıq' },
+        { word: 'BOOT',         az: 'çəkmə' },
+        { word: 'COAT',         az: 'palto' },
+      ]
+    },
+    {
+      words: [
+        { word: 'AIR',          az: 'hava' },
+        { word: 'RAIN',         az: 'yağış' },
+        { word: 'TRAIN',        az: 'qatar' },
+        { word: 'TRIP',         az: 'səfər' },
+        { word: 'PAIR',         az: 'cüt' },
+      ]
+    },
+    {
+      words: [
+        { word: 'EAST',         az: 'şərq' },
+        { word: 'SEA',          az: 'dəniz' },
+        { word: 'WEST',         az: 'qərb' },
+        { word: 'TREE',         az: 'ağac' },
+        { word: 'WATER',        az: 'su' },
+        { word: 'SWEATER',      az: 'sviter' },
+      ]
+    },
+  ]
+},
+    'b5_g1': { id: 'a1_b5_g1', title: 'Game 16',  phases: [
+    {
+      words: [
+        { word: 'ROAD',         az: 'yol' },
+        { word: 'COW',          az: 'inək' },
+        { word: 'WOOD',         az: 'taxta' },
+        { word: 'CAR',          az: 'avtomobil' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ICE',          az: 'buz' },
+        { word: 'BIKE',         az: 'motosiklet' },
+        { word: 'TICKET',       az: 'bilet' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DOG',          az: 'it' },
+        { word: 'HORSE',        az: 'at' },
+        { word: 'DRESS',        az: 'don' },
+        { word: 'SHOE',         az: 'ayaqqabı' },
+      ]
+    },
+  ]
+},
+    'b5_g2': { id: 'a1_b5_g2', title: 'Game 17',  phases: [
+    {
+      words: [
+        { word: 'DOG',          az: 'it' },
+        { word: 'HORSE',        az: 'at' },
+        { word: 'DRESS',        az: 'don' },
+        { word: 'SHOE',         az: 'ayaqqabı' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BEACH',        az: 'çimərlik' },
+        { word: 'WEATHER',      az: 'hava' },
+        { word: 'HAT',          az: 'şlyapa' },
+        { word: 'WATCH',        az: 'saat' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ISLAND',       az: 'ada' },
+        { word: 'LAND',         az: 'torpaq' },
+        { word: 'SUN',          az: 'günəş' },
+        { word: 'BUS',          az: 'avtobus' },
+      ]
+    },
+  ]
+},
+
+    
     // Blok 6 gameləri
-    'b6_g0': { id: 'a1_b6_g0', title: 'Game 18', words: [] },
-    'b6_g1': { id: 'a1_b6_g1', title: 'Game 19', words: [] },
+    'b6_g0': { id: 'a1_b6_g0', title: 'Game 18', phases: [
+    {
+      words: [
+        { word: 'AGE',          az: 'yaş' },
+        { word: 'DATE',         az: 'tarix' },
+        { word: 'LATE',         az: 'gec' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DAY',          az: 'gün' },
+        { word: 'YEAR',         az: 'il' },
+        { word: 'EARLY',        az: 'erkən' },
+      ]
+    },
+    {
+      words: [
+        { word: 'AGO',          az: 'əvvəl' },
+        { word: 'NOW',          az: 'indi' },
+        { word: 'SOON',         az: 'tezliklə' },
+      ]
+    },
+  ]
+},
+    'b6_g1': { id: 'a1_b6_g1', title: 'Game 19', phases: [
+    {
+      words: [
+        { word: 'MOMENT',       az: 'an' },
+        { word: 'MONTH',        az: 'ay' },
+        { word: 'THEN',         az: 'sonra' },
+        { word: 'OFTEN',        az: 'tez-tez' },
+      ]
+    },
+    {
+      words: [
+        { word: 'MONDAY',       az: 'bazar ertəsi' },
+        { word: 'MAY',          az: 'may' },
+        { word: 'AUTUMN',       az: 'payız' },
+        { word: 'TODAY',        az: 'bu gün' },
+      ]
+    },
+    {
+      words: [
+        { word: 'JUNE',         az: 'iyun' },
+        { word: 'MINUTE',       az: 'dəqiqə' },
+        { word: 'TIME',         az: 'vaxt' },
+      ]
+    },
+  ]
+},
+
+    
     // Blok 7 gameləri
-    'b7_g0': { id: 'a1_b7_g0', title: 'Game 20', words: [] },
-    'b7_g1': { id: 'a1_b7_g1', title: 'Game 21', words: [] },
+    'b7_g0': { id: 'a1_b7_g0', title: 'Game 20', phases: [
+    {
+      words: [
+        { word: 'POOR',         az: 'kasıb' },
+        { word: 'PHOTO',        az: 'şəkil' },
+        { word: 'PHOTO',        az: 'şəkil' },
+        { word: 'POP',          az: 'pop musiqi' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CARD',         az: 'kart' },
+        { word: 'CD',           az: 'disk' },
+        { word: 'DVD',          az: 'kaset' },
+        { word: 'TV',           az: 'televizor' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BILL',         az: 'hesab' },
+        { word: 'BLOG',         az: 'bloq' },
+        { word: 'BOOK',         az: 'kitab' },
+      ]
+    },
+  ]
+},
+
+    
+    'b7_g1': { id: 'a1_b7_g1', title: 'Game 21',  phases: [
+    {
+      words: [
+        { word: 'SHOP',         az: 'mağaza' },
+        { word: 'PHONE',        az: 'telefon' },
+        { word: 'NEWS',         az: 'xəbər' },
+        { word: 'SHOW',         az: 'veriliş' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PRICE',        az: 'qiymət' },
+        { word: 'CHEAP',        az: 'ucuz' },
+        { word: 'RICH',         az: 'varlı' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CENT',         az: 'sent' },
+        { word: 'TO COST',      az: 'başa gəlmək' },
+        { word: 'FREE',         az: 'pulsuz' },
+        { word: 'SCREEN',       az: 'ekran' },
+        { word: 'CONCERT',      az: 'konsert' },
+      ]
+    },
+  ]
+},
+
+
+
+    
     // Blok 8 gameləri
-    'b8_g0': { id: 'a1_b8_g0', title: 'Game 22', words: [] },
-    'b8_g1': { id: 'a1_b8_g1', title: 'Game 23', words: [] },
+    'b8_g0': { id: 'a1_b8_g0', title: 'Game 22',phases: [
+    {
+      words: [
+        { word: 'PAGE',         az: 'səhifə' },
+        { word: 'GAME',         az: 'oyun' },
+        { word: 'TEAM',         az: 'komanda' },
+      ]
+    },
+    {
+      words: [
+        { word: 'SCIENCE',      az: 'elm' },
+        { word: 'TEST',         az: 'test' },
+        { word: 'TENNIS',       az: 'tennis' },
+      ]
+    },
+    {
+      words: [
+        { word: 'LETTER',       az: 'hərf' },
+        { word: 'ART',          az: 'sənət' },
+        { word: 'BALL',         az: 'top' },
+      ]
+    },
+  ]
+},
+    'b8_g1': { id: 'a1_b8_g1', title: 'Game 23',phases: [
+    {
+      words: [
+        { word: 'LESSON',       az: 'dərs' },
+        { word: 'NOTE',         az: 'qeyd' },
+        { word: 'TO SPELL',     az: 'hərfləmək' },
+        { word: 'POOL',         az: 'hovuz' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CLASS',        az: 'sinif' },
+        { word: 'DETAIL',       az: 'təfərrüat' },
+        { word: 'TITLE',        az: 'başlıq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'TO TEACH',     az: 'öyrətmək' },
+        { word: 'CHESS',        az: 'şahmat' },
+        { word: 'MATCH',        az: 'oyun' },
+      ]
+    },
+  ]
+},
+
+    
     // Blok 9 gameləri
-    'b9_g0': { id: 'a1_b9_g0', title: 'Game 24', words: [] },
-    'b9_g1': { id: 'a1_b9_g1', title: 'Game 25', words: [] },
+    'b9_g0': { id: 'a1_b9_g0', title: 'Game 24', phases: [
+    {
+      words: [
+        { word: 'GO',        az: 'getmək' },
+        { word: 'EAT',       az: 'yemək' },
+        { word: 'GET',       az: 'əldə etmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'RUN',       az: 'qaçmaq' },
+        { word: 'TURN',      az: 'dönmək' },
+        { word: 'CUT',       az: 'kəsmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'FALL',      az: 'yıxılmaq' },
+        { word: 'CALL',      az: 'çağırmaq' },
+        { word: 'TALK',      az: 'söhbət etmək' },
+        { word: 'COOK',      az: 'bişirmək' },
+      ]
+    },
+  ]
+},
+    'b9_g1': { id: 'a1_b9_g1', title: 'Game 25', phases: [
+    {
+      words: [
+        { word: 'SIT',       az: 'oturmaq' },
+        { word: 'ASK',       az: 'soruşmaq' },
+        { word: 'SPEAK',     az: 'danışmaq' },
+        { word: 'KEEP',      az: 'saxlamaq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'STAND',     az: 'ayağa qalxmaq' },
+        { word: 'LISTEN',    az: 'qulaq asmaq' },
+        { word: 'SEND',      az: 'göndərmək' },
+        { word: 'CLEAN',     az: 'təmizləmək' },
+        { word: 'CLOSE',     az: 'bağlamaq' },
+        { word: 'DANCE',     az: 'rəqs etmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ARRIVE',    az: 'çatmaq' },
+        { word: 'RIDE',      az: 'minmək' },
+        { word: 'READ',      az: 'oxumaq' },
+        { word: 'WRITE',     az: 'yazmaq' },
+        { word: 'GIVE',      az: 'vermək' },
+        { word: 'GROW',      az: 'böyümək' },
+      ]
+    },
+  ]
+},
+
+    
     // Blok 10 gameləri
-    'b10_g0': { id: 'a1_b10_g0', title: 'Game 26', words: [] },
-    'b10_g1': { id: 'a1_b10_g1', title: 'Game 27', words: [] },
+    'b10_g0': { id: 'a1_b10_g0', title: 'Game 26', phases: [
+    {
+      words: [
+        { word: 'MAKE',         az: 'düzəltmək' },
+        { word: 'MEET',         az: 'görüşmək' },
+        { word: 'TAKE',         az: 'götürmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'WAIT',         az: 'gözləmək' },
+        { word: 'WANT',         az: 'istəmək' },
+        { word: 'WIN',          az: 'qalib gəlmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'FEEL',         az: 'hiss etmək' },
+        { word: 'FIND',         az: 'tapmaq' },
+        { word: 'NEED',         az: 'ehtiyac duymaq' },
+        { word: 'DIE',          az: 'ölmək' },
+        { word: 'LIE',          az: 'uzanmaq' },
+      ]
+    },
+  ]
+},
+    'b10_g1': { id: 'a1_b10_g1', title: 'Game 27',phases: [
+    {
+      words: [
+        { word: 'SLEEP',        az: 'yatmaq' },
+        { word: 'STOP',         az: 'dayanmaq' },
+        { word: 'LOSE',         az: 'itirmək' },
+        { word: 'SEE',          az: 'görmək' },
+        { word: 'LET',          az: 'icazə vermək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ORDER',        az: 'sifariş etmək' },
+        { word: 'DO',           az: 'etmək' },
+        { word: 'HEAR',         az: 'eşitmək' },
+        { word: 'DRAW',         az: 'rəsm çəkmək' },
+        { word: 'WEAR',         az: 'geymək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'LOOK',         az: 'baxmaq' },
+        { word: 'OWN',          az: 'sahib olmaq' },
+        { word: 'PAY',          az: 'ödəmək' },
+        { word: 'PLAY',         az: 'oynamaq' },
+        { word: 'KNOW',         az: 'bilmək' },
+        { word: 'PLAN',         az: 'planlaşdırmaq' },
+      ]
+    },
+  ]
+},
+
+    
     // Blok 11 gameləri
-    'b11_g0': { id: 'a1_b11_g0', title: 'Game 28', words: [] },
-    'b11_g1': { id: 'a1_b11_g1', title: 'Game 29', words: [] },
+    'b11_g0': { id: 'a1_b11_g0', title: 'Game 28',phases: [
+    {
+      words: [
+        { word: 'END',          az: 'son' },
+        { word: 'IDEA',         az: 'fikir' },
+        { word: 'KIND',         az: 'növ' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PLAN',         az: 'plan' },
+        { word: 'MAP',          az: 'xəritə' },
+        { word: 'NAME',         az: 'ad' },
+      ]
+    },
+    {
+      words: [
+        { word: 'MODEL',        az: 'model' },
+        { word: 'LOT',          az: 'xeyli' },
+        { word: 'BOTTLE',       az: 'butulka' },
+        { word: 'ITEM',         az: 'əşya' },
+        { word: 'MODEL',        az: 'model' },
+        { word: 'TITLE',        az: 'başlıq' },
+      ]
+    },
+  ]
+},
+    
+    'b11_g1': { id: 'a1_b11_g1', title: 'Game 29',phases: [
+    {
+      words: [
+        { word: 'FUN',          az: 'əyləncə' },
+        { word: 'LIFE',         az: 'həyat' },
+        { word: 'LINE',         az: 'xətt' },
+        { word: 'CUP',          az: 'fincan' },
+        { word: 'PIECE',        az: 'parça' },
+      ]
+    },
+    {
+      words: [
+        { word: 'REPORT',       az: 'hesabat' },
+        { word: 'WORK',         az: 'iş' },
+        { word: 'WORK',      az: 'işləmək' },
+        { word: 'PART',         az: 'hissə' },
+        { word: 'TYPE',         az: 'növ' },
+        { word: 'WAY',          az: 'yol' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ACTION',       az: 'hərəkət' },
+        { word: 'OFFICE',       az: 'ofis' },
+        { word: 'TO PLAN',      az: 'planlaşdırmaq' },
+        { word: 'LIST',         az: 'siyahı' },
+        { word: 'POINT',        az: 'nöqtə' },
+        { word: 'SPACE',        az: 'kosmos' },
+      ]
+    },
+  ]
+},
   },
 
   // ── A2 ─────────────────────────────────────────────────
