@@ -640,7 +640,6 @@ function _getWheelLetters(placedWords) {
     <div id="wg-cw-wrap">
   <div id="wg-cw"></div>
 </div>
-<div style="flex:1; min-height:8px;"></div>
 <div id="wg-hint-row" style="display:flex;align-items:center;gap:8px;padding:4px 16px;min-height:46px;background:${C.card};border-top:1px solid ${C.border};flex-shrink:0;position:relative;">
   <button id="wg-hint-btn" style="width:34px;height:34px;border-radius:50%;border:none;background:${C.inputBg};font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">💡</button>
   <div id="wg-hint-popup" style="display:none;position:absolute;top:46px;left:14px;z-index:200;background:${C.card};border:1.5px solid ${C.border};border-radius:14px;padding:10px 12px;width:230px;box-shadow:0 8px 24px rgba(0,0,0,.22);">
