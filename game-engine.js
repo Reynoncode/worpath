@@ -674,16 +674,18 @@ function _renderCells() {
   const rows = state.rows;
   if (!cols || !rows) return;
 
-  const byW = Math.floor((availW - (cols - 1) * 2) / cols);
-  const byH = Math.floor((availH - (rows - 1) * 2) / rows);
-  const cs  = Math.max(12, Math.min(byW, byH, 42));
-
-  board.style.cssText = `
-    display:grid;
-    grid-template-columns:repeat(${cols}, ${cs}px);
-    grid-template-rows:repeat(${rows}, ${cs}px);
-    gap:2px;
-  `;
+  const gap = 2;
+  const csW = Math.floor((availW - (cols - 1) * gap) / cols);  // enə görə cell size
+  const csH = Math.floor((availH - (rows - 1) * gap) / rows);  // hündürlüyə görə cell size
+  
+  // Üstünlük enə verilir: csW istifadə et, yalnız hündürlüyə sığmırsa csH-ya keç
+  const cs = Math.max(12, csW <= csH ? csW : csH);
+    board.style.cssText = `
+      display:grid;
+      grid-template-columns:repeat(${cols}, ${cs}px);
+      grid-template-rows:repeat(${rows}, ${cs}px);
+      gap:2px;
+    `;
 
   wrap.style.cssText = `
     flex:1;
