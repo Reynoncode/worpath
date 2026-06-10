@@ -3027,12 +3027,11 @@ gameNodes.forEach((gn) => {
     gameInner = `<span class="game-node-phase-num">${savedPhase}/${totalPhases}</span>`;
   }
 
+// game-node ölçüsü svgSize-a uyğun — border yox, progressSvg çevrəsi kifayətdir
+  const innerSize = GAME_SIZE;
   const nodeStyle = gameDone
-    ? `width:${GAME_SIZE}px;height:${GAME_SIZE}px;background:${lvl.color};border-color:${lvl.color};`
-    : savedPhase > 0
-    ? `width:${GAME_SIZE}px;height:${GAME_SIZE}px;color:${lvl.color};border-color:${lvl.color};background:${isDark ? '#142233' : 'white'};`
-    : `width:${GAME_SIZE}px;height:${GAME_SIZE}px;color:${lvl.color};border-color:${lvl.color};background:${isDark ? '#142233' : 'white'};`;
-
+    ? `width:${innerSize}px;height:${innerSize}px;background:${lvl.color};border:none;`
+    : `width:${innerSize}px;height:${innerSize}px;color:${lvl.color};background:${isDark ? '#142233' : 'white'};border:none;`;
   // ── Circular progress bar SVG ────────────────────────
   // circle: cx/cy = svgSize/2, r = CR
   // stroke-dashoffset: CIRC/4 — 12-dan başlasın (top)
