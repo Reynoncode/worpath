@@ -1203,17 +1203,26 @@ const GAME_DATA = {
     'b4_g0': { id: 'a2_b4_g0', title: 'Game 11', phases: [
     {
       words: [
-
+        { word: 'COACH',        az: 'avtobus' },
+        { word: 'COAT',         az: 'palto' },
+        { word: 'HAT',          az: 'papaq' },
       ]
     },
     {
       words: [
-
+        { word: 'SITE',         az: 'ərazi' },
+        { word: 'BUS',          az: 'avtobus' },
+        { word: 'SUIT',         az: 'kostyum' },
+        { word: 'TIE',          az: 'qalstuk' },
       ]
     },
     {
       words: [
-     
+         { word: 'LORRY',        az: 'yük maşını' },
+        { word: 'FERRY',        az: 'bərə' },
+        { word: 'ROOF',         az: 'dam' },
+        { word: 'DOOR',         az: 'qapı' },
+        { word: 'FLOOR',        az: 'döşəmə' },    
       ]
     },
   ]
@@ -1221,17 +1230,30 @@ const GAME_DATA = {
     'b4_g1': { id: 'a2_b4_g1', title: 'Game 12', phases: [
     {
       words: [
-
+        { word: 'WHEEL',        az: 'təkər' },
+        { word: 'BOAT',         az: 'qayıq' },
+        { word: 'TOWEL',        az: 'dəsmal' },
+        { word: 'WALL',         az: 'divar' },
+        { word: 'BELT',         az: 'kəmər' },
       ]
     },
     {
       words: [
-
+        { word: 'STAGE',        az: 'səhnə' },
+        { word: 'TRAIN',        az: 'qatar' },
+        { word: 'STAIRS',       az: 'pilləkən' },
+        { word: 'TRAINERS',     az: 'idman ayaqqabısı' },
+        { word: 'RING',         az: 'üzük' },
       ]
     },
     {
       words: [
-     
+        { word: 'CASTLE',       az: 'qala' },
+        { word: 'PALACE',       az: 'saray' },
+        { word: 'CAR',          az: 'avtomobil' },
+        { word: 'PLANE',        az: 'təyyarə' },
+        { word: 'CARPET',       az: 'xalça' },
+        { word: 'PANTS',        az: 'şalvar' },     
       ]
     },
   ]
@@ -1239,28 +1261,247 @@ const GAME_DATA = {
     'b4_g2': { id: 'a2_b4_g2', title: 'Game 13', phases: [
     {
       words: [
-
+        { word: 'PALACE',       az: 'saray' },
+        { word: 'AIRLINE',      az: 'aviaşirkət' },
+        { word: 'CAR',          az: 'avtomobil' },
+        { word: 'PLANE',        az: 'təyyarə' },
+        { word: 'BIN',          az: 'zibil qabı' },
       ]
     },
     {
       words: [
-
+        { word: 'PUB',          az: 'pivəxana' },
+        { word: 'UPSTAIRS',     az: 'yuxarı mərtəbə' },
+        { word: 'SHIP',         az: 'gəmi' },
+        { word: 'BRUSH',        az: 'fırça' },
+        { word: 'SHIRT',        az: 'köynək' },
       ]
     },
     {
       words: [
-     
+             { word: 'CHURCH',       az: 'kilsə' },
+        { word: 'TRUCK',        az: 'yük avtomobili' },
+        { word: 'SHEET',        az: 'çarşab' },
+        { word: 'SOCK',         az: 'corab' },
+        { word: 'DRESS',        az: 'don' },
+        { word: 'SHOES',        az: 'ayaqqabı' },
       ]
     },
   ]
 },
-    'b5_g0': { id: 'a2_b5_g0', title: 'Game 14', words: [] },
-    'b5_g1': { id: 'a2_b5_g1', title: 'Game 15', words: [] },
-    'b5_g2': { id: 'a2_b5_g2', title: 'Game 16', words: [] },
-    'b6_g0': { id: 'a2_b6_g0', title: 'Game 17', words: [] },
-    'b7_g0': { id: 'a2_b7_g0', title: 'Game 18', words: [] },
-    'b8_g0': { id: 'a2_b8_g0', title: 'Game 19', words: [] },
-    'b9_g0': { id: 'a2_b9_g0', title: 'Game 20', words: [] },
+
+
+    
+    
+    'b5_g0': { id: 'a2_b5_g0', title: 'Game 14', phases: [
+    {
+      words: [
+        { word: 'IDEAL',        az: 'ideal' },
+        { word: 'DEAD',         az: 'ölü' },
+        { word: 'ILL',          az: 'xəstə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PLEASED',      az: 'məmnun' },
+        { word: 'DEEP',         az: 'dərin' },
+        { word: 'ASLEEP',       az: 'yuxuda' },
+      ]
+    },
+    {
+      words: [
+             { word: 'FEAR',         az: 'qorxu' },
+        { word: 'BRAVE',        az: 'cəsur' },
+        { word: 'FAIR',         az: 'ədalətli' },
+      ]
+    },
+  ]
+},
+    'b5_g1': { id: 'a2_b5_g1', title: 'Game 15', phases: [
+    {
+      words: [
+        { word: 'ACTIVE',       az: 'fəal' },
+        { word: 'CLEVER',       az: 'ağıllı' },
+        { word: 'CREATIVE',     az: 'yaradıcı' },
+        { word: 'ANCIENT',      az: 'qədim' },
+        { word: 'CERTAIN',      az: 'əmin' },
+        { word: 'ALIVE',        az: 'sağ' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CALM',         az: 'sakit' },
+        { word: 'CAREFUL',      az: 'diqqətli' },
+        { word: 'CUTE',         az: 'sevimli' },
+        { word: 'EXACT',        az: 'dəqiq' },
+        { word: 'EXTREME',      az: 'həddindən artıq' },
+        { word: 'FLAT',         az: 'düz' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PAIN',         az: 'ağrı' },
+        { word: 'GLAD',         az: 'sevincli' },
+        { word: 'KIND',         az: 'mehriban' },
+        { word: 'BLANK',        az: 'boş' },
+        { word: 'DARK',         az: 'qaranlıq' },     
+      ]
+    },
+  ]
+},
+    'b5_g2': { id: 'a2_b5_g2', title: 'Game 16', phases: [
+    {
+      words: [
+        { word: 'HURT',         az: 'incimək' },
+        { word: 'CRAZY',        az: 'dəli' },
+        { word: 'LAZY',         az: 'tənbəl' },
+        { word: 'SHY',          az: 'utancaq' },
+        { word: 'CURLY',        az: 'qıvrım' },
+      ]
+    },
+    {
+      words: [
+        { word: 'LONELY',       az: 'tənha' },
+        { word: 'POLITE',       az: 'nəzakətli' },
+        { word: 'TYPICAL',      az: 'tipik' },
+        { word: 'PATIENT',      az: 'səbirli' },
+        { word: 'COMMON',       az: 'ümumi' },
+        { word: 'EMPTY',        az: 'boş' },
+      ]
+    },
+    {
+      words: [
+        { word: 'HOPE',         az: 'ümid' },
+        { word: 'ANGRY',        az: 'əsəbi' },
+        { word: 'UNHAPPY',      az: 'xoşbəxt olmayan' },
+        { word: 'AVERAGE',      az: 'orta' },
+        { word: 'HEAVY',        az: 'ağır' },
+        { word: 'HUGE',         az: 'nəhəng' },     
+      ]
+    },
+  ]
+},
+
+
+    
+    'b6_g0': { id: 'a2_b6_g0', title: 'Game 17', phases: [
+    {
+      words: [
+        { word: 'EASILY',       az: 'asanlıqla' },
+        { word: 'LAST',         az: 'son' },
+        { word: 'LATELY',       az: 'son vaxtlar' },
+        { word: 'STILL',        az: 'hələ də' },
+        { word: 'YET',          az: 'hələ' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ALREADY',      az: 'artıq' },
+        { word: 'CLEARLY',      az: 'aydın şəkildə' },
+        { word: 'DAILY',        az: 'gündəlik' },
+        { word: 'ALREADY',      az: 'artıq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'AFTER',        az: 'sonra' },
+        { word: 'BEFORE',       az: 'əvvəl' },
+        { word: 'SOON',         az: 'tezliklə' },
+        { word: 'NEVER',        az: 'heç vaxt' },
+        { word: 'OFTEN',        az: 'tez-tez' },
+      ]
+    },
+  ]
+},
+    'b7_g0': { id: 'a2_b7_g0', title: 'Game 18',phases: [
+    {
+      words: [
+        { word: 'AGREE',        az: 'razılaşmaq' },
+        { word: 'ARGUE',        az: 'mübahisə etmək' },
+        { word: 'SUGGEST',      az: 'təklif etmək' },
+        { word: 'GUEST',        az: 'qonaq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ADVICE',       az: 'məsləhət' },
+        { word: 'COMMENT',      az: 'şərh' },
+        { word: 'MENTION',      az: 'qeyd etmək' },
+        { word: 'INVITE',       az: 'dəvət etmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ARGUMENT',     az: 'mübahisə' },
+        { word: 'PROMISE',      az: 'söz vermək' },
+        { word: 'MARRIAGE',     az: 'evlilik' },
+        { word: 'PARTNER',      az: 'tərəfdaş' },
+        { word: 'SUPPORT',      az: 'dəstək' },
+      ]
+    },
+  ]
+},
+    'b8_g0': { id: 'a2_b8_g0', title: 'Game 19', phases: [
+    {
+      words: [
+        { word: 'DANGER',       az: 'təhlükə' },
+        { word: 'WAR',          az: 'müharibə' },
+        { word: 'AWARD',        az: 'mükafat' },
+        { word: 'EARN',         az: 'qazanmaq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'LAW',          az: 'qanun' },
+        { word: 'STEAL',        az: 'oğurlamaq' },
+        { word: 'SALE',         az: 'satış' },
+        { word: 'TAX',          az: 'vergi' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CRIME',        az: 'cinayət' },
+        { word: 'PROTECT',      az: 'qorumaq' },
+        { word: 'OFFICER',      az: 'zabit' },
+        { word: 'COIN',         az: 'sikkə' },
+        { word: 'PERCENT',     az: 'faiz' },
+        { word: 'PROFIT',       az: 'mənfəət' },
+      ]
+    },
+  ]
+},
+    'b9_g0': { id: 'a2_b9_g0', title: 'Game 20', phases: [
+    {
+      words: [
+        { word: 'GAS',          az: 'qaz' },
+        { word: 'GOLD',         az: 'qızıl' },
+        { word: 'GRASS',        az: 'ot' },
+        { word: 'ABROAD',       az: 'xaricdə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'OIL',          az: 'neft' },
+        { word: 'POLLUTION',    az: 'çirklənmə' },
+        { word: 'NATURE',       az: 'təbiət' },
+        { word: 'AIRLINE',      az: 'aviaşirkət' },
+        { word: 'TOUR',         az: 'tur' },
+        { word: 'ROUTE',        az: 'marşrut' },
+        { word: 'TRIP',         az: 'səfər' },
+      ]
+    },
+    {
+      words: [
+        { word: 'FOREST',       az: 'meşə' },
+        { word: 'REDUCE',       az: 'azaltmaq' },
+        { word: 'RESOURCE',     az: 'resurs' },
+        { word: 'WASTE',        az: 'tullantı' },
+        { word: 'WOOD',         az: 'taxta' },
+        { word: 'COAST',        az: 'sahil' },
+      ]
+    },
+  ]
+},
   },
 
   // ── B1 ─────────────────────────────────────────────────
