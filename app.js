@@ -2847,7 +2847,15 @@ function renderCefrPath(lvl, li) {
       allNodes.push({ ...examNode, xOffset: 0, isExam: true, blockIdx: gi });
     }
   });
+// ── Hər nodun faktiki Y mərkəzini hesabla ──────────────
+const nodeCenters = [];
+let currentY = PADDING_TOP;
 
+allNodes.forEach((node) => {
+  const center = currentY + NODE_H / 2;
+  nodeCenters.push(center);
+  currentY += NODE_H + (node.isExam ? 16 : 28) + LINE_H;
+});
   // ── Game nodelarını hesabla (ABSOLUTE, sıraya toxunmur) ─
   // Hər iki ardıcıl QUIZ-QUIZ cütü arasına bir game node
   // (quiz-exam arasına qoymuruq)
@@ -2870,8 +2878,8 @@ function renderCefrPath(lvl, li) {
 
     // Y mərkəzi: iki nodun tam ortası
     // Node[i] mərkəzi = PADDING_TOP + i * BLOCK_H + NODE_H/2
-    const yCenterA = PADDING_TOP + i * BLOCK_H + NODE_H / 2;
-    const yCenterB = PADDING_TOP + (i + 1) * BLOCK_H + NODE_H / 2;
+    const yCenterA = nodeCenters[i];
+    const yCenterB = nodeCenters[i + 1];
     const midY     = (yCenterA + yCenterB) / 2;
 
     // X mövqeyi: quiz nodelarının ƏKSI tərəfə
@@ -3108,7 +3116,7 @@ const innerSize = GAME_SIZE;
 });
   
   // ── Ümumi konteyner hündürlüyü ─────────────────────────
-  const totalH = allNodes.length * BLOCK_H + PADDING_TOP * 2;
+  const totalH = currentY + PADDING_TOP;
 
   return `
     <div style="
