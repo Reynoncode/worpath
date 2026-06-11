@@ -617,7 +617,13 @@ window.WordGame = (function () {
 
     return `
     <style>
-      #${OID} { background:${C.bg}; position:relative; }
+      #${OID} {
+  background-image:url('mp3/${dark ? 'backgrounddark' : 'background'}.png');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  position:relative;
+}
       #${OID} * { box-sizing:border-box; margin:0; padding:0; }
 
       @keyframes wgLetterPop {
@@ -640,8 +646,8 @@ window.WordGame = (function () {
       #wg-hdr {
         display:flex; align-items:center; gap:12px;
         padding:12px 16px;
-        background:${C.card};
-        border-bottom:1px solid ${C.border};
+        background:transparent;
+        border-bottom:none;
         flex-shrink:0;
       }
       #wg-back {
@@ -692,8 +698,9 @@ window.WordGame = (function () {
       #wg-hint-row {
         display:flex; align-items:center; gap:8px;
         padding:4px 16px; min-height:46px;
-        background:${C.card};
-        border-top:1px solid ${C.border};
+        background:transparent;
+        border-top:none;
+        border-bottom:none;
         flex-shrink:0; position:relative;
       }
       #wg-hint-btn {
@@ -768,8 +775,8 @@ window.WordGame = (function () {
 
       /* ── Wheel area ── */
       #wg-wheel-area {
-        background:${C.card};
-        border-top:1px solid ${C.border};
+        background:transparent;
+        border-top:none;
         padding:6px 16px 14px;
         display:flex; flex-direction:column;
         align-items:center; gap:6px;
