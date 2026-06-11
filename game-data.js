@@ -237,8 +237,8 @@ const GAME_DATA = {
     },
     {
       words: [
-        { word: 'TO FEEL',      az: 'hiss etmək' },
-        { word: 'TO HATE',      az: 'nifrət etmək' },
+        { word: 'FEEL',      az: 'hiss etmək' },
+        { word: 'HATE',      az: 'nifrət etmək' },
         { word: 'HALF',         az: 'yarım' },
         { word: 'FAST',         az: 'sürətli' },    
       ]
@@ -261,7 +261,7 @@ const GAME_DATA = {
         { word: 'TOMATO',       az: 'pomidor' },
         { word: 'MEAT',         az: 'ət' },
         { word: 'TEA',          az: 'çay' },
-        { word: 'TO EAT',       az: 'yemək' },
+        { word: 'EAT',       az: 'yemək' },
       ]
     },
     {
@@ -289,7 +289,7 @@ const GAME_DATA = {
         { word: 'ONION',        az: 'soğan' },
         { word: 'DIET',         az: 'pəhriz' },
         { word: 'DINNER',       az: 'axşam yeməyi' },
-        { word: 'TO ORDER',     az: 'sifariş etmək' },
+        { word: 'ORDER',     az: 'sifariş etmək' },
       ]
     },
     {
@@ -602,7 +602,6 @@ const GAME_DATA = {
       words: [
         { word: 'POOR',         az: 'kasıb' },
         { word: 'PHOTO',        az: 'şəkil' },
-        { word: 'PHOTO',        az: 'şəkil' },
         { word: 'POP',          az: 'pop musiqi' },
       ]
     },
@@ -644,7 +643,7 @@ const GAME_DATA = {
     {
       words: [
         { word: 'CENT',         az: 'sent' },
-        { word: 'TO COST',      az: 'başa gəlmək' },
+        { word: 'COST',      az: 'başa gəlmək' },
         { word: 'FREE',         az: 'pulsuz' },
         { word: 'SCREEN',       az: 'ekran' },
         { word: 'CONCERT',      az: 'konsert' },
@@ -686,7 +685,7 @@ const GAME_DATA = {
       words: [
         { word: 'LESSON',       az: 'dərs' },
         { word: 'NOTE',         az: 'qeyd' },
-        { word: 'TO SPELL',     az: 'hərfləmək' },
+        { word: 'SPELL',     az: 'hərfləmək' },
         { word: 'POOL',         az: 'hovuz' },
       ]
     },
@@ -699,7 +698,7 @@ const GAME_DATA = {
     },
     {
       words: [
-        { word: 'TO TEACH',     az: 'öyrətmək' },
+        { word: 'TEACH',     az: 'öyrətmək' },
         { word: 'CHESS',        az: 'şahmat' },
         { word: 'MATCH',        az: 'oyun' },
       ]
@@ -923,7 +922,6 @@ const GAME_DATA = {
         { word: 'DOCTOR',       az: 'həkim' },
         { word: 'TOE',          az: 'ayaq barmağı' },
         { word: 'EAR',          az: 'qulaq' },
-        { word: 'DOCTOR',       az: 'həkim' },
       ]
     },
   ]
