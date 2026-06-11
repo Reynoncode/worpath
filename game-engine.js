@@ -279,7 +279,22 @@ window.WordGame = (function () {
       starCollected: false,
     };
 
-    state.starCell = _pickStarCell(state.placedWords);
+ state.starCell = _pickStarCell(state.placedWords);
+
+    // Yarımçıq progress yüklə
+    const progressKey = `${levelId}_game_${gameKey}`;
+    const savedWords  = localStorage.getItem(`${progressKey}_phase_${phaseIdx}`);
+    if (savedWords) {
+      JSON.parse(savedWords).forEach(w => state.foundWords.add(w));
+    }
+  }
+
+  function _savePhaseProgress() {
+    const progressKey = `${state.levelId}_game_${state.gameKey}`;
+    localStorage.setItem(
+      `${progressKey}_phase_${state.phaseIdx}`,
+      JSON.stringify([...state.foundWords])
+    );
   }
 
   // ══════════════════════════════════════════════════════════
@@ -1179,9 +1194,10 @@ window.WordGame = (function () {
     const word = state.currentWord;
     if (!word || word.length < 2) { _clearSel(); return; }
 
-    const pw = state.placedWords.find(p => p.word === word && !state.foundWords.has(word));
+const pw = state.placedWords.find(p => p.word === word && !state.foundWords.has(word));
     if (pw) {
       state.foundWords.add(word);
+      _savePhaseProgress();
 
       _playSuccess();
       _showWordToast(word);
@@ -1215,11 +1231,12 @@ window.WordGame = (function () {
     }
   }
 
-  function _onPhaseComplete() {
+function _onPhaseComplete() {
     const nextPhase = state.phaseIdx + 1;
     const isLast    = nextPhase >= state.totalPhases;
     const progressKey = `${state.levelId}_game_${state.gameKey}`;
     localStorage.setItem(progressKey, String(nextPhase));
+    localStorage.removeItem(`${progressKey}_phase_${state.phaseIdx}`);
 
     if (isLast) {
       state._pendingStarReward = true;
