@@ -917,16 +917,17 @@ window.WordGame = (function () {
       const { r, c } = state.starCell;
       const targetDiv = board.querySelector(`[data-r="${r}"][data-c="${c}"]`);
       if (targetDiv) {
+        const starSz = Math.max(10, cs - 8);
         const starEl = document.createElement('span');
         starEl.id = 'wg-star-overlay';
-        starEl.textContent = '⭐';
+        starEl.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${starSz}" height="${starSz}" viewBox="0 0 24 24" fill="#ffd700" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
         starEl.style.cssText = `
           position:absolute; top:50%; left:50%;
           transform:translate(-50%,-50%);
-          font-size:${Math.max(10, cs - 10)}px;
           pointer-events:none; z-index:5;
-          filter:drop-shadow(0 0 4px #ffd700);
+          filter:drop-shadow(0 0 4px #ffd70088);
           animation:wgStarPulse 1.6s ease-in-out infinite;
+          display:flex; align-items:center; justify-content:center;
         `;
         targetDiv.appendChild(starEl);
       }
@@ -1244,8 +1245,7 @@ window.WordGame = (function () {
 
     const star = document.createElement('div');
     star.className = 'game-star-reward';
-    star.innerHTML = '⭐';
-    star.style.cssText = `
+    star.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#ffd700" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;    star.style.cssText = `
       position: absolute;
       top: -14px;
       left: 50%;
