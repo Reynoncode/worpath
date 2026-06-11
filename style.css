@@ -3770,7 +3770,6 @@ button { font-family: var(--font); }
    GAME NODE CSS
    Mövcud CSS faylının sonuna əlavə et
    ============================================================ */
-
 /* ── Game node — əsas stil ─────────────────────────────── */
 .game-node {
   border-radius: 50%;
@@ -3780,38 +3779,32 @@ button { font-family: var(--font); }
   flex-shrink: 0;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-
 .game-node:active {
   transform: scale(0.92);
 }
-
 /* ── Tamamlanmamış game node ─────────────────────────────── */
 .game-node-unlocked {
   opacity: 0.85;
 }
-
 .game-node-unlocked:hover {
   opacity: 1;
   transform: scale(1.08);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
-
 /* ── Tamamlanmış game node ──────────────────────────────── */
 .game-node-done {
   border-style: solid;
   opacity: 1;
 }
-
 .game-node-done:hover {
   transform: scale(1.06);
 }
-
 /* ── Game node wrapper ──────────────────────────────────── */
 .game-node-wrap {
   transition: opacity 0.2s ease;
 }
-
 /* ── Game placeholder (oyun hələ hazır deyil) ───────────── */
 .game-placeholder-wrap {
   display: flex;
@@ -3823,24 +3816,20 @@ button { font-family: var(--font); }
   padding: 32px 24px;
   text-align: center;
 }
-
 .game-placeholder-icon {
   font-size: 56px;
   line-height: 1;
 }
-
 .game-placeholder-title {
   font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
 }
-
 .game-placeholder-desc {
   font-size: 15px;
   color: var(--text-secondary);
 }
 /* ── Game Node — Circular Progress ──────────────────────── */
-
 .game-node-inprogress {
   border: 1.5px dashed currentColor;
   border-radius: 50%;
@@ -3849,31 +3838,26 @@ button { font-family: var(--font); }
   justify-content: center;
   flex-shrink: 0;
 }
-
 .game-node-phase-num {
   font-size: 10px;
   font-weight: 700;
   line-height: 1;
   color: currentColor;
 }
-
 .game-progress-ring {
   overflow: visible;
 }
-
 /* Tamamlandı — checkmark pulse animasiyası */
 @keyframes gameNodePulse {
   0%   { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
   60%  { opacity: 0;   transform: translate(-50%, -50%) scale(1.8); }
   100% { opacity: 0;   transform: translate(-50%, -50%) scale(1.8); }
 }
-
 /* Metal shimmer — tamamlanmış node üçün */
 .game-node-done {
   position: relative;
   overflow: hidden;
 }
-
 .game-node-done::after {
   content: '';
   position: absolute;
@@ -3890,7 +3874,6 @@ button { font-family: var(--font); }
   transform: skewX(-10deg);
   animation: gameNodeShimmer 3s ease-in-out infinite;
 }
-
 @keyframes gameNodeShimmer {
   0%   { left: -60%; opacity: 0; }
   20%  { opacity: 1; }
