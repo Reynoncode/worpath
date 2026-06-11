@@ -1949,7 +1949,8 @@ const GAME_DATA = {
         { word: 'RACE',         az: 'qaçış yarışı' },
         { word: 'RACING',       az: 'yarış' },
         { word: 'TRAINING',     az: 'məşq' },
-
+      ]
+    },
   ]
 },
     'b7_g1': { id: 'b1_b7_g1', title: 'Game 15', phases: [
