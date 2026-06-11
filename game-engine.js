@@ -71,8 +71,6 @@ window.WordGame = (function () {
 
     const trimmed = _trimGrid(grid, gridSize);
 
-    // FIX: _trimGrid indi rowMap/colMap qaytarır — placed koordinatları
-    // compression-dan sonra düzgün translate edilir
     return {
       grid: trimmed.grid,
       placedWords: placed.map(p => ({
@@ -157,8 +155,6 @@ window.WordGame = (function () {
     return null;
   }
 
-  // FIX: _trimGrid indi rowMap və colMap da qaytarır.
-  // Köhnə orijinal koordinat → yeni compressed koordinat mapping-i.
   function _trimGrid(grid, size) {
     let minR = size, maxR = 0, minC = size, maxC = 0;
     for (let r = 0; r < size; r++) {
@@ -181,7 +177,6 @@ window.WordGame = (function () {
       Array.from({ length: rawCols }, (_, c) => grid[minR + r]?.[minC + c] || null)
     );
 
-    // Boş sıraları sıxışdır; hər orijinal sıranın yeni indeksini yadda saxla
     const keptRowsOrig = [];
     let emptyCount = 0;
     for (let r = 0; r < rawRows; r++) {
@@ -195,7 +190,6 @@ window.WordGame = (function () {
       }
     }
 
-    // Boş sütunları sıxışdır; hər orijinal sütunun yeni indeksini yadda saxla
     const keptColsOrig = [];
     let emptyColCount = 0;
     for (let c = 0; c < rawCols; c++) {
@@ -215,11 +209,9 @@ window.WordGame = (function () {
     const finalRows = finalGrid.length;
     const finalCols = finalGrid[0]?.length || 0;
 
-    // rowMap: orijinal grid r → yeni compressed r
     const rowMap = {};
     keptRowsOrig.forEach((origR, newIdx) => { rowMap[origR] = newIdx; });
 
-    // colMap: orijinal grid c → yeni compressed c
     const colMap = {};
     keptColsOrig.forEach((origC, newIdx) => { colMap[origC] = newIdx; });
 
@@ -282,11 +274,72 @@ window.WordGame = (function () {
       currentWord:  '',
       foundWords:   new Set(),
       isDragging:   false,
+      // ── STAR SYSTEM ──
+      starCell:      null,
+      starCollected: false,
     };
+
+    state.starCell = _pickStarCell(state.placedWords);
   }
 
   // ══════════════════════════════════════════════════════════
-  //  4. HELPERS
+  //  4. STAR SYSTEM
+  // ══════════════════════════════════════════════════════════
+
+  // Bütün yerləşdirilmiş sözlərin hücrələrindən random 1-ni seçir
+  function _pickStarCell(placedWords) {
+    const seen = new Set();
+    const all  = [];
+    placedWords.forEach(pw => {
+      pw.cells.forEach(({ r, c }) => {
+        const k = r + ',' + c;
+        if (!seen.has(k)) { seen.add(k); all.push({ r, c }); }
+      });
+    });
+    return all[Math.floor(Math.random() * all.length)] || null;
+  }
+
+  // Ulduz animasiya ilə sayğaca uçur
+  function _collectStar() {
+    state.starCollected = true;
+
+    const starEl = document.getElementById('wg-star-overlay');
+    if (!starEl) { _creditStar(); return; }
+
+    const counterEl = document.getElementById('star-count');
+    if (!counterEl) { starEl.remove(); _creditStar(); return; }
+
+    const starRect    = starEl.getBoundingClientRect();
+    const counterRect = counterEl.getBoundingClientRect();
+
+    const dx = (counterRect.left + counterRect.width  / 2) - (starRect.left + starRect.width  / 2);
+    const dy = (counterRect.top  + counterRect.height / 2) - (starRect.top  + starRect.height / 2);
+
+    starEl.style.setProperty('--sfx', dx + 'px');
+    starEl.style.setProperty('--sfy', dy + 'px');
+    starEl.style.animation = 'wgStarFly 0.65s cubic-bezier(.4,0,.2,1) forwards';
+
+    setTimeout(() => {
+      starEl.remove();
+      _creditStar();
+    }, 650);
+  }
+
+  // Mövcud ulduz sisteminə 1 ulduz əlavə edir + sayğac bounce
+  function _creditStar() {
+    if (typeof addStar === 'function')  addStar();
+    if (typeof Stats !== 'undefined')   Stats.addStar(1);
+
+    const counterEl = document.getElementById('star-count');
+    if (counterEl) {
+      counterEl.style.transition = 'transform .15s';
+      counterEl.style.transform  = 'scale(1.6)';
+      setTimeout(() => { counterEl.style.transform = 'scale(1)'; }, 180);
+    }
+  }
+
+  // ══════════════════════════════════════════════════════════
+  //  5. HELPERS
   // ══════════════════════════════════════════════════════════
 
   function _getLvlColor() {
@@ -305,19 +358,16 @@ window.WordGame = (function () {
     const g = parseInt(hex.slice(3,5),16);
     const b = parseInt(hex.slice(5,7),16);
     if (dark) {
-      // FIX 8: dark modeda level rənginin daha tünd versiyası (crossword fon tonu ilə uyumlu)
       return `rgba(${Math.round(r*0.22)},${Math.round(g*0.22)},${Math.round(b*0.26)},1)`;
     } else {
       return `rgba(${Math.round(r*0.82 + 255*0.18)},${Math.round(g*0.82 + 255*0.18)},${Math.round(b*0.82 + 255*0.18)},1)`;
     }
   }
 
-  // FIX 8: Dark modeda çevrə border/glow rəngi üçün level rənginin tünd tonu
   function _darkenAccentBorder(hex) {
     const r = parseInt(hex.slice(1,3),16);
     const g = parseInt(hex.slice(3,5),16);
     const b = parseInt(hex.slice(5,7),16);
-    // ~60% qaralıq
     return `rgba(${Math.round(r*0.6)},${Math.round(g*0.6)},${Math.round(b*0.6)},1)`;
   }
 
@@ -341,7 +391,7 @@ window.WordGame = (function () {
   }
 
   // ══════════════════════════════════════════════════════════
-  //  5. WEB AUDIO
+  //  6. WEB AUDIO
   // ══════════════════════════════════════════════════════════
 
   let _audioCtx = null;
@@ -398,12 +448,11 @@ window.WordGame = (function () {
   }
 
   // ══════════════════════════════════════════════════════════
-  //  6. TOAST — FIX: 2x böyük, parlama, 3s göstər, hərflər tək-tək dolar, 0.3s yox olur
+  //  7. TOAST
   // ══════════════════════════════════════════════════════════
 
   function _showWordToast(word) {
     const wordLen = word.length;
-    // Mövcud toast varsa sil
     const old = document.getElementById('wg-toast');
     if (old) { clearTimeout(old._hideTimer); old.remove(); }
 
@@ -425,8 +474,6 @@ window.WordGame = (function () {
 
     const toast = document.createElement('div');
     toast.id = 'wg-toast';
-    // FIX 6: 10px aşağı (top:68px əvvəlki 58px idi)
-    // FIX 4: 2x böyük (padding, font-size artırıldı)
     toast.style.cssText = `
       position:absolute;
       top:68px; left:50%; transform:translateX(-50%) translateY(-12px);
@@ -447,7 +494,6 @@ window.WordGame = (function () {
       min-width:160px; justify-content:center;
     `;
 
-    // FIX 5: Hərflər tək-tək dolar — əvvəlcə emoji+text span qoyuruq, sonra hərfləri animasiya ilə doldururuq
     const emojiSpan = document.createElement('span');
     emojiSpan.style.cssText = 'font-size:32px; line-height:1;';
     emojiSpan.textContent = emoji;
@@ -459,28 +505,26 @@ window.WordGame = (function () {
       max-width:0; opacity:0;
     `;
     textSpan.textContent = text;
-    
+
     toast.appendChild(emojiSpan);
     toast.appendChild(textSpan);
-        
+
     const ov = document.getElementById('wg-overlay');
     if (ov) ov.appendChild(toast);
 
-    // Animasiya: gəl
     requestAnimationFrame(() => {
       toast.style.opacity = '1';
       toast.style.transform = 'translateX(-50%) translateY(0)';
     });
 
-// text hərflərini tək-tək aç (max-width genişlənməsi ilə)
-const totalChars = text.length;
-setTimeout(() => {
-  textSpan.style.transition = `max-width ${totalChars * 0.1 + 0.2}s steps(${totalChars}, end), opacity .15s`;
-  textSpan.style.maxWidth = '200px';
-  textSpan.style.opacity = '1';
-}, 80);
+    const totalChars = text.length;
+    setTimeout(() => {
+      textSpan.style.transition = `max-width ${totalChars * 0.1 + 0.2}s steps(${totalChars}, end), opacity .15s`;
+      textSpan.style.maxWidth = '200px';
+      textSpan.style.opacity = '1';
+    }, 80);
 
-const hideDelay = 3000;
+    const hideDelay = 3000;
     toast._hideTimer = setTimeout(() => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateX(-50%) translateY(-12px)';
@@ -490,7 +534,7 @@ const hideDelay = 3000;
   }
 
   // ══════════════════════════════════════════════════════════
-  //  7. OVERLAY & HTML
+  //  8. OVERLAY & HTML
   // ══════════════════════════════════════════════════════════
 
   const OID = 'wg-overlay';
@@ -517,23 +561,23 @@ const hideDelay = 3000;
     setTimeout(() => _renderCells(), 0);
   }
 
- function _closeOverlay() {
-  const ov = document.getElementById(OID);
-  
-  // Oyun tam bitibsə ulduz əlavə et
-  const wasLastPhase = state && state._pendingStarReward;
-  const savedLevelId = state?.levelId;
-  const savedGameKey = state?.gameKey;
+  function _closeOverlay() {
+    const ov = document.getElementById(OID);
 
-  if (ov) { ov.style.display = 'none'; ov.innerHTML = ''; }
-  state = null;
+    const wasLastPhase = state && state._pendingStarReward;
+    const savedLevelId = state?.levelId;
+    const savedGameKey = state?.gameKey;
 
-  if (wasLastPhase) {
-    setTimeout(() => {
-      _addStarToGameNode(savedLevelId, savedGameKey);
-    }, 300);
+    if (ov) { ov.style.display = 'none'; ov.innerHTML = ''; }
+    state = null;
+
+    if (wasLastPhase) {
+      setTimeout(() => {
+        _addStarToGameNode(savedLevelId, savedGameKey);
+      }, 300);
+    }
   }
-}
+
   function _buildHTML() {
     const C          = _colors();
     const dark       = _isDark();
@@ -541,7 +585,6 @@ const hideDelay = 3000;
     const phaseLabel = `${state.phaseIdx + 1} / ${state.totalPhases}`;
     const title      = state.gameData.title || 'Word Game';
 
-    // FIX 3 & FIX new color: Hint chip rəngi — tapılmamış: mavi, tapılmış: yaşıl
     const cluesHTML = state.placedWords.map(pw => `
       <span class="wg-chip" data-word="${pw.word}">
         <span class="wg-chip-dot"></span>${pw.az}
@@ -551,9 +594,8 @@ const hideDelay = 3000;
 
     const iconHint = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5c842" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 2.5-1.3 4.7-3.3 6l-.7 2H9l-.7-2A7 7 0 0 1 5 9a7 7 0 0 1 7-7z"/><path d="M9 21h6"/><path d="M9.5 17.5h5"/></svg>`;
 
-    // FIX 2: Shuffle SVG — hər iki ox tam görünür (viewBox genişləndirildi, stroke-width azaldıldı)
-const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3"/><path d="M18 20l3 -3l-3 -3"/><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h4"/><path d="M21 7h-4a5 5 0 0 0 -5 5a5 5 0 0 1 -5 5h-4"/></svg>`;
-    // FIX 8: dark modeda wheel düymə rəngləri — level accent-in tünd versiyası
+    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3"/><path d="M18 20l3 -3l-3 -3"/><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h4"/><path d="M21 7h-4a5 5 0 0 0 -5 5a5 5 0 0 1 -5 5h-4"/></svg>`;
+
     const wheelBtnBg     = dark ? _darkenAccent(accent, true)       : _darkenAccent(accent, false);
     const wheelBtnBorder = dark ? _darkenAccentBorder(accent)        : accent;
     const wheelGlow      = dark ? `${accent}33`                      : `${accent}44`;
@@ -563,10 +605,20 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       #${OID} { background:${C.bg}; position:relative; }
       #${OID} * { box-sizing:border-box; margin:0; padding:0; }
 
-      /* Toast hərfi animasiyası */
       @keyframes wgLetterPop {
         from { transform:scale(.5) translateY(6px); opacity:0; }
         to   { transform:scale(1) translateY(0);    opacity:1; }
+      }
+
+      /* ── Star system animasiyaları ── */
+      @keyframes wgStarPulse {
+        0%,100% { transform:translate(-50%,-50%) scale(1);    opacity:1; }
+        50%      { transform:translate(-50%,-50%) scale(1.25); opacity:.75; }
+      }
+      @keyframes wgStarFly {
+        0%   { opacity:1; transform:translate(-50%,-50%) scale(1); }
+        50%  { opacity:1; transform:translate(calc(-50% + var(--sfx)), calc(-50% + var(--sfy))) scale(1.5); }
+        100% { opacity:0; transform:translate(calc(-50% + var(--sfx)), calc(-50% + var(--sfy))) scale(0.2); }
       }
 
       /* ── Header ── */
@@ -637,7 +689,6 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       }
       #wg-hint-btn:active { background:${dark ? 'rgba(245,200,66,0.22)' : 'rgba(245,200,66,0.28)'}; }
 
-      /* FIX 3: Hint popup daha geniş, sözlər tam sığır */
       #wg-hint-popup {
         display:none;
         position:absolute; bottom:50px; left:14px;
@@ -650,7 +701,6 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       }
       #wg-hint-list { display:flex; flex-wrap:wrap; gap:7px; }
 
-      /* FIX 3 & color: Chips — tapılmamış mavi, tapılmış yaşıl */
       .wg-chip {
         display:inline-flex; align-items:center; gap:5px;
         padding:5px 14px; border-radius:20px;
@@ -660,8 +710,6 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
         border:1.5px solid rgba(59,130,246,0.35);
         transition:all .3s; white-space:nowrap;
       }
-
-      /* Tapılmış: yaşıl ton, üstündən xətt */
       .wg-chip.found {
         background:rgba(34,197,94,0.12);
         color:#22c55e;
@@ -671,7 +719,6 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       }
       .wg-chip.found .wg-chip-dot { background:#22c55e; }
 
-      /* Typed word display */
       #wg-typed-word {
         display:flex; align-items:center; gap:4px;
         flex:1; justify-content:center;
@@ -691,7 +738,7 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       .wg-tplaceholder { font-size:14px; color:${C.textSub}; font-style:italic; }
 
       .wg-shake { animation:wgShake .35s ease both; }
-     @keyframes wgShake {
+      @keyframes wgShake {
         0%,100% { transform:translateX(0) translateY(0); }
         20%     { transform:translateX(-5px) translateY(0); }
         40%     { transform:translateX(5px) translateY(0); }
@@ -715,7 +762,6 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       }
       #wg-wheel { position:relative; touch-action:none; user-select:none; }
 
-      /* FIX 8: Letter buttons — dark modeda level rənginin tünd tonu */
       .wg-lb {
         position:absolute;
         border-radius:50%;
@@ -776,7 +822,6 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       #wg-pc h2 { font-size:22px; font-weight:800; color:${C.textMain}; text-align:center; }
       #wg-pc p  { font-size:14px; color:${C.textSub}; text-align:center; line-height:1.5; }
 
-      /* FIX 7: Phase complete düymə hündürlüyü 2x (əvvəl padding:16px, indi padding:32px 16px) */
       .wg-pc-btn {
         width:100%; max-width:280px;
         padding:20px 16px;
@@ -824,7 +869,7 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
   }
 
   // ══════════════════════════════════════════════════════════
-  //  8. CROSSWORD RENDER
+  //  9. CROSSWORD RENDER
   // ══════════════════════════════════════════════════════════
 
   function _renderCells() {
@@ -862,11 +907,31 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
           div.dataset.r      = r;
           div.dataset.c      = c;
           div.dataset.letter = cell.letter;
-          // Orijinal davranış: xanalar boş qalır, söz tapıldıqda _animateWord açır
         }
         board.appendChild(div);
       }
     }
+
+    // ── STAR OVERLAY: star cell-ə ulduz əlavə et ──
+    if (state.starCell && !state.starCollected) {
+      const { r, c } = state.starCell;
+      const targetDiv = board.querySelector(`[data-r="${r}"][data-c="${c}"]`);
+      if (targetDiv) {
+        const starEl = document.createElement('span');
+        starEl.id = 'wg-star-overlay';
+        starEl.textContent = '⭐';
+        starEl.style.cssText = `
+          position:absolute; top:50%; left:50%;
+          transform:translate(-50%,-50%);
+          font-size:${Math.max(10, cs - 10)}px;
+          pointer-events:none; z-index:5;
+          filter:drop-shadow(0 0 4px #ffd700);
+          animation:wgStarPulse 1.6s ease-in-out infinite;
+        `;
+        targetDiv.appendChild(starEl);
+      }
+    }
+
     _refreshFound();
   }
 
@@ -884,10 +949,10 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
     });
   }
 
-  // FIX 5: _animateWord — hərflər tək-tək sürətlə yazılır (0.1s aralıq), sonra toast çıxır
   function _animateWord(word) {
     const pw = state.placedWords.find(p => p.word === word);
     if (!pw) return;
+
     pw.cells.forEach(({ r, c }, i) => {
       setTimeout(() => {
         const el = document.querySelector(`#wg-cw [data-r="${r}"][data-c="${c}"]`);
@@ -897,12 +962,24 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
         setTimeout(() => el.classList.remove('pop'), 400);
       }, i * 100);
     });
+
     const chip = document.querySelector(`.wg-chip[data-word="${word}"]`);
     if (chip) setTimeout(() => chip.classList.add('found'), pw.cells.length * 100 + 100);
+
+    // ── STAR CHECK: bu söz star cell-dən keçirsə topla ──
+    if (state.starCell && !state.starCollected) {
+      const covers = pw.cells.some(
+        ({ r, c }) => r === state.starCell.r && c === state.starCell.c
+      );
+      if (covers) {
+        // Son hərfin animasiyası bitdikdən sonra uçsun
+        setTimeout(_collectStar, pw.cells.length * 100 + 150);
+      }
+    }
   }
 
   // ══════════════════════════════════════════════════════════
-  //  9. LETTER WHEEL RENDER + TOUCH
+  //  10. LETTER WHEEL RENDER + TOUCH
   // ══════════════════════════════════════════════════════════
 
   function _renderWheel() {
@@ -926,9 +1003,8 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
     wrap.style.width  = `${size}px`;
     wrap.style.height = `${size}px`;
 
-    // FIX 2: Shuffle SVG — hər iki ox tam görünür
-const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3"/><path d="M18 20l3 -3l-3 -3"/><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h4"/><path d="M21 7h-4a5 5 0 0 0 -5 5a5 5 0 0 1 -5 5h-4"/></svg>`;
-    // FIX 8: dark modeda çevrə rəngləri — level accent tünd tonu
+    const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3"/><path d="M18 20l3 -3l-3 -3"/><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h4"/><path d="M21 7h-4a5 5 0 0 0 -5 5a5 5 0 0 1 -5 5h-4"/></svg>`;
+
     const wheelBtnBg     = dark ? _darkenAccent(accent, true)  : _darkenAccent(accent, false);
     const wheelBtnBorder = dark ? _darkenAccentBorder(accent)   : accent;
     const wheelGlow      = dark ? `${accent}33`                 : `${accent}44`;
@@ -1095,7 +1171,7 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
   }
 
   // ══════════════════════════════════════════════════════════
-  //  10. OYUN MƏNTİQİ
+  //  11. OYUN MƏNTİQİ
   // ══════════════════════════════════════════════════════════
 
   function _submitWord() {
@@ -1107,7 +1183,6 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
       state.foundWords.add(word);
 
       _playSuccess();
-      // FIX 5: toast-a sözün özünü ötürürük ki hərfləri göstərsin
       _showWordToast(word);
 
       const hintRow = document.getElementById('wg-hint-row');
@@ -1129,115 +1204,109 @@ const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="
         hintRow.classList.remove('wg-shake');
         void hintRow.offsetWidth;
         hintRow.classList.add('wg-shake');
-       setTimeout(() => {
-  hintRow.classList.remove('wg-shake');
-  _clearSel();
-}, 380);
+        setTimeout(() => {
+          hintRow.classList.remove('wg-shake');
+          _clearSel();
+        }, 380);
       } else {
         _clearSel();
       }
     }
   }
 
-function _onPhaseComplete() {
-  const nextPhase = state.phaseIdx + 1;
-  const isLast    = nextPhase >= state.totalPhases;
-  const progressKey = `${state.levelId}_game_${state.gameKey}`;
-  localStorage.setItem(progressKey, String(nextPhase));
+  function _onPhaseComplete() {
+    const nextPhase = state.phaseIdx + 1;
+    const isLast    = nextPhase >= state.totalPhases;
+    const progressKey = `${state.levelId}_game_${state.gameKey}`;
+    localStorage.setItem(progressKey, String(nextPhase));
 
-  if (isLast) {
-    state._pendingStarReward = true;
-  }
-
-  if (typeof markCompleted === 'function' && typeof LEVELS !== 'undefined') {
-    const lvlIdx = LEVELS.findIndex(l => l.id === state.levelId);
-    if (lvlIdx !== -1 && typeof _refreshOpenCard === 'function') {
-      _refreshOpenCard(lvlIdx);
+    if (isLast) {
+      state._pendingStarReward = true;
     }
-  }
 
-  _showPhaseComplete(isLast, nextPhase);
-}
-
-function _addStarToGameNode(levelId, gameKey) {
-  const wrap = document.querySelector(
-    `[data-game-key="${gameKey}"][data-level-id="${levelId}"]`
-  );
-  if (!wrap) return;
-
-  // Əgər artıq ulduz varsa əlavə etmə
-  if (wrap.querySelector('.game-star-reward')) return;
-
-  const star = document.createElement('div');
-  star.className = 'game-star-reward';
-  star.innerHTML = '⭐';
-  star.style.cssText = `
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 10;
-    animation: starPulse 1.5s ease-in-out infinite;
-    filter: drop-shadow(0 2px 6px rgba(255,200,0,0.7));
-  `;
-
-  // Pulse animasiyası CSS-ə əlavə et (bir dəfə)
-  if (!document.getElementById('star-reward-style')) {
-    const style = document.createElement('style');
-    style.id = 'star-reward-style';
-    style.textContent = `
-      @keyframes starPulse {
-        0%, 100% { transform: translateX(-50%) scale(1);   opacity: 1; }
-        50%       { transform: translateX(-50%) scale(1.3); opacity: 0.8; }
-      }
-      @keyframes starFly {
-        0%   { transform: translate(-50%, 0)   scale(1);   opacity: 1; }
-        40%  { transform: translate(-50%, -20px) scale(3); opacity: 1; }
-        100% { transform: translate(calc(var(--tx) - 50%), var(--ty)) scale(0.2); opacity: 0; }
-      }
-    `;
-    document.head.appendChild(style);
-  }
-
-  // Tıklayanda uç
-  star.addEventListener('click', (e) => {
-    e.stopPropagation();
-
-    // Ulduz sayğacının pozisyasunu tap
-    const starCounter = document.getElementById('star-count');
-    const counterRect = starCounter
-      ? starCounter.getBoundingClientRect()
-      : { left: window.innerWidth - 60, top: 20 };
-    const starRect = star.getBoundingClientRect();
-
-    const tx = counterRect.left - starRect.left;
-    const ty = counterRect.top  - starRect.top - 20;
-
-    star.style.setProperty('--tx', `${tx}px`);
-    star.style.setProperty('--ty', `${ty}px`);
-    star.style.animation = `starFly 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
-
-    setTimeout(() => {
-      // 3 ulduz əlavə et
-      if (typeof addStar === 'function') {
-        addStar(); addStar(); addStar();
-      }
-      if (typeof Stats !== 'undefined') Stats.addStar(3);
-      star.remove();
-
-      // Node-u tık görünüşünə keçir
-      const lvlIdx = LEVELS.findIndex(l => l.id === levelId);
+    if (typeof markCompleted === 'function' && typeof LEVELS !== 'undefined') {
+      const lvlIdx = LEVELS.findIndex(l => l.id === state.levelId);
       if (lvlIdx !== -1 && typeof _refreshOpenCard === 'function') {
         _refreshOpenCard(lvlIdx);
       }
-    }, 700);
-  });
+    }
 
-  wrap.style.position = 'relative';
-  wrap.appendChild(star);
-}
+    _showPhaseComplete(isLast, nextPhase);
+  }
+
+  function _addStarToGameNode(levelId, gameKey) {
+    const wrap = document.querySelector(
+      `[data-game-key="${gameKey}"][data-level-id="${levelId}"]`
+    );
+    if (!wrap) return;
+
+    if (wrap.querySelector('.game-star-reward')) return;
+
+    const star = document.createElement('div');
+    star.className = 'game-star-reward';
+    star.innerHTML = '⭐';
+    star.style.cssText = `
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 10;
+      animation: starPulse 1.5s ease-in-out infinite;
+      filter: drop-shadow(0 2px 6px rgba(255,200,0,0.7));
+    `;
+
+    if (!document.getElementById('star-reward-style')) {
+      const style = document.createElement('style');
+      style.id = 'star-reward-style';
+      style.textContent = `
+        @keyframes starPulse {
+          0%, 100% { transform: translateX(-50%) scale(1);   opacity: 1; }
+          50%       { transform: translateX(-50%) scale(1.3); opacity: 0.8; }
+        }
+        @keyframes starFly {
+          0%   { transform: translate(-50%, 0)   scale(1);   opacity: 1; }
+          40%  { transform: translate(-50%, -20px) scale(3); opacity: 1; }
+          100% { transform: translate(calc(var(--tx) - 50%), var(--ty)) scale(0.2); opacity: 0; }
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+    star.addEventListener('click', (e) => {
+      e.stopPropagation();
+
+      const starCounter = document.getElementById('star-count');
+      const counterRect = starCounter
+        ? starCounter.getBoundingClientRect()
+        : { left: window.innerWidth - 60, top: 20 };
+      const starRect = star.getBoundingClientRect();
+
+      const tx = counterRect.left - starRect.left;
+      const ty = counterRect.top  - starRect.top - 20;
+
+      star.style.setProperty('--tx', `${tx}px`);
+      star.style.setProperty('--ty', `${ty}px`);
+      star.style.animation = `starFly 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
+
+      setTimeout(() => {
+        if (typeof addStar === 'function') {
+          addStar(); addStar(); addStar();
+        }
+        if (typeof Stats !== 'undefined') Stats.addStar(3);
+        star.remove();
+
+        const lvlIdx = LEVELS.findIndex(l => l.id === levelId);
+        if (lvlIdx !== -1 && typeof _refreshOpenCard === 'function') {
+          _refreshOpenCard(lvlIdx);
+        }
+      }, 700);
+    });
+
+    wrap.style.position = 'relative';
+    wrap.appendChild(star);
+  }
 
   function _showPhaseComplete(isLast, nextPhase) {
     const ov = document.getElementById(OID);
@@ -1292,7 +1361,7 @@ function _addStarToGameNode(levelId, gameKey) {
   }
 
   // ══════════════════════════════════════════════════════════
-  //  11. EVENT LISTENERS
+  //  12. EVENT LISTENERS
   // ══════════════════════════════════════════════════════════
 
   function _attachEvents(ov) {
@@ -1324,7 +1393,7 @@ function _addStarToGameNode(levelId, gameKey) {
   }
 
   // ══════════════════════════════════════════════════════════
-  //  12. PUBLIC API
+  //  13. PUBLIC API
   // ══════════════════════════════════════════════════════════
 
   function start(levelId, gameKey, gameData, savedPhase) {
