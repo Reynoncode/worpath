@@ -684,10 +684,9 @@ window.WordGame = (function () {
         border:1.5px solid ${C.cellBd};
         transition:background .25s, color .2s, border-color .25s;
         user-select:none; position:relative;
-        box-shadow:0 2px 8px rgba(0,0,0,0.18);
       }
       .wg-cell.empty { background:transparent !important; border-color:transparent !important; }
-      .wg-cell.found { background:${C.accent} !important; color:#fff !important; border-color:${C.accent} !important; box-shadow:0 2px 8px rgba(0,0,0,0.22); }
+      .wg-cell.found { background:${C.accent} !important; color:#fff !important; border-color:${C.accent} !important; }
       .wg-cell.pop { animation:wgPop .38s cubic-bezier(.34,1.56,.64,1) both; }
       @keyframes wgPop {
         0%   { transform:scale(.65); opacity:.4; }
@@ -705,11 +704,10 @@ window.WordGame = (function () {
         flex-shrink:0; position:relative;
       }
       #wg-hint-btn {
-          width:36px; height:36px; border-radius:50%; border:none;
-          background:${dark ? 'rgba(245,200,66,0.13)' : 'rgba(245,200,66,0.15)'};
-          cursor:pointer; display:flex; align-items:center; justify-content:center;
-          flex-shrink:0; transition:background .15s;
-          box-shadow:0 2px 10px rgba(0,0,0,0.35);
+        width:36px; height:36px; border-radius:50%; border:none;
+        background:${dark ? 'rgba(245,200,66,0.13)' : 'rgba(245,200,66,0.15)'};
+        cursor:pointer; display:flex; align-items:center; justify-content:center;
+        flex-shrink:0; transition:background .15s;
       }
       #wg-hint-btn:active { background:${dark ? 'rgba(245,200,66,0.22)' : 'rgba(245,200,66,0.28)'}; }
 
@@ -743,12 +741,9 @@ window.WordGame = (function () {
       }
       .wg-chip.found .wg-chip-dot { background:#22c55e; }
 
-     #wg-typed-word {
+      #wg-typed-word {
         display:flex; align-items:center; gap:4px;
         flex:1; justify-content:center;
-        background:rgba(0,0,0,0.18);
-        border-radius:14px;
-        padding:6px 12px;
       }
       .wg-tletter {
         width:34px; height:34px; border-radius:9px;
@@ -757,7 +752,6 @@ window.WordGame = (function () {
         background:${C.accent}22; color:${C.accent};
         border:2px solid ${C.accent};
         animation:wgLetterIn .12s ease both;
-        box-shadow:0 2px 8px rgba(0,0,0,0.22);
       }
       @keyframes wgLetterIn {
         from { transform:scale(.7) translateY(4px); opacity:0; }
