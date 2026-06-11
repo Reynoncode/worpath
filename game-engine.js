@@ -918,8 +918,8 @@ window.WordGame = (function () {
 
     const csW = Math.floor((availW - (cols - 1) * gap) / cols);
     const csH = Math.floor((availH - (rows - 1) * gap) / rows);
-    const cs  = Math.max(12, csW <= csH ? csW : csH);
-
+    const cs  = Math.max(12, Math.min(csW, csH, 54));
+    
     board.style.cssText = `
       display:grid;
       grid-template-columns:repeat(${cols}, ${cs}px);
