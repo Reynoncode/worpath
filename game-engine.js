@@ -687,7 +687,7 @@ window.WordGame = (function () {
         box-shadow:0 2px 8px rgba(0,0,0,0.18);
       }
       .wg-cell.empty { background:transparent !important; border-color:transparent !important; }
-      .wg-cell.found { background:${C.accent} !important; color:#fff !important; border-color:${C.accent} !important; }
+      .wg-cell.found { background:${C.accent} !important; color:#fff !important; border-color:${C.accent} !important; box-shadow:0 2px 8px rgba(0,0,0,0.22); }
       .wg-cell.pop { animation:wgPop .38s cubic-bezier(.34,1.56,.64,1) both; }
       @keyframes wgPop {
         0%   { transform:scale(.65); opacity:.4; }
@@ -757,6 +757,7 @@ window.WordGame = (function () {
         background:${C.accent}22; color:${C.accent};
         border:2px solid ${C.accent};
         animation:wgLetterIn .12s ease both;
+        box-shadow:0 2px 8px rgba(0,0,0,0.22);
       }
       @keyframes wgLetterIn {
         from { transform:scale(.7) translateY(4px); opacity:0; }
