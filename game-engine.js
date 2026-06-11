@@ -646,9 +646,10 @@ window.WordGame = (function () {
       #wg-hdr {
         display:flex; align-items:center; gap:12px;
         padding:12px 16px;
-        background:transparent;
+        background:rgba(0,0,0,0.18);
         border-bottom:none;
         flex-shrink:0;
+        backdrop-filter:blur(4px);
       }
       #wg-back {
         width:38px; height:38px; border-radius:12px; border:none;
@@ -656,13 +657,19 @@ window.WordGame = (function () {
         font-size:18px; cursor:pointer; display:flex;
         align-items:center; justify-content:center;
         flex-shrink:0; transition:background .15s;
+        box-shadow:0 2px 10px rgba(0,0,0,0.35);
       }
       #wg-back:active { background:${C.cellBd}; }
       #wg-hdr-mid { flex:1; text-align:center; }
       #wg-hdr-title { font-size:15px; font-weight:700; color:${C.textMain}; line-height:1.2; }
       #wg-hdr-phase { font-size:11px; font-weight:600; color:${C.accent}; letter-spacing:.4px; margin-top:2px; }
 
-      #wg-phase-dots { display:flex; gap:5px; align-items:center; flex-shrink:0; }
+      #wg-phase-dots {
+        display:flex; gap:5px; align-items:center; flex-shrink:0;
+        background:rgba(0,0,0,0.22);
+        padding:6px 10px; border-radius:20px;
+        box-shadow:0 2px 10px rgba(0,0,0,0.28);
+      }
       .wg-dot { width:8px; height:8px; border-radius:50%; background:${C.border}; transition:background .3s; }
       .wg-dot.active { background:${C.accent}; }
       .wg-dot.done   { background:${C.accent}88; }
@@ -684,8 +691,9 @@ window.WordGame = (function () {
         border:1.5px solid ${C.cellBd};
         transition:background .25s, color .2s, border-color .25s;
         user-select:none; position:relative;
+        box-shadow:0 2px 8px rgba(0,0,0,0.18);
       }
-      .wg-cell.empty { background:transparent !important; border-color:transparent !important; }
+      .wg-cell.empty { background:transparent !important; border-color:transparent !important; box-shadow:none !important; }
       .wg-cell.found { background:${C.accent} !important; color:#fff !important; border-color:${C.accent} !important; }
       .wg-cell.pop { animation:wgPop .38s cubic-bezier(.34,1.56,.64,1) both; }
       @keyframes wgPop {
@@ -708,6 +716,7 @@ window.WordGame = (function () {
         background:${dark ? 'rgba(245,200,66,0.13)' : 'rgba(245,200,66,0.15)'};
         cursor:pointer; display:flex; align-items:center; justify-content:center;
         flex-shrink:0; transition:background .15s;
+        box-shadow:0 2px 10px rgba(0,0,0,0.35);
       }
       #wg-hint-btn:active { background:${dark ? 'rgba(245,200,66,0.22)' : 'rgba(245,200,66,0.28)'}; }
 
