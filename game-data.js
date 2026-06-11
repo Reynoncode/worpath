@@ -2003,32 +2003,701 @@ const GAME_DATA = {
   // Blok 12 → [44,45,46] → 3 quiz → 2 game
   // Blok 13 → [48,49,50] → 3 quiz → 2 game
   // Blok 14 → [52,53] → 2 quiz → 1 game
+
+
+    
+      // ──────────────────────────────────────────────
+  
   'b2': {
-    'b0_g0':  { id: 'b2_b0_g0',  title: 'Game 1',  words: [] },
-    'b1_g0':  { id: 'b2_b1_g0',  title: 'Game 2',  words: [] },
-    'b1_g1':  { id: 'b2_b1_g1',  title: 'Game 3',  words: [] },
-    'b2_g0':  { id: 'b2_b2_g0',  title: 'Game 4',  words: [] },
-    'b2_g1':  { id: 'b2_b2_g1',  title: 'Game 5',  words: [] },
-    'b2_g2':  { id: 'b2_b2_g2',  title: 'Game 6',  words: [] },
-    'b3_g0':  { id: 'b2_b3_g0',  title: 'Game 7',  words: [] },
-    'b3_g1':  { id: 'b2_b3_g1',  title: 'Game 8',  words: [] },
-    'b4_g0':  { id: 'b2_b4_g0',  title: 'Game 9',  words: [] },
-    'b5_g0':  { id: 'b2_b5_g0',  title: 'Game 10', words: [] },
-    'b6_g0':  { id: 'b2_b6_g0',  title: 'Game 11', words: [] },
-    'b6_g1':  { id: 'b2_b6_g1',  title: 'Game 12', words: [] },
-    'b6_g2':  { id: 'b2_b6_g2',  title: 'Game 13', words: [] },
-    'b7_g0':  { id: 'b2_b7_g0',  title: 'Game 14', words: [] },
-    'b7_g1':  { id: 'b2_b7_g1',  title: 'Game 15', words: [] },
-    'b7_g2':  { id: 'b2_b7_g2',  title: 'Game 16', words: [] },
-    'b8_g0':  { id: 'b2_b8_g0',  title: 'Game 17', words: [] },
-    'b9_g0':  { id: 'b2_b9_g0',  title: 'Game 18', words: [] },
-    'b10_g0': { id: 'b2_b10_g0', title: 'Game 19', words: [] },
-    'b11_g0': { id: 'b2_b11_g0', title: 'Game 20', words: [] },
-    'b12_g0': { id: 'b2_b12_g0', title: 'Game 21', words: [] },
-    'b12_g1': { id: 'b2_b12_g1', title: 'Game 22', words: [] },
-    'b13_g0': { id: 'b2_b13_g0', title: 'Game 23', words: [] },
-    'b13_g1': { id: 'b2_b13_g1', title: 'Game 24', words: [] },
-    'b14_g0': { id: 'b2_b14_g0', title: 'Game 25', words: [] },
+    'b0_g0':  { id: 'b2_b0_g0',  title: 'Game 1', phases: [
+    {
+      words: [
+        { word: 'EDUCATE',      az: 'təhsil vermək' },
+        { word: 'GRADUATE',     az: 'məzun olmaq' },
+        { word: 'ACCURATE',     az: 'dəqiq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'SEMINAR',      az: 'seminar' },
+        { word: 'AWARE',        az: 'xəbərdar' },
+        { word: 'AWARENESS',    az: 'məlumatlılıq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ANALYSIS',     az: 'təhlil' },
+        { word: 'ANALYST',      az: 'analitik' },
+        { word: 'DEADLINE',     az: 'son tarix' },
+        { word: 'ABILITY',      az: 'qabiliyyət' },
+      ]
+    },
+  ]
+},
+
+      
+      // ──────────────────────────────────────────────
+    'b1_g0':  { id: 'b2_b1_g0',  title: 'Game 2', phases: [
+    {
+      words: [
+        { word: 'BUDGET',       az: 'büdcə' },
+        { word: 'DEBT',         az: 'borc' },
+        { word: 'FEE',          az: 'ödəniş / haqq' },
+        { word: 'FUND',         az: 'fond' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DEADLINE',     az: 'son tarix' },
+        { word: 'FINANCE',      az: 'maliyyə' },
+        { word: 'FINANCIAL',    az: 'maliyyə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CLIENT',       az: 'müştəri' },
+        { word: 'COMMITTEE',    az: 'komitə' },
+        { word: 'INCOME',       az: 'gəlir' },
+        { word: 'LOAN',         az: 'kredit' },
+      ]
+    },
+  ]
+},
+
+    'b1_g1':  { id: 'b2_b1_g1',  title: 'Game 3', phases: [
+    {
+      words: [
+        { word: 'CAREER',       az: 'karyera' },
+        { word: 'MANAGEMENT',   az: 'idarəetmə' },
+        { word: 'MANAGER',      az: 'menecer' },
+        { word: 'TRADE',        az: 'ticarət' },
+      ]
+    },
+    {
+      words: [
+        { word: 'AGENCY',       az: 'agentlik' },
+        { word: 'COMPANY',      az: 'şirkət' },
+        { word: 'ECONOMY',      az: 'iqtisadiyyat' },
+        { word: 'PAYMENT',      az: 'ödəniş' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CORPORATION',  az: 'korporasiya' },
+        { word: 'FIRM',         az: 'firma' },
+        { word: 'PROFIT',       az: 'mənfəət' },
+        { word: 'PROMOTION',    az: 'vəzifə yüksəlişi' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b2_g0':  { id: 'b2_b2_g0',  title: 'Game 4', phases: [
+    {
+      words: [
+        { word: 'GLAD',         az: 'şad' },
+        { word: 'EAGER',        az: 'həvəsli' },
+        { word: 'RELAXED',      az: 'rahat' },
+      ]
+    },
+    {
+      words: [
+        { word: 'INTERNET',     az: 'internet' },
+        { word: 'IT',           az: 'informasiya texnologiyası' },
+        { word: 'REMIND',       az: 'xatırlatmaq' },
+        { word: 'DETERMINED',   az: 'qərarlı' },
+      ]
+    },
+    {
+      words: [
+        { word: 'UPDATE',       az: 'yeniləmək' },
+        { word: 'PERSUADE',     az: 'razı salmaq' },
+        { word: 'DEPRESSED',    az: 'depressiyada olan' },
+        { word: 'UPSET',        az: 'narahat' },
+      ]
+    },
+  ]
+},
+    'b2_g1':  { id: 'b2_b2_g1',  title: 'Game 5',   phases: [
+    {
+      words: [
+        { word: 'ONLINE',       az: 'onlayn' },
+        { word: 'YELL',         az: 'bağırmaq' },
+        { word: 'LONELY',       az: 'tənha' },
+        { word: 'ANNOYING',     az: 'əsəbləşdirici' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ANNOUNCE',     az: 'elan etmək' },
+        { word: 'ANNOUNCEMENT', az: 'elan' },
+        { word: 'COMMENT',      az: 'şərh' },
+        { word: 'CONTACT',      az: 'əlaqə saxlamaq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DISCUSS',      az: 'müzakirə etmək' },
+        { word: 'CURIOUS',      az: 'maraqlanan' },
+        { word: 'FURIOUS',      az: 'qəzəbli' },
+        { word: 'PROUD',        az: 'qürurlu' },
+        { word: 'SURPRISED',    az: 'təəccüblənmiş' },
+      ]
+    },
+  ]
+},
+    'b2_g2':  { id: 'b2_b2_g2',  title: 'Game 6',   phases: [
+    {
+      words: [
+        { word: 'ASHAMED',      az: 'utanmış' },
+        { word: 'SATISFIED',    az: 'məmnun' },
+        { word: 'DATABASE',     az: 'verilənlər bazası' },
+        { word: 'MEDIA',        az: 'media' },
+      ]
+    },
+    {
+      words: [
+        { word: 'SUGGEST',      az: 'təklif etmək' },
+        { word: 'GESTURE',      az: 'jest' },
+        { word: 'FRUSTRATED',   az: 'əsəbləşmiş' },
+        { word: 'GRATEFUL',     az: 'minnətdar' },
+        { word: 'CRUEL',        az: 'zalım' },
+      ]
+    },
+    {
+      words: [
+        { word: 'STUDIO',       az: 'studiya' },
+        { word: 'VERSION',      az: 'versiya' },
+        { word: 'RESPOND',      az: 'cavab vermək' },
+        { word: 'INTERPRET',    az: 'şərh etmək' },
+        { word: 'INTERPRETATION', az: 'şərh' },
+        { word: 'DISAPPOINTED', az: 'məyus' },
+        { word: 'NERVOUS',      az: 'gərgin' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b3_g0':  { id: 'b2_b3_g0',  title: 'Game 7',   phases: [
+    {
+      words: [
+        { word: 'LAW',          az: 'qanun' },
+        { word: 'LEGAL',        az: 'qanuni' },
+        { word: 'DAMAGE',       az: 'ziyan' },
+        { word: 'WAR',          az: 'müharibə' },
+        { word: 'ARMED',        az: 'silahlı' },
+      ]
+    },
+    {
+      words: [
+        { word: 'OFFENCE',      az: 'hüquq pozuntusu' },
+        { word: 'ELECTION',     az: 'seçki' },
+        { word: 'VOTE',         az: 'səs vermək' },
+        { word: 'CONFLICT',     az: 'münaqişə' },
+        { word: 'VIOLENCE',     az: 'zorakılıq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BAN',          az: 'qadağan etmək' },
+        { word: 'TRIAL',        az: 'məhkəmə prosesi' },
+        { word: 'BATTLE',       az: 'döyüş' },
+        { word: 'THREAT',       az: 'təhdid' },
+        { word: 'THREATEN',     az: 'təhdid etmək' },
+      ]
+    },
+  ]
+},
+    'b3_g1':  { id: 'b2_b3_g1',  title: 'Game 8',   phases: [
+    {
+      words: [
+        { word: 'CRIME',        az: 'cinayət' },
+        { word: 'VICTIM',       az: 'qurban' },
+        { word: 'MINISTER',     az: 'nazir' },
+        { word: 'EVIDENCE',     az: 'sübut' },
+        { word: 'CRISIS',       az: 'böhran' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ARREST',       az: 'həbs etmək' },
+        { word: 'COURT',        az: 'məhkəmə' },
+        { word: 'SUSPECT',      az: 'şübhəli' },
+        { word: 'PROTEST',      az: 'etiraz' },
+        { word: 'ACCUSE',       az: 'ittiham etmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'POLICE',       az: 'polis' },
+        { word: 'PRISON',       az: 'həbsxana' },
+        { word: 'CANDIDATE',    az: 'namizəd' },
+        { word: 'POLITICAL',    az: 'siyasi' },
+        { word: 'PRESIDENT',    az: 'prezident' },
+        { word: 'SOLDIER',      az: 'əsgər' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b4_g0':  { id: 'b2_b4_g0',  title: 'Game 9',   phases: [
+    {
+      words: [
+        { word: 'AIRPORT',      az: 'hava limanı' },
+        { word: 'PASSPORT',     az: 'pasport' },
+        { word: 'PORT',         az: 'liman' },
+        { word: 'STORM',        az: 'fırtına' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ROUTE',        az: 'marşrut' },
+        { word: 'TOURIST',      az: 'turist' },
+        { word: 'VISA',         az: 'viza' },
+        { word: 'RIVER',        az: 'çay' },
+      ]
+    },
+    {
+      words: [
+        { word: 'GUIDE',        az: 'bələdçi' },
+        { word: 'BORDER',       az: 'sərhəd' },
+        { word: 'FLOOD',        az: 'daşqın' },
+        { word: 'GLOBAL',       az: 'qlobal' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b5_g0':  { id: 'b2_b5_g0',  title: 'Game 10',  phases: [
+    {
+      words: [
+        { word: 'DATA',         az: 'məlumat' },
+        { word: 'HEAL',         az: 'sağalmaq' },
+        { word: 'HEALTH',       az: 'sağlamlıq' },
+        { word: 'MENTAL',       az: 'zehni' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ANALYSIS',     az: 'təhlil' },
+        { word: 'ANALYSE',      az: 'təhlil etmək' },
+        { word: 'ILLNESS',      az: 'xəstəlik' },
+        { word: 'PAIN',         az: 'ağrı' },
+        { word: 'PATIENT',      az: 'xəstə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'NUCLEAR',      az: 'nüvə' },
+        { word: 'AMBULANCE',    az: 'təcili yardım maşını' },
+        { word: 'CANCER',       az: 'xərçəng' },
+        { word: 'MUSCLE',       az: 'əzələ' },
+        { word: 'CHEMICAL',     az: 'kimyəvi' },
+
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b6_g0':  { id: 'b2_b6_g0',  title: 'Game 11',  phases: [
+    {
+      words: [
+        { word: 'MEAL',         az: 'yemək' },
+        { word: 'THEME',        az: 'mövzu' },
+        { word: 'ATHLETE',      az: 'atlet' },
+        { word: 'TEAM',         az: 'komanda' },
+      ]
+    },
+    {
+      words: [
+        { word: 'RECIPE',       az: 'resept' },
+        { word: 'GARAGE',       az: 'qaraj' },
+        { word: 'PIPE',         az: 'boru' },
+        { word: 'GIG',          az: 'konsert' },
+        { word: 'RACE',         az: 'qaçış yarışı' },
+      ]
+    },
+    {
+      words: [
+        { word: 'BAKE',         az: 'bişirmək' },
+        { word: 'BATTERY',      az: 'batareya' },
+        { word: 'ART',          az: 'sənət' },
+        { word: 'THEATRE',      az: 'teatr' },
+      ]
+    },
+  ]
+},
+    'b6_g1':  { id: 'b2_b6_g1',  title: 'Game 12',  phases: [
+    {
+      words: [
+        { word: 'COOK',         az: 'bişirmək' },
+        { word: 'COTTAGE',      az: 'kiçik ev' },
+        { word: 'COACH',        az: 'məşqçi' },
+        { word: 'MATCH',        az: 'oyun / matç' },
+      ]
+    },
+    {
+      words: [
+        { word: 'INGREDIENT',   az: 'inqredient' },
+        { word: 'ENGAGED',      az: 'nişanlı' },
+        { word: 'TRADITION',    az: 'ənənə' },
+        { word: 'GENERATION',   az: 'nəsil' },
+        { word: 'TRAINING',     az: 'məşq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ROMANTIC',     az: 'romantik' },
+        { word: 'CONCERT',      az: 'konsert' },
+        { word: 'POEM',         az: 'şeir' },
+        { word: 'CAPTAIN',      az: 'kapitan' },
+        { word: 'COMPETITION',  az: 'yarış' },
+      ]
+    },
+  ]
+},
+    'b6_g2':  { id: 'b2_b6_g2',  title: 'Game 13',  phases: [
+    {
+      words: [
+        { word: 'ALARM',        az: 'zəng / siqnal' },
+        { word: 'ALBUM',        az: 'albom' },
+        { word: 'PLAYER',       az: 'oyunçu' },
+        { word: 'RUGBY',        az: 'reqbi' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DIVORCE',      az: 'boşanma' },
+        { word: 'SOCIETY',      az: 'cəmiyyət' },
+        { word: 'SCORE',        az: 'hesab' },
+        { word: 'VICTORY',      az: 'qələbə' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CEILING',      az: 'tavan' },
+        { word: 'CURTAIN',      az: 'pərdə' },
+        { word: 'HEATING',      az: 'isitmə' },
+        { word: 'SHELTER',      az: 'sığınak' },
+        { word: 'CULTURE',      az: 'mədəniyyət' },
+        { word: 'STRENGTH',     az: 'güc' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b7_g0':  { id: 'b2_b7_g0',  title: 'Game 14',  phases: [
+    {
+      words: [
+        { word: 'IDEA',         az: 'fikir' },
+        { word: 'ADAPT',        az: 'uyğunlaşmaq' },
+        { word: 'CREATE',       az: 'yaratmaq' },
+        { word: 'PREPARE',      az: 'hazırlamaq' },
+        { word: 'REACT',        az: 'reaksiya vermək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CONCEPT',      az: 'konsepsiya' },
+        { word: 'CONDUCT',      az: 'həyata keçirmək' },
+        { word: 'PROCEED',      az: 'davam etmək' },
+        { word: 'PRODUCE',      az: 'istehsal etmək' },
+        { word: 'REDUCE',       az: 'azaltmaq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'VIEW',         az: 'görüş' },
+        { word: 'WISE',         az: 'müdrik' },
+        { word: 'ACHIEVE',      az: 'əldə etmək' },
+        { word: 'RECEIVE',      az: 'almaq' },
+        { word: 'RESEARCH',     az: 'tədqiqat aparmaq' },
+      ]
+    },
+  ]
+},
+    'b7_g1':  { id: 'b2_b7_g1',  title: 'Game 15',  phases: [
+    {
+      words: [
+        { word: 'BOLD',         az: 'cəsarətli' },
+        { word: 'BRAVE',        az: 'cəsur' },
+        { word: 'EAGER',        az: 'həvəsli' },
+        { word: 'RESOLVE',      az: 'həll etmək' },
+        { word: 'SOLVE',        az: 'həll etmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CALM',         az: 'sakit' },
+        { word: 'LOGIC',        az: 'məntiq' },
+        { word: 'LOGICAL',      az: 'məntiqi' },
+        { word: 'NOTION',       az: 'təsəvvür' },
+        { word: 'MANAGE',       az: 'idarə etmək' },
+        { word: 'NEGOTIATE',    az: 'danışıqlar aparmaq' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DETERMINED',   az: 'qərarlı' },
+        { word: 'MIND',         az: 'ağıl' },
+        { word: 'DEVELOP',      az: 'inkişaf etdirmək' },
+        { word: 'IMPLEMENT',    az: 'tətbiq etmək' },
+        { word: 'IMPROVE',      az: 'təkmilləşdirmək' },
+        { word: 'PROMOTE',      az: 'təbliğ etmək' },
+        { word: 'PROVIDE',      az: 'təmin etmək' },
+      ]
+    },
+  ]
+},
+    'b7_g2':  { id: 'b2_b7_g2',  title: 'Game 16',  phases: [
+    {
+      words: [
+        { word: 'HONEST',       az: 'dürüst' },
+        { word: 'LOYAL',        az: 'sadiq' },
+        { word: 'THEORY',       az: 'nəzəriyyə' },
+        { word: 'ANALYSE',      az: 'təhlil etmək' },
+        { word: 'HANDLE',       az: 'idarə etmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'PATIENT',      az: 'səbirli' },
+        { word: 'ABSTRACT',     az: 'mücərrəd' },
+        { word: 'PRINCIPLE',    az: 'prinsip' },
+        { word: 'REALISE',      az: 'dərk etmək' },
+        { word: 'REPLACE',      az: 'əvəz etmək' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CRUEL',        az: 'zalım' },
+        { word: 'CURIOUS',      az: 'maraqlanan' },
+        { word: 'GENUINE',      az: 'səmimi' },
+        { word: 'ORGANISE',     az: 'təşkil etmək' },
+        { word: 'REQUIRE',      az: 'tələb etmək' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b8_g0':  { id: 'b2_b8_g0',  title: 'Game 17',  phases: [
+    {
+      words: [
+        { word: 'ALTER',        az: 'dəyişdirmək' },
+        { word: 'CRISIS',       az: 'böhran' },
+        { word: 'ISSUE',        az: 'məsələ' },
+        { word: 'FAILURE',      az: 'uğursuzluq' },
+        { word: 'FAULT',        az: 'səhv' },
+      ]
+    },
+    {
+      words: [
+        { word: 'EVOLVE',       az: 'təkamül keçirmək' },
+        { word: 'REVOLUTION',   az: 'inqilab' },
+        { word: 'TRANSITION',   az: 'keçid' },
+        { word: 'VARIATION',    az: 'fərqlilik' },
+        { word: 'EVOLUTION',    az: 'təkamül' },
+        { word: 'SOLUTION',     az: 'həll yolu' },
+      ]
+    },
+    {
+      words: [
+        { word: 'DEVELOP',      az: 'inkişaf etmək' },
+        { word: 'IMPROVE',      az: 'yaxşılaşdırmaq' },
+        { word: 'MODIFY',       az: 'dəyişiklik etmək' },
+        { word: 'REFORM',       az: 'islahat' },
+        { word: 'VARY',         az: 'dəyişmək' },
+        { word: 'DILEMMA',      az: 'dilemma' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b9_g0':  { id: 'b2_b9_g0',  title: 'Game 18',  phases: [
+    {
+      words: [
+        { word: 'STATE',        az: 'dövlət' },
+        { word: 'LAW',          az: 'qanun' },
+        { word: 'LEGAL',        az: 'qanuni' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CANDIDATE',    az: 'namizəd' },
+        { word: 'VOTE',         az: 'səs vermək' },
+        { word: 'INNOCENT',     az: 'günahsız' },
+        { word: 'EVIDENCE',     az: 'sübut' },
+      ]
+    },
+    {
+      words: [
+        { word: 'ELECTION',     az: 'seçki' },
+        { word: 'POLITICAL',    az: 'siyasi' },
+        { word: 'PROTEST',      az: 'etiraz' },
+        { word: 'PRISON',       az: 'həbsxana' },
+        { word: 'TRIAL',        az: 'məhkəmə prosesi' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b10_g0': { id: 'b2_b10_g0', title: 'Game 19',  phases: [
+    {
+      words: [
+        { word: 'CAREER',       az: 'karyera' },
+        { word: 'AWARD',        az: 'mükafat' },
+        { word: 'WIN',          az: 'qazanmaq' },
+        { word: 'WINNER',       az: 'qalib' },
+        { word: 'REWARD',       az: 'mükafat' },
+      ]
+    },
+    {
+      words: [
+        { word: 'CONTRACT',     az: 'müqavilə' },
+        { word: 'RETIRE',       az: 'təqaüdə çıxmaq' },
+        { word: 'TALENT',       az: 'istedad' },
+        { word: 'GOAL',         az: 'məqsəd' },
+        { word: 'RECOGNITION',  az: 'tanınma' },
+        { word: 'TARGET',       az: 'hədəf' },
+      ]
+    },
+    {
+      words: [
+        { word: 'COLLEAGUE',    az: 'iş yoldaşı' },
+        { word: 'EMPLOYEE',     az: 'işçi' },
+        { word: 'EMPLOYER',     az: 'işəgötürən' },
+        { word: 'SALARY',       az: 'maaş' },
+        { word: 'SUCCESS',      az: 'uğur' },
+        { word: 'PROGRESS',     az: 'irəliləyiş' },
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b11_g0': { id: 'b2_b11_g0', title: 'Game 20',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b12_g0': { id: 'b2_b12_g0', title: 'Game 21',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b12_g1': { id: 'b2_b12_g1', title: 'Game 22',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b13_g0': { id: 'b2_b13_g0', title: 'Game 23', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b13_g1': { id: 'b2_b13_g1', title: 'Game 24', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+      
+      // ──────────────────────────────────────────────
+    'b14_g0': { id: 'b2_b14_g0', title: 'Game 25', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
   },
 
   // ── C1 ─────────────────────────────────────────────────
@@ -2046,33 +2715,504 @@ const GAME_DATA = {
   // Blok 11 → [41,42,43] → 3 quiz → 2 game
   // Blok 12 → [45,46,47] → 3 quiz → 2 game
   // Blok 13 → [49,50,51,52] → 4 quiz → 3 game
+
+        // ──────────────────────────────────────────────
+
   'c1': {
-    'b0_g0':  { id: 'c1_b0_g0',  title: 'Game 1',  words: [] },
-    'b1_g0':  { id: 'c1_b1_g0',  title: 'Game 2',  words: [] },
-    'b2_g0':  { id: 'c1_b2_g0',  title: 'Game 3',  words: [] },
-    'b2_g1':  { id: 'c1_b2_g1',  title: 'Game 4',  words: [] },
-    'b3_g0':  { id: 'c1_b3_g0',  title: 'Game 5',  words: [] },
-    'b4_g0':  { id: 'c1_b4_g0',  title: 'Game 6',  words: [] },
-    'b4_g1':  { id: 'c1_b4_g1',  title: 'Game 7',  words: [] },
-    'b5_g0':  { id: 'c1_b5_g0',  title: 'Game 8',  words: [] },
-    'b5_g1':  { id: 'c1_b5_g1',  title: 'Game 9',  words: [] },
-    'b6_g0':  { id: 'c1_b6_g0',  title: 'Game 10', words: [] },
-    'b6_g1':  { id: 'c1_b6_g1',  title: 'Game 11', words: [] },
-    'b7_g0':  { id: 'c1_b7_g0',  title: 'Game 12', words: [] },
-    'b7_g1':  { id: 'c1_b7_g1',  title: 'Game 13', words: [] },
-    'b8_g0':  { id: 'c1_b8_g0',  title: 'Game 14', words: [] },
-    'b8_g1':  { id: 'c1_b8_g1',  title: 'Game 15', words: [] },
-    'b9_g0':  { id: 'c1_b9_g0',  title: 'Game 16', words: [] },
-    'b9_g1':  { id: 'c1_b9_g1',  title: 'Game 17', words: [] },
-    'b10_g0': { id: 'c1_b10_g0', title: 'Game 18', words: [] },
-    'b10_g1': { id: 'c1_b10_g1', title: 'Game 19', words: [] },
-    'b11_g0': { id: 'c1_b11_g0', title: 'Game 20', words: [] },
-    'b11_g1': { id: 'c1_b11_g1', title: 'Game 21', words: [] },
-    'b12_g0': { id: 'c1_b12_g0', title: 'Game 22', words: [] },
-    'b12_g1': { id: 'c1_b12_g1', title: 'Game 23', words: [] },
-    'b13_g0': { id: 'c1_b13_g0', title: 'Game 24', words: [] },
-    'b13_g1': { id: 'c1_b13_g1', title: 'Game 25', words: [] },
-    'b13_g2': { id: 'c1_b13_g2', title: 'Game 26', words: [] },
+    'b0_g0':  { id: 'c1_b0_g0',  title: 'Game 1',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b1_g0':  { id: 'c1_b1_g0',  title: 'Game 2',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b2_g0':  { id: 'c1_b2_g0',  title: 'Game 3',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b2_g1':  { id: 'c1_b2_g1',  title: 'Game 4',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b3_g0':  { id: 'c1_b3_g0',  title: 'Game 5',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b4_g0':  { id: 'c1_b4_g0',  title: 'Game 6',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b4_g1':  { id: 'c1_b4_g1',  title: 'Game 7',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b5_g0':  { id: 'c1_b5_g0',  title: 'Game 8',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b5_g1':  { id: 'c1_b5_g1',  title: 'Game 9',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b6_g0':  { id: 'c1_b6_g0',  title: 'Game 10', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b6_g1':  { id: 'c1_b6_g1',  title: 'Game 11', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b7_g0':  { id: 'c1_b7_g0',  title: 'Game 12', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b7_g1':  { id: 'c1_b7_g1',  title: 'Game 13', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b8_g0':  { id: 'c1_b8_g0',  title: 'Game 14', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b8_g1':  { id: 'c1_b8_g1',  title: 'Game 15', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b9_g0':  { id: 'c1_b9_g0',  title: 'Game 16', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b9_g1':  { id: 'c1_b9_g1',  title: 'Game 17', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b10_g0': { id: 'c1_b10_g0', title: 'Game 18', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b10_g1': { id: 'c1_b10_g1', title: 'Game 19', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b11_g0': { id: 'c1_b11_g0', title: 'Game 20', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b11_g1': { id: 'c1_b11_g1', title: 'Game 21', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b12_g0': { id: 'c1_b12_g0', title: 'Game 22', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b12_g1': { id: 'c1_b12_g1', title: 'Game 23', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b13_g0': { id: 'c1_b13_g0', title: 'Game 24', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b13_g1': { id: 'c1_b13_g1', title: 'Game 25', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b13_g2': { id: 'c1_b13_g2', title: 'Game 26', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
   },
 
   // ── C2 ─────────────────────────────────────────────────
@@ -2095,43 +3235,694 @@ const GAME_DATA = {
   // Blok 16 → [63,64] → 2 → 1 game
   // Blok 17 → [66,67,68] → 3 → 2 game
   // Blok 18 → [70,71,72] → 3 → 2 game
+
+        // ──────────────────────────────────────────────
+
   'c2': {
-    'b0_g0':  { id: 'c2_b0_g0',  title: 'Game 1',  words: [] },
-    'b1_g0':  { id: 'c2_b1_g0',  title: 'Game 2',  words: [] },
-    'b2_g0':  { id: 'c2_b2_g0',  title: 'Game 3',  words: [] },
-    'b2_g1':  { id: 'c2_b2_g1',  title: 'Game 4',  words: [] },
-    'b2_g2':  { id: 'c2_b2_g2',  title: 'Game 5',  words: [] },
-    'b3_g0':  { id: 'c2_b3_g0',  title: 'Game 6',  words: [] },
-    'b3_g1':  { id: 'c2_b3_g1',  title: 'Game 7',  words: [] },
-    'b3_g2':  { id: 'c2_b3_g2',  title: 'Game 8',  words: [] },
-    'b4_g0':  { id: 'c2_b4_g0',  title: 'Game 9',  words: [] },
-    'b4_g1':  { id: 'c2_b4_g1',  title: 'Game 10', words: [] },
-    'b5_g0':  { id: 'c2_b5_g0',  title: 'Game 11', words: [] },
-    'b5_g1':  { id: 'c2_b5_g1',  title: 'Game 12', words: [] },
-    'b5_g2':  { id: 'c2_b5_g2',  title: 'Game 13', words: [] },
-    'b6_g0':  { id: 'c2_b6_g0',  title: 'Game 14', words: [] },
-    'b6_g1':  { id: 'c2_b6_g1',  title: 'Game 15', words: [] },
-    'b7_g0':  { id: 'c2_b7_g0',  title: 'Game 16', words: [] },
-    'b7_g1':  { id: 'c2_b7_g1',  title: 'Game 17', words: [] },
-    'b7_g2':  { id: 'c2_b7_g2',  title: 'Game 18', words: [] },
-    'b8_g0':  { id: 'c2_b8_g0',  title: 'Game 19', words: [] },
-    'b8_g1':  { id: 'c2_b8_g1',  title: 'Game 20', words: [] },
-    'b8_g2':  { id: 'c2_b8_g2',  title: 'Game 21', words: [] },
-    'b9_g0':  { id: 'c2_b9_g0',  title: 'Game 22', words: [] },
-    'b9_g1':  { id: 'c2_b9_g1',  title: 'Game 23', words: [] },
-    'b10_g0': { id: 'c2_b10_g0', title: 'Game 24', words: [] },
-    'b11_g0': { id: 'c2_b11_g0', title: 'Game 25', words: [] },
-    'b12_g0': { id: 'c2_b12_g0', title: 'Game 26', words: [] },
-    'b13_g0': { id: 'c2_b13_g0', title: 'Game 27', words: [] },
-    'b13_g1': { id: 'c2_b13_g1', title: 'Game 28', words: [] },
-    'b14_g0': { id: 'c2_b14_g0', title: 'Game 29', words: [] },
-    'b15_g0': { id: 'c2_b15_g0', title: 'Game 30', words: [] },
-    'b15_g1': { id: 'c2_b15_g1', title: 'Game 31', words: [] },
-    'b16_g0': { id: 'c2_b16_g0', title: 'Game 32', words: [] },
-    'b17_g0': { id: 'c2_b17_g0', title: 'Game 33', words: [] },
-    'b17_g1': { id: 'c2_b17_g1', title: 'Game 34', words: [] },
-    'b18_g0': { id: 'c2_b18_g0', title: 'Game 35', words: [] },
-    'b18_g1': { id: 'c2_b18_g1', title: 'Game 36', words: [] },
+    'b0_g0':  { id: 'c2_b0_g0',  title: 'Game 1',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b1_g0':  { id: 'c2_b1_g0',  title: 'Game 2',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b2_g0':  { id: 'c2_b2_g0',  title: 'Game 3',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b2_g1':  { id: 'c2_b2_g1',  title: 'Game 4',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b2_g2':  { id: 'c2_b2_g2',  title: 'Game 5',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b3_g0':  { id: 'c2_b3_g0',  title: 'Game 6',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b3_g1':  { id: 'c2_b3_g1',  title: 'Game 7',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b3_g2':  { id: 'c2_b3_g2',  title: 'Game 8',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b4_g0':  { id: 'c2_b4_g0',  title: 'Game 9',  phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b4_g1':  { id: 'c2_b4_g1',  title: 'Game 10', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b5_g0':  { id: 'c2_b5_g0',  title: 'Game 11', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b5_g1':  { id: 'c2_b5_g1',  title: 'Game 12', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b5_g2':  { id: 'c2_b5_g2',  title: 'Game 13', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b6_g0':  { id: 'c2_b6_g0',  title: 'Game 14', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b6_g1':  { id: 'c2_b6_g1',  title: 'Game 15', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b7_g0':  { id: 'c2_b7_g0',  title: 'Game 16', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b7_g1':  { id: 'c2_b7_g1',  title: 'Game 17', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b7_g2':  { id: 'c2_b7_g2',  title: 'Game 18', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b8_g0':  { id: 'c2_b8_g0',  title: 'Game 19', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b8_g1':  { id: 'c2_b8_g1',  title: 'Game 20', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b8_g2':  { id: 'c2_b8_g2',  title: 'Game 21', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b9_g0':  { id: 'c2_b9_g0',  title: 'Game 22', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b9_g1':  { id: 'c2_b9_g1',  title: 'Game 23', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b10_g0': { id: 'c2_b10_g0', title: 'Game 24', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b11_g0': { id: 'c2_b11_g0', title: 'Game 25', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b12_g0': { id: 'c2_b12_g0', title: 'Game 26', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b13_g0': { id: 'c2_b13_g0', title: 'Game 27', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b13_g1': { id: 'c2_b13_g1', title: 'Game 28', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b14_g0': { id: 'c2_b14_g0', title: 'Game 29', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b15_g0': { id: 'c2_b15_g0', title: 'Game 30', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b15_g1': { id: 'c2_b15_g1', title: 'Game 31', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b16_g0': { id: 'c2_b16_g0', title: 'Game 32', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b17_g0': { id: 'c2_b17_g0', title: 'Game 33', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b17_g1': { id: 'c2_b17_g1', title: 'Game 34', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+          // ──────────────────────────────────────────────
+
+    'b18_g0': { id: 'c2_b18_g0', title: 'Game 35', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
+    'b18_g1': { id: 'c2_b18_g1', title: 'Game 36', phases: [
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+    {
+      words: [
+
+      ]
+    },
+  ]
+},
   },
 };
 
