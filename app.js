@@ -3033,8 +3033,8 @@ gameNodes.forEach((gn) => {
 
 const innerSize = GAME_SIZE;
   const nodeStyle = gameDone
-    ? `width:${svgSize}px;height:${svgSize}px;background:${lvl.color};border:none;border-radius:50%;`
-    : `width:${innerSize}px;height:${innerSize}px;color:${lvl.color};background:${isDark ? '#142233' : 'white'};border:none;`;  // ── Circular progress bar SVG ────────────────────────
+      ? `width:${innerSize}px;height:${innerSize}px;background:${lvl.color};border:none;border-radius:50%;`
+      : `width:${innerSize}px;height:${innerSize}px;color:${lvl.color};background:${isDark ? '#142233' : 'white'};border:none;`;
   // circle: cx/cy = svgSize/2, r = CR
   // stroke-dashoffset: CIRC/4 — 12-dan başlasın (top)
   const progressSvg = `
@@ -3061,20 +3061,7 @@ const innerSize = GAME_SIZE;
       />
     </svg>`;
 
-  // ── Metal pulse (yalnız gameDone olduqda) ────────────
-  const pulseSvg = gameDone ? `
-    <div class="game-done-pulse" style="
-      position:absolute;
-      top:50%;left:50%;
-      transform:translate(-50%,-50%);
-      width:${GAME_SIZE + 16}px;
-      height:${GAME_SIZE + 16}px;
-      border-radius:50%;
-      background:${lvl.color};
-      opacity:0;
-      animation:gameNodePulse 2.4s ease-out infinite;
-      pointer-events:none;
-    "></div>` : '';
+const pulseSvg = '';
 
   gameNodesHTML += `
     <div class="game-node-wrap" style="
