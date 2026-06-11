@@ -2804,7 +2804,7 @@ function renderCefrPath(lvl, li) {
   const MAX_OFFSET  = 72;
   const LINE_H      = 50;
   const NODE_H      = 60;
-  const LABEL_H     = 24;
+  const LABEL_H     = 36;
   const BLOCK_H     = NODE_H + LABEL_H + LINE_H;  // 134px
   const PADDING_TOP = 16;
   const GAME_SIZE   = 44;  // game node diametri
@@ -2962,9 +2962,11 @@ function renderCefrPath(lvl, li) {
           ${nodeInner}
         </div>
         <div class="node-label" style="
-          font-size:11.5px; max-width:110px;
-          text-align:center; line-height:1.3; margin-top:4px;
-        ">${label}</div>
+  font-size:11.5px; max-width:110px;
+  text-align:center; line-height:1.3; margin-top:4px;
+  height:${LABEL_H}px;
+  display:flex; align-items:flex-start; justify-content:center;
+">${label}</div>
       </div>`;
   });
 
