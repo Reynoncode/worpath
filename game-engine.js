@@ -1025,6 +1025,12 @@ window.WordGame = (function () {
 
     wrap.style.width  = `${size}px`;
     wrap.style.height = `${size}px`;
+    const r = parseInt(accent.slice(1,3),16);
+    const g = parseInt(accent.slice(3,5),16);
+    const b = parseInt(accent.slice(5,7),16);
+    wrap.style.background = `rgba(${r},${g},${b},0.13)`;
+    wrap.style.borderRadius = '50%';
+    wrap.style.backdropFilter = 'blur(2px)';
 
     const iconShuffle = `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5b8af5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 4l3 3l-3 3"/><path d="M18 20l3 -3l-3 -3"/><path d="M3 7h3a5 5 0 0 1 5 5a5 5 0 0 0 5 5h4"/><path d="M21 7h-4a5 5 0 0 0 -5 5a5 5 0 0 1 -5 5h-4"/></svg>`;
 
