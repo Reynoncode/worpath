@@ -2964,8 +2964,6 @@ function renderCefrPath(lvl, li) {
         <div class="node-label" style="
           font-size:11.5px; max-width:110px;
           text-align:center; line-height:1.3; margin-top:4px;
-            height:${LABEL_H}px;       
-            overflow:hidden;     
         ">${label}</div>
       </div>`;
   });
