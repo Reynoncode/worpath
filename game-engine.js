@@ -138,10 +138,39 @@ window.WordGame = (function () {
     return { ...wordObj, row: r, col: c, dir, cells, found: false };
   }
 
-  function _findFreeRow(grid, wordLen, size, placed) {
-    const usedRows = new Set(placed.flatMap(p => p.cells.map(cell => cell.r)));
-    for (let r = 2; r < size - 2; r++) {
-      if (usedRows.has(r)) continue;
+  // YENİ
+function _findFreeRow(grid, wordLen, size, placed) {
+    // Mövcud sözlərin bounding box-ını tap
+    let minR = size, maxR = 0, minC = size, maxC = 0;
+    placed.forEach(p => p.cells.forEach(({ r, c }) => {
+      minR = Math.min(minR, r); maxR = Math.max(maxR, r);
+      minC = Math.min(minC, c); maxC = Math.max(maxC, c);
+    }));
+
+    // Bounding box ətrafında yaxın sahələri yoxla
+    const candidates = [];
+    for (let r = Math.max(1, minR - 2); r <= Math.min(size - 2, maxR + 2); r++) {
+      for (let c = Math.max(1, minC - 2); c <= Math.min(size - wordLen - 1, maxC + 2); c++) {
+        let ok = true;
+        for (let ci = c - 1; ci <= c + wordLen; ci++) {
+          if (grid[r]?.[ci]) { ok = false; break; }
+          if (grid[r-1]?.[ci] || grid[r+1]?.[ci]) { ok = false; break; }
+        }
+        if (ok) {
+          // Mərkəzə məsafə hesabla
+          const dist = Math.abs(r - (minR + maxR) / 2) + Math.abs(c + wordLen/2 - (minC + maxC) / 2);
+          candidates.push({ r, c, dist });
+        }
+      }
+    }
+
+    if (candidates.length) {
+      candidates.sort((a, b) => a.dist - b.dist);
+      return candidates[0];
+    }
+
+    // Yaxın sahə tapılmadısa geniş axtarış
+    for (let r = 1; r < size - 1; r++) {
       const c = Math.floor((size - wordLen) / 2);
       if (c >= 0 && c + wordLen < size) {
         let ok = true;
