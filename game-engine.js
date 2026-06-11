@@ -167,8 +167,8 @@ window.WordGame = (function () {
     }
     if (minR > maxR) return { grid: [[]], minR: 0, minC: 0, rows: 1, cols: 1, rowMap: {}, colMap: {} };
 
-    minR = Math.max(0, minR - 1); minC = Math.max(0, minC - 1);
-    maxR = Math.min(size - 1, maxR + 1); maxC = Math.min(size - 1, maxC + 1);
+    minR = Math.max(0, minR); minC = Math.max(0, minC);
+    maxR = Math.min(size - 1, maxR); maxC = Math.min(size - 1, maxC);
 
     const rawRows = maxR - minR + 1;
     const rawCols = maxC - minC + 1;
