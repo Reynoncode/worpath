@@ -2948,12 +2948,16 @@ function renderCefrPath(lvl, li) {
         ? `color:${lvl.color};border-color:${lvl.color};background:${isDark ? '#142233' : 'white'};`
         : '';
 
+const nodeTopY = PADDING_TOP + i * BLOCK_H;
     nodesHTML += `
       <div style="
-        position:relative; z-index:1;
+        position:absolute;
+        top:${nodeTopY}px;
+        left:50%;
+        transform:translateX(calc(-50% + ${xOffset}px));
         display:flex; flex-direction:column; align-items:center;
-        transform:translateX(${xOffset}px);
-        margin-bottom:${LINE_H}px;
+        z-index:1;
+        width:140px;
       ">
         <div class="${nodeClass}"
           data-quiz-idx="${qi}"
@@ -3110,15 +3114,11 @@ const innerSize = GAME_SIZE;
   // ── Ümumi konteyner hündürlüyü ─────────────────────────
   const totalH = allNodes.length * BLOCK_H + PADDING_TOP * 2;
 
-  return `
+return `
     <div style="
       position: relative;
       width: 100%;
       height: ${totalH}px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: ${PADDING_TOP}px;
     ">
       ${nodesHTML}
       ${gameNodesHTML}
