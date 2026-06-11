@@ -2994,7 +2994,7 @@ gameNodes.forEach((gn) => {
   // ── Circular progress bar parametrləri ───────────────
   const R        = GAME_SIZE / 2;       // 22px — nodun yarıçapı
   const STROKE   = 3.5;                 // bar qalınlığı
-  const CR       = R + STROKE + 2;      // SVG circle yarıçapı (noddan kənarda)
+  const CR = R + STROKE / 2;      // SVG circle yarıçapı (noddan kənarda)
   const CIRC     = 2 * Math.PI * CR;    // tam çevrə uzunluğu
   const svgSize  = (CR + STROKE + 1) * 2;  // SVG ölçüsü
 
