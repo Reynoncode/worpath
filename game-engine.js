@@ -855,21 +855,55 @@ function _findFreeRow(grid, wordLen, size, placed) {
         position:relative;
         display:flex; align-items:center;
       }
-      #wg-hint-def {
+#wg-hint-def {
         font-size:14px; line-height:1.3;
         color:${dark ? '#c8d4e8' : '#2d3a52'};
-        font-weight:500; flex:1;
+        font-weight:700; flex:1;
         padding-right:8px;
         white-space:nowrap;
         overflow:hidden;
-        text-overflow:ellipsis;
         cursor:pointer;
+        position:relative;
       }
       #wg-hint-def.found-word {
         color:${dark ? '#4ade80' : '#16a34a'};
         text-decoration:line-through;
         opacity:.65;
       }
+
+      #wg-hint-reveal-inline {
+        display:none;
+        position:absolute; inset:0;
+        align-items:center; gap:6px;
+        background:${dark ? 'rgba(14,26,40,0.92)' : 'rgba(240,242,248,0.92)'};
+        border-radius:8px; padding:0 8px;
+        z-index:10;
+      }
+      #wg-hint-reveal-inline.visible { display:flex; }
+      #wg-hint-reveal-inline-btn {
+        display:flex; align-items:center; gap:5px;
+        background:${C.accent}; color:#fff;
+        border:none; border-radius:8px;
+        padding:5px 12px; font-size:12px; font-weight:700;
+        cursor:pointer; white-space:nowrap;
+        transition:transform .1s;
+        flex-shrink:0;
+      }
+      #wg-hint-reveal-inline-btn:active { transform:scale(.95); }
+      #wg-hint-reveal-inline-close {
+        width:24px; height:24px; border-radius:50%; border:none;
+        background:${dark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)'};
+        color:${dark ? '#c8d4e8' : '#4a5568'};
+        display:flex; align-items:center; justify-content:center;
+        cursor:pointer; flex-shrink:0; font-size:14px;
+        transition:background .12s;
+      }
+      #wg-hint-reveal-inline-close:active { background:${dark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.15)'}; }
+
+      .wg-tplaceholder {
+        transition: opacity 0.3s ease;
+      }
+      .wg-tplaceholder.hidden { opacity:0; }
 
       #wg-hint-reveal-overlay {
         display:none;
@@ -920,22 +954,7 @@ function _findFreeRow(grid, wordLen, size, placed) {
         margin-top:2px;
       }
 
-      #wg-hint-dots {
-        display:flex; gap:4px; justify-content:center;
-        margin-top:8px;
-      }
-      .wg-hdot {
-        width:5px; height:5px; border-radius:50%;
-        background:${dark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.15)'};
-        transition:background .2s, transform .2s;
-      }
-      .wg-hdot.active {
-        background:${C.accent};
-        transform:scale(1.3);
-      }
-      .wg-hdot.found-dot {
-        background:${dark ? '#4ade80' : '#16a34a'};
-      }
+
       .wg-chip {
         display:inline-flex; align-items:center; gap:5px;
         padding:5px 14px; border-radius:20px;
@@ -1091,7 +1110,7 @@ function _findFreeRow(grid, wordLen, size, placed) {
 <div id="wg-hint-row">
       <button id="wg-hint-btn" title="İpucu">${iconHint}</button>
       <div id="wg-hint-panel"></div>
-      <div id="wg-hint-reveal-overlay">
+<div id="wg-hint-reveal-overlay">
         <div id="wg-hint-reveal-box">
           <p id="wg-hint-reveal-def"></p>
           <div class="wg-reveal-az" id="wg-hint-reveal-az"></div>
@@ -1202,11 +1221,6 @@ function _buildHintPanel() {
     let currentIdx = 0;
     const revealedMap = {};
 
-    function _closePanel() {
-      panel.classList.remove('open');
-      setTimeout(() => { panel.style.display = 'none'; }, 300);
-    }
-
     function _renderHint() {
       const pw      = words[currentIdx];
       const word    = pw.word;
@@ -1215,94 +1229,93 @@ function _buildHintPanel() {
       const isFound = state.foundWords.has(word);
       const total   = words.length;
 
-      const dotHTML = words.map((w, i) => {
-        const cls = state.foundWords.has(w.word)
-          ? 'wg-hdot found-dot'
-          : i === currentIdx ? 'wg-hdot active' : 'wg-hdot';
-        return `<div class="${cls}"></div>`;
-      }).join('');
-
       const prevDisabled = currentIdx === 0         ? 'disabled' : '';
       const nextDisabled = currentIdx === total - 1 ? 'disabled' : '';
 
       const iconPrev = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>`;
       const iconNext = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
+      const iconStar = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+      const iconX    = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>`;
 
-      // Font ölçüsünü definition uzunluğuna görə tənzimlə
-      const fontSize = def.length > 80 ? '11px' : def.length > 50 ? '12px' : '14px';
+      const shownText = revealedMap[word]
+        ? `<span style="color:#f5c842;font-weight:800;">${az}</span>`
+        : (def || '—');
 
       panel.innerHTML = `
         <div id="wg-hint-card">
           <div id="wg-hint-body">
-            <div id="wg-hint-def"
-                 class="${isFound ? 'found-word' : ''}"
-                 style="font-size:${fontSize};"
-            >${def || '—'}</div>
+            <div id="wg-hint-def" class="${isFound ? 'found-word' : ''}">
+              <span id="wg-hint-def-text">${shownText}</span>
+              <div id="wg-hint-reveal-inline">
+                <button id="wg-hint-reveal-inline-btn">${iconStar} 1 ulduzla tərcüməni gör</button>
+                <button id="wg-hint-reveal-inline-close">${iconX}</button>
+              </div>
+            </div>
             <div id="wg-hint-nav">
               <button class="wg-hnav-btn" id="wg-hnav-prev" ${prevDisabled}>${iconPrev}</button>
               <button class="wg-hnav-btn" id="wg-hnav-next" ${nextDisabled}>${iconNext}</button>
             </div>
           </div>
-          <div id="wg-hint-dots">${dotHTML}</div>
         </div>
       `;
+
+      // Font ölçüsünü avtomatik tənzimlə
+      const defTextEl = document.getElementById('wg-hint-def-text');
+      const defEl     = document.getElementById('wg-hint-def');
+      if (defTextEl && defEl) {
+        const availW = defEl.offsetWidth || 240;
+        const textLen = (revealedMap[word] ? az : def).length;
+        let fs = 14;
+        if (textLen > 90) fs = 10;
+        else if (textLen > 70) fs = 11;
+        else if (textLen > 50) fs = 12;
+        defTextEl.style.fontSize   = fs + 'px';
+        defTextEl.style.fontWeight = '700';
+        defTextEl.style.whiteSpace = 'nowrap';
+      }
 
       // Nav events
       document.getElementById('wg-hnav-prev')?.addEventListener('click', (e) => {
         e.stopPropagation();
+        document.getElementById('wg-hint-reveal-inline')?.classList.remove('visible');
         if (currentIdx > 0) { currentIdx--; _renderHint(); }
       });
       document.getElementById('wg-hnav-next')?.addEventListener('click', (e) => {
         e.stopPropagation();
+        document.getElementById('wg-hint-reveal-inline')?.classList.remove('visible');
         if (currentIdx < total - 1) { currentIdx++; _renderHint(); }
       });
 
-      // Definition-a toxunanda tərcümə overlay-i aç
-      document.getElementById('wg-hint-def')?.addEventListener('click', (e) => {
+      // Definition-a toxunanda inline overlay aç
+      document.getElementById('wg-hint-def-text')?.addEventListener('click', (e) => {
         e.stopPropagation();
-        if (isFound) return;
-        const overlay = document.getElementById('wg-hint-reveal-overlay');
-        const defEl   = document.getElementById('wg-hint-reveal-def');
-        const azEl    = document.getElementById('wg-hint-reveal-az');
-        const yesBtn  = document.getElementById('wg-hint-reveal-yes');
-        const noBtn   = document.getElementById('wg-hint-reveal-no');
-        if (!overlay) return;
+        if (isFound || revealedMap[word]) return;
+        const inline = document.getElementById('wg-hint-reveal-inline');
+        if (inline) inline.classList.add('visible');
+      });
 
-        if (defEl) defEl.textContent = def || '';
-        if (azEl)  { azEl.textContent = az; azEl.classList.remove('show'); }
-
-        // Əgər artıq açılıbsa birbaşa göstər
-        if (revealedMap[word]) {
-          if (azEl) azEl.classList.add('show');
-          if (yesBtn) yesBtn.style.display = 'none';
-          overlay.classList.add('visible');
-          noBtn?.addEventListener('click', () => overlay.classList.remove('visible'), { once: true });
+      // Tərcüməni gör
+      document.getElementById('wg-hint-reveal-inline-btn')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const stars = typeof getStars === 'function' ? getStars() : 0;
+        if (stars <= 0) {
+          const btn = document.getElementById('wg-hint-reveal-inline-btn');
+          if (btn) {
+            btn.textContent = 'Ulduz yoxdur!';
+            btn.style.background = '#ef4444';
+            setTimeout(() => _renderHint(), 1200);
+          }
           return;
         }
+        if (typeof spendStar === 'function') spendStar();
+        revealedMap[word] = true;
+        _renderHint();
+      });
 
-        if (yesBtn) yesBtn.style.display = '';
-        overlay.classList.add('visible');
-
-        yesBtn?.addEventListener('click', () => {
-          const stars = typeof getStars === 'function' ? getStars() : 0;
-          if (stars <= 0) {
-            yesBtn.textContent = 'Ulduz yoxdur!';
-            yesBtn.style.background = '#ef4444';
-            setTimeout(() => {
-              yesBtn.textContent = '⭐ 1 ulduzla tərcüməni gör';
-              yesBtn.style.background = '';
-            }, 1200);
-            return;
-          }
-          if (typeof spendStar === 'function') spendStar();
-          revealedMap[word] = true;
-          if (azEl) azEl.classList.add('show');
-          if (yesBtn) yesBtn.style.display = 'none';
-        }, { once: true });
-
-        noBtn?.addEventListener('click', () => {
-          overlay.classList.remove('visible');
-        }, { once: true });
+      // Bağla
+      document.getElementById('wg-hint-reveal-inline-close')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('wg-hint-reveal-inline')?.classList.remove('visible');
       });
     }
 
@@ -1761,17 +1774,20 @@ function _onPhaseComplete() {
     const hintBtn   = ov.querySelector('#wg-hint-btn');
     _buildHintPanel();
 
-    hintBtn?.addEventListener('click', (e) => {
+hintBtn?.addEventListener('click', (e) => {
       e.stopPropagation();
-      const panel = document.getElementById('wg-hint-panel');
+      const panel       = document.getElementById('wg-hint-panel');
+      const placeholder = document.querySelector('.wg-tplaceholder');
       if (!panel) return;
       const isOpen = panel.classList.contains('open');
       if (isOpen) {
         panel.classList.remove('open');
         setTimeout(() => { panel.style.display = 'none'; }, 300);
+        setTimeout(() => { if (placeholder) placeholder.classList.remove('hidden'); }, 300);
       } else {
         panel.style.display = 'block';
         requestAnimationFrame(() => panel.classList.add('open'));
+        if (placeholder) placeholder.classList.add('hidden');
       }
     });
 
