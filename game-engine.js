@@ -1318,8 +1318,19 @@ function _buildHintPanel() {
       });
     }
 
-    window._wgHintRefresh = () => {
+window._wgHintRefresh = () => {
       if (panel.classList.contains('open')) _renderHint();
+    };
+
+    window._wgHintOpen = (idx) => {
+      if (typeof idx === 'number') currentIdx = idx;
+      _renderHint();
+      if (!panel.classList.contains('open')) {
+        panel.style.display = 'block';
+        requestAnimationFrame(() => panel.classList.add('open'));
+        const placeholder = document.querySelector('.wg-tplaceholder');
+        if (placeholder) setTimeout(() => placeholder.classList.add('hidden'), 30);
+      }
     };
 
     _renderHint();
@@ -1594,8 +1605,19 @@ const pw = state.placedWords.find(p => p.word === word && !state.foundWords.has(
         setTimeout(() => hintRow.classList.remove('wg-correct-flash'), 320);
       }
 
-      _animateWord(word);
+_animateWord(word);
       _clearSel();
+
+      // Düzgün tapılanda hint paneli 0.4s sonra avtomatik aç
+      setTimeout(() => {
+        const panel = document.getElementById('wg-hint-panel');
+        if (!panel) return;
+        // Növbəti tapılmamış sözün indexini tap
+        const nextIdx = state.placedWords.findIndex(p => !state.foundWords.has(p.word));
+        if (nextIdx !== -1 && typeof window._wgHintOpen === 'function') {
+          window._wgHintOpen(nextIdx);
+        }
+      }, 400);
 
       if (state.foundWords.size === state.placedWords.length) {
         setTimeout(_onPhaseComplete, 900);
