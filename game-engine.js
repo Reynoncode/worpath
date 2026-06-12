@@ -1532,7 +1532,7 @@ function _attachWheelEvents(wrap) {
         _selectLetter(idx, btn.dataset.letter, btn);
       });
 
-   btn.addEventListener('mouseleave', (e) => {
+btn.addEventListener('mouseleave', (e) => {
         e.stopPropagation();
         if (!isMouseDown) return;
         if (currentHoverIdx === idx) {
@@ -1540,6 +1540,7 @@ function _attachWheelEvents(wrap) {
           currentHoverIdx = null;
         }
       });
+    });
 
     wrap.addEventListener('mouseup', (e) => {
       e.stopPropagation();
