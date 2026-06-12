@@ -1834,11 +1834,23 @@ function _onPhaseComplete() {
     wrap.appendChild(star);
   }
 
-  function _showPhaseComplete(isLast, nextPhase) {
+ function _showPhaseComplete(isLast, nextPhase) {
     const ov = document.getElementById(OID);
     if (!ov) return;
     const C    = _colors();
     const dark = _isDark();
+
+    // Növbəti game node-u tap (yalnız son phase-də)
+    let nextGameNode = null;
+    if (isLast) {
+      const allGameNodes = [...document.querySelectorAll('.game-node-wrap[data-is-game="true"]')];
+      const curIdx = allGameNodes.findIndex(
+        n => n.dataset.gameKey === state.gameKey && n.dataset.levelId === state.levelId
+      );
+      if (curIdx !== -1 && curIdx + 1 < allGameNodes.length) {
+        nextGameNode = allGameNodes[curIdx + 1];
+      }
+    }
 
     const iconPC = isLast
       ? `<svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="${C.accent}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v7a6 6 0 0 1-12 0V4z"/><path d="M4 4h2"/><path d="M18 4h2"/><path d="M4 7c-1 0-2 .5-2 2s1 2 2 2"/><path d="M20 7c1 0 2 .5 2 2s-1 2-2 2"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>`
@@ -1852,8 +1864,14 @@ function _onPhaseComplete() {
       ? 'Bütün mərhələləri uğurla bitirdiniz!'
       : `Növbəti bölüm: ${nextPhase + 1} / ${state.totalPhases}`;
 
+    const nextBtnLabel = isLast
+      ? (nextGameNode ? 'Növbəti oyuna keç' : 'Ana səhifəyə qayıt')
+      : 'Növbəti bölüm';
+
     const nextIconSvg = isLast
-      ? `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M15 6l6 6-6 6"/></svg>`
+      ? (nextGameNode
+          ? `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`
+          : `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18"/><path d="M15 6l6 6-6 6"/></svg>`)
       : `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
 
     const pc = document.createElement('div');
@@ -1864,16 +1882,15 @@ function _onPhaseComplete() {
       <p>${sub}</p>
       <button class="wg-pc-btn wg-pc-primary" id="wg-pc-next">
         ${nextIconSvg}
-        ${isLast ? 'Ana səhifəyə qayıt' : 'Növbəti bölüm'}
+        ${nextBtnLabel}
       </button>
       <button class="wg-pc-btn wg-pc-secondary" id="wg-pc-exit">Çıx</button>
     `;
     ov.appendChild(pc);
 
     pc.querySelector('#wg-pc-next').addEventListener('click', () => {
-      if (isLast) {
-        _closeOverlay();
-      } else {
+      if (!isLast) {
+        // Növbəti phase-ə keç
         pc.remove();
         const { levelId, gameKey, gameData } = state;
         _initState(levelId, gameKey, gameData, nextPhase);
@@ -1881,8 +1898,22 @@ function _onPhaseComplete() {
         _attachEvents(ov);
         _renderWheel();
         setTimeout(() => _renderCells(), 0);
+      } else if (nextGameNode) {
+        // Növbəti oyunu birbaşa başlat
+        const ngKey     = nextGameNode.dataset.gameKey;
+        const ngLevelId = nextGameNode.dataset.levelId;
+        _closeOverlay();
+        setTimeout(() => {
+          if (typeof startWordGame === 'function') {
+            startWordGame(ngLevelId, ngKey);
+          }
+        }, 350);
+      } else {
+        // Növbəti game yoxdur — ana səhifəyə qayıt
+        _closeOverlay();
       }
     });
+
     pc.querySelector('#wg-pc-exit').addEventListener('click', _closeOverlay);
   }
 
