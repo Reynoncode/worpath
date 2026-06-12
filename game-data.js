@@ -2585,17 +2585,28 @@ const GAME_DATA = {
     'b11_g0': { id: 'b2_b11_g0', title: 'Game 20',  phases: [
     {
       words: [
-
+        { word: 'ASHAMED',      az: 'utanmış', definition: 'feeling embarrassed or guilty about something you did' },
+        { word: 'SAD',          az: 'kədərli', definition: 'feeling unhappy' },
+        { word: 'SCARED',       az: 'qorxmuş', definition: 'feeling afraid or scared' },
+        { word: 'CALM',         az: 'sakit', definition: 'peaceful and not excited or angry' },
       ]
     },
     {
       words: [
-
+        { word: 'ANNOYED',      az: 'əsəbləşmiş', definition: 'slightly angry or irritated' },
+        { word: 'LONELY',       az: 'tənha', definition: 'feeling sad because you are alone' },
+        { word: 'PATIENT',      az: 'səbirli', definition: 'a person who is receiving medical treatment' },
+        { word: 'POLITE',       az: 'nəzakətli', definition: 'showing good manners and respect' },
+        { word: 'TALENTED',     az: 'istedadlı', definition: 'having a natural ability to do something well' },
       ]
     },
     {
       words: [
-
+        { word: 'BRAVE',        az: 'cəsur', definition: 'not afraid to face danger' },
+        { word: 'CALM',         az: 'sakit', definition: 'peaceful and not excited or angry' },
+        { word: 'CREATIVE',     az: 'yaradıcı', definition: 'able to produce new and original ideas' },
+        { word: 'DETERMINED',   az: 'qərarlı', definition: 'having a firm decision or being resolved to do something' },
+        { word: 'RELIABLE',     az: 'etibarlı', definition: 'able to be trusted' },
       ]
     },
   ]
@@ -2605,17 +2616,31 @@ const GAME_DATA = {
     'b12_g0': { id: 'b2_b12_g0', title: 'Game 21',  phases: [
     {
       words: [
-
+        { word: 'CHANNEL',      az: 'kanal', definition: 'a television or radio station' },
+        { word: 'CANCER',       az: 'xərçəng', definition: 'a serious disease in which cells grow uncontrollably' },
+        { word: 'HEAL',         az: 'sağalmaq', definition: 'to become healthy again after being ill' },
+        { word: 'HEALTH',       az: 'sağlamlıq', definition: 'the condition of your body and mind' },
       ]
     },
     {
       words: [
-
+        { word: 'EDITOR',       az: 'redaktor', definition: 'a person who is in charge of and selects material for a publication' },
+        { word: 'MEDIA',        az: 'media', definition: 'television, radio, newspapers and the internet' },
+        { word: 'DISASTER',     az: 'fəlakət', definition: 'a sudden event that causes great damage' },
+        { word: 'STORM',        az: 'fırtına', definition: 'bad weather with strong winds and rain' },
+        { word: 'DISEASE',      az: 'xəstəlik', definition: 'an illness that affects the body or mind' },
       ]
     },
     {
       words: [
-
+        { word: 'INTERNET',     az: 'internet', definition: 'the global computer network' },
+        { word: 'NEWS',         az: 'xəbər', definition: 'information about recent events' },
+        { word: 'NEWSPAPER',    az: 'qəzet', definition: 'a daily publication with news' },
+        { word: 'WEBSITE',      az: 'vebsayt', definition: 'a set of pages on the internet' },
+        { word: 'NATURE',       az: 'təbiət', definition: 'the natural world of plants, animals, and landscapes' },
+        { word: 'WASTE',        az: 'tullantı', definition: 'unwanted materials that are thrown away' },
+        { word: 'NURSE',        az: 'tibb bacısı', definition: 'a person who cares for sick people' },
+        { word: 'PATIENT',      az: 'xəstə', definition: 'a person who is receiving medical treatment' },
       ]
     },
   ]
@@ -2623,17 +2648,32 @@ const GAME_DATA = {
     'b12_g1': { id: 'b2_b12_g1', title: 'Game 22',  phases: [
     {
       words: [
-
+        { word: 'BROADCAST',    az: 'yayımlamaq', definition: 'to transmit radio or television programmes to a wide audience' },
+        { word: 'BLOG',         az: 'bloq', definition: 'a personal website with regular posts' },
+        { word: 'FLOOD',        az: 'daşqın', definition: 'when a lot of water covers land that is normally dry' },
+        { word: 'SOLAR',        az: 'günəş enerjisi', definition: 'using the power of the sun' },
+        { word: 'DOCTOR',       az: 'həkim', definition: 'a person who treats sick people' },
       ]
     },
     {
       words: [
-
+        { word: 'HEADLINE',     az: 'başlıq', definition: 'the heading at the top of a newspaper story' },
+        { word: 'CLIMATE',      az: 'iqlim', definition: 'the long-term weather conditions in a particular region' },
+        { word: 'FITNESS',      az: 'fiziki forma', definition: 'the state of being physically healthy and strong' },
+        { word: 'ILLNESS',      az: 'xəstəlik', definition: 'a disease or period of being ill' },
+        { word: 'MEDICINE',     az: 'dərman', definition: 'a substance used to treat illness' },
+        { word: 'MENTAL HEALTH', az: 'zehni sağlamlıq', definition: 'the condition of your mind and emotions' },
       ]
     },
     {
       words: [
-
+        { word: 'ARTICLE',      az: 'məqalə', definition: 'a piece of writing in a newspaper or magazine' },
+        { word: 'SOCIAL MEDIA', az: 'sosial media', definition: 'websites where people share information and photos' },
+        { word: 'RECYCLE',      az: 'təkrar emal etmək', definition: 'to process used materials so they can be used again' },
+        { word: 'ATMOSPHERE',   az: 'atmosfer', definition: 'the layer of gases that surrounds the Earth' },
+        { word: 'HOSPITAL',     az: 'xəstəxana', definition: 'a place where sick or injured people are treated' },
+        { word: 'SYMPTOM',      az: 'simptom', definition: 'a sign of an illness or disease' },
+        { word: 'THERAPY',      az: 'terapiya', definition: 'treatment intended to relieve or heal a disorder' },
       ]
     },
   ]
@@ -2643,17 +2683,28 @@ const GAME_DATA = {
     'b13_g0': { id: 'b2_b13_g0', title: 'Game 23', phases: [
     {
       words: [
-
+        { word: 'ROBOT',        az: 'robot', definition: 'a machine that can do tasks automatically' },
+        { word: 'APP',          az: 'tətbiq', definition: 'a program designed for a mobile phone' },
+        { word: 'AIRPORT',      az: 'hava limanı', definition: 'a place where planes take off and land' },
+        { word: 'TRIP',         az: 'gəzinti', definition: 'a short journey' },
       ]
     },
     {
       words: [
-
+        { word: 'LAPTOP',       az: 'noutbuk', definition: 'a small portable computer' },
+        { word: 'HOTEL',        az: 'otel', definition: 'a building where people pay to stay' },
+        { word: 'SALE',         az: 'satış', definition: 'the act of selling something' },
+        { word: 'SHOP',         az: 'mağaza', definition: 'a building where you can buy things' },
+        { word: 'TASTE',        az: 'dad', definition: 'the flavour of food or drink' },
       ]
     },
     {
       words: [
-
+        { word: 'GADGET',       az: 'qadcet', definition: 'a small useful machine or tool' },
+        { word: 'INTERNET',     az: 'internet', definition: 'the global computer network' },
+        { word: 'INGREDIENT',   az: 'inqredient', definition: 'one of the foods or substances needed to make a dish' },
+        { word: 'BARGAIN',      az: 'sövdələşmə', definition: 'a very good deal or agreement on price' },
+        { word: 'BRAND',        az: 'marka', definition: 'a name that identifies a particular product' },
       ]
     },
   ]
@@ -2661,17 +2712,29 @@ const GAME_DATA = {
     'b13_g1': { id: 'b2_b13_g1', title: 'Game 24', phases: [
     {
       words: [
-
+        { word: 'DEVICE',       az: 'cihaz', definition: 'a tool or machine designed for a particular purpose' },
+        { word: 'VISA',         az: 'viza', definition: 'an official permission to enter a foreign country' },
+        { word: 'PRICE',        az: 'qiymət', definition: 'the amount of money you must pay for something' },
+        { word: 'RECIPE',       az: 'resept', definition: 'instructions for cooking a particular dish' },
       ]
     },
     {
       words: [
-
+        { word: 'UPDATE',       az: 'yeniləmək', definition: 'to make something more modern or recent' },
+        { word: 'PASSPORT',     az: 'pasport', definition: 'an official document needed for international travel' },
+        { word: 'RESORT',       az: 'kurort', definition: 'a place where people go for a holiday' },
+        { word: 'TRANSPORT',    az: 'nəqliyyat', definition: 'the system of moving people or goods' },
+        { word: 'RESTAURANT',   az: 'restoran', definition: 'a place where you can buy and eat a meal' },
       ]
     },
     {
       words: [
-
+        { word: 'ELECTRONIC',   az: 'elektron', definition: 'using electricity and microchips' },
+        { word: 'ONLINE',       az: 'onlayn', definition: 'connected to the internet' },
+        { word: 'TOURISM',      az: 'turizm', definition: 'the business of organizing holidays for people' },
+        { word: 'TOURIST',      az: 'turist', definition: 'a person who travels for pleasure' },
+        { word: 'CUSTOMER',     az: 'müştəri', definition: 'a person who buys goods or services' },
+        { word: 'MENU',         az: 'menyu', definition: 'a list of food available in a restaurant' },
       ]
     },
   ]
@@ -2681,17 +2744,31 @@ const GAME_DATA = {
     'b14_g0': { id: 'b2_b14_g0', title: 'Game 25', phases: [
     {
       words: [
-
+        { word: 'GARAGE',       az: 'qaraj', definition: 'a building for keeping a car' },
+        { word: 'GARDEN',       az: 'bağ', definition: 'a piece of land where flowers and vegetables are grown' },
+        { word: 'RENT',         az: 'icarə', definition: 'money paid regularly to use a house or flat' },
+        { word: 'AGENDA',       az: 'gündəlik', definition: 'a list of things to be discussed' },
       ]
     },
     {
       words: [
-
+        { word: 'ROOF',         az: 'dam', definition: 'the top covering of a building' },
+        { word: 'WALL',         az: 'divar', definition: 'a vertical structure that forms the side of a building' },
+        { word: 'WINDOW',       az: 'pəncərə', definition: 'an opening in a wall with glass' },
+        { word: 'ABANDON',      az: 'tərk etmək', definition: 'to leave someone or something completely' },
+        { word: 'AFFAIR',       az: 'məsələ / iş', definition: 'an event or situation' },
       ]
     },
     {
       words: [
-
+        { word: 'APPLIANCE',    az: 'məişət texnikası', definition: 'a machine used in the home, such as a fridge or washing machine' },
+        { word: 'CEILING',      az: 'tavan', definition: 'the upper surface of a room' },
+        { word: 'HEATING',      az: 'isitmə', definition: 'the system that makes a house warm' },
+        { word: 'HOME',         az: 'ev', definition: 'the place where you live' },
+        { word: 'COTTAGE',      az: 'kiçik ev', definition: 'a small house, usually in the countryside' },
+        { word: 'ACCENT',       az: 'vurğu / ləhcə', definition: 'the way someone pronounces words' },
+        { word: 'ACCOMMODATE',  az: 'yerləşdirmək', definition: 'to provide a place for someone to stay' },
+        { word: 'ADOPT',        az: 'qəbul etmək', definition: 'to take something and use it as your own' },
       ]
     },
   ]
