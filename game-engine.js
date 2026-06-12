@@ -261,17 +261,12 @@ function _findFreeRow(grid, wordLen, size, placed) {
   }
 
   function _getWheelLetters(placedWords) {
-    const countMap = {};
-    placedWords.forEach(pw => {
-      const wordCount = {};
-      pw.word.split('').forEach(l => { wordCount[l] = (wordCount[l] || 0) + 1; });
-      Object.entries(wordCount).forEach(([l, cnt]) => {
-        countMap[l] = Math.max(countMap[l] || 0, cnt);
-      });
-    });
+    const seen = new Set();
     const letters = [];
-    Object.entries(countMap).forEach(([l, cnt]) => {
-      for (let i = 0; i < cnt; i++) letters.push(l);
+    placedWords.forEach(pw => {
+      pw.word.split('').forEach(l => {
+        if (!seen.has(l)) { seen.add(l); letters.push(l); }
+      });
     });
     return _shuffle(letters);
   }
@@ -1500,9 +1495,12 @@ window._wgHintRefresh = () => {
 function _attachWheelEvents(wrap) {
     const btns      = wrap.querySelectorAll('.wg-lb');
     let isMouseDown = false;
+    // Hər düymə üçün "içəridəmi" vəziyyəti izlə
+    // mouseenter/mouseleave ilə kənara çıxıb qayıtmağı tutaq
+    let currentHoverIdx = null;
 
     // Wheel-ə toxunanda hint paneli bağla
-wrap.addEventListener('touchstart', (e) => {
+    wrap.addEventListener('touchstart', (e) => {
       const panel = document.getElementById('wg-hint-panel');
       if (panel?.classList.contains('open')) {
         panel.classList.remove('open');
@@ -1518,23 +1516,36 @@ wrap.addEventListener('touchstart', (e) => {
     });
 
     btns.forEach(btn => {
+      const idx = parseInt(btn.dataset.idx);
+
       btn.addEventListener('mousedown', (e) => {
         e.stopPropagation();
         isMouseDown = true;
-        if (!btn.classList.contains('sel'))
-          _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
+        currentHoverIdx = idx;
+        _selectLetter(idx, btn.dataset.letter, btn);
       });
-      btn.addEventListener('mouseover', (e) => {
+
+      btn.addEventListener('mouseenter', (e) => {
         e.stopPropagation();
-        if (isMouseDown && !btn.classList.contains('sel'))
-          _selectLetter(parseInt(btn.dataset.idx), btn.dataset.letter, btn);
+        if (!isMouseDown) return;
+        currentHoverIdx = idx;
+        _selectLetter(idx, btn.dataset.letter, btn);
       });
-    });
+
+   btn.addEventListener('mouseleave', (e) => {
+        e.stopPropagation();
+        if (!isMouseDown) return;
+        if (currentHoverIdx === idx) {
+          state.selected.push(null);
+          currentHoverIdx = null;
+        }
+      });
 
     wrap.addEventListener('mouseup', (e) => {
       e.stopPropagation();
       if (!isMouseDown) return;
       isMouseDown = false;
+      currentHoverIdx = null;
       if (state.currentWord.length >= 2) _submitWord();
       else _clearSel();
     });
@@ -1542,6 +1553,7 @@ wrap.addEventListener('touchstart', (e) => {
     document.addEventListener('mouseup', (e) => {
       if (!isMouseDown) return;
       isMouseDown = false;
+      currentHoverIdx = null;
       if (!wrap.contains(e.target)) _clearSel();
     });
 
@@ -1550,8 +1562,13 @@ wrap.addEventListener('touchstart', (e) => {
     wrap.addEventListener('touchend',   _touchEnd,   { passive: false });
   }
 
-  function _selectLetter(idx, letter, btnEl) {
-    if (state.selected.includes(idx)) return;
+function _selectLetter(idx, letter, btnEl) {
+    // Son seçilən idx ilə eyni olarsa seçmə (ardıcıl dublikat yox)
+    // Amma əvvəlki seçimlərdə olan idx-dən fərqli davran:
+    // kənara çıxıb qayıtmaqla yenidən seçmək olar
+    const lastSel = state.selected[state.selected.length - 1];
+    if (lastSel === idx) return; // hələ eyni düymənin üstündəyik, skip
+
     btnEl.classList.add('sel');
     state.selected.push(idx);
     state.currentWord += letter;
@@ -1565,17 +1582,17 @@ wrap.addEventListener('touchstart', (e) => {
     _drawLines();
   }
 
-  function _touchStart(e) {
+function _touchStart(e) {
     e.preventDefault();
-    state.isDragging  = true;
-    state.selected    = [];
-    state.selectedPos = [];
-    state.currentWord = '';
+    state.isDragging   = true;
+    state.selected     = [];
+    state.selectedPos  = [];
+    state.currentWord  = '';
+    state._touchLastIdx = null;
     document.querySelectorAll('.wg-lb').forEach(b => b.classList.remove('sel'));
     _updateTyped();
     _processTouch(e.touches[0]);
   }
-
   function _touchMove(e) {
     e.preventDefault();
     if (!state.isDragging) return;
@@ -1589,20 +1606,38 @@ wrap.addEventListener('touchstart', (e) => {
     else _clearSel();
   }
 
-  function _processTouch(touch) {
+function _processTouch(touch) {
     const wrap = document.getElementById('wg-wheel');
     if (!wrap) return;
+
+    let foundIdx = null;
+
     wrap.querySelectorAll('.wg-lb').forEach(btn => {
       const rect = btn.getBoundingClientRect();
       const cx   = rect.left + rect.width  / 2;
       const cy   = rect.top  + rect.height / 2;
       const dist = Math.hypot(touch.clientX - cx, touch.clientY - cy);
       if (dist < rect.width * 0.65) {
-        const idx = parseInt(btn.dataset.idx);
-        if (!state.selected.includes(idx))
-          _selectLetter(idx, btn.dataset.letter, btn);
+        foundIdx = parseInt(btn.dataset.idx);
       }
     });
+
+    if (foundIdx === null) {
+      // Barmaq heç bir düymənin üstündə deyil — kənara çıxdı
+      if (state._touchLastIdx !== null) {
+        state.selected.push(null); // "boşluq" işarəsi — qayıdanda yenidən seçilsin
+        state._touchLastIdx = null;
+      }
+    } else {
+      // Barmaq bir düymənin üstündədir
+      if (state._touchLastIdx !== foundIdx) {
+        // Yeni düyməyə girdi (ya başqa düymə, ya kənara çıxıb qayıtdı)
+        const btn = wrap.querySelector(`.wg-lb[data-idx="${foundIdx}"]`);
+        if (btn) _selectLetter(foundIdx, btn.dataset.letter, btn);
+        state._touchLastIdx = foundIdx;
+      }
+      // else: hələ eyni düymənin üstündəyik — heç nə etmə
+    }
   }
 
   function _clearSel() {
