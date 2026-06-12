@@ -80,8 +80,8 @@ const GAME_DATA = {
       phases: [
     {
       words: [
-         { word: 'MAN',          az: 'kişi', definition: 'an adult male person' },
-        { word: 'AUNT',         az: 'xala', definition: 'your parent\' },
+        { word: 'MAN',          az: 'kişi', definition: 'an adult male person' },
+        { word: 'AUNT',         az: 'xala', definition: 'sister of your parents' },
         { word: 'DAD',          az: 'papa', definition: 'informal word for your father' },
         { word: 'MUM',          az: 'mama', definition: 'informal word for your mother' },
       ]
