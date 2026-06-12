@@ -495,7 +495,7 @@ function _findFreeRow(grid, wordLen, size, placed) {
   //  7. TOAST
   // ══════════════════════════════════════════════════════════
 
-  function _showWordToast(word) {
+ function _showWordToast(word) {
     const wordLen = word.length;
     const old = document.getElementById('wg-toast');
     if (old) { clearTimeout(old._hideTimer); old.remove(); }
@@ -503,18 +503,16 @@ function _findFreeRow(grid, wordLen, size, placed) {
     let emoji, text, color;
     if (wordLen <= 4) {
       emoji = '👍'; text = 'Yaxşı!';      color = '#4CAF50';
-    } else if (wordLen <= 7) {
+    } else if (wordLen <= 6) {
       emoji = '⭐'; text = 'Əla!';         color = '#FF9800';
-    } else if (wordLen <= 10) {
+    } else if (wordLen <= 8) {
       emoji = '🔥'; text = 'Möhtəşəm!';   color = '#E91E63';
     } else {
       emoji = '💥'; text = 'İnanılmaz!';  color = '#9C27B0';
     }
 
     const dark = _isDark();
-    const toastBg   = dark ? '#1e2d3d' : '#ffffff';
     const toastText = dark ? '#e8edf3' : '#1a2233';
-    const toastBd   = dark ? '#2a4060' : '#e0e5f0';
 
     const toast = document.createElement('div');
     toast.id = 'wg-toast';
@@ -522,8 +520,10 @@ function _findFreeRow(grid, wordLen, size, placed) {
       position:absolute;
       top:68px; left:50%; transform:translateX(-50%) translateY(-12px);
       z-index:10050;
-      background:${toastBg};
-      border:2px solid ${toastBd};
+      background:${color}22;
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      border:2px solid ${color}55;
       border-left:5px solid ${color};
       border-radius:18px;
       padding:16px 28px;
@@ -539,7 +539,7 @@ function _findFreeRow(grid, wordLen, size, placed) {
     `;
 
     const emojiSpan = document.createElement('span');
-    emojiSpan.style.cssText = 'font-size:32px; line-height:1;';
+    emojiSpan.style.cssText = 'font-size:32px; line-height:1; display:inline-block;';
     emojiSpan.textContent = emoji;
 
     const textSpan = document.createElement('span');
@@ -552,6 +552,58 @@ function _findFreeRow(grid, wordLen, size, placed) {
 
     toast.appendChild(emojiSpan);
     toast.appendChild(textSpan);
+
+    // Emoji animasiyasını kateqoriyaya görə təyin et
+    const styleId = 'wg-toast-anim-style';
+    let styleEl = document.getElementById(styleId);
+    if (!styleEl) {
+      styleEl = document.createElement('style');
+      styleEl.id = styleId;
+      document.head.appendChild(styleEl);
+    }
+
+    if (wordLen <= 4) {
+      // 👍 Yaxşı — baş barmaq yuxarı tərpənir
+      styleEl.textContent = `
+        @keyframes wgEmojiAnim {
+          0%,100% { transform: rotate(0deg) translateY(0); }
+          30%     { transform: rotate(-15deg) translateY(-4px); }
+          60%     { transform: rotate(10deg) translateY(-2px); }
+        }
+      `;
+    } else if (wordLen <= 6) {
+      // ⭐ Əla — ulduz fırlanır
+      styleEl.textContent = `
+        @keyframes wgEmojiAnim {
+          0%   { transform: scale(1)   rotate(0deg); }
+          40%  { transform: scale(1.4) rotate(180deg); }
+          100% { transform: scale(1)   rotate(360deg); }
+        }
+      `;
+    } else if (wordLen <= 8) {
+      // 🔥 Möhtəşəm — alov titrəyir
+      styleEl.textContent = `
+        @keyframes wgEmojiAnim {
+          0%,100% { transform: scaleX(1)    scaleY(1); }
+          20%     { transform: scaleX(0.85) scaleY(1.15); }
+          40%     { transform: scaleX(1.1)  scaleY(0.9); }
+          60%     { transform: scaleX(0.9)  scaleY(1.1); }
+          80%     { transform: scaleX(1.05) scaleY(0.95); }
+        }
+      `;
+    } else {
+      // 💥 İnanılmaz — partlayış effekti
+      styleEl.textContent = `
+        @keyframes wgEmojiAnim {
+          0%   { transform: scale(0.5) rotate(-20deg); opacity:0.4; }
+          50%  { transform: scale(1.6) rotate(10deg);  opacity:1;   }
+          75%  { transform: scale(0.9) rotate(-5deg);  opacity:1;   }
+          100% { transform: scale(1)   rotate(0deg);   opacity:1;   }
+        }
+      `;
+    }
+
+    emojiSpan.style.animation = 'wgEmojiAnim 0.6s cubic-bezier(.34,1.56,.64,1) both';
 
     const ov = document.getElementById('wg-overlay');
     if (ov) ov.appendChild(toast);
@@ -568,15 +620,13 @@ function _findFreeRow(grid, wordLen, size, placed) {
       textSpan.style.opacity = '1';
     }, 80);
 
-    const hideDelay = 3000;
     toast._hideTimer = setTimeout(() => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateX(-50%) translateY(-12px)';
       toast.style.transition = 'opacity .3s ease, transform .3s ease';
       setTimeout(() => toast.remove(), 320);
-    }, hideDelay);
+    }, 2000);
   }
-
   // ══════════════════════════════════════════════════════════
   //  8. OVERLAY & HTML
   // ══════════════════════════════════════════════════════════
