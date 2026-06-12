@@ -852,16 +852,18 @@ function _findFreeRow(grid, wordLen, size, placed) {
       .wg-hnav-btn:disabled { opacity:.3; cursor:default; }
 
       #wg-hint-body {
-        position:relative; min-height:52px;
+        position:relative;
         display:flex; align-items:center;
       }
       #wg-hint-def {
-        font-size:14px; line-height:1.55;
+        font-size:14px; line-height:1.3;
         color:${dark ? '#c8d4e8' : '#2d3a52'};
         font-weight:500; flex:1;
         padding-right:8px;
-        filter:blur(0);
-        transition:opacity .18s, filter .18s;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        cursor:pointer;
       }
       #wg-hint-def.found-word {
         color:${dark ? '#4ade80' : '#16a34a'};
@@ -871,31 +873,56 @@ function _findFreeRow(grid, wordLen, size, placed) {
 
       #wg-hint-reveal-overlay {
         display:none;
-        position:absolute; inset:0;
+        position:fixed; inset:0;
         align-items:center; justify-content:center;
-        z-index:5;
+        z-index:10060;
+        background:rgba(0,0,0,0.45);
+        backdrop-filter:blur(2px);
       }
       #wg-hint-reveal-overlay.visible { display:flex; }
-      #wg-hint-reveal-btn {
-        background:${dark ? 'rgba(10,18,28,0.72)' : 'rgba(240,242,248,0.82)'};
-        border:none; border-radius:12px;
-        padding:8px 16px;
-        font-size:13px; font-weight:700;
-        color:#f5c842;
-        cursor:pointer;
-        box-shadow:0 2px 12px rgba(0,0,0,0.28);
-        text-shadow:0 1px 6px rgba(180,130,0,0.4);
-        display:flex; align-items:center; gap:6px;
-        transition:transform .1s;
-        backdrop-filter:blur(4px);
-        -webkit-backdrop-filter:blur(4px);
-        white-space:nowrap;
+      #wg-hint-reveal-box {
+        background:${dark ? '#142233' : '#ffffff'};
+        border-radius:18px;
+        padding:24px 28px;
+        display:flex; flex-direction:column;
+        align-items:center; gap:14px;
+        box-shadow:0 8px 32px rgba(0,0,0,0.35);
+        max-width:300px; width:88%;
       }
-      #wg-hint-reveal-btn:active { transform:scale(.95); }
+      #wg-hint-reveal-box p {
+        font-size:14px; line-height:1.55;
+        color:${dark ? '#c8d4e8' : '#2d3a52'};
+        text-align:center; font-weight:500;
+      }
+      #wg-hint-reveal-box .wg-reveal-az {
+        font-size:22px; font-weight:800;
+        color:#f5c842;
+        text-shadow:0 1px 8px rgba(180,130,0,0.35);
+        display:none;
+      }
+      #wg-hint-reveal-box .wg-reveal-az.show { display:block; }
+      .wg-reveal-confirm {
+        width:100%; padding:13px;
+        border-radius:12px; border:none;
+        font-size:15px; font-weight:700;
+        cursor:pointer; display:flex;
+        align-items:center; justify-content:center; gap:7px;
+        transition:transform .1s;
+      }
+      .wg-reveal-confirm:active { transform:scale(.96); }
+      .wg-reveal-primary {
+        background:${C.accent}; color:#fff;
+        box-shadow:0 4px 14px ${C.accent}44;
+      }
+      .wg-reveal-secondary {
+        background:${dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)'};
+        color:${dark ? '#c8d4e8' : '#4a5568'};
+        margin-top:2px;
+      }
 
       #wg-hint-dots {
         display:flex; gap:4px; justify-content:center;
-        margin-top:10px;
+        margin-top:8px;
       }
       .wg-hdot {
         width:5px; height:5px; border-radius:50%;
@@ -1064,6 +1091,17 @@ function _findFreeRow(grid, wordLen, size, placed) {
 <div id="wg-hint-row">
       <button id="wg-hint-btn" title="İpucu">${iconHint}</button>
       <div id="wg-hint-panel"></div>
+      <div id="wg-hint-reveal-overlay">
+        <div id="wg-hint-reveal-box">
+          <p id="wg-hint-reveal-def"></p>
+          <div class="wg-reveal-az" id="wg-hint-reveal-az"></div>
+          <button class="wg-reveal-confirm wg-reveal-primary" id="wg-hint-reveal-yes">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f5c842" stroke="#f5c842" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            1 ulduzla tərcüməni gör
+          </button>
+          <button class="wg-reveal-confirm wg-reveal-secondary" id="wg-hint-reveal-no">Ləğv et</button>
+        </div>
+      </div>
       <div id="wg-typed-word">
         <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
       </div>
@@ -1162,7 +1200,6 @@ function _buildHintPanel() {
 
     const words = state.placedWords;
     let currentIdx = 0;
-
     const revealedMap = {};
 
     function _closePanel() {
@@ -1171,13 +1208,12 @@ function _buildHintPanel() {
     }
 
     function _renderHint() {
-      const pw       = words[currentIdx];
-      const word     = pw.word;
-      const def      = pw.definition || '';
-      const az       = pw.az || '';
-      const isFound  = state.foundWords.has(word);
-      const revealed = revealedMap[word];
-      const total    = words.length;
+      const pw      = words[currentIdx];
+      const word    = pw.word;
+      const def     = pw.definition || '';
+      const az      = pw.az || '';
+      const isFound = state.foundWords.has(word);
+      const total   = words.length;
 
       const dotHTML = words.map((w, i) => {
         const cls = state.foundWords.has(w.word)
@@ -1191,36 +1227,20 @@ function _buildHintPanel() {
 
       const iconPrev = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>`;
       const iconNext = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
-      const iconStar = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="#f5c842" stroke="#f5c842" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
 
-      let defHTML = '';
-      if (revealed) {
-        defHTML = `<span style="color:#f5c842;font-weight:700;">${az}</span>`;
-      } else if (def) {
-        defHTML = def;
-      } else {
-        defHTML = '';
-      }
-
-      const showRevealOverlay = !revealed && !isFound;
+      // Font ölçüsünü definition uzunluğuna görə tənzimlə
+      const fontSize = def.length > 80 ? '11px' : def.length > 50 ? '12px' : '14px';
 
       panel.innerHTML = `
         <div id="wg-hint-card">
-          <div id="wg-hint-top">
-            <span id="wg-hint-counter">${currentIdx + 1} / ${total}</span>
+          <div id="wg-hint-body">
+            <div id="wg-hint-def"
+                 class="${isFound ? 'found-word' : ''}"
+                 style="font-size:${fontSize};"
+            >${def || '—'}</div>
             <div id="wg-hint-nav">
               <button class="wg-hnav-btn" id="wg-hnav-prev" ${prevDisabled}>${iconPrev}</button>
               <button class="wg-hnav-btn" id="wg-hnav-next" ${nextDisabled}>${iconNext}</button>
-            </div>
-          </div>
-          <div id="wg-hint-body">
-            <div id="wg-hint-def" class="${isFound ? 'found-word' : ''}"
-                 style="${showRevealOverlay && def ? 'filter:blur(4px);user-select:none;' : ''}"
-            >${defHTML || '&nbsp;'}</div>
-            <div id="wg-hint-reveal-overlay" class="${showRevealOverlay ? 'visible' : ''}">
-              <button id="wg-hint-reveal-btn">
-                ${iconStar} 1 ulduzla tərcüməni gör
-              </button>
             </div>
           </div>
           <div id="wg-hint-dots">${dotHTML}</div>
@@ -1237,28 +1257,55 @@ function _buildHintPanel() {
         if (currentIdx < total - 1) { currentIdx++; _renderHint(); }
       });
 
-      // Reveal event
-      document.getElementById('wg-hint-reveal-btn')?.addEventListener('click', (e) => {
+      // Definition-a toxunanda tərcümə overlay-i aç
+      document.getElementById('wg-hint-def')?.addEventListener('click', (e) => {
         e.stopPropagation();
-        const stars = typeof getStars === 'function' ? getStars() : 0;
-        if (stars <= 0) {
-          // Ulduz yoxdur — düymənin rəngini dəyiş
-          const btn = document.getElementById('wg-hint-reveal-btn');
-          if (btn) {
-            btn.textContent = 'Ulduz yoxdur ⭐';
-            btn.style.color = '#ef4444';
-            setTimeout(() => _renderHint(), 1200);
-          }
+        if (isFound) return;
+        const overlay = document.getElementById('wg-hint-reveal-overlay');
+        const defEl   = document.getElementById('wg-hint-reveal-def');
+        const azEl    = document.getElementById('wg-hint-reveal-az');
+        const yesBtn  = document.getElementById('wg-hint-reveal-yes');
+        const noBtn   = document.getElementById('wg-hint-reveal-no');
+        if (!overlay) return;
+
+        if (defEl) defEl.textContent = def || '';
+        if (azEl)  { azEl.textContent = az; azEl.classList.remove('show'); }
+
+        // Əgər artıq açılıbsa birbaşa göstər
+        if (revealedMap[word]) {
+          if (azEl) azEl.classList.add('show');
+          if (yesBtn) yesBtn.style.display = 'none';
+          overlay.classList.add('visible');
+          noBtn?.addEventListener('click', () => overlay.classList.remove('visible'), { once: true });
           return;
         }
-        if (typeof spendStar === 'function') spendStar();
-        revealedMap[word] = true;
-        _renderHint();
+
+        if (yesBtn) yesBtn.style.display = '';
+        overlay.classList.add('visible');
+
+        yesBtn?.addEventListener('click', () => {
+          const stars = typeof getStars === 'function' ? getStars() : 0;
+          if (stars <= 0) {
+            yesBtn.textContent = 'Ulduz yoxdur!';
+            yesBtn.style.background = '#ef4444';
+            setTimeout(() => {
+              yesBtn.textContent = '⭐ 1 ulduzla tərcüməni gör';
+              yesBtn.style.background = '';
+            }, 1200);
+            return;
+          }
+          if (typeof spendStar === 'function') spendStar();
+          revealedMap[word] = true;
+          if (azEl) azEl.classList.add('show');
+          if (yesBtn) yesBtn.style.display = 'none';
+        }, { once: true });
+
+        noBtn?.addEventListener('click', () => {
+          overlay.classList.remove('visible');
+        }, { once: true });
       });
     }
 
-    // _refreshFound çağrılanda paneli yenilə
-    const _origRefresh = _refreshFound;
     window._wgHintRefresh = () => {
       if (panel.classList.contains('open')) _renderHint();
     };
@@ -1373,13 +1420,13 @@ function _attachWheelEvents(wrap) {
     let isMouseDown = false;
 
     // Wheel-ə toxunanda hint paneli bağla
-    wrap.addEventListener('touchstart', () => {
+wrap.addEventListener('touchstart', (e) => {
       const panel = document.getElementById('wg-hint-panel');
       if (panel?.classList.contains('open')) {
         panel.classList.remove('open');
         setTimeout(() => { panel.style.display = 'none'; }, 300);
       }
-    }, { passive: true });
+    }, { passive: false, capture: true });
     wrap.addEventListener('mousedown', () => {
       const panel = document.getElementById('wg-hint-panel');
       if (panel?.classList.contains('open')) {
