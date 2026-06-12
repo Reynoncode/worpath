@@ -11,7 +11,7 @@
 //      id:       string,       // unikal ID, məs. 'a1_g1'
 //      title:    string,       // node labelı
 //      words: [                // krossvord üçün sözlər
-//        { word: 'APPLE', clue: 'A fruit', az: 'alma' },
+//        { word: 'APPLE', clue: 'A fruit', az: 'alma', definition: 'a round red or green fruit' },
 //        ...
 //      ]
 //    }
@@ -47,28 +47,28 @@ const GAME_DATA = {
     {
       // Phase 1 — Peşələr (ortaq hərflər: A, R, T, E, S)
       words: [
-        { word: 'BABY',         az: 'körpə' },
-        { word: 'BOY',          az: 'oğlan' },
-        { word: 'ANYBODY',      az: 'hər hansı biri' },
-        { word: 'NOBODY',       az: 'heç kim' },
+        { word: 'BABY',         az: 'körpə', definition: 'a very young child who cannot walk or talk yet' },
+        { word: 'BOY',          az: 'oğlan', definition: 'a male child' },
+        { word: 'ANYBODY',      az: 'hər hansı biri', definition: 'any person at all' },
+        { word: 'NOBODY',       az: 'heç kim', definition: 'no person' },
       ]
     },
     {
       // Phase 2 — Peşələr (ortaq hərflər: S, E, R, I, N)
       words: [
         
-        { word: 'ACTRESS',      az: 'aktrisa' },
-        { word: 'ARTIST',       az: 'rəssam' },
-        { word: 'WAITER',       az: 'ofisiant' },
-        { word: 'WRITER',       az: 'yazıçı' },
+        { word: 'ACTRESS',      az: 'aktrisa', definition: 'a woman who acts in films or theatre' },
+        { word: 'ARTIST',       az: 'rəssam', definition: 'a person who creates art' },
+        { word: 'WAITER',       az: 'ofisiant', definition: 'a person who serves food in restaurants' },
+        { word: 'WRITER',       az: 'yazıçı', definition: 'a person who writes books and stories' },
       ]
     },
     {
       // Phase 3 — Ümumi insanlar (ortaq hərflər: O, N, E, R, A)
       words: [
-        { word: 'DANCER',       az: 'rəqqas' },
-        { word: 'MAN',          az: 'kişi' },
-        { word: 'MEMBER',       az: 'üzv' },
+        { word: 'DANCER',       az: 'rəqqas', definition: 'a person who dances to music' },
+        { word: 'MAN',          az: 'kişi', definition: 'an adult male person' },
+        { word: 'MEMBER',       az: 'üzv', definition: 'a person who belongs to a group, club, or organization' },
         
       ]
     },
@@ -80,26 +80,26 @@ const GAME_DATA = {
       phases: [
     {
       words: [
-         { word: 'MAN',          az: 'kişi' },
-        { word: 'AUNT',         az: 'xala' },
-        { word: 'DAD',          az: 'papa' },
-        { word: 'MUM',          az: 'mama' },
+         { word: 'MAN',          az: 'kişi', definition: 'an adult male person' },
+        { word: 'AUNT',         az: 'xala', definition: 'your parent\' },
+        { word: 'DAD',          az: 'papa', definition: 'informal word for your father' },
+        { word: 'MUM',          az: 'mama', definition: 'informal word for your mother' },
       ]
     },
     {
       words: [
         
-        { word: 'WOMAN',        az: 'qadın' },
-        { word: 'SOMEONE',      az: 'biri' },
-        { word: 'SON',          az: 'oğul' },
+        { word: 'WOMAN',        az: 'qadın', definition: 'an adult female person' },
+        { word: 'SOMEONE',      az: 'biri', definition: 'a person who is not specified' },
+        { word: 'SON',          az: 'oğul', definition: 'a male child of his parents' },
       ]
     },
     {
       words: [
-        { word: 'PARTNER',      az: 'ortaq' },
-        { word: 'PERSON',       az: 'insan' },
-        { word: 'PARENT',       az: 'valideyn' },
-        { word: 'SON',          az: 'oğul' },
+        { word: 'PARTNER',      az: 'ortaq', definition: 'a person you are in a relationship with' },
+        { word: 'PERSON',       az: 'insan', definition: 'a human being' },
+        { word: 'PARENT',       az: 'valideyn', definition: 'a mother or a father' },
+        { word: 'SON',          az: 'oğul', definition: 'a male child of his parents' },
       ]
     },
   ]
@@ -107,26 +107,26 @@ const GAME_DATA = {
     'b0_g2': { id: 'a1_b0_g2', title: 'Game 3',      phases: [
     {
       words: [
-        { word: 'ARM',          az: 'qol' },
-        { word: 'EAR',          az: 'qulaq' },
-        { word: 'FACE',         az: 'üz' },
+        { word: 'ARM',          az: 'qol', definition: 'the upper limb from shoulder to hand' },
+        { word: 'EAR',          az: 'qulaq', definition: 'the part of your head you hear with' },
+        { word: 'FACE',         az: 'üz', definition: 'the front part of your head' },
       ]
     },
     {
       words: [
-        { word: 'BODY',         az: 'bədən' },
-        { word: 'EYE',          az: 'göz' },
-        { word: 'HAND',         az: 'əl' },
-        { word: 'HEAD',         az: 'baş' },        
+        { word: 'BODY',         az: 'bədən', definition: 'the entire physical structure of a human' },
+        { word: 'EYE',          az: 'göz', definition: 'the part of your face you see with' },
+        { word: 'HAND',         az: 'əl', definition: 'the part at the end of your arm' },
+        { word: 'HEAD',         az: 'baş', definition: 'the top part of your body' },        
       ]
     },
     {
       words: [
 
-        { word: 'BROTHER',      az: 'qardaş' },
-        { word: 'MOTHER',       az: 'ana' },
-        { word: 'TOOTH',        az: 'diş' },
-        { word: 'BOTTOM',       az: 'oturacaq' },
+        { word: 'BROTHER',      az: 'qardaş', definition: 'a boy who has the same parents as you' },
+        { word: 'MOTHER',       az: 'ana', definition: 'a female parent' },
+        { word: 'TOOTH',        az: 'diş', definition: 'the hard white parts inside your mouth used for biting' },
+        { word: 'BOTTOM',       az: 'oturacaq', definition: 'lowest part' },
       ]
     },
   ]
@@ -138,27 +138,27 @@ const GAME_DATA = {
     'b1_g0': { id: 'a1_b1_g0', title: 'Game 4',      phases: [
     {
       words: [
-        { word: 'TALL',         az: 'hündür' },
-        { word: 'FAT',          az: 'kök' },
-        { word: 'LEFT',         az: 'sol' },
-        { word: 'LATE',         az: 'gec' },
+        { word: 'TALL',         az: 'hündür', definition: 'high person' },
+        { word: 'FAT',          az: 'kök', definition: 'big body' },
+        { word: 'LEFT',         az: 'sol', definition: 'left side' },
+        { word: 'LATE',         az: 'gec', definition: 'after the right time' },
       ]
     },
     {
       words: [
-            { word: 'COOL',         az: 'əla' },
-        { word: 'GOOD',         az: 'yaxşı' },
-        { word: 'COLD',         az: 'soyuq' },
-        { word: 'OLD',          az: 'köhnə' },
+            { word: 'COOL',         az: 'əla', definition: 'very good' },
+        { word: 'GOOD',         az: 'yaxşı', definition: 'nice or correct' },
+        { word: 'COLD',         az: 'soyuq', definition: 'not warm' },
+        { word: 'OLD',          az: 'köhnə', definition: 'not new' },
       ]
     },
     {
       words: [
-        { word: 'DEAR',         az: 'əziz' },
-        { word: 'DRY',          az: 'quru' },
-        { word: 'EARLY',        az: 'erkən' },
-        { word: 'READY',        az: 'hazır' },
-        { word: 'REAL',         az: 'həqiqi' },
+        { word: 'DEAR',         az: 'əziz', definition: 'very loved' },
+        { word: 'DRY',          az: 'quru', definition: 'not wet' },
+        { word: 'EARLY',        az: 'erkən', definition: 'before the right time' },
+        { word: 'READY',        az: 'hazır', definition: 'prepared to do' },
+        { word: 'REAL',         az: 'həqiqi', definition: 'not fake' },
 
       ]
     },
@@ -169,27 +169,27 @@ const GAME_DATA = {
     'b1_g1': { id: 'a1_b1_g1', title: 'Game 5',phases: [
     {
       words: [
-        { word: 'SHORT',        az: 'qısa' },
-        { word: 'TOP',          az: 'üst' },
-        { word: 'HOT',          az: 'isti' },
-        { word: 'POOR',         az: 'kasıb' },
+        { word: 'SHORT',        az: 'qısa', definition: 'not long' },
+        { word: 'TOP',          az: 'üst', definition: 'highest part' },
+        { word: 'HOT',          az: 'isti', definition: 'very warm' },
+        { word: 'POOR',         az: 'kasıb', definition: 'has little money' },
       ]
     },
     {
       words: [
-        { word: 'BACK',         az: 'arxa' },
-        { word: 'BAD',          az: 'pis' },
-        { word: 'DARK',         az: 'qaranlıq' },    
+        { word: 'BACK',         az: 'arxa', definition: 'the rear part of your body' },
+        { word: 'BAD',          az: 'pis', definition: 'not good' },
+        { word: 'DARK',         az: 'qaranlıq', definition: 'with very little light' },    
       ]
     },
     {
       words: [
 
-        { word: 'SAD',          az: 'kədərli' },
-        { word: 'SMALL',        az: 'kiçik' },
-        { word: 'MIDDLE',       az: 'orta' },
-        { word: 'SIDE',         az: 'yan' },
-        { word: 'SAME',         az: 'eyni' },
+        { word: 'SAD',          az: 'kədərli', definition: 'feeling unhappy' },
+        { word: 'SMALL',        az: 'kiçik', definition: 'little size' },
+        { word: 'MIDDLE',       az: 'orta', definition: 'centre part' },
+        { word: 'SIDE',         az: 'yan', definition: 'left or right part' },
+        { word: 'SAME',         az: 'eyni', definition: 'exactly like' },
       ]
     },
   ]
@@ -199,28 +199,28 @@ const GAME_DATA = {
     'b1_g2': { id: 'a1_b1_g2', title: 'Game 6',phases: [
     {
       words: [
-        { word: 'FULL',         az: 'dolu' },
-        { word: 'FALSE',        az: 'yalan' },
-        { word: 'FREE',         az: 'azad' },
-        { word: 'SURE',         az: 'əmin' },
+        { word: 'FULL',         az: 'dolu', definition: 'no space left' },
+        { word: 'FALSE',        az: 'yalan', definition: 'not true' },
+        { word: 'FREE',         az: 'azad', definition: 'costs nothing' },
+        { word: 'SURE',         az: 'əmin', definition: 'very certain' },
       ]
     },
     {
       words: [
-        { word: 'BIG',          az: 'böyük' },
-        { word: 'HIGH',         az: 'yüksək' },
-        { word: 'RIGHT',        az: 'sağ' },
-        { word: 'RICH',         az: 'varlı' },    
+        { word: 'BIG',          az: 'böyük', definition: 'large size' },
+        { word: 'HIGH',         az: 'yüksək', definition: 'far up' },
+        { word: 'RIGHT',        az: 'sağ', definition: 'right side' },
+        { word: 'RICH',         az: 'varlı', definition: 'has a lot of money' },    
       ]
     },
     {
       words: [
 
-        { word: 'TIRED',        az: 'yorğun' },
-        { word: 'NICE',         az: 'xoş' },
-        { word: 'CENTRE',       az: 'mərkəz' },
-        { word: 'DIFFERENT',    az: 'fərqli' },
-        { word: 'FINE',         az: 'normal' },
+        { word: 'TIRED',        az: 'yorğun', definition: 'feeling the need to rest' },
+        { word: 'NICE',         az: 'xoş', definition: 'pleasant and kind' },
+        { word: 'CENTRE',       az: 'mərkəz', definition: 'middle of the city' },
+        { word: 'DIFFERENT',    az: 'fərqli', definition: 'not the same' },
+        { word: 'FINE',         az: 'normal', definition: 'money you have to pay as a punishment' },
       ]
     },
   ]
@@ -258,26 +258,26 @@ const GAME_DATA = {
     'b2_g0': { id: 'a1_b2_g0', title: 'Game 8', phases: [
     {
       words: [
-        { word: 'TOMATO',       az: 'pomidor' },
-        { word: 'MEAT',         az: 'ət' },
-        { word: 'TEA',          az: 'çay' },
-        { word: 'EAT',       az: 'yemək' },
+        { word: 'TOMATO',       az: 'pomidor', definition: 'a round red vegetable' },
+        { word: 'MEAT',         az: 'ət', definition: 'food from animals' },
+        { word: 'TEA',          az: 'çay', definition: 'hot drink from leaves' },
+        { word: 'EAT',       az: 'yemək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'PEPPER',       az: 'bibər' },
-        { word: 'RICE',         az: 'düyü' },
-        { word: 'RECIPE',       az: 'resept' },
-        { word: 'BEER',         az: 'pivə' },    
+        { word: 'PEPPER',       az: 'bibər', definition: 'a red or green vegetable' },
+        { word: 'RICE',         az: 'düyü', definition: 'small white grains' },
+        { word: 'RECIPE',       az: 'resept', definition: 'instructions for cooking a particular dish' },
+        { word: 'BEER',         az: 'pivə', definition: 'alcoholic drink from grain' },    
       ]
     },
     {
       words: [
-        { word: 'BANANA',       az: 'banan' },
-        { word: 'PLANT',        az: 'bitki' },
-        { word: 'SALT',         az: 'duz' },
-        { word: 'PASTA',        az: 'makaron' },
+        { word: 'BANANA',       az: 'banan', definition: 'a long yellow fruit' },
+        { word: 'PLANT',        az: 'bitki', definition: 'living thing in a pot' },
+        { word: 'SALT',         az: 'duz', definition: 'white powder that makes food salty' },
+        { word: 'PASTA',        az: 'makaron', definition: 'Italian food from flour' },
       ]
     },
   ]
@@ -286,26 +286,26 @@ const GAME_DATA = {
     'b2_g1': { id: 'a1_b2_g1', title: 'Game 9', phases: [
     {
       words: [
-        { word: 'ONION',        az: 'soğan' },
-        { word: 'DIET',         az: 'pəhriz' },
-        { word: 'DINNER',       az: 'axşam yeməyi' },
-        { word: 'ORDER',     az: 'sifariş etmək' },
+        { word: 'ONION',        az: 'soğan', definition: 'a round white vegetable with strong smell' },
+        { word: 'DIET',         az: 'pəhriz', definition: 'special food plan' },
+        { word: 'DINNER',       az: 'axşam yeməyi', definition: 'evening meal' },
+        { word: 'ORDER',     az: 'sifariş etmək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-            { word: 'APPLE',        az: 'alma' },
-        { word: 'EGG',          az: 'yumurta' },
-        { word: 'MEAL',         az: 'yemək' },
+            { word: 'APPLE',        az: 'alma', definition: 'a round red or green fruit' },
+        { word: 'EGG',          az: 'yumurta', definition: 'food that comes from chickens' },
+        { word: 'MEAL',         az: 'yemək', definition: 'food eaten at one time' },
       ]
     },
     {
       words: [
-        { word: 'CHEESE',       az: 'pendir' },
-        { word: 'FISH',         az: 'balıq' },
-        { word: 'DISH',         az: 'təam' },
-        { word: 'FOOD',         az: 'qida' },
-        { word: 'COFFEE',       az: 'qəhvə' },
+        { word: 'CHEESE',       az: 'pendir', definition: 'a solid food made from milk' },
+        { word: 'FISH',         az: 'balıq', definition: 'an animal that lives in water' },
+        { word: 'DISH',         az: 'təam', definition: 'one kind of food' },
+        { word: 'FOOD',         az: 'qida', definition: 'things we eat' },
+        { word: 'COFFEE',       az: 'qəhvə', definition: 'hot brown drink' },
 
       ]
     },
@@ -317,26 +317,26 @@ const GAME_DATA = {
     'b3_g0': { id: 'a1_b3_g0', title: 'Game 10', phases: [
     {
       words: [
-        { word: 'ONE',          az: 'bir' },
-        { word: 'NINE',         az: 'doqquz' },
-        { word: 'ONCE',         az: 'bir dəfə' },
+        { word: 'ONE',          az: 'bir', definition: 'the number 1' },
+        { word: 'NINE',         az: 'doqquz', definition: 'the number 9' },
+        { word: 'ONCE',         az: 'bir dəfə', definition: 'one time' },
       ]
     },
     {
       words: [
-        { word: 'TEN',          az: 'on' },
-        { word: 'FIFTEEN',      az: 'on beş' },
-        { word: 'FIFTY',        az: 'əlli' },
-        { word: 'NINETY',       az: 'doxsan' },    
+        { word: 'TEN',          az: 'on', definition: 'the number 10' },
+        { word: 'FIFTEEN',      az: 'on beş', definition: 'the number 15' },
+        { word: 'FIFTY',        az: 'əlli', definition: 'the number 50' },
+        { word: 'NINETY',       az: 'doxsan', definition: 'the number 90' },    
       ]
     },
     {
       words: [
-        { word: 'GREEN',        az: 'yaşıl' },
-        { word: 'THREE',        az: 'üç' },
-        { word: 'EIGHT',        az: 'səkkiz' },
-        { word: 'THIRTEEN',     az: 'on üç' },
-        { word: 'EIGHTEEN',     az: 'on səkkiz' },
+        { word: 'GREEN',        az: 'yaşıl', definition: 'colour of grass' },
+        { word: 'THREE',        az: 'üç', definition: 'the number 3' },
+        { word: 'EIGHT',        az: 'səkkiz', definition: 'the number 8' },
+        { word: 'THIRTEEN',     az: 'on üç', definition: 'the number 13' },
+        { word: 'EIGHTEEN',     az: 'on səkkiz', definition: 'the number 18' },
 
       ]
     },
@@ -345,28 +345,28 @@ const GAME_DATA = {
     'b3_g1': { id: 'a1_b3_g1', title: 'Game 11', phases: [
     {
       words: [
-        { word: 'RED',          az: 'qırmızı' },
-        { word: 'DARK',         az: 'qaranlıq' },
-        { word: 'PALE',         az: 'solğun' },
-        { word: 'DEEP',         az: 'dərin' },
+        { word: 'RED',          az: 'qırmızı', definition: 'colour of blood' },
+        { word: 'DARK',         az: 'qaranlıq', definition: 'with very little light' },
+        { word: 'PALE',         az: 'solğun', definition: 'very light colour' },
+        { word: 'DEEP',         az: 'dərin', definition: 'going far down' },
       ]
     },
     {
       words: [
-            { word: 'SIX',          az: 'altı' },
-        { word: 'SEVEN',        az: 'yeddi' },
-        { word: 'SIXTEEN',      az: 'on altı' },
-        { word: 'SIXTY',        az: 'altmış' },
-        { word: 'SEVENTY',      az: 'yetmiş' },
+            { word: 'SIX',          az: 'altı', definition: 'the number 6' },
+        { word: 'SEVEN',        az: 'yeddi', definition: 'the number 7' },
+        { word: 'SIXTEEN',      az: 'on altı', definition: 'the number 16' },
+        { word: 'SIXTY',        az: 'altmış', definition: 'the number 60' },
+        { word: 'SEVENTY',      az: 'yetmiş', definition: 'the number 70' },
       ]
     },
     {
       words: [
-        { word: 'FOUR',         az: 'dörd' },
-        { word: 'THIRTY',       az: 'otuz' },
-        { word: 'FORTY',        az: 'qırx' },
-        { word: 'FOURTH',       az: 'dördüncü' },
-        { word: 'FIFTH',        az: 'beşinci' },
+        { word: 'FOUR',         az: 'dörd', definition: 'the number 4' },
+        { word: 'THIRTY',       az: 'otuz', definition: 'the number 30' },
+        { word: 'FORTY',        az: 'qırx', definition: 'the number 40' },
+        { word: 'FOURTH',       az: 'dördüncü', definition: 'number 4 in order' },
+        { word: 'FIFTH',        az: 'beşinci', definition: 'number 5 in order' },
 
       ]
     },
@@ -379,23 +379,23 @@ const GAME_DATA = {
     'b4_g0': { id: 'a1_b4_g0', title: 'Game 12', phases: [
     {
       words: [
-        { word: 'BED',          az: 'çarpayı' },
-        { word: 'AREA',         az: 'ərazi' },
-        { word: 'BAR',          az: 'bar' },
+        { word: 'BED',          az: 'çarpayı', definition: 'furniture for sleeping' },
+        { word: 'AREA',         az: 'ərazi', definition: 'part of a city' },
+        { word: 'BAR',          az: 'bar', definition: 'place for alcoholic drinks' },
       ]
     },
     {
       words: [
-        { word: 'POOL',         az: 'hovuz' },
-        { word: 'POST',         az: 'poçt' },
-        { word: 'TOP',          az: 'zirvə' },
+        { word: 'POOL',         az: 'hovuz', definition: 'place to swim' },
+        { word: 'POST',         az: 'poçt', definition: 'place to send letters' },
+        { word: 'TOP',          az: 'zirvə', definition: 'highest part' },
       ]
     },
     {
       words: [
-        { word: 'PAPER',        az: 'kağız' },
-        { word: 'PEN',          az: 'qələm' },
-        { word: 'PARK',         az: 'park' },
+        { word: 'PAPER',        az: 'kağız', definition: 'thin material for writing' },
+        { word: 'PEN',          az: 'qələm', definition: 'writes with ink' },
+        { word: 'PARK',         az: 'park', definition: 'green place with trees' },
       ]
     },
   ]
@@ -403,24 +403,24 @@ const GAME_DATA = {
     'b4_g1': { id: 'a1_b4_g1', title: 'Game 13', phases: [
     {
       words: [
-        { word: 'HOME',         az: 'ev' },
-        { word: 'HOUSE',        az: 'ev' },
-        { word: 'MUSEUM',       az: 'muzey' },
+        { word: 'HOME',         az: 'ev', definition: 'the place where you live' },
+        { word: 'HOUSE',        az: 'ev', definition: 'a building for one family' },
+        { word: 'MUSEUM',       az: 'muzey', definition: 'a place where old and important things are shown' },
       ]
     },
     {
       words: [
-        { word: 'BATH',         az: 'vanna' },
-        { word: 'TABLE',        az: 'masa' },
-        { word: 'BOTTLE',       az: 'şüşə' },
-        { word: 'HOTEL',        az: 'otel' },
+        { word: 'BATH',         az: 'vanna', definition: 'a big tub for washing' },
+        { word: 'TABLE',        az: 'masa', definition: 'furniture where you eat' },
+        { word: 'BOTTLE',       az: 'şüşə', definition: 'a tall container for liquids' },
+        { word: 'HOTEL',        az: 'otel', definition: 'a building where people pay to stay' },
       ]
     },
     {
       words: [
-        { word: 'CUP',          az: 'fincan' },
-        { word: 'CLUB',         az: 'klub' },
-        { word: 'PLACE',        az: 'məkan' },
+        { word: 'CUP',          az: 'fincan', definition: 'a small container for hot drinks' },
+        { word: 'CLUB',         az: 'klub', definition: 'place for dancing' },
+        { word: 'PLACE',        az: 'məkan', definition: 'where something is' },
       ]
     },
   ]
@@ -428,26 +428,26 @@ const GAME_DATA = {
     'b4_g2': { id: 'a1_b4_g2', title: 'Game 14', phases: [
     {
       words: [
-        { word: 'BAG',          az: 'çanta' },
-        { word: 'KEY',          az: 'açar' },
-        { word: 'BANK',         az: 'bank' },
-        { word: 'GYM',          az: 'idman zalı' },
+        { word: 'BAG',          az: 'çanta', definition: 'you carry things in it' },
+        { word: 'KEY',          az: 'açar', definition: 'opens a door' },
+        { word: 'BANK',         az: 'bank', definition: 'place for money' },
+        { word: 'GYM',          az: 'idman zalı', definition: 'place for exercise' },
       ]
     },
     {
       words: [
-        { word: 'BATHROOM',     az: 'vanna otağı' },
-        { word: 'ROOM',         az: 'otaq' },
-        { word: 'THEATRE',      az: 'teatr' },
-        { word: 'BOTTOM',       az: 'dib' },
+        { word: 'BATHROOM',     az: 'vanna otağı', definition: 'room with toilet and shower' },
+        { word: 'ROOM',         az: 'otaq', definition: 'a space inside a house' },
+        { word: 'THEATRE',      az: 'teatr', definition: 'a building where plays are performed' },
+        { word: 'BOTTOM',       az: 'dib', definition: 'lowest part' },
       ]
     },
     {
       words: [
-        { word: 'FLAT',         az: 'mənzil' },
-        { word: 'TOILET',       az: 'tualet' },
-        { word: 'CAFE',         az: 'kafe' },
-        { word: 'OFFICE',       az: 'ofis' },
+        { word: 'FLAT',         az: 'mənzil', definition: 'without hills or curves' },
+        { word: 'TOILET',       az: 'tualet', definition: 'room with WC' },
+        { word: 'CAFE',         az: 'kafe', definition: 'small place for coffee' },
+        { word: 'OFFICE',       az: 'ofis', definition: 'place where people work at desks' },
       ]
     },
   ]
@@ -461,29 +461,29 @@ const GAME_DATA = {
     'b5_g0': { id: 'a1_b5_g0', title: 'Game 15', phases: [
     {
       words: [
-        { word: 'CAT',          az: 'pişik' },
-        { word: 'BOAT',         az: 'qayıq' },
-        { word: 'BOOT',         az: 'çəkmə' },
-        { word: 'COAT',         az: 'palto' },
+        { word: 'CAT',          az: 'pişik', definition: 'a small pet that says meow' },
+        { word: 'BOAT',         az: 'qayıq', definition: 'a small vehicle for water' },
+        { word: 'BOOT',         az: 'çəkmə', definition: 'tall footwear' },
+        { word: 'COAT',         az: 'palto', definition: 'a warm outer piece of clothing' },
       ]
     },
     {
       words: [
-        { word: 'AIR',          az: 'hava' },
-        { word: 'RAIN',         az: 'yağış' },
-        { word: 'TRAIN',        az: 'qatar' },
-        { word: 'TRIP',         az: 'səfər' },
-        { word: 'PAIR',         az: 'cüt' },
+        { word: 'AIR',          az: 'hava', definition: 'what we breathe' },
+        { word: 'RAIN',         az: 'yağış', definition: 'water that falls from clouds' },
+        { word: 'TRAIN',        az: 'qatar', definition: 'a long vehicle that runs on rails' },
+        { word: 'TRIP',         az: 'səfər', definition: 'a short journey' },
+        { word: 'PAIR',         az: 'cüt', definition: 'two things together' },
       ]
     },
     {
       words: [
-        { word: 'EAST',         az: 'şərq' },
-        { word: 'SEA',          az: 'dəniz' },
-        { word: 'WEST',         az: 'qərb' },
-        { word: 'TREE',         az: 'ağac' },
-        { word: 'WATER',        az: 'su' },
-        { word: 'SWEATER',      az: 'sviter' },
+        { word: 'EAST',         az: 'şərq', definition: 'direction of sunrise' },
+        { word: 'SEA',          az: 'dəniz', definition: 'big salt water' },
+        { word: 'WEST',         az: 'qərb', definition: 'direction of sunset' },
+        { word: 'TREE',         az: 'ağac', definition: 'a tall plant with a trunk' },
+        { word: 'WATER',        az: 'su', definition: 'clear liquid we drink' },
+        { word: 'SWEATER',      az: 'sviter', definition: 'warm wool top' },
       ]
     },
   ]
@@ -491,25 +491,25 @@ const GAME_DATA = {
     'b5_g1': { id: 'a1_b5_g1', title: 'Game 16',  phases: [
     {
       words: [
-        { word: 'ROAD',         az: 'yol' },
-        { word: 'COW',          az: 'inək' },
-        { word: 'WOOD',         az: 'taxta' },
-        { word: 'CAR',          az: 'avtomobil' },
+        { word: 'ROAD',         az: 'yol', definition: 'way for cars' },
+        { word: 'COW',          az: 'inək', definition: 'big farm animal that gives milk' },
+        { word: 'WOOD',         az: 'taxta', definition: 'material from trees used for building' },
+        { word: 'CAR',          az: 'avtomobil', definition: 'a small vehicle for families' },
       ]
     },
     {
       words: [
-        { word: 'ICE',          az: 'buz' },
-        { word: 'BIKE',         az: 'motosiklet' },
-        { word: 'TICKET',       az: 'bilet' },
+        { word: 'ICE',          az: 'buz', definition: 'frozen water' },
+        { word: 'BIKE',         az: 'motosiklet', definition: 'short word for bicycle' },
+        { word: 'TICKET',       az: 'bilet', definition: 'a piece of paper that allows you to travel' },
       ]
     },
     {
       words: [
-        { word: 'DOG',          az: 'it' },
-        { word: 'HORSE',        az: 'at' },
-        { word: 'DRESS',        az: 'don' },
-        { word: 'SHOE',         az: 'ayaqqabı' },
+        { word: 'DOG',          az: 'it', definition: 'a pet that says woof' },
+        { word: 'HORSE',        az: 'at', definition: 'a big animal people ride' },
+        { word: 'DRESS',        az: 'don', definition: 'a one-piece clothing for women' },
+        { word: 'SHOE',         az: 'ayaqqabı', definition: 'footwear' },
       ]
     },
   ]
@@ -517,26 +517,26 @@ const GAME_DATA = {
     'b5_g2': { id: 'a1_b5_g2', title: 'Game 17',  phases: [
     {
       words: [
-        { word: 'DOG',          az: 'it' },
-        { word: 'HORSE',        az: 'at' },
-        { word: 'DRESS',        az: 'don' },
-        { word: 'SHOE',         az: 'ayaqqabı' },
+        { word: 'DOG',          az: 'it', definition: 'a pet that says woof' },
+        { word: 'HORSE',        az: 'at', definition: 'a big animal people ride' },
+        { word: 'DRESS',        az: 'don', definition: 'a one-piece clothing for women' },
+        { word: 'SHOE',         az: 'ayaqqabı', definition: 'footwear' },
       ]
     },
     {
       words: [
-        { word: 'BEACH',        az: 'çimərlik' },
-        { word: 'WEATHER',      az: 'hava' },
-        { word: 'HAT',          az: 'şlyapa' },
-        { word: 'WATCH',        az: 'saat' },
+        { word: 'BEACH',        az: 'çimərlik', definition: 'sandy place by the sea' },
+        { word: 'WEATHER',      az: 'hava', definition: 'the condition of the atmosphere at a particular time and place' },
+        { word: 'HAT',          az: 'şlyapa', definition: 'something you wear on your head' },
+        { word: 'WATCH',        az: 'saat', definition: 'tells time on your wrist' },
       ]
     },
     {
       words: [
-        { word: 'ISLAND',       az: 'ada' },
-        { word: 'LAND',         az: 'torpaq' },
-        { word: 'SUN',          az: 'günəş' },
-        { word: 'BUS',          az: 'avtobus' },
+        { word: 'ISLAND',       az: 'ada', definition: 'land with water all around it' },
+        { word: 'LAND',         az: 'torpaq', definition: 'ground, not water' },
+        { word: 'SUN',          az: 'günəş', definition: 'bright star in the sky' },
+        { word: 'BUS',          az: 'avtobus', definition: 'a large vehicle for many passengers' },
       ]
     },
   ]
@@ -547,23 +547,23 @@ const GAME_DATA = {
     'b6_g0': { id: 'a1_b6_g0', title: 'Game 18', phases: [
     {
       words: [
-        { word: 'AGE',          az: 'yaş' },
-        { word: 'DATE',         az: 'tarix' },
-        { word: 'LATE',         az: 'gec' },
+        { word: 'AGE',          az: 'yaş', definition: 'how old you are' },
+        { word: 'DATE',         az: 'tarix', definition: 'day, month and year' },
+        { word: 'LATE',         az: 'gec', definition: 'after the right time' },
       ]
     },
     {
       words: [
-        { word: 'DAY',          az: 'gün' },
-        { word: 'YEAR',         az: 'il' },
-        { word: 'EARLY',        az: 'erkən' },
+        { word: 'DAY',          az: 'gün', definition: '24 hours' },
+        { word: 'YEAR',         az: 'il', definition: '12 months' },
+        { word: 'EARLY',        az: 'erkən', definition: 'before the right time' },
       ]
     },
     {
       words: [
-        { word: 'AGO',          az: 'əvvəl' },
-        { word: 'NOW',          az: 'indi' },
-        { word: 'SOON',         az: 'tezliklə' },
+        { word: 'AGO',          az: 'əvvəl', definition: 'in the past' },
+        { word: 'NOW',          az: 'indi', definition: 'at this moment' },
+        { word: 'SOON',         az: 'tezliklə', definition: 'in a short time from now' },
       ]
     },
   ]
@@ -571,25 +571,25 @@ const GAME_DATA = {
     'b6_g1': { id: 'a1_b6_g1', title: 'Game 19', phases: [
     {
       words: [
-        { word: 'MOMENT',       az: 'an' },
-        { word: 'MONTH',        az: 'ay' },
-        { word: 'THEN',         az: 'sonra' },
-        { word: 'OFTEN',        az: 'tez-tez' },
+        { word: 'MOMENT',       az: 'an', definition: 'a very short time' },
+        { word: 'MONTH',        az: 'ay', definition: 'about 30 days' },
+        { word: 'THEN',         az: 'sonra', definition: 'at that time' },
+        { word: 'OFTEN',        az: 'tez-tez', definition: 'many times' },
       ]
     },
     {
       words: [
-        { word: 'MONDAY',       az: 'bazar ertəsi' },
-        { word: 'MAY',          az: 'may' },
-        { word: 'AUTUMN',       az: 'payız' },
-        { word: 'TODAY',        az: 'bu gün' },
+        { word: 'MONDAY',       az: 'bazar ertəsi', definition: 'first day of the week' },
+        { word: 'MAY',          az: 'may', definition: 'fifth month of the year' },
+        { word: 'AUTUMN',       az: 'payız', definition: 'season after summer' },
+        { word: 'TODAY',        az: 'bu gün', definition: 'this day' },
       ]
     },
     {
       words: [
-        { word: 'JUNE',         az: 'iyun' },
-        { word: 'MINUTE',       az: 'dəqiqə' },
-        { word: 'TIME',         az: 'vaxt' },
+        { word: 'JUNE',         az: 'iyun', definition: 'sixth month of the year' },
+        { word: 'MINUTE',       az: 'dəqiqə', definition: '60 seconds' },
+        { word: 'TIME',         az: 'vaxt', definition: 'hours, minutes, seconds' },
       ]
     },
   ]
@@ -600,24 +600,24 @@ const GAME_DATA = {
     'b7_g0': { id: 'a1_b7_g0', title: 'Game 20', phases: [
     {
       words: [
-        { word: 'POOR',         az: 'kasıb' },
-        { word: 'PHOTO',        az: 'şəkil' },
-        { word: 'POP',          az: 'pop musiqi' },
+        { word: 'POOR',         az: 'kasıb', definition: 'has little money' },
+        { word: 'PHOTO',        az: 'şəkil', definition: 'picture' },
+        { word: 'POP',          az: 'pop musiqi', definition: 'popular modern music' },
       ]
     },
     {
       words: [
-        { word: 'CARD',         az: 'kart' },
-        { word: 'CD',           az: 'disk' },
-        { word: 'DVD',          az: 'kaset' },
-        { word: 'TV',           az: 'televizor' },
+        { word: 'CARD',         az: 'kart', definition: 'plastic money' },
+        { word: 'CD',           az: 'disk', definition: 'old round music disc' },
+        { word: 'DVD',          az: 'kaset', definition: 'disc for movies' },
+        { word: 'TV',           az: 'televizor', definition: 'screen for watching' },
       ]
     },
     {
       words: [
-        { word: 'BILL',         az: 'hesab' },
-        { word: 'BLOG',         az: 'bloq' },
-        { word: 'BOOK',         az: 'kitab' },
+        { word: 'BILL',         az: 'hesab', definition: 'paper money' },
+        { word: 'BLOG',         az: 'bloq', definition: 'a personal website with regular posts' },
+        { word: 'BOOK',         az: 'kitab', definition: 'pages with story' },
       ]
     },
   ]
@@ -627,26 +627,26 @@ const GAME_DATA = {
     'b7_g1': { id: 'a1_b7_g1', title: 'Game 21',  phases: [
     {
       words: [
-        { word: 'SHOP',         az: 'mağaza' },
-        { word: 'PHONE',        az: 'telefon' },
-        { word: 'NEWS',         az: 'xəbər' },
-        { word: 'SHOW',         az: 'veriliş' },
+        { word: 'SHOP',         az: 'mağaza', definition: 'a building where you can buy things' },
+        { word: 'PHONE',        az: 'telefon', definition: 'device to call people' },
+        { word: 'NEWS',         az: 'xəbər', definition: 'information about recent events' },
+        { word: 'SHOW',         az: 'veriliş', definition: 'a television program' },
       ]
     },
     {
       words: [
-        { word: 'PRICE',        az: 'qiymət' },
-        { word: 'CHEAP',        az: 'ucuz' },
-        { word: 'RICH',         az: 'varlı' },
+        { word: 'PRICE',        az: 'qiymət', definition: 'the amount of money you must pay for something' },
+        { word: 'CHEAP',        az: 'ucuz', definition: 'low price' },
+        { word: 'RICH',         az: 'varlı', definition: 'has a lot of money' },
       ]
     },
     {
       words: [
-        { word: 'CENT',         az: 'sent' },
-        { word: 'COST',      az: 'başa gəlmək' },
-        { word: 'FREE',         az: 'pulsuz' },
-        { word: 'SCREEN',       az: 'ekran' },
-        { word: 'CONCERT',      az: 'konsert' },
+        { word: 'CENT',         az: 'sent', definition: 'small part of a dollar' },
+        { word: 'COST',      az: 'başa gəlmək', definition: 'the amount of money you need to pay' },
+        { word: 'FREE',         az: 'pulsuz', definition: 'costs nothing' },
+        { word: 'SCREEN',       az: 'ekran', definition: 'the part you look at on a device' },
+        { word: 'CONCERT',      az: 'konsert', definition: 'a live performance of music' },
       ]
     },
   ]
@@ -659,23 +659,23 @@ const GAME_DATA = {
     'b8_g0': { id: 'a1_b8_g0', title: 'Game 22',phases: [
     {
       words: [
-        { word: 'PAGE',         az: 'səhifə' },
-        { word: 'GAME',         az: 'oyun' },
-        { word: 'TEAM',         az: 'komanda' },
+        { word: 'PAGE',         az: 'səhifə', definition: 'one side of paper' },
+        { word: 'GAME',         az: 'oyun', definition: 'play activity' },
+        { word: 'TEAM',         az: 'komanda', definition: 'a group of players who play together' },
       ]
     },
     {
       words: [
-        { word: 'SCIENCE',      az: 'elm' },
-        { word: 'TEST',         az: 'test' },
-        { word: 'TENNIS',       az: 'tennis' },
+        { word: 'SCIENCE',      az: 'elm', definition: 'study of nature and experiments' },
+        { word: 'TEST',         az: 'test', definition: 'a short check of knowledge' },
+        { word: 'TENNIS',       az: 'tennis', definition: 'sport with racket and ball' },
       ]
     },
     {
       words: [
-        { word: 'LETTER',       az: 'hərf' },
-        { word: 'ART',          az: 'sənət' },
-        { word: 'BALL',         az: 'top' },
+        { word: 'LETTER',       az: 'hərf', definition: 'a, b, c or written message' },
+        { word: 'ART',          az: 'sənət', definition: 'the creation of paintings, sculptures and other works' },
+        { word: 'BALL',         az: 'top', definition: 'round thing for games' },
       ]
     },
   ]
@@ -683,24 +683,24 @@ const GAME_DATA = {
     'b8_g1': { id: 'a1_b8_g1', title: 'Game 23',phases: [
     {
       words: [
-        { word: 'LESSON',       az: 'dərs' },
-        { word: 'NOTE',         az: 'qeyd' },
-        { word: 'SPELL',     az: 'hərfləmək' },
-        { word: 'POOL',         az: 'hovuz' },
+        { word: 'LESSON',       az: 'dərs', definition: 'one class period' },
+        { word: 'NOTE',         az: 'qeyd', definition: 'a short written message' },
+        { word: 'SPELL',     az: 'hərfləmək', definition: '— tapılmadı —' },
+        { word: 'POOL',         az: 'hovuz', definition: 'place to swim' },
       ]
     },
     {
       words: [
-        { word: 'CLASS',        az: 'sinif' },
-        { word: 'DETAIL',       az: 'təfərrüat' },
-        { word: 'TITLE',        az: 'başlıq' },
+        { word: 'CLASS',        az: 'sinif', definition: 'a group of students' },
+        { word: 'DETAIL',       az: 'təfərrüat', definition: 'small information' },
+        { word: 'TITLE',        az: 'başlıq', definition: 'name of a book or film' },
       ]
     },
     {
       words: [
-        { word: 'TEACH',     az: 'öyrətmək' },
-        { word: 'CHESS',        az: 'şahmat' },
-        { word: 'MATCH',        az: 'oyun' },
+        { word: 'TEACH',     az: 'öyrətmək', definition: '— tapılmadı —' },
+        { word: 'CHESS',        az: 'şahmat', definition: 'board game with king' },
+        { word: 'MATCH',        az: 'oyun', definition: 'a game between two teams' },
       ]
     },
   ]
@@ -711,24 +711,24 @@ const GAME_DATA = {
     'b9_g0': { id: 'a1_b9_g0', title: 'Game 24', phases: [
     {
       words: [
-        { word: 'GO',        az: 'getmək' },
-        { word: 'EAT',       az: 'yemək' },
-        { word: 'GET',       az: 'əldə etmək' },
+        { word: 'GO',        az: 'getmək', definition: '— tapılmadı —' },
+        { word: 'EAT',       az: 'yemək', definition: '— tapılmadı —' },
+        { word: 'GET',       az: 'əldə etmək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'RUN',       az: 'qaçmaq' },
-        { word: 'TURN',      az: 'dönmək' },
-        { word: 'CUT',       az: 'kəsmək' },
+        { word: 'RUN',       az: 'qaçmaq', definition: 'to move fast with your legs' },
+        { word: 'TURN',      az: 'dönmək', definition: '— tapılmadı —' },
+        { word: 'CUT',       az: 'kəsmək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'FALL',      az: 'yıxılmaq' },
-        { word: 'CALL',      az: 'çağırmaq' },
-        { word: 'TALK',      az: 'söhbət etmək' },
-        { word: 'COOK',      az: 'bişirmək' },
+        { word: 'FALL',      az: 'yıxılmaq', definition: '— tapılmadı —' },
+        { word: 'CALL',      az: 'çağırmaq', definition: '— tapılmadı —' },
+        { word: 'TALK',      az: 'söhbət etmək', definition: '— tapılmadı —' },
+        { word: 'COOK',      az: 'bişirmək', definition: 'to prepare food by heating it' },
       ]
     },
   ]
@@ -736,30 +736,30 @@ const GAME_DATA = {
     'b9_g1': { id: 'a1_b9_g1', title: 'Game 25', phases: [
     {
       words: [
-        { word: 'SIT',       az: 'oturmaq' },
-        { word: 'ASK',       az: 'soruşmaq' },
-        { word: 'SPEAK',     az: 'danışmaq' },
-        { word: 'KEEP',      az: 'saxlamaq' },
+        { word: 'SIT',       az: 'oturmaq', definition: '— tapılmadı —' },
+        { word: 'ASK',       az: 'soruşmaq', definition: '— tapılmadı —' },
+        { word: 'SPEAK',     az: 'danışmaq', definition: '— tapılmadı —' },
+        { word: 'KEEP',      az: 'saxlamaq', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'STAND',     az: 'ayağa qalxmaq' },
-        { word: 'LISTEN',    az: 'qulaq asmaq' },
-        { word: 'SEND',      az: 'göndərmək' },
-        { word: 'CLEAN',     az: 'təmizləmək' },
-        { word: 'CLOSE',     az: 'bağlamaq' },
-        { word: 'DANCE',     az: 'rəqs etmək' },
+        { word: 'STAND',     az: 'ayağa qalxmaq', definition: '— tapılmadı —' },
+        { word: 'LISTEN',    az: 'qulaq asmaq', definition: '— tapılmadı —' },
+        { word: 'SEND',      az: 'göndərmək', definition: '— tapılmadı —' },
+        { word: 'CLEAN',     az: 'təmizləmək', definition: 'not dirty' },
+        { word: 'CLOSE',     az: 'bağlamaq', definition: '— tapılmadı —' },
+        { word: 'DANCE',     az: 'rəqs etmək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'ARRIVE',    az: 'çatmaq' },
-        { word: 'RIDE',      az: 'minmək' },
-        { word: 'READ',      az: 'oxumaq' },
-        { word: 'WRITE',     az: 'yazmaq' },
-        { word: 'GIVE',      az: 'vermək' },
-        { word: 'GROW',      az: 'böyümək' },
+        { word: 'ARRIVE',    az: 'çatmaq', definition: '— tapılmadı —' },
+        { word: 'RIDE',      az: 'minmək', definition: '— tapılmadı —' },
+        { word: 'READ',      az: 'oxumaq', definition: '— tapılmadı —' },
+        { word: 'WRITE',     az: 'yazmaq', definition: '— tapılmadı —' },
+        { word: 'GIVE',      az: 'vermək', definition: '— tapılmadı —' },
+        { word: 'GROW',      az: 'böyümək', definition: '— tapılmadı —' },
       ]
     },
   ]
@@ -770,25 +770,25 @@ const GAME_DATA = {
     'b10_g0': { id: 'a1_b10_g0', title: 'Game 26', phases: [
     {
       words: [
-        { word: 'MAKE',         az: 'düzəltmək' },
-        { word: 'MEET',         az: 'görüşmək' },
-        { word: 'TAKE',         az: 'götürmək' },
+        { word: 'MAKE',         az: 'düzəltmək', definition: '— tapılmadı —' },
+        { word: 'MEET',         az: 'görüşmək', definition: '— tapılmadı —' },
+        { word: 'TAKE',         az: 'götürmək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'WAIT',         az: 'gözləmək' },
-        { word: 'WANT',         az: 'istəmək' },
-        { word: 'WIN',          az: 'qalib gəlmək' },
+        { word: 'WAIT',         az: 'gözləmək', definition: '— tapılmadı —' },
+        { word: 'WANT',         az: 'istəmək', definition: 'a lack or deficiency of something' },
+        { word: 'WIN',          az: 'qalib gəlmək', definition: 'to be successful in a competition' },
       ]
     },
     {
       words: [
-        { word: 'FEEL',         az: 'hiss etmək' },
-        { word: 'FIND',         az: 'tapmaq' },
-        { word: 'NEED',         az: 'ehtiyac duymaq' },
-        { word: 'DIE',          az: 'ölmək' },
-        { word: 'LIE',          az: 'uzanmaq' },
+        { word: 'FEEL',         az: 'hiss etmək', definition: '— tapılmadı —' },
+        { word: 'FIND',         az: 'tapmaq', definition: '— tapılmadı —' },
+        { word: 'NEED',         az: 'ehtiyac duymaq', definition: '— tapılmadı —' },
+        { word: 'DIE',          az: 'ölmək', definition: '— tapılmadı —' },
+        { word: 'LIE',          az: 'uzanmaq', definition: '— tapılmadı —' },
       ]
     },
   ]
@@ -796,30 +796,30 @@ const GAME_DATA = {
     'b10_g1': { id: 'a1_b10_g1', title: 'Game 27',phases: [
     {
       words: [
-        { word: 'SLEEP',        az: 'yatmaq' },
-        { word: 'STOP',         az: 'dayanmaq' },
-        { word: 'LOSE',         az: 'itirmək' },
-        { word: 'SEE',          az: 'görmək' },
-        { word: 'LET',          az: 'icazə vermək' },
+        { word: 'SLEEP',        az: 'yatmaq', definition: '— tapılmadı —' },
+        { word: 'STOP',         az: 'dayanmaq', definition: '— tapılmadı —' },
+        { word: 'LOSE',         az: 'itirmək', definition: '— tapılmadı —' },
+        { word: 'SEE',          az: 'görmək', definition: '— tapılmadı —' },
+        { word: 'LET',          az: 'icazə vermək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'ORDER',        az: 'sifariş etmək' },
-        { word: 'DO',           az: 'etmək' },
-        { word: 'HEAR',         az: 'eşitmək' },
-        { word: 'DRAW',         az: 'rəsm çəkmək' },
-        { word: 'WEAR',         az: 'geymək' },
+        { word: 'ORDER',        az: 'sifariş etmək', definition: '— tapılmadı —' },
+        { word: 'DO',           az: 'etmək', definition: '— tapılmadı —' },
+        { word: 'HEAR',         az: 'eşitmək', definition: '— tapılmadı —' },
+        { word: 'DRAW',         az: 'rəsm çəkmək', definition: '— tapılmadı —' },
+        { word: 'WEAR',         az: 'geymək', definition: '— tapılmadı —' },
       ]
     },
     {
       words: [
-        { word: 'LOOK',         az: 'baxmaq' },
-        { word: 'OWN',          az: 'sahib olmaq' },
-        { word: 'PAY',          az: 'ödəmək' },
-        { word: 'PLAY',         az: 'oynamaq' },
-        { word: 'KNOW',         az: 'bilmək' },
-        { word: 'PLAN',         az: 'planlaşdırmaq' },
+        { word: 'LOOK',         az: 'baxmaq', definition: '— tapılmadı —' },
+        { word: 'OWN',          az: 'sahib olmaq', definition: '— tapılmadı —' },
+        { word: 'PAY',          az: 'ödəmək', definition: '— tapılmadı —' },
+        { word: 'PLAY',         az: 'oynamaq', definition: '— tapılmadı —' },
+        { word: 'KNOW',         az: 'bilmək', definition: '— tapılmadı —' },
+        { word: 'PLAN',         az: 'planlaşdırmaq', definition: 'what you will do' },
       ]
     },
   ]
@@ -830,26 +830,26 @@ const GAME_DATA = {
     'b11_g0': { id: 'a1_b11_g0', title: 'Game 28',phases: [
     {
       words: [
-        { word: 'END',          az: 'son' },
-        { word: 'IDEA',         az: 'fikir' },
-        { word: 'KIND',         az: 'növ' },
+        { word: 'END',          az: 'son', definition: 'last part' },
+        { word: 'IDEA',         az: 'fikir', definition: 'a thought or suggestion' },
+        { word: 'KIND',         az: 'növ', definition: 'friendly, generous and caring' },
       ]
     },
     {
       words: [
-        { word: 'PLAN',         az: 'plan' },
-        { word: 'MAP',          az: 'xəritə' },
-        { word: 'NAME',         az: 'ad' },
+        { word: 'PLAN',         az: 'plan', definition: 'what you will do' },
+        { word: 'MAP',          az: 'xəritə', definition: 'picture of a place' },
+        { word: 'NAME',         az: 'ad', definition: 'what someone is called' },
       ]
     },
     {
       words: [
-        { word: 'MODEL',        az: 'model' },
-        { word: 'LOT',          az: 'xeyli' },
-        { word: 'BOTTLE',       az: 'butulka' },
-        { word: 'ITEM',         az: 'əşya' },
-        { word: 'MODEL',        az: 'model' },
-        { word: 'TITLE',        az: 'başlıq' },
+        { word: 'MODEL',        az: 'model', definition: 'small copy' },
+        { word: 'LOT',          az: 'xeyli', definition: 'large amount' },
+        { word: 'BOTTLE',       az: 'butulka', definition: 'a tall container for liquids' },
+        { word: 'ITEM',         az: 'əşya', definition: 'one single thing' },
+        { word: 'MODEL',        az: 'model', definition: 'small copy' },
+        { word: 'TITLE',        az: 'başlıq', definition: 'name of a book or film' },
       ]
     },
   ]
@@ -858,31 +858,31 @@ const GAME_DATA = {
     'b11_g1': { id: 'a1_b11_g1', title: 'Game 29',phases: [
     {
       words: [
-        { word: 'FUN',          az: 'əyləncə' },
-        { word: 'LIFE',         az: 'həyat' },
-        { word: 'LINE',         az: 'xətt' },
-        { word: 'CUP',          az: 'fincan' },
-        { word: 'PIECE',        az: 'parça' },
+        { word: 'FUN',          az: 'əyləncə', definition: 'enjoyable time' },
+        { word: 'LIFE',         az: 'həyat', definition: 'time you are alive' },
+        { word: 'LINE',         az: 'xətt', definition: 'long thin mark' },
+        { word: 'CUP',          az: 'fincan', definition: 'a small container for hot drinks' },
+        { word: 'PIECE',        az: 'parça', definition: 'one part' },
       ]
     },
     {
       words: [
-        { word: 'REPORT',       az: 'hesabat' },
-        { word: 'WORK',         az: 'iş' },
-        { word: 'WORK',      az: 'işləmək' },
-        { word: 'PART',         az: 'hissə' },
-        { word: 'TYPE',         az: 'növ' },
-        { word: 'WAY',          az: 'yol' },
+        { word: 'REPORT',       az: 'hesabat', definition: 'a written or spoken account of events' },
+        { word: 'WORK',         az: 'iş', definition: 'job or activity' },
+        { word: 'WORK',      az: 'işləmək', definition: 'job or activity' },
+        { word: 'PART',         az: 'hissə', definition: 'piece of something' },
+        { word: 'TYPE',         az: 'növ', definition: 'kind or sort' },
+        { word: 'WAY',          az: 'yol', definition: 'how to do something' },
       ]
     },
     {
       words: [
-        { word: 'ACTION',       az: 'hərəkət' },
-        { word: 'OFFICE',       az: 'ofis' },
-        { word: 'TO PLAN',      az: 'planlaşdırmaq' },
-        { word: 'LIST',         az: 'siyahı' },
-        { word: 'POINT',        az: 'nöqtə' },
-        { word: 'SPACE',        az: 'kosmos' },
+        { word: 'ACTION',       az: 'hərəkət', definition: 'something you do' },
+        { word: 'OFFICE',       az: 'ofis', definition: 'place where people work at desks' },
+        { word: 'TO PLAN',      az: 'planlaşdırmaq', definition: 'to prepare future' },
+        { word: 'LIST',         az: 'siyahı', definition: 'names or things one after another' },
+        { word: 'POINT',        az: 'nöqtə', definition: 'single dot or idea' },
+        { word: 'SPACE',        az: 'kosmos', definition: 'empty area' },
       ]
     },
   ]
@@ -904,24 +904,24 @@ const GAME_DATA = {
     'b0_g0': { id: 'a2_b0_g0', title: 'Game 1',phases: [
     {
       words: [
-        { word: 'PAIN',         az: 'ağrı' },
-        { word: 'ILL',          az: 'xəstə' },
-        { word: 'PILL',         az: 'həb' },
+        { word: 'PAIN',         az: 'ağrı', definition: 'the feeling when part of your body hurts' },
+        { word: 'ILL',          az: 'xəstə', definition: 'sick' },
+        { word: 'PILL',         az: 'həb', definition: 'small round medicine' },
       ]
     },
     {
       words: [
-        { word: 'COOK',         az: 'aşpaz' },
-        { word: 'BONE',         az: 'sümük' },
-        { word: 'KNEE',         az: 'diz' },
-        { word: 'NECK',         az: 'boyun' },
+        { word: 'COOK',         az: 'aşpaz', definition: 'to prepare food by heating it' },
+        { word: 'BONE',         az: 'sümük', definition: 'the hard parts inside your body' },
+        { word: 'KNEE',         az: 'diz', definition: 'the joint in the middle of your leg' },
+        { word: 'NECK',         az: 'boyun', definition: 'the part that connects your head to your body' },
       ]
     },
     {
       words: [
-        { word: 'DOCTOR',       az: 'həkim' },
-        { word: 'TOE',          az: 'ayaq barmağı' },
-        { word: 'EAR',          az: 'qulaq' },
+        { word: 'DOCTOR',       az: 'həkim', definition: 'a person who treats sick people' },
+        { word: 'TOE',          az: 'ayaq barmağı', definition: 'one of the five parts at the end of your foot' },
+        { word: 'EAR',          az: 'qulaq', definition: 'the part of your head you hear with' },
       ]
     },
   ]
@@ -929,26 +929,26 @@ const GAME_DATA = {
     'b0_g1': { id: 'a2_b0_g1', title: 'Game 2', phases: [
     {
       words: [
-        { word: 'CHEF',         az: 'aşpaz' },
-        { word: 'FACE',         az: 'üz' },
-        { word: 'HAND',         az: 'əl' },
-        { word: 'HEAD',         az: 'baş' },
+        { word: 'CHEF',         az: 'aşpaz', definition: 'a professional cook' },
+        { word: 'FACE',         az: 'üz', definition: 'the front part of your head' },
+        { word: 'HAND',         az: 'əl', definition: 'the part at the end of your arm' },
+        { word: 'HEAD',         az: 'baş', definition: 'the top part of your body' },
       ]
     },
     {
       words: [
-        { word: 'TEACHER',      az: 'müəllim' },
-        { word: 'ATHLETE',      az: 'atlet' },
-        { word: 'HEART',        az: 'ürək' },
-        { word: 'HEALTH',       az: 'sağlamlıq' },
+        { word: 'TEACHER',      az: 'müəllim', definition: 'a person who teaches in a school' },
+        { word: 'ATHLETE',      az: 'atlet', definition: 'a person who competes in sports' },
+        { word: 'HEART',        az: 'ürək', definition: 'the organ that pumps blood in your body' },
+        { word: 'HEALTH',       az: 'sağlamlıq', definition: 'the condition of your body and mind' },
       ]
     },
     {
       words: [
-        { word: 'BRAIN',        az: 'beyin' },
-        { word: 'SKIN',         az: 'dəri' },
-        { word: 'BACK',         az: 'arxa' },
-        { word: 'SICK',         az: 'xəstə' },     
+        { word: 'BRAIN',        az: 'beyin', definition: 'the organ inside your head that controls thinking' },
+        { word: 'SKIN',         az: 'dəri', definition: 'the outer covering of your body' },
+        { word: 'BACK',         az: 'arxa', definition: 'the rear part of your body' },
+        { word: 'SICK',         az: 'xəstə', definition: 'not healthy' },     
       ]
     },
   ]
@@ -956,28 +956,28 @@ const GAME_DATA = {
     'b0_g2': { id: 'a2_b0_g2', title: 'Game 3', phases: [
     {
       words: [
-        { word: 'ARCHITECT',    az: 'memar' },
-        { word: 'ARTIST',       az: 'sənətkar' },
-        { word: 'ACTRESS',      az: 'aktrisa' },
-        { word: 'CHEST',        az: 'sinə' },
+        { word: 'ARCHITECT',    az: 'memar', definition: 'a person who designs buildings' },
+        { word: 'ARTIST',       az: 'sənətkar', definition: 'a person who creates art' },
+        { word: 'ACTRESS',      az: 'aktrisa', definition: 'a woman who acts in films or theatre' },
+        { word: 'CHEST',        az: 'sinə', definition: 'the front part of your body between your neck and waist' },
       ]
     },
     {
       words: [
-        { word: 'LAWYER',       az: 'hüquqşünas' },
-        { word: 'WRITER',       az: 'yazıçı' },
-        { word: 'WAITER',       az: 'ofisiant' },
-        { word: 'EYE',          az: 'göz' },
+        { word: 'LAWYER',       az: 'hüquqşünas', definition: 'a person who gives advice about the law' },
+        { word: 'WRITER',       az: 'yazıçı', definition: 'a person who writes books and stories' },
+        { word: 'WAITER',       az: 'ofisiant', definition: 'a person who serves food in restaurants' },
+        { word: 'EYE',          az: 'göz', definition: 'the part of your face you see with' },
       ]
     },
     {
       words: [
-             { word: 'DESIGNER',     az: 'dizayner' },
-        { word: 'DRIVER',       az: 'sürücü' },
-        { word: 'NURSE',        az: 'tibb bacısı' },
-        { word: 'DISEASE',      az: 'xəstəlik' },
-        { word: 'DRUG',         az: 'dərman' },
-        { word: 'VIRUS',        az: 'virus' },
+             { word: 'DESIGNER',     az: 'dizayner', definition: 'a person who creates the look of things' },
+        { word: 'DRIVER',       az: 'sürücü', definition: 'a person who drives vehicles' },
+        { word: 'NURSE',        az: 'tibb bacısı', definition: 'a person who cares for sick people' },
+        { word: 'DISEASE',      az: 'xəstəlik', definition: 'an illness that affects the body or mind' },
+        { word: 'DRUG',         az: 'dərman', definition: 'medicine or pill' },
+        { word: 'VIRUS',        az: 'virus', definition: 'a microscopic infectious agent that replicates inside living cells' },
       ]
     },
   ]
@@ -985,26 +985,26 @@ const GAME_DATA = {
     'b1_g0': { id: 'a2_b1_g0', title: 'Game 4', phases: [
     {
       words: [
-        { word: 'BEAR',         az: 'ayı' },
-        { word: 'RAT',          az: 'siçovul' },
-        { word: 'BEE',          az: 'arı' },
-        { word: 'TREE',         az: 'ağac' },
+        { word: 'BEAR',         az: 'ayı', definition: 'a big wild animal with thick fur' },
+        { word: 'RAT',          az: 'siçovul', definition: 'a large mouse' },
+        { word: 'BEE',          az: 'arı', definition: 'an insect that makes honey' },
+        { word: 'TREE',         az: 'ağac', definition: 'a tall plant with a trunk' },
       ]
     },
     {
       words: [
-        { word: 'PAN',          az: 'tava' },
-        { word: 'CAN',          az: 'konserv qutusu' },
-        { word: 'ANT',          az: 'qarışqa' },
-        { word: 'CAT',          az: 'pişik' },
+        { word: 'PAN',          az: 'tava', definition: 'a shallow metal container for frying' },
+        { word: 'CAN',          az: 'konserv qutusu', definition: 'a metal container for food' },
+        { word: 'ANT',          az: 'qarışqa', definition: 'a very small insect that lives in groups' },
+        { word: 'CAT',          az: 'pişik', definition: 'a small pet that says meow' },
       ]
     },
     {
       words: [
-             { word: 'GRAPE',        az: 'üzüm' },
-        { word: 'PEAR',         az: 'armud' },
-        { word: 'EGG',          az: 'yumurta' },
-        { word: 'JAR',          az: 'banka' },
+             { word: 'GRAPE',        az: 'üzüm', definition: 'a small round fruit that grows in bunches' },
+        { word: 'PEAR',         az: 'armud', definition: 'a sweet green or yellow fruit' },
+        { word: 'EGG',          az: 'yumurta', definition: 'food that comes from chickens' },
+        { word: 'JAR',          az: 'banka', definition: 'a glass container for jam' },
       ]
     },
   ]
@@ -1012,26 +1012,26 @@ const GAME_DATA = {
     'b1_g1': { id: 'a2_b1_g1', title: 'Game 5', phases: [
     {
       words: [
-        { word: 'TASTE',        az: 'dad' },
-        { word: 'BREAD',        az: 'çörək' },
-        { word: 'DESERT',       az: 'səhra' },
-        { word: 'STAR',         az: 'ulduz' },
+        { word: 'TASTE',        az: 'dad', definition: 'the flavour of food or drink' },
+        { word: 'BREAD',        az: 'çörək', definition: 'food made from flour and baked' },
+        { word: 'DESERT',       az: 'səhra', definition: 'a very dry hot place with sand' },
+        { word: 'STAR',         az: 'ulduz', definition: 'a bright point in the night sky' },
       ]
     },
     {
       words: [
-        { word: 'PLATE',        az: 'boşqab' },
-        { word: 'BOTTLE',       az: 'şüşə' },
-        { word: 'POT',          az: 'qazan' },
-        { word: 'TABLE',        az: 'masa' },
+        { word: 'PLATE',        az: 'boşqab', definition: 'a flat dish for food' },
+        { word: 'BOTTLE',       az: 'şüşə', definition: 'a tall container for liquids' },
+        { word: 'POT',          az: 'qazan', definition: 'a deep container for cooking soup' },
+        { word: 'TABLE',        az: 'masa', definition: 'furniture where you eat' },
       ]
     },
     {
       words: [
-             { word: 'BEEF',         az: 'mal əti' },
-        { word: 'BOWL',         az: 'dərin boşqab' },
-        { word: 'WOLF',         az: 'canavar' },
-        { word: 'WOOD',         az: 'meşə' },
+             { word: 'BEEF',         az: 'mal əti', definition: 'meat that comes from a cow' },
+        { word: 'BOWL',         az: 'dərin boşqab', definition: 'a round deep dish for soup' },
+        { word: 'WOLF',         az: 'canavar', definition: 'a wild animal like a big dog' },
+        { word: 'WOOD',         az: 'meşə', definition: 'material from trees used for building' },
       ]
     },
   ]
@@ -1039,30 +1039,30 @@ const GAME_DATA = {
     'b1_g2': { id: 'a2_b1_g2', title: 'Game 6', phases: [
     {
       words: [
-        { word: 'MEAT',         az: 'ət' },
-        { word: 'MOON',         az: 'ay' },
-        { word: 'OCEAN',        az: 'okean' },
-        { word: 'COAST',        az: 'sahil' },
-        { word: 'STONE',        az: 'daş' },
+        { word: 'MEAT',         az: 'ət', definition: 'food from animals' },
+        { word: 'MOON',         az: 'ay', definition: 'the round object we see at night' },
+        { word: 'OCEAN',        az: 'okean', definition: 'a very large area of salt water' },
+        { word: 'COAST',        az: 'sahil', definition: 'the land next to the sea' },
+        { word: 'STONE',        az: 'daş', definition: 'a small piece of rock' },
       ]
     },
     {
       words: [
-        { word: 'GLASS',        az: 'stəkan' },
-        { word: 'LID',          az: 'qapaq' },
-        { word: 'DOG',          az: 'it' },
-        { word: 'LION',         az: 'aslan' },
-        { word: 'ISLAND',       az: 'ada' },
+        { word: 'GLASS',        az: 'stəkan', definition: 'a container for cold drinks' },
+        { word: 'LID',          az: 'qapaq', definition: 'the top cover of a pot' },
+        { word: 'DOG',          az: 'it', definition: 'a pet that says woof' },
+        { word: 'LION',         az: 'aslan', definition: 'a big wild cat with a mane' },
+        { word: 'ISLAND',       az: 'ada', definition: 'land with water all around it' },
       ]
     },
     {
       words: [
-        { word: 'FROG',         az: 'qurbağa' },
-        { word: 'GOAT',         az: 'keçi' },
-        { word: 'HORSE',        az: 'at' },
-        { word: 'FOREST',       az: 'meşə' },
-        { word: 'GRASS',        az: 'ot' },
-        { word: 'EARTH',        az: 'yer kürəsi' },
+        { word: 'FROG',         az: 'qurbağa', definition: 'a small green animal that jumps' },
+        { word: 'GOAT',         az: 'keçi', definition: 'a farm animal with horns' },
+        { word: 'HORSE',        az: 'at', definition: 'a big animal people ride' },
+        { word: 'FOREST',       az: 'meşə', definition: 'a large area of land covered with trees' },
+        { word: 'GRASS',        az: 'ot', definition: 'the green plant that covers fields' },
+        { word: 'EARTH',        az: 'yer kürəsi', definition: 'the planet we live on' },
       ]
     },
   ]
@@ -1072,30 +1072,30 @@ const GAME_DATA = {
     'b2_g0': { id: 'a2_b2_g0', title: 'Game 7',phases: [
     {
       words: [
-        { word: 'APP',          az: 'tətbiq' },
-        { word: 'POSTER',       az: 'afişa' },
-        { word: 'REPORT',       az: 'hesabat' },
-        { word: 'PRESS',        az: 'mətbuat' },
-        { word: 'TEST',         az: 'test' },
+        { word: 'APP',          az: 'tətbiq', definition: 'a program designed for a mobile phone' },
+        { word: 'POSTER',       az: 'afişa', definition: 'a big picture used for advertising' },
+        { word: 'REPORT',       az: 'hesabat', definition: 'a written or spoken account of events' },
+        { word: 'PRESS',        az: 'mətbuat', definition: 'newspapers and journalists' },
+        { word: 'TEST',         az: 'test', definition: 'a short check of knowledge' },
       ]
     },
     {
       words: [
-        { word: 'TABLET',       az: 'planşet' },
-        { word: 'WEB',          az: 'veb' },
-        { word: 'LAB',          az: 'laboratoriya' },
-        { word: 'DATA',         az: 'məlumat' },
+        { word: 'TABLET',       az: 'planşet', definition: 'a flat portable computer' },
+        { word: 'WEB',          az: 'veb', definition: 'the system of websites' },
+        { word: 'LAB',          az: 'laboratoriya', definition: 'a room for scientific experiments' },
+        { word: 'DATA',         az: 'məlumat', definition: 'facts and information used for analysis' },
       ]
     },
     {
       words: [
-        { word: 'CODE',         az: 'kod' },
-        { word: 'DEVICE',       az: 'cihaz' },
-        { word: 'USER',         az: 'istifadəçi' },
-        { word: 'RECORD',       az: 'yazmaq / lövhə' },
-        { word: 'SERIES',       az: 'serial' },
-        { word: 'COURSE',       az: 'kurs' },
-        { word: 'DISCOVER',     az: 'kəşf etmək' },     
+        { word: 'CODE',         az: 'kod', definition: 'instructions for a computer' },
+        { word: 'DEVICE',       az: 'cihaz', definition: 'a tool or machine designed for a particular purpose' },
+        { word: 'USER',         az: 'istifadəçi', definition: 'a person who uses a system' },
+        { word: 'RECORD',       az: 'yazmaq / lövhə', definition: 'a piece of music on a disc' },
+        { word: 'SERIES',       az: 'serial', definition: 'a TV story with many parts' },
+        { word: 'COURSE',       az: 'kurs', definition: 'a complete study program' },
+        { word: 'DISCOVER',     az: 'kəşf etmək', definition: 'to find something new' },     
       ]
     },
   ]
@@ -1103,34 +1103,34 @@ const GAME_DATA = {
     'b2_g1': { id: 'a2_b2_g1', title: 'Game 8', phases: [
     {
       words: [
-        { word: 'SCREEN',       az: 'ekran' },
-        { word: 'CHANNEL',      az: 'kanal' },
-        { word: 'SCHOOL',       az: 'məktəb' },
-        { word: 'LESSON',       az: 'dərs' },
-        { word: 'CLASS',        az: 'sinif' },
-        { word: 'RESEARCH',     az: 'tədqiqat' },
-        { word: 'RESEARCHER',   az: 'tədqiqatçı' },
+        { word: 'SCREEN',       az: 'ekran', definition: 'the part you look at on a device' },
+        { word: 'CHANNEL',      az: 'kanal', definition: 'a television or radio station' },
+        { word: 'SCHOOL',       az: 'məktəb', definition: 'a place for children to study' },
+        { word: 'LESSON',       az: 'dərs', definition: 'one class period' },
+        { word: 'CLASS',        az: 'sinif', definition: 'a group of students' },
+        { word: 'RESEARCH',     az: 'tədqiqat', definition: 'to study something in detail to discover new facts' },
+        { word: 'RESEARCHER',   az: 'tədqiqatçı', definition: 'a person who does research' },
       ]
     },
     {
       words: [
-        { word: 'DIGITAL',      az: 'rəqəmsal' },
-        { word: 'EMAIL',        az: 'elektron poçt' },
-        { word: 'INTERNET',     az: 'internet' },
-        { word: 'MEDIA',        az: 'media' },
-        { word: 'DRAMA',        az: 'dram' },
-        { word: 'LEARNING',     az: 'öyrənmə' },
-        { word: 'DEGREE',       az: 'diplom' },
+        { word: 'DIGITAL',      az: 'rəqəmsal', definition: 'using computers and electronic signals' },
+        { word: 'EMAIL',        az: 'elektron poçt', definition: 'a message sent by computer' },
+        { word: 'INTERNET',     az: 'internet', definition: 'the global computer network' },
+        { word: 'MEDIA',        az: 'media', definition: 'television, radio, newspapers and the internet' },
+        { word: 'DRAMA',        az: 'dram', definition: 'a serious film or play' },
+        { word: 'LEARNING',     az: 'öyrənmə', definition: 'the process of getting knowledge' },
+        { word: 'DEGREE',       az: 'diplom', definition: 'qualification from university' },
       ]
     },
     {
       words: [
-         { word: 'LAPTOP',       az: 'noutbuk' },
-        { word: 'ONLINE',       az: 'onlayn' },
-        { word: 'NOVEL',        az: 'roman' },
-        { word: 'EXPLANATION',  az: 'izahat' },
-        { word: 'INVENTION',    az: 'ixtira' },
-        { word: 'INVENT',       az: 'ixtira etmək' },    
+         { word: 'LAPTOP',       az: 'noutbuk', definition: 'a small portable computer' },
+        { word: 'ONLINE',       az: 'onlayn', definition: 'connected to the internet' },
+        { word: 'NOVEL',        az: 'roman', definition: 'a long book with a story' },
+        { word: 'EXPLANATION',  az: 'izahat', definition: 'making something clear' },
+        { word: 'INVENTION',    az: 'ixtira', definition: 'creating something new' },
+        { word: 'INVENT',       az: 'ixtira etmək', definition: 'to create something new' },    
       ]
     },
   ]
@@ -1138,27 +1138,27 @@ const GAME_DATA = {
     'b2_g2': { id: 'a2_b2_g2', title: 'Game 9', phases: [
     {
       words: [
-        { word: 'ESSAY',        az: 'inşa' },
-        { word: 'MATHS',        az: 'riyaziyyat' },
-        { word: 'EXAM',         az: 'imtahan' },
-        { word: 'FACT',         az: 'fakt' },
-        { word: 'SYSTEM',       az: 'sistem' },
+        { word: 'ESSAY',        az: 'inşa', definition: 'a long piece of writing' },
+        { word: 'MATHS',        az: 'riyaziyyat', definition: 'short word for mathematics' },
+        { word: 'EXAM',         az: 'imtahan', definition: 'an important test' },
+        { word: 'FACT',         az: 'fakt', definition: 'something that is true' },
+        { word: 'SYSTEM',       az: 'sistem', definition: 'an organized way of working' },
       ]
     },
     {
       words: [
-        { word: 'LECTURE',      az: 'mühazirə' },
-        { word: 'RESULT',       az: 'nəticə' },
-        { word: 'PROCESS',      az: 'proses' },
-        { word: 'EXPERT',       az: 'mütəxəssis' },
+        { word: 'LECTURE',      az: 'mühazirə', definition: 'a long talk by a teacher' },
+        { word: 'RESULT',       az: 'nəticə', definition: 'what happens at the end of an experiment' },
+        { word: 'PROCESS',      az: 'proses', definition: 'a series of actions' },
+        { word: 'EXPERT',       az: 'mütəxəssis', definition: 'a person with special knowledge' },
       ]
     },
     {
       words: [
-         { word: 'NETWORK',      az: 'şəbəkə' },
-        { word: 'NEWS',         az: 'xəbər' },
-        { word: 'SHOW',         az: 'şou' },
-        { word: 'HOMEWORK',     az: 'ev tapşırığı' },    
+         { word: 'NETWORK',      az: 'şəbəkə', definition: 'a group of connected computers' },
+        { word: 'NEWS',         az: 'xəbər', definition: 'information about recent events' },
+        { word: 'SHOW',         az: 'şou', definition: 'a television program' },
+        { word: 'HOMEWORK',     az: 'ev tapşırığı', definition: 'work you do at home' },    
       ]
     },
   ]
@@ -1168,29 +1168,29 @@ const GAME_DATA = {
     'b3_g0': { id: 'a2_b3_g0', title: 'Game 10', phases: [
     {
       words: [
-        { word: 'RACE',         az: 'yarış' },
-        { word: 'ART',          az: 'sənət' },
-        { word: 'CRAFT',        az: 'əl işi' },
+        { word: 'RACE',         az: 'yarış', definition: 'a competition to see who is fastest' },
+        { word: 'ART',          az: 'sənət', definition: 'the creation of paintings, sculptures and other works' },
+        { word: 'CRAFT',        az: 'əl işi', definition: 'making things with your hands' },
       ]
     },
     {
       words: [
-        { word: 'TEAM',         az: 'komanda' },
-        { word: 'MATCH',        az: 'oyun' },
-        { word: 'ATHLETE',      az: 'atlet' },
-        { word: 'CAMP',         az: 'düşərgə' },
+        { word: 'TEAM',         az: 'komanda', definition: 'a group of players who play together' },
+        { word: 'MATCH',        az: 'oyun', definition: 'a game between two teams' },
+        { word: 'ATHLETE',      az: 'atlet', definition: 'a person who competes in sports' },
+        { word: 'CAMP',         az: 'düşərgə', definition: 'a place where you sleep in tents' },
       ]
     },
     {
       words: [
-        { word: 'RUN',          az: 'qaçmaq' },
-        { word: 'RUNNING',      az: 'qaçış' },
-        { word: 'WINNER',       az: 'qalib' },
-        { word: 'TRAINING',     az: 'məşq' },
-        { word: 'DRAWING',      az: 'çəkmə' },
-        { word: 'READING',      az: 'oxumaq' },
-        { word: 'WRITING',      az: 'yazmaq' },
-        { word: 'GARDEN',       az: 'bağ' },     
+        { word: 'RUN',          az: 'qaçmaq', definition: 'to move fast with your legs' },
+        { word: 'RUNNING',      az: 'qaçış', definition: 'the sport of moving fast on foot' },
+        { word: 'WINNER',       az: 'qalib', definition: 'a person who wins a competition' },
+        { word: 'TRAINING',     az: 'məşq', definition: 'practice to improve skills in sport' },
+        { word: 'DRAWING',      az: 'çəkmə', definition: 'making pictures with a pencil' },
+        { word: 'READING',      az: 'oxumaq', definition: 'looking at books or magazines' },
+        { word: 'WRITING',      az: 'yazmaq', definition: 'creating stories or poems' },
+        { word: 'GARDEN',       az: 'bağ', definition: 'a piece of land where flowers and vegetables are grown' },     
       ]
     },
   ]
@@ -1201,26 +1201,26 @@ const GAME_DATA = {
     'b4_g0': { id: 'a2_b4_g0', title: 'Game 11', phases: [
     {
       words: [
-        { word: 'COACH',        az: 'avtobus' },
-        { word: 'COAT',         az: 'palto' },
-        { word: 'HAT',          az: 'papaq' },
+        { word: 'COACH',        az: 'avtobus', definition: 'a person who trains athletes' },
+        { word: 'COAT',         az: 'palto', definition: 'a warm outer piece of clothing' },
+        { word: 'HAT',          az: 'papaq', definition: 'something you wear on your head' },
       ]
     },
     {
       words: [
-        { word: 'SITE',         az: 'ərazi' },
-        { word: 'BUS',          az: 'avtobus' },
-        { word: 'SUIT',         az: 'kostyum' },
-        { word: 'TIE',          az: 'qalstuk' },
+        { word: 'SITE',         az: 'ərazi', definition: 'a piece of land where something is built' },
+        { word: 'BUS',          az: 'avtobus', definition: 'a large vehicle for many passengers' },
+        { word: 'SUIT',         az: 'kostyum', definition: 'formal clothes for men' },
+        { word: 'TIE',          az: 'qalstuk', definition: 'a long cloth you wear with a shirt' },
       ]
     },
     {
       words: [
-         { word: 'LORRY',        az: 'yük maşını' },
-        { word: 'FERRY',        az: 'bərə' },
-        { word: 'ROOF',         az: 'dam' },
-        { word: 'DOOR',         az: 'qapı' },
-        { word: 'FLOOR',        az: 'döşəmə' },    
+         { word: 'LORRY',        az: 'yük maşını', definition: 'a big vehicle for carrying goods' },
+        { word: 'FERRY',        az: 'bərə', definition: 'a ship that carries cars and people' },
+        { word: 'ROOF',         az: 'dam', definition: 'the top covering of a building' },
+        { word: 'DOOR',         az: 'qapı', definition: 'you open it to enter a room' },
+        { word: 'FLOOR',        az: 'döşəmə', definition: 'the surface you walk on' },    
       ]
     },
   ]
@@ -1228,30 +1228,30 @@ const GAME_DATA = {
     'b4_g1': { id: 'a2_b4_g1', title: 'Game 12', phases: [
     {
       words: [
-        { word: 'WHEEL',        az: 'təkər' },
-        { word: 'BOAT',         az: 'qayıq' },
-        { word: 'TOWEL',        az: 'dəsmal' },
-        { word: 'WALL',         az: 'divar' },
-        { word: 'BELT',         az: 'kəmər' },
+        { word: 'WHEEL',        az: 'təkər', definition: 'the round part that makes a car move' },
+        { word: 'BOAT',         az: 'qayıq', definition: 'a small vehicle for water' },
+        { word: 'TOWEL',        az: 'dəsmal', definition: 'a cloth you use after washing' },
+        { word: 'WALL',         az: 'divar', definition: 'a vertical structure that forms the side of a building' },
+        { word: 'BELT',         az: 'kəmər', definition: 'a band you wear around your waist' },
       ]
     },
     {
       words: [
-        { word: 'STAGE',        az: 'səhnə' },
-        { word: 'TRAIN',        az: 'qatar' },
-        { word: 'STAIRS',       az: 'pilləkən' },
-        { word: 'TRAINERS',     az: 'idman ayaqqabısı' },
-        { word: 'RING',         az: 'üzük' },
+        { word: 'STAGE',        az: 'səhnə', definition: 'the place where actors perform' },
+        { word: 'TRAIN',        az: 'qatar', definition: 'a long vehicle that runs on rails' },
+        { word: 'STAIRS',       az: 'pilləkən', definition: 'steps to go up or down' },
+        { word: 'TRAINERS',     az: 'idman ayaqqabısı', definition: 'sport shoes' },
+        { word: 'RING',         az: 'üzük', definition: 'jewellery you wear on your finger' },
       ]
     },
     {
       words: [
-        { word: 'CASTLE',       az: 'qala' },
-        { word: 'PALACE',       az: 'saray' },
-        { word: 'CAR',          az: 'avtomobil' },
-        { word: 'PLANE',        az: 'təyyarə' },
-        { word: 'CARPET',       az: 'xalça' },
-        { word: 'PANTS',        az: 'şalvar' },     
+        { word: 'CASTLE',       az: 'qala', definition: 'an old strong building from the past' },
+        { word: 'PALACE',       az: 'saray', definition: 'a very big and beautiful house for kings' },
+        { word: 'CAR',          az: 'avtomobil', definition: 'a small vehicle for families' },
+        { word: 'PLANE',        az: 'təyyarə', definition: 'a flying vehicle' },
+        { word: 'CARPET',       az: 'xalça', definition: 'a soft covering on the floor' },
+        { word: 'PANTS',        az: 'şalvar', definition: 'another word for trousers' },     
       ]
     },
   ]
@@ -1259,30 +1259,30 @@ const GAME_DATA = {
     'b4_g2': { id: 'a2_b4_g2', title: 'Game 13', phases: [
     {
       words: [
-        { word: 'PALACE',       az: 'saray' },
-        { word: 'AIRLINE',      az: 'aviaşirkət' },
-        { word: 'CAR',          az: 'avtomobil' },
-        { word: 'PLANE',        az: 'təyyarə' },
-        { word: 'BIN',          az: 'zibil qabı' },
+        { word: 'PALACE',       az: 'saray', definition: 'a very big and beautiful house for kings' },
+        { word: 'AIRLINE',      az: 'aviaşirkət', definition: 'a company that flies planes' },
+        { word: 'CAR',          az: 'avtomobil', definition: 'a small vehicle for families' },
+        { word: 'PLANE',        az: 'təyyarə', definition: 'a flying vehicle' },
+        { word: 'BIN',          az: 'zibil qabı', definition: 'a container for rubbish' },
       ]
     },
     {
       words: [
-        { word: 'PUB',          az: 'pivəxana' },
-        { word: 'UPSTAIRS',     az: 'yuxarı mərtəbə' },
-        { word: 'SHIP',         az: 'gəmi' },
-        { word: 'BRUSH',        az: 'fırça' },
-        { word: 'SHIRT',        az: 'köynək' },
+        { word: 'PUB',          az: 'pivəxana', definition: 'a place where people drink beer and talk' },
+        { word: 'UPSTAIRS',     az: 'yuxarı mərtəbə', definition: 'on a higher floor of a building' },
+        { word: 'SHIP',         az: 'gəmi', definition: 'a large boat for sea travel' },
+        { word: 'BRUSH',        az: 'fırça', definition: 'a tool for cleaning or painting' },
+        { word: 'SHIRT',        az: 'köynək', definition: 'a top with buttons' },
       ]
     },
     {
       words: [
-             { word: 'CHURCH',       az: 'kilsə' },
-        { word: 'TRUCK',        az: 'yük avtomobili' },
-        { word: 'SHEET',        az: 'çarşab' },
-        { word: 'SOCK',         az: 'corab' },
-        { word: 'DRESS',        az: 'don' },
-        { word: 'SHOES',        az: 'ayaqqabı' },
+             { word: 'CHURCH',       az: 'kilsə', definition: 'a Christian religious building' },
+        { word: 'TRUCK',        az: 'yük avtomobili', definition: 'a large vehicle for heavy goods' },
+        { word: 'SHEET',        az: 'çarşab', definition: 'a thin cloth for your bed' },
+        { word: 'SOCK',         az: 'corab', definition: 'something you wear on your feet' },
+        { word: 'DRESS',        az: 'don', definition: 'a one-piece clothing for women' },
+        { word: 'SHOES',        az: 'ayaqqabı', definition: 'footwear' },
       ]
     },
   ]
@@ -1294,23 +1294,23 @@ const GAME_DATA = {
     'b5_g0': { id: 'a2_b5_g0', title: 'Game 14', phases: [
     {
       words: [
-        { word: 'IDEAL',        az: 'ideal' },
-        { word: 'DEAD',         az: 'ölü' },
-        { word: 'ILL',          az: 'xəstə' },
+        { word: 'IDEAL',        az: 'ideal', definition: 'perfect for a purpose' },
+        { word: 'DEAD',         az: 'ölü', definition: 'not living' },
+        { word: 'ILL',          az: 'xəstə', definition: 'sick' },
       ]
     },
     {
       words: [
-        { word: 'PLEASED',      az: 'məmnun' },
-        { word: 'DEEP',         az: 'dərin' },
-        { word: 'ASLEEP',       az: 'yuxuda' },
+        { word: 'PLEASED',      az: 'məmnun', definition: 'happy with something' },
+        { word: 'DEEP',         az: 'dərin', definition: 'going far down' },
+        { word: 'ASLEEP',       az: 'yuxuda', definition: 'sleeping' },
       ]
     },
     {
       words: [
-             { word: 'FEAR',         az: 'qorxu' },
-        { word: 'BRAVE',        az: 'cəsur' },
-        { word: 'FAIR',         az: 'ədalətli' },
+             { word: 'FEAR',         az: 'qorxu', definition: 'the feeling when you are afraid' },
+        { word: 'BRAVE',        az: 'cəsur', definition: 'not afraid to face danger' },
+        { word: 'FAIR',         az: 'ədalətli', definition: 'treating everyone equally' },
       ]
     },
   ]
@@ -1318,31 +1318,31 @@ const GAME_DATA = {
     'b5_g1': { id: 'a2_b5_g1', title: 'Game 15', phases: [
     {
       words: [
-        { word: 'ACTIVE',       az: 'fəal' },
-        { word: 'CLEVER',       az: 'ağıllı' },
-        { word: 'CREATIVE',     az: 'yaradıcı' },
-        { word: 'ANCIENT',      az: 'qədim' },
-        { word: 'CERTAIN',      az: 'əmin' },
-        { word: 'ALIVE',        az: 'sağ' },
+        { word: 'ACTIVE',       az: 'fəal', definition: 'someone who does a lot of things' },
+        { word: 'CLEVER',       az: 'ağıllı', definition: 'quick to understand and learn' },
+        { word: 'CREATIVE',     az: 'yaradıcı', definition: 'able to produce new and original ideas' },
+        { word: 'ANCIENT',      az: 'qədim', definition: 'very very old' },
+        { word: 'CERTAIN',      az: 'əmin', definition: 'sure about something' },
+        { word: 'ALIVE',        az: 'sağ', definition: 'living and not dead' },
       ]
     },
     {
       words: [
-        { word: 'CALM',         az: 'sakit' },
-        { word: 'CAREFUL',      az: 'diqqətli' },
-        { word: 'CUTE',         az: 'sevimli' },
-        { word: 'EXACT',        az: 'dəqiq' },
-        { word: 'EXTREME',      az: 'həddindən artıq' },
-        { word: 'FLAT',         az: 'düz' },
+        { word: 'CALM',         az: 'sakit', definition: 'peaceful and not excited or angry' },
+        { word: 'CAREFUL',      az: 'diqqətli', definition: 'doing things safely' },
+        { word: 'CUTE',         az: 'sevimli', definition: 'attractive and lovely' },
+        { word: 'EXACT',        az: 'dəqiq', definition: 'completely correct' },
+        { word: 'EXTREME',      az: 'həddindən artıq', definition: 'very strong or large' },
+        { word: 'FLAT',         az: 'düz', definition: 'without hills or curves' },
       ]
     },
     {
       words: [
-        { word: 'PAIN',         az: 'ağrı' },
-        { word: 'GLAD',         az: 'sevincli' },
-        { word: 'KIND',         az: 'mehriban' },
-        { word: 'BLANK',        az: 'boş' },
-        { word: 'DARK',         az: 'qaranlıq' },     
+        { word: 'PAIN',         az: 'ağrı', definition: 'the feeling when part of your body hurts' },
+        { word: 'GLAD',         az: 'sevincli', definition: 'pleased and happy about something' },
+        { word: 'KIND',         az: 'mehriban', definition: 'friendly, generous and caring' },
+        { word: 'BLANK',        az: 'boş', definition: 'completely empty' },
+        { word: 'DARK',         az: 'qaranlıq', definition: 'with very little light' },     
       ]
     },
   ]
@@ -1350,31 +1350,31 @@ const GAME_DATA = {
     'b5_g2': { id: 'a2_b5_g2', title: 'Game 16', phases: [
     {
       words: [
-        { word: 'HURT',         az: 'incimək' },
-        { word: 'CRAZY',        az: 'dəli' },
-        { word: 'LAZY',         az: 'tənbəl' },
-        { word: 'SHY',          az: 'utancaq' },
-        { word: 'CURLY',        az: 'qıvrım' },
+        { word: 'HURT',         az: 'incimək', definition: 'to feel emotional pain' },
+        { word: 'CRAZY',        az: 'dəli', definition: 'not behaving normally' },
+        { word: 'LAZY',         az: 'tənbəl', definition: 'not wanting to work' },
+        { word: 'SHY',          az: 'utancaq', definition: 'nervous and not comfortable with people' },
+        { word: 'CURLY',        az: 'qıvrım', definition: 'hair with curls' },
       ]
     },
     {
       words: [
-        { word: 'LONELY',       az: 'tənha' },
-        { word: 'POLITE',       az: 'nəzakətli' },
-        { word: 'TYPICAL',      az: 'tipik' },
-        { word: 'PATIENT',      az: 'səbirli' },
-        { word: 'COMMON',       az: 'ümumi' },
-        { word: 'EMPTY',        az: 'boş' },
+        { word: 'LONELY',       az: 'tənha', definition: 'feeling sad because you are alone' },
+        { word: 'POLITE',       az: 'nəzakətli', definition: 'showing good manners and respect' },
+        { word: 'TYPICAL',      az: 'tipik', definition: 'normal or usual' },
+        { word: 'PATIENT',      az: 'səbirli', definition: 'a person who is receiving medical treatment' },
+        { word: 'COMMON',       az: 'ümumi', definition: 'happening often' },
+        { word: 'EMPTY',        az: 'boş', definition: 'with nothing inside' },
       ]
     },
     {
       words: [
-        { word: 'HOPE',         az: 'ümid' },
-        { word: 'ANGRY',        az: 'əsəbi' },
-        { word: 'UNHAPPY',      az: 'xoşbəxt olmayan' },
-        { word: 'AVERAGE',      az: 'orta' },
-        { word: 'HEAVY',        az: 'ağır' },
-        { word: 'HUGE',         az: 'nəhəng' },     
+        { word: 'HOPE',         az: 'ümid', definition: 'the feeling that something good will happen' },
+        { word: 'ANGRY',        az: 'əsəbi', definition: 'feeling strong displeasure or annoyance' },
+        { word: 'UNHAPPY',      az: 'xoşbəxt olmayan', definition: 'not happy' },
+        { word: 'AVERAGE',      az: 'orta', definition: 'normal or usual' },
+        { word: 'HEAVY',        az: 'ağır', definition: 'weighing a lot' },
+        { word: 'HUGE',         az: 'nəhəng', definition: 'very very big' },     
       ]
     },
   ]
@@ -1385,28 +1385,28 @@ const GAME_DATA = {
     'b6_g0': { id: 'a2_b6_g0', title: 'Game 17', phases: [
     {
       words: [
-        { word: 'EASILY',       az: 'asanlıqla' },
-        { word: 'LAST',         az: 'son' },
-        { word: 'LATELY',       az: 'son vaxtlar' },
-        { word: 'STILL',        az: 'hələ də' },
-        { word: 'YET',          az: 'hələ' },
+        { word: 'EASILY',       az: 'asanlıqla', definition: 'without difficulty' },
+        { word: 'LAST',         az: 'son', definition: 'the final one' },
+        { word: 'LATELY',       az: 'son vaxtlar', definition: 'in the recent past' },
+        { word: 'STILL',        az: 'hələ də', definition: 'continuing until now' },
+        { word: 'YET',          az: 'hələ', definition: 'until now (in negative sentences)' },
       ]
     },
     {
       words: [
-        { word: 'ALREADY',      az: 'artıq' },
-        { word: 'CLEARLY',      az: 'aydın şəkildə' },
-        { word: 'DAILY',        az: 'gündəlik' },
-        { word: 'ALREADY',      az: 'artıq' },
+        { word: 'ALREADY',      az: 'artıq', definition: 'before now' },
+        { word: 'CLEARLY',      az: 'aydın şəkildə', definition: 'in a way that is easy to understand' },
+        { word: 'DAILY',        az: 'gündəlik', definition: 'every day' },
+        { word: 'ALREADY',      az: 'artıq', definition: 'before now' },
       ]
     },
     {
       words: [
-        { word: 'AFTER',        az: 'sonra' },
-        { word: 'BEFORE',       az: 'əvvəl' },
-        { word: 'SOON',         az: 'tezliklə' },
-        { word: 'NEVER',        az: 'heç vaxt' },
-        { word: 'OFTEN',        az: 'tez-tez' },
+        { word: 'AFTER',        az: 'sonra', definition: 'later than something' },
+        { word: 'BEFORE',       az: 'əvvəl', definition: 'earlier than something' },
+        { word: 'SOON',         az: 'tezliklə', definition: 'in a short time from now' },
+        { word: 'NEVER',        az: 'heç vaxt', definition: 'at no time' },
+        { word: 'OFTEN',        az: 'tez-tez', definition: 'many times' },
       ]
     },
   ]
@@ -1414,27 +1414,27 @@ const GAME_DATA = {
     'b7_g0': { id: 'a2_b7_g0', title: 'Game 18',phases: [
     {
       words: [
-        { word: 'AGREE',        az: 'razılaşmaq' },
-        { word: 'ARGUE',        az: 'mübahisə etmək' },
-        { word: 'SUGGEST',      az: 'təklif etmək' },
-        { word: 'GUEST',        az: 'qonaq' },
+        { word: 'AGREE',        az: 'razılaşmaq', definition: 'to have the same opinion' },
+        { word: 'ARGUE',        az: 'mübahisə etmək', definition: 'to disagree angrily' },
+        { word: 'SUGGEST',      az: 'təklif etmək', definition: 'to give an idea for someone to consider' },
+        { word: 'GUEST',        az: 'qonaq', definition: 'a person who visits your home' },
       ]
     },
     {
       words: [
-        { word: 'ADVICE',       az: 'məsləhət' },
-        { word: 'COMMENT',      az: 'şərh' },
-        { word: 'MENTION',      az: 'qeyd etmək' },
-        { word: 'INVITE',       az: 'dəvət etmək' },
+        { word: 'ADVICE',       az: 'məsləhət', definition: 'an opinion to help someone' },
+        { word: 'COMMENT',      az: 'şərh', definition: 'an opinion or remark about something' },
+        { word: 'MENTION',      az: 'qeyd etmək', definition: 'to speak about something quickly' },
+        { word: 'INVITE',       az: 'dəvət etmək', definition: 'to ask someone to come' },
       ]
     },
     {
       words: [
-        { word: 'ARGUMENT',     az: 'mübahisə' },
-        { word: 'PROMISE',      az: 'söz vermək' },
-        { word: 'MARRIAGE',     az: 'evlilik' },
-        { word: 'PARTNER',      az: 'tərəfdaş' },
-        { word: 'SUPPORT',      az: 'dəstək' },
+        { word: 'ARGUMENT',     az: 'mübahisə', definition: 'a serious disagreement' },
+        { word: 'PROMISE',      az: 'söz vermək', definition: 'to say you will definitely do something' },
+        { word: 'MARRIAGE',     az: 'evlilik', definition: 'the legal relationship between husband and wife' },
+        { word: 'PARTNER',      az: 'tərəfdaş', definition: 'a person you are in a relationship with' },
+        { word: 'SUPPORT',      az: 'dəstək', definition: 'help and encouragement' },
       ]
     },
   ]
@@ -1442,28 +1442,28 @@ const GAME_DATA = {
     'b8_g0': { id: 'a2_b8_g0', title: 'Game 19', phases: [
     {
       words: [
-        { word: 'DANGER',       az: 'təhlükə' },
-        { word: 'WAR',          az: 'müharibə' },
-        { word: 'AWARD',        az: 'mükafat' },
-        { word: 'EARN',         az: 'qazanmaq' },
+        { word: 'DANGER',       az: 'təhlükə', definition: 'the possibility of being harmed or killed' },
+        { word: 'WAR',          az: 'müharibə', definition: 'a long period of fighting between countries or groups' },
+        { word: 'AWARD',        az: 'mükafat', definition: 'a prize given for an achievement' },
+        { word: 'EARN',         az: 'qazanmaq', definition: 'to get money by working' },
       ]
     },
     {
       words: [
-        { word: 'LAW',          az: 'qanun' },
-        { word: 'STEAL',        az: 'oğurlamaq' },
-        { word: 'SALE',         az: 'satış' },
-        { word: 'TAX',          az: 'vergi' },
+        { word: 'LAW',          az: 'qanun', definition: 'the official rules of a country' },
+        { word: 'STEAL',        az: 'oğurlamaq', definition: 'to take something that is not yours' },
+        { word: 'SALE',         az: 'satış', definition: 'the act of selling something' },
+        { word: 'TAX',          az: 'vergi', definition: 'money paid to the government' },
       ]
     },
     {
       words: [
-        { word: 'CRIME',        az: 'cinayət' },
-        { word: 'PROTECT',      az: 'qorumaq' },
-        { word: 'OFFICER',      az: 'zabit' },
-        { word: 'COIN',         az: 'sikkə' },
-        { word: 'PERCENT',     az: 'faiz' },
-        { word: 'PROFIT',       az: 'mənfəət' },
+        { word: 'CRIME',        az: 'cinayət', definition: 'an illegal act that is punishable by law' },
+        { word: 'PROTECT',      az: 'qorumaq', definition: 'to keep someone safe' },
+        { word: 'OFFICER',      az: 'zabit', definition: 'a person with authority in the army or police' },
+        { word: 'COIN',         az: 'sikkə', definition: 'a small round piece of metal money' },
+        { word: 'PERCENT',     az: 'faiz', definition: '— tapılmadı —' },
+        { word: 'PROFIT',       az: 'mənfəət', definition: 'the financial gain after all expenses have been deducted' },
       ]
     },
   ]
@@ -1471,31 +1471,31 @@ const GAME_DATA = {
     'b9_g0': { id: 'a2_b9_g0', title: 'Game 20', phases: [
     {
       words: [
-        { word: 'GAS',          az: 'qaz' },
-        { word: 'GOLD',         az: 'qızıl' },
-        { word: 'GRASS',        az: 'ot' },
-        { word: 'ABROAD',       az: 'xaricdə' },
+        { word: 'GAS',          az: 'qaz', definition: 'a substance like air that we use for energy' },
+        { word: 'GOLD',         az: 'qızıl', definition: 'a very valuable yellow metal' },
+        { word: 'GRASS',        az: 'ot', definition: 'the green plant that covers fields' },
+        { word: 'ABROAD',       az: 'xaricdə', definition: 'in another country' },
       ]
     },
     {
       words: [
-        { word: 'OIL',          az: 'neft' },
-        { word: 'POLLUTION',    az: 'çirklənmə' },
-        { word: 'NATURE',       az: 'təbiət' },
-        { word: 'AIRLINE',      az: 'aviaşirkət' },
-        { word: 'TOUR',         az: 'tur' },
-        { word: 'ROUTE',        az: 'marşrut' },
-        { word: 'TRIP',         az: 'səfər' },
+        { word: 'OIL',          az: 'neft', definition: 'a black liquid used to make petrol' },
+        { word: 'POLLUTION',    az: 'çirklənmə', definition: 'the presence of harmful substances in the environment' },
+        { word: 'NATURE',       az: 'təbiət', definition: 'the natural world of plants, animals, and landscapes' },
+        { word: 'AIRLINE',      az: 'aviaşirkət', definition: 'a company that flies planes' },
+        { word: 'TOUR',         az: 'tur', definition: 'an organized trip to see places' },
+        { word: 'ROUTE',        az: 'marşrut', definition: 'the way or road you take to travel somewhere' },
+        { word: 'TRIP',         az: 'səfər', definition: 'a short journey' },
       ]
     },
     {
       words: [
-        { word: 'FOREST',       az: 'meşə' },
-        { word: 'REDUCE',       az: 'azaltmaq' },
-        { word: 'RESOURCE',     az: 'resurs' },
-        { word: 'WASTE',        az: 'tullantı' },
-        { word: 'WOOD',         az: 'taxta' },
-        { word: 'COAST',        az: 'sahil' },
+        { word: 'FOREST',       az: 'meşə', definition: 'a large area of land covered with trees' },
+        { word: 'REDUCE',       az: 'azaltmaq', definition: 'to make something smaller or less' },
+        { word: 'RESOURCE',     az: 'resurs', definition: 'something useful like money or materials' },
+        { word: 'WASTE',        az: 'tullantı', definition: 'unwanted materials that are thrown away' },
+        { word: 'WOOD',         az: 'taxta', definition: 'material from trees used for building' },
+        { word: 'COAST',        az: 'sahil', definition: 'the land next to the sea' },
       ]
     },
   ]
@@ -1515,28 +1515,28 @@ const GAME_DATA = {
     'b0_g0': { id: 'b1_b0_g0', title: 'Game 1', phases: [
     {
       words: [
-        { word: 'EDUCATE',      az: 'təhsil vermək' },
-        { word: 'EDUCATED',     az: 'təhsilli' },
-        { word: 'CAREER',       az: 'karyera' },
-        { word: 'TRADE',        az: 'ticarət' },
+        { word: 'EDUCATE',      az: 'təhsil vermək', definition: 'to teach someone over a long period, especially at school' },
+        { word: 'EDUCATED',     az: 'təhsilli', definition: 'having received a good education' },
+        { word: 'CAREER',       az: 'karyera', definition: 'the series of jobs you have during your working life' },
+        { word: 'TRADE',        az: 'ticarət', definition: 'the activity of buying and selling goods' },
       ]
     },
     {
       words: [
-        { word: 'TOPIC',        az: 'mövzu' },
-        { word: 'COMPETITOR',   az: 'rəqib' },
-        { word: 'PROMOTE',      az: 'təbliğ etmək' },
-        { word: 'IMPORT',       az: 'idxal etmək' },
-        { word: 'PRICE',        az: 'qiymət' },
+        { word: 'TOPIC',        az: 'mövzu', definition: 'the subject of a discussion or text' },
+        { word: 'COMPETITOR',   az: 'rəqib', definition: 'a company or person trying to be more successful' },
+        { word: 'PROMOTE',      az: 'təbliğ etmək', definition: 'to help something develop or become more popular' },
+        { word: 'IMPORT',       az: 'idxal etmək', definition: 'to bring goods from other countries' },
+        { word: 'PRICE',        az: 'qiymət', definition: 'the amount of money you must pay for something' },
       ]
     },
     {
       words: [
-        { word: 'ACADEMIC',     az: 'akademik' },
-        { word: 'CANDIDATE',    az: 'namizəd' },
-        { word: 'INDICATE',     az: 'göstərmək' },
-        { word: 'NOTE',         az: 'qeyd' },
-        { word: 'ECONOMIC',     az: 'iqtisadi' },
+        { word: 'ACADEMIC',     az: 'akademik', definition: 'connected with education, especially at university level' },
+        { word: 'CANDIDATE',    az: 'namizəd', definition: 'a person who is trying to be elected' },
+        { word: 'INDICATE',     az: 'göstərmək', definition: 'to show or point out something' },
+        { word: 'NOTE',         az: 'qeyd', definition: 'a short written message' },
+        { word: 'ECONOMIC',     az: 'iqtisadi', definition: 'related to the economy' },
       ]
     },
   ]
@@ -1550,18 +1550,18 @@ const GAME_DATA = {
     },
     {
       words: [
-        { word: 'GRADE',        az: 'qiymət' },
-        { word: 'DIAGRAM',      az: 'diaqram' },
-        { word: 'BARGAIN',      az: 'sövdələşmə' },
-        { word: 'BRAND',        az: 'marka' },
+        { word: 'GRADE',        az: 'qiymət', definition: 'a mark you receive for your work at school' },
+        { word: 'DIAGRAM',      az: 'diaqram', definition: 'a drawing that shows information' },
+        { word: 'BARGAIN',      az: 'sövdələşmə', definition: 'a very good deal or agreement on price' },
+        { word: 'BRAND',        az: 'marka', definition: 'a name that identifies a particular product' },
       ]
     },
     {
       words: [
-        { word: 'CHAPTER',      az: 'fəsil' },
-        { word: 'PROJECT',      az: 'layihə' },
-        { word: 'EXPORT',       az: 'ixrac etmək' },
-        { word: 'TAX',          az: 'vergi' },
+        { word: 'CHAPTER',      az: 'fəsil', definition: 'one of the main parts of a book' },
+        { word: 'PROJECT',      az: 'layihə', definition: 'a planned piece of work with a specific goal' },
+        { word: 'EXPORT',       az: 'ixrac etmək', definition: 'to sell goods to other countries' },
+        { word: 'TAX',          az: 'vergi', definition: 'money paid to the government' },
       ]
     },
   ]
@@ -1570,29 +1570,29 @@ const GAME_DATA = {
     'b0_g2': { id: 'b1_b0_g2', title: 'Game 3',phases: [
     {
       words: [
-        { word: 'REVISE',       az: 'təkrar etmək' },
-        { word: 'NARRATIVE',    az: 'hekayə' },
-        { word: 'TRANSLATE',    az: 'tərcümə etmək' },
-        { word: 'CLIENT',       az: 'müştəri' },
-        { word: 'INVEST',       az: 'sərmayə qoymaq' },
+        { word: 'REVISE',       az: 'təkrar etmək', definition: 'to study again before an exam' },
+        { word: 'NARRATIVE',    az: 'hekayə', definition: 'a story or description of events' },
+        { word: 'TRANSLATE',    az: 'tərcümə etmək', definition: 'to change text from one language to another' },
+        { word: 'CLIENT',       az: 'müştəri', definition: 'a person or company that buys a service' },
+        { word: 'INVEST',       az: 'sərmayə qoymaq', definition: 'to put money into something to make more money' },
       ]
     },
     {
       words: [
-        { word: 'PRACTICAL',    az: 'praktiki' },
-        { word: 'APPLICATION',  az: 'müraciət' },
-        { word: 'PROFIT',       az: 'mənfəət' },
-        { word: 'FINANCIAL',    az: 'maliyyə' },
-        { word: 'PROFIT',       az: 'mənfəət' },
+        { word: 'PRACTICAL',    az: 'praktiki', definition: 'connected with real situations' },
+        { word: 'APPLICATION',  az: 'müraciət', definition: 'a formal request for a job' },
+        { word: 'PROFIT',       az: 'mənfəət', definition: 'the financial gain after all expenses have been deducted' },
+        { word: 'FINANCIAL',    az: 'maliyyə', definition: 'connected with money and finance' },
+        { word: 'PROFIT',       az: 'mənfəət', definition: 'the financial gain after all expenses have been deducted' },
       ]
     },
     {
       words: [
-        { word: 'STANDARD',     az: 'standart' },
-        { word: 'ACCOUNT',      az: 'hesab' },
-        { word: 'STAFF',        az: 'heyət' },
-        { word: 'AFFORD',       az: 'gücü çatmaq' },
-        { word: 'RESOURCE',     az: 'resurs' },
+        { word: 'STANDARD',     az: 'standart', definition: 'a level of quality that is accepted' },
+        { word: 'ACCOUNT',      az: 'hesab', definition: 'a record of money in a bank' },
+        { word: 'STAFF',        az: 'heyət', definition: 'the people who work for an organization' },
+        { word: 'AFFORD',       az: 'gücü çatmaq', definition: 'to have enough money to buy something' },
+        { word: 'RESOURCE',     az: 'resurs', definition: 'something useful like money or materials' },
       ]
     },
   ]
@@ -1603,26 +1603,26 @@ const GAME_DATA = {
     'b1_g0': { id: 'b1_b1_g0', title: 'Game 4', phases: [
     {
       words: [
-        { word: 'SCAN',         az: 'skan etmək' },
-        { word: 'CONTACT',      az: 'əlaqə saxlamaq' },
-        { word: 'STATE',        az: 'bəyan etmək' },
+        { word: 'SCAN',         az: 'skan etmək', definition: 'to make a digital copy of a document' },
+        { word: 'CONTACT',      az: 'əlaqə saxlamaq', definition: 'to communicate with someone' },
+        { word: 'STATE',        az: 'bəyan etmək', definition: 'an organized political community' },
       ]
     },
     {
       words: [
-        { word: 'MALL',         az: 'ticarət mərkəzi' },
-        { word: 'VALUE',        az: 'dəyər' },
-        { word: 'VALUABLE',     az: 'dəyərli' },
-        { word: 'YELL',         az: 'bağırmaq' },
+        { word: 'MALL',         az: 'ticarət mərkəzi', definition: 'a large building with many shops' },
+        { word: 'VALUE',        az: 'dəyər', definition: 'how useful or important something is' },
+        { word: 'VALUABLE',     az: 'dəyərli', definition: 'worth a lot of money or very useful' },
+        { word: 'YELL',         az: 'bağırmaq', definition: 'to shout very loudly' },
       ]
     },
     {
       words: [
-        { word: 'CREDIT',       az: 'kredit' },
-        { word: 'RENT',         az: 'icarə' },
-        { word: 'COMMENT',      az: 'şərh' },
-        { word: 'RECOMMEND',    az: 'tövsiyə etmək' },
-        { word: 'REMIND',       az: 'xatırlatmaq' },
+        { word: 'CREDIT',       az: 'kredit', definition: 'an agreement to pay for something later' },
+        { word: 'RENT',         az: 'icarə', definition: 'money paid regularly to use a house or flat' },
+        { word: 'COMMENT',      az: 'şərh', definition: 'an opinion or remark about something' },
+        { word: 'RECOMMEND',    az: 'tövsiyə etmək', definition: 'to say that something is good or suitable' },
+        { word: 'REMIND',       az: 'xatırlatmaq', definition: 'to help someone remember something' },
       ]
     },
   ]
@@ -1630,29 +1630,29 @@ const GAME_DATA = {
     'b1_g1': { id: 'b1_b1_g1', title: 'Game 5', phases: [
     {
       words: [
-        { word: 'FINE',         az: 'cərimə' },
-        { word: 'CHANNEL',      az: 'kanal' },
-        { word: 'FILE',         az: 'fayl' },
-        { word: 'HEADLINE',     az: 'başlıq' },
+        { word: 'FINE',         az: 'cərimə', definition: 'money you have to pay as a punishment' },
+        { word: 'CHANNEL',      az: 'kanal', definition: 'a television or radio station' },
+        { word: 'FILE',         az: 'fayl', definition: 'a collection of information on a computer' },
+        { word: 'HEADLINE',     az: 'başlıq', definition: 'the heading at the top of a newspaper story' },
       ]
     },
     {
       words: [
-        { word: 'BARGAIN',      az: 'sövdələşmə' },
-        { word: 'BRAND',        az: 'marka' },
-        { word: 'GOODS',        az: 'mallar' },
-        { word: 'LOG',          az: 'qeyd' },
-        { word: 'SIGNAL',       az: 'siqnal' },
+        { word: 'BARGAIN',      az: 'sövdələşmə', definition: 'a very good deal or agreement on price' },
+        { word: 'BRAND',        az: 'marka', definition: 'a name that identifies a particular product' },
+        { word: 'GOODS',        az: 'mallar', definition: 'things that are made to be sold' },
+        { word: 'LOG',          az: 'qeyd', definition: 'a record of activity on a computer' },
+        { word: 'SIGNAL',       az: 'siqnal', definition: 'a sign or wave that carries information' },
       ]
     },
     {
       words: [
-        { word: 'PRICE',        az: 'qiymət' },
-        { word: 'SCRIPT',       az: 'ssenari' },
-        { word: 'UPDATE',       az: 'yeniləmək' },
-        { word: 'APPRECIATE',   az: 'qiymətləndirmək' },
-        { word: 'DISCUSS',      az: 'müzakirə etmək' },
-        { word: 'PERSUADE',     az: 'razı salmaq' },
+        { word: 'PRICE',        az: 'qiymət', definition: 'the amount of money you must pay for something' },
+        { word: 'SCRIPT',       az: 'ssenari', definition: 'the written text of a film or play' },
+        { word: 'UPDATE',       az: 'yeniləmək', definition: 'to make something more modern or recent' },
+        { word: 'APPRECIATE',   az: 'qiymətləndirmək', definition: 'to be thankful for something' },
+        { word: 'DISCUSS',      az: 'müzakirə etmək', definition: 'to talk about something in detail with others' },
+        { word: 'PERSUADE',     az: 'razı salmaq', definition: 'to make someone do something by giving reasons' },
       ]
     },
   ]
@@ -1665,31 +1665,31 @@ const GAME_DATA = {
     'b2_g0': { id: 'b1_b2_g0', title: 'Game 6', phases: [
     {
       words: [
-        { word: 'UPSET',        az: 'narahat' },
-        { word: 'CARELESS',     az: 'diqqətsiz' },
-        { word: 'CRUEL',        az: 'zalım' },
-        { word: 'PLEASANT',     az: 'xoş' },
-        { word: 'UNPLEASANT',   az: 'xoşagəlməz' },
+        { word: 'UPSET',        az: 'narahat', definition: 'unhappy and disappointed about something' },
+        { word: 'CARELESS',     az: 'diqqətsiz', definition: 'not paying attention to what you do' },
+        { word: 'CRUEL',        az: 'zalım', definition: 'deliberately causing pain or suffering to others' },
+        { word: 'PLEASANT',     az: 'xoş', definition: 'nice and enjoyable' },
+        { word: 'UNPLEASANT',   az: 'xoşagəlməz', definition: 'not nice or enjoyable' },
       ]
     },
     {
       words: [
-        { word: 'AMAZED',       az: 'heyrətlənmiş' },
-        { word: 'GLAD',         az: 'şad' },
-        { word: 'MAD',          az: 'dəli / əsəbi' },
-        { word: 'CALM',         az: 'sakit' },
-        { word: 'GENTLE',       az: 'mülayim' },
-        { word: 'TALENTED',     az: 'istedadlı' },
+        { word: 'AMAZED',       az: 'heyrətlənmiş', definition: 'very surprised by something unexpected or impressive' },
+        { word: 'GLAD',         az: 'şad', definition: 'pleased and happy about something' },
+        { word: 'MAD',          az: 'dəli / əsəbi', definition: 'very angry' },
+        { word: 'CALM',         az: 'sakit', definition: 'peaceful and not excited or angry' },
+        { word: 'GENTLE',       az: 'mülayim', definition: 'kind, calm and not rough' },
+        { word: 'TALENTED',     az: 'istedadlı', definition: 'having a natural ability to do something well' },
       ]
     },
     {
       words: [
-        { word: 'HONEST',       az: 'dürüst' },
-        { word: 'LONELY',       az: 'tənha' },
-        { word: 'SHY',          az: 'utancaq' },
-        { word: 'HORRIBLE',     az: 'dəhşətli' },
-        { word: 'SENSIBLE',     az: 'ağıllı' },
-        { word: 'SILLY',        az: 'axmaq' },
+        { word: 'HONEST',       az: 'dürüst', definition: 'always telling the truth' },
+        { word: 'LONELY',       az: 'tənha', definition: 'feeling sad because you are alone' },
+        { word: 'SHY',          az: 'utancaq', definition: 'nervous and not comfortable with people' },
+        { word: 'HORRIBLE',     az: 'dəhşətli', definition: 'extremely unpleasant or bad' },
+        { word: 'SENSIBLE',     az: 'ağıllı', definition: 'showing good judgement' },
+        { word: 'SILLY',        az: 'axmaq', definition: 'not serious or sensible' },
       ]
     },
   ]
@@ -1701,28 +1701,28 @@ const GAME_DATA = {
     'b3_g0': { id: 'b1_b3_g0', title: 'Game 7', phases: [
     {
       words: [
-        { word: 'BAN',          az: 'qadağan etmək' },
-        { word: 'GUARD',        az: 'mühafizəçi' },
-        { word: 'WARNING',      az: 'xəbərdarlıq' },
-        { word: 'WARN',         az: 'xəbərdarlıq etmək' },
+        { word: 'BAN',          az: 'qadağan etmək', definition: 'to officially say that something is not permitted' },
+        { word: 'GUARD',        az: 'mühafizəçi', definition: 'a person who protects something' },
+        { word: 'WARNING',      az: 'xəbərdarlıq', definition: 'a message about possible danger' },
+        { word: 'WARN',         az: 'xəbərdarlıq etmək', definition: 'to tell someone about possible danger' },
       ]
     },
     {
       words: [
-        { word: 'BOMB',         az: 'bomba' },
-        { word: 'STATE',        az: 'dövlət' },
-        { word: 'BATTLE',       az: 'döyüş' },
-        { word: 'BOMB',         az: 'bomba' },
-        { word: 'SLAM',         az: 'şiddətlə vurmaq' },
+        { word: 'BOMB',         az: 'bomba', definition: 'an explosive device used to cause damage' },
+        { word: 'STATE',        az: 'dövlət', definition: 'an organized political community' },
+        { word: 'BATTLE',       az: 'döyüş', definition: 'a fight between two armies in a war' },
+        { word: 'BOMB',         az: 'bomba', definition: 'an explosive device used to cause damage' },
+        { word: 'SLAM',         az: 'şiddətlə vurmaq', definition: 'to close something with great force' },
       ]
     },
     {
       words: [
-        { word: 'ELECTION',     az: 'seçki' },
-        { word: 'VICTIM',       az: 'qurban' },
-        { word: 'VOTE',         az: 'səs vermək' },
-        { word: 'CLAIM',        az: 'iddia etmək' },
-        { word: 'VIOLENT',      az: 'zorakı' },
+        { word: 'ELECTION',     az: 'seçki', definition: 'the process of choosing a government or representatives by voting' },
+        { word: 'VICTIM',       az: 'qurban', definition: 'a person who has been hurt or suffered because of a crime' },
+        { word: 'VOTE',         az: 'səs vermək', definition: 'to choose someone in an election' },
+        { word: 'CLAIM',        az: 'iddia etmək', definition: 'to say that something is true' },
+        { word: 'VIOLENT',      az: 'zorakı', definition: 'using or involving physical force' },
       ]
     },
   ]
@@ -1730,28 +1730,28 @@ const GAME_DATA = {
     'b3_g1': { id: 'b1_b3_g1', title: 'Game 8', phases: [
     {
       words: [
-        { word: 'PRISON',       az: 'həbsxana' },
-        { word: 'PUNISH',       az: 'cəzalandırmaq' },
-        { word: 'BURST',        az: 'partlamaq' },
-        { word: 'HUNT',         az: 'ov etmək' },
-        { word: 'SHOOT',        az: 'atəş açmaq' },
+        { word: 'PRISON',       az: 'həbsxana', definition: 'a building where criminals are kept as punishment' },
+        { word: 'PUNISH',       az: 'cəzalandırmaq', definition: 'to make someone suffer for doing wrong' },
+        { word: 'BURST',        az: 'partlamaq', definition: 'to break open suddenly' },
+        { word: 'HUNT',         az: 'ov etmək', definition: 'to chase and catch wild animals' },
+        { word: 'SHOOT',        az: 'atəş açmaq', definition: 'to fire a gun' },
       ]
     },
     {
       words: [
-        { word: 'LEGAL',        az: 'qanuni' },
-        { word: 'FORCE',        az: 'güc' },
-        { word: 'KILLING',      az: 'öldürmə' },
-        { word: 'RIFLE',        az: 'tüfəng' },
-        { word: 'RISK',         az: 'risk' }, ]
+        { word: 'LEGAL',        az: 'qanuni', definition: 'allowed by the law' },
+        { word: 'FORCE',        az: 'güc', definition: 'physical power or violence' },
+        { word: 'KILLING',      az: 'öldürmə', definition: 'the act of causing someone’s death' },
+        { word: 'RIFLE',        az: 'tüfəng', definition: 'a long gun used by soldiers' },
+        { word: 'RISK',         az: 'risk', definition: 'the possibility of something bad happening' }, ]
     },
     {
       words: [
-        { word: 'ARREST',       az: 'həbs etmək' },
-        { word: 'POLITICAL',    az: 'siyasi' },
-        { word: 'POLITICS',     az: 'siyasət' },
-        { word: 'PROTEST',      az: 'etiraz' },
-        { word: 'SLAP',         az: 'şillə vurmaq' },
+        { word: 'ARREST',       az: 'həbs etmək', definition: 'to take someone to the police station because they may have committed a crime' },
+        { word: 'POLITICAL',    az: 'siyasi', definition: 'relating to the government or public affairs of a country' },
+        { word: 'POLITICS',     az: 'siyasət', definition: 'the activities of government and power' },
+        { word: 'PROTEST',      az: 'etiraz', definition: 'a public demonstration against something' },
+        { word: 'SLAP',         az: 'şillə vurmaq', definition: 'to hit someone with your open hand' },
       ]
     },
   ]
@@ -1763,27 +1763,27 @@ const GAME_DATA = {
     'b4_g0': { id: 'b1_b4_g0', title: 'Game 9',  phases: [
     {
       words: [
-        { word: 'RAIN',         az: 'yağış' },
-        { word: 'DEER',         az: 'maral' },
-        { word: 'SAND',         az: 'qum' },
-        { word: 'SEED',         az: 'toxum' },
+        { word: 'RAIN',         az: 'yağış', definition: 'water that falls from clouds' },
+        { word: 'DEER',         az: 'maral', definition: 'a large wild animal with antlers' },
+        { word: 'SAND',         az: 'qum', definition: 'very small grains of rock found on beaches' },
+        { word: 'SEED',         az: 'toxum', definition: 'a small object from which a new plant grows' },
       ]
     },
     {
       words: [
-        { word: 'GUIDE',        az: 'bələdçi' },
-        { word: 'LUGGAGE',      az: 'baqaj' },
-        { word: 'FUEL',         az: 'yanacaq' },
-        { word: 'LEAF',         az: 'yarpaq' },
+        { word: 'GUIDE',        az: 'bələdçi', definition: 'a person who shows tourists around' },
+        { word: 'LUGGAGE',      az: 'baqaj', definition: 'bags and suitcases you take on a trip' },
+        { word: 'FUEL',         az: 'yanacaq', definition: 'a material like petrol used to produce energy' },
+        { word: 'LEAF',         az: 'yarpaq', definition: 'the flat green part of a tree or plant' },
       ]
     },
     {
       words: [
-        { word: 'TRAILER',      az: 'qoşqu' },
-        { word: 'HEAT',         az: 'istilik' },
-        { word: 'WEATHER',      az: 'hava' },
-        { word: 'WHALE',        az: 'balina' },
-        { word: 'WOOL',         az: 'yun' },
+        { word: 'TRAILER',      az: 'qoşqu', definition: 'a vehicle pulled behind a car' },
+        { word: 'HEAT',         az: 'istilik', definition: 'high temperature' },
+        { word: 'WEATHER',      az: 'hava', definition: 'the condition of the atmosphere at a particular time and place' },
+        { word: 'WHALE',        az: 'balina', definition: 'a very large sea animal' },
+        { word: 'WOOL',         az: 'yun', definition: 'soft material from sheep' },
       ]
     },
   ]
@@ -1791,29 +1791,29 @@ const GAME_DATA = {
     'b4_g1': { id: 'b1_b4_g1', title: 'Game 10',phases: [
     {
       words: [
-        { word: 'BORDER',       az: 'sərhəd' },
-        { word: 'DEPARTURE',    az: 'yola düşmə' },
-        { word: 'PORT',         az: 'liman' },
-        { word: 'ROUTE',        az: 'marşrut' },
+        { word: 'BORDER',       az: 'sərhəd', definition: 'the official line separating two countries' },
+        { word: 'DEPARTURE',    az: 'yola düşmə', definition: 'the act of leaving a place' },
+        { word: 'PORT',         az: 'liman', definition: 'a place where ships load and unload goods' },
+        { word: 'ROUTE',        az: 'marşrut', definition: 'the way or road you take to travel somewhere' },
       ]
     },
     {
       words: [
-        { word: 'SAILOR',       az: 'dənizçi' },
-        { word: 'TOURISM',      az: 'turizm' },
-        { word: 'STORM',        az: 'fırtına' },
-        { word: 'MUD',          az: 'palçıq' },
-        { word: 'SOIL',         az: 'torpaq' },
+        { word: 'SAILOR',       az: 'dənizçi', definition: 'a person who works on a ship' },
+        { word: 'TOURISM',      az: 'turizm', definition: 'the business of organizing holidays for people' },
+        { word: 'STORM',        az: 'fırtına', definition: 'bad weather with strong winds and rain' },
+        { word: 'MUD',          az: 'palçıq', definition: 'wet earth that is soft and sticky' },
+        { word: 'SOIL',         az: 'torpaq', definition: 'the top layer of earth where plants grow' },
       ]
     },
     {
       words: [
-        { word: 'DESTINATION',  az: 'təyinat yeri' },
-        { word: 'TRANSPORT',    az: 'nəqliyyat' },
-        { word: 'DISASTER',     az: 'fəlakət' },
-        { word: 'GRAIN',        az: 'taxıl' },
-        { word: 'SPRING',       az: 'yaz' },
-        { word: 'ENTRANCE',     az: 'giriş' },
+        { word: 'DESTINATION',  az: 'təyinat yeri', definition: 'the place you are travelling to' },
+        { word: 'TRANSPORT',    az: 'nəqliyyat', definition: 'the system of moving people or goods' },
+        { word: 'DISASTER',     az: 'fəlakət', definition: 'a sudden event that causes great damage' },
+        { word: 'GRAIN',        az: 'taxıl', definition: 'the seeds of crops like wheat and rice' },
+        { word: 'SPRING',       az: 'yaz', definition: 'the season after winter' },
+        { word: 'ENTRANCE',     az: 'giriş', definition: 'the door or gate where you enter a building' },
       ]
     },
   ]
@@ -1825,28 +1825,28 @@ const GAME_DATA = {
     'b5_g0': { id: 'b1_b5_g0', title: 'Game 11', phases: [
     {
       words: [
-        { word: 'TIN',          az: 'qalay' },
-        { word: 'PAIN',         az: 'ağrı' },
-        { word: 'PAN',          az: 'tava' },
-        { word: 'POT',          az: 'qazan' },
+        { word: 'TIN',          az: 'qalay', definition: 'a soft metal often used for cans' },
+        { word: 'PAIN',         az: 'ağrı', definition: 'the feeling when part of your body hurts' },
+        { word: 'PAN',          az: 'tava', definition: 'a shallow metal container for frying' },
+        { word: 'POT',          az: 'qazan', definition: 'a deep container for cooking soup' },
       ]
     },
     {
       words: [
-        { word: 'LEATHER',      az: 'dəri' },
-        { word: 'METAL',        az: 'metal' },
-        { word: 'HEALTH',       az: 'sağlamlıq' },
-        { word: 'TREAT',        az: 'müalicə etmək' },
-        { word: 'MEAL',         az: 'yemək' },
+        { word: 'LEATHER',      az: 'dəri', definition: 'material made from animal skin' },
+        { word: 'METAL',        az: 'metal', definition: 'a hard shiny material like iron or gold' },
+        { word: 'HEALTH',       az: 'sağlamlıq', definition: 'the condition of your body and mind' },
+        { word: 'TREAT',        az: 'müalicə etmək', definition: 'to give medical care to someone' },
+        { word: 'MEAL',         az: 'yemək', definition: 'food eaten at one time' },
       ]
     },
     {
       words: [
-        { word: 'COAL',         az: 'kömür' },
-        { word: 'COTTON',       az: 'pambıq' },
-        { word: 'THROAT',       az: 'boğaz' },
-        { word: 'ALCOHOL',      az: 'spirt' },
-        { word: 'CLOTH',        az: 'parça' },
+        { word: 'COAL',         az: 'kömür', definition: 'a black rock used as fuel' },
+        { word: 'COTTON',       az: 'pambıq', definition: 'a soft natural material from plants' },
+        { word: 'THROAT',       az: 'boğaz', definition: 'the passage at the back of your mouth' },
+        { word: 'ALCOHOL',      az: 'spirt', definition: 'drinks like beer and wine that contain ethanol' },
+        { word: 'CLOTH',        az: 'parça', definition: 'material made of fabric' },
       ]
     },
   ]
@@ -1854,32 +1854,32 @@ const GAME_DATA = {
     'b5_g1': { id: 'b1_b5_g1', title: 'Game 12', phases: [
     {
       words: [
-        { word: 'SCIENTIFIC',   az: 'elmi' },
-        { word: 'CHEST',        az: 'sinə' },
-        { word: 'FITNESS',      az: 'fiziki forma' },
-        { word: 'ILLNESS',      az: 'xəstəlik' },
-        { word: 'SLICE',        az: 'dilim' },
+        { word: 'SCIENTIFIC',   az: 'elmi', definition: 'relating to science and experiments' },
+        { word: 'CHEST',        az: 'sinə', definition: 'the front part of your body between your neck and waist' },
+        { word: 'FITNESS',      az: 'fiziki forma', definition: 'the state of being physically healthy and strong' },
+        { word: 'ILLNESS',      az: 'xəstəlik', definition: 'a disease or period of being ill' },
+        { word: 'SLICE',        az: 'dilim', definition: 'a thin flat piece cut from something' },
       ]
     },
     {
       words: [
-        { word: 'MATERIAL',     az: 'material' },
-        { word: 'BREATH',       az: 'nəfəs' },
-        { word: 'BREATHE',      az: 'nəfəs almaq' },
-        { word: 'MENTAL',       az: 'zehni' },
-        { word: 'TREATMENT',    az: 'müalicə' },
+        { word: 'MATERIAL',     az: 'material', definition: 'a substance used for making things' },
+        { word: 'BREATH',       az: 'nəfəs', definition: 'the air that goes in and out of your lungs' },
+        { word: 'BREATHE',      az: 'nəfəs almaq', definition: 'to take air into your lungs' },
+        { word: 'MENTAL',       az: 'zehni', definition: 'relating to the mind' },
+        { word: 'TREATMENT',    az: 'müalicə', definition: 'the process of treating an illness or injury' },
       ]
     },
     {
       words: [
-        { word: 'COPPER',       az: 'mis' },
-        { word: 'FUEL',         az: 'yanacaq' },
-        { word: 'IRON',         az: 'dəmir' },
-        { word: 'NUCLEAR',      az: 'nüvə' },
-        { word: 'PAINFUL',      az: 'ağrılı' },
-        { word: 'APPLIANCE',    az: 'məişət texnikası' },
-        { word: 'FLOUR',        az: 'un' },
-        { word: 'RECIPE',       az: 'resept' },
+        { word: 'COPPER',       az: 'mis', definition: 'a reddish-brown metal used in wires' },
+        { word: 'FUEL',         az: 'yanacaq', definition: 'a material like petrol used to produce energy' },
+        { word: 'IRON',         az: 'dəmir', definition: 'a strong metal used for making tools' },
+        { word: 'NUCLEAR',      az: 'nüvə', definition: 'relating to the energy produced by atoms' },
+        { word: 'PAINFUL',      az: 'ağrılı', definition: 'causing pain' },
+        { word: 'APPLIANCE',    az: 'məişət texnikası', definition: 'a machine used in the home, such as a fridge or washing machine' },
+        { word: 'FLOUR',        az: 'un', definition: 'powder made from wheat used for bread' },
+        { word: 'RECIPE',       az: 'resept', definition: 'instructions for cooking a particular dish' },
       ]
     },
   ]
@@ -1892,28 +1892,28 @@ const GAME_DATA = {
     'b6_g0': { id: 'b1_b6_g0', title: 'Game 13', phases: [
     {
       words: [
-        { word: 'APPLIANCE',    az: 'məişət texnikası' },
-        { word: 'CEILING',      az: 'tavan' },
-        { word: 'PAN',          az: 'tava' },
-        { word: 'PIPE',         az: 'boru' },
+        { word: 'APPLIANCE',    az: 'məişət texnikası', definition: 'a machine used in the home, such as a fridge or washing machine' },
+        { word: 'CEILING',      az: 'tavan', definition: 'the upper surface of a room' },
+        { word: 'PAN',          az: 'tava', definition: 'a shallow metal container for frying' },
+        { word: 'PIPE',         az: 'boru', definition: 'a tube that carries water or gas' },
       ]
     },
     {
       words: [
-        { word: 'ALARM',        az: 'zəng / siqnal' },
-        { word: 'GARAGE',       az: 'qaraj' },
-        { word: 'BRIDE',        az: 'gəlin' },
-        { word: 'MARRIAGE',     az: 'evlilik' },
+        { word: 'ALARM',        az: 'zəng / siqnal', definition: 'a loud sound used to wake you up or warn you' },
+        { word: 'GARAGE',       az: 'qaraj', definition: 'a building for keeping a car' },
+        { word: 'BRIDE',        az: 'gəlin', definition: 'a woman on her wedding day' },
+        { word: 'MARRIAGE',     az: 'evlilik', definition: 'the legal relationship between husband and wife' },
       ]
     },
     {
       words: [
-        { word: 'BEDROOM',      az: 'yataq otağı' },
-        { word: 'COTTAGE',      az: 'kiçik ev' },
-        { word: 'ENGAGED',      az: 'nişanlı' },
-        { word: 'ROMANCE',      az: 'romantika' },
-        { word: 'ROMANTIC',     az: 'romantik' },
-        { word: 'TRADITION',    az: 'ənənə' },
+        { word: 'BEDROOM',      az: 'yataq otağı', definition: 'the room where you sleep' },
+        { word: 'COTTAGE',      az: 'kiçik ev', definition: 'a small house, usually in the countryside' },
+        { word: 'ENGAGED',      az: 'nişanlı', definition: 'having formally agreed to marry someone' },
+        { word: 'ROMANCE',      az: 'romantika', definition: 'a loving relationship' },
+        { word: 'ROMANTIC',     az: 'romantik', definition: 'showing love in a sentimental way' },
+        { word: 'TRADITION',    az: 'ənənə', definition: 'a custom passed down through generations' },
       ]
     },
   ]
@@ -1925,28 +1925,28 @@ const GAME_DATA = {
     'b7_g0': { id: 'b1_b7_g0', title: 'Game 14', phases: [
     {
       words: [
-        { word: 'POEM',         az: 'şeir' },
-        { word: 'POET',         az: 'şair' },
-        { word: 'POETRY',       az: 'şeir sənəti' },
-        { word: 'REPORT',       az: 'hesabat' },
+        { word: 'POEM',         az: 'şeir', definition: 'a piece of writing with short lines and rhythm' },
+        { word: 'POET',         az: 'şair', definition: 'a person who writes poems' },
+        { word: 'POETRY',       az: 'şeir sənəti', definition: 'the art of writing poems' },
+        { word: 'REPORT',       az: 'hesabat', definition: 'a written or spoken account of events' },
       ]
     },
     {
       words: [
-        { word: 'THEME',        az: 'mövzu' },
-        { word: 'ATHLETE',      az: 'atlet' },
-        { word: 'TALENT',       az: 'istedad' },
-        { word: 'LABEL',        az: 'etiket' },
+        { word: 'THEME',        az: 'mövzu', definition: 'the main subject or idea in a work of art' },
+        { word: 'ATHLETE',      az: 'atlet', definition: 'a person who competes in sports' },
+        { word: 'TALENT',       az: 'istedad', definition: 'a natural ability to do something well' },
+        { word: 'LABEL',        az: 'etiket', definition: 'a piece of paper with information on a product' },
       ]
     },
     {
       words: [
-        { word: 'CULTURAL',     az: 'mədəni' },
-        { word: 'CULTURE',      az: 'mədəniyyət' },
-        { word: 'GIG',          az: 'konsert' },
-        { word: 'RACE',         az: 'qaçış yarışı' },
-        { word: 'RACING',       az: 'yarış' },
-        { word: 'TRAINING',     az: 'məşq' },
+        { word: 'CULTURAL',     az: 'mədəni', definition: 'related to the culture of a society' },
+        { word: 'CULTURE',      az: 'mədəniyyət', definition: 'the customs, arts and way of life of a society' },
+        { word: 'GIG',          az: 'konsert', definition: 'a live performance by a musician or band' },
+        { word: 'RACE',         az: 'qaçış yarışı', definition: 'a competition to see who is fastest' },
+        { word: 'RACING',       az: 'yarış', definition: 'the sport of competing in races' },
+        { word: 'TRAINING',     az: 'məşq', definition: 'practice to improve skills in sport' },
       ]
     },
   ]
@@ -1954,31 +1954,31 @@ const GAME_DATA = {
     'b7_g1': { id: 'b1_b7_g1', title: 'Game 15', phases: [
     {
       words: [
-        { word: 'ALBUM',        az: 'albom' },
-        { word: 'MAGIC',        az: 'sehrli' },
-        { word: 'MUSCLE',       az: 'əzələ' },
-        { word: 'RUGBY',        az: 'reqbi' },
-        { word: 'SUMMARY',      az: 'xülasə' },
+        { word: 'ALBUM',        az: 'albom', definition: 'a collection of songs released together' },
+        { word: 'MAGIC',        az: 'sehrli', definition: 'the art of doing tricks that seem impossible' },
+        { word: 'MUSCLE',       az: 'əzələ', definition: 'the soft tissue in your body that helps you move' },
+        { word: 'RUGBY',        az: 'reqbi', definition: 'a team sport played with an oval ball' },
+        { word: 'SUMMARY',      az: 'xülasə', definition: 'a short version of a longer piece of writing' },
       ]
     },
     {
       words: [
-        { word: 'CAPTAIN',      az: 'kapitan' },
-        { word: 'CHAMPION',     az: 'çempion' },
-        { word: 'COACH',        az: 'məşqçi' },
-        { word: 'COMMENT',      az: 'şərh' },
-        { word: 'NOTE',         az: 'qeyd' },
-        { word: 'TOPIC',        az: 'mövzu' },
+        { word: 'CAPTAIN',      az: 'kapitan', definition: 'the leader of a sports team' },
+        { word: 'CHAMPION',     az: 'çempion', definition: 'the winner of a competition' },
+        { word: 'COACH',        az: 'məşqçi', definition: 'a person who trains athletes' },
+        { word: 'COMMENT',      az: 'şərh', definition: 'an opinion or remark about something' },
+        { word: 'NOTE',         az: 'qeyd', definition: 'a short written message' },
+        { word: 'TOPIC',        az: 'mövzu', definition: 'the subject of a discussion or text' },
       ]
     },
     {
       words: [
-        { word: 'PORTRAIT',     az: 'portret' },
-        { word: 'STUDIO',       az: 'studiya' },
-        { word: 'SPEED',        az: 'sürət' },
-        { word: 'STADIUM',      az: 'stadion' },
-        { word: 'SUPPORTER',    az: 'azarkeş' },
-        { word: 'SUMMARISE',    az: 'xülasə etmək' },
+        { word: 'PORTRAIT',     az: 'portret', definition: 'a painting, drawing or photograph of a person' },
+        { word: 'STUDIO',       az: 'studiya', definition: 'a room where artists or musicians work' },
+        { word: 'SPEED',        az: 'sürət', definition: 'how fast someone or something moves' },
+        { word: 'STADIUM',      az: 'stadion', definition: 'a large building where people watch sports' },
+        { word: 'SUPPORTER',    az: 'azarkeş', definition: 'a person who supports a sports team' },
+        { word: 'SUMMARISE',    az: 'xülasə etmək', definition: 'to give a short version of a longer text' },
       ]
     },
   ]
@@ -2010,24 +2010,24 @@ const GAME_DATA = {
     'b0_g0':  { id: 'b2_b0_g0',  title: 'Game 1', phases: [
     {
       words: [
-        { word: 'EDUCATE',      az: 'təhsil vermək' },
-        { word: 'GRADUATE',     az: 'məzun olmaq' },
-        { word: 'ACCURATE',     az: 'dəqiq' },
+        { word: 'EDUCATE',      az: 'təhsil vermək', definition: 'to teach someone over a long period, especially at school' },
+        { word: 'GRADUATE',     az: 'məzun olmaq', definition: 'to successfully complete a university course' },
+        { word: 'ACCURATE',     az: 'dəqiq', definition: 'correct and exact in all details' },
       ]
     },
     {
       words: [
-        { word: 'SEMINAR',      az: 'seminar' },
-        { word: 'AWARE',        az: 'xəbərdar' },
-        { word: 'AWARENESS',    az: 'məlumatlılıq' },
+        { word: 'SEMINAR',      az: 'seminar', definition: 'a class at university where a small group discusses a subject' },
+        { word: 'AWARE',        az: 'xəbərdar', definition: 'knowing about a situation or fact' },
+        { word: 'AWARENESS',    az: 'məlumatlılıq', definition: 'knowledge or understanding of a situation' },
       ]
     },
     {
       words: [
-        { word: 'ANALYSIS',     az: 'təhlil' },
-        { word: 'ANALYST',      az: 'analitik' },
-        { word: 'DEADLINE',     az: 'son tarix' },
-        { word: 'ABILITY',      az: 'qabiliyyət' },
+        { word: 'ANALYSIS',     az: 'təhlil', definition: 'a detailed examination of the elements or structure of something' },
+        { word: 'ANALYST',      az: 'analitik', definition: 'a person who examines information and makes reports' },
+        { word: 'DEADLINE',     az: 'son tarix', definition: 'the last date by which something must be finished' },
+        { word: 'ABILITY',      az: 'qabiliyyət', definition: 'the mental or physical power to do something' },
       ]
     },
   ]
@@ -2038,25 +2038,25 @@ const GAME_DATA = {
     'b1_g0':  { id: 'b2_b1_g0',  title: 'Game 2', phases: [
     {
       words: [
-        { word: 'BUDGET',       az: 'büdcə' },
-        { word: 'DEBT',         az: 'borc' },
-        { word: 'FEE',          az: 'ödəniş / haqq' },
-        { word: 'FUND',         az: 'fond' },
+        { word: 'BUDGET',       az: 'büdcə', definition: 'a financial plan estimating income and expenditure over a period' },
+        { word: 'DEBT',         az: 'borc', definition: 'money that you owe to someone' },
+        { word: 'FEE',          az: 'ödəniş / haqq', definition: 'money you pay for a professional service' },
+        { word: 'FUND',         az: 'fond', definition: 'an amount of money saved or collected for a purpose' },
       ]
     },
     {
       words: [
-        { word: 'DEADLINE',     az: 'son tarix' },
-        { word: 'FINANCE',      az: 'maliyyə' },
-        { word: 'FINANCIAL',    az: 'maliyyə' },
+        { word: 'DEADLINE',     az: 'son tarix', definition: 'the last date by which something must be finished' },
+        { word: 'FINANCE',      az: 'maliyyə', definition: 'the management of large amounts of money' },
+        { word: 'FINANCIAL',    az: 'maliyyə', definition: 'connected with money and finance' },
       ]
     },
     {
       words: [
-        { word: 'CLIENT',       az: 'müştəri' },
-        { word: 'COMMITTEE',    az: 'komitə' },
-        { word: 'INCOME',       az: 'gəlir' },
-        { word: 'LOAN',         az: 'kredit' },
+        { word: 'CLIENT',       az: 'müştəri', definition: 'a person or company that buys a service' },
+        { word: 'COMMITTEE',    az: 'komitə', definition: 'a group of people who make decisions together' },
+        { word: 'INCOME',       az: 'gəlir', definition: 'money that you receive regularly' },
+        { word: 'LOAN',         az: 'kredit', definition: 'money that you borrow and must pay back' },
       ]
     },
   ]
@@ -2065,26 +2065,26 @@ const GAME_DATA = {
     'b1_g1':  { id: 'b2_b1_g1',  title: 'Game 3', phases: [
     {
       words: [
-        { word: 'CAREER',       az: 'karyera' },
-        { word: 'MANAGEMENT',   az: 'idarəetmə' },
-        { word: 'MANAGER',      az: 'menecer' },
-        { word: 'TRADE',        az: 'ticarət' },
+        { word: 'CAREER',       az: 'karyera', definition: 'the series of jobs you have during your working life' },
+        { word: 'MANAGEMENT',   az: 'idarəetmə', definition: 'the process of controlling and organizing a company' },
+        { word: 'MANAGER',      az: 'menecer', definition: 'a person who is in charge of a team or department' },
+        { word: 'TRADE',        az: 'ticarət', definition: 'the activity of buying and selling goods' },
       ]
     },
     {
       words: [
-        { word: 'AGENCY',       az: 'agentlik' },
-        { word: 'COMPANY',      az: 'şirkət' },
-        { word: 'ECONOMY',      az: 'iqtisadiyyat' },
-        { word: 'PAYMENT',      az: 'ödəniş' },
+        { word: 'AGENCY',       az: 'agentlik', definition: 'a business that provides a particular service' },
+        { word: 'COMPANY',      az: 'şirkət', definition: 'a business organization' },
+        { word: 'ECONOMY',      az: 'iqtisadiyyat', definition: 'the system of money, industry and trade in a country' },
+        { word: 'PAYMENT',      az: 'ödəniş', definition: 'the act of paying money for something' },
       ]
     },
     {
       words: [
-        { word: 'CORPORATION',  az: 'korporasiya' },
-        { word: 'FIRM',         az: 'firma' },
-        { word: 'PROFIT',       az: 'mənfəət' },
-        { word: 'PROMOTION',    az: 'vəzifə yüksəlişi' },
+        { word: 'CORPORATION',  az: 'korporasiya', definition: 'a large company or group of companies authorized to act as a single entity' },
+        { word: 'FIRM',         az: 'firma', definition: 'a business company' },
+        { word: 'PROFIT',       az: 'mənfəət', definition: 'the financial gain after all expenses have been deducted' },
+        { word: 'PROMOTION',    az: 'vəzifə yüksəlişi', definition: 'moving to a higher position in a company' },
       ]
     },
   ]
@@ -2094,25 +2094,25 @@ const GAME_DATA = {
     'b2_g0':  { id: 'b2_b2_g0',  title: 'Game 4', phases: [
     {
       words: [
-        { word: 'GLAD',         az: 'şad' },
-        { word: 'EAGER',        az: 'həvəsli' },
-        { word: 'RELAXED',      az: 'rahat' },
+        { word: 'GLAD',         az: 'şad', definition: 'pleased and happy about something' },
+        { word: 'EAGER',        az: 'həvəsli', definition: 'very keen and excited to do something' },
+        { word: 'RELAXED',      az: 'rahat', definition: 'feeling calm and not worried' },
       ]
     },
     {
       words: [
-        { word: 'INTERNET',     az: 'internet' },
-        { word: 'IT',           az: 'informasiya texnologiyası' },
-        { word: 'REMIND',       az: 'xatırlatmaq' },
-        { word: 'DETERMINED',   az: 'qərarlı' },
+        { word: 'INTERNET',     az: 'internet', definition: 'the global computer network' },
+        { word: 'IT',           az: 'informasiya texnologiyası', definition: 'the use of computers and technology in business' },
+        { word: 'REMIND',       az: 'xatırlatmaq', definition: 'to help someone remember something' },
+        { word: 'DETERMINED',   az: 'qərarlı', definition: 'having a firm decision or being resolved to do something' },
       ]
     },
     {
       words: [
-        { word: 'UPDATE',       az: 'yeniləmək' },
-        { word: 'PERSUADE',     az: 'razı salmaq' },
-        { word: 'DEPRESSED',    az: 'depressiyada olan' },
-        { word: 'UPSET',        az: 'narahat' },
+        { word: 'UPDATE',       az: 'yeniləmək', definition: 'to make something more modern or recent' },
+        { word: 'PERSUADE',     az: 'razı salmaq', definition: 'to make someone do something by giving reasons' },
+        { word: 'DEPRESSED',    az: 'depressiyada olan', definition: 'feeling very sad and without hope for a long time' },
+        { word: 'UPSET',        az: 'narahat', definition: 'unhappy and disappointed about something' },
       ]
     },
   ]
@@ -2120,27 +2120,27 @@ const GAME_DATA = {
     'b2_g1':  { id: 'b2_b2_g1',  title: 'Game 5',   phases: [
     {
       words: [
-        { word: 'ONLINE',       az: 'onlayn' },
-        { word: 'YELL',         az: 'bağırmaq' },
-        { word: 'LONELY',       az: 'tənha' },
-        { word: 'ANNOYING',     az: 'əsəbləşdirici' },
+        { word: 'ONLINE',       az: 'onlayn', definition: 'connected to the internet' },
+        { word: 'YELL',         az: 'bağırmaq', definition: 'to shout very loudly' },
+        { word: 'LONELY',       az: 'tənha', definition: 'feeling sad because you are alone' },
+        { word: 'ANNOYING',     az: 'əsəbləşdirici', definition: 'making you feel slightly angry or irritated' },
       ]
     },
     {
       words: [
-        { word: 'ANNOUNCE',     az: 'elan etmək' },
-        { word: 'ANNOUNCEMENT', az: 'elan' },
-        { word: 'COMMENT',      az: 'şərh' },
-        { word: 'CONTACT',      az: 'əlaqə saxlamaq' },
+        { word: 'ANNOUNCE',     az: 'elan etmək', definition: 'to tell people something officially or publicly' },
+        { word: 'ANNOUNCEMENT', az: 'elan', definition: 'an official statement about something' },
+        { word: 'COMMENT',      az: 'şərh', definition: 'an opinion or remark about something' },
+        { word: 'CONTACT',      az: 'əlaqə saxlamaq', definition: 'to communicate with someone' },
       ]
     },
     {
       words: [
-        { word: 'DISCUSS',      az: 'müzakirə etmək' },
-        { word: 'CURIOUS',      az: 'maraqlanan' },
-        { word: 'FURIOUS',      az: 'qəzəbli' },
-        { word: 'PROUD',        az: 'qürurlu' },
-        { word: 'SURPRISED',    az: 'təəccüblənmiş' },
+        { word: 'DISCUSS',      az: 'müzakirə etmək', definition: 'to talk about something in detail with others' },
+        { word: 'CURIOUS',      az: 'maraqlanan', definition: 'wanting to know or learn more about something' },
+        { word: 'FURIOUS',      az: 'qəzəbli', definition: 'extremely angry' },
+        { word: 'PROUD',        az: 'qürurlu', definition: 'feeling pleased about your own achievements' },
+        { word: 'SURPRISED',    az: 'təəccüblənmiş', definition: 'feeling unexpected astonishment' },
       ]
     },
   ]
@@ -2148,30 +2148,30 @@ const GAME_DATA = {
     'b2_g2':  { id: 'b2_b2_g2',  title: 'Game 6',   phases: [
     {
       words: [
-        { word: 'ASHAMED',      az: 'utanmış' },
-        { word: 'SATISFIED',    az: 'məmnun' },
-        { word: 'DATABASE',     az: 'verilənlər bazası' },
-        { word: 'MEDIA',        az: 'media' },
+        { word: 'ASHAMED',      az: 'utanmış', definition: 'feeling embarrassed or guilty about something you did' },
+        { word: 'SATISFIED',    az: 'məmnun', definition: 'pleased because your needs or expectations are met' },
+        { word: 'DATABASE',     az: 'verilənlər bazası', definition: 'a large collection of information stored in a computer' },
+        { word: 'MEDIA',        az: 'media', definition: 'television, radio, newspapers and the internet' },
       ]
     },
     {
       words: [
-        { word: 'SUGGEST',      az: 'təklif etmək' },
-        { word: 'GESTURE',      az: 'jest' },
-        { word: 'FRUSTRATED',   az: 'əsəbləşmiş' },
-        { word: 'GRATEFUL',     az: 'minnətdar' },
-        { word: 'CRUEL',        az: 'zalım' },
+        { word: 'SUGGEST',      az: 'təklif etmək', definition: 'to give an idea for someone to consider' },
+        { word: 'GESTURE',      az: 'jest', definition: 'a movement of the hand or head to express something' },
+        { word: 'FRUSTRATED',   az: 'əsəbləşmiş', definition: 'feeling annoyed because you cannot achieve what you want' },
+        { word: 'GRATEFUL',     az: 'minnətdar', definition: 'feeling thankful for something' },
+        { word: 'CRUEL',        az: 'zalım', definition: 'deliberately causing pain or suffering to others' },
       ]
     },
     {
       words: [
-        { word: 'STUDIO',       az: 'studiya' },
-        { word: 'VERSION',      az: 'versiya' },
-        { word: 'RESPOND',      az: 'cavab vermək' },
-        { word: 'INTERPRET',    az: 'şərh etmək' },
-        { word: 'INTERPRETATION', az: 'şərh' },
-        { word: 'DISAPPOINTED', az: 'məyus' },
-        { word: 'NERVOUS',      az: 'gərgin' },
+        { word: 'STUDIO',       az: 'studiya', definition: 'a room where artists or musicians work' },
+        { word: 'VERSION',      az: 'versiya', definition: 'a form of something that is slightly different' },
+        { word: 'RESPOND',      az: 'cavab vermək', definition: 'to reply or react to something' },
+        { word: 'INTERPRET',    az: 'şərh etmək', definition: 'to explain the meaning of something' },
+        { word: 'INTERPRETATION', az: 'şərh', definition: 'an explanation or understanding of something' },
+        { word: 'DISAPPOINTED', az: 'məyus', definition: 'sad because something was not as good as expected' },
+        { word: 'NERVOUS',      az: 'gərgin', definition: 'worried or anxious about something' },
       ]
     },
   ]
@@ -2181,29 +2181,29 @@ const GAME_DATA = {
     'b3_g0':  { id: 'b2_b3_g0',  title: 'Game 7',   phases: [
     {
       words: [
-        { word: 'LAW',          az: 'qanun' },
-        { word: 'LEGAL',        az: 'qanuni' },
-        { word: 'DAMAGE',       az: 'ziyan' },
-        { word: 'WAR',          az: 'müharibə' },
-        { word: 'ARMED',        az: 'silahlı' },
+        { word: 'LAW',          az: 'qanun', definition: 'the official rules of a country' },
+        { word: 'LEGAL',        az: 'qanuni', definition: 'allowed by the law' },
+        { word: 'DAMAGE',       az: 'ziyan', definition: 'physical harm caused to something' },
+        { word: 'WAR',          az: 'müharibə', definition: 'a long period of fighting between countries or groups' },
+        { word: 'ARMED',        az: 'silahlı', definition: 'carrying or equipped with weapons' },
       ]
     },
     {
       words: [
-        { word: 'OFFENCE',      az: 'hüquq pozuntusu' },
-        { word: 'ELECTION',     az: 'seçki' },
-        { word: 'VOTE',         az: 'səs vermək' },
-        { word: 'CONFLICT',     az: 'münaqişə' },
-        { word: 'VIOLENCE',     az: 'zorakılıq' },
+        { word: 'OFFENCE',      az: 'hüquq pozuntusu', definition: 'a crime or illegal action' },
+        { word: 'ELECTION',     az: 'seçki', definition: 'the process of choosing a government or representatives by voting' },
+        { word: 'VOTE',         az: 'səs vermək', definition: 'to choose someone in an election' },
+        { word: 'CONFLICT',     az: 'münaqişə', definition: 'a serious disagreement or argument' },
+        { word: 'VIOLENCE',     az: 'zorakılıq', definition: 'the use of physical force to harm people' },
       ]
     },
     {
       words: [
-        { word: 'BAN',          az: 'qadağan etmək' },
-        { word: 'TRIAL',        az: 'məhkəmə prosesi' },
-        { word: 'BATTLE',       az: 'döyüş' },
-        { word: 'THREAT',       az: 'təhdid' },
-        { word: 'THREATEN',     az: 'təhdid etmək' },
+        { word: 'BAN',          az: 'qadağan etmək', definition: 'to officially say that something is not permitted' },
+        { word: 'TRIAL',        az: 'məhkəmə prosesi', definition: 'the legal process of judging someone in court' },
+        { word: 'BATTLE',       az: 'döyüş', definition: 'a fight between two armies in a war' },
+        { word: 'THREAT',       az: 'təhdid', definition: 'a statement of an intention to inflict harm' },
+        { word: 'THREATEN',     az: 'təhdid etmək', definition: 'to say that you will cause harm to someone' },
       ]
     },
   ]
@@ -2211,30 +2211,30 @@ const GAME_DATA = {
     'b3_g1':  { id: 'b2_b3_g1',  title: 'Game 8',   phases: [
     {
       words: [
-        { word: 'CRIME',        az: 'cinayət' },
-        { word: 'VICTIM',       az: 'qurban' },
-        { word: 'MINISTER',     az: 'nazir' },
-        { word: 'EVIDENCE',     az: 'sübut' },
-        { word: 'CRISIS',       az: 'böhran' },
+        { word: 'CRIME',        az: 'cinayət', definition: 'an illegal act that is punishable by law' },
+        { word: 'VICTIM',       az: 'qurban', definition: 'a person who has been hurt or suffered because of a crime' },
+        { word: 'MINISTER',     az: 'nazir', definition: 'a senior member of the government' },
+        { word: 'EVIDENCE',     az: 'sübut', definition: 'facts or information that prove something is true' },
+        { word: 'CRISIS',       az: 'böhran', definition: 'a time of intense difficulty or danger' },
       ]
     },
     {
       words: [
-        { word: 'ARREST',       az: 'həbs etmək' },
-        { word: 'COURT',        az: 'məhkəmə' },
-        { word: 'SUSPECT',      az: 'şübhəli' },
-        { word: 'PROTEST',      az: 'etiraz' },
-        { word: 'ACCUSE',       az: 'ittiham etmək' },
+        { word: 'ARREST',       az: 'həbs etmək', definition: 'to take someone to the police station because they may have committed a crime' },
+        { word: 'COURT',        az: 'məhkəmə', definition: 'the place where legal cases are judged' },
+        { word: 'SUSPECT',      az: 'şübhəli', definition: 'a person who is thought to have committed a crime' },
+        { word: 'PROTEST',      az: 'etiraz', definition: 'a public demonstration against something' },
+        { word: 'ACCUSE',       az: 'ittiham etmək', definition: 'to say that someone has done something wrong' },
       ]
     },
     {
       words: [
-        { word: 'POLICE',       az: 'polis' },
-        { word: 'PRISON',       az: 'həbsxana' },
-        { word: 'CANDIDATE',    az: 'namizəd' },
-        { word: 'POLITICAL',    az: 'siyasi' },
-        { word: 'PRESIDENT',    az: 'prezident' },
-        { word: 'SOLDIER',      az: 'əsgər' },
+        { word: 'POLICE',       az: 'polis', definition: 'the official organization that keeps order and catches criminals' },
+        { word: 'PRISON',       az: 'həbsxana', definition: 'a building where criminals are kept as punishment' },
+        { word: 'CANDIDATE',    az: 'namizəd', definition: 'a person who is trying to be elected' },
+        { word: 'POLITICAL',    az: 'siyasi', definition: 'relating to the government or public affairs of a country' },
+        { word: 'PRESIDENT',    az: 'prezident', definition: 'the head of state in many countries' },
+        { word: 'SOLDIER',      az: 'əsgər', definition: 'a person who serves in the army' },
       ]
     },
   ]
@@ -2244,26 +2244,26 @@ const GAME_DATA = {
     'b4_g0':  { id: 'b2_b4_g0',  title: 'Game 9',   phases: [
     {
       words: [
-        { word: 'AIRPORT',      az: 'hava limanı' },
-        { word: 'PASSPORT',     az: 'pasport' },
-        { word: 'PORT',         az: 'liman' },
-        { word: 'STORM',        az: 'fırtına' },
+        { word: 'AIRPORT',      az: 'hava limanı', definition: 'a place where planes take off and land' },
+        { word: 'PASSPORT',     az: 'pasport', definition: 'an official document needed for international travel' },
+        { word: 'PORT',         az: 'liman', definition: 'a place where ships load and unload goods' },
+        { word: 'STORM',        az: 'fırtına', definition: 'bad weather with strong winds and rain' },
       ]
     },
     {
       words: [
-        { word: 'ROUTE',        az: 'marşrut' },
-        { word: 'TOURIST',      az: 'turist' },
-        { word: 'VISA',         az: 'viza' },
-        { word: 'RIVER',        az: 'çay' },
+        { word: 'ROUTE',        az: 'marşrut', definition: 'the way or road you take to travel somewhere' },
+        { word: 'TOURIST',      az: 'turist', definition: 'a person who travels for pleasure' },
+        { word: 'VISA',         az: 'viza', definition: 'an official permission to enter a foreign country' },
+        { word: 'RIVER',        az: 'çay', definition: 'a large natural flow of water' },
       ]
     },
     {
       words: [
-        { word: 'GUIDE',        az: 'bələdçi' },
-        { word: 'BORDER',       az: 'sərhəd' },
-        { word: 'FLOOD',        az: 'daşqın' },
-        { word: 'GLOBAL',       az: 'qlobal' },
+        { word: 'GUIDE',        az: 'bələdçi', definition: 'a person who shows tourists around' },
+        { word: 'BORDER',       az: 'sərhəd', definition: 'the official line separating two countries' },
+        { word: 'FLOOD',        az: 'daşqın', definition: 'when a lot of water covers land that is normally dry' },
+        { word: 'GLOBAL',       az: 'qlobal', definition: 'affecting the whole world' },
       ]
     },
   ]
@@ -2273,28 +2273,28 @@ const GAME_DATA = {
     'b5_g0':  { id: 'b2_b5_g0',  title: 'Game 10',  phases: [
     {
       words: [
-        { word: 'DATA',         az: 'məlumat' },
-        { word: 'HEAL',         az: 'sağalmaq' },
-        { word: 'HEALTH',       az: 'sağlamlıq' },
-        { word: 'MENTAL',       az: 'zehni' },
+        { word: 'DATA',         az: 'məlumat', definition: 'facts and information used for analysis' },
+        { word: 'HEAL',         az: 'sağalmaq', definition: 'to become healthy again after being ill' },
+        { word: 'HEALTH',       az: 'sağlamlıq', definition: 'the condition of your body and mind' },
+        { word: 'MENTAL',       az: 'zehni', definition: 'relating to the mind' },
       ]
     },
     {
       words: [
-        { word: 'ANALYSIS',     az: 'təhlil' },
-        { word: 'ANALYSE',      az: 'təhlil etmək' },
-        { word: 'ILLNESS',      az: 'xəstəlik' },
-        { word: 'PAIN',         az: 'ağrı' },
-        { word: 'PATIENT',      az: 'xəstə' },
+        { word: 'ANALYSIS',     az: 'təhlil', definition: 'a detailed examination of the elements or structure of something' },
+        { word: 'ANALYSE',      az: 'təhlil etmək', definition: 'to examine something in detail' },
+        { word: 'ILLNESS',      az: 'xəstəlik', definition: 'a disease or period of being ill' },
+        { word: 'PAIN',         az: 'ağrı', definition: 'the feeling when part of your body hurts' },
+        { word: 'PATIENT',      az: 'xəstə', definition: 'a person who is receiving medical treatment' },
       ]
     },
     {
       words: [
-        { word: 'NUCLEAR',      az: 'nüvə' },
-        { word: 'AMBULANCE',    az: 'təcili yardım maşını' },
-        { word: 'CANCER',       az: 'xərçəng' },
-        { word: 'MUSCLE',       az: 'əzələ' },
-        { word: 'CHEMICAL',     az: 'kimyəvi' },
+        { word: 'NUCLEAR',      az: 'nüvə', definition: 'relating to the energy produced by atoms' },
+        { word: 'AMBULANCE',    az: 'təcili yardım maşını', definition: 'a vehicle used to take people to hospital in an emergency' },
+        { word: 'CANCER',       az: 'xərçəng', definition: 'a serious disease in which cells grow uncontrollably' },
+        { word: 'MUSCLE',       az: 'əzələ', definition: 'the soft tissue in your body that helps you move' },
+        { word: 'CHEMICAL',     az: 'kimyəvi', definition: 'relating to chemistry or made by chemical processes' },
 
       ]
     },
@@ -2305,27 +2305,27 @@ const GAME_DATA = {
     'b6_g0':  { id: 'b2_b6_g0',  title: 'Game 11',  phases: [
     {
       words: [
-        { word: 'MEAL',         az: 'yemək' },
-        { word: 'THEME',        az: 'mövzu' },
-        { word: 'ATHLETE',      az: 'atlet' },
-        { word: 'TEAM',         az: 'komanda' },
+        { word: 'MEAL',         az: 'yemək', definition: 'food eaten at one time' },
+        { word: 'THEME',        az: 'mövzu', definition: 'the main subject or idea in a work of art' },
+        { word: 'ATHLETE',      az: 'atlet', definition: 'a person who competes in sports' },
+        { word: 'TEAM',         az: 'komanda', definition: 'a group of players who play together' },
       ]
     },
     {
       words: [
-        { word: 'RECIPE',       az: 'resept' },
-        { word: 'GARAGE',       az: 'qaraj' },
-        { word: 'PIPE',         az: 'boru' },
-        { word: 'GIG',          az: 'konsert' },
-        { word: 'RACE',         az: 'qaçış yarışı' },
+        { word: 'RECIPE',       az: 'resept', definition: 'instructions for cooking a particular dish' },
+        { word: 'GARAGE',       az: 'qaraj', definition: 'a building for keeping a car' },
+        { word: 'PIPE',         az: 'boru', definition: 'a tube that carries water or gas' },
+        { word: 'GIG',          az: 'konsert', definition: 'a live performance by a musician or band' },
+        { word: 'RACE',         az: 'qaçış yarışı', definition: 'a competition to see who is fastest' },
       ]
     },
     {
       words: [
-        { word: 'BAKE',         az: 'bişirmək' },
-        { word: 'BATTERY',      az: 'batareya' },
-        { word: 'ART',          az: 'sənət' },
-        { word: 'THEATRE',      az: 'teatr' },
+        { word: 'BAKE',         az: 'bişirmək', definition: 'to cook food in an oven' },
+        { word: 'BATTERY',      az: 'batareya', definition: 'a device that stores electrical energy' },
+        { word: 'ART',          az: 'sənət', definition: 'the creation of paintings, sculptures and other works' },
+        { word: 'THEATRE',      az: 'teatr', definition: 'a building where plays are performed' },
       ]
     },
   ]
@@ -2333,28 +2333,28 @@ const GAME_DATA = {
     'b6_g1':  { id: 'b2_b6_g1',  title: 'Game 12',  phases: [
     {
       words: [
-        { word: 'COOK',         az: 'bişirmək' },
-        { word: 'COTTAGE',      az: 'kiçik ev' },
-        { word: 'COACH',        az: 'məşqçi' },
-        { word: 'MATCH',        az: 'oyun / matç' },
+        { word: 'COOK',         az: 'bişirmək', definition: 'to prepare food by heating it' },
+        { word: 'COTTAGE',      az: 'kiçik ev', definition: 'a small house, usually in the countryside' },
+        { word: 'COACH',        az: 'məşqçi', definition: 'a person who trains athletes' },
+        { word: 'MATCH',        az: 'oyun / matç', definition: 'a game between two teams' },
       ]
     },
     {
       words: [
-        { word: 'INGREDIENT',   az: 'inqredient' },
-        { word: 'ENGAGED',      az: 'nişanlı' },
-        { word: 'TRADITION',    az: 'ənənə' },
-        { word: 'GENERATION',   az: 'nəsil' },
-        { word: 'TRAINING',     az: 'məşq' },
+        { word: 'INGREDIENT',   az: 'inqredient', definition: 'one of the foods or substances needed to make a dish' },
+        { word: 'ENGAGED',      az: 'nişanlı', definition: 'having formally agreed to marry someone' },
+        { word: 'TRADITION',    az: 'ənənə', definition: 'a custom passed down through generations' },
+        { word: 'GENERATION',   az: 'nəsil', definition: 'all people born at about the same time' },
+        { word: 'TRAINING',     az: 'məşq', definition: 'practice to improve skills in sport' },
       ]
     },
     {
       words: [
-        { word: 'ROMANTIC',     az: 'romantik' },
-        { word: 'CONCERT',      az: 'konsert' },
-        { word: 'POEM',         az: 'şeir' },
-        { word: 'CAPTAIN',      az: 'kapitan' },
-        { word: 'COMPETITION',  az: 'yarış' },
+        { word: 'ROMANTIC',     az: 'romantik', definition: 'showing love in a sentimental way' },
+        { word: 'CONCERT',      az: 'konsert', definition: 'a live performance of music' },
+        { word: 'POEM',         az: 'şeir', definition: 'a piece of writing with short lines and rhythm' },
+        { word: 'CAPTAIN',      az: 'kapitan', definition: 'the leader of a sports team' },
+        { word: 'COMPETITION',  az: 'yarış', definition: 'an event where people try to win' },
       ]
     },
   ]
@@ -2362,28 +2362,28 @@ const GAME_DATA = {
     'b6_g2':  { id: 'b2_b6_g2',  title: 'Game 13',  phases: [
     {
       words: [
-        { word: 'ALARM',        az: 'zəng / siqnal' },
-        { word: 'ALBUM',        az: 'albom' },
-        { word: 'PLAYER',       az: 'oyunçu' },
-        { word: 'RUGBY',        az: 'reqbi' },
+        { word: 'ALARM',        az: 'zəng / siqnal', definition: 'a loud sound used to wake you up or warn you' },
+        { word: 'ALBUM',        az: 'albom', definition: 'a collection of songs released together' },
+        { word: 'PLAYER',       az: 'oyunçu', definition: 'a person who takes part in a sport or game' },
+        { word: 'RUGBY',        az: 'reqbi', definition: 'a team sport played with an oval ball' },
       ]
     },
     {
       words: [
-        { word: 'DIVORCE',      az: 'boşanma' },
-        { word: 'SOCIETY',      az: 'cəmiyyət' },
-        { word: 'SCORE',        az: 'hesab' },
-        { word: 'VICTORY',      az: 'qələbə' },
+        { word: 'DIVORCE',      az: 'boşanma', definition: 'the legal end of a marriage' },
+        { word: 'SOCIETY',      az: 'cəmiyyət', definition: 'all the people in a country or area' },
+        { word: 'SCORE',        az: 'hesab', definition: 'the number of points in a game' },
+        { word: 'VICTORY',      az: 'qələbə', definition: 'an act of defeating an opponent in a battle or contest' },
       ]
     },
     {
       words: [
-        { word: 'CEILING',      az: 'tavan' },
-        { word: 'CURTAIN',      az: 'pərdə' },
-        { word: 'HEATING',      az: 'isitmə' },
-        { word: 'SHELTER',      az: 'sığınak' },
-        { word: 'CULTURE',      az: 'mədəniyyət' },
-        { word: 'STRENGTH',     az: 'güc' },
+        { word: 'CEILING',      az: 'tavan', definition: 'the upper surface of a room' },
+        { word: 'CURTAIN',      az: 'pərdə', definition: 'a piece of material hung to cover a window' },
+        { word: 'HEATING',      az: 'isitmə', definition: 'the system that makes a house warm' },
+        { word: 'SHELTER',      az: 'sığınak', definition: 'a place that protects you from danger or bad weather' },
+        { word: 'CULTURE',      az: 'mədəniyyət', definition: 'the customs, arts and way of life of a society' },
+        { word: 'STRENGTH',     az: 'güc', definition: 'physical power' },
       ]
     },
   ]
@@ -2393,29 +2393,29 @@ const GAME_DATA = {
     'b7_g0':  { id: 'b2_b7_g0',  title: 'Game 14',  phases: [
     {
       words: [
-        { word: 'IDEA',         az: 'fikir' },
-        { word: 'ADAPT',        az: 'uyğunlaşmaq' },
-        { word: 'CREATE',       az: 'yaratmaq' },
-        { word: 'PREPARE',      az: 'hazırlamaq' },
-        { word: 'REACT',        az: 'reaksiya vermək' },
+        { word: 'IDEA',         az: 'fikir', definition: 'a thought or suggestion' },
+        { word: 'ADAPT',        az: 'uyğunlaşmaq', definition: 'to change your behaviour to suit a new situation' },
+        { word: 'CREATE',       az: 'yaratmaq', definition: 'to make something new' },
+        { word: 'PREPARE',      az: 'hazırlamaq', definition: 'to make something ready for use' },
+        { word: 'REACT',        az: 'reaksiya vermək', definition: 'to respond to something' },
       ]
     },
     {
       words: [
-        { word: 'CONCEPT',      az: 'konsepsiya' },
-        { word: 'CONDUCT',      az: 'həyata keçirmək' },
-        { word: 'PROCEED',      az: 'davam etmək' },
-        { word: 'PRODUCE',      az: 'istehsal etmək' },
-        { word: 'REDUCE',       az: 'azaltmaq' },
+        { word: 'CONCEPT',      az: 'konsepsiya', definition: 'an abstract idea or general notion' },
+        { word: 'CONDUCT',      az: 'həyata keçirmək', definition: 'to carry out or organize something' },
+        { word: 'PROCEED',      az: 'davam etmək', definition: 'to continue doing something' },
+        { word: 'PRODUCE',      az: 'istehsal etmək', definition: 'to make or create something' },
+        { word: 'REDUCE',       az: 'azaltmaq', definition: 'to make something smaller or less' },
       ]
     },
     {
       words: [
-        { word: 'VIEW',         az: 'görüş' },
-        { word: 'WISE',         az: 'müdrik' },
-        { word: 'ACHIEVE',      az: 'əldə etmək' },
-        { word: 'RECEIVE',      az: 'almaq' },
-        { word: 'RESEARCH',     az: 'tədqiqat aparmaq' },
+        { word: 'VIEW',         az: 'görüş', definition: 'a particular opinion or way of thinking' },
+        { word: 'WISE',         az: 'müdrik', definition: 'having experience and good judgement' },
+        { word: 'ACHIEVE',      az: 'əldə etmək', definition: 'to succeed in reaching a goal' },
+        { word: 'RECEIVE',      az: 'almaq', definition: 'to get or be given something' },
+        { word: 'RESEARCH',     az: 'tədqiqat aparmaq', definition: 'to study something in detail to discover new facts' },
       ]
     },
   ]
@@ -2423,32 +2423,32 @@ const GAME_DATA = {
     'b7_g1':  { id: 'b2_b7_g1',  title: 'Game 15',  phases: [
     {
       words: [
-        { word: 'BOLD',         az: 'cəsarətli' },
-        { word: 'BRAVE',        az: 'cəsur' },
-        { word: 'EAGER',        az: 'həvəsli' },
-        { word: 'RESOLVE',      az: 'həll etmək' },
-        { word: 'SOLVE',        az: 'həll etmək' },
+        { word: 'BOLD',         az: 'cəsarətli', definition: 'confident and willing to take risks' },
+        { word: 'BRAVE',        az: 'cəsur', definition: 'not afraid to face danger' },
+        { word: 'EAGER',        az: 'həvəsli', definition: 'very keen and excited to do something' },
+        { word: 'RESOLVE',      az: 'həll etmək', definition: 'to find a solution to a problem' },
+        { word: 'SOLVE',        az: 'həll etmək', definition: 'to find a solution to a problem' },
       ]
     },
     {
       words: [
-        { word: 'CALM',         az: 'sakit' },
-        { word: 'LOGIC',        az: 'məntiq' },
-        { word: 'LOGICAL',      az: 'məntiqi' },
-        { word: 'NOTION',       az: 'təsəvvür' },
-        { word: 'MANAGE',       az: 'idarə etmək' },
-        { word: 'NEGOTIATE',    az: 'danışıqlar aparmaq' },
+        { word: 'CALM',         az: 'sakit', definition: 'peaceful and not excited or angry' },
+        { word: 'LOGIC',        az: 'məntiq', definition: 'reasoning conducted according to strict principles of validity' },
+        { word: 'LOGICAL',      az: 'məntiqi', definition: 'based on reason and clear thinking' },
+        { word: 'NOTION',       az: 'təsəvvür', definition: 'a conception of or belief about something' },
+        { word: 'MANAGE',       az: 'idarə etmək', definition: 'to be in charge of something' },
+        { word: 'NEGOTIATE',    az: 'danışıqlar aparmaq', definition: 'to discuss something in order to reach an agreement' },
       ]
     },
     {
       words: [
-        { word: 'DETERMINED',   az: 'qərarlı' },
-        { word: 'MIND',         az: 'ağıl' },
-        { word: 'DEVELOP',      az: 'inkişaf etdirmək' },
-        { word: 'IMPLEMENT',    az: 'tətbiq etmək' },
-        { word: 'IMPROVE',      az: 'təkmilləşdirmək' },
-        { word: 'PROMOTE',      az: 'təbliğ etmək' },
-        { word: 'PROVIDE',      az: 'təmin etmək' },
+        { word: 'DETERMINED',   az: 'qərarlı', definition: 'having a firm decision or being resolved to do something' },
+        { word: 'MIND',         az: 'ağıl', definition: 'the part of a person that thinks and feels' },
+        { word: 'DEVELOP',      az: 'inkişaf etdirmək', definition: 'to grow or improve over time' },
+        { word: 'IMPLEMENT',    az: 'tətbiq etmək', definition: 'to put a decision, plan or agreement into effect' },
+        { word: 'IMPROVE',      az: 'təkmilləşdirmək', definition: 'to make something better' },
+        { word: 'PROMOTE',      az: 'təbliğ etmək', definition: 'to help something develop or become more popular' },
+        { word: 'PROVIDE',      az: 'təmin etmək', definition: 'to give someone something they need' },
       ]
     },
   ]
@@ -2456,29 +2456,29 @@ const GAME_DATA = {
     'b7_g2':  { id: 'b2_b7_g2',  title: 'Game 16',  phases: [
     {
       words: [
-        { word: 'HONEST',       az: 'dürüst' },
-        { word: 'LOYAL',        az: 'sadiq' },
-        { word: 'THEORY',       az: 'nəzəriyyə' },
-        { word: 'ANALYSE',      az: 'təhlil etmək' },
-        { word: 'HANDLE',       az: 'idarə etmək' },
+        { word: 'HONEST',       az: 'dürüst', definition: 'always telling the truth' },
+        { word: 'LOYAL',        az: 'sadiq', definition: 'always supporting and being faithful to someone' },
+        { word: 'THEORY',       az: 'nəzəriyyə', definition: 'an idea intended to explain something' },
+        { word: 'ANALYSE',      az: 'təhlil etmək', definition: 'to examine something in detail' },
+        { word: 'HANDLE',       az: 'idarə etmək', definition: 'to deal with a situation or problem' },
       ]
     },
     {
       words: [
-        { word: 'PATIENT',      az: 'səbirli' },
-        { word: 'ABSTRACT',     az: 'mücərrəd' },
-        { word: 'PRINCIPLE',    az: 'prinsip' },
-        { word: 'REALISE',      az: 'dərk etmək' },
-        { word: 'REPLACE',      az: 'əvəz etmək' },
+        { word: 'PATIENT',      az: 'səbirli', definition: 'a person who is receiving medical treatment' },
+        { word: 'ABSTRACT',     az: 'mücərrəd', definition: 'existing in thought and not in physical form' },
+        { word: 'PRINCIPLE',    az: 'prinsip', definition: 'a fundamental truth or proposition that serves as the foundation for a system' },
+        { word: 'REALISE',      az: 'dərk etmək', definition: 'to become aware of something' },
+        { word: 'REPLACE',      az: 'əvəz etmək', definition: 'to put something new in the place of something old' },
       ]
     },
     {
       words: [
-        { word: 'CRUEL',        az: 'zalım' },
-        { word: 'CURIOUS',      az: 'maraqlanan' },
-        { word: 'GENUINE',      az: 'səmimi' },
-        { word: 'ORGANISE',     az: 'təşkil etmək' },
-        { word: 'REQUIRE',      az: 'tələb etmək' },
+        { word: 'CRUEL',        az: 'zalım', definition: 'deliberately causing pain or suffering to others' },
+        { word: 'CURIOUS',      az: 'maraqlanan', definition: 'wanting to know or learn more about something' },
+        { word: 'GENUINE',      az: 'səmimi', definition: 'real and sincere' },
+        { word: 'ORGANISE',     az: 'təşkil etmək', definition: 'to arrange or plan something' },
+        { word: 'REQUIRE',      az: 'tələb etmək', definition: 'to need something' },
       ]
     },
   ]
@@ -2488,31 +2488,31 @@ const GAME_DATA = {
     'b8_g0':  { id: 'b2_b8_g0',  title: 'Game 17',  phases: [
     {
       words: [
-        { word: 'ALTER',        az: 'dəyişdirmək' },
-        { word: 'CRISIS',       az: 'böhran' },
-        { word: 'ISSUE',        az: 'məsələ' },
-        { word: 'FAILURE',      az: 'uğursuzluq' },
-        { word: 'FAULT',        az: 'səhv' },
+        { word: 'ALTER',        az: 'dəyişdirmək', definition: 'to change something slightly' },
+        { word: 'CRISIS',       az: 'böhran', definition: 'a time of intense difficulty or danger' },
+        { word: 'ISSUE',        az: 'məsələ', definition: 'a problem or important subject' },
+        { word: 'FAILURE',      az: 'uğursuzluq', definition: 'lack of success' },
+        { word: 'FAULT',        az: 'səhv', definition: 'a mistake or weakness' },
       ]
     },
     {
       words: [
-        { word: 'EVOLVE',       az: 'təkamül keçirmək' },
-        { word: 'REVOLUTION',   az: 'inqilab' },
-        { word: 'TRANSITION',   az: 'keçid' },
-        { word: 'VARIATION',    az: 'fərqlilik' },
-        { word: 'EVOLUTION',    az: 'təkamül' },
-        { word: 'SOLUTION',     az: 'həll yolu' },
+        { word: 'EVOLVE',       az: 'təkamül keçirmək', definition: 'to develop gradually from a simple to a more complex form' },
+        { word: 'REVOLUTION',   az: 'inqilab', definition: 'a dramatic and wide-reaching change in conditions or way of life' },
+        { word: 'TRANSITION',   az: 'keçid', definition: 'the process or period of changing from one state to another' },
+        { word: 'VARIATION',    az: 'fərqlilik', definition: 'a change or difference in something' },
+        { word: 'EVOLUTION',    az: 'təkamül', definition: 'the gradual development of something from a simple to a more complex form' },
+        { word: 'SOLUTION',     az: 'həll yolu', definition: 'a way of solving a problem' },
       ]
     },
     {
       words: [
-        { word: 'DEVELOP',      az: 'inkişaf etmək' },
-        { word: 'IMPROVE',      az: 'yaxşılaşdırmaq' },
-        { word: 'MODIFY',       az: 'dəyişiklik etmək' },
-        { word: 'REFORM',       az: 'islahat' },
-        { word: 'VARY',         az: 'dəyişmək' },
-        { word: 'DILEMMA',      az: 'dilemma' },
+        { word: 'DEVELOP',      az: 'inkişaf etmək', definition: 'to grow or improve over time' },
+        { word: 'IMPROVE',      az: 'yaxşılaşdırmaq', definition: 'to make something better' },
+        { word: 'MODIFY',       az: 'dəyişiklik etmək', definition: 'to change something slightly' },
+        { word: 'REFORM',       az: 'islahat', definition: 'to make changes in something in order to improve it' },
+        { word: 'VARY',         az: 'dəyişmək', definition: 'to be different in size or amount' },
+        { word: 'DILEMMA',      az: 'dilemma', definition: 'a situation in which a difficult choice has to be made' },
       ]
     },
   ]
@@ -2522,26 +2522,26 @@ const GAME_DATA = {
     'b9_g0':  { id: 'b2_b9_g0',  title: 'Game 18',  phases: [
     {
       words: [
-        { word: 'STATE',        az: 'dövlət' },
-        { word: 'LAW',          az: 'qanun' },
-        { word: 'LEGAL',        az: 'qanuni' },
+        { word: 'STATE',        az: 'dövlət', definition: 'an organized political community' },
+        { word: 'LAW',          az: 'qanun', definition: 'the official rules of a country' },
+        { word: 'LEGAL',        az: 'qanuni', definition: 'allowed by the law' },
       ]
     },
     {
       words: [
-        { word: 'CANDIDATE',    az: 'namizəd' },
-        { word: 'VOTE',         az: 'səs vermək' },
-        { word: 'INNOCENT',     az: 'günahsız' },
-        { word: 'EVIDENCE',     az: 'sübut' },
+        { word: 'CANDIDATE',    az: 'namizəd', definition: 'a person who is trying to be elected' },
+        { word: 'VOTE',         az: 'səs vermək', definition: 'to choose someone in an election' },
+        { word: 'INNOCENT',     az: 'günahsız', definition: 'not responsible for a crime or wrongdoing' },
+        { word: 'EVIDENCE',     az: 'sübut', definition: 'facts or information that prove something is true' },
       ]
     },
     {
       words: [
-        { word: 'ELECTION',     az: 'seçki' },
-        { word: 'POLITICAL',    az: 'siyasi' },
-        { word: 'PROTEST',      az: 'etiraz' },
-        { word: 'PRISON',       az: 'həbsxana' },
-        { word: 'TRIAL',        az: 'məhkəmə prosesi' },
+        { word: 'ELECTION',     az: 'seçki', definition: 'the process of choosing a government or representatives by voting' },
+        { word: 'POLITICAL',    az: 'siyasi', definition: 'relating to the government or public affairs of a country' },
+        { word: 'PROTEST',      az: 'etiraz', definition: 'a public demonstration against something' },
+        { word: 'PRISON',       az: 'həbsxana', definition: 'a building where criminals are kept as punishment' },
+        { word: 'TRIAL',        az: 'məhkəmə prosesi', definition: 'the legal process of judging someone in court' },
       ]
     },
   ]
@@ -2551,31 +2551,31 @@ const GAME_DATA = {
     'b10_g0': { id: 'b2_b10_g0', title: 'Game 19',  phases: [
     {
       words: [
-        { word: 'CAREER',       az: 'karyera' },
-        { word: 'AWARD',        az: 'mükafat' },
-        { word: 'WIN',          az: 'qazanmaq' },
-        { word: 'WINNER',       az: 'qalib' },
-        { word: 'REWARD',       az: 'mükafat' },
+        { word: 'CAREER',       az: 'karyera', definition: 'the series of jobs you have during your working life' },
+        { word: 'AWARD',        az: 'mükafat', definition: 'a prize given for an achievement' },
+        { word: 'WIN',          az: 'qazanmaq', definition: 'to be successful in a competition' },
+        { word: 'WINNER',       az: 'qalib', definition: 'a person who wins a competition' },
+        { word: 'REWARD',       az: 'mükafat', definition: 'something given because of good work' },
       ]
     },
     {
       words: [
-        { word: 'CONTRACT',     az: 'müqavilə' },
-        { word: 'RETIRE',       az: 'təqaüdə çıxmaq' },
-        { word: 'TALENT',       az: 'istedad' },
-        { word: 'GOAL',         az: 'məqsəd' },
-        { word: 'RECOGNITION',  az: 'tanınma' },
-        { word: 'TARGET',       az: 'hədəf' },
+        { word: 'CONTRACT',     az: 'müqavilə', definition: 'a formal legal agreement about work' },
+        { word: 'RETIRE',       az: 'təqaüdə çıxmaq', definition: 'to stop working because of old age' },
+        { word: 'TALENT',       az: 'istedad', definition: 'a natural ability to do something well' },
+        { word: 'GOAL',         az: 'məqsəd', definition: 'something you want to achieve' },
+        { word: 'RECOGNITION',  az: 'tanınma', definition: 'identification of the existence, validity or legality of something' },
+        { word: 'TARGET',       az: 'hədəf', definition: 'a goal or result you want to achieve' },
       ]
     },
     {
       words: [
-        { word: 'COLLEAGUE',    az: 'iş yoldaşı' },
-        { word: 'EMPLOYEE',     az: 'işçi' },
-        { word: 'EMPLOYER',     az: 'işəgötürən' },
-        { word: 'SALARY',       az: 'maaş' },
-        { word: 'SUCCESS',      az: 'uğur' },
-        { word: 'PROGRESS',     az: 'irəliləyiş' },
+        { word: 'COLLEAGUE',    az: 'iş yoldaşı', definition: 'a person you work with' },
+        { word: 'EMPLOYEE',     az: 'işçi', definition: 'a person who works for a company' },
+        { word: 'EMPLOYER',     az: 'işəgötürən', definition: 'a person or company that gives jobs to people' },
+        { word: 'SALARY',       az: 'maaş', definition: 'money paid to someone regularly for their work' },
+        { word: 'SUCCESS',      az: 'uğur', definition: 'the accomplishment of an aim or purpose' },
+        { word: 'PROGRESS',     az: 'irəliləyiş', definition: 'forward or onward movement towards a destination or goal' },
       ]
     },
   ]
