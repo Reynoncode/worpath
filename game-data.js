@@ -2797,17 +2797,28 @@ const GAME_DATA = {
     'b0_g0':  { id: 'c1_b0_g0',  title: 'Game 1',  phases: [
     {
       words: [
-
+        { word: 'BALLOT',       az: 'səsvermə bülleteni', definition: 'the piece of paper used to cast a vote in an election' },
+        { word: 'CABINET',      az: 'kabinet', definition: 'the group of senior ministers who advise the head of government' },
+        { word: 'COALITION',    az: 'koalisiya', definition: 'a temporary alliance between different political parties' },
+        { word: 'ELECTION',     az: 'seçki', definition: 'the process of choosing a government or representatives by voting' },
       ]
     },
     {
       words: [
-
+        { word: 'AMENDMENT',    az: 'düzəliş', definition: 'a minor change or addition designed to improve or correct a law, document or constitution' },
+        { word: 'DEMOCRACY',    az: 'demokratiya', definition: 'a system of government in which power is held by the people through voting' },
+        { word: 'MANDATE',      az: 'mandat', definition: 'the authority to carry out a policy or course of action given by an electorate' },
+        { word: 'TREATY',       az: 'müqavilə', definition: 'a formally concluded and ratified agreement between states' },
       ]
     },
     {
       words: [
-
+        { word: 'CONGRESS',     az: 'kongres', definition: 'a formal meeting or the legislative body in some countries' },
+        { word: 'COUNCILLOR',   az: 'şura üzvü', definition: 'a member of a local council or advisory body' },
+        { word: 'ELECTORAL',    az: 'seçki (sifət)', definition: 'relating to elections and the process of voting' },
+        { word: 'LEGISLATION',  az: 'qanunvericilik', definition: 'laws collectively or the process of making or enacting laws' },
+        { word: 'LEGISLATURE',  az: 'qanunverici orqan', definition: 'the body of people with the power to make laws' },
+        { word: 'REGULATION',   az: 'tənzimləmə', definition: 'an official rule or law controlling how something is done' },
       ]
     },
   ]
@@ -2817,17 +2828,28 @@ const GAME_DATA = {
     'b1_g0':  { id: 'c1_b1_g0',  title: 'Game 2',  phases: [
     {
       words: [
-
+        { word: 'DETENTION',    az: 'saxlanılma', definition: 'the action of keeping someone in official custody' },
+        { word: 'DETAIN',       az: 'saxlamaq', definition: 'to keep someone in official custody' },
+        { word: 'RAID',         az: 'basqın', definition: 'a sudden attack on an enemy by troops, aircraft or other armed forces' },
+        { word: 'RIOT',         az: 'iğtişaş', definition: 'a violent disturbance by a crowd of people' },
       ]
     },
     {
       words: [
-
+        { word: 'BREACH',       az: 'pozuntu', definition: 'an act of breaking or failing to observe a law, agreement or code of conduct' },
+        { word: 'COUP',         az: 'çevriliş', definition: 'a sudden, violent and illegal seizure of power from a government' },
+        { word: 'RAPE',         az: 'zorlanma', definition: 'the crime of forcing someone to have sexual intercourse' },
+        { word: 'TORTURE',      az: 'işgəncə', definition: 'the infliction of severe pain to punish or extract information' },
       ]
     },
     {
       words: [
-
+        { word: 'ALLEGATION',   az: 'iddia', definition: 'a claim or assertion that someone has done something illegal or wrong, typically without proof' },
+        { word: 'ALLEGE',       az: 'iddia etmək', definition: 'to claim or assert that something is the case' },
+        { word: 'CONVICTION',   az: 'məhkumetmə', definition: 'a formal declaration that someone is guilty of a crime' },
+        { word: 'DEFENDANT',    az: 'müttəhim', definition: 'an individual, company or institution sued or accused in a court of law' },
+        { word: 'GENOCIDE',     az: 'soyqırım', definition: 'the deliberate killing of a large number of people from a particular nation or group' },
+        { word: 'VIOLATION',    az: 'pozuntu', definition: 'the action of breaking a law, rule or agreement' },
       ]
     },
   ]
@@ -2837,17 +2859,27 @@ const GAME_DATA = {
     'b2_g0':  { id: 'c1_b2_g0',  title: 'Game 3',  phases: [
     {
       words: [
-
+        { word: 'CONTRACTOR',   az: 'podratçı', definition: 'a person or company that undertakes a contract to provide materials or labor' },
+        { word: 'ALLOCATION',   az: 'bölüşdürmə', definition: 'the action of distributing resources according to a plan' },
+        { word: 'ABORTION',     az: 'abort', definition: 'the deliberate termination of a pregnancy' },
+        { word: 'TOLERANCE',    az: 'tolerantlıq', definition: 'the ability to accept opinions or behaviour different from one’s own' },
       ]
     },
     {
       words: [
-
+        { word: 'BUDGET',       az: 'büdcə', definition: 'a financial plan estimating income and expenditure over a period' },
+        { word: 'ASSET',        az: 'aktiv', definition: 'a useful or valuable thing or person owned by a company' },
+        { word: 'AUDIT',        az: 'audit', definition: 'an official inspection of financial accounts' },
+        { word: 'SUBSIDY',      az: 'subsidiya', definition: 'a sum of money granted by the government to support an industry' },
       ]
     },
     {
       words: [
-
+        { word: 'MERGER',       az: 'birləşmə', definition: 'the combining of two or more companies into one' },
+        { word: 'TRANSACTION',  az: 'əməliyyat', definition: 'an instance of buying or selling something' },
+        { word: 'INTEGRATION',  az: 'inteqrasiya', definition: 'the process of combining different groups into a unified society' },
+        { word: 'MIGRATION',    az: 'miqrasiya', definition: 'the movement of people from one country or area to another' },
+        { word: 'RACISM',       az: 'irqçilik', definition: 'prejudice, discrimination or antagonism directed against a person based on race' },
       ]
     },
   ]
@@ -2855,17 +2887,28 @@ const GAME_DATA = {
     'b2_g1':  { id: 'c1_b2_g1',  title: 'Game 4',  phases: [
     {
       words: [
-
+        { word: 'DEFICIT',      az: 'kəsir', definition: 'the amount by which expenditure exceeds income' },
+        { word: 'BENEFICIARY',  az: 'faydalanan', definition: 'a person or thing that receives help or an advantage' },
+        { word: 'YIELD',        az: 'gəlir (investisiya)', definition: 'the profit or income from an investment' },
+        { word: 'LIBERTY',      az: 'azadlıq', definition: 'the state of being free from oppressive restrictions' },
       ]
     },
     {
       words: [
-
+        { word: 'CAPITALISM',   az: 'kapitalizm', definition: 'an economic system based on private ownership and free markets' },
+        { word: 'COMMODITY',    az: 'əmtəə', definition: 'a raw material or primary agricultural product that can be bought and sold' },
+        { word: 'FISCAL',       az: 'fiskal', definition: 'relating to government revenue, especially through taxation' },
+        { word: 'PROFIT',       az: 'mənfəət', definition: 'the financial gain after all expenses have been deducted' },
+        { word: 'SOLIDARITY',   az: 'həmrəylik', definition: 'unity or agreement of feeling or action among individuals' },
       ]
     },
     {
       words: [
-
+        { word: 'ACCUMULATION', az: 'toplanma', definition: 'the process of gradually collecting or increasing in quantity' },
+        { word: 'ACCOUNTABILITY', az: 'hesabatlılıq', definition: 'the obligation to explain and justify one’s actions and decisions' },
+        { word: 'EQUALITY',     az: 'bərabərlik', definition: 'the state of being equal in rights, status and opportunities' },
+        { word: 'INEQUALITY',   az: 'bərabərsizlik', definition: 'the unfair situation in which some people have more rights than others' },
+        { word: 'MINORITY',     az: 'azlıq', definition: 'a smaller group of people differing from the rest of a community' },
       ]
     },
   ]
@@ -2875,17 +2918,29 @@ const GAME_DATA = {
     'b3_g0':  { id: 'c1_b3_g0',  title: 'Game 5',  phases: [
     {
       words: [
-
+        { word: 'PERCEPTION',   az: 'qavrayış', definition: 'the way in which something is regarded, understood or interpreted' },
+        { word: 'CONCEPT',      az: 'konsept', definition: 'an abstract idea or general notion' },
+        { word: 'CRITERION',    az: 'meyar', definition: 'a principle or standard by which something is judged' },
+        { word: 'NOTION',       az: 'anlayış', definition: 'a conception of or belief about something' },
       ]
     },
     {
       words: [
-
+        { word: 'EGO',          az: 'ego', definition: 'a person’s sense of self-esteem or self-importance' },
+        { word: 'ANALOGY',      az: 'anoloji', definition: 'a comparison between two things to explain or clarify an idea' },
+        { word: 'IDEOLOGY',     az: 'ideologiya', definition: 'a system of ideas and ideals, especially one which forms the basis of economic or political theory and policy' },
+        { word: 'LOGIC',        az: 'məntiq', definition: 'reasoning conducted according to strict principles of validity' },
       ]
     },
     {
       words: [
-
+        { word: 'DEPRESSION',   az: 'depressiya', definition: 'a mental state of persistent sadness and loss of interest' },
+        { word: 'IRONY',        az: 'ironi', definition: 'a situation or statement that is the opposite of what is expected' },
+        { word: 'OPTIMISM',     az: 'optimizm', definition: 'hopefulness and confidence about the future' },
+        { word: 'SENTIMENT',    az: 'hiss', definition: 'a view, opinion or feeling towards a situation or event' },
+        { word: 'DIMENSION',    az: 'ölçü', definition: 'a measurable extent of a particular kind' },
+        { word: 'HYPOTHESIS',   az: 'hipotez', definition: 'a supposition or proposed explanation made on the basis of limited evidence as a starting point for further investigation' },
+        { word: 'THESIS',       az: 'tezis', definition: 'a statement or theory put forward to be maintained or proved' },
       ]
     },
   ]
@@ -2895,17 +2950,26 @@ const GAME_DATA = {
     'b4_g0':  { id: 'c1_b4_g0',  title: 'Game 6',  phases: [
     {
       words: [
-
+        { word: 'CONFER',       az: 'müzakirə etmək', definition: 'to have discussions or exchange opinions' },
+        { word: 'ENFORCE',      az: 'tətbiq etmək', definition: 'to compel observance of or obedience to a law, rule or command' },
+        { word: 'REFORM',       az: 'islahat', definition: 'to make changes in something in order to improve it' },
       ]
     },
     {
       words: [
-
+        { word: 'ALLOCATE',     az: 'bölüşdürmək', definition: 'to distribute resources according to a plan' },
+        { word: 'COLLABORATE',  az: 'əməkdaşlıq etmək', definition: 'to work jointly with others on an activity or project' },
+        { word: 'CORRELATE',    az: 'əlaqəsi olmaq', definition: 'to have a mutual relationship or connection' },
+        { word: 'EVOLVE',       az: 'inkişaf etmək', definition: 'to develop gradually from a simple to a more complex form' },
       ]
     },
     {
       words: [
-
+        { word: 'ADMINISTER',   az: 'idarə etmək', definition: 'to manage and be responsible for the running of an organization' },
+        { word: 'DEMONSTRATE',  az: 'nümayiş etdirmək', definition: 'to show or prove something clearly' },
+        { word: 'MONITOR',      az: 'izləmək', definition: 'to observe and check the progress or quality of something over time' },
+        { word: 'DETERIORATION', az: 'pisləşmə', definition: 'the process of becoming progressively worse' },
+        { word: 'TRANSITION',   az: 'keçid', definition: 'the process or period of changing from one state to another' },
       ]
     },
   ]
@@ -2913,17 +2977,29 @@ const GAME_DATA = {
     'b4_g1':  { id: 'c1_b4_g1',  title: 'Game 7',  phases: [
     {
       words: [
-
+        { word: 'CONCEIVE',     az: 'düşünmək', definition: 'to form or devise a plan or idea in the mind' },
+        { word: 'DERIVE',       az: 'hasil etmək', definition: 'to obtain something from a specified source' },
+        { word: 'ENSURE',       az: 'təmin etmək', definition: 'to make certain that something will occur or be the case' },
+        { word: 'CONVERSION',   az: 'çevrilmə', definition: 'the process of changing or causing something to change into a different form' },
       ]
     },
     {
       words: [
-
+        { word: 'EVALUATE',     az: 'qiymətləndirmək', definition: 'to form an idea of the amount, number or value of something' },
+        { word: 'INTEGRATE',    az: 'inteqrasiya etmək', definition: 'to combine or bring together different elements into a whole' },
+        { word: 'NEGOTIATE',    az: 'danışıqlar aparmaq', definition: 'to discuss something in order to reach an agreement' },
+        { word: 'EVOLUTION',    az: 'təkamül', definition: 'the gradual development of something from a simple to a more complex form' },
+        { word: 'REVOLUTION',   az: 'inqilab', definition: 'a dramatic and wide-reaching change in conditions or way of life' },
       ]
     },
     {
       words: [
-
+        { word: 'COMPENSATE',   az: 'kompensasiya vermək', definition: 'to give someone something to reduce or balance the effect of loss or suffering' },
+        { word: 'COMPRISE',     az: 'əhatə etmək', definition: 'to consist of or be made up of particular elements' },
+        { word: 'EXERT',        az: 'səy göstərmək', definition: 'to apply or bring to bear a force, influence or quality' },
+        { word: 'IMPOSE',       az: 'tətbiq etmək (məcburi)', definition: 'to force a law, rule or tax to be obeyed or paid' },
+        { word: 'MAXIMISE',     az: 'maksimallaşdırmaq', definition: 'to make something as large or great as possible' },
+        { word: 'EXPANSION',    az: 'genişlənmə', definition: 'the action of becoming larger or more extensive' },
       ]
     },
   ]
@@ -2933,17 +3009,26 @@ const GAME_DATA = {
     'b5_g0':  { id: 'c1_b5_g0',  title: 'Game 8',  phases: [
     {
       words: [
-
+        { word: 'RATIO',        az: 'nisbət', definition: 'the quantitative relation between two amounts' },
+        { word: 'TRAUMA',       az: 'travma', definition: 'a deeply distressing or disturbing experience' },
+        { word: 'TUMOUR',       az: 'şiş', definition: 'a mass of cells growing abnormally in the body' },
       ]
     },
     {
       words: [
-
+        { word: 'COVERAGE',     az: 'işıqlandırma', definition: 'the extent to which something is reported or dealt with by the media' },
+        { word: 'CONVEY',       az: 'çatdırmaq', definition: 'to communicate or make known an idea or feeling' },
+        { word: 'IRONY',        az: 'ironi', definition: 'a situation or statement that is the opposite of what is expected' },
+        { word: 'VACCINE',      az: 'vaksin', definition: 'a substance used to stimulate the production of antibodies and provide immunity' },
       ]
     },
     {
       words: [
-
+        { word: 'RHETORIC',     az: 'ritorika', definition: 'the art of effective or persuasive speaking or writing' },
+        { word: 'THEORETICAL',  az: 'nəzəri', definition: 'concerned with or involving the theory of a subject or area of study rather than its practical application' },
+        { word: 'CORRELATION',  az: 'korrelyasiya', definition: 'a mutual relationship or connection between two or more things' },
+        { word: 'CHRONIC',      az: 'xroniki', definition: 'persisting for a long time or constantly recurring' },
+        { word: 'CLINICAL',     az: 'klinik', definition: 'relating to the observation and treatment of actual patients' },
       ]
     },
   ]
@@ -2951,17 +3036,31 @@ const GAME_DATA = {
     'b5_g1':  { id: 'c1_b5_g1',  title: 'Game 9',  phases: [
     {
       words: [
-
+          { word: 'TRANSCRIPT',   az: 'transkript', definition: 'a written or printed version of material originally presented in another medium' },
+        { word: 'THESIS',       az: 'tezis', definition: 'a statement or theory put forward to be maintained or proved' },
+        { word: 'PSYCHIATRIC',  az: 'psixiatrik', definition: 'relating to the study and treatment of mental illness' },
+        { word: 'THERAPY',      az: 'terapiya', definition: 'treatment intended to relieve or heal a disorder' },
+        { word: 'PHYSICIAN',    az: 'terapevt', definition: 'a medical practitioner who treats general medical conditions' },     
       ]
     },
     {
       words: [
-
+        { word: 'EDITOR',       az: 'redaktor', definition: 'a person who is in charge of and selects material for a publication' },
+        { word: 'ARTICULATE',   az: 'aydın ifadə etmək', definition: 'to express an idea or feeling fluently and coherently' },
+        { word: 'EMPIRICAL',    az: 'empirik', definition: 'based on observation or experience rather than theory' },
+        { word: 'PARAMETER',    az: 'parametr', definition: 'a numerical or other measurable factor that defines a system' },
+        { word: 'MOLECULAR',    az: 'molekulyar', definition: 'relating to or consisting of molecules' },
+        { word: 'EPIDEMIC',     az: 'epidemiya', definition: 'the rapid spread of a disease to many people in a community' },
       ]
     },
     {
       words: [
-
+        { word: 'DISCOURSE',    az: 'diskurs', definition: 'written or spoken communication or debate' },
+        { word: 'SCRUTINY',     az: 'diqqətli nəzarət', definition: 'critical observation or examination' },
+        { word: 'DIAGNOSIS',    az: 'diaqnoz', definition: 'the identification of the nature of an illness or problem' },
+        { word: 'GENETIC',      az: 'genetik', definition: 'relating to genes or heredity' },
+        { word: 'SURGEON',      az: 'cərrah', definition: 'a medical practitioner qualified to practise surgery' },
+        { word: 'SURGERY',      az: 'cərrahiyyə', definition: 'medical treatment in which a doctor cuts open the body' },
       ]
     },
   ]
@@ -2971,17 +3070,25 @@ const GAME_DATA = {
     'b6_g0':  { id: 'c1_b6_g0',  title: 'Game 10', phases: [
     {
       words: [
-
+        { word: 'ARTISTIC',     az: 'bədii', definition: 'having or revealing creative skill and imagination' },
+        { word: 'CLASSICAL',    az: 'klassik', definition: 'relating to ancient Greek or Roman culture' },
+        { word: 'RADICAL',      az: 'radikal', definition: 'relating to or affecting the fundamental nature of something' },
       ]
     },
     {
       words: [
-
+        { word: 'EMISSION',     az: 'emissiya', definition: 'the production and discharge of something, especially gas or radiation' },
+        { word: 'MARINE',       az: 'dəniz (sifət)', definition: 'relating to the sea' },
+        { word: 'EROSION',      az: 'eroziya', definition: 'the process of eroding or being eroded by wind, water or other natural agents' },
+        { word: 'GENRE',        az: 'janr', definition: 'a category of artistic composition' },
       ]
     },
     {
       words: [
-
+        { word: 'HABITAT',      az: 'yaşayış mühiti', definition: 'the natural home or environment of an animal or plant' },
+        { word: 'ARCHITECTURAL', az: 'memarlıq (sifət)', definition: 'relating to the design and construction of buildings' },
+        { word: 'LITERATURE',   az: 'ədəbiyyat', definition: 'written works, especially those considered of superior artistic merit' },
+        { word: 'THEATRICAL',   az: 'teatr (sifət)', definition: 'relating to acting, actors or the theatre' },
       ]
     },
   ]
@@ -2989,17 +3096,31 @@ const GAME_DATA = {
     'b6_g1':  { id: 'c1_b6_g1',  title: 'Game 11', phases: [
     {
       words: [
-
+        { word: 'ECOLOGICAL',   az: 'ekoloji', definition: 'relating to the relationships between living organisms and their environment' },
+        { word: 'EXTINCTION',   az: 'nəslin kəsilməsi', definition: 'the state of a species no longer existing' },
+        { word: 'TOXIC',        az: 'zəhərli', definition: 'containing or being poisonous' },
+        { word: 'ARROGANT',     az: 'təkəbbürlü', definition: 'having an exaggerated sense of one’s own importance' },
+        { word: 'TOLERANT',     az: 'tolerant', definition: 'showing willingness to allow the existence of opinions or behaviour different from one’s own' },
       ]
     },
     {
       words: [
-
+        { word: 'CONSERVATION', az: 'mühafizə', definition: 'the protection and preservation of the natural environment' },
+        { word: 'AESTHETIC',    az: 'estetik', definition: 'concerned with beauty or the appreciation of beauty' },
+        { word: 'CANVAS',       az: 'kətan', definition: 'a strong cloth used as a surface for painting' },
+        { word: 'ORCHESTRA',    az: 'orkestr', definition: 'a large group of musicians who play various instruments together' },
+        { word: 'NAIVE',        az: 'sadəlövh', definition: 'lacking experience, wisdom or judgement' },
       ]
     },
     {
       words: [
-
+        { word: 'CLIMATE',      az: 'iqlim', definition: 'the long-term weather conditions in a particular region' },
+        { word: 'ECOSYSTEM',    az: 'ekosistem', definition: 'a biological community of interacting organisms and their physical environment' },
+        { word: 'MELODY',       az: 'melodiya', definition: 'a sequence of single notes that is musically satisfying' },
+        { word: 'CYNICAL',      az: 'kinik', definition: 'believing that people are motivated purely by self-interest' },
+        { word: 'COMPASSIONATE', az: 'şəfqətli', definition: 'feeling or showing sympathy and concern for others' },
+        { word: 'DIPLOMATIC',   az: 'diplomatik', definition: 'having or showing skill in dealing with people' },
+        { word: 'SCEPTICAL',    az: 'şübhəci', definition: 'not easily convinced or having doubts' },
       ]
     },
   ]
@@ -3009,17 +3130,28 @@ const GAME_DATA = {
     'b7_g0':  { id: 'c1_b7_g0',  title: 'Game 12', phases: [
     {
       words: [
-
+        { word: 'MILITANT',     az: 'silahlı', definition: 'a person who is engaged in aggressive or violent action' },
+        { word: 'TACTICAL',     az: 'taktik', definition: 'relating to short-term military planning' },
+        { word: 'DYNAMIC',      az: 'dinamik', definition: 'characterized by constant change, activity or progress' },
+        { word: 'CYNICAL',      az: 'kinik', definition: 'believing that people are motivated purely by self-interest' },
       ]
     },
     {
       words: [
-
+        { word: 'ABSURD',       az: 'absurd', definition: 'wildly unreasonable, illogical or inappropriate' },
+        { word: 'ACCESSIBLE',   az: 'əlçatan', definition: 'easy to approach, reach or understand' },
+        { word: 'BIASED',       az: 'qərəzli', definition: '— tapılmadı —' },
+        { word: 'CREDIBLE',     az: 'etibarlı', definition: 'able to be believed or trusted' },
+        { word: 'RADICAL',      az: 'radikal', definition: 'relating to or affecting the fundamental nature of something' },
       ]
     },
     {
       words: [
-
+        { word: 'INVASION',     az: 'işğal', definition: 'an act of invading a country or region with an armed force' },
+        { word: 'VETERAN',      az: 'veteran', definition: 'a person who has had long experience in a particular field' },
+        { word: 'NAIVE',        az: 'sadəlövh', definition: 'lacking experience, wisdom or judgement' },
+        { word: 'RESILIENT',    az: 'davamlı', definition: 'able to withstand or recover quickly from difficult conditions' },
+        { word: 'TOLERANT',     az: 'tolerant', definition: 'showing willingness to allow the existence of opinions or behaviour different from one’s own' },
       ]
     },
   ]
@@ -3027,17 +3159,29 @@ const GAME_DATA = {
     'b7_g1':  { id: 'c1_b7_g1',  title: 'Game 13', phases: [
     {
       words: [
-
+        { word: 'MISSILE',      az: 'raket', definition: 'a weapon that is self-propelled or directed' },
+        { word: 'ARMED',        az: 'silahlı', definition: 'carrying or equipped with weapons' },
+        { word: 'ADVERSE',      az: 'mənfi', definition: 'preventing success or development' },
+        { word: 'DECISIVE',     az: 'qəti', definition: 'settling an issue or showing a clear result' },
       ]
     },
     {
       words: [
-
+        { word: 'DEPLOYMENT',   az: 'yerləşdirmə', definition: 'the movement of troops or equipment to a place where they are needed' },
+        { word: 'MILITARY',     az: 'hərbi', definition: 'relating to or characteristic of soldiers or armed forces' },
+        { word: 'TROOP',        az: 'qoşun', definition: 'soldiers or armed forces' },
+        { word: 'ARTILLERY',    az: 'artilleriya', definition: 'large-calibre guns used in warfare on land' },
+        { word: 'DOMINANT',     az: 'dominant', definition: 'having power and influence over others' },
       ]
     },
     {
       words: [
-
+        { word: 'COMBAT',       az: 'döyüş', definition: 'fighting between armed forces' },
+        { word: 'AUTHENTIC',    az: 'həqiqi', definition: 'of undisputed origin and not a copy' },
+        { word: 'COHERENT',     az: 'ardıcıl', definition: 'logical and consistent' },
+        { word: 'AMBITIOUS',    az: 'ambisiyalı', definition: 'having a strong desire for success' },
+        { word: 'CHARISMATIC',  az: 'xarizmatik', definition: 'exercising a compelling charm that inspires devotion' },
+        { word: 'STUBBORN',     az: 'inadkar', definition: 'determined not to change one’s attitude or position' },
       ]
     },
   ]
@@ -3047,17 +3191,27 @@ const GAME_DATA = {
     'b8_g0':  { id: 'c1_b8_g0',  title: 'Game 14', phases: [
     {
       words: [
-
+        { word: 'ALLOCATE',     az: 'bölüşdürmək', definition: 'to distribute resources according to a plan' },
+        { word: 'ASSERT',       az: 'iddia etmək', definition: 'to state a fact or belief confidently and forcefully' },
+        { word: 'ESCALATE',     az: 'güclənmək', definition: 'to become or make something more intense' },
       ]
     },
     {
       words: [
-
+        { word: 'DOCTRINE',     az: 'doktrina', definition: 'a belief or set of beliefs held and taught by a group' },
+        { word: 'NOTION',       az: 'anlayış', definition: 'a conception of or belief about something' },
+        { word: 'CONCEDE',      az: 'etiraf etmək', definition: 'to admit or agree that something is true' },
+        { word: 'CONCEIVE',     az: 'düşünmək', definition: 'to form or devise a plan or idea in the mind' },
+        { word: 'REVIVE',       az: 'canlandırmaq', definition: 'to restore to life or consciousness' },
       ]
     },
     {
       words: [
-
+        { word: 'PRINCIPLE',    az: 'prinsip', definition: 'a fundamental truth or proposition that serves as the foundation for a system' },
+        { word: 'COMPEL',       az: 'məcbur etmək', definition: 'to force or oblige someone to do something' },
+        { word: 'COMPILE',      az: 'tərtib etmək', definition: 'to produce a list, book or report by assembling information' },
+        { word: 'CONFER',       az: 'müzakirə etmək', definition: 'to have discussions or exchange opinions' },
+        { word: 'REFORM',       az: 'islahat etmək', definition: 'to make changes in something in order to improve it' },
       ]
     },
   ]
@@ -3065,17 +3219,29 @@ const GAME_DATA = {
     'b8_g1':  { id: 'c1_b8_g1',  title: 'Game 15', phases: [
     {
       words: [
-
+        { word: 'DILEMMA',      az: 'dilemma', definition: 'a situation in which a difficult choice has to be made' },
+        { word: 'ACCUMULATE',   az: 'toplamaq', definition: 'to gather together or acquire an increasing number or quantity of something' },
+        { word: 'ARTICULATE',   az: 'aydın ifadə etmək', definition: 'to express an idea or feeling fluently and coherently' },
+        { word: 'CIRCULATE',    az: 'dövriyyəyə buraxmaq', definition: 'to pass or cause to pass from place to place or person to person' },
       ]
     },
     {
       words: [
-
+        { word: 'DIGNITY',      az: 'ləyaqət', definition: 'the quality of being worthy of respect or honour' },
+        { word: 'INTEGRITY',    az: 'dürüstlük', definition: 'the quality of being honest and having strong moral principles' },
+        { word: 'IRONY',        az: 'ironi', definition: 'a situation or statement that is the opposite of what is expected' },
+        { word: 'REASONING',    az: 'mühakimə', definition: 'the process of thinking about something in a logical way' },
+        { word: 'TRANSITION',   az: 'keçid etmək', definition: 'the process or period of changing from one state to another' },
       ]
     },
     {
       words: [
-
+        { word: 'ADHERE',       az: 'riayət etmək', definition: 'to stick fast to a surface or to a rule or agreement' },
+        { word: 'CONSOLIDATE',  az: 'möhkəmləndirmək', definition: 'to make something physically stronger or more solid' },
+        { word: 'COORDINATE',   az: 'əlaqələndirmək', definition: 'to organize different elements so they work together effectively' },
+        { word: 'CONVERSION',   az: 'çevrilmə', definition: 'the process of changing or causing something to change into a different form' },
+        { word: 'EVOLVE',       az: 'inkişaf etmək', definition: 'to develop gradually from a simple to a more complex form' },
+        { word: 'THRIVE',       az: 'uğurla inkişaf etmək', definition: 'to grow or develop vigorously and successfully' },
       ]
     },
   ]
