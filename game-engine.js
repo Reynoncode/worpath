@@ -1289,21 +1289,26 @@ function _getUnfoundWords() {
       const iconStar = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#fff" stroke="#fff" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
       const iconX    = `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>`;
 
-const shownText = revealedMap[word]
+// Accent rəngindən açıq arxa plan (hərflərin dizaynı kimi)
+      const accentLight = `rgba(${r},${g},${b},0.18)`;
+      const accentBorder = `rgba(${Math.round(r*0.6)},${Math.round(g*0.6)},${Math.round(b*0.6)},1)`;
+
+      const shownText = revealedMap[word]
         ? `<span style="
             display:inline-block;
-            color:${accent};
+            color:#fff;
             font-weight:800;
-            background:${accentDark};
-            border:2px solid ${accent};
+            background:${accentLight};
+            border:2px solid ${accentBorder};
             border-radius:8px;
             padding:2px 10px;
             letter-spacing:1px;
           ">${az}</span>`
         : `<span style="
-            color:${accent};
-            font-weight:700;
-            text-shadow:0 1px 6px rgba(0,0,0,0.7), 0 0px 2px rgba(0,0,0,0.9);
+            color:${dark ? '#e2eaf5' : '#1e293b'};
+            font-weight:600;
+            font-size:13px;
+            line-height:1.4;
           ">${def || '—'}</span>`;
 
       panel.innerHTML = `
