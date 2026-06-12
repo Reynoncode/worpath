@@ -226,34 +226,34 @@ const GAME_DATA = {
   ]
 },
 
-    'b1_g3': { id: 'a1_b1_g3', title: 'Game 7', phases: [
+'b1_g3': { id: 'a1_b1_g3', title: 'Game 7', phases: [
     {
       words: [
-        { word: 'GREAT',        az: 'əla' },
-        { word: 'LARGE',        az: 'iri' },
-        { word: 'LITTLE',       az: 'balaca' },
-        { word: 'TERRIBLE',     az: 'dəhşətli' },
+        { word: 'GREAT',        az: 'əla',        definition: 'Of an extent, amount, or intensity considerably above the normal or average.' },
+        { word: 'LARGE',        az: 'iri',         definition: 'Of considerable or relatively great size, extent, or capacity.' },
+        { word: 'LITTLE',       az: 'balaca',      definition: 'Small in size, amount, or degree.' },
+        { word: 'TERRIBLE',     az: 'dəhşətli',    definition: 'Extremely bad or serious; causing or likely to cause terror.' },
       ]
     },
     {
       words: [
-        { word: 'FEEL',      az: 'hiss etmək' },
-        { word: 'HATE',      az: 'nifrət etmək' },
-        { word: 'HALF',         az: 'yarım' },
-        { word: 'FAST',         az: 'sürətli' },    
+        { word: 'FEEL',         az: 'hiss etmək',  definition: 'To be aware of a sensation or emotion through physical or mental experience.' },
+        { word: 'HATE',         az: 'nifrət etmək',definition: 'To feel intense dislike or strong aversion toward someone or something.' },
+        { word: 'HALF',         az: 'yarım',       definition: 'Either of two equal parts that together make up a whole.' },
+        { word: 'FAST',         az: 'sürətli',     definition: 'Moving or capable of moving at high speed.' },
       ]
     },
     {
       words: [
-        { word: 'PERFECT',      az: 'mükəmməl' },
-        { word: 'FRONT',        az: 'ön' },
-        { word: 'CORRECT',      az: 'düzgün' },
-        { word: 'OPEN',         az: 'açıq' },
+        { word: 'PERFECT',      az: 'mükəmməl',    definition: 'Having all the required or desirable elements, qualities, or characteristics; as good as it is possible to be.' },
+        { word: 'FRONT',        az: 'ön',          definition: 'The side or part of an object that faces forward or is normally seen first.' },
+        { word: 'CORRECT',      az: 'düzgün',      definition: 'Free from error; in accordance with fact or truth.' },
+        { word: 'OPEN',         az: 'açıq',        definition: 'Allowing access, passage, or a view; not closed or blocked.' },
       ]
     },
   ]
 },
-
+    
     // Blok 2 gameləri
     'b2_g0': { id: 'a1_b2_g0', title: 'Game 8', phases: [
     {
