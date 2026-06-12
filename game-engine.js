@@ -1564,20 +1564,20 @@ btn.addEventListener('mouseleave', (e) => {
   }
 
 function _selectLetter(idx, letter, btnEl) {
-    // Son seçilən idx ilə eyni olarsa seçmə (ardıcıl dublikat yox)
-    // Amma əvvəlki seçimlərdə olan idx-dən fərqli davran:
-    // kənara çıxıb qayıtmaqla yenidən seçmək olar
     const lastSel = state.selected[state.selected.length - 1];
-    if (lastSel === idx) return; // hələ eyni düymənin üstündəyik, skip
+    if (lastSel === idx) return;
+
+    const now = Date.now();
+    if (idx === state._lastSelectedIdx && (now - (state._lastSelectedTime || 0)) < 300) return;
+    state._lastSelectedIdx  = idx;
+    state._lastSelectedTime = now;
 
     btnEl.classList.add('sel');
     state.selected.push(idx);
     state.currentWord += letter;
-
     const x = parseFloat(btnEl.style.left);
     const y = parseFloat(btnEl.style.top);
     state.selectedPos.push({ x, y });
-
     _playTick();
     _updateTyped();
     _drawLines();
