@@ -3251,17 +3251,29 @@ const GAME_DATA = {
     'b9_g0':  { id: 'c1_b9_g0',  title: 'Game 16', phases: [
     {
       words: [
-
+        { word: 'CHAOS',        az: 'xaos', definition: 'complete disorder and confusion' },
+        { word: 'CRISIS',       az: 'böhran', definition: 'a time of intense difficulty or danger' },
+        { word: 'THREAT',       az: 'təhdid', definition: 'a statement of an intention to inflict harm' },
+        { word: 'RHETORIC',     az: 'ritorika', definition: 'the art of effective or persuasive speaking or writing' },
       ]
     },
     {
       words: [
-
+        { word: 'CONSTRAINT',   az: 'məhdudiyyət', definition: 'a limitation or restriction' },
+        { word: 'RESTRAINT',    az: 'məhdudiyyət', definition: 'a measure or condition that keeps someone or something under control' },
+        { word: 'FEAT',         az: 'qəhrəmanlıq', definition: 'an achievement that requires great courage, skill or strength' },
+        { word: 'SENSATION',    az: 'sensasiya', definition: 'a widespread reaction of interest and excitement' },
+        { word: 'IRONIC',       az: 'ironik', definition: 'using or characterized by irony' },
       ]
     },
     {
       words: [
-
+        { word: 'MERIT',        az: 'ləyaqət', definition: 'the quality of being particularly good or worthy' },
+        { word: 'RECOGNITION',  az: 'tanınma', definition: 'identification of the existence, validity or legality of something' },
+        { word: 'VICTORY',      az: 'zəfər', definition: 'an act of defeating an opponent in a battle or contest' },
+        { word: 'COMMENTARY',   az: 'şərh', definition: 'a set of explanatory notes or opinions on an event or text' },
+        { word: 'COVERAGE',     az: 'işıqlandırma', definition: 'the extent to which something is reported or dealt with by the media' },
+        { word: 'CONVEY',       az: 'çatdırmaq', definition: 'to communicate or make known an idea or feeling' },
       ]
     },
   ]
@@ -3269,17 +3281,30 @@ const GAME_DATA = {
     'b9_g1':  { id: 'c1_b9_g1',  title: 'Game 17', phases: [
     {
       words: [
-
+        { word: 'FLAW',         az: 'qüsur', definition: 'a defect or weakness in something' },
+        { word: 'RENOWNED',     az: 'məşhur', definition: 'known and respected by many people' },
+        { word: 'WORTHWHILE',   az: 'dəyərli', definition: 'worth the time, money or effort spent' },
+        { word: 'EDITORIAL',    az: 'redaksiya məqaləsi', definition: 'a newspaper or magazine article that gives the opinion of the editor' },
+        { word: 'HEADLINE',     az: 'başlıq', definition: 'the heading at the top of a newspaper story' },
       ]
     },
     {
       words: [
-
+        { word: 'PROMINENT',    az: 'görkəmli', definition: 'important or famous' },
+        { word: 'CORRESPONDENT', az: 'müxbir', definition: 'a journalist who reports from a particular place or on a specific subject' },
+        { word: 'DISCOURSE',    az: 'diskurs', definition: 'written or spoken communication or debate' },
+        { word: 'RUMOUR',       az: 'şayiə', definition: 'a currently circulating story or report of uncertain truth' },
+        { word: 'SPECTRUM',     az: 'spektr', definition: 'a wide range of different but related ideas or opinions' },
       ]
     },
     {
       words: [
-
+        { word: 'OBSTACLE',     az: 'maneə', definition: 'a thing that blocks one’s way or prevents progress' },
+        { word: 'EXCEPTIONAL',  az: 'müstəsna', definition: 'unusually good or remarkable' },
+        { word: 'PUBLICATION',  az: 'nəşr', definition: 'a book, journal or other printed material that is issued for sale' },
+        { word: 'TRANSCRIPT',   az: 'transkript', definition: 'a written or printed version of material originally presented in another medium' },
+        { word: 'ARTICULATE',   az: 'aydın ifadə etmək', definition: 'to express an idea or feeling fluently and coherently' },
+        { word: 'EXPLICIT',     az: 'açıq', definition: 'stated clearly and in detail, leaving no room for confusion' },
       ]
     },
   ]
@@ -3289,17 +3314,27 @@ const GAME_DATA = {
     'b10_g0': { id: 'c1_b10_g0', title: 'Game 18', phases: [
     {
       words: [
-
+        { word: 'RATIO',        az: 'nisbət', definition: 'the quantitative relation between two amounts' },
+        { word: 'TRAUMA',       az: 'travma', definition: 'a deeply distressing or disturbing experience' },
+        { word: 'TUMOUR',       az: 'şiş', definition: 'a mass of cells growing abnormally in the body' },
+        { word: 'HABITAT',      az: 'yaşayış mühiti', definition: 'the natural home or environment of an animal or plant' },
       ]
     },
     {
       words: [
-
+        { word: 'EMISSION',     az: 'emissiya', definition: 'the production and discharge of something, especially gas or radiation' },
+        { word: 'EROSION',      az: 'eroziya', definition: 'the process of eroding or being eroded by wind, water or other natural agents' },
+        { word: 'MARINE',       az: 'donanma', definition: 'relating to the sea' },
+        { word: 'OZONE',        az: 'ozon', definition: 'a colourless unstable gas that forms a protective layer in the atmosphere' },
       ]
     },
     {
       words: [
-
+        { word: 'GENETIC',      az: 'genetik', definition: 'relating to genes or heredity' },
+        { word: 'CLINICAL',     az: 'klinik', definition: 'relating to the observation and treatment of actual patients' },
+        { word: 'ECOLOGICAL',   az: 'ekoloji', definition: 'relating to the relationships between living organisms and their environment' },
+        { word: 'EXTINCTION',   az: 'nəslin kəsilməsi', definition: 'the state of a species no longer existing' },
+        { word: 'TOXIC',        az: 'zəhərli', definition: 'containing or being poisonous' },
       ]
     },
   ]
@@ -3307,17 +3342,28 @@ const GAME_DATA = {
     'b10_g1': { id: 'c1_b10_g1', title: 'Game 19', phases: [
     {
       words: [
-
+        { word: 'EMPIRICAL',    az: 'empirik', definition: 'based on observation or experience rather than theory' },
+        { word: 'PARAMETER',    az: 'parametr', definition: 'a numerical or other measurable factor that defines a system' },
+        { word: 'EPIDEMIC',     az: 'epidemiya', definition: 'the rapid spread of a disease to many people in a community' },
+        { word: 'CLIMATE',      az: 'iqlim', definition: 'the long-term weather conditions in a particular region' },
       ]
     },
     {
       words: [
-
+        { word: 'HYPOTHESIS',   az: 'hipotez', definition: 'a supposition or proposed explanation made on the basis of limited evidence as a starting point for further investigation' },
+        { word: 'PROTOTYPE',    az: 'prototip', definition: 'a first or preliminary model of something' },
+        { word: 'OBESITY',      az: 'piylənmə', definition: 'the condition of being grossly fat or overweight' },
+        { word: 'THERAPY',      az: 'terapiya', definition: 'treatment intended to relieve or heal a disorder' },
       ]
     },
     {
       words: [
-
+        { word: 'THEORETICAL',  az: 'nəzəri', definition: 'concerned with or involving the theory of a subject or area of study rather than its practical application' },
+        { word: 'VARIABLE',     az: 'dəyişən', definition: 'a factor that can change in a scientific experiment' },
+        { word: 'CORRELATION',  az: 'korrelyasiya', definition: 'a mutual relationship or connection between two or more things' },
+        { word: 'CHRONIC',      az: 'xroniki', definition: 'persisting for a long time or constantly recurring' },
+        { word: 'INFECTION',    az: 'infeksiya', definition: 'the invasion of an organism’s body tissues by disease-causing agents' },
+        { word: 'VACCINE',      az: 'vaksin', definition: 'a substance used to stimulate the production of antibodies and provide immunity' },
       ]
     },
   ]
@@ -3327,17 +3373,31 @@ const GAME_DATA = {
     'b11_g0': { id: 'c1_b11_g0', title: 'Game 20', phases: [
     {
       words: [
-
+        { word: 'ARTISTIC',     az: 'bədii', definition: 'having or revealing creative skill and imagination' },
+        { word: 'CLASSICAL',    az: 'klassik', definition: 'relating to ancient Greek or Roman culture' },
+        { word: 'RITUAL',       az: 'ritual', definition: 'a religious or solemn ceremony consisting of a series of actions' },
+        { word: 'ASSAULT',      az: 'hücum', definition: 'a violent physical attack on someone' },
+        { word: 'TACTICAL',     az: 'taktik', definition: 'relating to short-term military planning' },
       ]
     },
     {
       words: [
-
+        { word: 'CANVAS',       az: 'kətan', definition: 'a strong cloth used as a surface for painting' },
+        { word: 'CONVICTION',   az: 'məhkumetmə', definition: 'a formal declaration that someone is guilty of a crime' },
+        { word: 'SANCTION',     az: 'sanksiya', definition: 'a threatened penalty for disobeying a law or rule' },
+        { word: 'VIOLATION',    az: 'pozuntu', definition: 'the action of breaking a law, rule or agreement' },
+        { word: 'INVASION',     az: 'işğal', definition: 'an act of invading a country or region with an armed force' },
       ]
     },
     {
       words: [
-
+        { word: 'GENRE',        az: 'janr', definition: 'a category of artistic composition' },
+        { word: 'LITERATURE',   az: 'ədəbiyyat', definition: 'written works, especially those considered of superior artistic merit' },
+        { word: 'ALLEGATION',   az: 'iddia', definition: 'a claim or assertion that someone has done something illegal or wrong, typically without proof' },
+        { word: 'REGULATION',   az: 'tənzimləmə', definition: 'an official rule or law controlling how something is done' },
+        { word: 'GUERRILLA',    az: 'partizan', definition: 'a member of an irregular armed force that fights a stronger force by sabotage and harassment' },
+        { word: 'RIOT',         az: 'iğtişaş', definition: 'a violent disturbance by a crowd of people' },
+        { word: 'TORTURE',      az: 'işgəncə', definition: 'the infliction of severe pain to punish or extract information' },
       ]
     },
   ]
@@ -3345,17 +3405,30 @@ const GAME_DATA = {
     'b11_g1': { id: 'c1_b11_g1', title: 'Game 21', phases: [
     {
       words: [
-
+        { word: 'WARRANT',      az: 'axtarış orderi', definition: 'an official authorization or a document authorizing an action' },
+        { word: 'LAWFUL',       az: 'qanuni', definition: 'conforming to or permitted by law' },
+        { word: 'UNLAWFUL',     az: 'qeyri-qanuni', definition: 'not conforming to or permitted by law' },
+        { word: 'VETERAN',      az: 'veteran', definition: 'a person who has had long experience in a particular field' },
+        { word: 'WARFARE',      az: 'müharibə', definition: 'the activity of fighting a war' },
       ]
     },
     {
       words: [
-
+        { word: 'AESTHETIC',    az: 'estetik', definition: 'concerned with beauty or the appreciation of beauty' },
+        { word: 'HERITAGE',     az: 'miras', definition: 'property or traditions that are inherited from the past' },
+        { word: 'ORCHESTRA',    az: 'orkestr', definition: 'a large group of musicians who play various instruments together' },
+        { word: 'BREACH',       az: 'pozuntu', definition: 'an act of breaking or failing to observe a law, agreement or code of conduct' },
+        { word: 'HOSTAGE',      az: 'girov', definition: 'a person held captive by force as a means of bargaining' },
       ]
     },
     {
       words: [
-
+        { word: 'INDICTMENT',   az: 'ittihamnamə', definition: 'a formal charge or accusation of a serious crime' },
+        { word: 'LEGISLATION',  az: 'qanunvericilik', definition: 'laws collectively or the process of making or enacting laws' },
+        { word: 'LEGITIMATE',   az: 'qanuni', definition: 'conforming to the law or rules' },
+        { word: 'GENOCIDE',     az: 'soyqırım', definition: 'the deliberate killing of a large number of people from a particular nation or group' },
+        { word: 'MILITANT',     az: 'silahlı', definition: 'a person who is engaged in aggressive or violent action' },
+        { word: 'MISSILE',      az: 'raket', definition: 'a weapon that is self-propelled or directed' },
       ]
     },
   ]
@@ -3365,17 +3438,25 @@ const GAME_DATA = {
     'b12_g0': { id: 'c1_b12_g0', title: 'Game 22', phases: [
     {
       words: [
-
+        { word: 'MERGER',       az: 'birləşmə', definition: 'the combining of two or more companies into one' },
+        { word: 'RACISM',       az: 'irqçilik', definition: 'prejudice, discrimination or antagonism directed against a person based on race' },
+        { word: 'SARCASM',      az: 'sarkazm', definition: 'the use of irony to mock or convey contempt' },
       ]
     },
     {
       words: [
-
+        { word: 'ASSET',        az: 'aktiv', definition: 'a useful or valuable thing or person owned by a company' },
+        { word: 'INTEGRATION',  az: 'inteqrasiya', definition: 'the process of combining different groups into a unified society' },
+        { word: 'NEGOTIATION',  az: 'danışıqlar', definition: 'discussion aimed at reaching an agreement' },
+        { word: 'ASSERTION',    az: 'iddia', definition: 'a confident and forceful statement of fact or belief' },
       ]
     },
     {
       words: [
-
+        { word: 'TURNOVER',     az: 'dövriyyə', definition: 'the total sales made by a business over a period' },
+        { word: 'TOLERANCE',    az: 'tolerantlıq', definition: 'the ability to accept opinions or behaviour different from one’s own' },
+        { word: 'VULNERABLE',   az: 'həssas', definition: 'exposed to the possibility of being attacked or harmed' },
+        { word: 'VERBAL',       az: 'şifahi', definition: 'relating to or in the form of words' },
       ]
     },
   ]
@@ -3383,17 +3464,29 @@ const GAME_DATA = {
     'b12_g1': { id: 'c1_b12_g1', title: 'Game 23', phases: [
     {
       words: [
-
+        { word: 'COMMODITY',    az: 'əmtəə', definition: 'a raw material or primary agricultural product that can be bought and sold' },
+        { word: 'MIGRATION',    az: 'miqrasiya', definition: 'the movement of people from one country or area to another' },
+        { word: 'MINORITY',     az: 'azlıq', definition: 'a smaller group of people differing from the rest of a community' },
+        { word: 'IRONY',        az: 'ironi', definition: 'a situation or statement that is the opposite of what is expected' },
       ]
     },
     {
       words: [
-
+        { word: 'TRANSACTION',  az: 'əməliyyat', definition: 'an instance of buying or selling something' },
+        { word: 'ARTICULATE',   az: 'aydın ifadə etmək', definition: 'to express an idea or feeling fluently and coherently' },
+        { word: 'INTERPRET',    az: 'şərh etmək', definition: 'to explain the meaning of something' },
+        { word: 'PERSUASION',   az: 'inandırma', definition: 'the action or process of persuading someone' },
+        { word: 'CONSULTATION', az: 'məsləhət', definition: 'the action or process of formally consulting or discussing' },
       ]
     },
     {
       words: [
-
+        { word: 'DEFICIT',      az: 'kəsir', definition: 'the amount by which expenditure exceeds income' },
+        { word: 'FISCAL',       az: 'fiskal', definition: 'relating to government revenue, especially through taxation' },
+        { word: 'SHAREHOLDER',  az: 'səhmdar', definition: 'a person who owns shares in a company' },
+        { word: 'YIELD',        az: 'gəlir (investisiya)', definition: 'the profit or income from an investment' },
+        { word: 'SOLIDARITY',   az: 'həmrəylik', definition: 'unity or agreement of feeling or action among individuals' },
+        { word: 'RHETORIC',     az: 'ritorika', definition: 'the art of effective or persuasive speaking or writing' },
       ]
     },
   ]
@@ -3403,17 +3496,24 @@ const GAME_DATA = {
     'b13_g0': { id: 'c1_b13_g0', title: 'Game 24', phases: [
     {
       words: [
-
+        { word: 'MISERY',       az: 'əzab', definition: 'a state or feeling of great distress or discomfort' },
+        { word: 'CYNICISM',     az: 'kinizm', definition: 'an inclination to believe that people are motivated purely by self-interest' },
+        { word: 'MERCY',        az: 'mərhəmət', definition: 'compassion or forgiveness shown towards someone' },
       ]
     },
     {
       words: [
-
+        { word: 'INTENSE',      az: 'güclü', definition: 'of extreme force, degree or strength' },
+        { word: 'ABSENCE',      az: 'yoxluq', definition: 'the state of being away from a place or person' },
+        { word: 'AESTHETIC',    az: 'estetik', definition: 'concerned with beauty or the appreciation of beauty' },
       ]
     },
     {
       words: [
-
+        { word: 'ADVERSE',      az: 'mənfi', definition: 'preventing success or development' },
+        { word: 'CREDIBLE',     az: 'etibarlı', definition: 'able to be believed or trusted' },
+        { word: 'DECISIVE',     az: 'qəti', definition: 'settling an issue or showing a clear result' },
+        { word: 'ACCESSIBLE',   az: 'əlçatan', definition: 'easy to approach, reach or understand' },
       ]
     },
   ]
@@ -3421,17 +3521,30 @@ const GAME_DATA = {
     'b13_g1': { id: 'c1_b13_g1', title: 'Game 25', phases: [
     {
       words: [
-
+        { word: 'HATRED',       az: 'nifrət', definition: 'intense dislike or ill will' },
+        { word: 'DEDICATION',   az: 'sədaqət', definition: 'the quality of being committed to a task or purpose' },
+        { word: 'COHERENT',     az: 'ardıcıl', definition: 'logical and consistent' },
+        { word: 'INHERENT',     az: 'daxili', definition: 'existing in something as a permanent and inseparable element' },
       ]
     },
     {
       words: [
-
+        { word: 'ATROCITY',     az: 'vəhşilik', definition: 'an extremely wicked or cruel act, typically one involving physical violence or injury' },
+        { word: 'INTEGRITY',    az: 'dürüstlük', definition: 'the quality of being honest and having strong moral principles' },
+        { word: 'LOYALTY',      az: 'sədaqət', definition: 'a strong feeling of support or allegiance' },
+        { word: 'TOLERANCE',    az: 'tolerantlıq', definition: 'the ability to accept opinions or behaviour different from one’s own' },
+        { word: 'INTEGRAL',     az: 'ayrılmaz', definition: 'necessary to make a whole complete' },
+        { word: 'ALLEGATION',   az: 'iddia', definition: 'a claim or assertion that someone has done something illegal or wrong, typically without proof' },
       ]
     },
     {
       words: [
-
+        { word: 'CORRUPTION',   az: 'korrupsiya', definition: 'dishonest or fraudulent conduct by those in power, typically involving bribery' },
+        { word: 'SUSPICION',    az: 'şübhə', definition: 'a feeling or thought that something is possible or true' },
+        { word: 'TRAUMA',       az: 'travma', definition: 'a deeply distressing or disturbing experience' },
+        { word: 'COMPASSION',   az: 'şəfqət', definition: 'sympathetic pity and concern for the sufferings of others' },
+        { word: 'OPTIMISM',     az: 'optimizm', definition: 'hopefulness and confidence about the future' },
+        { word: 'ASPIRATION',   az: 'istək', definition: 'a hope or ambition of achieving something' },
       ]
     },
   ]
@@ -3439,17 +3552,31 @@ const GAME_DATA = {
     'b13_g2': { id: 'c1_b13_g2', title: 'Game 26', phases: [
     {
       words: [
-
+        { word: 'CONTEMPT',     az: 'nifrət', definition: 'the feeling that a person or thing is worthless or beneath consideration' },
+        { word: 'DOMINANT',     az: 'dominant', definition: 'having power and influence over others' },
+        { word: 'ACTIVATION',   az: 'aktivləşdirmə', definition: 'the action of making something active or operative' },
+        { word: 'ADOPTION',     az: 'qəbul etmə', definition: 'the action of adopting or being adopted' },
+        { word: 'ADVOCATE',     az: 'müdafiəçi', definition: 'a person who publicly supports or recommends a particular cause' },
       ]
     },
     {
       words: [
-
+        { word: 'FRUSTRATION',  az: 'məyusluq', definition: 'the feeling of being upset or annoyed as a result of being unable to change or achieve something' },
+        { word: 'GRIEF',        az: 'yas', definition: 'intense sorrow, especially caused by someone’s death' },
+        { word: 'GUILT',        az: 'günah hissi', definition: 'a feeling of having done something wrong or immoral' },
+        { word: 'OUTRAGE',      az: 'qəzəb', definition: 'an extremely strong reaction of anger or shock' },
+        { word: 'FAIRNESS',     az: 'ədalətlilik', definition: 'impartial and just treatment or behaviour' },
+        { word: 'AGGRESSION',   az: 'aqressiya', definition: 'hostile or violent behaviour or attitudes' },
       ]
     },
     {
       words: [
-
+        { word: 'BETRAYAL',     az: 'xəyanət', definition: 'the action of betraying someone or something' },
+        { word: 'VULNERABILITY', az: 'həssaslıq', definition: 'the quality of being easily hurt or attacked' },
+        { word: 'VIRTUE',       az: 'fəzilət', definition: 'behaviour showing high moral standards' },
+        { word: 'SINCERITY',    az: 'səmimiyyət', definition: 'the quality of being free from pretence or deceit' },
+        { word: 'INEVITABLE',   az: 'qaçılmaz', definition: 'certain to happen and unavoidable' },
+        { word: 'SUBSTANTIAL',  az: 'əhəmiyyətli', definition: 'of considerable importance, size or worth' },
       ]
     },
   ]
