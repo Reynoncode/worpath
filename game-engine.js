@@ -785,12 +785,13 @@ function _findFreeRow(grid, wordLen, size, placed) {
         border-bottom:none;
         flex-shrink:0; position:relative;
       }
-      #wg-hint-btn {
+#wg-hint-btn {
         width:36px; height:36px; border-radius:50%; border:none;
         background:${dark ? 'rgba(245,200,66,0.13)' : 'rgba(245,200,66,0.15)'};
         cursor:pointer; display:flex; align-items:center; justify-content:center;
         flex-shrink:0; transition:background .15s;
         box-shadow:0 2px 10px rgba(0,0,0,0.35);
+        margin-top:10px; align-self:flex-start;
       }
       #wg-hint-btn:active { background:${dark ? 'rgba(245,200,66,0.22)' : 'rgba(245,200,66,0.28)'}; }
 
@@ -898,14 +899,15 @@ function _findFreeRow(grid, wordLen, size, placed) {
         z-index:10; flex-shrink:0;
       }
       #wg-hint-reveal-inline.visible { display:flex; }
-      #wg-hint-reveal-inline-btn {
+#wg-hint-reveal-inline-btn {
         display:flex; align-items:center; gap:5px;
         background:${C.accent}; color:#fff;
         border:none; border-radius:8px;
-        padding:5px 12px; font-size:12px; font-weight:700;
+        padding:5px 12px 5px 12px; font-size:12px; font-weight:700;
         cursor:pointer; white-space:nowrap;
         transition:transform .1s;
         flex-shrink:0;
+        margin-right:10px;
       }
       #wg-hint-reveal-inline-btn:active { transform:scale(.95); }
       #wg-hint-reveal-inline-close {
@@ -1287,10 +1289,10 @@ function _getUnfoundWords() {
       const accentLight = `rgba(${r},${g},${b},0.18)`;
       const accentBorder = `rgba(${Math.round(r*0.6)},${Math.round(g*0.6)},${Math.round(b*0.6)},1)`;
 
-      const shownText = revealedMap[word]
+const shownText = revealedMap[word]
         ? `<span style="
             display:inline-block;
-            color:#fff;
+            color:${dark ? '#fff' : accentBorder};
             font-weight:800;
             background:${accentLight};
             border:2px solid ${accentBorder};
@@ -1336,11 +1338,13 @@ function _getUnfoundWords() {
       });
 
       // Definition-a toxunanda inline overlay aç
-      document.getElementById('wg-hint-def-text')?.addEventListener('click', (e) => {
+document.getElementById('wg-hint-def-text')?.addEventListener('click', (e) => {
         e.stopPropagation();
         if (isFound || revealedMap[word]) return;
         const inline = document.getElementById('wg-hint-reveal-inline');
         if (inline) inline.classList.add('visible');
+        const defText = document.getElementById('wg-hint-def-text');
+        if (defText) defText.style.visibility = 'hidden';
       });
 
       // Tərcüməni gör
@@ -1362,9 +1366,11 @@ function _getUnfoundWords() {
       });
 
       // Bağla
-      document.getElementById('wg-hint-reveal-inline-close')?.addEventListener('click', (e) => {
+document.getElementById('wg-hint-reveal-inline-close')?.addEventListener('click', (e) => {
         e.stopPropagation();
         document.getElementById('wg-hint-reveal-inline')?.classList.remove('visible');
+        const defText = document.getElementById('wg-hint-def-text');
+        if (defText) defText.style.visibility = 'visible';
       });
     }
 
