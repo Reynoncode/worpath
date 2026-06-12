@@ -871,13 +871,10 @@ function _findFreeRow(grid, wordLen, size, placed) {
         opacity:.65;
       }
 
-      #wg-hint-reveal-inline {
+#wg-hint-reveal-inline {
         display:none;
-        position:absolute; inset:0;
-        align-items:center; gap:6px;
-        background:${dark ? 'rgba(14,26,40,0.92)' : 'rgba(240,242,248,0.92)'};
-        border-radius:8px; padding:0 8px;
-        z-index:10;
+        align-items:center; gap:4px;
+        z-index:10; flex-shrink:0;
       }
       #wg-hint-reveal-inline.visible { display:flex; }
       #wg-hint-reveal-inline-btn {
@@ -1244,8 +1241,8 @@ function _buildHintPanel() {
       panel.innerHTML = `
         <div id="wg-hint-card">
           <div id="wg-hint-body">
-            <div id="wg-hint-def" class="${isFound ? 'found-word' : ''}">
-              <span id="wg-hint-def-text">${shownText}</span>
+            <div id="wg-hint-def" class="${isFound ? 'found-word' : ''}" style="display:flex;align-items:center;gap:6px;overflow:hidden;">
+              <span id="wg-hint-def-text" style="flex:1;overflow:hidden;">${shownText}</span>
               <div id="wg-hint-reveal-inline">
                 <button id="wg-hint-reveal-inline-btn">${iconStar} 1 ulduzla tərcüməni gör</button>
                 <button id="wg-hint-reveal-inline-close">${iconX}</button>
@@ -1780,14 +1777,16 @@ hintBtn?.addEventListener('click', (e) => {
       const placeholder = document.querySelector('.wg-tplaceholder');
       if (!panel) return;
       const isOpen = panel.classList.contains('open');
-      if (isOpen) {
+if (isOpen) {
         panel.classList.remove('open');
-        setTimeout(() => { panel.style.display = 'none'; }, 300);
-        setTimeout(() => { if (placeholder) placeholder.classList.remove('hidden'); }, 300);
+        setTimeout(() => {
+          panel.style.display = 'none';
+          if (placeholder) placeholder.classList.remove('hidden');
+        }, 300);
       } else {
         panel.style.display = 'block';
         requestAnimationFrame(() => panel.classList.add('open'));
-        if (placeholder) placeholder.classList.add('hidden');
+        setTimeout(() => { if (placeholder) placeholder.classList.add('hidden'); }, 30);
       }
     });
 
