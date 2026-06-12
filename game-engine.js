@@ -1790,19 +1790,17 @@ if (isOpen) {
       }
     });
 
-    ov.addEventListener('click', (e) => {
+ov.addEventListener('click', (e) => {
       if (!e.target.closest('#wg-hint-btn') && !e.target.closest('#wg-hint-card')) {
         const panel = document.getElementById('wg-hint-panel');
         if (panel?.classList.contains('open')) {
           panel.classList.remove('open');
-          setTimeout(() => { panel.style.display = 'none'; }, 300);
+          setTimeout(() => {
+            panel.style.display = 'none';
+            const placeholder = document.querySelector('.wg-tplaceholder');
+            if (placeholder) placeholder.classList.remove('hidden');
+          }, 300);
         }
-      }
-    });
-
-    ov.addEventListener('click', (e) => {
-      if (!e.target.closest('#wg-hint-btn') && !e.target.closest('#wg-hint-popup')) {
-        if (hintPopup) hintPopup.style.display = 'none';
       }
     });
 
