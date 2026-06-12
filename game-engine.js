@@ -809,7 +809,7 @@ function _findFreeRow(grid, wordLen, size, placed) {
       }
       #wg-hint-panel.open { pointer-events:all; }
 
-      #wg-hint-card {
+#wg-hint-card {
         position:absolute;
         bottom:0; left:0; right:0;
         background:${dark ? 'rgba(14,26,40,0.45)' : 'rgba(220,227,245,0.38)'};
@@ -817,7 +817,7 @@ function _findFreeRow(grid, wordLen, size, placed) {
         -webkit-backdrop-filter:blur(3px);
         border-top:1.5px solid ${dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)'};
         border-radius:18px 18px 0 0;
-        padding:14px 16px 10px;
+        padding:9px 16px 7px;
         transform:translateX(-100%);
         transition:transform 0.3s cubic-bezier(.4,0,.2,1);
         pointer-events:all;
@@ -851,19 +851,26 @@ function _findFreeRow(grid, wordLen, size, placed) {
       .wg-hnav-btn:active { transform:scale(.88); }
       .wg-hnav-btn:disabled { opacity:.3; cursor:default; }
 
-      #wg-hint-body {
+#wg-hint-body {
         position:relative;
         display:flex; align-items:center;
+        gap:8px;
+        min-height:38px;
       }
 #wg-hint-def {
-        font-size:14px; line-height:1.3;
-        color:${dark ? '#c8d4e8' : '#2d3a52'};
+        font-size:14px; line-height:1.35;
+        color:${dark ? '#e2eaf5' : '#1e293b'};
         font-weight:700; flex:1;
-        padding-right:8px;
-        white-space:nowrap;
         overflow:hidden;
         cursor:pointer;
         position:relative;
+        display:flex; align-items:center; gap:6px;
+        text-shadow:${dark ? '0 1px 6px rgba(0,0,0,0.55)' : '0 1px 4px rgba(0,0,0,0.12)'};
+      }
+      #wg-hint-def.found-word {
+        color:${dark ? '#4ade80' : '#16a34a'};
+        text-decoration:line-through;
+        opacity:.65;
       }
       #wg-hint-def.found-word {
         color:${dark ? '#4ade80' : '#16a34a'};
@@ -871,7 +878,16 @@ function _findFreeRow(grid, wordLen, size, placed) {
         opacity:.65;
       }
 
-#wg-hint-reveal-inline {
+#wg-hint-def-text {
+        display:-webkit-box;
+        -webkit-line-clamp:2;
+        -webkit-box-orient:vertical;
+        overflow:hidden;
+        flex:1;
+        white-space:normal;
+        word-break:break-word;
+      }
+      #wg-hint-reveal-inline {
         display:none;
         align-items:center; gap:4px;
         z-index:10; flex-shrink:0;
@@ -1241,8 +1257,8 @@ function _buildHintPanel() {
       panel.innerHTML = `
         <div id="wg-hint-card">
           <div id="wg-hint-body">
-            <div id="wg-hint-def" class="${isFound ? 'found-word' : ''}" style="display:flex;align-items:center;gap:6px;overflow:hidden;">
-              <span id="wg-hint-def-text" style="flex:1;overflow:hidden;">${shownText}</span>
+            <div id="wg-hint-def" class="${isFound ? 'found-word' : ''}">
+              <span id="wg-hint-def-text">${shownText}</span>
               <div id="wg-hint-reveal-inline">
                 <button id="wg-hint-reveal-inline-btn">${iconStar} 1 ulduzla tərcüməni gör</button>
                 <button id="wg-hint-reveal-inline-close">${iconX}</button>
@@ -1256,20 +1272,6 @@ function _buildHintPanel() {
         </div>
       `;
 
-      // Font ölçüsünü avtomatik tənzimlə
-      const defTextEl = document.getElementById('wg-hint-def-text');
-      const defEl     = document.getElementById('wg-hint-def');
-      if (defTextEl && defEl) {
-        const availW = defEl.offsetWidth || 240;
-        const textLen = (revealedMap[word] ? az : def).length;
-        let fs = 14;
-        if (textLen > 90) fs = 10;
-        else if (textLen > 70) fs = 11;
-        else if (textLen > 50) fs = 12;
-        defTextEl.style.fontSize   = fs + 'px';
-        defTextEl.style.fontWeight = '700';
-        defTextEl.style.whiteSpace = 'nowrap';
-      }
 
       // Nav events
       document.getElementById('wg-hnav-prev')?.addEventListener('click', (e) => {
