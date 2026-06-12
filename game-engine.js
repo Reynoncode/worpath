@@ -876,7 +876,6 @@ function _findFreeRow(grid, wordLen, size, placed) {
         cursor:pointer;
         position:relative;
         display:flex; align-items:center; gap:6px;
-        text-shadow:${dark ? '0 1px 6px rgba(0,0,0,0.55)' : '0 1px 4px rgba(0,0,0,0.12)'};
       }
       #wg-hint-def.found-word {
         color:${dark ? '#4ade80' : '#16a34a'};
