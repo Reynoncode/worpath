@@ -799,18 +799,116 @@ function _findFreeRow(grid, wordLen, size, placed) {
       }
       #wg-hint-btn:active { background:${dark ? 'rgba(245,200,66,0.22)' : 'rgba(245,200,66,0.28)'}; }
 
-      #wg-hint-popup {
+#wg-hint-panel {
         display:none;
-        position:absolute; bottom:50px; left:14px;
+        position:absolute;
+        bottom:0; left:0; right:0;
         z-index:200;
-        background:${C.card};
-        border:1.5px solid ${C.border};
-        border-radius:14px;
-        padding:12px 14px; width:280px;
-        box-shadow:0 8px 24px rgba(0,0,0,.22);
+        height:100%;
+        pointer-events:none;
       }
-      #wg-hint-list { display:flex; flex-wrap:wrap; gap:7px; }
+      #wg-hint-panel.open { pointer-events:all; }
 
+      #wg-hint-card {
+        position:absolute;
+        bottom:0; left:0; right:0;
+        background:${dark ? 'rgba(14,26,40,0.45)' : 'rgba(220,227,245,0.38)'};
+        backdrop-filter:blur(3px);
+        -webkit-backdrop-filter:blur(3px);
+        border-top:1.5px solid ${dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)'};
+        border-radius:18px 18px 0 0;
+        padding:14px 16px 10px;
+        transform:translateX(-100%);
+        transition:transform 0.3s cubic-bezier(.4,0,.2,1);
+        pointer-events:all;
+      }
+      #wg-hint-panel.open #wg-hint-card {
+        transform:translateX(0);
+      }
+
+      #wg-hint-top {
+        display:flex; align-items:center;
+        justify-content:space-between;
+        margin-bottom:10px;
+      }
+      #wg-hint-counter {
+        font-size:12px; font-weight:600;
+        color:${dark ? 'rgba(180,200,220,0.7)' : 'rgba(60,80,120,0.6)'};
+        letter-spacing:.3px;
+      }
+      #wg-hint-nav {
+        display:flex; gap:6px; align-items:center;
+      }
+      .wg-hnav-btn {
+        width:32px; height:32px; border-radius:50%; border:none;
+        background:${dark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)'};
+        color:${dark ? '#c8d4e8' : '#4a5568'};
+        display:flex; align-items:center; justify-content:center;
+        cursor:pointer; font-size:16px; font-weight:700;
+        transition:background .15s, transform .1s;
+        flex-shrink:0;
+      }
+      .wg-hnav-btn:active { transform:scale(.88); }
+      .wg-hnav-btn:disabled { opacity:.3; cursor:default; }
+
+      #wg-hint-body {
+        position:relative; min-height:52px;
+        display:flex; align-items:center;
+      }
+      #wg-hint-def {
+        font-size:14px; line-height:1.55;
+        color:${dark ? '#c8d4e8' : '#2d3a52'};
+        font-weight:500; flex:1;
+        padding-right:8px;
+        filter:blur(0);
+        transition:opacity .18s, filter .18s;
+      }
+      #wg-hint-def.found-word {
+        color:${dark ? '#4ade80' : '#16a34a'};
+        text-decoration:line-through;
+        opacity:.65;
+      }
+
+      #wg-hint-reveal-overlay {
+        display:none;
+        position:absolute; inset:0;
+        align-items:center; justify-content:center;
+        z-index:5;
+      }
+      #wg-hint-reveal-overlay.visible { display:flex; }
+      #wg-hint-reveal-btn {
+        background:${dark ? 'rgba(10,18,28,0.72)' : 'rgba(240,242,248,0.82)'};
+        border:none; border-radius:12px;
+        padding:8px 16px;
+        font-size:13px; font-weight:700;
+        color:#f5c842;
+        cursor:pointer;
+        box-shadow:0 2px 12px rgba(0,0,0,0.28);
+        text-shadow:0 1px 6px rgba(180,130,0,0.4);
+        display:flex; align-items:center; gap:6px;
+        transition:transform .1s;
+        backdrop-filter:blur(4px);
+        -webkit-backdrop-filter:blur(4px);
+        white-space:nowrap;
+      }
+      #wg-hint-reveal-btn:active { transform:scale(.95); }
+
+      #wg-hint-dots {
+        display:flex; gap:4px; justify-content:center;
+        margin-top:10px;
+      }
+      .wg-hdot {
+        width:5px; height:5px; border-radius:50%;
+        background:${dark ? 'rgba(255,255,255,0.18)' : 'rgba(0,0,0,0.15)'};
+        transition:background .2s, transform .2s;
+      }
+      .wg-hdot.active {
+        background:${C.accent};
+        transform:scale(1.3);
+      }
+      .wg-hdot.found-dot {
+        background:${dark ? '#4ade80' : '#16a34a'};
+      }
       .wg-chip {
         display:inline-flex; align-items:center; gap:5px;
         padding:5px 14px; border-radius:20px;
@@ -963,11 +1061,9 @@ function _findFreeRow(grid, wordLen, size, placed) {
       <div id="wg-cw"></div>
     </div>
 
-    <div id="wg-hint-row">
+<div id="wg-hint-row">
       <button id="wg-hint-btn" title="İpucu">${iconHint}</button>
-      <div id="wg-hint-popup">
-        <div id="wg-hint-list">${cluesHTML}</div>
-      </div>
+      <div id="wg-hint-panel"></div>
       <div id="wg-typed-word">
         <span class="wg-tplaceholder">Hərfləri birləşdir...</span>
       </div>
@@ -1059,7 +1155,117 @@ function _findFreeRow(grid, wordLen, size, placed) {
       });
     });
   }
+  
+function _buildHintPanel() {
+    const panel = document.getElementById('wg-hint-panel');
+    if (!panel) return;
 
+    const words = state.placedWords;
+    let currentIdx = 0;
+
+    const revealedMap = {};
+
+    function _closePanel() {
+      panel.classList.remove('open');
+      setTimeout(() => { panel.style.display = 'none'; }, 300);
+    }
+
+    function _renderHint() {
+      const pw       = words[currentIdx];
+      const word     = pw.word;
+      const def      = pw.definition || '';
+      const az       = pw.az || '';
+      const isFound  = state.foundWords.has(word);
+      const revealed = revealedMap[word];
+      const total    = words.length;
+
+      const dotHTML = words.map((w, i) => {
+        const cls = state.foundWords.has(w.word)
+          ? 'wg-hdot found-dot'
+          : i === currentIdx ? 'wg-hdot active' : 'wg-hdot';
+        return `<div class="${cls}"></div>`;
+      }).join('');
+
+      const prevDisabled = currentIdx === 0         ? 'disabled' : '';
+      const nextDisabled = currentIdx === total - 1 ? 'disabled' : '';
+
+      const iconPrev = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>`;
+      const iconNext = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>`;
+      const iconStar = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="#f5c842" stroke="#f5c842" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+
+      let defHTML = '';
+      if (revealed) {
+        defHTML = `<span style="color:#f5c842;font-weight:700;">${az}</span>`;
+      } else if (def) {
+        defHTML = def;
+      } else {
+        defHTML = '';
+      }
+
+      const showRevealOverlay = !revealed && !isFound;
+
+      panel.innerHTML = `
+        <div id="wg-hint-card">
+          <div id="wg-hint-top">
+            <span id="wg-hint-counter">${currentIdx + 1} / ${total}</span>
+            <div id="wg-hint-nav">
+              <button class="wg-hnav-btn" id="wg-hnav-prev" ${prevDisabled}>${iconPrev}</button>
+              <button class="wg-hnav-btn" id="wg-hnav-next" ${nextDisabled}>${iconNext}</button>
+            </div>
+          </div>
+          <div id="wg-hint-body">
+            <div id="wg-hint-def" class="${isFound ? 'found-word' : ''}"
+                 style="${showRevealOverlay && def ? 'filter:blur(4px);user-select:none;' : ''}"
+            >${defHTML || '&nbsp;'}</div>
+            <div id="wg-hint-reveal-overlay" class="${showRevealOverlay ? 'visible' : ''}">
+              <button id="wg-hint-reveal-btn">
+                ${iconStar} 1 ulduzla tərcüməni gör
+              </button>
+            </div>
+          </div>
+          <div id="wg-hint-dots">${dotHTML}</div>
+        </div>
+      `;
+
+      // Nav events
+      document.getElementById('wg-hnav-prev')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentIdx > 0) { currentIdx--; _renderHint(); }
+      });
+      document.getElementById('wg-hnav-next')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (currentIdx < total - 1) { currentIdx++; _renderHint(); }
+      });
+
+      // Reveal event
+      document.getElementById('wg-hint-reveal-btn')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const stars = typeof getStars === 'function' ? getStars() : 0;
+        if (stars <= 0) {
+          // Ulduz yoxdur — düymənin rəngini dəyiş
+          const btn = document.getElementById('wg-hint-reveal-btn');
+          if (btn) {
+            btn.textContent = 'Ulduz yoxdur ⭐';
+            btn.style.color = '#ef4444';
+            setTimeout(() => _renderHint(), 1200);
+          }
+          return;
+        }
+        if (typeof spendStar === 'function') spendStar();
+        revealedMap[word] = true;
+        _renderHint();
+      });
+    }
+
+    // _refreshFound çağrılanda paneli yenilə
+    const _origRefresh = _refreshFound;
+    window._wgHintRefresh = () => {
+      if (panel.classList.contains('open')) _renderHint();
+    };
+
+    _renderHint();
+  }
+  
   function _animateWord(word) {
     const pw = state.placedWords.find(p => p.word === word);
     if (!pw) return;
@@ -1076,6 +1282,10 @@ function _findFreeRow(grid, wordLen, size, placed) {
 
     const chip = document.querySelector(`.wg-chip[data-word="${word}"]`);
     if (chip) setTimeout(() => chip.classList.add('found'), pw.cells.length * 100 + 100);
+    // Hint paneli yenilə (tapılan söz üçün)
+    setTimeout(() => {
+      if (typeof window._wgHintRefresh === 'function') window._wgHintRefresh();
+    }, pw.cells.length * 100 + 200);
 
     // ── STAR CHECK: bu söz star cell-dən keçirsə topla ──
     if (state.starCell && !state.starCollected) {
@@ -1158,9 +1368,25 @@ function _findFreeRow(grid, wordLen, size, placed) {
     _attachWheelEvents(wrap);
   }
 
-  function _attachWheelEvents(wrap) {
+function _attachWheelEvents(wrap) {
     const btns      = wrap.querySelectorAll('.wg-lb');
     let isMouseDown = false;
+
+    // Wheel-ə toxunanda hint paneli bağla
+    wrap.addEventListener('touchstart', () => {
+      const panel = document.getElementById('wg-hint-panel');
+      if (panel?.classList.contains('open')) {
+        panel.classList.remove('open');
+        setTimeout(() => { panel.style.display = 'none'; }, 300);
+      }
+    }, { passive: true });
+    wrap.addEventListener('mousedown', () => {
+      const panel = document.getElementById('wg-hint-panel');
+      if (panel?.classList.contains('open')) {
+        panel.classList.remove('open');
+        setTimeout(() => { panel.style.display = 'none'; }, 300);
+      }
+    });
 
     btns.forEach(btn => {
       btn.addEventListener('mousedown', (e) => {
@@ -1486,13 +1712,29 @@ function _onPhaseComplete() {
     ov.querySelector('#wg-back')?.addEventListener('click', _closeOverlay);
 
     const hintBtn   = ov.querySelector('#wg-hint-btn');
-    const hintPopup = ov.querySelector('#wg-hint-popup');
+    _buildHintPanel();
 
     hintBtn?.addEventListener('click', (e) => {
       e.stopPropagation();
-      if (hintPopup) {
-        const isOpen = hintPopup.style.display === 'block';
-        hintPopup.style.display = isOpen ? 'none' : 'block';
+      const panel = document.getElementById('wg-hint-panel');
+      if (!panel) return;
+      const isOpen = panel.classList.contains('open');
+      if (isOpen) {
+        panel.classList.remove('open');
+        setTimeout(() => { panel.style.display = 'none'; }, 300);
+      } else {
+        panel.style.display = 'block';
+        requestAnimationFrame(() => panel.classList.add('open'));
+      }
+    });
+
+    ov.addEventListener('click', (e) => {
+      if (!e.target.closest('#wg-hint-btn') && !e.target.closest('#wg-hint-card')) {
+        const panel = document.getElementById('wg-hint-panel');
+        if (panel?.classList.contains('open')) {
+          panel.classList.remove('open');
+          setTimeout(() => { panel.style.display = 'none'; }, 300);
+        }
       }
     });
 
