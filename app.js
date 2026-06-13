@@ -2032,7 +2032,8 @@ if (!progress[lvl.id][i]) {
     || lvl.id === 'subject_verb_agreement' || lvl.id === 'imperative'
     || lvl.id === 'exclamatory'
     || lvl.id === 'cumle_temeli' || lvl.id === 'zamanlar_modal'
-    || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar';
+    || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar'
+    || lvl.id === 'writing_skills';
 
   if (isOpenSection) {
     progress[lvl.id][i] = 'unlocked';
@@ -2276,6 +2277,7 @@ const iconStyles = {
   'zamanlar_modal':      { background: '#E0F2FE', borderColor: '#7DD3FC', color: '#0369A1' },
   'isim_evezlik_artikl': { background: '#ECFDF5', borderColor: '#6EE7B7', color: '#065F46' },
   'cumle_tamamlayanlar': { background: '#FFFBEB', borderColor: '#FCD34D', color: '#92400E' },
+  'writing_skills': { background: '#F0FDF4', borderColor: '#86EFAC', color: '#14532D' },
   };
 
 
@@ -2442,7 +2444,8 @@ LEVELS.forEach((lvl, li) => {
   const grammarList = document.getElementById('grammar-list');
   if (grammarList) grammarList.appendChild(card);
 } else if (lvl.id === 'cumle_temeli' || lvl.id === 'zamanlar_modal'
-        || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar') {
+        || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar'
+        || lvl.id === 'writing_skills') {
   const skillsPage = document.getElementById('skills-page-content');
   if (skillsPage) skillsPage.appendChild(card);
 } else {
@@ -3157,7 +3160,8 @@ if (lvl.id === 'grammar' || lvl.id === 'verbs' || lvl.id === 'passive'
   || lvl.id === 'complex_object' || lvl.id === 'subject_verb_agreement'
   || lvl.id === 'imperative' || lvl.id === 'exclamatory'
   || lvl.id === 'cumle_temeli' || lvl.id === 'zamanlar_modal'
-  || lvl.id === 'isim_evezlik_artikl' || lvl.id === 'cumle_tamamlayanlar') {
+  || lvl.id === 'isim_evezlik_artikl'   || lvl.id === 'cumle_tamamlayanlar'
+  || lvl.id === 'writing_skills') {
   return renderGrammarPath(lvl, li);
 }
 
@@ -3443,6 +3447,7 @@ if (innerIcon && iconStyles[lvl.id]) {
     'zamanlar_modal':      { background: '#091418', borderColor: '#0e3848', color: '#22b8d4' },
     'isim_evezlik_artikl': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
     'cumle_tamamlayanlar': { background: '#161408', borderColor: '#504208', color: '#d4b840' },
+    'writing_skills': { background: '#0a1810', borderColor: '#1a4828', color: '#4aaa70' },
   };
 
   const activeStyle = isDark ? (darkIconStyles[lvl.id] || s) : s;
