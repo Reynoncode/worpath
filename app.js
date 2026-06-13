@@ -2354,12 +2354,16 @@ LEVELS.forEach((lvl, li) => {
  
         // ── Game node ──────────────────────────────────
         if (node.dataset.isGame === 'true') {
+          if (node.dataset.gameLocked === 'true') {
+            showToast('Əvvəlki testi tam bitir 🔒');
+            return;
+          }
           const gameKey = node.dataset.gameKey;
           const levelId = node.dataset.levelId;
           startWordGame(levelId, gameKey);
           return;
         }
- 
+         
         // ── Normal quiz node ───────────────────────────
         const qi     = parseInt(node.dataset.quizIdx, 10);
         const status = node.dataset.status;
@@ -2983,30 +2987,36 @@ gameNodes.forEach((gn) => {
 
   const progressKey = `${gn.levelId}_game_${gn.gameKey}`;
   const savedPhase  = parseInt(localStorage.getItem(progressKey) || '0', 10);
-  // savedPhase: 0=başlamamış, 1=phase1 bitib, 2=phase2 bitib, 3=hamısı bitib
 
   const totalPhases = gameData?.phases?.length || 3;
   const gameDone    = savedPhase >= totalPhases;
   const gameLabel   = gameData?.title || 'Game';
   const isDark      = document.documentElement.getAttribute('data-theme') === 'dark';
 
+  // ── Blokun açıq olub-olmadığını yoxla ──────────────────
+  const blockGroup       = groups[gn.gi];
+  const firstQuizInBlock = blockGroup?.find(n => !n.isExam);
+  const firstQuizStatus  = firstQuizInBlock
+    ? (progress[lvl.id]?.[firstQuizInBlock.qi] || 'locked')
+    : 'locked';
+  const blockUnlocked = firstQuizStatus !== 'locked';
+  const isGameLocked  = !blockUnlocked && !gameDone;
+
   const nodeTop  = gn.midY - GAME_SIZE / 2;
 
   // ── Circular progress bar parametrləri ───────────────
-  const R        = GAME_SIZE / 2;       // 22px — nodun yarıçapı
-  const STROKE   = 3.5;                 // bar qalınlığı
-  const CR = R + STROKE + 2;      // SVG circle yarıçapı (noddan kənarda)
-  const CIRC     = 2 * Math.PI * CR;    // tam çevrə uzunluğu
-  const svgSize  = (CR + STROKE + 1) * 2;  // SVG ölçüsü
+  const R       = GAME_SIZE / 2;
+  const STROKE  = 3.5;
+  const CR      = R + STROKE + 2;
+  const CIRC    = 2 * Math.PI * CR;
+  const svgSize = (CR + STROKE + 1) * 2;
 
-  // Faiz: neçə phase tamamlanıb / total
-  const fillPct  = gameDone ? 1 : (savedPhase / totalPhases);
+  const fillPct  = gameDone ? 1 : (isGameLocked ? 0 : (savedPhase / totalPhases));
   const dashFill = fillPct * CIRC;
   const dashGap  = CIRC - dashFill;
 
-  // Rənglər — lvl.color əsasında
-  const barColor    = lvl.color;
-  const trackColor  = isDark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.10)';
+  const barColor   = lvl.color;
+  const trackColor = isDark ? 'rgba(255,255,255,0.10)' : 'rgba(0,0,0,0.10)';
 
   // ── Node inner ───────────────────────────────────────
   let gameClass = 'game-node';
@@ -3018,6 +3028,13 @@ gameNodes.forEach((gn) => {
       stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"/>
     </svg>`;
+  } else if (isGameLocked) {
+    gameClass += ' game-node-locked';
+    gameInner = `<svg width="19" height="19" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <rect x="3" y="11" width="18" height="11" rx="2"/>
+      <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+    </svg>`;
   } else if (savedPhase === 0) {
     gameClass += ' game-node-unlocked';
     gameInner = `<svg width="19" height="19" viewBox="0 0 24 24" fill="none"
@@ -3027,17 +3044,17 @@ gameNodes.forEach((gn) => {
       <line x1="12" y1="22.08" x2="12" y2="12"/>
     </svg>`;
   } else {
-    // Bir və ya daha çox phase tamamlanıb amma hamısı yox
     gameClass += ' game-node-inprogress';
     gameInner = `<span class="game-node-phase-num">${savedPhase}/${totalPhases}</span>`;
   }
 
-const innerSize = GAME_SIZE;
+  const innerSize = GAME_SIZE;
   const nodeStyle = gameDone
-      ? `width:${innerSize}px;height:${innerSize}px;background:${lvl.color};border:none;border-radius:50%;`
-      : `width:${innerSize}px;height:${innerSize}px;color:${lvl.color};background:${isDark ? '#142233' : 'white'};border:none;`;
-  // circle: cx/cy = svgSize/2, r = CR
-  // stroke-dashoffset: CIRC/4 — 12-dan başlasın (top)
+    ? `width:${innerSize}px;height:${innerSize}px;background:${lvl.color};border:none;border-radius:50%;`
+    : isGameLocked
+    ? `width:${innerSize}px;height:${innerSize}px;color:${isDark ? '#3a5068' : '#c0bdb8'};background:${isDark ? '#1a2a3a' : '#eeebe6'};border:none;opacity:0.7;`
+    : `width:${innerSize}px;height:${innerSize}px;color:${lvl.color};background:${isDark ? '#142233' : 'white'};border:none;`;
+
   const progressSvg = `
     <svg class="game-progress-ring ${gameDone ? 'game-progress-ring--done' : ''}"
       width="${svgSize}" height="${svgSize}"
@@ -3062,7 +3079,7 @@ const innerSize = GAME_SIZE;
       />
     </svg>`;
 
-const pulseSvg = '';
+  const pulseSvg = '';
 
   gameNodesHTML += `
     <div class="game-node-wrap" style="
@@ -3074,11 +3091,12 @@ const pulseSvg = '';
       flex-direction:column;
       align-items:center;
       z-index:2;
-      cursor:pointer;
+      cursor:${isGameLocked ? 'default' : 'pointer'};
     "
       data-game-key="${gn.gameKey}"
       data-level-id="${gn.levelId}"
-      data-is-game="true">
+      data-is-game="true"
+      data-game-locked="${isGameLocked}">
       <div style="position:relative;display:flex;align-items:center;justify-content:center;
         width:${svgSize}px;height:${svgSize}px;">
         ${pulseSvg}
@@ -3093,7 +3111,7 @@ const pulseSvg = '';
         text-align:center;
         line-height:1.3;
         margin-top:3px;
-        color:${lvl.color};
+        color:${isGameLocked ? (isDark ? '#3a5068' : '#c0bdb8') : lvl.color};
         font-weight:600;
       ">${gameLabel}</div>
     </div>`;
@@ -3476,6 +3494,10 @@ stickyHeader.addEventListener('click', (e) => {
  
         // ── Game node ──────────────────────────────────
         if (node.dataset.isGame === 'true') {
+          if (node.dataset.gameLocked === 'true') {
+            showToast('Əvvəlki testi tam bitir 🔒');
+            return;
+          }
           const gameKey = node.dataset.gameKey;
           const levelId = node.dataset.levelId;
           startWordGame(levelId, gameKey);
