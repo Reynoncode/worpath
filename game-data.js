@@ -4359,17 +4359,27 @@ const GAME_DATA = {
     'b11_g0': { id: 'c2_b11_g0', title: 'Game 25', phases: [
     {
       words: [
-
+        { word: 'SABOTAGE',     az: 'diversiya', definition: 'the deliberate destruction of property or obstruction of normal operations' },
+        { word: 'SIEGE',        az: 'mühazirə', definition: 'a military operation in which enemy forces surround a town or building' },
+        { word: 'TO BESIEGE',   az: 'mühazirə etmək', definition: 'to surround a place with armed forces in order to capture it or force its surrender' },
       ]
     },
     {
       words: [
-
+        { word: 'ATTRITION',    az: 'zəiflətmə müharibəsi', definition: 'the action or process of gradually reducing the strength or effectiveness of someone or something through sustained attack or pressure' },
+        { word: 'MUNITION',     az: 'sursat', definition: 'a supply or quantity of bullets and shells' },
+        { word: 'RAID',         az: 'basqın', definition: 'a sudden attack on an enemy by troops, aircraft or other armed forces' },
+        { word: 'ROUT',         az: 'tam məğlubiyyət', definition: 'a disorderly retreat of defeated troops' },
       ]
     },
     {
       words: [
-
+        { word: 'ARMISTICE',    az: 'atəşkəs', definition: 'an agreement made by opposing sides in a war to stop fighting for a certain time' },
+        { word: 'CITADEL',      az: 'qala', definition: 'a fortress, typically on high ground, protecting or dominating a city' },
+        { word: 'TO DECIMATE',  az: 'böyük itki vermək', definition: 'to kill, destroy or remove a large percentage or part of' },
+        { word: 'MILITIA',      az: 'xalq milisi', definition: 'a military force that is raised from the civil population to supplement a regular army in an emergency' },
+        { word: 'SORTIE',       az: 'çıxış əməliyyatı', definition: 'an attack made by troops coming out from a position besieged by the enemy' },
+        { word: 'TO RETALIATE', az: 'qisas almaq', definition: 'to make an attack or assault in return for a similar attack' },
       ]
     },
   ]
@@ -4379,17 +4389,28 @@ const GAME_DATA = {
     'b12_g0': { id: 'c2_b12_g0', title: 'Game 26', phases: [
     {
       words: [
-
+        { word: 'TO ABET',      az: 'cinayətə kömək etmək', definition: 'to encourage or assist someone to commit a crime' },
+        { word: 'CABAL',        az: 'gizli qrup', definition: 'a secret political clique or faction' },
+        { word: 'ILLICIT',      az: 'qanunsuz', definition: 'forbidden by law, rules or custom' },
       ]
     },
     {
       words: [
-
+        { word: 'TO ABSCOND',   az: 'qaçmaq', definition: 'to leave hurriedly and secretly, typically to avoid detection or arrest' },
+        { word: 'PERPETRATOR',  az: 'cinayətkar', definition: 'a person who carries out a harmful, illegal or immoral act' },
+        { word: 'TREASON',      az: 'vətənə xəyanət', definition: 'the crime of betraying one’s country, especially by attempting to kill the sovereign or overthrow the government' },
+        { word: 'CONTRABAND',   az: 'qaçaqmal', definition: 'goods that have been imported or exported illegally' },
       ]
     },
     {
       words: [
-
+        { word: 'FELONY',       az: 'ağır cinayət', definition: 'a crime, typically one involving violence, regarded as more serious than a misdemeanour' },
+        { word: 'INFRACTION',   az: 'pozuntu', definition: 'a violation or infringement of a law, agreement or code of conduct' },
+        { word: 'LARCENY',      az: 'oğurluq', definition: 'theft of personal property' },
+        { word: 'VILLAINY',     az: 'alçaqlıq', definition: 'wicked or criminal behaviour' },
+        { word: 'TO CONNIVE',   az: 'göz yummaq', definition: 'to secretly allow something wrong or illegal to happen' },
+        { word: 'TO CONTRAVENE', az: 'pozmaq', definition: 'to act in a way that conflicts with a law, treaty or principle' },
+        { word: 'FORGERY',      az: 'saxtakarlıq', definition: 'the action of forging a copy or imitation of a document, signature or banknote' },
       ]
     },
   ]
@@ -4399,17 +4420,28 @@ const GAME_DATA = {
     'b13_g0': { id: 'c2_b13_g0', title: 'Game 27', phases: [
     {
       words: [
-
+        { word: 'DURESS',       az: 'məcburiyyət', definition: 'threats, violence, constraints or other action brought to bear on someone to do something against their will or better judgement' },
+        { word: 'REMORSE',      az: 'vicdan əzabı', definition: 'a gnawing distress arising from a sense of guilt for past wrongs' },
+        { word: 'WOE',          az: 'bədbəxtlik', definition: 'great sorrow or distress' },
+        { word: 'SERFDOM',      az: 'təhkimçilik', definition: 'the state of being a serf or the condition of serfdom' },
       ]
     },
     {
       words: [
-
+        { word: 'SCOURGE',      az: 'bəla', definition: 'a person or thing causing great trouble or suffering' },
+        { word: 'LARGESSE',     az: 'səxavət', definition: 'generosity in bestowing gifts or money' },
+        { word: 'TO SOLACE',    az: 'təsəlli vermək', definition: 'to give comfort to someone in distress or grief' },
+        { word: 'TO SUCCOUR',   az: 'kömək etmək', definition: 'to give assistance or help, especially in a time of need' },
       ]
     },
     {
       words: [
-
+        { word: 'DESOLATION',   az: 'tənhalıq', definition: 'a state of complete emptiness or destruction' },
+        { word: 'OPPRESSION',   az: 'əsarət', definition: 'prolonged cruel or unjust treatment or control' },
+        { word: 'ORDEAL',       az: 'ağır sınaq', definition: 'a prolonged painful or uncomfortable experience' },
+        { word: 'REPRESSION',   az: 'siyasi təzyiq', definition: 'the action of subduing someone or something by force' },
+        { word: 'TO PALLIATE',  az: 'yumşaltmaq', definition: 'to make a disease or its symptoms less severe or unpleasant without removing the cause' },
+        { word: 'REPARATION',   az: 'təzminat', definition: 'the making of amends for a wrong one has done, by paying money to or otherwise helping those who have been wronged' },
       ]
     },
   ]
@@ -4417,17 +4449,32 @@ const GAME_DATA = {
     'b13_g1': { id: 'c2_b13_g1', title: 'Game 28', phases: [
     {
       words: [
-
+        { word: 'FORLORN',      az: 'ümidsiz', definition: 'pitifully sad and abandoned or lonely' },
+        { word: 'BENEFACTOR',   az: 'xeyriyyəçi', definition: 'a person who gives money or other help to a person or cause' },
+        { word: 'BENEVOLENCE',  az: 'xeyirxahlıq', definition: 'the quality of being well meaning; kindness' },
+        { word: 'BENEVOLENT',   az: 'xeyirxah', definition: 'well meaning and kind' },
+        { word: 'FORBEARANCE',  az: 'dözümlülük', definition: 'patient self-control; restraint and tolerance' },
       ]
     },
     {
       words: [
-
+        { word: 'DESTITUTE',    az: 'kasıb', definition: 'extremely poor and without the basic necessities of life' },
+        { word: 'MISERY',       az: 'əzab', definition: 'a state or feeling of great distress or discomfort' },
+        { word: 'TORMENT',      az: 'işgəncə', definition: 'severe physical or mental suffering' },
+        { word: 'DRUDGERY',     az: 'ağır zəhmət', definition: 'hard, menial and tedious work' },
+        { word: 'IGNOMINY',     az: 'rüsvayçılıq', definition: 'public shame or disgrace' },
+        { word: 'DESTITUTION',  az: 'kasıblıq', definition: 'extreme poverty' },
       ]
     },
     {
       words: [
-
+        { word: 'ANGUISH',      az: 'dərin kədər', definition: 'severe mental or physical pain or suffering' },
+        { word: 'GRUELLING',    az: 'çox ağır', definition: 'extremely tiring and demanding' },
+        { word: 'HOLOCAUST',    az: 'böyük qırğın', definition: 'destruction or slaughter on a mass scale, especially caused by fire or nuclear war' },
+        { word: 'PERSECUTION',  az: 'təqib', definition: 'hostility and ill-treatment, especially because of race or political or religious beliefs' },
+        { word: 'PLIGHT',       az: 'ağır vəziyyət', definition: 'a dangerous, difficult or otherwise unfortunate situation' },
+        { word: 'PHILANTHROPIC', az: 'xeyriyyəçi', definition: 'seeking to promote the welfare of others' },
+        { word: 'PHILANTHROPIST', az: 'xeyriyyəçi', definition: 'a person who seeks to promote the welfare of others, especially by the generous donation of money to good causes' },
       ]
     },
   ]
@@ -4437,17 +4484,35 @@ const GAME_DATA = {
     'b14_g0': { id: 'c2_b14_g0', title: 'Game 29', phases: [
     {
       words: [
-
+        { word: 'IMPERIOUS',    az: 'əmr verən', definition: 'assuming power or authority without justification; arrogant and domineering' },
+        { word: 'POMPOUS',      az: 'təntənəli', definition: 'affectedly grand, solemn or self-important' },
+        { word: 'PRESUMPTUOUS', az: 'həddini aşan', definition: 'failing to observe the limits of what is permitted or appropriate' },
+        { word: 'SURREPTITIOUS', az: 'gizli', definition: 'kept secret, especially because it would not be approved of' },
+        { word: 'TO SUPPRESS',  az: 'boğmaq', definition: 'to forcibly put an end to something' },
       ]
     },
     {
       words: [
-
+        { word: 'EGREGIOUS',    az: 'çox pis', definition: 'outstandingly bad; shocking' },
+        { word: 'HAUGHTINESS',  az: 'təkəbbür', definition: 'the quality of being arrogantly superior and disdainful' },
+        { word: 'HUBRIS',       az: 'həddindən artıq özünə inam', definition: 'excessive pride or self-confidence' },
+        { word: 'OSTENTATIOUS', az: 'nümayişkar', definition: 'characterised by vulgar or pretentious display; designed to impress or attract notice' },
+        { word: 'TO HARBOUR',   az: 'gizlətmək', definition: 'to keep a thought or feeling in one’s mind, especially secretly' },
+        { word: 'TO HOARD',     az: 'yığmaq', definition: 'to accumulate and store away money, possessions or resources in a carefully guarded way' },
+        { word: 'TO SHROUD',    az: 'örtmək', definition: 'to cover or envelop so as to conceal from view' },
+        { word: 'SHROUDED',     az: 'örtülü', definition: 'covered or enveloped so as to conceal from view' },
       ]
     },
     {
       words: [
-
+        { word: 'CONDESCENSION', az: 'yuxarıdan baxma', definition: 'an attitude of patronising superiority' },
+        { word: 'INSOLENCE',    az: 'ədəbsizlik', definition: 'rude and disrespectful behaviour' },
+        { word: 'OSTENTATION',  az: 'nümayişkarlıq', definition: 'the pretentious and showy display of wealth, knowledge or skill' },
+        { word: 'ARCANE',       az: 'gizli', definition: 'understood by few; mysterious or secret' },
+        { word: 'CLANDESTINE',  az: 'gizli', definition: 'done secretly or kept secret' },
+        { word: 'ESOTERIC',     az: 'daxili', definition: 'intended for or likely to be understood by only a small number of people with a specialised knowledge or interest' },
+        { word: 'LATENT',       az: 'gizli', definition: 'existing but not yet developed or manifest; hidden or concealed' },
+        { word: 'RECONDITE',    az: 'dərin və gizli', definition: 'little known; abstruse' },
       ]
     },
   ]
@@ -4457,17 +4522,26 @@ const GAME_DATA = {
     'b15_g0': { id: 'c2_b15_g0', title: 'Game 30', phases: [
     {
       words: [
-
+        { word: 'SECESSION',    az: 'ayrılma', definition: 'the action of withdrawing formally from membership of a federation or body, especially a political state' },
+        { word: 'ACCESSION',    az: 'qəbul', definition: 'the action or process of acceding to a position of power or authority' },
+        { word: 'CESSATION',    az: 'dayanma', definition: 'the fact or process of ending or being brought to an end' },
+        { word: 'SATIATE',      az: 'doymaq', definition: 'to satisfy fully a desire or appetite' },
       ]
     },
     {
       words: [
-
+        { word: 'RENEGADE',     az: 'xain', definition: 'a person who deserts and betrays an organization, country or set of principles' },
+        { word: 'TO ACCEDE',    az: 'razılaşmaq', definition: 'to agree to a demand, proposal or treaty' },
+        { word: 'CONCORDANCE',  az: 'razılıq', definition: 'agreement; harmony' },
+        { word: 'DECADENCE',    az: 'tənəzzül', definition: 'moral or cultural decline as evidenced by excessive indulgence in pleasure or luxury' },
       ]
     },
     {
       words: [
-
+        { word: 'BILATERAL',    az: 'ikitarafli', definition: 'involving two parties, usually countries' },
+        { word: 'PARITY',       az: 'bərabərlik', definition: 'the state or condition of being equal, especially as regards status or pay' },
+        { word: 'REPRIEVE',     az: 'müvəqqəti azadlıq', definition: 'a temporary cancellation or postponement of a punishment' },
+        { word: 'TREATY',       az: 'müqavilə', definition: 'a formally concluded and ratified agreement between states' },
       ]
     },
   ]
@@ -4475,17 +4549,31 @@ const GAME_DATA = {
     'b15_g1': { id: 'c2_b15_g1', title: 'Game 31', phases: [
     {
       words: [
-
+        { word: 'ANARCHY',      az: 'anarxiya', definition: 'a state of disorder due to absence or non-recognition of authority' },
+        { word: 'HERESY',       az: 'bidət', definition: 'belief or opinion contrary to orthodox religious doctrine' },
+        { word: 'SCHISM',       az: 'bölünmə', definition: 'a split or division between strongly opposed parties caused by differences in opinion or belief' },
+        { word: 'EMISSARY',     az: 'elçi', definition: 'a person sent on a special mission, usually as a diplomatic representative' },
       ]
     },
     {
       words: [
-
+        { word: 'DEFECTION',    az: 'tərəf dəyişmə', definition: 'the desertion of one’s country or cause in favour of an opposing one' },
+        { word: 'DISSIDENT',    az: 'dissident', definition: 'a person who opposes official policy, especially in a totalitarian state' },
+        { word: 'INSURRECTION', az: 'üsyan', definition: 'a violent uprising against an authority or government' },
+        { word: 'TO RENOUNCE',  az: 'imtina etmək', definition: 'to formally declare one’s abandonment of a claim, right or possession' },
+        { word: 'SEDITIOUS',    az: 'üsyançı', definition: 'inciting or causing people to rebel against the authority of a state or monarch' },
+        { word: 'SURFEIT',      az: 'həddindən artıq', definition: 'an excessive amount of something' },
       ]
     },
     {
       words: [
-
+        { word: 'ICONOCLASM',   az: 'köhnəyə qarşı çıxma', definition: 'the rejection of or attack on cherished beliefs and institutions' },
+        { word: 'TO CAPITULATE', az: 'təslim olmaq', definition: 'to cease to resist an opponent or an unwelcome demand; surrender' },
+        { word: 'TO MEDIATE',   az: 'vasitəçilik etmək', definition: 'to intervene between people in a dispute in order to bring about an agreement or reconciliation' },
+        { word: 'LICENTIOUS',   az: 'əxlaqsız', definition: 'promiscuous and unprincipled in sexual matters' },
+        { word: 'OPULENCE',     az: 'zənginlik', definition: 'great wealth or luxuriousness' },
+        { word: 'SALACIOUS',    az: 'şəhvani', definition: 'having or conveying undue or inappropriate interest in sexual matters' },
+        { word: 'DISSIPATION',  az: 'israf', definition: 'the squandering of money, energy or resources' },
       ]
     },
   ]
@@ -4495,17 +4583,29 @@ const GAME_DATA = {
     'b16_g0': { id: 'c2_b16_g0', title: 'Game 32', phases: [
     {
       words: [
-
+        { word: 'ERUDITE',      az: 'oxumuş', definition: 'having or showing great knowledge or learning' },
+        { word: 'ERUDITION',    az: 'dərin bilik', definition: 'the quality of having or showing great knowledge or learning' },
+        { word: 'INTUITION',    az: 'intuisiya', definition: 'the ability to understand something immediately, without the need for conscious reasoning' },
+        { word: 'RECONDITE',    az: 'dərin', definition: 'little known; abstruse' },
       ]
     },
     {
       words: [
-
+        { word: 'TO ASCERTAIN', az: 'əmin olmaq', definition: 'to find something out for certain; make sure of' },
+        { word: 'TO DISCERN',   az: 'fərq etmək', definition: 'to perceive or recognise something' },
+        { word: 'ARCANE',       az: 'gizli', definition: 'understood by few; mysterious or secret' },
+        { word: 'DIDACTIC',     az: 'öyrədici', definition: 'intended to teach, particularly in having moral instruction as an ulterior motive' },
+        { word: 'ESOTERIC',     az: 'daxili', definition: 'intended for or likely to be understood by only a small number of people with a specialised knowledge or interest' },
       ]
     },
     {
       words: [
-
+        { word: 'ASTUTE',       az: 'zirək', definition: 'having or showing an ability to accurately assess a situation and turn it to one’s advantage' },
+        { word: 'COGENT',       az: 'inandırıcı', definition: 'clear, logical and convincing' },
+        { word: 'INCISIVE',     az: 'iti', definition: 'showing or suggesting an ability to think clearly, deeply and with insight' },
+        { word: 'INGENIOUS',    az: 'zirək', definition: 'clever, original and inventive' },
+        { word: 'SAGACIOUS',    az: 'dərin ağıllı', definition: 'having or showing keen mental discernment and good judgement' },
+        { word: 'SAVANT',       az: 'alim', definition: 'a person of profound or extensive learning; an erudite scholar' },
       ]
     },
   ]
@@ -4515,17 +4615,28 @@ const GAME_DATA = {
     'b17_g0': { id: 'c2_b17_g0', title: 'Game 33', phases: [
     {
       words: [
-
+        { word: 'PALATIAL',     az: 'saray kimi', definition: 'resembling a palace in being spacious and splendid' },
+        { word: 'PALLID',       az: 'solğun', definition: 'pale, typically because of poor health' },
+        { word: 'PLACID',       az: 'sakit', definition: 'not easily upset or excited; calm' },
+        { word: 'LUCID',        az: 'aydın', definition: 'expressed clearly; easy to understand' },
       ]
     },
     {
       words: [
-
+        { word: 'DIFFIDENT',    az: 'özünə inamsız', definition: 'modest or shy because of a lack of self-confidence' },
+        { word: 'DISINTERESTED', az: 'laqeyd', definition: 'not influenced by considerations of personal advantage' },
+        { word: 'INDIFFERENT',  az: 'laqeyd', definition: 'having no particular interest or sympathy; unconcerned' },
+        { word: 'FINESSE',      az: 'incəlik', definition: 'refinement or delicacy of workmanship, structure or texture' },
+        { word: 'TERSE',        az: 'qısa və kəskin', definition: 'sparing in the use of words; abrupt' },
       ]
     },
     {
       words: [
-
+        { word: 'ETHEREAL',     az: 'havayi', definition: 'extremely delicate and light in a way that seems too perfect for this world' },
+        { word: 'ORNATE',       az: 'bəzəkli', definition: 'made in an intricate shape or decorated with complex patterns' },
+        { word: 'NONCHALANCE',  az: 'qayğısızlıq', definition: 'the state of being casually calm and relaxed' },
+        { word: 'NONCHALANT',   az: 'qayğısız', definition: 'feeling or appearing casually calm and relaxed; not displaying anxiety, interest or enthusiasm' },
+        { word: 'TRENCHANT',    az: 'iti və dəqiq', definition: 'vigorous or incisive in expression or style' },
       ]
     },
   ]
@@ -4533,17 +4644,31 @@ const GAME_DATA = {
     'b17_g1': { id: 'c2_b17_g1', title: 'Game 34', phases: [
     {
       words: [
-
+        { word: 'OSTENTATIOUS', az: 'nümayişkar', definition: 'characterised by vulgar or pretentious display; designed to impress or attract notice' },
+        { word: 'INSOUCIANT',   az: 'qayğısız', definition: 'casually unconcerned' },
+        { word: 'STOIC',        az: 'dözümlü', definition: 'enduring pain or hardship without showing one’s feelings or complaining' },
+        { word: 'CONCISE',      az: 'qısa və dəqiq', definition: 'giving a lot of information clearly and in few words; brief but comprehensive' },
+        { word: 'SUCCINCT',     az: 'qısa və dəqiq', definition: 'briefly and clearly expressed' },
       ]
     },
     {
       words: [
-
+        { word: 'ALOOF',        az: 'kənarda duran', definition: 'not friendly or forthcoming; cool and distant' },
+        { word: 'INDIFFERENCE', az: 'laqeydlik', definition: 'lack of interest, concern or sympathy' },
+        { word: 'RETICENT',     az: 'danıqmaz', definition: 'not revealing one’s thoughts or feelings readily' },
+        { word: 'LACONIC',      az: 'az sözlü', definition: 'using very few words' },
+        { word: 'ADROIT',       az: 'bacarıqlı', definition: 'clever or skilful in using the hands or mind' },
       ]
     },
     {
       words: [
-
+        { word: 'GRANDIOSE',    az: 'təntənəli', definition: 'impressive or magnificent in appearance or style, especially pretentiously so' },
+        { word: 'TACITURN',     az: 'az danışan', definition: 'reserved or uncommunicative in speech; saying little' },
+        { word: 'DISAFFECTION', az: 'narazılıq', definition: 'a feeling of being disappointed with or not satisfied with someone or something' },
+        { word: 'CANDOUR',      az: 'açıqlıq', definition: 'the quality of being open and honest in expression; frankness' },
+        { word: 'COGENT',       az: 'inandırıcı', definition: 'clear, logical and convincing' },
+        { word: 'FASTIDIOUS',   az: 'tələbkar', definition: 'very attentive to and concerned about accuracy and detail' },
+        { word: 'RIGOROUS',     az: 'sərt və dəqiq', definition: 'extremely thorough, exhaustive or accurate' },
       ]
     },
   ]
@@ -4553,17 +4678,35 @@ const GAME_DATA = {
     'b18_g0': { id: 'c2_b18_g0', title: 'Game 35', phases: [
     {
       words: [
-
+        { word: 'INCARNATION',  az: 'təcəssüm', definition: 'a person who embodies in the flesh a deity, spirit or abstract quality' },
+        { word: 'OMEN',         az: 'əlamət', definition: 'an event regarded as a portent of good or evil' },
+        { word: 'REINCARNATION', az: 'yenidən doğuş', definition: 'the rebirth of a soul in a new body' },
+        { word: 'COMMEMORATION', az: 'anım', definition: 'the action or fact of remembering and showing respect for someone or something' },
+        { word: 'MEMENTO',      az: 'yadigar', definition: 'an object kept as a reminder of a person or event' },
+        { word: 'REMNANT',      az: 'qalıq', definition: 'a small remaining quantity of something' },
       ]
     },
     {
       words: [
-
+        { word: 'ORACLE',       az: 'kahin', definition: 'a person or thing regarded as an infallible authority or guide' },
+        { word: 'EPOCH',        az: 'dövr', definition: 'a period of time in history or a person’s life, typically one marked by notable events or particular characteristics' },
+        { word: 'EPITAPH',      az: 'qəbir daşı yazısı', definition: 'a phrase or form of words written in memory of a person who has died, especially as an inscription on a tombstone' },
+        { word: 'RELIC',        az: 'qalıq', definition: 'an object surviving from an earlier time, especially one of historical or sentimental interest' },
+        { word: 'DEARTH',       az: 'çatışmazlıq', definition: 'a scarcity or lack of something' },
+        { word: 'DEPLETED',     az: 'tükənmiş', definition: 'having used up or reduced the supply of something' },
+        { word: 'PLETHORA',     az: 'həddindən artıq', definition: 'a large or excessive amount of something' },
       ]
     },
     {
       words: [
-
+        { word: 'APPARITION',   az: 'xəyalət', definition: 'a ghost or ghostlike image of a person' },
+        { word: 'PORTENT',      az: 'xəbərdarlıq əlaməti', definition: 'a sign or warning that something, especially something momentous or calamitous, is likely to happen' },
+        { word: 'SEER',         az: 'gələcəyi görən', definition: 'a person who is supposed to be able, through supernatural insight, to see what the future holds' },
+        { word: 'SPECTER',      az: 'xəyalət', definition: 'a ghost or phantom' },
+        { word: 'RENAISSANCE',  az: 'dirçəliş', definition: 'a revival of or renewed interest in something' },
+        { word: 'RETROSPECTION', az: 'keçmişə baxış', definition: 'the action of looking back on or reviewing past events or situations' },
+        { word: 'PITTANCE',     az: 'cüzi miqdar', definition: 'a very small or inadequate amount of money' },
+        { word: 'SPARSE',       az: 'seyrək', definition: 'thinly dispersed or scattered' },
       ]
     },
   ]
@@ -4571,17 +4714,36 @@ const GAME_DATA = {
     'b18_g1': { id: 'c2_b18_g1', title: 'Game 36', phases: [
     {
       words: [
-
+        { word: 'TALISMAN',     az: 'talisman', definition: 'an object, typically an inscribed ring or stone, that is thought to have magic powers and to bring good luck' },
+        { word: 'LINEAGE',      az: 'nəsil', definition: 'direct descent from an ancestor; ancestry or pedigree' },
+        { word: 'FAMINE',       az: 'aclıq', definition: 'extreme scarcity of food' },
+        { word: 'MEAGRE',       az: 'az', definition: 'lacking in quantity or quality; deficient' },
+        { word: 'SMATTERING',   az: 'az miqdar', definition: 'a small amount of something' },
+        { word: 'TEEMING',      az: 'dolu', definition: 'full of or swarming with' },
       ]
     },
     {
       words: [
-
+        { word: 'PORTENTOUS',   az: 'əhəmiyyətli', definition: 'of or like a portent; ominous' },
+        { word: 'RESURRECTION', az: 'dirilmə', definition: 'the action or fact of resurrecting or being resurrected' },
+        { word: 'POSTERITY',    az: 'gələcək nəsillər', definition: 'all future generations of people' },
+        { word: 'COPIOUS',      az: 'bol', definition: 'abundant in supply or quantity' },
+        { word: 'CORNUCOPIA',   az: 'bolluq rəmzi', definition: 'an abundant supply of good things' },
+        { word: 'PAUCITY',      az: 'çatışmazlıq', definition: 'the presence of something only in small or insufficient quantities or amounts' },
+        { word: 'SCARCITY',     az: 'çatışmazlıq', definition: 'the state of being scarce or in short supply; shortage' },
+        { word: 'PENURY',       az: 'yoxsulluq', definition: 'extreme poverty or destitution' },
       ]
     },
     {
       words: [
-
+        { word: 'HARBINGER',    az: 'xəbərçi', definition: 'a person or thing that announces or signals the approach of another' },
+        { word: 'ALCHEMY',      az: 'əlkimya', definition: 'the medieval forerunner of chemistry, concerned with the transmutation of matter, especially into gold' },
+        { word: 'CHRONICLE',    az: 'salnamə', definition: 'a factual written account of important or noteworthy events in the order of their occurrence' },
+        { word: 'HEIRLOOM',     az: 'ailə yadigarı', definition: 'a valuable object that has belonged to a family for several generations' },
+        { word: 'LEGACY',       az: 'miras', definition: 'an amount of money or property left to someone in a will' },
+        { word: 'MEMORABILIA',  az: 'yadigarlar', definition: 'objects that are collected because they are connected with a person or event of particular interest' },
+        { word: 'REMEMBRANCE',  az: 'xatirə', definition: 'the action of remembering something' },
+        { word: 'MYRIAD',       az: 'çoxlu', definition: 'a countless or extremely large number of people or things' },
       ]
     },
   ]
