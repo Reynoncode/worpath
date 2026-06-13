@@ -2870,8 +2870,8 @@ function renderCefrPath(lvl, li) {
 
     // Y mərkəzi: iki nodun tam ortası
     // Node[i] mərkəzi = PADDING_TOP + i * BLOCK_H + NODE_H/2
-    const yCenterA = PADDING_TOP + i * BLOCK_H + NODE_H / 2;
-    const yCenterB = PADDING_TOP + (i + 1) * BLOCK_H + NODE_H / 2;
+    const yCenterA = PADDING_TOP + i * BLOCK_H + NODE_H / 2 + (i > 0 ? 15 : 0);
+    const yCenterB = PADDING_TOP + (i + 1) * BLOCK_H + NODE_H / 2 + 15;
     const midY     = (yCenterA + yCenterB) / 2;
 
     // X mövqeyi: quiz nodelarının ƏKSI tərəfə
@@ -2948,7 +2948,8 @@ function renderCefrPath(lvl, li) {
         ? `color:${lvl.color};border-color:${lvl.color};background:${isDark ? '#142233' : 'white'};`
         : '';
 
-const nodeTopY = PADDING_TOP + i * BLOCK_H;
+const nodeTopY = PADDING_TOP + i * BLOCK_H + (i > 0 ? 15 : 0);
+
     nodesHTML += `
       <div style="
         position:absolute;
@@ -3099,7 +3100,8 @@ const pulseSvg = '';
 });
   
   // ── Ümumi konteyner hündürlüyü ─────────────────────────
-  const totalH = allNodes.length * BLOCK_H + PADDING_TOP * 2;
+  const totalH = allNodes.length * BLOCK_H + PADDING_TOP * 2 + 15;
+
 
 return `
     <div style="
