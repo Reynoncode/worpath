@@ -3874,6 +3874,11 @@ button { font-family: var(--font); }
   transform: skewX(-10deg);
   animation: gameNodeShimmer 3s ease-in-out infinite;
 }
+.game-node-locked {
+  opacity: 0.45;
+  cursor: default;
+}
+
 @keyframes gameNodeShimmer {
   0%   { left: -60%; opacity: 0; }
   20%  { opacity: 1; }
