@@ -579,9 +579,9 @@ function renderGrammarPath(lvl, li) {
         ['completed','phase2_completed','phase3_unlocked','level_done'].includes(s)
       ).length;
       const pulseClass = qi === completedSoFar ? 'pulse' : '';
+      const isDark     = document.documentElement.getAttribute('data-theme') === 'dark';
       const isGrammar  = item && !Array.isArray(item) && item.type === 'grammar_lesson';
-      const bgStyle    = isGrammar ? `background:${lvl.color}18;` : `background:white;`;
-
+      const bgStyle    = isGrammar ? `background:${lvl.color}18;` : `background:${isDark ? '#142233' : 'white'};`;
       html += `<div class="${nodeClass} unlocked ${pulseClass}"
         data-quiz-idx="${qi}" data-status="unlocked"
         style="color:${lvl.color}; border-color:${lvl.color}; ${bgStyle}">
