@@ -261,7 +261,7 @@ const GAME_DATA = {
         { word: 'TOMATO',       az: 'pomidor', definition: 'a round red vegetable' },
         { word: 'MEAT',         az: 'ət', definition: 'food from animals' },
         { word: 'TEA',          az: 'çay', definition: 'hot drink from leaves' },
-        { word: 'EAT',       az: 'yemək', definition: '— tapılmadı —' },
+        { word: 'EAT',       az: 'yemək',            definition: 'To put food in your mouth and swallow it.' },
       ]
     },
     {
@@ -289,7 +289,8 @@ const GAME_DATA = {
         { word: 'ONION',        az: 'soğan', definition: 'a round white vegetable with strong smell' },
         { word: 'DIET',         az: 'pəhriz', definition: 'special food plan' },
         { word: 'DINNER',       az: 'axşam yeməyi', definition: 'evening meal' },
-        { word: 'ORDER',     az: 'sifariş etmək', definition: '— tapılmadı —' },
+        { word: 'ORDER',     az: 'sifariş etmək',    definition: 'To ask for food or drinks in a restaurant.' },
+
       ]
     },
     {
@@ -685,7 +686,7 @@ const GAME_DATA = {
       words: [
         { word: 'LESSON',       az: 'dərs', definition: 'one class period' },
         { word: 'NOTE',         az: 'qeyd', definition: 'a short written message' },
-        { word: 'SPELL',     az: 'hərfləmək', definition: '— tapılmadı —' },
+        { word: 'SPELL',     az: 'hərfləmək',        definition: 'To say or write the letters of a word correctly.' },
         { word: 'POOL',         az: 'hovuz', definition: 'place to swim' },
       ]
     },
@@ -698,7 +699,7 @@ const GAME_DATA = {
     },
     {
       words: [
-        { word: 'TEACH',     az: 'öyrətmək', definition: '— tapılmadı —' },
+        { word: 'TEACH',     az: 'öyrətmək',         definition: 'To help someone learn new things or skills.' },
         { word: 'CHESS',        az: 'şahmat', definition: 'board game with king' },
         { word: 'MATCH',        az: 'oyun', definition: 'a game between two teams' },
       ]
@@ -711,23 +712,23 @@ const GAME_DATA = {
     'b9_g0': { id: 'a1_b9_g0', title: 'Game 24', phases: [
     {
       words: [
-        { word: 'GO',        az: 'getmək', definition: '— tapılmadı —' },
-        { word: 'EAT',       az: 'yemək', definition: '— tapılmadı —' },
-        { word: 'GET',       az: 'əldə etmək', definition: '— tapılmadı —' },
+        { word: 'GO',        az: 'getmək',           definition: 'To move from one place to another place.' },
+        { word: 'EAT',       az: 'yemək',            definition: 'To put food in your mouth and swallow it.' },
+        { word: 'GET',       az: 'əldə etmək',       definition: 'To receive or obtain something that you want.' },
       ]
     },
     {
       words: [
         { word: 'RUN',       az: 'qaçmaq', definition: 'to move fast with your legs' },
-        { word: 'TURN',      az: 'dönmək', definition: '— tapılmadı —' },
-        { word: 'CUT',       az: 'kəsmək', definition: '— tapılmadı —' },
+        { word: 'TURN',      az: 'dönmək',           definition: 'To move your body or face in a new direction.' },
+        { word: 'CUT',       az: 'kəsmək',           definition: 'To divide something using a knife or scissors.' },
       ]
     },
     {
       words: [
-        { word: 'FALL',      az: 'yıxılmaq', definition: '— tapılmadı —' },
-        { word: 'CALL',      az: 'çağırmaq', definition: '— tapılmadı —' },
-        { word: 'TALK',      az: 'söhbət etmək', definition: '— tapılmadı —' },
+        { word: 'FALL',      az: 'yıxılmaq',         definition: 'To drop down suddenly from a higher place.' },
+        { word: 'CALL',      az: 'çağırmaq',         definition: 'To speak to someone by phone or shout their name.' },
+        { word: 'TALK',      az: 'söhbət etmək',     definition: 'To say words and have a conversation with others.' },
         { word: 'COOK',      az: 'bişirmək', definition: 'to prepare food by heating it' },
       ]
     },
@@ -736,30 +737,30 @@ const GAME_DATA = {
     'b9_g1': { id: 'a1_b9_g1', title: 'Game 25', phases: [
     {
       words: [
-        { word: 'SIT',       az: 'oturmaq', definition: '— tapılmadı —' },
-        { word: 'ASK',       az: 'soruşmaq', definition: '— tapılmadı —' },
-        { word: 'SPEAK',     az: 'danışmaq', definition: '— tapılmadı —' },
-        { word: 'KEEP',      az: 'saxlamaq', definition: '— tapılmadı —' },
+        { word: 'SIT',       az: 'oturmaq',          definition: 'To rest your body on a chair or the floor.' },
+        { word: 'ASK',       az: 'soruşmaq',         definition: 'To say a question to get information from someone.' },
+        { word: 'SPEAK',     az: 'danışmaq',         definition: 'To say words and express your ideas out loud.' },
+        { word: 'KEEP',      az: 'saxlamaq',         definition: 'To have something and not give it back to anyone.' },
       ]
     },
     {
       words: [
-        { word: 'STAND',     az: 'ayağa qalxmaq', definition: '— tapılmadı —' },
-        { word: 'LISTEN',    az: 'qulaq asmaq', definition: '— tapılmadı —' },
-        { word: 'SEND',      az: 'göndərmək', definition: '— tapılmadı —' },
+        { word: 'STAND',     az: 'ayağa qalxmaq',    definition: 'To be in an upright position on your two feet.' },
+        { word: 'LISTEN',    az: 'qulaq asmaq',      definition: 'To pay attention to sounds or what someone says.' },
+        { word: 'SEND',      az: 'göndərmək',        definition: 'To make something go to another person and place.' },
         { word: 'CLEAN',     az: 'təmizləmək', definition: 'not dirty' },
-        { word: 'CLOSE',     az: 'bağlamaq', definition: '— tapılmadı —' },
-        { word: 'DANCE',     az: 'rəqs etmək', definition: '— tapılmadı —' },
+        { word: 'CLOSE',     az: 'bağlamaq',         definition: 'To move a door or window so it is not open.' },
+        { word: 'DANCE',     az: 'rəqs etmək',       definition: 'To move your body to music in a fun way.' },
       ]
     },
     {
       words: [
-        { word: 'ARRIVE',    az: 'çatmaq', definition: '— tapılmadı —' },
-        { word: 'RIDE',      az: 'minmək', definition: '— tapılmadı —' },
-        { word: 'READ',      az: 'oxumaq', definition: '— tapılmadı —' },
-        { word: 'WRITE',     az: 'yazmaq', definition: '— tapılmadı —' },
-        { word: 'GIVE',      az: 'vermək', definition: '— tapılmadı —' },
-        { word: 'GROW',      az: 'böyümək', definition: '— tapılmadı —' },
+        { word: 'ARRIVE',    az: 'çatmaq',           definition: 'To reach a place that you were travelling to.' },
+        { word: 'RIDE',      az: 'minmək',           definition: 'To sit on a bike or horse and move with it.' },
+        { word: 'READ',      az: 'oxumaq',           definition: 'To look at written words and understand their meaning.' },
+        { word: 'WRITE',     az: 'yazmaq',           definition: 'To make letters or words on paper with a pen.' },
+        { word: 'GIVE',      az: 'vermək',           definition: 'To let someone else have something that is yours.' },
+        { word: 'GROW',      az: 'böyümək',          definition: 'To get bigger or taller over a period of time.' },
       ]
     },
   ]
@@ -770,25 +771,25 @@ const GAME_DATA = {
     'b10_g0': { id: 'a1_b10_g0', title: 'Game 26', phases: [
     {
       words: [
-        { word: 'MAKE',         az: 'düzəltmək', definition: '— tapılmadı —' },
-        { word: 'MEET',         az: 'görüşmək', definition: '— tapılmadı —' },
-        { word: 'TAKE',         az: 'götürmək', definition: '— tapılmadı —' },
+        { word: 'MAKE',      az: 'düzəltmək',        definition: 'To create or build something new using your hands.' },
+        { word: 'MEET',      az: 'görüşmək',         definition: 'To come together with someone in the same place.' },
+        { word: 'TAKE',      az: 'götürmək',         definition: 'To pick something up and carry it with you.' },
       ]
     },
     {
       words: [
-        { word: 'WAIT',         az: 'gözləmək', definition: '— tapılmadı —' },
+        { word: 'WAIT',      az: 'gözləmək',         definition: 'To stay in a place until something happens or arrives.' },
         { word: 'WANT',         az: 'istəmək', definition: 'a lack or deficiency of something' },
         { word: 'WIN',          az: 'qalib gəlmək', definition: 'to be successful in a competition' },
       ]
     },
     {
       words: [
-        { word: 'FEEL',         az: 'hiss etmək', definition: '— tapılmadı —' },
-        { word: 'FIND',         az: 'tapmaq', definition: '— tapılmadı —' },
-        { word: 'NEED',         az: 'ehtiyac duymaq', definition: '— tapılmadı —' },
-        { word: 'DIE',          az: 'ölmək', definition: '— tapılmadı —' },
-        { word: 'LIE',          az: 'uzanmaq', definition: '— tapılmadı —' },
+        { word: 'FEEL',      az: 'hiss etmək',       definition: 'To experience an emotion or physical sensation inside.' },
+        { word: 'FIND',      az: 'tapmaq',           definition: 'To see or discover something you were looking for.' },
+        { word: 'NEED',      az: 'ehtiyac duymaq',   definition: 'To require something that is very important for you.' },
+        { word: 'DIE',       az: 'ölmək',            definition: 'To stop living; when life ends for a person.' },
+        { word: 'LIE',       az: 'uzanmaq',          definition: 'To put your body flat on a surface or bed.' },
       ]
     },
   ]
@@ -796,29 +797,29 @@ const GAME_DATA = {
     'b10_g1': { id: 'a1_b10_g1', title: 'Game 27',phases: [
     {
       words: [
-        { word: 'SLEEP',        az: 'yatmaq', definition: '— tapılmadı —' },
-        { word: 'STOP',         az: 'dayanmaq', definition: '— tapılmadı —' },
-        { word: 'LOSE',         az: 'itirmək', definition: '— tapılmadı —' },
-        { word: 'SEE',          az: 'görmək', definition: '— tapılmadı —' },
-        { word: 'LET',          az: 'icazə vermək', definition: '— tapılmadı —' },
+        { word: 'SLEEP',     az: 'yatmaq',           definition: 'To rest with your eyes closed and no consciousness.' },
+        { word: 'STOP',      az: 'dayanmaq',         definition: 'To not continue doing something that you were doing.' },
+        { word: 'LOSE',      az: 'itirmək',          definition: 'To not be able to find something you once had.' },
+        { word: 'SEE',       az: 'görmək',           definition: 'To notice something with your eyes without any effort.' },
+        { word: 'LET',       az: 'icazə vermək',     definition: 'To allow someone to do what they want to do.' },
       ]
     },
     {
       words: [
-        { word: 'ORDER',        az: 'sifariş etmək', definition: '— tapılmadı —' },
-        { word: 'DO',           az: 'etmək', definition: '— tapılmadı —' },
-        { word: 'HEAR',         az: 'eşitmək', definition: '— tapılmadı —' },
-        { word: 'DRAW',         az: 'rəsm çəkmək', definition: '— tapılmadı —' },
-        { word: 'WEAR',         az: 'geymək', definition: '— tapılmadı —' },
+        { word: 'ORDER',     az: 'sifariş etmək',    definition: 'To ask for food or drinks in a restaurant.' },
+        { word: 'DO',        az: 'etmək',            definition: 'To perform an action or complete a task yourself.' },
+        { word: 'HEAR',      az: 'eşitmək',          definition: 'To receive sounds through your ears without trying hard.' },
+        { word: 'DRAW',      az: 'rəsm çəkmək',      definition: 'To make a picture using a pencil or pen.' },
+        { word: 'WEAR',      az: 'geymək',           definition: 'To have clothes or accessories on your body now.' },
       ]
     },
     {
       words: [
-        { word: 'LOOK',         az: 'baxmaq', definition: '— tapılmadı —' },
-        { word: 'OWN',          az: 'sahib olmaq', definition: '— tapılmadı —' },
-        { word: 'PAY',          az: 'ödəmək', definition: '— tapılmadı —' },
-        { word: 'PLAY',         az: 'oynamaq', definition: '— tapılmadı —' },
-        { word: 'KNOW',         az: 'bilmək', definition: '— tapılmadı —' },
+        { word: 'LOOK',      az: 'baxmaq',           definition: 'To turn your eyes toward something to see it.' },
+        { word: 'OWN',       az: 'sahib olmaq',      definition: 'To have something that legally belongs to you alone.' },
+        { word: 'PAY',       az: 'ödəmək',           definition: 'To give money in exchange for goods or a service.' },
+        { word: 'PLAY',      az: 'oynamaq',          definition: 'To do a fun activity or sport for enjoyment.' },
+        { word: 'KNOW',      az: 'bilmək',           definition: 'To have information or facts stored in your memory.' },
         { word: 'PLAN',         az: 'planlaşdırmaq', definition: 'what you will do' },
       ]
     },
@@ -1462,7 +1463,7 @@ const GAME_DATA = {
         { word: 'PROTECT',      az: 'qorumaq', definition: 'to keep someone safe' },
         { word: 'OFFICER',      az: 'zabit', definition: 'a person with authority in the army or police' },
         { word: 'COIN',         az: 'sikkə', definition: 'a small round piece of metal money' },
-        { word: 'PERCENT',     az: 'faiz', definition: '— tapılmadı —' },
+        { word: 'PERCENT',   az: 'faiz',             definition: 'A number that shows a part out of one hundred.' },
         { word: 'PROFIT',       az: 'mənfəət', definition: 'the financial gain after all expenses have been deducted' },
       ]
     },
@@ -3140,7 +3141,7 @@ const GAME_DATA = {
       words: [
         { word: 'ABSURD',       az: 'absurd', definition: 'wildly unreasonable, illogical or inappropriate' },
         { word: 'ACCESSIBLE',   az: 'əlçatan', definition: 'easy to approach, reach or understand' },
-        { word: 'BIASED',       az: 'qərəzli', definition: '— tapılmadı —' },
+        { word: 'BIASED',    az: 'qərəzli',          definition: 'Unfairly preferring one person or idea over another.' },
         { word: 'CREDIBLE',     az: 'etibarlı', definition: 'able to be believed or trusted' },
         { word: 'RADICAL',      az: 'radikal', definition: 'relating to or affecting the fundamental nature of something' },
       ]
