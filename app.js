@@ -4430,6 +4430,9 @@ function goToPage(idx, animate = true) {
 
   if (idx === 4 && window.StatsPage) StatsPage.render('stats-root');
   if (window._updateHeaderProfileBtn) _updateHeaderProfileBtn(idx);
+
+  const darkBtn = document.getElementById('darkToggleBtn');
+  if (darkBtn) darkBtn.style.display = idx === 4 ? '' : 'none';
 }
 
 
