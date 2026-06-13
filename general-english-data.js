@@ -19,7 +19,7 @@ const GENERAL_ENGLISH_LEVELS = [
       
 {
   type: 'grammar_lesson',
-  title: 'To be — indiki zaman (Dərs 1)',
+  title: 'To be — indiki zaman',
   cards: [
 
     // ── Ekran 1: Giriş ───────────────────────────────
@@ -186,7 +186,7 @@ const GENERAL_ENGLISH_LEVELS = [
 
 {
   type: 'grammar_lesson',
-  title: 'To be — indiki zaman (Dərs 2)',
+  title: 'To be — indiki zaman',
   cards: [
 
     // ── Ekran 1: Sual forması ────────────────────────
@@ -385,7 +385,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Was / Were — Keçmiş Zaman (Dərs 1)',
+  title: 'Was / Were — Keçmiş Zaman',
   cards: [
 
     // ── Ekran 1: Giriş ───────────────────────────────────────────────────────
@@ -504,7 +504,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Was / Were — Keçmiş Zaman (Dərs 2)',
+  title: 'Was / Were — Keçmiş Zaman',
   cards: [
 
     // ── Ekran 1: Sual forması ────────────────────────────────────────────────
@@ -700,7 +700,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Söz Sırası — Word Order (Dərs 1)',
+  title: 'Söz Sırası — Word Order',
   cards: [
 
     // ── Ekran 1: Giriş — SVO ─────────────────────────────────────────────────
@@ -831,7 +831,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Söz Sırası — Word Order (Dərs 2)',
+  title: 'Söz Sırası — Word Order',
   cards: [
 
     // ── Ekran 1: Sual cümləsində söz sırası ──────────────────────────────────
@@ -1075,7 +1075,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Simple — Müsbət Cümlə (Dərs 1)',
+  title: 'Present Simple — Müsbət Cümlə',
   cards: [
 
     // ── Ekran 1: Giriş — Quruluş ─────────────────────────────────────────────
@@ -1207,7 +1207,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Simple — Müsbət Cümlə (Dərs 2)',
+  title: 'Present Simple — Müsbət Cümlə',
   cards: [
 
     // ── Ekran 1: Nə zaman işlədilir ──────────────────────────────────────────
@@ -1454,7 +1454,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Simple — İnkar (Dərs 1)',
+  title: 'Present Simple — İnkar',
   cards: [
 
     // ── Ekran 1: İnkar quruluşu ───────────────────────────────────────────────
@@ -1588,7 +1588,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Simple — Sual (Dərs 2)',
+  title: 'Present Simple — Sual',
   cards: [
 
     // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
@@ -1814,7 +1814,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Tezlik Zərfləri — Frequency Adverbs (Dərs 1)',
+  title: 'Tezlik Zərfləri — Frequency Adverbs',
   cards: [
 
     // ── Ekran 1: Tezlik sırası ────────────────────────────────────────────────
@@ -2047,7 +2047,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Continuous — Quruluş və Spelling (Dərs 1)',
+  title: 'Present Continuous — Quruluş və Spelling',
   cards: [
 
     // ── Ekran 1: Müsbət quruluş ───────────────────────────────────────────────
@@ -2175,7 +2175,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Continuous — İstifadə və Qısa Cavablar (Dərs 2)',
+  title: 'Present Continuous — İstifadə və Qısa Cavablar',
   cards: [
 
     // ── Ekran 1: Bu günlər davam edən işlər ──────────────────────────────────
@@ -2409,7 +2409,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Simple vs Continuous — Əsas Fərq (Dərs 1)',
+  title: 'Present Simple vs Continuous — Əsas Fərq',
   cards: [
 
     // ── Ekran 1: Əsas fərq ────────────────────────────────────────────────────
@@ -2531,7 +2531,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Simple vs Continuous — Stative Verbs (Dərs 2)',
+  title: 'Present Simple vs Continuous — Stative Verbs',
   cards: [
 
     // ── Ekran 1: Stative verbs nədir? ────────────────────────────────────────
@@ -2766,7 +2766,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Past Simple — Düzgün Fellər, Quruluş və Spelling (Dərs 1)',
+  title: 'Past Simple — Düzgün Fellər, Quruluş və Spelling',
   cards: [
 
     // ── Ekran 1: Quruluş ──────────────────────────────────────────────────────
@@ -2891,7 +2891,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Past Simple — Tələffüz və Zaman İfadələri (Dərs 2)',
+  title: 'Past Simple — Tələffüz və Zaman İfadələri',
   cards: [
 
     // ── Ekran 1: Tələffüz qaydaları ───────────────────────────────────────────
@@ -3120,7 +3120,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Past Simple — Düzgünsüz Fellər, Qrup 1–3 (Dərs 1)',
+  title: 'Past Simple — Düzgünsüz Fellər, Qrup 1–3',
   cards: [
 
     // ── Ekran 1: Giriş — düzgünsüz fellər nədir? ─────────────────────────────
@@ -3248,7 +3248,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Past Simple — Düzgünsüz Fellər, Qrup 4–6 (Dərs 2)',
+  title: 'Past Simple — Düzgünsüz Fellər, Qrup 4–6',
   cards: [
 
     // ── Ekran 1: Qrup 4 — -ew forması ────────────────────────────────────────
@@ -3475,7 +3475,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Past Simple — İnkar (didn\'t) (Dərs 1)',
+  title: 'Past Simple — İnkar (didn\'t)',
   cards: [
 
     // ── Ekran 1: İnkar quruluşu ───────────────────────────────────────────────
@@ -3623,7 +3623,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Past Simple — Sual (Did?) (Dərs 2)',
+  title: 'Past Simple — Sual (Did?)',
   cards: [
 
     // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
@@ -3847,7 +3847,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'going to — Müsbət və İnkar (Dərs 1)',
+  title: 'going to — Müsbət və İnkar',
   cards: [
 
     // ── Ekran 1: going to quruluşu ────────────────────────────────────────────
@@ -3985,7 +3985,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'going to — Sual və Proqnoz (Dərs 2)',
+  title: 'going to — Sual və Proqnoz',
   cards: [
 
     // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
@@ -4218,7 +4218,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'will — Quruluş və İşlənmə (Dərs 1)',
+  title: 'will — Quruluş və İşlənmə',
   cards: [
 
     // ── Ekran 1: will quruluşu ────────────────────────────────────────────────
@@ -4358,7 +4358,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'will — Sual, İnkar və will vs going to (Dərs 2)',
+  title: 'will — Sual, İnkar və will vs going to',
   cards: [
 
     // ── Ekran 1: will — Sual və İnkar ────────────────────────────────────────
@@ -4593,7 +4593,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'can / can\'t — Quruluş və Bacarıq (Dərs 1)',
+  title: 'can / can\'t — Quruluş və Bacarıq',
   cards: [
 
     // ── Ekran 1: can quruluşu ─────────────────────────────────────────────────
@@ -4735,7 +4735,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'can — Sual, Qısa Cavab və Sual Sözləri (Dərs 2)',
+  title: 'can — Sual, Qısa Cavab və Sual Sözləri',
   cards: [
 
     // ── Ekran 1: Sual quruluşu ────────────────────────────────────────────────
@@ -4963,7 +4963,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'could / couldn\'t — Quruluş və Keçmiş Bacarıq (Dərs 1)',
+  title: 'could / couldn\'t — Quruluş və Keçmiş Bacarıq',
   cards: [
 
     // ── Ekran 1: could quruluşu ───────────────────────────────────────────────
@@ -5100,7 +5100,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'could — Sual, Qısa Cavab və Nəzakətli Xahiş (Dərs 2)',
+  title: 'could — Sual, Qısa Cavab və Nəzakətli Xahiş',
   cards: [
 
     // ── Ekran 1: Sual quruluşu və qısa cavablar ───────────────────────────────
@@ -5332,7 +5332,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'must / have to — Quruluş və Fərq (Dərs 1)',
+  title: 'must / have to — Quruluş və Fərq',
   cards: [
 
     // ── Ekran 1: must və have to quruluşu ────────────────────────────────────
@@ -5460,7 +5460,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'mustn\'t / don\'t have to / had to (Dərs 2)',
+  title: 'mustn\'t / don\'t have to / had to ',
   cards: [
 
     // ── Ekran 1: mustn't vs don't have to — fərq ─────────────────────────────
@@ -5686,7 +5686,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'should / shouldn\'t — Quruluş və Məsləhət (Dərs 1)',
+  title: 'should / shouldn\'t — Quruluş və Məsləhət ',
   cards: [
 
     // ── Ekran 1: should quruluşu ──────────────────────────────────────────────
@@ -5822,7 +5822,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'should — Sual, Qısa Cavab və I think + should (Dərs 2)',
+  title: 'should — Sual, Qısa Cavab və I think + should ',
   cards: [
 
     // ── Ekran 1: Sual quruluşu və qısa cavablar ───────────────────────────────
@@ -6049,7 +6049,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Perfect — Quruluş və İstifadə (Dərs 1)',
+  title: 'Present Perfect — Quruluş və İstifadə ',
   cards: [
 
     // ── Ekran 1: Quruluş ──────────────────────────────────────────────────────
@@ -6190,7 +6190,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Present Perfect — just/already/yet/ever/never + PP vs PS (Dərs 2)',
+  title: 'Present Perfect — just/already/yet/ever/never + PP vs PS ',
   cards: [
 
     // ── Ekran 1: just / already / yet ─────────────────────────────────────────
@@ -6422,7 +6422,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'a / an — Qeyri-Müəyyən Artikl (Dərs 1)',
+  title: 'a / an — Qeyri-Müəyyən Artikl ',
   cards: [
 
     // ── Ekran 1: a vs an qayda ────────────────────────────────────────────────
@@ -6547,7 +6547,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'a / an — Tələffüz Qaydası və Xüsusi Hallar (Dərs 2)',
+  title: 'a / an — Tələffüz Qaydası və Xüsusi Hallar ',
   cards: [
 
     // ── Ekran 1: Səs qaydası — detallı ───────────────────────────────────────
@@ -6778,7 +6778,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'the — Müəyyən Artikl (Dərs 1)',
+  title: 'the — Müəyyən Artikl ',
   cards: [
 
     // ── Ekran 1: the nədir? ───────────────────────────────────────────────────
@@ -6904,7 +6904,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'the — Coğrafi Adlar + the İşlənməyən Hallar (Dərs 2)',
+  title: 'the — Coğrafi Adlar + the İşlənməyən Hallar ',
   cards: [
 
     // ── Ekran 1: Coğrafi adlar — the işlədilən ────────────────────────────────
@@ -7124,7 +7124,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Artikl İşlənməyən Hallar — İdman, Dillər, Fənlər, Ümumi Anlayışlar (Dərs 1)',
+  title: 'Artikl İşlənməyən Hallar — İdman, Dillər, Fənlər, Ümumi Anlayışlar ',
   cards: [
 
     // ── Ekran 1: İdman + Dillər ───────────────────────────────────────────────
@@ -7245,7 +7245,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Artikl İşlənməyən Hallar — Xüsusi İfadələr və Coğrafi Adlar (Dərs 2)',
+  title: 'Artikl İşlənməyən Hallar — Xüsusi İfadələr və Coğrafi Adlar ',
   cards: [
 
     // ── Ekran 1: Funksional ifadələr — go to work/school/bed ─────────────────
@@ -7466,7 +7466,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Çoxluq — Yazılış Qaydaları (Dərs 1)',
+  title: 'Çoxluq — Yazılış Qaydaları ',
   cards: [
 
     // ── Ekran 1: Ümumi qayda + xüsusi sonluqlar ───────────────────────────────
@@ -7593,7 +7593,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Çoxluq — Həmişə Cəm İsimlər + Ümumi Səhvlər (Dərs 2)',
+  title: 'Çoxluq — Həmişə Cəm İsimlər + Ümumi Səhvlər ',
   cards: [
 
     // ── Ekran 1: Həmişə cəm işlənən isimlər ──────────────────────────────────
@@ -7825,7 +7825,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Sayılan vs Sayılmayan İsimlər (Dərs 1)',
+  title: 'Sayılan vs Sayılmayan İsimlər ',
   cards: [
 
     // ── Ekran 1: Sayılan vs Sayılmayan ───────────────────────────────────────
@@ -7963,7 +7963,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'much / many / a lot of + How much / How many (Dərs 2)',
+  title: 'much / many / a lot of + How much / How many ',
   cards: [
 
     // ── Ekran 1: much / many / a lot of ──────────────────────────────────────
@@ -8184,7 +8184,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'some / any — Əsas Qayda (Dərs 1)',
+  title: 'some / any — Əsas Qayda ',
   cards: [
 
     // ── Ekran 1: Əsas qayda ───────────────────────────────────────────────────
@@ -8304,7 +8304,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'some / any — İsimsiz İşlənmə + something/anybody (Dərs 2)',
+  title: 'some / any — İsimsiz İşlənmə + something/anybody ',
   cards: [
 
     // ── Ekran 1: İsimsiz işlənmə ─────────────────────────────────────────────
@@ -8526,7 +8526,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'much / many / a lot of — Əsas Qayda (Dərs 1)',
+  title: 'much / many / a lot of — Əsas Qayda ',
   cards: [
 
     // ── Ekran 1: Əsas fərq ───────────────────────────────────────────────────
@@ -8644,7 +8644,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'much / many / a lot of — İşlənmə Fərqləri + Səhvlər (Dərs 2)',
+  title: 'much / many / a lot of — İşlənmə Fərqləri + Səhvlər ',
   cards: [
 
     // ── Ekran 1: much — müsbət cümlədə qeyri-təbii ───────────────────────────
@@ -8872,7 +8872,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Şəxs Əvəzlikləri — Subject / Object (Dərs 1)',
+  title: 'Şəxs Əvəzlikləri — Subject / Object ',
   cards: [
 
     // ── Ekran 1: Tam cədvəl ───────────────────────────────────────────────────
@@ -8994,7 +8994,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Şəxs Əvəzlikləri — Possessive + Reflexive (Dərs 2)',
+  title: 'Şəxs Əvəzlikləri — Possessive + Reflexive ',
   cards: [
 
     // ── Ekran 1: Possessive Adjective ─────────────────────────────────────────
@@ -9210,7 +9210,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'this / that / these / those — Əsas Qayda (Dərs 1)',
+  title: 'this / that / these / those — Əsas Qayda ',
   cards: [
 
     // ── Ekran 1: Əsas cədvəl ─────────────────────────────────────────────────
@@ -9327,7 +9327,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'this / that / these / those — Xüsusi Hallar + Səhvlər (Dərs 2)',
+  title: 'this / that / these / those — Xüsusi Hallar + Səhvlər ',
   cards: [
 
     // ── Ekran 1: Telefonda işlənmə ────────────────────────────────────────────
@@ -9563,7 +9563,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Yes/No Sualları — do/does + is/are (Dərs 1)',
+  title: 'Yes/No Sualları — do/does + is/are ',
   cards: [
 
     // ── Ekran 1: Əsas formula ─────────────────────────────────────────────────
@@ -9684,7 +9684,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Yes/No Sualları — was/were + did (Dərs 2)',
+  title: 'Yes/No Sualları — was/were + did ',
   cards: [
 
     // ── Ekran 1: was / were — keçmişdə to be ──────────────────────────────────
@@ -9900,7 +9900,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Wh- Sualları — Sual Sözləri + Formula (Dərs 1)',
+  title: 'Wh- Sualları — Sual Sözləri + Formula ',
   cards: [
 
     // ── Ekran 1: Sual sözləri cədvəli ────────────────────────────────────────
@@ -10028,7 +10028,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Wh- Sualları — What/Which/How + Xüsusi Hallar (Dərs 2)',
+  title: 'Wh- Sualları — What/Which/How + Xüsusi Hallar ',
   cards: [
 
     // ── Ekran 1: what vs which ────────────────────────────────────────────────
@@ -10244,7 +10244,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'there is / there are — Əsas Qayda (Dərs 1)',
+  title: 'there is / there are — Əsas Qayda ',
   cards: [
 
     // ── Ekran 1: Forma cədvəli ────────────────────────────────────────────────
@@ -10363,7 +10363,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'there is / there are — some/any + Səhvlər (Dərs 2)',
+  title: 'there is / there are — some/any + Səhvlər ',
   cards: [
 
     // ── Ekran 1: some / any ilə işlənmə ──────────────────────────────────────
@@ -10591,7 +10591,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Comparative — Yazılış Qaydaları (Dərs 1)',
+  title: 'Comparative — Yazılış Qaydaları ',
   cards: [
 
     // ── Ekran 1: Ümumi qayda + -er formalar ──────────────────────────────────
@@ -10717,7 +10717,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Comparative — than / a bit / much (Dərs 2)',
+  title: 'Comparative — than / a bit / much ',
   cards: [
 
     // ── Ekran 1: than ilə müqayisə ────────────────────────────────────────────
@@ -10948,7 +10948,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Superlative — Yazılış Qaydaları (Dərs 1)',
+  title: 'Superlative — Yazılış Qaydaları ',
   cards: [
 
     // ── Ekran 1: Ümumi qayda + -est formalar ─────────────────────────────────
@@ -11071,7 +11071,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Superlative — in/of + ever (Dərs 2)',
+  title: 'Superlative — in/of + ever ',
   cards: [
 
     // ── Ekran 1: in / of ilə superlative ─────────────────────────────────────
@@ -11297,7 +11297,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'in / on / at — Əsas Fərqlər (Dərs 1)',
+  title: 'in / on / at — Əsas Fərqlər ',
   cards: [
 
     // ── Ekran 1: in — içəridə ─────────────────────────────────────────────────
@@ -11425,7 +11425,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'next to / between / above / under — Nisbi Mövqe (Dərs 2)',
+  title: 'next to / between / above / under — Nisbi Mövqe ',
   cards: [
 
     // ── Ekran 1: next to / between / opposite ─────────────────────────────────
@@ -11647,7 +11647,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'at / on / in — Zaman Önlükləri (Dərs 1)',
+  title: 'at / on / in — Zaman Önlükləri ',
   cards: [
 
     // ── Ekran 1: at — saat və xüsusi ifadələr ────────────────────────────────
@@ -11774,7 +11774,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'this/last/next/every + in ... (müddət sonra) (Dərs 2)',
+  title: 'this/last/next/every + in ... (müddət sonra) ',
   cards: [
 
     // ── Ekran 1: önlük işlənməyən hallar ──────────────────────────────────────
@@ -11998,7 +11998,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'on / at / by / with / about — Xüsusi İfadələr (Dərs 1)',
+  title: 'on / at / by / with / about — Xüsusi İfadələr ',
   cards: [
 
     // ── Ekran 1: on ilə xüsusi ifadələr ──────────────────────────────────────
@@ -12123,7 +12123,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Sifət + Önlük / Fel + Önlük (Dərs 2)',
+  title: 'Sifət + Önlük / Fel + Önlük ',
   cards: [
 
     // ── Ekran 1: Sifət + önlük ────────────────────────────────────────────────
@@ -12350,7 +12350,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'and / but / or — Əsas Bağlayıcılar (Dərs 1)',
+  title: 'and / but / or — Əsas Bağlayıcılar ',
   cards: [
 
     // ── Ekran 1: and — əlavə, davam ───────────────────────────────────────────
@@ -12470,7 +12470,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'so / because — Nəticə və Səbəb (Dərs 2)',
+  title: 'so / because — Nəticə və Səbəb ',
   cards: [
 
     // ── Ekran 1: so — nəticə ──────────────────────────────────────────────────
@@ -12688,7 +12688,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'because / although / however / despite (Dərs 1)',
+  title: 'because / although / however / despite ',
   cards: [
 
     // ── Ekran 1: because — səbəb bildirmək ───────────────────────────────────
@@ -12845,7 +12845,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'because / although / however / despite — Təkmilləşdirmə (Dərs 2)',
+  title: 'because / although / however / despite — Təkmilləşdirmə ',
   cards: [
 
     // ── Ekran 1: because vs so ────────────────────────────────────────────────
@@ -13067,7 +13067,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'when / while / before / after — Zaman Bağlayıcıları (Dərs 1)',
+  title: 'when / while / before / after — Zaman Bağlayıcıları ',
   cards: [
 
     // ── Ekran 1: when ─────────────────────────────────────────────────────────
@@ -13220,7 +13220,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'when / while / before / after — Təkmilləşdirmə (Dərs 2)',
+  title: 'when / while / before / after — Təkmilləşdirmə ',
   cards: [
 
     // ── Ekran 1: while vs when fərqi ──────────────────────────────────────────
@@ -13431,7 +13431,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'if — Birinci Şərt Cümləsi (Dərs 1)',
+  title: 'if — Birinci Şərt Cümləsi ',
   cards: [
 
     // ── Ekran 1: Forma və quruluş ─────────────────────────────────────────────
@@ -13580,7 +13580,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'if — Birinci Şərt Cümləsi Təkmilləşdirmə (Dərs 2)',
+  title: 'if — Birinci Şərt Cümləsi Təkmilləşdirmə ',
   cards: [
 
     // ── Ekran 1: if cümlənin əvvəlində / ortasında ────────────────────────────
@@ -13806,7 +13806,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 1) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Passive Voice — Məchul Növ (Dərs 1)',
+  title: 'Passive Voice — Məchul Növ ',
   cards: [
 
     // ── Ekran 1: Aktiv vs Məchul ──────────────────────────────────────────────
@@ -13937,7 +13937,7 @@ const GENERAL_ENGLISH_LEVELS = [
 // ── Grammar Lesson (Dərs 2) ──────────────────────────────────────────────────
 {
   type: 'grammar_lesson',
-  title: 'Passive Voice — Present Continuous və Present Perfect (Dərs 2)',
+  title: 'Passive Voice — Present Continuous və Present Perfect ',
   cards: [
 
     // ── Ekran 1: Present Continuous Passive ───────────────────────────────────
