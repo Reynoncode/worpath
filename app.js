@@ -4384,9 +4384,13 @@ window._updateHeaderProfileBtn = function (pageIndex) {
       avatar.style.background = isDark ? '#1d3348' : '#EDEAE2';
       avatar.style.color = isDark ? '#dce8f2' : '#4A4740';
       avatar.style.borderRadius = '10px';
+      btn.style.marginRight = 'auto';
       return;
     }
   }
+
+// Page 4-dən çıxanda profil ikonunu normal yerinə qaytar
+  btn.style.marginRight = '';
 
   // Normal profil avatarı bərpa et
   if (window.AuthManager) {
@@ -4428,8 +4432,14 @@ function goToPage(idx, animate = true) {
     dot.classList.toggle('active', i === idx);
   });
 
-  if (idx === 4 && window.StatsPage) StatsPage.render('stats-root');
+if (idx === 4 && window.StatsPage) StatsPage.render('stats-root');
   if (window._updateHeaderProfileBtn) _updateHeaderProfileBtn(idx);
+
+  // Dark mode düyməsi yalnız page 4-də görünsün
+  const darkToggleBtn = document.getElementById('dark-mode-toggle');
+  if (darkToggleBtn) {
+    darkToggleBtn.style.display = idx === 4 ? '' : 'none';
+  }
 }
 
 
@@ -4529,6 +4539,8 @@ document.addEventListener('mouseup', () => {
 });
 // ── Init ──────────────────────────────────
 goToPage(DEFAULT_PAGE, false);
+const darkToggleBtn = document.getElementById('dark-mode-toggle');
+if (darkToggleBtn) darkToggleBtn.style.display = 'none';
 StatsPage.render('stats-root');
 loadProgress();
 renderLevels();
