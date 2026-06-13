@@ -1,0 +1,1 @@
+const WRITING_LEVELS = [ ... ]
