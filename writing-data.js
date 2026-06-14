@@ -1,4 +1,3 @@
-
 // ============================================================
 //  WORDPATH — WRITING SKILLS DATA
 //  writing-data.js
