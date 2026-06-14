@@ -3957,7 +3957,7 @@ button { font-family: var(--font); }
   cursor: grab;
   padding: 0 2px;
   white-space: nowrap;
-  color: var(--color-text-primary, #1a1a1a);
+  color: inherit;
   user-select: none;
 }
 
@@ -4003,8 +4003,7 @@ button { font-family: var(--font); }
 }
 
 .wf-word-hidden {
-  opacity: 0;
-  pointer-events: none;
+  display: none;
 }
 
 /* ── Yoxla / Növbəti düyməsi ─────────────────────────────── */
