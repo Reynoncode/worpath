@@ -21,17 +21,21 @@ const geState = {
 // ============================================================
 //  START
 // ============================================================
-
 function startGeneralEnglishLesson(levelId, quizIdx) {
   const lvl  = GENERAL_ENGLISH_LEVELS.find(l => l.id === levelId);
   if (!lvl) { console.warn('GE: level tapılmadı', levelId); return; }
-
   const item = lvl.quizzes[quizIdx];
+
+  // ── Writing tipləri ──────────────────────────────────
+  if (item && item.type === 'writing_fill') {
+    WritingEngine.start(levelId, quizIdx);
+    return;
+  }
+
   if (!item || !item.cards || item.cards.length === 0) {
     console.warn('GE: cards yoxdur', quizIdx);
     return;
   }
-
   geState.levelIdx    = levelId;
   geState.quizIdx     = quizIdx;
   geState.item        = item;
@@ -39,14 +43,11 @@ function startGeneralEnglishLesson(levelId, quizIdx) {
   geState.miniAnswers = {};
   geState.totalCards  = item.cards.length;
   geState.locked      = false;
-
   quiz.mode   = 'grammar';
   quiz.locked = false;
-
   showQuizScreen();
   renderGeCard();
 }
-
 // ============================================================
 //  RENDER
 // ============================================================
