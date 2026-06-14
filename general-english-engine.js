@@ -562,3 +562,4 @@ window.gameState      = gameState;
 window.startGeneralEnglishLesson  = startGeneralEnglishLesson;
 window.renderGeneralEnglishPath   = renderGeneralEnglishPath;
 window.geState                    = geState;
+LEVELS.push(...WRITING_LEVELS);
