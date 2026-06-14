@@ -3678,6 +3678,10 @@ function startQuiz(levelIdx, quizIdx) {
     startGrammarLesson(levelIdx, quizIdx);
     return;
   }
+  if (item && !Array.isArray(item) && item.type === 'writing_fill') {
+  startGeneralEnglishLesson(lvl.id, quizIdx);
+  return;
+}
   // Sentence builder quiz
   if (item && !Array.isArray(item) && item.type === 'quiz_sentence_builder') {
     startSentenceBuilder(levelIdx, quizIdx);
