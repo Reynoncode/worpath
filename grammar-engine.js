@@ -535,8 +535,11 @@ function renderGrammarPath(lvl, li) {
     let typeIcon  = '';
     let typeClass = '';
 
-   if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
+  if (item && !Array.isArray(item) && item.type === 'grammar_lesson') {
   typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-book-2"></i>');
+  typeClass = 'grammar-lesson-node';
+} else if (item && !Array.isArray(item) && item.type === 'writing_fill') {
+  typeIcon  = isDone ? '' : (isLocked ? '' : '<i class="ti ti-pencil"></i>');
   typeClass = 'grammar-lesson-node';
 } else if (Array.isArray(item)) {
   const prevItm = lvl.quizzes[qi - 1];
