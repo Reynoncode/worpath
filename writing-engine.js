@@ -1,39 +1,16 @@
 // ============================================================
 //  WORDPATH — WRITING ENGINE
 //  writing-engine.js
-//  index.html-də app.js-dən SONRA yüklənməlidir.
-//
-//  Mövcud test tipləri:
-//    1. writing_fill  — drag & drop boşluq doldurma
-//
-//  Gələcək test tipləri (hazır interfeys):
-//    2. writing_order   — cümləni düzgün sırala
-//    3. writing_choose  — çoxlu seçim (essay structure)
-//    4. writing_free    — sərbəst yazı + avtomatik yoxlama
 // ============================================================
 
 const WritingEngine = (() => {
-
-  // ══════════════════════════════════════════════════════════
-  //  SHARED STATE
-  // ══════════════════════════════════════════════════════════
 
   const state = {
     lvlId:    null,
     quizIdx:  null,
     item:     null,
-    type:     null,   // 'writing_fill' | 'writing_order' | ...
+    type:     null,
   };
-
-  // ══════════════════════════════════════════════════════════
-  //  ENTRY POINT — startWritingQuiz
-  //  general-english-engine.js-dən bu funksiyanı çağır:
-  //
-  //  } else if (item.type === 'writing_fill') {
-  //    WritingEngine.start(lvlId, qi);
-  //    return;
-  //  }
-  // ══════════════════════════════════════════════════════════
 
   function start(lvlId, quizIdx) {
     const lvl  = GENERAL_ENGLISH_LEVELS.find(l => l.id === lvlId);
@@ -51,18 +28,10 @@ const WritingEngine = (() => {
     showQuizScreen();
 
     switch (item.type) {
-      case 'writing_fill':  WritingFill.start(item);  break;
-      // case 'writing_order':  WritingOrder.start(item);  break;
-      // case 'writing_choose': WritingChoose.start(item); break;
-      // case 'writing_free':   WritingFree.start(item);   break;
-      default:
-        showToast('Bu test tipi hələ hazır deyil ✏️');
+      case 'writing_fill': WritingFill.start(item); break;
+      default: showToast('Bu test tipi hələ hazır deyil ✏️');
     }
   }
-
-  // ══════════════════════════════════════════════════════════
-  //  SHARED: nəticə ekranı
-  // ══════════════════════════════════════════════════════════
 
   function showResult({ title, correct, total, onRetry }) {
     elProgressFill.style.width = '100%';
@@ -89,7 +58,6 @@ const WritingEngine = (() => {
       elStatWrong.textContent   = wrong;
       elStatPct.textContent     = `${pct}%`;
 
-      // Progress qeyd et
       const lvl = GENERAL_ENGLISH_LEVELS.find(l => l.id === state.lvlId);
       if (lvl) {
         const li = LEVELS.indexOf(lvl);
@@ -106,22 +74,21 @@ const WritingEngine = (() => {
   }
 
   // ══════════════════════════════════════════════════════════
-  //  1. WRITING FILL — Drag & Drop boşluq doldurma
+  //  WRITING FILL
   // ══════════════════════════════════════════════════════════
 
   const WritingFill = (() => {
 
-    // ── State ──────────────────────────────────────────────
     const s = {
       item:     null,
       paraIdx:  0,
-      filled:   {},   // { BLANK_0: 'reading', ... }
+      filled:   {},
       mistakes: 0,
       checked:  false,
     };
 
-    // ── Touch state ────────────────────────────────────────
-    let touchData   = null;  // { word, fromBlankId|null }
+    let dragData    = null;
+    let touchData   = null;
     let ghostActive = false;
 
     // ── Başlat ─────────────────────────────────────────────
@@ -135,7 +102,7 @@ const WritingEngine = (() => {
       _render();
     }
 
-    // ── Paragraph render ───────────────────────────────────
+    // ── Render ─────────────────────────────────────────────
     function _render() {
       const para  = s.item.paragraphs[s.paraIdx];
       const total = s.item.paragraphs.length;
@@ -153,7 +120,7 @@ const WritingEngine = (() => {
           const id    = m[1];
           const val   = s.filled[id] || '';
           const blank = para.blanks.find(b => b.id === id);
-          const minW  = Math.max(blank ? blank.answer.length : 6, 6) * 10 + 12;
+          const minW  = Math.max(blank ? blank.answer.length : 6, 6) * 10 + 16;
 
           textHTML += `
             <span class="wf-blank ${val ? 'wf-blank-filled' : ''}"
@@ -175,7 +142,7 @@ const WritingEngine = (() => {
         }
       });
 
-      // Sözlər hovuzu
+      // Söz kartları
       const usedWords = Object.values(s.filled);
       const wordsHTML = para.words.map(w => {
         const usedCount  = usedWords.filter(u => u === w).length;
@@ -200,20 +167,20 @@ const WritingEngine = (() => {
       quizBody.className = 'quiz-body wf-body';
       quizBody.innerHTML = `
         <div class="wf-text-card">
-          <p class="wf-text" id="wf-text">${textHTML}</p>
+          <p class="wf-text">${textHTML}</p>
         </div>
-        <div class="wf-words-pool" id="wf-words-pool">${wordsHTML}</div>
-        <button class="wf-check-btn" id="wf-check-btn"
-                onclick="WritingEngine._fill.checkOrNext()">
-          ${btnLabel}
-        </button>
-        <div class="wf-feedback" id="wf-feedback"></div>
+        <div class="wf-bottom-panel">
+          <div class="wf-words-pool">${wordsHTML}</div>
+          <div class="wf-feedback" id="wf-feedback"></div>
+          <button class="wf-check-btn" id="wf-check-btn"
+                  onclick="WritingEngine._fill.checkOrNext()">
+            ${btnLabel}
+          </button>
+        </div>
       `;
     }
 
     // ── Desktop drag ───────────────────────────────────────
-    let dragData = null;
-
     function dragStart(event, idOrWord, fromBlank) {
       dragData = fromBlank
         ? { word: s.filled[idOrWord], fromBlankId: idOrWord }
@@ -231,7 +198,7 @@ const WritingEngine = (() => {
 
     // ── Mobil touch ────────────────────────────────────────
     function touchStart(event, idOrWord, fromBlank) {
-      const word = fromBlank ? s.filled[idOrWord] : idOrWord;
+      const word  = fromBlank ? s.filled[idOrWord] : idOrWord;
       touchData   = { word, fromBlankId: fromBlank ? idOrWord : null };
       ghostActive = true;
       const ghost = document.getElementById('wf-ghost');
@@ -267,7 +234,7 @@ const WritingEngine = (() => {
       ghost.style.top  = `${touch.clientY - 20}px`;
     }
 
-    // ── Sözü yerləşdir ─────────────────────────────────────
+    // ── Yerləşdir ──────────────────────────────────────────
     function _place(word, fromBlankId, toBlankId) {
       if (fromBlankId) delete s.filled[fromBlankId];
       if (s.filled[toBlankId]) delete s.filled[toBlankId];
@@ -292,14 +259,12 @@ const WritingEngine = (() => {
       const para   = s.item.paragraphs[s.paraIdx];
       const blanks = para.blanks;
 
-      // Hamısı doldurulubmu?
       if (!blanks.every(b => s.filled[b.id])) {
         const fb = document.getElementById('wf-feedback');
         if (fb) { fb.textContent = 'Bütün boşluqları doldur!'; fb.className = 'wf-feedback wf-fb-warn'; }
         return;
       }
 
-      // Yoxla
       let errors = 0;
       blanks.forEach(b => {
         const el   = document.querySelector(`[data-blank-id="${b.id}"]`);
@@ -308,7 +273,6 @@ const WritingEngine = (() => {
         if (el) el.classList.add(isOk ? 'wf-blank-correct' : 'wf-blank-wrong');
       });
 
-      // Səhv olanları düzgün cavabla göstər
       blanks.forEach(b => {
         if (s.filled[b.id] !== b.answer) {
           const el = document.querySelector(`[data-blank-id="${b.id}"]`);
@@ -331,11 +295,10 @@ const WritingEngine = (() => {
       }
       if (btn) btn.textContent = isLast ? 'Bitir →' : 'Növbəti →';
 
-      // Söz hovuzunu deaktiv et
       document.querySelectorAll('.wf-word').forEach(w => {
         w.setAttribute('draggable', 'false');
         w.style.pointerEvents = 'none';
-        w.style.opacity = '0.5';
+        w.style.opacity = '0.4';
       });
     }
 
@@ -351,61 +314,21 @@ const WritingEngine = (() => {
       });
     }
 
-    // ── Ghost element ──────────────────────────────────────
+    // ── Ghost ──────────────────────────────────────────────
     function _ensureGhost() {
       if (document.getElementById('wf-ghost')) return;
       const ghost = document.createElement('span');
       ghost.id = 'wf-ghost';
-      ghost.style.cssText = [
-        'position:fixed', 'pointer-events:none', 'display:none', 'z-index:9999',
-        'padding:4px 12px', 'border-radius:20px', 'font-size:15px',
-        'font-weight:500', 'white-space:nowrap',
-        'background:var(--color-surface, #fff)',
-        'border:1.5px solid var(--color-border-secondary, #ddd)',
-        'box-shadow:0 4px 12px rgba(0,0,0,0.15)',
-      ].join(';');
       document.body.appendChild(ghost);
     }
 
     return { start, dragStart, drop, touchStart, touchMove, touchEnd, touchDrop, checkOrNext };
   })();
 
-
-  // ══════════════════════════════════════════════════════════
-  //  2. WRITING ORDER — (gələcək tip — interfeys hazırdır)
-  // ══════════════════════════════════════════════════════════
-
-  // const WritingOrder = (() => {
-  //   function start(item) { /* ... */ }
-  //   return { start };
-  // })();
-
-
-  // ══════════════════════════════════════════════════════════
-  //  3. WRITING CHOOSE — (gələcək tip)
-  // ══════════════════════════════════════════════════════════
-
-  // const WritingChoose = (() => {
-  //   function start(item) { /* ... */ }
-  //   return { start };
-  // })();
-
-
-  // ══════════════════════════════════════════════════════════
-  //  4. WRITING FREE — (gələcək tip)
-  // ══════════════════════════════════════════════════════════
-
-  // const WritingFree = (() => {
-  //   function start(item) { /* ... */ }
-  //   return { start };
-  // })();
-
-
-  // ── Public API ────────────────────────────────────────────
   return {
     start,
     showResult,
-    _fill: WritingFill,   // inline handler-lar üçün (ondrop, ondragstart)
+    _fill: WritingFill,
   };
 
 })();
